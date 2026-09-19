@@ -22,7 +22,8 @@ import subprocess
 ENV_KEYS = set('PATH HOME TMPDIR LANG LC_ALL TZ CC CXX CFLAGS CXXFLAGS CPPFLAGS '
                'LDFLAGS LD_LIBRARY_PATH PKG_CONFIG_LIBDIR CMAKE_PREFIX_PATH '
                'PROJ_DATA PROJ_LIB PROJ_NETWORK GDAL_DATA PGHOST PGPORT PGUSER '
-               'PGDATABASE'.split())
+               'PGDATABASE PGIS_REG_TMPDIR POSTGIS_REGRESS_DB AMBISGIS_REAL_PERL '
+               'AMBISGIS_REGRESSION_ARTIFACTS'.split())
 TOOLS = 'gcc g++ cc c++ ld as ar ranlib cmake ctest make ninja python3 perl autoconf automake aclocal libtoolize pkg-config bison flex m4 bash tar sed awk git'.split()
 BINARIES = 'pg_config postgres initdb pg_ctl psql pg_dump pg_restore geos-config geosop proj projinfo cs2cs gdal-config gdalinfo ogrinfo protoc protoc-c sqlite3'.split()
 TEST_ARTIFACTS = {'LastTest.log', 'LastTestsFailed.log', 'LastTestsDisabled.log',
@@ -202,6 +203,38 @@ def runtime_inventory(run):
             'limit': 'ldd covers observed dynamic linkage; no claim of static/compiler/sysroot closure.'}
 
 
+def observe_probe_evidence(value, run, artifacts, problems):
+    """Verify referenced probe files while preserving original results verbatim."""
+    def observe(record, field, expected=None):
+        if not record.get(field):
+            return None
+        path = Path(record[field])
+        if not path.resolve().is_relative_to(run):
+            problems.append({'path': str(path), 'error': 'probe evidence outside run; not read'})
+            return None
+        observed = metadata(path)
+        artifacts.append(observed)
+        record['observed_' + field] = observed
+        if expected:
+            record['recorded_' + field + '_hash_matches'] = observed.get('sha256') == expected
+        return path
+
+    for field, hash_field in (('recipe_snapshot', 'recipe_sha256'),
+                              ('validation_recipe_snapshot', 'validation_recipe_sha256')):
+        observe(value, field, value.get(hash_field))
+    for command in value.get('commands', []):
+        observe(command, 'log', command.get('log_sha256'))
+        observe(command, 'input_sql')
+        for invocation in command.get('invocations', []):
+            receipt = observe(invocation, 'receipt')
+            if receipt:
+                # Version-1 regression receipts store output.log beside command.json.
+                invocation['output_log'] = str(receipt.parent / 'output.log')
+                observe(invocation, 'output_log', invocation.get('output_sha256'))
+            for artifact in invocation.get('artifacts', []):
+                observe(artifact, 'path', artifact.get('sha256'))
+
+
 def collect(args):
     run = args.run.resolve()
     problems = []
@@ -248,7 +281,7 @@ def collect(args):
         else:
             entry['observation'] = 'Manifest identity only; --custody not supplied'
         report['retained_inputs'].append(entry)
-    artifacts, tests, database_reports = [], [], []
+    artifacts, tests, database_reports, regression_reports = [], [], [], []
     declarations = {}
     # Traverse only evidence-bearing build/log/database directories; source trees
     # and a database cluster's raw storage files are not published or hashed here.
@@ -276,21 +309,13 @@ def collect(args):
                     declarations.setdefault(component, []).extend({'name': a or b, 'file': str(path)} for a, b in found)
                 if name == 'report.json':
                     value = read_json(path, problems)
-                    if value and value.get('kind') == 'ambisgis-postgis-database-probe-v1':
-                        for command in value.get('commands', []):
-                            for field in ('log', 'input_sql'):
-                                if not command.get(field):
-                                    continue
-                                evidence_path = Path(command[field])
-                                if not evidence_path.resolve().is_relative_to(run):
-                                    problems.append({'path': str(evidence_path), 'error': 'database evidence outside run; not read'})
-                                    continue
-                                observation = metadata(evidence_path)
-                                artifacts.append(observation)
-                                command['observed_' + field] = observation
-                                if field == 'log' and command.get('log_sha256'):
-                                    command['recorded_log_hash_matches'] = observation.get('sha256') == command['log_sha256']
-                        database_reports.append({'identity': metadata(path), 'report': value})
+                    if value and value.get('kind') in (
+                            'ambisgis-postgis-database-probe-v1',
+                            'ambisgis-postgis-regression-probe-v1'):
+                        observe_probe_evidence(value, run, artifacts, problems)
+                        reports = (regression_reports if value['kind'] ==
+                                   'ambisgis-postgis-regression-probe-v1' else database_reports)
+                        reports.append({'identity': metadata(path), 'report': value})
     report['evidence_artifacts'] = artifacts
     report['latest_test_logs'] = tests
     report['ctest_static_registration'] = {
@@ -298,6 +323,7 @@ def collect(args):
                     'limit': 'Static generated declarations; executed counts come from actual ctest summaries.'}
         for component, rows in declarations.items()}
     report['database_reports'] = database_reports
+    report['regression_reports'] = regression_reports
     report['host_tools'] = tool_inventory(run)
     report['runtime'] = runtime_inventory(run)
     report['snapshot_status'] = 'incomplete_or_unverified_snapshot'
