@@ -83,3 +83,73 @@ python3 tools/validate_package.py --require-schemas
 
 Use the retained `/tmp/ambisgis-validation-venv/bin/python` for strict schema
 validation when the host Python lacks `jsonschema`; do not install globally.
+
+## Toolchain and effective dependency resolution
+
+The next FND-02 checkpoint is implemented by `toolchain.py`, `resolution.py`,
+`maven_proxy.py`, `replay_model.py` and `resolution_inventory.py`. See
+[toolchain custody](toolchain.md) and [ADR 003](../../plan/adrs/003-java-resolution-candidate.md).
+The audit manifest above remains unchanged. The new work uses separate
+`source-archives/java-resolution` custody and `build-worktrees/java-resolution`
+source/repository copies. All commands below are explicit acquisition or model
+operations; none compiles, packages, installs, deploys or runs Java tests.
+
+```sh
+TASK_ROOT=/home/revelberry/Projects/AmbisGIS
+TASK_TOOLS="$TASK_ROOT/build-worktrees/java-resolution/toolchain"
+TASK_WORK="$TASK_ROOT/build-worktrees/java-resolution/new-resolution"
+python3 build-support/java/toolchain.py \
+  --custody "$TASK_ROOT/source-archives/java-resolution/toolchain" \
+  --verify-extracted "$TASK_TOOLS"
+python3 build-support/java/resolution.py prepare \
+  --audit-custody "$TASK_ROOT/source-archives/java-audit" --work "$TASK_WORK"
+python3 build-support/java/resolution.py effective --work "$TASK_WORK" \
+  --custody "$TASK_ROOT/source-archives/java-resolution/maven" \
+  --toolchain-custody "$TASK_ROOT/source-archives/java-resolution/toolchain" \
+  --java "$TASK_TOOLS/jdk-17.0.20.1+1" \
+  --maven "$TASK_TOOLS/apache-maven-3.9.16" --run-id model-01
+```
+
+Use `dependencies` instead of `effective` with another new run ID to invoke the
+pinned Maven dependency plugin's `go-offline` goal. It resolves build/report
+plugins and their dependencies as well as selected application inputs; it never
+executes those plugins' lifecycle goals. An unsuccessful reactor run preserves
+its true exit and skipped-project diagnostics. `--offline` permits only retained
+proxy bytes; it is not a process network restriction.
+
+All Maven resolution passes use fresh local repositories. Task-local settings
+mirror every declared repository through a loopback acquisition proxy with only
+Central and the OSGeo release repository allowed. Successful bytes, original and
+final URLs, SHA256, size and repository identity are retained before Maven sees
+them. First acquired origins and discovery metadata are frozen. Snapshots,
+moving version aliases and donor core binaries are refused. Metadata retention
+is not source-build evidence. No inherited `.mvn`, user settings, credentials,
+Maven/JVM environment options or mavenrc are accepted outside the recorded source
+and toolchain configuration. Required source/configuration files are checked
+before and after each invocation.
+
+For a model replay using a file mirror, a fresh local repository, and actual
+Linux x86-64 Internet socket denial:
+
+```sh
+python3 build-support/java/replay_model.py --work "$TASK_WORK" \
+  --custody "$TASK_ROOT/source-archives/java-resolution/maven" \
+  --toolchain-custody "$TASK_ROOT/source-archives/java-resolution/toolchain" \
+  --tools "$TASK_TOOLS" \
+  --output "$TASK_ROOT/build-worktrees/java-resolution/new-model-replay"
+```
+
+The existing process-local seccomp runner records live AF_INET/AF_INET6 denial
+probes. It does not isolate host files/tools or Unix-domain services. This proves
+retained-input model replay only, not a compiled Java or GIS offline rebuild.
+
+`resolution_inventory.py --custody PATH --output NEW_FILE` verifies Maven custody
+and reports POM-declared licenses, original notice bytes and candidate source
+coverage. `--acquire-sources` deliberately fetches fixed GAV source classifiers
+and POMs from each binary's recorded origin. Exit 2 means retained inputs pass
+integrity verification but source/POM gaps remain. Source classifiers may omit
+test/native sources; their retention never establishes source-to-binary identity
+or license approval. Stop acquisition before taking a final inventory snapshot.
+
+Primary goal references: [Maven effective POM](https://maven.apache.org/plugins/maven-help-plugin/effective-pom-mojo.html)
+and [Maven go-offline](https://maven.apache.org/plugins/maven-dependency-plugin/go-offline-mojo.html).

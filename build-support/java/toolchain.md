@@ -66,7 +66,7 @@ its fixed URL. Fresh extraction then succeeded. The initial hardlink attempt
 failed because `/tmp` is another filesystem; independent copies were used.
 The first extractor rejected a legitimate repeated Maven directory; the fix,
 regression test and successful rerun are recorded with the original failure.
-All **12 toolchain tests passed**, with no failures/errors/skips in the final run.
+The later installed-tree verification suite has **19 passing toolchain tests**, with no failures/errors/skips in the final run.
 
 The initial task-local extracted executables are:
 
@@ -80,8 +80,13 @@ reports source revision `2bdd9fddda4b155ebf8000e807eb73fd829a51d5`.
 The version commands used `MAVEN_SKIP_RC=true` and removed inherited
 `JAVA_TOOL_OPTIONS`, `JDK_JAVA_OPTIONS`, `MAVEN_OPTS`, `MAVEN_ARGS` and `CLASSPATH`.
 No build, Maven goal, resolver, inherited workflow, global install or remote
-mutation was performed by this toolchain subtask. The verifier checks archives;
-verify installed files against them or extract fresh before later execution.
+mutation was performed by this toolchain subtask.
+
+`--verify-extracted /path/to/toolchain` compares the entire installed distribution
+tree with verified archive members before later execution. It checks regular-file
+hashes, exact symlink targets and paths and rejects missing, added or changed
+entries. The actual tree passed: **342 files, 208 symlinks and 103 directories**.
+The resolution runners call this check before starting Maven.
 
 ## Remaining custody limits
 
