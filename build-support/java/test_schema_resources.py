@@ -34,9 +34,9 @@ def pom(gav=GAV):
 
 
 class SchemaResourceTests(unittest.TestCase):
-    def test_all_nine_exact_capsules_report_original_members_and_sources(self):
-        self.assertEqual(len(schema.RESOURCES), 9)
-        self.assertEqual(sum(len(paths) for paths in schema.RESOURCES.values()), 73)
+    def test_all_nineteen_exact_capsules_report_original_members_and_sources(self):
+        self.assertEqual(len(schema.RESOURCES), 19)
+        self.assertEqual(sum(len(paths) for paths in schema.RESOURCES.values()), 177)
         for gav, resources in schema.RESOURCES.items():
             group, artifact, version = gav.split(":")
             path = f'{group.replace(".", "/")}/{artifact}/{version}/{artifact}-{version}.jar'
@@ -50,6 +50,41 @@ class SchemaResourceTests(unittest.TestCase):
                 self.assertFalse(report["license_approval"])
                 self.assertTrue(all(row["declared_source_url"] == resources[row["path"]]
                                     for row in report["members"]))
+
+    def test_only_exact_gml_recipe_readmes_are_inert_text_resources(self):
+        gav = 'org.geotools.schemas:gml-3.2:3.2.1-1'
+        path = 'org/geotools/schemas/gml-3.2/3.2.1-1/gml-3.2-3.2.1-1.jar'
+        expected = {'net/opengis/schemas/gml/3.2.1/ReadMe.txt',
+                    'net/opengis/schemas/gml/3.2.1/gml_3_2_1-ReadMe.txt'}
+        report = schema.validate_schema_archive(path, capsule(gav))
+        self.assertEqual({row['path'] for row in report['members']
+                          if row['kind'] == 'source-resource-text'}, expected)
+        for payload in (b'#!/bin/sh\nexecute', b'binary\x00bytes'):
+            entries = [(name, payload if name in expected else
+                        (XSD if name.endswith('.xsd') else b'<dictionary/>'))
+                       for name in schema.RESOURCES[gav]]
+            with self.subTest(payload=payload), self.assertRaises(schema.SchemaResourceError):
+                schema.validate_schema_archive(path, capsule(gav, resources=False, extra=entries))
+        with self.assertRaises(schema.SchemaResourceError):
+            schema.validate_schema_archive(path, capsule(gav, extra=[('arbitrary.txt', b'text')]))
+
+    def test_new_transitive_coordinate_versions_remain_exact(self):
+        for gav in ('org.geotools.schemas:wfs-1.1:1.1.2-2',
+                    'org.geotools.schemas:filter-1.1:1.1.1-2',
+                    'org.geotools.schemas:ows-1.0:1.0.0-2',
+                    'org.geotools.schemas:earthresourceml-1.1:1.1.0-3',
+                    'org.geotools.schemas:gml-3.2:3.2.1-1',
+                    'org.geotools.schemas:iso-19139-2007:1.0.0-1',
+                    'org.geotools.schemas:wfs-2.0:2.0.0-2',
+                    'org.geotools.schemas:xml-1.0:1.0.0-3',
+                    'org.geotools.schemas:ows-1.1:1.1.0-1',
+                    'org.geotools.schemas:filter-2.0:2.0.0-2'):
+            group, artifact, version = gav.split(':')
+            path = f"{group.replace('.', '/')}/{artifact}/{version}/{artifact}-{version}.jar"
+            with self.subTest(gav=gav):
+                self.assertEqual(schema.schema_coordinate(path), gav)
+                self.assertIsNone(schema.schema_coordinate(path.replace(version, version + '-other')))
+                self.assertIsNone(schema.schema_coordinate(path.replace('.jar', '-sources.jar')))
 
     def test_unknown_versions_classifiers_and_coordinates_have_no_exception(self):
         for path in (PATH.replace("1.0.0-4", "1.0.0-5"), PATH.replace(".jar", "-sources.jar"),

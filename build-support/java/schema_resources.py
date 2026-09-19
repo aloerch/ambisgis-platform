@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate nine pinned GeoTools XML/XSD resource capsules, never executable jars.
+"""Validate nineteen pinned GeoTools schema resource capsules, never executable jars.
 
 Resource paths and historical Ant source URLs come from the unchanged owned
 GeoTools 34.5 packaging POMs. This module neither runs those POMs nor contacts
@@ -31,9 +31,22 @@ _NOTICE = re.compile(r"(?:LICENSE|NOTICE|COPYING|COPYRIGHT)(?:[-_.][A-Za-z0-9_.+
 _CHECKSUMS = ("sha1", "sha256", "sha512", "md5")
 _NS = {"m": "http://maven.apache.org/POM/4.0.0"}
 
-# Exact resources from the nine reviewed, parentless source packaging POMs.
+# Exact resources from nineteen reviewed, parentless source packaging POMs.
 RESOURCES = {'org.geotools.schemas:cgiutilities-1.0:1.0.0-4': {'org/geosciml/www/cgiutilities/1.0/xsd/cgiUtilities.xsd': 'http://www.geosciml.org/cgiutilities/1.0/xsd/cgiUtilities.xsd',
                                                    'org/geosciml/www/cgiutilities/1.0/xsd/primitiveTypes.xsd': 'http://www.geosciml.org/cgiutilities/1.0/xsd/primitiveTypes.xsd'},
+ 'org.geotools.schemas:earthresourceml-1.1:1.1.0-3': {'org/earthresourceml/www/earthresourceml/1.1/xsd/earthResource.xsd': 'http://www.earthresourceml.org/earthresourceml/1.1/xsd/earthResource.xsd',
+                                                      'org/earthresourceml/www/earthresourceml/1.1/xsd/mine.xsd': 'http://www.earthresourceml.org/earthresourceml/1.1/xsd/mine.xsd',
+                                                      'org/earthresourceml/www/earthresourceml/1.1/xsd/mineralOccurrence.xsd': 'http://www.earthresourceml.org/earthresourceml/1.1/xsd/mineralOccurrence.xsd'},
+ 'org.geotools.schemas:filter-1.1:1.1.1-2': {'net/opengis/schemas/filter/1.1.0/expr.xsd': 'http://schemas.opengis.net/filter/1.1.0/expr.xsd',
+                                             'net/opengis/schemas/filter/1.1.0/filter.xsd': 'http://schemas.opengis.net/filter/1.1.0/filter.xsd',
+                                             'net/opengis/schemas/filter/1.1.0/filterCapabilities.xsd': 'http://schemas.opengis.net/filter/1.1.0/filterCapabilities.xsd',
+                                             'net/opengis/schemas/filter/1.1.0/sort.xsd': 'http://schemas.opengis.net/filter/1.1.0/sort.xsd'},
+ 'org.geotools.schemas:filter-2.0:2.0.0-2': {'net/opengis/schemas/filter/2.0/expr.xsd': 'http://schemas.opengis.net/filter/2.0/expr.xsd',
+                                             'net/opengis/schemas/filter/2.0/filter.xsd': 'http://schemas.opengis.net/filter/2.0/filter.xsd',
+                                             'net/opengis/schemas/filter/2.0/filterAll.xsd': 'http://schemas.opengis.net/filter/2.0/filterAll.xsd',
+                                             'net/opengis/schemas/filter/2.0/filterCapabilities.xsd': 'http://schemas.opengis.net/filter/2.0/filterCapabilities.xsd',
+                                             'net/opengis/schemas/filter/2.0/query.xsd': 'http://schemas.opengis.net/filter/2.0/query.xsd',
+                                             'net/opengis/schemas/filter/2.0/sort.xsd': 'http://schemas.opengis.net/filter/2.0/sort.xsd'},
  'org.geotools.schemas:geosciml-2.0:2.0.2-4': {'org/geosciml/www/geosciml/2.0/xsd/GeologicUnitType.xml': 'http://www.geosciml.org/geosciml/2.0/xsd/GeologicUnitType.xml',
                                                'org/geosciml/www/geosciml/2.0/xsd/borehole.xsd': 'http://www.geosciml.org/geosciml/2.0/xsd/borehole.xsd',
                                                'org/geosciml/www/geosciml/2.0/xsd/collection.xsd': 'http://www.geosciml.org/geosciml/2.0/xsd/collection.xsd',
@@ -79,9 +92,97 @@ RESOURCES = {'org.geotools.schemas:cgiutilities-1.0:1.0.0-4': {'org/geosciml/www
                                           'net/opengis/schemas/gml/3.1.1/smil/smil20-language.xsd': 'http://schemas.opengis.net/gml/3.1.1/smil/smil20-language.xsd',
                                           'net/opengis/schemas/gml/3.1.1/smil/smil20.xsd': 'http://schemas.opengis.net/gml/3.1.1/smil/smil20.xsd',
                                           'net/opengis/schemas/gml/3.1.1/smil/xml-mod.xsd': 'http://schemas.opengis.net/gml/3.1.1/smil/xml-mod.xsd'},
+ 'org.geotools.schemas:gml-3.2:3.2.1-1': {'net/opengis/schemas/gml/3.2.1/ReadMe.txt': 'http://schemas.opengis.net/gml/3.2.1/ReadMe.txt',
+                                          'net/opengis/schemas/gml/3.2.1/SchematronConstraints.xml': 'http://schemas.opengis.net/gml/3.2.1/SchematronConstraints.xml',
+                                          'net/opengis/schemas/gml/3.2.1/basicTypes.xsd': 'http://schemas.opengis.net/gml/3.2.1/basicTypes.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/coordinateOperations.xsd': 'http://schemas.opengis.net/gml/3.2.1/coordinateOperations.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/coordinateReferenceSystems.xsd': 'http://schemas.opengis.net/gml/3.2.1/coordinateReferenceSystems.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/coordinateSystems.xsd': 'http://schemas.opengis.net/gml/3.2.1/coordinateSystems.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/coverage.xsd': 'http://schemas.opengis.net/gml/3.2.1/coverage.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/datums.xsd': 'http://schemas.opengis.net/gml/3.2.1/datums.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/defaultStyle.xsd': 'http://schemas.opengis.net/gml/3.2.1/defaultStyle.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/deprecatedTypes.xsd': 'http://schemas.opengis.net/gml/3.2.1/deprecatedTypes.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/dictionary.xsd': 'http://schemas.opengis.net/gml/3.2.1/dictionary.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/direction.xsd': 'http://schemas.opengis.net/gml/3.2.1/direction.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/dynamicFeature.xsd': 'http://schemas.opengis.net/gml/3.2.1/dynamicFeature.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/feature.xsd': 'http://schemas.opengis.net/gml/3.2.1/feature.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/geometryAggregates.xsd': 'http://schemas.opengis.net/gml/3.2.1/geometryAggregates.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/geometryBasic0d1d.xsd': 'http://schemas.opengis.net/gml/3.2.1/geometryBasic0d1d.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/geometryBasic2d.xsd': 'http://schemas.opengis.net/gml/3.2.1/geometryBasic2d.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/geometryComplexes.xsd': 'http://schemas.opengis.net/gml/3.2.1/geometryComplexes.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/geometryPrimitives.xsd': 'http://schemas.opengis.net/gml/3.2.1/geometryPrimitives.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/gml.xsd': 'http://schemas.opengis.net/gml/3.2.1/gml.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/gmlBase.xsd': 'http://schemas.opengis.net/gml/3.2.1/gmlBase.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/gml_3_2_1-ReadMe.txt': 'http://schemas.opengis.net/gml/3.2.1/gml_3_2_1-ReadMe.txt',
+                                          'net/opengis/schemas/gml/3.2.1/grids.xsd': 'http://schemas.opengis.net/gml/3.2.1/grids.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/measures.xsd': 'http://schemas.opengis.net/gml/3.2.1/measures.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/observation.xsd': 'http://schemas.opengis.net/gml/3.2.1/observation.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/referenceSystems.xsd': 'http://schemas.opengis.net/gml/3.2.1/referenceSystems.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/temporal.xsd': 'http://schemas.opengis.net/gml/3.2.1/temporal.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/temporalReferenceSystems.xsd': 'http://schemas.opengis.net/gml/3.2.1/temporalReferenceSystems.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/temporalTopology.xsd': 'http://schemas.opengis.net/gml/3.2.1/temporalTopology.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/topology.xsd': 'http://schemas.opengis.net/gml/3.2.1/topology.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/units.xsd': 'http://schemas.opengis.net/gml/3.2.1/units.xsd',
+                                          'net/opengis/schemas/gml/3.2.1/valueObjects.xsd': 'http://schemas.opengis.net/gml/3.2.1/valueObjects.xsd'},
  'org.geotools.schemas:ic-2.0:2.0.0-3': {'net/opengis/schemas/ic/2.0/IC-ISM-v2.xsd': 'http://schemas.opengis.net/ic/2.0/IC-ISM-v2.xsd'},
+ 'org.geotools.schemas:iso-19139-2007:1.0.0-1': {'net/opengis/schemas/iso/19139/20070417/gco/basicTypes.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gco/basicTypes.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gco/gco.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gco/gcoBase.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gco/gcoBase.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/applicationSchema.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/applicationSchema.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/citation.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/citation.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/constraints.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/constraints.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/content.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/content.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/dataQuality.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/dataQuality.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/distribution.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/distribution.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/extent.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/extent.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/freeText.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/freeText.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/gmd.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/identification.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/identification.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/maintenance.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/maintenance.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/metadataApplication.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/metadataApplication.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/metadataEntity.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/metadataEntity.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/metadataExtension.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/metadataExtension.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/portrayalCatalogue.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/portrayalCatalogue.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/referenceSystem.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/referenceSystem.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmd/spatialRepresentation.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmd/spatialRepresentation.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmx/catalogues.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmx/catalogues.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmx/codelistItem.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmx/codelistItem.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmx/crsItem.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmx/crsItem.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmx/extendedTypes.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmx/extendedTypes.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmx/gmx.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmx/gmx.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmx/gmxUsage.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmx/gmxUsage.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gmx/uomItem.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gmx/uomItem.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gsr/gsr.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gsr/gsr.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gsr/spatialReferencing.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gsr/spatialReferencing.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gss/geometry.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gss/geometry.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gss/gss.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gss/gss.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gts/gts.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gts/gts.xsd',
+                                                 'net/opengis/schemas/iso/19139/20070417/gts/temporalObjects.xsd': 'http://schemas.opengis.net/iso/19139/20070417/gts/temporalObjects.xsd'},
  'org.geotools.schemas:om-1.0:1.0.0-4': {'net/opengis/schemas/om/1.0.0/observation.xsd': 'http://schemas.opengis.net/om/1.0.0/observation.xsd',
                                          'net/opengis/schemas/om/1.0.0/om.xsd': 'http://schemas.opengis.net/om/1.0.0/om.xsd'},
+ 'org.geotools.schemas:ows-1.0:1.0.0-2': {'net/opengis/schemas/ows/1.0.0/ows19115subset.xsd': 'http://schemas.opengis.net/ows/1.0.0/ows19115subset.xsd',
+                                          'net/opengis/schemas/ows/1.0.0/owsAll.xsd': 'http://schemas.opengis.net/ows/1.0.0/owsAll.xsd',
+                                          'net/opengis/schemas/ows/1.0.0/owsCommon.xsd': 'http://schemas.opengis.net/ows/1.0.0/owsCommon.xsd',
+                                          'net/opengis/schemas/ows/1.0.0/owsDataIdentification.xsd': 'http://schemas.opengis.net/ows/1.0.0/owsDataIdentification.xsd',
+                                          'net/opengis/schemas/ows/1.0.0/owsExceptionReport.xsd': 'http://schemas.opengis.net/ows/1.0.0/owsExceptionReport.xsd',
+                                          'net/opengis/schemas/ows/1.0.0/owsGetCapabilities.xsd': 'http://schemas.opengis.net/ows/1.0.0/owsGetCapabilities.xsd',
+                                          'net/opengis/schemas/ows/1.0.0/owsOperationsMetadata.xsd': 'http://schemas.opengis.net/ows/1.0.0/owsOperationsMetadata.xsd',
+                                          'net/opengis/schemas/ows/1.0.0/owsServiceIdentification.xsd': 'http://schemas.opengis.net/ows/1.0.0/owsServiceIdentification.xsd',
+                                          'net/opengis/schemas/ows/1.0.0/owsServiceProvider.xsd': 'http://schemas.opengis.net/ows/1.0.0/owsServiceProvider.xsd'},
+ 'org.geotools.schemas:ows-1.1:1.1.0-1': {'net/opengis/schemas/ows/1.1.0/ows19115subset.xsd': 'http://schemas.opengis.net/ows/1.1.0/ows19115subset.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsAll.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsAll.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsCommon.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsCommon.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsContents.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsContents.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsDataIdentification.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsDataIdentification.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsDomainType.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsDomainType.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsExceptionReport.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsExceptionReport.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsGetCapabilities.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsGetCapabilities.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsGetResourceByID.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsGetResourceByID.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsInputOutputData.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsInputOutputData.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsManifest.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsManifest.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsOperationsMetadata.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsOperationsMetadata.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsServiceIdentification.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsServiceIdentification.xsd',
+                                          'net/opengis/schemas/ows/1.1.0/owsServiceProvider.xsd': 'http://schemas.opengis.net/ows/1.1.0/owsServiceProvider.xsd'},
  'org.geotools.schemas:sampling-1.0:1.0.0-4': {'net/opengis/schemas/sampling/1.0.0/LUTgeodesy.xsd': 'http://schemas.opengis.net/sampling/1.0.0/LUTgeodesy.xsd',
                                                'net/opengis/schemas/sampling/1.0.0/sampling.xsd': 'http://schemas.opengis.net/sampling/1.0.0/sampling.xsd',
                                                'net/opengis/schemas/sampling/1.0.0/samplingBase.xsd': 'http://schemas.opengis.net/sampling/1.0.0/samplingBase.xsd',
@@ -104,7 +205,10 @@ RESOURCES = {'org.geotools.schemas:cgiutilities-1.0:1.0.0-4': {'org/geosciml/www
                                                 'net/opengis/schemas/sweCommon/1.0.1/swe.xsd': 'http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd',
                                                 'net/opengis/schemas/sweCommon/1.0.1/temporalAggregates.xsd': 'http://schemas.opengis.net/sweCommon/1.0.1/temporalAggregates.xsd',
                                                 'net/opengis/schemas/sweCommon/1.0.1/xmlData.xsd': 'http://schemas.opengis.net/sweCommon/1.0.1/xmlData.xsd'},
- 'org.geotools.schemas:xlink-1.0:1.0.0-3': {'net/opengis/schemas/xlink/1.0.0/xlinks.xsd': 'http://schemas.opengis.net/xlink/1.0.0/xlinks.xsd'}}
+ 'org.geotools.schemas:wfs-1.1:1.1.2-2': {'net/opengis/schemas/wfs/1.1.0/wfs.xsd': 'http://schemas.opengis.net/wfs/1.1.0/wfs.xsd'},
+ 'org.geotools.schemas:wfs-2.0:2.0.0-2': {'net/opengis/schemas/wfs/2.0/wfs.xsd': 'http://schemas.opengis.net/wfs/2.0/wfs.xsd'},
+ 'org.geotools.schemas:xlink-1.0:1.0.0-3': {'net/opengis/schemas/xlink/1.0.0/xlinks.xsd': 'http://schemas.opengis.net/xlink/1.0.0/xlinks.xsd'},
+ 'org.geotools.schemas:xml-1.0:1.0.0-3': {'org/w3/www/2001/xml.xsd': 'http://www.w3.org/2001/xml.xsd'}}
 
 
 def schema_coordinate(maven_path: str) -> str | None:
@@ -276,10 +380,16 @@ def validate_schema_archive(maven_path: str, jar_bytes: bytes) -> dict:
                         raise SchemaResourceError("ZIP directory contains bytes")
                     member_kind = "directory"
                 elif name in RESOURCES[gav]:
-                    root = _xml(data)
-                    if name.endswith(".xsd") and root.tag != "{http://www.w3.org/2001/XMLSchema}schema":
-                        raise SchemaResourceError("XSD resource root is not an XML Schema")
-                    member_kind = "xml-schema" if name.endswith(".xsd") else "xml-resource"
+                    if name.endswith(".txt"):
+                        # Only two exact GML 3.2 recipe paths have this suffix;
+                        # this does not permit arbitrary text files in a capsule.
+                        _text(data)
+                        member_kind = "source-resource-text"
+                    else:
+                        root = _xml(data)
+                        if name.endswith(".xsd") and root.tag != "{http://www.w3.org/2001/XMLSchema}schema":
+                            raise SchemaResourceError("XSD resource root is not an XML Schema")
+                        member_kind = "xml-schema" if name.endswith(".xsd") else "xml-resource"
                     resources.add(name)
                 elif name == "META-INF/MANIFEST.MF":
                     _manifest(data)
