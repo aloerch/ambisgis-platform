@@ -52,3 +52,65 @@ transitive source gaps and host dependencies remain separately recorded.
 Only pinned effective-model and dependency-acquisition plugin goals run here.
 A Maven `BUILD SUCCESS` message for either goal means that goal succeeded, not
 that Java compilation, native tests, runtime checks or a product build passed.
+
+## Schema resource acquisition refinement
+
+Actual resolution exposed nine `org.geotools.schemas` archives used by the
+selected graph. Owned GeoTools documentation calls these independently released
+schema-definition packages; the `gt-xml` test dependencies use them for offline
+schema resolution. All nine retained artifact POMs have the same 73 resolved
+Ant download source/destination pairs as their owned packaging recipes. Their
+metadata/authorship/SCM serialization differs and none declares a license. Five
+required XML basenames are absent from the owned source archive, so existing
+fixtures cannot silently substitute for these inputs.
+
+The third dependency pass exposed ten additional transitive archives. Their
+104 source/destination pairs and dependency lists also match the unchanged owned
+recipes, including two exact GML ReadMe text files. See the [additional comparison](../verification/java-additional-schema-recipes.json).
+The combined evaluation set is 19 exact coordinates / 177 resources; no POM in
+either set declares a license.
+
+Retain only these 19 exact reviewed GAVs as **Class B XML/XSD source-resource
+candidates**, subject to inspection of the actual ZIP bytes before serving them.
+The narrowly scoped validator requires the exact declared resource paths, refuses
+compiled/native/script/nested-archive payloads and unsafe or duplicate ZIP paths,
+and retains member hashes, XML annotations, notices and matching Maven metadata.
+This does not permit other donor-built core artifacts, other schema versions,
+or an unvalidated namespace exception. Checksums alone are not the resource
+content check. The resource archive itself contains the candidate XML/XSD source;
+a Java `sources` classifier is not assumed to exist for these data packages.
+
+Owned offline repackaging, schema resolver tests, upstream XML references and
+file-level rights remain unresolved until actually exercised/reviewed. No Ant
+network download, lifecycle build or schema runtime test is authorized by a
+successful resource acquisition check.
+
+### Exact XML namespace documentation instruction
+
+The additional evaluation accepted nine archives and quarantined `xml-1.0:1.0.0-3`
+because its W3C schema contains a documentation `xml-stylesheet` instruction.
+Inspection of the original archive found one such instruction, no DTD/entities,
+no schema imports/includes/redefines and no executable archive members. For
+inert source-data retention only, allow this exact tuple:
+
+- GAV: `org.geotools.schemas:xml-1.0:1.0.0-3`.
+- Member: `org/w3/www/2001/xml.xsd`.
+- Member SHA256: `61960fb3131e38022caad5360e2f33a3382578ab3c80cd58bd74320ede61b20c`.
+- Instruction: `<?xml-stylesheet href="../2008/09/xsd.xsl" type="text/xsl"?>`.
+
+The original JAR SHA256 is
+`203543257c4fce6dd844c8606dd77fc2bddde647807d97feaab7bc224cc734a9`.
+The validator records the instruction but never requests or executes its
+stylesheet. Every other processing instruction, altered member/hash, DTD/entity
+and executable payload remains refused. Preserve the initial quarantine and its
+failure report. This narrow acquisition decision is not safe browser/XSLT/runtime
+handling evidence, license clearance, or human security-gate approval. Later
+schema consumers must be explicitly offline and resource-aware, with real tests.
+
+The final retained-file dependency goal succeeded after adding the exact SLF4J
+API 2.0.17 JAR/source bytes exposed by a failed network-denied run. Identical POMs
+and the acquisition plugin's unordered dependency sets mean goal success must
+not be represented as a resolved-version lock. [The diagnosis](../verification/java-resolution-slf4j-mediation.json)
+records the observed competing versions and distinguishes evidence from the
+mediation-order inference. Reconcile and test actual logging bindings before build
+or runtime acceptance.

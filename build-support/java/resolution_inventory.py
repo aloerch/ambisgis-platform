@@ -3,7 +3,7 @@
 
 Default operation reads custody only. --acquire-sources explicitly adds exact
 base-GAV sources and POMs through maven_proxy, from each binary's recorded origin.
-The nine narrowly approved schema resource capsules are independently revalidated
+The 19 narrowly reviewed schema resource capsules are independently revalidated
 and serve as their own XML/XSD source candidates; their POMs are still retained.
 Neither a sources classifier nor a declared license proves binary correspondence,
 complete build inputs, license compatibility, or permission to redistribute.

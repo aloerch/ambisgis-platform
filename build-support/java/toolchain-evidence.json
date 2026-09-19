@@ -41,13 +41,26 @@
     "authenticity": "Publisher checksum equality over HTTPS; signatures retained but no independent trusted signing-key verification"
   },
   "validation_evidence": "toolchain-validation.txt",
-  "toolchain_tests": {
+  "github_mutations": [],
+  "java_build_or_runtime_tests": false,
+  "package_checks": "Actual package/schema results are recorded separately in ../../plan/verification/java-resolution-package-checks.json; not Java/GIS tests.",
+  "toolchain_tests_initial": {
     "passed": 12,
     "failures": 0,
     "errors": 0,
     "skips": 0
   },
-  "github_mutations": [],
-  "java_build_or_runtime_tests": false,
-  "package_checks": "Integrator runs required plan package/schema checks after integration; not Java/GIS tests."
+  "toolchain_tests_final": {
+    "passed": 19,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "evidence": "../../plan/verification/java-resolution-tool-tests.txt"
+  },
+  "installed_tree_verification": {
+    "files": 342,
+    "symlinks": 208,
+    "directories": 103,
+    "evidence": "../../plan/verification/java-resolution.json"
+  }
 }

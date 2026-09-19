@@ -1,7 +1,7 @@
-# FND-02 Java rendering dependency audit
+# FND-02 Java audit and dependency-input resolution
 
-This is a static source/dependency audit, **not a Maven dependency lock, Java
-build, distribution, or runtime acceptance**. The selected owned roots are
+This retains a source/dependency audit and bounded toolchain/input resolution,
+**not a complete Maven dependency lock, Java build, distribution, or runtime acceptance**. The selected owned roots are
 GeoTools 34.5, GeoWebCache 1.28.5, GeoServer 2.28.5 and GeoNode 5.1.0. Exact
 commits, archive hashes and audit research inputs are in `inputs.json`.
 
@@ -63,7 +63,7 @@ have not been represented as retaining any external LFS or submodule content.
    complete effective Maven graph, including parent/BOM, plugin, test, classifier,
    platform and extension inputs, into a fresh isolated repository. Record every
    source/artifact URL, hash and license; never resolve moving snapshots for the
-   acceptance build. No selected Java toolchain is currently retained here.
+   acceptance build. The selected JDK/Maven custody checkpoint is linked below; full source/build closure remains open.
 4. Inspect inherited Maven goals: `validate` binds source-formatting actions;
    build only in disposable owned-source copies with the recorded check/skip
    choice. Keep settings and local Maven repository task-local. Do not run
@@ -86,7 +86,7 @@ validation when the host Python lacks `jsonschema`; do not install globally.
 
 ## Toolchain and effective dependency resolution
 
-The next FND-02 checkpoint is implemented by `toolchain.py`, `resolution.py`,
+The FND-02 resolution checkpoint is implemented by `toolchain.py`, `resolution.py`,
 `maven_proxy.py`, `replay_model.py` and `resolution_inventory.py`. See
 [toolchain custody](toolchain.md) and [ADR 003](../../plan/adrs/003-java-resolution-candidate.md).
 The audit manifest above remains unchanged. The new work uses separate
@@ -122,7 +122,9 @@ mirror every declared repository through a loopback acquisition proxy with only
 Central and the OSGeo release repository allowed. Successful bytes, original and
 final URLs, SHA256, size and repository identity are retained before Maven sees
 them. First acquired origins and discovery metadata are frozen. Snapshots,
-moving version aliases and donor core binaries are refused. Metadata retention
+moving version aliases and donor core binaries are refused. The 19 exact
+reviewed schema data archives in ADR 003 are allowed only after their actual ZIP
+contents pass the source-resource validator; no executable core code is allowed. Metadata retention
 is not source-build evidence. No inherited `.mvn`, user settings, credentials,
 Maven/JVM environment options or mavenrc are accepted outside the recorded source
 and toolchain configuration. Required source/configuration files are checked
@@ -139,9 +141,13 @@ python3 build-support/java/replay_model.py --work "$TASK_WORK" \
   --output "$TASK_ROOT/build-worktrees/java-resolution/new-model-replay"
 ```
 
+Add `--stage dependencies` with another fresh output directory to replay the
+pinned dependency-acquisition goal against the same retained file mirror.
+This also runs no lifecycle build.
+
 The existing process-local seccomp runner records live AF_INET/AF_INET6 denial
-probes. It does not isolate host files/tools or Unix-domain services. This proves
-retained-input model replay only, not a compiled Java or GIS offline rebuild.
+probes. It does not isolate host files/tools or Unix-domain services. A successful run proves replay of the selected model or dependency-acquisition
+goal from retained inputs, not a compiled Java or GIS offline rebuild.
 
 `resolution_inventory.py --custody PATH --output NEW_FILE` verifies Maven custody
 and reports POM-declared licenses, original notice bytes and candidate source
