@@ -264,6 +264,22 @@ class MavenCustodyProxy:
         except (ValueError, KeyError, TypeError) as exc:
             raise AcquisitionError("invalid retained artifact record") from exc
 
+    def _selection(self, path: str, repository: str | None = None) -> str | None:
+        selection_path = self.root / "selections" / (path + ".json")
+        self._safe_file(selection_path)
+        if repository is not None:
+            self._write_once(selection_path, (json.dumps(
+                {"maven_path": path, "repository": repository}, sort_keys=True) + "\n").encode())
+        if not selection_path.exists():
+            return None
+        try:
+            record = json.loads(self._read(selection_path))
+            if record["maven_path"] != path or record["repository"] not in self.repositories:
+                raise AcquisitionError("retained combined-origin selection identity mismatch")
+            return record["repository"]
+        except (ValueError, KeyError, TypeError) as exc:
+            raise AcquisitionError("invalid retained combined-origin selection") from exc
+
     def fetch(self, path: str, repository: str = "all") -> RetainedArtifact:
         """Acquire or verify/replay a relative Maven path; never overwrite custody."""
         with self._lock:
@@ -277,6 +293,24 @@ class MavenCustodyProxy:
                             status=exc.status, reason=str(exc))
                 raise
             candidates = list(self.repositories) if repository == "all" else [repository]
+            if repository == "all":
+                try:
+                    selected = self._selection(path)
+                    # Pin the first successful combined-route origin. Also consult retained
+                    # bytes before network if an earlier process stopped before pinning it.
+                    for key in ([selected] if selected else candidates):
+                        cached = self._cached(key, path)
+                        if cached is not None:
+                            self._selection(path, key)
+                            self._event("reused", repository=key, maven_path=path,
+                                        sha256=cached.record["sha256"], offline=self.offline)
+                            return cached
+                        if selected:
+                            raise AcquisitionError("selected combined-origin custody record is missing")
+                except AcquisitionError as exc:
+                    self._event("error", repository="all", maven_path=path,
+                                status=exc.status, reason=str(exc), offline=self.offline)
+                    raise
             for key in candidates:
                 url = self.repositories[key] + "/" + path
                 try:
@@ -307,6 +341,8 @@ class MavenCustodyProxy:
                     self._write_once(self.root / "records" / key / (path + ".json"),
                                      (json.dumps(record, indent=2, sort_keys=True) + "\n").encode())
                     self._event("acquired", **record)
+                    if repository == "all":
+                        self._selection(path, key)
                     return RetainedArtifact(blob, record)
                 except AcquisitionError as exc:
                     self._event("error", repository=key, maven_path=path, original_url=url,

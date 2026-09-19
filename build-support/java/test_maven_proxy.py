@@ -141,6 +141,23 @@ class ProxyTests(unittest.TestCase):
         offline = self.proxy(offline=True, fetcher=lambda url: self.fail("offline network"))
         self.assertEqual(offline.fetch(PATH), artifact)
 
+    def test_combined_origin_stays_frozen_when_preferred_origin_later_publishes(self):
+        def first_fetch(url):
+            if url.startswith(REPOSITORIES["central"]):
+                raise AcquisitionError("upstream returned HTTP 404", 404)
+            return FetchResult(b"original osgeo bytes", url)
+        original = self.proxy(fetcher=first_fetch).fetch(PATH)
+        later = self.proxy(fetcher=lambda url: FetchResult(b"new central bytes", url))
+        self.assertEqual(later.fetch(PATH), original)
+        # An explicit repository fetch cannot change the already pinned combined route.
+        central = later.fetch(PATH, repository="central")
+        self.assertNotEqual(central.record["sha256"], original.record["sha256"])
+        self.assertEqual(later.fetch(PATH), original)
+        record = self.root / "records" / "osgeo" / (PATH + ".json")
+        record.unlink()
+        with self.assertRaisesRegex(AcquisitionError, "selected combined-origin"):
+            later.fetch(PATH)
+
     def test_non404_errors_do_not_fall_back(self):
         def fetch(url):
             self.calls.append(url)
