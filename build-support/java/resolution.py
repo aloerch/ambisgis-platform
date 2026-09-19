@@ -108,7 +108,9 @@ def command(work, java, maven, stage, local_repository, settings, log_id):
     return cmd, env
 
 
-def execute(cmd, cwd, env, output, timeout):
+def execute(cmd, cwd, env, output, timeout, termination_grace=10):
+    if termination_grace < 0:
+        raise ValueError('termination grace must be nonnegative')
     process = subprocess.Popen(cmd, cwd=cwd, env=env, stdout=output,
                                stderr=subprocess.STDOUT, start_new_session=True)
     try:
@@ -118,11 +120,24 @@ def execute(cmd, cwd, env, output, timeout):
             os.killpg(process.pid, signal.SIGTERM)
         except ProcessLookupError:
             pass
-        try:
-            process.wait(timeout=10)
-        except subprocess.TimeoutExpired:
-            os.killpg(process.pid, signal.SIGKILL)
-            process.wait()
+        deadline = time.monotonic() + termination_grace
+        while True:
+            # Reap the leader promptly, but its exit does not prove that the
+            # offline wrapper's Maven/JVM descendants have left the group.
+            process.poll()
+            try:
+                os.killpg(process.pid, 0)
+            except ProcessLookupError:
+                break
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+                break
+            time.sleep(min(0.05, remaining))
+        process.wait()
         raise
 
 

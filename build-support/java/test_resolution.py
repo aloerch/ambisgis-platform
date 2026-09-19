@@ -6,6 +6,10 @@ from unittest.mock import patch
 import json
 import hashlib
 import subprocess
+import os
+import signal
+import sys
+import textwrap
 import resolution
 import replay_model
 
@@ -127,6 +131,73 @@ class ResolutionTests(unittest.TestCase):
             self.assertEqual(result['result_exit_code'], 1)
             self.assertEqual(result['error']['type'], 'ParseError')
             self.assertEqual(json.loads((root / 'replay/result.json').read_text())['result_exit_code'], 1)
+
+
+class ProcessGroupCleanupTests(unittest.TestCase):
+    def test_timeout_kills_term_ignoring_child_after_group_leader_exits(self):
+        # A dedicated Linux subreaper owns/reaps the fixture's orphan child. The
+        # test runner and real Maven processes receive no process-state changes.
+        with tempfile.TemporaryDirectory(prefix='ambisgis-process-group-test-') as tmp:
+            root = Path(tmp)
+            child_code = ("import os,signal,time; "
+                          "signal.signal(signal.SIGTERM,signal.SIG_IGN); "
+                          "open('child.pid','w').write(str(os.getpid())); time.sleep(30)")
+            leader_code = ("import os,subprocess,sys,time; "
+                           "open('leader.pid','w').write(str(os.getpid())); "
+                           "subprocess.Popen([sys.executable,'-c'," + repr(child_code) + "]); time.sleep(30)")
+            harness = textwrap.dedent("""\
+                import ctypes, os, signal, subprocess, sys, time
+                from pathlib import Path
+                sys.path.insert(0, sys.argv[1])
+                import resolution
+                if ctypes.CDLL(None, use_errno=True).prctl(36, 1, 0, 0, 0) != 0:
+                    raise RuntimeError('fixture cannot establish process-local subreaper')
+                started = time.monotonic()
+                try:
+                    with Path('fixture.log').open('w') as output:
+                        try:
+                            resolution.execute([sys.executable, '-c', sys.argv[2]], Path.cwd(),
+                                               dict(os.environ), output, 0.8, termination_grace=0.2)
+                        except subprocess.TimeoutExpired:
+                            pass
+                        else:
+                            raise AssertionError('fixture did not time out')
+                    child = int(Path('child.pid').read_text())
+                    deadline = time.monotonic() + 2
+                    while time.monotonic() < deadline:
+                        waited, status = os.waitpid(child, os.WNOHANG)
+                        if waited:
+                            assert os.WIFSIGNALED(status) and os.WTERMSIG(status) == signal.SIGKILL
+                            break
+                        time.sleep(0.01)
+                    else:
+                        raise AssertionError('TERM-ignoring child survived leader exit and cleanup')
+                    assert time.monotonic() - started < 4
+                finally:
+                    if Path('leader.pid').exists():
+                        try:
+                            os.killpg(int(Path('leader.pid').read_text()), signal.SIGKILL)
+                        except ProcessLookupError:
+                            pass
+                    if Path('child.pid').exists():
+                        try:
+                            os.waitpid(int(Path('child.pid').read_text()), 0)
+                        except ChildProcessError:
+                            pass
+                """)
+            try:
+                result = subprocess.run([sys.executable, '-c', harness,
+                                         str(Path(resolution.__file__).parent), leader_code],
+                                        cwd=root, capture_output=True, text=True, timeout=6)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            finally:
+                # Also bound cleanup if the isolated test harness itself fails.
+                leader = root / 'leader.pid'
+                if leader.exists():
+                    try:
+                        os.killpg(int(leader.read_text()), signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
 
 
 class DependencyReplayTests(unittest.TestCase):
