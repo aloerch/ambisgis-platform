@@ -1887,7 +1887,7 @@ After activation: explicit rollback -&gt; prior revision or a new corrective rev
 <p>GitHub CLI's documented field-creation types are TEXT, SINGLE_SELECT, DATE and NUMBER. Do not invent a <code>gh project field-create --data-type ITERATION</code> flag. Check the current GraphQL/UI capabilities for iteration/view configuration at execution. [S50–S51]</p>
 <h3>4. Required views</h3>
 <p><strong>Product backlog — table:</strong> all non-cancelled task issues; group by Phase and sort by Priority/Task ID. Show dependencies, risk and review gate.</p>
-<p><strong>Execution board — board:</strong> group by Delivery; show Ready, In progress, In review, Verified and Blocked, with other states available. Work in progress is governed by assignee/task claims rather than an arbitrary number of agents.</p>
+<p><strong>Execution board — board:</strong> set the column field to Delivery; show Ready, In progress, In review, Verified and Blocked, with other states available. Horizontal Group by and Slice by are separate optional settings. Work in progress is governed by assignee/task claims rather than an arbitrary number of agents.</p>
 <p><strong>Release roadmap — roadmap:</strong> group by Target release or Phase and use Start date/Target date. Empty dates remain empty until planning evidence supports them; phases alone are not invented calendar estimates.</p>
 <p><strong>Review and approvals — table:</strong> filter to review-ready or blocked tasks with human/security/migration/license gates; show PR and Evidence.</p>
 <p><strong>Source and security maintenance — table:</strong> retain source-custody/build/patch tasks and subsequent dependency vulnerabilities; sensitive vulnerabilities stay off this public board.</p>

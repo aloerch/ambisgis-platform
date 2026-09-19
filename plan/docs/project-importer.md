@@ -32,17 +32,17 @@ Initial fields apply only to newly added items with a recorded pending initializ
 
 ## Views and remaining UI verification
 
-The current documented API can create named table/board/roadmap views and choose visible fields for tables and boards. Roadmap creation rejects visible-field configuration, so that input is omitted for roadmaps. Built-in Status is excluded from the created table/board columns; roadmap grouping and GitHub's automatically created default view still need UI inspection so Delivery remains the product state field. The default view is preserved. Grouping, sorting, filters and roadmap date-field selection must still be verified before GOV-02 is complete; this importer does not guess undocumented inputs or overwrite subsequent manual view configuration.
+The current documented API can create named table/board/roadmap views and choose visible fields for tables and boards. Roadmap creation rejects visible-field configuration, so that input is omitted for roadmaps. Built-in Status is excluded from the created table/board columns. Creation alone does not verify Delivery authority in the roadmap or GitHub's automatically created default view; that verification is recorded separately. The default view is preserved. Full configuration must be verified before GOV-02 is complete; this importer does not guess undocumented inputs or overwrite subsequent manual view configuration. Supported readback exposes filters, visible fields, grouping, board column fields and sorting. Accept attributed owner observations for UI-only settings such as roadmap date mappings; do not reset completed verification. The owner reports that the roadmap layout has no table/board fields-selection picker. Do not prescribe hiding Status through an unavailable picker or infer rendered visibility from the roadmap's `fields` response. Preserve Delivery as the sole authority and record the exact limitation for review. See [the current GOV-02 reconciliation](project-view-reconciliation.md) for accepted evidence, the attributed roadmap limitation and remaining PR review.
 
 Open the created Project and configure each saved view using its view menu, then save changes:
 
 - Product backlog: table; exclude Delivery Cancelled; group by Phase; sort by Priority then Task ID; show dependencies, Risk and Review gate.
-- Execution board: group by Delivery; show Ready, In progress, In review, Verified and Blocked, with other states available.
+- Execution board: set View → Column field to Delivery (the UI may label this Column group by field); horizontal Group by and Slice by are separate optional settings; show Ready, In progress, In review, Verified and Blocked, with other states available.
 - Release roadmap: group by Target release (or Phase); select Start date and Target date. Leave dates unset until planning evidence supports them.
 - Review and approvals: table; filter to In review/Blocked with human, security, migration or license review gates; show linked PRs and Evidence.
 - Source and security maintenance: table; include custody/build/maintenance tasks and public vulnerability work. Sensitive reports stay off this public Project.
 
-Record actual saved view IDs, observed configuration and owner verification in GOV-02. Merely creating a view name/layout does not satisfy its acceptance.
+Record actual saved view IDs, supported configuration readback and attributed owner verification in GOV-02. GitHub distinguishes [board columns from horizontal grouping](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/customizing-the-board-layout). The manifest uses `column_field` for the former and `group_by` for the latter; these are local desired settings, not GraphQL input names. Merely creating a view name/layout does not satisfy its acceptance.
 
 ## Tests and limits
 

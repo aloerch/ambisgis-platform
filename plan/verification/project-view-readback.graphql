@@ -1,0 +1,46 @@
+# Read-only GOV-02 reconciliation. Every connection must report hasNextPage=false
+# before this bounded capture is complete; otherwise paginate before accepting it.
+query SavedViewReadback {
+  viewer { login }
+  repository(owner: "aloerch", name: "ambisgis-platform") { databaseId nameWithOwner }
+  user(login: "aloerch") {
+    id
+    projectV2(number: 2) {
+      id number title url public closed
+      views(first: 100) {
+        nodes {
+          id number name layout filter updatedAt
+          fields(first: 100) {
+            nodes { ...FieldIdentity }
+            pageInfo { hasNextPage endCursor }
+          }
+          configuration {
+            visibleFields(first: 100) {
+              nodes { ...FieldIdentity }
+              pageInfo { hasNextPage endCursor }
+            }
+          }
+          groupByFields(first: 100) {
+            nodes { ...FieldIdentity }
+            pageInfo { hasNextPage endCursor }
+          }
+          verticalGroupByFields(first: 100) {
+            nodes { ...FieldIdentity }
+            pageInfo { hasNextPage endCursor }
+          }
+          sortByFields(first: 100) {
+            nodes { direction field { ...FieldIdentity } }
+            pageInfo { hasNextPage endCursor }
+          }
+        }
+        pageInfo { hasNextPage endCursor }
+      }
+    }
+  }
+  viewType: __type(name: "ProjectV2View") { fields { name } }
+  configurationType: __type(name: "ProjectV2ViewConfiguration") { fields { name } }
+}
+
+fragment FieldIdentity on ProjectV2FieldConfiguration {
+  ... on ProjectV2FieldCommon { id name dataType }
+}

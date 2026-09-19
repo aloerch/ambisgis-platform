@@ -1,0 +1,37 @@
+GOV-02 saved-view reconciliation validation — 2026-09-19
+Worktree: /home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov02
+Branch: gov-02/saved-view-reconciliation
+Base: a3c2e2e696ea11bdc10c2ad202a240fbd0137f45
+
+From plan/:
+/tmp/ambisgis-validation-venv/bin/python -m unittest discover -s tests -v
+Result: 175 tests passed in 8.327s; no failures or skips.
+Full output: project-view-tests.txt
+
+/tmp/ambisgis-validation-venv/bin/python tools/validate_package.py --require-schemas
+Plan references and acyclic dependencies: PASS {'repositories': 15, 'tasks': 66, 'requirements': 24, 'sources': 65}
+JSON Schema 2020-12 and format/example checks: PASS (4 schemas/examples)
+
+Initial command error: unittest discovery was first invoked from the repository
+root, which has no tests/ directory. It failed before running tests with
+ImportError: Start directory is not importable: 'tests'. It was corrected to
+plan/ and the full required suite passed as recorded above.
+
+Saved-view query: read-only, identity verified, no GraphQL errors, 6 views,
+all connection pageInfo.hasNextPage values false. See dated readback JSON.
+No GOV-01 importer rerun or Project mutation.
+
+These are package/governance checks, not GIS product acceptance. No database
+harness/native build was rerun for this documentation/manifest-only correction;
+no shared database or notebook implementation changed.
+
+Independent review: the integrator agent reviewed the reconciliation document
+and accepted attribution, supported readback versus UI evidence, and the exact
+two remaining gates without a blocker. This is not human approval.
+
+Publication: the first push failed because the existing credential helper
+referenced missing /usr/bin/gh. The following PR attempt consequently failed
+because the remote branch did not yet exist. A per-command credential helper
+using the verified /tmp GitHub CLI resolved it; no global install or config
+change and no credential output. Branch push then succeeded and PR #52 opened:
+https://github.com/aloerch/ambisgis-platform/pull/52
