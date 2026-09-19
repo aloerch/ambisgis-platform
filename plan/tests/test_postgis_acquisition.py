@@ -97,7 +97,9 @@ class AcquisitionTests(unittest.TestCase):
                                      ("different/LICENSE", tarfile.REGTYPE, ""),
                                      ("source/fifo", tarfile.FIFOTYPE, ""),
                                      ("source/LICENSE", tarfile.REGTYPE, ""),
-                                     ("source/link", tarfile.SYMTYPE, "../../escape")):
+                                     ("source/link", tarfile.SYMTYPE, "../../escape"),
+                                     ("source/link", tarfile.SYMTYPE, "../escape"),
+                                     ("source/hardlink", tarfile.LNKTYPE, "outside")):
             with self.subTest(name=name, kind=kind):
                 entry = tarfile.TarInfo(name)
                 entry.type = kind

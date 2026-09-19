@@ -11,6 +11,7 @@ import hashlib
 import json
 import os
 from pathlib import Path, PurePosixPath
+import posixpath
 import re
 import subprocess
 import tarfile
@@ -78,6 +79,14 @@ def checked_members(archive: tarfile.TarFile, root: str) -> list[tarfile.TarInfo
             raise ValueError(f"Unexpected archive root: {member.name}")
         if not (member.isfile() or member.isdir() or member.issym() or member.islnk()):
             raise ValueError(f"Unsupported archive entry: {member.name}")
+        if member.issym() or member.islnk():
+            link = PurePosixPath(member.linkname)
+            if link.is_absolute() or "\\" in member.linkname:
+                raise ValueError("Archive link escapes source root")
+            link_target = path.parent / link if member.issym() else link
+            resolved = PurePosixPath(posixpath.normpath(str(link_target)))
+            if not resolved.parts or resolved.parts[0] != root:
+                raise ValueError("Archive link escapes source root")
         if not member.isdir():
             if member.name in files:
                 raise ValueError(f"Duplicate archive entry: {member.name}")
