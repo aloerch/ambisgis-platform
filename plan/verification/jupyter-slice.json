@@ -657,5 +657,13 @@
     "scan_exit_code": 1,
     "finding": "unused bundled Parcel musl variant incompatible with glibc host",
     "actual_node_loader": "glibc sibling selected successfully; no missing linked libraries"
-  }
+  },
+  "implementation_commit": "ee6d2d135fd64e1b9ad5372bd0506fa077af4456",
+  "pull_request": "https://github.com/aloerch/ambisgis-platform/pull/53",
+  "pull_request_state": "open; not merged",
+  "remote_changes": [
+    "Pushed fnd-02/jupyter-runtime and opened PR #53",
+    "Posted FND-02 claim/evidence comments",
+    "Separate GOV-02 branch/PR #52 and issue evidence; no Project settings/values changed"
+  ]
 }

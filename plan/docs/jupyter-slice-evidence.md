@@ -1,6 +1,6 @@
 # FND-02 owned Jupyter candidate/runtime evidence
 
-The bounded Jupyter slice is implemented and reviewable. A clean retained-input
+The bounded Jupyter slice is implemented and reviewable in [PR #53](https://github.com/aloerch/ambisgis-platform/pull/53), code commit `ee6d2d135fd64e1b9ad5372bd0506fa077af4456`. A clean retained-input
 build produced owned Hub 6.0.1 and Lab 4.6.3 wheels, including their frontend builds;
 329 selected native tests passed with no failures/skips. Two independent fresh-state
 runtime probes passed standalone Lab and Hub → proxy → single-user launch, real
