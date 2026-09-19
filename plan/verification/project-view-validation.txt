@@ -24,3 +24,14 @@ No GOV-01 importer rerun or Project mutation.
 These are package/governance checks, not GIS product acceptance. No database
 harness/native build was rerun for this documentation/manifest-only correction;
 no shared database or notebook implementation changed.
+
+Independent review: the integrator agent reviewed the reconciliation document
+and accepted attribution, supported readback versus UI evidence, and the exact
+two remaining gates without a blocker. This is not human approval.
+
+Publication: the first push failed because the existing credential helper
+referenced missing /usr/bin/gh. The following PR attempt consequently failed
+because the remote branch did not yet exist. A per-command credential helper
+using the verified /tmp GitHub CLI resolved it; no global install or config
+change and no credential output. Branch push then succeeded and PR #52 opened:
+https://github.com/aloerch/ambisgis-platform/pull/52
