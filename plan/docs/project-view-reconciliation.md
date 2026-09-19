@@ -1,6 +1,6 @@
 # GOV-02 saved-view reconciliation
 
-GOV-02 is **ready for In review** in [PR #52](https://github.com/aloerch/ambisgis-platform/pull/52). The owner resolved the review filter and reported that the roadmap has no visible-fields picker. The unsupported instruction to hide Status through that picker is withdrawn; the exact layout limitation is retained for review below. At the fresh readback, live Delivery still read **Blocked**; this document does not claim a Project transition, approval, merge or whole-task completion. FND-02 continues independently.
+GOV-02 is now **In review** in [PR #52](https://github.com/aloerch/ambisgis-platform/pull/52). The owner resolved the review filter and reported that the roadmap has no visible-fields picker. The unsupported instruction to hide Status through that picker is withdrawn; the exact layout limitation is retained for review below. At the fresh readback, live Delivery still read **Blocked**; this document does not claim a Project transition, approval, merge or whole-task completion. FND-02 continues independently.
 
 This reconciliation uses the owner's [initial 2026-09-19 verification](https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5744517566), [follow-up at 21:19:59 UTC](https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5745381847), and [fresh supported GraphQL readback](../verification/project-view-followup-readback.json) captured at `2026-09-19T21:25:32.834870+00:00`. The [earlier 19:05:54 UTC capture](../verification/project-view-readback.json) is preserved as historical evidence. The agent did not personally inspect the UI. The initial comment's unfilled “Remaining exceptions” placeholder is not additional evidence.
 
@@ -59,3 +59,20 @@ The fresh follow-up passed **175 package/governance tests with no failures, erro
 The earlier independent integrator-agent review accepted the original reconciliation with its then-outstanding checks. That historical review is not approval of this follow-up or whole-task acceptance. Fresh package/schema outcomes are retained separately in [the follow-up validation record](../verification/project-view-followup-validation.txt) and [test output](../verification/project-view-followup-tests.txt).
 
 The review branch also integrates current main `12bd2c5c88ab8573add1b483f1d53b4024649b39` in local merge `453eacb9724a477a75642e708b0c20082d612b38`. Post-integration **175 tests and all four schema/example checks passed**; [integration validation](../verification/project-view-integration-validation.txt), [test output](../verification/project-view-integration-tests.txt) and [schema output](../verification/project-view-integration-schemas.txt) are retained. Current-main Jupyter/FND-02 records are preserved; only the GOV-02 paragraphs differ in the two STATUS files. This branch integration is not a remote merge of PR #52.
+
+## Recorded review transition
+
+After the follow-up and current-main integration were tested and pushed, the
+integrator verified PR #52 open at `7ace33af6e9b92cc05374de28c996957f584f549`,
+existing local Project write authorization, owner/repository/Project/item/field
+identities, and the live Blocked value. A deliberate update moved only GOV-02
+Delivery to **In review** and its Evidence link to PR #52.
+[Mutation receipts and supported readback](../verification/project-view-review-transition.json)
+confirm both values. The earlier Blocked captures remain historical evidence.
+No saved-view setting, other task state, workflow or importer was changed.
+
+Independent integrator review found no blocker to reviewing this bounded
+correction: observations are attributed, unsupported UI behavior is not claimed,
+and current-main engineering evidence is preserved. This is engineering review;
+the owner's review of the precise limitation still precedes Verified. No PR
+merge, issue closure or whole-task acceptance was performed.
