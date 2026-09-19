@@ -1,0 +1,216 @@
+{
+  "observed_at": "2026-09-19T21:47:46.372164+00:00",
+  "pull_request": {
+    "baseRefName": "ambisgis/main",
+    "headRefName": "fnd-02/java-dependency-audit",
+    "headRefOid": "514e90f41ddc12e5c2d03bd50ad339859d70beeb",
+    "state": "OPEN",
+    "url": "https://github.com/aloerch/ambisgis-platform/pull/54"
+  },
+  "mutation": "Only FND-02 Evidence updated from PR51 to PR54; Delivery retained In progress",
+  "before": {
+    "data": {
+      "node": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg7tpvY",
+        "isArchived": false,
+        "project": {
+          "id": "PVT_kwHOAOk9es4Bj_k-"
+        },
+        "content": {
+          "number": 3,
+          "repository": {
+            "nameWithOwner": "aloerch/ambisgis-platform",
+            "databaseId": 1376927351
+          }
+        },
+        "fieldValues": {
+          "nodes": [
+            {},
+            {},
+            {},
+            {
+              "text": "[FND-02] Resolve source, license and compatible dependency tuple",
+              "field": {
+                "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                "name": "Title"
+              }
+            },
+            {
+              "name": "Todo",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4CU",
+                "name": "Status"
+              }
+            },
+            {
+              "text": "FND-02",
+              "field": {
+                "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                "name": "Task ID"
+              }
+            },
+            {
+              "name": "In progress",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                "name": "Delivery"
+              }
+            },
+            {
+              "name": "P0",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                "name": "Phase"
+              }
+            },
+            {
+              "name": "Platform",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                "name": "Component"
+              }
+            },
+            {
+              "name": "High",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                "name": "Priority"
+              }
+            },
+            {
+              "name": "High",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+                "name": "Risk"
+              }
+            },
+            {
+              "name": "License/Brand",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+                "name": "Review gate"
+              }
+            },
+            {
+              "text": "https://github.com/aloerch/ambisgis-platform/pull/51",
+              "field": {
+                "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+                "name": "Evidence"
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      }
+    }
+  },
+  "result": {
+    "data": {
+      "updateProjectV2ItemFieldValue": {
+        "projectV2Item": {
+          "id": "PVTI_lAHOAOk9es4Bj_k-zg7tpvY"
+        }
+      }
+    }
+  },
+  "after": {
+    "data": {
+      "node": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg7tpvY",
+        "isArchived": false,
+        "project": {
+          "id": "PVT_kwHOAOk9es4Bj_k-"
+        },
+        "content": {
+          "number": 3,
+          "repository": {
+            "nameWithOwner": "aloerch/ambisgis-platform",
+            "databaseId": 1376927351
+          }
+        },
+        "fieldValues": {
+          "nodes": [
+            {},
+            {},
+            {},
+            {
+              "text": "[FND-02] Resolve source, license and compatible dependency tuple",
+              "field": {
+                "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                "name": "Title"
+              }
+            },
+            {
+              "name": "Todo",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4CU",
+                "name": "Status"
+              }
+            },
+            {
+              "text": "FND-02",
+              "field": {
+                "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                "name": "Task ID"
+              }
+            },
+            {
+              "name": "In progress",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                "name": "Delivery"
+              }
+            },
+            {
+              "name": "P0",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                "name": "Phase"
+              }
+            },
+            {
+              "name": "Platform",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                "name": "Component"
+              }
+            },
+            {
+              "name": "High",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                "name": "Priority"
+              }
+            },
+            {
+              "name": "High",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+                "name": "Risk"
+              }
+            },
+            {
+              "name": "License/Brand",
+              "field": {
+                "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+                "name": "Review gate"
+              }
+            },
+            {
+              "text": "https://github.com/aloerch/ambisgis-platform/pull/54",
+              "field": {
+                "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+                "name": "Evidence"
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      }
+    }
+  }
+}

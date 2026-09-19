@@ -1,11 +1,17 @@
 # FND-02 Java audit — resumption record
 
-The bounded Java dependency audit is on branch `fnd-02/java-dependency-audit` in
+The bounded Java dependency audit is reviewable in [PR #54](https://github.com/aloerch/ambisgis-platform/pull/54), **open and unmerged**, on branch `fnd-02/java-dependency-audit` in
 `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java`, repository
 `aloerch/ambisgis-platform` (ID `1376927351`). It starts from actual owner merge
 `12bd2c5c88ab8573add1b483f1d53b4024649b39` of Jupyter PR #53. The previous
 Jupyter handoff's open-PR observation is historical; its reviewed branch,
 archives and runs remain preserved. FND-02 stays **In progress**.
+
+Implemented/tested checkpoint commit: `514e90f41ddc12e5c2d03bd50ad339859d70beeb`.
+Subsequent commits record PR/Project evidence only; verify the actual review head
+with `gh pr view 54 --repo aloerch/ambisgis-platform --json state,headRefOid`.
+FND-02 Evidence now links PR #54, with Delivery still In progress and readback
+retained in `plan/verification/java-audit-project-evidence.json`.
 
 This checkpoint is a source/dependency **audit**, not a retained transitive Maven
 closure or completed Java build. No Java build/native/runtime test was started.

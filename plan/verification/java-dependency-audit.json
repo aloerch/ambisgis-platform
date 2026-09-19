@@ -125,5 +125,12 @@
     "Exact JDK/Maven plus complete parent/BOM/plugin/test/native/source closure",
     "Human license/security review and canonical full-tuple acceptance"
   ],
-  "next_ready": "Retain exact Java toolchains and resolve the explicitly selected extension graph, including the printing source decision, before a controlled build"
+  "next_ready": "Retain exact Java toolchains and resolve the explicitly selected extension graph, including the printing source decision, before a controlled build",
+  "review": {
+    "pull_request": "https://github.com/aloerch/ambisgis-platform/pull/54",
+    "implementation_commit": "514e90f41ddc12e5c2d03bd50ad339859d70beeb",
+    "status": "OPEN; no merge authorized",
+    "head_note": "Subsequent evidence-only commits may advance the PR head; use live PR readback"
+  },
+  "project_evidence_record": "java-audit-project-evidence.json"
 }
