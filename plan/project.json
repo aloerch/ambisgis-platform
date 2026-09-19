@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "owner": "aloerch",
+  "owner_type": "User",
+  "title": "AmbisGIS — Product Development",
+  "visibility": "PUBLIC",
+  "marker": "ambisgis-product-development-v2",
+  "status": "design only; no remote project created",
+  "repositories": [
+    "ambisgis-platform",
+    "ambisgis-geodb",
+    "ambisgis-qgis-plugin",
+    "ambisgis-notebooks",
+    "ambisgis-postgresql",
+    "ambisgis-postgis",
+    "ambisgis-qgis",
+    "ambisgis-jupyterhub",
+    "ambisgis-jupyterlab",
+    "ambisgis-geotools",
+    "ambisgis-geowebcache",
+    "ambisgis-geoserver",
+    "ambisgis-geonode",
+    "ambisgis-mapstore-client",
+    "ambisgis-mapstore"
+  ],
+  "task_source": "backlog.json",
+  "fields": [
+    {
+      "name": "Task ID",
+      "type": "TEXT"
+    },
+    {
+      "name": "Delivery",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Backlog",
+        "Ready",
+        "In progress",
+        "In review",
+        "Verified",
+        "Merged",
+        "Released",
+        "Blocked",
+        "Cancelled"
+      ]
+    },
+    {
+      "name": "Phase",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "P0",
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6",
+        "P7"
+      ]
+    },
+    {
+      "name": "Component",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Platform",
+        "Database",
+        "Server",
+        "Desktop",
+        "Web apps",
+        "Notebooks",
+        "Governance",
+        "Security/Release"
+      ]
+    },
+    {
+      "name": "Priority",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Critical",
+        "High",
+        "Normal",
+        "Low"
+      ]
+    },
+    {
+      "name": "Risk",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    {
+      "name": "Review gate",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Standard PR",
+        "Human approval",
+        "Security",
+        "Data migration",
+        "License/Brand",
+        "Release"
+      ]
+    },
+    {
+      "name": "Target release",
+      "type": "TEXT"
+    },
+    {
+      "name": "Evidence",
+      "type": "TEXT"
+    },
+    {
+      "name": "Start date",
+      "type": "DATE"
+    },
+    {
+      "name": "Target date",
+      "type": "DATE"
+    }
+  ],
+  "views": [
+    {
+      "name": "Product backlog",
+      "layout": "TABLE",
+      "group_by": "Phase",
+      "sort": [
+        "Priority",
+        "Task ID"
+      ],
+      "purpose": "All task issues with dependencies and review gates"
+    },
+    {
+      "name": "Execution board",
+      "layout": "BOARD",
+      "group_by": "Delivery",
+      "purpose": "Ready, working, review and blocked work"
+    },
+    {
+      "name": "Release roadmap",
+      "layout": "ROADMAP",
+      "group_by": "Target release",
+      "start_field": "Start date",
+      "end_field": "Target date",
+      "purpose": "Dates remain unset until evidence-based scheduling"
+    },
+    {
+      "name": "Review and approvals",
+      "layout": "TABLE",
+      "purpose": "Review-ready tasks and human/security/migration/license gates"
+    },
+    {
+      "name": "Source and security maintenance",
+      "layout": "TABLE",
+      "purpose": "Source/build/patch custody and public maintenance tasks only"
+    }
+  ],
+  "provisioning": {
+    "implementation_task": "GOV-01",
+    "dry_run_default": true,
+    "explicit_apply_required": true,
+    "verify_owner_and_receipts": true,
+    "never_reset_live_progress": true,
+    "no_automatic_scope_escalation": true,
+    "preserve_human_issue_text": true,
+    "query_pagination_required": true,
+    "unverified_view_setup_is_pending": true,
+    "native_dependencies": "blocked-by/blocking; verify installed CLI/API capability",
+    "issue_body_marker_format": "<!-- ambisgis:task:{id} -->"
+  }
+}

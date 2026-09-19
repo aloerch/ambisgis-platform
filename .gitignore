@@ -1,0 +1,11 @@
+.bootstrap-receipt.json
+.project-receipt.json
+.project-receipt.json.lock
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+secrets/
+private-data/

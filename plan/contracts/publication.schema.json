@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "Proposed AmbisGIS publication envelope v1",
+  "description": "Starter envelope, not complete server/OpenAPI implementation; analyzer and authorization remain mandatory.",
+  "required": [
+    "schema_version",
+    "title",
+    "source",
+    "outputs",
+    "renderer",
+    "metadata",
+    "sharing",
+    "layers"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "source": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "upload_id"
+          ],
+          "properties": {
+            "type": {
+              "const": "upload"
+            },
+            "upload_id": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "source_id",
+            "dataset"
+          ],
+          "properties": {
+            "type": {
+              "const": "registered"
+            },
+            "source_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "dataset": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "outputs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "map",
+          "feature",
+          "raster_tiles",
+          "vector_tiles",
+          "coverage"
+        ]
+      }
+    },
+    "renderer": {
+      "enum": [
+        "auto",
+        "geoserver",
+        "qgis"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "tags",
+        "rights",
+        "lineage"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "rights": {
+          "type": "string"
+        },
+        "lineage": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string"
+        }
+      }
+    },
+    "sharing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "visibility",
+        "group_ids"
+      ],
+      "properties": {
+        "visibility": {
+          "enum": [
+            "private",
+            "groups",
+            "public"
+          ]
+        },
+        "group_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "visibility": {
+                "const": "groups"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "group_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "visibility": {
+                "enum": [
+                  "private",
+                  "public"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "group_ids": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "layers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_layer",
+          "name"
+        ],
+        "properties": {
+          "source_layer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "existing_layer_id": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "overwrite_service_id": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

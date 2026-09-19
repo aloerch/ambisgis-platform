@@ -1,0 +1,15 @@
+.bootstrap-receipt.json
+.ambisgis-receipt-*
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+secrets/
+private-data/
+
+.project-receipt.json
+.project-receipt-*

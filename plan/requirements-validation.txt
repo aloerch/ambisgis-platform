@@ -1,0 +1,3 @@
+# Optional tooling for complete local schema/example validation, not GIS runtime dependencies.
+# Use an isolated virtual environment. This exact version was used to validate the package.
+jsonschema==4.26.0

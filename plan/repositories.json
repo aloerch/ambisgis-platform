@@ -1,0 +1,97 @@
+{
+  "manifest_version": 1,
+  "owner": "aloerch",
+  "visibility": "public",
+  "repositories": [
+    {
+      "name": "ambisgis-platform",
+      "kind": "new",
+      "upstream": null,
+      "description": "AmbisGIS: Umbrella product, control plane, gateway, portal, publishing, SDK, deployment and integration tests"
+    },
+    {
+      "name": "ambisgis-geodb",
+      "kind": "new",
+      "upstream": null,
+      "description": "AmbisGIS: Typed geodatabase semantics, migrations, branch engine and correctness tests"
+    },
+    {
+      "name": "ambisgis-qgis-plugin",
+      "kind": "new",
+      "upstream": null,
+      "description": "AmbisGIS: QGIS publishing and controlled branch-edit plugin"
+    },
+    {
+      "name": "ambisgis-notebooks",
+      "kind": "new",
+      "upstream": null,
+      "description": "AmbisGIS: JupyterHub integration, spatial environments and isolation tests"
+    },
+    {
+      "name": "ambisgis-postgresql",
+      "kind": "fork",
+      "upstream": "postgres/postgres",
+      "description": "AmbisGIS: Owned PostgreSQL source and tested database-engine builds; semantic changes only when justified"
+    },
+    {
+      "name": "ambisgis-postgis",
+      "kind": "fork",
+      "upstream": "postgis/postgis",
+      "description": "AmbisGIS: Owned PostGIS source, spatial extension builds and regression tests"
+    },
+    {
+      "name": "ambisgis-qgis",
+      "kind": "fork",
+      "upstream": "qgis/QGIS",
+      "description": "AmbisGIS: Owned QGIS desktop/server source and product distribution; publishing plugin developed separately"
+    },
+    {
+      "name": "ambisgis-jupyterhub",
+      "kind": "fork",
+      "upstream": "jupyterhub/jupyterhub",
+      "description": "AmbisGIS: Owned multi-user notebook service source and security maintenance"
+    },
+    {
+      "name": "ambisgis-jupyterlab",
+      "kind": "fork",
+      "upstream": "jupyterlab/jupyterlab",
+      "description": "AmbisGIS: Owned notebook workbench source and product UX"
+    },
+    {
+      "name": "ambisgis-geotools",
+      "kind": "fork",
+      "upstream": "geotools/geotools",
+      "description": "AmbisGIS: Owned server geospatial library source and builds"
+    },
+    {
+      "name": "ambisgis-geowebcache",
+      "kind": "fork",
+      "upstream": "GeoWebCache/geowebcache",
+      "description": "AmbisGIS: Owned tile-cache engine source and builds"
+    },
+    {
+      "name": "ambisgis-geoserver",
+      "kind": "fork",
+      "upstream": "geoserver/geoserver",
+      "description": "AmbisGIS: Independently maintained rendering and service-engine source derived from GeoServer"
+    },
+    {
+      "name": "ambisgis-geonode",
+      "kind": "fork",
+      "upstream": "GeoNode/geonode",
+      "description": "AmbisGIS: Independently maintained catalog/control-plane source derived from GeoNode"
+    },
+    {
+      "name": "ambisgis-mapstore-client",
+      "kind": "fork",
+      "upstream": "GeoNode/geonode-mapstore-client",
+      "description": "AmbisGIS: GeoNode and MapStore integration bridge"
+    },
+    {
+      "name": "ambisgis-mapstore",
+      "kind": "fork",
+      "upstream": "geosolutions-it/MapStore2",
+      "description": "AmbisGIS: Independently maintained map/dashboard/application components derived from MapStore"
+    }
+  ]
+}
