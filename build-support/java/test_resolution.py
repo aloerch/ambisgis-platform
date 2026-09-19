@@ -4,6 +4,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 import json
+import hashlib
+import subprocess
 import resolution
 import replay_model
 
@@ -125,6 +127,98 @@ class ResolutionTests(unittest.TestCase):
             self.assertEqual(result['result_exit_code'], 1)
             self.assertEqual(result['error']['type'], 'ParseError')
             self.assertEqual(json.loads((root / 'replay/result.json').read_text())['result_exit_code'], 1)
+
+
+class DependencyReplayTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(prefix='ambisgis-dependency-replay-test-')
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        (self.root / 'source').mkdir()
+        (self.root / 'logs').mkdir()
+        (self.root / 'source/pom.xml').write_text('<project/>')
+        (self.root / 'empty-global-settings.xml').write_text('<settings/>\n')
+        resolution.write_json(self.root / 'preparation.json',
+                              {'maven_files': resolution.maven_inventory(self.root / 'source')})
+        self.custody = self.root / 'custody'
+        self.path = 'org/example/fixture/1/fixture-1.pom'
+        self.data = b'<project>retained model fixture</project>'
+        self.digest = hashlib.sha256(self.data).hexdigest()
+        blob = self.custody / 'blobs/sha256' / self.digest
+        blob.parent.mkdir(parents=True)
+        blob.write_bytes(self.data)
+        selection = self.custody / 'selections' / (self.path + '.json')
+        selection.parent.mkdir(parents=True)
+        resolution.write_json(selection, {'repository': 'central', 'maven_path': self.path})
+        self.inventory = {'verification': {'valid': True}, 'artifacts': [{
+            'repository': 'central', 'maven_path': self.path,
+            'blob_path': 'blobs/sha256/' + self.digest, 'sha256': self.digest}]}
+        self.output = self.root / 'replay'
+
+    def invoke(self, executor, stage='dependencies'):
+        with patch('toolchain.verify_extracted', return_value={'verified': True}), \
+             patch('replay_model.verify_custody', return_value=self.inventory), \
+             patch('replay_model.execute', side_effect=executor):
+            return replay_model.replay(self.root, self.custody, self.root / 'tool-custody',
+                                       self.root / 'tools', self.output, stage=stage)
+
+    def test_dependency_replay_uses_fresh_repository_without_model_parsing(self):
+        def successful(cmd, cwd, env, output, timeout):
+            self.assertIn(resolution.DEPENDENCIES, cmd)
+            self.assertNotIn(resolution.HELP, cmd)
+            self.assertFalse(any(arg.startswith('-Doutput=') for arg in cmd))
+            self.assertEqual(cmd[cmd.index('-pl') + 1], resolution.TARGETS)
+            self.assertIn('-am', cmd)
+            self.assertIn('-DexcludeReactor=true', cmd)
+            self.assertEqual(timeout, 3600)
+            self.assertEqual(list((self.output / 'fresh-m2').iterdir()), [])
+            self.assertEqual((self.output / 'retained-repository' / self.path).read_bytes(), self.data)
+            self.assertIn((self.output / 'retained-repository').as_uri(),
+                          (self.output / 'settings.xml').read_text())
+            self.assertIn('offline_exec.py', cmd[1])
+            self.assertEqual(env['MAVEN_BASEDIR'], str(self.root / 'source'))
+            output.write('fixture dependency goal complete\n')
+            return 0
+        with patch('replay_model.validate_effective', side_effect=AssertionError('must not parse a model')):
+            result = self.invoke(successful)
+        self.assertEqual(result['stage'], 'dependencies')
+        self.assertEqual(result['status'], 'succeeded')
+        self.assertEqual(result['exit_code'], 0)
+        self.assertEqual(result['result_exit_code'], 0)
+        self.assertNotIn('effective_projects', result)
+        self.assertFalse(result['transitive_closure_complete'])
+        self.assertFalse(result['java_build_run'])
+        self.assertFalse((self.output / 'effective-graph.json').exists())
+        self.assertEqual(json.loads((self.output / 'result.json').read_text()), result)
+        # The same explicit output can never reset the retained mirror or fresh repository.
+        with self.assertRaises(FileExistsError):
+            self.invoke(lambda *_: self.fail('reused replay executed'))
+        self.assertEqual(json.loads((self.output / 'result.json').read_text()), result)
+
+    def test_failed_dependency_goal_retains_its_actual_exit_status(self):
+        result = self.invoke(lambda *_: 7)
+        self.assertEqual(result['exit_code'], 7)
+        self.assertEqual(result['result_exit_code'], 7)
+        self.assertEqual(result['status'], 'failed')
+        self.assertNotIn('effective_projects', result)
+
+    def test_dependency_timeout_retains_a_failure_receipt(self):
+        def timeout(*args):
+            raise subprocess.TimeoutExpired('fixture pinned goal', 3600)
+        result = self.invoke(timeout)
+        self.assertIsNone(result['exit_code'])
+        self.assertEqual(result['result_exit_code'], 1)
+        self.assertEqual(result['status'], 'failed')
+        self.assertEqual(result['error']['type'], 'TimeoutExpired')
+        self.assertEqual(json.loads((self.output / 'result.json').read_text()), result)
+
+    def test_lifecycle_stage_is_rejected_before_verification_or_output_creation(self):
+        with patch('toolchain.verify_extracted') as verifier:
+            with self.assertRaisesRegex(ValueError, 'only effective or dependencies'):
+                replay_model.replay(self.root, self.custody, self.root / 'tool-custody',
+                                    self.root / 'tools', self.output, stage='package')
+        verifier.assert_not_called()
+        self.assertFalse(self.output.exists())
 
 
 if __name__ == '__main__':

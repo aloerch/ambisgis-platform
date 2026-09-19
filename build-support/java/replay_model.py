@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-"""Recompute the selected effective model using retained files and socket denial.
+"""Replay a pinned Maven model or dependency goal from retained files.
 
-This is dependency-model replay, never a Java build or runtime acceptance test.
+The default effective stage recomputes the selected effective model. The
+optional dependencies stage runs only the selected reactor's pinned go-offline
+goal. Both use a fresh Maven repository and the existing socket-denial wrapper;
+neither compiles Java, runs a lifecycle build, or proves runtime acceptance.
 """
 import argparse
 from datetime import datetime, timezone
@@ -15,7 +18,9 @@ from resolution import (command, execute, maven_inventory, sha, validate_effecti
 import toolchain
 
 
-def replay(work, custody, tool_custody, tools, output):
+def replay(work, custody, tool_custody, tools, output, stage='effective'):
+    if stage not in ('effective', 'dependencies'):
+        raise ValueError('replay permits only effective or dependencies stages')
     manifest = json.loads(Path(__file__).with_name('toolchain-inputs.json').read_text())
     installed = toolchain.verify_extracted(tool_custody, manifest, tools)
     java = tools / next(a['root'] for a in manifest['archives']
@@ -51,20 +56,24 @@ def replay(work, custody, tool_custody, tools, output):
         rows.append(record)
     write_json(output / 'retained-inputs.json', rows)
     settings = output / 'settings.xml'
-    settings.write_text('<settings><mirrors><mirror><id>ambisgis-custody</id>'
-                        '<mirrorOf>*</mirrorOf><url>' + repository.as_uri() +
-                        '</url></mirror></mirrors></settings>\n')
+    with settings.open('x') as stream:
+        stream.write('<settings><mirrors><mirror><id>ambisgis-custody</id>'
+                     '<mirrorOf>*</mirrorOf><url>' + repository.as_uri() +
+                     '</url></mirror></mirrors></settings>\n')
     local = output / 'fresh-m2'
     local.mkdir()
-    run_id = 'network-denied-model-' + output.name
-    model = work / 'logs' / (run_id + '-effective.xml')
-    if model.exists() or model.is_symlink():
+    run_id = ('network-denied-model-' if stage == 'effective'
+              else 'network-denied-dependencies-') + output.name
+    model = work / 'logs' / (run_id + '-effective.xml') if stage == 'effective' else None
+    if model is not None and (model.exists() or model.is_symlink()):
         raise ValueError('model output already exists')
-    cmd, env = command(work, java, maven, 'effective', local, settings, run_id)
+    cmd, env = command(work, java, maven, stage, local, settings, run_id)
     offline_runner = Path(__file__).resolve().parents[1] / 'postgis/offline_exec.py'
     guarded = [sys.executable, str(offline_runner), '--evidence',
                str(output / 'network-denial.json'), '--', *cmd]
     report = {'started_at': datetime.now(timezone.utc).isoformat(),
+              'stage': stage, 'status': 'running', 'goal_timeout_seconds': 3600,
+              'fresh_local_repository': str(local), 'transitive_closure_complete': False,
               'toolchain': installed, 'command': guarded, 'environment': env,
               'retained_files': len(rows), 'input_manifest_sha256': sha(output / 'retained-inputs.json'),
               'java_build_run': False, 'acceptance_build_ready': False,
@@ -72,9 +81,9 @@ def replay(work, custody, tool_custody, tools, output):
     write_json(output / 'started.json', report)
     try:
         with (output / 'maven.log').open('x') as stream:
-            result = execute(guarded, work / 'source', env, stream, 600)
+            result = execute(guarded, work / 'source', env, stream, 3600)
         report['exit_code'] = result
-        if result == 0:
+        if result == 0 and stage == 'effective':
             graph = validate_effective(model)
             write_json(output / 'effective-graph.json', graph)
             report['effective_projects'] = graph['project_count']
@@ -88,6 +97,7 @@ def replay(work, custody, tool_custody, tools, output):
         if not report['source_maven_files_unchanged']:
             report['result_exit_code'] = 1
         report['log_sha256'] = sha(output / 'maven.log') if (output / 'maven.log').exists() else None
+        report['status'] = 'succeeded' if report['result_exit_code'] == 0 else 'failed'
         write_json(output / 'result.json', report)
     return report
 
@@ -96,9 +106,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('work', 'custody', 'toolchain-custody', 'tools', 'output'):
         parser.add_argument('--' + name, type=Path, required=True)
+    parser.add_argument('--stage', choices=('effective', 'dependencies'), default='effective',
+                        help='pinned acquisition goal to replay; default: effective')
     args = parser.parse_args()
     report = replay(args.work.resolve(), args.custody.resolve(),
-                    args.toolchain_custody.resolve(), args.tools.resolve(), args.output.absolute())
+                    args.toolchain_custody.resolve(), args.tools.resolve(), args.output.absolute(), args.stage)
     print(json.dumps(report, indent=2))
     raise SystemExit(report['result_exit_code'])
 
