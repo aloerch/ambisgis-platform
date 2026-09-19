@@ -73,3 +73,11 @@ The 127 inherited GitHub workflow paths were inventoried and preserved at exact 
 The required package checks validate this design package only. They do not validate a GIS distribution, donor build, license decision, disconnected rebuild, or release. No task is marked Verified, Merged or Released by this evidence record.
 
 Validation on this branch used the isolated validation environment from `plan/`: `python3 -m unittest discover -s tests -v` passed all **55 tests**, with no failures, errors or skips; `python3 tools/validate_package.py --require-schemas` passed plan/dependency checks and all four schema/example checks. Additional evidence checks verified 11 archive records, 46 retained license hashes, 127 workflow paths, retained pending gates, and absence of absolute local paths or token patterns.
+
+## Owned PostgreSQL candidate build probe
+
+The exact owned PostgreSQL acquisition commit `c62b330912e2095dc8dee2f749adf7e5d94ca611` was built in a separate local `fnd-02/postgresql-build` worktree with unmodified default configure settings. Configure and `make -j4` passed; `make -j4 check` passed **239 real core regression tests**, with zero failures or skip markers. The temporary test cluster shut down cleanly and the source worktree remained clean. No global installation or remote source changes occurred.
+
+[The path-normalized build record](../verification/postgresql-candidate-build.json) contains actual commands, source/tree IDs, compiler/library versions and hashes, executable hashes and log hashes. The original report and logs are retained locally. Build time was 47.820 seconds and the core regression command took 5.977 seconds on this environment; these are observations, not product performance guarantees.
+
+This candidate identifies as PostgreSQL **20devel** and has not been selected as a product baseline. GCC 15.2.0, ICU 77.1, readline 8.3, zlib 1.3.1 and the remaining host toolchain/libraries are observed inputs whose complete source/build closure is not retained. Static build-script inspection is not network-denial evidence. TAP/check-world, PostGIS integration, AmbisGIS branch/concurrency/authorization/restore tests, an upstream-disconnected rebuild and independent repair remain unrun. The probe establishes build feasibility and does not satisfy FND-08 or approve an immutable product tuple.
