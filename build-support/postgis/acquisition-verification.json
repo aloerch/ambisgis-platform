@@ -1,0 +1,72 @@
+{
+  "scope": "Source acquisition and package checks only; GIS build/database results recorded separately",
+  "timestamp": "2026-09-19T17:19:54.999920+00:00",
+  "results": [
+    {
+      "suite": "package-unit",
+      "started_at": "2026-09-19T17:19:47.292416+00:00",
+      "argv": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "<platform-checkout>/plan",
+      "exit_code": 0,
+      "log": "<workspace>/source-archives/postgis-slice/verification/package-unit.log",
+      "log_sha256": "c8ac1abce19a5fefeee27af655b9c9fa6bfaefdede76d9a3a32cd587c43f2f25"
+    },
+    {
+      "suite": "package-schema",
+      "started_at": "2026-09-19T17:19:54.708706+00:00",
+      "argv": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "<platform-checkout>/plan",
+      "exit_code": 0,
+      "log": "<workspace>/source-archives/postgis-slice/verification/package-schema.log",
+      "log_sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    },
+    {
+      "suite": "retained-inputs",
+      "started_at": "2026-09-19T17:19:54.800203+00:00",
+      "argv": [
+        "python3",
+        "build-support/postgis/acquisition.py",
+        "--custody",
+        "<workspace>/source-archives/postgis-slice"
+      ],
+      "cwd": "<platform-checkout>",
+      "exit_code": 0,
+      "log": "<workspace>/source-archives/postgis-slice/verification/retained-inputs.log",
+      "log_sha256": "9cdc1bdbcab18d2a0865314eecdded07e08f3848aa1c973fda121deb67c9557d"
+    }
+  ],
+  "prior_default_python_result": {
+    "unit_tests": 151,
+    "skipped": 7,
+    "schema_validation_exit_code": 1,
+    "cause": "Default Python lacks optional jsonschema; rerun with established validation venv below."
+  },
+  "actual_extract_probe": {
+    "argv": [
+      "python3",
+      "build-support/postgis/acquisition.py",
+      "--custody",
+      "<workspace>/source-archives/postgis-slice",
+      "--fetch",
+      "--source-workspace",
+      "<workspace>",
+      "--extract",
+      "/tmp/ambisgis-inputs-verification-20260919"
+    ],
+    "exit_code": 0,
+    "verified_and_extracted_inputs": 19,
+    "scope": "All inputs already retained; archive original notices compared and safe extraction into fresh directory succeeded. Tool transcript contains stdout; extracted artifact directory retained locally."
+  }
+}
