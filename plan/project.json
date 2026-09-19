@@ -135,7 +135,7 @@
     {
       "name": "Execution board",
       "layout": "BOARD",
-      "group_by": "Delivery",
+      "column_field": "Delivery",
       "purpose": "Ready, working, review and blocked work"
     },
     {

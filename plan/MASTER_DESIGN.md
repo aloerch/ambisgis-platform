@@ -1368,7 +1368,7 @@ GitHub CLI's documented field-creation types are TEXT, SINGLE_SELECT, DATE and N
 
 **Product backlog — table:** all non-cancelled task issues; group by Phase and sort by Priority/Task ID. Show dependencies, risk and review gate.
 
-**Execution board — board:** group by Delivery; show Ready, In progress, In review, Verified and Blocked, with other states available. Work in progress is governed by assignee/task claims rather than an arbitrary number of agents.
+**Execution board — board:** set the column field to Delivery; show Ready, In progress, In review, Verified and Blocked, with other states available. Horizontal Group by and Slice by are separate optional settings. Work in progress is governed by assignee/task claims rather than an arbitrary number of agents.
 
 **Release roadmap — roadmap:** group by Target release or Phase and use Start date/Target date. Empty dates remain empty until planning evidence supports them; phases alone are not invented calendar estimates.
 

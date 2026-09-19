@@ -1,5 +1,7 @@
 # GOV-01 live verification
 
+This is the historical GOV-01 provisioning snapshot. Later owner configuration and supported readback are reconciled in [GOV-02 saved-view evidence](project-view-reconciliation.md); the originally unset filters below are not current-state claims.
+
 The public [AmbisGIS Project](https://github.com/users/aloerch/projects/2) was provisioned under the owner's locally authorized GitHub CLI identity. Repository bootstrap receipts verified all fifteen newly created target IDs. The first complete dry-run made no mutations and wrote no Project creation receipt.
 
 Live apply created eleven custom fields and seeded 66 issues/items with stable Task IDs, actual specification/dependency links and 130 native blocked-by relations. All five requested view names/layouts now exist. GitHub also created a default `View 1`; it was preserved. Grouping, sorting, filters, roadmap date mappings and Delivery authority remain GOV-02 UI gates. Current saved filters were read back as unset; no completed filter setup is claimed.

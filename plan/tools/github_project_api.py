@@ -527,7 +527,8 @@ class GitHubProjectAPI:
         payload = {"projectId": project_id, "name": spec["name"], "layout": layout}
         if "visibleFieldIds" in spec and layout != "ROADMAP_LAYOUT":
             payload["configuration"] = {"visibleFieldIds": spec["visibleFieldIds"]}
-        # Grouping, sorting and roadmap dates are deliberately not guessed.
+        # Column fields, horizontal grouping, sorting and roadmap dates are
+        # desired local settings, not undocumented API inputs to guess.
         return self._mutate("createProjectV2View", "CreateProjectV2ViewInput", payload, "projectV2View", VIEW_FIELDS)
 
     def update_view_filter(self, view_id: str, filter_text: str) -> dict:
