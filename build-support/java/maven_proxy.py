@@ -26,6 +26,9 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, ProxyHandler, Request, build_opener
 
+from schema_resources import (SchemaResourceError, schema_coordinate, schema_checksum,
+                              validate_schema_archive)
+
 
 REPOSITORIES = {
     "central": "https://repo.maven.apache.org/maven2",
@@ -213,7 +216,7 @@ class MavenCustodyProxy:
         version = parts[-2] if len(parts) >= 4 else ""
         if "SNAPSHOT" in version.upper() or version in {"LATEST", "RELEASE"}:
             raise AcquisitionError("moving snapshot/latest/release coordinates are forbidden", 403)
-        metadata = self._classification(path) != "artifact"
+        metadata = self._classification(path) in {"upstream-pom-metadata", "mutable-discovery-metadata"}
         if not metadata:
             group, artifact, version = ((".".join(parts[:-3]), parts[-3], parts[-2])
                                         if len(parts) >= 4 else ("", "", ""))
@@ -222,12 +225,17 @@ class MavenCustodyProxy:
                         ("org/geotools/", "org/geowebcache/", "org/geoserver/"))
             geofence = ((group == "org.geoserver.geofence" or group.startswith("org.geoserver.geofence."))
                         and version == "3.8.3")
-            if gav in self.forbidden_gavs or (owned and not geofence):
+            resource = schema_coordinate(path) is not None or schema_checksum(path) is not None
+            if gav in self.forbidden_gavs or (owned and not geofence and not resource):
                 raise AcquisitionError("owned reactor artifact must be built from retained owned source", 403)
         return path
 
     @staticmethod
     def _classification(path: str) -> str:
+        if schema_coordinate(path):
+            return "source-resource-archive"
+        if schema_checksum(path):
+            return "source-resource-checksum"
         name = path.rsplit("/", 1)[-1]
         while any(name.endswith(suffix) for suffix in (".sha1", ".sha256", ".sha512", ".md5", ".asc")):
             name = name.rsplit(".", 1)[0]
@@ -283,9 +291,49 @@ class MavenCustodyProxy:
             data = self._read(blob)
             if len(data) != record["size"] or hashlib.sha256(data).hexdigest() != digest:
                 raise AcquisitionError("retained artifact bytes changed; refusing reuse")
+            validation = self._resource_validation(repository, path, data, cached=True)
+            if validation != record.get("source_resource_validation"):
+                raise AcquisitionError("retained source/resource validation record differs from actual bytes")
             return RetainedArtifact(blob, record)
         except (ValueError, KeyError, TypeError) as exc:
             raise AcquisitionError("invalid retained artifact record") from exc
+
+    def _resource_validation(self, repository: str, path: str, data: bytes, cached=False):
+        try:
+            if schema_coordinate(path):
+                return validate_schema_archive(path, data)
+            sidecar = schema_checksum(path)
+            if sidecar:
+                archive_path, algorithm = sidecar
+                archive = (self._cached(repository, archive_path) if cached
+                           else self.fetch(archive_path, repository))
+                if archive is None:
+                    raise SchemaResourceError("checksum has no validated same-origin resource archive")
+                archive_data = self._read(archive.path)
+                expected = hashlib.new(algorithm, archive_data).hexdigest()
+                fields = data.decode("ascii").strip().split()
+                if (len(fields) not in (1, 2) or fields[0].lower() != expected
+                        or (len(fields) == 2 and fields[1].lstrip("*") != archive_path.rsplit("/", 1)[-1])):
+                    raise SchemaResourceError("resource archive checksum does not match validated bytes")
+                return {"schema_version": 1, "source_archive_path": archive_path,
+                        "source_archive_sha256": archive.record["sha256"],
+                        "checksum_algorithm": algorithm, "checksum": expected}
+        except (SchemaResourceError, UnicodeError) as error:
+            raise AcquisitionError("source/resource validation refused: " + str(error), 403) from error
+        return None
+
+    def _quarantine(self, path, url, result, error):
+        digest = hashlib.sha256(result.data).hexdigest()
+        self._write_once(self.root / "quarantine" / (digest + ".bin"), result.data)
+        record = {"schema_version": 1, "maven_path": path,
+                  "original_url": url, "final_url": result.final_url,
+                  "sha256": digest, "size": len(result.data), "reason": str(error),
+                  "served": False, "selected": False}
+        # Different URLs can deliver identical rejected bytes; one receipt per request identity.
+        key = hashlib.sha256((url + "\n" + digest).encode()).hexdigest()
+        self._write_once(self.root / "quarantine" / (key + ".json"),
+                         (json.dumps(record, sort_keys=True, indent=2) + "\n").encode())
+        self._event("quarantined", **record)
 
     def _selection(self, path: str, repository: str | None = None) -> str | None:
         selection_path = self.root / "selections" / (path + ".json")
@@ -352,6 +400,11 @@ class MavenCustodyProxy:
                         raise AcquisitionError(f"upstream returned HTTP {result.status}", result.status)
                     if not isinstance(result.data, bytes) or len(result.data) > self.max_bytes:
                         raise AcquisitionError("invalid or oversized acquisition response")
+                    try:
+                        validation = self._resource_validation(key, path, result.data)
+                    except AcquisitionError as error:
+                        self._quarantine(path, url, result, error)
+                        raise
                     digest = hashlib.sha256(result.data).hexdigest()
                     blob = self.root / "blobs" / "sha256" / digest
                     self._write_once(blob, result.data)
@@ -361,6 +414,8 @@ class MavenCustodyProxy:
                               "classification": self._classification(path),
                               "acquired_at": datetime.now(timezone.utc).isoformat(),
                               "license_status": "unreviewed; artifact and POM retention is not license acceptance"}
+                    if validation is not None:
+                        record["source_resource_validation"] = validation
                     self._write_once(self.root / "records" / key / (path + ".json"),
                                      (json.dumps(record, indent=2, sort_keys=True) + "\n").encode())
                     self._event("acquired", **record)

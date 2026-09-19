@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Acquisition safety tests with injected bytes; no public network access."""
 import hashlib
+import io
+import zipfile
 import http.client
 import json
 from pathlib import Path
@@ -14,6 +16,18 @@ from maven_proxy import (AcquisitionError, FetchResult, MavenCustodyProxy,
 
 
 PATH = "org/example/sample/1.2/sample-1.2.jar"
+SCHEMA_PATH = "org/geotools/schemas/cgiutilities-1.0/1.0.0-4/cgiutilities-1.0-1.0.0-4.jar"
+
+
+def schema_bytes(extra=()):
+    import schema_resources
+    output = io.BytesIO()
+    with zipfile.ZipFile(output, "w") as archive:
+        for path in schema_resources.RESOURCES["org.geotools.schemas:cgiutilities-1.0:1.0.0-4"]:
+            archive.writestr(path, b'<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>')
+        for name, data in extra:
+            archive.writestr(name, data)
+    return output.getvalue()
 
 
 class ProxyTests(unittest.TestCase):
@@ -271,6 +285,70 @@ class ProxyTests(unittest.TestCase):
         with self.assertRaises(AcquisitionError):
             proxy.fetch(PATH)
         self.assertEqual(list((self.root / "blobs" / "sha256").iterdir()), [])
+
+    def test_exact_source_resource_archive_is_validated_before_custody_and_reuse(self):
+        data = schema_bytes()
+        proxy = self.proxy(fetcher=lambda url: FetchResult(data, url))
+        artifact = proxy.fetch(SCHEMA_PATH)
+        self.assertEqual(artifact.record["classification"], "source-resource-archive")
+        self.assertEqual(artifact.record["source_resource_validation"]["xsd_count"], 2)
+        self.assertEqual(proxy.fetch(SCHEMA_PATH), artifact)
+        record_path = self.root / "records" / "central" / (SCHEMA_PATH + ".json")
+        record = json.loads(record_path.read_text())
+        record["source_resource_validation"]["xsd_count"] = 99
+        record_path.write_text(json.dumps(record))
+        with self.assertRaisesRegex(AcquisitionError, "validation record differs"):
+            proxy.fetch(SCHEMA_PATH)
+
+    def test_invalid_source_resource_bytes_are_quarantined_and_never_selected(self):
+        data = schema_bytes(extra=[("Bad.class", b"class bytes")])
+        proxy = self.proxy(fetcher=lambda url: FetchResult(data, url))
+        with self.assertRaisesRegex(AcquisitionError, "source/resource validation"):
+            proxy.fetch(SCHEMA_PATH)
+        self.assertEqual(list((self.root / "blobs" / "sha256").iterdir()), [])
+        self.assertFalse((self.root / "records" / "central" / (SCHEMA_PATH + ".json")).exists())
+        self.assertFalse((self.root / "selections" / (SCHEMA_PATH + ".json")).exists())
+        digest = hashlib.sha256(data).hexdigest()
+        self.assertEqual((self.root / "quarantine" / (digest + ".bin")).read_bytes(), data)
+        event = [entry for entry in self.events() if entry["event"] == "quarantined"][0]
+        self.assertEqual(event["sha256"], digest)
+        self.assertEqual(event["size"], len(data))
+        self.assertIn("Bad.class", event["reason"])
+        self.assertFalse(event["served"])
+        self.assertFalse(event["selected"])
+        self.assertEqual(event["final_url"], REPOSITORIES["central"] + "/" + SCHEMA_PATH)
+
+    def test_resource_checksum_acquires_and_verifies_same_origin_archive(self):
+        data = schema_bytes()
+        digest = hashlib.sha1(data).hexdigest()
+        def fetch(url):
+            self.calls.append(url)
+            return FetchResult(digest.encode() if url.endswith(".sha1") else data, url)
+        proxy = self.proxy(fetcher=fetch)
+        sidecar = proxy.fetch(SCHEMA_PATH + ".sha1")
+        self.assertEqual(sidecar.record["classification"], "source-resource-checksum")
+        validation = sidecar.record["source_resource_validation"]
+        self.assertEqual(validation["checksum"], digest)
+        self.assertEqual(validation["source_archive_sha256"], hashlib.sha256(data).hexdigest())
+        self.assertEqual(len(self.calls), 2)
+        offline = self.proxy(offline=True, fetcher=lambda url: self.fail("offline network"))
+        self.assertEqual(offline.fetch(SCHEMA_PATH + ".sha1"), sidecar)
+
+    def test_invalid_resource_checksum_is_quarantined(self):
+        data = schema_bytes()
+        proxy = self.proxy(fetcher=lambda url: FetchResult(b"0" * 40 if url.endswith(".sha1") else data, url))
+        with self.assertRaisesRegex(AcquisitionError, "checksum does not match"):
+            proxy.fetch(SCHEMA_PATH + ".sha1")
+        self.assertTrue(any(row["event"] == "quarantined" for row in self.events()))
+        self.assertFalse((self.root / "records" / "central" / (SCHEMA_PATH + ".sha1.json")).exists())
+
+    def test_schema_exception_does_not_allow_unknown_versions_or_classifiers(self):
+        proxy = self.proxy()
+        for path in (SCHEMA_PATH.replace("1.0.0-4", "1.0.0-5"),
+                     SCHEMA_PATH.replace(".jar", "-sources.jar")):
+            with self.subTest(path=path), self.assertRaises(AcquisitionError):
+                proxy.fetch(path)
+        self.assertEqual(self.calls, [])
 
     def test_http_get_head_and_shutdown(self):
         with self.proxy() as proxy:
