@@ -122,6 +122,10 @@ class ProxyTests(unittest.TestCase):
             for suffix in (".jar", "-sources.jar", ".war", ".jar.sha1"):
                 with self.subTest(prefix=prefix, suffix=suffix), self.assertRaises(AcquisitionError):
                     proxy.fetch(f"{prefix}/sample/34.5/sample-34.5{suffix}")
+        for malformed in ("org/geotools/loose.jar", "org/geowebcache/loose.war",
+                          "org/geoserver/geofence/3.8.3/geofence-3.8.3.jar"):
+            with self.subTest(path=malformed), self.assertRaises(AcquisitionError):
+                proxy.fetch(malformed)
         self.assertEqual(self.calls, [])
 
     def test_owned_pom_and_metadata_are_explicitly_classified(self):

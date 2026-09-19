@@ -208,12 +208,14 @@ class MavenCustodyProxy:
         if any("SNAPSHOT" in part.upper() or part.upper() in {"LATEST", "RELEASE"} for part in parts):
             raise AcquisitionError("moving snapshot/latest/release coordinates are forbidden", 403)
         metadata = self._classification(path) != "artifact"
-        if not metadata and len(parts) >= 4:
-            group, artifact, version = ".".join(parts[:-3]), parts[-3], parts[-2]
+        if not metadata:
+            group, artifact, version = ((".".join(parts[:-3]), parts[-3], parts[-2])
+                                        if len(parts) >= 4 else ("", "", ""))
             gav = f"{group}:{artifact}:{version}"
             owned = any(path.startswith(prefix) for prefix in
                         ("org/geotools/", "org/geowebcache/", "org/geoserver/"))
-            geofence = (path.startswith("org/geoserver/geofence/") and version == "3.8.3")
+            geofence = ((group == "org.geoserver.geofence" or group.startswith("org.geoserver.geofence."))
+                        and version == "3.8.3")
             if gav in self.forbidden_gavs or (owned and not geofence):
                 raise AcquisitionError("owned reactor artifact must be built from retained owned source", 403)
         return path
