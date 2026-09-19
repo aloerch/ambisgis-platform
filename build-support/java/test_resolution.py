@@ -111,6 +111,7 @@ class ResolutionTests(unittest.TestCase):
     def test_replay_cannot_report_success_with_malformed_effective_xml(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
+            (root / 'custody/selections').mkdir(parents=True)
             (root / 'source').mkdir()
             (root / 'logs').mkdir()
             (root / 'source/pom.xml').write_text('<project/>')
@@ -266,9 +267,66 @@ class DependencyReplayTests(unittest.TestCase):
             self.invoke(lambda *_: self.fail('reused replay executed'))
         self.assertEqual(json.loads((self.output / 'result.json').read_text()), result)
 
+    def test_selection_directory_with_json_suffix_is_descended(self):
+        old_selection = self.custody / 'selections' / (self.path + '.json')
+        old_selection.unlink()
+        self.path = 'org/glassfish/javax.json/1.0.4/javax.json-1.0.4.pom'
+        self.inventory['artifacts'][0]['maven_path'] = self.path
+        selection = self.custody / 'selections' / (self.path + '.json')
+        selection.parent.mkdir(parents=True)
+        resolution.write_json(selection, {'repository': 'central', 'maven_path': self.path})
+        result = self.invoke(lambda *_: 0)
+        self.assertEqual(result['result_exit_code'], 0)
+        self.assertEqual(result['retained_files'], 1)
+        self.assertEqual((self.output / 'retained-repository' / self.path).read_bytes(), self.data)
+
+    def test_selection_symlink_directory_is_refused_with_preflight_receipt(self):
+        outside = self.root / 'outside'
+        outside.mkdir()
+        (outside / 'sentinel.json').write_text('unchanged')
+        (self.custody / 'selections/linked.json').symlink_to(outside, target_is_directory=True)
+        result = self.invoke(lambda *_: self.fail('unsafe traversal reached Maven'))
+        self.assertEqual(result['phase'], 'preflight')
+        self.assertEqual(result['status'], 'failed')
+        self.assertIsNone(result['exit_code'])
+        self.assertIn('symlink directory', result['error']['message'])
+        self.assertEqual((outside / 'sentinel.json').read_text(), 'unchanged')
+        self.assertEqual(json.loads((self.output / 'result.json').read_text()), result)
+        self.assertTrue((self.output / 'started.json').exists())
+        self.assertFalse((self.output / 'maven.log').exists())
+
+    def test_selection_symlink_file_is_refused_with_preflight_receipt(self):
+        source = self.custody / 'selections' / (self.path + '.json')
+        (self.custody / 'selections/linked.json').symlink_to(source)
+        result = self.invoke(lambda *_: self.fail('symlink file reached Maven'))
+        self.assertEqual(result['status'], 'failed')
+        self.assertIn('symlink', result['error']['message'])
+        self.assertEqual(json.loads((self.output / 'result.json').read_text()), result)
+
+    def test_unexpected_selection_file_is_not_silently_ignored(self):
+        (self.custody / 'selections/unexpected.txt').write_text('unreviewed')
+        result = self.invoke(lambda *_: self.fail('unexpected selection reached Maven'))
+        self.assertEqual(result['phase'], 'preflight')
+        self.assertEqual(result['result_exit_code'], 1)
+        self.assertIn('non-JSON selection file', result['error']['message'])
+        self.assertEqual(json.loads((self.output / 'result.json').read_text()), result)
+
+    def test_toolchain_preflight_failure_also_retains_receipt(self):
+        with patch('toolchain.verify_extracted', side_effect=ValueError('fixture tool bytes changed')):
+            result = replay_model.replay(self.root, self.custody, self.root / 'tool-custody',
+                                         self.root / 'tools', self.output, stage='dependencies')
+        self.assertEqual(result['phase'], 'preflight')
+        self.assertEqual(result['result_exit_code'], 1)
+        self.assertEqual(result['status'], 'failed')
+        self.assertIsNone(result['exit_code'])
+        self.assertIsNone(result['source_maven_files_unchanged'])
+        self.assertEqual(result['error']['message'], 'fixture tool bytes changed')
+        self.assertEqual(json.loads((self.output / 'result.json').read_text()), result)
+
     def test_failed_dependency_goal_retains_its_actual_exit_status(self):
         result = self.invoke(lambda *_: 7)
         self.assertEqual(result['exit_code'], 7)
+        self.assertEqual(result['phase'], 'execution')
         self.assertEqual(result['result_exit_code'], 7)
         self.assertEqual(result['status'], 'failed')
         self.assertNotIn('effective_projects', result)
