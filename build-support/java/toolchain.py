@@ -153,12 +153,112 @@ def extract(root: Path, manifest: dict, destination: Path) -> None:
             stream.extractall(destination, members=members, filter="data")
 
 
+def verify_extracted(custody: Path, manifest: dict, destination: Path) -> dict:
+    """Match every extracted distribution file/link to verified archive bytes.
+
+    This is a read-only pre-execution integrity check, not concurrent-write
+    protection. Callers must keep the tools immutable while subsequently in use.
+    """
+    verify(custody, manifest)
+    if destination.is_symlink() or not destination.is_dir():
+        raise CustodyError("extracted tools must be an existing real directory")
+    expected = {}
+    distribution_roots = set()
+    for archive in manifest["archives"]:
+        if archive["role"] != "distribution":
+            continue
+        if archive["root"] in distribution_roots:
+            raise CustodyError("duplicate distribution root")
+        distribution_roots.add(archive["root"])
+        with tarfile.open(custody / archive["path"]) as stream:
+            members_seen = set()
+            for member in stream.getmembers():
+                relative = PurePosixPath(member.name)
+                if (relative.is_absolute() or not relative.parts
+                        or relative.parts[0] != archive["root"]
+                        or ".." in relative.parts):
+                    raise CustodyError(f"unsafe archive member: {member.name}")
+                name = str(relative)
+                if name in members_seen and not (member.isdir() and expected[name]["type"] == "directory"):
+                    raise CustodyError(f"duplicate archive member: {member.name}")
+                members_seen.add(name)
+                if member.isdir():
+                    item = {"type": "directory"}
+                elif member.issym():
+                    if PurePosixPath(member.linkname).is_absolute():
+                        raise CustodyError(f"absolute archive symlink: {member.name}")
+                    item = {"type": "symlink", "target": member.linkname}
+                elif member.isfile() or member.islnk():
+                    if member.islnk():
+                        target = PurePosixPath(member.linkname)
+                        if target.is_absolute() or ".." in target.parts or not target.parts or target.parts[0] != archive["root"]:
+                            raise CustodyError(f"unsafe archive hardlink: {member.name}")
+                    value = hashlib.sha256()
+                    size = 0
+                    with stream.extractfile(member) as contents:
+                        for chunk in iter(lambda: contents.read(1024 * 1024), b""):
+                            value.update(chunk)
+                            size += len(chunk)
+                    item = {"type": "file", "bytes": size, "sha256": value.hexdigest()}
+                else:
+                    raise CustodyError(f"unsupported archive member: {member.name}")
+                if name in expected and expected[name] != item:
+                    raise CustodyError(f"conflicting archive entry: {member.name}")
+                expected[name] = item
+                for parent in relative.parents:
+                    if parent == PurePosixPath("."):
+                        break
+                    key = str(parent)
+                    if key in expected and expected[key]["type"] != "directory":
+                        raise CustodyError(f"archive parent is not a directory: {key}")
+                    expected[key] = {"type": "directory"}
+    if not distribution_roots:
+        raise CustodyError("no retained distributions to verify")
+
+    actual = {}
+
+    def walk_error(error):
+        raise error
+
+    for folder, directories, filenames in os.walk(destination, followlinks=False, onerror=walk_error):
+        for name in directories + filenames:
+            path = Path(folder) / name
+            relative = path.relative_to(destination).as_posix()
+            actual[relative] = path
+    missing = set(expected) - set(actual)
+    extra = set(actual) - set(expected)
+    if missing or extra:
+        raise CustodyError(f"extracted tree differs: missing={sorted(missing)}, extra={sorted(extra)}")
+    for name, item in expected.items():
+        path = actual[name]
+        if item["type"] == "directory":
+            if path.is_symlink() or not path.is_dir():
+                raise CustodyError(f"changed extracted directory: {name}")
+        elif item["type"] == "symlink":
+            if not path.is_symlink() or os.readlink(path) != item["target"]:
+                raise CustodyError(f"changed extracted symlink: {name}")
+            try:
+                target = path.resolve(strict=True)
+                target.relative_to((destination / PurePosixPath(name).parts[0]).resolve(strict=True))
+            except (ValueError, OSError, RuntimeError) as error:
+                raise CustodyError(f"unsafe/broken extracted symlink: {name}") from error
+        else:
+            if path.is_symlink() or not path.is_file() or path.stat().st_size != item["bytes"] or digest(path) != item["sha256"]:
+                raise CustodyError(f"changed extracted file: {name}")
+    return {"verified": True, "destination": str(destination),
+            "distribution_roots": sorted(distribution_roots),
+            "files": sum(item["type"] == "file" for item in expected.values()),
+            "symlinks": sum(item["type"] == "symlink" for item in expected.values()),
+            "directories": sum(item["type"] == "directory" for item in expected.values())}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--custody", type=Path, required=True)
     parser.add_argument("--manifest", type=Path, default=Path(__file__).with_name("toolchain-inputs.json"))
     parser.add_argument("--acquire", action="store_true", help="download missing hash-locked inputs only; restore metadata/receipts from backup")
     parser.add_argument("--extract", type=Path, help="extract distributions to a NEW directory after complete verification")
+    parser.add_argument("--verify-extracted", type=Path, help="match complete installed distribution trees to verified archives")
     args = parser.parse_args()
     try:
         manifest = json.loads(args.manifest.read_text())
@@ -172,6 +272,8 @@ def main() -> int:
         if args.extract:
             extract(args.custody, manifest, args.extract)
             result["extracted_to"] = str(args.extract)
+        if args.verify_extracted:
+            result["extracted"] = verify_extracted(args.custody, manifest, args.verify_extracted)
         print(json.dumps(result, indent=2))
         return 0
     except (CustodyError, OSError, ValueError, tarfile.TarError) as error:
