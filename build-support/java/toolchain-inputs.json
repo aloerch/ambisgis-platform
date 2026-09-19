@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "task": "FND-02",
+  "recorded_at": "2026-09-19T22:05:17.283520+00:00",
+  "jdk": {
+    "version": "17.0.20.1+1",
+    "distribution": "Eclipse Temurin",
+    "platform": "linux-x64-hotspot",
+    "release_tag": "jdk-17.0.20.1+1",
+    "metadata_declared_source_commit": "79597447bd94ff9f8216e2e3a573d5261ee49f2e",
+    "metadata_declared_build_commit": "e6ba7dec3d07654074559310376a3ae89da5f4ac"
+  },
+  "maven": {
+    "version": "3.9.16",
+    "version_reported_commit": "2bdd9fddda4b155ebf8000e807eb73fd829a51d5"
+  },
+  "authenticity": "HTTPS and publisher checksum equality. Signatures and Apache KEYS retained, but trusted-key/signature verification not performed. GitHub release asset digests were also checked where supplied.",
+  "toolchain_rebuild_closure_complete": false,
+  "remaining_gaps": [
+    "No source-to-binary or reproducible toolchain rebuild demonstrated.",
+    "JDK native compiler/build dependencies, boot JDK, publisher base-image layers and host shared-library source closure not retained.",
+    "Maven bundled external dependency source/transitive build closure not retained by this bounded toolchain acquisition.",
+    "Publisher SBOM and build metadata are evidence, not proof of complete custody or independent authenticity.",
+    "Source archive bytes match publisher checksums; source commit correspondence not independently rebuilt.",
+    "License/brand and security review gates remain open."
+  ],
+  "archives": [
+    {
+      "path": "OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz",
+      "root": "jdk-17.0.20.1+1",
+      "role": "distribution",
+      "algorithm": "sha256",
+      "publisher_checksum": "OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.sha256.txt"
+    },
+    {
+      "path": "OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz",
+      "root": "jdk-17.0.20.1+1-src",
+      "role": "source",
+      "algorithm": "sha256",
+      "publisher_checksum": "OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.sha256.txt"
+    },
+    {
+      "path": "apache-maven-3.9.16-bin.tar.gz",
+      "root": "apache-maven-3.9.16",
+      "role": "distribution",
+      "algorithm": "sha512",
+      "publisher_checksum": "apache-maven-3.9.16-bin.tar.gz.sha512"
+    },
+    {
+      "path": "apache-maven-3.9.16-src.tar.gz",
+      "root": "apache-maven-3.9.16",
+      "role": "source",
+      "algorithm": "sha512",
+      "publisher_checksum": "apache-maven-3.9.16-src.tar.gz.sha512"
+    }
+  ],
+  "files": [
+    {
+      "path": "OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz",
+      "bytes": 109272338,
+      "sha256": "21e2a065d244ab048e737f21af5d1fc74daaeb6707de36477ead8db1dca71214",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz"
+    },
+    {
+      "path": "OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.json",
+      "bytes": 29216,
+      "sha256": "3a259a1f367eaabc3c50cbf41164648a04c42f9ae2a237110d319f01da4b883f",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.json",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.json"
+    },
+    {
+      "path": "OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.json.receipt.json",
+      "bytes": 422,
+      "sha256": "306e67caccc27780a222733f86f32670983ae14f66741ca41ac0fffda692aa71",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.receipt.json",
+      "bytes": 421,
+      "sha256": "1b9da557b5aa3552cec08a2207b211a7b444175a3c27271fed18f658efc67294",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.sha256.txt",
+      "bytes": 108,
+      "sha256": "4955f7b4564879befa59e2f417d6f7518fb428a8de1d0df7095cdb0e3f5ffb23",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.sha256.txt",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.sha256.txt"
+    },
+    {
+      "path": "OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.sha256.txt.receipt.json",
+      "bytes": 426,
+      "sha256": "3a9c5b14dfb71c4515f7991c165140b4af52f3597157473f44ac2f1498628d9a",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.sig",
+      "bytes": 310,
+      "sha256": "aa3df8dd812e3e221b0174718610f0c3eb3836042468b8ac7f583fe37f942031",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.sig",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.sig"
+    },
+    {
+      "path": "OpenJDK17U-jdk-sources_17.0.20.1_1.tar.gz.sig.receipt.json",
+      "bytes": 419,
+      "sha256": "7237bcf6d73e8f5c35bd615f9c7297d2c56fb12cd5aaf485894952d177cdcde4",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz",
+      "bytes": 193252603,
+      "sha256": "3808d1d15e3ec6bd5b84057fb5d84c33d8a1536a258146bcea2e603fc726e08e",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz"
+    },
+    {
+      "path": "OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.json",
+      "bytes": 29212,
+      "sha256": "4f21ef9c32468160de6ac6dd6707d8637455bae067b11f322ffcd1b7a43f7280",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.json",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.json"
+    },
+    {
+      "path": "OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.json.receipt.json",
+      "bytes": 432,
+      "sha256": "7fd09b9ec90a4f3f5456857ee802b3e9f9ee525b2d1f99daa44009e78d01c62d",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.receipt.json",
+      "bytes": 431,
+      "sha256": "0a8f9cc136ec70eab04760a25135cb39ea051801192e30afbf0c52ba50ba7a38",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.sha256.txt",
+      "bytes": 118,
+      "sha256": "355528c6d0728db298aa55e0b4f9be9ed617c83edd3c1dea7cd73a4525b92365",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.sha256.txt",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.sha256.txt"
+    },
+    {
+      "path": "OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.sha256.txt.receipt.json",
+      "bytes": 436,
+      "sha256": "49e47d97ffbf373cc31d5a78fb6ff3deb3cbcd365d3333647a64e1825f04f5ad",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.sig",
+      "bytes": 310,
+      "sha256": "6dee7b777982c477b1bbea4c729f3cac6404cece853ee924dc77e6b9daaa6154",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.sig",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.sig"
+    },
+    {
+      "path": "OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz.sig.receipt.json",
+      "bytes": 429,
+      "sha256": "8b0b8d35951fdeeeee29b22e9eabd7d406c1a38d92390d8f7098363b437b5c86",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1-metadata.json",
+      "bytes": 29213,
+      "sha256": "98ce692bc12fbf5b095d60ed93f937d463a9d16ec29e707ae65f98620325ad1c",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1-metadata.json",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1-metadata.json"
+    },
+    {
+      "path": "OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1-metadata.json.receipt.json",
+      "bytes": 435,
+      "sha256": "0270cb69b9764ec283614404ea9cbaed2279f49fd9e457ff605c1fe8a3807495",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1.json",
+      "bytes": 161519,
+      "sha256": "b86100e3d2c612d8609805da1559538ffae8555058ac09dec882311c0c9e80dd",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1.json",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1.json"
+    },
+    {
+      "path": "OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1.json.receipt.json",
+      "bytes": 427,
+      "sha256": "07aaa0d9fbd4c1fff7db2ca2b01216ce7faee0bb508ee399b39b96614c9b6133",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1.json.sig",
+      "bytes": 310,
+      "sha256": "03652068afaef77fc88b450560b2297ad8268f086e09b7e884ebab0d61d6e16d",
+      "observed_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1.json.sig",
+      "acquire_url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1.json.sig"
+    },
+    {
+      "path": "OpenJDK17U-sbom_x64_linux_hotspot_17.0.20.1_1.json.sig.receipt.json",
+      "bytes": 428,
+      "sha256": "68e77de1cd5d6061b626dc3f8acf68ffee2317544c19476b5d6bb1b66fa4574c",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "apache-maven-3.9.16-bin.tar.gz",
+      "bytes": 9278065,
+      "sha256": "80ffca22aed9e8b9713a232f3394fd81d7f20322df75efdb2b047dbd3e3a23bb",
+      "observed_url": "https://downloads.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz",
+      "acquire_url": "https://downloads.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz"
+    },
+    {
+      "path": "apache-maven-3.9.16-bin.tar.gz.asc",
+      "bytes": 902,
+      "sha256": "a034782f2cab6a037143d3e4a703804a9280fcbb28b0b97a5ea8dae79ebcba39",
+      "observed_url": "https://downloads.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz.asc",
+      "acquire_url": "https://downloads.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz.asc"
+    },
+    {
+      "path": "apache-maven-3.9.16-bin.tar.gz.asc.receipt.json",
+      "bytes": 315,
+      "sha256": "a8ab6624748822f33a2b66a6485d4f9b8ab35bebf9e5eb616a92797ab0a716eb",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "apache-maven-3.9.16-bin.tar.gz.receipt.json",
+      "bytes": 315,
+      "sha256": "b82bee6b582b8ded1148358617a78efa9b99e8b74a95851f34893ebed168f4b8",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "apache-maven-3.9.16-bin.tar.gz.sha512",
+      "bytes": 128,
+      "sha256": "41c3bd51b3ef382dd71b9f078b98931030a7931e6ddcb86cd3676d5308891cd1",
+      "observed_url": "https://downloads.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz.sha512",
+      "acquire_url": "https://downloads.apache.org/maven/maven-3/3.9.16/binaries/apache-maven-3.9.16-bin.tar.gz.sha512"
+    },
+    {
+      "path": "apache-maven-3.9.16-bin.tar.gz.sha512.receipt.json",
+      "bytes": 318,
+      "sha256": "3876e441965689a066bfee88bbf30b3a5ee34fc7527b43daba6bccf556eeee0d",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "apache-maven-3.9.16-src.tar.gz",
+      "bytes": 2732301,
+      "sha256": "f7031b091ad75a226a06a0c092cbf05860dcfc16d140e6da997e6c6b62dbd03c",
+      "observed_url": "https://downloads.apache.org/maven/maven-3/3.9.16/source/apache-maven-3.9.16-src.tar.gz",
+      "acquire_url": "https://downloads.apache.org/maven/maven-3/3.9.16/source/apache-maven-3.9.16-src.tar.gz"
+    },
+    {
+      "path": "apache-maven-3.9.16-src.tar.gz.asc",
+      "bytes": 902,
+      "sha256": "25d93313dbbb62672c623ec18bd828b84cb780992aaadcbfef09dbb96ffc8478",
+      "observed_url": "https://downloads.apache.org/maven/maven-3/3.9.16/source/apache-maven-3.9.16-src.tar.gz.asc",
+      "acquire_url": "https://downloads.apache.org/maven/maven-3/3.9.16/source/apache-maven-3.9.16-src.tar.gz.asc"
+    },
+    {
+      "path": "apache-maven-3.9.16-src.tar.gz.asc.receipt.json",
+      "bytes": 313,
+      "sha256": "bc9e014cbee79cb8a535c1b9b6ec5e5642bf69974d92c4aab7b08dbc347162cf",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "apache-maven-3.9.16-src.tar.gz.receipt.json",
+      "bytes": 313,
+      "sha256": "74feda6d40f3731cf609c515cd43983de2e89ca81124af99fdda7e1028133546",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "apache-maven-3.9.16-src.tar.gz.sha512",
+      "bytes": 128,
+      "sha256": "07aa0ab2d0dd146ba3abe198a15effea1d76d84f29d1dca5b8c8103828115f7b",
+      "observed_url": "https://downloads.apache.org/maven/maven-3/3.9.16/source/apache-maven-3.9.16-src.tar.gz.sha512",
+      "acquire_url": "https://downloads.apache.org/maven/maven-3/3.9.16/source/apache-maven-3.9.16-src.tar.gz.sha512"
+    },
+    {
+      "path": "apache-maven-3.9.16-src.tar.gz.sha512.receipt.json",
+      "bytes": 316,
+      "sha256": "f606ec2f5eb202d0e3728e2a380ce52cb4362832153bf72735ff07f5855cb560",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "apache-maven-KEYS",
+      "bytes": 279457,
+      "sha256": "1e53a10e6b65c64ae0f5a241c8ef289c7578f1109d8a78512dff7de2b29117b3",
+      "observed_url": "https://downloads.apache.org/maven/KEYS",
+      "recovery": "restore original discovery/key snapshot from retained backup; never refetch moving endpoint"
+    },
+    {
+      "path": "apache-maven-KEYS.receipt.json",
+      "bytes": 264,
+      "sha256": "3a4504d6ac20d29d05e0bdda11b97a3c3035536162afc29b0f9e28e980faa484",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "execution-evidence.json",
+      "bytes": 1589,
+      "sha256": "2bc5292dfb8a94fca297f6dcebf32df0552b6e6368057894c0bb1a85e06e04a2",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "license-inventory.json",
+      "bytes": 83313,
+      "sha256": "327ecb030f9b6360559a472b251186f32e2d597bbb1bddd02185998fdfb05a36",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "maven-download.html",
+      "bytes": 31512,
+      "sha256": "7b087293a94d81d2682bd96da522a02d26a25005a164941f3c9edc4bebc34b56",
+      "observed_url": "https://maven.apache.org/download.cgi",
+      "recovery": "restore original discovery/key snapshot from retained backup; never refetch moving endpoint"
+    },
+    {
+      "path": "maven-download.html.receipt.json",
+      "bytes": 227,
+      "sha256": "f719200b93103c5470ecf898f2404ac831a7456b2f8eb3380103f77bf8768912",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "temurin-build-e6ba7dec3d07654074559310376a3ae89da5f4ac.tar.gz",
+      "bytes": 584568,
+      "sha256": "b1340378b9ed62b32acfacd012dd069ec2b9d940fc39d3c73f32142d64e89713",
+      "observed_url": "https://codeload.github.com/adoptium/temurin-build/tar.gz/e6ba7dec3d07654074559310376a3ae89da5f4ac",
+      "acquire_url": "https://codeload.github.com/adoptium/temurin-build/tar.gz/e6ba7dec3d07654074559310376a3ae89da5f4ac"
+    },
+    {
+      "path": "temurin-build-e6ba7dec3d07654074559310376a3ae89da5f4ac.tar.gz.receipt.json",
+      "bytes": 389,
+      "sha256": "4a0d66ff23ae71507ceca23950bf02f896333baffab138560bd007a1b0d53a54",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    },
+    {
+      "path": "temurin17-release.json",
+      "bytes": 484716,
+      "sha256": "0ff990584f1b55b42772f2a34d35a2780c8d4a896dda692a48875a7330ae80ef",
+      "observed_url": "https://api.github.com/repos/adoptium/temurin17-binaries/releases/latest",
+      "recovery": "restore original discovery/key snapshot from retained backup; never refetch moving endpoint"
+    },
+    {
+      "path": "temurin17-release.json.receipt.json",
+      "bytes": 263,
+      "sha256": "f38c0928c7b2d62245663cd3ed754fea55027cfc1fa64c82f48e8513419224a3",
+      "recovery": "restore retained backup; local evidence/receipt has no remote artifact"
+    }
+  ]
+}

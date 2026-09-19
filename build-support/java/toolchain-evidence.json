@@ -1,0 +1,53 @@
+{
+  "task": "FND-02",
+  "scope": "bounded JDK/Maven distribution/source custody and executable version checks",
+  "custody": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/toolchain",
+  "manifest_sha256": "48b0521866a69a7570f140acc45db2f40bdcb77dfc9a6bc8936d911bd4b8e43c",
+  "files": 44,
+  "bytes": 316260577,
+  "publisher_archive_checksums_matched": 4,
+  "notice_inventory_entries": 324,
+  "trusted_signature_verification": false,
+  "toolchain_rebuild_closure_complete": false,
+  "execution": {
+    "recorded_at": "2026-09-19T22:02:11.538207+00:00",
+    "commands": [
+      {
+        "command": [
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+          "--version"
+        ],
+        "returncode": 0,
+        "output": "openjdk 17.0.20.1 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)\n"
+      },
+      {
+        "command": [
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+          "--version"
+        ],
+        "returncode": 0,
+        "output": "javac 17.0.20.1\n"
+      },
+      {
+        "command": [
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/apache-maven-3.9.16/bin/mvn",
+          "--version"
+        ],
+        "returncode": 0,
+        "output": "Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)\nMaven home: /home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/apache-maven-3.9.16\nJava version: 17.0.20.1, vendor: Eclipse Adoptium, runtime: /home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1\nDefault locale: en, platform encoding: UTF-8\nOS name: \"linux\", version: \"7.2.5-1-default\", arch: \"amd64\", family: \"unix\"\n"
+      }
+    ],
+    "scope": "version checks only; no Maven goal/build/resolution",
+    "authenticity": "Publisher checksum equality over HTTPS; signatures retained but no independent trusted signing-key verification"
+  },
+  "validation_evidence": "toolchain-validation.txt",
+  "toolchain_tests": {
+    "passed": 12,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "github_mutations": [],
+  "java_build_or_runtime_tests": false,
+  "package_checks": "Integrator runs required plan package/schema checks after integration; not Java/GIS tests."
+}

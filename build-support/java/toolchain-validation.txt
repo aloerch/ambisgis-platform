@@ -1,0 +1,73 @@
+[
+  {
+    "attempt": "Initial version discovery",
+    "url": "https://api.adoptium.net/v3/assets/latest/17/hotspot?architecture=x64&image_type=jdk&os=linux&vendor=eclipse",
+    "exit": 1,
+    "error": "HTTP 403 Forbidden; no response body retained. Official GitHub release metadata was subsequently retained and used to freeze exact release."
+  },
+  {
+    "attempt": "Initial recovery setup used os.link into /tmp",
+    "exit": 1,
+    "output": "OSError: [Errno 18] Invalid cross-device link; no custody input was changed. Retried using independent file copies."
+  },
+  {
+    "command": [
+      "python3",
+      "build-support/java/toolchain_tests.py",
+      "-v"
+    ],
+    "exit": 0,
+    "output": "test_archive_paths_must_be_locked (__main__.ToolchainCustodyTests.test_archive_paths_must_be_locked) ... ok\ntest_changed_file_stops_acquisition_before_network (__main__.ToolchainCustodyTests.test_changed_file_stops_acquisition_before_network) ... ok\ntest_corrupted_archive_refused_before_extraction (__main__.ToolchainCustodyTests.test_corrupted_archive_refused_before_extraction) ... ok\ntest_extra_input_refused (__main__.ToolchainCustodyTests.test_extra_input_refused) ... ok\ntest_fixed_https_urls_required (__main__.ToolchainCustodyTests.test_fixed_https_urls_required) ... ok\ntest_missing_input_reported (__main__.ToolchainCustodyTests.test_missing_input_reported) ... ok\ntest_path_and_duplicate_manifest_entries_refused (__main__.ToolchainCustodyTests.test_path_and_duplicate_manifest_entries_refused) ... ok\ntest_publisher_checksum_independently_checked (__main__.ToolchainCustodyTests.test_publisher_checksum_independently_checked) ... ok\ntest_symlink_substitution_refused (__main__.ToolchainCustodyTests.test_symlink_substitution_refused) ... ok\ntest_tar_traversal_and_external_link_refused (__main__.ToolchainCustodyTests.test_tar_traversal_and_external_link_refused) ... ok\ntest_verify_and_safe_reextract (__main__.ToolchainCustodyTests.test_verify_and_safe_reextract) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.006s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python3",
+      "build-support/java/toolchain.py",
+      "--custody",
+      "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/toolchain"
+    ],
+    "exit": 0,
+    "output": "{\n  \"files\": 44,\n  \"bytes\": 316260577,\n  \"publisher_checksums\": 4,\n  \"verified\": true,\n  \"signature_trust_verified\": false,\n  \"toolchain_rebuild_closure_complete\": false\n}\n"
+  },
+  {
+    "command": [
+      "python3",
+      "build-support/java/toolchain.py",
+      "--custody",
+      "/tmp/ambisgis-java-toolchain-recovery-bvbxbw4d",
+      "--acquire",
+      "--extract",
+      "/tmp/ambisgis-java-toolchain-extraction-hbk0_jp4/tools"
+    ],
+    "exit": 1,
+    "output": "{\"verified\": false, \"error\": \"unsafe/duplicate archive member: apache-maven-3.9.16/lib/jansi-native\"}\n",
+    "missing_input_restored": "apache-maven-3.9.16-src.tar.gz.sha512"
+  },
+  {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "build-support/java",
+      "-p",
+      "test_toolchain.py",
+      "-v"
+    ],
+    "exit": 0,
+    "output": "test_archive_paths_must_be_locked (test_toolchain.ToolchainCustodyTests.test_archive_paths_must_be_locked) ... ok\ntest_changed_file_stops_acquisition_before_network (test_toolchain.ToolchainCustodyTests.test_changed_file_stops_acquisition_before_network) ... ok\ntest_corrupted_archive_refused_before_extraction (test_toolchain.ToolchainCustodyTests.test_corrupted_archive_refused_before_extraction) ... ok\ntest_extra_input_refused (test_toolchain.ToolchainCustodyTests.test_extra_input_refused) ... ok\ntest_fixed_https_urls_required (test_toolchain.ToolchainCustodyTests.test_fixed_https_urls_required) ... ok\ntest_missing_input_reported (test_toolchain.ToolchainCustodyTests.test_missing_input_reported) ... ok\ntest_path_and_duplicate_manifest_entries_refused (test_toolchain.ToolchainCustodyTests.test_path_and_duplicate_manifest_entries_refused) ... ok\ntest_publisher_checksum_independently_checked (test_toolchain.ToolchainCustodyTests.test_publisher_checksum_independently_checked) ... ok\ntest_repeated_directory_entries_are_safe (test_toolchain.ToolchainCustodyTests.test_repeated_directory_entries_are_safe) ... ok\ntest_symlink_substitution_refused (test_toolchain.ToolchainCustodyTests.test_symlink_substitution_refused) ... ok\ntest_tar_traversal_and_external_link_refused (test_toolchain.ToolchainCustodyTests.test_tar_traversal_and_external_link_refused) ... ok\ntest_verify_and_safe_reextract (test_toolchain.ToolchainCustodyTests.test_verify_and_safe_reextract) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.007s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python3",
+      "build-support/java/toolchain.py",
+      "--custody",
+      "/tmp/ambisgis-java-toolchain-recovery-bvbxbw4d",
+      "--extract",
+      "/tmp/ambisgis-java-toolchain-extraction-5o18u33s/tools"
+    ],
+    "exit": 0,
+    "output": "{\n  \"files\": 44,\n  \"bytes\": 316260577,\n  \"publisher_checksums\": 4,\n  \"verified\": true,\n  \"signature_trust_verified\": false,\n  \"toolchain_rebuild_closure_complete\": false,\n  \"extracted_to\": \"/tmp/ambisgis-java-toolchain-extraction-5o18u33s/tools\"\n}\n"
+  }
+]
