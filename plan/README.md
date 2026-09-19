@@ -14,7 +14,7 @@ Read `REVISION_2_CHANGES.md`, `docs/00-architecture.md`, `docs/11-independent-pr
 
 The package has 13 design chapters, 66 tasks, 24 requirements, a 15-repository manifest, a GitHub Project schema, source/release templates, the original feature comparison and proposed API schemas. Existing domain requirements—branch editing, service administration, portal/apps, notebooks and QGIS publishing—remain intact.
 
-Implemented local aids: safe repository creation bootstrap; plan/schema validators; a small illustrative three-way-merge model; and an offline Project issue-seed exporter. The repository bootstrap uses Python's standard library plus an already installed/authenticated GitHub CLI; its network behavior is tested with mocks, not live writes. **Live GitHub Project/issue provisioning is specified as GOV-01 for Codex to implement; it is not included as a completed remote-action script.** No GIS engine, source mirror, product image, Project board or acceptance deployment has been built by this package.
+Implemented tooling: safe repository creation bootstrap; plan/schema validators; a small illustrative three-way-merge model; an offline Project issue-seed exporter; and the receipt-backed Project importer in `tools/bootstrap_github_project.py`. The bootstrap and importer use Python's standard library plus a locally authenticated GitHub CLI. The importer defaults to read-only and preserves human progress; see [the runbook](docs/project-importer.md) for authorization, receipts, recovery and remaining view gates. Live execution and acceptance are recorded separately from mocked safety tests in `STATUS.md`. No GIS engine, product image or acceptance deployment is implemented by these tools.
 
 ```bash
 # Local checks, no GitHub access:
@@ -27,6 +27,12 @@ python3 tools/bootstrap_repositories.py --owner aloerch
 
 # Explicit creation of missing approved public repositories only:
 python3 tools/bootstrap_repositories.py --owner aloerch --apply
+
+# Complete read-only Project preflight, requiring the actual bootstrap receipt:
+python3 tools/bootstrap_github_project.py --repository-receipt .bootstrap-receipt.json
+
+# Apply only after reviewing the dry run and local Project authorization:
+python3 tools/bootstrap_github_project.py --repository-receipt .bootstrap-receipt.json --apply
 ```
 
 Full schema checks use `requirements-validation.txt` in an isolated virtual environment. No command installs global packages, changes production systems or purchases infrastructure.
@@ -35,7 +41,7 @@ Full schema checks use `requirements-validation.txt` in an isolated virtual envi
 
 Four new first-party repositories and eleven source forks are defined in `repositories.json`. They form one product and one controlled release graph. PostgreSQL/PostGIS and QGIS are no longer excluded from source custody. Preserving their mature internals initially is allowed; being unable to build or patch them independently is not.
 
-One public user-owned GitHub Project, **AmbisGIS — Product Development**, spans all approved repositories. `project.json` specifies fields and views. `project-seed.json` is a generated local issue seed; it contains no actual remote issue or Project IDs. The live Project tracks progress while version-controlled tasks/requirements/contracts define engineering acceptance.
+One public user-owned GitHub Project, **AmbisGIS — Product Development**, spans all approved repositories. `project.json` specifies fields and views. `project-seed.json` is a generated local issue seed; it contains no actual remote issue or Project IDs. The live Project tracks progress while version-controlled tasks/requirements/contracts define engineering acceptance. Its actual identity comes from the creation receipt, never from the seed.
 
 ## Navigation
 
