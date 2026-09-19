@@ -1,0 +1,127 @@
+{
+  "observed_at": "2026-09-19T21:37:49.171485+00:00",
+  "owner": "aloerch",
+  "repository_id": 1376927351,
+  "project_id": "PVT_kwHOAOk9es4Bj_k-",
+  "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqFE",
+  "previous_delivery": "Blocked",
+  "delivery": "In review",
+  "evidence": "https://github.com/aloerch/ambisgis-platform/pull/52",
+  "review_head": "7ace33af6e9b92cc05374de28c996957f584f549",
+  "operations": [
+    {
+      "field": "Delivery",
+      "value": {
+        "singleSelectOptionId": "a1372c9d"
+      },
+      "result": {
+        "data": {
+          "updateProjectV2ItemFieldValue": {
+            "projectV2Item": {
+              "id": "PVTI_lAHOAOk9es4Bj_k-zg7tqFE"
+            }
+          }
+        }
+      }
+    },
+    {
+      "field": "Evidence",
+      "value": {
+        "text": "https://github.com/aloerch/ambisgis-platform/pull/52"
+      },
+      "result": {
+        "data": {
+          "updateProjectV2ItemFieldValue": {
+            "projectV2Item": {
+              "id": "PVTI_lAHOAOk9es4Bj_k-zg7tqFE"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "readback": {
+    "data": {
+      "node": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg7tqFE",
+        "content": {
+          "number": 9,
+          "repository": {
+            "nameWithOwner": "aloerch/ambisgis-platform",
+            "databaseId": 1376927351
+          }
+        },
+        "fieldValues": {
+          "nodes": [
+            {},
+            {},
+            {
+              "text": "[GOV-02] Configure project views, task transitions and evidence synchronization",
+              "field": {
+                "name": "Title"
+              }
+            },
+            {
+              "name": "Todo",
+              "field": {
+                "name": "Status"
+              }
+            },
+            {
+              "text": "GOV-02",
+              "field": {
+                "name": "Task ID"
+              }
+            },
+            {
+              "name": "In review",
+              "field": {
+                "name": "Delivery"
+              }
+            },
+            {
+              "name": "P0",
+              "field": {
+                "name": "Phase"
+              }
+            },
+            {
+              "name": "Governance",
+              "field": {
+                "name": "Component"
+              }
+            },
+            {
+              "name": "High",
+              "field": {
+                "name": "Priority"
+              }
+            },
+            {
+              "name": "High",
+              "field": {
+                "name": "Risk"
+              }
+            },
+            {
+              "name": "Standard PR",
+              "field": {
+                "name": "Review gate"
+              }
+            },
+            {
+              "text": "https://github.com/aloerch/ambisgis-platform/pull/52",
+              "field": {
+                "name": "Evidence"
+              }
+            }
+          ],
+          "pageInfo": {
+            "hasNextPage": false
+          }
+        }
+      }
+    }
+  },
+  "limitations": "Review pending; not Verified or Merged. No saved-view settings or other items changed."
+}
