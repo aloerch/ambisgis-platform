@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 from urllib.request import Request
 
 from maven_proxy import (AcquisitionError, FetchResult, MavenCustodyProxy,
@@ -43,6 +44,29 @@ class ProxyTests(unittest.TestCase):
         self.assertEqual(proxy.fetch(PATH), first)
         self.assertEqual(len(self.calls), 1)
         self.assertEqual([event["event"] for event in self.events()], ["session", "acquired", "reused"])
+
+    def test_write_once_publishes_only_after_complete_flush(self):
+        proxy = self.proxy()
+        target = self.root / "atomic.json"
+        observations = []
+        with patch("maven_proxy.os.fsync", side_effect=lambda fd: observations.append(target.exists())):
+            proxy._write_once(target, b"complete")
+        self.assertEqual(observations, [False, True])
+        self.assertEqual(target.read_bytes(), b"complete")
+        self.assertEqual(list(self.root.glob(".custody-*")), [])
+
+    def test_interrupted_write_does_not_publish_partial_record(self):
+        proxy = self.proxy()
+        target = self.root / "atomic.json"
+        with patch("maven_proxy.os.fsync", side_effect=OSError("fixture flush failure")):
+            with self.assertRaises(AcquisitionError):
+                proxy._write_once(target, b"complete")
+        self.assertFalse(target.exists())
+        self.assertEqual(list(self.root.glob(".custody-*")), [])
+        proxy._write_once(target, b"complete")
+        with self.assertRaisesRegex(AcquisitionError, "refusing overwrite"):
+            proxy._write_once(target, b"changed")
+        self.assertEqual(target.read_bytes(), b"complete")
 
     def test_changed_custody_bytes_fail_without_network_or_overwrite(self):
         proxy = self.proxy()

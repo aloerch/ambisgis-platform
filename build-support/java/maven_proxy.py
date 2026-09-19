@@ -19,6 +19,7 @@ import os
 from pathlib import Path
 import re
 import stat
+import tempfile
 import threading
 from typing import Callable, Mapping
 from urllib.error import HTTPError, URLError
@@ -144,17 +145,31 @@ class MavenCustodyProxy:
 
     def _write_once(self, path: Path, data: bytes) -> None:
         self._safe_file(path)
+        temporary = None
         try:
-            fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+            # Publish only complete, flushed bytes. A crash cannot strand an empty
+            # record at its authoritative name or expose it to an inventory reader.
+            fd, temporary_name = tempfile.mkstemp(prefix=".custody-", dir=path.parent)
+            temporary = Path(temporary_name)
             with os.fdopen(fd, "wb") as stream:
                 stream.write(data)
                 stream.flush()
                 os.fsync(stream.fileno())
-        except FileExistsError:
-            if self._read(path) != data:
-                raise AcquisitionError("existing custody bytes changed; refusing overwrite")
+            try:
+                os.link(temporary, path, follow_symlinks=False)
+            except FileExistsError:
+                if self._read(path) != data:
+                    raise AcquisitionError("existing custody bytes changed; refusing overwrite")
+            directory_fd = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+            try:
+                os.fsync(directory_fd)
+            finally:
+                os.close(directory_fd)
         except OSError as exc:
             raise AcquisitionError("cannot retain acquisition bytes") from exc
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
 
     def _event(self, event: str, **fields) -> None:
         path = self.root / "events.jsonl"
