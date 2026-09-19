@@ -1,0 +1,910 @@
+{
+  "report_version": 1,
+  "task": "FND-02",
+  "repository": "aloerch/ambisgis-postgis",
+  "repository_id": 1376927690,
+  "source_commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+  "candidate_tag": "3.5.7",
+  "created_utc": "2026-09-19T09:30:24.901592+00:00",
+  "scope": "Read-only prerequisite audit; no PostGIS autogen/configure/build/test executed",
+  "environment": {
+    "PATH": "/usr/bin:/bin",
+    "LC_ALL": "C.UTF-8"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/xml2-config",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "2.14.6",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/autoconf",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "autoconf (GNU Autoconf) 2.72\nCopyright (C) 2023 Free Software Foundation, Inc.\nLicense GPLv3+/Autoconf: GNU GPL version 3 or later\n<https://gnu.org/licenses/gpl.html>, <https://gnu.org/licenses/exceptions.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by David J. MacKenzie and Akim Demaille.",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/automake",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "automake (GNU automake) 1.18.1\nFeatures: subsecond-mtime\n\nCopyright (C) 2025 Free Software Foundation, Inc.\nLicense GPLv2+: GNU GPL version 2 or later\n  <https://gnu.org/licenses/gpl-2.0.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Tom Tromey <tromey@redhat.com>\n       and Alexandre Duret-Lutz <adl@gnu.org>.",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/aclocal",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "aclocal (GNU automake) 1.18.1\nCopyright (C) 2025 Free Software Foundation, Inc.\nLicense GPLv2+: GNU GPL version 2 or later <https://gnu.org/licenses/gpl-2.0.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Tom Tromey <tromey@redhat.com>\n       and Alexandre Duret-Lutz <adl@gnu.org>.",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/libtool",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "libtool (GNU libtool) 2.5.4\nCopyright (C) 2026 Free Software Foundation, Inc.\nLicense GPLv2+: GNU GPL version 2 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nOriginally written by Gordon Matzigkeit, 1996\n(See AUTHORS for complete contributor listing)",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/libtoolize",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "libtoolize (GNU libtool) 2.5.4\nCopyright (C) 2026 Free Software Foundation, Inc.\nLicense GPLv2+: GNU GPL version 2 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Gary V. Vaughan <gary@gnu.org>, 2003",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "2.5.1",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/gcc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "gcc (GCC) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/g++",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "g++ (GCC) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/bison",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "bison (GNU Bison) 3.8.2\nWritten by Robert Corbett and Richard Stallman.\n\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/flex",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "flex 2.6.4",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/gettext",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "gettext (GNU gettext-runtime) 0.26\nCopyright (C) 1995-2025 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\nWritten by Ulrich Drepper.",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/xsltproc",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "Using libxml 21406, libxslt 10143 and libexslt 824\nxsltproc was compiled against libxml 21406, libxslt 10143 and libexslt 824\nlibxslt 10143 was compiled against libxml 21406\nlibexslt 824 was compiled against libxml 21406",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "geos"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package geos was not found in the pkg-config search path.\nPerhaps you should add the directory containing `geos.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'geos' not found"
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "proj"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package proj was not found in the pkg-config search path.\nPerhaps you should add the directory containing `proj.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'proj' not found"
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "gdal"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package gdal was not found in the pkg-config search path.\nPerhaps you should add the directory containing `gdal.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'gdal' not found"
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "libprotobuf-c"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package libprotobuf-c was not found in the pkg-config search path.\nPerhaps you should add the directory containing `libprotobuf-c.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'libprotobuf-c' not found"
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "libxml-2.0"
+      ],
+      "exit_code": 0,
+      "stdout": "2.14.6",
+      "stderr": "",
+      "flags": {
+        "argv": [
+          "/usr/bin/pkg-config",
+          "--cflags",
+          "--libs",
+          "libxml-2.0"
+        ],
+        "exit_code": 0,
+        "stdout": "-I/usr/include/libxml2 -lxml2",
+        "stderr": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--cflags",
+        "--libs",
+        "libxml-2.0"
+      ],
+      "exit_code": 0,
+      "stdout": "-I/usr/include/libxml2 -lxml2",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "json-c"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package json-c was not found in the pkg-config search path.\nPerhaps you should add the directory containing `json-c.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'json-c' not found"
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "cunit"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package cunit was not found in the pkg-config search path.\nPerhaps you should add the directory containing `cunit.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'cunit' not found"
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "libpcre2-8"
+      ],
+      "exit_code": 0,
+      "stdout": "10.46",
+      "stderr": "",
+      "flags": {
+        "argv": [
+          "/usr/bin/pkg-config",
+          "--cflags",
+          "--libs",
+          "libpcre2-8"
+        ],
+        "exit_code": 0,
+        "stdout": "-lpcre2-8",
+        "stderr": ""
+      }
+    },
+    {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--cflags",
+        "--libs",
+        "libpcre2-8"
+      ],
+      "exit_code": 0,
+      "stdout": "-lpcre2-8",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "PostgreSQL 15.19",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+        "--bindir"
+      ],
+      "exit_code": 0,
+      "stdout": "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config",
+      "stderr": "",
+      "reported_path_exists": true
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+        "--includedir"
+      ],
+      "exit_code": 0,
+      "stdout": "/usr/local/pgsql/include",
+      "stderr": "",
+      "reported_path_exists": false
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+        "--includedir-server"
+      ],
+      "exit_code": 0,
+      "stdout": "/usr/local/pgsql/include/server",
+      "stderr": "",
+      "reported_path_exists": false
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+        "--libdir"
+      ],
+      "exit_code": 0,
+      "stdout": "/usr/local/pgsql/lib",
+      "stderr": "",
+      "reported_path_exists": false
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+        "--pkglibdir"
+      ],
+      "exit_code": 0,
+      "stdout": "/usr/local/pgsql/lib",
+      "stderr": "",
+      "reported_path_exists": false
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+        "--sharedir"
+      ],
+      "exit_code": 0,
+      "stdout": "/usr/local/pgsql/share",
+      "stderr": "",
+      "reported_path_exists": false
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+        "--pgxs"
+      ],
+      "exit_code": 0,
+      "stdout": "/usr/local/pgsql/lib/pgxs/src/makefiles/pgxs.mk",
+      "stderr": "",
+      "reported_path_exists": false
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "PostgreSQL 15.19",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+        "--bindir"
+      ],
+      "exit_code": 0,
+      "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin",
+      "stderr": "",
+      "reported_path_exists": true
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+        "--includedir"
+      ],
+      "exit_code": 0,
+      "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/include",
+      "stderr": "",
+      "reported_path_exists": true
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+        "--includedir-server"
+      ],
+      "exit_code": 0,
+      "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/include/server",
+      "stderr": "",
+      "reported_path_exists": true
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+        "--libdir"
+      ],
+      "exit_code": 0,
+      "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/lib",
+      "stderr": "",
+      "reported_path_exists": true
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+        "--pkglibdir"
+      ],
+      "exit_code": 0,
+      "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/lib",
+      "stderr": "",
+      "reported_path_exists": true
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+        "--sharedir"
+      ],
+      "exit_code": 0,
+      "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/share",
+      "stderr": "",
+      "reported_path_exists": true
+    },
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+        "--pgxs"
+      ],
+      "exit_code": 0,
+      "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/lib/pgxs/src/makefiles/pgxs.mk",
+      "stderr": "",
+      "reported_path_exists": true
+    }
+  ],
+  "tools": {
+    "geos-config": {
+      "path": null,
+      "status": "not found in /usr/bin:/bin"
+    },
+    "gdal-config": {
+      "path": null,
+      "status": "not found in /usr/bin:/bin"
+    },
+    "protoc-c": {
+      "path": null,
+      "status": "not found in /usr/bin:/bin"
+    },
+    "protoc": {
+      "path": null,
+      "status": "not found in /usr/bin:/bin"
+    },
+    "xml2-config": {
+      "path": "/usr/bin/xml2-config",
+      "sha256": "322673837da4db863dbb6e37115b1473265904cea2eeb86e8ab862835fa4122b",
+      "exit_code": 0,
+      "version_output": "2.14.6"
+    },
+    "autoconf": {
+      "path": "/usr/bin/autoconf",
+      "sha256": "301f41936a575a0fe4b50cfd34db9f4e59a30dcd57b65804df1011c4d92e01e7",
+      "exit_code": 0,
+      "version_output": "autoconf (GNU Autoconf) 2.72\nCopyright (C) 2023 Free Software Foundation, Inc.\nLicense GPLv3+/Autoconf: GNU GPL version 3 or later\n<https://gnu.org/licenses/gpl.html>, <https://gnu.org/licenses/exceptions.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by David J. MacKenzie and Akim Demaille."
+    },
+    "automake": {
+      "path": "/usr/bin/automake",
+      "sha256": "7758def8eb7aab6c70252f620b39f8db9b7e1bc150607cc1c06297a96fad28c3",
+      "exit_code": 0,
+      "version_output": "automake (GNU automake) 1.18.1\nFeatures: subsecond-mtime\n\nCopyright (C) 2025 Free Software Foundation, Inc.\nLicense GPLv2+: GNU GPL version 2 or later\n  <https://gnu.org/licenses/gpl-2.0.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Tom Tromey <tromey@redhat.com>\n       and Alexandre Duret-Lutz <adl@gnu.org>."
+    },
+    "aclocal": {
+      "path": "/usr/bin/aclocal",
+      "sha256": "2856208d4f55edabc4406a223bae20480aa2059ea2f399daedaa4a0b08971d26",
+      "exit_code": 0,
+      "version_output": "aclocal (GNU automake) 1.18.1\nCopyright (C) 2025 Free Software Foundation, Inc.\nLicense GPLv2+: GNU GPL version 2 or later <https://gnu.org/licenses/gpl-2.0.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Tom Tromey <tromey@redhat.com>\n       and Alexandre Duret-Lutz <adl@gnu.org>."
+    },
+    "libtool": {
+      "path": "/usr/bin/libtool",
+      "sha256": "2b7bef702e6428b2f9690faa05904bd312ddbe534610098bf1de8572db14c17c",
+      "exit_code": 0,
+      "version_output": "libtool (GNU libtool) 2.5.4\nCopyright (C) 2026 Free Software Foundation, Inc.\nLicense GPLv2+: GNU GPL version 2 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nOriginally written by Gordon Matzigkeit, 1996\n(See AUTHORS for complete contributor listing)"
+    },
+    "libtoolize": {
+      "path": "/usr/bin/libtoolize",
+      "sha256": "c318afeb64d6c3308d420bf0cd7385537fe9d552dda798d364b24163d1713a22",
+      "exit_code": 0,
+      "version_output": "libtoolize (GNU libtool) 2.5.4\nCopyright (C) 2026 Free Software Foundation, Inc.\nLicense GPLv2+: GNU GPL version 2 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Gary V. Vaughan <gary@gnu.org>, 2003"
+    },
+    "pkg-config": {
+      "path": "/usr/bin/pkg-config",
+      "sha256": "7e6ddcf3ddef3644547e244d0f54c2bc6b6b0a790bf7e49a44f6e49af3ec85a9",
+      "exit_code": 0,
+      "version_output": "2.5.1"
+    },
+    "gcc": {
+      "path": "/usr/bin/gcc",
+      "sha256": "852a74efd4840122caaff5c862a480d20a08a5b25a8972dddada9f0c092367f2",
+      "exit_code": 0,
+      "version_output": "gcc (GCC) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    "g++": {
+      "path": "/usr/bin/g++",
+      "sha256": "46e9a9c3deca3d2e2de06ac715d143763aae74bdeb1649d870a24ac545c857cf",
+      "exit_code": 0,
+      "version_output": "g++ (GCC) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    "bison": {
+      "path": "/usr/bin/bison",
+      "sha256": "989b385fae3aa02fb526435816c2f477ab30d873c40382679e060b0c3ee98c39",
+      "exit_code": 0,
+      "version_output": "bison (GNU Bison) 3.8.2\nWritten by Robert Corbett and Richard Stallman.\n\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    "flex": {
+      "path": "/usr/bin/flex",
+      "sha256": "22212de7f3433fe8bf9bd23e55905ef8751449dadf8d6c1c2325b01718fa6610",
+      "exit_code": 0,
+      "version_output": "flex 2.6.4"
+    },
+    "gettext": {
+      "path": "/usr/bin/gettext",
+      "sha256": "49623c8d19622aa60ecdfc3271fce00ea7273d0c613c5790dffe38ecc68d3a61",
+      "exit_code": 0,
+      "version_output": "gettext (GNU gettext-runtime) 0.26\nCopyright (C) 1995-2025 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\nWritten by Ulrich Drepper."
+    },
+    "xsltproc": {
+      "path": "/usr/bin/xsltproc",
+      "sha256": "38d81aae6b647811357e5b019964b2e864365de365a0cd2a332394369b8de850",
+      "exit_code": 0,
+      "version_output": "Using libxml 21406, libxslt 10143 and libexslt 824\nxsltproc was compiled against libxml 21406, libxslt 10143 and libexslt 824\nlibxslt 10143 was compiled against libxml 21406\nlibexslt 824 was compiled against libxml 21406"
+    },
+    "pg_config": {
+      "path": null,
+      "status": "not found in /usr/bin:/bin"
+    },
+    "proj": {
+      "path": null,
+      "status": "not found in /usr/bin:/bin"
+    },
+    "projinfo": {
+      "path": null,
+      "status": "not found in /usr/bin:/bin"
+    }
+  },
+  "pkg_config": {
+    "geos": {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "geos"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package geos was not found in the pkg-config search path.\nPerhaps you should add the directory containing `geos.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'geos' not found"
+    },
+    "proj": {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "proj"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package proj was not found in the pkg-config search path.\nPerhaps you should add the directory containing `proj.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'proj' not found"
+    },
+    "gdal": {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "gdal"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package gdal was not found in the pkg-config search path.\nPerhaps you should add the directory containing `gdal.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'gdal' not found"
+    },
+    "libprotobuf-c": {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "libprotobuf-c"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package libprotobuf-c was not found in the pkg-config search path.\nPerhaps you should add the directory containing `libprotobuf-c.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'libprotobuf-c' not found"
+    },
+    "libxml-2.0": {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "libxml-2.0"
+      ],
+      "exit_code": 0,
+      "stdout": "2.14.6",
+      "stderr": "",
+      "flags": {
+        "argv": [
+          "/usr/bin/pkg-config",
+          "--cflags",
+          "--libs",
+          "libxml-2.0"
+        ],
+        "exit_code": 0,
+        "stdout": "-I/usr/include/libxml2 -lxml2",
+        "stderr": ""
+      }
+    },
+    "json-c": {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "json-c"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package json-c was not found in the pkg-config search path.\nPerhaps you should add the directory containing `json-c.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'json-c' not found"
+    },
+    "cunit": {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "cunit"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Package cunit was not found in the pkg-config search path.\nPerhaps you should add the directory containing `cunit.pc'\nto the PKG_CONFIG_PATH environment variable\nPackage 'cunit' not found"
+    },
+    "libpcre2-8": {
+      "argv": [
+        "/usr/bin/pkg-config",
+        "--modversion",
+        "libpcre2-8"
+      ],
+      "exit_code": 0,
+      "stdout": "10.46",
+      "stderr": "",
+      "flags": {
+        "argv": [
+          "/usr/bin/pkg-config",
+          "--cflags",
+          "--libs",
+          "libpcre2-8"
+        ],
+        "exit_code": 0,
+        "stdout": "-lpcre2-8",
+        "stderr": ""
+      }
+    }
+  },
+  "pg_config": {
+    "build": {
+      "path": "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+      "exists": true,
+      "queries": {
+        "--version": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+            "--version"
+          ],
+          "exit_code": 0,
+          "stdout": "PostgreSQL 15.19",
+          "stderr": ""
+        },
+        "--bindir": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+            "--bindir"
+          ],
+          "exit_code": 0,
+          "stdout": "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config",
+          "stderr": "",
+          "reported_path_exists": true
+        },
+        "--includedir": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+            "--includedir"
+          ],
+          "exit_code": 0,
+          "stdout": "/usr/local/pgsql/include",
+          "stderr": "",
+          "reported_path_exists": false
+        },
+        "--includedir-server": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+            "--includedir-server"
+          ],
+          "exit_code": 0,
+          "stdout": "/usr/local/pgsql/include/server",
+          "stderr": "",
+          "reported_path_exists": false
+        },
+        "--libdir": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+            "--libdir"
+          ],
+          "exit_code": 0,
+          "stdout": "/usr/local/pgsql/lib",
+          "stderr": "",
+          "reported_path_exists": false
+        },
+        "--pkglibdir": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+            "--pkglibdir"
+          ],
+          "exit_code": 0,
+          "stdout": "/usr/local/pgsql/lib",
+          "stderr": "",
+          "reported_path_exists": false
+        },
+        "--sharedir": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+            "--sharedir"
+          ],
+          "exit_code": 0,
+          "stdout": "/usr/local/pgsql/share",
+          "stderr": "",
+          "reported_path_exists": false
+        },
+        "--pgxs": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/src/bin/pg_config/pg_config",
+            "--pgxs"
+          ],
+          "exit_code": 0,
+          "stdout": "/usr/local/pgsql/lib/pgxs/src/makefiles/pgxs.mk",
+          "stderr": "",
+          "reported_path_exists": false
+        }
+      },
+      "sha256": "e7f37e84aed518977116574716e680f7102a1e9694d8be10bf84b332a25aa460"
+    },
+    "temporary_install": {
+      "path": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+      "exists": true,
+      "queries": {
+        "--version": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+            "--version"
+          ],
+          "exit_code": 0,
+          "stdout": "PostgreSQL 15.19",
+          "stderr": ""
+        },
+        "--bindir": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+            "--bindir"
+          ],
+          "exit_code": 0,
+          "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin",
+          "stderr": "",
+          "reported_path_exists": true
+        },
+        "--includedir": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+            "--includedir"
+          ],
+          "exit_code": 0,
+          "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/include",
+          "stderr": "",
+          "reported_path_exists": true
+        },
+        "--includedir-server": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+            "--includedir-server"
+          ],
+          "exit_code": 0,
+          "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/include/server",
+          "stderr": "",
+          "reported_path_exists": true
+        },
+        "--libdir": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+            "--libdir"
+          ],
+          "exit_code": 0,
+          "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/lib",
+          "stderr": "",
+          "reported_path_exists": true
+        },
+        "--pkglibdir": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+            "--pkglibdir"
+          ],
+          "exit_code": 0,
+          "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/lib",
+          "stderr": "",
+          "reported_path_exists": true
+        },
+        "--sharedir": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+            "--sharedir"
+          ],
+          "exit_code": 0,
+          "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/share",
+          "stderr": "",
+          "reported_path_exists": true
+        },
+        "--pgxs": {
+          "argv": [
+            "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/bin/pg_config",
+            "--pgxs"
+          ],
+          "exit_code": 0,
+          "stdout": "<workspace>/build-worktrees/postgresql15-build/tmp_install/usr/local/pgsql/lib/pgxs/src/makefiles/pgxs.mk",
+          "stderr": "",
+          "reported_path_exists": true
+        }
+      },
+      "sha256": "e7f37e84aed518977116574716e680f7102a1e9694d8be10bf84b332a25aa460"
+    }
+  },
+  "standard_header_paths": {
+    "geos_c.h": {
+      "/usr/include/geos_c.h": false,
+      "/usr/local/include/geos_c.h": false
+    },
+    "proj.h": {
+      "/usr/include/proj.h": false,
+      "/usr/local/include/proj.h": false
+    },
+    "gdal/gdal.h": {
+      "/usr/include/gdal/gdal.h": false,
+      "/usr/local/include/gdal/gdal.h": false
+    },
+    "protobuf-c/protobuf-c.h": {
+      "/usr/include/protobuf-c/protobuf-c.h": false,
+      "/usr/local/include/protobuf-c/protobuf-c.h": false
+    },
+    "libxml2/libxml/parser.h": {
+      "/usr/include/libxml2/libxml/parser.h": true,
+      "/usr/local/include/libxml2/libxml/parser.h": false
+    },
+    "json-c/json.h": {
+      "/usr/include/json-c/json.h": false,
+      "/usr/local/include/json-c/json.h": false
+    },
+    "CUnit/CUnit.h": {
+      "/usr/include/CUnit/CUnit.h": false,
+      "/usr/local/include/CUnit/CUnit.h": false
+    }
+  },
+  "source_inputs": {
+    "autogen.sh": {
+      "sha256": "8cb636d39cf7c5d3792b422c04a1071baba5e494cb3c09c4de523de92c655324"
+    },
+    "configure.ac": {
+      "sha256": "08b52b635b58ddc66280fc3771eb856bed3528b6053fe3a4413f8f7103d8e50a"
+    },
+    "README.postgis": {
+      "sha256": "bed5c1e41cf460c9a221377e3a2735a659cf1530297868187ece62949e7c1ab2"
+    },
+    "utils/extract_majmin_version.sh": {
+      "sha256": "04aa518d306304933fbf9e72a5115687e2486802f552870746b40fc054e08ed1"
+    }
+  },
+  "requirements": {
+    "postgresql": ">=12 with pg_config, server headers, frontend headers/library, PGXS",
+    "geos": ">=3.8.0; >=3.12 exposes newer coverage features per candidate README",
+    "proj": ">=6.1.0 as candidate intended requirement",
+    "gdal": ">=2.4.0 for required raster",
+    "protobuf_c": ">=1.1.0 and protoc-c for required MVT/Geobuf",
+    "libxml2": ">=2.5.0 per candidate README; configure requires headers/library",
+    "json_c": ">=0.9 per README for GeoJSON support",
+    "cunit": "Required to execute C unit tests (configure only warns if missing)",
+    "autogen": "autoconf, aclocal from automake, libtoolize; writes generated local files, no download commands found in autogen.sh"
+  },
+  "limitations": [
+    "This is discovery and filesystem inspection, not compilation/link/ABI proof.",
+    "No PostGIS autogen, configure, build, install or regression test was executed.",
+    "No source worktree was created or changed, and no dependency archive was acquired.",
+    "Host package versions and headers are observed inputs, not retained reproducible dependencies.",
+    "Full default make/test rules, external CRS grids, GDAL driver matrix and source provenance/license/security gates still require audit.",
+    "The prior PostgreSQL15 default build is not the reviewed product feature profile."
+  ],
+  "blockers": [
+    {
+      "dependency": "geos",
+      "evidence": "pkg-config --modversion exits 1 with package not found; corresponding standard development header absent"
+    },
+    {
+      "dependency": "proj",
+      "evidence": "pkg-config --modversion exits 1 with package not found; corresponding standard development header absent"
+    },
+    {
+      "dependency": "gdal",
+      "evidence": "pkg-config --modversion exits 1 with package not found; corresponding standard development header absent"
+    },
+    {
+      "dependency": "libprotobuf-c",
+      "evidence": "pkg-config --modversion exits 1 with package not found; corresponding standard development header absent"
+    },
+    {
+      "dependency": "json-c",
+      "evidence": "pkg-config --modversion exits 1 with package not found; corresponding standard development header absent"
+    },
+    {
+      "dependency": "cunit",
+      "evidence": "pkg-config --modversion exits 1 with package not found; corresponding standard development header absent"
+    },
+    {
+      "dependency": "protoc-c",
+      "evidence": "No executable in /usr/bin:/bin; configure.ac:1244-1246 requires this compiler for MVT/Geobuf"
+    }
+  ],
+  "next_action": [
+    "Select, license/provenance audit, retain and hash missing GEOS/PROJ/GDAL/protobuf-c (including protoc-c)/json-c/CUnit sources and their full transitive inputs; prepare them in an isolated local prefix without changing system packages.",
+    "Prepare a reviewed PostgreSQL product feature profile and durable local development prefix. For a bounded integration probe the retained make-check temporary installation already exposes existing headers/libpq/PGXS through its own pg_config; direct build-tree pg_config points development paths at absent /usr/local/pgsql and must not be used.",
+    "Audit remaining PostGIS make/test/install recipes at the exact candidate commit, create an isolated source worktree, generate configure locally, then configure/build with explicit owned pg_config and required raster/MVT/GeoJSON/CUnit support. Run real C-unit, vector/raster/MVT, extension install/upgrade and PostgreSQL pair tests; do not pass --without-raster/--without-protobuf/--without-json to hide missing prerequisites."
+  ],
+  "audit_notes": [
+    "autogen.sh executes libtoolize --force --copy --install, aclocal -I macros, autoconf, and touch build-aux/config.rpath; these generate source-worktree files. Its --install option belongs to libtoolize and copies auxiliary scripts locally; no system package installation command occurs in autogen.sh.",
+    "configure.ac checks PostgreSQL >=12, a real PGXS path, headers and libpq; raster and protobuf support are on unless explicitly disabled.",
+    "Missing json-c produces a warning and omits JSON-C support; missing CUnit produces a warning and prevents the C-unit suite. Product acceptance must enforce these requested capabilities/test prerequisites instead of treating configure exit zero as completeness.",
+    "No inherited build/configure/autogen script executed in this audit."
+  ],
+  "updated_utc": "2026-09-19T09:31:04.318352+00:00",
+  "public_export": {
+    "original_report_sha256": "517301e47b5dadabfed0d4bfc629a6abf74cf7a53135f91010633e44a6c0e32b",
+    "normalization": "Local workspace/evidence path strings replaced with explicit aliases; observed hashes/versions unchanged."
+  }
+}

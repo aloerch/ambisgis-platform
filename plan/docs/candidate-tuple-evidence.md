@@ -39,3 +39,10 @@ JupyterHub/JupyterLab candidates are outside this bounded inspection and remain 
 6. Finish Jupyter candidates and the full release input inventory, obtain required human license/security review, and only then propose reviewed canonical-branch setup. Upstream-disconnected rebuild, independent repair, upgrade/restore and release gates remain unrun. No binary branding, signing, deployment or release is authorized by this evidence document.
 
 Inspection used read-only local Git queries; no fetching, installation, submodule initialization, builds or remote writes were performed. Candidate integration tests were not run. The source-acquisition evidence and PostgreSQL probe remain separately reported in [source-acquisition-evidence.md](source-acquisition-evidence.md).
+
+
+## Local PostGIS prerequisite audit
+
+A subsequent read-only audit of candidate `9816f82458db774e62906cfb2c4f01f8b262c862` found **GEOS, PROJ, GDAL, protobuf-c/protoc-c, json-c and CUnit absent from the inspected default host development paths**. libxml2 2.14.6, autoconf 2.72, automake/aclocal 1.18.1, libtool/libtoolize 2.5.4 and GCC/G++ 15.2.0 are available. [The actual prerequisite record](../verification/postgis-prerequisites.json) includes command outcomes and source requirements. No PostGIS autogen, configure, compilation or regression test was run.
+
+The retained PostgreSQL 15 test installation has usable staged `pg_config`, development headers, libpq and PGXS. The direct build-tree `pg_config` points to absent `/usr/local/pgsql` development paths and must not be mistaken for an installed dependency. Retain and audit the missing dependency sources and transitive inputs, build into an isolated local prefix, and choose a reviewed PostgreSQL feature profile before the full PostGIS vector/raster/MVT/GeoJSON build. Missing json-c and CUnit only produce configure warnings, so acceptance must explicitly verify their inclusion. No global package installation or feature suppression was used to bypass this gap.
