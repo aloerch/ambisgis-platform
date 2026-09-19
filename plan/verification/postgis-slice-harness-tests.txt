@@ -1,0 +1,27 @@
+test_existing_regression_snapshot_is_never_replaced (test_regress_database.DriverSnapshotTests.test_existing_regression_snapshot_is_never_replaced) ... ok
+test_existing_validation_snapshot_mismatch_rejected (test_regress_database.DriverSnapshotTests.test_existing_validation_snapshot_mismatch_rejected) ... ok
+test_frozen_pair_imports_without_original_checkout_on_path (test_regress_database.DriverSnapshotTests.test_frozen_pair_imports_without_original_checkout_on_path) ... ok
+test_combined_normal_and_self_upgrade_counts (test_regress_database.RegressionEvidenceTests.test_combined_normal_and_self_upgrade_counts) ... ok
+test_control_flow_skip_is_not_missing_sql_test (test_regress_database.RegressionEvidenceTests.test_control_flow_skip_is_not_missing_sql_test) ... ok
+test_empty_summary_does_not_establish_execution (test_regress_database.RegressionEvidenceTests.test_empty_summary_does_not_establish_execution) ... ok
+test_failed_summary_does_not_invent_pass_count (test_regress_database.RegressionEvidenceTests.test_failed_summary_does_not_invent_pass_count) ... ok
+test_missing_summary_is_not_zero_failures_pass (test_regress_database.RegressionEvidenceTests.test_missing_summary_is_not_zero_failures_pass) ... ok
+test_skipped_test_deducted_and_retained (test_regress_database.RegressionEvidenceTests.test_skipped_test_deducted_and_retained) ... ok
+test_postgis35_requires_actual_raster_and_topology_module_names (test_validate_database.LibraryNameTests.test_postgis35_requires_actual_raster_and_topology_module_names) ... ok
+test_absolute_and_arrow_dependencies_must_be_owned (test_validate_database.LibraryResolutionTests.test_absolute_and_arrow_dependencies_must_be_owned) ... ok
+test_dependency_symlink_to_host_is_rejected (test_validate_database.LibraryResolutionTests.test_dependency_symlink_to_host_is_rejected) ... ok
+test_native_revision_suffix_is_recorded_without_accepting_wrong_version (test_validate_database.RuntimeVersionTests.test_native_revision_suffix_is_recorded_without_accepting_wrong_version) ... ok
+test_data_directory_escape_rejected (test_validate_database.UpgradeStateTests.test_data_directory_escape_rejected) ... ok
+test_different_installation_rejected (test_validate_database.UpgradeStateTests.test_different_installation_rejected) ... ok
+test_existing_postmaster_rejected (test_validate_database.UpgradeStateTests.test_existing_postmaster_rejected) ... ok
+test_foreign_os_user_rejected (test_validate_database.UpgradeStateTests.test_foreign_os_user_rejected) ... ok
+test_marker_mismatch_rejected (test_validate_database.UpgradeStateTests.test_marker_mismatch_rejected) ... ok
+test_moved_state_rejected (test_validate_database.UpgradeStateTests.test_moved_state_rejected) ... ok
+test_owned_stopped_earlier_fixture_accepted (test_validate_database.UpgradeStateTests.test_owned_stopped_earlier_fixture_accepted) ... ok
+test_same_version_fixture_rejected (test_validate_database.UpgradeStateTests.test_same_version_fixture_rejected) ... ok
+test_symlink_escape_rejected (test_validate_database.UpgradeStateTests.test_symlink_escape_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.039s
+
+OK

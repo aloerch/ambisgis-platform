@@ -1,0 +1,407 @@
+{
+  "task": "FND-02",
+  "purpose": "Local owned PostgreSQL candidate feasibility probe; not approved baseline, FND-08 or independence acceptance",
+  "repository": "aloerch/ambisgis-postgresql",
+  "repository_id": 1376927644,
+  "origin": "https://github.com/aloerch/ambisgis-postgresql.git",
+  "source_commit": "c62b330912e2095dc8dee2f749adf7e5d94ca611",
+  "branch": "fnd-02/postgresql-build",
+  "source_path": "<workspace>/build-worktrees/postgresql",
+  "build_path": "<workspace>/build-worktrees/postgresql-build",
+  "configuration": "Default configure with no feature-disabling options; no global installation",
+  "started_utc": "2026-09-19T08:58:22.821479+00:00",
+  "commands": [
+    {
+      "argv": [
+        "<workspace>/build-worktrees/postgresql/configure"
+      ],
+      "cwd": "<workspace>/build-worktrees/postgresql-build",
+      "exit_code": 0,
+      "elapsed_seconds": 6.688,
+      "log": "<local-evidence>/ambisgis-postgresql-configure.log",
+      "log_sha256": "0c83ae043640202019418b9c950daac589d0663d2f0083d35740224bcda76f63",
+      "output_tail": [
+        "checking for vectorized CRC-32C... AVX-512 with runtime check",
+        "checking for library containing sem_init... none required",
+        "checking which semaphore API to use... unnamed POSIX",
+        "checking which random number source to use... /dev/urandom",
+        "checking for /dev/urandom... yes",
+        "checking for xmllint... /usr/bin/xmllint",
+        "checking for xsltproc... /usr/bin/xsltproc",
+        "checking for fop... no",
+        "checking for dbtoepub... no",
+        "checking whether gcc supports -Wl,--as-needed, for LDFLAGS... yes",
+        "checking whether gcc supports -Wl,--export-dynamic, for LDFLAGS_EX_BE... yes",
+        "configure: using compiler=gcc (GCC) 15.2.0",
+        "configure: using CFLAGS=-Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wmissing-format-attribute -Wold-style-declaration -Wimplicit-fallthrough=5 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -Wmissing-variable-declarations -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -Wstrict-prototypes -Wold-style-definition",
+        "configure: using CPPFLAGS= -D_GNU_SOURCE ",
+        "configure: using LDFLAGS=  -Wl,--as-needed",
+        "preparing build tree... done",
+        "configure: creating ./config.status",
+        "config.status: creating GNUmakefile",
+        "config.status: creating src/Makefile.global",
+        "config.status: creating src/include/pg_config.h",
+        "config.status: creating src/interfaces/ecpg/include/ecpg_config.h",
+        "config.status: linking <workspace>/build-worktrees/postgresql/src/backend/port/posix_sema.c to src/backend/port/pg_sema.c",
+        "config.status: linking <workspace>/build-worktrees/postgresql/src/backend/port/sysv_shmem.c to src/backend/port/pg_shmem.c",
+        "config.status: linking <workspace>/build-worktrees/postgresql/src/include/port/linux.h to src/include/pg_config_os.h",
+        "config.status: linking <workspace>/build-worktrees/postgresql/src/makefiles/Makefile.linux to src/Makefile.port"
+      ]
+    },
+    {
+      "argv": [
+        "make",
+        "-j4"
+      ],
+      "cwd": "<workspace>/build-worktrees/postgresql-build",
+      "exit_code": 0,
+      "elapsed_seconds": 47.82,
+      "log": "<local-evidence>/ambisgis-postgresql-make.log",
+      "log_sha256": "e508af77c1b44077bfe1f61ca60e23fcd6354ba408d1f87f2696ddd9d360abde",
+      "output_tail": [
+        "make[4]: Entering directory '<workspace>/build-worktrees/postgresql-build/src/port'",
+        "make[4]: Nothing to be done for 'all'.",
+        "make[4]: Leaving directory '<workspace>/build-worktrees/postgresql-build/src/port'",
+        "make -C ../../../src/common all",
+        "make[4]: Entering directory '<workspace>/build-worktrees/postgresql-build/src/common'",
+        "make[4]: Nothing to be done for 'all'.",
+        "make[4]: Leaving directory '<workspace>/build-worktrees/postgresql-build/src/common'",
+        "make[3]: Leaving directory '<workspace>/build-worktrees/postgresql-build/src/test/regress'",
+        "rm -f pg_regress.o && ln -s ../../../src/test/regress/pg_regress.o .",
+        "touch specparse.h",
+        "gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wmissing-format-attribute -Wold-style-declaration -Wimplicit-fallthrough=5 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -Wmissing-variable-declarations -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -Wstrict-prototypes -Wold-style-definition -I. -I<workspace>/build-worktrees/postgresql/src/test/isolation -I<workspace>/build-worktrees/postgresql/src/interfaces/libpq -I<workspace>/build-worktrees/postgresql/src/test/isolation/../regress -I../../../src/include -I<workspace>/build-worktrees/postgresql/src/include -D_GNU_SOURCE      -c -o specparse.o specparse.c",
+        "gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wmissing-format-attribute -Wold-style-declaration -Wimplicit-fallthrough=5 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -Wmissing-variable-declarations -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -Wstrict-prototypes -Wold-style-definition -I. -I<workspace>/build-worktrees/postgresql/src/test/isolation -I<workspace>/build-worktrees/postgresql/src/interfaces/libpq -I<workspace>/build-worktrees/postgresql/src/test/isolation/../regress -I../../../src/include -I<workspace>/build-worktrees/postgresql/src/include -D_GNU_SOURCE      -c -o specscanner.o specscanner.c",
+        "gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wmissing-format-attribute -Wold-style-declaration -Wimplicit-fallthrough=5 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -Wmissing-variable-declarations -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -Wstrict-prototypes -Wold-style-definition isolation_main.o pg_regress.o -L../../../src/interfaces/libpq -lpq -L../../../src/port -L../../../src/common   -Wl,--as-needed -Wl,-rpath,'/usr/local/pgsql/lib',--enable-new-dtags  -lpgcommon -lpgport -lz -lreadline -lm  -o pg_isolation_regress",
+        "gcc -Wall -Wmissing-prototypes -Wpointer-arith -Wdeclaration-after-statement -Werror=vla -Wmissing-format-attribute -Wold-style-declaration -Wimplicit-fallthrough=5 -Wcast-function-type -Wshadow=compatible-local -Wformat-security -Wmissing-variable-declarations -fno-strict-aliasing -fwrapv -fexcess-precision=standard -Wno-format-truncation -Wno-stringop-truncation -O2 -Wstrict-prototypes -Wold-style-definition isolationtester.o specparse.o specscanner.o -L../../../src/interfaces/libpq -lpq -L../../../src/port -L../../../src/common   -Wl,--as-needed -Wl,-rpath,'/usr/local/pgsql/lib',--enable-new-dtags  -lpgcommon -lpgport -lz -lreadline -lm  -o isolationtester",
+        "make[2]: Leaving directory '<workspace>/build-worktrees/postgresql-build/src/test/isolation'",
+        "make -C test/perl all",
+        "make[2]: Entering directory '<workspace>/build-worktrees/postgresql-build/src/test/perl'",
+        "make[2]: Nothing to be done for 'all'.",
+        "make[2]: Leaving directory '<workspace>/build-worktrees/postgresql-build/src/test/perl'",
+        "make[1]: Leaving directory '<workspace>/build-worktrees/postgresql-build/src'"
+      ]
+    },
+    {
+      "argv": [
+        "make",
+        "-j4",
+        "check"
+      ],
+      "cwd": "<workspace>/build-worktrees/postgresql-build",
+      "exit_code": 0,
+      "elapsed_seconds": 5.977,
+      "log": "<local-evidence>/ambisgis-postgresql-check.log",
+      "log_sha256": "99451c93ebcf9f23d21952029f052b077d77c995e1b737bcc3f7a2b8ad6d435c",
+      "output_tail": [
+        "# parallel group (15 tests):  numa planner_est hash_part reloptions partition_info explain predicate memoize eager_aggregate partition_aggregate partition_join tuplesort partition_prune indexing stats",
+        "ok 216       + partition_join                            185 ms",
+        "ok 217       + partition_prune                           201 ms",
+        "ok 218       + reloptions                                 17 ms",
+        "ok 219       + hash_part                                   9 ms",
+        "ok 220       + indexing                                  359 ms",
+        "ok 221       + partition_aggregate                       174 ms",
+        "ok 222       + partition_info                             19 ms",
+        "ok 223       + tuplesort                                 195 ms",
+        "ok 224       + explain                                    19 ms",
+        "ok 225       + memoize                                    48 ms",
+        "ok 226       + stats                                     529 ms",
+        "ok 227       + predicate                                  21 ms",
+        "ok 228       + numa                                        4 ms",
+        "ok 229       + eager_aggregate                            69 ms",
+        "ok 230       + planner_est                                 7 ms",
+        "# parallel group (4 tests):  compression_lz4 compression_pglz compression cluster",
+        "ok 231       + compression                                29 ms",
+        "ok 232       + compression_lz4                             3 ms",
+        "ok 233       + compression_pglz                            4 ms",
+        "ok 234       + cluster                                    73 ms",
+        "# parallel group (2 tests):  oidjoins event_trigger",
+        "ok 235       + oidjoins                                   56 ms",
+        "ok 236       + event_trigger                              64 ms",
+        "ok 237       - event_trigger_login                        27 ms",
+        "ok 238       - fast_default                               46 ms",
+        "ok 239       - tablespace                                101 ms",
+        "1..239",
+        "# All 239 tests passed.",
+        "make[1]: Leaving directory '<workspace>/build-worktrees/postgresql-build/src/test/regress'"
+      ]
+    }
+  ],
+  "tool_versions": {
+    "gcc": {
+      "path": "/usr/bin/gcc",
+      "returncode": 0,
+      "version": [
+        "gcc (GCC) 15.2.0",
+        "Copyright (C) 2025 Free Software Foundation, Inc."
+      ],
+      "sha256": "852a74efd4840122caaff5c862a480d20a08a5b25a8972dddada9f0c092367f2"
+    },
+    "make": {
+      "path": "/usr/bin/make",
+      "returncode": 0,
+      "version": [
+        "GNU Make 4.4.1",
+        "Built for x86_64-unknown-linux-gnu"
+      ],
+      "sha256": "08956cb988ce63d477cac00063460449e5e7b23b883e93abafb8f20d3b5bb030"
+    },
+    "bison": {
+      "path": "/usr/bin/bison",
+      "returncode": 0,
+      "version": [
+        "bison (GNU Bison) 3.8.2",
+        "Written by Robert Corbett and Richard Stallman."
+      ],
+      "sha256": "989b385fae3aa02fb526435816c2f477ab30d873c40382679e060b0c3ee98c39"
+    },
+    "flex": {
+      "path": "/usr/bin/flex",
+      "returncode": 0,
+      "version": [
+        "flex 2.6.4"
+      ],
+      "sha256": "22212de7f3433fe8bf9bd23e55905ef8751449dadf8d6c1c2325b01718fa6610"
+    },
+    "perl": {
+      "path": "/usr/bin/perl",
+      "returncode": 0,
+      "version": [
+        "This is perl 5, version 44, subversion 0 (v5.44.0) built for x86_64-linux",
+        "(with 1 registered patch, see perl -V for more detail)"
+      ],
+      "sha256": "7cb2827fc3a557f1ce476f3c26bd0f913df3529b7b71df0c278f0b8a89f7386f"
+    },
+    "pkg-config": {
+      "path": "/usr/bin/pkg-config",
+      "returncode": 0,
+      "version": [
+        "2.5.1"
+      ],
+      "sha256": "7e6ddcf3ddef3644547e244d0f54c2bc6b6b0a790bf7e49a44f6e49af3ec85a9"
+    },
+    "ld": {
+      "path": "/usr/bin/ld",
+      "returncode": 0,
+      "version": [
+        "GNU ld (GNU Binutils) 2.47.20260726",
+        "Copyright (C) 2026 Free Software Foundation, Inc."
+      ],
+      "sha256": "58582c6bf8170c5a6a56014b50a2543f0f13f1be9619bda7fc1baad1f6c34019"
+    },
+    "ar": {
+      "path": "/usr/bin/ar",
+      "returncode": 0,
+      "version": [
+        "GNU ar (GNU Binutils) 2.47.20260726",
+        "Copyright (C) 2026 Free Software Foundation, Inc."
+      ],
+      "sha256": "38f4070d36700c5b567f264322a59be10d22457a8370445a6365b7df9caf90b0"
+    }
+  },
+  "environment": {
+    "PATH": "/usr/bin:/bin",
+    "LC_ALL": "C.UTF-8"
+  },
+  "inputs": {
+    "configure": {
+      "sha256": "77a749ef8e2c409ae026d43e4563fe2ddf2c66554a02ef307f2705b0400ec93f"
+    },
+    "configure.ac": {
+      "sha256": "bcb2e2c81cec5db32e0942786e7d3aac82b25acd89b02706345a49c2c87f350e"
+    },
+    "GNUmakefile.in": {
+      "sha256": "80d7947861dd26da7816ada4e591e9fbabf0a5c4b0043b29e5d42a266ae6dc31"
+    },
+    "src/Makefile.global.in": {
+      "sha256": "56c1720ccfbb8f13c5d14739ca002fb1d3e09890abda5f7bcde2feaa8d05a87a"
+    },
+    "doc/src/sgml/installation.sgml": {
+      "sha256": "a40f4e04165bb2ed21589ed4f3077399114408280ad5a9f1676801172bc0a03c"
+    },
+    "COPYRIGHT": {
+      "sha256": "3d6af92ff8a4c2cdf69afb1cf44edea727922f5cd0cf8b5f72b11cdecac8fdfd"
+    }
+  },
+  "limitations": [
+    "Candidate is PostgreSQL 20devel, not a reviewed production baseline.",
+    "System toolchain and dependency inputs have not been retained; successful compilation would not establish independent rebuild/repair acceptance.",
+    "No inherited workflows run; no remote writes, installs or engine algorithm edits.",
+    "Build script inspection is static, not network-denial evidence.",
+    "Only core make check was run; TAP, check-world, PostGIS integration, AmbisGIS branch concurrency/security/recovery and release acceptance were not run.",
+    "Maintenance Unicode regeneration has network download rules that need retained inputs before offline maintenance acceptance.",
+    "No source bundle, toolchain archive, canonical product branch or release artifact was created by this probe."
+  ],
+  "status": "build_and_core_regression_passed",
+  "build_executed": true,
+  "tests_executed": true,
+  "config_log": {
+    "path": "<workspace>/build-worktrees/postgresql-build/config.log",
+    "sha256": "2c5a9ce90b769695e26bdaa6ddb2445a83e8723a0dc3af86484f6978a08778a0"
+  },
+  "updated_utc": "2026-09-19T09:00:33.741990+00:00",
+  "test_uid": 1000,
+  "dependency_versions": {
+    "icu-uc": "77.1",
+    "icu-i18n": "77.1",
+    "readline": "8.3",
+    "zlib": "1.3.1"
+  },
+  "source_tree": "c35889c063fcdf01c2924af80f29cf0e208d8ac9",
+  "source_status": "",
+  "postgres_version": "postgres (PostgreSQL) 20devel",
+  "output_artifacts": {
+    "src/backend/postgres": {
+      "sha256": "81feeda04a7230cd9c431434fb4e27299e94969b453248ea8c2c9f77a7194290",
+      "bytes": 12141104
+    },
+    "src/bin/psql/psql": {
+      "sha256": "1c613f86f1053acab9e17ff90811cff3063ef44293d3929b446099c7e642e0d5",
+      "bytes": 1100408
+    },
+    "src/bin/initdb/initdb": {
+      "sha256": "ffc5f71c1eaf4c0d077c9a035af63320fc16bd8d49c49be71978bb7c89113580",
+      "bytes": 224064
+    },
+    "src/bin/pg_ctl/pg_ctl": {
+      "sha256": "4476bfe932bc8be5600135deabae6852b912dd8186e67bca1a43c6e0e4af057a",
+      "bytes": 93328
+    },
+    "src/bin/pg_dump/pg_dump": {
+      "sha256": "e76adc21045e911e54cb68557bfea26308c2b02bddfdbcbcb2c206b32e45b0fa",
+      "bytes": 538616
+    },
+    "src/bin/pg_dump/pg_restore": {
+      "sha256": "1374692bde607cfc564cbea1a3884bedaf1da7748fabdbc8abfed5bf77e44754",
+      "bytes": 279416
+    },
+    "src/bin/pg_config/pg_config": {
+      "sha256": "041082ae65b67673b92da29b16e2791227defa924cf8556ea3643ddff0281164",
+      "bytes": 58824
+    },
+    "src/interfaces/libpq/libpq.so.5.20": {
+      "sha256": "da491feaef109ddaa92eda5a07deb3d3917ed9e79aa47699d75e976aeafb09f2",
+      "bytes": 396904
+    },
+    "src/test/regress/pg_regress": {
+      "sha256": "19f93c6f470e17bcfaf269390301334a4e3b276e7686f5220d21951f49c7624d",
+      "bytes": 122024
+    }
+  },
+  "linked_system_libraries": {
+    "/usr/lib/x86_64-linux-gnu/libz.so.1": {
+      "sha256": "1b741cc7e0c9ec4fef8ced7530729aeb1f8ce42f23d0c7f082490d6f6719513c",
+      "bytes": 107504,
+      "retained": false
+    },
+    "/usr/lib/x86_64-linux-gnu/libm.so.6": {
+      "sha256": "c8e4c13df8f5a8d8ccd300f5522760ebcb76cd1665c0213fe02488f465e88031",
+      "bytes": 1061664,
+      "retained": false
+    },
+    "/usr/lib/x86_64-linux-gnu/libicui18n.so.77": {
+      "sha256": "6b98f8a4f99a74d53958904dfdee0fc0327bc95e67a37bda01552f28c3c9c793",
+      "bytes": 4082064,
+      "retained": false
+    },
+    "/usr/lib/x86_64-linux-gnu/libicuuc.so.77": {
+      "sha256": "2886d4431a2f4a9a9e48405e884d39d56a5c112cd2931835ef9c75adb9df076e",
+      "bytes": 2354928,
+      "retained": false
+    },
+    "/usr/lib/x86_64-linux-gnu/libc.so.6": {
+      "sha256": "5e226dd4f7994c64ee2378fdcf0be9d50b6dbe2142a1bb5e99ec02a8d557a96b",
+      "bytes": 2116320,
+      "retained": false
+    },
+    "/lib64/ld-linux-x86-64.so.2": {
+      "sha256": "a3b79fc634bbfdc51b5f1c6dc0013b14a7ceb98068efbd1f0055d9ca96d27cf6",
+      "bytes": 240760,
+      "retained": false
+    },
+    "/usr/lib/x86_64-linux-gnu/libstdc++.so.6": {
+      "sha256": "1127b859107dc29531c5f9173bf6d191f090174372974219ee66efd4072f3852",
+      "bytes": 2872504,
+      "retained": false
+    },
+    "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1": {
+      "sha256": "ce1e741d6f6b1e12a587b46d3ecaaf5574021e63aa7a64df5a622b0a124c513c",
+      "bytes": 183288,
+      "retained": false
+    },
+    "/usr/lib/x86_64-linux-gnu/libicudata.so.77": {
+      "sha256": "516a46019ed4f9037b44b7f5f1cc4432c227e2cd5255ef9c6fe7fec298a90c03",
+      "bytes": 31915336,
+      "retained": false
+    },
+    "<workspace>/build-worktrees/postgresql-build/src/interfaces/libpq/libpq.so.5": {
+      "sha256": "da491feaef109ddaa92eda5a07deb3d3917ed9e79aa47699d75e976aeafb09f2",
+      "bytes": 396904,
+      "retained": false
+    },
+    "/usr/lib/x86_64-linux-gnu/libreadline.so.8": {
+      "sha256": "c5edfaf27eb0b0608584589452ea543dfb939ff276d168382275a42b4656cef6",
+      "bytes": 401512,
+      "retained": false
+    },
+    "/usr/lib/x86_64-linux-gnu/libncursesw.so.6": {
+      "sha256": "aaaec18c5d8aef1d212366f0dc741a8d0fe8740901bc3162a09f8a7a6d8193e4",
+      "bytes": 258752,
+      "retained": false
+    },
+    "/usr/lib/x86_64-linux-gnu/libtinfow.so.6": {
+      "sha256": "7fbb10cd78f19aedf1f05669802b2f1693e07e57b29f42a2db9f16fa99d41365",
+      "bytes": 287528,
+      "retained": false
+    }
+  },
+  "log_artifacts": {
+    "src/test/regress/log/postmaster.log": {
+      "sha256": "ea4c5c77ab30c6d7377946a3618c3af3b0cd42af7e39ba20e01994cb209e3775",
+      "bytes": 3025107
+    },
+    "tmp_install/log/install.log": {
+      "sha256": "411e2e6969c7dcede7115864fc9d24327d9b1faeea5ab8b1c6d64c8221147a8c",
+      "bytes": 157810
+    },
+    "tmp_install/log/initdb-template.log": {
+      "sha256": "bbcc0171f8ec18ec489869ceac54991d705ca27b0e388b1cefaab8a8782329b3",
+      "bytes": 1144
+    }
+  },
+  "test_result": {
+    "suite": "PostgreSQL core make check regression tests",
+    "tests_passed": 239,
+    "tests_failed": 0,
+    "skip_markers": 0,
+    "temporary_cluster": "build-local src/test/regress/tmp_check; temporary installation in build-local tmp_install",
+    "listener": "Unix domain sockets; no TCP listener by default",
+    "full_product_acceptance": false
+  },
+  "temporary_cluster_shutdown_observed": true,
+  "audit": {
+    "reviewed_paths": [
+      "configure",
+      "configure.ac",
+      "GNUmakefile.in",
+      "src/Makefile.global.in",
+      "config/config.guess",
+      "config/config.sub",
+      "config/prep_buildtree",
+      "doc/src/sgml/installation.sgml",
+      "src/test/regress/GNUmakefile",
+      "src/test/regress/pg_regress.c"
+    ],
+    "default_fetch_paths_found": false,
+    "maintenance_fetch_paths": [
+      "src/common/unicode/Makefile: update-unicode",
+      "src/backend/utils/mb/Unicode/Makefile: explicit encoding generation",
+      "contrib/unaccent/Makefile: update-unicode"
+    ],
+    "site_scripts_loaded": false,
+    "makefile_custom_present": false,
+    "independent_audit": "Separate read-only agent traced default configure/make/check and maintenance download paths."
+  },
+  "completed_utc": "2026-09-19T09:01:59.601482+00:00",
+  "export_note": "Public path-normalized export. <workspace> is the local multi-repository workspace; <local-evidence> holds retained logs. Report hashes identify the original retained bytes, not rewritten excerpts.",
+  "original_report_sha256": "b618c601a0edd7ae39e7945acc8b3e461c570d572d9eda9f2071408ad91065c1"
+}

@@ -1,0 +1,2978 @@
+{
+  "evidence_version": 1,
+  "recorded_at": "2026-09-19T08:57:25.188795+00:00",
+  "purpose": "Preparatory source acquisition and factual license evidence for FND-02; not product acceptance or a release lock",
+  "tracking": {
+    "FND-01": {
+      "issue_url": "https://github.com/aloerch/ambisgis-platform/issues/2",
+      "delivery_context": "Merged after owner-approved PR #1",
+      "merge_commit": "2215a91511a53601464eef46d383cd3557cfa3a8",
+      "pr_url": "https://github.com/aloerch/ambisgis-platform/pull/1"
+    },
+    "FND-02": {
+      "issue_url": "https://github.com/aloerch/ambisgis-platform/issues/3",
+      "scope": "In progress after verified FND-01 merge; baseline, license and build acceptance remain pending"
+    },
+    "FND-07": {
+      "issue_url": "https://github.com/aloerch/ambisgis-platform/issues/6",
+      "scope": "Preparatory retention only; acceptance remains pending"
+    }
+  },
+  "path_convention": "Paths beginning source-archives/ are relative to the local multi-repository workspace, outside ambisgis-platform; they are not repository-hosted download links.",
+  "input_artifacts": [
+    {
+      "name": "ambisgis-owned-clones.json",
+      "sha256": "7a3d61b577f4e7a0e613fbf5bf7df5ed8aae161ce4982fc9be7080766370ba97"
+    },
+    {
+      "name": "inventory.json",
+      "sha256": "d8106fbb05b0b3d08536cd257b392a71e658a1e2e86b1d833b9c58405f1cadd3"
+    },
+    {
+      "name": "ambisgis-license-review.json",
+      "sha256": "1103019c38c93bdf88adea373446f24c7bde8a042ba62a0b4676bd4930689724"
+    },
+    {
+      "name": "ambisgis-donor-inspection.json",
+      "sha256": "6c9e6250e4d6ce08c526dbfef5cfe845aa4992a41b3208e7a468e15fb92b1061"
+    }
+  ],
+  "scope": {
+    "owned_forks": 11,
+    "license_notice_files": 46,
+    "git_bundle_count": 11,
+    "git_bundle_total_size_bytes": 11609671470,
+    "source_scripts_executed": false,
+    "source_checkouts_performed": false,
+    "remote_mutations_by_acquisition": false,
+    "product_baselines_approved": false,
+    "licenses_approved": false,
+    "full_source_dependency_custody_demonstrated": false,
+    "owned_builds_produced": false
+  },
+  "method": [
+    "Verified authenticated owner aloerch and matched live owned repository ID, exact owner/name, public visibility and donor parent against the bootstrap receipt before each clone.",
+    "Cloned owned HTTPS origins with complete Git history, no checkout, no recursion into submodules, no depth limit, and no object filter.",
+    "Fetched all branch and tag refs from the owned origin without forced ref updates; added no donor remote.",
+    "Matched clone HEAD to the bootstrap-observed default commit, checked absent shallow/partial markers, and ran git fsck --connectivity-only.",
+    "Created git bundle --all archives, verified them with git bundle verify, compared every archived ref and HEAD to the recorded clone refs, and calculated actual archive SHA256 and size.",
+    "Confirmed every bundle header contains zero external Git-object prerequisites. No clean-restore or disconnected-build result is implied.",
+    "Read license bytes using git show at the recorded owned commits, verified each Git blob identity, retained original bytes separately, and calculated SHA256."
+  ],
+  "repositories": [
+    {
+      "repository": "aloerch/ambisgis-postgresql",
+      "repository_id": 1376927644,
+      "owned_url": "https://github.com/aloerch/ambisgis-postgresql",
+      "origin": "https://github.com/aloerch/ambisgis-postgresql.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:39:08.608264+00:00",
+      "donor": {
+        "id": 927442,
+        "full_name": "postgres/postgres"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "master",
+        "commit_sha": "c62b330912e2095dc8dee2f749adf7e5d94ca611",
+        "commit_url": "https://github.com/aloerch/ambisgis-postgresql/commit/c62b330912e2095dc8dee2f749adf7e5d94ca611",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/master",
+        "remote_branch_count": 39,
+        "tag_count": 692,
+        "total_local_remote_tag_refs": 733,
+        "sorted_refs_json_sha256": "c18fd899c82ddb0ff13c1f973084685f10738b1194fb1a5b2e37edc4207a323d",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:39:53.819410+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-postgresql-c62b330912e2.bundle",
+        "sha256": "9480530afa7045636f0e0ea6636e42ec688cd477d8355089e29499e8e6837c6c",
+        "size_bytes": 804532351,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 734,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "ace019408aa21edcdd6630c065a841a0e90b8d1ca1289810e7ade7c124edad74",
+        "verified_at": "2026-09-19T08:45:50.273507+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/pg-ci.yml",
+            "blob_sha": "a2629c8335a1b5598d711406e630b09a0d69a18e",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgresql/blob/c62b330912e2095dc8dee2f749adf7e5d94ca611/.github/workflows/pg-ci.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "COPYRIGHT identifies PostgreSQL Global Development Group and University of California; contains permission grant, notice-retention conditions, and disclaimers."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending."
+        ],
+        "files": [
+          {
+            "original_path": "COPYRIGHT",
+            "blob_sha": "0a397648dcd3c2177acc58bd7daecd11ad64be62",
+            "sha256": "3d6af92ff8a4c2cdf69afb1cf44edea727922f5cd0cf8b5f72b11cdecac8fdfd",
+            "size_bytes": 1198,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgresql/blob/c62b330912e2095dc8dee2f749adf7e5d94ca611/COPYRIGHT",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 4,
+                "text": "Portions Copyright (c) 1996-2026, PostgreSQL Global Development Group"
+              },
+              {
+                "line_number": 6,
+                "text": "Portions Copyright (c) 1994, The Regents of the University of California"
+              },
+              {
+                "line_number": 10,
+                "text": "is hereby granted, provided that the above copyright notice and this"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-postgresql/COPYRIGHT"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-postgis",
+      "repository_id": 1376927690,
+      "owned_url": "https://github.com/aloerch/ambisgis-postgis",
+      "origin": "https://github.com/aloerch/ambisgis-postgis.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:39:08.537410+00:00",
+      "donor": {
+        "id": 4407129,
+        "full_name": "postgis/postgis"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "master",
+        "commit_sha": "84890ccbe53549130de8a2b75a72ab3a54b570d1",
+        "commit_url": "https://github.com/aloerch/ambisgis-postgis/commit/84890ccbe53549130de8a2b75a72ab3a54b570d1",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/master",
+        "remote_branch_count": 38,
+        "tag_count": 316,
+        "total_local_remote_tag_refs": 356,
+        "sorted_refs_json_sha256": "c5c0571617b8339d63f0bd69cae8af96276e12543208622080d9a39a90525d0f",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:39:36.973309+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-postgis-84890ccbe535.bundle",
+        "sha256": "bc2bdd1cc3ae18ca532120c854b4502ff5b78762262876cc546fd20bf1e2c4cf",
+        "size_bytes": 307823739,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 357,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "0aacc497642e0d5ca2c68f9e0ca682db04583f57546c4e66af110eca71e8e44e",
+        "verified_at": "2026-09-19T08:45:45.666009+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/ci-freebsd.yml",
+            "blob_sha": "162412ac5fe5ae1846fbad00dad2d8c363129f16",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgis/blob/84890ccbe53549130de8a2b75a72ab3a54b570d1/.github/workflows/ci-freebsd.yml"
+          },
+          {
+            "path": ".github/workflows/ci-macos.yml",
+            "blob_sha": "dbaa9ee8ec7763b1c61ddd51b601c15e6ebf0205",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgis/blob/84890ccbe53549130de8a2b75a72ab3a54b570d1/.github/workflows/ci-macos.yml"
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "blob_sha": "c9d4d16c1dcbaf0aaaac361211c27c263a35dd94",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgis/blob/84890ccbe53549130de8a2b75a72ab3a54b570d1/.github/workflows/ci.yml"
+          },
+          {
+            "path": ".github/workflows/codeql.yml",
+            "blob_sha": "d6792c4033428e81c8c3f2b737f95f83b1f600f4",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgis/blob/84890ccbe53549130de8a2b75a72ab3a54b570d1/.github/workflows/codeql.yml"
+          },
+          {
+            "path": ".github/workflows/codespell.yml",
+            "blob_sha": "d75ca2f01863c6c683c100c2ef8be9be91e9bdb8",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgis/blob/84890ccbe53549130de8a2b75a72ab3a54b570d1/.github/workflows/codespell.yml"
+          },
+          {
+            "path": ".github/workflows/contributor-credits.yml",
+            "blob_sha": "3fd68fa8f24d24dcf65249b51d14e529009a6d0c",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgis/blob/84890ccbe53549130de8a2b75a72ab3a54b570d1/.github/workflows/contributor-credits.yml"
+          },
+          {
+            "path": ".github/workflows/msys.yml",
+            "blob_sha": "1a06602b495064d2937c645272a064550ad2bb76",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgis/blob/84890ccbe53549130de8a2b75a72ab3a54b570d1/.github/workflows/msys.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "COPYING contains GNU GPL version 2 text; LICENSE.TXT states GPL version 2 or later for PostGIS generally and lists dependencies and included-source exceptions."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending."
+        ],
+        "files": [
+          {
+            "original_path": "COPYING",
+            "blob_sha": "d159169d1050894d3ea3b98e1c965c4058208fe1",
+            "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+            "size_bytes": 18092,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgis/blob/84890ccbe53549130de8a2b75a72ab3a54b570d1/COPYING",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "                    GNU GENERAL PUBLIC LICENSE"
+              },
+              {
+                "line_number": 2,
+                "text": "                       Version 2, June 1991"
+              },
+              {
+                "line_number": 4,
+                "text": " Copyright (C) 1989, 1991 Free Software Foundation, Inc.,"
+              },
+              {
+                "line_number": 18,
+                "text": "the GNU Lesser General Public License instead.)  You can apply it to"
+              },
+              {
+                "line_number": 39,
+                "text": "  We protect your rights with two steps: (1) copyright the software, and"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-postgis/COPYING"
+          },
+          {
+            "original_path": "LICENSE.TXT",
+            "blob_sha": "403c98bb6d2c550f629a639faa63cebe14ee3111",
+            "sha256": "c6932c2f90517d5254f49c02f957d54b88b41ec662c2ca62a9488b0ab080b11d",
+            "size_bytes": 3580,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-postgis/blob/84890ccbe53549130de8a2b75a72ab3a54b570d1/LICENSE.TXT",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 12,
+                "text": "of the GNU General Public License, either version 2 or (at your option) any"
+              },
+              {
+                "line_number": 31,
+                "text": "shapefil.h, shpopen.c (copyrighted by Frank Warmerdam and Even Rouault)."
+              },
+              {
+                "line_number": 33,
+                "text": "-- loader/getopt.* are under AT&T public domain (Copyright (c) 1984, 1985 AT&T)."
+              },
+              {
+                "line_number": 41,
+                "text": "contains a copyright, copying notice, or special exception, that file notice is"
+              },
+              {
+                "line_number": 42,
+                "text": "authoritative for redistribution. macros/gtk-2.0.m4 contains Owen Taylor's"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-postgis/LICENSE.TXT"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-qgis",
+      "repository_id": 1376927721,
+      "owned_url": "https://github.com/aloerch/ambisgis-qgis",
+      "origin": "https://github.com/aloerch/ambisgis-qgis.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:39:08.543130+00:00",
+      "donor": {
+        "id": 1690480,
+        "full_name": "qgis/QGIS"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "master",
+        "commit_sha": "09d73a2b827841320e798d1f18c84a4776dbd265",
+        "commit_url": "https://github.com/aloerch/ambisgis-qgis/commit/09d73a2b827841320e798d1f18c84a4776dbd265",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/master",
+        "remote_branch_count": 130,
+        "tag_count": 314,
+        "total_local_remote_tag_refs": 446,
+        "sorted_refs_json_sha256": "c113fef89e9ac3a0a3f40d0972beee4ca83e463d6fd313255bb379ba7a3e587a",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:43:23.497766+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-qgis-09d73a2b8278.bundle",
+        "sha256": "16115faa63138821a443f416abcedfc824d53c552952b21d7d95d5c86ad4fb65",
+        "size_bytes": 5735009887,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 447,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "24b5bb652e3084c541bb74b4d73a05586ed59bb73cc433a595a60ffa01d51ccd",
+        "verified_at": "2026-09-19T08:46:01.067520+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/backport.yml",
+            "blob_sha": "be6deaf74ac893753b07750c5bf9ef79d64b6b58",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/backport.yml"
+          },
+          {
+            "path": ".github/workflows/build-macos-qt6.yml",
+            "blob_sha": "757a61b2ab167e9f27e5d0fec36bff99ced80977",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/build-macos-qt6.yml"
+          },
+          {
+            "path": ".github/workflows/build_artifact_comment.yml",
+            "blob_sha": "3f6e87a36c771f3bfedde3ff17482017d8201b54",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/build_artifact_comment.yml"
+          },
+          {
+            "path": ".github/workflows/check-user-reported-qgis-version.yml",
+            "blob_sha": "8675d884a036d010da22d4589d4be22efe40ec60",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/check-user-reported-qgis-version.yml"
+          },
+          {
+            "path": ".github/workflows/code_layout.yml",
+            "blob_sha": "11575846a5bf027e37d59e863d957da8dbaf419c",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/code_layout.yml"
+          },
+          {
+            "path": ".github/workflows/ogc.yml",
+            "blob_sha": "da5eda0e0eac4cabd6e5963125c40cfabba5c109",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/ogc.yml"
+          },
+          {
+            "path": ".github/workflows/pr-auto-label.yml",
+            "blob_sha": "b5d000b8766fcfd5fee62c296ef35fa0affdb503",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/pr-auto-label.yml"
+          },
+          {
+            "path": ".github/workflows/pr-auto-milestone.yml",
+            "blob_sha": "0e9f8fa03487ce17216b5d45d5fef15f18be1763",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/pr-auto-milestone.yml"
+          },
+          {
+            "path": ".github/workflows/pr-needs-documentation.yml",
+            "blob_sha": "6e4b94723381057411e71167d0a8e1c002ccfe18",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/pr-needs-documentation.yml"
+          },
+          {
+            "path": ".github/workflows/pr_unstale_commit.yml",
+            "blob_sha": "f7cf664dd2871ee0610d7a7c7b11e1cb65037bc1",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/pr_unstale_commit.yml"
+          },
+          {
+            "path": ".github/workflows/pre-commit.yaml",
+            "blob_sha": "2314d234c37f6ec2a6748b89c069b3e239ce16e6",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/pre-commit.yaml"
+          },
+          {
+            "path": ".github/workflows/release.yml",
+            "blob_sha": "d1c0f4b832c0a1e0f8975dc4f7f1665177203ec8",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/release.yml"
+          },
+          {
+            "path": ".github/workflows/run-tests.yml",
+            "blob_sha": "0079e8dc783f012c4c207e409445e38e01c615a6",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/run-tests.yml"
+          },
+          {
+            "path": ".github/workflows/sipify-bot.yml",
+            "blob_sha": "978e470d19488ee02c11384ea59d2fac27ecedf5",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/sipify-bot.yml"
+          },
+          {
+            "path": ".github/workflows/stale.yml",
+            "blob_sha": "eba688686f7921e5ea7953686f469ab28d06d9d0",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/stale.yml"
+          },
+          {
+            "path": ".github/workflows/stale_slop.yml",
+            "blob_sha": "8f99cf94dcacc440a2538a0d3af6477c7cd13e6e",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/stale_slop.yml"
+          },
+          {
+            "path": ".github/workflows/unstale.yml",
+            "blob_sha": "05c8fb791a758b495f3bca99d73578e900e4a548",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/unstale.yml"
+          },
+          {
+            "path": ".github/workflows/vcpkg-bump.yml",
+            "blob_sha": "79ac30d1fae5d39b7b1935506d9cb0c8a4240483",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/vcpkg-bump.yml"
+          },
+          {
+            "path": ".github/workflows/vcpkg-update-report.yml",
+            "blob_sha": "8f29e32557f77fbbfc66cd814b6465807d663f0f",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/vcpkg-update-report.yml"
+          },
+          {
+            "path": ".github/workflows/wasm.yml",
+            "blob_sha": "3a3eaeed63ab1c4696a5d27f036df374e5231b7b",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/wasm.yml"
+          },
+          {
+            "path": ".github/workflows/windows-qt6.yml",
+            "blob_sha": "c1ceebe21dca0a1c3b95176482da97f5473dee9f",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/windows-qt6.yml"
+          },
+          {
+            "path": ".github/workflows/write_failure_comment.yml",
+            "blob_sha": "28cb23fad04f06e6f4681b1655ab070b865de56c",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/.github/workflows/write_failure_comment.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "COPYING contains GNU GPL version 2 text. This file alone does not settle the licensing scope of all source headers, bundled assets, or dependencies."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending."
+        ],
+        "files": [
+          {
+            "original_path": "COPYING",
+            "blob_sha": "8e2daf6bc046673223b197d859fa9609255ef13c",
+            "sha256": "dba313854f65a8d41b1777cf9d6cb5ddf692792be04d808b82c86c63909fbdf0",
+            "size_bytes": 18801,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-qgis/blob/09d73a2b827841320e798d1f18c84a4776dbd265/COPYING",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "                    GNU GENERAL PUBLIC LICENSE"
+              },
+              {
+                "line_number": 2,
+                "text": "                       Version 2, June 1991"
+              },
+              {
+                "line_number": 4,
+                "text": " Copyright (C) 1989, 1991 Free Software Foundation, Inc.,"
+              },
+              {
+                "line_number": 18,
+                "text": "the GNU Lesser General Public License instead.)  You can apply it to"
+              },
+              {
+                "line_number": 39,
+                "text": "  We protect your rights with two steps: (1) copyright the software, and"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-qgis/COPYING"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-jupyterhub",
+      "repository_id": 1376927753,
+      "owned_url": "https://github.com/aloerch/ambisgis-jupyterhub",
+      "origin": "https://github.com/aloerch/ambisgis-jupyterhub.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:39:37.390417+00:00",
+      "donor": {
+        "id": 20785986,
+        "full_name": "jupyterhub/jupyterhub"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "main",
+        "commit_sha": "929ef417d1e337a17a5e3ebfdd0e0143b021f91d",
+        "commit_url": "https://github.com/aloerch/ambisgis-jupyterhub/commit/929ef417d1e337a17a5e3ebfdd0e0143b021f91d",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/main",
+        "remote_branch_count": 9,
+        "tag_count": 103,
+        "total_local_remote_tag_refs": 114,
+        "sorted_refs_json_sha256": "ca659e0ccac5976a52baefb050b6207ad3f2808e93097ec59db2e6b5d419fc38",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:39:44.118632+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-jupyterhub-929ef417d1e3.bundle",
+        "sha256": "876157a2a00c166f4c8417d90f872f521dbc93bd08972303a28f264f003c304f",
+        "size_bytes": 37379597,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 115,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "3785a3156502fe8e8959cc7cbc7562404b55b9d07240c7790ab755a1ec015458",
+        "verified_at": "2026-09-19T08:45:50.825358+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/release.yml",
+            "blob_sha": "305707c9a37681dcff94c8ea95df17a1104dd7d6",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterhub/blob/929ef417d1e337a17a5e3ebfdd0e0143b021f91d/.github/workflows/release.yml"
+          },
+          {
+            "path": ".github/workflows/support-bot.yml",
+            "blob_sha": "f7c5dd0b859b8b1b199db9005b8e3cdcd3567abc",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterhub/blob/929ef417d1e337a17a5e3ebfdd0e0143b021f91d/.github/workflows/support-bot.yml"
+          },
+          {
+            "path": ".github/workflows/test-docs.yml",
+            "blob_sha": "e9e9ab902f71c943875358eac622756fe639414d",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterhub/blob/929ef417d1e337a17a5e3ebfdd0e0143b021f91d/.github/workflows/test-docs.yml"
+          },
+          {
+            "path": ".github/workflows/test-javascript.yml",
+            "blob_sha": "a3b0769a8a58329480b00255af25977492a58203",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterhub/blob/929ef417d1e337a17a5e3ebfdd0e0143b021f91d/.github/workflows/test-javascript.yml"
+          },
+          {
+            "path": ".github/workflows/test.yml",
+            "blob_sha": "4b95fa4627d9a78b756b048f22cd85bd0ae758c1",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterhub/blob/929ef417d1e337a17a5e3ebfdd0e0143b021f91d/.github/workflows/test.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "LICENSE attributes Jupyter Development Team and contains three numbered redistribution and non-endorsement conditions."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending."
+        ],
+        "files": [
+          {
+            "original_path": "LICENSE",
+            "blob_sha": "1cd53dfc5126cc8879ed7f2879fc71860c47553d",
+            "sha256": "7069c7e8d60ec35d526ba72e1683c4509c0c961a1df0dd71d04b94d668dd03a3",
+            "size_bytes": 1475,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterhub/blob/929ef417d1e337a17a5e3ebfdd0e0143b021f91d/LICENSE",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "Copyright 2014-, Jupyter Development Team"
+              },
+              {
+                "line_number": 3,
+                "text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:"
+              },
+              {
+                "line_number": 5,
+                "text": "1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer."
+              },
+              {
+                "line_number": 7,
+                "text": "2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution."
+              },
+              {
+                "line_number": 9,
+                "text": "3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-jupyterhub/LICENSE"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-jupyterlab",
+      "repository_id": 1376927783,
+      "owned_url": "https://github.com/aloerch/ambisgis-jupyterlab",
+      "origin": "https://github.com/aloerch/ambisgis-jupyterlab.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:39:44.578716+00:00",
+      "donor": {
+        "id": 60374819,
+        "full_name": "jupyterlab/jupyterlab"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "main",
+        "commit_sha": "5ad633d6747371452c2f5fe465d18a70b8f3195d",
+        "commit_url": "https://github.com/aloerch/ambisgis-jupyterlab/commit/5ad633d6747371452c2f5fe465d18a70b8f3195d",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/main",
+        "remote_branch_count": 40,
+        "tag_count": 48752,
+        "total_local_remote_tag_refs": 48794,
+        "sorted_refs_json_sha256": "01cc778a436a24d1c8479209e6f9465ef9519095cdb33ff2df1379607b159170",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:40:05.545027+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-jupyterlab-5ad633d67473.bundle",
+        "sha256": "96f80e5ed46ef306b4c4a414c215a95fdf148b9c288aacb2c05257c9f2bd462f",
+        "size_bytes": 325510384,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 48795,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "9a2727b86d428826ab165e585d81ab559557655a3f30eb7d9fa10ca3fe8e3f17",
+        "verified_at": "2026-09-19T08:45:53.538014+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/answered.yml",
+            "blob_sha": "c045bedeb78fc4c5332f3d95dfc3928728eb4df1",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/answered.yml"
+          },
+          {
+            "path": ".github/workflows/auto_author_assign.yml",
+            "blob_sha": "dde3b3db6f1383bff4ad91beb1d18fb65085f190",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/auto_author_assign.yml"
+          },
+          {
+            "path": ".github/workflows/check-external-links.yml",
+            "blob_sha": "06878af357771c4daaeb668289e7e37edd80da8c",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/check-external-links.yml"
+          },
+          {
+            "path": ".github/workflows/check-i18n.yml",
+            "blob_sha": "23fef5f9933b3e91830b8115d226ab8597614173",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/check-i18n.yml"
+          },
+          {
+            "path": ".github/workflows/check-release.yml",
+            "blob_sha": "05370c2c33c4d22f0413289cb01bd8e3d23482a8",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/check-release.yml"
+          },
+          {
+            "path": ".github/workflows/codeql-analysis.yml",
+            "blob_sha": "4971fd5809505e4a45054e45846924822f82f926",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/codeql-analysis.yml"
+          },
+          {
+            "path": ".github/workflows/docker-test.yml",
+            "blob_sha": "573938ae777536ea2675b0d0f7c00f470de80cef",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/docker-test.yml"
+          },
+          {
+            "path": ".github/workflows/enforce-label.yml",
+            "blob_sha": "96217d7b0fb36d1b2bb5dbc32bc815a5c43e991a",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/enforce-label.yml"
+          },
+          {
+            "path": ".github/workflows/galata-flakiness-report.yml",
+            "blob_sha": "6e72b5e2291b4ce68f7f7314f19587d10e26b73b",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/galata-flakiness-report.yml"
+          },
+          {
+            "path": ".github/workflows/galata-pr-comment.yml",
+            "blob_sha": "0cd44b73ca3d74befc743d45e79c0ee3986b9586",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/galata-pr-comment.yml"
+          },
+          {
+            "path": ".github/workflows/galata-update-v2.yml",
+            "blob_sha": "3a2cc3c755f454cc9ae8cf5fe9940b27e37b2c6d",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/galata-update-v2.yml"
+          },
+          {
+            "path": ".github/workflows/galata-update.yml",
+            "blob_sha": "2ecb3dd97ba0b1e6ce798e6cfa9b3964c8e59288",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/galata-update.yml"
+          },
+          {
+            "path": ".github/workflows/galata.yml",
+            "blob_sha": "b145f43a79afc79e0425da71dab293a8c74b0847",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/galata.yml"
+          },
+          {
+            "path": ".github/workflows/labeler.yml",
+            "blob_sha": "94e47b015f0d325b221db63a81dd43a56a31b857",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/labeler.yml"
+          },
+          {
+            "path": ".github/workflows/license-header.yml",
+            "blob_sha": "f3a040bcecd876dd13830a661a8cc8abcd67b137",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/license-header.yml"
+          },
+          {
+            "path": ".github/workflows/linuxjs-tests.yml",
+            "blob_sha": "dbf48da81b4dc40c83c404588429c051ee777d3a",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/linuxjs-tests.yml"
+          },
+          {
+            "path": ".github/workflows/linuxtests.yml",
+            "blob_sha": "922aa20ad1a4b3ed3a15e31c9dd9020678c200d6",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/linuxtests.yml"
+          },
+          {
+            "path": ".github/workflows/lock.yml",
+            "blob_sha": "935ac9f429c62d6234e6250789669b977e22bc30",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/lock.yml"
+          },
+          {
+            "path": ".github/workflows/macostests.yml",
+            "blob_sha": "bb9c306509769423ad18bf974570cf2002967874",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/macostests.yml"
+          },
+          {
+            "path": ".github/workflows/pr-title-spell-check.yml",
+            "blob_sha": "f84022c9ca4883148ae715ba43bfc6f1b46a88ff",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/pr-title-spell-check.yml"
+          },
+          {
+            "path": ".github/workflows/prep-release.yml",
+            "blob_sha": "090b8363f49b5624e0d7af73bb6b00c0aa532d11",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/prep-release.yml"
+          },
+          {
+            "path": ".github/workflows/publish-changelog.yml",
+            "blob_sha": "638ad8ae3c0681b8ec8492ec8ee7dcfadaa784d7",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/publish-changelog.yml"
+          },
+          {
+            "path": ".github/workflows/publish-release.yml",
+            "blob_sha": "aed771c5041375c0084a0a6ad2b406f03bb91944",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/publish-release.yml"
+          },
+          {
+            "path": ".github/workflows/reject-core-meta-changes.yml",
+            "blob_sha": "ac13276f81effa62db11245a236882ac5b98562f",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/reject-core-meta-changes.yml"
+          },
+          {
+            "path": ".github/workflows/reject-staging-checks.yml",
+            "blob_sha": "08630cf19ebc7d0e6f8bba173b4da1ebc78323ee",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/reject-staging-checks.yml"
+          },
+          {
+            "path": ".github/workflows/spell-check.yml",
+            "blob_sha": "31064e79f0bf8aed1a37ee18dc99c2fa0105c9e2",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/spell-check.yml"
+          },
+          {
+            "path": ".github/workflows/windowstests.yml",
+            "blob_sha": "19e41476b1547b8061606782289b13908ab60c84",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/windowstests.yml"
+          },
+          {
+            "path": ".github/workflows/zizmor.yml",
+            "blob_sha": "42f666e7910e6c0ce0cf14bcb0536bd71402bac8",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/.github/workflows/zizmor.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "LICENSE attributes Project Jupyter Contributors and contains three numbered redistribution and non-endorsement conditions."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending."
+        ],
+        "files": [
+          {
+            "original_path": "LICENSE",
+            "blob_sha": "5df16e6eb196ff092e4c7413e9a218fe3705f25c",
+            "sha256": "56b2e89eae0571033d778a9790872f17ee219c723b826399052522ddb94b2853",
+            "size_bytes": 1518,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-jupyterlab/blob/5ad633d6747371452c2f5fe465d18a70b8f3195d/LICENSE",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "Copyright (c) 2015-2026 Project Jupyter Contributors"
+              },
+              {
+                "line_number": 4,
+                "text": "Redistribution and use in source and binary forms, with or without"
+              },
+              {
+                "line_number": 7,
+                "text": "1. Redistributions of source code must retain the above copyright notice, this"
+              },
+              {
+                "line_number": 10,
+                "text": "2. Redistributions in binary form must reproduce the above copyright notice,"
+              },
+              {
+                "line_number": 14,
+                "text": "3. Neither the name of the copyright holder nor the names of its"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-jupyterlab/LICENSE"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-geotools",
+      "repository_id": 1376927869,
+      "owned_url": "https://github.com/aloerch/ambisgis-geotools",
+      "origin": "https://github.com/aloerch/ambisgis-geotools.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:39:54.219613+00:00",
+      "donor": {
+        "id": 2752522,
+        "full_name": "geotools/geotools"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "main",
+        "commit_sha": "9a4f847e8b83875169e279999659052a0cc2bf14",
+        "commit_url": "https://github.com/aloerch/ambisgis-geotools/commit/9a4f847e8b83875169e279999659052a0cc2bf14",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/main",
+        "remote_branch_count": 64,
+        "tag_count": 240,
+        "total_local_remote_tag_refs": 306,
+        "sorted_refs_json_sha256": "bc7d454552284fe1ad1c083d069662bd91643ee9374d89558381f887819f603a",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:40:16.662744+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-geotools-9a4f847e8b83.bundle",
+        "sha256": "c738143f1179d2a8964e11f84bfa84a24c463c95cef4e9c459b31d8b37454212",
+        "size_bytes": 449194517,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 307,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "cf0f869940578350760e6bd0b39c577fffed06219d9074c85c770d0a3ed092a9",
+        "verified_at": "2026-09-19T08:45:56.568369+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/assembly.yml",
+            "blob_sha": "db91f870e5d3ccce255e773306bac6baf43f0915",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/assembly.yml"
+          },
+          {
+            "path": ".github/workflows/backport.yml",
+            "blob_sha": "a438d67763cc17ebdaf6bb5b42da9021dde4f0b8",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/backport.yml"
+          },
+          {
+            "path": ".github/workflows/cql2_online.yml",
+            "blob_sha": "b0058fcc82285a2e60866eb804553cf23f7ff6a0",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/cql2_online.yml"
+          },
+          {
+            "path": ".github/workflows/db2_online.yml",
+            "blob_sha": "8bc5e1ef435950eaff40120ea26bc134d7e88cef",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/db2_online.yml"
+          },
+          {
+            "path": ".github/workflows/elasticsearch_online.yml",
+            "blob_sha": "7d2c5233dd2e073d1274698a78851e22fc4a6faf",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/elasticsearch_online.yml"
+          },
+          {
+            "path": ".github/workflows/geopkg_online.yml",
+            "blob_sha": "3dddd7ac957639b946a53713a0dce2b6b557d6c5",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/geopkg_online.yml"
+          },
+          {
+            "path": ".github/workflows/hana_online.yml",
+            "blob_sha": "7228b25aa5b55436bb86dad270ae2075b108077f",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/hana_online.yml"
+          },
+          {
+            "path": ".github/workflows/informix.yml",
+            "blob_sha": "4700cc1fd15bf4ba7bf61866b1dadfe89ef7bc54",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/informix.yml"
+          },
+          {
+            "path": ".github/workflows/integration-qa.yml",
+            "blob_sha": "2fca50663a459ef4f4de91ef843ca246fbed24fb",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/integration-qa.yml"
+          },
+          {
+            "path": ".github/workflows/integration.yml",
+            "blob_sha": "0a0412106471bcf1ff974192fd4d094fe14316a3",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/integration.yml"
+          },
+          {
+            "path": ".github/workflows/linux_gdal.yml",
+            "blob_sha": "b7fe83d1ca6b6885c918a1c837f14f32d62d6a59",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/linux_gdal.yml"
+          },
+          {
+            "path": ".github/workflows/linux_jdk17.yml",
+            "blob_sha": "818da35a7c860a73d94b49656ede691404befad6",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/linux_jdk17.yml"
+          },
+          {
+            "path": ".github/workflows/linux_jdk21.yml",
+            "blob_sha": "58b29950c77a0c55042d6413fb07f2698c80e6ee",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/linux_jdk21.yml"
+          },
+          {
+            "path": ".github/workflows/linux_jdk25.yml",
+            "blob_sha": "60e8aff4384f546eee47f339e7a9b62db75d00a1",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/linux_jdk25.yml"
+          },
+          {
+            "path": ".github/workflows/linux_locales.yml",
+            "blob_sha": "a3a73c1648856a634b953d6e3d47bc0cbf6f6f9f",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/linux_locales.yml"
+          },
+          {
+            "path": ".github/workflows/macos.yml",
+            "blob_sha": "6a540206683ce3bf846e1f6aefa6c029a0e39fa4",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/macos.yml"
+          },
+          {
+            "path": ".github/workflows/mssql_online.yml",
+            "blob_sha": "30a01e4b481c8469ca7b894f63f08c05a9634fd1",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/mssql_online.yml"
+          },
+          {
+            "path": ".github/workflows/mysql_online.yml",
+            "blob_sha": "1c7db7d4829c066f7175b53ec1591500575435f3",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/mysql_online.yml"
+          },
+          {
+            "path": ".github/workflows/oracle_online.yml",
+            "blob_sha": "5912c40b2dd8bc54d185f7e183b4087165c4ac6c",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/oracle_online.yml"
+          },
+          {
+            "path": ".github/workflows/postgis_online.yml",
+            "blob_sha": "76c2c6f11c13a180b679eaeac34f51381ba1c14d",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/postgis_online.yml"
+          },
+          {
+            "path": ".github/workflows/qa.yml",
+            "blob_sha": "254b5e2fb4d05e5a90e2c1a2257b5f67a5164a5b",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/qa.yml"
+          },
+          {
+            "path": ".github/workflows/solr_online.yml",
+            "blob_sha": "aee7d690542da97b91a1b9b60d50f9121f0bc4e1",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/solr_online.yml"
+          },
+          {
+            "path": ".github/workflows/windows.yml",
+            "blob_sha": "cf1373ea9f6b68f5dde252734c0ea94d3b96e9be",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/.github/workflows/windows.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "LICENSE.md contains GNU LGPL version 2.1 text; licenses/README.md states version 2 or later but its standard-header example says version 2.1. File-header and exception scope remains unresolved.",
+          "Supplementary licenses include fonts, ColorBrewer, Creative Commons, EPSG, OGC, database drivers, and netCDF notices; retention does not establish applicability to a product build."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending."
+        ],
+        "files": [
+          {
+            "original_path": "LICENSE.md",
+            "blob_sha": "d55f6088e5e96fe5933ad3ac1025f32c9055d01f",
+            "sha256": "994ce1902a23c74519b5d118c6bbb657edabce91dd6b7cc825d86bb8f5c9780f",
+            "size_bytes": 26338,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/LICENSE.md",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "### GNU LESSER GENERAL PUBLIC LICENSE"
+              },
+              {
+                "line_number": 3,
+                "text": "Version 2.1, February 1999"
+              },
+              {
+                "line_number": 5,
+                "text": "    Copyright (C) 1991, 1999 Free Software Foundation, Inc."
+              },
+              {
+                "line_number": 12,
+                "text": "     as the successor of the GNU Library Public License, version 2, hence"
+              },
+              {
+                "line_number": 18,
+                "text": "to share and change it. By contrast, the GNU General Public Licenses"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/LICENSE.md"
+          },
+          {
+            "original_path": "licenses/Bitstream-Vera-Fonts.md",
+            "blob_sha": "b4a741004c56a01c7abb692ae808590e68017c9e",
+            "sha256": "8f82fbeab9c8a7af5cbd61a30e39c769ec42d1370abbf0ecb7bcbcf9c6689835",
+            "size_bytes": 6000,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/Bitstream-Vera-Fonts.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "Bitstream Vera Fonts Copyright"
+              },
+              {
+                "line_number": 4,
+                "text": "The fonts have a generous copyright, allowing derivative works (as"
+              },
+              {
+                "line_number": 5,
+                "text": "long as \"Bitstream\" or \"Vera\" are not in the names), and full"
+              },
+              {
+                "line_number": 6,
+                "text": "redistribution (so long as they are not *sold* by themselves). They"
+              },
+              {
+                "line_number": 9,
+                "text": "The fonts are distributed under the following copyright:"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/Bitstream-Vera-Fonts.md"
+          },
+          {
+            "original_path": "licenses/COLORBREWER.md",
+            "blob_sha": "e713ac378dde49a38240aeb7c233885a92bc0916",
+            "sha256": "af2d1abeb8fdf92fb4c411d5dfcce6bac4ea4033bf20b4cd0d612a4f18b56ee5",
+            "size_bytes": 1786,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/COLORBREWER.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "# Apache-Style Software License for ColorBrewer Color Schemes"
+              },
+              {
+                "line_number": 3,
+                "text": "Copyright (c) 2002 Cynthia Brewer, Mark Harrower, and The Pennsylvania State University."
+              },
+              {
+                "line_number": 5,
+                "text": "Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use  this file except in compliance with the License. You may obtain a copy of the License at:"
+              },
+              {
+                "line_number": 11,
+                "text": "Redistribution and use in source and binary forms, with or without modification, "
+              },
+              {
+                "line_number": 14,
+                "text": "1. Redistributions as source code must retain the above copyright notice, this  list of conditions and the following disclaimer. "
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/COLORBREWER.md"
+          },
+          {
+            "original_path": "licenses/CreativeCommonsByAttribution.md",
+            "blob_sha": "9ac10474f9031367db9ee20496514dd9332f8298",
+            "sha256": "582441af51c200f050e55ee378f75bc6d7dd009429bff798bf6ef13daa7b73ac",
+            "size_bytes": 17157,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/CreativeCommonsByAttribution.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 9,
+                "text": "Creative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain oth"
+              },
+              {
+                "line_number": 11,
+                "text": "* __Considerations for licensors:__ Our public licenses are intended for use by those authorized to give the public permission to use material in ways otherwise restricted by copyright and certain other rights. Our licen"
+              },
+              {
+                "line_number": 13,
+                "text": "* __Considerations for the public:__ By using one of our public licenses, a licensor grants the public permission to use the licensed material under specified terms and conditions. If the licensor\u2019s permission is not nec"
+              },
+              {
+                "line_number": 21,
+                "text": "a. __Adapted Material__ means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or"
+              },
+              {
+                "line_number": 23,
+                "text": "b. __Adapter's License__ means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/CreativeCommonsByAttribution.md"
+          },
+          {
+            "original_path": "licenses/EPSG.md",
+            "blob_sha": "46041ff617f3107c8676e93c455b3f2480020da7",
+            "sha256": "3cb5d366eb824312c9e0c7a94e7d0d3bf3a6ee4901d017f3e3be245235daff1c",
+            "size_bytes": 7588,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/EPSG.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "# EPSG Geodetic Parameter Dataset Terms of Use"
+              },
+              {
+                "line_number": 5,
+                "text": "   \u201cRegistry\u201d means the EPSG Geodetic Parameter Registry;\u201cEPSG Dataset\u201d means EPSG Geodetic Parameter Dataset;\u201cIOGP\u201d means the International Association of Oil and Gas Producers, incorporated in England as a company limi"
+              },
+              {
+                "line_number": 7,
+                "text": "   \u201cthe data\u201d means the geodetic parameter data and associated metadata, contained in the EPSG Dataset; it also refers to any subset of data from the EPSG Dataset."
+              },
+              {
+                "line_number": 9,
+                "text": "2. The EPSG Facilities are published by IOGP at no charge. Distribution for profit is forbidden."
+              },
+              {
+                "line_number": 11,
+                "text": "3. The EPSG Facilities are owned by IOGP. They are compiled by the Geodetic Subcommittee of the IOGP from publicly available and member-supplied information."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/EPSG.md"
+          },
+          {
+            "original_path": "licenses/GeoTools.md",
+            "blob_sha": "30f38539938149591e8d94478b4a4deedfdcdc49",
+            "sha256": "17e4f4338f6364576cf201182a0419d96181e8cf265b73952bea2e9000a07fa4",
+            "size_bytes": 1862,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/GeoTools.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 6,
+                "text": "GeoTools files are covered by the copyright of the Open Source Geospatial"
+              },
+              {
+                "line_number": 10,
+                "text": "General Public  License (LGPL), version 2 or later. The directory containing"
+              },
+              {
+                "line_number": 18,
+                "text": "> version 2.1 of the License. <br/>"
+              },
+              {
+                "line_number": 30,
+                "text": "Look for files with names such as [EPSG](EPSG.md) and [OGC](OGC.md)."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/GeoTools.md"
+          },
+          {
+            "original_path": "licenses/HSQL.md",
+            "blob_sha": "0222271abaa66107d91e43700d35285c1c067381",
+            "sha256": "93eb0babe75b422ea15923640a5c46ef3f22cb33986922f358740790ca824aa4",
+            "size_bytes": 1696,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/HSQL.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 4,
+                "text": "_Copyright (c) 2001-2004, The HSQL Development Group_ All rights reserved."
+              },
+              {
+                "line_number": 6,
+                "text": "> Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:"
+              },
+              {
+                "line_number": 8,
+                "text": "> 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer."
+              },
+              {
+                "line_number": 10,
+                "text": "> 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution."
+              },
+              {
+                "line_number": 12,
+                "text": "> 3. Neither the name of the HSQL Development Group nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/HSQL.md"
+          },
+          {
+            "original_path": "licenses/LGPL.md",
+            "blob_sha": "17b05cbcc1ffe20df022124dd960cf9e01bc712e",
+            "sha256": "caf27a8b2f4c7901ff2f62cb416cae4577c37587fd7608fcd61404eabc9669c7",
+            "size_bytes": 26434,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/LGPL.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "### GNU LESSER GENERAL PUBLIC LICENSE"
+              },
+              {
+                "line_number": 3,
+                "text": "Version 2.1, February 1999"
+              },
+              {
+                "line_number": 5,
+                "text": "    Copyright (C) 1991, 1999 Free Software Foundation, Inc."
+              },
+              {
+                "line_number": 12,
+                "text": "     as the successor of the GNU Library Public License, version 2, hence"
+              },
+              {
+                "line_number": 18,
+                "text": "to share and change it. By contrast, the GNU General Public Licenses"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/LGPL.md"
+          },
+          {
+            "original_path": "licenses/OGC.md",
+            "blob_sha": "e8905d8e3856ac418c35b471fdfadf378aea77cb",
+            "sha256": "92e7f53513fd7e4c8459e9d33d709775ada098d594b5a6e20d00e67745cd8d4a",
+            "size_bytes": 2268,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/OGC.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 3,
+                "text": "This OGC work (including software, documents, or other related items) is being provided by the copyright holders under the following license. By obtaining, using and/or copying this work, you (the licensee) agree that yo"
+              },
+              {
+                "line_number": 9,
+                "text": "2. Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of a"
+              },
+              {
+                "line_number": 13,
+                "text": "THIS SOFTWARE AND DOCUMENTATION IS PROVIDED \"AS IS,\" AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICU"
+              },
+              {
+                "line_number": 15,
+                "text": "COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION."
+              },
+              {
+                "line_number": 17,
+                "text": "The name and trademarks of copyright holders may NOT be used in advertising or publicity pertaining to the software without specific, written prior permission. Title to copyright in this software and any associated docum"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/OGC.md"
+          },
+          {
+            "original_path": "licenses/PostgreSQL.md",
+            "blob_sha": "a3cd137f72f92df40a11158b2a80badbf7de5cce",
+            "sha256": "64e8e182ccc063bd69e20e3903713dd05a33848471969f973bd8d2003fd8c9df",
+            "size_bytes": 1484,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/PostgreSQL.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 3,
+                "text": "**Copyright (c) 1997-2005, PostgreSQL Global Development Group**<br/>"
+              },
+              {
+                "line_number": 6,
+                "text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:"
+              },
+              {
+                "line_number": 8,
+                "text": "1. Redistributions of source code must retain the above copyright notice,"
+              },
+              {
+                "line_number": 11,
+                "text": "2. Redistributions in binary form must reproduce the above copyright notice,"
+              },
+              {
+                "line_number": 15,
+                "text": "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\""
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/PostgreSQL.md"
+          },
+          {
+            "original_path": "licenses/README.md",
+            "blob_sha": "28529c0959761a085a68cc84e411738d47e78c43",
+            "sha256": "43920463752117334f1a8172c5b14c82832a02035a8e43ad806385249f9c45c9",
+            "size_bytes": 2423,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/README.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 6,
+                "text": "GeoTools files are covered by the copyright of the Open Source Geospatial"
+              },
+              {
+                "line_number": 10,
+                "text": "General Public  License (LGPL), version 2 or later. The directory containing"
+              },
+              {
+                "line_number": 18,
+                "text": "> version 2.1 of the License. <br/>"
+              },
+              {
+                "line_number": 29,
+                "text": "Look for files with names such as [EPSG](EPSG.md) and [OGC](OGC.md)."
+              },
+              {
+                "line_number": 31,
+                "text": "* [Bitstream Vera Fonts Copyright](Bitstream-Vera-Fonts.md)"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/README.md"
+          },
+          {
+            "original_path": "licenses/W3C.md",
+            "blob_sha": "d8244b3edf07a8f581a922bcc50971f3beb51293",
+            "sha256": "6736e37f92df9c547ea75bf005ff7bcad0a75cfdac46ec27c7a6c1122763dfb2",
+            "size_bytes": 2648,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/W3C.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 6,
+                "text": "This work is being provided by the copyright holders under the following license."
+              },
+              {
+                "line_number": 15,
+                "text": "* Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, the [W3C Software and Document Short Notice](https://www.w3.org/Consortium/Legal/copyright-software-short-notice) sho"
+              },
+              {
+                "line_number": 16,
+                "text": "* Notice of any changes or modifications, through a copyright statement on the new code or document such as \"This software or document includes material copied from or derived from \\[title and URI of the W3C document\\]. "
+              },
+              {
+                "line_number": 20,
+                "text": "THIS WORK IS PROVIDED \"AS IS,\" AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT TH"
+              },
+              {
+                "line_number": 22,
+                "text": "COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENT."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/W3C.md"
+          },
+          {
+            "original_path": "licenses/header_osgeo.txt",
+            "blob_sha": "2d92213da2671649d4b418d4926b359e33857535",
+            "sha256": "7e5f4a9fdb4c6c2286fe9c61bb1746280b06327cddfd691ac71504dbba6c6790",
+            "size_bytes": 644,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/header_osgeo.txt",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 10,
+                "text": " *    version 2.1 of the License."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/header_osgeo.txt"
+          },
+          {
+            "original_path": "licenses/header_publicDomain.txt",
+            "blob_sha": "adeceb3b20ea603389c895a899c463582df940f0",
+            "sha256": "d717b1518eaeba57eb5464529fdc8a71c14dcea645c75bbbecbed6993bc36930",
+            "size_bytes": 302,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/header_publicDomain.txt",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/header_publicDomain.txt"
+          },
+          {
+            "original_path": "licenses/netCDF.md",
+            "blob_sha": "8df6819e73e58eb89699565a7a97f812fdc6a885",
+            "sha256": "9cd33a66378e34280d452ab557237be0d288e519f0ac27e17df72b5778752d89",
+            "size_bytes": 1757,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geotools/blob/9a4f847e8b83875169e279999659052a0cc2bf14/licenses/netCDF.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 3,
+                "text": "_Copyright 1998-2018 University Corporation for Atmospheric Research/Unidata_<br/>"
+              },
+              {
+                "line_number": 6,
+                "text": "Redistribution and use in source and binary forms, with or without modification,"
+              },
+              {
+                "line_number": 9,
+                "text": "1. Redistributions of source code must retain the above copyright notice,"
+              },
+              {
+                "line_number": 12,
+                "text": "2. Redistributions in binary form must reproduce the above copyright notice,"
+              },
+              {
+                "line_number": 16,
+                "text": "3. Neither the name of the copyright holder nor the names of its contributors"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geotools/licenses/netCDF.md"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-geowebcache",
+      "repository_id": 1376927892,
+      "owned_url": "https://github.com/aloerch/ambisgis-geowebcache",
+      "origin": "https://github.com/aloerch/ambisgis-geowebcache.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:40:06.034928+00:00",
+      "donor": {
+        "id": 952585,
+        "full_name": "GeoWebCache/geowebcache"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "main",
+        "commit_sha": "821bae4793863555321cd7a935137c80b8eded73",
+        "commit_url": "https://github.com/aloerch/ambisgis-geowebcache/commit/821bae4793863555321cd7a935137c80b8eded73",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/main",
+        "remote_branch_count": 80,
+        "tag_count": 212,
+        "total_local_remote_tag_refs": 294,
+        "sorted_refs_json_sha256": "5dd44ba683e90bb862a0d13901dc23440fec541c5265d851ad46d1d04dc96014",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:40:10.543429+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-geowebcache-821bae479386.bundle",
+        "sha256": "10dfc62c08e8028f6dddf96692bec2a5bec2db0feba21ae75153db9aa5366a47",
+        "size_bytes": 14633334,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 295,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "ea4d3ea129016f84ead1b5db68d9fecfc7f56eea41e663ccb6b211fdb2c7594c",
+        "verified_at": "2026-09-19T08:45:56.954456+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/azure-integration.yml",
+            "blob_sha": "9ed45c1e263376d1a10428f86480e8f9dc93a998",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/.github/workflows/azure-integration.yml"
+          },
+          {
+            "path": ".github/workflows/backport.yml",
+            "blob_sha": "060f7f4c052b3efb7dff47d1782197b76950001c",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/.github/workflows/backport.yml"
+          },
+          {
+            "path": ".github/workflows/diskquota-jdbc-integration.yml",
+            "blob_sha": "36e3bc5e32f2ddbcacb1858e9c141c17c65bffff",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/.github/workflows/diskquota-jdbc-integration.yml"
+          },
+          {
+            "path": ".github/workflows/gcs-integration.yml",
+            "blob_sha": "28e65ed3b31583dc0da7725f5ee66c2d8d215bef",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/.github/workflows/gcs-integration.yml"
+          },
+          {
+            "path": ".github/workflows/integration.yml",
+            "blob_sha": "199a58cc517ef7146bc1df9382b3971fc7179487",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/.github/workflows/integration.yml"
+          },
+          {
+            "path": ".github/workflows/linux.yml",
+            "blob_sha": "fbd45226853ea77b852f61569397884b2ebce630",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/.github/workflows/linux.yml"
+          },
+          {
+            "path": ".github/workflows/macos.yml",
+            "blob_sha": "e46cc1518dcbae5f2bfc2258601a1fbb5fd6a95a",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/.github/workflows/macos.yml"
+          },
+          {
+            "path": ".github/workflows/windows.yml",
+            "blob_sha": "f77c30e1ef173d51bb5ed57707c236794d91084b",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/.github/workflows/windows.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "No root LICENSE-like file was found. geowebcache/LICENSE.txt contains GNU LGPL version 3 text.",
+          "Separate Blueprint and OpenLayers license files apply to named bundled resources; their scope is not resolved by the core license text."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending."
+        ],
+        "files": [
+          {
+            "original_path": "documentation/en/theme/_static/blueprint/LICENSE",
+            "blob_sha": "d7474100a91bb723f7b32fa66093a7bdd5161905",
+            "sha256": "f452378814d84281b89660f559ddf155c2201e0aba5ecb97e98ebdc549025ff9",
+            "size_bytes": 16748,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/documentation/en/theme/_static/blueprint/LICENSE",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 4,
+                "text": "Copyright (c) 2007-2008 Olav Bjorkoy (olav at bjorkoy.com)"
+              },
+              {
+                "line_number": 21,
+                "text": "The above copyright notice, and every other copyright notice found in this "
+              },
+              {
+                "line_number": 28,
+                "text": "AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER"
+              },
+              {
+                "line_number": 37,
+                "text": "        GNU GENERAL PUBLIC LICENSE"
+              },
+              {
+                "line_number": 38,
+                "text": "           Version 2, June 1991"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geowebcache/documentation/en/theme/_static/blueprint/LICENSE"
+          },
+          {
+            "original_path": "geowebcache/LICENSE.txt",
+            "blob_sha": "fc8a5de7edf437cdc98a216370faf7c757279bcb",
+            "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+            "size_bytes": 7639,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/geowebcache/LICENSE.txt",
+            "scope": "core_module_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "\t\t   GNU LESSER GENERAL PUBLIC LICENSE"
+              },
+              {
+                "line_number": 2,
+                "text": "                       Version 3, 29 June 2007"
+              },
+              {
+                "line_number": 4,
+                "text": " Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>"
+              },
+              {
+                "line_number": 9,
+                "text": "  This version of the GNU Lesser General Public License incorporates"
+              },
+              {
+                "line_number": 10,
+                "text": "the terms and conditions of version 3 of the GNU General Public"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geowebcache/geowebcache/LICENSE.txt"
+          },
+          {
+            "original_path": "geowebcache/core/src/main/resources/org/geowebcache/rest/webresources/openlayers/license.txt",
+            "blob_sha": "285ccc469d18ca34b53f9b90737f8a89ed82bc4e",
+            "sha256": "b44d6ba2797a87b5b12ee8a3d3196aab2a217b79c8618d2dd611ccaf541775fa",
+            "size_bytes": 1860,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geowebcache/blob/821bae4793863555321cd7a935137c80b8eded73/geowebcache/core/src/main/resources/org/geowebcache/rest/webresources/openlayers/license.txt",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 5,
+                "text": "Copyright (c) 2005-2008 MetaCarta, Inc."
+              },
+              {
+                "line_number": 9,
+                "text": "Redistribution and use in source and binary forms, with or without"
+              },
+              {
+                "line_number": 13,
+                "text": " * Redistributions of source code must retain the above copyright"
+              },
+              {
+                "line_number": 16,
+                "text": " * Redistributions in binary form must reproduce the above copyright"
+              },
+              {
+                "line_number": 22,
+                "text": "   contributors may be used to endorse or promote products derived"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geowebcache/geowebcache/core/src/main/resources/org/geowebcache/rest/webresources/openlayers/license.txt"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-geoserver",
+      "repository_id": 1376927947,
+      "owned_url": "https://github.com/aloerch/ambisgis-geoserver",
+      "origin": "https://github.com/aloerch/ambisgis-geoserver.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:40:10.970013+00:00",
+      "donor": {
+        "id": 2751199,
+        "full_name": "geoserver/geoserver"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "main",
+        "commit_sha": "98c7c567a9fa3b691915fa2fc613d90d90d78b62",
+        "commit_url": "https://github.com/aloerch/ambisgis-geoserver/commit/98c7c567a9fa3b691915fa2fc613d90d90d78b62",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/main",
+        "remote_branch_count": 110,
+        "tag_count": 237,
+        "total_local_remote_tag_refs": 349,
+        "sorted_refs_json_sha256": "6c2ee5847e1a2d465284a8f951dde7af86a8182c5b44a84008e1dfe928fed5a6",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:40:39.453856+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-geoserver-98c7c567a9fa.bundle",
+        "sha256": "1e4a84dbb27c6fb52714f43997305fa0b1aa85632e31326dc026ed2d49dd554b",
+        "size_bytes": 657339763,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 350,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "29185ff3781edfd696aa69ebb171873ab219bdc0cd040163e4507ee94fa05d7f",
+        "verified_at": "2026-09-19T08:46:00.250242+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/acceptance.yml",
+            "blob_sha": "d56a0cc60d1fa5266b1f53875c3df352b2cba119",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/acceptance.yml"
+          },
+          {
+            "path": ".github/workflows/assembly.yml",
+            "blob_sha": "87bf1650ed27aec969b0330bfa68bc7925839079",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/assembly.yml"
+          },
+          {
+            "path": ".github/workflows/backport.yml",
+            "blob_sha": "311b4fab13084dfbc40a1950c3077a17894f0782",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/backport.yml"
+          },
+          {
+            "path": ".github/workflows/cite.yml",
+            "blob_sha": "88b54a02380439409610f4ce137d6babc6cc70cd",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/cite.yml"
+          },
+          {
+            "path": ".github/workflows/docs.yml",
+            "blob_sha": "52b00e402b2e1e305a0f5980a9f7fe0f9dd13986",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/docs.yml"
+          },
+          {
+            "path": ".github/workflows/fips.yml",
+            "blob_sha": "81d52517240a9ba40bd67829de731f636ce015f7",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/fips.yml"
+          },
+          {
+            "path": ".github/workflows/javadoc.yml",
+            "blob_sha": "b336e12f6e0b31e6c5e50be377e9583a2178c4c6",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/javadoc.yml"
+          },
+          {
+            "path": ".github/workflows/linux.yml",
+            "blob_sha": "ef520e48138282d80e8011c0f49df05b73ea1619",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/linux.yml"
+          },
+          {
+            "path": ".github/workflows/linux_locales.yml",
+            "blob_sha": "efd18d8e6c988fdabc455942ba30675121b36a83",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/linux_locales.yml"
+          },
+          {
+            "path": ".github/workflows/linux_timezone.yml",
+            "blob_sha": "b7cd2a55deff6c84bd4a985c1e938a31b2a5edf2",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/linux_timezone.yml"
+          },
+          {
+            "path": ".github/workflows/macos.yml",
+            "blob_sha": "41c926f59b8ae6dfbf95275255890799ca110ca4",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/macos.yml"
+          },
+          {
+            "path": ".github/workflows/postgis_appschema_online.yml",
+            "blob_sha": "35ca4fa222e8eb0143c3a56926e3e6d268f249fc",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/postgis_appschema_online.yml"
+          },
+          {
+            "path": ".github/workflows/qa.yml",
+            "blob_sha": "c8009c5c5356fdc1d493fe23e510484eee68aad6",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/qa.yml"
+          },
+          {
+            "path": ".github/workflows/windows.yml",
+            "blob_sha": "6311ee88d83bbe11c4778df32645c35a37210a86",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/.github/workflows/windows.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "LICENSE.md states GPL version 2 or later and includes an EMF/XSD/OSHI combination exception and additional notices.",
+          "The licenses directory includes third-party notices; component inclusion and redistribution obligations remain unresolved."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending."
+        ],
+        "files": [
+          {
+            "original_path": "LICENSE.md",
+            "blob_sha": "af6b139e48b9eb4b97b68674170d509e4d414be1",
+            "sha256": "25bb569259d36ecb73adb0215565f77099d9ad4d095cc0eca67351827d2d9ed1",
+            "size_bytes": 28774,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/LICENSE.md",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 3,
+                "text": "GeoServer is distributed under the GNU General Public License Version 2.0 license:"
+              },
+              {
+                "line_number": 6,
+                "text": "    Copyright (C) 2014-2020 Open Source Geospatial Foundation."
+              },
+              {
+                "line_number": 7,
+                "text": "    Copyright (C) 2001-2014 OpenPlans"
+              },
+              {
+                "line_number": 10,
+                "text": "    it under the terms of the GNU General Public License as published by"
+              },
+              {
+                "line_number": 11,
+                "text": "    the Free Software Foundation; either version 2 of the License, or"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/LICENSE.md"
+          },
+          {
+            "original_path": "licenses/COLORBREWER.md",
+            "blob_sha": "e713ac378dde49a38240aeb7c233885a92bc0916",
+            "sha256": "af2d1abeb8fdf92fb4c411d5dfcce6bac4ea4033bf20b4cd0d612a4f18b56ee5",
+            "size_bytes": 1786,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/COLORBREWER.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "# Apache-Style Software License for ColorBrewer Color Schemes"
+              },
+              {
+                "line_number": 3,
+                "text": "Copyright (c) 2002 Cynthia Brewer, Mark Harrower, and The Pennsylvania State University."
+              },
+              {
+                "line_number": 5,
+                "text": "Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use  this file except in compliance with the License. You may obtain a copy of the License at:"
+              },
+              {
+                "line_number": 11,
+                "text": "Redistribution and use in source and binary forms, with or without modification, "
+              },
+              {
+                "line_number": 14,
+                "text": "1. Redistributions as source code must retain the above copyright notice, this  list of conditions and the following disclaimer. "
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/COLORBREWER.md"
+          },
+          {
+            "original_path": "licenses/CreativeCommonsByAttribution.md",
+            "blob_sha": "9ac10474f9031367db9ee20496514dd9332f8298",
+            "sha256": "582441af51c200f050e55ee378f75bc6d7dd009429bff798bf6ef13daa7b73ac",
+            "size_bytes": 17157,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/CreativeCommonsByAttribution.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 9,
+                "text": "Creative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain oth"
+              },
+              {
+                "line_number": 11,
+                "text": "* __Considerations for licensors:__ Our public licenses are intended for use by those authorized to give the public permission to use material in ways otherwise restricted by copyright and certain other rights. Our licen"
+              },
+              {
+                "line_number": 13,
+                "text": "* __Considerations for the public:__ By using one of our public licenses, a licensor grants the public permission to use the licensed material under specified terms and conditions. If the licensor\u2019s permission is not nec"
+              },
+              {
+                "line_number": 21,
+                "text": "a. __Adapted Material__ means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or"
+              },
+              {
+                "line_number": 23,
+                "text": "b. __Adapter's License__ means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/CreativeCommonsByAttribution.md"
+          },
+          {
+            "original_path": "licenses/EPSG.md",
+            "blob_sha": "46041ff617f3107c8676e93c455b3f2480020da7",
+            "sha256": "3cb5d366eb824312c9e0c7a94e7d0d3bf3a6ee4901d017f3e3be245235daff1c",
+            "size_bytes": 7588,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/EPSG.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "# EPSG Geodetic Parameter Dataset Terms of Use"
+              },
+              {
+                "line_number": 5,
+                "text": "   \u201cRegistry\u201d means the EPSG Geodetic Parameter Registry;\u201cEPSG Dataset\u201d means EPSG Geodetic Parameter Dataset;\u201cIOGP\u201d means the International Association of Oil and Gas Producers, incorporated in England as a company limi"
+              },
+              {
+                "line_number": 7,
+                "text": "   \u201cthe data\u201d means the geodetic parameter data and associated metadata, contained in the EPSG Dataset; it also refers to any subset of data from the EPSG Dataset."
+              },
+              {
+                "line_number": 9,
+                "text": "2. The EPSG Facilities are published by IOGP at no charge. Distribution for profit is forbidden."
+              },
+              {
+                "line_number": 11,
+                "text": "3. The EPSG Facilities are owned by IOGP. They are compiled by the Geodetic Subcommittee of the IOGP from publicly available and member-supplied information."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/EPSG.md"
+          },
+          {
+            "original_path": "licenses/GEOTOOLS_NOTICE.txt",
+            "blob_sha": "83ceaad0e5f4279db02acfc8b06a6fae6ae059d1",
+            "sha256": "faf70d509c578e896e8e0b19bae482897a2a682a4e5df3018990d2517a8abb6d",
+            "size_bytes": 2422,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/GEOTOOLS_NOTICE.txt",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 6,
+                "text": "GeoTools files are covered by the copyright of the Open Source Geospatial"
+              },
+              {
+                "line_number": 10,
+                "text": "General Public  License (LGPL), version 2 or later. The directory containing"
+              },
+              {
+                "line_number": 18,
+                "text": "> version 2.1 of the License. <br/>"
+              },
+              {
+                "line_number": 29,
+                "text": "Look for files with names such as [EPSG](EPSG.md) and [OGC](OGC.md)."
+              },
+              {
+                "line_number": 31,
+                "text": "* [Bitstream Vera Fonts Copyright](Bitstream-Vera-Fonts.md)"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/GEOTOOLS_NOTICE.txt"
+          },
+          {
+            "original_path": "licenses/GPL.md",
+            "blob_sha": "90ae12017c9656645386f404e89506593dd31d32",
+            "sha256": "e7ea3adeab955103a837b692ca0017cb3abbed0d3dccbfa499d6b2b825d698c3",
+            "size_bytes": 17894,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/GPL.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "### GNU GENERAL PUBLIC LICENSE"
+              },
+              {
+                "line_number": 3,
+                "text": "Version 2, June 1991"
+              },
+              {
+                "line_number": 5,
+                "text": "    Copyright (C) 1989, 1991 Free Software Foundation, Inc.  "
+              },
+              {
+                "line_number": 14,
+                "text": "to share and change it. By contrast, the GNU General Public License is"
+              },
+              {
+                "line_number": 20,
+                "text": "the GNU Lesser General Public License instead.) You can apply it to"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/GPL.md"
+          },
+          {
+            "original_path": "licenses/HSQL.md",
+            "blob_sha": "0222271abaa66107d91e43700d35285c1c067381",
+            "sha256": "93eb0babe75b422ea15923640a5c46ef3f22cb33986922f358740790ca824aa4",
+            "size_bytes": 1696,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/HSQL.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 4,
+                "text": "_Copyright (c) 2001-2004, The HSQL Development Group_ All rights reserved."
+              },
+              {
+                "line_number": 6,
+                "text": "> Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:"
+              },
+              {
+                "line_number": 8,
+                "text": "> 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer."
+              },
+              {
+                "line_number": 10,
+                "text": "> 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution."
+              },
+              {
+                "line_number": 12,
+                "text": "> 3. Neither the name of the HSQL Development Group nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/HSQL.md"
+          },
+          {
+            "original_path": "licenses/IBM-IPLA.md",
+            "blob_sha": "c4835b792f91b7fceb2b0ef080467a8026d5be8a",
+            "sha256": "a3ed209a536ecbb907f1a1d8cd4fc80276bc8bd1ea6ec45bc5188f8ea5a0aef9",
+            "size_bytes": 2521,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/IBM-IPLA.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 32,
+                "text": "any copyright or notice files contained in the Redistributables or use IBM's, it's suppliers' or"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/IBM-IPLA.md"
+          },
+          {
+            "original_path": "licenses/LGPL.md",
+            "blob_sha": "17b05cbcc1ffe20df022124dd960cf9e01bc712e",
+            "sha256": "caf27a8b2f4c7901ff2f62cb416cae4577c37587fd7608fcd61404eabc9669c7",
+            "size_bytes": 26434,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/LGPL.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "### GNU LESSER GENERAL PUBLIC LICENSE"
+              },
+              {
+                "line_number": 3,
+                "text": "Version 2.1, February 1999"
+              },
+              {
+                "line_number": 5,
+                "text": "    Copyright (C) 1991, 1999 Free Software Foundation, Inc."
+              },
+              {
+                "line_number": 12,
+                "text": "     as the successor of the GNU Library Public License, version 2, hence"
+              },
+              {
+                "line_number": 18,
+                "text": "to share and change it. By contrast, the GNU General Public Licenses"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/LGPL.md"
+          },
+          {
+            "original_path": "licenses/NOTICE.md",
+            "blob_sha": "9cf07b39e425b1da95aa1de40b5cb5cc49e4714e",
+            "sha256": "de9d64d7399034f0400c9d50f2305904f80e59c1dbfd8b38255f83300d4b3b31",
+            "size_bytes": 30291,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/NOTICE.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 3,
+                "text": "GeoServer is distributed under the GNU General Public License Version 2.0 license:"
+              },
+              {
+                "line_number": 6,
+                "text": "    Copyright (C) 2014-2020 Open Source Geospatial Foundation."
+              },
+              {
+                "line_number": 7,
+                "text": "    Copyright (C) 2001-2014 OpenPlans"
+              },
+              {
+                "line_number": 10,
+                "text": "    it under the terms of the GNU General Public License as published by"
+              },
+              {
+                "line_number": 11,
+                "text": "    the Free Software Foundation; either version 2 of the License, or"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/NOTICE.md"
+          },
+          {
+            "original_path": "licenses/OGC.md",
+            "blob_sha": "e8905d8e3856ac418c35b471fdfadf378aea77cb",
+            "sha256": "92e7f53513fd7e4c8459e9d33d709775ada098d594b5a6e20d00e67745cd8d4a",
+            "size_bytes": 2268,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/OGC.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 3,
+                "text": "This OGC work (including software, documents, or other related items) is being provided by the copyright holders under the following license. By obtaining, using and/or copying this work, you (the licensee) agree that yo"
+              },
+              {
+                "line_number": 9,
+                "text": "2. Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of a"
+              },
+              {
+                "line_number": 13,
+                "text": "THIS SOFTWARE AND DOCUMENTATION IS PROVIDED \"AS IS,\" AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICU"
+              },
+              {
+                "line_number": 15,
+                "text": "COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION."
+              },
+              {
+                "line_number": 17,
+                "text": "The name and trademarks of copyright holders may NOT be used in advertising or publicity pertaining to the software without specific, written prior permission. Title to copyright in this software and any associated docum"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/OGC.md"
+          },
+          {
+            "original_path": "licenses/OracleFUTC.md",
+            "blob_sha": "1c26d15fb55dba3dd5b6db9b695944f43ab3bf64",
+            "sha256": "53b3f545f33f386c193978edac0e99896bb2481662b9dc69c24ea8f24710534e",
+            "size_bytes": 5767,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/OracleFUTC.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/OracleFUTC.md"
+          },
+          {
+            "original_path": "licenses/PostgreSQL.md",
+            "blob_sha": "a3cd137f72f92df40a11158b2a80badbf7de5cce",
+            "sha256": "64e8e182ccc063bd69e20e3903713dd05a33848471969f973bd8d2003fd8c9df",
+            "size_bytes": 1484,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/PostgreSQL.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 3,
+                "text": "**Copyright (c) 1997-2005, PostgreSQL Global Development Group**<br/>"
+              },
+              {
+                "line_number": 6,
+                "text": "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:"
+              },
+              {
+                "line_number": 8,
+                "text": "1. Redistributions of source code must retain the above copyright notice,"
+              },
+              {
+                "line_number": 11,
+                "text": "2. Redistributions in binary form must reproduce the above copyright notice,"
+              },
+              {
+                "line_number": 15,
+                "text": "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\""
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/PostgreSQL.md"
+          },
+          {
+            "original_path": "licenses/W3C.md",
+            "blob_sha": "d8244b3edf07a8f581a922bcc50971f3beb51293",
+            "sha256": "6736e37f92df9c547ea75bf005ff7bcad0a75cfdac46ec27c7a6c1122763dfb2",
+            "size_bytes": 2648,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/W3C.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 6,
+                "text": "This work is being provided by the copyright holders under the following license."
+              },
+              {
+                "line_number": 15,
+                "text": "* Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, the [W3C Software and Document Short Notice](https://www.w3.org/Consortium/Legal/copyright-software-short-notice) sho"
+              },
+              {
+                "line_number": 16,
+                "text": "* Notice of any changes or modifications, through a copyright statement on the new code or document such as \"This software or document includes material copied from or derived from \\[title and URI of the W3C document\\]. "
+              },
+              {
+                "line_number": 20,
+                "text": "THIS WORK IS PROVIDED \"AS IS,\" AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT TH"
+              },
+              {
+                "line_number": 22,
+                "text": "COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENT."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/W3C.md"
+          },
+          {
+            "original_path": "licenses/apache-1.1.md",
+            "blob_sha": "46a200fd35a9addfed9c91c3953cd3a642273b9e",
+            "sha256": "a699603340daea451f87e7c3589f137529b9ad9d571df078f60879dba804844f",
+            "size_bytes": 2137,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/apache-1.1.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 3,
+                "text": "Copyright (c) 2000-2002 The Apache Software Foundation.  All rights"
+              },
+              {
+                "line_number": 6,
+                "text": "Redistribution and use in source and binary forms, with or without"
+              },
+              {
+                "line_number": 10,
+                "text": "1. Redistributions of source code must retain the above copyright"
+              },
+              {
+                "line_number": 13,
+                "text": "2. Redistributions in binary form must reproduce the above copyright"
+              },
+              {
+                "line_number": 18,
+                "text": "3. The end-user documentation included with the redistribution,"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/apache-1.1.md"
+          },
+          {
+            "original_path": "licenses/apache-2.0.md",
+            "blob_sha": "a4c5fe448deb60f7d3fa6d6ba975a8e5f36af0b4",
+            "sha256": "c93c2d53df306f20be69097a824b45477f9b360e7cdad1c6fc29da6789e99a94",
+            "size_bytes": 10493,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/apache-2.0.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 4,
+                "text": "_Version 2.0, January 2004_  "
+              },
+              {
+                "line_number": 14,
+                "text": "\u201cLicensor\u201d shall mean the copyright owner or entity authorized by the copyright"
+              },
+              {
+                "line_number": 36,
+                "text": "available under the License, as indicated by a copyright notice that is included"
+              },
+              {
+                "line_number": 49,
+                "text": "by the copyright owner or by an individual or Legal Entity authorized to submit"
+              },
+              {
+                "line_number": 50,
+                "text": "on behalf of the copyright owner. For the purposes of this definition,"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/apache-2.0.md"
+          },
+          {
+            "original_path": "licenses/epl-1.0.md",
+            "blob_sha": "e95f32a68ef88b59ec84c6b385251037a6263795",
+            "sha256": "254d8d89fe25d76cc9ce43245f733b34532bc3a7f00befdf03ff337d34f0d5c1",
+            "size_bytes": 11279,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/epl-1.0.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 29,
+                "text": "a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform"
+              },
+              {
+                "line_number": 35,
+                "text": "d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement."
+              },
+              {
+                "line_number": 59,
+                "text": "Contributors may not remove or alter any copyright notices contained within the Program."
+              },
+              {
+                "line_number": 85,
+                "text": "Everyone is permitted to copy and distribute copies of this Agreement, but in order to avoid inconsistency the Agreement is copyrighted and may only be modified in the following manner. The Agreement Steward reserves the"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/epl-1.0.md"
+          },
+          {
+            "original_path": "licenses/mpl-2.0.md",
+            "blob_sha": "3759302a477065dc446f76eb374e72e6c770431c",
+            "sha256": "86299535d4d06830eb8e53a37d074d7b51345eedfbe7edd89a1656bf35077662",
+            "size_bytes": 15580,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/mpl-2.0.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "Mozilla Public License Version 2.0"
+              },
+              {
+                "line_number": 65,
+                "text": "    means either the GNU General Public License, Version 2.0, the GNU"
+              },
+              {
+                "line_number": 66,
+                "text": "    Lesser General Public License, Version 2.1, the GNU Affero General"
+              },
+              {
+                "line_number": 67,
+                "text": "    Public License, Version 3.0, or any later versions of those"
+              },
+              {
+                "line_number": 143,
+                "text": "applicable copyright doctrines of fair use, fair dealing, or other"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/mpl-2.0.md"
+          },
+          {
+            "original_path": "licenses/netCDF.md",
+            "blob_sha": "8df6819e73e58eb89699565a7a97f812fdc6a885",
+            "sha256": "9cd33a66378e34280d452ab557237be0d288e519f0ac27e17df72b5778752d89",
+            "size_bytes": 1757,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geoserver/blob/98c7c567a9fa3b691915fa2fc613d90d90d78b62/licenses/netCDF.md",
+            "scope": "supplementary_or_asset_notice_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 3,
+                "text": "_Copyright 1998-2018 University Corporation for Atmospheric Research/Unidata_<br/>"
+              },
+              {
+                "line_number": 6,
+                "text": "Redistribution and use in source and binary forms, with or without modification,"
+              },
+              {
+                "line_number": 9,
+                "text": "1. Redistributions of source code must retain the above copyright notice,"
+              },
+              {
+                "line_number": 12,
+                "text": "2. Redistributions in binary form must reproduce the above copyright notice,"
+              },
+              {
+                "line_number": 16,
+                "text": "3. Neither the name of the copyright holder nor the names of its contributors"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geoserver/licenses/netCDF.md"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-geonode",
+      "repository_id": 1376927978,
+      "owned_url": "https://github.com/aloerch/ambisgis-geonode",
+      "origin": "https://github.com/aloerch/ambisgis-geonode.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:40:17.089541+00:00",
+      "donor": {
+        "id": 701765,
+        "full_name": "GeoNode/geonode"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "master",
+        "commit_sha": "ddfdc44cabf13931fb1d53d35809699d6e4766ae",
+        "commit_url": "https://github.com/aloerch/ambisgis-geonode/commit/ddfdc44cabf13931fb1d53d35809699d6e4766ae",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/master",
+        "remote_branch_count": 30,
+        "tag_count": 491,
+        "total_local_remote_tag_refs": 523,
+        "sorted_refs_json_sha256": "f57f98d2dc422050d3b2434cfa379729393c4dbcfc7a2b2ff7943426c46d5dd2",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:41:06.233413+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-geonode-ddfdc44cabf1.bundle",
+        "sha256": "c5bac3dfb45f503397275a3739b115bd7434bebab1e90d5624375189c68514bd",
+        "size_bytes": 498966440,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 524,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "7610123ac016eac867130a7d8a777e5532adc151ab2122e2a1bad955fe73686d",
+        "verified_at": "2026-09-19T08:46:01.886086+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/backport.yml",
+            "blob_sha": "29ad6d52f261ba707e9a4dd3b2e3a96ce53a5a06",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geonode/blob/ddfdc44cabf13931fb1d53d35809699d6e4766ae/.github/workflows/backport.yml"
+          },
+          {
+            "path": ".github/workflows/codeql.yml",
+            "blob_sha": "6ea0cc06511647102a176b4a99810d6ceb8db682",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geonode/blob/ddfdc44cabf13931fb1d53d35809699d6e4766ae/.github/workflows/codeql.yml"
+          },
+          {
+            "path": ".github/workflows/flake8.yml",
+            "blob_sha": "2ddc257ffacb4f5b95b3efa58817ac411e4b7595",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geonode/blob/ddfdc44cabf13931fb1d53d35809699d6e4766ae/.github/workflows/flake8.yml"
+          },
+          {
+            "path": ".github/workflows/run-test-suite.yml",
+            "blob_sha": "f88c169baaf74bc90c3b7b42d23b4adcbcdde66f",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geonode/blob/ddfdc44cabf13931fb1d53d35809699d6e4766ae/.github/workflows/run-test-suite.yml"
+          },
+          {
+            "path": ".github/workflows/stale.yml",
+            "blob_sha": "f887c1719edb657ec56a988ccfd262d0b1f99596",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geonode/blob/ddfdc44cabf13931fb1d53d35809699d6e4766ae/.github/workflows/stale.yml"
+          },
+          {
+            "path": ".github/workflows/tests.yml",
+            "blob_sha": "7764f298641df7b4708589b24cbd95c57cb61048",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geonode/blob/ddfdc44cabf13931fb1d53d35809699d6e4766ae/.github/workflows/tests.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "LICENSE header states GNU GPL version 2 or later; its separator labels the reproduced complete license as GPL v3 and the reproduced text is version 3. Both facts are preserved without choosing a product license or concluding incompatibility."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending.",
+          "Review the GPL version-2-or-later header alongside the reproduced GPL version-3 text; do not derive a new licensing choice from this inventory."
+        ],
+        "files": [
+          {
+            "original_path": "LICENSE",
+            "blob_sha": "6c1d884a15799e997ab66b822b70c0f92cc2ce54",
+            "sha256": "90ef058cd188d1fbf4a2337f4e2bf4671236aa5eaf435432d7c40b498f032edf",
+            "size_bytes": 36001,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-geonode/blob/ddfdc44cabf13931fb1d53d35809699d6e4766ae/LICENSE",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 2,
+                "text": "Copyright (C) 2014\u2013present Open Source Geospatial Foundation"
+              },
+              {
+                "line_number": 3,
+                "text": "Copyright (C) 2001-2014 OpenPlans"
+              },
+              {
+                "line_number": 6,
+                "text": "it under the terms of the GNU General Public License as published by"
+              },
+              {
+                "line_number": 7,
+                "text": "the Free Software Foundation; either version 2 of the License, or"
+              },
+              {
+                "line_number": 13,
+                "text": "GNU General Public License for more details."
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-geonode/LICENSE"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-mapstore-client",
+      "repository_id": 1376928013,
+      "owned_url": "https://github.com/aloerch/ambisgis-mapstore-client",
+      "origin": "https://github.com/aloerch/ambisgis-mapstore-client.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:40:39.884337+00:00",
+      "donor": {
+        "id": 193512177,
+        "full_name": "GeoNode/geonode-mapstore-client"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "master",
+        "commit_sha": "673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7",
+        "commit_url": "https://github.com/aloerch/ambisgis-mapstore-client/commit/673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/master",
+        "remote_branch_count": 95,
+        "tag_count": 60,
+        "total_local_remote_tag_refs": 157,
+        "sorted_refs_json_sha256": "3157481e379101f3a7461bc387a67f72772a9bae34114bc7eebf3b99c5becfe3",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:42:15.281069+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-mapstore-client-673a854c4b3b.bundle",
+        "sha256": "263740e7d437e77f50bc8c665b30ff69398d12823d7b2527531371cdbcc0fbd2",
+        "size_bytes": 2093037430,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 158,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "eb5c91ebae216a2a9be618732f35135e525731884fdfde6117d6e1e47613ccfa",
+        "verified_at": "2026-09-19T08:46:06.259445+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/backport.yml",
+            "blob_sha": "29ad6d52f261ba707e9a4dd3b2e3a96ce53a5a06",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore-client/blob/673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7/.github/workflows/backport.yml"
+          },
+          {
+            "path": ".github/workflows/build.yml",
+            "blob_sha": "3ff75cb7d9da2490c5a86a8799d3e25abe6534ce",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore-client/blob/673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7/.github/workflows/build.yml"
+          },
+          {
+            "path": ".github/workflows/static.yml",
+            "blob_sha": "20a08d02d0c724c1bded1f812e9e4d8766b3da94",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore-client/blob/673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7/.github/workflows/static.yml"
+          },
+          {
+            "path": ".github/workflows/test.yml",
+            "blob_sha": "10a80171725c8e264de827b60d21fe8633ef2d20",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore-client/blob/673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7/.github/workflows/test.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "LICENSE attributes GeoSolutions Sas and contains two numbered source/binary redistribution conditions plus a MapStore2 attribution disclaimer.",
+          "The MapStore2 submodule has its own source and licensing scope; the client LICENSE is not evidence that submodule custody or obligations are complete."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending."
+        ],
+        "files": [
+          {
+            "original_path": "LICENSE",
+            "blob_sha": "d383fa83cba58726dd59ce3145df56b3e4b5deaa",
+            "sha256": "92cd28cdfe6f432e4a43bb9855feb2e020771f2f7d6de72e68d1f41a0c9d48d6",
+            "size_bytes": 1539,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore-client/blob/673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7/LICENSE",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "Copyright (c) 2015-2018, GeoSolutions Sas"
+              },
+              {
+                "line_number": 4,
+                "text": "Redistribution and use in source and binary forms, with or without modification, are"
+              },
+              {
+                "line_number": 7,
+                "text": "   1. Redistributions of source code must retain the above copyright notice, this list of"
+              },
+              {
+                "line_number": 10,
+                "text": "   2. Redistributions in binary form must reproduce the above copyright notice, this list"
+              },
+              {
+                "line_number": 14,
+                "text": "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-mapstore-client/LICENSE"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-mapstore",
+      "repository_id": 1376928043,
+      "owned_url": "https://github.com/aloerch/ambisgis-mapstore",
+      "origin": "https://github.com/aloerch/ambisgis-mapstore.git",
+      "public": true,
+      "identity_observed_at": "2026-09-19T08:41:06.726500+00:00",
+      "donor": {
+        "id": 39382076,
+        "full_name": "geosolutions-it/MapStore2"
+      },
+      "observed_baseline": {
+        "status": "Unapproved default-head observation",
+        "branch": "master",
+        "commit_sha": "0eedc8b7184d3b753d0581963814726f1e5ec8eb",
+        "commit_url": "https://github.com/aloerch/ambisgis-mapstore/commit/0eedc8b7184d3b753d0581963814726f1e5ec8eb",
+        "matches_bootstrap_receipt": true,
+        "donor_default_tip_matches": true,
+        "product_branch_created": false
+      },
+      "preserved_refs": {
+        "origin_head": "refs/remotes/origin/master",
+        "remote_branch_count": 153,
+        "tag_count": 66,
+        "total_local_remote_tag_refs": 221,
+        "sorted_refs_json_sha256": "fc59fc599c46ecc1a1144e9267591453e78dd0d699ec0cc2298a45412b848dd3",
+        "digest_encoding": "UTF-8 JSON of [{name, sha}, ...], sorted by name; object keys sorted; separators comma and colon; no terminal newline",
+        "all_refs_in_bundle": true,
+        "donor_reference_policy": "Inherited branches and tags are retained provenance; no automatic synchronization or release-selection authority."
+      },
+      "clone_verification": {
+        "full_history": true,
+        "partial_clone_configuration_absent": true,
+        "checkout_performed": false,
+        "fsck_connectivity_only_exit_code": 0,
+        "fsck_completed_at": "2026-09-19T08:41:49.020936+00:00"
+      },
+      "archive": {
+        "workspace_relative_path": "source-archives/ambisgis-mapstore-0eedc8b7184d.bundle",
+        "sha256": "f9ce607c7fdfd070f8bdafd50b8cea288cc85bd2e9ae8e27763188c1500c02c4",
+        "size_bytes": 686244028,
+        "format": "# v2 git bundle",
+        "bundle_ref_count": 222,
+        "external_git_object_prerequisite_count": 0,
+        "bundle_create_exit_code": 0,
+        "bundle_verify_exit_code": 0,
+        "bundle_verify_log_sha256": "0438d82834685d7f1dc7102e28c5fafef848e826324330ae9f03a8923ede6055",
+        "verified_at": "2026-09-19T08:46:05.984178+00:00",
+        "all_source_refs_exact_match": true
+      },
+      "workflow_evidence": {
+        "contents_review_completed": false,
+        "execution_by_acquisition": false,
+        "files": [
+          {
+            "path": ".github/workflows/CI.yml",
+            "blob_sha": "d31ed56fc49478159b8f215fc4adb3a7ca52d2ae",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore/blob/0eedc8b7184d3b753d0581963814726f1e5ec8eb/.github/workflows/CI.yml"
+          },
+          {
+            "path": ".github/workflows/backport.yml",
+            "blob_sha": "a1934e507d0076bbeb46f45af977525073b2a3dd",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore/blob/0eedc8b7184d3b753d0581963814726f1e5ec8eb/.github/workflows/backport.yml"
+          },
+          {
+            "path": ".github/workflows/build.yml",
+            "blob_sha": "5672816bebcf6f4f04c1330c54a99408fd2120f4",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore/blob/0eedc8b7184d3b753d0581963814726f1e5ec8eb/.github/workflows/build.yml"
+          },
+          {
+            "path": ".github/workflows/check_milestone.yml",
+            "blob_sha": "5ed88ce91ed0cc922dc8c775d8a40c5a0b5d02d8",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore/blob/0eedc8b7184d3b753d0581963814726f1e5ec8eb/.github/workflows/check_milestone.yml"
+          },
+          {
+            "path": ".github/workflows/create_release.yml",
+            "blob_sha": "38212a8e9a73e1dba99a00a1067cc1b5f457e662",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore/blob/0eedc8b7184d3b753d0581963814726f1e5ec8eb/.github/workflows/create_release.yml"
+          },
+          {
+            "path": ".github/workflows/cut_major_branch.yml",
+            "blob_sha": "a10f1d0a6c40e83b3d66024fed28f6d709c8dac0",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore/blob/0eedc8b7184d3b753d0581963814726f1e5ec8eb/.github/workflows/cut_major_branch.yml"
+          },
+          {
+            "path": ".github/workflows/post_release.yml",
+            "blob_sha": "d70bf51cc4262aa13211402224fdf24d8c4db2ae",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore/blob/0eedc8b7184d3b753d0581963814726f1e5ec8eb/.github/workflows/post_release.yml"
+          },
+          {
+            "path": ".github/workflows/pre_release.yml",
+            "blob_sha": "97b36e09ce216180d76b4694292e5dedaabf8af0",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore/blob/0eedc8b7184d3b753d0581963814726f1e5ec8eb/.github/workflows/pre_release.yml"
+          },
+          {
+            "path": ".github/workflows/update_dependencies_versions.yml",
+            "blob_sha": "c9b03a2ca82df6d6f1114398a7d2f887241d085e",
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore/blob/0eedc8b7184d3b753d0581963814726f1e5ec8eb/.github/workflows/update_dependencies_versions.yml"
+          }
+        ]
+      },
+      "license_evidence": {
+        "approval": false,
+        "license_selected": false,
+        "factual_observations": [
+          "LICENSE.txt attributes GeoSolutions SRL and contains two numbered source/binary redistribution conditions plus a MapStore2 attribution disclaimer."
+        ],
+        "unresolved_scope_and_asset_obligations": [
+          "Human license and brand review is pending; no approval or relicensing decision is recorded.",
+          "This inspection does not exhaust source headers, nested or vendored code, fonts, images, datasets, translations, submodules, or dependency licenses.",
+          "Determine included product components and applicable attribution, notice, corresponding-source, linking, and distribution obligations before a release.",
+          "Product baseline approval, binary branding, dependency provenance, and release gates remain pending."
+        ],
+        "files": [
+          {
+            "original_path": "LICENSE.txt",
+            "blob_sha": "31b15b949d3e91fae5bb8ab8d8718a2241e0e934",
+            "sha256": "11fa1f48ecca52099e110ac43793a3a8ac3a9970dea4cb3bcdcbef0c127a672b",
+            "size_bytes": 1540,
+            "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore/blob/0eedc8b7184d3b753d0581963814726f1e5ec8eb/LICENSE.txt",
+            "scope": "root_license_evidence",
+            "textual_indicators": [
+              {
+                "line_number": 1,
+                "text": "Copyright (c) 2015-2025, GeoSolutions SRL"
+              },
+              {
+                "line_number": 4,
+                "text": "Redistribution and use in source and binary forms, with or without modification, are"
+              },
+              {
+                "line_number": 7,
+                "text": "   1. Redistributions of source code must retain the above copyright notice, this list of"
+              },
+              {
+                "line_number": 10,
+                "text": "   2. Redistributions in binary form must reproduce the above copyright notice, this list"
+              },
+              {
+                "line_number": 14,
+                "text": "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY"
+              }
+            ],
+            "applicability_review_approved": false,
+            "workspace_relative_path": "source-archives/license-evidence/ambisgis-mapstore/LICENSE.txt"
+          }
+        ]
+      }
+    }
+  ],
+  "dependency_tuple_inspection": {
+    "geonode": {
+      "repository": "aloerch/ambisgis-geonode",
+      "commit_sha": "ddfdc44cabf13931fb1d53d35809699d6e4766ae",
+      "files": [
+        {
+          "path": "pyproject.toml",
+          "blob_sha": "d3fa11e4ef76df3943749acf68585a50b8d82cfb",
+          "sha256": "c21ac2400cfdd9f4d78fbd1ea959f2d0336798f13998400b44f081da0bba1b7c",
+          "owned_blob_url": "https://github.com/aloerch/ambisgis-geonode/blob/ddfdc44cabf13931fb1d53d35809699d6e4766ae/pyproject.toml",
+          "references": [
+            {
+              "line_number": 97,
+              "text": "\"django_geonode_mapstore_client @ https://github.com/GeoNode/geonode-mapstore-client/archive/refs/heads/master.zip\","
+            },
+            {
+              "line_number": 103,
+              "text": "\"geoserver-restconfig==2.0.16\","
+            }
+          ]
+        },
+        {
+          "path": "docker-compose.yml",
+          "blob_sha": "2634e95f7b877444b983b959caa37ebea27ff92c",
+          "sha256": "6d6015d379cd4ff6e04ee359d2412c99e29964c1bdbdbd8d80c2adc492b267d1",
+          "owned_blob_url": "https://github.com/aloerch/ambisgis-geonode/blob/ddfdc44cabf13931fb1d53d35809699d6e4766ae/docker-compose.yml",
+          "references": [
+            {
+              "line_number": 96,
+              "text": "image: geonode/geoserver:2.28.x-latest"
+            }
+          ]
+        }
+      ],
+      "immutable_tuple_established": false,
+      "findings": [
+        "MapStore client dependency references archive/refs/heads/master.zip, a floating branch archive.",
+        "GeoServer image geonode/geoserver:2.28.x-latest is a floating tag with no observed digest pin.",
+        "geoserver-restconfig==2.0.16 pins a client package version, not the GeoServer server source/build.",
+        "No source or binary compatibility has been executed or validated."
+      ]
+    },
+    "mapstore_client": {
+      "repository": "aloerch/ambisgis-mapstore-client",
+      "commit_sha": "673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7",
+      "gitmodules_blob_sha": "00da0a732ed6c4cf44d8ea152c84c11292d9ab40",
+      "gitmodules_sha256": "cbac20407d5084312bd5b89ea4986288bb3ba3a39ef712eb01182ee62542422e",
+      "owned_blob_url": "https://github.com/aloerch/ambisgis-mapstore-client/blob/673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7/.gitmodules",
+      "gitmodules_contents": "[submodule \"geonode_mapstore_client/client/MapStore2\"]\n\tpath = geonode_mapstore_client/client/MapStore2\n\turl = https://github.com/geosolutions-it/MapStore2.git\n\tbranch = master\n",
+      "mapstore2_gitlink_commit_sha": "57868404efd4a29c6faf99ab046f1a746fa0ba34",
+      "mapstore2_commit_present_in_owned_mapstore_clone": true,
+      "submodule_initialized": false,
+      "findings": [
+        "The tree pins a MapStore2 gitlink; .gitmodules still references the donor URL and master branch.",
+        "Presence of the gitlink commit in the owned MapStore clone does not establish submodule/dependency custody, an approved baseline, or compatibility."
+      ]
+    }
+  },
+  "pending_gates": [
+    "license and brand review",
+    "product baseline approval",
+    "LFS-object acquisition and integrity",
+    "submodule source acquisition and integrity",
+    "toolchain archival",
+    "dependency source and binary archival",
+    "dependency lock and provenance review",
+    "owned product builds and test artifacts",
+    "upstream-disconnected rebuild and independent repair",
+    "release signing and human review"
+  ],
+  "package_validation": {
+    "recorded_at": "2026-09-19T08:58:32.962831+00:00",
+    "working_directory": "plan/",
+    "environment": "isolated validation virtual environment",
+    "unit_tests": {
+      "command": "python3 -m unittest discover -s tests -v",
+      "tests_run": 55,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "exit_code": 0
+    },
+    "schema_plan_validation": {
+      "command": "python3 tools/validate_package.py --require-schemas",
+      "exit_code": 0,
+      "repositories": 15,
+      "tasks": 66,
+      "requirements": 24,
+      "sources": 65,
+      "schemas_and_examples": 4
+    },
+    "evidence_checks": {
+      "owned_repository_count": 11,
+      "license_notice_hashes_checked": 46,
+      "workflow_path_count": 127,
+      "absolute_local_paths_absent": true,
+      "token_patterns_absent": true
+    },
+    "acceptance_scope": "Package and evidence checks only; no GIS product, source-build, license approval, or independent-repair acceptance."
+  }
+}

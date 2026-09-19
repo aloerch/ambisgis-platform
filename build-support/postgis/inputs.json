@@ -1,0 +1,1322 @@
+{
+  "schema_version": 1,
+  "scope": "FND-02 PostgreSQL/PostGIS experimental build inputs; not a product release lock",
+  "custody_directory": "source-archives/postgis-slice relative to multi-repository workspace",
+  "integrity_scope": "Computed SHA256 identifies acquired bytes; signatures and independent publisher authenticity are not validated by these hashes.",
+  "host_dependencies": "Compiler, linker, libc/libstdc++, headers, build tools, Python/Perl/Tcl and selected host PostgreSQL feature libraries remain outside this source manifest; see build evidence.",
+  "inputs": [
+    {
+      "name": "cunit",
+      "version": "2.1-3",
+      "artifact": "CUnit-2.1-3.tar.bz2",
+      "source_url": "https://downloads.sourceforge.net/project/cunit/CUnit/2.1-3/CUnit-2.1-3.tar.bz2",
+      "sha256": "f5b29137f845bb08b77ec60584fdb728b4e58f1023e6f249a464efa49a40f214",
+      "bytes": 514500,
+      "archive_root": "CUnit-2.1-3",
+      "license_evidence": [
+        {
+          "original_path": "COPYING",
+          "sha256": "5d9d73d41a57dd2f34487ef3978a2c13cdb97294baeeb81fcd274796399eb15f",
+          "retained_path": "licenses/cunit/COPYING",
+          "bytes": 25959
+        }
+      ],
+      "usage": [
+        "test"
+      ],
+      "required_inputs": [],
+      "build_recipe": "build.py, stage cunit",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "gdal",
+      "version": "3.10.3",
+      "artifact": "gdal-3.10.3.tar.xz",
+      "source_url": "https://download.osgeo.org/gdal/3.10.3/gdal-3.10.3.tar.xz",
+      "sha256": "335a8d2c7567d783563d3fed37e8b58d72d9c1723f6fd1d8c299fe4c0d936781",
+      "bytes": 9208456,
+      "archive_root": "gdal-3.10.3",
+      "license_evidence": [
+        {
+          "original_path": "LICENSE.TXT",
+          "sha256": "1dae3468e81d00da56e2936f74d33b8b3ad09d726437f19ce209a5dabea41f77",
+          "retained_path": "licenses/gdal/LICENSE.TXT",
+          "bytes": 21841
+        },
+        {
+          "original_path": "alg/internal_libqhull/COPYING.txt",
+          "sha256": "106d55c931fd6a84822e5345d900273d059f1c27310d02567ccb313c5d18c55d",
+          "retained_path": "licenses/gdal/alg/internal_libqhull/COPYING.txt",
+          "bytes": 1720
+        },
+        {
+          "original_path": "frmts/gif/giflib/COPYING",
+          "sha256": "0c9b7990ecdca88b676db232c226548ac408b279f550d424d996f0d83591dd8e",
+          "retained_path": "licenses/gdal/frmts/gif/giflib/COPYING",
+          "bytes": 1088
+        },
+        {
+          "original_path": "frmts/grib/degrib/LICENSE.TXT",
+          "sha256": "ebc0e3db515bae2a665cfbc27e2f7a205d16f47f55251d6f837d5b5d92974818",
+          "retained_path": "licenses/gdal/frmts/grib/degrib/LICENSE.TXT",
+          "bytes": 1979
+        },
+        {
+          "original_path": "frmts/mrf/LERCV1/LICENSE.TXT",
+          "sha256": "77a8b761727c75e2167b15bfdf61b2c0bcf8792271228bebe80779106ad00671",
+          "retained_path": "licenses/gdal/frmts/mrf/LERCV1/LICENSE.TXT",
+          "bytes": 9198
+        },
+        {
+          "original_path": "frmts/mrf/LERCV1/NOTICE",
+          "sha256": "dec77a45efad63cb8d1792eb6793fd5038fb9a6672d19f3e7cf3288ef543680a",
+          "retained_path": "licenses/gdal/frmts/mrf/LERCV1/NOTICE",
+          "bytes": 656
+        },
+        {
+          "original_path": "frmts/pcraster/libcsf/COPYING",
+          "sha256": "e2de6081270d702ecb09599ff1d60a1f88a1076c10e622177ea2abcd1c3caa0d",
+          "retained_path": "licenses/gdal/frmts/pcraster/libcsf/COPYING",
+          "bytes": 1666
+        },
+        {
+          "original_path": "frmts/png/libpng/LICENSE",
+          "sha256": "7317e078e2d3b5d7ba5a6159e650945153262b44b76f6700f8e9edb261c5143e",
+          "retained_path": "licenses/gdal/frmts/png/libpng/LICENSE",
+          "bytes": 5345
+        },
+        {
+          "original_path": "ogr/ogrsf_frmts/flatgeobuf/LICENSE",
+          "sha256": "0c1f1aec227c3959a805cc1bbb7cc4cf6abd22314770ccf6e39443a460fafa2c",
+          "retained_path": "licenses/gdal/ogr/ogrsf_frmts/flatgeobuf/LICENSE",
+          "bytes": 1519
+        },
+        {
+          "original_path": "ogr/ogrsf_frmts/flatgeobuf/flatbuffers/LICENSE",
+          "sha256": "e55b7f3aaf3a9db897cc6a63fd6a79ae8fbbcaa32ffbe382ae77ce1f0db33f99",
+          "retained_path": "licenses/gdal/ogr/ogrsf_frmts/flatgeobuf/flatbuffers/LICENSE",
+          "bytes": 11343
+        },
+        {
+          "original_path": "ogr/ogrsf_frmts/geojson/libjson/COPYING",
+          "sha256": "74c1e6ca5eba76b54d0ad00d4815c8315c1b3bc45ff99de61d103dc92486284c",
+          "retained_path": "licenses/gdal/ogr/ogrsf_frmts/geojson/libjson/COPYING",
+          "bytes": 2205
+        },
+        {
+          "original_path": "ogr/ogrsf_frmts/pmtiles/pmtiles/LICENSE",
+          "sha256": "9500fb7d824af20acfb30e32e8350d98ba60525610a91008e91fd83e16da7bb5",
+          "retained_path": "licenses/gdal/ogr/ogrsf_frmts/pmtiles/pmtiles/LICENSE",
+          "bytes": 1457
+        },
+        {
+          "original_path": "third_party/LercLib/LICENSE",
+          "sha256": "77a8b761727c75e2167b15bfdf61b2c0bcf8792271228bebe80779106ad00671",
+          "retained_path": "licenses/gdal/third_party/LercLib/LICENSE",
+          "bytes": 9198
+        },
+        {
+          "original_path": "third_party/LercLib/NOTICE",
+          "sha256": "1aafa4a1157927c8a745b0856356ef32161563b4e253d02a6d3ee891dae4c21f",
+          "retained_path": "licenses/gdal/third_party/LercLib/NOTICE",
+          "bytes": 679
+        },
+        {
+          "original_path": "third_party/fast_float/LICENSE-MIT",
+          "sha256": "e562f3f974ced7e69dd1db77b820b36bcf8f30377f1aa105723fba449c53c4e6",
+          "retained_path": "licenses/gdal/third_party/fast_float/LICENSE-MIT",
+          "bytes": 1079
+        },
+        {
+          "original_path": "frmts/gtiff/libgeotiff/geo_normalize.c",
+          "retained_path": "licenses/gdal/frmts/gtiff/libgeotiff/geo_normalize.c",
+          "sha256": "34d31b4d12790a5d818371bdc83f68bcf53f74325e10576c758762dac5315919",
+          "bytes": 112259
+        },
+        {
+          "original_path": "frmts/gtiff/libgeotiff/geotiffio.h",
+          "retained_path": "licenses/gdal/frmts/gtiff/libgeotiff/geotiffio.h",
+          "sha256": "f4345cfb487b33b9a4c12cec8cdf010149e2208bf6e13d7f449d6ad4ba1f6e78",
+          "bytes": 480
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [
+        "proj",
+        "tiff",
+        "jpeg",
+        "libpng",
+        "zlib",
+        "googletest",
+        "gdal-tests"
+      ],
+      "build_recipe": "build.py, stage gdal",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "gdal-tests",
+      "version": "3.10.3",
+      "artifact": "gdalautotest-3.10.3.tar.gz",
+      "source_url": "https://download.osgeo.org/gdal/3.10.3/gdalautotest-3.10.3.tar.gz",
+      "sha256": "e64a9a4bdfb1027d9dcb6d684bd7aa2a76f6612e18eca71897e4025ec4e1e097",
+      "bytes": 17694635,
+      "archive_root": "gdalautotest-3.10.3",
+      "license_evidence": [
+        {
+          "original_path": "cpp/test_gdal.cpp",
+          "sha256": "0c6616e0d085ca3efe649df947c6c1518669e881818c446f6a41703d137902ca",
+          "retained_path": "licenses/gdal-tests/cpp/test_gdal.cpp",
+          "bytes": 193670
+        },
+        {
+          "original_path": "cpp/test_ogr_lgpl.cpp",
+          "sha256": "94386356efc61e9210a9d572cdf234ed610490ec104c5fb74dfac5525c56ed33",
+          "retained_path": "licenses/gdal-tests/cpp/test_ogr_lgpl.cpp",
+          "bytes": 5477
+        },
+        {
+          "original_path": "gdrivers/data/tga/ref_test_suite/LICENSE",
+          "sha256": "8a0a57eda34cb129c52fa6d17a9edf627396efde24a55cfdaa771a1f77a1ad65",
+          "retained_path": "licenses/gdal-tests/gdrivers/data/tga/ref_test_suite/LICENSE",
+          "bytes": 635
+        }
+      ],
+      "usage": [
+        "test"
+      ],
+      "required_inputs": [
+        "gdal",
+        "googletest"
+      ],
+      "build_recipe": "copied into GDAL source/autotest before GDAL configure",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "geos",
+      "version": "3.13.1",
+      "artifact": "geos-3.13.1.tar.bz2",
+      "source_url": "https://download.osgeo.org/geos/geos-3.13.1.tar.bz2",
+      "sha256": "df2c50503295f325e7c8d7b783aca8ba4773919cde984193850cf9e361dfd28c",
+      "bytes": 6839955,
+      "archive_root": "geos-3.13.1",
+      "license_evidence": [
+        {
+          "original_path": "COPYING",
+          "sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551",
+          "retained_path": "licenses/geos/COPYING",
+          "bytes": 26530
+        },
+        {
+          "original_path": "src/deps/ryu/LICENSE",
+          "sha256": "087edee322a9d2e527453ddc6731ccb4f015a36e55864b30715934f32a4879c1",
+          "retained_path": "licenses/geos/src/deps/ryu/LICENSE",
+          "bytes": 205
+        },
+        {
+          "original_path": "src/deps/ryu/LICENSE-Apache2",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "retained_path": "licenses/geos/src/deps/ryu/LICENSE-Apache2",
+          "bytes": 11357
+        },
+        {
+          "original_path": "src/deps/ryu/LICENSE-Boost",
+          "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+          "retained_path": "licenses/geos/src/deps/ryu/LICENSE-Boost",
+          "bytes": 1338
+        },
+        {
+          "original_path": "tools/astyle/LICENSE.md",
+          "sha256": "d9807bd8ed985a7bbecf032d8d7b8497c85625fc98499325bad51b71fe9281e3",
+          "retained_path": "licenses/geos/tools/astyle/LICENSE.md",
+          "bytes": 1094
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [],
+      "build_recipe": "build.py, stage geos",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "googletest",
+      "version": "1.15.2",
+      "artifact": "googletest-1.15.2.tar.gz",
+      "source_url": "https://github.com/google/googletest/releases/download/v1.15.2/googletest-1.15.2.tar.gz",
+      "sha256": "7b42b4d6ed48810c5362c265a17faebe90dc2373c885e5216439d37927f02926",
+      "bytes": 872667,
+      "archive_root": "googletest-1.15.2",
+      "license_evidence": [
+        {
+          "original_path": "LICENSE",
+          "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+          "retained_path": "licenses/googletest/LICENSE",
+          "bytes": 1475
+        }
+      ],
+      "usage": [
+        "test"
+      ],
+      "required_inputs": [],
+      "build_recipe": "build.py, stage googletest",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "jpeg",
+      "version": "9f",
+      "artifact": "jpegsrc.v9f.tar.gz",
+      "source_url": "https://www.ijg.org/files/jpegsrc.v9f.tar.gz",
+      "sha256": "04705c110cb2469caa79fb71fba3d7bf834914706e9641a4589485c1f832565b",
+      "bytes": 1081470,
+      "archive_root": "jpeg-9f",
+      "license_evidence": [
+        {
+          "original_path": "README",
+          "sha256": "7c25493a9f64fed34d01445467341bda77bc1cdbeccbe33558659ef173fb9ff2",
+          "retained_path": "licenses/jpeg/README",
+          "bytes": 18719
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [],
+      "build_recipe": "build.py, stage jpeg",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "json-c",
+      "version": "0.18",
+      "artifact": "json-c-0.18.tar.gz",
+      "source_url": "https://s3.amazonaws.com/json-c_releases/releases/json-c-0.18.tar.gz",
+      "sha256": "876ab046479166b869afc6896d288183bbc0e5843f141200c677b3e8dfb11724",
+      "bytes": 401788,
+      "archive_root": "json-c-0.18",
+      "license_evidence": [
+        {
+          "original_path": "COPYING",
+          "sha256": "74c1e6ca5eba76b54d0ad00d4815c8315c1b3bc45ff99de61d103dc92486284c",
+          "retained_path": "licenses/json-c/COPYING",
+          "bytes": 2205
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [],
+      "build_recipe": "build.py, stage json-c",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "libpng",
+      "version": "1.6.58",
+      "artifact": "libpng-1.6.58.tar.xz",
+      "source_url": "https://download.sourceforge.net/libpng/libpng-1.6.58.tar.xz",
+      "sha256": "28eb403f51f0f7405249132cecfe82ea5c0ef97f1b32c5a65828814ae0d34775",
+      "bytes": 1070096,
+      "archive_root": "libpng-1.6.58",
+      "license_evidence": [
+        {
+          "original_path": "LICENSE",
+          "sha256": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526",
+          "retained_path": "licenses/libpng/LICENSE",
+          "bytes": 5345
+        },
+        {
+          "original_path": "ci/LICENSE_MIT.txt",
+          "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1",
+          "retained_path": "licenses/libpng/ci/LICENSE_MIT.txt",
+          "bytes": 1036
+        },
+        {
+          "original_path": "contrib/gregbook/COPYING",
+          "sha256": "d6cb0e9e560f51085556949a84af12b79a00f10ab8b66c752537faf7cd665572",
+          "retained_path": "licenses/libpng/contrib/gregbook/COPYING",
+          "bytes": 18097
+        },
+        {
+          "original_path": "contrib/gregbook/LICENSE",
+          "sha256": "b6a03c1803eb58ffb1f1278d5c7d4096c4c116e66dce8a7553e8c77d163c3438",
+          "retained_path": "licenses/libpng/contrib/gregbook/LICENSE",
+          "bytes": 2373
+        },
+        {
+          "original_path": "contrib/pngexif/LICENSE_MIT.txt",
+          "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1",
+          "retained_path": "licenses/libpng/contrib/pngexif/LICENSE_MIT.txt",
+          "bytes": 1036
+        },
+        {
+          "original_path": "contrib/pngminus/LICENSE.txt",
+          "sha256": "1806f1f10d393e9e377b3a8d1b968452b54f1a90378f14eeef45426946ace330",
+          "retained_path": "licenses/libpng/contrib/pngminus/LICENSE.txt",
+          "bytes": 1164
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [
+        "zlib"
+      ],
+      "build_recipe": "build.py, stage libpng",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "libxml2",
+      "version": "2.14.6",
+      "artifact": "libxml2-2.14.6.tar.xz",
+      "source_url": "https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.6.tar.xz",
+      "sha256": "7ce458a0affeb83f0b55f1f4f9e0e55735dbfc1a9de124ee86fb4a66b597203a",
+      "bytes": 2327580,
+      "archive_root": "libxml2-2.14.6",
+      "license_evidence": [
+        {
+          "original_path": "Copyright",
+          "sha256": "5d4873884a890122a4b9b20ad56ac6f7da1d796a5bfcf04a427970ac96217626",
+          "retained_path": "licenses/libxml2/Copyright",
+          "bytes": 1314
+        },
+        {
+          "original_path": "result/html-tokenizer/NOTICE",
+          "sha256": "d6a2cb265a0a249a234b89eeffa7f316ebe5bff546672a0a2b1a861dd2238460",
+          "retained_path": "licenses/libxml2/result/html-tokenizer/NOTICE",
+          "bytes": 1270
+        },
+        {
+          "original_path": "test/html-tokenizer/NOTICE",
+          "sha256": "d6a2cb265a0a249a234b89eeffa7f316ebe5bff546672a0a2b1a861dd2238460",
+          "retained_path": "licenses/libxml2/test/html-tokenizer/NOTICE",
+          "bytes": 1270
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [
+        "zlib"
+      ],
+      "build_recipe": "build.py, stage libxml2",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "postgis",
+      "version": "3.5.7",
+      "artifact": "postgis-3.5.7.tar",
+      "archive_root": "postgis-3.5.7",
+      "sha256": "56c28571f8e93cd0fb5232b62d4802f7c603df4cab397ca436fb2018795caca0",
+      "bytes": 64911360,
+      "commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+      "source_url": "https://github.com/aloerch/ambisgis-postgis/commit/9816f82458db774e62906cfb2c4f01f8b262c862",
+      "owned_repository": "ambisgis-postgis",
+      "owned_reference": "3.5.7",
+      "acquisition": "git archive from retained owned clone",
+      "license_evidence": [
+        {
+          "original_path": "COPYING",
+          "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+          "retained_path": "licenses/postgis/COPYING",
+          "bytes": 18092
+        },
+        {
+          "original_path": "LICENSE.TXT",
+          "sha256": "81749eea887e78402c9b85896cd629b155bc29256927f818f01001f038146391",
+          "retained_path": "licenses/postgis/LICENSE.TXT",
+          "bytes": 3002
+        },
+        {
+          "original_path": "deps/flatgeobuf/include/flatbuffers/LICENSE",
+          "sha256": "e55b7f3aaf3a9db897cc6a63fd6a79ae8fbbcaa32ffbe382ae77ce1f0db33f99",
+          "retained_path": "licenses/postgis/deps/flatgeobuf/include/flatbuffers/LICENSE",
+          "bytes": 11343
+        },
+        {
+          "original_path": "deps/ryu/LICENSE",
+          "sha256": "087edee322a9d2e527453ddc6731ccb4f015a36e55864b30715934f32a4879c1",
+          "retained_path": "licenses/postgis/deps/ryu/LICENSE",
+          "bytes": 205
+        },
+        {
+          "original_path": "deps/ryu/LICENSE-Apache2",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "retained_path": "licenses/postgis/deps/ryu/LICENSE-Apache2",
+          "bytes": 11357
+        },
+        {
+          "original_path": "deps/ryu/LICENSE-Boost",
+          "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+          "retained_path": "licenses/postgis/deps/ryu/LICENSE-Boost",
+          "bytes": 1338
+        },
+        {
+          "original_path": "deps/uthash/LICENSE",
+          "sha256": "e821299139af6b90b9dcc959c1082b04cfe9819ff5c515329f952c5e6d61b787",
+          "retained_path": "licenses/postgis/deps/uthash/LICENSE",
+          "bytes": 1140
+        },
+        {
+          "original_path": "deps/wagyu/LICENSE.README",
+          "sha256": "7d7a20ccebbd86587b82a6d5be3250ab2af5fcea8061bd8c1f6dfdda23a9331b",
+          "retained_path": "licenses/postgis/deps/wagyu/LICENSE.README",
+          "bytes": 1700
+        },
+        {
+          "original_path": "deps/wagyu/LICENSE.geometry",
+          "sha256": "44b7f71c4d7f3da85e5e6a5d0cfa6942055d326a24f4d60a3728ebed26ea2b9d",
+          "retained_path": "licenses/postgis/deps/wagyu/LICENSE.geometry",
+          "bytes": 724
+        },
+        {
+          "original_path": "deps/wagyu/LICENSE.wagyu",
+          "sha256": "fa512859289fe038057411764168eadb059bf28c1f1cb6c539dc07bc88137ef8",
+          "retained_path": "licenses/postgis/deps/wagyu/LICENSE.wagyu",
+          "bytes": 1864
+        },
+        {
+          "original_path": "doc/xsl/LICENSE",
+          "sha256": "91181a0b9c93d487896f306e8adc962117d4518868eafe53ae9b7450696a2515",
+          "retained_path": "licenses/postgis/doc/xsl/LICENSE",
+          "bytes": 1511
+        },
+        {
+          "original_path": "extensions/address_standardizer/COPYING",
+          "sha256": "ac49639709022abcdc78cdc0123e9cd4aeda8764523f248a0bf14a11e200f10a",
+          "retained_path": "licenses/postgis/extensions/address_standardizer/COPYING",
+          "bytes": 1151
+        },
+        {
+          "original_path": "extras/tiger_geocoder/COPYING",
+          "sha256": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
+          "retained_path": "licenses/postgis/extras/tiger_geocoder/COPYING",
+          "bytes": 18431
+        },
+        {
+          "original_path": "postgis/geobuf.LICENSE",
+          "sha256": "66781fb12e25a44ff9c78e869c2c8c2325fe1071cdfdc006e25bbd62515c392c",
+          "retained_path": "licenses/postgis/postgis/geobuf.LICENSE",
+          "bytes": 737
+        },
+        {
+          "original_path": "postgis/vector_tile.LICENSE",
+          "sha256": "08bb164892939c1d45529ef688dc83be5ea08cc5a42a640ad4f241cec52bea7f",
+          "retained_path": "licenses/postgis/postgis/vector_tile.LICENSE",
+          "bytes": 12831
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [
+        "postgresql",
+        "geos",
+        "proj",
+        "gdal",
+        "protobuf-c",
+        "json-c",
+        "libxml2",
+        "cunit"
+      ],
+      "build_recipe": "build.py, stage postgis",
+      "review_status": "Candidate input only; license, provenance and security approval pending",
+      "repository_id": 1376927690,
+      "retained_git_bundle": {
+        "workspace_relative_path": "source-archives/ambisgis-postgis-84890ccbe535.bundle",
+        "sha256": "bc2bdd1cc3ae18ca532120c854b4502ff5b78762262876cc546fd20bf1e2c4cf",
+        "external_git_object_prerequisite_count": 0
+      }
+    },
+    {
+      "name": "postgis-upgrade",
+      "version": "3.5.6",
+      "artifact": "postgis-upgrade-3.5.6.tar",
+      "archive_root": "postgis-upgrade-3.5.6",
+      "sha256": "421eb634849757ac09cdc2a24ebf8f6785cc25474c72ae1efad14499ccf6e898",
+      "bytes": 64901120,
+      "commit": "9aa71a8e5059959929825926db5ebefafde471db",
+      "source_url": "https://github.com/aloerch/ambisgis-postgis/commit/9aa71a8e5059959929825926db5ebefafde471db",
+      "owned_repository": "ambisgis-postgis",
+      "owned_reference": "3.5.6",
+      "acquisition": "git archive from retained owned clone",
+      "license_evidence": [
+        {
+          "original_path": "COPYING",
+          "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+          "retained_path": "licenses/postgis-upgrade/COPYING",
+          "bytes": 18092
+        },
+        {
+          "original_path": "LICENSE.TXT",
+          "sha256": "81749eea887e78402c9b85896cd629b155bc29256927f818f01001f038146391",
+          "retained_path": "licenses/postgis-upgrade/LICENSE.TXT",
+          "bytes": 3002
+        },
+        {
+          "original_path": "deps/flatgeobuf/include/flatbuffers/LICENSE",
+          "sha256": "e55b7f3aaf3a9db897cc6a63fd6a79ae8fbbcaa32ffbe382ae77ce1f0db33f99",
+          "retained_path": "licenses/postgis-upgrade/deps/flatgeobuf/include/flatbuffers/LICENSE",
+          "bytes": 11343
+        },
+        {
+          "original_path": "deps/ryu/LICENSE",
+          "sha256": "087edee322a9d2e527453ddc6731ccb4f015a36e55864b30715934f32a4879c1",
+          "retained_path": "licenses/postgis-upgrade/deps/ryu/LICENSE",
+          "bytes": 205
+        },
+        {
+          "original_path": "deps/ryu/LICENSE-Apache2",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "retained_path": "licenses/postgis-upgrade/deps/ryu/LICENSE-Apache2",
+          "bytes": 11357
+        },
+        {
+          "original_path": "deps/ryu/LICENSE-Boost",
+          "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+          "retained_path": "licenses/postgis-upgrade/deps/ryu/LICENSE-Boost",
+          "bytes": 1338
+        },
+        {
+          "original_path": "deps/uthash/LICENSE",
+          "sha256": "e821299139af6b90b9dcc959c1082b04cfe9819ff5c515329f952c5e6d61b787",
+          "retained_path": "licenses/postgis-upgrade/deps/uthash/LICENSE",
+          "bytes": 1140
+        },
+        {
+          "original_path": "deps/wagyu/LICENSE.README",
+          "sha256": "7d7a20ccebbd86587b82a6d5be3250ab2af5fcea8061bd8c1f6dfdda23a9331b",
+          "retained_path": "licenses/postgis-upgrade/deps/wagyu/LICENSE.README",
+          "bytes": 1700
+        },
+        {
+          "original_path": "deps/wagyu/LICENSE.geometry",
+          "sha256": "44b7f71c4d7f3da85e5e6a5d0cfa6942055d326a24f4d60a3728ebed26ea2b9d",
+          "retained_path": "licenses/postgis-upgrade/deps/wagyu/LICENSE.geometry",
+          "bytes": 724
+        },
+        {
+          "original_path": "deps/wagyu/LICENSE.wagyu",
+          "sha256": "fa512859289fe038057411764168eadb059bf28c1f1cb6c539dc07bc88137ef8",
+          "retained_path": "licenses/postgis-upgrade/deps/wagyu/LICENSE.wagyu",
+          "bytes": 1864
+        },
+        {
+          "original_path": "doc/xsl/LICENSE",
+          "sha256": "91181a0b9c93d487896f306e8adc962117d4518868eafe53ae9b7450696a2515",
+          "retained_path": "licenses/postgis-upgrade/doc/xsl/LICENSE",
+          "bytes": 1511
+        },
+        {
+          "original_path": "extensions/address_standardizer/COPYING",
+          "sha256": "ac49639709022abcdc78cdc0123e9cd4aeda8764523f248a0bf14a11e200f10a",
+          "retained_path": "licenses/postgis-upgrade/extensions/address_standardizer/COPYING",
+          "bytes": 1151
+        },
+        {
+          "original_path": "extras/tiger_geocoder/COPYING",
+          "sha256": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
+          "retained_path": "licenses/postgis-upgrade/extras/tiger_geocoder/COPYING",
+          "bytes": 18431
+        },
+        {
+          "original_path": "postgis/geobuf.LICENSE",
+          "sha256": "66781fb12e25a44ff9c78e869c2c8c2325fe1071cdfdc006e25bbd62515c392c",
+          "retained_path": "licenses/postgis-upgrade/postgis/geobuf.LICENSE",
+          "bytes": 737
+        },
+        {
+          "original_path": "postgis/vector_tile.LICENSE",
+          "sha256": "08bb164892939c1d45529ef688dc83be5ea08cc5a42a640ad4f241cec52bea7f",
+          "retained_path": "licenses/postgis-upgrade/postgis/vector_tile.LICENSE",
+          "bytes": 12831
+        }
+      ],
+      "usage": [
+        "upgrade-fixture"
+      ],
+      "required_inputs": [
+        "postgresql",
+        "geos",
+        "proj",
+        "gdal",
+        "protobuf-c",
+        "json-c",
+        "libxml2",
+        "cunit"
+      ],
+      "build_recipe": "build.py, stage postgis-upgrade",
+      "review_status": "Candidate input only; license, provenance and security approval pending",
+      "repository_id": 1376927690,
+      "retained_git_bundle": {
+        "workspace_relative_path": "source-archives/ambisgis-postgis-84890ccbe535.bundle",
+        "sha256": "bc2bdd1cc3ae18ca532120c854b4502ff5b78762262876cc546fd20bf1e2c4cf",
+        "external_git_object_prerequisite_count": 0
+      }
+    },
+    {
+      "name": "postgresql",
+      "version": "15.19",
+      "artifact": "postgresql-15.19.tar",
+      "archive_root": "postgresql-15.19",
+      "sha256": "2b72bd0340b66c8f824e5d4d44b19685e6a89c2cfeb6ae45c98aa87fb285336f",
+      "bytes": 126228480,
+      "commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "source_url": "https://github.com/aloerch/ambisgis-postgresql/commit/2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "owned_repository": "ambisgis-postgresql",
+      "owned_reference": "REL_15_19",
+      "acquisition": "git archive from retained owned clone",
+      "license_evidence": [
+        {
+          "original_path": "COPYRIGHT",
+          "sha256": "3d6af92ff8a4c2cdf69afb1cf44edea727922f5cd0cf8b5f72b11cdecac8fdfd",
+          "retained_path": "licenses/postgresql/COPYRIGHT",
+          "bytes": 1198
+        },
+        {
+          "original_path": "src/backend/jit/llvm/SectionMemoryManager.LICENSE",
+          "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+          "retained_path": "licenses/postgresql/src/backend/jit/llvm/SectionMemoryManager.LICENSE",
+          "bytes": 15141
+        },
+        {
+          "original_path": "src/backend/regex/COPYRIGHT",
+          "sha256": "5027cfe4f54842896b01ca6be28becc9a018623aaadc0f5b51350da71118cb0e",
+          "retained_path": "licenses/postgresql/src/backend/regex/COPYRIGHT",
+          "bytes": 4362
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [
+        "zlib",
+        "libxml2"
+      ],
+      "build_recipe": "build.py, stage postgresql",
+      "review_status": "Candidate input only; license, provenance and security approval pending",
+      "repository_id": 1376927644,
+      "retained_git_bundle": {
+        "workspace_relative_path": "source-archives/ambisgis-postgresql-c62b330912e2.bundle",
+        "sha256": "9480530afa7045636f0e0ea6636e42ec688cd477d8355089e29499e8e6837c6c",
+        "external_git_object_prerequisite_count": 0
+      }
+    },
+    {
+      "name": "proj",
+      "version": "9.6.2",
+      "artifact": "proj-9.6.2.tar.gz",
+      "source_url": "https://download.osgeo.org/proj/proj-9.6.2.tar.gz",
+      "sha256": "53d0cafaee3bb2390264a38668ed31d90787de05e71378ad7a8f35bb34c575d1",
+      "bytes": 6394614,
+      "archive_root": "proj-9.6.2",
+      "license_evidence": [
+        {
+          "original_path": "COPYING",
+          "sha256": "6a8f30793e877d32e3f88b972f0970a051a3b5a26cd057d3993cb51e21c43319",
+          "retained_path": "licenses/proj/COPYING",
+          "bytes": 1784
+        },
+        {
+          "original_path": "fix_typos/codespell/COPYING",
+          "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+          "retained_path": "licenses/proj/fix_typos/codespell/COPYING",
+          "bytes": 18092
+        },
+        {
+          "original_path": "include/proj/internal/include_nlohmann_json.hpp",
+          "sha256": "e294aab73c8fb1380f74e858fb4b5ece0b1b6477e5fd32178c4a8cc0122d21db",
+          "retained_path": "licenses/proj/include/proj/internal/include_nlohmann_json.hpp",
+          "bytes": 1998
+        },
+        {
+          "original_path": "include/proj/internal/vendor/nlohmann/json.hpp",
+          "retained_path": "licenses/proj/include/proj/internal/vendor/nlohmann/json.hpp",
+          "sha256": "1c6a0b5ff46e5967201646728e22df59185c84191f99e056c0194b4ab46160a4",
+          "bytes": 926237
+        },
+        {
+          "original_path": "data/sql/README.md",
+          "retained_path": "licenses/proj/data/sql/README.md",
+          "sha256": "8e457825d89f3526787433b36bd462069ec4b7e557184d09aa33ebf731c05137",
+          "bytes": 3333
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [
+        "sqlite",
+        "tiff",
+        "googletest",
+        "pyyaml",
+        "curl"
+      ],
+      "build_recipe": "build.py, stage proj",
+      "review_status": "Candidate input only; license, provenance and security approval pending",
+      "resource_evidence": [
+        {
+          "original_path": "data/sql/metadata.sql",
+          "sha256": "65322de1acb3de61b9464f05d947877ee8d45b21cbdfccac618071c93d3ce9fd",
+          "bytes": 1002
+        },
+        {
+          "original_path": "data/tests/egm96_15_uncompressed_truncated.tif",
+          "sha256": "e1de817a45e0fbcb478f8a940bcf21ee789ffc0a73cdad306b40df05b870d35a",
+          "bytes": 956
+        },
+        {
+          "original_path": "data/tests/fr_ign_RAGTBT2016.tif",
+          "sha256": "5984c1565e9a65b88d5608c7bd3cdbf39f7f13c84b453e1984feab56384d1baa",
+          "bytes": 33374
+        },
+        {
+          "original_path": "data/tests/nkgrf03vel_realigned_extract.tif",
+          "sha256": "516f686a50b884a45250882eb9ba48e87a717309c16441885a2107f11799cc81",
+          "bytes": 1795
+        },
+        {
+          "original_path": "data/tests/nkgrf03vel_realigned_extract_tiled_256x256.tif",
+          "sha256": "f232c7fa265a0231c4ef07192893ed2e496da02cb39208c57e53391e7b4d06e6",
+          "bytes": 2678
+        },
+        {
+          "original_path": "data/tests/simple_model_degree_3d_grid.tif",
+          "sha256": "8112e3a86f36153074289e6113f71f47bed5dd1e0069ae523f0a0275e95cfd57",
+          "bytes": 1082
+        },
+        {
+          "original_path": "data/tests/simple_model_metre_3d_grid.tif",
+          "sha256": "c769a3c4a3c6bfa707333049fbea2001dfa4b9fd9a332a923e40ff6ffc044078",
+          "bytes": 1080
+        },
+        {
+          "original_path": "data/tests/simple_model_metre_vertical_grid.tif",
+          "sha256": "b0071ccd366edf3acb026b61830a6d6d1a241cca425c3271e323768f265e9a0f",
+          "bytes": 748
+        },
+        {
+          "original_path": "data/tests/simple_model_polar.tif",
+          "sha256": "cc7ef07652adcc333631d063121fda4d802c22be7ee18ce675c33333bd85564e",
+          "bytes": 1544
+        },
+        {
+          "original_path": "data/tests/simple_model_wrap_east.tif",
+          "sha256": "e5a85f9bb88469934715e4cc1c79279a0e3382588e6d8fb3e7f5eadeaa151b8d",
+          "bytes": 1153
+        },
+        {
+          "original_path": "data/tests/simple_model_wrap_west.tif",
+          "sha256": "925b92ece7c54d1ee1428775567edde4a72bf0a67a7f48935dbf5209d4aebf5a",
+          "bytes": 1153
+        },
+        {
+          "original_path": "data/tests/subset_of_gr3df97a.tif",
+          "sha256": "e503665e33f19d2f5394fbaf7670c40971471695db81bba7552a8c43de2e2353",
+          "bytes": 3215
+        },
+        {
+          "original_path": "data/tests/test_3d_grid_projected.tif",
+          "sha256": "d6a371b892f6a9265e7aa9e585357ba72b8e932f752bc4ed4490f90e35c1edc7",
+          "bytes": 1516
+        },
+        {
+          "original_path": "data/tests/test_gridshift_projected.tif",
+          "sha256": "ea07142108a526863d82e4c829d7f2898ed1c71511e5ec474e488850cc74fbdc",
+          "bytes": 1741
+        },
+        {
+          "original_path": "data/tests/test_hgrid.tif",
+          "sha256": "da8b51010ca0ed774ab718b8b5367242491c3c76e73659bbb653fa069cac0f51",
+          "bytes": 506
+        },
+        {
+          "original_path": "data/tests/test_hgrid_degree.tif",
+          "sha256": "b52ed85b7e0f1a9e7e54182882f641bb67823bd9700e799dc4d42104ef5d1e0b",
+          "bytes": 680
+        },
+        {
+          "original_path": "data/tests/test_hgrid_extra_ifd_with_other_info.tif",
+          "sha256": "f0ff8c871116e0028d091f4deb4fed26edec6e519df948b91aa6cfd54a7b33db",
+          "bytes": 1708
+        },
+        {
+          "original_path": "data/tests/test_hgrid_lon_shift_first.tif",
+          "sha256": "95a29e0d3f2dc1b81febb082c764d799d528627333ed2db6c88a683016b46b27",
+          "bytes": 764
+        },
+        {
+          "original_path": "data/tests/test_hgrid_positive_west.tif",
+          "sha256": "25584e7a2e31e24163bdb242de216632ca0874e44e83b77c5c9c93e809b2d4e8",
+          "bytes": 764
+        },
+        {
+          "original_path": "data/tests/test_hgrid_radian.tif",
+          "sha256": "34267c105e77fc7aad7bf73fefe236b002c0df5dfbabf04b1b16d047c2e2b52e",
+          "bytes": 680
+        },
+        {
+          "original_path": "data/tests/test_hgrid_separate.tif",
+          "sha256": "2acea51124c4c15b1faff61fa88a6c89cfb0f38c7d7b0e98d6afc30016d555e5",
+          "bytes": 514
+        },
+        {
+          "original_path": "data/tests/test_hgrid_strip.tif",
+          "sha256": "4d31d43fdc38abc6321d77b21812c23a90aeea69ddd3482a2a81906896beae02",
+          "bytes": 514
+        },
+        {
+          "original_path": "data/tests/test_hgrid_tiled.tif",
+          "sha256": "8ba7e11f4341b23b9b92b611b5623b2cc2da3d317b0c238a9b0b06a21bf57091",
+          "bytes": 4920
+        },
+        {
+          "original_path": "data/tests/test_hgrid_tiled_separate.tif",
+          "sha256": "ac2b2db755f8ff90c8bbebeda85e135386378c9a936b4610b987123cf960c1ff",
+          "bytes": 2256
+        },
+        {
+          "original_path": "data/tests/test_hgrid_with_overview.tif",
+          "sha256": "420b716ac9e077b5fb3e0395c684afe09cd81e3cd9eaf19a4841f18278614480",
+          "bytes": 864
+        },
+        {
+          "original_path": "data/tests/test_hgrid_with_subgrid.tif",
+          "sha256": "34764736a483a96f9762d238640f8ef712c1970b9cdaca6a875a9f86cca7b877",
+          "bytes": 6943
+        },
+        {
+          "original_path": "data/tests/test_hgrid_with_subgrid_no_grid_name.tif",
+          "sha256": "ff8b40f3a1ab574e0b9e4a538144f81e235cad62a9ebc9127185853d7294ab53",
+          "bytes": 6943
+        },
+        {
+          "original_path": "data/tests/test_hgrid_with_two_level_of_subgrids_no_grid_name.tif",
+          "sha256": "0db46a29e11368a10bde261f28a9145cf6abf5ac23d64b0799d124d7c2b3d3af",
+          "bytes": 3504
+        },
+        {
+          "original_path": "data/tests/test_hydroid_height.tif",
+          "sha256": "46b6adc1e47f9f5516ca6eaee9dede57ccd3edb89a93555cbca972d3b2cfe698",
+          "bytes": 1002
+        },
+        {
+          "original_path": "data/tests/test_vgrid_bigendian.tif",
+          "sha256": "9c3cd3077b049d56033cf013be47adc9443f88bf6656aad798e2d0f97572e525",
+          "bytes": 430
+        },
+        {
+          "original_path": "data/tests/test_vgrid_bigendian_bigtiff.tif",
+          "sha256": "9d7e32efa8896743495206d999e4ef894fe870b5935b8879bf24629d980b7f1e",
+          "bytes": 568
+        },
+        {
+          "original_path": "data/tests/test_vgrid_bigtiff.tif",
+          "sha256": "93c2e2dfab4ce5e223bc5e809a3a013693e0f6ed1158b6decd83927b7f47787f",
+          "bytes": 568
+        },
+        {
+          "original_path": "data/tests/test_vgrid_bottomup_with_matrix.tif",
+          "sha256": "9c5f270150b4b18cb5ea0062133407ed7a0e822e9573e734f7bb48f2b4ab6741",
+          "bytes": 474
+        },
+        {
+          "original_path": "data/tests/test_vgrid_bottomup_with_scale.tif",
+          "sha256": "eaab7fb3ff118ddf3a2d624ce062b62b13832683496527a3e0c63ef3c7c80712",
+          "bytes": 430
+        },
+        {
+          "original_path": "data/tests/test_vgrid_deflate.tif",
+          "sha256": "7ac1c98525b1e14e99973681682d0c29f498c369e01ad4a0c0c1f5bb1989eba5",
+          "bytes": 430
+        },
+        {
+          "original_path": "data/tests/test_vgrid_deflate_floatingpointpredictor.tif",
+          "sha256": "06213949c378323f759afd79cf6f3b1905a283030c8eb142f93f5a31c2350dba",
+          "bytes": 422
+        },
+        {
+          "original_path": "data/tests/test_vgrid_float64.tif",
+          "sha256": "1620e77207190e0c5ff37cf14751ce8bb38643b5d125a12d349f63bc9335ff52",
+          "bytes": 494
+        },
+        {
+          "original_path": "data/tests/test_vgrid_in_second_channel.tif",
+          "sha256": "80029139e2b6796625f64a360f0b656fff9e83b4f9b9d37cc9f3667b522c1b00",
+          "bytes": 632
+        },
+        {
+          "original_path": "data/tests/test_vgrid_int16.tif",
+          "sha256": "111256399bb05e5e8093563f76ab97f495da6919574eb6ad8b5d211982e927d5",
+          "bytes": 398
+        },
+        {
+          "original_path": "data/tests/test_vgrid_int32.tif",
+          "sha256": "da471d8bbc33a8628d83a3445f2fdd39766a90e09e4af81a8032664e4d61ba3b",
+          "bytes": 430
+        },
+        {
+          "original_path": "data/tests/test_vgrid_invalid_channel_type.tif",
+          "sha256": "a0115321ea0f011803ac3214769baae7cc840213a7243e1a5ef7c17969a1dfec",
+          "bytes": 560
+        },
+        {
+          "original_path": "data/tests/test_vgrid_nodata.tif",
+          "sha256": "43754e797794663bdf977ac81e6cb0b6248f76e7574e8caa8177d2d13f288d90",
+          "bytes": 464
+        },
+        {
+          "original_path": "data/tests/test_vgrid_pixelisarea.tif",
+          "sha256": "9c184492fe90eaff5581b621fd76b46de499371e1b0b72e82f173f5f95227840",
+          "bytes": 430
+        },
+        {
+          "original_path": "data/tests/test_vgrid_pixelispoint.tif",
+          "sha256": "e705233b3d27f3df32163c0ec39f310c1390c0aad67427f638c3a7eaf748b13f",
+          "bytes": 430
+        },
+        {
+          "original_path": "data/tests/test_vgrid_single_strip_truncated.tif",
+          "sha256": "5e3568fa61d7fd9e80055d69da9c25b5795ac3517151ab6df1a47df892485c92",
+          "bytes": 550
+        },
+        {
+          "original_path": "data/tests/test_vgrid_uint16.tif",
+          "sha256": "40d525cb640d8ae71ca3b831fc4c9fce14d6341ccc8bc8be0ab1698cc69ff11f",
+          "bytes": 398
+        },
+        {
+          "original_path": "data/tests/test_vgrid_uint16_with_scale_offset.tif",
+          "sha256": "d90a40dfcfeef957b2f71bd08e711bbc6a57ddcbe0f27b84043706ff7bbdac24",
+          "bytes": 556
+        },
+        {
+          "original_path": "data/tests/test_vgrid_uint32.tif",
+          "sha256": "ab0bc9dbbe9bfd3c52fc50789e8184bf40da921e6524f306eaa7b6e9436bad09",
+          "bytes": 430
+        },
+        {
+          "original_path": "data/tests/test_vgrid_unsupported_byte.tif",
+          "sha256": "c9a5dfdb66151617bb9766c3e83c5e8f7f357036e25b33b3ca5540447a183d5c",
+          "bytes": 382
+        },
+        {
+          "original_path": "data/tests/test_vgrid_with_overview.tif",
+          "sha256": "c3de78e99ae5d3c7f4891eeaf4191165c7d2017c51ade53befe90dc33d6e212d",
+          "bytes": 707
+        },
+        {
+          "original_path": "data/tests/test_vgrid_with_subgrid.tif",
+          "sha256": "76a44727f8a8fe0d34baaba4605062c7cdc25ad4c57e27c6b94b76c7eaa962e8",
+          "bytes": 756
+        },
+        {
+          "original_path": "data/tests/us_noaa_geoid06_ak_subset_at_antimeridian.tif",
+          "sha256": "10b25d2e7589ed57ccce033a1a8e3fd08f3386547826ac51ae7c30b140fe6b51",
+          "bytes": 6617
+        },
+        {
+          "original_path": "data/tests/us_noaa_nadcon5_nad83_1986_nad83_harn_conus_extract_sanfrancisco.tif",
+          "sha256": "76be03b6f9b5b60027312d18704b1a94aeb1ced6fa7ec6dbf1b5874d7e9cefae",
+          "bytes": 1285
+        },
+        {
+          "original_path": "data/tests/us_noaa_nadcon5_nad83_2007_nad83_2011_alaska_extract.tif",
+          "sha256": "d311b0f11b4b2dbbd133430c980d323498e00382ca715c9465fbb196b7f6576a",
+          "bytes": 3547
+        },
+        {
+          "original_path": "data/tests/us_noaa_nadcon5_nad83_2007_nad83_2011_conus_extract.tif",
+          "sha256": "4d3cebadcc92369b48a3ce6c1855bcbd7bff71d82340cc129bbcacaceb6cb4c0",
+          "bytes": 2661
+        },
+        {
+          "original_path": "data/tests/BETA2007.gsb",
+          "sha256": "6588e7b5fcca7dfad848085b7b621bf4b2e73866a0af3c459daa955deaacc3da",
+          "bytes": 83696
+        },
+        {
+          "original_path": "data/tests/ntf_r93.gsb",
+          "sha256": "08734dadf9158ceeee3590120a26710f4abcdacb7ecde2782370b1919fc19db2",
+          "bytes": 277424
+        },
+        {
+          "original_path": "data/tests/ntv2_0_downsampled.gsb",
+          "sha256": "adf5357f48a3cc8374b89ed5e1ed6bc9b361f1b5e839e5a741fd47946777d027",
+          "bytes": 245824
+        },
+        {
+          "original_path": "data/tests/test_hgrid_big_endian.gsb",
+          "sha256": "ecf003c4f9452144c6394d2d2b098f8a249ca06c6b9e4e8a67334c1bdcdc7915",
+          "bytes": 624
+        },
+        {
+          "original_path": "data/tests/test_hgrid_little_endian.gsb",
+          "sha256": "32553c6c770fadb392e2607aeef91a9c320fd5bddc01fe778c0f23001524860b",
+          "bytes": 624
+        },
+        {
+          "original_path": "data/tests/egm96_15_downsampled.gtx",
+          "sha256": "d04f9af2e817e1b4db3a244f6c2fcfbb1b191e6c8ef470fc687cf1fb6f374e39",
+          "bytes": 259240
+        },
+        {
+          "original_path": "data/tests/nkgrf03vel_realigned_z_extract.gtx",
+          "sha256": "ab830eab6d81ed7a00dc7116268ee01fa50896ec2a569f96e117f280e223ad6f",
+          "bytes": 140
+        },
+        {
+          "original_path": "data/tests/test_nodata.gtx",
+          "sha256": "0e4aafe35c425fa0651dac2531ace71daec5e4d0026ed31a93982b9f71af2bb6",
+          "bytes": 104
+        }
+      ],
+      "resource_scope": "Included SQL builds proj.db; included test grids cover bounded synthetic/regression transforms. Separate global PROJ-data 1.22 is not retained or claimed."
+    },
+    {
+      "name": "protobuf",
+      "version": "21.12",
+      "artifact": "protobuf-all-21.12.tar.gz",
+      "source_url": "https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protobuf-all-21.12.tar.gz",
+      "sha256": "2c6a36c7b5a55accae063667ef3c55f2642e67476d96d355ff0acb13dbb47f09",
+      "bytes": 7649074,
+      "archive_root": "protobuf-21.12",
+      "license_evidence": [
+        {
+          "original_path": "LICENSE",
+          "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d",
+          "retained_path": "licenses/protobuf/LICENSE",
+          "bytes": 1732
+        },
+        {
+          "original_path": "third_party/googletest/googlemock/LICENSE",
+          "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+          "retained_path": "licenses/protobuf/third_party/googletest/googlemock/LICENSE",
+          "bytes": 1475
+        },
+        {
+          "original_path": "third_party/googletest/googlemock/scripts/generator/LICENSE",
+          "sha256": "5e0df8c845c742e76f2f64d2d9ce1b7e74a2422fddbc577ae6a56319083de0bf",
+          "retained_path": "licenses/protobuf/third_party/googletest/googlemock/scripts/generator/LICENSE",
+          "bytes": 11386
+        },
+        {
+          "original_path": "third_party/googletest/googletest/LICENSE",
+          "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+          "retained_path": "licenses/protobuf/third_party/googletest/googletest/LICENSE",
+          "bytes": 1475
+        }
+      ],
+      "usage": [
+        "build"
+      ],
+      "required_inputs": [
+        "zlib",
+        "googletest"
+      ],
+      "build_recipe": "build.py, stage protobuf",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "protobuf-c",
+      "version": "1.5.2",
+      "artifact": "protobuf-c-1.5.2.tar.gz",
+      "source_url": "https://github.com/protobuf-c/protobuf-c/releases/download/v1.5.2/protobuf-c-1.5.2.tar.gz",
+      "sha256": "e2c86271873a79c92b58fef7ebf8de1aa0df4738347a8bd5d4e65a80a16d0d24",
+      "bytes": 532447,
+      "archive_root": "protobuf-c-1.5.2",
+      "license_evidence": [
+        {
+          "original_path": "LICENSE",
+          "sha256": "2d1d028bd27f8c85bc970d720519d2069ca6213fcb26b9dea444a7c39d24bbb3",
+          "retained_path": "licenses/protobuf-c/LICENSE",
+          "bytes": 1613
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [
+        "protobuf"
+      ],
+      "build_recipe": "build.py, stage protobuf-c",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "sqlite",
+      "version": "3.50.4",
+      "artifact": "sqlite-autoconf-3500400.tar.gz",
+      "source_url": "https://www.sqlite.org/2025/sqlite-autoconf-3500400.tar.gz",
+      "sha256": "a3db587a1b92ee5ddac2f66b3edb41b26f9c867275782d46c3a088977d6a5b18",
+      "bytes": 3173050,
+      "archive_root": "sqlite-autoconf-3500400",
+      "license_evidence": [
+        {
+          "original_path": "autosetup/LICENSE",
+          "sha256": "679b9208e67df09977456d1d2ae4d885b9badf02c47b45a28cf95ee27c14cb18",
+          "retained_path": "licenses/sqlite/autosetup/LICENSE",
+          "bytes": 1737
+        },
+        {
+          "original_path": "shell.c",
+          "sha256": "c446ff8f3109335ce6d0731b6f7d65e57f1d1747c9bfc8b18b50db8f48cd253a",
+          "retained_path": "licenses/sqlite/shell.c",
+          "bytes": 1066685
+        },
+        {
+          "original_path": "sqlite3.h",
+          "sha256": "abd1514e0351f79393d1be882830afdb40a8099e8257f311f0bfdf8486f11bea",
+          "retained_path": "licenses/sqlite/sqlite3.h",
+          "bytes": 661968
+        },
+        {
+          "original_path": "tea/license.terms",
+          "sha256": "66e056b6e8687f32af30d5187611b98b12a8f46f07aaf62f43585f276e8f0ac9",
+          "retained_path": "licenses/sqlite/tea/license.terms",
+          "bytes": 257
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [],
+      "build_recipe": "build.py, stage sqlite",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "tiff",
+      "version": "4.7.0",
+      "artifact": "tiff-4.7.0.tar.xz",
+      "source_url": "https://download.osgeo.org/libtiff/tiff-4.7.0.tar.xz",
+      "sha256": "273a0a73b1f0bed640afee4a5df0337357ced5b53d3d5d1c405b936501f71017",
+      "bytes": 2286220,
+      "archive_root": "tiff-4.7.0",
+      "license_evidence": [
+        {
+          "original_path": "LICENSE.md",
+          "sha256": "0780558a8bfba0af1160ec1ff11ade4f41c0d7deafd6ecfc796b492a788e380d",
+          "retained_path": "licenses/tiff/LICENSE.md",
+          "bytes": 1164
+        },
+        {
+          "original_path": "doc/html-prebuilt/_sources/project/license.rst.txt",
+          "sha256": "02e86af3b805e0f2075ebb5ac512831f6ab2a97ddeb186de076c418956418ba1",
+          "retained_path": "licenses/tiff/doc/html-prebuilt/_sources/project/license.rst.txt",
+          "bytes": 1181
+        },
+        {
+          "original_path": "doc/html-prebuilt/project/license.html",
+          "sha256": "fe543a09ba633b6c113d2850e39887df3a5d90b67b1df9d033ef60d391b13319",
+          "retained_path": "licenses/tiff/doc/html-prebuilt/project/license.html",
+          "bytes": 5718
+        },
+        {
+          "original_path": "doc/project/license.rst",
+          "sha256": "02e86af3b805e0f2075ebb5ac512831f6ab2a97ddeb186de076c418956418ba1",
+          "retained_path": "licenses/tiff/doc/project/license.rst",
+          "bytes": 1181
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [
+        "zlib",
+        "jpeg"
+      ],
+      "build_recipe": "build.py, stage tiff",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "zlib",
+      "version": "1.3.1",
+      "artifact": "zlib-1.3.1.tar.gz",
+      "source_url": "https://zlib.net/fossils/zlib-1.3.1.tar.gz",
+      "sha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23",
+      "bytes": 1512791,
+      "archive_root": "zlib-1.3.1",
+      "license_evidence": [
+        {
+          "original_path": "LICENSE",
+          "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+          "retained_path": "licenses/zlib/LICENSE",
+          "bytes": 1002
+        },
+        {
+          "original_path": "contrib/dotzlib/LICENSE_1_0.txt",
+          "sha256": "36266a8fd073568394cb81cdb2b124f7fdae2c64c1a7ed09db34b4d22efa2951",
+          "retained_path": "licenses/zlib/contrib/dotzlib/LICENSE_1_0.txt",
+          "bytes": 1359
+        }
+      ],
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [],
+      "build_recipe": "build.py, stage zlib",
+      "review_status": "Candidate input only; license, provenance and security approval pending"
+    },
+    {
+      "name": "pyyaml",
+      "version": "6.0.2",
+      "artifact": "pyyaml-6.0.2.tar.gz",
+      "source_url": "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz",
+      "archive_root": "pyyaml-6.0.2",
+      "sha256": "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e",
+      "bytes": 130631,
+      "publisher_sha256": "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e",
+      "usage": [
+        "test"
+      ],
+      "required_inputs": [],
+      "build_recipe": "build.py sets PYTHONPATH to retained source lib/ for PROJ CLI tests; no pip resolution",
+      "review_status": "Candidate test input; license/provenance/security review pending",
+      "license_evidence": [
+        {
+          "original_path": "LICENSE",
+          "retained_path": "licenses/pyyaml/LICENSE",
+          "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4",
+          "bytes": 1101
+        }
+      ]
+    },
+    {
+      "name": "curl",
+      "version": "8.14.1",
+      "artifact": "curl-8.14.1.tar.xz",
+      "source_url": "https://curl.se/download/curl-8.14.1.tar.xz",
+      "archive_root": "curl-8.14.1",
+      "sha256": "f4619a1e2474c4bbfedc88a7c2191209c8334b48fa1f4e53fd584cc12e9120dd",
+      "bytes": 2817248,
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [
+        "zlib"
+      ],
+      "build_recipe": "build.py builds HTTP-only libcurl with retained zlib, no TLS or optional transport libraries; PROJ networking defaults OFF and offline builds deny network sockets",
+      "review_status": "Experimental HTTP transport and PROJ CLI compatibility input only; no TLS capability, security approval or production baseline",
+      "license_evidence": [
+        {
+          "original_path": "COPYING",
+          "retained_path": "licenses/curl/COPYING",
+          "sha256": "e18f1989333b70044b2adfb7dc2f905d0119dbdcac3bc9f4bc9d540e3a29de5b",
+          "bytes": 1088
+        }
+      ]
+    }
+  ]
+}
