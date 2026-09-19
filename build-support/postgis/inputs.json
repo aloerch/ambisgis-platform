@@ -757,7 +757,8 @@
         "sqlite",
         "tiff",
         "googletest",
-        "pyyaml"
+        "pyyaml",
+        "curl"
       ],
       "build_recipe": "build.py, stage proj",
       "review_status": "Candidate input only; license, provenance and security approval pending",
@@ -1288,6 +1289,32 @@
           "retained_path": "licenses/pyyaml/LICENSE",
           "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4",
           "bytes": 1101
+        }
+      ]
+    },
+    {
+      "name": "curl",
+      "version": "8.14.1",
+      "artifact": "curl-8.14.1.tar.xz",
+      "source_url": "https://curl.se/download/curl-8.14.1.tar.xz",
+      "archive_root": "curl-8.14.1",
+      "sha256": "f4619a1e2474c4bbfedc88a7c2191209c8334b48fa1f4e53fd584cc12e9120dd",
+      "bytes": 2817248,
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "required_inputs": [
+        "zlib"
+      ],
+      "build_recipe": "build.py builds HTTP-only libcurl with retained zlib, no TLS or optional transport libraries; PROJ networking defaults OFF and offline builds deny network sockets",
+      "review_status": "Experimental HTTP transport and PROJ CLI compatibility input only; no TLS capability, security approval or production baseline",
+      "license_evidence": [
+        {
+          "original_path": "COPYING",
+          "retained_path": "licenses/curl/COPYING",
+          "sha256": "e18f1989333b70044b2adfb7dc2f905d0119dbdcac3bc9f4bc9d540e3a29de5b",
+          "bytes": 1088
         }
       ]
     }

@@ -45,6 +45,39 @@
       "exit_code": 0,
       "log": "<workspace>/source-archives/postgis-slice/verification/retained-inputs.log",
       "log_sha256": "9cdc1bdbcab18d2a0865314eecdded07e08f3848aa1c973fda121deb67c9557d"
+    },
+    {
+      "suite": "retained-inputs-with-curl",
+      "started_at": "2026-09-19T17:41:19.773569+00:00",
+      "argv": [
+        "python3",
+        "build-support/postgis/acquisition.py",
+        "--custody",
+        "<workspace>/source-archives/postgis-slice"
+      ],
+      "cwd": "<platform-checkout>",
+      "exit_code": 0,
+      "log": "<workspace>/source-archives/postgis-slice/verification/retained-inputs-with-curl.log",
+      "log_sha256": "a71417072cd5e93a040adeabc104924e58e376d2e0fe08fcba86ae1dff569f24"
+    },
+    {
+      "suite": "acquisition-regressions-with-curl",
+      "started_at": "2026-09-19T17:41:19.996207+00:00",
+      "argv": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "plan/tests",
+        "-p",
+        "test_postgis_acquisition.py",
+        "-v"
+      ],
+      "cwd": "<platform-checkout>",
+      "exit_code": 0,
+      "log": "<workspace>/source-archives/postgis-slice/verification/acquisition-regressions-with-curl.log",
+      "log_sha256": "6cb0fb8bbe54de50c11f549dba081da1d8fda7e767d0ae1545116c296e49d855"
     }
   ],
   "prior_default_python_result": {
@@ -68,5 +101,21 @@
     "exit_code": 0,
     "verified_and_extracted_inputs": 19,
     "scope": "All inputs already retained; archive original notices compared and safe extraction into fresh directory succeeded. Tool transcript contains stdout; extracted artifact directory retained locally."
+  },
+  "curl_extract_probe": {
+    "argv": [
+      "python3",
+      "build-support/postgis/acquisition.py",
+      "--custody",
+      "<workspace>/source-archives/postgis-slice",
+      "--fetch",
+      "--only",
+      "curl",
+      "--extract",
+      "/tmp/ambisgis-curl-input-verification"
+    ],
+    "exit_code": 0,
+    "verified_and_extracted_inputs": 1,
+    "scope": "Retained curl archive and its original COPYING notice verified; safe extraction into a fresh directory succeeded. All 20 retained inputs subsequently verified read-only."
   }
 }

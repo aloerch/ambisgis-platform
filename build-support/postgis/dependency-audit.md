@@ -6,8 +6,8 @@ baselines, a license decision, a security assessment, or the whole-product
 release lock. Build and database results belong in the integrator's evidence
 record; acquisition and source inspection alone do not establish compatibility.
 
-`inputs.json` contains actual SHA256 values for 19 retained archives, totaling
-317,730,934 bytes, and 92 original license/notice/source-header records. Large
+`inputs.json` contains actual SHA256 values for 20 retained archives, totaling
+320,548,182 bytes, and 93 original license/notice/source-header records. Large
 archives, extracted inspection trees and notice copies are outside Git at
 `source-archives/postgis-slice/` relative to the existing multi-repository
 workspace. Archive names, root directories and original notice paths are
@@ -42,7 +42,8 @@ the recipe must assert their presence and execute their capabilities/tests.
 | Input | Use and direct inputs in this experiment | Original evidence and review notes |
 |---|---|---|
 | GEOS 3.13.1 | Runtime geometry; CMake >=3.15, C++14; own tests | `COPYING` contains LGPL 2.1 text. Subtree notices are retained too. |
-| PROJ 9.6.2 | Runtime CRS; SQLite library + shell >=3.11, TIFF; CMake >=3.16, C++17; GoogleTest/PyYAML for tests | `COPYING`, embedded JSON header and SQL provenance README retained. MIT-style notice does not substitute for review of CRS/data provenance. |
+| PROJ 9.6.2 | Runtime CRS; SQLite library + shell >=3.11, TIFF and HTTP-only libcurl; CMake >=3.16, C++17; GoogleTest/PyYAML for tests | `COPYING`, embedded JSON header and SQL provenance README retained. MIT-style notice does not substitute for review of CRS/data provenance. |
+| curl 8.14.1 | Runtime PROJ transport API and remote-data status; retained zlib, no TLS or optional protocol libraries | Original `COPYING` retained. HTTP-only compatibility experiment, network disabled and denied; no production HTTPS capability or security approval. |
 | GDAL 3.10.3 | Runtime raster; PROJ, TIFF, PNG, JPEG, zlib; embedded GeoTIFF and other bundled sources | `LICENSE.TXT` aggregates differing notices; relevant embedded notices/headers retained. |
 | GDAL autotest 3.10.3 | Test only; separate official release archive, installed under the isolated GDAL source's `autotest` | Source-file notices retained; fixture provenance and redistribution still require human review. |
 | protobuf-c 1.5.2 | Runtime C wire format and build-time `protoc-c`; Google protobuf >=3.0 | BSD-style `LICENSE`; library/compiler are both required by PostGIS MVT/Geobuf. |
@@ -112,8 +113,10 @@ that the needed transformation grid exists.
 Source audit identified these build/test traps:
 
 - PROJ defaults `TESTING_USE_NETWORK=ON`, probing Google with curl/ping.
-  Set it and `RUN_NETWORK_DEPENDENT_TESTS` to OFF. Disable CURL and
-  `BUILD_PROJSYNC`; projsync requires CURL. Use `USE_EXTERNAL_GTEST=ON` with
+  Set it and `RUN_NETWORK_DEPENDENT_TESTS` to OFF. Keep `BUILD_PROJSYNC=OFF`.
+  The final candidate compiles CURL support using the retained HTTP-only
+  libcurl input while leaving `PROJ_NETWORK=OFF`; see the failed clean-build
+  investigation below. Use `USE_EXTERNAL_GTEST=ON` with
   retained GoogleTest; otherwise the unit-test CMake file can fetch GitHub.
 - GDAL's main release archive omits autotest. The matching separately retained
   archive is required for real C++ tests; its CMake can also download GoogleTest
@@ -137,6 +140,50 @@ Source audit identified these build/test traps:
   queries are required. Host libc/libstdc++, compiler, linker, headers and
   tools are not retained by this manifest; the slice is not a complete
   independently reconstructable product toolchain.
+
+
+## Clean-build findings and the curl addition
+
+Run-001's initial PROJ CMake cache omitted eleven YAML CLI wrappers because
+PyYAML was unavailable at the first configure. Its 55 registered passing
+wrappers were incomplete coverage. The clean run-002 registered all 66 and
+failed unmodified `test_projinfo.yaml`, case 49: `projinfo --remote-data` with
+`PROJ_NETWORK=OFF` expected the normal disabled-network reason, while the
+CURL-free build reported that curl support was absent. The expected output and
+test selection were not changed. The candidate profile now includes the
+required compiled libcurl API, retaining curl 8.14.1 from the
+[official source archive](https://curl.se/download/curl-8.14.1.tar.xz).
+This exact archive is an experimental compatibility input selected for the
+bounded 8.x build, not a claim that it is the current or security-approved curl.
+
+The minimal transport build enables HTTP and retained zlib, disables TLS,
+external IDN/PSL/GSS/SSH/HTTP2/HTTP3/resolver libraries and compression libraries
+other than retained zlib, and disables
+other protocols explicitly. `--enable-debug` enables the retained unit-test
+library. Build `lib/libcurlu.la`, then the five individual unit programs 1300,
+1302, 1305, 1307 and 1309. Run each with a dummy URL argument: these source
+bodies test linked lists, Base64, hash/DNS-cache data structures, wildcard
+matching and splay trees without issuing a transfer. `UNITTEST_STOP` returns the
+failure count. The full server/protocol test harness and HTTPS are outside
+this profile; version probes or these five cases do not test real transport.
+Actual run results remain the integrator's evidence, not asserted here.
+
+Enabling CURL also compiles more PROJ network unit cases. Its `initial_check`
+attempts an HTTPS CDN request regardless of the CMake network-test option;
+the HTTP-only curl cannot perform HTTPS, and the offline run denies network
+sockets. Later cases often return early when `networkAccessOK` is false instead
+of reporting GTest skips. These returned cases must be recorded as unavailable
+network coverage even when their wrapper reports success. The local callback
+and network-disabled behavior tests remain applicable.
+
+A separate run-001 omission was detected by reading GDAL's internal skips:
+`GDAL_ENABLE_DRIVER_EHDR` is not a supported 3.10.3 CMake option. EHdr and ENVI
+belong to `GDAL_ENABLE_DRIVER_RAW`; the former switch was unused and RAW was
+OFF. Three internal cases therefore skipped unexpectedly (ENVI layout, ENVI
+multithreaded writing and EHdr virtual memory). The corrected recipe uses RAW
+and verifies actual runtime driver names. Other inspected intended switches
+were recognized and their runtime formats present. Do not treat the initial
+24 successful GDAL wrappers as proof of the originally intended raster profile.
 
 ## Repeatable acquisition and recovery
 
@@ -178,8 +225,12 @@ Eight offline acquisition regressions cover read-only verification, archive
 and notice corruption, corrupt-input preservation, traversal and unsafe entry
 rejection, internal symlink preservation, destination reuse, directory-link
 escapes, incomplete downloads, manifest bounds and earlier upgrade identity.
-All 19 actual retained archives and 92 original notice copies were verified by
-the recipe, and every archive was safely extracted to a fresh temporary directory.
+The initial 19 actual retained archives and 92 original notice copies were
+verified by the recipe, and every archive was safely extracted to a fresh
+temporary directory. The later curl input was separately verified and safely
+extracted; read-only verification of all 20 inputs and the eight acquisition
+regressions passed after the addition. These results and log hashes are retained
+in `acquisition-verification.json`.
 The existing schema-validation environment subsequently passed all 151 package
 tests with no skips and the schema-aware package validator; the initial default
 Python run lacked jsonschema and had seven skips plus a schema-validator failure.
