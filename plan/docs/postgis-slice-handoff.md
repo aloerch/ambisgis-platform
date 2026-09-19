@@ -1,5 +1,11 @@
 # FND-02 database slice — resumption record
 
+**Historical checkpoint below.** PR #51 was subsequently merged by the owner at
+`a3c2e2e696ea11bdc10c2ad202a240fbd0137f45`. The separate
+[Jupyter slice handoff](jupyter-slice-handoff.md) now controls resumption; this
+merge accepted the database development checkpoint only. Preserve these original
+build reports and commands. No database native rebuild occurred in the Jupyter slice.
+
 The bounded owned PostgreSQL/PostGIS build slice is reviewable. FND-02 remains
 **In progress**; [PR #51](https://github.com/aloerch/ambisgis-platform/pull/51)
 remains open and unmerged. Merge requires explicit owner approval for this PR.

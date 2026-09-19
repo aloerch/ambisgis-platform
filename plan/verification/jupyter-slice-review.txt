@@ -1,0 +1,42 @@
+Independent review, 2026-09-19
+
+Separate candidate/build audit, runtime implementer, native verifier and final
+reviewer contexts reviewed this bounded FND-02 implementation. The root agent
+integrated shared build/input/evidence files; no agent self-approved a production
+security, license or release gate.
+
+Material findings and disposition:
+1. Ordinary Lab staging can replace owned core packages with registry outputs:
+   build/verify 103 owned workspaces, compile dev_mode and package generated assets.
+2. Builder verified listed files but consumed whole directories: fixed to copy
+   only manifest-listed cache/wheel files; required roots/locks validated. Seven
+   focused tests passed for corruption, unlisted files, traversal, symlinks,
+   changed-during-copy inputs and unverified roots/locks.
+3. Git archive Hub package omitted tracked runtime data: real Hub startup failed;
+   explicit original-file MANIFEST inclusion plus wheel byte checks fixed it.
+4. Runtime origin check insufficiently bound to build evidence: fixed exact wheel
+   hash/path/version/module byte verification, sanitized inspection environment,
+   prefix-confined full Lab static asset comparison and PAM artifact receipt checks.
+5. Inventory omitted Python native member lists: fixed both ecosystems and .so.N
+   detection; binary distributions remain distinct from source-built outputs.
+6. Recovery could write through a symlink parent: preflight rejects symlink or
+   escaping destinations before directory creation, download or rename.
+7. Native Hub collection required missing libpam: retained Linux-PAM 1.7.2, built
+   only libpam/libpam_misc in local prefix with source/tool/artifact receipts.
+   No host authentication configuration, modules or privileged accounts changed.
+
+Final independent readback:
+- run-002 build: 24 top-level commands, all exits zero; PAM nested commands zero.
+- selected native suites: 137+69+55+62+6 =329 passed, zero failures/errors/skips.
+- runtime-ivnhawpn and runtime-tgw1e3j7: standalone and Hub/proxy/singleuser paths
+  pass, exact418assets, real kernels/notebook reopen, all observed listeners local,
+  exit0/forced_cleanup=false/remaining_processes0 for both process trees.
+- broad ldd diagnostic exit1 preserved for unused bundled musl Parcel alternative;
+  actual Node loader receipt selects glibc sibling with no missing dependencies.
+- final reviewer found no remaining implementation blocker in reviewed scope.
+  README clarification covers PAM probe use and the nonzero diagnostic explicitly.
+
+Full upstream/browser suites, production authorization/isolation, GIS profiles,
+complete toolchain/third-party source repair, licensing and release acceptance
+were neither reviewed as complete nor approved. Human checkpoint review remains
+separate. No merge or release was performed.

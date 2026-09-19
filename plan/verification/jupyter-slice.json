@@ -1,0 +1,661 @@
+{
+  "schema_version": 1,
+  "task": "FND-02",
+  "delivery": "In progress",
+  "repository": {
+    "name": "aloerch/ambisgis-platform",
+    "id": 1376927351
+  },
+  "branch": "fnd-02/jupyter-runtime",
+  "base": "a3c2e2e696ea11bdc10c2ad202a240fbd0137f45",
+  "source_roots": [
+    {
+      "name": "jupyterhub",
+      "tag": "6.0.1",
+      "tag_object": "65de9c630531e0ac7630f6da166e91c54726e0af",
+      "commit": "3e516c6f382b481e815ec455befb2f14d80d337b",
+      "path": "jupyterhub-3e516c6f382b481e815ec455befb2f14d80d337b.tar",
+      "sha256": "968fe3c69eb729da01fcd4f30464b14610fb717943101d31646405b122b9ba0c",
+      "class": "owned-source",
+      "url": "https://github.com/aloerch/ambisgis-jupyterhub"
+    },
+    {
+      "name": "jupyterlab",
+      "tag": "v4.6.3",
+      "tag_object": "9c81bd1442601ba5c6b20bbd46678b5b236d2721",
+      "commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+      "path": "jupyterlab-e7255a9334c12ad8f9cb15db27584215fab5ece2.tar",
+      "sha256": "e7bd6706f0493a1a93efb7f36b5808b11db4327429948713fbc456e0d69498c5",
+      "class": "owned-source",
+      "url": "https://github.com/aloerch/ambisgis-jupyterlab"
+    },
+    {
+      "name": "node",
+      "version": "v24.21.0",
+      "path": "node-v24.21.0-linux-x64.tar.xz",
+      "sha256": "fd8e59d5a511510f6a298afb548f18c7d2b1be404d8b4a27d94fbe49f56cb2d6",
+      "class": "retained-binary",
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-linux-x64.tar.xz"
+    },
+    {
+      "name": "node",
+      "version": "v24.21.0",
+      "path": "node-v24.21.0.tar.xz",
+      "sha256": "a6f54defb6fd7c84f41dba13d61e78e9b4e0961712cf61f29715c05f5ced94fc",
+      "class": "retained-source",
+      "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0.tar.xz"
+    },
+    {
+      "name": "Linux-PAM",
+      "version": "1.7.2",
+      "tag": "v1.7.2",
+      "tag_object": "d3166e64d620d0b0277054d383cba735f7bed793",
+      "commit": "fe03a10115c082a8486ccbab7462139d7e4bb067",
+      "class": "retained-source",
+      "path": "Linux-PAM-1.7.2.tar.xz",
+      "sha256": "3d86b6383fb5fd9eb9578d2cd47d92801191f4bf3f9bc61419bfefc8aa1e531a",
+      "url": "https://github.com/linux-pam/linux-pam/releases/download/v1.7.2/Linux-PAM-1.7.2.tar.xz",
+      "role": "build only libpam/libpam_misc for native dependency import; no OS authentication/profile/modules"
+    },
+    {
+      "name": "web-infra-dev/rspack",
+      "tag": "v2.0.2",
+      "tag_object": "abbb9774575a8fb48f1508d6e71e34252c96c1c4",
+      "commit": "b7d4de71c2d3e912450ff13b28e7e25cfc266772",
+      "class": "retained-source",
+      "path": "web-infra-dev-rspack-b7d4de71c2d3e912450ff13b28e7e25cfc266772.tar.gz",
+      "sha256": "3907d65e89ddb7f777486a3ea96290ad833d7452ace6e94dbf97094987133367",
+      "url": "https://codeload.github.com/web-infra-dev/rspack/tar.gz/b7d4de71c2d3e912450ff13b28e7e25cfc266772",
+      "role": "toolchain repair source; source rebuild and transitive compiler closure not tested"
+    },
+    {
+      "name": "yarnpkg/berry",
+      "tag": "@yarnpkg/cli/3.5.0",
+      "tag_object": "4c5030f873205ae6269a09716e0fee77926b3ace",
+      "commit": "f4af6c7cf1588f80011ec13060099d96be67127c",
+      "class": "retained-source",
+      "path": "yarnpkg-berry-f4af6c7cf1588f80011ec13060099d96be67127c.tar.gz",
+      "sha256": "41325fbd99d9f34e4f9f683a8a61d74558a28f2c8fcb5e3ced9ed97ea5e63d2c",
+      "url": "https://codeload.github.com/yarnpkg/berry/tar.gz/f4af6c7cf1588f80011ec13060099d96be67127c",
+      "role": "toolchain repair source; source rebuild and transitive compiler closure not tested"
+    }
+  ],
+  "input_manifest": {
+    "path": "build-support/jupyter/inputs.json",
+    "sha256": "fc0b29f213d4613f5a0595bca7e8d179f0b2e8f40fc8ddff9e3d56c771d7d2b5",
+    "files": 5510,
+    "bytes": 817990927
+  },
+  "retention": {
+    "store": "/home/revelberry/Projects/AmbisGIS/source-archives/jupyter-slice",
+    "python_distributions": 146,
+    "javascript_distribution_records": 2830,
+    "notice_records": 3522,
+    "unique_notices": 1156,
+    "off_machine_backup_tested": false
+  },
+  "build": {
+    "status": "passed",
+    "commands": 24,
+    "nonzero_commands": [],
+    "owned_lab_workspaces": 103,
+    "wheels": [
+      {
+        "path": "wheels/jupyterhub-6.0.1-py3-none-any.whl",
+        "sha256": "e3c8ddb0b8307e54debddc75af2ffc1fc59d690fa3cf987693da09e404d5a277",
+        "size": 15340184
+      },
+      {
+        "path": "wheels/jupyterlab-4.6.3-py3-none-any.whl",
+        "sha256": "98c21e3a6a98e011418ad5d586f3679fdfe942254dd1ac1e3d1f4f10147b8d02",
+        "size": 16772320
+      }
+    ],
+    "hub_archive_packaging": {
+      "manifest_sha256": "47040928ae727285cec3b2d132c0234e312008dd7c88d07e04acc39dd16594e0",
+      "included_owned_data": [
+        "jupyterhub/alembic.ini",
+        "jupyterhub/alembic/README",
+        "jupyterhub/alembic/script.py.mako",
+        "jupyterhub/event-schemas/server-actions/v1.yaml",
+        "jupyterhub/singleuser/templates/page.html"
+      ]
+    }
+  },
+  "offline": {
+    "schema_version": 1,
+    "started_utc": "2026-09-19T19:19:53.018808+00:00",
+    "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jupyter",
+    "command": [
+      "python3",
+      "build-support/jupyter/build.py",
+      "--custody",
+      "/home/revelberry/Projects/AmbisGIS/source-archives/jupyter-slice",
+      "--run",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002"
+    ],
+    "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+    "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+    "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+    "limitations": [
+      "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+      "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+      "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+    ],
+    "status": "completed",
+    "resolved_executable": "/usr/bin/python3",
+    "closed_inherited_fds": [],
+    "kernel_state": {
+      "no_new_privs": 1,
+      "seccomp_mode": 2,
+      "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+    },
+    "probes": [
+      {
+        "family": "AF_INET",
+        "operation": "socket(SOCK_STREAM)",
+        "errno": 1,
+        "errno_name": "EPERM",
+        "expected_errno": 1,
+        "passed": true
+      },
+      {
+        "family": "AF_INET6",
+        "operation": "socket(SOCK_STREAM)",
+        "errno": 1,
+        "errno_name": "EPERM",
+        "expected_errno": 1,
+        "passed": true
+      },
+      {
+        "family": "AF_UNIX",
+        "operation": "socket(SOCK_STREAM)",
+        "errno": 0,
+        "errno_name": "SUCCESS",
+        "expected_errno": 0,
+        "passed": true
+      },
+      {
+        "family": "AF_UNIX",
+        "operation": "socketpair send/recv",
+        "errno": 0,
+        "passed": true
+      }
+    ],
+    "command_exit_code": 0,
+    "finished_utc": "2026-09-19T19:22:00.211871+00:00"
+  },
+  "native_suites": [
+    {
+      "name": "hub-python",
+      "exit_code": 0,
+      "counts": {
+        "total": 137,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "lab-python",
+      "exit_code": 0,
+      "counts": {
+        "total": 69,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "hub-jsx",
+      "exit_code": 0,
+      "counts": {
+        "total": 55,
+        "passed": 55,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "lab-coreutils",
+      "exit_code": 0,
+      "counts": {
+        "total": 62,
+        "passed": 62,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "name": "lab-testing-build",
+      "exit_code": 0,
+      "counts": null
+    },
+    {
+      "name": "lab-nbformat",
+      "exit_code": 0,
+      "counts": {
+        "total": 6,
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
+  ],
+  "native_total": 329,
+  "native_failed": 0,
+  "native_skipped": 0,
+  "runtime": [
+    {
+      "report": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/runtime-evidence/runtime-ivnhawpn/report.json",
+      "sha256": "edd963ad2d28d5a8ea85eafa58da5c0ab163177f3033917c4d42effdaa178f6e",
+      "status": "passed",
+      "standalone": {
+        "authentication": "missing and invalid tokens rejected",
+        "execution": {
+          "execute_reply": "ok",
+          "execution_count": 1,
+          "idle_received": true,
+          "stdout": "AMBISGIS_KERNEL_RESULT=285\n"
+        },
+        "lab_http_status": 200,
+        "notebook_save_reopen": "passed",
+        "notebook_sha256": "fe87ee918a863c83abf5d7a28266f90321f6169c685fd9d4f4d70bb7a705a163",
+        "observed_tcp_listeners": [
+          {
+            "address": "127.0.0.1",
+            "port": 36417
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 41945
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 43957
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 44745
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 51043
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 53759
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 54509
+          }
+        ],
+        "server_trust_annotations": [
+          true
+        ],
+        "shutdown": {
+          "exit_code": 0,
+          "forced_cleanup": false,
+          "remaining_processes": 0
+        }
+      },
+      "hub": {
+        "authentication": "missing and invalid tokens rejected",
+        "execution": {
+          "execute_reply": "ok",
+          "execution_count": 1,
+          "idle_received": true,
+          "stdout": "AMBISGIS_KERNEL_RESULT=285\n"
+        },
+        "lab_http_status": 200,
+        "notebook_save_reopen": "passed",
+        "notebook_sha256": "fe87ee918a863c83abf5d7a28266f90321f6169c685fd9d4f4d70bb7a705a163",
+        "observed_tcp_listeners": [
+          {
+            "address": "127.0.0.1",
+            "port": 33011
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 34093
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 37027
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 44719
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 49417
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 53749
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 54389
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 58467
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 58515
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 59333
+          }
+        ],
+        "profile": "one trusted OS user; no multi-user isolation",
+        "server_trust_annotations": [
+          true
+        ],
+        "shutdown": {
+          "exit_code": 0,
+          "forced_cleanup": false,
+          "remaining_processes": 0
+        },
+        "singleuser_stopped": true,
+        "status": "passed"
+      },
+      "lab_assets": {
+        "directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/user-env/share/jupyter/lab/static",
+        "file_count": 418,
+        "sha256": "9c0d114ec2143877b9b56cd78bc25a50995962b207263ccfc41ddc505a17f647"
+      },
+      "package_versions": {
+        "ipykernel": "7.3.0",
+        "jupyter_client": "8.10.0",
+        "jupyter_server": "2.21.1",
+        "jupyterhub": "6.0.1",
+        "jupyterlab": "4.6.3",
+        "websocket-client": "1.9.2"
+      },
+      "build_receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/build-report.json",
+        "sha256": "f1c635b5db759d3275c66bd0c14b168902629cfe8afc868a7acf7a6429b7ddb5"
+      }
+    },
+    {
+      "report": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/runtime-evidence/runtime-tgw1e3j7/report.json",
+      "sha256": "271c34044dbca848dfd8ce6381dfa6ec35448fd378b99abf6c43d9da7d6d7396",
+      "status": "passed",
+      "standalone": {
+        "authentication": "missing and invalid tokens rejected",
+        "execution": {
+          "execute_reply": "ok",
+          "execution_count": 1,
+          "idle_received": true,
+          "stdout": "AMBISGIS_KERNEL_RESULT=285\n"
+        },
+        "lab_http_status": 200,
+        "notebook_save_reopen": "passed",
+        "notebook_sha256": "fe87ee918a863c83abf5d7a28266f90321f6169c685fd9d4f4d70bb7a705a163",
+        "observed_tcp_listeners": [
+          {
+            "address": "127.0.0.1",
+            "port": 36411
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 37773
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 41009
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 44049
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 46603
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 48009
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 50793
+          }
+        ],
+        "server_trust_annotations": [
+          true
+        ],
+        "shutdown": {
+          "exit_code": 0,
+          "forced_cleanup": false,
+          "remaining_processes": 0
+        }
+      },
+      "hub": {
+        "authentication": "missing and invalid tokens rejected",
+        "execution": {
+          "execute_reply": "ok",
+          "execution_count": 1,
+          "idle_received": true,
+          "stdout": "AMBISGIS_KERNEL_RESULT=285\n"
+        },
+        "lab_http_status": 200,
+        "notebook_save_reopen": "passed",
+        "notebook_sha256": "fe87ee918a863c83abf5d7a28266f90321f6169c685fd9d4f4d70bb7a705a163",
+        "observed_tcp_listeners": [
+          {
+            "address": "127.0.0.1",
+            "port": 34369
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 36397
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 37867
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 48985
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 49889
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 52899
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 54471
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 55559
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 60795
+          },
+          {
+            "address": "127.0.0.1",
+            "port": 60959
+          }
+        ],
+        "profile": "one trusted OS user; no multi-user isolation",
+        "server_trust_annotations": [
+          true
+        ],
+        "shutdown": {
+          "exit_code": 0,
+          "forced_cleanup": false,
+          "remaining_processes": 0
+        },
+        "singleuser_stopped": true,
+        "status": "passed"
+      },
+      "lab_assets": {
+        "directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/user-env/share/jupyter/lab/static",
+        "file_count": 418,
+        "sha256": "9c0d114ec2143877b9b56cd78bc25a50995962b207263ccfc41ddc505a17f647"
+      },
+      "package_versions": {
+        "ipykernel": "7.3.0",
+        "jupyter_client": "8.10.0",
+        "jupyter_server": "2.21.1",
+        "jupyterhub": "6.0.1",
+        "jupyterlab": "4.6.3",
+        "websocket-client": "1.9.2"
+      },
+      "build_receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/build-report.json",
+        "sha256": "f1c635b5db759d3275c66bd0c14b168902629cfe8afc868a7acf7a6429b7ddb5"
+      }
+    }
+  ],
+  "tooling": {
+    "jupyter_harness": 20,
+    "database_harness": 22,
+    "package_tests": 175,
+    "schemas": {
+      "passed": 4,
+      "strict_plan": "15 repositories, 66 tasks, 24 requirements, 65 source references"
+    },
+    "package_skipped": 0
+  },
+  "reports": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/build-report.json",
+      "sha256": "f1c635b5db759d3275c66bd0c14b168902629cfe8afc868a7acf7a6429b7ddb5",
+      "size": 27908,
+      "status": "passed",
+      "error": null
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/pam/report.json",
+      "sha256": "4cba2fc9e86d4a9d9cf38d614969a6a1538e9a6be4ac50f38aec3e413cbd6c11",
+      "size": 4491,
+      "status": "passed",
+      "error": null
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/native-tests/report.json",
+      "sha256": "f723ecf428df0603d098c57b361679cad62cc20280e4dabd187f90295c753108",
+      "size": 8687,
+      "status": "passed",
+      "error": null
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/native-linkage.json",
+      "sha256": "bee67da3b4791b9d3398e4a0ccb59a865e8b518a714e716d13be65a21cdd6acf",
+      "size": 57022,
+      "status": "diagnostic",
+      "error": null
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/offline-run002.json",
+      "sha256": "e592aadf05a64793b9339d6d8849c55263abf6d1a886e9d4a4ed03c28e6b3aff",
+      "size": 1926,
+      "status": "completed",
+      "error": null
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/jupyter-harness-tests.txt",
+      "sha256": "7186101309ab6a1dea1b6de3c2696f5a3bba94bfe3e30c2d3471fc22909d9a50",
+      "size": 2967
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/database-harness-tests.txt",
+      "sha256": "75283f031c651359042c495a487870fb2068f00440c4698e447a9736de36881e",
+      "size": 3181
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/runtime-evidence/runtime-42n5ncxe/report.json",
+      "sha256": "426869bde31107b8653bedbca5007768e0ece1853fe3e51c8f08992a96801a4c",
+      "size": 69222,
+      "status": "failed",
+      "error": "hub exited before readiness; inspect sanitized log"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/runtime-evidence/runtime-ivnhawpn/report.json",
+      "sha256": "edd963ad2d28d5a8ea85eafa58da5c0ab163177f3033917c4d42effdaa178f6e",
+      "size": 73349,
+      "status": "passed",
+      "error": null
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/runtime-evidence/runtime-ke17a_9l/report.json",
+      "sha256": "38f2698aad0cf5b48ac7f0870c14c9f4bd07cc59e37a5b88b4268b7a053547e5",
+      "size": 68403,
+      "status": "failed",
+      "error": "saved/reopened notebook cells differ"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/runtime-evidence/runtime-m0h5pu7n/report.json",
+      "sha256": "1e67c9605fe0580311cf7a95c84c06ff00a9b2c65b60c672d45d1843963bcf76",
+      "size": 70545,
+      "status": "passed",
+      "error": null
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/runtime-evidence/runtime-n01e4hpr/report.json",
+      "sha256": "be24cc1a64a5226b7c2887c451f45e26adb8832c34c9329173d1d5639e72660c",
+      "size": 68806,
+      "status": "failed",
+      "error": "saved/reopened notebook cells differ: [{'cell_type': 'code', 'execution_count': 1, 'id': 'runtime-probe', 'metadata': {'trusted': True}, 'outputs': [{'name': 'stdout', 'output_type': 'stream', 'text': 'AMBISGIS_KERNEL_RESULT=285\\n'}], 'source': \"import sys\\nassert sys.prefix == '/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-001/user-env'\\nprint('AMBISGIS_KERNEL_RESULT=' + str(sum(i*i for i in range(10))))\"}]"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/runtime-evidence/runtime-pdnq9kdc/report.json",
+      "sha256": "9784745bd043566344fd84820bb05607aa19b53a747877219857ef642ba6188a",
+      "size": 68417,
+      "status": "failed",
+      "error": "lab exited before readiness; inspect sanitized log"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/runtime-evidence/runtime-tgw1e3j7/report.json",
+      "sha256": "271c34044dbca848dfd8ce6381dfa6ec35448fd378b99abf6c43d9da7d6d7396",
+      "size": 73349,
+      "status": "passed",
+      "error": null
+    },
+    {
+      "path": "plan/verification/jupyter-package-tests.txt",
+      "sha256": "f3047f83ebd24cd9b916010948fe5d41f24887fdf2d49a8e161b0f5ad321ff71",
+      "size": 26038
+    },
+    {
+      "path": "plan/verification/jupyter-schemas.txt",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+      "size": 189
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/native-linkage-selection.json",
+      "sha256": "c502a8d8510d393bca26790547e910561d026f46e93cc6a2dcd8453e40b81e9e",
+      "size": 1871
+    }
+  ],
+  "limits": [
+    "Selected native suites only; no full browser/accessibility coverage",
+    "Runtime loopback-only listeners verified; external egress isolation not tested",
+    "One trusted OS user; no multiuser isolation, production SSO, quota/scheduling or GIS profile acceptance",
+    "Host Python/stdlib/toolchain/libc remain unretained; third-party source rebuild/repair and complete transitive source closure not tested",
+    "Broad ldd scan has one incompatible bundled musl Parcel variant on glibc; required loader selection recorded separately",
+    "No canonical baseline/license/security/FND-07/FND-08/P1/P6 or release acceptance"
+  ],
+  "linkage_audit": {
+    "elf_files": 80,
+    "resolved_library_paths": 14,
+    "unretained_host_libraries": 9,
+    "scan_exit_code": 1,
+    "finding": "unused bundled Parcel musl variant incompatible with glibc host",
+    "actual_node_loader": "glibc sibling selected successfully; no missing linked libraries"
+  }
+}
