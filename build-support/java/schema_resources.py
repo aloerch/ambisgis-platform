@@ -31,6 +31,16 @@ _NOTICE = re.compile(r"(?:LICENSE|NOTICE|COPYING|COPYRIGHT)(?:[-_.][A-Za-z0-9_.+
 _CHECKSUMS = ("sha1", "sha256", "sha512", "md5")
 _NS = {"m": "http://maven.apache.org/POM/4.0.0"}
 
+# Reviewed documentation metadata in one exact W3C source-data member. Expat
+# reports the PI without fetching or interpreting the referenced stylesheet.
+_INERT_STYLESHEET = {
+    "gav": "org.geotools.schemas:xml-1.0:1.0.0-3",
+    "member": "org/w3/www/2001/xml.xsd",
+    "sha256": "61960fb3131e38022caad5360e2f33a3382578ab3c80cd58bd74320ede61b20c",
+    "target": "xml-stylesheet",
+    "data": 'href="../2008/09/xsd.xsl" type="text/xsl"',
+}
+
 # Exact resources from nineteen reviewed, parentless source packaging POMs.
 RESOURCES = {'org.geotools.schemas:cgiutilities-1.0:1.0.0-4': {'org/geosciml/www/cgiutilities/1.0/xsd/cgiUtilities.xsd': 'http://www.geosciml.org/cgiutilities/1.0/xsd/cgiUtilities.xsd',
                                                    'org/geosciml/www/cgiutilities/1.0/xsd/primitiveTypes.xsd': 'http://www.geosciml.org/cgiutilities/1.0/xsd/primitiveTypes.xsd'},
@@ -228,18 +238,31 @@ def schema_checksum(maven_path: str) -> tuple[str, str] | None:
     return None
 
 
-def _xml(data: bytes):
-    # Expat callbacks catch declarations regardless of XML byte encoding. No DTD,
-    # entities, stylesheet instruction, network fetch or XInclude execution occurs.
+def _xml(data: bytes, *, resource_gav=None, resource_path=None, retained_instructions=None):
+    # Expat callbacks catch declarations regardless of XML byte encoding. One
+    # exact source-member PI may be retained as inert documentation metadata;
+    # DTDs/entities and every other PI remain forbidden. No external fetch or
+    # XInclude/stylesheet execution occurs in either parser.
     parser = expat.ParserCreate()
 
     def forbidden(*args):
         raise SchemaResourceError("XML declarations/entities/processing instructions are forbidden")
 
+    def processing_instruction(target, instruction):
+        approved = _INERT_STYLESHEET
+        if (resource_gav != approved["gav"] or resource_path != approved["member"]
+                or hashlib.sha256(data).hexdigest() != approved["sha256"]
+                or target != approved["target"] or instruction != approved["data"]
+                or retained_instructions is None or retained_instructions):
+            forbidden()
+        retained_instructions.append({"target": target, "data": instruction,
+                                      "member_sha256": approved["sha256"],
+                                      "handling": "retained inert; stylesheet neither fetched nor executed"})
+
     parser.StartDoctypeDeclHandler = forbidden
     parser.EntityDeclHandler = forbidden
     parser.ExternalEntityRefHandler = forbidden
-    parser.ProcessingInstructionHandler = forbidden
+    parser.ProcessingInstructionHandler = processing_instruction
     try:
         parser.Parse(data, True)
         return ET.fromstring(data)
@@ -375,6 +398,7 @@ def validate_schema_archive(maven_path: str, jar_bytes: bytes) -> dict:
                     data = stream.read(MAX_MEMBER_BYTES + 1)
                 if len(data) != entry.file_size or len(data) > MAX_MEMBER_BYTES:
                     raise SchemaResourceError("ZIP member length differs or exceeds bounds")
+                retained_instructions = []
                 if entry.is_dir():
                     if data:
                         raise SchemaResourceError("ZIP directory contains bytes")
@@ -386,7 +410,8 @@ def validate_schema_archive(maven_path: str, jar_bytes: bytes) -> dict:
                         _text(data)
                         member_kind = "source-resource-text"
                     else:
-                        root = _xml(data)
+                        root = _xml(data, resource_gav=gav, resource_path=name,
+                                    retained_instructions=retained_instructions)
                         if name.endswith(".xsd") and root.tag != "{http://www.w3.org/2001/XMLSchema}schema":
                             raise SchemaResourceError("XSD resource root is not an XML Schema")
                         member_kind = "xml-schema" if name.endswith(".xsd") else "xml-resource"
@@ -412,6 +437,8 @@ def validate_schema_archive(maven_path: str, jar_bytes: bytes) -> dict:
                           "sha256": hashlib.sha256(data).hexdigest()}
                 if name in RESOURCES[gav]:
                     member["declared_source_url"] = RESOURCES[gav][name]
+                if retained_instructions:
+                    member["retained_processing_instructions"] = retained_instructions
                 members.append(member)
     except (zipfile.BadZipFile, RuntimeError, NotImplementedError, EOFError, zlib.error) as error:
         raise SchemaResourceError("invalid ZIP resource capsule") from error

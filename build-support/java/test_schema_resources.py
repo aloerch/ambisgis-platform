@@ -181,6 +181,51 @@ class SchemaResourceTests(unittest.TestCase):
                 with self.subTest(encoding=encoding), self.assertRaises(schema.SchemaResourceError):
                     schema.validate_schema_archive(PATH, capsule(resources=False, extra=[(name, xml.encode(encoding))]))
 
+    def test_pinned_documentation_pi_is_recorded_without_execution(self):
+        gav = 'org.geotools.schemas:xml-1.0:1.0.0-3'
+        path = 'org/geotools/schemas/xml-1.0/1.0.0-3/xml-1.0-1.0.0-3.jar'
+        member = 'org/w3/www/2001/xml.xsd'
+        data = b'<?xml-stylesheet href="../2008/09/xsd.xsl" type="text/xsl"?>' + XSD
+        # Synthetic fixture exercises the full gate; production bytes retain
+        # their independently observed, fixed SHA256 rather than this test hash.
+        with patch.dict(schema._INERT_STYLESHEET, {'sha256': hashlib.sha256(data).hexdigest()}):
+            report = schema.validate_schema_archive(path, capsule(gav, resources=False, extra=[(member, data)]))
+        instructions = report['members'][0]['retained_processing_instructions']
+        self.assertEqual(instructions, [{
+            'target': 'xml-stylesheet', 'data': 'href="../2008/09/xsd.xsl" type="text/xsl"',
+            'member_sha256': hashlib.sha256(data).hexdigest(),
+            'handling': 'retained inert; stylesheet neither fetched nor executed'}])
+        self.assertEqual(report['missing_resources'], [])
+
+    def test_documentation_pi_exception_requires_exact_gav_member_hash_and_data(self):
+        approved = schema._INERT_STYLESHEET
+        data = b'<?xml-stylesheet href="../2008/09/xsd.xsl" type="text/xsl"?>' + XSD
+        with self.assertRaises(schema.SchemaResourceError):
+            schema._xml(data, resource_gav=approved['gav'], resource_path=approved['member'],
+                        retained_instructions=[])
+        with patch.dict(approved, {'sha256': hashlib.sha256(data).hexdigest()}):
+            for gav, member in ((approved['gav'] + '-other', approved['member']),
+                                (approved['gav'], 'other/xml.xsd')):
+                with self.subTest(gav=gav, member=member), self.assertRaises(schema.SchemaResourceError):
+                    schema._xml(data, resource_gav=gav, resource_path=member, retained_instructions=[])
+        for changed in (data.replace(b'../2008/09/xsd.xsl', b'https://unapproved.invalid/style.xsl'),
+                        data.replace(b'text/xsl', b'other/type'),
+                        data.replace(b'xml-stylesheet', b'other-target'),
+                        data.replace(XSD, data)):
+            with patch.dict(approved, {'sha256': hashlib.sha256(changed).hexdigest()}):
+                with self.assertRaises(schema.SchemaResourceError):
+                    schema._xml(changed, resource_gav=approved['gav'], resource_path=approved['member'],
+                                retained_instructions=[])
+
+    def test_documentation_pi_exception_never_allows_a_doctype(self):
+        approved = schema._INERT_STYLESHEET
+        data = (b'<!DOCTYPE schema [<!ENTITY e "unapproved">]>'
+                b'<?xml-stylesheet href="../2008/09/xsd.xsl" type="text/xsl"?>' + XSD)
+        with patch.dict(approved, {'sha256': hashlib.sha256(data).hexdigest()}):
+            with self.assertRaises(schema.SchemaResourceError):
+                schema._xml(data, resource_gav=approved['gav'], resource_path=approved['member'],
+                            retained_instructions=[])
+
     def test_executable_prefix_and_trailing_payload_are_rejected(self):
         for data in (b"MZbad" + capsule(), capsule() + b"executable trailing bytes"):
             with self.subTest(prefix=data[:8]), self.assertRaises(schema.SchemaResourceError):
