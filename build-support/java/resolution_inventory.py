@@ -233,7 +233,8 @@ def verify_custody(custody: Path | str) -> dict:
                     raise InventoryError("schema archive changed during checksum verification")
                 actual = hashlib.new(algorithm, source_bytes).hexdigest()
                 text = read_file(root / record["blob_path"]).decode("ascii").strip().split()
-                if not text or text[0].lower() != actual:
+                if (len(text) not in (1, 2) or text[0].lower() != actual
+                        or (len(text) == 2 and text[1].lstrip("*") != source_path.rsplit("/", 1)[-1])):
                     raise InventoryError("schema checksum bytes disagree with source archive")
                 observed = {"schema_version": 1, "source_archive_path": source_path,
                             "source_archive_sha256": source["sha256"],

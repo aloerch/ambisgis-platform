@@ -319,6 +319,22 @@ class InventoryTests(unittest.TestCase):
         self.assertFalse(report["verification"]["valid"])
         self.assertIn("same-origin", report["verification"]["errors"][0]["error"])
 
+    def test_schema_checksum_grammar_matches_proxy_replay_policy(self):
+        path, data, artifact = self.schema_capsule()
+        checksum = hashlib.sha1(data).hexdigest()
+        details = {"schema_version": 1, "source_archive_path": path,
+                   "source_archive_sha256": hashlib.sha256(data).hexdigest(),
+                   "checksum_algorithm": "sha1", "checksum": checksum}
+        filename = path.rsplit("/", 1)[-1]
+        for body in (checksum, checksum.upper(), checksum + " *" + filename):
+            self.retain(path + ".sha1", body.encode(), "osgeo", source_resource_validation=details)
+            self.assertTrue(inventory.verify_custody(self.custody)["verification"]["valid"])
+        for body in (checksum + " other.jar", checksum + " " + filename + " extra"):
+            self.retain(path + ".sha1", body.encode(), "osgeo", source_resource_validation=details)
+            report = inventory.verify_custody(self.custody)
+            self.assertFalse(report["verification"]["valid"])
+            self.assertIn("checksum bytes disagree", report["verification"]["errors"][0]["error"])
+
     def test_forged_resource_verified_flag_cannot_skip_source_acquisition(self):
         self.retain(self.base + ".jar", jar(), source_resource_verified=True,
                     source_resource_validation={"notices": []})
