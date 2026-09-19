@@ -13,3 +13,6 @@ private-data/
 
 .project-receipt.json
 .project-receipt-*
+
+.project-receipt.json.lock
+.evidence/
