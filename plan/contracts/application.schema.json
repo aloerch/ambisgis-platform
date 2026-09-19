@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "Proposed application composition envelope v1",
+  "required": [
+    "schema_version",
+    "title",
+    "data_sources",
+    "widgets",
+    "pages"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "item_id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "item_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      }
+    },
+    "widgets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "config"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "map",
+              "table",
+              "chart",
+              "kpi",
+              "text",
+              "image",
+              "legend",
+              "layer_list",
+              "search",
+              "filter",
+              "button"
+            ]
+          },
+          "data_source_id": {
+            "type": "string"
+          },
+          "config": {
+            "type": "object",
+            "description": "Widget-specific schema/permissions must be validated by registry; no arbitrary executable code."
+          }
+        }
+      }
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "layouts"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "layouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "desktop",
+              "tablet",
+              "mobile"
+            ],
+            "properties": {
+              "desktop": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "widget_id",
+                    "row",
+                    "column",
+                    "width",
+                    "height"
+                  ],
+                  "properties": {
+                    "widget_id": {
+                      "type": "string"
+                    },
+                    "row": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "column": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "width": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "height": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  }
+                }
+              },
+              "tablet": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "widget_id",
+                    "row",
+                    "column",
+                    "width",
+                    "height"
+                  ],
+                  "properties": {
+                    "widget_id": {
+                      "type": "string"
+                    },
+                    "row": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "column": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "width": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "height": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  }
+                }
+              },
+              "mobile": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "widget_id",
+                    "row",
+                    "column",
+                    "width",
+                    "height"
+                  ],
+                  "properties": {
+                    "widget_id": {
+                      "type": "string"
+                    },
+                    "row": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "column": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "width": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "height": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

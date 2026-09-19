@@ -1,0 +1,28 @@
+{
+  "html_ids": 83,
+  "internal_navigation_links": 18,
+  "source_anchors": 65,
+  "external_scripts": 0,
+  "master_words": 29576,
+  "docs": 13,
+  "tasks": 66,
+  "browser_checks": {
+    "desktop": {
+      "viewport": 1440,
+      "bodyWidth": 1440,
+      "documentWidth": 1440,
+      "title": "AmbisGIS \u2014 Independent Product Design, Revision 2",
+      "headings": 145,
+      "page_errors": []
+    },
+    "mobile": {
+      "viewport": 390,
+      "bodyWidth": 390,
+      "documentWidth": 390,
+      "title": "AmbisGIS \u2014 Independent Product Design, Revision 2",
+      "headings": 145,
+      "page_errors": []
+    }
+  },
+  "visual_inspection": "Desktop and mobile previews inspected."
+}

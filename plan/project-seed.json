@@ -1,0 +1,1724 @@
+{
+  "schema_version": 1,
+  "kind": "local seed; NOT a remote receipt or completed provisioning",
+  "owner": "aloerch",
+  "project_title": "AmbisGIS — Product Development",
+  "project_marker": "ambisgis-product-development-v2",
+  "visibility": "PUBLIC",
+  "issue_count": 66,
+  "issues": [
+    {
+      "task_id": "FND-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[FND-01] Verify environment and create only approved repositories",
+      "marker": "<!-- ambisgis:task:FND-01 -->",
+      "body": "<!-- ambisgis:task:FND-01 -->\n<!-- ambisgis:managed:start -->\n## FND-01 — Verify environment and create only approved repositories\n\nPhase: P0 · Repository: ambisgis-platform\nRequirements: R20\nDepends on: None\n\n### Deliverables\n- Bootstrap receipt; verified remotes; plan/scaffold PR\n- Fifteen exact approved targets; preserve source-donor history; no public product release implied\n\n### Acceptance criteria\n- [ ] Package tests pass; dry-run shows all targets.\n- [ ] Explicit apply creates missing public repositories only; collisions fail without modifying existing repos.\n- [ ] No imported workflows enabled or secrets committed.\n\n### Planned verification\nT-BOOTSTRAP-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "880fb21009ac3d6a48800855415442318f9cfcb6d50eb7404151610544c9dec5",
+      "dependency_task_ids": [],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p0",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "FND-01",
+        "Delivery": "Backlog",
+        "Phase": "P0",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "FND-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[FND-02] Resolve source, license and compatible dependency tuple",
+      "marker": "<!-- ambisgis:task:FND-02 -->",
+      "body": "<!-- ambisgis:task:FND-02 -->\n<!-- ambisgis:managed:start -->\n## FND-02 — Resolve source, license and compatible dependency tuple\n\nPhase: P0 · Repository: ambisgis-platform\nRequirements: R20\nDepends on: FND-01\n\n### Deliverables\n- Exact source/image/runtime lock proposal; license inventory; upstream patch policy\n\n### Acceptance criteria\n- [ ] Inspect actual GeoNode, MapStore/client, GeoServer/extensions, QGIS and Jupyter versions.\n- [ ] Resolve or record blocking GeoNode/license scope issues; preserve originals.\n- [ ] Build and smoke-test selected tuple; no floating latest tags.\n- [ ] Upstream releases are initial acquisition candidates only; later component changes follow AmbisGIS release authority.\n\n### Planned verification\nT-LOCK-01\n\nRisk: high · Review gate: License/Brand\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "5bbacb2c7cddcdefb439e6a2657c95aa4448892f386be899a898c832645e8f55",
+      "dependency_task_ids": [
+        "FND-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p0",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "FND-02",
+        "Delivery": "Backlog",
+        "Phase": "P0",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "License/Brand"
+      }
+    },
+    {
+      "task_id": "FND-03",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[FND-03] Prove catalog identity and ACL integration",
+      "marker": "<!-- ambisgis:task:FND-03 -->",
+      "body": "<!-- ambisgis:task:FND-03 -->\n<!-- ambisgis:managed:start -->\n## FND-03 — Prove catalog identity and ACL integration\n\nPhase: P0 · Repository: ambisgis-platform\nRequirements: R08, R18\nDepends on: FND-02\n\n### Deliverables\n- Two-user identity/GeoNode/GeoServer policy spike and ADR\n\n### Acceptance criteria\n- [ ] Public/private/group reads and revocation work through gateway and engine path.\n- [ ] No duplicate policy authority or raw admin access.\n\n### Planned verification\nT-AUTH-ALL\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "c464b0d5d5931b8f304e415a2645c185780850880383780dbb3d43674f8e8291",
+      "dependency_task_ids": [
+        "FND-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p0",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "FND-03",
+        "Delivery": "Backlog",
+        "Phase": "P0",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "FND-04",
+      "repository": "aloerch/ambisgis-geodb",
+      "title": "[FND-04] Prototype and compare branch versioning approaches",
+      "marker": "<!-- ambisgis:task:FND-04 -->",
+      "body": "<!-- ambisgis:task:FND-04 -->\n<!-- ambisgis:managed:start -->\n## FND-04 — Prototype and compare branch versioning approaches\n\nPhase: P0 · Repository: ambisgis-geodb\nRequirements: R06, R07\nDepends on: FND-02\n\n### Deliverables\n- Kart/GeoGig/plugin comparison; reference model; typed PostgreSQL prototype; storage measurements\n\n### Acceptance criteria\n- [ ] Demonstrate base isolation, conflict, stale target and atomic post in a real DB prototype.\n- [ ] Report snapshot storage/time and choose documented implementation; no performance claims without measurements.\n\n### Planned verification\nT-VERSION-ORACLE\n\nRisk: critical · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "fe9d39be9861d9852273f3b73e82a6b87f6341e139b9850d173993cf5efac095",
+      "dependency_task_ids": [
+        "FND-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p0",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "FND-04",
+        "Delivery": "Backlog",
+        "Phase": "P0",
+        "Component": "Platform",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "FND-05",
+      "repository": "aloerch/ambisgis-qgis-plugin",
+      "title": "[FND-05] Compare desktop publishing and renderer integration",
+      "marker": "<!-- ambisgis:task:FND-05 -->",
+      "body": "<!-- ambisgis:task:FND-05 -->\n<!-- ambisgis:managed:start -->\n## FND-05 — Compare desktop publishing and renderer integration\n\nPhase: P0 · Repository: ambisgis-qgis-plugin\nRequirements: R14, R16\nDepends on: FND-02\n\n### Deliverables\n- QGIS/GeoServer/QGIS Server fixture; G3W/Lizmap comparison and ADR\n\n### Acceptance criteria\n- [ ] Representative style packaging/rendering and authorization work.\n- [ ] Record unsupported style/provider behavior and chosen extension hooks.\n\n### Planned verification\nT-CARTO-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "b448b866c21e121b9cc7b4ba37460b6aa37bfd9f8dd1c908e58562f7d6387c37",
+      "dependency_task_ids": [
+        "FND-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p0",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "FND-05",
+        "Delivery": "Backlog",
+        "Phase": "P0",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "FND-06",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[FND-06] Freeze initial contracts, threat model and fixture design",
+      "marker": "<!-- ambisgis:task:FND-06 -->",
+      "body": "<!-- ambisgis:task:FND-06 -->\n<!-- ambisgis:managed:start -->\n## FND-06 — Freeze initial contracts, threat model and fixture design\n\nPhase: P0 · Repository: ambisgis-platform\nRequirements: R02, R18, R20\nDepends on: FND-03, FND-04, FND-05, FND-08\n\n### Deliverables\n- ADRs; public API boundaries; synthetic corpus generator; threat model\n- Koop C1 reuse spike and ADR with bounded authorized query provider\n\n### Acceptance criteria\n- [ ] Native/OGC/ArcGIS tiers and authoritative ownership agreed.\n- [ ] All five user goals retain traceable acceptance tests.\n- [ ] Koop adoption/rejection records tested output, query pushdown, pagination, permission and licensing evidence before bespoke C1 encoding.\n\n### Planned verification\nT-API-01, T-SEC-ABUSE\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "c29c1389f6e246a3267dfb81c8025ffb7634462c24c6fbaef7d30cafc1af2dee",
+      "dependency_task_ids": [
+        "FND-03",
+        "FND-04",
+        "FND-05",
+        "FND-08"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p0",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "FND-06",
+        "Delivery": "Backlog",
+        "Phase": "P0",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "FND-07",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[FND-07] Acquire source custody and record independently maintained product baselines",
+      "marker": "<!-- ambisgis:task:FND-07 -->",
+      "body": "<!-- ambisgis:task:FND-07 -->\n<!-- ambisgis:managed:start -->\n## FND-07 — Acquire source custody and record independently maintained product baselines\n\nPhase: P0 · Repository: ambisgis-platform\nRequirements: R21, R22\nDepends on: FND-02\n\n### Deliverables\n- Owned product branches in every fork; provenance inventory; git bundles; retained submodule/LFS/build assets\n\n### Acceptance criteria\n- [ ] Every selected core component resolves to an owned source revision and retained baseline.\n- [ ] No source transfer implies a copyright reassignment or blanket relicensing.\n- [ ] All required additional assets are enumerated; nulls are explicit blockers, not fabricated hashes.\n\n### Planned verification\nT-OWN-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "4711c14bd2292b07cff88775ad924e9c9ae8e36d56e4ac776eb016b8d5d5310b",
+      "dependency_task_ids": [
+        "FND-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p0",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "FND-07",
+        "Delivery": "Backlog",
+        "Phase": "P0",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "FND-08",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[FND-08] Build the initial product spine from owned sources and cached dependencies",
+      "marker": "<!-- ambisgis:task:FND-08 -->",
+      "body": "<!-- ambisgis:task:FND-08 -->\n<!-- ambisgis:managed:start -->\n## FND-08 — Build the initial product spine from owned sources and cached dependencies\n\nPhase: P0 · Repository: ambisgis-platform\nRequirements: R21, R22\nDepends on: FND-07\n\n### Deliverables\n- Owned PostgreSQL/PostGIS, catalog, rendering/cache and UI builds; controlled artifact store; source/build recipes\n\n### Acceptance criteria\n- [ ] Initial vertical-slice components build without resolving upstream branch tips or fetching unrecorded packages.\n- [ ] A simulated upstream API/branch change does not change selected inputs or outputs.\n- [ ] The source inventory includes libraries, plugins, styles, fonts, CRS resources, toolchains and base image dependencies.\n\n### Planned verification\nT-OWN-02\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "58cabb1b9f0eaf0bf10d78223136708a2dbc406f8b347c12f23c1e45f2193646",
+      "dependency_task_ids": [
+        "FND-07"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p0",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "FND-08",
+        "Delivery": "Backlog",
+        "Phase": "P0",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "GOV-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[GOV-01] Implement safe GitHub Project and issue bootstrap",
+      "marker": "<!-- ambisgis:task:GOV-01 -->",
+      "body": "<!-- ambisgis:task:GOV-01 -->\n<!-- ambisgis:managed:start -->\n## GOV-01 — Implement safe GitHub Project and issue bootstrap\n\nPhase: P0 · Repository: ambisgis-platform\nRequirements: R23\nDepends on: FND-01\n\n### Deliverables\n- Idempotent project/issue importer; local receipts; public umbrella Project; seeded issues with stable IDs\n\n### Acceptance criteria\n- [ ] Validate project.json and generated seed; all read preflights precede mutation.\n- [ ] Retry does not duplicate project, issue, field or item; ambiguous ownership aborts.\n- [ ] Project visibility is explicitly public; secrets/private security reports never enter public items.\n- [ ] Permissions and partial failures are reported accurately; no token scope escalation is automatic.\n\n### Planned verification\nT-PROJECT-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "50ac1a81c43fa99f36bce568405c5ec66e0c15b5403ad3292cc317c72d86b42f",
+      "dependency_task_ids": [
+        "FND-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p0",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "GOV-01",
+        "Delivery": "Backlog",
+        "Phase": "P0",
+        "Component": "Governance",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "GOV-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[GOV-02] Configure project views, task transitions and evidence synchronization",
+      "marker": "<!-- ambisgis:task:GOV-02 -->",
+      "body": "<!-- ambisgis:task:GOV-02 -->\n<!-- ambisgis:managed:start -->\n## GOV-02 — Configure project views, task transitions and evidence synchronization\n\nPhase: P0 · Repository: ambisgis-platform\nRequirements: R23\nDepends on: GOV-01\n\n### Deliverables\n- Backlog/board/roadmap/review/maintenance views; task state policy; exported remote IDs; setup evidence\n\n### Acceptance criteria\n- [ ] Task dependencies determine Ready, not the agent's preference.\n- [ ] In review/Verified/Merged/Released states are not conflated; cancellation is distinct from completion.\n- [ ] A plan update only edits importer-owned issue content and preserves human discussion and progress.\n- [ ] All views are verified using supported interfaces; any UI-only step is reported, not claimed completed.\n\n### Planned verification\nT-PROJECT-02\n\nRisk: high · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "3fb85c65a6bf19052be3ca22a1d202562915c61ce6c1cf4993ec5f68287129f2",
+      "dependency_task_ids": [
+        "GOV-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p0",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "GOV-02",
+        "Delivery": "Backlog",
+        "Phase": "P0",
+        "Component": "Governance",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "API-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[API-01] Implement versioned native contracts and initial read API",
+      "marker": "<!-- ambisgis:task:API-01 -->",
+      "body": "<!-- ambisgis:task:API-01 -->\n<!-- ambisgis:managed:start -->\n## API-01 — Implement versioned native contracts and initial read API\n\nPhase: P1 · Repository: ambisgis-platform\nRequirements: R02\nDepends on: PLT-01, DB-01\n\n### Deliverables\n- OpenAPI; generated clients; bounded layer/schema/read routes\n\n### Acceptance criteria\n- [ ] Schema tests and real feature read tests pass.\n- [ ] Unsupported capabilities are false/absent.\n\n### Planned verification\nT-API-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "475d309cadd2bec41b21d547241c34362972f1ce0daeb4bcefd38c51acd26636",
+      "dependency_task_ids": [
+        "PLT-01",
+        "DB-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p1",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "API-01",
+        "Delivery": "Backlog",
+        "Phase": "P1",
+        "Component": "Platform",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "DB-01",
+      "repository": "aloerch/ambisgis-geodb",
+      "title": "[DB-01] Implement managed dataset identity and typed schema foundation",
+      "marker": "<!-- ambisgis:task:DB-01 -->",
+      "body": "<!-- ambisgis:task:DB-01 -->\n<!-- ambisgis:managed:start -->\n## DB-01 — Implement managed dataset identity and typed schema foundation\n\nPhase: P1 · Repository: ambisgis-geodb\nRequirements: R04\nDepends on: FND-06\n\n### Deliverables\n- Migrations; dataset schema library; UUID/ObjectID registry\n- DEFAULT-only version identity is part of the foundation so later named branches do not require an incompatible edit-table rewrite.\n\n### Acceptance criteria\n- [ ] No row-number identity; stable IDs survive reorder/republication.\n- [ ] Typed geometry/SRID/null/length constraints pass real DB tests.\n\n### Planned verification\nT-DB-SCHEMA, T-DB-IDENTITY\n\nRisk: high · Review gate: Data migration\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "60bc12950f5c3d957e6e43c12bb8026c125e66aa4cba56b868e063d24991b2d4",
+      "dependency_task_ids": [
+        "FND-06"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p1",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "DB-01",
+        "Delivery": "Backlog",
+        "Phase": "P1",
+        "Component": "Database",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Data migration"
+      }
+    },
+    {
+      "task_id": "PLT-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[PLT-01] Build repeatable development installation and config generator",
+      "marker": "<!-- ambisgis:task:PLT-01 -->",
+      "body": "<!-- ambisgis:task:PLT-01 -->\n<!-- ambisgis:managed:start -->\n## PLT-01 — Build repeatable development installation and config generator\n\nPhase: P1 · Repository: ambisgis-platform\nRequirements: R01\nDepends on: FND-06\n\n### Deliverables\n- Compose profile; init/up/status/doctor skeleton; generated secrets/network\n\n### Acceptance criteria\n- [ ] Clean loopback install is idempotent and contains no public admin ports.\n- [ ] Health distinguishes process state from useful service readiness.\n\n### Planned verification\nT-INSTALL-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "864130c45e5f2cd6bd66b31019faad1c1d3ef4210898745b1d80cfcdd6dec929",
+      "dependency_task_ids": [
+        "FND-06"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p1",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "PLT-01",
+        "Delivery": "Backlog",
+        "Phase": "P1",
+        "Component": "Platform",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "PLT-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[PLT-02] Implement the owned catalog authority for items, policy and jobs",
+      "marker": "<!-- ambisgis:task:PLT-02 -->",
+      "body": "<!-- ambisgis:task:PLT-02 -->\n<!-- ambisgis:managed:start -->\n## PLT-02 — Implement the owned catalog authority for items, policy and jobs\n\nPhase: P1 · Repository: ambisgis-platform\nRequirements: R08, R18\nDepends on: PLT-01\n\n### Deliverables\n- Catalog extension; resource/item adapters; durable job tables\n\n### Acceptance criteria\n- [ ] No competing catalog; two-user item visibility and revision checks pass.\n- [ ] Queue loss does not erase authoritative job state.\n- [ ] Modify inherited GeoNode internals where necessary; no competing external catalog or mandatory upstream hooks.\n\n### Planned verification\nT-PORTAL-01, T-AUTH-ALL\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "04e0a537dde553588d71b5a51e9bcaedd66dbc5aaf9049efca79a3f2f1d65f41",
+      "dependency_task_ids": [
+        "PLT-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p1",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "PLT-02",
+        "Delivery": "Backlog",
+        "Phase": "P1",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "PLT-03",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[PLT-03] Implement gateway authentication and policy enforcement",
+      "marker": "<!-- ambisgis:task:PLT-03 -->",
+      "body": "<!-- ambisgis:task:PLT-03 -->\n<!-- ambisgis:managed:start -->\n## PLT-03 — Implement gateway authentication and policy enforcement\n\nPhase: P1 · Repository: ambisgis-platform\nRequirements: R18\nDepends on: API-01, PLT-02\n\n### Deliverables\n- OIDC session/token handling; policy adapters; revocation checks\n\n### Acceptance criteria\n- [ ] Deny-path tests cover metadata, features and raw backend access.\n- [ ] Revoked permissions deny new requests without relying only on delayed GeoFence sync.\n\n### Planned verification\nT-AUTH-ALL\n\nRisk: critical · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "166875a54500eb3bbef7a4627089b4fa995d505441945f7bdc624f162f33cd8e",
+      "dependency_task_ids": [
+        "API-01",
+        "PLT-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p1",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "PLT-03",
+        "Delivery": "Backlog",
+        "Phase": "P1",
+        "Component": "Platform",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "PUB-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[PUB-01] Complete the single-layer publish/share/revoke/restart slice",
+      "marker": "<!-- ambisgis:task:PUB-01 -->",
+      "body": "<!-- ambisgis:task:PUB-01 -->\n<!-- ambisgis:managed:start -->\n## PUB-01 — Complete the single-layer publish/share/revoke/restart slice\n\nPhase: P1 · Repository: ambisgis-platform\nRequirements: R01, R14, R18\nDepends on: SRV-01, UX-01, DB-01\n\n### Deliverables\n- Synthetic upload-to-private-service flow; end-to-end recording\n\n### Acceptance criteria\n- [ ] Clean install to map/query/item workflow requires no upstream UI.\n- [ ] Second user deny/grant/revoke and restart preserve correct behavior.\n\n### Planned verification\nT-INSTALL-01, T-AUTH-ALL\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "a53a0e66ebf8fe93338269e0ae7836f55ccef9ccb407229a45c7603019376a7f",
+      "dependency_task_ids": [
+        "SRV-01",
+        "UX-01",
+        "DB-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p1",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "PUB-01",
+        "Delivery": "Backlog",
+        "Phase": "P1",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "SRV-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[SRV-01] Implement private GeoServer rendering/configuration adapter",
+      "marker": "<!-- ambisgis:task:SRV-01 -->",
+      "body": "<!-- ambisgis:task:SRV-01 -->\n<!-- ambisgis:managed:start -->\n## SRV-01 — Implement private GeoServer rendering/configuration adapter\n\nPhase: P1 · Repository: ambisgis-platform\nRequirements: R01, R15\nDepends on: PLT-03\n\n### Deliverables\n- Engine adapter and extension manifest; upstream patch only if required\n\n### Acceptance criteria\n- [ ] Create private staged layer and serve map through gateway.\n- [ ] No public admin/config API or arbitrary workspace passthrough.\n\n### Planned verification\nT-SRV-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "9e9bef913ce40b8a7e52c69459dd456c2034aee8a938ef837c2a46a8140a1a3c",
+      "dependency_task_ids": [
+        "PLT-03"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p1",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "SRV-01",
+        "Delivery": "Backlog",
+        "Phase": "P1",
+        "Component": "Server",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "UX-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[UX-01] Build product shell and initial content/service details",
+      "marker": "<!-- ambisgis:task:UX-01 -->",
+      "body": "<!-- ambisgis:task:UX-01 -->\n<!-- ambisgis:managed:start -->\n## UX-01 — Build product shell and initial content/service details\n\nPhase: P1 · Repository: ambisgis-platform\nRequirements: R08\nDepends on: PLT-02, API-01\n\n### Deliverables\n- React shell; design tokens; content/service/job screens\n\n### Acceptance criteria\n- [ ] Keyboard-accessible sign-in/content/details flow works with real API.\n- [ ] Error/loading states distinguish permission denial and no data.\n\n### Planned verification\nT-PORTAL-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "094150d4d2d083a8d3a8e5510f3431f141dc71c1d476f8b3dd87e741a3a1d416",
+      "dependency_task_ids": [
+        "PLT-02",
+        "API-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p1",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "UX-01",
+        "Delivery": "Backlog",
+        "Phase": "P1",
+        "Component": "Web apps",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "API-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[API-02] Implement typed query grammar and bounded statistics",
+      "marker": "<!-- ambisgis:task:API-02 -->",
+      "body": "<!-- ambisgis:task:API-02 -->\n<!-- ambisgis:managed:start -->\n## API-02 — Implement typed query grammar and bounded statistics\n\nPhase: P2 · Repository: ambisgis-platform\nRequirements: R02\nDepends on: PUB-01\n\n### Deliverables\n- Filter AST compiler; pagination; CRS; aggregates\n\n### Acceptance criteria\n- [ ] SQL injection/fuzz, null/date, cursor-revision and policy-filtered counts pass.\n- [ ] Large/unsupported requests fail explicitly.\n\n### Planned verification\nT-QUERY-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "d6180cf5cbbd03e9059a4c310a96447e66b0fe6d1eb035cbd9629b759920a65d",
+      "dependency_task_ids": [
+        "PUB-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p2",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "API-02",
+        "Delivery": "Backlog",
+        "Phase": "P2",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "API-03",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[API-03] Implement explicitly scoped ArcGIS C1 facade",
+      "marker": "<!-- ambisgis:task:API-03 -->",
+      "body": "<!-- ambisgis:task:API-03 -->\n<!-- ambisgis:managed:start -->\n## API-03 — Implement explicitly scoped ArcGIS C1 facade\n\nPhase: P2 · Repository: ambisgis-platform\nRequirements: R02\nDepends on: API-02\n\n### Deliverables\n- Discovery/query/export/legend supported subset; conformance matrix\n\n### Acceptance criteria\n- [ ] Tests name exact clients/parameters; unknown operations are rejected.\n- [ ] No branch/sync/federation capability claim; protected-client auth limitations recorded.\n- [ ] Implement the FND-06 Koop reuse decision; no in-memory full-dataset shortcut or parallel permission authority.\n\n### Planned verification\nT-COMPAT-C1\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "aa50a28f9ea62ee38d335293bc290203ce24405051fbb0af2e4da3b8f698e9f1",
+      "dependency_task_ids": [
+        "API-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p2",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "API-03",
+        "Delivery": "Backlog",
+        "Phase": "P2",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "API-04",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[API-04] Implement basic native atomic edits and attachments",
+      "marker": "<!-- ambisgis:task:API-04 -->",
+      "body": "<!-- ambisgis:task:API-04 -->\n<!-- ambisgis:managed:start -->\n## API-04 — Implement basic native atomic edits and attachments\n\nPhase: P2 · Repository: ambisgis-platform\nRequirements: R05\nDepends on: API-02, DB-02\n\n### Deliverables\n- Edit endpoints; scanned blob references; idempotency/audit\n\n### Acceptance criteria\n- [ ] Atomic multi-layer edits within one DB; duplicate requests return original result.\n- [ ] Cross-DB atomicity is rejected; untrusted ownership fields cannot be spoofed.\n\n### Planned verification\nT-EDIT-01, T-EDIT-RETRY\n\nRisk: critical · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "f1e205bbb1b7040fd67a416e0054ee9af356a0019b21dac1ac74ed218e51b016",
+      "dependency_task_ids": [
+        "API-02",
+        "DB-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p2",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "API-04",
+        "Delivery": "Backlog",
+        "Phase": "P2",
+        "Component": "Platform",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "DB-02",
+      "repository": "aloerch/ambisgis-geodb",
+      "title": "[DB-02] Implement domains, subtypes, relationships and validation rules",
+      "marker": "<!-- ambisgis:task:DB-02 -->",
+      "body": "<!-- ambisgis:task:DB-02 -->\n<!-- ambisgis:managed:start -->\n## DB-02 — Implement domains, subtypes, relationships and validation rules\n\nPhase: P2 · Repository: ambisgis-geodb\nRequirements: R04\nDepends on: DB-01\n\n### Deliverables\n- Schema registry; deterministic rule subset; relation constraints\n\n### Acceptance criteria\n- [ ] Domain/default/subtype/relationship failures reject edits.\n- [ ] No arbitrary SQL/Python/Arcade execution; schema revisions retained.\n\n### Planned verification\nT-DB-SCHEMA\n\nRisk: high · Review gate: Data migration\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "0e4700a28eeff52c760287599f2c6a57849fb75eb9270fc8e434b23d46373f37",
+      "dependency_task_ids": [
+        "DB-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p2",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "DB-02",
+        "Delivery": "Backlog",
+        "Phase": "P2",
+        "Component": "Database",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Data migration"
+      }
+    },
+    {
+      "task_id": "OWN-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[OWN-01] Consolidate inherited product models and eliminate redundant administration",
+      "marker": "<!-- ambisgis:task:OWN-01 -->",
+      "body": "<!-- ambisgis:task:OWN-01 -->\n<!-- ambisgis:managed:start -->\n## OWN-01 — Consolidate inherited product models and eliminate redundant administration\n\nPhase: P2 · Repository: ambisgis-platform\nRequirements: R21, R24\nDepends on: PUB-01, FND-08\n\n### Deliverables\n- Duplication register; canonical catalog/service/config models; retired or restricted legacy write paths; owned internal contracts\n\n### Acceptance criteria\n- [ ] Metadata, ownership, permission and service lifecycle have one authoritative source.\n- [ ] Inherited admin screens cannot bypass or contradict the authoritative product model.\n- [ ] Local structural changes are not rejected merely because upstream lacks an extension hook.\n- [ ] Useful engine capabilities survive; notebook/database isolation is preserved.\n\n### Planned verification\nT-OWN-03\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "4c95aa1f36d985851502a77761789f527a67a25b97c360cee4bc0bed9ca92f83",
+      "dependency_task_ids": [
+        "PUB-01",
+        "FND-08"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p2",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "OWN-01",
+        "Delivery": "Backlog",
+        "Phase": "P2",
+        "Component": "Governance",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "PUB-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[PUB-02] Implement durable publication saga and recovery",
+      "marker": "<!-- ambisgis:task:PUB-02 -->",
+      "body": "<!-- ambisgis:task:PUB-02 -->\n<!-- ambisgis:managed:start -->\n## PUB-02 — Implement durable publication saga and recovery\n\nPhase: P2 · Repository: ambisgis-platform\nRequirements: R14, R17\nDepends on: PUB-01, API-04\n\n### Deliverables\n- Persisted steps/leases/idempotency/compensation; staging ownership tags\n\n### Acceptance criteria\n- [ ] Kill worker in each step; recovery never deletes prior/shared resources.\n- [ ] Private staging is not discoverable and failures retain previous active service.\n\n### Planned verification\nT-PUBLISH-CRASH\n\nRisk: critical · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "6f472f310a1af10e0a5af0fe65789e6e6fc4da0664929ecf8625aeb4dcfb07ad",
+      "dependency_task_ids": [
+        "PUB-01",
+        "API-04"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p2",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "PUB-02",
+        "Delivery": "Backlog",
+        "Phase": "P2",
+        "Component": "Platform",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "SEC-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[SEC-01] Run complete initial service bypass/cache tests",
+      "marker": "<!-- ambisgis:task:SEC-01 -->",
+      "body": "<!-- ambisgis:task:SEC-01 -->\n<!-- ambisgis:managed:start -->\n## SEC-01 — Run complete initial service bypass/cache tests\n\nPhase: P2 · Repository: ambisgis-platform\nRequirements: R18\nDepends on: API-04, SRV-03, SRV-04\n\n### Deliverables\n- Security route matrix and abuse fixtures\n\n### Acceptance criteria\n- [ ] Query/count/legend/raster/download/admin paths enforce policy.\n- [ ] Unsupported secure render combinations are denied, not leaked.\n\n### Planned verification\nT-AUTH-ALL, T-SEC-ABUSE\n\nRisk: critical · Review gate: Security\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "c651bb175ebe05c5f86bb037ef19bc72d0f83abbceb7a71d284f101ddb81da89",
+      "dependency_task_ids": [
+        "API-04",
+        "SRV-03",
+        "SRV-04"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p2",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "SEC-01",
+        "Delivery": "Backlog",
+        "Phase": "P2",
+        "Component": "Security/Release",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Security"
+      }
+    },
+    {
+      "task_id": "SRV-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[SRV-02] Complete service manager controls and diagnostics",
+      "marker": "<!-- ambisgis:task:SRV-02 -->",
+      "body": "<!-- ambisgis:task:SRV-02 -->\n<!-- ambisgis:managed:start -->\n## SRV-02 — Complete service manager controls and diagnostics\n\nPhase: P2 · Repository: ambisgis-platform\nRequirements: R01\nDepends on: PUB-01\n\n### Deliverables\n- Service status/start/stop/configure UX; diagnostics\n\n### Acceptance criteria\n- [ ] Operators manage services without GeoServer settings screens.\n- [ ] IDs and permission policy persist across stop/start.\n\n### Planned verification\nT-SRV-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "f02d2aa24cabbba8217538340d858fcb6e36d1823077b891e6cca834d4d5546e",
+      "dependency_task_ids": [
+        "PUB-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p2",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "SRV-02",
+        "Delivery": "Backlog",
+        "Phase": "P2",
+        "Component": "Server",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "SRV-03",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[SRV-03] Implement canonical metadata forms and standards projection",
+      "marker": "<!-- ambisgis:task:SRV-03 -->",
+      "body": "<!-- ambisgis:task:SRV-03 -->\n<!-- ambisgis:managed:start -->\n## SRV-03 — Implement canonical metadata forms and standards projection\n\nPhase: P2 · Repository: ambisgis-platform\nRequirements: R03\nDepends on: PLT-02, SRV-01\n\n### Deliverables\n- Metadata schema/editor; GeoServer/pycsw projections; original XML retention\n\n### Acceptance criteria\n- [ ] One update appears consistently in item/service metadata.\n- [ ] Validation and stale projection errors are visible; no separate GeoNetwork install.\n\n### Planned verification\nT-META-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "e7ddab80cf1de034f06b81d0df9f0839d978d6f7e4b992461a93a2d12408c43b",
+      "dependency_task_ids": [
+        "PLT-02",
+        "SRV-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p2",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "SRV-03",
+        "Delivery": "Backlog",
+        "Phase": "P2",
+        "Component": "Server",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "SRV-04",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[SRV-04] Implement raster ingestion and coverage/map baseline",
+      "marker": "<!-- ambisgis:task:SRV-04 -->",
+      "body": "<!-- ambisgis:task:SRV-04 -->\n<!-- ambisgis:managed:start -->\n## SRV-04 — Implement raster ingestion and coverage/map baseline\n\nPhase: P2 · Repository: ambisgis-platform\nRequirements: R15, R16\nDepends on: PUB-02\n\n### Deliverables\n- Raster analyzer; native/GeoServer coverage mapping\n\n### Acceptance criteria\n- [ ] Band/nodata/CRS validation and sample-value checks pass.\n- [ ] Rendering does not masquerade as scientific coverage output.\n\n### Planned verification\nT-RASTER-01, T-INGEST-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "619606b3c395152277d88fff981f9506cab04c46f4ec7e9585e8169bffc07fac",
+      "dependency_task_ids": [
+        "PUB-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p2",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "SRV-04",
+        "Delivery": "Backlog",
+        "Phase": "P2",
+        "Component": "Server",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "PUB-03",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[PUB-03] Implement stable overwrite, dependency checks and rollback",
+      "marker": "<!-- ambisgis:task:PUB-03 -->",
+      "body": "<!-- ambisgis:task:PUB-03 -->\n<!-- ambisgis:managed:start -->\n## PUB-03 — Implement stable overwrite, dependency checks and rollback\n\nPhase: P3 · Repository: ambisgis-platform\nRequirements: R17\nDepends on: PUB-02, PLT-02\n\n### Deliverables\n- Immutable service revisions; active pointer; dependency analyzer\n\n### Acceptance criteria\n- [ ] Layer IDs/URLs/UUIDs persist; breaking changes blocked.\n- [ ] Configuration rollback distinguished from dataset history; old service survives failed activation.\n\n### Planned verification\nT-OVERWRITE-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "9ec83f53a3faab55f668896c34ff022413f92d5660933a354884b5b82ffd6d91",
+      "dependency_task_ids": [
+        "PUB-02",
+        "PLT-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p3",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "PUB-03",
+        "Delivery": "Backlog",
+        "Phase": "P3",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "PUB-04",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[PUB-04] Complete ingestion fidelity and parser sandbox tests",
+      "marker": "<!-- ambisgis:task:PUB-04 -->",
+      "body": "<!-- ambisgis:task:PUB-04 -->\n<!-- ambisgis:managed:start -->\n## PUB-04 — Complete ingestion fidelity and parser sandbox tests\n\nPhase: P3 · Repository: ambisgis-platform\nRequirements: R14, R15, R16\nDepends on: QGIS-04, SRV-05, SRV-06\n\n### Deliverables\n- Format/geometry/schema/CRS corpus; resource-bomb tests\n\n### Acceptance criteria\n- [ ] Malformed packages/paths/remote URLs fail safely.\n- [ ] All requested output types have successful and interrupted-publish tests.\n\n### Planned verification\nT-INGEST-01, T-PUBLISH-CRASH\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "0b37eb13a7f96b2d469abd81df708b89251b9579ee8c76c7e42010276637c80b",
+      "dependency_task_ids": [
+        "QGIS-04",
+        "SRV-05",
+        "SRV-06"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p3",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "PUB-04",
+        "Delivery": "Backlog",
+        "Phase": "P3",
+        "Component": "Platform",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "QGIS-01",
+      "repository": "aloerch/ambisgis-qgis-plugin",
+      "title": "[QGIS-01] Implement QGIS sign-in and catalog browser",
+      "marker": "<!-- ambisgis:task:QGIS-01 -->",
+      "body": "<!-- ambisgis:task:QGIS-01 -->\n<!-- ambisgis:managed:start -->\n## QGIS-01 — Implement QGIS sign-in and catalog browser\n\nPhase: P3 · Repository: ambisgis-qgis-plugin\nRequirements: R14\nDepends on: PUB-01, FND-05\n\n### Deliverables\n- Plugin packaging; PKCE/device flow; credential-store adapter\n\n### Acceptance criteria\n- [ ] No password/token in project files; supported desktop versions tested.\n- [ ] Catalog only lists authorized resources.\n\n### Planned verification\nT-QGIS-PUBLISH\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "1cf9edf7f1fa815cfe5174cfcfe04a72cf8578f850a012a3f1d5d7dea83742fa",
+      "dependency_task_ids": [
+        "PUB-01",
+        "FND-05"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p3",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "QGIS-01",
+        "Delivery": "Backlog",
+        "Phase": "P3",
+        "Component": "Desktop",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "QGIS-02",
+      "repository": "aloerch/ambisgis-qgis-plugin",
+      "title": "[QGIS-02] Implement analyzer and publishing wizard",
+      "marker": "<!-- ambisgis:task:QGIS-02 -->",
+      "body": "<!-- ambisgis:task:QGIS-02 -->\n<!-- ambisgis:managed:start -->\n## QGIS-02 — Implement analyzer and publishing wizard\n\nPhase: P3 · Repository: ambisgis-qgis-plugin\nRequirements: R14\nDepends on: QGIS-01, PUB-02, SRV-03\n\n### Deliverables\n- Copy/reference choices; analyzer; progress/cancel UI\n\n### Acceptance criteria\n- [ ] End-to-end publish from real QGIS completes without component-specific settings.\n- [ ] Missing CRS/source/font or rights issues produce actionable warnings/errors.\n\n### Planned verification\nT-QGIS-PUBLISH\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "ec50ab5c98e62e9b55608860764a7052f1afd61ecfabe89f89d3a8a4886a4309",
+      "dependency_task_ids": [
+        "QGIS-01",
+        "PUB-02",
+        "SRV-03"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p3",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "QGIS-02",
+        "Delivery": "Backlog",
+        "Phase": "P3",
+        "Component": "Desktop",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "QGIS-03",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[QGIS-03] Implement QGIS Server project renderer adapter",
+      "marker": "<!-- ambisgis:task:QGIS-03 -->",
+      "body": "<!-- ambisgis:task:QGIS-03 -->\n<!-- ambisgis:managed:start -->\n## QGIS-03 — Implement QGIS Server project renderer adapter\n\nPhase: P3 · Repository: ambisgis-platform\nRequirements: R15, R16\nDepends on: QGIS-02, FND-05\n\n### Deliverables\n- Sandboxed project packaging; renderer adapter; source/asset rewriting\n\n### Acceptance criteria\n- [ ] No macros/arbitrary plugin execution or embedded secrets.\n- [ ] Same service and policy model works with both renderers.\n\n### Planned verification\nT-CARTO-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "517fdcea5bd08e3d78c87053f5c22350788ff9b12796213c3c38b5dbbed6488c",
+      "dependency_task_ids": [
+        "QGIS-02",
+        "FND-05"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p3",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "QGIS-03",
+        "Delivery": "Backlog",
+        "Phase": "P3",
+        "Component": "Desktop",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "QGIS-04",
+      "repository": "aloerch/ambisgis-qgis-plugin",
+      "title": "[QGIS-04] Verify cartographic, CRS and desktop packaging fidelity",
+      "marker": "<!-- ambisgis:task:QGIS-04 -->",
+      "body": "<!-- ambisgis:task:QGIS-04 -->\n<!-- ambisgis:managed:start -->\n## QGIS-04 — Verify cartographic, CRS and desktop packaging fidelity\n\nPhase: P3 · Repository: ambisgis-qgis-plugin\nRequirements: R16\nDepends on: QGIS-03\n\n### Deliverables\n- Controlled desktop/server visual fixtures and conversion reports\n- Owned QGIS Desktop/Server builds plus bundled AmbisGIS plugin; source provenance and distribution obligations\n\n### Acceptance criteria\n- [ ] Fonts/labels/symbols pass supported-subset tests.\n- [ ] No silent SRID/units/Z/M loss; unsupported conversion documented.\n\n### Planned verification\nT-CARTO-01, T-INGEST-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "eb43401543ec772440adffdae93301c4a547a325814d8bfcfb6d3644443023e4",
+      "dependency_task_ids": [
+        "QGIS-03"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p3",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "QGIS-04",
+        "Delivery": "Backlog",
+        "Phase": "P3",
+        "Component": "Desktop",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "SRV-05",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[SRV-05] Implement raster tile jobs and bounded caching",
+      "marker": "<!-- ambisgis:task:SRV-05 -->",
+      "body": "<!-- ambisgis:task:SRV-05 -->\n<!-- ambisgis:managed:start -->\n## SRV-05 — Implement raster tile jobs and bounded caching\n\nPhase: P3 · Repository: ambisgis-platform\nRequirements: R15\nDepends on: SRV-04, PUB-03\n\n### Deliverables\n- Gridset/zoom analyzer; seeding quotas/cancel; cache invalidation\n\n### Acceptance criteria\n- [ ] Requested raster tiles render; quota/cancel/retry works.\n- [ ] Policy/style/data revision separation prevents private cache leakage.\n\n### Planned verification\nT-TILES-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "0e964332c0a8ee794b78e7058087be3511269fd9a10baf9c82872282980b2bbd",
+      "dependency_task_ids": [
+        "SRV-04",
+        "PUB-03"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p3",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "SRV-05",
+        "Delivery": "Backlog",
+        "Phase": "P3",
+        "Component": "Server",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "SRV-06",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[SRV-06] Implement vector tiles with style assets",
+      "marker": "<!-- ambisgis:task:SRV-06 -->",
+      "body": "<!-- ambisgis:task:SRV-06 -->\n<!-- ambisgis:managed:start -->\n## SRV-06 — Implement vector tiles with style assets\n\nPhase: P3 · Repository: ambisgis-platform\nRequirements: R15\nDepends on: PUB-03, API-02\n\n### Deliverables\n- MVT/TileJSON/style/sprite/glyph pipeline; serving tests\n\n### Acceptance criteria\n- [ ] Client renders complete map, not just standalone PBF.\n- [ ] IDs/extents/zoom limits and policy-scoped caching pass.\n\n### Planned verification\nT-TILES-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "c05eb50fcc42430012e2bd983f6fac70b6f376741dd8db1a23293aef0e896013",
+      "dependency_task_ids": [
+        "PUB-03",
+        "API-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p3",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "SRV-06",
+        "Delivery": "Backlog",
+        "Phase": "P3",
+        "Component": "Server",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "DB-03",
+      "repository": "aloerch/ambisgis-geodb",
+      "title": "[DB-03] Implement isolated typed snapshots and branch lifecycle",
+      "marker": "<!-- ambisgis:task:DB-03 -->",
+      "body": "<!-- ambisgis:task:DB-03 -->\n<!-- ambisgis:managed:start -->\n## DB-03 — Implement isolated typed snapshots and branch lifecycle\n\nPhase: P4 · Repository: ambisgis-geodb\nRequirements: R06\nDepends on: DB-02, FND-04\n\n### Deliverables\n- Version/snapshot/commit migrations; quotas; branch CRUD\n\n### Acceptance criteria\n- [ ] Branch base consistent across layers and unaffected by later DEFAULT changes.\n- [ ] Cancellation/creation failure cannot expose a partial branch.\n\n### Planned verification\nT-VERSION-SNAPSHOT\n\nRisk: critical · Review gate: Data migration\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "0aca3d84ae8f18d1ba329745396c4c63827de63a4c9df233a34c2c21f2e3ab13",
+      "dependency_task_ids": [
+        "DB-02",
+        "FND-04"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p4",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "DB-03",
+        "Delivery": "Backlog",
+        "Phase": "P4",
+        "Component": "Database",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Data migration"
+      }
+    },
+    {
+      "task_id": "DB-04",
+      "repository": "aloerch/ambisgis-geodb",
+      "title": "[DB-04] Implement branch edit concurrency and audit",
+      "marker": "<!-- ambisgis:task:DB-04 -->",
+      "body": "<!-- ambisgis:task:DB-04 -->\n<!-- ambisgis:managed:start -->\n## DB-04 — Implement branch edit concurrency and audit\n\nPhase: P4 · Repository: ambisgis-geodb\nRequirements: R05, R06\nDepends on: DB-03, API-04\n\n### Deliverables\n- Expected-head/revision checks; typed branch edits; idempotency\n\n### Acceptance criteria\n- [ ] Stale edits never overwrite newer work.\n- [ ] Concurrent duplicate requests produce one commit; attachments/relations are atomic.\n\n### Planned verification\nT-EDIT-01, T-EDIT-RETRY\n\nRisk: critical · Review gate: Data migration\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "6c0e4f3691cbb6ada763255c573b9bc3b5d5b013f20011f9d7cc9b9079ec1fc6",
+      "dependency_task_ids": [
+        "DB-03",
+        "API-04"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p4",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "DB-04",
+        "Delivery": "Backlog",
+        "Phase": "P4",
+        "Component": "Database",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Data migration"
+      }
+    },
+    {
+      "task_id": "DB-05",
+      "repository": "aloerch/ambisgis-geodb",
+      "title": "[DB-05] Implement three-way reconcile and conflict candidate",
+      "marker": "<!-- ambisgis:task:DB-05 -->",
+      "body": "<!-- ambisgis:task:DB-05 -->\n<!-- ambisgis:managed:start -->\n## DB-05 — Implement three-way reconcile and conflict candidate\n\nPhase: P4 · Repository: ambisgis-geodb\nRequirements: R07\nDepends on: DB-04\n\n### Deliverables\n- Immutable B/O/T plans; field/existence/geometry conflicts; candidate validation\n\n### Acceptance criteria\n- [ ] Reference comparison covers delete/update, disjoint fields, Z/M and natural-key conflicts.\n- [ ] No silent preference or geometry repair; plan bound to exact heads/schema.\n\n### Planned verification\nT-VERSION-ORACLE\n\nRisk: critical · Review gate: Data migration\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "9dfaf21132d7fa923b2a0c3f9d2ae7ff54f200cbbb52c15cb2aa1deac015251b",
+      "dependency_task_ids": [
+        "DB-04"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p4",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "DB-05",
+        "Delivery": "Backlog",
+        "Phase": "P4",
+        "Component": "Database",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Data migration"
+      }
+    },
+    {
+      "task_id": "DB-06",
+      "repository": "aloerch/ambisgis-geodb",
+      "title": "[DB-06] Implement accept-reconcile and atomic post",
+      "marker": "<!-- ambisgis:task:DB-06 -->",
+      "body": "<!-- ambisgis:task:DB-06 -->\n<!-- ambisgis:managed:start -->\n## DB-06 — Implement accept-reconcile and atomic post\n\nPhase: P4 · Repository: ambisgis-geodb\nRequirements: R07\nDepends on: DB-05\n\n### Deliverables\n- Branch-only accept; target promotion; approvals and lock ordering\n\n### Acceptance criteria\n- [ ] Changed target/source/schema invalidates plan; revalidation happens inside post.\n- [ ] Crash/retry and concurrent posts produce no lost/half updates.\n\n### Planned verification\nT-VERSION-POST, T-VERSION-RACE\n\nRisk: critical · Review gate: Data migration\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "594df671b68ab36bfc841cb66bc71b124b34effd0c5ffa6bfd71212b0b4b728a",
+      "dependency_task_ids": [
+        "DB-05"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p4",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "DB-06",
+        "Delivery": "Backlog",
+        "Phase": "P4",
+        "Component": "Database",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Data migration"
+      }
+    },
+    {
+      "task_id": "DB-07",
+      "repository": "aloerch/ambisgis-geodb",
+      "title": "[DB-07] Implement history, retention and version recovery hooks",
+      "marker": "<!-- ambisgis:task:DB-07 -->",
+      "body": "<!-- ambisgis:task:DB-07 -->\n<!-- ambisgis:managed:start -->\n## DB-07 — Implement history, retention and version recovery hooks\n\nPhase: P4 · Repository: ambisgis-geodb\nRequirements: R06, R07\nDepends on: DB-06\n\n### Deliverables\n- History APIs; reference-aware GC; snapshot/asset backup manifests\n\n### Acceptance criteria\n- [ ] No live base/revision/blob collected; historical schema remains resolvable.\n- [ ] Restored branch successfully reconciles/accepts/posts.\n\n### Planned verification\nT-VERSION-RECOVERY\n\nRisk: critical · Review gate: Data migration\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "075dba123fbea2c8515ff9fd8bb4270097ddb4305315d591a2bcb096cf0ffa64",
+      "dependency_task_ids": [
+        "DB-06"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p4",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "DB-07",
+        "Delivery": "Backlog",
+        "Phase": "P4",
+        "Component": "Database",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Data migration"
+      }
+    },
+    {
+      "task_id": "DB-08",
+      "repository": "aloerch/ambisgis-geodb",
+      "title": "[DB-08] Complete randomized DB/reference and fault validation",
+      "marker": "<!-- ambisgis:task:DB-08 -->",
+      "body": "<!-- ambisgis:task:DB-08 -->\n<!-- ambisgis:managed:start -->\n## DB-08 — Complete randomized DB/reference and fault validation\n\nPhase: P4 · Repository: ambisgis-geodb\nRequirements: R05, R06, R07\nDepends on: DB-07\n\n### Deliverables\n- Seeded property tests; process/DB failure harness; measurements\n\n### Acceptance criteria\n- [ ] Reference and real PostgreSQL state match after randomized operation sequences.\n- [ ] Document supported quotas and lock/storage results; no production claims from mocks.\n\n### Planned verification\nT-VERSION-ORACLE, T-VERSION-RACE, T-VERSION-RECOVERY\n\nRisk: critical · Review gate: Data migration\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "cbe2d8ee6ddf9021022d3ffe87989ebfd96a510baf491213b8b23dbac7d7a823",
+      "dependency_task_ids": [
+        "DB-07"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p4",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "DB-08",
+        "Delivery": "Backlog",
+        "Phase": "P4",
+        "Component": "Database",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Data migration"
+      }
+    },
+    {
+      "task_id": "QGIS-05",
+      "repository": "aloerch/ambisgis-qgis-plugin",
+      "title": "[QGIS-05] Implement controlled branch edit sessions",
+      "marker": "<!-- ambisgis:task:QGIS-05 -->",
+      "body": "<!-- ambisgis:task:QGIS-05 -->\n<!-- ambisgis:managed:start -->\n## QGIS-05 — Implement controlled branch edit sessions\n\nPhase: P4 · Repository: ambisgis-qgis-plugin\nRequirements: R05, R06, R07\nDepends on: QGIS-01, DB-06\n\n### Deliverables\n- Local edit buffer; revision tracking; submit/reconcile UI\n\n### Acceptance criteria\n- [ ] No direct managed DB writes; stale buffer requires explicit resolution.\n- [ ] Lost response resolves through idempotency before clearing local edits.\n\n### Planned verification\nT-EDIT-RETRY, T-VERSION-POST\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "436bf30d651dd01007f5258401b10e5b92d244d7275223c30a50a3bcbbf92eed",
+      "dependency_task_ids": [
+        "QGIS-01",
+        "DB-06"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p4",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "QGIS-05",
+        "Delivery": "Backlog",
+        "Phase": "P4",
+        "Component": "Desktop",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "SEC-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[SEC-02] Enforce branch read/render boundaries",
+      "marker": "<!-- ambisgis:task:SEC-02 -->",
+      "body": "<!-- ambisgis:task:SEC-02 -->\n<!-- ambisgis:managed:start -->\n## SEC-02 — Enforce branch read/render boundaries\n\nPhase: P4 · Repository: ambisgis-platform\nRequirements: R18\nDepends on: DB-08, UX-02, QGIS-05\n\n### Deliverables\n- Branch authorization tests; DEFAULT-only WMS gate or secure immutable projection\n\n### Acceptance criteria\n- [ ] Feature/history/render cache cannot cross branch permissions.\n- [ ] No untested branch WMS or Esri branch capability advertised.\n\n### Planned verification\nT-AUTH-ALL\n\nRisk: critical · Review gate: Security\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "d3c0960cf21f4d719d82a8c8b741c050861c192d424a94f4efef8c46aa3bb653",
+      "dependency_task_ids": [
+        "DB-08",
+        "UX-02",
+        "QGIS-05"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p4",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "SEC-02",
+        "Delivery": "Backlog",
+        "Phase": "P4",
+        "Component": "Security/Release",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Security"
+      }
+    },
+    {
+      "task_id": "UX-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[UX-02] Implement branch management and conflict-review UX",
+      "marker": "<!-- ambisgis:task:UX-02 -->",
+      "body": "<!-- ambisgis:task:UX-02 -->\n<!-- ambisgis:managed:start -->\n## UX-02 — Implement branch management and conflict-review UX\n\nPhase: P4 · Repository: ambisgis-platform\nRequirements: R06, R07\nDepends on: DB-06, UX-01\n\n### Deliverables\n- Version panel; diff/conflict map/table; accept/post permissions\n\n### Acceptance criteria\n- [ ] User inspects base/branch/target and resolves validated conflicts.\n- [ ] Stale plans and permission revocation handled with no data loss.\n\n### Planned verification\nT-VERSION-POST\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "d355e4b95fe0588dc15726c3bb2a13757d371c9ed108a2ea13503e50d1c6d3ac",
+      "dependency_task_ids": [
+        "DB-06",
+        "UX-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p4",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "UX-02",
+        "Delivery": "Backlog",
+        "Phase": "P4",
+        "Component": "Web apps",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "WEB-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[WEB-01] Implement versioned web maps and MapStore adapter",
+      "marker": "<!-- ambisgis:task:WEB-01 -->",
+      "body": "<!-- ambisgis:task:WEB-01 -->\n<!-- ambisgis:managed:start -->\n## WEB-01 — Implement versioned web maps and MapStore adapter\n\nPhase: P5 · Repository: ambisgis-platform\nRequirements: R09\nDepends on: API-02, QGIS-03, SRV-06\n\n### Deliverables\n- Web-map schema/editor; stable layer/style references\n\n### Acceptance criteria\n- [ ] Feature/map/raster/vector layers load with correct policy and capabilities.\n- [ ] Schema migrations preserve supported map settings.\n\n### Planned verification\nT-WEBMAP-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "05723c6bc4c99cd3d09bc0e31b7a65716661d409fac74ea52994c36c36a2e39b",
+      "dependency_task_ids": [
+        "API-02",
+        "QGIS-03",
+        "SRV-06"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p5",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "WEB-01",
+        "Delivery": "Backlog",
+        "Phase": "P5",
+        "Component": "Web apps",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "WEB-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[WEB-02] Integrate linked dashboard widgets",
+      "marker": "<!-- ambisgis:task:WEB-02 -->",
+      "body": "<!-- ambisgis:task:WEB-02 -->\n<!-- ambisgis:managed:start -->\n## WEB-02 — Integrate linked dashboard widgets\n\nPhase: P5 · Repository: ambisgis-platform\nRequirements: R09\nDepends on: WEB-01\n\n### Deliverables\n- Map/table/chart/KPI widgets; typed event bus; aggregation API\n\n### Acceptance criteria\n- [ ] Cross-filtering works without event loops or unbounded downloads.\n- [ ] Counts/statistics enforce the same row/field policy as map data.\n\n### Planned verification\nT-DASHBOARD-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "5e72ccfbadffcfa8c84e4d37e1171272c2b35e166b9777805b78acefb2d3a5e6",
+      "dependency_task_ids": [
+        "WEB-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p5",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "WEB-02",
+        "Delivery": "Backlog",
+        "Phase": "P5",
+        "Component": "Web apps",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "WEB-03",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[WEB-03] Build constrained responsive app composer",
+      "marker": "<!-- ambisgis:task:WEB-03 -->",
+      "body": "<!-- ambisgis:task:WEB-03 -->\n<!-- ambisgis:managed:start -->\n## WEB-03 — Build constrained responsive app composer\n\nPhase: P5 · Repository: ambisgis-platform\nRequirements: R10\nDepends on: WEB-02\n\n### Deliverables\n- Widget registry; layouts/breakpoints; properties/preview/undo\n\n### Acceptance criteria\n- [ ] User builds a functional responsive app without editing JSON.\n- [ ] No arbitrary user JS; invalid bindings block publish.\n\n### Planned verification\nT-APP-01\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "e1fc5742f4018ab5b82c2e84d2c4f612e7a38d95b8d202847af3abd3545943cb",
+      "dependency_task_ids": [
+        "WEB-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p5",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "WEB-03",
+        "Delivery": "Backlog",
+        "Phase": "P5",
+        "Component": "Web apps",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "WEB-04",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[WEB-04] Complete accessibility and task usability review",
+      "marker": "<!-- ambisgis:task:WEB-04 -->",
+      "body": "<!-- ambisgis:task:WEB-04 -->\n<!-- ambisgis:managed:start -->\n## WEB-04 — Complete accessibility and task usability review\n\nPhase: P5 · Repository: ambisgis-platform\nRequirements: R08, R10\nDepends on: WEB-03, SRV-02\n\n### Deliverables\n- Keyboard/screen-reader tests; responsive fixtures; pilot results\n\n### Acceptance criteria\n- [ ] No critical focus/label/keyboard blockers; data has accessible alternative.\n- [ ] Pilot findings logged and blocking workflow problems fixed.\n\n### Planned verification\nT-A11Y-01\n\nRisk: medium · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "cf9891e59454e76cadf7694dcd5c0a329dd386966900b4c44412746d4d314651",
+      "dependency_task_ids": [
+        "WEB-03",
+        "SRV-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p5",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "WEB-04",
+        "Delivery": "Backlog",
+        "Phase": "P5",
+        "Component": "Web apps",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "WEB-05",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[WEB-05] Implement app revision, dependencies and sharing lifecycle",
+      "marker": "<!-- ambisgis:task:WEB-05 -->",
+      "body": "<!-- ambisgis:task:WEB-05 -->\n<!-- ambisgis:managed:start -->\n## WEB-05 — Implement app revision, dependencies and sharing lifecycle\n\nPhase: P5 · Repository: ambisgis-platform\nRequirements: R10, R18\nDepends on: WEB-03, PUB-03\n\n### Deliverables\n- Draft/publish/rollback; viewer preview; dependency permissions\n\n### Acceptance criteria\n- [ ] Public app never auto-publicizes private sources.\n- [ ] Concurrent config edits conflict safely; published rollback preserves drafts.\n\n### Planned verification\nT-APP-SHARING\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "dcb35799a267357e6d095a5bcd3bdece964913b357889e9173b4aa9533be0865",
+      "dependency_task_ids": [
+        "WEB-03",
+        "PUB-03"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p5",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "WEB-05",
+        "Delivery": "Backlog",
+        "Phase": "P5",
+        "Component": "Web apps",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "NB-01",
+      "repository": "aloerch/ambisgis-notebooks",
+      "title": "[NB-01] Implement isolated JupyterHub profile and SSO",
+      "marker": "<!-- ambisgis:task:NB-01 -->",
+      "body": "<!-- ambisgis:task:NB-01 -->\n<!-- ambisgis:managed:start -->\n## NB-01 — Implement isolated JupyterHub profile and SSO\n\nPhase: P6 · Repository: ambisgis-notebooks\nRequirements: R11, R18\nDepends on: PLT-03, FND-06\n\n### Deliverables\n- Per-user domain/runtime; storage/quota/network; hub auth\n\n### Acceptance criteria\n- [ ] Two users cannot access each other or control-plane services.\n- [ ] No Docker socket/admin tokens; source/output not portal-origin executable content.\n\n### Planned verification\nT-NB-ISOLATION\n\nRisk: critical · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "77c73acdd7bc0edbf25637deedb970c56fe61fc07ae58bf9c1baca8a7e17e5ee",
+      "dependency_task_ids": [
+        "PLT-03",
+        "FND-06"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p6",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "NB-01",
+        "Delivery": "Backlog",
+        "Phase": "P6",
+        "Component": "Notebooks",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "NB-02",
+      "repository": "aloerch/ambisgis-notebooks",
+      "title": "[NB-02] Build locked spatial image profiles",
+      "marker": "<!-- ambisgis:task:NB-02 -->",
+      "body": "<!-- ambisgis:task:NB-02 -->\n<!-- ambisgis:managed:start -->\n## NB-02 — Build locked spatial image profiles\n\nPhase: P6 · Repository: ambisgis-notebooks\nRequirements: R12\nDepends on: NB-01, FND-02\n\n### Deliverables\n- Core/raster image locks; optional PyQGIS image; import/CRS/I/O tests\n- Owned JupyterHub/JupyterLab builds and complete retained native/Python dependency graph\n\n### Acceptance criteria\n- [ ] Native GIS package ABI and required transformations work reproducibly.\n- [ ] Image digests and libraries recorded; no claim of ArcPy parity.\n\n### Planned verification\nT-NB-ENV\n\nRisk: medium · Review gate: Standard PR\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "94a460e1186b21ec378e9b0272151b5fec2c603d60e1948652de95fd813420ec",
+      "dependency_task_ids": [
+        "NB-01",
+        "FND-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p6",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "NB-02",
+        "Delivery": "Backlog",
+        "Phase": "P6",
+        "Component": "Notebooks",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Standard PR"
+      }
+    },
+    {
+      "task_id": "NB-03",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[NB-03] Implement ergonomic SDK and notebook catalog/publish integration",
+      "marker": "<!-- ambisgis:task:NB-03 -->",
+      "body": "<!-- ambisgis:task:NB-03 -->\n<!-- ambisgis:managed:start -->\n## NB-03 — Implement ergonomic SDK and notebook catalog/publish integration\n\nPhase: P6 · Repository: ambisgis-platform\nRequirements: R12, R13\nDepends on: NB-02, PUB-03\n\n### Deliverables\n- Generated clients; runtime auth broker; catalog extension; result publisher\n\n### Acceptance criteria\n- [ ] Notebook reads authorized data and publishes private output through standard saga.\n- [ ] Credentials excluded from notebook source/output; revocation enforced.\n\n### Planned verification\nT-SDK-01, T-NB-PUBLISH\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "88e34c651a2931e04588624ee6cad682c33e299b036728cf8249c1384d1eb894",
+      "dependency_task_ids": [
+        "NB-02",
+        "PUB-03"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p6",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "NB-03",
+        "Delivery": "Backlog",
+        "Phase": "P6",
+        "Component": "Notebooks",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "NB-04",
+      "repository": "aloerch/ambisgis-notebooks",
+      "title": "[NB-04] Implement scoped scheduled execution and provenance",
+      "marker": "<!-- ambisgis:task:NB-04 -->",
+      "body": "<!-- ambisgis:task:NB-04 -->\n<!-- ambisgis:managed:start -->\n## NB-04 — Implement scoped scheduled execution and provenance\n\nPhase: P6 · Repository: ambisgis-notebooks\nRequirements: R13\nDepends on: NB-03\n\n### Deliverables\n- Runner; validated parameters; time-zone/concurrency/retry policy\n\n### Acceptance criteria\n- [ ] Job uses approved narrow identity, not retained admin token.\n- [ ] Inputs/environment/output provenance and failure artifacts recorded.\n\n### Planned verification\nT-NB-SCHEDULE\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "f85e84d4a4c96a3ebcbe4bc0190e9efc778c02a2cffc7df5a595f4f6eb317e6a",
+      "dependency_task_ids": [
+        "NB-03"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p6",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "NB-04",
+        "Delivery": "Backlog",
+        "Phase": "P6",
+        "Component": "Notebooks",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "NB-05",
+      "repository": "aloerch/ambisgis-notebooks",
+      "title": "[NB-05] Complete runtime abuse, restart and quota validation",
+      "marker": "<!-- ambisgis:task:NB-05 -->",
+      "body": "<!-- ambisgis:task:NB-05 -->\n<!-- ambisgis:managed:start -->\n## NB-05 — Complete runtime abuse, restart and quota validation\n\nPhase: P6 · Repository: ambisgis-notebooks\nRequirements: R11, R18\nDepends on: NB-04\n\n### Deliverables\n- Cross-user/browser/network/resource/restart test suite\n\n### Acceptance criteria\n- [ ] Memory/storage exhaustion and malicious HTML do not affect other users or APIs.\n- [ ] Persistent notebooks recover after restart with correct owner.\n\n### Planned verification\nT-NB-ISOLATION\n\nRisk: critical · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "3c226d9335f9d2f4c93888b1044d06264cc1a6b6cc88d171ed1af35cf1055ace",
+      "dependency_task_ids": [
+        "NB-04"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p6",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "NB-05",
+        "Delivery": "Backlog",
+        "Phase": "P6",
+        "Component": "Notebooks",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "OPS-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[OPS-01] Finish organizational installer and guided diagnostics",
+      "marker": "<!-- ambisgis:task:OPS-01 -->",
+      "body": "<!-- ambisgis:task:OPS-01 -->\n<!-- ambisgis:managed:start -->\n## OPS-01 — Finish organizational installer and guided diagnostics\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R01\nDepends on: PUB-04, SEC-02, WEB-05, NB-05\n\n### Deliverables\n- Production profile; credential enrollment; full first-run wizard\n\n### Acceptance criteria\n- [ ] Clean install completes all service integrations without upstream admin steps.\n- [ ] Repeated initialization is safe; missing TLS/DNS/storage are diagnosed.\n\n### Planned verification\nT-INSTALL-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "4cd1d94ab493a3edfb78bb5cffe865f242754686bee0419ff1d566e35849a3f4",
+      "dependency_task_ids": [
+        "PUB-04",
+        "SEC-02",
+        "WEB-05",
+        "NB-05"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "OPS-01",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Security/Release",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "OPS-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[OPS-02] Implement coordinated backup and isolated restore",
+      "marker": "<!-- ambisgis:task:OPS-02 -->",
+      "body": "<!-- ambisgis:task:OPS-02 -->\n<!-- ambisgis:managed:start -->\n## OPS-02 — Implement coordinated backup and isolated restore\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R19, R07\nDepends on: DB-07, NB-05, PUB-03\n\n### Deliverables\n- Checkpoint/backup manifests; restore command; rehearsal logs\n\n### Acceptance criteria\n- [ ] Restore complete catalog/data/assets/notebooks and execute branch post.\n- [ ] No untested RPO/RTO guarantee; actual recovery timings recorded.\n\n### Planned verification\nT-RESTORE-01, T-VERSION-RECOVERY\n\nRisk: critical · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "7daf1fba1ce004630ec5d24961be94e41057cff2adca35934aa767ae3cb2e764",
+      "dependency_task_ids": [
+        "DB-07",
+        "NB-05",
+        "PUB-03"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "OPS-02",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Security/Release",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "OPS-03",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[OPS-03] Implement locked upgrades and migration recovery",
+      "marker": "<!-- ambisgis:task:OPS-03 -->",
+      "body": "<!-- ambisgis:task:OPS-03 -->\n<!-- ambisgis:managed:start -->\n## OPS-03 — Implement locked upgrades and migration recovery\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R19, R20\nDepends on: OPS-02, FND-02\n\n### Deliverables\n- Release lock; staging-copy upgrade; ordered migrations; rollback notes\n\n### Acceptance criteria\n- [ ] Supported previous release upgrades with contract tests.\n- [ ] Irreversible migrations are not falsely reversed by image rollback.\n\n### Planned verification\nT-UPGRADE-01, T-LOCK-01\n\nRisk: critical · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "d23861260902c664bd88ff66a24b4141969c4db60b6ae3e141c8c4693b2138dc",
+      "dependency_task_ids": [
+        "OPS-02",
+        "FND-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "OPS-03",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Security/Release",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "OPS-04",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[OPS-04] Validate offline distribution and operational dependencies",
+      "marker": "<!-- ambisgis:task:OPS-04 -->",
+      "body": "<!-- ambisgis:task:OPS-04 -->\n<!-- ambisgis:managed:start -->\n## OPS-04 — Validate offline distribution and operational dependencies\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R19\nDepends on: OPS-03, NB-02\n\n### Deliverables\n- Offline source/image/docs/grid/font bundle; install/update tests\n\n### Acceptance criteria\n- [ ] Fresh offline host starts required workflows without hidden downloads.\n- [ ] Third-party basemaps and optional network features are clearly disabled or configured.\n\n### Planned verification\nT-OFFLINE-01\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "d1728ada4bc6b06bc700545bdfb9cd28f262eaa8ef420f6797f8f653fe2e74fb",
+      "dependency_task_ids": [
+        "OPS-03",
+        "NB-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "OPS-04",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Security/Release",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "OWN-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[OWN-02] Demonstrate no-upstream rebuild, independent patch and product recovery",
+      "marker": "<!-- ambisgis:task:OWN-02 -->",
+      "body": "<!-- ambisgis:task:OWN-02 -->\n<!-- ambisgis:managed:start -->\n## OWN-02 — Demonstrate no-upstream rebuild, independent patch and product recovery\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R21, R22\nDepends on: OPS-04, NB-02, QGIS-04, FND-08, OWN-01\n\n### Deliverables\n- Air-gapped rebuild/install report; independently implemented regression fix; restored source/artifact/backlog export\n\n### Acceptance criteria\n- [ ] With upstream origins and public registries blocked, rebuild all selected components from retained source and dependencies.\n- [ ] Using a synthetic defect, produce and test an owned source patch without consulting or importing a donor update.\n- [ ] Install signed product artifacts, run publication/branch/notebook tests and restore after failure.\n- [ ] Reproducibility differences are documented; no claim of bit-for-bit reproducibility without evidence.\n\n### Planned verification\nT-OWN-04\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "cd91245037e2f625d603cff31147928bcf588ff2e2ae6b676f1120d0bc7d8384",
+      "dependency_task_ids": [
+        "OPS-04",
+        "NB-02",
+        "QGIS-04",
+        "FND-08",
+        "OWN-01"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "OWN-02",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Governance",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "QA-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[QA-01] Run native/OGC/ArcGIS and actual client compatibility matrix",
+      "marker": "<!-- ambisgis:task:QA-01 -->",
+      "body": "<!-- ambisgis:task:QA-01 -->\n<!-- ambisgis:managed:start -->\n## QA-01 — Run native/OGC/ArcGIS and actual client compatibility matrix\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R02, R14, R15\nDepends on: API-03, PUB-04, WEB-05, NB-05, SEC-02\n\n### Deliverables\n- Named build/operation conformance results; release capability matrix\n\n### Acceptance criteria\n- [ ] Supported exact clients and authentication paths pass real tests.\n- [ ] Core OSS CI remains runnable without proprietary licenses.\n\n### Planned verification\nT-API-01, T-COMPAT-C1, T-QGIS-PUBLISH\n\nRisk: high · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "724154bec45436762f466ef952c4dbb81d0975f1365a453e2ee1bdf024b7b073",
+      "dependency_task_ids": [
+        "API-03",
+        "PUB-04",
+        "WEB-05",
+        "NB-05",
+        "SEC-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "QA-01",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Security/Release",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "QA-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[QA-02] Measure supported scale and workflow usability",
+      "marker": "<!-- ambisgis:task:QA-02 -->",
+      "body": "<!-- ambisgis:task:QA-02 -->\n<!-- ambisgis:managed:start -->\n## QA-02 — Measure supported scale and workflow usability\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R19, R08\nDepends on: OPS-01, DB-08, WEB-04\n\n### Deliverables\n- Reproducible load scripts; hardware/data/results; supported quotas\n\n### Acceptance criteria\n- [ ] Report p95/error/resource results with warm/cold and security scope.\n- [ ] Only measured limits appear in release notes.\n\n### Planned verification\nT-PERF-01\n\nRisk: medium · Review gate: Human approval\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "8155f53339c2e3a8082692281267d1b87936ce2f01764c6dd8be1cf97d9be69f",
+      "dependency_task_ids": [
+        "OPS-01",
+        "DB-08",
+        "WEB-04"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:medium"
+      ],
+      "initial_fields_only": {
+        "Task ID": "QA-02",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Security/Release",
+        "Priority": "Normal",
+        "Risk": "Medium",
+        "Review gate": "Human approval"
+      }
+    },
+    {
+      "task_id": "REL-01",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[REL-01] Complete license/branding/source and supply-chain release gate",
+      "marker": "<!-- ambisgis:task:REL-01 -->",
+      "body": "<!-- ambisgis:task:REL-01 -->\n<!-- ambisgis:managed:start -->\n## REL-01 — Complete license/branding/source and supply-chain release gate\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R20\nDepends on: FND-02, OPS-03, OPS-04, OWN-02, SEC-04\n\n### Deliverables\n- Notices; exact-source bundle; SBOM; signatures/provenance; branding review\n\n### Acceptance criteria\n- [ ] No unresolved redistribution/trademark/source-obligation blockers.\n- [ ] Every binary/image maps to exact source/build and dependency records.\n\n### Planned verification\nT-RELEASE-01\n\nRisk: high · Review gate: License/Brand\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "c5e3c2c2d98831fd119e77b9b4a80c17aeb7e74b0abcb4fac50ef1ac0ddc479f",
+      "dependency_task_ids": [
+        "FND-02",
+        "OPS-03",
+        "OPS-04",
+        "OWN-02",
+        "SEC-04"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "REL-01",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Security/Release",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "License/Brand"
+      }
+    },
+    {
+      "task_id": "REL-02",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[REL-02] Publish first complete scoped release after acceptance",
+      "marker": "<!-- ambisgis:task:REL-02 -->",
+      "body": "<!-- ambisgis:task:REL-02 -->\n<!-- ambisgis:managed:start -->\n## REL-02 — Publish first complete scoped release after acceptance\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R01, R02, R03, R04, R05, R06, R07, R08, R09, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20\nDepends on: SEC-03, QA-01, QA-02, REL-01, OPS-02, OWN-02, GOV-02\n\n### Deliverables\n- Five-goal end-to-end acceptance record; release notes; support matrix\n\n### Acceptance criteria\n- [ ] All required requirements have merged implementation and actual passing evidence.\n- [ ] Explicitly list remaining Esri incompatibilities/exclusions; no blanket parity claim.\n\n### Planned verification\nT-RELEASE-01\n\nRisk: critical · Review gate: Release\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "298f65ace7f1221df119898ea5d11d7738c6facbcc3446b5652127f02e235de8",
+      "dependency_task_ids": [
+        "SEC-03",
+        "QA-01",
+        "QA-02",
+        "REL-01",
+        "OPS-02",
+        "OWN-02",
+        "GOV-02"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "REL-02",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Security/Release",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Release"
+      }
+    },
+    {
+      "task_id": "SEC-03",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[SEC-03] Complete release threat-model and abuse review",
+      "marker": "<!-- ambisgis:task:SEC-03 -->",
+      "body": "<!-- ambisgis:task:SEC-03 -->\n<!-- ambisgis:managed:start -->\n## SEC-03 — Complete release threat-model and abuse review\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R18\nDepends on: OPS-01, OPS-03\n\n### Deliverables\n- Independent security review; all route/cache/runtime tests\n\n### Acceptance criteria\n- [ ] No blocking authorization/secret/execution/data-integrity defect.\n- [ ] Failures/skips explicitly recorded and prevent unsupported capability claims.\n\n### Planned verification\nT-AUTH-ALL, T-SEC-ABUSE\n\nRisk: critical · Review gate: Security\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "a1e5b2c418bd1f94852f084d141a8b592abe837f2073bc82fe1cffa08c4cf1fc",
+      "dependency_task_ids": [
+        "OPS-01",
+        "OPS-03"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:critical"
+      ],
+      "initial_fields_only": {
+        "Task ID": "SEC-03",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Security/Release",
+        "Priority": "Critical",
+        "Risk": "Critical",
+        "Review gate": "Security"
+      }
+    },
+    {
+      "task_id": "SEC-04",
+      "repository": "aloerch/ambisgis-platform",
+      "title": "[SEC-04] Establish independent security maintenance and supported-release obligations",
+      "marker": "<!-- ambisgis:task:SEC-04 -->",
+      "body": "<!-- ambisgis:task:SEC-04 -->\n<!-- ambisgis:managed:start -->\n## SEC-04 — Establish independent security maintenance and supported-release obligations\n\nPhase: P7 · Repository: ambisgis-platform\nRequirements: R21, R22\nDepends on: FND-07, SEC-03\n\n### Deliverables\n- Dependency vulnerability triage policy; source patch/backport workflow; supported-series inventory; private reporting route\n\n### Acceptance criteria\n- [ ] Security responsibility belongs to AmbisGIS even when no upstream fix exists.\n- [ ] A corrective patch is tested against product contracts and storage/recovery invariants.\n- [ ] No automatic donor synchronization, indefinite insecure freezing or unsupported SLA.\n\n### Planned verification\nT-OWN-05\n\nRisk: high · Review gate: Security\n\nSpecification: version-controlled plan/backlog.json and relevant plan/docs chapters.\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+      "spec_sha256": "ccb0d002325169ccceb7e65b2d6144a4cf5b4f87936382dc983b2c2601de137d",
+      "dependency_task_ids": [
+        "FND-07",
+        "SEC-03"
+      ],
+      "labels": [
+        "ambisgis-managed",
+        "phase:p7",
+        "risk:high"
+      ],
+      "initial_fields_only": {
+        "Task ID": "SEC-04",
+        "Delivery": "Backlog",
+        "Phase": "P7",
+        "Component": "Security/Release",
+        "Priority": "High",
+        "Risk": "High",
+        "Review gate": "Security"
+      }
+    }
+  ]
+}

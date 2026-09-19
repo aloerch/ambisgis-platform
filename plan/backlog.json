@@ -1,0 +1,1817 @@
+{
+  "schema_version": 1,
+  "status": "planning backlog; all implementation tasks not started",
+  "tasks": [
+    {
+      "id": "FND-01",
+      "phase": "P0",
+      "repository": "ambisgis-platform",
+      "title": "Verify environment and create only approved repositories",
+      "dependencies": [],
+      "requirement_ids": [
+        "R20"
+      ],
+      "tests": [
+        "T-BOOTSTRAP-01"
+      ],
+      "deliverables": [
+        "Bootstrap receipt; verified remotes; plan/scaffold PR",
+        "Fifteen exact approved targets; preserve source-donor history; no public product release implied"
+      ],
+      "acceptance": [
+        "Package tests pass; dry-run shows all targets.",
+        "Explicit apply creates missing public repositories only; collisions fail without modifying existing repos.",
+        "No imported workflows enabled or secrets committed."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "FND-02",
+      "phase": "P0",
+      "repository": "ambisgis-platform",
+      "title": "Resolve source, license and compatible dependency tuple",
+      "dependencies": [
+        "FND-01"
+      ],
+      "requirement_ids": [
+        "R20"
+      ],
+      "tests": [
+        "T-LOCK-01"
+      ],
+      "deliverables": [
+        "Exact source/image/runtime lock proposal; license inventory; upstream patch policy"
+      ],
+      "acceptance": [
+        "Inspect actual GeoNode, MapStore/client, GeoServer/extensions, QGIS and Jupyter versions.",
+        "Resolve or record blocking GeoNode/license scope issues; preserve originals.",
+        "Build and smoke-test selected tuple; no floating latest tags.",
+        "Upstream releases are initial acquisition candidates only; later component changes follow AmbisGIS release authority."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "FND-03",
+      "phase": "P0",
+      "repository": "ambisgis-platform",
+      "title": "Prove catalog identity and ACL integration",
+      "dependencies": [
+        "FND-02"
+      ],
+      "requirement_ids": [
+        "R08",
+        "R18"
+      ],
+      "tests": [
+        "T-AUTH-ALL"
+      ],
+      "deliverables": [
+        "Two-user identity/GeoNode/GeoServer policy spike and ADR"
+      ],
+      "acceptance": [
+        "Public/private/group reads and revocation work through gateway and engine path.",
+        "No duplicate policy authority or raw admin access."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "FND-04",
+      "phase": "P0",
+      "repository": "ambisgis-geodb",
+      "title": "Prototype and compare branch versioning approaches",
+      "dependencies": [
+        "FND-02"
+      ],
+      "requirement_ids": [
+        "R06",
+        "R07"
+      ],
+      "tests": [
+        "T-VERSION-ORACLE"
+      ],
+      "deliverables": [
+        "Kart/GeoGig/plugin comparison; reference model; typed PostgreSQL prototype; storage measurements"
+      ],
+      "acceptance": [
+        "Demonstrate base isolation, conflict, stale target and atomic post in a real DB prototype.",
+        "Report snapshot storage/time and choose documented implementation; no performance claims without measurements."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "FND-05",
+      "phase": "P0",
+      "repository": "ambisgis-qgis-plugin",
+      "title": "Compare desktop publishing and renderer integration",
+      "dependencies": [
+        "FND-02"
+      ],
+      "requirement_ids": [
+        "R14",
+        "R16"
+      ],
+      "tests": [
+        "T-CARTO-01"
+      ],
+      "deliverables": [
+        "QGIS/GeoServer/QGIS Server fixture; G3W/Lizmap comparison and ADR"
+      ],
+      "acceptance": [
+        "Representative style packaging/rendering and authorization work.",
+        "Record unsupported style/provider behavior and chosen extension hooks."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "FND-06",
+      "phase": "P0",
+      "repository": "ambisgis-platform",
+      "title": "Freeze initial contracts, threat model and fixture design",
+      "dependencies": [
+        "FND-03",
+        "FND-04",
+        "FND-05",
+        "FND-08"
+      ],
+      "requirement_ids": [
+        "R02",
+        "R18",
+        "R20"
+      ],
+      "tests": [
+        "T-API-01",
+        "T-SEC-ABUSE"
+      ],
+      "deliverables": [
+        "ADRs; public API boundaries; synthetic corpus generator; threat model",
+        "Koop C1 reuse spike and ADR with bounded authorized query provider"
+      ],
+      "acceptance": [
+        "Native/OGC/ArcGIS tiers and authoritative ownership agreed.",
+        "All five user goals retain traceable acceptance tests.",
+        "Koop adoption/rejection records tested output, query pushdown, pagination, permission and licensing evidence before bespoke C1 encoding."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "PLT-01",
+      "phase": "P1",
+      "repository": "ambisgis-platform",
+      "title": "Build repeatable development installation and config generator",
+      "dependencies": [
+        "FND-06"
+      ],
+      "requirement_ids": [
+        "R01"
+      ],
+      "tests": [
+        "T-INSTALL-01"
+      ],
+      "deliverables": [
+        "Compose profile; init/up/status/doctor skeleton; generated secrets/network"
+      ],
+      "acceptance": [
+        "Clean loopback install is idempotent and contains no public admin ports.",
+        "Health distinguishes process state from useful service readiness."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "DB-01",
+      "phase": "P1",
+      "repository": "ambisgis-geodb",
+      "title": "Implement managed dataset identity and typed schema foundation",
+      "dependencies": [
+        "FND-06"
+      ],
+      "requirement_ids": [
+        "R04"
+      ],
+      "tests": [
+        "T-DB-SCHEMA",
+        "T-DB-IDENTITY"
+      ],
+      "deliverables": [
+        "Migrations; dataset schema library; UUID/ObjectID registry",
+        "DEFAULT-only version identity is part of the foundation so later named branches do not require an incompatible edit-table rewrite."
+      ],
+      "acceptance": [
+        "No row-number identity; stable IDs survive reorder/republication.",
+        "Typed geometry/SRID/null/length constraints pass real DB tests."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "API-01",
+      "phase": "P1",
+      "repository": "ambisgis-platform",
+      "title": "Implement versioned native contracts and initial read API",
+      "dependencies": [
+        "PLT-01",
+        "DB-01"
+      ],
+      "requirement_ids": [
+        "R02"
+      ],
+      "tests": [
+        "T-API-01"
+      ],
+      "deliverables": [
+        "OpenAPI; generated clients; bounded layer/schema/read routes"
+      ],
+      "acceptance": [
+        "Schema tests and real feature read tests pass.",
+        "Unsupported capabilities are false/absent."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "PLT-02",
+      "phase": "P1",
+      "repository": "ambisgis-platform",
+      "title": "Implement the owned catalog authority for items, policy and jobs",
+      "dependencies": [
+        "PLT-01"
+      ],
+      "requirement_ids": [
+        "R08",
+        "R18"
+      ],
+      "tests": [
+        "T-PORTAL-01",
+        "T-AUTH-ALL"
+      ],
+      "deliverables": [
+        "Catalog extension; resource/item adapters; durable job tables"
+      ],
+      "acceptance": [
+        "No competing catalog; two-user item visibility and revision checks pass.",
+        "Queue loss does not erase authoritative job state.",
+        "Modify inherited GeoNode internals where necessary; no competing external catalog or mandatory upstream hooks."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "PLT-03",
+      "phase": "P1",
+      "repository": "ambisgis-platform",
+      "title": "Implement gateway authentication and policy enforcement",
+      "dependencies": [
+        "API-01",
+        "PLT-02"
+      ],
+      "requirement_ids": [
+        "R18"
+      ],
+      "tests": [
+        "T-AUTH-ALL"
+      ],
+      "deliverables": [
+        "OIDC session/token handling; policy adapters; revocation checks"
+      ],
+      "acceptance": [
+        "Deny-path tests cover metadata, features and raw backend access.",
+        "Revoked permissions deny new requests without relying only on delayed GeoFence sync."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "SRV-01",
+      "phase": "P1",
+      "repository": "ambisgis-platform",
+      "title": "Implement private GeoServer rendering/configuration adapter",
+      "dependencies": [
+        "PLT-03"
+      ],
+      "requirement_ids": [
+        "R01",
+        "R15"
+      ],
+      "tests": [
+        "T-SRV-01"
+      ],
+      "deliverables": [
+        "Engine adapter and extension manifest; upstream patch only if required"
+      ],
+      "acceptance": [
+        "Create private staged layer and serve map through gateway.",
+        "No public admin/config API or arbitrary workspace passthrough."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "UX-01",
+      "phase": "P1",
+      "repository": "ambisgis-platform",
+      "title": "Build product shell and initial content/service details",
+      "dependencies": [
+        "PLT-02",
+        "API-01"
+      ],
+      "requirement_ids": [
+        "R08"
+      ],
+      "tests": [
+        "T-PORTAL-01"
+      ],
+      "deliverables": [
+        "React shell; design tokens; content/service/job screens"
+      ],
+      "acceptance": [
+        "Keyboard-accessible sign-in/content/details flow works with real API.",
+        "Error/loading states distinguish permission denial and no data."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "PUB-01",
+      "phase": "P1",
+      "repository": "ambisgis-platform",
+      "title": "Complete the single-layer publish/share/revoke/restart slice",
+      "dependencies": [
+        "SRV-01",
+        "UX-01",
+        "DB-01"
+      ],
+      "requirement_ids": [
+        "R01",
+        "R14",
+        "R18"
+      ],
+      "tests": [
+        "T-INSTALL-01",
+        "T-AUTH-ALL"
+      ],
+      "deliverables": [
+        "Synthetic upload-to-private-service flow; end-to-end recording"
+      ],
+      "acceptance": [
+        "Clean install to map/query/item workflow requires no upstream UI.",
+        "Second user deny/grant/revoke and restart preserve correct behavior."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "API-02",
+      "phase": "P2",
+      "repository": "ambisgis-platform",
+      "title": "Implement typed query grammar and bounded statistics",
+      "dependencies": [
+        "PUB-01"
+      ],
+      "requirement_ids": [
+        "R02"
+      ],
+      "tests": [
+        "T-QUERY-01"
+      ],
+      "deliverables": [
+        "Filter AST compiler; pagination; CRS; aggregates"
+      ],
+      "acceptance": [
+        "SQL injection/fuzz, null/date, cursor-revision and policy-filtered counts pass.",
+        "Large/unsupported requests fail explicitly."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "API-03",
+      "phase": "P2",
+      "repository": "ambisgis-platform",
+      "title": "Implement explicitly scoped ArcGIS C1 facade",
+      "dependencies": [
+        "API-02"
+      ],
+      "requirement_ids": [
+        "R02"
+      ],
+      "tests": [
+        "T-COMPAT-C1"
+      ],
+      "deliverables": [
+        "Discovery/query/export/legend supported subset; conformance matrix"
+      ],
+      "acceptance": [
+        "Tests name exact clients/parameters; unknown operations are rejected.",
+        "No branch/sync/federation capability claim; protected-client auth limitations recorded.",
+        "Implement the FND-06 Koop reuse decision; no in-memory full-dataset shortcut or parallel permission authority."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "SRV-02",
+      "phase": "P2",
+      "repository": "ambisgis-platform",
+      "title": "Complete service manager controls and diagnostics",
+      "dependencies": [
+        "PUB-01"
+      ],
+      "requirement_ids": [
+        "R01"
+      ],
+      "tests": [
+        "T-SRV-01"
+      ],
+      "deliverables": [
+        "Service status/start/stop/configure UX; diagnostics"
+      ],
+      "acceptance": [
+        "Operators manage services without GeoServer settings screens.",
+        "IDs and permission policy persist across stop/start."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "SRV-03",
+      "phase": "P2",
+      "repository": "ambisgis-platform",
+      "title": "Implement canonical metadata forms and standards projection",
+      "dependencies": [
+        "PLT-02",
+        "SRV-01"
+      ],
+      "requirement_ids": [
+        "R03"
+      ],
+      "tests": [
+        "T-META-01"
+      ],
+      "deliverables": [
+        "Metadata schema/editor; GeoServer/pycsw projections; original XML retention"
+      ],
+      "acceptance": [
+        "One update appears consistently in item/service metadata.",
+        "Validation and stale projection errors are visible; no separate GeoNetwork install."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "DB-02",
+      "phase": "P2",
+      "repository": "ambisgis-geodb",
+      "title": "Implement domains, subtypes, relationships and validation rules",
+      "dependencies": [
+        "DB-01"
+      ],
+      "requirement_ids": [
+        "R04"
+      ],
+      "tests": [
+        "T-DB-SCHEMA"
+      ],
+      "deliverables": [
+        "Schema registry; deterministic rule subset; relation constraints"
+      ],
+      "acceptance": [
+        "Domain/default/subtype/relationship failures reject edits.",
+        "No arbitrary SQL/Python/Arcade execution; schema revisions retained."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "API-04",
+      "phase": "P2",
+      "repository": "ambisgis-platform",
+      "title": "Implement basic native atomic edits and attachments",
+      "dependencies": [
+        "API-02",
+        "DB-02"
+      ],
+      "requirement_ids": [
+        "R05"
+      ],
+      "tests": [
+        "T-EDIT-01",
+        "T-EDIT-RETRY"
+      ],
+      "deliverables": [
+        "Edit endpoints; scanned blob references; idempotency/audit"
+      ],
+      "acceptance": [
+        "Atomic multi-layer edits within one DB; duplicate requests return original result.",
+        "Cross-DB atomicity is rejected; untrusted ownership fields cannot be spoofed."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "PUB-02",
+      "phase": "P2",
+      "repository": "ambisgis-platform",
+      "title": "Implement durable publication saga and recovery",
+      "dependencies": [
+        "PUB-01",
+        "API-04"
+      ],
+      "requirement_ids": [
+        "R14",
+        "R17"
+      ],
+      "tests": [
+        "T-PUBLISH-CRASH"
+      ],
+      "deliverables": [
+        "Persisted steps/leases/idempotency/compensation; staging ownership tags"
+      ],
+      "acceptance": [
+        "Kill worker in each step; recovery never deletes prior/shared resources.",
+        "Private staging is not discoverable and failures retain previous active service."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "SRV-04",
+      "phase": "P2",
+      "repository": "ambisgis-platform",
+      "title": "Implement raster ingestion and coverage/map baseline",
+      "dependencies": [
+        "PUB-02"
+      ],
+      "requirement_ids": [
+        "R15",
+        "R16"
+      ],
+      "tests": [
+        "T-RASTER-01",
+        "T-INGEST-01"
+      ],
+      "deliverables": [
+        "Raster analyzer; native/GeoServer coverage mapping"
+      ],
+      "acceptance": [
+        "Band/nodata/CRS validation and sample-value checks pass.",
+        "Rendering does not masquerade as scientific coverage output."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "SEC-01",
+      "phase": "P2",
+      "repository": "ambisgis-platform",
+      "title": "Run complete initial service bypass/cache tests",
+      "dependencies": [
+        "API-04",
+        "SRV-03",
+        "SRV-04"
+      ],
+      "requirement_ids": [
+        "R18"
+      ],
+      "tests": [
+        "T-AUTH-ALL",
+        "T-SEC-ABUSE"
+      ],
+      "deliverables": [
+        "Security route matrix and abuse fixtures"
+      ],
+      "acceptance": [
+        "Query/count/legend/raster/download/admin paths enforce policy.",
+        "Unsupported secure render combinations are denied, not leaked."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "QGIS-01",
+      "phase": "P3",
+      "repository": "ambisgis-qgis-plugin",
+      "title": "Implement QGIS sign-in and catalog browser",
+      "dependencies": [
+        "PUB-01",
+        "FND-05"
+      ],
+      "requirement_ids": [
+        "R14"
+      ],
+      "tests": [
+        "T-QGIS-PUBLISH"
+      ],
+      "deliverables": [
+        "Plugin packaging; PKCE/device flow; credential-store adapter"
+      ],
+      "acceptance": [
+        "No password/token in project files; supported desktop versions tested.",
+        "Catalog only lists authorized resources."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "QGIS-02",
+      "phase": "P3",
+      "repository": "ambisgis-qgis-plugin",
+      "title": "Implement analyzer and publishing wizard",
+      "dependencies": [
+        "QGIS-01",
+        "PUB-02",
+        "SRV-03"
+      ],
+      "requirement_ids": [
+        "R14"
+      ],
+      "tests": [
+        "T-QGIS-PUBLISH"
+      ],
+      "deliverables": [
+        "Copy/reference choices; analyzer; progress/cancel UI"
+      ],
+      "acceptance": [
+        "End-to-end publish from real QGIS completes without component-specific settings.",
+        "Missing CRS/source/font or rights issues produce actionable warnings/errors."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "QGIS-03",
+      "phase": "P3",
+      "repository": "ambisgis-platform",
+      "title": "Implement QGIS Server project renderer adapter",
+      "dependencies": [
+        "QGIS-02",
+        "FND-05"
+      ],
+      "requirement_ids": [
+        "R15",
+        "R16"
+      ],
+      "tests": [
+        "T-CARTO-01"
+      ],
+      "deliverables": [
+        "Sandboxed project packaging; renderer adapter; source/asset rewriting"
+      ],
+      "acceptance": [
+        "No macros/arbitrary plugin execution or embedded secrets.",
+        "Same service and policy model works with both renderers."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "QGIS-04",
+      "phase": "P3",
+      "repository": "ambisgis-qgis-plugin",
+      "title": "Verify cartographic, CRS and desktop packaging fidelity",
+      "dependencies": [
+        "QGIS-03"
+      ],
+      "requirement_ids": [
+        "R16"
+      ],
+      "tests": [
+        "T-CARTO-01",
+        "T-INGEST-01"
+      ],
+      "deliverables": [
+        "Controlled desktop/server visual fixtures and conversion reports",
+        "Owned QGIS Desktop/Server builds plus bundled AmbisGIS plugin; source provenance and distribution obligations"
+      ],
+      "acceptance": [
+        "Fonts/labels/symbols pass supported-subset tests.",
+        "No silent SRID/units/Z/M loss; unsupported conversion documented."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "PUB-03",
+      "phase": "P3",
+      "repository": "ambisgis-platform",
+      "title": "Implement stable overwrite, dependency checks and rollback",
+      "dependencies": [
+        "PUB-02",
+        "PLT-02"
+      ],
+      "requirement_ids": [
+        "R17"
+      ],
+      "tests": [
+        "T-OVERWRITE-01"
+      ],
+      "deliverables": [
+        "Immutable service revisions; active pointer; dependency analyzer"
+      ],
+      "acceptance": [
+        "Layer IDs/URLs/UUIDs persist; breaking changes blocked.",
+        "Configuration rollback distinguished from dataset history; old service survives failed activation."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "SRV-05",
+      "phase": "P3",
+      "repository": "ambisgis-platform",
+      "title": "Implement raster tile jobs and bounded caching",
+      "dependencies": [
+        "SRV-04",
+        "PUB-03"
+      ],
+      "requirement_ids": [
+        "R15"
+      ],
+      "tests": [
+        "T-TILES-01"
+      ],
+      "deliverables": [
+        "Gridset/zoom analyzer; seeding quotas/cancel; cache invalidation"
+      ],
+      "acceptance": [
+        "Requested raster tiles render; quota/cancel/retry works.",
+        "Policy/style/data revision separation prevents private cache leakage."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "SRV-06",
+      "phase": "P3",
+      "repository": "ambisgis-platform",
+      "title": "Implement vector tiles with style assets",
+      "dependencies": [
+        "PUB-03",
+        "API-02"
+      ],
+      "requirement_ids": [
+        "R15"
+      ],
+      "tests": [
+        "T-TILES-01"
+      ],
+      "deliverables": [
+        "MVT/TileJSON/style/sprite/glyph pipeline; serving tests"
+      ],
+      "acceptance": [
+        "Client renders complete map, not just standalone PBF.",
+        "IDs/extents/zoom limits and policy-scoped caching pass."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "PUB-04",
+      "phase": "P3",
+      "repository": "ambisgis-platform",
+      "title": "Complete ingestion fidelity and parser sandbox tests",
+      "dependencies": [
+        "QGIS-04",
+        "SRV-05",
+        "SRV-06"
+      ],
+      "requirement_ids": [
+        "R14",
+        "R15",
+        "R16"
+      ],
+      "tests": [
+        "T-INGEST-01",
+        "T-PUBLISH-CRASH"
+      ],
+      "deliverables": [
+        "Format/geometry/schema/CRS corpus; resource-bomb tests"
+      ],
+      "acceptance": [
+        "Malformed packages/paths/remote URLs fail safely.",
+        "All requested output types have successful and interrupted-publish tests."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "DB-03",
+      "phase": "P4",
+      "repository": "ambisgis-geodb",
+      "title": "Implement isolated typed snapshots and branch lifecycle",
+      "dependencies": [
+        "DB-02",
+        "FND-04"
+      ],
+      "requirement_ids": [
+        "R06"
+      ],
+      "tests": [
+        "T-VERSION-SNAPSHOT"
+      ],
+      "deliverables": [
+        "Version/snapshot/commit migrations; quotas; branch CRUD"
+      ],
+      "acceptance": [
+        "Branch base consistent across layers and unaffected by later DEFAULT changes.",
+        "Cancellation/creation failure cannot expose a partial branch."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "DB-04",
+      "phase": "P4",
+      "repository": "ambisgis-geodb",
+      "title": "Implement branch edit concurrency and audit",
+      "dependencies": [
+        "DB-03",
+        "API-04"
+      ],
+      "requirement_ids": [
+        "R05",
+        "R06"
+      ],
+      "tests": [
+        "T-EDIT-01",
+        "T-EDIT-RETRY"
+      ],
+      "deliverables": [
+        "Expected-head/revision checks; typed branch edits; idempotency"
+      ],
+      "acceptance": [
+        "Stale edits never overwrite newer work.",
+        "Concurrent duplicate requests produce one commit; attachments/relations are atomic."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "DB-05",
+      "phase": "P4",
+      "repository": "ambisgis-geodb",
+      "title": "Implement three-way reconcile and conflict candidate",
+      "dependencies": [
+        "DB-04"
+      ],
+      "requirement_ids": [
+        "R07"
+      ],
+      "tests": [
+        "T-VERSION-ORACLE"
+      ],
+      "deliverables": [
+        "Immutable B/O/T plans; field/existence/geometry conflicts; candidate validation"
+      ],
+      "acceptance": [
+        "Reference comparison covers delete/update, disjoint fields, Z/M and natural-key conflicts.",
+        "No silent preference or geometry repair; plan bound to exact heads/schema."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "DB-06",
+      "phase": "P4",
+      "repository": "ambisgis-geodb",
+      "title": "Implement accept-reconcile and atomic post",
+      "dependencies": [
+        "DB-05"
+      ],
+      "requirement_ids": [
+        "R07"
+      ],
+      "tests": [
+        "T-VERSION-POST",
+        "T-VERSION-RACE"
+      ],
+      "deliverables": [
+        "Branch-only accept; target promotion; approvals and lock ordering"
+      ],
+      "acceptance": [
+        "Changed target/source/schema invalidates plan; revalidation happens inside post.",
+        "Crash/retry and concurrent posts produce no lost/half updates."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "DB-07",
+      "phase": "P4",
+      "repository": "ambisgis-geodb",
+      "title": "Implement history, retention and version recovery hooks",
+      "dependencies": [
+        "DB-06"
+      ],
+      "requirement_ids": [
+        "R06",
+        "R07"
+      ],
+      "tests": [
+        "T-VERSION-RECOVERY"
+      ],
+      "deliverables": [
+        "History APIs; reference-aware GC; snapshot/asset backup manifests"
+      ],
+      "acceptance": [
+        "No live base/revision/blob collected; historical schema remains resolvable.",
+        "Restored branch successfully reconciles/accepts/posts."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "DB-08",
+      "phase": "P4",
+      "repository": "ambisgis-geodb",
+      "title": "Complete randomized DB/reference and fault validation",
+      "dependencies": [
+        "DB-07"
+      ],
+      "requirement_ids": [
+        "R05",
+        "R06",
+        "R07"
+      ],
+      "tests": [
+        "T-VERSION-ORACLE",
+        "T-VERSION-RACE",
+        "T-VERSION-RECOVERY"
+      ],
+      "deliverables": [
+        "Seeded property tests; process/DB failure harness; measurements"
+      ],
+      "acceptance": [
+        "Reference and real PostgreSQL state match after randomized operation sequences.",
+        "Document supported quotas and lock/storage results; no production claims from mocks."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "UX-02",
+      "phase": "P4",
+      "repository": "ambisgis-platform",
+      "title": "Implement branch management and conflict-review UX",
+      "dependencies": [
+        "DB-06",
+        "UX-01"
+      ],
+      "requirement_ids": [
+        "R06",
+        "R07"
+      ],
+      "tests": [
+        "T-VERSION-POST"
+      ],
+      "deliverables": [
+        "Version panel; diff/conflict map/table; accept/post permissions"
+      ],
+      "acceptance": [
+        "User inspects base/branch/target and resolves validated conflicts.",
+        "Stale plans and permission revocation handled with no data loss."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "QGIS-05",
+      "phase": "P4",
+      "repository": "ambisgis-qgis-plugin",
+      "title": "Implement controlled branch edit sessions",
+      "dependencies": [
+        "QGIS-01",
+        "DB-06"
+      ],
+      "requirement_ids": [
+        "R05",
+        "R06",
+        "R07"
+      ],
+      "tests": [
+        "T-EDIT-RETRY",
+        "T-VERSION-POST"
+      ],
+      "deliverables": [
+        "Local edit buffer; revision tracking; submit/reconcile UI"
+      ],
+      "acceptance": [
+        "No direct managed DB writes; stale buffer requires explicit resolution.",
+        "Lost response resolves through idempotency before clearing local edits."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "SEC-02",
+      "phase": "P4",
+      "repository": "ambisgis-platform",
+      "title": "Enforce branch read/render boundaries",
+      "dependencies": [
+        "DB-08",
+        "UX-02",
+        "QGIS-05"
+      ],
+      "requirement_ids": [
+        "R18"
+      ],
+      "tests": [
+        "T-AUTH-ALL"
+      ],
+      "deliverables": [
+        "Branch authorization tests; DEFAULT-only WMS gate or secure immutable projection"
+      ],
+      "acceptance": [
+        "Feature/history/render cache cannot cross branch permissions.",
+        "No untested branch WMS or Esri branch capability advertised."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "WEB-01",
+      "phase": "P5",
+      "repository": "ambisgis-platform",
+      "title": "Implement versioned web maps and MapStore adapter",
+      "dependencies": [
+        "API-02",
+        "QGIS-03",
+        "SRV-06"
+      ],
+      "requirement_ids": [
+        "R09"
+      ],
+      "tests": [
+        "T-WEBMAP-01"
+      ],
+      "deliverables": [
+        "Web-map schema/editor; stable layer/style references"
+      ],
+      "acceptance": [
+        "Feature/map/raster/vector layers load with correct policy and capabilities.",
+        "Schema migrations preserve supported map settings."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "WEB-02",
+      "phase": "P5",
+      "repository": "ambisgis-platform",
+      "title": "Integrate linked dashboard widgets",
+      "dependencies": [
+        "WEB-01"
+      ],
+      "requirement_ids": [
+        "R09"
+      ],
+      "tests": [
+        "T-DASHBOARD-01"
+      ],
+      "deliverables": [
+        "Map/table/chart/KPI widgets; typed event bus; aggregation API"
+      ],
+      "acceptance": [
+        "Cross-filtering works without event loops or unbounded downloads.",
+        "Counts/statistics enforce the same row/field policy as map data."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "WEB-03",
+      "phase": "P5",
+      "repository": "ambisgis-platform",
+      "title": "Build constrained responsive app composer",
+      "dependencies": [
+        "WEB-02"
+      ],
+      "requirement_ids": [
+        "R10"
+      ],
+      "tests": [
+        "T-APP-01"
+      ],
+      "deliverables": [
+        "Widget registry; layouts/breakpoints; properties/preview/undo"
+      ],
+      "acceptance": [
+        "User builds a functional responsive app without editing JSON.",
+        "No arbitrary user JS; invalid bindings block publish."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "WEB-04",
+      "phase": "P5",
+      "repository": "ambisgis-platform",
+      "title": "Complete accessibility and task usability review",
+      "dependencies": [
+        "WEB-03",
+        "SRV-02"
+      ],
+      "requirement_ids": [
+        "R08",
+        "R10"
+      ],
+      "tests": [
+        "T-A11Y-01"
+      ],
+      "deliverables": [
+        "Keyboard/screen-reader tests; responsive fixtures; pilot results"
+      ],
+      "acceptance": [
+        "No critical focus/label/keyboard blockers; data has accessible alternative.",
+        "Pilot findings logged and blocking workflow problems fixed."
+      ],
+      "risk": "medium",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "WEB-05",
+      "phase": "P5",
+      "repository": "ambisgis-platform",
+      "title": "Implement app revision, dependencies and sharing lifecycle",
+      "dependencies": [
+        "WEB-03",
+        "PUB-03"
+      ],
+      "requirement_ids": [
+        "R10",
+        "R18"
+      ],
+      "tests": [
+        "T-APP-SHARING"
+      ],
+      "deliverables": [
+        "Draft/publish/rollback; viewer preview; dependency permissions"
+      ],
+      "acceptance": [
+        "Public app never auto-publicizes private sources.",
+        "Concurrent config edits conflict safely; published rollback preserves drafts."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "NB-01",
+      "phase": "P6",
+      "repository": "ambisgis-notebooks",
+      "title": "Implement isolated JupyterHub profile and SSO",
+      "dependencies": [
+        "PLT-03",
+        "FND-06"
+      ],
+      "requirement_ids": [
+        "R11",
+        "R18"
+      ],
+      "tests": [
+        "T-NB-ISOLATION"
+      ],
+      "deliverables": [
+        "Per-user domain/runtime; storage/quota/network; hub auth"
+      ],
+      "acceptance": [
+        "Two users cannot access each other or control-plane services.",
+        "No Docker socket/admin tokens; source/output not portal-origin executable content."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "NB-02",
+      "phase": "P6",
+      "repository": "ambisgis-notebooks",
+      "title": "Build locked spatial image profiles",
+      "dependencies": [
+        "NB-01",
+        "FND-02"
+      ],
+      "requirement_ids": [
+        "R12"
+      ],
+      "tests": [
+        "T-NB-ENV"
+      ],
+      "deliverables": [
+        "Core/raster image locks; optional PyQGIS image; import/CRS/I/O tests",
+        "Owned JupyterHub/JupyterLab builds and complete retained native/Python dependency graph"
+      ],
+      "acceptance": [
+        "Native GIS package ABI and required transformations work reproducibly.",
+        "Image digests and libraries recorded; no claim of ArcPy parity."
+      ],
+      "risk": "medium",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "NB-03",
+      "phase": "P6",
+      "repository": "ambisgis-platform",
+      "title": "Implement ergonomic SDK and notebook catalog/publish integration",
+      "dependencies": [
+        "NB-02",
+        "PUB-03"
+      ],
+      "requirement_ids": [
+        "R12",
+        "R13"
+      ],
+      "tests": [
+        "T-SDK-01",
+        "T-NB-PUBLISH"
+      ],
+      "deliverables": [
+        "Generated clients; runtime auth broker; catalog extension; result publisher"
+      ],
+      "acceptance": [
+        "Notebook reads authorized data and publishes private output through standard saga.",
+        "Credentials excluded from notebook source/output; revocation enforced."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "NB-04",
+      "phase": "P6",
+      "repository": "ambisgis-notebooks",
+      "title": "Implement scoped scheduled execution and provenance",
+      "dependencies": [
+        "NB-03"
+      ],
+      "requirement_ids": [
+        "R13"
+      ],
+      "tests": [
+        "T-NB-SCHEDULE"
+      ],
+      "deliverables": [
+        "Runner; validated parameters; time-zone/concurrency/retry policy"
+      ],
+      "acceptance": [
+        "Job uses approved narrow identity, not retained admin token.",
+        "Inputs/environment/output provenance and failure artifacts recorded."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "NB-05",
+      "phase": "P6",
+      "repository": "ambisgis-notebooks",
+      "title": "Complete runtime abuse, restart and quota validation",
+      "dependencies": [
+        "NB-04"
+      ],
+      "requirement_ids": [
+        "R11",
+        "R18"
+      ],
+      "tests": [
+        "T-NB-ISOLATION"
+      ],
+      "deliverables": [
+        "Cross-user/browser/network/resource/restart test suite"
+      ],
+      "acceptance": [
+        "Memory/storage exhaustion and malicious HTML do not affect other users or APIs.",
+        "Persistent notebooks recover after restart with correct owner."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "OPS-01",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Finish organizational installer and guided diagnostics",
+      "dependencies": [
+        "PUB-04",
+        "SEC-02",
+        "WEB-05",
+        "NB-05"
+      ],
+      "requirement_ids": [
+        "R01"
+      ],
+      "tests": [
+        "T-INSTALL-01"
+      ],
+      "deliverables": [
+        "Production profile; credential enrollment; full first-run wizard"
+      ],
+      "acceptance": [
+        "Clean install completes all service integrations without upstream admin steps.",
+        "Repeated initialization is safe; missing TLS/DNS/storage are diagnosed."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "OPS-02",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Implement coordinated backup and isolated restore",
+      "dependencies": [
+        "DB-07",
+        "NB-05",
+        "PUB-03"
+      ],
+      "requirement_ids": [
+        "R19",
+        "R07"
+      ],
+      "tests": [
+        "T-RESTORE-01",
+        "T-VERSION-RECOVERY"
+      ],
+      "deliverables": [
+        "Checkpoint/backup manifests; restore command; rehearsal logs"
+      ],
+      "acceptance": [
+        "Restore complete catalog/data/assets/notebooks and execute branch post.",
+        "No untested RPO/RTO guarantee; actual recovery timings recorded."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "OPS-03",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Implement locked upgrades and migration recovery",
+      "dependencies": [
+        "OPS-02",
+        "FND-02"
+      ],
+      "requirement_ids": [
+        "R19",
+        "R20"
+      ],
+      "tests": [
+        "T-UPGRADE-01",
+        "T-LOCK-01"
+      ],
+      "deliverables": [
+        "Release lock; staging-copy upgrade; ordered migrations; rollback notes"
+      ],
+      "acceptance": [
+        "Supported previous release upgrades with contract tests.",
+        "Irreversible migrations are not falsely reversed by image rollback."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "SEC-03",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Complete release threat-model and abuse review",
+      "dependencies": [
+        "OPS-01",
+        "OPS-03"
+      ],
+      "requirement_ids": [
+        "R18"
+      ],
+      "tests": [
+        "T-AUTH-ALL",
+        "T-SEC-ABUSE"
+      ],
+      "deliverables": [
+        "Independent security review; all route/cache/runtime tests"
+      ],
+      "acceptance": [
+        "No blocking authorization/secret/execution/data-integrity defect.",
+        "Failures/skips explicitly recorded and prevent unsupported capability claims."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "QA-01",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Run native/OGC/ArcGIS and actual client compatibility matrix",
+      "dependencies": [
+        "API-03",
+        "PUB-04",
+        "WEB-05",
+        "NB-05",
+        "SEC-02"
+      ],
+      "requirement_ids": [
+        "R02",
+        "R14",
+        "R15"
+      ],
+      "tests": [
+        "T-API-01",
+        "T-COMPAT-C1",
+        "T-QGIS-PUBLISH"
+      ],
+      "deliverables": [
+        "Named build/operation conformance results; release capability matrix"
+      ],
+      "acceptance": [
+        "Supported exact clients and authentication paths pass real tests.",
+        "Core OSS CI remains runnable without proprietary licenses."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "QA-02",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Measure supported scale and workflow usability",
+      "dependencies": [
+        "OPS-01",
+        "DB-08",
+        "WEB-04"
+      ],
+      "requirement_ids": [
+        "R19",
+        "R08"
+      ],
+      "tests": [
+        "T-PERF-01"
+      ],
+      "deliverables": [
+        "Reproducible load scripts; hardware/data/results; supported quotas"
+      ],
+      "acceptance": [
+        "Report p95/error/resource results with warm/cold and security scope.",
+        "Only measured limits appear in release notes."
+      ],
+      "risk": "medium",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "OPS-04",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Validate offline distribution and operational dependencies",
+      "dependencies": [
+        "OPS-03",
+        "NB-02"
+      ],
+      "requirement_ids": [
+        "R19"
+      ],
+      "tests": [
+        "T-OFFLINE-01"
+      ],
+      "deliverables": [
+        "Offline source/image/docs/grid/font bundle; install/update tests"
+      ],
+      "acceptance": [
+        "Fresh offline host starts required workflows without hidden downloads.",
+        "Third-party basemaps and optional network features are clearly disabled or configured."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "REL-01",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Complete license/branding/source and supply-chain release gate",
+      "dependencies": [
+        "FND-02",
+        "OPS-03",
+        "OPS-04",
+        "OWN-02",
+        "SEC-04"
+      ],
+      "requirement_ids": [
+        "R20"
+      ],
+      "tests": [
+        "T-RELEASE-01"
+      ],
+      "deliverables": [
+        "Notices; exact-source bundle; SBOM; signatures/provenance; branding review"
+      ],
+      "acceptance": [
+        "No unresolved redistribution/trademark/source-obligation blockers.",
+        "Every binary/image maps to exact source/build and dependency records."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "REL-02",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Publish first complete scoped release after acceptance",
+      "dependencies": [
+        "SEC-03",
+        "QA-01",
+        "QA-02",
+        "REL-01",
+        "OPS-02",
+        "OWN-02",
+        "GOV-02"
+      ],
+      "requirement_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20"
+      ],
+      "tests": [
+        "T-RELEASE-01"
+      ],
+      "deliverables": [
+        "Five-goal end-to-end acceptance record; release notes; support matrix"
+      ],
+      "acceptance": [
+        "All required requirements have merged implementation and actual passing evidence.",
+        "Explicitly list remaining Esri incompatibilities/exclusions; no blanket parity claim."
+      ],
+      "risk": "critical",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "FND-07",
+      "phase": "P0",
+      "repository": "ambisgis-platform",
+      "title": "Acquire source custody and record independently maintained product baselines",
+      "dependencies": [
+        "FND-02"
+      ],
+      "requirement_ids": [
+        "R21",
+        "R22"
+      ],
+      "tests": [
+        "T-OWN-01"
+      ],
+      "deliverables": [
+        "Owned product branches in every fork; provenance inventory; git bundles; retained submodule/LFS/build assets"
+      ],
+      "acceptance": [
+        "Every selected core component resolves to an owned source revision and retained baseline.",
+        "No source transfer implies a copyright reassignment or blanket relicensing.",
+        "All required additional assets are enumerated; nulls are explicit blockers, not fabricated hashes."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "FND-08",
+      "phase": "P0",
+      "repository": "ambisgis-platform",
+      "title": "Build the initial product spine from owned sources and cached dependencies",
+      "dependencies": [
+        "FND-07"
+      ],
+      "requirement_ids": [
+        "R21",
+        "R22"
+      ],
+      "tests": [
+        "T-OWN-02"
+      ],
+      "deliverables": [
+        "Owned PostgreSQL/PostGIS, catalog, rendering/cache and UI builds; controlled artifact store; source/build recipes"
+      ],
+      "acceptance": [
+        "Initial vertical-slice components build without resolving upstream branch tips or fetching unrecorded packages.",
+        "A simulated upstream API/branch change does not change selected inputs or outputs.",
+        "The source inventory includes libraries, plugins, styles, fonts, CRS resources, toolchains and base image dependencies."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "GOV-01",
+      "phase": "P0",
+      "repository": "ambisgis-platform",
+      "title": "Implement safe GitHub Project and issue bootstrap",
+      "dependencies": [
+        "FND-01"
+      ],
+      "requirement_ids": [
+        "R23"
+      ],
+      "tests": [
+        "T-PROJECT-01"
+      ],
+      "deliverables": [
+        "Idempotent project/issue importer; local receipts; public umbrella Project; seeded issues with stable IDs"
+      ],
+      "acceptance": [
+        "Validate project.json and generated seed; all read preflights precede mutation.",
+        "Retry does not duplicate project, issue, field or item; ambiguous ownership aborts.",
+        "Project visibility is explicitly public; secrets/private security reports never enter public items.",
+        "Permissions and partial failures are reported accurately; no token scope escalation is automatic."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "GOV-02",
+      "phase": "P0",
+      "repository": "ambisgis-platform",
+      "title": "Configure project views, task transitions and evidence synchronization",
+      "dependencies": [
+        "GOV-01"
+      ],
+      "requirement_ids": [
+        "R23"
+      ],
+      "tests": [
+        "T-PROJECT-02"
+      ],
+      "deliverables": [
+        "Backlog/board/roadmap/review/maintenance views; task state policy; exported remote IDs; setup evidence"
+      ],
+      "acceptance": [
+        "Task dependencies determine Ready, not the agent's preference.",
+        "In review/Verified/Merged/Released states are not conflated; cancellation is distinct from completion.",
+        "A plan update only edits importer-owned issue content and preserves human discussion and progress.",
+        "All views are verified using supported interfaces; any UI-only step is reported, not claimed completed."
+      ],
+      "risk": "high",
+      "human_review_required": false,
+      "status": "not_started"
+    },
+    {
+      "id": "OWN-01",
+      "phase": "P2",
+      "repository": "ambisgis-platform",
+      "title": "Consolidate inherited product models and eliminate redundant administration",
+      "dependencies": [
+        "PUB-01",
+        "FND-08"
+      ],
+      "requirement_ids": [
+        "R21",
+        "R24"
+      ],
+      "tests": [
+        "T-OWN-03"
+      ],
+      "deliverables": [
+        "Duplication register; canonical catalog/service/config models; retired or restricted legacy write paths; owned internal contracts"
+      ],
+      "acceptance": [
+        "Metadata, ownership, permission and service lifecycle have one authoritative source.",
+        "Inherited admin screens cannot bypass or contradict the authoritative product model.",
+        "Local structural changes are not rejected merely because upstream lacks an extension hook.",
+        "Useful engine capabilities survive; notebook/database isolation is preserved."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "OWN-02",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Demonstrate no-upstream rebuild, independent patch and product recovery",
+      "dependencies": [
+        "OPS-04",
+        "NB-02",
+        "QGIS-04",
+        "FND-08",
+        "OWN-01"
+      ],
+      "requirement_ids": [
+        "R21",
+        "R22"
+      ],
+      "tests": [
+        "T-OWN-04"
+      ],
+      "deliverables": [
+        "Air-gapped rebuild/install report; independently implemented regression fix; restored source/artifact/backlog export"
+      ],
+      "acceptance": [
+        "With upstream origins and public registries blocked, rebuild all selected components from retained source and dependencies.",
+        "Using a synthetic defect, produce and test an owned source patch without consulting or importing a donor update.",
+        "Install signed product artifacts, run publication/branch/notebook tests and restore after failure.",
+        "Reproducibility differences are documented; no claim of bit-for-bit reproducibility without evidence."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    },
+    {
+      "id": "SEC-04",
+      "phase": "P7",
+      "repository": "ambisgis-platform",
+      "title": "Establish independent security maintenance and supported-release obligations",
+      "dependencies": [
+        "FND-07",
+        "SEC-03"
+      ],
+      "requirement_ids": [
+        "R21",
+        "R22"
+      ],
+      "tests": [
+        "T-OWN-05"
+      ],
+      "deliverables": [
+        "Dependency vulnerability triage policy; source patch/backport workflow; supported-series inventory; private reporting route"
+      ],
+      "acceptance": [
+        "Security responsibility belongs to AmbisGIS even when no upstream fix exists.",
+        "A corrective patch is tested against product contracts and storage/recovery invariants.",
+        "No automatic donor synchronization, indefinite insecure freezing or unsupported SLA."
+      ],
+      "risk": "high",
+      "human_review_required": true,
+      "status": "not_started"
+    }
+  ],
+  "revision": "2.0"
+}

@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "status": "proposed; no product capabilities implemented by this package",
+  "requirements": [
+    {
+      "id": "R01",
+      "user_goal": 1,
+      "requirement": "One supported install and simple service administration",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-INSTALL-01",
+        "T-SRV-01"
+      ]
+    },
+    {
+      "id": "R02",
+      "user_goal": 1,
+      "requirement": "Native REST, selected OGC and explicit ArcGIS C1 compatibility",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-API-01",
+        "T-QUERY-01",
+        "T-COMPAT-C1"
+      ]
+    },
+    {
+      "id": "R03",
+      "user_goal": 1,
+      "requirement": "One integrated authoritative metadata workflow",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-META-01"
+      ]
+    },
+    {
+      "id": "R04",
+      "user_goal": 2,
+      "requirement": "Typed managed schema, stable identity, domains and relationships",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-DB-SCHEMA",
+        "T-DB-IDENTITY"
+      ]
+    },
+    {
+      "id": "R05",
+      "user_goal": 2,
+      "requirement": "Service-only atomic edits with audit and idempotency",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-EDIT-01",
+        "T-EDIT-RETRY"
+      ]
+    },
+    {
+      "id": "R06",
+      "user_goal": 2,
+      "requirement": "Isolated named branches and retained history",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-VERSION-SNAPSHOT",
+        "T-VERSION-ORACLE"
+      ]
+    },
+    {
+      "id": "R07",
+      "user_goal": 2,
+      "requirement": "Reconcile, explicit conflict resolution, accept and atomic post",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-VERSION-RACE",
+        "T-VERSION-POST",
+        "T-VERSION-RECOVERY"
+      ]
+    },
+    {
+      "id": "R08",
+      "user_goal": 3,
+      "requirement": "Unified catalog, roles and modern accessible portal",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-PORTAL-01",
+        "T-A11Y-01"
+      ]
+    },
+    {
+      "id": "R09",
+      "user_goal": 3,
+      "requirement": "Web maps and linked dashboard widgets",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-WEBMAP-01",
+        "T-DASHBOARD-01"
+      ]
+    },
+    {
+      "id": "R10",
+      "user_goal": 3,
+      "requirement": "Responsive declarative application composer and revision lifecycle",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-APP-01",
+        "T-APP-SHARING"
+      ]
+    },
+    {
+      "id": "R11",
+      "user_goal": 4,
+      "requirement": "Multi-user isolated Jupyter notebook launch and persistence",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-NB-ISOLATION"
+      ]
+    },
+    {
+      "id": "R12",
+      "user_goal": 4,
+      "requirement": "Pinned spatial package environments and GIS SDK",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-NB-ENV",
+        "T-SDK-01"
+      ]
+    },
+    {
+      "id": "R13",
+      "user_goal": 4,
+      "requirement": "Notebook publishing and scoped scheduled execution",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-NB-PUBLISH",
+        "T-NB-SCHEDULE"
+      ]
+    },
+    {
+      "id": "R14",
+      "user_goal": 5,
+      "requirement": "One QGIS copy/reference publishing wizard",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-QGIS-PUBLISH",
+        "T-PUBLISH-CRASH"
+      ]
+    },
+    {
+      "id": "R15",
+      "user_goal": 5,
+      "requirement": "Dynamic map, feature, raster and vector tile publication",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-TILES-01",
+        "T-RASTER-01"
+      ]
+    },
+    {
+      "id": "R16",
+      "user_goal": 5,
+      "requirement": "Explicit cartographic fidelity and CRS/format diagnostics",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-CARTO-01",
+        "T-INGEST-01"
+      ]
+    },
+    {
+      "id": "R17",
+      "user_goal": 5,
+      "requirement": "Stable overwrite, dependency checking and recoverable publication",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-OVERWRITE-01",
+        "T-PUBLISH-CRASH"
+      ]
+    },
+    {
+      "id": "R18",
+      "user_goal": 0,
+      "requirement": "Authorization enforced across every API, renderer, cache and runtime",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-AUTH-ALL",
+        "T-SEC-ABUSE"
+      ]
+    },
+    {
+      "id": "R19",
+      "user_goal": 0,
+      "requirement": "Backup/restore, upgrades, offline profile and measured support limits",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-RESTORE-01",
+        "T-UPGRADE-01",
+        "T-OFFLINE-01",
+        "T-PERF-01"
+      ]
+    },
+    {
+      "id": "R20",
+      "user_goal": 0,
+      "requirement": "Safe repositories, license/source compliance and evidence-based release",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-BOOTSTRAP-01",
+        "T-LOCK-01",
+        "T-RELEASE-01"
+      ]
+    },
+    {
+      "id": "R21",
+      "user_goal": 6,
+      "requirement": "Independent product ownership: source custody, local modification and release authority without upstream approval",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-OWN-01",
+        "T-OWN-02",
+        "T-OWN-03",
+        "T-OWN-04",
+        "T-OWN-05"
+      ]
+    },
+    {
+      "id": "R22",
+      "user_goal": 6,
+      "requirement": "Retained transitive build/runtime inputs, upstream-disconnected rebuilds and independent security maintenance",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-OWN-01",
+        "T-OWN-02",
+        "T-OWN-04",
+        "T-OWN-05"
+      ]
+    },
+    {
+      "id": "R23",
+      "user_goal": 7,
+      "requirement": "Cross-repository GitHub Project with traceable tasks, dependencies, review/evidence states and safe repeatable provisioning",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-PROJECT-01",
+        "T-PROJECT-02"
+      ]
+    },
+    {
+      "id": "R24",
+      "user_goal": 6,
+      "requirement": "Consolidate inherited user-facing models and configuration into one product; a branded integration stack alone is insufficient",
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-OWN-03"
+      ]
+    }
+  ]
+}

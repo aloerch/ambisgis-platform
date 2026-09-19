@@ -1,0 +1,143 @@
+{
+  "observed_at": "2026-09-19T08:41:00.564515+00:00",
+  "owner": "aloerch",
+  "owner_id": 15285626,
+  "kind": "Verified repository creation only; not source/build acceptance",
+  "repositories": {
+    "aloerch/ambisgis-platform": {
+      "id": 1376927351,
+      "kind": "new",
+      "upstream": null,
+      "status": "ready",
+      "default_branch": "main",
+      "observed_default_commit": "01741fb11c5cc7ef64e7dcf17833ddf26fcab971",
+      "url": "https://github.com/aloerch/ambisgis-platform"
+    },
+    "aloerch/ambisgis-geodb": {
+      "id": 1376927417,
+      "kind": "new",
+      "upstream": null,
+      "status": "ready",
+      "default_branch": "main",
+      "observed_default_commit": "41fbb62b9967fc3409aa60a960823b7747f76523",
+      "url": "https://github.com/aloerch/ambisgis-geodb"
+    },
+    "aloerch/ambisgis-qgis-plugin": {
+      "id": 1376927494,
+      "kind": "new",
+      "upstream": null,
+      "status": "ready",
+      "default_branch": "main",
+      "observed_default_commit": "2d6eb508d9a6b6c149b07dfa721a1d57f05af48f",
+      "url": "https://github.com/aloerch/ambisgis-qgis-plugin"
+    },
+    "aloerch/ambisgis-notebooks": {
+      "id": 1376927589,
+      "kind": "new",
+      "upstream": null,
+      "status": "ready",
+      "default_branch": "main",
+      "observed_default_commit": "801734fc35c6987b71786902559082289e6bd378",
+      "url": "https://github.com/aloerch/ambisgis-notebooks"
+    },
+    "aloerch/ambisgis-postgresql": {
+      "id": 1376927644,
+      "kind": "fork",
+      "upstream": "postgres/postgres",
+      "status": "ready",
+      "default_branch": "master",
+      "observed_default_commit": "c62b330912e2095dc8dee2f749adf7e5d94ca611",
+      "url": "https://github.com/aloerch/ambisgis-postgresql"
+    },
+    "aloerch/ambisgis-postgis": {
+      "id": 1376927690,
+      "kind": "fork",
+      "upstream": "postgis/postgis",
+      "status": "ready",
+      "default_branch": "master",
+      "observed_default_commit": "84890ccbe53549130de8a2b75a72ab3a54b570d1",
+      "url": "https://github.com/aloerch/ambisgis-postgis"
+    },
+    "aloerch/ambisgis-qgis": {
+      "id": 1376927721,
+      "kind": "fork",
+      "upstream": "qgis/QGIS",
+      "status": "ready",
+      "default_branch": "master",
+      "observed_default_commit": "09d73a2b827841320e798d1f18c84a4776dbd265",
+      "url": "https://github.com/aloerch/ambisgis-qgis"
+    },
+    "aloerch/ambisgis-jupyterhub": {
+      "id": 1376927753,
+      "kind": "fork",
+      "upstream": "jupyterhub/jupyterhub",
+      "status": "ready",
+      "default_branch": "main",
+      "observed_default_commit": "929ef417d1e337a17a5e3ebfdd0e0143b021f91d",
+      "url": "https://github.com/aloerch/ambisgis-jupyterhub"
+    },
+    "aloerch/ambisgis-jupyterlab": {
+      "id": 1376927783,
+      "kind": "fork",
+      "upstream": "jupyterlab/jupyterlab",
+      "status": "ready",
+      "default_branch": "main",
+      "observed_default_commit": "5ad633d6747371452c2f5fe465d18a70b8f3195d",
+      "url": "https://github.com/aloerch/ambisgis-jupyterlab"
+    },
+    "aloerch/ambisgis-geotools": {
+      "id": 1376927869,
+      "kind": "fork",
+      "upstream": "geotools/geotools",
+      "status": "ready",
+      "default_branch": "main",
+      "observed_default_commit": "9a4f847e8b83875169e279999659052a0cc2bf14",
+      "url": "https://github.com/aloerch/ambisgis-geotools"
+    },
+    "aloerch/ambisgis-geowebcache": {
+      "id": 1376927892,
+      "kind": "fork",
+      "upstream": "GeoWebCache/geowebcache",
+      "status": "ready",
+      "default_branch": "main",
+      "observed_default_commit": "821bae4793863555321cd7a935137c80b8eded73",
+      "url": "https://github.com/aloerch/ambisgis-geowebcache"
+    },
+    "aloerch/ambisgis-geoserver": {
+      "id": 1376927947,
+      "kind": "fork",
+      "upstream": "geoserver/geoserver",
+      "status": "ready",
+      "default_branch": "main",
+      "observed_default_commit": "98c7c567a9fa3b691915fa2fc613d90d90d78b62",
+      "url": "https://github.com/aloerch/ambisgis-geoserver"
+    },
+    "aloerch/ambisgis-geonode": {
+      "id": 1376927978,
+      "kind": "fork",
+      "upstream": "GeoNode/geonode",
+      "status": "ready",
+      "default_branch": "master",
+      "observed_default_commit": "ddfdc44cabf13931fb1d53d35809699d6e4766ae",
+      "url": "https://github.com/aloerch/ambisgis-geonode"
+    },
+    "aloerch/ambisgis-mapstore-client": {
+      "id": 1376928013,
+      "kind": "fork",
+      "upstream": "GeoNode/geonode-mapstore-client",
+      "status": "ready",
+      "default_branch": "master",
+      "observed_default_commit": "673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7",
+      "url": "https://github.com/aloerch/ambisgis-mapstore-client"
+    },
+    "aloerch/ambisgis-mapstore": {
+      "id": 1376928043,
+      "kind": "fork",
+      "upstream": "geosolutions-it/MapStore2",
+      "status": "ready",
+      "default_branch": "master",
+      "observed_default_commit": "0eedc8b7184d3b753d0581963814726f1e5ec8eb",
+      "url": "https://github.com/aloerch/ambisgis-mapstore"
+    }
+  }
+}

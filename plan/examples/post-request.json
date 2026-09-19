@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "accepted_reconcile_id": "00000000-0000-4000-8000-000000000008",
+  "resolution_revision": 1,
+  "expected_branch_head": "00000000-0000-4000-8000-000000000009",
+  "expected_target_head": "00000000-0000-4000-8000-000000000010",
+  "idempotency_key": "synthetic-post-0001"
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "version_group_id": "00000000-0000-4000-8000-000000000002",
+  "branch_id": "00000000-0000-4000-8000-000000000003",
+  "expected_head": "00000000-0000-4000-8000-000000000004",
+  "idempotency_key": "synthetic-edit-0001",
+  "operations": [
+    {
+      "op": "update",
+      "dataset_id": "00000000-0000-4000-8000-000000000005",
+      "feature_id": "00000000-0000-4000-8000-000000000006",
+      "expected_feature_revision": "00000000-0000-4000-8000-000000000007",
+      "attributes": {
+        "status": "reviewed"
+      }
+    }
+  ]
+}
