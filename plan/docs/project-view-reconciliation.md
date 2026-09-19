@@ -1,6 +1,6 @@
 # GOV-02 saved-view reconciliation
 
-GOV-02 is now **In review** in [PR #52](https://github.com/aloerch/ambisgis-platform/pull/52). The owner resolved the review filter and reported that the roadmap has no visible-fields picker. The unsupported instruction to hide Status through that picker is withdrawn; the exact layout limitation is retained for review below. At the fresh readback, live Delivery still read **Blocked**; this document does not claim a Project transition, approval, merge or whole-task completion. FND-02 continues independently.
+GOV-02 is now **In review** in [PR #52](https://github.com/aloerch/ambisgis-platform/pull/52). The owner resolved the review filter and reported that the roadmap has no visible-fields picker. The unsupported instruction to hide Status through that picker is withdrawn; the exact layout limitation is retained for review below. At the initial follow-up readback, live Delivery still read **Blocked**; the later verified review transition is recorded below. No approval, merge or whole-task completion is claimed. FND-02 continues independently.
 
 This reconciliation uses the owner's [initial 2026-09-19 verification](https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5744517566), [follow-up at 21:19:59 UTC](https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5745381847), and [fresh supported GraphQL readback](../verification/project-view-followup-readback.json) captured at `2026-09-19T21:25:32.834870+00:00`. The [earlier 19:05:54 UTC capture](../verification/project-view-readback.json) is preserved as historical evidence. The agent did not personally inspect the UI. The initial comment's unfilled “Remaining exceptions” placeholder is not additional evidence.
 
@@ -10,7 +10,7 @@ This reconciliation uses the owner's [initial 2026-09-19 verification](https://g
 - Project: [AmbisGIS — Product Development #2](https://github.com/users/aloerch/projects/2), node ID `PVT_kwHOAOk9es4Bj_k-`, public and open.
 - Worktree: `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov02`; branch `gov-02/saved-view-reconciliation`; separate review [PR #52](https://github.com/aloerch/ambisgis-platform/pull/52).
 - Initial base: `a3c2e2e696ea11bdc10c2ad202a240fbd0137f45`, the verified merge of [PR #51](https://github.com/aloerch/ambisgis-platform/pull/51). The review branch subsequently integrates verified `ambisgis/main` commit `12bd2c5c88ab8573add1b483f1d53b4024649b39`, preserving the current Jupyter/FND-02 records; this local branch integration does not merge PR #52 into main.
-- Project operations: read-only queries. Existing item values, dates, comments and saved settings were preserved. No importer rerun, workflow change, merge or release occurred in this reconciliation.
+- Initial reconciliation: read-only queries preserved item values, dates, comments and saved settings. The later deliberate GOV-02 Delivery/Evidence update is recorded separately below. No importer rerun, workflow change, remote merge or release occurred.
 
 ## Accepted observations and readback
 
