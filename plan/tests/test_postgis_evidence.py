@@ -45,6 +45,9 @@ class RegressionReportExportTests(unittest.TestCase):
             environment = {'PGHOST': '/tmp/owned-pg', 'POSTGIS_REGRESS_DB': 'owned_probe',
                            'PGIS_REG_TMPDIR': str(invocation), 'AMBISGIS_REAL_PERL': '/usr/bin/perl',
                            'AMBISGIS_REGRESSION_ARTIFACTS': str(invocation.parent),
+                           'PYTHONPATH': '/retained/pyyaml/lib',
+                           'PG_REGRESS_SOCK_DIR': '/tmp/owned-core',
+                           'PROJ_USER_WRITABLE_DIRECTORY': '/owned/proj-user',
                            'UNRELATED_SECRET': 'must-not-export'}
             report = {
                 'kind': 'ambisgis-postgis-regression-probe-v1', 'status': 'failed',
@@ -88,6 +91,8 @@ class RegressionReportExportTests(unittest.TestCase):
             self.assertFalse(nested['artifacts'][0]['recorded_path_hash_matches'])
             self.assertEqual(nested['environment']['PGIS_REG_TMPDIR'], str(invocation))
             self.assertEqual(command['environment']['POSTGIS_REGRESS_DB'], 'owned_probe')
+            for key in ('PYTHONPATH', 'PG_REGRESS_SOCK_DIR', 'PROJ_USER_WRITABLE_DIRECTORY'):
+                self.assertEqual(command['environment'][key], environment[key])
             self.assertNotIn('must-not-export', json.dumps(exported))
             self.assertEqual(exported['snapshot_status'], 'incomplete_or_unverified_snapshot')
             self.assertEqual(exported['collection_problems'], [])

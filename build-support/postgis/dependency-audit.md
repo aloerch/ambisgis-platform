@@ -161,9 +161,9 @@ external IDN/PSL/GSS/SSH/HTTP2/HTTP3/resolver libraries and compression librarie
 other than retained zlib, and disables
 other protocols explicitly. `--enable-debug` enables the retained unit-test
 library. Build `lib/libcurlu.la`, then the five individual unit programs 1300,
-1302, 1305, 1307 and 1309. Run each with a dummy URL argument: these source
-bodies test linked lists, Base64, hash/DNS-cache data structures, wildcard
-matching and splay trees without issuing a transfer. `UNITTEST_STOP` returns the
+1302, 1303, 1305 and 1309. Run each with a dummy URL argument: these source
+bodies test linked lists, Base64, timeout arithmetic, hash/DNS-cache data
+structures and splay trees without issuing a transfer. `UNITTEST_STOP` returns the
 failure count. The full server/protocol test harness and HTTPS are outside
 this profile; version probes or these five cases do not test real transport.
 Actual run results remain the integrator's evidence, not asserted here.
@@ -173,7 +173,10 @@ attempts an HTTPS CDN request regardless of the CMake network-test option;
 the HTTP-only curl cannot perform HTTPS, and the offline run denies network
 sockets. Later cases often return early when `networkAccessOK` is false instead
 of reporting GTest skips. These returned cases must be recorded as unavailable
-network coverage even when their wrapper reports success. The local callback
+network coverage even when their wrapper reports success. In the final profile,
+12 cases return early entirely, and `basic` omits its live transformation after
+running local disabled/error assertions; `initial_check` is a probe, not a
+successful network test. The local callback
 and network-disabled behavior tests remain applicable.
 
 A separate run-001 omission was detected by reading GDAL's internal skips:

@@ -80,5 +80,58 @@ class UpgradeStateTests(unittest.TestCase):
             probe.contained(link, self.run)
 
 
+class LibraryNameTests(unittest.TestCase):
+    def test_postgis35_requires_actual_raster_and_topology_module_names(self):
+        from validate_database import extension_libraries
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ('postgis-3.so', 'postgis_raster-3.so', 'postgis_topology-3.so'):
+                (root/name).touch()
+            self.assertEqual(len(extension_libraries(root)), 3)
+            (root/'postgis_raster-3.so').unlink()
+            (root/'rtpostgis-3.so').touch()
+            with self.assertRaisesRegex(RuntimeError, 'postgis_raster'):
+                extension_libraries(root)
+
+
+class RuntimeVersionTests(unittest.TestCase):
+    def test_native_revision_suffix_is_recorded_without_accepting_wrong_version(self):
+        from validate_database import require_postgis_versions
+        actual = {'postgis': '3.5.6', 'raster': '3.5.6 0', 'scripts': '3.5.6 0'}
+        require_postgis_versions(actual, '3.5.6')
+        for wrong in ('3.5.60 0', '3.5.6dev 0', '3.5.7 0'):
+            with self.assertRaises(RuntimeError):
+                require_postgis_versions(dict(actual, raster=wrong), '3.5.6')
+
+
+class LibraryResolutionTests(unittest.TestCase):
+    def test_absolute_and_arrow_dependencies_must_be_owned(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            prefix = root / 'prefix'
+            (prefix / 'lib').mkdir(parents=True)
+            library = prefix / 'lib/libsqlite3.so'
+            library.touch()
+            for line in (f' {library} (0x1234)', f' libsqlite3.so => {library} (0x1234)'):
+                probe.require_owned_linkage(line, prefix)
+            for line in (' /usr/lib/libsqlite3.so (0x1234)',
+                         ' libsqlite3.so => /usr/lib/libsqlite3.so (0x1234)',
+                         ' libsqlite3.so => not found', ' libproj.so => unknown'):
+                with self.subTest(line=line), self.assertRaises(RuntimeError):
+                    probe.require_owned_linkage(line, prefix)
+
+    def test_dependency_symlink_to_host_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            prefix = root / 'prefix'
+            prefix.mkdir()
+            outside = root / 'libsqlite3.so'
+            outside.touch()
+            library = prefix / 'libsqlite3.so'
+            library.symlink_to(outside)
+            with self.assertRaises(RuntimeError):
+                probe.require_owned_linkage(f' {library} (0x1234)', prefix)
+
+
 if __name__ == '__main__':
     unittest.main()

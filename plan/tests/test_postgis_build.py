@@ -135,6 +135,13 @@ class BuildRecipeTests(unittest.TestCase):
             with self.assertRaises(BlockingIOError):
                 build.Builder({'inputs': []}, root, root/'run', 1)
 
+    def test_gdal_cmake_success_cannot_hide_missing_required_raw_driver(self):
+        names = ['VRT', 'GTiff', 'AAIGrid', 'DTED', 'PNG', 'JPEG', 'MEM']
+        observed = '\n'.join(f'  {name} -raster- (rwv): description' for name in names)
+        with self.assertRaisesRegex(RuntimeError, 'EHdr'):
+            build.require_gdal_raster_drivers(observed)
+        build.require_gdal_raster_drivers(observed + '\n  EHdr -raster- (rwv): ESRI .hdr')
+
 
 if __name__ == '__main__':
     unittest.main()

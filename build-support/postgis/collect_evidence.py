@@ -22,7 +22,7 @@ import subprocess
 ENV_KEYS = set('PATH HOME TMPDIR LANG LC_ALL TZ CC CXX CFLAGS CXXFLAGS CPPFLAGS '
                'LDFLAGS LD_LIBRARY_PATH PKG_CONFIG_LIBDIR CMAKE_PREFIX_PATH '
                'PROJ_DATA PROJ_LIB PROJ_NETWORK GDAL_DATA PGHOST PGPORT PGUSER '
-               'PGDATABASE PGIS_REG_TMPDIR POSTGIS_REGRESS_DB AMBISGIS_REAL_PERL '
+               'PGDATABASE PYTHONPATH PG_REGRESS_SOCK_DIR PROJ_USER_WRITABLE_DIRECTORY PGIS_REG_TMPDIR POSTGIS_REGRESS_DB AMBISGIS_REAL_PERL '
                'AMBISGIS_REGRESSION_ARTIFACTS'.split())
 TOOLS = 'gcc g++ cc c++ ld as ar ranlib cmake ctest make ninja python3 perl autoconf automake aclocal libtoolize pkg-config bison flex m4 bash tar sed awk git'.split()
 BINARIES = 'pg_config postgres initdb pg_ctl psql pg_dump pg_restore geos-config geosop proj projinfo cs2cs gdal-config gdalinfo ogrinfo protoc protoc-c sqlite3'.split()

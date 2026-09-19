@@ -28,7 +28,7 @@ OLD_POSTGIS = '3.5.6'
 TARGET_POSTGIS = '3.5.7'
 EXTENSIONS = ('postgis', 'postgis_raster', 'postgis_topology')
 TRACKED_ENV = ('PATH', 'LD_LIBRARY_PATH', 'PROJ_DATA', 'PROJ_LIB', 'PROJ_NETWORK',
-               'GDAL_DATA', 'PGHOST', 'PGPORT', 'PGUSER', 'PGDATABASE', 'LC_ALL')
+               'PROJ_USER_WRITABLE_DIRECTORY', 'GDAL_DATA', 'HOME', 'PGHOST', 'PGPORT', 'PGUSER', 'PGDATABASE', 'LC_ALL')
 
 
 def digest(path: Path) -> str:
@@ -46,6 +46,38 @@ def contained(path: Path, root: Path) -> Path:
     require(resolved.is_relative_to(root.resolve()) and resolved != root.resolve(),
             f'Path must be inside {root}: {path}')
     return resolved
+
+
+def extension_libraries(directory: Path) -> list[Path]:
+    paths = [directory/name for name in
+             ('postgis-3.so', 'postgis_raster-3.so', 'postgis_topology-3.so')]
+    for path in paths:
+        require(path.is_file(), f'Required candidate extension library is missing: {path}')
+    return paths
+
+
+def require_owned_linkage(linked: str, prefix: Path) -> None:
+    require('not found' not in linked, 'Unresolved shared library')
+    for line in linked.splitlines():
+        fields = line.split()
+        if not fields:
+            continue
+        name = Path(fields[0]).name
+        if re.match(r'lib(?:geos(?:_c)?|proj|gdal|json-c|protobuf-c|xml2|sqlite3|z|png(?:16)?|jpeg|tiff|curl)[.-]', name):
+            # Absolute DT_NEEDED entries have no `name =>` prefix in ldd.
+            match = re.search(r'=>\s+(/\S+)|^\s*(/\S+)\s+\(', line)
+            require(match is not None, f'Cannot establish owned dependency path: {line}')
+            contained(Path(match[1] or match[2]), prefix)
+
+
+def require_postgis_versions(actual: dict, version: str) -> None:
+    # These native APIs return the version plus optional build revision, unlike
+    # postgis_lib_version(). Archive builds report revision 0; source identity
+    # is established independently by retained archive/commit and binary hashes.
+    require(actual['postgis'] == version, f'Wrong PostGIS runtime: {actual}')
+    for key in ('raster', 'scripts'):
+        require(re.fullmatch(re.escape(version) + r'(?: [0-9A-Za-z._+-]+)?', actual[key]) is not None,
+                f'Runtime/SQL PostGIS version mismatch: {actual}')
 
 
 def write_json(path: Path, value: dict) -> None:
@@ -101,13 +133,14 @@ class Probe:
         # UNIX sockaddr paths have a short platform limit: avoid long build roots.
         self.socket_dir = Path(tempfile.mkdtemp(prefix='ambisgis-pg-', dir='/tmp'))
         self.socket_dir.chmod(0o700)
-        self.env = {k: v for k, v in os.environ.items()
-                    if not k.startswith(('PG', 'PROJ_', 'GDAL_'))
-                    and k not in ('LD_PRELOAD', 'LD_LIBRARY_PATH')}
+        self.env = {'HOME': str(self.run_dir/'home')}
+        (self.run_dir/'home').mkdir(exist_ok=True)
+        (self.run_dir/'proj-user').mkdir(exist_ok=True)
         self.env.update(PATH=f'{self.prefix / "bin"}:' + os.defpath,
                         LD_LIBRARY_PATH=f'{self.prefix / "lib"}:{self.prefix / "lib64"}',
                         PROJ_DATA=str(self.prefix / 'share/proj'),
                         PROJ_LIB=str(self.prefix / 'share/proj'), PROJ_NETWORK='OFF',
+                        PROJ_USER_WRITABLE_DIRECTORY=str(self.run_dir/'proj-user'),
                         GDAL_DATA=str(self.prefix / 'share/gdal'), PGHOST=str(self.socket_dir),
                         PGPORT='5432', PGUSER='ambisgis_probe', PGDATABASE='postgres', LC_ALL='C')
         self.started = False
@@ -183,17 +216,10 @@ class Probe:
             resources[str(path)] = digest(path)
         self.report['resources_sha256'] = resources
         libraries = {}
-        for pattern in ('postgis-*.so', 'rtpostgis-*.so'):
-            for path in Path(paths['--pkglibdir']).glob(pattern):
-                libraries[str(path)] = digest(path)
-                linked = self.run(f'ldd-{path.name}', ['/usr/bin/ldd', str(path)])
-                require('not found' not in linked, f'Unresolved shared library: {path}')
-                for line in linked.splitlines():
-                    if re.match(r'\s*lib(?:geos(?:_c)?|proj|gdal|json-c|protobuf-c|xml2|sqlite3|z|png(?:16)?|jpeg|tiff)[.-]', line):
-                        match = re.search(r'=>\s+(/\S+)', line)
-                        require(match is not None, f'Cannot establish owned dependency path: {line}')
-                        contained(Path(match.group(1)), self.prefix)
-        require(len(libraries) >= 2, 'Geometry and raster shared libraries must be installed')
+        for path in extension_libraries(Path(paths['--pkglibdir'])):
+            libraries[str(path)] = digest(path)
+            linked = self.run(f'ldd-{path.name}', ['/usr/bin/ldd', str(path)])
+            require_owned_linkage(linked, self.prefix)
         self.report['extension_libraries_sha256'] = libraries
         if self.state:
             require(self.state['postgres_sha256'] == binaries['postgres']['sha256'],
@@ -253,9 +279,10 @@ class Probe:
               'gdal',postgis_gdal_version(), 'json_c',postgis_libjson_version(),
               'protobuf_c',postgis_libprotobuf_version(), 'full',postgis_full_version());\n"""
             actual = json.loads(self.sql('runtime-versions-' + database, query, database).strip())
-            require(actual['postgis'] == version and actual['raster'] == version and actual['scripts'] == version,
-                    f'Runtime/SQL PostGIS version mismatch: {actual}')
+            require_postgis_versions(actual, version)
             require('NETWORK_ENABLED=OFF' in actual['proj'], 'PROJ networking must be disabled')
+            require('USER_WRITABLE_DIRECTORY=' + str(self.run_dir/'proj-user') in actual['proj'],
+                    'PROJ writable resources escaped the disposable run')
             require('DATABASE_PATH=' + str(self.prefix / 'share/proj/proj.db') in actual['proj'],
                     'Runtime PROJ database is not the retained prefix resource')
             for component in ('geos', 'proj', 'gdal', 'json_c', 'protobuf_c'):

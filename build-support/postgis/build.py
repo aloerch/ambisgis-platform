@@ -21,7 +21,7 @@ import time
 
 HERE = Path(__file__).resolve().parent
 ORDER = ['zlib', 'sqlite', 'libxml2', 'cunit', 'googletest', 'json-c',
-         'jpeg', 'libpng', 'tiff', 'geos', 'proj', 'protobuf',
+         'jpeg', 'libpng', 'tiff', 'geos', 'curl', 'proj', 'protobuf',
          'protobuf-c', 'gdal', 'postgresql', 'postgis-upgrade', 'postgis']
 
 
@@ -84,6 +84,13 @@ def require_generated_files(paths):
     for path in paths:
         if not path.is_file() or path.stat().st_size == 0:
             raise RuntimeError(f'generator omitted required output: {path}')
+
+
+def require_gdal_raster_drivers(output):
+    observed = set(re.findall(r'^\s{2}(.+?)\s+-', output, re.M))
+    required = {'VRT', 'GTiff', 'AAIGrid', 'DTED', 'PNG', 'JPEG', 'MEM', 'EHdr'}
+    if missing := required - observed:
+        raise RuntimeError(f'GDAL omitted required raster drivers: {sorted(missing)}')
 
 
 class Builder:
@@ -250,10 +257,32 @@ class Builder:
         elif name == 'geos':
             self.cmake(source, build, ['-DBUILD_SHARED_LIBS=ON', '-DBUILD_TESTING=ON',
                                       '-DBUILD_GEOSOP=ON'])
+        elif name == 'curl':
+            # PROJ's retained CLI tests require the curl-enabled API variant.
+            # This transport is experimental HTTP-only; PROJ networking stays
+            # OFF and offline_exec denies network sockets throughout this run.
+            flags = ['--enable-debug', '--enable-http', '--disable-docs', '--disable-manual',
+                     '--without-ssl', '--without-libpsl', '--without-libidn2',
+                     '--without-libgsasl', '--without-librtmp', '--without-libssh2',
+                     '--without-libssh', '--without-wolfssh', '--without-nghttp2',
+                     '--without-nghttp3', '--without-ngtcp2', '--without-quiche',
+                     '--without-msh3', '--without-libuv', '--without-gssapi',
+                     '--without-zstd', '--without-brotli', '--disable-ares',
+                     f'--with-zlib={p}']
+            flags += ['--disable-' + protocol for protocol in
+                      ('ftp', 'file', 'ipfs', 'ldap', 'ldaps', 'rtsp', 'dict', 'telnet',
+                       'tftp', 'pop3', 'imap', 'smb', 'smtp', 'gopher', 'mqtt', 'websockets')]
+            self.autotools(source, build, flags, test_target=None)
+            self.command(['make', '-C', build/'lib', 'libcurlu.la', f'-j{self.jobs}'], self.root)
+            units = ['unit1300', 'unit1302', 'unit1303', 'unit1305', 'unit1309']
+            self.command(['make', '-C', build/'tests/unit', f'-j{self.jobs}', *units], self.root)
+            for unit in units:
+                self.command([build/'tests/unit'/unit, 'http://unused.invalid'], self.root)
+            self.command([p/'bin/curl', '--version'], self.root)
         elif name == 'proj':
             self.env['PYTHONPATH'] = str(self.source('pyyaml')/'lib')
             self.cmake(source, build, ['-DBUILD_SHARED_LIBS=ON', '-DBUILD_TESTING=ON',
-                                      '-DENABLE_CURL=OFF', '-DBUILD_PROJSYNC=OFF', '-DENABLE_TIFF=ON',
+                                      '-DENABLE_CURL=ON', '-DBUILD_PROJSYNC=OFF', '-DENABLE_TIFF=ON',
                                       '-DUSE_EXTERNAL_GTEST=ON', '-DTESTING_USE_NETWORK=OFF',
                                       '-DRUN_NETWORK_DEPENDENT_TESTS=OFF'])
         elif name == 'protobuf':
@@ -273,11 +302,16 @@ class Builder:
                                       '-DGDAL_BUILD_OPTIONAL_DRIVERS=OFF',
                                       '-DOGR_BUILD_OPTIONAL_DRIVERS=OFF',
                                       '-DGDAL_ENABLE_DRIVER_GTIFF=ON', '-DGDAL_ENABLE_DRIVER_PNG=ON',
-                                      '-DGDAL_ENABLE_DRIVER_JPEG=ON', '-DGDAL_ENABLE_DRIVER_EHDR=ON',
+                                      '-DGDAL_ENABLE_DRIVER_JPEG=ON', '-DGDAL_ENABLE_DRIVER_RAW=ON',
                                       '-DGDAL_ENABLE_DRIVER_AAIGRID=ON', '-DGDAL_ENABLE_DRIVER_DTED=ON',
                                       '-DOGR_ENABLE_DRIVER_SHAPE=ON',
                                       '-DBUILD_PYTHON_BINDINGS=OFF', '-DBUILD_JAVA_BINDINGS=OFF',
                                       '-DBUILD_CSHARP_BINDINGS=OFF', '-DGDAL_USE_CURL=OFF'])
+            self.command([p/'bin/gdalinfo', '--formats'], self.root)
+            require_gdal_raster_drivers(self.last_log.read_text())
+            self.command([p/'bin/ogrinfo', '--formats'], self.root)
+            if not re.search(r'^\s+ESRI Shapefile\s+-', self.last_log.read_text(), re.M):
+                raise RuntimeError('GDAL omitted required OGR Shapefile driver')
         elif name == 'postgresql':
             # pg_regress otherwise places sockets below long TMPDIR paths,
             # exceeding Linux's 107-byte UNIX sockaddr limit.
@@ -286,6 +320,10 @@ class Builder:
                 try:
                     self.autotools(source, build, ['--without-readline', '--with-libxml',
                                                   '--with-zlib'], test_target='check')
+                    # Required by the inherited installed TIGER extension suite.
+                    for target in ('all', 'check', 'install'):
+                        self.command(['make', '-C', build/'contrib/fuzzystrmatch',
+                                      f'-j{self.jobs}', target], build)
                 finally:
                     self.env.pop('PG_REGRESS_SOCK_DIR', None)
             self.command([p / 'bin/pg_config'], self.root)
