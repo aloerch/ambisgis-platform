@@ -22,10 +22,34 @@ import sys
 import tempfile
 import time
 
+import validate_database as validation_driver
 from validate_database import Probe, TARGET_POSTGIS, contained, digest, require, write_json
 
 CANDIDATES = {'postgis': '9816f82458db774e62906cfb2c4f01f8b262c862',
               'postgresql': '2ff1375b5dd8bf09d8cb0e795974528180fd75ca'}
+
+
+def retain_driver_snapshots(probe: Probe) -> None:
+    """Bind this run to its two separate driver identities and freeze imports."""
+    validation_snapshot = probe.log_dir / 'validate_database.py'
+    if not validation_snapshot.exists():
+        with validation_snapshot.open('xb') as stream:
+            stream.write(Path(validation_driver.__file__).read_bytes())
+    validation_sha256 = digest(validation_snapshot)
+    recorded_validation_sha256 = probe.report.get('recipe_sha256')
+    require(recorded_validation_sha256 in (None, validation_sha256),
+            'Imported validation driver snapshot differs from its recorded identity')
+    recipe_snapshot = probe.log_dir / 'regress_database.py'
+    # Never replace an existing snapshot, even if the working checkout changes.
+    with recipe_snapshot.open('xb') as stream:
+        stream.write(Path(__file__).read_bytes())
+    recipe_snapshot.chmod(0o444)
+    validation_snapshot.chmod(0o444)
+    probe.report.update(recipe_sha256=digest(recipe_snapshot),
+                        recipe_snapshot=str(recipe_snapshot),
+                        validation_recipe_sha256=validation_sha256,
+                        validation_recipe_snapshot=str(validation_snapshot))
+    probe.save()
 
 
 def parse_results(output: str) -> dict:
@@ -192,10 +216,11 @@ def main(argv=None) -> int:
     probe = None
     try:
         probe = Probe(args)
+        probe.report['kind'] = 'ambisgis-postgis-regression-probe-v1'
+        retain_driver_snapshots(probe)
         print(f'Regression report: {probe.log_dir / "report.json"}', flush=True)
         build = Path(args.build_dir).resolve()
         probe.report['build_inputs'] = verify_build(build, probe.prefix)
-        probe.report['kind'] = 'ambisgis-postgis-regression-probe-v1'
         probe.report['limits'].append('Upstream suite self-upgrade cases do not establish an earlier-version upgrade.')
         probe.preflight()
         probe.start()
@@ -204,8 +229,8 @@ def main(argv=None) -> int:
         perl = shutil.which('perl', path=os.defpath)
         require(perl is not None, 'Host Perl is required by the retained source regression runner')
         launcher = probe.run_dir / 'record-perl'
-        launcher.write_text('#!' + sys.executable + '\nimport sys\nsys.path.insert(0, ' +
-                            repr(str(Path(__file__).resolve().parent)) + ')\n' +
+        launcher.write_text('#!' + sys.executable + '\nimport sys\nsys.dont_write_bytecode = True\nsys.path.insert(0, ' +
+                            repr(str(probe.log_dir)) + ')\n' +
                             'from regress_database import record_perl\nsys.exit(record_perl(sys.argv[1:]))\n')
         launcher.chmod(0o700)
         probe.report['perl'] = dict(path=perl, sha256=digest(Path(perl)))
