@@ -5,11 +5,13 @@
   "tracking": {
     "FND-01": {
       "issue_url": "https://github.com/aloerch/ambisgis-platform/issues/2",
-      "delivery_context": "In review; prerequisite acceptance remains pending"
+      "delivery_context": "Merged after owner-approved PR #1",
+      "merge_commit": "2215a91511a53601464eef46d383cd3557cfa3a8",
+      "pr_url": "https://github.com/aloerch/ambisgis-platform/pull/1"
     },
     "FND-02": {
       "issue_url": "https://github.com/aloerch/ambisgis-platform/issues/3",
-      "scope": "Preparation only; no dependency or acceptance transition"
+      "scope": "In progress after verified FND-01 merge; baseline, license and build acceptance remain pending"
     },
     "FND-07": {
       "issue_url": "https://github.com/aloerch/ambisgis-platform/issues/6",
@@ -1216,7 +1218,7 @@
               },
               {
                 "line_number": 13,
-                "text": "* __Considerations for the public:__ By using one of our public licenses, a licensor grants the public permission to use the licensed material under specified terms and conditions. If the licensor’s permission is not nec"
+                "text": "* __Considerations for the public:__ By using one of our public licenses, a licensor grants the public permission to use the licensed material under specified terms and conditions. If the licensor\u2019s permission is not nec"
               },
               {
                 "line_number": 21,
@@ -1244,11 +1246,11 @@
               },
               {
                 "line_number": 5,
-                "text": "   “Registry” means the EPSG Geodetic Parameter Registry;“EPSG Dataset” means EPSG Geodetic Parameter Dataset;“IOGP” means the International Association of Oil and Gas Producers, incorporated in England as a company limi"
+                "text": "   \u201cRegistry\u201d means the EPSG Geodetic Parameter Registry;\u201cEPSG Dataset\u201d means EPSG Geodetic Parameter Dataset;\u201cIOGP\u201d means the International Association of Oil and Gas Producers, incorporated in England as a company limi"
               },
               {
                 "line_number": 7,
-                "text": "   “the data” means the geodetic parameter data and associated metadata, contained in the EPSG Dataset; it also refers to any subset of data from the EPSG Dataset."
+                "text": "   \u201cthe data\u201d means the geodetic parameter data and associated metadata, contained in the EPSG Dataset; it also refers to any subset of data from the EPSG Dataset."
               },
               {
                 "line_number": 9,
@@ -1975,7 +1977,7 @@
               },
               {
                 "line_number": 13,
-                "text": "* __Considerations for the public:__ By using one of our public licenses, a licensor grants the public permission to use the licensed material under specified terms and conditions. If the licensor’s permission is not nec"
+                "text": "* __Considerations for the public:__ By using one of our public licenses, a licensor grants the public permission to use the licensed material under specified terms and conditions. If the licensor\u2019s permission is not nec"
               },
               {
                 "line_number": 21,
@@ -2003,11 +2005,11 @@
               },
               {
                 "line_number": 5,
-                "text": "   “Registry” means the EPSG Geodetic Parameter Registry;“EPSG Dataset” means EPSG Geodetic Parameter Dataset;“IOGP” means the International Association of Oil and Gas Producers, incorporated in England as a company limi"
+                "text": "   \u201cRegistry\u201d means the EPSG Geodetic Parameter Registry;\u201cEPSG Dataset\u201d means EPSG Geodetic Parameter Dataset;\u201cIOGP\u201d means the International Association of Oil and Gas Producers, incorporated in England as a company limi"
               },
               {
                 "line_number": 7,
-                "text": "   “the data” means the geodetic parameter data and associated metadata, contained in the EPSG Dataset; it also refers to any subset of data from the EPSG Dataset."
+                "text": "   \u201cthe data\u201d means the geodetic parameter data and associated metadata, contained in the EPSG Dataset; it also refers to any subset of data from the EPSG Dataset."
               },
               {
                 "line_number": 9,
@@ -2350,7 +2352,7 @@
               },
               {
                 "line_number": 14,
-                "text": "“Licensor” shall mean the copyright owner or entity authorized by the copyright"
+                "text": "\u201cLicensor\u201d shall mean the copyright owner or entity authorized by the copyright"
               },
               {
                 "line_number": 36,
@@ -2573,7 +2575,7 @@
             "textual_indicators": [
               {
                 "line_number": 2,
-                "text": "Copyright (C) 2014–present Open Source Geospatial Foundation"
+                "text": "Copyright (C) 2014\u2013present Open Source Geospatial Foundation"
               },
               {
                 "line_number": 3,

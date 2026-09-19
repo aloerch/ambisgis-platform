@@ -2,7 +2,7 @@
 
 Recorded 19 September 2026. Eleven authorized public source forks have complete local Git histories and verified retained Git bundles. This evidence supports review of the initial source candidates. It does not approve product baselines, licenses, a compatible build tuple, or full source/dependency custody.
 
-[FND-01](https://github.com/aloerch/ambisgis-platform/issues/2) remains **In review**. The work here is preparation for [FND-02](https://github.com/aloerch/ambisgis-platform/issues/3); it does not satisfy that dependency or advance [FND-07](https://github.com/aloerch/ambisgis-platform/issues/6). FND-02 requires a human License/Brand review and real build/smoke evidence.
+[FND-01](https://github.com/aloerch/ambisgis-platform/issues/2) is **Merged** after owner-approved [PR #1](https://github.com/aloerch/ambisgis-platform/pull/1), commit `2215a91511a53601464eef46d383cd3557cfa3a8`. [FND-02](https://github.com/aloerch/ambisgis-platform/issues/3) is now in progress; this evidence does not complete it or advance [FND-07](https://github.com/aloerch/ambisgis-platform/issues/6). FND-02 requires a human License/Brand review and real build/smoke evidence.
 
 The [machine-readable record](../verification/source-acquisition.json) contains owned repository IDs, donor parents, exact commits, verification results, workflow paths and blob IDs, and 46 license/notice file records with original filenames, blob IDs, SHA256 hashes and owned GitHub URLs. All values come from observed API or local Git/archive evidence. No unresolved release-lock value was fabricated or filled by assumption.
 
@@ -63,7 +63,7 @@ The 127 inherited GitHub workflow paths were inventoried and preserved at exact 
 
 ## Next review decisions and acceptance work
 
-1. Complete FND-01 review and preserve its live dependency evidence before claiming FND-02 as ready. Choose exact candidate component commits with a documented rationale; verify PostgreSQL/PostGIS mirror commits against canonical provenance and check required assets. Default heads alone do not make this decision.
+1. Preserve the verified FND-01 merge as dependency evidence. Choose exact candidate component commits with a documented rationale; verify PostgreSQL/PostGIS mirror commits against canonical provenance and check required assets. Default heads alone do not make this decision.
 2. Resolve or explicitly block selected-file license scope, including GeoNode and GeoTools findings; decide included extensions, fonts, datasets, drivers and other assets. Preserve all original notices, record corresponding-source obligations, and obtain the required human License/Brand review. AmbisGIS remains a provisional name.
 3. Inspect owned GeoServer/GeoTools/GeoWebCache extensions and GeoNode/MapStore/client relationships, then propose an immutable source/image/runtime tuple. Enumerate every remaining null as a blocker. Build and smoke-test the selected combination before claiming `T-LOCK-01`.
 4. Audit inherited workflows, package destinations, downloads and update checks. Prepare reviewed setup changes before creating `ambisgis/main` from approved baselines or making it the product default. Preserve donor reference history and prohibit automatic donor synchronization.
