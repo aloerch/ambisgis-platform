@@ -1,5 +1,10 @@
 # Source acquisition evidence — preparation for FND-02
 
+Later engineering evidence: the [owned PostgreSQL/PostGIS slice](postgis-slice-evidence.md)
+now records the retained dependencies, tested experimental profile, real earlier-version
+upgrade and clean network-denied rebuild. Earlier probe/prerequisite statements below
+are historical checkpoints. The full tuple and acceptance gates remain incomplete.
+
 Recorded 19 September 2026. Eleven authorized public source forks have complete local Git histories and verified retained Git bundles. This evidence supports review of the initial source candidates. It does not approve product baselines, licenses, a compatible build tuple, or full source/dependency custody.
 
 [FND-01](https://github.com/aloerch/ambisgis-platform/issues/2) is **Merged** after owner-approved [PR #1](https://github.com/aloerch/ambisgis-platform/pull/1), commit `2215a91511a53601464eef46d383cd3557cfa3a8`. [FND-02](https://github.com/aloerch/ambisgis-platform/issues/3) is now in progress; this evidence does not complete it or advance [FND-07](https://github.com/aloerch/ambisgis-platform/issues/6). FND-02 requires a human License/Brand review and real build/smoke evidence.

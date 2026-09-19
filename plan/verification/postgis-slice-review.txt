@@ -1,0 +1,24 @@
+FND-02 database candidate slice review — 19 September 2026
+Implementation commit: 9c8b32bcce74870473d947d2ed6810b6c5041e2f
+
+Independent read-only review found and resolved:
+- GDAL EHDR was an unused option; RAW enables the missing EHdr/ENVI tests.
+- curl unit 1307 is empty with FTP disabled; five active units include 1303.
+- Native version revision suffixes and actual raster/topology module names are checked.
+- Regression and validation drivers have separate immutable snapshots; Perl uses them.
+- Collector includes full regression/invocation evidence and relevant environment fields.
+- Linkage ownership checks handle both arrow and absolute DT_NEEDED ldd forms.
+- Actual target CUnit count is 413 tests / 51,347 assertions; earlier fixture is 412 / 51,344.
+
+Final evidence review independently recomputed 1,346 file hashes with no mismatch;
+190 command-log, 752 nested-artifact, 20 retained-input and both regression driver
+snapshot match markers passed. 2,391 metadata hash-stability markers passed.
+Real earlier-version update commands, changed extension binaries, unchanged PG
+binary, preserved geometry/raster/topology witnesses and stopped clusters verified.
+Both native SQL targets passed 672 cases, no failures/skips. Seven final offline
+receipts completed with exit 0, IPv4/IPv6 EPERM and UNIX socketpair success.
+
+No remaining material code/evidence mismatch was found. Dependency omissions,
+exploratory failures and unretained host/toolchain scope remain explicitly recorded.
+Review is engineering evidence, not human license, security, baseline, release,
+FND-02 tuple or FND-07/FND-08 approval. PR #51 is not merged by this review.
