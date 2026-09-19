@@ -3,6 +3,8 @@
 
 Default operation reads custody only. --acquire-sources explicitly adds exact
 base-GAV sources and POMs through maven_proxy, from each binary's recorded origin.
+The nine narrowly approved schema resource capsules are independently revalidated
+and serve as their own XML/XSD source candidates; their POMs are still retained.
 Neither a sources classifier nor a declared license proves binary correspondence,
 complete build inputs, license compatibility, or permission to redistribute.
 Reports and their sibling <report-stem>.notices directory must be fresh.
@@ -85,7 +87,24 @@ def walk_files(root: Path, errors: list[dict]) -> list[Path]:
     return sorted(result)
 
 
+def schema_api(path: str):
+    """Require the reviewed validator only when schema jar/sidecar inputs occur."""
+    if path.startswith("org/geotools/schemas/") and ".jar" in path.rsplit("/", 1)[-1]:
+        try:
+            import schema_resources
+        except ImportError as exc:
+            raise InventoryError("schema resource validator is required for schema jar custody") from exc
+        return schema_resources
+    return None
+
+
 def classification(path: str) -> str:
+    schema = schema_api(path)
+    if schema is not None:
+        if schema.schema_coordinate(path) is not None:
+            return "source-resource-archive"
+        if schema.schema_checksum(path) is not None:
+            return "source-resource-checksum"
     name = path.rsplit("/", 1)[-1]
     while any(name.endswith(x) for x in (".sha1", ".sha256", ".sha512", ".md5", ".asc")):
         name = name.rsplit(".", 1)[0]
@@ -165,6 +184,8 @@ def verify_custody(custody: Path | str) -> dict:
             record = json.loads(read_file(path), object_pairs_hook=unique_object)
             if not isinstance(record, dict):
                 raise InventoryError("record must be an object")
+            if any(key in record for key in ("source_resource_verified", "source_resource_checksum_verified")):
+                raise InventoryError("record must not supply derived resource verification flags")
             repository = record["repository"]
             maven_path = record["maven_path"]
             validate_maven_path(maven_path)
@@ -185,10 +206,45 @@ def verify_custody(custody: Path | str) -> dict:
                 raise InventoryError("invalid SHA256 field")
             if digest not in blobs or blobs[digest] != record["size"]:
                 raise InventoryError("record has no verified blob of the recorded size")
-            records.append({**record, "record_path": str(path.relative_to(root)),
+            extra = {}
+            if record["classification"] == "source-resource-archive":
+                observed = schema_api(maven_path).validate_schema_archive(
+                    maven_path, read_file(root / "blobs" / "sha256" / digest))
+                if (observed != record.get("source_resource_validation")
+                        or observed["artifact_sha256"] != digest
+                        or observed["artifact_size"] != record["size"]):
+                    raise InventoryError("schema resource validation differs from retained manifest")
+                extra["source_resource_verified"] = True
+            records.append({**record, **extra, "record_path": str(path.relative_to(root)),
                             "blob_path": "blobs/sha256/" + digest})
         except (OSError, InventoryError, ValueError, KeyError, TypeError) as exc:
             errors.append({"path": str(path), "error": str(exc)})
+    indexed = {(r["repository"], r["maven_path"]): r for r in records}
+    checked_records = []
+    for record in records:
+        try:
+            if record["classification"] == "source-resource-checksum":
+                source_path, algorithm = schema_api(record["maven_path"]).schema_checksum(record["maven_path"])
+                source = indexed.get((record["repository"], source_path))
+                if source is None or not source.get("source_resource_verified"):
+                    raise InventoryError("schema checksum lacks validated same-origin source archive")
+                source_bytes = read_file(root / source["blob_path"])
+                if hashlib.sha256(source_bytes).hexdigest() != source["sha256"]:
+                    raise InventoryError("schema archive changed during checksum verification")
+                actual = hashlib.new(algorithm, source_bytes).hexdigest()
+                text = read_file(root / record["blob_path"]).decode("ascii").strip().split()
+                if not text or text[0].lower() != actual:
+                    raise InventoryError("schema checksum bytes disagree with source archive")
+                observed = {"schema_version": 1, "source_archive_path": source_path,
+                            "source_archive_sha256": source["sha256"],
+                            "checksum_algorithm": algorithm, "checksum": actual}
+                if observed != record.get("source_resource_validation"):
+                    raise InventoryError("schema checksum validation differs from retained manifest")
+                record["source_resource_checksum_verified"] = True
+            checked_records.append(record)
+        except (OSError, InventoryError, ValueError, KeyError, TypeError) as exc:
+            errors.append({"path": str(root / record["record_path"]), "error": str(exc)})
+    records = checked_records
     referenced = {r["sha256"] for r in records}
     return {"custody_root": str(root), "artifacts": records,
             "verification": {"valid": not errors, "record_count": len(record_files),
@@ -230,7 +286,8 @@ def acquire_sources(custody: Path | str, records: list[dict], fetch: Callable | 
             continue  # The final coverage report records unrecognizable binary paths.
         if coordinate is None:
             continue
-        for key in ("pom_path", "sources_path"):
+        keys = ("pom_path",) if record.get("source_resource_verified") else ("pom_path", "sources_path")
+        for key in keys:
             path = coordinate[key]
             identity = (record["repository"], path)
             if identity in attempted:
@@ -303,15 +360,17 @@ def make_report(custody: Path | str, acquisition: list[dict] | None = None) -> t
             "Base sources may omit tests or native code for classified binaries.",
             "POM licenses are declarations only; parent inheritance and compatibility remain unreviewed.",
             "Notice discovery is a filename heuristic; absent notices do not imply absent obligations."],
-        acquisition=acquisition or [], source_coverage=[], missing_sources=[], pom_licenses=[], notices=[])
+        acquisition=acquisition or [], source_coverage=[], missing_sources=[], pom_licenses=[], notices=[],
+        license_notice_gaps=[])
     root = Path(report["custody_root"])
     records = {(r["repository"], r["maven_path"]): r for r in report["artifacts"]}
-    contents, zip_errors, pom_errors = {}, {}, {}
+    contents, zip_errors, pom_errors, parsed_poms = {}, {}, {}, {}
     for record in report["artifacts"]:
         path = record["maven_path"]
         identity = (record["repository"], path)
         if path.endswith(".pom"):
             parsed = pom_licenses(read_file(root / record["blob_path"]))
+            parsed_poms[identity] = parsed
             report["pom_licenses"].append({"repository": identity[0], "maven_path": path,
                 "sha256": record["sha256"], **parsed})
             if parsed.get("error"):
@@ -336,7 +395,26 @@ def make_report(custody: Path | str, acquisition: list[dict] | None = None) -> t
                "binary_sha256": record["sha256"], "binary_size": record["size"],
                "binary_original_url": record["original_url"], "binary_final_url": record["final_url"],
                "coverage_scope": "base-GAV source candidate; classifier contents and correspondence unverified"}
-        for key, label, parse_errors in (("sources_path", "sources", zip_errors), ("pom_path", "pom", pom_errors)):
+        resource_source = record.get("source_resource_verified", False)
+        if resource_source:
+            row["sources_path"] = path
+            row["coverage_scope"] = "validated XML/XSD source-data capsule; owned offline repackaging remains unverified"
+            row["source_resource_validation"] = record["source_resource_validation"]
+            for resource in record["source_resource_validation"].get("missing_resources", []):
+                report["missing_sources"].append({"repository": repository, "binary_path": path,
+                    "required_path": resource, "kind": "schema-resource",
+                    "reason": "validated capsule omits a resource declared by the owned packaging recipe"})
+            row["sources"] = {"status": "retained-source-resource-candidate", "maven_path": path,
+                              **{k: record[k] for k in ("sha256", "size", "original_url", "final_url", "blob_path")}}
+            if not record["source_resource_validation"].get("notices"):
+                report["license_notice_gaps"].append({"repository": repository, "maven_path": path,
+                    "reason": "no separately named notice/license files; XML-embedded notices require file review"})
+            if not parsed_poms.get((repository, coordinate["pom_path"]), {}).get("declarations"):
+                report["license_notice_gaps"].append({"repository": repository, "maven_path": path,
+                    "reason": "no POM license declaration retained; schema terms remain unreviewed"})
+        requirements = [("pom_path", "pom", pom_errors)] if resource_source else [
+            ("sources_path", "sources", zip_errors), ("pom_path", "pom", pom_errors)]
+        for key, label, parse_errors in requirements:
             identity = (repository, coordinate[key])
             retained = records.get(identity)
             valid = retained is not None and identity not in parse_errors

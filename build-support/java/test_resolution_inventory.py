@@ -240,6 +240,100 @@ class InventoryTests(unittest.TestCase):
             code = inventory.main(["--custody", str(self.custody), "--output", str(self.root / "report.json"), "--acquire-sources"])
         self.assertEqual(code, 1)
 
+    def schema_capsule(self):
+        import schema_resources
+        path = "org/geotools/schemas/xlink-1.0/1.0.0-3/xlink-1.0-1.0.0-3.jar"
+        data = jar({"net/opengis/schemas/xlink/1.0.0/xlinks.xsd":
+                    b'<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>'})
+        validation = schema_resources.validate_schema_archive(path, data)
+        artifact = self.retain(path, data, "osgeo", source_resource_validation=validation)
+        self.retain(path[:-4] + ".pom", b'<project><groupId>org.geotools.schemas</groupId><artifactId>xlink-1.0</artifactId><version>1.0.0-3</version></project>', "osgeo")
+        return path, data, artifact
+
+    def test_validated_schema_capsule_is_own_source_with_explicit_notice_gaps(self):
+        path, data, artifact = self.schema_capsule()
+        report, _ = inventory.make_report(self.custody)
+        self.assertTrue(report["verification"]["valid"])
+        self.assertTrue(report["source_coverage_complete"])
+        self.assertEqual(report["source_coverage"][0]["sources_path"], path)
+        self.assertEqual(report["source_coverage"][0]["sources"]["status"], "retained-source-resource-candidate")
+        self.assertEqual(len(report["license_notice_gaps"]), 2)
+        self.assertFalse(report["build_ready"])
+        self.assertFalse(report["source_binary_correspondence_established"])
+        calls = []
+        def fetch(requested, repository):
+            calls.append((requested, repository))
+            return artifact
+        inventory.acquire_sources(self.custody, report["artifacts"], fetch)
+        self.assertEqual(calls, [(path[:-4] + ".pom", "osgeo")])
+
+    def test_partial_schema_capsule_cannot_count_as_complete_sources(self):
+        import schema_resources
+        path = "org/geotools/schemas/cgiutilities-1.0/1.0.0-4/cgiutilities-1.0-1.0.0-4.jar"
+        data = jar({"org/geosciml/www/cgiutilities/1.0/xsd/cgiUtilities.xsd":
+                    b'<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>'})
+        with self.assertRaises(ValueError):
+            schema_resources.validate_schema_archive(path, data)
+        self.retain(path, data, "osgeo", source_resource_validation={})
+        self.retain(path[:-4] + ".pom", b"<project/>", "osgeo")
+        report, _ = inventory.make_report(self.custody)
+        self.assertFalse(report["verification"]["valid"])
+        self.assertFalse(report["source_coverage_complete"])
+        self.assertEqual(report["source_coverage"], [])
+
+    def test_schema_validation_manifest_must_match_actual_capsule(self):
+        path, data, artifact = self.schema_capsule()
+        record = json.loads(artifact.record_file.read_text())
+        record["source_resource_validation"]["resource_count"] += 1
+        artifact.record_file.write_text(json.dumps(record))
+        report, _ = inventory.make_report(self.custody)
+        self.assertFalse(report["verification"]["valid"])
+        self.assertEqual(report["source_coverage"], [])
+        self.assertIn("validation differs", report["verification"]["errors"][0]["error"])
+
+    def test_malformed_or_executable_schema_capsules_never_count_as_sources(self):
+        path, original, artifact = self.schema_capsule()
+        valid_manifest = artifact.record["source_resource_validation"]
+        for data in (b"not an archive", jar({"net/opengis/schemas/xlink/1.0.0/xlinks.xsd":
+                b'<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"/>',
+                "Hidden.class": b"unexpected executable"})):
+            self.retain(path, data, "osgeo", source_resource_validation=valid_manifest)
+            report, _ = inventory.make_report(self.custody)
+            self.assertFalse(report["verification"]["valid"])
+            self.assertFalse(report["source_coverage_complete"])
+            self.assertEqual(report["source_coverage"], [])
+
+    def test_schema_checksum_requires_same_origin_archive_and_validated_bytes(self):
+        path, data, artifact = self.schema_capsule()
+        checksum = hashlib.sha1(data).hexdigest()
+        details = {"schema_version": 1, "source_archive_path": path,
+                   "source_archive_sha256": hashlib.sha256(data).hexdigest(),
+                   "checksum_algorithm": "sha1", "checksum": checksum}
+        sidecar = self.retain(path + ".sha1", checksum.encode(), "osgeo", source_resource_validation=details)
+        self.assertTrue(inventory.verify_custody(self.custody)["verification"]["valid"])
+        self.retain(path + ".sha1", b"0" * 40, "osgeo", source_resource_validation=details)
+        self.assertFalse(inventory.verify_custody(self.custody)["verification"]["valid"])
+        sidecar.record_file.unlink()
+        self.retain(path + ".sha1", checksum.encode(), "central", source_resource_validation=details)
+        report = inventory.verify_custody(self.custody)
+        self.assertFalse(report["verification"]["valid"])
+        self.assertIn("same-origin", report["verification"]["errors"][0]["error"])
+
+    def test_forged_resource_verified_flag_cannot_skip_source_acquisition(self):
+        self.retain(self.base + ".jar", jar(), source_resource_verified=True,
+                    source_resource_validation={"notices": []})
+        report, _ = inventory.make_report(self.custody)
+        self.assertFalse(report["verification"]["valid"])
+        self.assertEqual(report["source_coverage"], [])
+        self.assertIn("derived", report["verification"]["errors"][0]["error"])
+
+    def test_schema_capsule_cannot_skip_recorded_content_validation(self):
+        path, data, artifact = self.schema_capsule()
+        record = json.loads(artifact.record_file.read_text())
+        del record["source_resource_validation"]
+        artifact.record_file.write_text(json.dumps(record))
+        self.assertFalse(inventory.verify_custody(self.custody)["verification"]["valid"])
+
     def test_unknown_jar_coordinate_is_a_gap(self):
         self.retain("org/example/tool/1.2/different.jar", jar())
         report, _ = inventory.make_report(self.custody)
