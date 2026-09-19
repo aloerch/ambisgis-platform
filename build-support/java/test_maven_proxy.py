@@ -116,6 +116,23 @@ class ProxyTests(unittest.TestCase):
                 proxy.fetch(f"org/example/sample/{version}/sample-{version}.pom")
         self.assertEqual(self.calls, [])
 
+    def test_release_and_snapshot_group_or_artifact_names_are_not_version_aliases(self):
+        proxy = self.proxy()
+        for path in (
+                "org/apache/maven/release/maven-release/3.0.1/maven-release-3.0.1.pom",
+                "org/apache/maven/release/maven-metadata.xml",
+                "org/apache/maven/release/maven-release/maven-metadata.xml",
+                "org/example/snapshot/sample/1.2/sample-1.2.jar",
+                "org/example/sample-snapshot/1.2/sample-snapshot-1.2.jar",
+                "org/example/RELEASE/sample/1.2/sample-1.2.jar"):
+            with self.subTest(path=path):
+                self.assertEqual(proxy.fetch(path).record["maven_path"], path)
+        for version in ("RELEASE", "LATEST", "1.0-SNAPSHOT"):
+            for filename in ("sample-" + version + ".jar", "maven-metadata.xml",
+                             "maven-metadata.xml.sha1"):
+                with self.subTest(version=version, filename=filename), self.assertRaises(AcquisitionError):
+                    proxy.fetch(f"org/example/sample/{version}/{filename}")
+
     def test_owned_binaries_and_binary_checksum_requests_are_rejected(self):
         proxy = self.proxy()
         for prefix in ("org/geotools", "org/geotools/x", "org/geowebcache", "org/geoserver"):

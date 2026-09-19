@@ -205,7 +205,13 @@ class MavenCustodyProxy:
         parts = path.split("/")
         if any(part in {"", ".", ".."} or not _SEGMENT.fullmatch(part) for part in parts):
             raise AcquisitionError("unsafe Maven artifact path", 403)
-        if any("SNAPSHOT" in part.upper() or part.upper() in {"LATEST", "RELEASE"} for part in parts):
+        # Maven coordinates put the version immediately before the filename.
+        # Group/artifact names may legitimately contain release or snapshot words
+        # (for example org/apache/maven/release/maven-release/3.0.1). Discovery
+        # metadata can also live at group/artifact level: lowercase "release" is
+        # an ordinary name, while Maven's moving aliases are uppercase literals.
+        version = parts[-2] if len(parts) >= 4 else ""
+        if "SNAPSHOT" in version.upper() or version in {"LATEST", "RELEASE"}:
             raise AcquisitionError("moving snapshot/latest/release coordinates are forbidden", 403)
         metadata = self._classification(path) != "artifact"
         if not metadata:
