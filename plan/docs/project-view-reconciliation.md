@@ -9,7 +9,7 @@ This reconciliation uses the owner's [initial 2026-09-19 verification](https://g
 - Repository: `aloerch/ambisgis-platform`, database ID `1376927351`; authenticated login `aloerch`.
 - Project: [AmbisGIS — Product Development #2](https://github.com/users/aloerch/projects/2), node ID `PVT_kwHOAOk9es4Bj_k-`, public and open.
 - Worktree: `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov02`; branch `gov-02/saved-view-reconciliation`; separate review [PR #52](https://github.com/aloerch/ambisgis-platform/pull/52).
-- Base: `a3c2e2e696ea11bdc10c2ad202a240fbd0137f45`, the verified merge of [PR #51](https://github.com/aloerch/ambisgis-platform/pull/51) into `ambisgis/main`.
+- Initial base: `a3c2e2e696ea11bdc10c2ad202a240fbd0137f45`, the verified merge of [PR #51](https://github.com/aloerch/ambisgis-platform/pull/51). The review branch subsequently integrates verified `ambisgis/main` commit `12bd2c5c88ab8573add1b483f1d53b4024649b39`, preserving the current Jupyter/FND-02 records; this local branch integration does not merge PR #52 into main.
 - Project operations: read-only queries. Existing item values, dates, comments and saved settings were preserved. No importer rerun, workflow change, merge or release occurred in this reconciliation.
 
 ## Accepted observations and readback

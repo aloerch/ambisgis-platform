@@ -1,0 +1,25 @@
+test_changed_retained_wheel_fails_before_build (test_build.RetainedBoundaryTests.test_changed_retained_wheel_fails_before_build) ... ok
+test_copy_detects_input_changed_after_verify (test_build.RetainedBoundaryTests.test_copy_detects_input_changed_after_verify) ... ok
+test_missing_lock_cannot_be_consumed (test_build.RetainedBoundaryTests.test_missing_lock_cannot_be_consumed) ... ok
+test_path_traversal_and_duplicates_fail (test_build.RetainedBoundaryTests.test_path_traversal_and_duplicates_fail) ... ok
+test_root_must_match_verified_digest (test_build.RetainedBoundaryTests.test_root_must_match_verified_digest) ... ok
+test_symlink_cannot_stand_in_for_input (test_build.RetainedBoundaryTests.test_symlink_cannot_stand_in_for_input) ... ok
+test_unlisted_wheel_cannot_enter_consumed_store (test_build.RetainedBoundaryTests.test_unlisted_wheel_cannot_enter_consumed_store) ... ok
+test_environment_does_not_inherit_credentials_or_python_paths (test_runtime_probe.RuntimeHarnessTests.test_environment_does_not_inherit_credentials_or_python_paths) ... ok
+test_hub_fixture_denies_login_and_scopes_existing_user (test_runtime_probe.RuntimeHarnessTests.test_hub_fixture_denies_login_and_scopes_existing_user) ... ok
+test_missing_proxy_reports_explicit_integration_gap (test_runtime_probe.RuntimeHarnessTests.test_missing_proxy_reports_explicit_integration_gap) ... ok
+test_native_loader_directory_is_bound_to_receipt_and_artifacts (test_runtime_probe.RuntimeHarnessTests.test_native_loader_directory_is_bound_to_receipt_and_artifacts) ... ok
+test_notebook_trust_annotation_preserves_exact_code_and_outputs (test_runtime_probe.RuntimeHarnessTests.test_notebook_trust_annotation_preserves_exact_code_and_outputs) ... ok
+test_owned_build_hash_and_installed_origin_are_bound (test_runtime_probe.RuntimeHarnessTests.test_owned_build_hash_and_installed_origin_are_bound) ... ok
+test_pid_reuse_is_not_signalled (test_runtime_probe.RuntimeHarnessTests.test_pid_reuse_is_not_signalled) ... ok
+test_process_cleanup_reaps_detached_child (test_runtime_probe.RuntimeHarnessTests.test_process_cleanup_reaps_detached_child) ... ok
+test_process_logs_are_sanitized_before_persistence (test_runtime_probe.RuntimeHarnessTests.test_process_logs_are_sanitized_before_persistence) ... ok
+test_readiness_fails_for_dead_process (test_runtime_probe.RuntimeHarnessTests.test_readiness_fails_for_dead_process) ... ok
+test_redacts_known_and_structured_credentials (test_runtime_probe.RuntimeHarnessTests.test_redacts_known_and_structured_credentials) ... ok
+test_requests_reject_missing_tokens_and_do_not_follow_redirects (test_runtime_probe.RuntimeHarnessTests.test_requests_reject_missing_tokens_and_do_not_follow_redirects) ... ok
+test_url_boundary_rejects_external_and_embedded_credentials (test_runtime_probe.RuntimeHarnessTests.test_url_boundary_rejects_external_and_embedded_credentials) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.767s
+
+OK
