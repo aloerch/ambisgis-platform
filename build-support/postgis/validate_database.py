@@ -93,6 +93,11 @@ class Probe:
             self.data_dir = self.run_dir / 'data'
             self.nonce = uuid.uuid4().hex
         self.log_dir = Path(tempfile.mkdtemp(prefix=args.phase + '-', dir=self.run_dir))
+        recipe = Path(__file__).read_bytes()
+        self.recipe_sha256 = hashlib.sha256(recipe).hexdigest()
+        (self.log_dir/'validate_database.py').write_bytes(recipe)
+        self.smoke_sql = Path(__file__).with_name('smoke.sql').read_bytes()
+        (self.log_dir/'smoke.sql').write_bytes(self.smoke_sql)
         # UNIX sockaddr paths have a short platform limit: avoid long build roots.
         self.socket_dir = Path(tempfile.mkdtemp(prefix='ambisgis-pg-', dir='/tmp'))
         self.socket_dir.chmod(0o700)
@@ -107,6 +112,7 @@ class Probe:
                         PGPORT='5432', PGUSER='ambisgis_probe', PGDATABASE='postgres', LC_ALL='C')
         self.started = False
         self.report = dict(kind='ambisgis-postgis-database-probe-v1', phase=args.phase,
+                           recipe_sha256=self.recipe_sha256,
                            started_at=dt.datetime.now(dt.timezone.utc).isoformat(),
                            prefix=str(self.prefix), run_dir=str(self.run_dir),
                            data_dir=str(self.data_dir), socket_dir=str(self.socket_dir),
@@ -172,7 +178,7 @@ class Probe:
         self.report['pg_config_paths'] = paths
         self.report['pg_config'] = self.run('pg-config-all', [pg_config])
         resources = {}
-        for path in (self.prefix / 'share/proj/proj.db', Path(__file__).with_name('smoke.sql')):
+        for path in (self.prefix / 'share/proj/proj.db', self.log_dir/'smoke.sql'):
             require(path.is_file(), f'Required resource absent: {path}')
             resources[str(path)] = digest(path)
         self.report['resources_sha256'] = resources
@@ -183,7 +189,7 @@ class Probe:
                 linked = self.run(f'ldd-{path.name}', ['/usr/bin/ldd', str(path)])
                 require('not found' not in linked, f'Unresolved shared library: {path}')
                 for line in linked.splitlines():
-                    if re.match(r'\s*lib(?:geos(?:_c)?|proj|gdal|json-c|protobuf-c)[.-]', line):
+                    if re.match(r'\s*lib(?:geos(?:_c)?|proj|gdal|json-c|protobuf-c|xml2|sqlite3|z|png(?:16)?|jpeg|tiff)[.-]', line):
                         match = re.search(r'=>\s+(/\S+)', line)
                         require(match is not None, f'Cannot establish owned dependency path: {line}')
                         contained(Path(match.group(1)), self.prefix)
@@ -263,7 +269,7 @@ class Probe:
         return versions
 
     def smoke(self, database: str) -> None:
-        output = self.sql('smoke-' + database, Path(__file__).with_name('smoke.sql').read_text(), database)
+        output = self.sql('smoke-' + database, self.smoke_sql.decode(), database)
         tests = re.findall(r'^AMBISGIS_ASSERT\|(.+)$', output, re.MULTILINE)
         count = re.findall(r'^AMBISGIS_COUNT\|(\d+)$', output, re.MULTILINE)
         require(count == [str(len(tests))] and len(tests) == 13, f'Smoke assertion count mismatch: {tests}')
