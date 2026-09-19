@@ -63,7 +63,7 @@ Milestones are repository-scoped. Use a Project `Target release` field for cross
 
 ## 6. Safe provisioning algorithm — implement in GOV-01
 
-The package includes a tested local seed exporter, **not a live Project provisioner**. Codex implements `tools/bootstrap_github_project.py` as GOV-01 with these behaviors:
+The revision-2 design initially supplied only the tested local seed exporter. GOV-01 now implements `tools/bootstrap_github_project.py` and its guarded GitHub adapter; see [the operations guide](project-importer.md) and `STATUS.md` for actual live evidence and remaining review gates. The importer must preserve these behaviors:
 
 1. Validate manifests and the acyclic dependency graph. Check GitHub identity and the fifteen repository IDs against the repository bootstrap receipt. Read project/issue/field state completely with pagination. For GraphQL read-only preflight, HTTP POST is normal; distinguish queries from mutations rather than claiming every read uses HTTP GET.
 2. Default to dry-run: list intended creates and managed updates without remote mutations or local creation receipts. Detect rate limits, authentication errors and partial GraphQL errors. Missing permission is not evidence that a Project does not exist.
