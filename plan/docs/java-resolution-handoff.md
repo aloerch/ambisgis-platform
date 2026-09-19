@@ -4,6 +4,12 @@ Worktree: `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-resolution`
 Repository: `aloerch/ambisgis-platform` (ID `1376927351`). Branch:
 `fnd-02/java-toolchain-resolution`, based on audit head
 `c2ec4bfd37ba1afa789330972f103d0e6c977fdf` of open [PR #54](https://github.com/aloerch/ambisgis-platform/pull/54).
+The new checkpoint is in **[PR #55](https://github.com/aloerch/ambisgis-platform/pull/55), open and unmerged**, stacked on PR #54.
+Implemented/tested checkpoint commit: `48b95a984dcf04ff52f4611f90e6219c6ad723cb`.
+Later commits record publication/Project evidence only; verify the current review
+head with `gh pr view 55 --repo aloerch/ambisgis-platform --json state,headRefOid`.
+FND-02 Evidence now links PR #55; Delivery remains In progress, with readback in
+[the Project receipt](../verification/java-resolution-project-evidence.json).
 The prior audit branch, archives and evidence are preserved. FND-02 remains
 **In progress**; this is toolchain/input resolution, not a Java build acceptance.
 
@@ -77,5 +83,5 @@ Verify the retained CLI before reuse: archive SHA256
 binary SHA256 `ea857a3f0f7d4276cf5848b236542c5048e2eaa7bdd1b6ddec238f8793e74bff`.
 Git's inherited credential helper points to absent `/usr/bin/gh`; use the verified
 CLI via a per-command helper override. Global credentials/configuration remain
-unchanged. No Java compilation/native/runtime test, deployment, release or
+unchanged. No task process remains running. No Java compilation/native/runtime test, deployment, release or
 full-product acceptance was performed by this checkpoint.

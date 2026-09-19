@@ -1,0 +1,27 @@
+{
+  "observed_at": "2026-09-19T23:30:27.437489+00:00",
+  "implemented_tested_commit": "48b95a984dcf04ff52f4611f90e6219c6ad723cb",
+  "publication_checkpoint_pr": {
+    "baseRefName": "fnd-02/java-dependency-audit",
+    "headRefName": "fnd-02/java-toolchain-resolution",
+    "headRefOid": "48b95a984dcf04ff52f4611f90e6219c6ad723cb",
+    "state": "OPEN",
+    "url": "https://github.com/aloerch/ambisgis-platform/pull/55"
+  },
+  "issue_comment": {
+    "id": 5746115428,
+    "url": "https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5746115428",
+    "author": "aloerch",
+    "body_sha256": "2533f1c1326978145d82adf03c46e397cb51bf2a23c6c3baf17f1d2947a95d0f",
+    "readback_matches": true
+  },
+  "subsequent_commits": "publication/handoff evidence only; read live PR head for current review commit",
+  "remote_mutations": [
+    "created/pushed fnd-02/java-toolchain-resolution",
+    "opened PR55 stacked on PR54",
+    "changed FND-02 Project Evidence PR54 -> PR55; Delivery unchanged",
+    "posted FND-02 claim and checkpoint comments"
+  ],
+  "merged_by_agent": false,
+  "release_deployment_workflow_secret_changes": false
+}
