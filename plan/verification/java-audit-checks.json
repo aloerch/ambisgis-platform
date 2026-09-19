@@ -1,0 +1,64 @@
+{
+  "observed_at": "2026-09-19T21:39:01.844653+00:00",
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "build-support/java",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java",
+      "python": "/tmp/ambisgis-validation-venv/bin/python3",
+      "exit_code": 0,
+      "log": "java-audit-tool-tests.txt",
+      "sha256": "fc5136f6c0aae3d099815b6c095f508f40152cbc5d16565ca39bd76ac753bcf4"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java/plan",
+      "python": "/tmp/ambisgis-validation-venv/bin/python3",
+      "exit_code": 0,
+      "log": "java-audit-package-tests.txt",
+      "sha256": "ee8577ac1c5bdb8ad87c204274b1a42744b47261af6dd74e78d9a9dfa6f24671"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java/plan",
+      "python": "/tmp/ambisgis-validation-venv/bin/python3",
+      "exit_code": 0,
+      "log": "java-audit-schemas.txt",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    },
+    {
+      "command": [
+        "python3",
+        "build-support/java/acquisition.py",
+        "--custody",
+        "/home/revelberry/Projects/AmbisGIS/source-archives/java-audit"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java",
+      "python": "/tmp/ambisgis-validation-venv/bin/python3",
+      "exit_code": 0,
+      "log": "java-audit-custody.txt",
+      "sha256": "ed752a8e885ebbf0c70efb6857fc8a3aa607946e25c888886d1366076ce7a0dc"
+    }
+  ]
+}

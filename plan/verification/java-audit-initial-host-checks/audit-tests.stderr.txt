@@ -1,0 +1,20 @@
+test_deployment_targets_preserved_without_selection_or_execution (test_audit.DeclarationTests.test_deployment_targets_preserved_without_selection_or_execution) ... ok
+test_inheritance_and_profiles_remain_unresolved (test_audit.DeclarationTests.test_inheritance_and_profiles_remain_unresolved) ... ok
+test_malformed_and_entity_input_fail_without_repair (test_audit.DeclarationTests.test_malformed_and_entity_input_fail_without_repair) ... ok
+test_management_plugin_and_profile_contexts_and_policies_preserved (test_audit.DeclarationTests.test_management_plugin_and_profile_contexts_and_policies_preserved) ... ok
+test_snapshot_indirection_and_ranges_are_findings_not_resolutions (test_audit.DeclarationTests.test_snapshot_indirection_and_ranges_are_findings_not_resolutions) ... ok
+test_different_tag_object_with_same_peeled_commit_rejected (test_audit.SourceTests.test_different_tag_object_with_same_peeled_commit_rejected) ... ok
+test_malformed_pom_retained_and_cli_returns_nonzero (test_audit.SourceTests.test_malformed_pom_retained_and_cli_returns_nonzero) ... ok
+test_moved_tag_rejected (test_audit.SourceTests.test_moved_tag_rejected) ... ok
+test_multiple_origin_urls_rejected (test_audit.SourceTests.test_multiple_origin_urls_rejected) ... ok
+test_output_never_overwrites_existing_file_or_symlink (test_audit.SourceTests.test_output_never_overwrites_existing_file_or_symlink) ... ok
+test_pinned_objects_ignore_dirty_checkout_and_are_deterministic (test_audit.SourceTests.test_pinned_objects_ignore_dirty_checkout_and_are_deterministic) ... ok
+test_promisor_input_rejected_without_fetch (test_audit.SourceTests.test_promisor_input_rejected_without_fetch) ... ok
+test_symlink_pom_rejected (test_audit.SourceTests.test_symlink_pom_rejected) ... ok
+test_wrong_owned_origin_rejected (test_audit.SourceTests.test_wrong_owned_origin_rejected) ... ok
+test_wrong_push_origin_rejected (test_audit.SourceTests.test_wrong_push_origin_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.144s
+
+OK
