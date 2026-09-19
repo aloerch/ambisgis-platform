@@ -140,6 +140,15 @@ class TransportTests(unittest.TestCase):
         self.assertNotIn("SECRET", str(caught.exception))
         self.assertEqual(len(runner.calls), 2)
 
+    def test_graphql_errors_with_cli_failure_keep_category_and_hide_diagnostics(self):
+        for kind, expected in (("UNPROCESSABLE", "graphql"), ("FORBIDDEN", "permission"), ("RATE_LIMITED", "rate_limit")):
+            runner = QueueRunner(response({"data": {}, "errors": [{"message": "SECRET", "type": kind}]}, returncode=1))
+            with self.subTest(kind=kind), self.assertRaises(GitHubAPIError) as caught:
+                GitHubProjectAPI(runner=runner)._graphql("query Check { viewer { login } }")
+            self.assertEqual(caught.exception.category, expected)
+            self.assertNotIn("SECRET", str(caught.exception))
+            self.assertEqual(len(runner.calls), 1)
+
     def test_explicit_permission_error_is_not_missing_or_retried(self):
         for status in (401, 403, 404):
             runner = QueueRunner(response({"message": "SECRET"}, status, returncode=1))
@@ -360,6 +369,17 @@ class MutationAndCapabilityTests(unittest.TestCase):
         GitHubProjectAPI(read_only=False, runner=runner).create_view("P1", {"name": "Execution board", "layout": "BOARD", "group_by": "Delivery"})
         payload = json.loads(runner.calls[0][1]["input"])["variables"]["input"]
         self.assertEqual(payload, {"projectId": "P1", "name": "Execution board", "layout": "BOARD_LAYOUT"})
+
+    def test_roadmap_omits_unsupported_visible_fields_but_table_and_board_keep_them(self):
+        for layout in ("ROADMAP", "TABLE", "BOARD"):
+            runner = QueueRunner(response({"data": {"createProjectV2View": {"projectV2View": {"id": "V1", "layout": layout + "_LAYOUT"}}}}))
+            GitHubProjectAPI(read_only=False, runner=runner).create_view("P1", {"name": "View", "layout": layout, "visibleFieldIds": ["F1", "F2"]})
+            payload = json.loads(runner.calls[0][1]["input"])["variables"]["input"]
+            with self.subTest(layout=layout):
+                if layout == "ROADMAP":
+                    self.assertNotIn("configuration", payload)
+                else:
+                    self.assertEqual(payload["configuration"], {"visibleFieldIds": ["F1", "F2"]})
 
     def test_capabilities_are_live_introspection_without_mutation(self):
         body = {"mutations": {"fields": [{"name": "createProjectV2"}, {"name": "createProjectV2View"}]},

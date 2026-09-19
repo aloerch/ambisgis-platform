@@ -67,6 +67,13 @@ def reconcile_body(current: str, desired: str, previous_hash: str | None) -> str
 
 def desired_body(seed: dict, issues: dict[str, dict]) -> str:
     body = seed['body']
+    base = 'https://github.com/aloerch/ambisgis-platform/blob/ambisgis/main/plan/'
+    body = body.replace(
+        'Specification: version-controlled plan/backlog.json and relevant plan/docs chapters.',
+        f'Specification: [backlog.json]({base}backlog.json), '
+        f'[requirements.json]({base}requirements.json), '
+        f'[component specifications]({base}docs), '
+        f'[source ownership]({base}docs/11-independent-product-and-source-ownership.md).')
     deps = seed['dependency_task_ids']
     # The second pass adds actual links, never guessed issue numbers.
     if deps and all(task in issues for task in deps):
@@ -322,8 +329,10 @@ def discover(api: Any, manifest: dict, project_spec: dict, seed: dict,
                 issues=issues, items=items, labels=labels, dependencies=dependencies)
 
 
-def plan_changes(project_spec: dict, seed: dict, snapshot: dict) -> list[dict]:
+def plan_changes(project_spec: dict, seed: dict, snapshot: dict,
+                 pending: dict[str, dict] | None = None) -> list[dict]:
     ops = []
+    pending = pending or {}
     project = snapshot['project']
     if not project:
         ops.append({'action': 'create_project', 'title': project_spec['title'], 'public': True})
@@ -343,9 +352,19 @@ def plan_changes(project_spec: dict, seed: dict, snapshot: dict) -> list[dict]:
         else:
             if block(issue['body'])[1] != block(desired_body(s, snapshot['issues']))[1]:
                 ops.append({'action': 'update_managed_body', 'task_id': task})
-        if not issue or issue['node_id'] not in snapshot['items']:
+        item = snapshot['items'].get(issue['node_id']) if issue else None
+        if item is None:
             ops.append({'action': 'add_item', 'task_id': task,
                         'initial_fields_only': s['initial_fields_only']})
+        else:
+            # An interrupted add may leave an existing item with journaled
+            # initialization still due. Plan the same absent-only writes as
+            # apply; never propose replacing a human's current field value.
+            initial = pending.get('item:' + task, {}).get('initial_fields', {})
+            for name, value in initial.items():
+                if name not in item.get('values', {}):
+                    ops.append({'action': 'set_initial_field', 'task_id': task,
+                                'field': name, 'value': value})
         existing_labels = {x['name'] for x in snapshot['labels'][s['repository']]}
         for label in s['labels']:
             operation = {'action': 'create_label', 'repository': s['repository'], 'name': label}
@@ -385,7 +404,7 @@ def execute(api: Any, root: Path, repository_receipt: Path, receipt: Path,
     with import_lock(receipt, apply):
         journal = Journal(receipt, apply)
         snapshot = discover(api, manifest, project_spec, seed, repo_receipt, journal)
-        operations = plan_changes(project_spec, seed, snapshot)
+        operations = plan_changes(project_spec, seed, snapshot, journal.data['pending'])
         if not apply:
             return {'mode': 'dry-run', 'operations': operations,
                     'views': 'Pending capability-checked creation and owner layout verification.',

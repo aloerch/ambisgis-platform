@@ -159,6 +159,14 @@ class GitHubProjectAPI:
             retry_after = self._retry_delay(response_headers, attempt)
             limited = status == 429 or (status == 403 and (
                 "retry-after" in response_headers or response_headers.get("x-ratelimit-remaining") == "0"))
+            # gh exits nonzero for GraphQL application errors even on HTTP 200.
+            # Classify those before the CLI exit status; never expose raw errors.
+            if endpoint == "graphql" and 200 <= status < 300 and isinstance(body, dict) and body.get("errors"):
+                types = {e.get("type") for e in body["errors"] if isinstance(e, dict)} if isinstance(body["errors"], list) else set()
+                category = ("rate_limit" if "RATE_LIMITED" in types else
+                            "permission" if types & {"FORBIDDEN", "UNAUTHORIZED", "INSUFFICIENT_SCOPES"} else "graphql")
+                raise GitHubAPIError("GraphQL returned errors; partial data is not usable.", status,
+                                     category=category)
             if not 200 <= status < 300 or result.returncode != 0:
                 category = "rate_limit" if limited else ("permission" if status in {401, 403} else "http")
                 retryable = limited or status in {502, 503, 504}
@@ -171,12 +179,6 @@ class GitHubProjectAPI:
             if endpoint == "graphql":
                 if not isinstance(body, dict):
                     raise GitHubAPIError("Invalid GraphQL response.", status, category="schema")
-                if body.get("errors"):
-                    types = {e.get("type") for e in body["errors"] if isinstance(e, dict)} if isinstance(body["errors"], list) else set()
-                    category = ("rate_limit" if "RATE_LIMITED" in types else
-                                "permission" if types & {"FORBIDDEN", "UNAUTHORIZED", "INSUFFICIENT_SCOPES"} else "graphql")
-                    raise GitHubAPIError("GraphQL returned errors; partial data is not usable.", status,
-                                         category=category)
                 if not isinstance(body.get("data"), dict):
                     raise GitHubAPIError("GraphQL returned no complete data object.", status, category="schema")
                 body = body["data"]
@@ -523,7 +525,7 @@ class GitHubProjectAPI:
         if layout not in {"TABLE_LAYOUT", "BOARD_LAYOUT", "ROADMAP_LAYOUT"}:
             raise GitHubAPIError("Unsupported Project view layout.", category="schema")
         payload = {"projectId": project_id, "name": spec["name"], "layout": layout}
-        if "visibleFieldIds" in spec:
+        if "visibleFieldIds" in spec and layout != "ROADMAP_LAYOUT":
             payload["configuration"] = {"visibleFieldIds": spec["visibleFieldIds"]}
         # Grouping, sorting and roadmap dates are deliberately not guessed.
         return self._mutate("createProjectV2View", "CreateProjectV2ViewInput", payload, "projectV2View", VIEW_FIELDS)

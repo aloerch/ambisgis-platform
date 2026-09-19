@@ -32,7 +32,7 @@ Initial fields apply only to newly added items with a recorded pending initializ
 
 ## Views and remaining UI verification
 
-The current documented API can create named table/board/roadmap views and choose visible fields. Built-in Status is excluded so Delivery remains the product state field. Grouping, sorting, filters and roadmap date-field selection must still be verified before GOV-02 is complete; this importer does not guess undocumented inputs or overwrite subsequent manual view configuration.
+The current documented API can create named table/board/roadmap views and choose visible fields for tables and boards. Roadmap creation rejects visible-field configuration, so that input is omitted for roadmaps. Built-in Status is excluded from the created table/board columns; roadmap grouping and GitHub's automatically created default view still need UI inspection so Delivery remains the product state field. The default view is preserved. Grouping, sorting, filters and roadmap date-field selection must still be verified before GOV-02 is complete; this importer does not guess undocumented inputs or overwrite subsequent manual view configuration.
 
 Open the created Project and configure each saved view using its view menu, then save changes:
 

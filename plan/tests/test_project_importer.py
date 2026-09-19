@@ -438,6 +438,49 @@ class ProjectImporterTests(unittest.TestCase):
         self.assertEqual(report['verified_issues'], 66)
         self.assertEqual(self.api.writes.count('create_issue'), 66)
 
+    def test_interrupted_initialization_dry_run_lists_remaining_field_writes(self):
+        self.api.fail_before['set_field'] = SimulatedInterruption()
+        with self.assertRaises(SimulatedInterruption):
+            self.run_import(apply=True)
+        spec = self.seed['issues'][0]
+        receipt_before = self.receipt.read_bytes()
+        self.api.writes.clear()
+
+        report = self.run_import()
+
+        operations = [op for op in report['operations']
+                      if op['action'] == 'set_initial_field' and op['task_id'] == spec['task_id']]
+        self.assertEqual({op['field']: op['value'] for op in operations}, spec['initial_fields_only'])
+        self.assertFalse(any(op['action'] == 'add_item' and op['task_id'] == spec['task_id']
+                             for op in report['operations']))
+        self.assertEqual(self.api.writes, [])
+        self.assertEqual(self.receipt.read_bytes(), receipt_before)
+
+    def test_resume_dry_run_omits_existing_human_field_values(self):
+        self.api.fail_before['set_field'] = SimulatedInterruption()
+        with self.assertRaises(SimulatedInterruption):
+            self.run_import(apply=True)
+        spec = self.seed['issues'][0]
+        item = next(iter(self.api.project_store.values()))['items'][0]
+        human_values = {'Delivery': 'In progress', 'Priority': 'Low'}
+        item['values'].update(human_values)
+        receipt_before = self.receipt.read_bytes()
+        self.api.writes.clear()
+
+        report = self.run_import()
+
+        operations = [op for op in report['operations']
+                      if op['action'] == 'set_initial_field' and op['task_id'] == spec['task_id']]
+        self.assertEqual({op['field']: op['value'] for op in operations},
+                         {name: value for name, value in spec['initial_fields_only'].items()
+                          if name not in human_values})
+        self.assertEqual(item['values'], human_values)
+        self.assertEqual(self.api.writes, [])
+        self.assertEqual(self.receipt.read_bytes(), receipt_before)
+        self.run_import(apply=True)
+        for name, value in human_values.items():
+            self.assertEqual(item['values'][name], value)
+
     def test_interrupted_initialization_preserves_human_values_on_resume(self):
         self.api.fail_before['set_field'] = SimulatedInterruption()
         with self.assertRaises(SimulatedInterruption):
@@ -614,6 +657,12 @@ class ProjectImporterTests(unittest.TestCase):
         with self.assertRaises(BootstrapError):
             self.run_import(apply=True)
         self.assertEqual(self.api.writes, ['create_project'])
+
+    def test_issue_bodies_link_to_owned_version_controlled_specs(self):
+        project = self.seed_complete()
+        body = self.api.issue_store['aloerch/ambisgis-platform'][0]['body']
+        self.assertIn('https://github.com/aloerch/ambisgis-platform/blob/ambisgis/main/plan/backlog.json', body)
+        self.assertIn('[source ownership]', body)
 
 
 if __name__ == '__main__':

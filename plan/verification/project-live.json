@@ -1,0 +1,1925 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-19T09:24:43.006835+00:00",
+  "owner": "aloerch",
+  "owner_id": 15285626,
+  "owner_node_id": "MDQ6VXNlcjE1Mjg1NjI2",
+  "project": {
+    "id": "PVT_kwHOAOk9es4Bj_k-",
+    "number": 2,
+    "url": "https://github.com/users/aloerch/projects/2"
+  },
+  "repositories": {
+    "aloerch/ambisgis-platform": {
+      "id": 1376927351,
+      "node_id": "R_kgDOUhI-dw"
+    },
+    "aloerch/ambisgis-geodb": {
+      "id": 1376927417,
+      "node_id": "R_kgDOUhI-uQ"
+    },
+    "aloerch/ambisgis-qgis-plugin": {
+      "id": 1376927494,
+      "node_id": "R_kgDOUhI_Bg"
+    },
+    "aloerch/ambisgis-notebooks": {
+      "id": 1376927589,
+      "node_id": "R_kgDOUhI_ZQ"
+    },
+    "aloerch/ambisgis-postgresql": {
+      "id": 1376927644,
+      "node_id": "R_kgDOUhI_nA"
+    },
+    "aloerch/ambisgis-postgis": {
+      "id": 1376927690,
+      "node_id": "R_kgDOUhI_yg"
+    },
+    "aloerch/ambisgis-qgis": {
+      "id": 1376927721,
+      "node_id": "R_kgDOUhI_6Q"
+    },
+    "aloerch/ambisgis-jupyterhub": {
+      "id": 1376927753,
+      "node_id": "R_kgDOUhJACQ"
+    },
+    "aloerch/ambisgis-jupyterlab": {
+      "id": 1376927783,
+      "node_id": "R_kgDOUhJAJw"
+    },
+    "aloerch/ambisgis-geotools": {
+      "id": 1376927869,
+      "node_id": "R_kgDOUhJAfQ"
+    },
+    "aloerch/ambisgis-geowebcache": {
+      "id": 1376927892,
+      "node_id": "R_kgDOUhJAlA"
+    },
+    "aloerch/ambisgis-geoserver": {
+      "id": 1376927947,
+      "node_id": "R_kgDOUhJAyw"
+    },
+    "aloerch/ambisgis-geonode": {
+      "id": 1376927978,
+      "node_id": "R_kgDOUhJA6g"
+    },
+    "aloerch/ambisgis-mapstore-client": {
+      "id": 1376928013,
+      "node_id": "R_kgDOUhJBDQ"
+    },
+    "aloerch/ambisgis-mapstore": {
+      "id": 1376928043,
+      "node_id": "R_kgDOUhJBKw"
+    }
+  },
+  "tasks": {
+    "FND-01": {
+      "id": 5508924007,
+      "node_id": "I_kwDOUhI-d88AAAABSFuCZw",
+      "number": 2,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/2",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tpsE"
+    },
+    "FND-02": {
+      "id": 5508924071,
+      "node_id": "I_kwDOUhI-d88AAAABSFuCpw",
+      "number": 3,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/3",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tpvY"
+    },
+    "FND-03": {
+      "id": 5508924148,
+      "node_id": "I_kwDOUhI-d88AAAABSFuC9A",
+      "number": 4,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/4",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tpxU"
+    },
+    "FND-04": {
+      "id": 5508924229,
+      "node_id": "I_kwDOUhI-uc8AAAABSFuDRQ",
+      "number": 1,
+      "html_url": "https://github.com/aloerch/ambisgis-geodb/issues/1",
+      "repository": "aloerch/ambisgis-geodb",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tp0I"
+    },
+    "FND-05": {
+      "id": 5508924303,
+      "node_id": "I_kwDOUhI_Bs8AAAABSFuDjw",
+      "number": 1,
+      "html_url": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1",
+      "repository": "aloerch/ambisgis-qgis-plugin",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tp20"
+    },
+    "FND-06": {
+      "id": 5508924368,
+      "node_id": "I_kwDOUhI-d88AAAABSFuD0A",
+      "number": 5,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/5",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tp5s"
+    },
+    "FND-07": {
+      "id": 5508924529,
+      "node_id": "I_kwDOUhI-d88AAAABSFuEcQ",
+      "number": 6,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/6",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tp8Q"
+    },
+    "FND-08": {
+      "id": 5508924673,
+      "node_id": "I_kwDOUhI-d88AAAABSFuFAQ",
+      "number": 7,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/7",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tp-g"
+    },
+    "GOV-01": {
+      "id": 5508924746,
+      "node_id": "I_kwDOUhI-d88AAAABSFuFSg",
+      "number": 8,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/8",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqCI"
+    },
+    "GOV-02": {
+      "id": 5508924821,
+      "node_id": "I_kwDOUhI-d88AAAABSFuFlQ",
+      "number": 9,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/9",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqFE"
+    },
+    "API-01": {
+      "id": 5508924905,
+      "node_id": "I_kwDOUhI-d88AAAABSFuF6Q",
+      "number": 10,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/10",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqIw"
+    },
+    "DB-01": {
+      "id": 5508924986,
+      "node_id": "I_kwDOUhI-uc8AAAABSFuGOg",
+      "number": 2,
+      "html_url": "https://github.com/aloerch/ambisgis-geodb/issues/2",
+      "repository": "aloerch/ambisgis-geodb",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqNk"
+    },
+    "PLT-01": {
+      "id": 5508925066,
+      "node_id": "I_kwDOUhI-d88AAAABSFuGig",
+      "number": 11,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/11",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqRY"
+    },
+    "PLT-02": {
+      "id": 5508925117,
+      "node_id": "I_kwDOUhI-d88AAAABSFuGvQ",
+      "number": 12,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/12",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqT4"
+    },
+    "PLT-03": {
+      "id": 5508925309,
+      "node_id": "I_kwDOUhI-d88AAAABSFuHfQ",
+      "number": 13,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/13",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqXI"
+    },
+    "PUB-01": {
+      "id": 5508925384,
+      "node_id": "I_kwDOUhI-d88AAAABSFuHyA",
+      "number": 14,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/14",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqZs"
+    },
+    "SRV-01": {
+      "id": 5508925451,
+      "node_id": "I_kwDOUhI-d88AAAABSFuICw",
+      "number": 15,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/15",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqcI"
+    },
+    "UX-01": {
+      "id": 5508925512,
+      "node_id": "I_kwDOUhI-d88AAAABSFuISA",
+      "number": 16,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/16",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqfE"
+    },
+    "API-02": {
+      "id": 5508925589,
+      "node_id": "I_kwDOUhI-d88AAAABSFuIlQ",
+      "number": 17,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/17",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqhs"
+    },
+    "API-03": {
+      "id": 5508925663,
+      "node_id": "I_kwDOUhI-d88AAAABSFuI3w",
+      "number": 18,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/18",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqlI"
+    },
+    "API-04": {
+      "id": 5508925736,
+      "node_id": "I_kwDOUhI-d88AAAABSFuJKA",
+      "number": 19,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/19",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqoc"
+    },
+    "DB-02": {
+      "id": 5508925790,
+      "node_id": "I_kwDOUhI-uc8AAAABSFuJXg",
+      "number": 3,
+      "html_url": "https://github.com/aloerch/ambisgis-geodb/issues/3",
+      "repository": "aloerch/ambisgis-geodb",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqsg"
+    },
+    "OWN-01": {
+      "id": 5508926019,
+      "node_id": "I_kwDOUhI-d88AAAABSFuKQw",
+      "number": 20,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/20",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tqxE"
+    },
+    "PUB-02": {
+      "id": 5508926093,
+      "node_id": "I_kwDOUhI-d88AAAABSFuKjQ",
+      "number": 21,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/21",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tq0k"
+    },
+    "SEC-01": {
+      "id": 5508926175,
+      "node_id": "I_kwDOUhI-d88AAAABSFuK3w",
+      "number": 22,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/22",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tq4I"
+    },
+    "SRV-02": {
+      "id": 5508926270,
+      "node_id": "I_kwDOUhI-d88AAAABSFuLPg",
+      "number": 23,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/23",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tq68"
+    },
+    "SRV-03": {
+      "id": 5508926344,
+      "node_id": "I_kwDOUhI-d88AAAABSFuLiA",
+      "number": 24,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/24",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tq_A"
+    },
+    "SRV-04": {
+      "id": 5508926417,
+      "node_id": "I_kwDOUhI-d88AAAABSFuL0Q",
+      "number": 25,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/25",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trBs"
+    },
+    "PUB-03": {
+      "id": 5508926490,
+      "node_id": "I_kwDOUhI-d88AAAABSFuMGg",
+      "number": 26,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/26",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trEU"
+    },
+    "PUB-04": {
+      "id": 5508926542,
+      "node_id": "I_kwDOUhI-d88AAAABSFuMTg",
+      "number": 27,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/27",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trG8"
+    },
+    "QGIS-01": {
+      "id": 5508926613,
+      "node_id": "I_kwDOUhI_Bs8AAAABSFuMlQ",
+      "number": 2,
+      "html_url": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/2",
+      "repository": "aloerch/ambisgis-qgis-plugin",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trJg"
+    },
+    "QGIS-02": {
+      "id": 5508926705,
+      "node_id": "I_kwDOUhI_Bs8AAAABSFuM8Q",
+      "number": 3,
+      "html_url": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/3",
+      "repository": "aloerch/ambisgis-qgis-plugin",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trM8"
+    },
+    "QGIS-03": {
+      "id": 5508926777,
+      "node_id": "I_kwDOUhI-d88AAAABSFuNOQ",
+      "number": 28,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/28",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trRM"
+    },
+    "QGIS-04": {
+      "id": 5508926840,
+      "node_id": "I_kwDOUhI_Bs8AAAABSFuNeA",
+      "number": 4,
+      "html_url": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/4",
+      "repository": "aloerch/ambisgis-qgis-plugin",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trUE"
+    },
+    "SRV-05": {
+      "id": 5508926916,
+      "node_id": "I_kwDOUhI-d88AAAABSFuNxA",
+      "number": 29,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/29",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trYA"
+    },
+    "SRV-06": {
+      "id": 5508926987,
+      "node_id": "I_kwDOUhI-d88AAAABSFuOCw",
+      "number": 30,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/30",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trb8"
+    },
+    "DB-03": {
+      "id": 5508927054,
+      "node_id": "I_kwDOUhI-uc8AAAABSFuOTg",
+      "number": 4,
+      "html_url": "https://github.com/aloerch/ambisgis-geodb/issues/4",
+      "repository": "aloerch/ambisgis-geodb",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trgc"
+    },
+    "DB-04": {
+      "id": 5508927123,
+      "node_id": "I_kwDOUhI-uc8AAAABSFuOkw",
+      "number": 5,
+      "html_url": "https://github.com/aloerch/ambisgis-geodb/issues/5",
+      "repository": "aloerch/ambisgis-geodb",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trkM"
+    },
+    "DB-05": {
+      "id": 5508927211,
+      "node_id": "I_kwDOUhI-uc8AAAABSFuO6w",
+      "number": 6,
+      "html_url": "https://github.com/aloerch/ambisgis-geodb/issues/6",
+      "repository": "aloerch/ambisgis-geodb",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7troE"
+    },
+    "DB-06": {
+      "id": 5508927283,
+      "node_id": "I_kwDOUhI-uc8AAAABSFuPMw",
+      "number": 7,
+      "html_url": "https://github.com/aloerch/ambisgis-geodb/issues/7",
+      "repository": "aloerch/ambisgis-geodb",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trsQ"
+    },
+    "DB-07": {
+      "id": 5508927354,
+      "node_id": "I_kwDOUhI-uc8AAAABSFuPeg",
+      "number": 8,
+      "html_url": "https://github.com/aloerch/ambisgis-geodb/issues/8",
+      "repository": "aloerch/ambisgis-geodb",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trvY"
+    },
+    "DB-08": {
+      "id": 5508927434,
+      "node_id": "I_kwDOUhI-uc8AAAABSFuPyg",
+      "number": 9,
+      "html_url": "https://github.com/aloerch/ambisgis-geodb/issues/9",
+      "repository": "aloerch/ambisgis-geodb",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7trzc"
+    },
+    "QGIS-05": {
+      "id": 5508927504,
+      "node_id": "I_kwDOUhI_Bs8AAAABSFuQEA",
+      "number": 5,
+      "html_url": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/5",
+      "repository": "aloerch/ambisgis-qgis-plugin",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tr2w"
+    },
+    "SEC-02": {
+      "id": 5508927578,
+      "node_id": "I_kwDOUhI-d88AAAABSFuQWg",
+      "number": 31,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/31",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tr6E"
+    },
+    "UX-02": {
+      "id": 5508927649,
+      "node_id": "I_kwDOUhI-d88AAAABSFuQoQ",
+      "number": 32,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/32",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tr-o"
+    },
+    "WEB-01": {
+      "id": 5508927732,
+      "node_id": "I_kwDOUhI-d88AAAABSFuQ9A",
+      "number": 33,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/33",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tsCc"
+    },
+    "WEB-02": {
+      "id": 5508927805,
+      "node_id": "I_kwDOUhI-d88AAAABSFuRPQ",
+      "number": 34,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/34",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tsG8"
+    },
+    "WEB-03": {
+      "id": 5508927867,
+      "node_id": "I_kwDOUhI-d88AAAABSFuRew",
+      "number": 35,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/35",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tsK8"
+    },
+    "WEB-04": {
+      "id": 5508927935,
+      "node_id": "I_kwDOUhI-d88AAAABSFuRvw",
+      "number": 36,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/36",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tsO4"
+    },
+    "WEB-05": {
+      "id": 5508928006,
+      "node_id": "I_kwDOUhI-d88AAAABSFuSBg",
+      "number": 37,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/37",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tsS4"
+    },
+    "NB-01": {
+      "id": 5508928074,
+      "node_id": "I_kwDOUhI_Zc8AAAABSFuSSg",
+      "number": 1,
+      "html_url": "https://github.com/aloerch/ambisgis-notebooks/issues/1",
+      "repository": "aloerch/ambisgis-notebooks",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tsWk"
+    },
+    "NB-02": {
+      "id": 5508928142,
+      "node_id": "I_kwDOUhI_Zc8AAAABSFuSjg",
+      "number": 2,
+      "html_url": "https://github.com/aloerch/ambisgis-notebooks/issues/2",
+      "repository": "aloerch/ambisgis-notebooks",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tscA"
+    },
+    "NB-03": {
+      "id": 5508928217,
+      "node_id": "I_kwDOUhI-d88AAAABSFuS2Q",
+      "number": 38,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/38",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tshI"
+    },
+    "NB-04": {
+      "id": 5508928279,
+      "node_id": "I_kwDOUhI_Zc8AAAABSFuTFw",
+      "number": 3,
+      "html_url": "https://github.com/aloerch/ambisgis-notebooks/issues/3",
+      "repository": "aloerch/ambisgis-notebooks",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tslQ"
+    },
+    "NB-05": {
+      "id": 5508928358,
+      "node_id": "I_kwDOUhI_Zc8AAAABSFuTZg",
+      "number": 4,
+      "html_url": "https://github.com/aloerch/ambisgis-notebooks/issues/4",
+      "repository": "aloerch/ambisgis-notebooks",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tsqA"
+    },
+    "OPS-01": {
+      "id": 5508928422,
+      "node_id": "I_kwDOUhI-d88AAAABSFuTpg",
+      "number": 39,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/39",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tstw"
+    },
+    "OPS-02": {
+      "id": 5508928501,
+      "node_id": "I_kwDOUhI-d88AAAABSFuT9Q",
+      "number": 40,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/40",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7tsx0"
+    },
+    "OPS-03": {
+      "id": 5508928572,
+      "node_id": "I_kwDOUhI-d88AAAABSFuUPA",
+      "number": 41,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/41",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7ts30"
+    },
+    "OPS-04": {
+      "id": 5508928652,
+      "node_id": "I_kwDOUhI-d88AAAABSFuUjA",
+      "number": 42,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/42",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7ts7g"
+    },
+    "OWN-02": {
+      "id": 5508928759,
+      "node_id": "I_kwDOUhI-d88AAAABSFuU9w",
+      "number": 43,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/43",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7ts_g"
+    },
+    "QA-01": {
+      "id": 5508928845,
+      "node_id": "I_kwDOUhI-d88AAAABSFuVTQ",
+      "number": 44,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/44",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7ttC0"
+    },
+    "QA-02": {
+      "id": 5508928907,
+      "node_id": "I_kwDOUhI-d88AAAABSFuViw",
+      "number": 45,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/45",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7ttHM"
+    },
+    "REL-01": {
+      "id": 5508928984,
+      "node_id": "I_kwDOUhI-d88AAAABSFuV2A",
+      "number": 46,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/46",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7ttLs"
+    },
+    "REL-02": {
+      "id": 5508929056,
+      "node_id": "I_kwDOUhI-d88AAAABSFuWIA",
+      "number": 47,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/47",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7ttP4"
+    },
+    "SEC-03": {
+      "id": 5508929138,
+      "node_id": "I_kwDOUhI-d88AAAABSFuWcg",
+      "number": 48,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/48",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7ttVI"
+    },
+    "SEC-04": {
+      "id": 5508929221,
+      "node_id": "I_kwDOUhI-d88AAAABSFuWxQ",
+      "number": 49,
+      "html_url": "https://github.com/aloerch/ambisgis-platform/issues/49",
+      "repository": "aloerch/ambisgis-platform",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg7ttYc"
+    }
+  },
+  "fields": [
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+      "name": "Title",
+      "dataType": "TITLE",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+      "name": "Assignees",
+      "dataType": "ASSIGNEES",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2SingleSelectField",
+      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4CU",
+      "name": "Status",
+      "dataType": "SINGLE_SELECT",
+      "options": [
+        {
+          "id": "f75ad846",
+          "name": "Todo",
+          "color": "GREEN",
+          "description": "This item hasn't been started"
+        },
+        {
+          "id": "47fc9ee4",
+          "name": "In Progress",
+          "color": "YELLOW",
+          "description": "This is actively being worked on"
+        },
+        {
+          "id": "98236657",
+          "name": "Done",
+          "color": "PURPLE",
+          "description": "This has been completed"
+        }
+      ]
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CY",
+      "name": "Labels",
+      "dataType": "LABELS",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+      "name": "Linked pull requests",
+      "dataType": "LINKED_PULL_REQUESTS",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cg",
+      "name": "Milestone",
+      "dataType": "MILESTONE",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Ck",
+      "name": "Repository",
+      "dataType": "REPOSITORY",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cs",
+      "name": "Reviewers",
+      "dataType": "REVIEWERS",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cw",
+      "name": "Parent issue",
+      "dataType": "PARENT_ISSUE",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+      "name": "Sub-issues progress",
+      "dataType": "SUB_ISSUES_PROGRESS",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C4",
+      "name": "Created",
+      "dataType": "CREATED",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C8",
+      "name": "Updated",
+      "dataType": "UPDATED",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DA",
+      "name": "Closed",
+      "dataType": "CLOSED",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+      "name": "Task ID",
+      "dataType": "TEXT",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2SingleSelectField",
+      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+      "name": "Delivery",
+      "dataType": "SINGLE_SELECT",
+      "options": [
+        {
+          "id": "c7fda122",
+          "name": "Backlog",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "395e8865",
+          "name": "Ready",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "04fd066e",
+          "name": "In progress",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "a1372c9d",
+          "name": "In review",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "a315aa54",
+          "name": "Verified",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "220b6838",
+          "name": "Merged",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "20d40666",
+          "name": "Released",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "38647f0f",
+          "name": "Blocked",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "636bd451",
+          "name": "Cancelled",
+          "color": "GRAY",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "__typename": "ProjectV2SingleSelectField",
+      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+      "name": "Phase",
+      "dataType": "SINGLE_SELECT",
+      "options": [
+        {
+          "id": "99bdfdf0",
+          "name": "P0",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "49b98a98",
+          "name": "P1",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "2d67980b",
+          "name": "P2",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "e4a4a6e8",
+          "name": "P3",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "aa7b5772",
+          "name": "P4",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "90e7462d",
+          "name": "P5",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "dfefe73c",
+          "name": "P6",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "1c1e26f4",
+          "name": "P7",
+          "color": "GRAY",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "__typename": "ProjectV2SingleSelectField",
+      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+      "name": "Component",
+      "dataType": "SINGLE_SELECT",
+      "options": [
+        {
+          "id": "eb47eedd",
+          "name": "Platform",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "acdb9f3d",
+          "name": "Database",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "1756c69e",
+          "name": "Server",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "e7f0020c",
+          "name": "Desktop",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "06178ba1",
+          "name": "Web apps",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "6c0ebf39",
+          "name": "Notebooks",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "776d2e53",
+          "name": "Governance",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "bf8b639d",
+          "name": "Security/Release",
+          "color": "GRAY",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "__typename": "ProjectV2SingleSelectField",
+      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+      "name": "Priority",
+      "dataType": "SINGLE_SELECT",
+      "options": [
+        {
+          "id": "61c45397",
+          "name": "Critical",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "212a93ea",
+          "name": "High",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "74ced31e",
+          "name": "Normal",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "ab21e344",
+          "name": "Low",
+          "color": "GRAY",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "__typename": "ProjectV2SingleSelectField",
+      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+      "name": "Risk",
+      "dataType": "SINGLE_SELECT",
+      "options": [
+        {
+          "id": "70bcce04",
+          "name": "Low",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "32175d1e",
+          "name": "Medium",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "867c076a",
+          "name": "High",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "d3ece014",
+          "name": "Critical",
+          "color": "GRAY",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "__typename": "ProjectV2SingleSelectField",
+      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+      "name": "Review gate",
+      "dataType": "SINGLE_SELECT",
+      "options": [
+        {
+          "id": "9ddcf2ad",
+          "name": "Standard PR",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "c4fd1bc4",
+          "name": "Human approval",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "7561d905",
+          "name": "Security",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "296f6b8b",
+          "name": "Data migration",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "59f085af",
+          "name": "License/Brand",
+          "color": "GRAY",
+          "description": ""
+        },
+        {
+          "id": "49322142",
+          "name": "Release",
+          "color": "GRAY",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HA",
+      "name": "Target release",
+      "dataType": "TEXT",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+      "name": "Evidence",
+      "dataType": "TEXT",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4IA",
+      "name": "Start date",
+      "dataType": "DATE",
+      "options": []
+    },
+    {
+      "__typename": "ProjectV2Field",
+      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4I8",
+      "name": "Target date",
+      "dataType": "DATE",
+      "options": []
+    }
+  ],
+  "views": [
+    {
+      "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_Ac",
+      "name": "View 1",
+      "layout": "TABLE_LAYOUT",
+      "filter": null
+    },
+    {
+      "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_dE",
+      "name": "Product backlog",
+      "layout": "TABLE_LAYOUT",
+      "filter": null
+    },
+    {
+      "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_dc",
+      "name": "Execution board",
+      "layout": "BOARD_LAYOUT",
+      "filter": null
+    },
+    {
+      "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_xc",
+      "name": "Release roadmap",
+      "layout": "ROADMAP_LAYOUT",
+      "filter": null
+    },
+    {
+      "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_xk",
+      "name": "Review and approvals",
+      "layout": "TABLE_LAYOUT",
+      "filter": null
+    },
+    {
+      "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_x4",
+      "name": "Source and security maintenance",
+      "layout": "TABLE_LAYOUT",
+      "filter": null
+    }
+  ],
+  "dependencies": [
+    {
+      "task": "FND-02",
+      "blocked_by": "FND-01",
+      "issue_id": 5508924071,
+      "blocking_issue_id": 5508924007
+    },
+    {
+      "task": "FND-03",
+      "blocked_by": "FND-02",
+      "issue_id": 5508924148,
+      "blocking_issue_id": 5508924071
+    },
+    {
+      "task": "FND-04",
+      "blocked_by": "FND-02",
+      "issue_id": 5508924229,
+      "blocking_issue_id": 5508924071
+    },
+    {
+      "task": "FND-05",
+      "blocked_by": "FND-02",
+      "issue_id": 5508924303,
+      "blocking_issue_id": 5508924071
+    },
+    {
+      "task": "FND-06",
+      "blocked_by": "FND-03",
+      "issue_id": 5508924368,
+      "blocking_issue_id": 5508924148
+    },
+    {
+      "task": "FND-06",
+      "blocked_by": "FND-04",
+      "issue_id": 5508924368,
+      "blocking_issue_id": 5508924229
+    },
+    {
+      "task": "FND-06",
+      "blocked_by": "FND-05",
+      "issue_id": 5508924368,
+      "blocking_issue_id": 5508924303
+    },
+    {
+      "task": "FND-06",
+      "blocked_by": "FND-08",
+      "issue_id": 5508924368,
+      "blocking_issue_id": 5508924673
+    },
+    {
+      "task": "FND-07",
+      "blocked_by": "FND-02",
+      "issue_id": 5508924529,
+      "blocking_issue_id": 5508924071
+    },
+    {
+      "task": "FND-08",
+      "blocked_by": "FND-07",
+      "issue_id": 5508924673,
+      "blocking_issue_id": 5508924529
+    },
+    {
+      "task": "GOV-01",
+      "blocked_by": "FND-01",
+      "issue_id": 5508924746,
+      "blocking_issue_id": 5508924007
+    },
+    {
+      "task": "GOV-02",
+      "blocked_by": "GOV-01",
+      "issue_id": 5508924821,
+      "blocking_issue_id": 5508924746
+    },
+    {
+      "task": "API-01",
+      "blocked_by": "PLT-01",
+      "issue_id": 5508924905,
+      "blocking_issue_id": 5508925066
+    },
+    {
+      "task": "API-01",
+      "blocked_by": "DB-01",
+      "issue_id": 5508924905,
+      "blocking_issue_id": 5508924986
+    },
+    {
+      "task": "DB-01",
+      "blocked_by": "FND-06",
+      "issue_id": 5508924986,
+      "blocking_issue_id": 5508924368
+    },
+    {
+      "task": "PLT-01",
+      "blocked_by": "FND-06",
+      "issue_id": 5508925066,
+      "blocking_issue_id": 5508924368
+    },
+    {
+      "task": "PLT-02",
+      "blocked_by": "PLT-01",
+      "issue_id": 5508925117,
+      "blocking_issue_id": 5508925066
+    },
+    {
+      "task": "PLT-03",
+      "blocked_by": "API-01",
+      "issue_id": 5508925309,
+      "blocking_issue_id": 5508924905
+    },
+    {
+      "task": "PLT-03",
+      "blocked_by": "PLT-02",
+      "issue_id": 5508925309,
+      "blocking_issue_id": 5508925117
+    },
+    {
+      "task": "PUB-01",
+      "blocked_by": "SRV-01",
+      "issue_id": 5508925384,
+      "blocking_issue_id": 5508925451
+    },
+    {
+      "task": "PUB-01",
+      "blocked_by": "UX-01",
+      "issue_id": 5508925384,
+      "blocking_issue_id": 5508925512
+    },
+    {
+      "task": "PUB-01",
+      "blocked_by": "DB-01",
+      "issue_id": 5508925384,
+      "blocking_issue_id": 5508924986
+    },
+    {
+      "task": "SRV-01",
+      "blocked_by": "PLT-03",
+      "issue_id": 5508925451,
+      "blocking_issue_id": 5508925309
+    },
+    {
+      "task": "UX-01",
+      "blocked_by": "PLT-02",
+      "issue_id": 5508925512,
+      "blocking_issue_id": 5508925117
+    },
+    {
+      "task": "UX-01",
+      "blocked_by": "API-01",
+      "issue_id": 5508925512,
+      "blocking_issue_id": 5508924905
+    },
+    {
+      "task": "API-02",
+      "blocked_by": "PUB-01",
+      "issue_id": 5508925589,
+      "blocking_issue_id": 5508925384
+    },
+    {
+      "task": "API-03",
+      "blocked_by": "API-02",
+      "issue_id": 5508925663,
+      "blocking_issue_id": 5508925589
+    },
+    {
+      "task": "API-04",
+      "blocked_by": "API-02",
+      "issue_id": 5508925736,
+      "blocking_issue_id": 5508925589
+    },
+    {
+      "task": "API-04",
+      "blocked_by": "DB-02",
+      "issue_id": 5508925736,
+      "blocking_issue_id": 5508925790
+    },
+    {
+      "task": "DB-02",
+      "blocked_by": "DB-01",
+      "issue_id": 5508925790,
+      "blocking_issue_id": 5508924986
+    },
+    {
+      "task": "OWN-01",
+      "blocked_by": "PUB-01",
+      "issue_id": 5508926019,
+      "blocking_issue_id": 5508925384
+    },
+    {
+      "task": "OWN-01",
+      "blocked_by": "FND-08",
+      "issue_id": 5508926019,
+      "blocking_issue_id": 5508924673
+    },
+    {
+      "task": "PUB-02",
+      "blocked_by": "PUB-01",
+      "issue_id": 5508926093,
+      "blocking_issue_id": 5508925384
+    },
+    {
+      "task": "PUB-02",
+      "blocked_by": "API-04",
+      "issue_id": 5508926093,
+      "blocking_issue_id": 5508925736
+    },
+    {
+      "task": "SEC-01",
+      "blocked_by": "API-04",
+      "issue_id": 5508926175,
+      "blocking_issue_id": 5508925736
+    },
+    {
+      "task": "SEC-01",
+      "blocked_by": "SRV-03",
+      "issue_id": 5508926175,
+      "blocking_issue_id": 5508926344
+    },
+    {
+      "task": "SEC-01",
+      "blocked_by": "SRV-04",
+      "issue_id": 5508926175,
+      "blocking_issue_id": 5508926417
+    },
+    {
+      "task": "SRV-02",
+      "blocked_by": "PUB-01",
+      "issue_id": 5508926270,
+      "blocking_issue_id": 5508925384
+    },
+    {
+      "task": "SRV-03",
+      "blocked_by": "PLT-02",
+      "issue_id": 5508926344,
+      "blocking_issue_id": 5508925117
+    },
+    {
+      "task": "SRV-03",
+      "blocked_by": "SRV-01",
+      "issue_id": 5508926344,
+      "blocking_issue_id": 5508925451
+    },
+    {
+      "task": "SRV-04",
+      "blocked_by": "PUB-02",
+      "issue_id": 5508926417,
+      "blocking_issue_id": 5508926093
+    },
+    {
+      "task": "PUB-03",
+      "blocked_by": "PUB-02",
+      "issue_id": 5508926490,
+      "blocking_issue_id": 5508926093
+    },
+    {
+      "task": "PUB-03",
+      "blocked_by": "PLT-02",
+      "issue_id": 5508926490,
+      "blocking_issue_id": 5508925117
+    },
+    {
+      "task": "PUB-04",
+      "blocked_by": "QGIS-04",
+      "issue_id": 5508926542,
+      "blocking_issue_id": 5508926840
+    },
+    {
+      "task": "PUB-04",
+      "blocked_by": "SRV-05",
+      "issue_id": 5508926542,
+      "blocking_issue_id": 5508926916
+    },
+    {
+      "task": "PUB-04",
+      "blocked_by": "SRV-06",
+      "issue_id": 5508926542,
+      "blocking_issue_id": 5508926987
+    },
+    {
+      "task": "QGIS-01",
+      "blocked_by": "PUB-01",
+      "issue_id": 5508926613,
+      "blocking_issue_id": 5508925384
+    },
+    {
+      "task": "QGIS-01",
+      "blocked_by": "FND-05",
+      "issue_id": 5508926613,
+      "blocking_issue_id": 5508924303
+    },
+    {
+      "task": "QGIS-02",
+      "blocked_by": "QGIS-01",
+      "issue_id": 5508926705,
+      "blocking_issue_id": 5508926613
+    },
+    {
+      "task": "QGIS-02",
+      "blocked_by": "PUB-02",
+      "issue_id": 5508926705,
+      "blocking_issue_id": 5508926093
+    },
+    {
+      "task": "QGIS-02",
+      "blocked_by": "SRV-03",
+      "issue_id": 5508926705,
+      "blocking_issue_id": 5508926344
+    },
+    {
+      "task": "QGIS-03",
+      "blocked_by": "QGIS-02",
+      "issue_id": 5508926777,
+      "blocking_issue_id": 5508926705
+    },
+    {
+      "task": "QGIS-03",
+      "blocked_by": "FND-05",
+      "issue_id": 5508926777,
+      "blocking_issue_id": 5508924303
+    },
+    {
+      "task": "QGIS-04",
+      "blocked_by": "QGIS-03",
+      "issue_id": 5508926840,
+      "blocking_issue_id": 5508926777
+    },
+    {
+      "task": "SRV-05",
+      "blocked_by": "SRV-04",
+      "issue_id": 5508926916,
+      "blocking_issue_id": 5508926417
+    },
+    {
+      "task": "SRV-05",
+      "blocked_by": "PUB-03",
+      "issue_id": 5508926916,
+      "blocking_issue_id": 5508926490
+    },
+    {
+      "task": "SRV-06",
+      "blocked_by": "PUB-03",
+      "issue_id": 5508926987,
+      "blocking_issue_id": 5508926490
+    },
+    {
+      "task": "SRV-06",
+      "blocked_by": "API-02",
+      "issue_id": 5508926987,
+      "blocking_issue_id": 5508925589
+    },
+    {
+      "task": "DB-03",
+      "blocked_by": "DB-02",
+      "issue_id": 5508927054,
+      "blocking_issue_id": 5508925790
+    },
+    {
+      "task": "DB-03",
+      "blocked_by": "FND-04",
+      "issue_id": 5508927054,
+      "blocking_issue_id": 5508924229
+    },
+    {
+      "task": "DB-04",
+      "blocked_by": "DB-03",
+      "issue_id": 5508927123,
+      "blocking_issue_id": 5508927054
+    },
+    {
+      "task": "DB-04",
+      "blocked_by": "API-04",
+      "issue_id": 5508927123,
+      "blocking_issue_id": 5508925736
+    },
+    {
+      "task": "DB-05",
+      "blocked_by": "DB-04",
+      "issue_id": 5508927211,
+      "blocking_issue_id": 5508927123
+    },
+    {
+      "task": "DB-06",
+      "blocked_by": "DB-05",
+      "issue_id": 5508927283,
+      "blocking_issue_id": 5508927211
+    },
+    {
+      "task": "DB-07",
+      "blocked_by": "DB-06",
+      "issue_id": 5508927354,
+      "blocking_issue_id": 5508927283
+    },
+    {
+      "task": "DB-08",
+      "blocked_by": "DB-07",
+      "issue_id": 5508927434,
+      "blocking_issue_id": 5508927354
+    },
+    {
+      "task": "QGIS-05",
+      "blocked_by": "QGIS-01",
+      "issue_id": 5508927504,
+      "blocking_issue_id": 5508926613
+    },
+    {
+      "task": "QGIS-05",
+      "blocked_by": "DB-06",
+      "issue_id": 5508927504,
+      "blocking_issue_id": 5508927283
+    },
+    {
+      "task": "SEC-02",
+      "blocked_by": "DB-08",
+      "issue_id": 5508927578,
+      "blocking_issue_id": 5508927434
+    },
+    {
+      "task": "SEC-02",
+      "blocked_by": "UX-02",
+      "issue_id": 5508927578,
+      "blocking_issue_id": 5508927649
+    },
+    {
+      "task": "SEC-02",
+      "blocked_by": "QGIS-05",
+      "issue_id": 5508927578,
+      "blocking_issue_id": 5508927504
+    },
+    {
+      "task": "UX-02",
+      "blocked_by": "DB-06",
+      "issue_id": 5508927649,
+      "blocking_issue_id": 5508927283
+    },
+    {
+      "task": "UX-02",
+      "blocked_by": "UX-01",
+      "issue_id": 5508927649,
+      "blocking_issue_id": 5508925512
+    },
+    {
+      "task": "WEB-01",
+      "blocked_by": "API-02",
+      "issue_id": 5508927732,
+      "blocking_issue_id": 5508925589
+    },
+    {
+      "task": "WEB-01",
+      "blocked_by": "QGIS-03",
+      "issue_id": 5508927732,
+      "blocking_issue_id": 5508926777
+    },
+    {
+      "task": "WEB-01",
+      "blocked_by": "SRV-06",
+      "issue_id": 5508927732,
+      "blocking_issue_id": 5508926987
+    },
+    {
+      "task": "WEB-02",
+      "blocked_by": "WEB-01",
+      "issue_id": 5508927805,
+      "blocking_issue_id": 5508927732
+    },
+    {
+      "task": "WEB-03",
+      "blocked_by": "WEB-02",
+      "issue_id": 5508927867,
+      "blocking_issue_id": 5508927805
+    },
+    {
+      "task": "WEB-04",
+      "blocked_by": "WEB-03",
+      "issue_id": 5508927935,
+      "blocking_issue_id": 5508927867
+    },
+    {
+      "task": "WEB-04",
+      "blocked_by": "SRV-02",
+      "issue_id": 5508927935,
+      "blocking_issue_id": 5508926270
+    },
+    {
+      "task": "WEB-05",
+      "blocked_by": "WEB-03",
+      "issue_id": 5508928006,
+      "blocking_issue_id": 5508927867
+    },
+    {
+      "task": "WEB-05",
+      "blocked_by": "PUB-03",
+      "issue_id": 5508928006,
+      "blocking_issue_id": 5508926490
+    },
+    {
+      "task": "NB-01",
+      "blocked_by": "PLT-03",
+      "issue_id": 5508928074,
+      "blocking_issue_id": 5508925309
+    },
+    {
+      "task": "NB-01",
+      "blocked_by": "FND-06",
+      "issue_id": 5508928074,
+      "blocking_issue_id": 5508924368
+    },
+    {
+      "task": "NB-02",
+      "blocked_by": "NB-01",
+      "issue_id": 5508928142,
+      "blocking_issue_id": 5508928074
+    },
+    {
+      "task": "NB-02",
+      "blocked_by": "FND-02",
+      "issue_id": 5508928142,
+      "blocking_issue_id": 5508924071
+    },
+    {
+      "task": "NB-03",
+      "blocked_by": "NB-02",
+      "issue_id": 5508928217,
+      "blocking_issue_id": 5508928142
+    },
+    {
+      "task": "NB-03",
+      "blocked_by": "PUB-03",
+      "issue_id": 5508928217,
+      "blocking_issue_id": 5508926490
+    },
+    {
+      "task": "NB-04",
+      "blocked_by": "NB-03",
+      "issue_id": 5508928279,
+      "blocking_issue_id": 5508928217
+    },
+    {
+      "task": "NB-05",
+      "blocked_by": "NB-04",
+      "issue_id": 5508928358,
+      "blocking_issue_id": 5508928279
+    },
+    {
+      "task": "OPS-01",
+      "blocked_by": "PUB-04",
+      "issue_id": 5508928422,
+      "blocking_issue_id": 5508926542
+    },
+    {
+      "task": "OPS-01",
+      "blocked_by": "SEC-02",
+      "issue_id": 5508928422,
+      "blocking_issue_id": 5508927578
+    },
+    {
+      "task": "OPS-01",
+      "blocked_by": "WEB-05",
+      "issue_id": 5508928422,
+      "blocking_issue_id": 5508928006
+    },
+    {
+      "task": "OPS-01",
+      "blocked_by": "NB-05",
+      "issue_id": 5508928422,
+      "blocking_issue_id": 5508928358
+    },
+    {
+      "task": "OPS-02",
+      "blocked_by": "DB-07",
+      "issue_id": 5508928501,
+      "blocking_issue_id": 5508927354
+    },
+    {
+      "task": "OPS-02",
+      "blocked_by": "NB-05",
+      "issue_id": 5508928501,
+      "blocking_issue_id": 5508928358
+    },
+    {
+      "task": "OPS-02",
+      "blocked_by": "PUB-03",
+      "issue_id": 5508928501,
+      "blocking_issue_id": 5508926490
+    },
+    {
+      "task": "OPS-03",
+      "blocked_by": "OPS-02",
+      "issue_id": 5508928572,
+      "blocking_issue_id": 5508928501
+    },
+    {
+      "task": "OPS-03",
+      "blocked_by": "FND-02",
+      "issue_id": 5508928572,
+      "blocking_issue_id": 5508924071
+    },
+    {
+      "task": "OPS-04",
+      "blocked_by": "OPS-03",
+      "issue_id": 5508928652,
+      "blocking_issue_id": 5508928572
+    },
+    {
+      "task": "OPS-04",
+      "blocked_by": "NB-02",
+      "issue_id": 5508928652,
+      "blocking_issue_id": 5508928142
+    },
+    {
+      "task": "OWN-02",
+      "blocked_by": "OPS-04",
+      "issue_id": 5508928759,
+      "blocking_issue_id": 5508928652
+    },
+    {
+      "task": "OWN-02",
+      "blocked_by": "NB-02",
+      "issue_id": 5508928759,
+      "blocking_issue_id": 5508928142
+    },
+    {
+      "task": "OWN-02",
+      "blocked_by": "QGIS-04",
+      "issue_id": 5508928759,
+      "blocking_issue_id": 5508926840
+    },
+    {
+      "task": "OWN-02",
+      "blocked_by": "FND-08",
+      "issue_id": 5508928759,
+      "blocking_issue_id": 5508924673
+    },
+    {
+      "task": "OWN-02",
+      "blocked_by": "OWN-01",
+      "issue_id": 5508928759,
+      "blocking_issue_id": 5508926019
+    },
+    {
+      "task": "QA-01",
+      "blocked_by": "API-03",
+      "issue_id": 5508928845,
+      "blocking_issue_id": 5508925663
+    },
+    {
+      "task": "QA-01",
+      "blocked_by": "PUB-04",
+      "issue_id": 5508928845,
+      "blocking_issue_id": 5508926542
+    },
+    {
+      "task": "QA-01",
+      "blocked_by": "WEB-05",
+      "issue_id": 5508928845,
+      "blocking_issue_id": 5508928006
+    },
+    {
+      "task": "QA-01",
+      "blocked_by": "NB-05",
+      "issue_id": 5508928845,
+      "blocking_issue_id": 5508928358
+    },
+    {
+      "task": "QA-01",
+      "blocked_by": "SEC-02",
+      "issue_id": 5508928845,
+      "blocking_issue_id": 5508927578
+    },
+    {
+      "task": "QA-02",
+      "blocked_by": "OPS-01",
+      "issue_id": 5508928907,
+      "blocking_issue_id": 5508928422
+    },
+    {
+      "task": "QA-02",
+      "blocked_by": "DB-08",
+      "issue_id": 5508928907,
+      "blocking_issue_id": 5508927434
+    },
+    {
+      "task": "QA-02",
+      "blocked_by": "WEB-04",
+      "issue_id": 5508928907,
+      "blocking_issue_id": 5508927935
+    },
+    {
+      "task": "REL-01",
+      "blocked_by": "FND-02",
+      "issue_id": 5508928984,
+      "blocking_issue_id": 5508924071
+    },
+    {
+      "task": "REL-01",
+      "blocked_by": "OPS-03",
+      "issue_id": 5508928984,
+      "blocking_issue_id": 5508928572
+    },
+    {
+      "task": "REL-01",
+      "blocked_by": "OPS-04",
+      "issue_id": 5508928984,
+      "blocking_issue_id": 5508928652
+    },
+    {
+      "task": "REL-01",
+      "blocked_by": "OWN-02",
+      "issue_id": 5508928984,
+      "blocking_issue_id": 5508928759
+    },
+    {
+      "task": "REL-01",
+      "blocked_by": "SEC-04",
+      "issue_id": 5508928984,
+      "blocking_issue_id": 5508929221
+    },
+    {
+      "task": "REL-02",
+      "blocked_by": "SEC-03",
+      "issue_id": 5508929056,
+      "blocking_issue_id": 5508929138
+    },
+    {
+      "task": "REL-02",
+      "blocked_by": "QA-01",
+      "issue_id": 5508929056,
+      "blocking_issue_id": 5508928845
+    },
+    {
+      "task": "REL-02",
+      "blocked_by": "QA-02",
+      "issue_id": 5508929056,
+      "blocking_issue_id": 5508928907
+    },
+    {
+      "task": "REL-02",
+      "blocked_by": "REL-01",
+      "issue_id": 5508929056,
+      "blocking_issue_id": 5508928984
+    },
+    {
+      "task": "REL-02",
+      "blocked_by": "OPS-02",
+      "issue_id": 5508929056,
+      "blocking_issue_id": 5508928501
+    },
+    {
+      "task": "REL-02",
+      "blocked_by": "OWN-02",
+      "issue_id": 5508929056,
+      "blocking_issue_id": 5508928759
+    },
+    {
+      "task": "REL-02",
+      "blocked_by": "GOV-02",
+      "issue_id": 5508929056,
+      "blocking_issue_id": 5508924821
+    },
+    {
+      "task": "SEC-03",
+      "blocked_by": "OPS-01",
+      "issue_id": 5508929138,
+      "blocking_issue_id": 5508928422
+    },
+    {
+      "task": "SEC-03",
+      "blocked_by": "OPS-03",
+      "issue_id": 5508929138,
+      "blocking_issue_id": 5508928572
+    },
+    {
+      "task": "SEC-04",
+      "blocked_by": "FND-07",
+      "issue_id": 5508929221,
+      "blocking_issue_id": 5508924529
+    },
+    {
+      "task": "SEC-04",
+      "blocked_by": "SEC-03",
+      "issue_id": 5508929221,
+      "blocking_issue_id": 5508929138
+    }
+  ],
+  "verification": {
+    "recorded_at": "2026-09-19T09:23:30.263248+00:00",
+    "import_report": {
+      "mode": "apply",
+      "project": {
+        "id": "PVT_kwHOAOk9es4Bj_k-",
+        "number": 2,
+        "url": "https://github.com/users/aloerch/projects/2"
+      },
+      "verified_issues": 66,
+      "verified_dependency_edges": 130,
+      "views_pending": [
+        "Product backlog: verify grouping, sorting, filters, visible fields and roadmap dates in the UI",
+        "Execution board: verify grouping, sorting, filters, visible fields and roadmap dates in the UI",
+        "Release roadmap: verify grouping, sorting, filters, visible fields and roadmap dates in the UI",
+        "Review and approvals: verify grouping, sorting, filters, visible fields and roadmap dates in the UI",
+        "Source and security maintenance: verify grouping, sorting, filters, visible fields and roadmap dates in the UI"
+      ],
+      "gov_01": "Live provisioning verified; human review remains required.",
+      "gov_02": "Incomplete: view configuration and evidence transitions require verification."
+    },
+    "transport_mutation_calls": 0,
+    "transport_read_calls": 480,
+    "all_item_values_and_archive_states_preserved": true,
+    "representative_issue_state_assignees_comments_bodies_preserved": true,
+    "representative_issue_evidence": {
+      "FND-01": {
+        "state": "closed",
+        "assignees": [
+          "aloerch"
+        ],
+        "comments": 2,
+        "body_sha256": "8c93cbd349973ac5c25be99f4a5143aec22e9c36393b666c23a566f6b20f2b29"
+      },
+      "FND-02": {
+        "state": "open",
+        "assignees": [
+          "aloerch"
+        ],
+        "comments": 2,
+        "body_sha256": "d2c5b678bafbb8b0d86afda4fae83c61b624e397e98502884866a95123a2ede2"
+      },
+      "GOV-01": {
+        "state": "open",
+        "assignees": [],
+        "comments": 1,
+        "body_sha256": "a8c3ba5fffef23f6f565db0868b86092c78e23a8859571db29e3078f6b7fb88b"
+      },
+      "GOV-02": {
+        "state": "open",
+        "assignees": [],
+        "comments": 0,
+        "body_sha256": "57bc960b68a13f5373100c8237050ab97770986f03ea55115852803312a965b6"
+      }
+    },
+    "project_public": true,
+    "project_closed": false,
+    "linked_repositories": 15,
+    "item_count": 66
+  },
+  "tested_file_sha256": {
+    "tools/bootstrap_github_project.py": "501306c4930fd94fae001766c720bf4648caf1ecd3420781b75e7e7ff392a883",
+    "tools/github_project_api.py": "a77a0f491f1cf9245f1e9424b71535245daaac757a29a6300a33a8fc914747f1",
+    "tests/test_project_importer.py": "d9a6184c5167dc9fbba47651dfb6a8a427bccbe38d32a0091fb361e092b83d03",
+    "tests/test_github_project_api.py": "4b96e0a13f4e308e00796aec0a3697ed44f1c32998901e2531497cbd96f93013"
+  },
+  "limits": [
+    "GOV-01 human review pending; live provisioning does not merge or release the task.",
+    "Five planned view names/layouts exist; GOV-02 grouping/sorting/filter/date verification remains pending.",
+    "GitHub automatically created View 1; it was preserved and needs Delivery/Status review.",
+    "No GIS product, independent rebuild, security or release acceptance follows from Project provisioning."
+  ]
+}
