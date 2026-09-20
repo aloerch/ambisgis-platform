@@ -1,0 +1,31 @@
+{
+  "source_declarations": [
+    {
+      "repository": "aloerch/ambisgis-geonode",
+      "commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+      "path": "geonode/settings.py",
+      "sha256": "652dea658029b136b393752cbaec676fdbf980619110ef293917c9d9a9b8ac75",
+      "size": 89184
+    },
+    {
+      "repository": "aloerch/ambisgis-geonode",
+      "commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+      "path": "geonode/geoserver/helpers.py",
+      "sha256": "0bb14d3b3bf22178f328d12b142ff5bf82c02e2c1eac1d7a2f34e8c6b8cb6d9d",
+      "size": 86911
+    }
+  ],
+  "selected_profiles": [
+    "importer",
+    "oauth2-geonode",
+    "geofence-server",
+    "geofence-server-postgres",
+    "printing",
+    "postgis"
+  ],
+  "scope": "bounded-compilation-compatibility-probes",
+  "wps": "deferred; GeoNode application default is false; donor recipe default differs; no product capability removed",
+  "bootstrap": "no retained extension data directory or deployment recipe installed",
+  "managed_branch_writes": "not enabled by selected legacy importer; durable publication/authorization remains a separate product gate",
+  "acceptance": false
+}

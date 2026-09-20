@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "source_commit": "b4e2fc4b7596cae051ee233417f39e3e33b5e6c5",
+  "source_archive": "/home/revelberry/Projects/AmbisGIS/source-archives/java-audit/geonode-research/geoserver-geonode-ext-b4e2fc4b7596cae051ee233417f39e3e33b5e6c5.tar.gz",
+  "source_archive_sha256": "c5fc10ffd52e7807e5aa0370666a8f7f3b8a63864a6107b12b47496c891aa265",
+  "retrievals": [
+    {
+      "path": "north-arrow-page.html",
+      "url": "https://commons.wikimedia.org/w/index.php?title=File:Arrow_North_CFCF.svg&oldid=1036216605",
+      "retrieved_at": "2026-09-20T19:09:56.763625+00:00",
+      "final_url": "https://commons.wikimedia.org/w/index.php?title=File:Arrow_North_CFCF.svg&oldid=1036216605",
+      "http_status": 200,
+      "size": 96067,
+      "sha256": "828d12bb1274c777a84e75f62cce17ead7706c944fec9c8f3fbe726f946aa8a0"
+    },
+    {
+      "path": "Arrow_North_CFCF.svg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Arrow_North_CFCF.svg",
+      "retrieved_at": "2026-09-20T19:09:57.193387+00:00",
+      "final_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Arrow_North_CFCF.svg",
+      "http_status": 200,
+      "size": 4828,
+      "sha256": "d307e75e7a6b7da858580bc582f38cee9204c25fb89647f80b91f9c884d827fc"
+    }
+  ],
+  "files": [
+    {
+      "path": "data/README.rst",
+      "size": 184,
+      "sha256": "255ec291496feb4bf032043fad29fedc89221e36c199890d4d44bd12fdf2053c",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned bootstrap/schema/configuration implementation and appropriate review precede activation."
+    },
+    {
+      "path": "data/geofence/geofence-datasource-ovr.properties",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned bootstrap/schema/configuration implementation and appropriate review precede activation."
+    },
+    {
+      "path": "data/geofence/geofence-server.properties",
+      "size": 610,
+      "sha256": "e6012bb7a7bb9c7ccffc55d1480e4a8f849d566650757d923072fce4f1776261",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned bootstrap/schema/configuration implementation and appropriate review precede activation."
+    },
+    {
+      "path": "data/geofence/geofence.properties",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned bootstrap/schema/configuration implementation and appropriate review precede activation."
+    },
+    {
+      "path": "data/geofence/geofence_db/_placeholder",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned bootstrap/schema/configuration implementation and appropriate review precede activation."
+    },
+    {
+      "path": "data/printing/Arrow_North_CFCF.svg",
+      "size": 4828,
+      "sha256": "d307e75e7a6b7da858580bc582f38cee9204c25fb89647f80b91f9c884d827fc",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "byte-matched-publisher-rights-evidence-retained",
+      "publisher_source_matches": true,
+      "publisher_declared_rights": "public-domain dedication, Carlos Francisco Cruz Fierro; Commons revision 1036216605; legal approval remains separate",
+      "next_action": "Use reviewed owned print fixtures; prove PDF/image/legend behavior independently of inherited layout and brand assets."
+    },
+    {
+      "path": "data/printing/config.yaml",
+      "size": 48568,
+      "sha256": "3fff96b7901f80345560af21807430b66e497b0c086428ff3f505400d56a9b50",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Use reviewed owned print fixtures; prove PDF/image/legend behavior independently of inherited layout and brand assets."
+    },
+    {
+      "path": "data/printing/config.yaml.geoext",
+      "size": 9349,
+      "sha256": "70b6c3be2ec0597a62915ad770adb3aaa22a806fff4d996427142d9ffa9dab0f",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Use reviewed owned print fixtures; prove PDF/image/legend behavior independently of inherited layout and brand assets."
+    },
+    {
+      "path": "data/printing/config.yaml.ms2",
+      "size": 38714,
+      "sha256": "1ed561d2425931705219ab7861440381d87b7038541c1d5187fbc46ceecdd8a5",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Use reviewed owned print fixtures; prove PDF/image/legend behavior independently of inherited layout and brand assets."
+    },
+    {
+      "path": "data/printing/default_error.png",
+      "size": 1784,
+      "sha256": "86750647c5f76e95fbdde52c44a3034c7e0148b9fe7a62a8ff6ddea5f2f3f1a9",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Use reviewed owned print fixtures; prove PDF/image/legend behavior independently of inherited layout and brand assets."
+    },
+    {
+      "path": "data/printing/logo-geonode.png",
+      "size": 9104,
+      "sha256": "778647493cacc8b1b518aeec0f0debc1c51a76ed1de523933c2f1ff0ba78e2ee",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Use reviewed owned print fixtures; prove PDF/image/legend behavior independently of inherited layout and brand assets."
+    },
+    {
+      "path": "data/printing/print_header.png",
+      "size": 14166,
+      "sha256": "5e251cead51a9eb35f93e7d9fd9c7fdcdca08a6fdbad31eb8faa0702090847e3",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Use reviewed owned print fixtures; prove PDF/image/legend behavior independently of inherited layout and brand assets."
+    },
+    {
+      "path": "data/security/auth/default/config.xml",
+      "size": 247,
+      "sha256": "3a0951ac56db1392ba1cc0327dacf5e426866a45e203a64f0de31258278e0c5e",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/auth/geofence/config.xml",
+      "size": 185,
+      "sha256": "919128f95686393e534c47d37b3b303143c0f4eac62e2b929e8eb40182a90939",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/config.xml",
+      "size": 3707,
+      "sha256": "0c2398c2f45eda377f671fa4b0e8a0e280b827c4c6a4d49ca2a526d6e164f27b",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/anonymous/config.xml",
+      "size": 210,
+      "sha256": "f730f2541fbc0ab1960e09366b4966131473ca0f64dd6a2ac9df95bec513212a",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/basic/config.xml",
+      "size": 233,
+      "sha256": "038dfc9a91d463bbd606e52fdcc3514e62bd9ce6ef659509377f79895c20149b",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/contextAsc/config.xml",
+      "size": 256,
+      "sha256": "a5bd07b133f0583c5c825db0c42725aed9852a36b6740650a9b11e91799f7ff6",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/contextNoAsc/config.xml",
+      "size": 259,
+      "sha256": "22bd5e3aef69248e8b63fcd261ca58914b5c6f582243993c21012d419930d5ca",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/exception/config.xml",
+      "size": 201,
+      "sha256": "8f3152e509858144bcee946ba436ac0f42e4be59ed6d28ba9669f0ba81b2809c",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/form/config.xml",
+      "size": 326,
+      "sha256": "b878a4ebb757177fa0f41cf7f1409ac6dfb9cbe4ef6bb903441a4e08ef95c2bd",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/formLogout/config.xml",
+      "size": 362,
+      "sha256": "23ca82efc615d6d4f99a7537ca653b862ec048ea164a84404d6e1cde54af6655",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/geonode-oauth2/config.xml",
+      "size": 1656,
+      "sha256": "5e397f9193c620d50e2bba25236809f2b02b290bce303608fc6777d1abad91e1",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/interceptor/config.xml",
+      "size": 340,
+      "sha256": "573534eee3b30886b7276440bdfdc32ec7daa2d6a770ff356f40f627117da52e",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/rememberme/config.xml",
+      "size": 214,
+      "sha256": "54628788409c0e52151c0663c8f01f64cfac28971365323abe37e1f95aed8d75",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/restInterceptor/config.xml",
+      "size": 344,
+      "sha256": "7dcb6b8617271495f4496f9a93498c840f01d4b3a77ff120353e8a65c2c67255",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/roleFilter/config.xml",
+      "size": 310,
+      "sha256": "c9d9777d9bb02940d69284a48d0e713e71b7dfedc881caae573180fc7eb5383f",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/filter/sslFilter/config.xml",
+      "size": 187,
+      "sha256": "2cb16be817414d44f9d64f429c8b6e8ac79529920304f305078dce701caa54c4",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/geoserver.jceks",
+      "size": 1027,
+      "sha256": "1cf259030f4ea648e2a6e8685f23e9fe69af7d45313b096071c2dc4f0968b55e",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/layers.properties",
+      "size": 97,
+      "sha256": "48beef030d60e562a9ebaa041aea8c814a83bb969c5ce4dde7dd3360e55fd49a",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/masterpw.xml",
+      "size": 73,
+      "sha256": "a9b47a240f8df8123e4081548f0f2f8f9cf26737bf4597ccd8ee688629b7b35b",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/masterpw/default/config.xml",
+      "size": 296,
+      "sha256": "c3db47795e8d4122dc41aed28883d931ae09831955f9e842c4ea1588cca5301a",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/masterpw/default/passwd",
+      "size": 32,
+      "sha256": "22768bfab7d7559e9b4423668b75999684f3348e8274040d2ca8f0448060eaa0",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/pwpolicy/default/config.xml",
+      "size": 365,
+      "sha256": "aa72f0505f8f9bd0ed323c9a79f3e0303eb4dd70202d2eeac9fafeb157065069",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/pwpolicy/master/config.xml",
+      "size": 364,
+      "sha256": "363f58b1c60b3547178212c3095ac033ed519d318aedd0aed5e5119d10ce08cc",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/rest.properties",
+      "size": 1532,
+      "sha256": "fdb027c58abceb415d1d1b333e6fb0ec219564fae6475a20fe92ad4cf5aec1d0",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/role/default/config.xml",
+      "size": 355,
+      "sha256": "8f35484f42fd28bb92e7076a5bb09f2cabd0966774fa8cafd9e9ce552a3fd289",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/role/default/roles.xml",
+      "size": 411,
+      "sha256": "37ca5165921726763f4b530fa3d84007cd0fcffdf797b44d31847dccfe79aa8d",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/role/default/roles.xsd",
+      "size": 3526,
+      "sha256": "6cf8bb267bd1f3289128013c4d7cd1c2aecf3426ff936e7aa1cc02490a039f6e",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/role/geonode REST role service/config.xml",
+      "size": 858,
+      "sha256": "2c502cb4c825112ac0a62443951edba2ea57f1851d75b29fba54fbea97bfc10c",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/services.properties",
+      "size": 341,
+      "sha256": "d6ac7d2ebd36a11fd3790c27cdd48da78c610057d3e833e051218956447ec23f",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/usergroup/default/config.xml",
+      "size": 391,
+      "sha256": "69a9113af0d14ee1b0f8ef6590a386b98efc13f26fca26d8ce44d735cd4adeae",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/usergroup/default/users.xml",
+      "size": 245,
+      "sha256": "fa22eac5b8bf42a49ae791e39c8e58cd8af84ae1ba2d4fcd2df14820aaf0af62",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/usergroup/default/users.xsd",
+      "size": 2962,
+      "sha256": "10961823d975568c5b8f88b1fd9ac55344e78810ed0053501c045f607158e6bb",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/security/version.properties",
+      "size": 119,
+      "sha256": "77841fe4eff5cdbb0c336447e0afd9269f48c0dab9ecb0235ffa02527d2c0ff9",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Owned deployment configuration must generate fresh credentials and use canonical policy; do not import inherited credential stores or users."
+    },
+    {
+      "path": "data/wps.xml",
+      "size": 1904,
+      "sha256": "39b3a4e242c03ddc4ad869fe2d9eaaca06a256235e4ead0d09c7d08a1d81ff0f",
+      "disposition": "retained-for-research-not-installed",
+      "rights_status": "unresolved-file-level-rights",
+      "next_action": "Remain outside this bounded profile; WPS activation requires explicit capability and authorization tests."
+    }
+  ],
+  "installed_assets": 0,
+  "legal_approval": false
+}
