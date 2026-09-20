@@ -25,7 +25,7 @@ TARGETS = {
     'mapfish': 'org.mapfish.print:print-lib',
     'geofence': 'org.geoserver.geofence:geofence-persistence-pg-test',
     'importer': 'org.geoserver.importer:gs-importer-core',
-    'oauth': 'org.geoserver.extension:gs-sec-oauth2-geonode',
+    'oauth': 'org.geoserver.community:gs-sec-oauth2-geonode',
 }
 
 TEST_PACKAGES = {'referencing': 'org/geotools/referencing/', 'xml': 'org/geotools/xml/',
@@ -37,7 +37,7 @@ TARGET_MODULES = {'referencing': 'geotools/modules/library/referencing/',
                   'mapfish': 'mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/',
                   'geofence': 'geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/',
                   'importer': 'geoserver/src/extension/importer/core/',
-                  'oauth': 'geoserver/src/extension/security/oauth2-geonode/'}
+                  'oauth': 'geoserver/src/community/security/oauth2-geonode/'}
 
 
 def materialize(custody, destination):
@@ -116,13 +116,15 @@ def validate_execution(report, output, target, tests):
         report['target_executed_tests'] = sum(r['tests'] - r['skipped'] for r in selected)
 
 
-def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None):
+def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None):
     if target not in TARGETS or stage not in ('test', 'package') or tests not in ('all', 'target', 'schema-resolver', 'compile-only'):
         raise ValueError('unsupported bounded target or lifecycle')
     if repair not in ('none', 'xmlcodegen-emf') or (tests == 'schema-resolver' and target != 'xml'):
         raise ValueError('unsupported bounded repair or schema test target')
     if (postgres_prefix is None) != (postgres_evidence is None) or (postgres_prefix and target != 'geofence'):
         raise ValueError('PostgreSQL fixture requires both paths and GeoFence target')
+    if (gdal_prefix is None) != (gdal_archive is None) or (gdal_prefix and target != 'importer'):
+        raise ValueError('GDAL fixture requires both paths and importer target')
     output.mkdir(parents=True, exist_ok=False)
     report = {'schema_version': 1, 'runner_sha256': sha(Path(__file__)), 'started_at': datetime.now(timezone.utc).isoformat(),
               'target': target, 'stage': stage, 'test_selection': tests, 'purpose': 'exploratory-compatibility-probe',
@@ -185,6 +187,11 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
         local = output / 'fresh-m2'
         local.mkdir()
         cmd, env = command(work, java, maven, 'dependencies', local, settings, output.name)
+        if gdal_prefix is not None:
+            import gdal_fixture
+            report['gdal_fixture'] = gdal_fixture.prepare(gdal_prefix, gdal_archive, output)
+            env.update(report['gdal_fixture']['environment'])
+            env['PATH'] = str(output / 'native-bin') + ':' + env['PATH']
         cmd = cmd[:cmd.index('-pl')] + ['-pl', TARGETS[target], '-am', stage,
             '-Dspotless.check.skip=true', '-Dmaven.test.failure.ignore=false',
             '-Dallow.test.failure.ignore=false']
@@ -254,6 +261,8 @@ def main():
         parser.add_argument('--' + option, type=Path, required=True)
     parser.add_argument('--target', choices=TARGETS, required=True)
     parser.add_argument('--stage', choices=('test', 'package'), default='test')
+    parser.add_argument('--gdal-prefix', type=Path)
+    parser.add_argument('--gdal-archive', type=Path)
     parser.add_argument('--postgres-prefix', type=Path)
     parser.add_argument('--postgres-evidence', type=Path)
     parser.add_argument('--repair', choices=('none', 'xmlcodegen-emf'), default='none')
@@ -261,7 +270,7 @@ def main():
     parser.add_argument('--timeout', type=int, default=1200)
     args = parser.parse_args()
     result = probe(args.audit_custody.resolve(), args.custody.resolve(), args.toolchain_custody.resolve(),
-                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence)
+                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive)
     print(json.dumps(result, indent=2))
     return result['result_exit_code']
 
