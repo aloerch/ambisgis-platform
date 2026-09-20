@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "test_compatibility",
+    "test_gdal_fixture",
+    "-v"
+  ],
+  "exit_code": 0,
+  "scope": "tooling regression only; no native component run"
+}

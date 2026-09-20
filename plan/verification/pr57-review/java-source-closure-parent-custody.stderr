@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure/build-support/java/acquisition.py", line 136, in <module>
+    main()
+    ~~~~^^
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure/build-support/java/acquisition.py", line 130, in main
+    report = verify(args.custody, manifest)
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure/build-support/java/acquisition.py", line 52, in verify
+    records = entries(custody, manifest)
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure/build-support/java/acquisition.py", line 27, in entries
+    raise ValueError('expected a nonempty version 1 audit manifest')
+ValueError: expected a nonempty version 1 audit manifest

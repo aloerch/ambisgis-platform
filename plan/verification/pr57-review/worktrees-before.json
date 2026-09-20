@@ -1,0 +1,122 @@
+[
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform",
+    "HEAD": "3e7581a06b000856ea9b27468cc415612c28b4b0",
+    "branch": "refs/heads/ambisgis/main",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-db-validation",
+    "HEAD": "9e88f6d400bda30f7b2192b6f13f011e999967c0",
+    "branch": "refs/heads/fnd-02/database-validation",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-dependencies",
+    "HEAD": "1deeaef1eaf49ee925752e9f56faa0d085eba900",
+    "branch": "refs/heads/fnd-02/dependency-inputs",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov01",
+    "HEAD": "3c4a95415049f574caacb52528edd177ef4b69f7",
+    "branch": "refs/heads/gov-01/project-importer",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov02",
+    "HEAD": "e19bc4960866d89c749e1d2d68427dd586130d2f",
+    "branch": "refs/heads/gov-02/saved-view-reconciliation",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java",
+    "HEAD": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+    "branch": "refs/heads/fnd-02/java-dependency-audit",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure",
+    "HEAD": "7d3063f89c20b5e028b0151a6648a79e4ef14a83",
+    "branch": "refs/heads/fnd-02/java-source-compatibility",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-compatibility",
+    "HEAD": "c1aa7893e93b314af010bd9e01c9b7210591f5b8",
+    "branch": "refs/heads/fnd-02/java-compatibility-probes",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-inventory",
+    "HEAD": "a20e6da2b3278c866f899a841be34d922688ae1c",
+    "branch": "refs/heads/fnd-02/java-resolution-inventory",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-proxy",
+    "HEAD": "f569ef3d480a87013c30e107c782995a10e62658",
+    "branch": "refs/heads/fnd-02/java-offline-replay",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-resolution",
+    "HEAD": "8eeb408f296b7c6152fae2ef5edef65161f674ac",
+    "branch": "refs/heads/fnd-02/java-toolchain-resolution",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-source-closure",
+    "HEAD": "2a30c457cfbf00be36b164f9cbc25873002d278a",
+    "branch": "refs/heads/fnd-02/java-source-provenance",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-tool",
+    "HEAD": "f9760feff99a5cafbd968c6a279194604009f9d5",
+    "branch": "refs/heads/fnd-02/java-audit-tool",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-toolchain",
+    "HEAD": "cb0314f6c60ca9b53a6eed6ff41746cc57884130",
+    "branch": "refs/heads/fnd-02/java-toolchain-custody",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-javacsv",
+    "HEAD": "a658665d7440268f5a6d72b6ec55a47fefe7214b",
+    "branch": "refs/heads/fnd-02/javacsv-source-recovery",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jupyter",
+    "HEAD": "d1b39132c1b003f354589026a7e211021aac1c56",
+    "branch": "refs/heads/fnd-02/jupyter-runtime",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-offline",
+    "HEAD": "038e2fd1df1e11be8e45a9f7d5273b55cd338abf",
+    "branch": "refs/heads/fnd-02/offline-runner",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-pr-review",
+    "HEAD": "28c9d79757b98bdedd44b5d7486835f9e4b71e63",
+    "branch": "refs/heads/gov-02/pr-review-visibility",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser",
+    "HEAD": "1c318dc92fd02d2b791a7d9235c88b8f55b6321a",
+    "branch": "refs/heads/review/fnd-02-resolution-parser",
+    "status": ""
+  },
+  {
+    "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source",
+    "HEAD": "1c3a9b7f85c45cb8f00ac2ebe70041b2fbd755b9",
+    "branch": "refs/heads/fnd-02/source-evidence",
+    "status": ""
+  }
+]

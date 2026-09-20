@@ -1,0 +1,318 @@
+{
+  "scope": "read-only historical receipt/log/native XML revalidation; no Maven/native component execution",
+  "runs": [
+    {
+      "run": "geofence-01",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 0,
+      "native_totals": {
+        "tests": 0,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": []
+    },
+    {
+      "run": "geofence-02",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 0,
+      "native_totals": {
+        "tests": 0,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": []
+    },
+    {
+      "run": "geofence-03",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 16,
+      "native_totals": {
+        "tests": 62,
+        "errors": 22,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": []
+    },
+    {
+      "run": "geofence-04",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 4,
+      "native_totals": {
+        "tests": 8,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": []
+    },
+    {
+      "run": "geofence-05",
+      "result_exit_code": 0,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 16,
+      "native_totals": {
+        "tests": 62,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": [],
+      "original_source_check_completed": true,
+      "network_denial_rechecked": true,
+      "cluster_stop_readback": true
+    },
+    {
+      "run": "geofence-06",
+      "result_exit_code": 0,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 16,
+      "native_totals": {
+        "tests": 62,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": [],
+      "original_source_check_completed": true,
+      "network_denial_rechecked": true,
+      "cluster_stop_readback": true
+    },
+    {
+      "run": "importer-01",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 0,
+      "native_totals": {
+        "tests": 0,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": []
+    },
+    {
+      "run": "importer-02",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 0,
+      "native_totals": {
+        "tests": 0,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": []
+    },
+    {
+      "run": "importer-03",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 0,
+      "native_totals": {
+        "tests": 0,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": []
+    },
+    {
+      "run": "importer-04",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 0,
+      "native_totals": {
+        "tests": 0,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": []
+    },
+    {
+      "run": "importer-05",
+      "result_exit_code": 0,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 20,
+      "native_totals": {
+        "tests": 118,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 10
+      },
+      "issues": [],
+      "original_source_check_completed": true,
+      "network_denial_rechecked": true
+    },
+    {
+      "run": "importer-06",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 0,
+      "native_totals": {
+        "tests": 0,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": []
+    },
+    {
+      "run": "importer-07",
+      "result_exit_code": 0,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 20,
+      "native_totals": {
+        "tests": 118,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 6
+      },
+      "issues": [],
+      "original_source_check_completed": true,
+      "network_denial_rechecked": true
+    },
+    {
+      "run": "logging-01",
+      "result_exit_code": 0,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 0,
+      "native_totals": {
+        "tests": 0,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": [],
+      "network_denial_rechecked": true
+    },
+    {
+      "run": "logging-02",
+      "result_exit_code": 0,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 0,
+      "native_totals": {
+        "tests": 0,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": [],
+      "network_denial_rechecked": true
+    },
+    {
+      "run": "mapfish-01",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 128,
+      "native_totals": {
+        "tests": 686,
+        "errors": 1,
+        "failures": 0,
+        "skipped": 8
+      },
+      "issues": []
+    },
+    {
+      "run": "mapfish-02",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 0,
+      "native_totals": {
+        "tests": 0,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": []
+    },
+    {
+      "run": "mapfish-03",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 24,
+      "native_totals": {
+        "tests": 84,
+        "errors": 24,
+        "failures": 0,
+        "skipped": 6
+      },
+      "issues": []
+    },
+    {
+      "run": "referencing-01",
+      "result_exit_code": 0,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 124,
+      "native_totals": {
+        "tests": 675,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 8
+      },
+      "issues": [],
+      "original_source_check_completed": true,
+      "network_denial_rechecked": true
+    },
+    {
+      "run": "xml-01",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 128,
+      "native_totals": {
+        "tests": 686,
+        "errors": 1,
+        "failures": 0,
+        "skipped": 8
+      },
+      "issues": []
+    },
+    {
+      "run": "xml-02",
+      "result_exit_code": 1,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 35,
+      "native_totals": {
+        "tests": 298,
+        "errors": 1,
+        "failures": 0,
+        "skipped": 4
+      },
+      "issues": []
+    },
+    {
+      "run": "xml-schema-03",
+      "result_exit_code": 0,
+      "receipt_and_retained_copy_verified": true,
+      "native_reports_rechecked": 2,
+      "native_totals": {
+        "tests": 12,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "issues": [],
+      "original_source_check_completed": true,
+      "network_denial_rechecked": true
+    }
+  ],
+  "run_count": 22,
+  "native_report_count": 533,
+  "successful_native_runs": [
+    "geofence-05",
+    "geofence-06",
+    "importer-05",
+    "importer-07",
+    "referencing-01",
+    "xml-schema-03"
+  ],
+  "issues": []
+}

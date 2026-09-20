@@ -1,0 +1,41 @@
+test_arbitrary_resource_not_empty (test_source_closure.FullAccountingTests.test_arbitrary_resource_not_empty) ... ok
+test_benign_encoded_pom_preserves_original_declaration_values (test_source_closure.FullAccountingTests.test_benign_encoded_pom_preserves_original_declaration_values) ... ok
+test_embedded_source_not_missing_classifier (test_source_closure.FullAccountingTests.test_embedded_source_not_missing_classifier) ... ok
+test_empty_maven_metadata_counts_separately (test_source_closure.FullAccountingTests.test_empty_maven_metadata_counts_separately) ... ok
+test_encoded_pom_declarations_are_refused_before_source_accounting (test_source_closure.FullAccountingTests.test_encoded_pom_declarations_are_refused_before_source_accounting) ... ok
+test_generated_rule_without_source_recipe_rejected (test_source_closure.FullAccountingTests.test_generated_rule_without_source_recipe_rejected) ... ok
+test_java_template_is_explicit (test_source_closure.FullAccountingTests.test_java_template_is_explicit) ... ok
+test_nested_jar_under_metadata_not_empty (test_source_closure.FullAccountingTests.test_nested_jar_under_metadata_not_empty) ... ok
+test_observed_classpath_requires_exact_binary_identity (test_source_closure.FullAccountingTests.test_observed_classpath_requires_exact_binary_identity) ... ok
+test_posix_colon_member_is_inert (test_source_closure.FullAccountingTests.test_posix_colon_member_is_inert) ... ok
+test_unmapped_class_remains_unresolved (test_source_closure.FullAccountingTests.test_unmapped_class_remains_unresolved) ... ok
+test_windows_drive_archive_path_rejected (test_source_closure.FullAccountingTests.test_windows_drive_archive_path_rejected) ... ok
+test_class_source_reads_exact_source_attribute (test_source_closure.SourceClosureTests.test_class_source_reads_exact_source_attribute) ... ok
+test_comment_delimiters_inside_strings_do_not_create_classes (test_source_closure.SourceClosureTests.test_comment_delimiters_inside_strings_do_not_create_classes) ... ok
+test_comment_does_not_forge_type_or_package (test_source_closure.SourceClosureTests.test_comment_does_not_forge_type_or_package) ... ok
+test_duplicate_zip_path_rejected (test_source_closure.SourceClosureTests.test_duplicate_zip_path_rejected) ... ok
+test_input_digest_checked (test_source_closure.SourceClosureTests.test_input_digest_checked) ... ok
+test_manifest_requires_all_exact_gaps (test_source_closure.SourceClosureTests.test_manifest_requires_all_exact_gaps) ... ok
+test_missing_debug_attribute_stays_absent (test_source_closure.SourceClosureTests.test_missing_debug_attribute_stays_absent) ... ok
+test_nested_type_is_not_inferred_as_top_level (test_source_closure.SourceClosureTests.test_nested_type_is_not_inferred_as_top_level) ... ok
+test_non_archive_rejected (test_source_closure.SourceClosureTests.test_non_archive_rejected) ... ok
+test_reject_class_magic (test_source_closure.SourceClosureTests.test_reject_class_magic) ... ok
+test_reject_class_source_path (test_source_closure.SourceClosureTests.test_reject_class_source_path) ... ok
+test_reject_trailing_class_bytes (test_source_closure.SourceClosureTests.test_reject_trailing_class_bytes) ... ok
+test_reject_truncated_class (test_source_closure.SourceClosureTests.test_reject_truncated_class) ... ok
+test_restore_checks_hash_before_retaining (test_source_closure.SourceClosureTests.test_restore_checks_hash_before_retaining) ... ok
+test_restore_preserves_existing_input_and_is_idempotent (test_source_closure.SourceClosureTests.test_restore_preserves_existing_input_and_is_idempotent) ... ok
+test_secondary_class_maps_to_actual_declaring_source (test_source_closure.SourceClosureTests.test_secondary_class_maps_to_actual_declaring_source) ... ok
+test_source_attribute_package_mapping (test_source_closure.SourceClosureTests.test_source_attribute_package_mapping) ... ok
+test_stripped_class_has_labeled_declaration_inference (test_source_closure.SourceClosureTests.test_stripped_class_has_labeled_declaration_inference) ... ok
+test_symlink_blob_rejected (test_source_closure.SourceClosureTests.test_symlink_blob_rejected) ... ok
+test_tar_links_rejected (test_source_closure.SourceClosureTests.test_tar_links_rejected) ... ok
+test_wrong_internal_class_path_rejected (test_source_closure.SourceClosureTests.test_wrong_internal_class_path_rejected) ... ok
+test_wrong_package_is_not_coverage (test_source_closure.SourceClosureTests.test_wrong_package_is_not_coverage) ... ok
+test_zip_symlink_rejected (test_source_closure.SourceClosureTests.test_zip_symlink_rejected) ... ok
+test_zip_traversal_rejected (test_source_closure.SourceClosureTests.test_zip_traversal_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.015s
+
+OK

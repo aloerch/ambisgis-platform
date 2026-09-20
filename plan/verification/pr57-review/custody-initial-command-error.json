@@ -1,0 +1,11 @@
+{
+  "error": "FileNotFoundError",
+  "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-research/custody-snapshot-01.json",
+  "cause": "Initial orchestration assumed all snapshots used the same filename; verifier outputs retained; discover actual research manifest and rerun only missing checks.",
+  "archives_modified": false,
+  "additional_error": {
+    "manifest": "java-source-closure-parent/custody-snapshot-01.json",
+    "reason": "Original research schema omits schema_version; generic CLI rejects it."
+  },
+  "resolution": "Both research manifests verified with original file entries through an explicit in-memory schema adapter; original hashes and exact file sets retained in research-custody.json."
+}

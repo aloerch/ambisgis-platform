@@ -1,0 +1,26 @@
+[
+  {
+    "status": "audit-inputs-verified",
+    "build_ready": false,
+    "files": 93,
+    "bytes": 3183613,
+    "custody": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-parent",
+    "manifest": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-parent/custody-snapshot-01.json",
+    "manifest_sha256": "ac062d70e69d5b5093add3de1dd456317ef0c8e1bc15815bfcfd0b9ba0329a42",
+    "complete_file_set_equal": true,
+    "original_manifest_unchanged": true,
+    "schema_adapter": "add schema_version 1 in memory only; original file entries unchanged"
+  },
+  {
+    "status": "audit-inputs-verified",
+    "build_ready": false,
+    "files": 115,
+    "bytes": 4166763,
+    "custody": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-research",
+    "manifest": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-research/research-snapshot-01.json",
+    "manifest_sha256": "1354e3a5781ba2003c91e22d2a1232756d8359db87c643d7e04ec4bf9b69c71e",
+    "complete_file_set_equal": true,
+    "original_manifest_unchanged": true,
+    "schema_adapter": "add schema_version 1 in memory only; original file entries unchanged"
+  }
+]

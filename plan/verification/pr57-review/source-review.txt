@@ -1,0 +1,77 @@
+PR 57 independent scoped engineering review — source closure and recovered-source tooling
+
+Reviewed immutable pre-integration commit: 7d3063f89c20b5e028b0151a6648a79e4ef14a83
+Pre-integration tree: f825d7f3be05a97da1ac4046abef654599ae0630
+Reviewed integrated base: dc250cd854ae87bfb80657148efe937a69c381dc
+Integrated tree: 841e19082f139909e6097bf10ec96ed78e96060f
+Merged-main base: bb3680802d7f7d5c500180ec12e66d32d81d0aa0
+
+Scope: source_closure.py and its manifest/tests; JGridShift, JavaCSV recovery/probe,
+Huldra probe; corresponding provenance, recovered-source and handoff claims.
+The parent integrator separately reviews compatibility changes, live tracking,
+ancestry, selected-branch integration, full suites, and actual custody checks.
+This is engineering assessment, not owner approval or security/legal acceptance.
+
+One confirmed material P2 finding:
+At source_closure.py:216-219 in the reviewed base, the source-closure path duplicated
+ASCII DTD/entity scanning before encoding-aware ElementTree parsing. A disposable,
+hash-consistent POM fixture was refused as UTF-8 but accepted as UTF-16, UTF-16LE,
+and UTF-16BE, emitting the internal entity value ENTITY_EXPANDED into license
+inventory. The presence of the fixed PR 55 parser elsewhere did not protect this
+new path. Original reproducer: source-pom-declaration-reproducer.json and its
+preserved copy parser/original-reproducer.json. No retained source was changed.
+
+Authorized narrow correction, ready for integrator cherry-pick:
+Commit fc376c13deecae500c312775a4bce6e068a1cb68
+Tree 484dc12b278d736d70ddc71a4842366e3f3feaf2
+Branch review/fnd-02-source-parser
+Worktree /home/revelberry/Projects/AmbisGIS/ambisgis-platform-review57-parser
+Only build-support/java/source_closure.py and test_source_closure.py changed.
+The source-closure path now uses resolution_inventory.pom_licenses as its shared
+encoding-aware validity guard. Its existing declaration collection is preserved,
+including whitespace, empty values, and scope; there is no interpretation change
+to already accepted POM license text. PR 55 resolution_inventory.py and its tests
+remain byte-identical to merged main (hashes in parser/before-hashes.json and
+parser/after-tests.json).
+
+Actual tests for this repair:
+- New source-closure regressions cover internal, empty, and external DTD declarations
+  across UTF-8, UTF-8 BOM, UTF-16 BOM, UTF-16LE, UTF-16BE, and UTF-16BE BOM.
+- Benign namespaced non-ASCII licenses remain accepted across the same six encodings;
+  original whitespace and empty declaration values, source hashes and bounds remain.
+- Before correction: 36 source-closure tests, 12 failing subtest observations.
+- After correction: 36 source-closure tests passed, no failures/errors/skips.
+- Shared PR 55 inventory suite: 31 passed, no failures/errors/skips.
+- git diff --check passed. Local repair worktree clean after commit.
+Exact commands, outputs and source hashes are retained under parser/.
+
+No additional material finding identified in the bounded source/recovery review.
+The retained summary accounts for all 64 coordinates as 39 retained-source structural
+candidates, 4 embedded-source cases, 3 generation-input cases, 2 metadata-only,
+12 unresolved and 4 partial. The 48 structural categories do not claim independent
+source rebuilds or final redistribution approval. Eclipse's source qualifier remains
+an explicit correspondence limitation; Typica stays unresolved. Marlin's mismatching
+preceding source is not accepted. Oracle's unavailable source/rights is not waived.
+Generator inputs remain distinguished from executed generation. SourceFile and
+fallback declaration mappings remain structural evidence only.
+
+Recovered-source claims remain bounded: JavaCSV original binary identity and source
+recovery do not claim byte-identical rebuilding; its historical CRLF success and
+unchanged Linux-default failures remain separate. JGridShift public API comparison
+is not numerical/grid acceptance. Huldra's original randomized tests do not establish
+product acceptance. Existing native outcomes are historical in this review; this
+agent did not rerun Java native probes, package/schema/full tooling suites, or add
+new acquisitions. The integrator owns current full checks and real64-accounting
+before/after validation. No GitHub writes, frozen-custody changes, selected-checkout
+edits, PR merge, new engineering slice, or license/security/product approval occurred.
+
+Real repaired source-accounting command for the integrator, after cherry-pick:
+python3 -B build-support/java/source_closure.py \
+  --triage plan/verification/java-resolution-source-gap-triage.json \
+  --manifest build-support/java/source-closure-inputs.json \
+  --frozen-maven /home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven \
+  --supplement /home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure \
+  --output /tmp/ambisgis-pr57-review-20260920/source-accounting-after.json
+Run from the selected PR 57 worktree. Expected exit 2, preserving 12 unresolved plus
+4 partial dispositions; compare actual complete artifact records with the retained
+before result. Do not reuse an existing output filename.

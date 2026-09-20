@@ -1,55 +1,67 @@
 # FND-02 Java source and compatibility — continuation handoff
 
 Repository: `aloerch/ambisgis-platform`, database ID `1376927351`, node
-`R_kgDOUhI-dw`; authenticated owner `aloerch` (ID `15285626`). Engineering
-worktree: `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure`.
-Branch: `fnd-02/java-source-compatibility`, based on corrected PR #55 head
-`9e1b2e1bca26d00b200a39f58a4a0890d43fca98`. FND-02 remains **In progress**.
-The new engineering checkpoint is **[PR #57](https://github.com/aloerch/ambisgis-platform/pull/57), open and unmerged**,
-initial implementation/tested head `6bf922428076e8f238431cefa12cea1ba4987d2a`.
-The publication follow-up changes handoff/status records only. Its exact final
-tested review head is in the PR summary and session handoff; verify the live
-head before any owner-approved merge. No PR was merged by this session.
+`R_kgDOUhI-dw`; authenticated owner `aloerch` (ID `15285626`).
+Worktree: `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure`.
+Branch: `fnd-02/java-source-compatibility`; target: `ambisgis/main`.
+FND-02 remains **In progress**. This session prepares **PR #57 only** for owner
+review; it does not merge a PR or start the next engineering slice.
 
-## OWNER ACTIONS
+## Current owner action and actual ancestry
 
-| PR | Exact tested head | Order and bounded decision |
-|---|---|---|
-| [#54](https://github.com/aloerch/ambisgis-platform/pull/54) | `b15a785f350d347c0c2c4ff07ac6e5681c1d9746` | First Java checkpoint: review audit and normal integration of owner-merged main, then separately authorize merge to `ambisgis/main`. Accepts audit evidence, not Java compilation, source closure or product baseline. |
-| [#55](https://github.com/aloerch/ambisgis-platform/pull/55) | `9e1b2e1bca26d00b200a39f58a4a0890d43fca98` | After #54 merges, verify actual main, integrate normally, retarget to main and recheck remaining diff/tests/current head. Accepts retained toolchain/dependency resolution, not runtime or source/legal acceptance. Never merge into an obsolete audit branch. |
-| [#56](https://github.com/aloerch/ambisgis-platform/pull/56) | `28c9d79757b98bdedd44b5d7486835f9e4b71e63` | Independent governance review/merge to main. Accepts narrow Project visibility correction and preservation regression, not Java/product progress. |
-| [#57](https://github.com/aloerch/ambisgis-platform/pull/57) | Initial implementation `6bf922428076e8f238431cefa12cea1ba4987d2a`; final tested head in PR summary | Review new source recovery/compile/native evidence as a separate checkpoint. Merge only after #55 is owner-merged, actual base is verified/retargeted and current diff/tests are reviewed. No acceptance of unresolved source, license/security, full tuple or release gates. |
+The chosen review order is **#54 → #55 → #57 → #56**. Actual live merges:
 
-At reconciliation #54 and #55 both read `stack: null`, `stackEntry: null`:
-these are ordinary dependent branch PRs, not a GitHub-managed stack. The original
-#54 conflict was limited to GOV-02 paragraphs in both STATUS files; the normal
-merge preserved database/Jupyter evidence and owner-merged governance corrections.
-No force-push, reset or history rewrite occurred. #54's integration passed 28
-Java tooling /175 package tests; #55's passed 140/175. Both passed strict plan
-validation and four schemas. Their bodies carry their exact current tested heads,
-bases and mergeability; acceptance/retargeting decisions stay separate.
+- #54: owner `aloerch`, 2026-09-20T20:09:12Z, merge
+  `8393fc46b9b979b05faa416f5998e0159ecd1e33`.
+- #55: the same owner, 2026-09-20T20:50:29Z, reviewed head
+  `8eeb408f296b7c6152fae2ef5edef65161f674ac`, merge/current main
+  `bb3680802d7f7d5c500180ec12e66d32d81d0aa0`. Main's tree equals the exact
+  reviewed #55 tree `c7353aa55c9cd874ec8b98ad38e70839f5e50a3b`.
 
-**No owner decision is currently required to continue engineering.** The pending
-PR decisions gate merging only. No repeat GOV-02 setup or owner UI action is
-pending. Security, license/brand, migration, signing and deployment approvals
-remain future task-specific gates; this handoff does not request those approvals.
+Normal merge `dc250cd854ae87bfb80657148efe937a69c381dc` combines previous
+#57 head `7d3063f89c20b5e028b0151a6648a79e4ef14a83` and actual main.
+Only root/plan STATUS conflicted. Both were reconciled deliberately, preserving
+native/database/Jupyter evidence and the newer governance/parser records.
+Before scoped review repairs, the remaining Java implementation diff was byte
+identical to #57's old diff against #55. The 96 changed paths also matched.
+The inherited encoding-aware POM parser and its three regression tests equal
+merged main. No reset, rebase, force-push or cited history rewrite occurred.
 
-[PR review queue](https://github.com/users/aloerch/projects/2/views/7) was fully
-read back with saved filter `is:pr is:open`, without parent-task Delivery/Review
-gate restriction. Existing #54/#55 are separate unarchived PR items; neither
-inherits Task ID or progress fields. Project count is **66 planned tasks +2 PR
-items =68 items**, not 68 tasks. Existing views were preserved. Supported columns
-include Repository/Evidence; parent issue links use Evidence because the actual
-schema offers no Linked issues column. GOV-02 Delivery was reconciled to Merged
-from the actual owner merge of #52, retaining its other fields. FND-02 fields
-remain unchanged. PR #56 and the engineering PR were not added: this session's
-Project authorization specifically names #54/#55. The separate #56 retains all
-tracking code/docs/receipts; it is not folded into this Java branch. The live
-importer was not rerun, and its new local preservation regression passed.
+These were ordinary dependent branches. #57 was explicitly retargeted only
+after #55's actual merge; no automatic managed-stack behavior was assumed.
+Read [the selected review report](pr-57-review.md) for scoped repairs, current
+checks, exact tested source identity, unresolved findings and acceptance limits.
+The PR summary and final verification receipt identify the exact published head
+and full tested Git tree. Independent engineering review is not human approval.
+
+The owner decision is whether to accept this bounded source-recovery and
+compatibility-evidence checkpoint for a separate GitHub merge. #56 remains open,
+technically independent, and **not prepared in this run**; it follows #57 in the
+chosen order. No acceptance of final source/license/security/product gates,
+release, or the future HTTP/XML/printing/logging/OAuth slice is implied.
+
+## Project readback
+
+Complete archived/unarchived enumeration confirms **66 planned tasks + four PR
+items =70 items**, all unarchived. Saved `is:pr is:open` matches #57 and #56;
+merged #54/#55 remain retained items. Parent Evidence, task identities, seven
+views, 24 fields and 15 repository links are preserved. FND-02 remains In progress;
+GOV-02 remains Merged. Since the prior #55 receipt, only #55's coarse built-in
+Status changed Todo → Done; this is distinct from product Delivery.
+
+[Actual readback](../verification/pr57-review/project/README.md) records zero
+remote mutations. No duplicate item, task issue, importer run, progress reset,
+archive change or UI setup is needed. Historical 68-item observations remain in
+the earlier receipts and commits; they are not the current membership.
+
+Current preparation checks: **218 Java tooling tests, 175 package tests, all four
+strict schemas and 12 selected native XML resolver tests passed without failures/
+skips**. Both scoped review repairs are documented in the selected report. Other
+native results below remain historical; full suites were not rerun.
 
 ## ENGINEERING STATUS
 
-This slice adds actual controlled source compilation/native tests to the earlier
+The retained engineering slice added actual controlled source compilation/native tests to the earlier
 resolution-only checkpoint. [ADR 004](../adrs/004-java-source-and-compatibility-probes.md)
 records the guarded EMF build-plugin repair, Unix-only PostgreSQL test fixture,
 logging witness and source-recovery boundaries. Read the component evidence:
@@ -68,7 +80,7 @@ final legal approval gates stay explicit. In particular:
 - Partial: Commons Codec 1.2 includes a class absent from its source tag; AspectJ Weaver 1.5.4 bundles five BEA classes; GroboUtils 5 bundles incompletely recovered third-party classes; Marlin 0.9.4.8 lacks exact OpenGL source. A preceding Marlin source compiled but differs substantively in disassembly and is rejected as exact correspondence.
 - The Json-lib patch author's recovered POM says 2.4.1-geoserver, not selected 2.4.2-geoserver. The NetBeans source endpoint returned HTML, and a JAI ImageIO download was a Windows binary installer, never executed. Failed/mismatched candidates remain retained. Oracle source/rights access or a tested capability-preserving implementation change remains necessary; no driver/functionality was silently removed.
 
-Real results include GeoTools referencing **667 passed/8 skips**, XML schema
+Historical native results include GeoTools referencing **667 passed/8 skips**, XML schema
 resolver **12 passed**, GeoFence **62 passed** (8 model/27 H2/27 PostgreSQL),
 Huldra **19 passed**, and JavaCSV **105 passed** with explicit historical CRLF.
 JavaCSV's unchanged Linux-default suite produces the same **16 failures** against
@@ -100,7 +112,7 @@ GeoNode-default rationale. Schema resolver success does not close offline
 repackaging, external resource/rights or broad XML behavior. Bootstrap assets
 have hash/provenance improvements, not permission to deploy inherited credentials.
 
-**212 Java tooling tests, 175 package tests and all four strict schema/example
+Historical publication checks: **212 Java tooling tests, 175 package tests and all four strict schema/example
 checks passed with no failures or skips.** Actual output is retained in
 `plan/verification/java-closure-integration-*.txt`. The checks run from the
 correct root/plan directories using the verified validation environment. They
@@ -126,7 +138,7 @@ an exact recorded command into a new directory. GitHub CLI's verified SHA256 is
 `ea857a3f0f7d4276cf5848b236542c5048e2eaa7bdd1b6ddec238f8793e74bff`;
 locate/verify it before reuse instead of assuming a `/tmp` path survives.
 
-Next ready FND-02 action: supply a controlled loopback-capable fixture environment
+Future FND-02 engineering scope (not started or authorized by this review): supply a controlled loopback-capable fixture environment
 for XML/MapFish HTTP tests, while independently resolving the exact 16 remaining
 source dispositions and testing the combined GeoServer/GeoFence logging and OAuth
 paths. Recovered sources still need controlled rebuild/source-binary evidence;
@@ -136,7 +148,7 @@ FND-07/FND-08, P1/P6 and release acceptance remain open. No inherited workflow,
 source-fork default, secret, deployment or release changed. All task-owned build
 and database processes were stopped before publication.
 
-Final review hardened GDAL staging against changed bytes during copy, directory
+Historical publication review hardened GDAL staging against changed bytes during copy, directory
 symlinks, unrecorded installed files and relative-path ambiguity. Seven targeted
 guards passed, followed by the full 212-test suite. A fresh actual staging check
 verified all 2,914 retained files and the same three tool hashes. It ran no Java
