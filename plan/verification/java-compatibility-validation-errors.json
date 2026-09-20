@@ -1,0 +1,16 @@
+[
+  {
+    "step": "initial-package-tests",
+    "exit_code": 1,
+    "message": "verification/java-compatibility-package-tests.txt: No such file or directory",
+    "test_process_started": false,
+    "remedy": "Run from plan/ with retained validation Python;175 passed"
+  },
+  {
+    "step": "initial-final-document-schema-check",
+    "exit_code": 1,
+    "message": "verification/java-compatibility-docs-schemas.txt: No such file or directory",
+    "validator_started": false,
+    "remedy": "Run from plan/ with retained validation Python; strict4schema check passed"
+  }
+]
