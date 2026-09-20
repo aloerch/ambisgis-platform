@@ -1,0 +1,22 @@
+[
+  {
+    "pid": 9797,
+    "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan",
+    "executable": "/bin/sh"
+  },
+  {
+    "pid": 380147,
+    "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan",
+    "executable": "/app/extra/vscode/code"
+  },
+  {
+    "pid": 464544,
+    "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure",
+    "executable": "/bin/sh"
+  },
+  {
+    "pid": 464545,
+    "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure",
+    "executable": "python3"
+  }
+]

@@ -1,0 +1,1024 @@
+{
+  "build_ready": false,
+  "direct_source_evidence": [
+    {
+      "lines": [
+        {
+          "line": 50,
+          "text": ""
+        },
+        {
+          "line": 51,
+          "text": "        <dependency>"
+        },
+        {
+          "line": 52,
+          "text": "            <groupId>net.postgis</groupId>"
+        },
+        {
+          "line": 53,
+          "text": "            <artifactId>postgis-jdbc</artifactId>"
+        },
+        {
+          "line": 54,
+          "text": "            <scope>test</scope>"
+        },
+        {
+          "line": 55,
+          "text": "        </dependency>"
+        },
+        {
+          "line": 56,
+          "text": ""
+        },
+        {
+          "line": 57,
+          "text": "        <dependency>"
+        },
+        {
+          "line": 58,
+          "text": "            <groupId>org.postgresql</groupId>"
+        },
+        {
+          "line": 59,
+          "text": "            <artifactId>postgresql</artifactId>"
+        },
+        {
+          "line": 60,
+          "text": "            <scope>test</scope>"
+        },
+        {
+          "line": 61,
+          "text": "        </dependency>"
+        },
+        {
+          "line": 62,
+          "text": ""
+        },
+        {
+          "line": 63,
+          "text": "        <!-- JUnit -->"
+        },
+        {
+          "line": 64,
+          "text": ""
+        },
+        {
+          "line": 65,
+          "text": "        <dependency>"
+        },
+        {
+          "line": 66,
+          "text": "            <groupId>junit</groupId>"
+        },
+        {
+          "line": 67,
+          "text": "            <artifactId>junit</artifactId>"
+        },
+        {
+          "line": 68,
+          "text": "            <scope>test</scope>"
+        },
+        {
+          "line": 69,
+          "text": "        </dependency>"
+        },
+        {
+          "line": 70,
+          "text": ""
+        },
+        {
+          "line": 71,
+          "text": "        <dependency>"
+        },
+        {
+          "line": 72,
+          "text": "            <groupId>org.slf4j</groupId>"
+        },
+        {
+          "line": 73,
+          "text": "            <artifactId>slf4j-simple</artifactId>"
+        },
+        {
+          "line": 74,
+          "text": "            <version>1.7.30</version>"
+        },
+        {
+          "line": 75,
+          "text": "            <scope>test</scope>     "
+        },
+        {
+          "line": 76,
+          "text": "        </dependency>"
+        },
+        {
+          "line": 77,
+          "text": "        <dependency>"
+        },
+        {
+          "line": 78,
+          "text": "            <groupId>org.apache.logging.log4j</groupId>"
+        },
+        {
+          "line": 79,
+          "text": "            <artifactId>log4j-core</artifactId>"
+        },
+        {
+          "line": 80,
+          "text": "            <scope>test</scope>"
+        },
+        {
+          "line": 81,
+          "text": "        </dependency>"
+        },
+        {
+          "line": 82,
+          "text": "        <dependency>"
+        },
+        {
+          "line": 83,
+          "text": "            <groupId>org.apache.logging.log4j</groupId>"
+        },
+        {
+          "line": 84,
+          "text": "            <artifactId>log4j-slf4j-impl</artifactId>"
+        },
+        {
+          "line": 85,
+          "text": "            <scope>test</scope>"
+        },
+        {
+          "line": 86,
+          "text": "        </dependency>"
+        }
+      ],
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/run-03/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/pom.xml",
+      "sha256": "c52b1d5cf42eaf1aa1a395b201c9197a9f832f7d76a6146973146ce6fc295bc0"
+    },
+    {
+      "lines": [
+        {
+          "line": 51,
+          "text": "        <commons-logging-version>1.2</commons-logging-version>"
+        },
+        {
+          "line": 52,
+          "text": "        <log4j-version>2.24.3</log4j-version>"
+        },
+        {
+          "line": 53,
+          "text": ""
+        },
+        {
+          "line": 54,
+          "text": "        <commons-lang-version>2.3</commons-lang-version>"
+        },
+        {
+          "line": 55,
+          "text": "        <commons-collections-version>3.2.2</commons-collections-version>"
+        },
+        {
+          "line": 56,
+          "text": "        <commons-beanutils-version>1.9.4</commons-beanutils-version>"
+        },
+        {
+          "line": 57,
+          "text": "        <commons-dbcp-version>1.2.2</commons-dbcp-version>"
+        },
+        {
+          "line": 58,
+          "text": "        <commons-codec-version>1.17.1</commons-codec-version>"
+        },
+        {
+          "line": 59,
+          "text": "        <cxf-version>3.3.2</cxf-version>"
+        },
+        {
+          "line": 60,
+          "text": ""
+        },
+        {
+          "line": 61,
+          "text": "        <!--"
+        },
+        {
+          "line": 62,
+          "text": "        5.4.3 jts mismatch w geolatte"
+        },
+        {
+          "line": 63,
+          "text": "        6.2.2 package javax.persistence does not exist"
+        },
+        {
+          "line": 64,
+          "text": "        6.4.4 javax.persistence not found"
+        },
+        {
+          "line": 65,
+          "text": "        -->"
+        },
+        {
+          "line": 66,
+          "text": "        <hibernate-version>5.6.15.Final</hibernate-version>"
+        },
+        {
+          "line": 67,
+          "text": ""
+        },
+        {
+          "line": 68,
+          "text": "        <postgresql.jdbc.version>42.7.7</postgresql.jdbc.version>"
+        },
+        {
+          "line": 69,
+          "text": "        <postgis.jdbc.version>2025.1.1</postgis.jdbc.version>"
+        }
+      ],
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/run-03/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/pom.xml",
+      "sha256": "05f5eef5f6d8c2ab3605f094f9728f4ce8690693811e857fb5411115e3dfaa54"
+    },
+    {
+      "lines": [
+        {
+          "line": 209,
+          "text": "            <dependency>"
+        },
+        {
+          "line": 210,
+          "text": "                <groupId>org.apache.logging.log4j</groupId>"
+        },
+        {
+          "line": 211,
+          "text": "                <artifactId>log4j-api</artifactId>"
+        },
+        {
+          "line": 212,
+          "text": "                <version>${log4j-version}</version>"
+        },
+        {
+          "line": 213,
+          "text": "            </dependency>"
+        },
+        {
+          "line": 214,
+          "text": "            <dependency>"
+        },
+        {
+          "line": 215,
+          "text": "                <groupId>org.apache.logging.log4j</groupId>"
+        },
+        {
+          "line": 216,
+          "text": "                <artifactId>log4j-core</artifactId>"
+        },
+        {
+          "line": 217,
+          "text": "                <version>${log4j-version}</version>"
+        },
+        {
+          "line": 218,
+          "text": "            </dependency>"
+        },
+        {
+          "line": 219,
+          "text": "            <dependency>"
+        },
+        {
+          "line": 220,
+          "text": "                <groupId>org.apache.logging.log4j</groupId>"
+        },
+        {
+          "line": 221,
+          "text": "                <artifactId>log4j-slf4j-impl</artifactId>"
+        },
+        {
+          "line": 222,
+          "text": "                <version>${log4j-version}</version>"
+        },
+        {
+          "line": 223,
+          "text": "            </dependency>"
+        }
+      ],
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/run-03/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/pom.xml",
+      "sha256": "05f5eef5f6d8c2ab3605f094f9728f4ce8690693811e857fb5411115e3dfaa54"
+    },
+    {
+      "lines": [
+        {
+          "line": 559,
+          "text": "            <dependency>"
+        },
+        {
+          "line": 560,
+          "text": "                <groupId>net.postgis</groupId>"
+        },
+        {
+          "line": 561,
+          "text": "                <artifactId>postgis-jdbc</artifactId>"
+        },
+        {
+          "line": 562,
+          "text": "                <version>${postgis.jdbc.version}</version>"
+        },
+        {
+          "line": 563,
+          "text": "            </dependency>"
+        },
+        {
+          "line": 564,
+          "text": "            <dependency>"
+        },
+        {
+          "line": 565,
+          "text": "                <groupId>org.postgresql</groupId>"
+        },
+        {
+          "line": 566,
+          "text": "                <artifactId>postgresql</artifactId>"
+        },
+        {
+          "line": 567,
+          "text": "                <version>${postgresql.jdbc.version}</version>"
+        }
+      ],
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/run-03/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/pom.xml",
+      "sha256": "05f5eef5f6d8c2ab3605f094f9728f4ce8690693811e857fb5411115e3dfaa54"
+    }
+  ],
+  "inference": {
+    "closure_equivalence_proven": false,
+    "confidence_scope": "Supported mechanism and matching observations; no -X resolution trace or controlled repeated experiment was run, so exact internal winning-path causation remains an inference.",
+    "likely_cause": "Order-sensitive conflict mediation among equal-depth explicit SLF4J versions, enabled by go-offline plugin HashSet reconstruction that discards POM declaration order. HTTP versus file transport and allocation/cache differences may affect the observed traversal, but transport causation is not proven.",
+    "range_based_selection_proven": false
+  },
+  "java_build_run": false,
+  "license_approval": false,
+  "maven_runtime_model": {
+    "class_member": "org/apache/maven/model/Dependency.class",
+    "declares_equals": false,
+    "declares_hashCode": false,
+    "inspection_method": "Python classfile member table parsing; no Java execution",
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/apache-maven-3.9.16/lib/maven-model-3.9.16.jar",
+    "sha256": "f59d86a507c241bf17bbf050050d1b8b9c0d34d5010a7e2386c3cab7c83b93de",
+    "superclass": "java/lang/Object"
+  },
+  "offline_missing_dependency_evidence": {
+    "lines": [
+      {
+        "line": 201233,
+        "text": "[INFO] BUILD FAILURE"
+      },
+      {
+        "line": 201234,
+        "text": "[INFO] ------------------------------------------------------------------------"
+      },
+      {
+        "line": 201235,
+        "text": "[INFO] Total time:  14.269 s"
+      },
+      {
+        "line": 201236,
+        "text": "[INFO] Finished at: 2026-09-19T16:17:37-07:00"
+      },
+      {
+        "line": 201237,
+        "text": "[INFO] ------------------------------------------------------------------------"
+      },
+      {
+        "line": 201238,
+        "text": "[ERROR] Failed to execute goal org.apache.maven.plugins:maven-dependency-plugin:3.11.0:go-offline (default-cli) on project geofence-persistence-pg-test: The following artifacts could not be resolved: org.slf4j:slf4j-api:jar:2.0.17 (absent): Could not find artifact org.slf4j:slf4j-api:jar:2.0.17 in ambisgis-custody (file:///home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/dependency-replay-02/retained-repository) -> [Help 1]"
+      }
+    ],
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/dependency-replay-02/maven.log",
+    "sha256": "96fa0678c75cacd518f9af9c3658f1030c94fd27716e6cdb05b3bfc3d7cb9a0d"
+  },
+  "online_selected_dependency_evidence": {
+    "lines": [
+      {
+        "line": 127319,
+        "text": "[INFO] Resolved dependency: log4j-slf4j-impl-2.24.3.jar"
+      },
+      {
+        "line": 127320,
+        "text": "[INFO] Resolved dependency: log4j-api-2.24.3.jar"
+      },
+      {
+        "line": 127321,
+        "text": "[INFO] Resolved dependency: slf4j-api-1.7.36.jar"
+      },
+      {
+        "line": 127322,
+        "text": "[INFO] Resolved dependency: slf4j-simple-1.7.30.jar"
+      },
+      {
+        "line": 127323,
+        "text": "[INFO] Resolved dependency: junit-4.13.jar"
+      },
+      {
+        "line": 127324,
+        "text": "[INFO] Resolved dependency: hamcrest-core-1.3.jar"
+      },
+      {
+        "line": 127325,
+        "text": "[INFO] Resolved dependency: postgresql-42.7.7.jar"
+      },
+      {
+        "line": 127326,
+        "text": "[INFO] Resolved dependency: checker-qual-3.49.3.jar"
+      },
+      {
+        "line": 127327,
+        "text": "[INFO] Resolved dependency: log4j-core-2.24.3.jar"
+      },
+      {
+        "line": 127328,
+        "text": "[INFO] Resolved dependency: postgis-jdbc-2025.1.1.jar"
+      },
+      {
+        "line": 127329,
+        "text": "[INFO] Resolved dependency: postgis-geometry-2025.1.1.jar"
+      }
+    ],
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/run-03/logs/dependencies-04.log",
+    "sha256": "353be1032cab7e6c75940c3989a876d735867515afb29d050c1ec265dc5cdebe"
+  },
+  "pom_identity_checks": [
+    {
+      "bytes_equal": true,
+      "maven_path": "net/postgis/postgis-java-aggregator/2025.1.1/postgis-java-aggregator-2025.1.1.pom",
+      "online_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/run-03/m2-dependencies-04/net/postgis/postgis-java-aggregator/2025.1.1/postgis-java-aggregator-2025.1.1.pom",
+      "replay_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/dependency-replay-02/retained-repository/net/postgis/postgis-java-aggregator/2025.1.1/postgis-java-aggregator-2025.1.1.pom",
+      "sha256": "60ded1fb36007d463b40da6fe74f42abba6f599529a544ec107b08a2f05d3925"
+    },
+    {
+      "bytes_equal": true,
+      "maven_path": "net/postgis/postgis-jdbc/2025.1.1/postgis-jdbc-2025.1.1.pom",
+      "online_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/run-03/m2-dependencies-04/net/postgis/postgis-jdbc/2025.1.1/postgis-jdbc-2025.1.1.pom",
+      "replay_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/dependency-replay-02/retained-repository/net/postgis/postgis-jdbc/2025.1.1/postgis-jdbc-2025.1.1.pom",
+      "sha256": "fad7a91bdc24075c24e4c596f299d6485632481f6ae79fa51d573c9f41c1eb20"
+    },
+    {
+      "bytes_equal": true,
+      "maven_path": "org/apache/logging/log4j/log4j-slf4j-impl/2.24.3/log4j-slf4j-impl-2.24.3.pom",
+      "online_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/run-03/m2-dependencies-04/org/apache/logging/log4j/log4j-slf4j-impl/2.24.3/log4j-slf4j-impl-2.24.3.pom",
+      "replay_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/dependency-replay-02/retained-repository/org/apache/logging/log4j/log4j-slf4j-impl/2.24.3/log4j-slf4j-impl-2.24.3.pom",
+      "sha256": "f51b44e8305e77b2ac611b4dd2f3724f512a607da4ac10226fc5898dbe27f593"
+    },
+    {
+      "bytes_equal": true,
+      "maven_path": "org/slf4j/slf4j-parent/1.7.30/slf4j-parent-1.7.30.pom",
+      "online_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/run-03/m2-dependencies-04/org/slf4j/slf4j-parent/1.7.30/slf4j-parent-1.7.30.pom",
+      "replay_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/dependency-replay-02/retained-repository/org/slf4j/slf4j-parent/1.7.30/slf4j-parent-1.7.30.pom",
+      "sha256": "11647956e48a0c5bfb3ac33f6da7e83f341002b6857efd335a505b687be34b75"
+    }
+  ],
+  "proven_findings": [
+    "GeoFence persistence PostGIS test declares test-scope postgis-jdbc, slf4j-simple:1.7.30 and log4j-slf4j-impl dependencies; its services parent manages postgis-jdbc:2025.1.1 and log4j:2.24.3, without a matching direct slf4j-api management entry.",
+    "postgis-jdbc:2025.1.1 inherits explicit org.slf4j:slf4j-api:2.0.17 from postgis-java-aggregator:2025.1.1; this observed edge does not use a version range.",
+    "log4j-slf4j-impl:2.24.3 explicitly manages its slf4j-api dependency to1.7.36; slf4j-simple:1.7.30 inherits API1.7.30 management.",
+    "Online dependencies-04 selected slf4j-api-1.7.36.jar in module105/157; dependency-replay-02 requested absent slf4j-api:2.0.17 and failed that module.",
+    "The four relevant retained dependency POMs are byte-identical between online fresh repository and replay retained-repository. No slf4j-api version-list metadata is present in replay retained-repository.",
+    "Retained dependency-plugin3.11.0 GoOfflineMojo reconstructs dependencies using HashSet<Artifact> then HashSet<Dependency>, then streams this collection to a new dependency-resolution request.",
+    "Static inspection of retained Maven3.9.16 maven-model Dependency.class finds superclass java/lang/Object and no equals/hashCode method; its dependency set therefore uses object identity hashing."
+  ],
+  "repair_scope": "Retain the exact observed missing API2.0.17 JAR/source/checksum and use a fresh replay; preserve prior failure evidence. A passing acquisition/replay goal is not a release dependency lock, runtime logging compatibility test, Java build, or proof of equal selected closures.",
+  "retained_plugin_source_evidence": {
+    "custody_record": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/central/org/apache/maven/plugins/maven-dependency-plugin/3.11.0/maven-dependency-plugin-3.11.0-sources.jar.json",
+    "line_ranges": [
+      {
+        "end": 194,
+        "lines": [
+          {
+            "line": 162,
+            "text": "    protected List<org.eclipse.aether.artifact.Artifact> resolveDependencyArtifacts()"
+          },
+          {
+            "line": 163,
+            "text": "            throws ArtifactFilterException, DependencyResolutionException {"
+          },
+          {
+            "line": 164,
+            "text": "        Collection<Dependency> dependencies = getProject().getDependencies();"
+          },
+          {
+            "line": 165,
+            "text": ""
+          },
+          {
+            "line": 166,
+            "text": "        dependencies = filterDependencies(dependencies);"
+          },
+          {
+            "line": 167,
+            "text": ""
+          },
+          {
+            "line": 168,
+            "text": "        Predicate<Dependency> excludeReactorProjectsDependencyFilter = d -> true;"
+          },
+          {
+            "line": 169,
+            "text": "        if (this.excludeReactor) {"
+          },
+          {
+            "line": 170,
+            "text": "            excludeReactorProjectsDependencyFilter = new ExcludeReactorProjectsDependencyFilter(session.getProjects());"
+          },
+          {
+            "line": 171,
+            "text": "        }"
+          },
+          {
+            "line": 172,
+            "text": ""
+          },
+          {
+            "line": 173,
+            "text": "        ArtifactTypeRegistry artifactTypeRegistry ="
+          },
+          {
+            "line": 174,
+            "text": "                session.getRepositorySession().getArtifactTypeRegistry();"
+          },
+          {
+            "line": 175,
+            "text": ""
+          },
+          {
+            "line": 176,
+            "text": "        List<org.eclipse.aether.graph.Dependency> dependableCoordinates = dependencies.stream()"
+          },
+          {
+            "line": 177,
+            "text": "                .filter(excludeReactorProjectsDependencyFilter)"
+          },
+          {
+            "line": 178,
+            "text": "                .map(d -> RepositoryUtils.toDependency(d, artifactTypeRegistry))"
+          },
+          {
+            "line": 179,
+            "text": "                .collect(Collectors.toList());"
+          },
+          {
+            "line": 180,
+            "text": ""
+          },
+          {
+            "line": 181,
+            "text": "        List<org.eclipse.aether.graph.Dependency> managedDependencies = ofNullable("
+          },
+          {
+            "line": 182,
+            "text": "                        getProject().getDependencyManagement())"
+          },
+          {
+            "line": 183,
+            "text": "                .map(DependencyManagement::getDependencies)"
+          },
+          {
+            "line": 184,
+            "text": "                .map(list -> list.stream()"
+          },
+          {
+            "line": 185,
+            "text": "                        .map(d -> RepositoryUtils.toDependency(d, artifactTypeRegistry))"
+          },
+          {
+            "line": 186,
+            "text": "                        .collect(Collectors.toList()))"
+          },
+          {
+            "line": 187,
+            "text": "                .orElse(null);"
+          },
+          {
+            "line": 188,
+            "text": ""
+          },
+          {
+            "line": 189,
+            "text": "        return getResolverUtil()"
+          },
+          {
+            "line": 190,
+            "text": "                .resolveDependenciesForArtifact("
+          },
+          {
+            "line": 191,
+            "text": "                        RepositoryUtils.toArtifact(getProject().getArtifact()),"
+          },
+          {
+            "line": 192,
+            "text": "                        dependableCoordinates,"
+          },
+          {
+            "line": 193,
+            "text": "                        managedDependencies,"
+          },
+          {
+            "line": 194,
+            "text": "                        getProject().getRemoteProjectRepositories());"
+          }
+        ],
+        "start": 162
+      },
+      {
+        "end": 267,
+        "lines": [
+          {
+            "line": 227,
+            "text": "    private Collection<Dependency> filterDependencies(Collection<Dependency> deps) throws ArtifactFilterException {"
+          },
+          {
+            "line": 228,
+            "text": ""
+          },
+          {
+            "line": 229,
+            "text": "        Set<Artifact> artifacts = createArtifactSetFromDependencies(deps);"
+          },
+          {
+            "line": 230,
+            "text": ""
+          },
+          {
+            "line": 231,
+            "text": "        final FilterArtifacts filter = getArtifactsFilter();"
+          },
+          {
+            "line": 232,
+            "text": "        artifacts = filter.filter(artifacts);"
+          },
+          {
+            "line": 233,
+            "text": ""
+          },
+          {
+            "line": 234,
+            "text": "        return createDependencySetFromArtifacts(artifacts);"
+          },
+          {
+            "line": 235,
+            "text": "    }"
+          },
+          {
+            "line": 236,
+            "text": ""
+          },
+          {
+            "line": 237,
+            "text": "    private Set<Artifact> createArtifactSetFromDependencies(Collection<Dependency> deps) {"
+          },
+          {
+            "line": 238,
+            "text": "        Set<Artifact> artifacts = new HashSet<>();"
+          },
+          {
+            "line": 239,
+            "text": "        for (Dependency dep : deps) {"
+          },
+          {
+            "line": 240,
+            "text": "            DefaultArtifactHandler handler = new DefaultArtifactHandler(dep.getType());"
+          },
+          {
+            "line": 241,
+            "text": "            artifacts.add(new DefaultArtifact("
+          },
+          {
+            "line": 242,
+            "text": "                    dep.getGroupId(),"
+          },
+          {
+            "line": 243,
+            "text": "                    dep.getArtifactId(),"
+          },
+          {
+            "line": 244,
+            "text": "                    dep.getVersion(),"
+          },
+          {
+            "line": 245,
+            "text": "                    dep.getScope(),"
+          },
+          {
+            "line": 246,
+            "text": "                    dep.getType(),"
+          },
+          {
+            "line": 247,
+            "text": "                    dep.getClassifier(),"
+          },
+          {
+            "line": 248,
+            "text": "                    handler));"
+          },
+          {
+            "line": 249,
+            "text": "        }"
+          },
+          {
+            "line": 250,
+            "text": "        return artifacts;"
+          },
+          {
+            "line": 251,
+            "text": "    }"
+          },
+          {
+            "line": 252,
+            "text": ""
+          },
+          {
+            "line": 253,
+            "text": "    private Collection<Dependency> createDependencySetFromArtifacts(Set<Artifact> artifacts) {"
+          },
+          {
+            "line": 254,
+            "text": "        Set<Dependency> dependencies = new HashSet<>();"
+          },
+          {
+            "line": 255,
+            "text": ""
+          },
+          {
+            "line": 256,
+            "text": "        for (Artifact artifact : artifacts) {"
+          },
+          {
+            "line": 257,
+            "text": "            Dependency d = new Dependency();"
+          },
+          {
+            "line": 258,
+            "text": "            d.setGroupId(artifact.getGroupId());"
+          },
+          {
+            "line": 259,
+            "text": "            d.setArtifactId(artifact.getArtifactId());"
+          },
+          {
+            "line": 260,
+            "text": "            d.setVersion(artifact.getVersion());"
+          },
+          {
+            "line": 261,
+            "text": "            d.setType(artifact.getType());"
+          },
+          {
+            "line": 262,
+            "text": "            d.setClassifier(artifact.getClassifier());"
+          },
+          {
+            "line": 263,
+            "text": "            d.setScope(artifact.getScope());"
+          },
+          {
+            "line": 264,
+            "text": "            dependencies.add(d);"
+          },
+          {
+            "line": 265,
+            "text": "        }"
+          },
+          {
+            "line": 266,
+            "text": ""
+          },
+          {
+            "line": 267,
+            "text": "        return dependencies;"
+          }
+        ],
+        "start": 227
+      }
+    ],
+    "source_member": "org/apache/maven/plugins/dependency/resolvers/GoOfflineMojo.java",
+    "source_member_sha256": "01a7425f9bb5125a93be297f557bb67da1060c31ea87f022a8860d426d19a051",
+    "sources_jar_sha256": "64f86b29fb66fa00c87b1c53b58a6651d0fca3b1d31e0e28c3c8dd606358427a"
+  },
+  "runtime_followup": "Reconcile SLF4J1 bindings versus API2, own deterministic dependency management and lock evidence before acceptance builds; this report does not adopt a version or modify source.",
+  "schema_version": 1,
+  "scope": "Read-only diagnosis of observed online dependency acquisition and network-denied replay SLF4J selection difference; no Maven execution or downloads performed by reviewer.",
+  "security_acceptance": false,
+  "transitive_pom_evidence": [
+    {
+      "lines": [
+        {
+          "line": 155,
+          "text": "        <dependency.jts-version.version>1.20.0</dependency.jts-version.version>"
+        },
+        {
+          "line": 156,
+          "text": "        <dependency.logback.version>1.3.15</dependency.logback.version>"
+        },
+        {
+          "line": 157,
+          "text": "        <dependency.pmd.version>7.14.0</dependency.pmd.version>"
+        },
+        {
+          "line": 158,
+          "text": "        <dependency.postgresql-jdbc.version>42.7.7</dependency.postgresql-jdbc.version>"
+        },
+        {
+          "line": 159,
+          "text": "        <dependency.slf4j.version>2.0.17</dependency.slf4j.version>"
+        },
+        {
+          "line": 160,
+          "text": "        <dependency.spatial4j.version>0.8</dependency.spatial4j.version>"
+        }
+      ],
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/dependency-replay-02/retained-repository/net/postgis/postgis-java-aggregator/2025.1.1/postgis-java-aggregator-2025.1.1.pom",
+      "sha256": "60ded1fb36007d463b40da6fe74f42abba6f599529a544ec107b08a2f05d3925"
+    },
+    {
+      "lines": [
+        {
+          "line": 190,
+          "text": "        </dependency>"
+        },
+        {
+          "line": 191,
+          "text": "        <dependency>"
+        },
+        {
+          "line": 192,
+          "text": "            <groupId>org.slf4j</groupId>"
+        },
+        {
+          "line": 193,
+          "text": "            <artifactId>slf4j-api</artifactId>"
+        },
+        {
+          "line": 194,
+          "text": "            <version>${dependency.slf4j.version}</version>"
+        },
+        {
+          "line": 195,
+          "text": "        </dependency>"
+        }
+      ],
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/dependency-replay-02/retained-repository/net/postgis/postgis-java-aggregator/2025.1.1/postgis-java-aggregator-2025.1.1.pom",
+      "sha256": "60ded1fb36007d463b40da6fe74f42abba6f599529a544ec107b08a2f05d3925"
+    },
+    {
+      "lines": [
+        {
+          "line": 3,
+          "text": "    <modelVersion>4.0.0</modelVersion>"
+        },
+        {
+          "line": 4,
+          "text": "\t"
+        },
+        {
+          "line": 5,
+          "text": "    <parent>"
+        },
+        {
+          "line": 6,
+          "text": "        <groupId>net.postgis</groupId>"
+        },
+        {
+          "line": 7,
+          "text": "        <artifactId>postgis-java-aggregator</artifactId>"
+        },
+        {
+          "line": 8,
+          "text": "        <version>2025.1.1</version>"
+        },
+        {
+          "line": 9,
+          "text": "    </parent>"
+        },
+        {
+          "line": 10,
+          "text": ""
+        },
+        {
+          "line": 11,
+          "text": "    <artifactId>postgis-jdbc</artifactId>"
+        },
+        {
+          "line": 12,
+          "text": "    <version>2025.1.1</version>"
+        },
+        {
+          "line": 13,
+          "text": "    <packaging>jar</packaging>"
+        }
+      ],
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/dependency-replay-02/retained-repository/net/postgis/postgis-jdbc/2025.1.1/postgis-jdbc-2025.1.1.pom",
+      "sha256": "fad7a91bdc24075c24e4c596f299d6485632481f6ae79fa51d573c9f41c1eb20"
+    },
+    {
+      "lines": [
+        {
+          "line": 40,
+          "text": "  <properties>"
+        },
+        {
+          "line": 41,
+          "text": "    <slf4j1.version>1.7.36</slf4j1.version>"
+        },
+        {
+          "line": 42,
+          "text": "  </properties>"
+        },
+        {
+          "line": 43,
+          "text": "  <dependencyManagement>"
+        },
+        {
+          "line": 44,
+          "text": "    <dependencies>"
+        },
+        {
+          "line": 45,
+          "text": "      <dependency>"
+        },
+        {
+          "line": 46,
+          "text": "        <groupId>org.slf4j</groupId>"
+        },
+        {
+          "line": 47,
+          "text": "        <artifactId>slf4j-api</artifactId>"
+        },
+        {
+          "line": 48,
+          "text": "        <version>${slf4j1.version}</version>"
+        },
+        {
+          "line": 49,
+          "text": "      </dependency>"
+        },
+        {
+          "line": 50,
+          "text": "    </dependencies>"
+        },
+        {
+          "line": 51,
+          "text": "  </dependencyManagement>"
+        },
+        {
+          "line": 52,
+          "text": "  <dependencies>"
+        },
+        {
+          "line": 53,
+          "text": "    <dependency>"
+        },
+        {
+          "line": 54,
+          "text": "      <groupId>org.osgi</groupId>"
+        },
+        {
+          "line": 55,
+          "text": "      <artifactId>org.osgi.core</artifactId>"
+        },
+        {
+          "line": 56,
+          "text": "      <scope>provided</scope>"
+        },
+        {
+          "line": 57,
+          "text": "    </dependency>"
+        },
+        {
+          "line": 58,
+          "text": "    <dependency>"
+        },
+        {
+          "line": 59,
+          "text": "      <groupId>org.apache.logging.log4j</groupId>"
+        },
+        {
+          "line": 60,
+          "text": "      <artifactId>log4j-api</artifactId>"
+        },
+        {
+          "line": 61,
+          "text": "    </dependency>"
+        },
+        {
+          "line": 62,
+          "text": "    <dependency>"
+        },
+        {
+          "line": 63,
+          "text": "      <groupId>org.slf4j</groupId>"
+        },
+        {
+          "line": 64,
+          "text": "      <artifactId>slf4j-api</artifactId>"
+        }
+      ],
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/dependency-replay-02/retained-repository/org/apache/logging/log4j/log4j-slf4j-impl/2.24.3/log4j-slf4j-impl-2.24.3.pom",
+      "sha256": "f51b44e8305e77b2ac611b4dd2f3724f512a607da4ac10226fc5898dbe27f593"
+    }
+  ]
+}

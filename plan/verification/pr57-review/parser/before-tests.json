@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "build-support/java",
+    "-p",
+    "test_source_closure.py",
+    "-v"
+  ],
+  "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review57-parser",
+  "exit_code": 1,
+  "log_sha256": "fd6876924010fceab19b4b05a5c294c029b841a861a876238db13d0223939a5d"
+}

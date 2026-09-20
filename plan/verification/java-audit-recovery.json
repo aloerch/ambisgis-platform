@@ -1,0 +1,26 @@
+{
+  "command": [
+    "python3",
+    "build-support/java/acquisition.py",
+    "--custody",
+    "/tmp/ambisgis-java-recovery-3v7wtm1n/custody",
+    "--manifest",
+    "/tmp/ambisgis-java-recovery-3v7wtm1n/subset.json",
+    "--restore-owned",
+    "--owned-root",
+    "/home/revelberry/Projects/AmbisGIS"
+  ],
+  "exit_code": 0,
+  "report": {
+    "build_ready": false,
+    "bytes": 13322240,
+    "files": 1,
+    "manifest_sha256": "be4102805acdc08db32f9d47724ea242e72246c9fd76cf6b5cb711f95f3d80db",
+    "restored": [
+      "geowebcache-59640420454b73f1e04e8409cc6ed43f4b24fed2.tar"
+    ],
+    "status": "audit-inputs-verified"
+  },
+  "retained_recovery_directory": "/tmp/ambisgis-java-recovery-3v7wtm1n",
+  "scope": "Regenerated the actual GWC source archive from local owned Git objects; no Java build or product recovery test."
+}

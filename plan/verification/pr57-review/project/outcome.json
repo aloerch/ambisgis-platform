@@ -1,0 +1,216 @@
+{
+  "captured_at": "2026-09-20T20:58:14.041994+00:00",
+  "read_only": true,
+  "mutation_count": 0,
+  "task_count": 66,
+  "distinct_task_ids": 66,
+  "pr_item_count": 4,
+  "total_items": 70,
+  "archived_item_count": 0,
+  "queue_filter": "is:pr is:open",
+  "queue_membership": [
+    56,
+    57
+  ],
+  "queue_membership_method": "Fully paginated Project content plus live PR state and saved filter; not browser inspection",
+  "pr_items": [
+    {
+      "number": 54,
+      "content_id": "PR_kwDOUhI-d88AAAABEQiDOg",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72Eq8",
+      "state": "MERGED",
+      "archived": false,
+      "values": {
+        "Title": "Audit retained Java sources and GeoNode extension dependencies",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/54 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3 (FND-02 remains In progress)",
+        "Status": "Done"
+      },
+      "pr_details": {
+        "id": "PR_kwDOUhI-d88AAAABEQiDOg",
+        "number": 54,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/54",
+        "state": "MERGED",
+        "mergedAt": "2026-09-20T20:09:12Z",
+        "mergedBy": {
+          "login": "aloerch"
+        },
+        "mergeCommit": {
+          "oid": "8393fc46b9b979b05faa416f5998e0159ecd1e33"
+        },
+        "headRefOid": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+        "baseRefName": "ambisgis/main"
+      }
+    },
+    {
+      "number": 55,
+      "content_id": "PR_kwDOUhI-d88AAAABEQ97wg",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72Erw",
+      "state": "MERGED",
+      "archived": false,
+      "values": {
+        "Title": "FND-02: retain Java toolchain and replay selected dependency inputs",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/55 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3 (FND-02 remains In progress)",
+        "Status": "Done"
+      },
+      "pr_details": {
+        "id": "PR_kwDOUhI-d88AAAABEQ97wg",
+        "number": 55,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/55",
+        "state": "MERGED",
+        "mergedAt": "2026-09-20T20:50:29Z",
+        "mergedBy": {
+          "login": "aloerch"
+        },
+        "mergeCommit": {
+          "oid": "bb3680802d7f7d5c500180ec12e66d32d81d0aa0"
+        },
+        "headRefOid": "8eeb408f296b7c6152fae2ef5edef65161f674ac",
+        "baseRefName": "ambisgis/main"
+      }
+    },
+    {
+      "number": 56,
+      "content_id": "PR_kwDOUhI-d88AAAABEVLddg",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72aCk",
+      "state": "OPEN",
+      "archived": false,
+      "values": {
+        "Title": "GOV-02: expose incremental PR reviews and reconcile merged tracking",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/56 ; parent task https://github.com/aloerch/ambisgis-platform/issues/9",
+        "Status": "Todo"
+      },
+      "pr_details": {
+        "id": "PR_kwDOUhI-d88AAAABEVLddg",
+        "number": 56,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/56",
+        "state": "OPEN",
+        "mergedAt": null,
+        "mergedBy": null,
+        "mergeCommit": null,
+        "headRefOid": "28c9d79757b98bdedd44b5d7486835f9e4b71e63",
+        "baseRefName": "ambisgis/main"
+      }
+    },
+    {
+      "number": 57,
+      "content_id": "PR_kwDOUhI-d88AAAABEVWAzA",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72aDY",
+      "state": "OPEN",
+      "archived": false,
+      "values": {
+        "Title": "FND-02: recover Java sources and exercise component compatibility",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/57 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3",
+        "Status": "Todo"
+      },
+      "pr_details": {
+        "id": "PR_kwDOUhI-d88AAAABEVWAzA",
+        "number": 57,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/57",
+        "state": "OPEN",
+        "mergedAt": null,
+        "mergedBy": null,
+        "mergeCommit": null,
+        "headRefOid": "7d3063f89c20b5e028b0151a6648a79e4ef14a83",
+        "baseRefName": "fnd-02/java-toolchain-resolution"
+      }
+    }
+  ],
+  "task_fields_unchanged_from_pr55": true,
+  "all_item_identities_archive_states_and_parent_evidence_unchanged": true,
+  "views_fields_repository_links_unchanged": true,
+  "field_count": 24,
+  "view_count": 7,
+  "repository_link_count": 15,
+  "item_changes_from_pr55": [
+    {
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72Erw",
+      "content": {
+        "__typename": "PullRequest",
+        "id": "PR_kwDOUhI-d88AAAABEQ97wg",
+        "number": 55,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/55",
+        "repository": {
+          "nameWithOwner": "aloerch/ambisgis-platform"
+        }
+      },
+      "old_values": {
+        "Title": "FND-02: retain Java toolchain and replay selected dependency inputs",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/55 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3 (FND-02 remains In progress)",
+        "Status": "Todo"
+      },
+      "new_values": {
+        "Title": "FND-02: retain Java toolchain and replay selected dependency inputs",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/55 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3 (FND-02 remains In progress)",
+        "Status": "Done"
+      },
+      "old_archive": false,
+      "new_archive": false,
+      "old_raw_values": [
+        {
+          "__typename": "ProjectV2ItemFieldRepositoryValue"
+        },
+        {
+          "__typename": "ProjectV2ItemFieldTextValue",
+          "text": "FND-02: retain Java toolchain and replay selected dependency inputs",
+          "field": {
+            "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+            "name": "Title"
+          }
+        },
+        {
+          "__typename": "ProjectV2ItemFieldTextValue",
+          "text": "https://github.com/aloerch/ambisgis-platform/pull/55 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3 (FND-02 remains In progress)",
+          "field": {
+            "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+            "name": "Evidence"
+          }
+        },
+        {
+          "__typename": "ProjectV2ItemFieldSingleSelectValue",
+          "name": "Todo",
+          "optionId": "f75ad846",
+          "field": {
+            "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4CU",
+            "name": "Status"
+          }
+        }
+      ],
+      "new_raw_values": [
+        {
+          "__typename": "ProjectV2ItemFieldRepositoryValue"
+        },
+        {
+          "__typename": "ProjectV2ItemFieldTextValue",
+          "text": "FND-02: retain Java toolchain and replay selected dependency inputs",
+          "field": {
+            "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+            "name": "Title"
+          }
+        },
+        {
+          "__typename": "ProjectV2ItemFieldTextValue",
+          "text": "https://github.com/aloerch/ambisgis-platform/pull/55 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3 (FND-02 remains In progress)",
+          "field": {
+            "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+            "name": "Evidence"
+          }
+        },
+        {
+          "__typename": "ProjectV2ItemFieldSingleSelectValue",
+          "name": "Done",
+          "optionId": "98236657",
+          "field": {
+            "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4CU",
+            "name": "Status"
+          }
+        }
+      ]
+    }
+  ],
+  "delivery": {
+    "FND-02": "In progress",
+    "GOV-02": "Merged"
+  },
+  "prior_receipt_source": "origin/ambisgis/main:plan/verification/pr55-review/project/after.json",
+  "prior_receipt_sha256": "8b5eb040151b1eb33acae6acd5545babbca22ff7c6ea7173be68e6430935cba8"
+}

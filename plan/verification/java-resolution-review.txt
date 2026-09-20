@@ -1,0 +1,17 @@
+Independent reviews during FND-02 toolchain/resolution work
+
+Source reviewer confirmed exact five-root aggregate, selected WAR plus GeoFence PostgreSQL test target, six profiles, and distinct GeoTools property overrides. Actual Maven output later confirmed 157 effective projects. No runtime or license approval inferred.
+
+Proxy review found and fixed pre-response hash validation, persistent first-origin selection, atomic custody publication, malformed owned-coordinate handling, and the actual maven-release group false positive (original failed run preserved).
+
+Resolver review found and fixed missing exception receipts, output overwrite risk, Maven configuration tamper coverage, incomplete effective-model success checks, process-group cleanup, malformed XML false-success handling, and ancestor .mvn inheritance. MAVEN_BASEDIR now identifies the prepared source root. Regression tests cover the affected boundaries.
+
+Actual network-denied model replay recorded IPv4/IPv6 EPERM probes, exit 0, 157 projects and unchanged Maven source/configuration. The first replay preceded the additional ancestor guard; process arguments confirmed it already used the intended root. Final replay evidence is recorded separately.
+
+The schema-resource refinement follows owned documentation and comparison of all 73 download source/destination pairs; actual archive validation and final tests are separately recorded. Security/license/release human gates remain open; these agent reviews do not replace them.
+
+Final independent review found the inventory sidecar grammar accepted trailing tokens/wrong filenames that proxy replay rejected. Both now enforce the same exact checksum grammar, with valid/invalid regression coverage. It also identified group-leader-only timeout cleanup as insufficient for surviving descendants; the final correction and process regression are recorded in final tool tests. No survivor was observed in actual resolution runs.
+
+Independent XML namespace review: exact quarantined JAR/member hashes matched; one declared documentation stylesheet PI, XSD root, no DTD/entities, no schema import/include/redefine, no executable or nested archive. Found the narrowly hash/GAV/member/instruction-scoped engineering retention exception appropriate for evaluation only; stylesheet remains external/unrequested/unexecuted. Runtime and file rights remain unaccepted.
+
+Actual expanded replay exposed a directory ending .json (org/glassfish/javax.json) during selection enumeration. Both attempts stopped before Maven; custody verification remained valid. Final traversal uses the verified regular-file walker and retains the two original preflight-failure observations. Regression coverage and fresh replay results are retained separately.

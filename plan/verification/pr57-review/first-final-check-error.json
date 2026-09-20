@@ -1,0 +1,11 @@
+{
+  "head": "7c6ac4c0f992f79041362fd48899a83e705ce702",
+  "tree": "584188e2a9399f17fbaa9e8b8b409ef457efdf71",
+  "tooling": "218 passed",
+  "package": "175 run; one error during all-JSON validation",
+  "schemas": "failed before schema validation",
+  "cause": "Two preserved failed custody commands had empty stdout captured with .json extension. Package validator parses every .json under plan.",
+  "correction": "Rename only those two empty raw stdout captures to .stdout; bytes and stderr unchanged; no validator weakening.",
+  "guarded_push": "Did not execute: final-checks receipt absent after failed verification.",
+  "code_or_dependencies_changed": false
+}

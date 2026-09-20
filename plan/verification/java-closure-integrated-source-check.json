@@ -1,0 +1,22 @@
+{
+  "report_path": "/tmp/ambisgis-java-integrated-source-report-01.json",
+  "report_sha256": "6a13f947af9b42750f50e030beaf1674cf06eac2203756ed4e3312bc43aa8155",
+  "exit_code": 2,
+  "artifact_count": 64,
+  "dispositions": {
+    "generated-source-input-coverage": 3,
+    "retained-source-coverage": 39,
+    "embedded-source-coverage": 4,
+    "unresolved-source": 12,
+    "metadata-only-no-java-classes": 2,
+    "partial-source-coverage": 4
+  },
+  "build_ready": false,
+  "interpretation": "All exact inventory entries verified; partial/unresolved remain, not acceptance.",
+  "source_custody_verification": {
+    "exit_code": 0,
+    "files": 337,
+    "bytes": 160418290,
+    "manifest_sha256": "675432bc43c70e93b31be880cd3ff9b2dc004d0c76482bc074003ba6cddd9c17"
+  }
+}

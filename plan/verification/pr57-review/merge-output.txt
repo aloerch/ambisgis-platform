@@ -1,0 +1,6 @@
+Auto-merging STATUS.md
+CONFLICT (content): Merge conflict in STATUS.md
+Auto-merging plan/STATUS.md
+CONFLICT (content): Merge conflict in plan/STATUS.md
+Auto-merging plan/docs/java-resolution-handoff.md
+Automatic merge failed; fix conflicts and then commit the result.

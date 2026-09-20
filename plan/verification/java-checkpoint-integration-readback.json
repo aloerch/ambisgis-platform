@@ -1,0 +1,42 @@
+{
+  "data": {
+    "repository": {
+      "id": "R_kgDOUhI-dw",
+      "nameWithOwner": "aloerch/ambisgis-platform",
+      "p54": {
+        "id": "PR_kwDOUhI-d88AAAABEQiDOg",
+        "number": 54,
+        "state": "OPEN",
+        "headRefOid": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+        "baseRefName": "ambisgis/main",
+        "baseRefOid": "fc77ab978e567ce5d55e3428d1249a3b332da09d",
+        "baseRef": {
+          "target": {
+            "oid": "fc77ab978e567ce5d55e3428d1249a3b332da09d"
+          }
+        },
+        "mergeable": "UNKNOWN",
+        "mergeStateStatus": "UNKNOWN",
+        "stack": null,
+        "stackEntry": null
+      },
+      "p55": {
+        "id": "PR_kwDOUhI-d88AAAABEQ97wg",
+        "number": 55,
+        "state": "OPEN",
+        "headRefOid": "9e1b2e1bca26d00b200a39f58a4a0890d43fca98",
+        "baseRefName": "fnd-02/java-dependency-audit",
+        "baseRefOid": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+        "baseRef": {
+          "target": {
+            "oid": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746"
+          }
+        },
+        "mergeable": "UNKNOWN",
+        "mergeStateStatus": "UNKNOWN",
+        "stack": null,
+        "stackEntry": null
+      }
+    }
+  }
+}

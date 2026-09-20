@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "test_compatibility.CompatibilityTests.test_source_verification_error_after_maven_success_fails_receipt",
+    "-v"
+  ],
+  "exit_code": 1,
+  "scope": "tooling regression only; no native component run"
+}

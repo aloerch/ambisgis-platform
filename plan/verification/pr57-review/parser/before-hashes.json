@@ -1,0 +1,11 @@
+{
+  "base_commit": "dc250cd854ae87bfb80657148efe937a69c381dc",
+  "base_tree": "841e19082f139909e6097bf10ec96ed78e96060f",
+  "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review57-parser",
+  "file_sha256": {
+    "build-support/java/source_closure.py": "a0bf10359066764c30e9d861b45c65c73991c62b235bdb6181dd8a5a5862dab4",
+    "build-support/java/test_source_closure.py": "9df05a9292aa5962a3a8154c778b22de7189e5755174ce9ea8856defba88c4e4",
+    "build-support/java/resolution_inventory.py": "77864a6fe8547effb39cc6b48fbcf712252fbb7a7a12cab64424aeda298d48dc",
+    "build-support/java/test_resolution_inventory.py": "1c44daaf95bb65dc6ea16dabde5048c3f20accb5eecc0a19ef49bc79020d4335"
+  }
+}

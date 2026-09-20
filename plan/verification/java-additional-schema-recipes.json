@@ -1,0 +1,923 @@
+{
+  "all_resource_maps_equal": true,
+  "build_ready": false,
+  "coordinate_count": 10,
+  "coordinates": [
+    {
+      "dependencies_equal": true,
+      "gav": "org.geotools.schemas:wfs-1.1:1.1.2-2",
+      "license_gap": "Neither direct POM declares a license or parent; XML annotations and named notices in actual JAR bytes need retention and review.",
+      "owned": {
+        "dependencies": [
+          {
+            "artifactId": "gml-3.1",
+            "groupId": "org.geotools.schemas",
+            "version": "3.1.1-4"
+          },
+          {
+            "artifactId": "filter-1.1",
+            "groupId": "org.geotools.schemas",
+            "version": "1.1.1-2"
+          },
+          {
+            "artifactId": "ows-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-2"
+          }
+        ],
+        "gav": "org.geotools.schemas:wfs-1.1:1.1.2-2",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/wfs/1.1.0/wfs.xsd": "http://schemas.opengis.net/wfs/1.1.0/wfs.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "owned_pom_path": "geotools/modules/extension/app-schema/app-schema-packages/wfs-1.1/pom.xml",
+      "owned_pom_sha256": "04626dae3d45468c6fc256c4d2578a51c06b82e67a44749a6a605c1fd06e5294",
+      "owned_recipe_files": [
+        "geotools/modules/extension/app-schema/app-schema-packages/wfs-1.1/pom.xml"
+      ],
+      "pom_bytes_equal": false,
+      "resource_count": 1,
+      "resource_maps_equal": true,
+      "resource_types": {
+        ".xsd": 1
+      },
+      "retained": {
+        "dependencies": [
+          {
+            "artifactId": "gml-3.1",
+            "groupId": "org.geotools.schemas",
+            "version": "3.1.1-4"
+          },
+          {
+            "artifactId": "filter-1.1",
+            "groupId": "org.geotools.schemas",
+            "version": "1.1.1-2"
+          },
+          {
+            "artifactId": "ows-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-2"
+          }
+        ],
+        "gav": "org.geotools.schemas:wfs-1.1:1.1.2-2",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/wfs/1.1.0/wfs.xsd": "http://schemas.opengis.net/wfs/1.1.0/wfs.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "retained_final_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/wfs-1.1/1.1.2-2/wfs-1.1-1.1.2-2.pom",
+      "retained_original_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/wfs-1.1/1.1.2-2/wfs-1.1-1.1.2-2.pom",
+      "retained_pom_record_path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/osgeo/org/geotools/schemas/wfs-1.1/1.1.2-2/wfs-1.1-1.1.2-2.pom.json",
+      "retained_pom_sha256": "2d83b5fef752b87185bfb4393c3c6706b938960288eef536c5984a25bae1301b",
+      "retained_pom_size": 2961
+    },
+    {
+      "dependencies_equal": true,
+      "gav": "org.geotools.schemas:filter-1.1:1.1.1-2",
+      "license_gap": "Neither direct POM declares a license or parent; XML annotations and named notices in actual JAR bytes need retention and review.",
+      "owned": {
+        "dependencies": [
+          {
+            "artifactId": "gml-3.1",
+            "groupId": "org.geotools.schemas",
+            "version": "3.1.1-4"
+          }
+        ],
+        "gav": "org.geotools.schemas:filter-1.1:1.1.1-2",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/filter/1.1.0/expr.xsd": "http://schemas.opengis.net/filter/1.1.0/expr.xsd",
+          "net/opengis/schemas/filter/1.1.0/filter.xsd": "http://schemas.opengis.net/filter/1.1.0/filter.xsd",
+          "net/opengis/schemas/filter/1.1.0/filterCapabilities.xsd": "http://schemas.opengis.net/filter/1.1.0/filterCapabilities.xsd",
+          "net/opengis/schemas/filter/1.1.0/sort.xsd": "http://schemas.opengis.net/filter/1.1.0/sort.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "owned_pom_path": "geotools/modules/extension/app-schema/app-schema-packages/filter-1.1/pom.xml",
+      "owned_pom_sha256": "7a6a4a5bfca60cf0da3c7ec7a838d74b276cc8f3a41425519aef6634aa72a434",
+      "owned_recipe_files": [
+        "geotools/modules/extension/app-schema/app-schema-packages/filter-1.1/pom.xml"
+      ],
+      "pom_bytes_equal": false,
+      "resource_count": 4,
+      "resource_maps_equal": true,
+      "resource_types": {
+        ".xsd": 4
+      },
+      "retained": {
+        "dependencies": [
+          {
+            "artifactId": "gml-3.1",
+            "groupId": "org.geotools.schemas",
+            "version": "3.1.1-4"
+          }
+        ],
+        "gav": "org.geotools.schemas:filter-1.1:1.1.1-2",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/filter/1.1.0/expr.xsd": "http://schemas.opengis.net/filter/1.1.0/expr.xsd",
+          "net/opengis/schemas/filter/1.1.0/filter.xsd": "http://schemas.opengis.net/filter/1.1.0/filter.xsd",
+          "net/opengis/schemas/filter/1.1.0/filterCapabilities.xsd": "http://schemas.opengis.net/filter/1.1.0/filterCapabilities.xsd",
+          "net/opengis/schemas/filter/1.1.0/sort.xsd": "http://schemas.opengis.net/filter/1.1.0/sort.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "retained_final_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/filter-1.1/1.1.1-2/filter-1.1-1.1.1-2.pom",
+      "retained_original_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/filter-1.1/1.1.1-2/filter-1.1-1.1.1-2.pom",
+      "retained_pom_record_path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/osgeo/org/geotools/schemas/filter-1.1/1.1.1-2/filter-1.1-1.1.1-2.pom.json",
+      "retained_pom_sha256": "16b0287e9a4ec2177f0657dbde4d639af61866b481f96e2a25f669d2731ab241",
+      "retained_pom_size": 2907
+    },
+    {
+      "dependencies_equal": true,
+      "gav": "org.geotools.schemas:ows-1.0:1.0.0-2",
+      "license_gap": "Neither direct POM declares a license or parent; XML annotations and named notices in actual JAR bytes need retention and review.",
+      "owned": {
+        "dependencies": [
+          {
+            "artifactId": "xlink-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          }
+        ],
+        "gav": "org.geotools.schemas:ows-1.0:1.0.0-2",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/ows/1.0.0/ows19115subset.xsd": "http://schemas.opengis.net/ows/1.0.0/ows19115subset.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsAll.xsd": "http://schemas.opengis.net/ows/1.0.0/owsAll.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsCommon.xsd": "http://schemas.opengis.net/ows/1.0.0/owsCommon.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsDataIdentification.xsd": "http://schemas.opengis.net/ows/1.0.0/owsDataIdentification.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsExceptionReport.xsd": "http://schemas.opengis.net/ows/1.0.0/owsExceptionReport.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsGetCapabilities.xsd": "http://schemas.opengis.net/ows/1.0.0/owsGetCapabilities.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsOperationsMetadata.xsd": "http://schemas.opengis.net/ows/1.0.0/owsOperationsMetadata.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsServiceIdentification.xsd": "http://schemas.opengis.net/ows/1.0.0/owsServiceIdentification.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsServiceProvider.xsd": "http://schemas.opengis.net/ows/1.0.0/owsServiceProvider.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "owned_pom_path": "geotools/modules/extension/app-schema/app-schema-packages/ows-1.0/pom.xml",
+      "owned_pom_sha256": "b038f9e7bde4a31ecf7901b5e3a1def038027570d2b0e2fe436c33bb7c07dab4",
+      "owned_recipe_files": [
+        "geotools/modules/extension/app-schema/app-schema-packages/ows-1.0/pom.xml"
+      ],
+      "pom_bytes_equal": false,
+      "resource_count": 9,
+      "resource_maps_equal": true,
+      "resource_types": {
+        ".xsd": 9
+      },
+      "retained": {
+        "dependencies": [
+          {
+            "artifactId": "xlink-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          }
+        ],
+        "gav": "org.geotools.schemas:ows-1.0:1.0.0-2",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/ows/1.0.0/ows19115subset.xsd": "http://schemas.opengis.net/ows/1.0.0/ows19115subset.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsAll.xsd": "http://schemas.opengis.net/ows/1.0.0/owsAll.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsCommon.xsd": "http://schemas.opengis.net/ows/1.0.0/owsCommon.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsDataIdentification.xsd": "http://schemas.opengis.net/ows/1.0.0/owsDataIdentification.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsExceptionReport.xsd": "http://schemas.opengis.net/ows/1.0.0/owsExceptionReport.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsGetCapabilities.xsd": "http://schemas.opengis.net/ows/1.0.0/owsGetCapabilities.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsOperationsMetadata.xsd": "http://schemas.opengis.net/ows/1.0.0/owsOperationsMetadata.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsServiceIdentification.xsd": "http://schemas.opengis.net/ows/1.0.0/owsServiceIdentification.xsd",
+          "net/opengis/schemas/ows/1.0.0/owsServiceProvider.xsd": "http://schemas.opengis.net/ows/1.0.0/owsServiceProvider.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "retained_final_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/ows-1.0/1.0.0-2/ows-1.0-1.0.0-2.pom",
+      "retained_original_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/ows-1.0/1.0.0-2/ows-1.0-1.0.0-2.pom",
+      "retained_pom_record_path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/osgeo/org/geotools/schemas/ows-1.0/1.0.0-2/ows-1.0-1.0.0-2.pom.json",
+      "retained_pom_sha256": "b5371febb6027c0be7e7b7ceb25661f616909f13b4ac005ad2b974ab60413e02",
+      "retained_pom_size": 3554
+    },
+    {
+      "dependencies_equal": true,
+      "gav": "org.geotools.schemas:earthresourceml-1.1:1.1.0-3",
+      "license_gap": "Neither direct POM declares a license or parent; XML annotations and named notices in actual JAR bytes need retention and review.",
+      "owned": {
+        "dependencies": [
+          {
+            "artifactId": "gml-3.1",
+            "groupId": "org.geotools.schemas",
+            "version": "3.1.1-4"
+          },
+          {
+            "artifactId": "cgiutilities-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-4"
+          },
+          {
+            "artifactId": "geosciml-2.0",
+            "groupId": "org.geotools.schemas",
+            "version": "2.0.2-4"
+          }
+        ],
+        "gav": "org.geotools.schemas:earthresourceml-1.1:1.1.0-3",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "org/earthresourceml/www/earthresourceml/1.1/xsd/earthResource.xsd": "http://www.earthresourceml.org/earthresourceml/1.1/xsd/earthResource.xsd",
+          "org/earthresourceml/www/earthresourceml/1.1/xsd/mine.xsd": "http://www.earthresourceml.org/earthresourceml/1.1/xsd/mine.xsd",
+          "org/earthresourceml/www/earthresourceml/1.1/xsd/mineralOccurrence.xsd": "http://www.earthresourceml.org/earthresourceml/1.1/xsd/mineralOccurrence.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "owned_pom_path": "geotools/modules/extension/app-schema/app-schema-packages/earthresourceml-1.1/pom.xml",
+      "owned_pom_sha256": "0f67b3a26498d5e6972f59534db36d46a39a94193ea307f948dd8839d392df18",
+      "owned_recipe_files": [
+        "geotools/modules/extension/app-schema/app-schema-packages/earthresourceml-1.1/pom.xml"
+      ],
+      "pom_bytes_equal": false,
+      "resource_count": 3,
+      "resource_maps_equal": true,
+      "resource_types": {
+        ".xsd": 3
+      },
+      "retained": {
+        "dependencies": [
+          {
+            "artifactId": "gml-3.1",
+            "groupId": "org.geotools.schemas",
+            "version": "3.1.1-4"
+          },
+          {
+            "artifactId": "cgiutilities-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-4"
+          },
+          {
+            "artifactId": "geosciml-2.0",
+            "groupId": "org.geotools.schemas",
+            "version": "2.0.2-4"
+          }
+        ],
+        "gav": "org.geotools.schemas:earthresourceml-1.1:1.1.0-3",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "org/earthresourceml/www/earthresourceml/1.1/xsd/earthResource.xsd": "http://www.earthresourceml.org/earthresourceml/1.1/xsd/earthResource.xsd",
+          "org/earthresourceml/www/earthresourceml/1.1/xsd/mine.xsd": "http://www.earthresourceml.org/earthresourceml/1.1/xsd/mine.xsd",
+          "org/earthresourceml/www/earthresourceml/1.1/xsd/mineralOccurrence.xsd": "http://www.earthresourceml.org/earthresourceml/1.1/xsd/mineralOccurrence.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "retained_final_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/earthresourceml-1.1/1.1.0-3/earthresourceml-1.1-1.1.0-3.pom",
+      "retained_original_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/earthresourceml-1.1/1.1.0-3/earthresourceml-1.1-1.1.0-3.pom",
+      "retained_pom_record_path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/osgeo/org/geotools/schemas/earthresourceml-1.1/1.1.0-3/earthresourceml-1.1-1.1.0-3.pom.json",
+      "retained_pom_sha256": "280b25bd8895653e77562a7659e91f8907aeecb1d36a2b06164fe285038378fe",
+      "retained_pom_size": 3277
+    },
+    {
+      "dependencies_equal": true,
+      "gav": "org.geotools.schemas:gml-3.2:3.2.1-1",
+      "license_gap": "Neither direct POM declares a license or parent; XML annotations and named notices in actual JAR bytes need retention and review.",
+      "owned": {
+        "dependencies": [
+          {
+            "artifactId": "xlink-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          },
+          {
+            "artifactId": "gml-3.1",
+            "groupId": "org.geotools.schemas",
+            "version": "3.1.1-4"
+          },
+          {
+            "artifactId": "iso-19139-2007",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-1"
+          }
+        ],
+        "gav": "org.geotools.schemas:gml-3.2:3.2.1-1",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/gml/3.2.1/ReadMe.txt": "http://schemas.opengis.net/gml/3.2.1/ReadMe.txt",
+          "net/opengis/schemas/gml/3.2.1/SchematronConstraints.xml": "http://schemas.opengis.net/gml/3.2.1/SchematronConstraints.xml",
+          "net/opengis/schemas/gml/3.2.1/basicTypes.xsd": "http://schemas.opengis.net/gml/3.2.1/basicTypes.xsd",
+          "net/opengis/schemas/gml/3.2.1/coordinateOperations.xsd": "http://schemas.opengis.net/gml/3.2.1/coordinateOperations.xsd",
+          "net/opengis/schemas/gml/3.2.1/coordinateReferenceSystems.xsd": "http://schemas.opengis.net/gml/3.2.1/coordinateReferenceSystems.xsd",
+          "net/opengis/schemas/gml/3.2.1/coordinateSystems.xsd": "http://schemas.opengis.net/gml/3.2.1/coordinateSystems.xsd",
+          "net/opengis/schemas/gml/3.2.1/coverage.xsd": "http://schemas.opengis.net/gml/3.2.1/coverage.xsd",
+          "net/opengis/schemas/gml/3.2.1/datums.xsd": "http://schemas.opengis.net/gml/3.2.1/datums.xsd",
+          "net/opengis/schemas/gml/3.2.1/defaultStyle.xsd": "http://schemas.opengis.net/gml/3.2.1/defaultStyle.xsd",
+          "net/opengis/schemas/gml/3.2.1/deprecatedTypes.xsd": "http://schemas.opengis.net/gml/3.2.1/deprecatedTypes.xsd",
+          "net/opengis/schemas/gml/3.2.1/dictionary.xsd": "http://schemas.opengis.net/gml/3.2.1/dictionary.xsd",
+          "net/opengis/schemas/gml/3.2.1/direction.xsd": "http://schemas.opengis.net/gml/3.2.1/direction.xsd",
+          "net/opengis/schemas/gml/3.2.1/dynamicFeature.xsd": "http://schemas.opengis.net/gml/3.2.1/dynamicFeature.xsd",
+          "net/opengis/schemas/gml/3.2.1/feature.xsd": "http://schemas.opengis.net/gml/3.2.1/feature.xsd",
+          "net/opengis/schemas/gml/3.2.1/geometryAggregates.xsd": "http://schemas.opengis.net/gml/3.2.1/geometryAggregates.xsd",
+          "net/opengis/schemas/gml/3.2.1/geometryBasic0d1d.xsd": "http://schemas.opengis.net/gml/3.2.1/geometryBasic0d1d.xsd",
+          "net/opengis/schemas/gml/3.2.1/geometryBasic2d.xsd": "http://schemas.opengis.net/gml/3.2.1/geometryBasic2d.xsd",
+          "net/opengis/schemas/gml/3.2.1/geometryComplexes.xsd": "http://schemas.opengis.net/gml/3.2.1/geometryComplexes.xsd",
+          "net/opengis/schemas/gml/3.2.1/geometryPrimitives.xsd": "http://schemas.opengis.net/gml/3.2.1/geometryPrimitives.xsd",
+          "net/opengis/schemas/gml/3.2.1/gml.xsd": "http://schemas.opengis.net/gml/3.2.1/gml.xsd",
+          "net/opengis/schemas/gml/3.2.1/gmlBase.xsd": "http://schemas.opengis.net/gml/3.2.1/gmlBase.xsd",
+          "net/opengis/schemas/gml/3.2.1/gml_3_2_1-ReadMe.txt": "http://schemas.opengis.net/gml/3.2.1/gml_3_2_1-ReadMe.txt",
+          "net/opengis/schemas/gml/3.2.1/grids.xsd": "http://schemas.opengis.net/gml/3.2.1/grids.xsd",
+          "net/opengis/schemas/gml/3.2.1/measures.xsd": "http://schemas.opengis.net/gml/3.2.1/measures.xsd",
+          "net/opengis/schemas/gml/3.2.1/observation.xsd": "http://schemas.opengis.net/gml/3.2.1/observation.xsd",
+          "net/opengis/schemas/gml/3.2.1/referenceSystems.xsd": "http://schemas.opengis.net/gml/3.2.1/referenceSystems.xsd",
+          "net/opengis/schemas/gml/3.2.1/temporal.xsd": "http://schemas.opengis.net/gml/3.2.1/temporal.xsd",
+          "net/opengis/schemas/gml/3.2.1/temporalReferenceSystems.xsd": "http://schemas.opengis.net/gml/3.2.1/temporalReferenceSystems.xsd",
+          "net/opengis/schemas/gml/3.2.1/temporalTopology.xsd": "http://schemas.opengis.net/gml/3.2.1/temporalTopology.xsd",
+          "net/opengis/schemas/gml/3.2.1/topology.xsd": "http://schemas.opengis.net/gml/3.2.1/topology.xsd",
+          "net/opengis/schemas/gml/3.2.1/units.xsd": "http://schemas.opengis.net/gml/3.2.1/units.xsd",
+          "net/opengis/schemas/gml/3.2.1/valueObjects.xsd": "http://schemas.opengis.net/gml/3.2.1/valueObjects.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "owned_pom_path": "geotools/modules/extension/app-schema/app-schema-packages/gml-3.2/pom.xml",
+      "owned_pom_sha256": "c752cbd522c3616061afd5fd966539759002efee832ace5eb0fd67f71a765dac",
+      "owned_recipe_files": [
+        "geotools/modules/extension/app-schema/app-schema-packages/gml-3.2/pom.xml"
+      ],
+      "pom_bytes_equal": false,
+      "resource_count": 32,
+      "resource_maps_equal": true,
+      "resource_types": {
+        ".txt": 2,
+        ".xml": 1,
+        ".xsd": 29
+      },
+      "retained": {
+        "dependencies": [
+          {
+            "artifactId": "xlink-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          },
+          {
+            "artifactId": "gml-3.1",
+            "groupId": "org.geotools.schemas",
+            "version": "3.1.1-4"
+          },
+          {
+            "artifactId": "iso-19139-2007",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-1"
+          }
+        ],
+        "gav": "org.geotools.schemas:gml-3.2:3.2.1-1",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/gml/3.2.1/ReadMe.txt": "http://schemas.opengis.net/gml/3.2.1/ReadMe.txt",
+          "net/opengis/schemas/gml/3.2.1/SchematronConstraints.xml": "http://schemas.opengis.net/gml/3.2.1/SchematronConstraints.xml",
+          "net/opengis/schemas/gml/3.2.1/basicTypes.xsd": "http://schemas.opengis.net/gml/3.2.1/basicTypes.xsd",
+          "net/opengis/schemas/gml/3.2.1/coordinateOperations.xsd": "http://schemas.opengis.net/gml/3.2.1/coordinateOperations.xsd",
+          "net/opengis/schemas/gml/3.2.1/coordinateReferenceSystems.xsd": "http://schemas.opengis.net/gml/3.2.1/coordinateReferenceSystems.xsd",
+          "net/opengis/schemas/gml/3.2.1/coordinateSystems.xsd": "http://schemas.opengis.net/gml/3.2.1/coordinateSystems.xsd",
+          "net/opengis/schemas/gml/3.2.1/coverage.xsd": "http://schemas.opengis.net/gml/3.2.1/coverage.xsd",
+          "net/opengis/schemas/gml/3.2.1/datums.xsd": "http://schemas.opengis.net/gml/3.2.1/datums.xsd",
+          "net/opengis/schemas/gml/3.2.1/defaultStyle.xsd": "http://schemas.opengis.net/gml/3.2.1/defaultStyle.xsd",
+          "net/opengis/schemas/gml/3.2.1/deprecatedTypes.xsd": "http://schemas.opengis.net/gml/3.2.1/deprecatedTypes.xsd",
+          "net/opengis/schemas/gml/3.2.1/dictionary.xsd": "http://schemas.opengis.net/gml/3.2.1/dictionary.xsd",
+          "net/opengis/schemas/gml/3.2.1/direction.xsd": "http://schemas.opengis.net/gml/3.2.1/direction.xsd",
+          "net/opengis/schemas/gml/3.2.1/dynamicFeature.xsd": "http://schemas.opengis.net/gml/3.2.1/dynamicFeature.xsd",
+          "net/opengis/schemas/gml/3.2.1/feature.xsd": "http://schemas.opengis.net/gml/3.2.1/feature.xsd",
+          "net/opengis/schemas/gml/3.2.1/geometryAggregates.xsd": "http://schemas.opengis.net/gml/3.2.1/geometryAggregates.xsd",
+          "net/opengis/schemas/gml/3.2.1/geometryBasic0d1d.xsd": "http://schemas.opengis.net/gml/3.2.1/geometryBasic0d1d.xsd",
+          "net/opengis/schemas/gml/3.2.1/geometryBasic2d.xsd": "http://schemas.opengis.net/gml/3.2.1/geometryBasic2d.xsd",
+          "net/opengis/schemas/gml/3.2.1/geometryComplexes.xsd": "http://schemas.opengis.net/gml/3.2.1/geometryComplexes.xsd",
+          "net/opengis/schemas/gml/3.2.1/geometryPrimitives.xsd": "http://schemas.opengis.net/gml/3.2.1/geometryPrimitives.xsd",
+          "net/opengis/schemas/gml/3.2.1/gml.xsd": "http://schemas.opengis.net/gml/3.2.1/gml.xsd",
+          "net/opengis/schemas/gml/3.2.1/gmlBase.xsd": "http://schemas.opengis.net/gml/3.2.1/gmlBase.xsd",
+          "net/opengis/schemas/gml/3.2.1/gml_3_2_1-ReadMe.txt": "http://schemas.opengis.net/gml/3.2.1/gml_3_2_1-ReadMe.txt",
+          "net/opengis/schemas/gml/3.2.1/grids.xsd": "http://schemas.opengis.net/gml/3.2.1/grids.xsd",
+          "net/opengis/schemas/gml/3.2.1/measures.xsd": "http://schemas.opengis.net/gml/3.2.1/measures.xsd",
+          "net/opengis/schemas/gml/3.2.1/observation.xsd": "http://schemas.opengis.net/gml/3.2.1/observation.xsd",
+          "net/opengis/schemas/gml/3.2.1/referenceSystems.xsd": "http://schemas.opengis.net/gml/3.2.1/referenceSystems.xsd",
+          "net/opengis/schemas/gml/3.2.1/temporal.xsd": "http://schemas.opengis.net/gml/3.2.1/temporal.xsd",
+          "net/opengis/schemas/gml/3.2.1/temporalReferenceSystems.xsd": "http://schemas.opengis.net/gml/3.2.1/temporalReferenceSystems.xsd",
+          "net/opengis/schemas/gml/3.2.1/temporalTopology.xsd": "http://schemas.opengis.net/gml/3.2.1/temporalTopology.xsd",
+          "net/opengis/schemas/gml/3.2.1/topology.xsd": "http://schemas.opengis.net/gml/3.2.1/topology.xsd",
+          "net/opengis/schemas/gml/3.2.1/units.xsd": "http://schemas.opengis.net/gml/3.2.1/units.xsd",
+          "net/opengis/schemas/gml/3.2.1/valueObjects.xsd": "http://schemas.opengis.net/gml/3.2.1/valueObjects.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "retained_final_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/gml-3.2/3.2.1-1/gml-3.2-3.2.1-1.pom",
+      "retained_original_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/gml-3.2/3.2.1-1/gml-3.2-3.2.1-1.pom",
+      "retained_pom_record_path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/osgeo/org/geotools/schemas/gml-3.2/3.2.1-1/gml-3.2-3.2.1-1.pom.json",
+      "retained_pom_sha256": "1661a1063ce8ce28db4f9a2da5d86f7aa67628f9230138697d49037ec861508c",
+      "retained_pom_size": 6354
+    },
+    {
+      "dependencies_equal": true,
+      "gav": "org.geotools.schemas:iso-19139-2007:1.0.0-1",
+      "license_gap": "Neither direct POM declares a license or parent; XML annotations and named notices in actual JAR bytes need retention and review.",
+      "owned": {
+        "dependencies": [],
+        "gav": "org.geotools.schemas:iso-19139-2007:1.0.0-1",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/iso/19139/20070417/gco/basicTypes.xsd": "http://schemas.opengis.net/iso/19139/20070417/gco/basicTypes.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gco/gco.xsd": "http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gco/gcoBase.xsd": "http://schemas.opengis.net/iso/19139/20070417/gco/gcoBase.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/applicationSchema.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/applicationSchema.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/citation.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/citation.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/constraints.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/constraints.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/content.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/content.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/dataQuality.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/dataQuality.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/distribution.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/distribution.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/extent.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/extent.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/freeText.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/freeText.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/gmd.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/identification.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/identification.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/maintenance.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/maintenance.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/metadataApplication.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/metadataApplication.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/metadataEntity.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/metadataEntity.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/metadataExtension.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/metadataExtension.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/portrayalCatalogue.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/portrayalCatalogue.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/referenceSystem.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/referenceSystem.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/spatialRepresentation.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/spatialRepresentation.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/catalogues.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/catalogues.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/codelistItem.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/codelistItem.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/crsItem.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/crsItem.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/extendedTypes.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/extendedTypes.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/gmx.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/gmx.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/gmxUsage.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/gmxUsage.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/uomItem.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/uomItem.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gsr/gsr.xsd": "http://schemas.opengis.net/iso/19139/20070417/gsr/gsr.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gsr/spatialReferencing.xsd": "http://schemas.opengis.net/iso/19139/20070417/gsr/spatialReferencing.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gss/geometry.xsd": "http://schemas.opengis.net/iso/19139/20070417/gss/geometry.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gss/gss.xsd": "http://schemas.opengis.net/iso/19139/20070417/gss/gss.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gts/gts.xsd": "http://schemas.opengis.net/iso/19139/20070417/gts/gts.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gts/temporalObjects.xsd": "http://schemas.opengis.net/iso/19139/20070417/gts/temporalObjects.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "owned_pom_path": "geotools/modules/extension/app-schema/app-schema-packages/iso-19139-2007/pom.xml",
+      "owned_pom_sha256": "7e94d4d211f6ed7d5f2b5181a7ee2a7814864bdba467066700b221d9cc253679",
+      "owned_recipe_files": [
+        "geotools/modules/extension/app-schema/app-schema-packages/iso-19139-2007/pom.xml"
+      ],
+      "pom_bytes_equal": false,
+      "resource_count": 33,
+      "resource_maps_equal": true,
+      "resource_types": {
+        ".xsd": 33
+      },
+      "retained": {
+        "dependencies": [],
+        "gav": "org.geotools.schemas:iso-19139-2007:1.0.0-1",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/iso/19139/20070417/gco/basicTypes.xsd": "http://schemas.opengis.net/iso/19139/20070417/gco/basicTypes.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gco/gco.xsd": "http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gco/gcoBase.xsd": "http://schemas.opengis.net/iso/19139/20070417/gco/gcoBase.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/applicationSchema.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/applicationSchema.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/citation.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/citation.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/constraints.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/constraints.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/content.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/content.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/dataQuality.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/dataQuality.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/distribution.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/distribution.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/extent.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/extent.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/freeText.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/freeText.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/gmd.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/identification.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/identification.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/maintenance.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/maintenance.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/metadataApplication.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/metadataApplication.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/metadataEntity.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/metadataEntity.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/metadataExtension.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/metadataExtension.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/portrayalCatalogue.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/portrayalCatalogue.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/referenceSystem.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/referenceSystem.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmd/spatialRepresentation.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmd/spatialRepresentation.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/catalogues.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/catalogues.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/codelistItem.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/codelistItem.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/crsItem.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/crsItem.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/extendedTypes.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/extendedTypes.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/gmx.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/gmx.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/gmxUsage.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/gmxUsage.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gmx/uomItem.xsd": "http://schemas.opengis.net/iso/19139/20070417/gmx/uomItem.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gsr/gsr.xsd": "http://schemas.opengis.net/iso/19139/20070417/gsr/gsr.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gsr/spatialReferencing.xsd": "http://schemas.opengis.net/iso/19139/20070417/gsr/spatialReferencing.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gss/geometry.xsd": "http://schemas.opengis.net/iso/19139/20070417/gss/geometry.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gss/gss.xsd": "http://schemas.opengis.net/iso/19139/20070417/gss/gss.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gts/gts.xsd": "http://schemas.opengis.net/iso/19139/20070417/gts/gts.xsd",
+          "net/opengis/schemas/iso/19139/20070417/gts/temporalObjects.xsd": "http://schemas.opengis.net/iso/19139/20070417/gts/temporalObjects.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "retained_final_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/iso-19139-2007/1.0.0-1/iso-19139-2007-1.0.0-1.pom",
+      "retained_original_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/iso-19139-2007/1.0.0-1/iso-19139-2007-1.0.0-1.pom",
+      "retained_pom_record_path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/osgeo/org/geotools/schemas/iso-19139-2007/1.0.0-1/iso-19139-2007-1.0.0-1.pom.json",
+      "retained_pom_sha256": "3e28cf62838b8cbc77f446534f6ebfff8c998a7ba97bfbaeacf05992034d717c",
+      "retained_pom_size": 6616
+    },
+    {
+      "dependencies_equal": true,
+      "gav": "org.geotools.schemas:wfs-2.0:2.0.0-2",
+      "license_gap": "Neither direct POM declares a license or parent; XML annotations and named notices in actual JAR bytes need retention and review.",
+      "owned": {
+        "dependencies": [
+          {
+            "artifactId": "xml-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          },
+          {
+            "artifactId": "xlink-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          },
+          {
+            "artifactId": "ows-1.1",
+            "groupId": "org.geotools.schemas",
+            "version": "1.1.0-1"
+          },
+          {
+            "artifactId": "filter-2.0",
+            "groupId": "org.geotools.schemas",
+            "version": "2.0.0-2"
+          }
+        ],
+        "gav": "org.geotools.schemas:wfs-2.0:2.0.0-2",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/wfs/2.0/wfs.xsd": "http://schemas.opengis.net/wfs/2.0/wfs.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "owned_pom_path": "geotools/modules/extension/app-schema/app-schema-packages/wfs-2.0/pom.xml",
+      "owned_pom_sha256": "47dfb3fa22d72583b92c9ef57dafe65e9bfcf31f07af7633b80f06ad1a9379e4",
+      "owned_recipe_files": [
+        "geotools/modules/extension/app-schema/app-schema-packages/wfs-2.0/pom.xml"
+      ],
+      "pom_bytes_equal": false,
+      "resource_count": 1,
+      "resource_maps_equal": true,
+      "resource_types": {
+        ".xsd": 1
+      },
+      "retained": {
+        "dependencies": [
+          {
+            "artifactId": "xml-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          },
+          {
+            "artifactId": "xlink-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          },
+          {
+            "artifactId": "ows-1.1",
+            "groupId": "org.geotools.schemas",
+            "version": "1.1.0-1"
+          },
+          {
+            "artifactId": "filter-2.0",
+            "groupId": "org.geotools.schemas",
+            "version": "2.0.0-2"
+          }
+        ],
+        "gav": "org.geotools.schemas:wfs-2.0:2.0.0-2",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/wfs/2.0/wfs.xsd": "http://schemas.opengis.net/wfs/2.0/wfs.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "retained_final_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/wfs-2.0/2.0.0-2/wfs-2.0-2.0.0-2.pom",
+      "retained_original_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/wfs-2.0/2.0.0-2/wfs-2.0-2.0.0-2.pom",
+      "retained_pom_record_path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/osgeo/org/geotools/schemas/wfs-2.0/2.0.0-2/wfs-2.0-2.0.0-2.pom.json",
+      "retained_pom_sha256": "72b59c5950db16efc9863c56515c81af2d67e2a516baa960c8d8b86323f6adb0",
+      "retained_pom_size": 3138
+    },
+    {
+      "dependencies_equal": true,
+      "gav": "org.geotools.schemas:xml-1.0:1.0.0-3",
+      "license_gap": "Neither direct POM declares a license or parent; XML annotations and named notices in actual JAR bytes need retention and review.",
+      "owned": {
+        "dependencies": [],
+        "gav": "org.geotools.schemas:xml-1.0:1.0.0-3",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "org/w3/www/2001/xml.xsd": "http://www.w3.org/2001/xml.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "owned_pom_path": "geotools/modules/extension/app-schema/app-schema-packages/xml-1.0/pom.xml",
+      "owned_pom_sha256": "b3b733563633c0c8ed1f6225b1befab0e9578e4bb5d7c4d3ec532fc883466faf",
+      "owned_recipe_files": [
+        "geotools/modules/extension/app-schema/app-schema-packages/xml-1.0/pom.xml"
+      ],
+      "pom_bytes_equal": false,
+      "resource_count": 1,
+      "resource_maps_equal": true,
+      "resource_types": {
+        ".xsd": 1
+      },
+      "retained": {
+        "dependencies": [],
+        "gav": "org.geotools.schemas:xml-1.0:1.0.0-3",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "org/w3/www/2001/xml.xsd": "http://www.w3.org/2001/xml.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "retained_final_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/xml-1.0/1.0.0-3/xml-1.0-1.0.0-3.pom",
+      "retained_original_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/xml-1.0/1.0.0-3/xml-1.0-1.0.0-3.pom",
+      "retained_pom_record_path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/osgeo/org/geotools/schemas/xml-1.0/1.0.0-3/xml-1.0-1.0.0-3.pom.json",
+      "retained_pom_sha256": "5216b2cd90e68beb130124f850679069c2631663eb51d25489fbde9b6600fe8c",
+      "retained_pom_size": 2331
+    },
+    {
+      "dependencies_equal": true,
+      "gav": "org.geotools.schemas:ows-1.1:1.1.0-1",
+      "license_gap": "Neither direct POM declares a license or parent; XML annotations and named notices in actual JAR bytes need retention and review.",
+      "owned": {
+        "dependencies": [
+          {
+            "artifactId": "xlink-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          },
+          {
+            "artifactId": "xml-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          }
+        ],
+        "gav": "org.geotools.schemas:ows-1.1:1.1.0-1",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/ows/1.1.0/ows19115subset.xsd": "http://schemas.opengis.net/ows/1.1.0/ows19115subset.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsAll.xsd": "http://schemas.opengis.net/ows/1.1.0/owsAll.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsCommon.xsd": "http://schemas.opengis.net/ows/1.1.0/owsCommon.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsContents.xsd": "http://schemas.opengis.net/ows/1.1.0/owsContents.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsDataIdentification.xsd": "http://schemas.opengis.net/ows/1.1.0/owsDataIdentification.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsDomainType.xsd": "http://schemas.opengis.net/ows/1.1.0/owsDomainType.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsExceptionReport.xsd": "http://schemas.opengis.net/ows/1.1.0/owsExceptionReport.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsGetCapabilities.xsd": "http://schemas.opengis.net/ows/1.1.0/owsGetCapabilities.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsGetResourceByID.xsd": "http://schemas.opengis.net/ows/1.1.0/owsGetResourceByID.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsInputOutputData.xsd": "http://schemas.opengis.net/ows/1.1.0/owsInputOutputData.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsManifest.xsd": "http://schemas.opengis.net/ows/1.1.0/owsManifest.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsOperationsMetadata.xsd": "http://schemas.opengis.net/ows/1.1.0/owsOperationsMetadata.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsServiceIdentification.xsd": "http://schemas.opengis.net/ows/1.1.0/owsServiceIdentification.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsServiceProvider.xsd": "http://schemas.opengis.net/ows/1.1.0/owsServiceProvider.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "owned_pom_path": "geotools/modules/extension/app-schema/app-schema-packages/ows-1.1/pom.xml",
+      "owned_pom_sha256": "c2dca3496cbcecf1771115871954de51bc97182d0e45798eabaa36a1e64d1242",
+      "owned_recipe_files": [
+        "geotools/modules/extension/app-schema/app-schema-packages/ows-1.1/pom.xml"
+      ],
+      "pom_bytes_equal": false,
+      "resource_count": 14,
+      "resource_maps_equal": true,
+      "resource_types": {
+        ".xsd": 14
+      },
+      "retained": {
+        "dependencies": [
+          {
+            "artifactId": "xlink-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          },
+          {
+            "artifactId": "xml-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          }
+        ],
+        "gav": "org.geotools.schemas:ows-1.1:1.1.0-1",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/ows/1.1.0/ows19115subset.xsd": "http://schemas.opengis.net/ows/1.1.0/ows19115subset.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsAll.xsd": "http://schemas.opengis.net/ows/1.1.0/owsAll.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsCommon.xsd": "http://schemas.opengis.net/ows/1.1.0/owsCommon.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsContents.xsd": "http://schemas.opengis.net/ows/1.1.0/owsContents.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsDataIdentification.xsd": "http://schemas.opengis.net/ows/1.1.0/owsDataIdentification.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsDomainType.xsd": "http://schemas.opengis.net/ows/1.1.0/owsDomainType.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsExceptionReport.xsd": "http://schemas.opengis.net/ows/1.1.0/owsExceptionReport.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsGetCapabilities.xsd": "http://schemas.opengis.net/ows/1.1.0/owsGetCapabilities.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsGetResourceByID.xsd": "http://schemas.opengis.net/ows/1.1.0/owsGetResourceByID.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsInputOutputData.xsd": "http://schemas.opengis.net/ows/1.1.0/owsInputOutputData.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsManifest.xsd": "http://schemas.opengis.net/ows/1.1.0/owsManifest.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsOperationsMetadata.xsd": "http://schemas.opengis.net/ows/1.1.0/owsOperationsMetadata.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsServiceIdentification.xsd": "http://schemas.opengis.net/ows/1.1.0/owsServiceIdentification.xsd",
+          "net/opengis/schemas/ows/1.1.0/owsServiceProvider.xsd": "http://schemas.opengis.net/ows/1.1.0/owsServiceProvider.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "retained_final_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/ows-1.1/1.1.0-1/ows-1.1-1.1.0-1.pom",
+      "retained_original_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/ows-1.1/1.1.0-1/ows-1.1-1.1.0-1.pom",
+      "retained_pom_record_path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/osgeo/org/geotools/schemas/ows-1.1/1.1.0-1/ows-1.1-1.1.0-1.pom.json",
+      "retained_pom_sha256": "e4159e8884a7307e78916c756dee4f7174a6a129f593e45ab5a6e38c67fd2e34",
+      "retained_pom_size": 4290
+    },
+    {
+      "dependencies_equal": true,
+      "gav": "org.geotools.schemas:filter-2.0:2.0.0-2",
+      "license_gap": "Neither direct POM declares a license or parent; XML annotations and named notices in actual JAR bytes need retention and review.",
+      "owned": {
+        "dependencies": [
+          {
+            "artifactId": "xml-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          },
+          {
+            "artifactId": "ows-1.1",
+            "groupId": "org.geotools.schemas",
+            "version": "1.1.0-1"
+          }
+        ],
+        "gav": "org.geotools.schemas:filter-2.0:2.0.0-2",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/filter/2.0/expr.xsd": "http://schemas.opengis.net/filter/2.0/expr.xsd",
+          "net/opengis/schemas/filter/2.0/filter.xsd": "http://schemas.opengis.net/filter/2.0/filter.xsd",
+          "net/opengis/schemas/filter/2.0/filterAll.xsd": "http://schemas.opengis.net/filter/2.0/filterAll.xsd",
+          "net/opengis/schemas/filter/2.0/filterCapabilities.xsd": "http://schemas.opengis.net/filter/2.0/filterCapabilities.xsd",
+          "net/opengis/schemas/filter/2.0/query.xsd": "http://schemas.opengis.net/filter/2.0/query.xsd",
+          "net/opengis/schemas/filter/2.0/sort.xsd": "http://schemas.opengis.net/filter/2.0/sort.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "owned_pom_path": "geotools/modules/extension/app-schema/app-schema-packages/filter-2.0/pom.xml",
+      "owned_pom_sha256": "d94feda424cd2bf4a8f67a4fa33c45fdbec8d2e7d568ad50cc70b9a730648821",
+      "owned_recipe_files": [
+        "geotools/modules/extension/app-schema/app-schema-packages/filter-2.0/pom.xml"
+      ],
+      "pom_bytes_equal": false,
+      "resource_count": 6,
+      "resource_maps_equal": true,
+      "resource_types": {
+        ".xsd": 6
+      },
+      "retained": {
+        "dependencies": [
+          {
+            "artifactId": "xml-1.0",
+            "groupId": "org.geotools.schemas",
+            "version": "1.0.0-3"
+          },
+          {
+            "artifactId": "ows-1.1",
+            "groupId": "org.geotools.schemas",
+            "version": "1.1.0-1"
+          }
+        ],
+        "gav": "org.geotools.schemas:filter-2.0:2.0.0-2",
+        "licenses_declared": [],
+        "parent_present": false,
+        "resources": {
+          "net/opengis/schemas/filter/2.0/expr.xsd": "http://schemas.opengis.net/filter/2.0/expr.xsd",
+          "net/opengis/schemas/filter/2.0/filter.xsd": "http://schemas.opengis.net/filter/2.0/filter.xsd",
+          "net/opengis/schemas/filter/2.0/filterAll.xsd": "http://schemas.opengis.net/filter/2.0/filterAll.xsd",
+          "net/opengis/schemas/filter/2.0/filterCapabilities.xsd": "http://schemas.opengis.net/filter/2.0/filterCapabilities.xsd",
+          "net/opengis/schemas/filter/2.0/query.xsd": "http://schemas.opengis.net/filter/2.0/query.xsd",
+          "net/opengis/schemas/filter/2.0/sort.xsd": "http://schemas.opengis.net/filter/2.0/sort.xsd"
+        },
+        "task_types": [
+          "get",
+          "mkdir",
+          "property"
+        ]
+      },
+      "retained_final_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/filter-2.0/2.0.0-2/filter-2.0-2.0.0-2.pom",
+      "retained_original_url": "https://repo.osgeo.org/repository/release/org/geotools/schemas/filter-2.0/2.0.0-2/filter-2.0-2.0.0-2.pom",
+      "retained_pom_record_path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/records/osgeo/org/geotools/schemas/filter-2.0/2.0.0-2/filter-2.0-2.0.0-2.pom.json",
+      "retained_pom_sha256": "cb78c8617d43fc3ac17aacc817b3dabeae8ff9615f32eacd66701d194c129f65",
+      "retained_pom_size": 3276
+    }
+  ],
+  "jar_content_validated": false,
+  "license_approval": false,
+  "non_xsd_resources": [
+    {
+      "declared_source_url": "http://schemas.opengis.net/gml/3.2.1/ReadMe.txt",
+      "gav": "org.geotools.schemas:gml-3.2:3.2.1-1",
+      "path": "net/opengis/schemas/gml/3.2.1/ReadMe.txt"
+    },
+    {
+      "declared_source_url": "http://schemas.opengis.net/gml/3.2.1/SchematronConstraints.xml",
+      "gav": "org.geotools.schemas:gml-3.2:3.2.1-1",
+      "path": "net/opengis/schemas/gml/3.2.1/SchematronConstraints.xml"
+    },
+    {
+      "declared_source_url": "http://schemas.opengis.net/gml/3.2.1/gml_3_2_1-ReadMe.txt",
+      "gav": "org.geotools.schemas:gml-3.2:3.2.1-1",
+      "path": "net/opengis/schemas/gml/3.2.1/gml_3_2_1-ReadMe.txt"
+    }
+  ],
+  "owned_source_archive": "/home/revelberry/Projects/AmbisGIS/source-archives/java-audit/geotools-aac73e9b89821331e77f67f1dd0921e541a78cfc.tar",
+  "owned_source_commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+  "purpose": "Read-only comparison of exact ten additional schema source-data packaging recipes; no live Ant downloads or JAR execution",
+  "resource_count": 104,
+  "resource_types": {
+    ".txt": 2,
+    ".xml": 1,
+    ".xsd": 101
+  },
+  "schema_version": 1,
+  "source_custody": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven"
+}

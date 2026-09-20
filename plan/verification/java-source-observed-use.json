@@ -1,0 +1,191 @@
+{
+  "observations": [
+    {
+      "gav": "it.geosolutions.jgridshift:jgridshift-core:1.3",
+      "kind": "actual-test-classpath-presence",
+      "module": "referencing",
+      "run": "referencing-01",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/fresh-m2/it/geosolutions/jgridshift/jgridshift-core/1.3/jgridshift-core-1.3.jar",
+      "artifact_sha256": "303eb6a6f6f87369f6b9e3dcacefd6f9b0ad55920cd65a7f162ab9a23401c722",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/work/source/geotools/modules/library/referencing/target/surefire-reports/TEST-org.geotools.geometry.GeneralBoundsTest.xml",
+      "test_report_sha256": "6ef17daa88766f06f087ec1587da01a0cf21e9e530e9c643475cbd7b9fa58f36",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+      "kind": "actual-test-classpath-presence",
+      "module": "referencing",
+      "run": "referencing-01",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/fresh-m2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+      "artifact_sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/work/source/geotools/modules/library/referencing/target/surefire-reports/TEST-org.geotools.geometry.GeneralBoundsTest.xml",
+      "test_report_sha256": "6ef17daa88766f06f087ec1587da01a0cf21e9e530e9c643475cbd7b9fa58f36",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "net.sourceforge.javacsv:javacsv:2.0",
+      "kind": "actual-test-classpath-presence",
+      "module": "referencing",
+      "run": "referencing-01",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/fresh-m2/net/sourceforge/javacsv/javacsv/2.0/javacsv-2.0.jar",
+      "artifact_sha256": "c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/work/source/geotools/modules/library/referencing/target/surefire-reports/TEST-org.geotools.geometry.GeneralBoundsTest.xml",
+      "test_report_sha256": "6ef17daa88766f06f087ec1587da01a0cf21e9e530e9c643475cbd7b9fa58f36",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "it.geosolutions.jgridshift:jgridshift-core:1.3",
+      "kind": "actual-test-classpath-presence",
+      "module": "xml",
+      "run": "xml-schema-03",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/xml-schema-03/fresh-m2/it/geosolutions/jgridshift/jgridshift-core/1.3/jgridshift-core-1.3.jar",
+      "artifact_sha256": "303eb6a6f6f87369f6b9e3dcacefd6f9b0ad55920cd65a7f162ab9a23401c722",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/xml-schema-03/work/source/geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.SchemaFactoryResolveTest.xml",
+      "test_report_sha256": "991f262fff740059fb9acfa02220588cd46adf9842f779f9e1fc2222735f6230",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "org.apache.xml:xml-commons-resolver:1.2",
+      "kind": "actual-test-classpath-presence",
+      "module": "xml",
+      "run": "xml-schema-03",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/xml-schema-03/fresh-m2/org/apache/xml/xml-commons-resolver/1.2/xml-commons-resolver-1.2.jar",
+      "artifact_sha256": "47dcde8986019314ef78ae7280a94973a21d2ed95075a40a000b42da956429e1",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/xml-schema-03/work/source/geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.SchemaFactoryResolveTest.xml",
+      "test_report_sha256": "991f262fff740059fb9acfa02220588cd46adf9842f779f9e1fc2222735f6230",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "antlr:antlr:2.7.7",
+      "kind": "actual-test-classpath-presence",
+      "module": "model",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/antlr/antlr/2.7.7/antlr-2.7.7.jar",
+      "artifact_sha256": "88fbda4b912596b9f56e8e12e580cc954bacfb51776ecfddd3e18fc1cf56dc4c",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/model/target/surefire-reports/TEST-org.geoserver.geofence.core.model.Base64EncodersTest.xml",
+      "test_report_sha256": "ffb68c71b7f73724ca668a69af246f9701b583eaeef22a3f5904b6b18e52b6fe",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "commons-dbcp:commons-dbcp:1.2.2",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2.jar",
+      "artifact_sha256": "fd8813beda8e5a3dcc912b9f9944a9f33c6abf856125690092cbcb061039bdaa",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "org.opengeo:geodb:0.9",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/org/opengeo/geodb/0.9/geodb-0.9.jar",
+      "artifact_sha256": "661f4100005e7d3537b2e3f9b6c0c01d0a64c41644f57fdd0fcfdb89d2a7217e",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "antlr:antlr:2.7.7",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/antlr/antlr/2.7.7/antlr-2.7.7.jar",
+      "artifact_sha256": "88fbda4b912596b9f56e8e12e580cc954bacfb51776ecfddd3e18fc1cf56dc4c",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "org.aspectj:aspectjrt:1.5.4",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/org/aspectj/aspectjrt/1.5.4/aspectjrt-1.5.4.jar",
+      "artifact_sha256": "ea6dbd45089605b17840d35dd2474ec9a687929334903801e42e1f2e07fc40fb",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "org.aspectj:aspectjweaver:1.5.4",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/org/aspectj/aspectjweaver/1.5.4/aspectjweaver-1.5.4.jar",
+      "artifact_sha256": "a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+      "artifact_sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "antlr:antlr:2.7.7",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence-pg-test",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/antlr/antlr/2.7.7/antlr-2.7.7.jar",
+      "artifact_sha256": "88fbda4b912596b9f56e8e12e580cc954bacfb51776ecfddd3e18fc1cf56dc4c",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "56955c8dd1d539d1a6cadb0565119eb59545a686097a607e843fa284dc915bb6",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "commons-dbcp:commons-dbcp:1.2.2",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence-pg-test",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2.jar",
+      "artifact_sha256": "fd8813beda8e5a3dcc912b9f9944a9f33c6abf856125690092cbcb061039bdaa",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "56955c8dd1d539d1a6cadb0565119eb59545a686097a607e843fa284dc915bb6",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "org.aspectj:aspectjrt:1.5.4",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence-pg-test",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/org/aspectj/aspectjrt/1.5.4/aspectjrt-1.5.4.jar",
+      "artifact_sha256": "ea6dbd45089605b17840d35dd2474ec9a687929334903801e42e1f2e07fc40fb",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "56955c8dd1d539d1a6cadb0565119eb59545a686097a607e843fa284dc915bb6",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "org.aspectj:aspectjweaver:1.5.4",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence-pg-test",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/org/aspectj/aspectjweaver/1.5.4/aspectjweaver-1.5.4.jar",
+      "artifact_sha256": "a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "56955c8dd1d539d1a6cadb0565119eb59545a686097a607e843fa284dc915bb6",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    },
+    {
+      "gav": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+      "kind": "actual-test-classpath-presence",
+      "module": "persistence-pg-test",
+      "run": "geofence-06",
+      "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+      "artifact_sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
+      "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+      "test_report_sha256": "56955c8dd1d539d1a6cadb0565119eb59545a686097a607e843fa284dc915bb6",
+      "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+    }
+  ]
+}

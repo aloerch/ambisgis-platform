@@ -1,0 +1,32 @@
+{
+  "environment": "existing /tmp/ambisgis-validation-venv; no global installation",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-resolution/plan",
+      "exit_code": 0,
+      "duration_seconds": 8.019,
+      "evidence": "java-resolution-package-tests.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-resolution/plan",
+      "exit_code": 0,
+      "duration_seconds": 0.094,
+      "evidence": "java-resolution-schemas.txt"
+    }
+  ],
+  "gis_product_tests": false
+}

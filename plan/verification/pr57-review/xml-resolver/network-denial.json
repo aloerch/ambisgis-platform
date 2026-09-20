@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-09-20T21:06:11.949821+00:00",
+  "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/work/source",
+  "command": [
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/apache-maven-3.9.16/bin/mvn",
+    "--batch-mode",
+    "--no-transfer-progress",
+    "-gs",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/work/empty-global-settings.xml",
+    "-s",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/settings.xml",
+    "-Dmaven.repo.local=/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/fresh-m2",
+    "-Dstyle.color=never",
+    "-Dgt.version=34.5",
+    "-Dgt-version=34.5",
+    "-Dmf.version=2.4.1",
+    "-Dspotless.apply.skip=true",
+    "-Dpom.fmt.skip=true",
+    "-Pimporter,oauth2-geonode,geofence-server,geofence-server-postgres,printing,postgis",
+    "-pl",
+    "org.geotools:gt-xml",
+    "-am",
+    "package",
+    "-Dspotless.check.skip=true",
+    "-Dmaven.test.failure.ignore=false",
+    "-Dallow.test.failure.ignore=false",
+    "-Dtest=org.geotools.xml.resolver.SchemaResolverTest,org.geotools.xml.SchemaFactoryResolveTest",
+    "-Dsurefire.failIfNoSpecifiedTests=false"
+  ],
+  "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+  "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+  "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+  "limitations": [
+    "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+    "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+    "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+  ],
+  "status": "completed",
+  "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/apache-maven-3.9.16/bin/mvn",
+  "closed_inherited_fds": [],
+  "kernel_state": {
+    "no_new_privs": 1,
+    "seccomp_mode": 2,
+    "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+  },
+  "probes": [
+    {
+      "family": "AF_INET",
+      "operation": "socket(SOCK_STREAM)",
+      "errno": 1,
+      "errno_name": "EPERM",
+      "expected_errno": 1,
+      "passed": true
+    },
+    {
+      "family": "AF_INET6",
+      "operation": "socket(SOCK_STREAM)",
+      "errno": 1,
+      "errno_name": "EPERM",
+      "expected_errno": 1,
+      "passed": true
+    },
+    {
+      "family": "AF_UNIX",
+      "operation": "socket(SOCK_STREAM)",
+      "errno": 0,
+      "errno_name": "SUCCESS",
+      "expected_errno": 0,
+      "passed": true
+    },
+    {
+      "family": "AF_UNIX",
+      "operation": "socketpair send/recv",
+      "errno": 0,
+      "passed": true
+    }
+  ],
+  "command_exit_code": 0,
+  "finished_utc": "2026-09-20T21:06:24.550309+00:00"
+}

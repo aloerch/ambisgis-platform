@@ -1,0 +1,299 @@
+{
+  "custody": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-parent",
+  "manifest_sha256": "ac062d70e69d5b5093add3de1dd456317ef0c8e1bc15815bfcfd0b9ba0329a42",
+  "manifest": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-parent/custody-snapshot-01.json",
+  "file_count": 93,
+  "bytes": 3183613,
+  "huldra": {
+    "acceptance_build": false,
+    "classes": [
+      {
+        "path": "org/huldra/math/BasicTest.class",
+        "sha256": "7e63d410ad12ecb2c0054603fecffe67e98e43b0f66a36a307183ee3d25d0eb0"
+      },
+      {
+        "path": "org/huldra/math/BigInt$1.class",
+        "sha256": "d21703510839a23656eb89858b32bfac7d480b30fb101db16229ab46cbc0b9e0"
+      },
+      {
+        "path": "org/huldra/math/BigInt$2.class",
+        "sha256": "5ce759a3dfebb47afaf188197d24455f35314a01089c90b0105f48ec82b548c8"
+      },
+      {
+        "path": "org/huldra/math/BigInt$3.class",
+        "sha256": "e2d74f8793862a57dac84f58093f6a6a3da6fdac3c2a9cc98d8cbd31b9035cbb"
+      },
+      {
+        "path": "org/huldra/math/BigInt.class",
+        "sha256": "5b2b8db99d26f19cccae39c080b40290139222e47b959b3234ecf322305f3c6e"
+      }
+    ],
+    "commands": [
+      {
+        "command": [
+          "/usr/bin/python3",
+          "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure/build-support/postgis/offline_exec.py",
+          "--evidence",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/compile-network-denial.json",
+          "--",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+          "-source",
+          "7",
+          "-target",
+          "7",
+          "-encoding",
+          "UTF-8",
+          "-g",
+          "-cp",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/lib/junit-4.12.jar:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/lib/hamcrest-core-1.3.jar",
+          "-d",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/classes",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/source/src/main/java/org/huldra/math/BigInt.java",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/source/src/test/java/org/huldra/math/BasicTest.java"
+        ],
+        "exit_code": 0,
+        "log_sha256": "0eba124133a93a69171073ec4da5b0af8ddde272b3082a8632d955543f1ea92c",
+        "name": "compile",
+        "network_denial_sha256": "d11bd7fa669d4d0885275ca2f3e2bd8adc029a03fc40e2fe3aac78fd3fdaef72"
+      },
+      {
+        "command": [
+          "/usr/bin/python3",
+          "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure/build-support/postgis/offline_exec.py",
+          "--evidence",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/native-tests-network-denial.json",
+          "--",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+          "-cp",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/classes:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/lib/junit-4.12.jar:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/lib/hamcrest-core-1.3.jar",
+          "org.junit.runner.JUnitCore",
+          "org.huldra.math.BasicTest"
+        ],
+        "exit_code": 0,
+        "log_sha256": "21492346ab3dae2b26cc0c14b1537932e2710e2e5bb1d0df49e92e014ac0485b",
+        "name": "native-tests",
+        "network_denial_sha256": "55fab625107131e644e81d49626c43994222947623e444d49d48157d78521621"
+      }
+    ],
+    "exit_code": 0,
+    "host_toolchain_closure": false,
+    "native_tests": {
+      "errors": 0,
+      "failures": 0,
+      "randomized_tests_use_original_unseeded_random": true,
+      "skipped": 0,
+      "tests": 19
+    },
+    "original_source_unchanged": true,
+    "purpose": "third-party-repair-source-compilation-and-native-tests",
+    "source_commit": "efb66d8bfe782a66a78cb8c4b7ddd2be7212a9f9",
+    "source_members": [
+      {
+        "path": "src/main/java/org/huldra/math/BigInt.java",
+        "sha256": "f93f51f57d55b1a7d327e2180a866055091791017e62e81cb043069510f19070",
+        "size": 65618
+      },
+      {
+        "path": "src/test/java/org/huldra/math/BasicTest.java",
+        "sha256": "232c44cd3d4567fd513857bff16ef6e9156aec34440b8ac548213fbf77af7f0a",
+        "size": 19578
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "05aa64383e9fa128aa2d067dc727e2a392308685f000380f2be3571caffeaa9e",
+        "size": 1499
+      },
+      {
+        "path": "pom.xml",
+        "sha256": "2673e59ba0e3ee6af6d9b9fe50b124cdc8e0ee8698feb5c251defd703003afa3",
+        "size": 1816
+      }
+    ],
+    "source_sha256": "3985701f0a8ef56a0d5408f2bfac9890e01efeb70751e946b9c34a3d1647a497",
+    "test_inputs": {
+      "hamcrest-core-1.3.jar": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+      "junit-4.12.jar": "59721f0805e223d84b90677887d9ff567dc534d7c502ca903c0c2b17f05c116a"
+    },
+    "toolchain": {
+      "destination": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain",
+      "directories": 103,
+      "distribution_roots": [
+        "apache-maven-3.9.16",
+        "jdk-17.0.20.1+1"
+      ],
+      "files": 342,
+      "symlinks": 208,
+      "verified": true
+    }
+  },
+  "marlin": {
+    "purpose": "single-class-source-correspondence-probe",
+    "acceptance_build": false,
+    "command": [
+      "/usr/bin/python3",
+      "build-support/postgis/offline_exec.py",
+      "--evidence",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/network-denial.json",
+      "--",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+      "-source",
+      "11",
+      "-target",
+      "11",
+      "-g",
+      "--patch-module",
+      "java.desktop=/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/source:/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-parent/blobs/sha256/44c3c3620102749844e58f668523f073db127efbd0b233ec9b13b3205db1362f",
+      "-d",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/classes",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/source/sun/java2d/opengl/OGLRenderQueue.java"
+    ],
+    "exit_code": 0,
+    "source_receipt": {
+      "key": "marlin-deleted-opengl-source",
+      "url": "https://raw.githubusercontent.com/bourgesl/marlin-renderer/aeeb57fa32f175cb970994b9ae5d3b173990ce6e/src/main/java/sun/java2d/opengl/OGLRenderQueue.java",
+      "retrieved_at": "2026-09-20T19:21:48.974469+00:00",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/bourgesl/marlin-renderer/aeeb57fa32f175cb970994b9ae5d3b173990ce6e/src/main/java/sun/java2d/opengl/OGLRenderQueue.java",
+      "content_type": "text/plain; charset=utf-8",
+      "sha256": "fc6915a590ecd84afd8fde3a2748622ed8e438a6faa740c62b6c5be5e478a2bd",
+      "size": 8912,
+      "path": "blobs/sha256/fc6915a590ecd84afd8fde3a2748622ed8e438a6faa740c62b6c5be5e478a2bd"
+    },
+    "compiled_classes": [
+      {
+        "path": "sun/java2d/opengl/OGLRenderQueue$QueueFlusher.class",
+        "rebuilt_sha256": "515d9e71df399024b3a727e9e53f97768cb56e6f392451094cddbe5332224b68",
+        "publisher_sha256": "5cd831b3c947d690d6871a8ad10309e8e0d213ab6473cb1d5a6375d18c02a72f",
+        "identical": false
+      },
+      {
+        "path": "sun/java2d/opengl/OGLRenderQueue.class",
+        "rebuilt_sha256": "4078d1bf5d3177aee59f97b101039d70cfa7470b856acae03413ca82f092cadd",
+        "publisher_sha256": "f227c68a23b5ee1d809e523d84086d4f33e043f029f484e814eee5c494f8cdeb",
+        "identical": false
+      }
+    ]
+  },
+  "marlin_bytecode": [
+    {
+      "path": "sun/java2d/opengl/OGLRenderQueue$QueueFlusher.class",
+      "normalized_javap_equal": false,
+      "normalization": "constant-pool numeric indices only; instruction/operand/type text retained",
+      "publisher_normalized_sha256": "8a43741853c2ee0ddac3b1fc4733667189e4eefdeda7409517832d080ec6b52e",
+      "rebuilt_normalized_sha256": "675871f092d2d6824c9870612599a3eb94ed49ebe2eb04d548ace81a986f325c"
+    },
+    {
+      "path": "sun/java2d/opengl/OGLRenderQueue.class",
+      "normalized_javap_equal": false,
+      "normalization": "constant-pool numeric indices only; instruction/operand/type text retained",
+      "publisher_normalized_sha256": "d74686c8cce8dbd52479416315e9c53007245fd971d8c7e9be1273797b3121a8",
+      "rebuilt_normalized_sha256": "48ba12b9da8286676f42752991ec4ba86901ed77378653b8e9e91920c78d31f4"
+    }
+  ],
+  "huldra-01_files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-01/compile-network-denial.json",
+      "sha256": "6b962800cd1472e7ad4bf9d380331ffb115cc296bee13e3b6eb4bfdb7f69246e",
+      "size": 2597
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-01/compile.log",
+      "sha256": "0eba124133a93a69171073ec4da5b0af8ddde272b3082a8632d955543f1ea92c",
+      "size": 346
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-01/native-tests-network-denial.json",
+      "sha256": "7d2dc52bd862760dc967b2b59d0b8763b43cdfc062885045aa40103a985d1c61",
+      "size": 2282
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-01/native-tests.log",
+      "sha256": "c3d5a4d7f959d3910205e5ea3f7c4056e6ebc29301d2a52764dbd4e97700a233",
+      "size": 66
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-01/result.json",
+      "sha256": "c87cf5ebd5bd901b57be0c50445bd7de87a64a0d0e1e87e97471718b2714f31c",
+      "size": 4937
+    }
+  ],
+  "huldra-02_files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/compile-network-denial.json",
+      "sha256": "d11bd7fa669d4d0885275ca2f3e2bd8adc029a03fc40e2fe3aac78fd3fdaef72",
+      "size": 2597
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/compile.log",
+      "sha256": "0eba124133a93a69171073ec4da5b0af8ddde272b3082a8632d955543f1ea92c",
+      "size": 346
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/native-tests-network-denial.json",
+      "sha256": "55fab625107131e644e81d49626c43994222947623e444d49d48157d78521621",
+      "size": 2282
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/native-tests.log",
+      "sha256": "21492346ab3dae2b26cc0c14b1537932e2710e2e5bb1d0df49e92e014ac0485b",
+      "size": 67
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/huldra-02/result.json",
+      "sha256": "40c1ae484d18bc52c7b4bb88ed3e8a2f2fb94d69ed313e714478371339af29fa",
+      "size": 4937
+    }
+  ],
+  "marlin-correspondence-01_files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/OGLRenderQueue$QueueFlusher.class.bytecode.diff",
+      "sha256": "d8fe660b1a250adde50c4b5a0ed213de3af47dea283e78c0bd13ed02fc39eff5",
+      "size": 3936
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/OGLRenderQueue$QueueFlusher.class.publisher.javap.txt",
+      "sha256": "682d43e8b07cd201b979722f835c285b2efca6c81ab6e06d477765b33d682a32",
+      "size": 8649
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/OGLRenderQueue$QueueFlusher.class.rebuilt.javap.txt",
+      "sha256": "fae32496cbaacab57f39d439e00d677381773be5eb253049897fa805ea468260",
+      "size": 8600
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/OGLRenderQueue.class.bytecode.diff",
+      "sha256": "b26c495bc71e2c80a2d0091313292bd998e8cc633799c8ece5e4251efb5b7c88",
+      "size": 9511
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/OGLRenderQueue.class.publisher.javap.txt",
+      "sha256": "00e01f22490188ad78cf9c3ef5580ed617df03533ea71936ccc1910b57c5de4e",
+      "size": 8672
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/OGLRenderQueue.class.rebuilt.javap.txt",
+      "sha256": "93e63d8dafb38817858955677d7d3c58ae1de2bfb94d8ac89fd464aae14bebba",
+      "size": 8672
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/bytecode-comparison.json",
+      "sha256": "c46ac6a035c46f270eeda1285db6389a1759dcf2fbaf7d7645d5b4890f63eec9",
+      "size": 820
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/compile.log",
+      "sha256": "16517555eda07dc6ae9149b12d3f4b5145cbdf07ded796aae16e5418a43d1213",
+      "size": 1295
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/network-denial.json",
+      "sha256": "a7daf09ed2f8308f04e8a2dd9e19f3f87c6a5962325612cc6c697729c66c6dde",
+      "size": 2519
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/marlin-correspondence-01/result.json",
+      "sha256": "6fbe79e1396cd13680763581efcadd5510d6e77325b5207afbbc46afbb825d51",
+      "size": 2407
+    }
+  ]
+}

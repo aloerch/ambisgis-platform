@@ -1,0 +1,31 @@
+PR #57 bounded compatibility review — 2026-09-20
+
+Scope and coordinates
+- Reviewed remaining compatibility.py, test_compatibility.py, GeoFence AF_UNIX fixture/adapter and existing database lifecycle helper, GDAL archive/staging guards/tests, isolated logging witness, compatibility recipes, and retained native evidence.
+- Historical PR #57 head: 7d3063f89c20b5e028b0151a6648a79e4ef14a83.
+- Current main supplied/verified by integrator: bb3680802d7f7d5c500180ec12e66d32d81d0aa0; normal merge reviewed: dc250cd854ae87bfb80657148efe937a69c381dc.
+- The merge changes only resolution_inventory.py and its regression tests within Java/native tooling, bringing the encoding-aware POM declaration rejection. Probe execution commands, selected Java revisions, native fixtures and dependency inputs did not change in the merge.
+- Read the user review-preparation request and applicable AGENTS instructions. No GitHub writes, donor checkout changes, full native suite, new HTTP/logging/OAuth engineering, or changes to the integration worktree were performed by this reviewer.
+
+Material finding, resolved
+[P1] compatibility.py outer exception handler could preserve result_exit_code=0 after Maven had returned success. If hashing an original source file subsequently raised (for example PermissionError), the receipt recorded the exception but could still report status=succeeded without completing original-source verification. Final Maven-configuration/test/network checks did not necessarily catch this failure.
+- Reproduced with a synthetic post-execution PermissionError: Maven exit 0, successful native/network fixture checks, error present, changed_original_source_files absent, final status succeeded.
+- Reproduction receipt: compatibility-fail-open-reproduction.json in this review directory.
+- Authorized repair in isolated worktree /home/revelberry/Projects/AmbisGIS/ambisgis-platform-review57-compat, branch review/fnd-02-compat-finalization.
+- Repair commit 71e747401bc249420fe547caff6e518c9eb274db sets result_exit_code=1 in the outer exception handler and adds a regression that verifies preserved Maven status/error plus failed immutable final receipt. Integrator reports cherry-pick 4a78597.
+- Retained regression red run: one expected failing test. Green: 20 compatibility/GDAL tooling tests pass, including the added regression. git diff --check passes. Logs/commands: compat-finalization/{red,green}.{txt,json}.
+- No additional material issue found in this assigned scope after this repair. This does not supersede the separate source/provenance review or legal/security/product acceptance gates.
+
+Historical native evidence recheck
+- Read-only audit of all 22 recorded task-owned runs verified both working and retained-copy receipt hashes, recorded Maven log hashes, and all 533 native XML report hashes and counts against plan/verification/java-compatibility.json. No mismatches.
+- Six successful native/Maven runs (geofence-05, geofence-06, importer-05, importer-07, referencing-01, xml-schema-03) contain no body/finalization/shutdown error, explicitly completed original-source checks with no changes, and unchanged Maven source/configuration. Their network-denial receipts were rechecked. Both successful GeoFence fixture runs have cluster-stop/readback evidence.
+- Logging-01 and logging-02 remain successful isolated witnesses with their compile/JVM denial receipts verified; they are separate from native Maven execution and combined-application logging acceptance.
+- Native counts remain historical: referencing 667 passed/8 skipped; selected XML resolver 12 passed; GeoFence 62 passed (8 model, 27 H2, 27 PostgreSQL); final importer 112 passed/6 unavailable Oracle/SQLServer skips. The earlier importer 108 passed/10 skipped and all failed attempts remain retained.
+- Broad XML remains 293 passed/4 skipped/1 socket-fixture error. MapFish remains 54 distinct passes/6 skips/17 errored identities (24 repeated XML error records). Neither is accepted by the successful narrow XML resolver run.
+- Machine audit and runnable read-only script: compatibility-historical-audit.json and audit_compatibility_history.py. The initial ad hoc audit needed optional-field handling for logging's distinct receipt schema; this was a review-script issue, not a product result.
+
+Verification recommendation and limits
+- The #55 merge alone does not justify rerunning native Java/database/GDAL/logging suites: it changes metadata parsing, not source revisions, candidate dependencies or native execution recipes. Rerun the complete relevant tooling, package and strict schema suites plus real source accounting with the corrected parser; integrator owns those checks.
+- The exception-outcome repair is fully covered by the focused red/green test. As an additional representative normal-path check, integrator is running one fresh existing --target xml --stage package --tests schema-resolver probe in a new retained directory. Record its actual result separately and do not describe it as a full XML or broader native rerun.
+- Preserve existing remaining gates: HTTP/WMS/WMTS fixtures and broad XML printing failures, GeoFence service/policy integration, combined GeoServer/GeoFence logging graph, inherited exclusions and unavailable proprietary database fixtures, incomplete source/host closure, and legal/security/release review.
+- This reviewer launched no Maven, PostgreSQL or GDAL processes. Only bounded Python test/review commands ran and completed. Own repair worktree is clean; historical archives, receipts and run directories were read only.

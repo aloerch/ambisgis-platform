@@ -1,0 +1,18 @@
+{
+  "before_sha256": "6a13f947af9b42750f50e030beaf1674cf06eac2203756ed4e3312bc43aa8155",
+  "after_sha256": "6a13f947af9b42750f50e030beaf1674cf06eac2203756ed4e3312bc43aa8155",
+  "byte_identical": true,
+  "semantic_equal": true,
+  "artifact_count": 64,
+  "dispositions": {
+    "generated-source-input-coverage": 3,
+    "retained-source-coverage": 39,
+    "embedded-source-coverage": 4,
+    "unresolved-source": 12,
+    "metadata-only-no-java-classes": 2,
+    "partial-source-coverage": 4
+  },
+  "before_exit": 2,
+  "after_exit": 2,
+  "native_tests_rerun": false
+}

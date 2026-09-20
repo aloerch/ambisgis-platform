@@ -1,0 +1,286 @@
+{
+  "acceptance_build": false,
+  "built_jars": [
+    {
+      "path": "geotools/modules/library/api/target/gt-api-34.5-sources.jar",
+      "sha256": "1e4a1044df7c4382c4629d9a84448ce188309cd9b16601c9972b148e81963d72",
+      "size": 847846
+    },
+    {
+      "path": "geotools/modules/library/api/target/gt-api-34.5.jar",
+      "sha256": "5c142897e6426e05b23ca7c884c6cc6820d47da1e04fe9235d8f112ff078890c",
+      "size": 228531
+    },
+    {
+      "path": "geotools/modules/library/http/target/gt-http-34.5-sources.jar",
+      "sha256": "c641eaad1c77e0ccd8d2bc4dc4724ee1b5dedb7e3673485e08ba4a2c2f36ab08",
+      "size": 22430
+    },
+    {
+      "path": "geotools/modules/library/http/target/gt-http-34.5-tests.jar",
+      "sha256": "4438477a8aeefac0e1992614ecb26e0c01b5f3d1a2e9af31c5b8e8a9a7e24339",
+      "size": 20967
+    },
+    {
+      "path": "geotools/modules/library/http/target/gt-http-34.5.jar",
+      "sha256": "48535a5e961f39ee96b0f47a41895fd3e3449a384863ff83179b7203056fd017",
+      "size": 26944
+    },
+    {
+      "path": "geotools/modules/library/main/target/gt-main-34.5-sources.jar",
+      "sha256": "03b21a8c2b484673d32bf94b185a5cc2358400c4b77e48d5e6e1aabc8132a5e5",
+      "size": 1658971
+    },
+    {
+      "path": "geotools/modules/library/main/target/gt-main-34.5-tests.jar",
+      "sha256": "a0933a1aa8b9879793e4a4e6ba9126c1a90d38ffc9cdc88d98dea2a37dcc5b79",
+      "size": 986635
+    },
+    {
+      "path": "geotools/modules/library/main/target/gt-main-34.5.jar",
+      "sha256": "516ac7bd40c87a0ff856271621523286c13f0d019fd2bd867e1298a98d8f00e2",
+      "size": 2099662
+    },
+    {
+      "path": "geotools/modules/library/metadata/target/gt-metadata-34.5-sources.jar",
+      "sha256": "c4f059856a56ee3690d8313ec7b418b19aac135b3016beab84fab189b8e5ebbb",
+      "size": 571658
+    },
+    {
+      "path": "geotools/modules/library/metadata/target/gt-metadata-34.5.jar",
+      "sha256": "d877c1813ffc9d671850a246c2ce88f3276184a16edab0c8707bcfe52eaab444",
+      "size": 517141
+    },
+    {
+      "path": "geotools/modules/library/referencing/target/gt-referencing-34.5-sources.jar",
+      "sha256": "bebad03756fc04a8502f7d622866e788b8e10f68e76d4cc1f8b4e91cb1df24a9",
+      "size": 1489112
+    },
+    {
+      "path": "geotools/modules/library/referencing/target/gt-referencing-34.5-tests.jar",
+      "sha256": "d1b5874a0bf3887e2bf81a37a53f8265579fe1b9c7d8ca6378be565144ee1a87",
+      "size": 450311
+    },
+    {
+      "path": "geotools/modules/library/referencing/target/gt-referencing-34.5.jar",
+      "sha256": "2a6ce631f3c4874c49926af81f0675952b697c9062ecd8f52395b49ce636e0bc",
+      "size": 1514505
+    },
+    {
+      "path": "geotools/modules/library/sample-data/target/gt-sample-data-34.5-sources.jar",
+      "sha256": "9bff1ac4fbe200b17b9aedea01c49c9a484b82c17f623ab948407410dd7ad91c",
+      "size": 3965998
+    },
+    {
+      "path": "geotools/modules/library/sample-data/target/gt-sample-data-34.5.jar",
+      "sha256": "5a6f6b1999ab96ace79f462c6d7f1ab207cf30a236e101e124044042b080af6d",
+      "size": 3965912
+    },
+    {
+      "path": "geotools/modules/library/xml/target/gt-xml-34.5-sources.jar",
+      "sha256": "ec2e20d206800dbb66f34570bfbd4539e150958416faddd3b80f35a9b531cb5a",
+      "size": 382408
+    },
+    {
+      "path": "geotools/modules/library/xml/target/gt-xml-34.5.jar",
+      "sha256": "fc23f9ca135a5d9f360321c01619aa54909cb1bc11afcd612b96b34f9e315aa8",
+      "size": 835547
+    },
+    {
+      "path": "geotools/modules/ogc/net.opengis.ows/target/net.opengis.ows-34.5-sources.jar",
+      "sha256": "d3174daabe05b4514c297b4d97f88adf1c5ecd1961bd757905dccd6e75a5b6c9",
+      "size": 597240
+    },
+    {
+      "path": "geotools/modules/ogc/net.opengis.ows/target/net.opengis.ows-34.5.jar",
+      "sha256": "b95339d30a086b6c1cfb23626b383e9c524b9907a8a0226128229bb3587c8786",
+      "size": 594076
+    },
+    {
+      "path": "geotools/modules/ogc/org.w3.xlink/target/org.w3.xlink-34.5-sources.jar",
+      "sha256": "65f40579d78dac898f78f37ae47a1d73d29fd7e03a44ffc31ded2794c4cdd0f5",
+      "size": 50521
+    },
+    {
+      "path": "geotools/modules/ogc/org.w3.xlink/target/org.w3.xlink-34.5.jar",
+      "sha256": "cd8c90d7654a217e2474a9675fe84e5ef87e488aaf76c2fe1de92f032303a0e2",
+      "size": 54254
+    },
+    {
+      "path": "geotools/modules/plugin/epsg-hsql/target/gt-epsg-hsql-34.5-sources.jar",
+      "sha256": "b27eec82621930d8087bc519803305b5dcdaf7e323ce0fee8d151c6214f325b1",
+      "size": 3658313
+    },
+    {
+      "path": "geotools/modules/plugin/epsg-hsql/target/gt-epsg-hsql-34.5.jar",
+      "sha256": "7e173a058701e82b4776a06cf11ba94f8bda725845b6f18bfcf61475380bcd47",
+      "size": 3659437
+    },
+    {
+      "path": "geotools/modules/plugin/http-commons/target/gt-http-commons-34.5-sources.jar",
+      "sha256": "da7cf788c842363db30895d47914ad9d7ad7f71c2c858b37e487f612e8452e04",
+      "size": 7479
+    },
+    {
+      "path": "geotools/modules/plugin/http-commons/target/gt-http-commons-34.5-tests.jar",
+      "sha256": "caae3638e835b3de096ac5313e53ab928113757d22354b489fdefc4313627e05",
+      "size": 9364
+    },
+    {
+      "path": "geotools/modules/plugin/http-commons/target/gt-http-commons-34.5.jar",
+      "sha256": "dc5139e03119a4030cca71bb75c67f3f7323491b8556b9750c5581a3422d4541",
+      "size": 11838
+    }
+  ],
+  "changed_original_source_files": [],
+  "command": [
+    "/usr/bin/python3",
+    "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure/build-support/postgis/offline_exec.py",
+    "--evidence",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/network-denial.json",
+    "--",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/apache-maven-3.9.16/bin/mvn",
+    "--batch-mode",
+    "--no-transfer-progress",
+    "-gs",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/work/empty-global-settings.xml",
+    "-s",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/settings.xml",
+    "-Dmaven.repo.local=/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/fresh-m2",
+    "-Dstyle.color=never",
+    "-Dgt.version=34.5",
+    "-Dgt-version=34.5",
+    "-Dmf.version=2.4.1",
+    "-Dspotless.apply.skip=true",
+    "-Dpom.fmt.skip=true",
+    "-Pimporter,oauth2-geonode,geofence-server,geofence-server-postgres,printing,postgis",
+    "-pl",
+    "org.geotools:gt-xml",
+    "-am",
+    "package",
+    "-Dspotless.check.skip=true",
+    "-Dmaven.test.failure.ignore=false",
+    "-Dallow.test.failure.ignore=false",
+    "-Dtest=org.geotools.xml.resolver.SchemaResolverTest,org.geotools.xml.SchemaFactoryResolveTest",
+    "-Dsurefire.failIfNoSpecifiedTests=false"
+  ],
+  "duration_seconds": 31.168,
+  "environment": {
+    "JAVA_HOME": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1",
+    "LANG": "C.UTF-8",
+    "LC_ALL": "C.UTF-8",
+    "MAVEN_BASEDIR": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/work/source",
+    "MAVEN_OPTS": "-Xmx2g -XX:ActiveProcessorCount=4 -Djava.awt.headless=true -Duser.home=/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/work/user",
+    "MAVEN_SKIP_RC": "true",
+    "PATH": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin:/usr/bin:/bin"
+  },
+  "exit_code": 0,
+  "full_source_closure": false,
+  "generated_maven_files": {},
+  "host_toolchain_closure": false,
+  "input_manifest_sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+  "java_build_run": true,
+  "log_sha256": "7fd0277090bea43ef28fb19f2837e49a9017c5080551791c0c52e916d2316d4b",
+  "native_tests": {
+    "errors": 0,
+    "failures": 0,
+    "passed": 12,
+    "skipped": 0,
+    "skipped_cases": [],
+    "suites": [
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.geotools.xml.SchemaFactoryResolveTest",
+        "path": "geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.SchemaFactoryResolveTest.xml",
+        "sha256": "bc095890ccd6fba617f7774c9f6f3bdb36b08be0beb004716edc123be2e2ff8a",
+        "skipped": 0,
+        "tests": 3
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.geotools.xml.resolver.SchemaResolverTest",
+        "path": "geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.resolver.SchemaResolverTest.xml",
+        "sha256": "ced98ad41fc40e9ad57cee26d5502638e919cabdae9471be000b14b8e1b6e5af",
+        "skipped": 0,
+        "tests": 9
+      }
+    ],
+    "tests": 12
+  },
+  "network_denial": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-xml-resolver-01/network-denial.json",
+    "sha256": "cc631016e44df8fcb0a095de9fc41f776dfeaf1a9790b0630c494a93cd66c52a",
+    "verified": true
+  },
+  "network_denial_verified": true,
+  "purpose": "exploratory-compatibility-probe",
+  "result_exit_code": 0,
+  "retained_files": 9214,
+  "runner_sha256": "66d6c920e06bd7e22bea8466dc9647588abe02c11f331b113e54b321629892bc",
+  "schema_version": 1,
+  "source_manifest_sha256": "b38d724599d4b348006ab552f294094b037b98d384b2c14affc3d52b90a3aa36",
+  "source_maven_files_unchanged": true,
+  "stage": "package",
+  "started_at": "2026-09-20T21:05:54.571301+00:00",
+  "status": "succeeded",
+  "target": "xml",
+  "target_executed_tests": 12,
+  "test_selection": "schema-resolver",
+  "test_selector": "org.geotools.xml.resolver.SchemaResolverTest,org.geotools.xml.SchemaFactoryResolveTest",
+  "timeout_seconds": 300,
+  "toolchain": {
+    "destination": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain",
+    "directories": 103,
+    "distribution_roots": [
+      "apache-maven-3.9.16",
+      "jdk-17.0.20.1+1"
+    ],
+    "files": 342,
+    "symlinks": 208,
+    "verified": true
+  },
+  "tooling_manifest": {
+    "java/acquisition.py": "0e851e604f52e12e1b211782072ad7d89f29197932e44dfd0d8099215f2188ff",
+    "java/audit.py": "cfba3557792085ce93a9fd869409cd3124d1dd55d1e4c26851bde3a1a487478f",
+    "java/compatibility-patches/xmlcodegen-emf.json": "dabda448d9138a1e057872a04bbb6f7d347e71bef167ec44b4b79d206d43c963",
+    "java/compatibility-patches/xmlcodegen-emf.patch": "3bfb100b20d37df860637b819cf30ae0870663ed9b2ca6c361c6d56c141fd125",
+    "java/compatibility.py": "66d6c920e06bd7e22bea8466dc9647588abe02c11f331b113e54b321629892bc",
+    "java/fixtures/UnixSocketFactory.java": "033b67d8193ae3a04f59887150c3d8c1d86a58dab64729584ac8b174ae6fbf1b",
+    "java/gdal_fixture.py": "4129cfdb1b3b0212be10a993a7a82355be3666baeb13a8a0a648c2ed839908fd",
+    "java/geofence_fixture.py": "ff940ecbea49eb51714004489d9d7b77df63e2e02f220a68bee81a6f582dc7ed",
+    "java/huldra_probe.py": "e5e8b921fa458200604845cb773c8c56027bd463530d8ae5338c1f4aebbfc58f",
+    "java/inputs.json": "58afe0a757446e69e40ba3630f3361a464686254eca35ac691ef8cec4090957b",
+    "java/javacsv_probe.py": "52d4acf2e7fdac3703df62dd34ce13f4299736369726707fcc676c777133761c",
+    "java/javacsv_recovery.py": "085d5d587efdfc01eb352d79c65d32cd3c51d09f72488b9a8ee75ea7a41a9ee9",
+    "java/jgridshift_probe.py": "8dc711aeca470049940e6d7176dbf0076a28cad55921ae0301f3df481d7cc389",
+    "java/logging_probe.py": "0878dae5e1d615effdd89a792c35f6c81a15f749d5c44418bd3506a325431794",
+    "java/maven_proxy.py": "4f49f578cb7ad326fd7e9f621eee12677e353ce3a7881b42ee531b230ec7e798",
+    "java/replay_model.py": "f556e73d58f78677e24378e32fcef44879420df06a3b8e21e883746e3ebf6d82",
+    "java/resolution.py": "4da9cbddc0ee56b3957c4e53284012bff3aae17c461ef88175d69eaec48eb5d4",
+    "java/resolution_inventory.py": "77864a6fe8547effb39cc6b48fbcf712252fbb7a7a12cab64424aeda298d48dc",
+    "java/schema_resources.py": "7bd858887895d05f6e0be6e233eab12b80bf2388c43bf24a744c30bb87a873dd",
+    "java/source-closure-inputs.json": "f59a9e3cdca8f366045ffa699c40e797a1f29c73ee50e59b457e87513b248da0",
+    "java/source_closure.py": "ef885b98ead7381dc358cc37b17b5c0294ef7eeaf08a0aba92e1fe526d8861ef",
+    "java/test_acquisition.py": "14a38764381bfbfee9cc7d3385eec7981eadd1961815d26e0c0586a3d7a34d7b",
+    "java/test_audit.py": "23bcfa5ac06acab2cdc04f75835953cd162d26472f2e37185d1dd031cd47cfb8",
+    "java/test_compatibility.py": "8b3d6dcb7a004d7fa0cbbd2dd99a5603f3978332a473e2aebb4a82b83c432154",
+    "java/test_gdal_fixture.py": "6646f3306d86584830bb5685e57902bd30a0f1a5f37b6462a05ebc60f88a36c5",
+    "java/test_huldra_probe.py": "30f74fd42e07dff37b5a905af3ed04632f5bc1ea5994f7b67beae479bd720c5c",
+    "java/test_javacsv_probe.py": "007b6c175ca1248eba798a52d1c0c28555ba8796e87227e854a355bfc6c6a9cc",
+    "java/test_javacsv_recovery.py": "b133f7809751c0df9ea29d593173ebf3ce0b23a11a591a2eee26f6be4521b528",
+    "java/test_maven_proxy.py": "971b9d754e7d7c1bee2634d1bd3862bb468825ae12e916f4e081a1eab85df08a",
+    "java/test_resolution.py": "fc79196758a2e7b7afea187eef7ab149bfd588122371b5124218817c02515053",
+    "java/test_resolution_inventory.py": "1c44daaf95bb65dc6ea16dabde5048c3f20accb5eecc0a19ef49bc79020d4335",
+    "java/test_schema_resources.py": "28addd0344728cd7233a7876e2cf1800de037d62758c5dcf9beec23a5c1d9b72",
+    "java/test_source_closure.py": "a4a5dce19b7605aad08a7575fe545441a7222950c983fc28550a224d704e83cc",
+    "java/test_toolchain.py": "7fd5dba5f82edb5d125515de7446a77cbf06f644f6a95bf4f46f227566ae0b2f",
+    "java/toolchain-evidence.json": "80f197d0beece76dd3a90427ae844b31cabcf3418d1761cd55b5a7c1fe79ae79",
+    "java/toolchain-inputs.json": "48b0521866a69a7570f140acc45db2f40bdcb77dfc9a6bc8936d911bd4b8e43c",
+    "java/toolchain.py": "efc18464da7c1116c4edfeded78b99b5a672f5b9da691b7d7d8b61ec53f30d65",
+    "postgis/offline_exec.py": "ed658e05bc1cde8b008835b146bf2be73487313f581ce66da31d5644b3766ace",
+    "postgis/smoke.sql": "e38c20899595e7d02a91b691e5e3f17d64d0456fc75b53a4b9c795d567ed70f8",
+    "postgis/validate_database.py": "e553e2d11b2b7ac5c1c4209829e1345090f8ea495639c342daea6be16ce77b69"
+  }
+}

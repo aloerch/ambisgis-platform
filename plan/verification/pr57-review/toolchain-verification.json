@@ -1,0 +1,19 @@
+{
+  "files": 44,
+  "bytes": 316260577,
+  "publisher_checksums": 4,
+  "verified": true,
+  "signature_trust_verified": false,
+  "toolchain_rebuild_closure_complete": false,
+  "extracted": {
+    "verified": true,
+    "destination": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain",
+    "distribution_roots": [
+      "apache-maven-3.9.16",
+      "jdk-17.0.20.1+1"
+    ],
+    "files": 342,
+    "symlinks": 208,
+    "directories": 103
+  }
+}
