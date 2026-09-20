@@ -98,7 +98,10 @@ Raw JavaCSV logs retain CRLF evidence: whole-diff whitespace checking reports th
 six historical log files and one verbatim failing-regression line in
 `parser/before-tests.txt`. Source/docs checks excluding exactly those seven raw
 outputs pass.
-No failure evidence was normalized or removed.
+No failure evidence was normalized or removed. The first final-head package/schema
+check caught two empty failed-command stdout captures named `.json`; only their
+extensions were corrected to `.stdout`, preserving all bytes and diagnostics.
+The failing check is retained; the validator was not weakened.
 
 Only the selected XML resolver native probe was rerun. Broad XML, MapFish,
 referencing, GeoFence, importer/GDAL, Huldra, JavaCSV, JGridShift, logging and

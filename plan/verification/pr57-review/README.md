@@ -44,7 +44,10 @@ copies, Maven repository and logs remain at
 Custody outputs retain original snapshot hashes. The original parent/research
 snapshot schemas differ from the generic audit manifest; initial command errors
 are retained alongside `verify-research-custody.py`, which validates unchanged
-file entries through an explicit in-memory adapter. No archive was edited.
+file entries through an explicit in-memory adapter. No archive was edited. The first final-head package/schema check caught two empty
+failed-command stdout files named `.json`; they are now correctly named `.stdout`,
+with unchanged bytes. `first-final-check-error.json` and the failing output retain
+the diagnosis; no validator rule was changed.
 Toolchain trust/bootstrap limits remain explicit. Historical-native audit hashes
 and counts are reverified by `audit_compatibility_history.py`, not rerun.
 
