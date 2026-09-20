@@ -19,7 +19,7 @@ import tarfile
 import zipfile
 import xml.etree.ElementTree as ET
 
-from resolution_inventory import read_file, checked_path, unique_object
+from resolution_inventory import read_file, checked_path, unique_object, pom_licenses
 
 MAX_MEMBER = 32 * 1024 * 1024
 MAX_TOTAL = 512 * 1024 * 1024
@@ -213,7 +213,10 @@ def summarize(gap, frozen, supplement, candidate):
     if record['maven_path'] != pom_path or record['repository'] != gap['repository']:
         raise ClosureError('POM identity mismatch')
     pom_data = checked_blob(frozen, {'path': 'blobs/sha256/' + record['sha256'], **{k:record[k] for k in ('sha256','size')}})
-    if b'<!DOCTYPE' in pom_data or b'<!ENTITY' in pom_data: raise ClosureError('POM DTD/entity forbidden')
+    # Reuse the encoding-aware declaration policy from the retained-input parser.
+    # Preserve this report's original declaration values after that shared guard.
+    checked_pom = pom_licenses(pom_data)
+    if checked_pom.get('error'): raise ClosureError('POM refused: ' + checked_pom['error'])
     pom = ET.fromstring(pom_data)
     license_nodes = [node for node in pom.iter() if node.tag.rsplit('}', 1)[-1] == 'license']
     licenses = [{c.tag.rsplit('}',1)[-1]:c.text for c in node} for node in license_nodes]

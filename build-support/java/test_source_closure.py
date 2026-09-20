@@ -113,13 +113,56 @@ class FullAccountingTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name);self.frozen=self.root/'frozen';self.extra=self.root/'extra';self.extra.mkdir()
-    def fixture(self,members):
+    def fixture(self,members,pom=None):
         data=zipbytes(members);sha=sc.digest(data);blob=self.frozen/'blobs/sha256'/sha;blob.parent.mkdir(parents=True,exist_ok=True);blob.write_bytes(data)
-        pom=b'<project><groupId>g</groupId><artifactId>a</artifactId><version>1</version></project>'
+        if pom is None:
+            pom=b'<project><groupId>g</groupId><artifactId>a</artifactId><version>1</version></project>'
         h=sc.digest(pom);(blob.parent/h).write_bytes(pom)
         record=self.frozen/'records/central/g/a/1/a-1.pom.json';record.parent.mkdir(parents=True,exist_ok=True)
         record.write_text(json.dumps({'repository':'central','maven_path':'g/a/1/a-1.pom','sha256':h,'size':len(pom)}))
         return {'gav':'g:a:1','binary_sha256':sha,'binary_path':'g/a/1/a-1.jar','repository':'central','direct_effective_declarations':[], 'direct_effective_plugin_matches':[], 'retained_pom_examples':[], 'resolved_plugin_log_examples':[]}
+    def test_encoded_pom_declarations_are_refused_before_source_accounting(self):
+        declarations = (
+            '<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>',
+            '<!DOCTYPE project>',
+            '<!DOCTYPE project SYSTEM "urn:ambisgis:test:pom-dtd">',
+        )
+        for declaration in declarations:
+            name = '&sample;' if '<!ENTITY' in declaration else 'Example license'
+            xml = (declaration + '<project><licenses><license><name>' + name
+                   + '</name></license></licenses></project>')
+            variants = {encoding: xml.encode(encoding) for encoding in
+                        ('utf-8', 'utf-8-sig', 'utf-16', 'utf-16-le', 'utf-16-be')}
+            variants['utf-16-be-bom'] = b'\xfe\xff' + xml.encode('utf-16-be')
+            for encoding, data in variants.items():
+                with self.subTest(declaration=declaration, encoding=encoding):
+                    gap = self.fixture([('p/Foo.class', classfile()),
+                                        ('p/Foo.java', b'package p; class Foo {}')], pom=data)
+                    with self.assertRaisesRegex(sc.ClosureError, 'DTD/entity'):
+                        sc.build_report({'gaps': [gap]}, {'artifacts': {'g:a:1': {}}},
+                                        self.frozen, self.extra)
+
+    def test_benign_encoded_pom_preserves_original_declaration_values(self):
+        xml = ('<project xmlns="http://maven.apache.org/POM/4.0.0">'
+               '<licenses><license><name>  Example café license  </name>'
+               '<distribution/></license></licenses></project>')
+        variants = {encoding: xml.encode(encoding) for encoding in
+                    ('utf-8', 'utf-8-sig', 'utf-16', 'utf-16-le', 'utf-16-be')}
+        variants['utf-16-be-bom'] = b'\xfe\xff' + xml.encode('utf-16-be')
+        for encoding, data in variants.items():
+            with self.subTest(encoding=encoding):
+                gap = self.fixture([('p/Foo.class', classfile()),
+                                    ('p/Foo.java', b'package p; class Foo {}')], pom=data)
+                report = sc.build_report({'gaps': [gap]}, {'artifacts': {'g:a:1': {}}},
+                                         self.frozen, self.extra)
+                record = report['artifacts'][0]
+                self.assertEqual(record['license_evidence']['pom_declarations'],
+                                 [{'name': '  Example café license  ', 'distribution': None}])
+                self.assertEqual(record['license_evidence']['pom_sha256'], sc.digest(data))
+                self.assertEqual(record['disposition'], 'embedded-source-coverage')
+                self.assertFalse(report['build_ready'])
+                self.assertFalse(record['source_binary_correspondence_established'])
+
     def test_embedded_source_not_missing_classifier(self):
         gap=self.fixture([('p/Foo.class',classfile()),('p/Foo.java',b'package p; class Foo {}')])
         report=sc.summarize(gap,self.frozen,self.extra,{})
