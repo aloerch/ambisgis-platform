@@ -1,0 +1,1856 @@
+{
+  "recorded_at": "2026-09-20T19:32:22.271624+00:00",
+  "source_recovery": {
+    "coordinate": "net.sourceforge.javacsv:javacsv:2.0",
+    "license_evidence": "CsvReader.java and CsvWriter.java retain original LGPL-2.1-or-later headers. Historical AllTests.java has no file header; final license review remains open.",
+    "limitations": "Contemporaneous publisher source recovery and exact binary identity; no byte-identical rebuild or product acceptance claimed.",
+    "publisher_binary": {
+      "byte_equal_selected_artifact": true,
+      "date": "2006.12.20.20.01.26",
+      "revision": "1.2",
+      "sha256": "c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed"
+    },
+    "publisher_url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip",
+    "selected_sources": [
+      {
+        "date": "2006.12.20.19.59.50",
+        "path": "src/com/csvreader/CsvReader.java",
+        "revision": "1.9",
+        "sha256": "659de2080f9641e3d0ee3446eaa9b4ea1a8b3c30a3a6c470fcddcce7646867b4",
+        "size": 47667
+      },
+      {
+        "date": "2006.11.02.04.35.07",
+        "path": "src/com/csvreader/CsvWriter.java",
+        "revision": "1.8",
+        "sha256": "adc1bb26bec625bb661d8e5902daaa98f69b8c10d7160e5531bbf41ad727b977",
+        "size": 15716
+      },
+      {
+        "date": "2006.11.02.04.35.29",
+        "path": "src/AllTests.java",
+        "revision": "1.4",
+        "sha256": "f51edc54a4679ffd3ec1a09b6d3ce37971d1ba0e2b038f818c5fd4d0942c90fe",
+        "size": 71224
+      },
+      {
+        "date": "2006.12.12.19.37.18",
+        "path": "build.xml",
+        "revision": "1.3",
+        "sha256": "e13866b5101f12cfbaffa77d76cb4dc90d32cb2ae9fd3819b95bb772dcd20866",
+        "size": 679
+      }
+    ],
+    "snapshot_sha256": "608624c41a5b499e7f0085854fb39e359c1e34a133506ddf16c86331703263d3",
+    "source_capsule": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-research/javacsv-2.0-recovered/javacsv-2.0-recovered-sources.tar.gz",
+      "revision": "CVS CsvReader.java 1.9; CsvWriter.java 1.8; AllTests.java 1.4; build.xml 1.3",
+      "sha256": "7d0022112ccafbf27c940e80756f2591f6f7c8686d075af87cd57040bd9cffbe",
+      "size": 18729,
+      "url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip"
+    }
+  },
+  "runs": [
+    {
+      "run_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01",
+      "result": {
+        "purpose": "isolated compatibility probe, not GIS acceptance",
+        "java_target": "--release 8; original Java 5 output is not reproduced",
+        "source_recovery": {
+          "coordinate": "net.sourceforge.javacsv:javacsv:2.0",
+          "license_evidence": "CsvReader.java and CsvWriter.java retain original LGPL-2.1-or-later headers. Historical AllTests.java has no file header; final license review remains open.",
+          "limitations": "Contemporaneous publisher source recovery and exact binary identity; no byte-identical rebuild or product acceptance claimed.",
+          "publisher_binary": {
+            "byte_equal_selected_artifact": true,
+            "date": "2006.12.20.20.01.26",
+            "revision": "1.2",
+            "sha256": "c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed"
+          },
+          "publisher_url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip",
+          "selected_sources": [
+            {
+              "date": "2006.12.20.19.59.50",
+              "path": "src/com/csvreader/CsvReader.java",
+              "revision": "1.9",
+              "sha256": "659de2080f9641e3d0ee3446eaa9b4ea1a8b3c30a3a6c470fcddcce7646867b4",
+              "size": 47667
+            },
+            {
+              "date": "2006.11.02.04.35.07",
+              "path": "src/com/csvreader/CsvWriter.java",
+              "revision": "1.8",
+              "sha256": "adc1bb26bec625bb661d8e5902daaa98f69b8c10d7160e5531bbf41ad727b977",
+              "size": 15716
+            },
+            {
+              "date": "2006.11.02.04.35.29",
+              "path": "src/AllTests.java",
+              "revision": "1.4",
+              "sha256": "f51edc54a4679ffd3ec1a09b6d3ce37971d1ba0e2b038f818c5fd4d0942c90fe",
+              "size": 71224
+            },
+            {
+              "date": "2006.12.12.19.37.18",
+              "path": "build.xml",
+              "revision": "1.3",
+              "sha256": "e13866b5101f12cfbaffa77d76cb4dc90d32cb2ae9fd3819b95bb772dcd20866",
+              "size": 679
+            }
+          ],
+          "snapshot_sha256": "608624c41a5b499e7f0085854fb39e359c1e34a133506ddf16c86331703263d3",
+          "source_capsule": {
+            "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-research/javacsv-2.0-recovered/javacsv-2.0-recovered-sources.tar.gz",
+            "revision": "CVS CsvReader.java 1.9; CsvWriter.java 1.8; AllTests.java 1.4; build.xml 1.3",
+            "sha256": "7d0022112ccafbf27c940e80756f2591f6f7c8686d075af87cd57040bd9cffbe",
+            "size": 18729,
+            "url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip"
+          }
+        },
+        "jdk_binaries": {
+          "javac": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+            "sha256": "50d09f424b513525af1f0b05cd948ed7890a8d60fef7f7797e20892705b0067d"
+          },
+          "java": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+            "sha256": "f5aed21d3a0b0f4b05d3a3f9fe71263916d5bc0d47b53aa52a3340b90f0b4805"
+          }
+        },
+        "dependencies": [
+          {
+            "acquired_at": "2026-09-19T22:14:31.600336+00:00",
+            "classification": "artifact",
+            "final_url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+            "maven_path": "junit/junit/4.13.2/junit-4.13.2.jar",
+            "original_url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "repository": "central",
+            "schema_version": 1,
+            "sha256": "8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3",
+            "size": 384581,
+            "status": 200
+          },
+          {
+            "acquired_at": "2026-09-19T22:14:31.725675+00:00",
+            "classification": "artifact",
+            "final_url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+            "maven_path": "org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "original_url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "repository": "central",
+            "schema_version": 1,
+            "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "size": 45024,
+            "status": 200
+          }
+        ],
+        "commands": [
+          {
+            "label": "compile",
+            "argv": [
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+              "--release",
+              "8",
+              "-encoding",
+              "ISO-8859-1",
+              "-cp",
+              "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+              "-d",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/classes",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/src/AllTests.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/src/NativeTestRunner.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/src/com/csvreader/CsvReader.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/src/com/csvreader/CsvWriter.java"
+            ],
+            "exit_code": 0,
+            "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/compile.log",
+            "log_sha256": "25107265dd5da3cd08741b21170a3eaecca9c38fd83ddbddb490f87ab24145fc"
+          },
+          {
+            "label": "native-tests",
+            "argv": [
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+              "-cp",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/classes:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+              "NativeTestRunner"
+            ],
+            "exit_code": 1,
+            "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/native-tests.log",
+            "log_sha256": "9f05005d4a287430138ef7a06e4689d64f7818334f3545da641bb08763bb3884"
+          }
+        ],
+        "outputs": [
+          {
+            "path": "classes/AllTests$FailingReader.class",
+            "size": 632,
+            "sha256": "0c43276d405a1018053d6322adc6641758eecab532a61836cd0d5ef0d6b49e91"
+          },
+          {
+            "path": "classes/AllTests.class",
+            "size": 35549,
+            "sha256": "9294101958d74bf879dba8dd9a294a354e30c0cb49e11454c91e8101d2118c2d"
+          },
+          {
+            "path": "classes/NativeTestRunner.class",
+            "size": 1403,
+            "sha256": "496e67f557dbf9fa255bd21e7ae3dc1fc4c75cdc8ed641ceb8ce486f03f04b13"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$ColumnBuffer.class",
+            "size": 544,
+            "sha256": "80e407cee3536e02eb4b749752f7eba78609bca3dd1edca63494c464c583e9c6"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$ComplexEscape.class",
+            "size": 525,
+            "sha256": "3278ae6d79920ac8acddf4d2415b00b5624936209795a8891bfb6bfaa3714cb6"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$DataBuffer.class",
+            "size": 656,
+            "sha256": "71f455fe3afa85d308e33397a672dc46cae2e9a6eb095a49599bcbbe06aedef4"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$HeadersHolder.class",
+            "size": 587,
+            "sha256": "d0113b43ffbb829dcfd24f236a74f6333b2fb037954774d04341376a8a75bb30"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$Letters.class",
+            "size": 812,
+            "sha256": "f32c437570d469938f32cd63e7bfb9c2bc3fb1530bac0c7e38dab94625b7bb5c"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$RawRecordBuffer.class",
+            "size": 551,
+            "sha256": "1de0bccd67dcc223b51d3170803b5872e9581deaf7137a5f5aa353ac2f968024"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$StaticSettings.class",
+            "size": 586,
+            "sha256": "bf3ce5d01e1d595a0c5d8a4b3e1ca762494eabb59aa8c1efada2cb752d4539d4"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$UserSettings.class",
+            "size": 971,
+            "sha256": "e3531fb2099f9ee8bbd62dbcadb7f747bf66d7082eefb98dd5422ffa86c16ca8"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader.class",
+            "size": 16174,
+            "sha256": "5b9c041e5f77a4c278a20547b1a77750b3258b2794dcdeeb58a629986689839c"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter$Letters.class",
+            "size": 651,
+            "sha256": "792a2452ac37609a38145163e2d5694a2d20c286494df7fbd784678df2ee4710"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter$UserSettings.class",
+            "size": 753,
+            "sha256": "de1980e683ff7bade0c58cfaba3b2786e0519472c1dd0833808f5e3171386742"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter.class",
+            "size": 6652,
+            "sha256": "88d6189e9bf2814efc6190df3c86910d69c286c19eba66f2aff61fb8b5d43fe0"
+          }
+        ],
+        "passed": false
+      },
+      "native_count": {
+        "run": 105,
+        "failures": 16,
+        "ignored": 0
+      },
+      "failed_test_names": [
+        "test118",
+        "test119",
+        "test120",
+        "test121",
+        "test122",
+        "test123",
+        "test131",
+        "test132",
+        "test54",
+        "test56",
+        "test57",
+        "test58",
+        "test71",
+        "test73",
+        "test74",
+        "test75"
+      ],
+      "offline_receipts": [
+        {
+          "schema_version": 1,
+          "started_utc": "2026-09-20T19:25:59.441428+00:00",
+          "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+            "--release",
+            "8",
+            "-encoding",
+            "ISO-8859-1",
+            "-cp",
+            "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "-d",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/classes",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/src/AllTests.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/src/NativeTestRunner.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/src/com/csvreader/CsvReader.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/src/com/csvreader/CsvWriter.java"
+          ],
+          "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+          "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+          "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+          "limitations": [
+            "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+            "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+            "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+          ],
+          "status": "completed",
+          "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+          "closed_inherited_fds": [],
+          "kernel_state": {
+            "no_new_privs": 1,
+            "seccomp_mode": 2,
+            "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+          },
+          "probes": [
+            {
+              "family": "AF_INET",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_INET6",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 0,
+              "errno_name": "SUCCESS",
+              "expected_errno": 0,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socketpair send/recv",
+              "errno": 0,
+              "passed": true
+            }
+          ],
+          "command_exit_code": 0,
+          "finished_utc": "2026-09-20T19:25:59.906936+00:00"
+        },
+        {
+          "schema_version": 1,
+          "started_utc": "2026-09-20T19:25:59.935478+00:00",
+          "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+            "-cp",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-01/classes:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "NativeTestRunner"
+          ],
+          "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+          "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+          "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+          "limitations": [
+            "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+            "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+            "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+          ],
+          "status": "completed",
+          "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+          "closed_inherited_fds": [],
+          "kernel_state": {
+            "no_new_privs": 1,
+            "seccomp_mode": 2,
+            "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+          },
+          "probes": [
+            {
+              "family": "AF_INET",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_INET6",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 0,
+              "errno_name": "SUCCESS",
+              "expected_errno": 0,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socketpair send/recv",
+              "errno": 0,
+              "passed": true
+            }
+          ],
+          "command_exit_code": 1,
+          "finished_utc": "2026-09-20T19:26:00.072108+00:00"
+        }
+      ]
+    },
+    {
+      "run_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02",
+      "result": {
+        "line_separator": "crlf",
+        "tested_library": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/classes",
+        "purpose": "isolated compatibility probe, not GIS acceptance",
+        "java_target": "--release 8; original Java 5 output is not reproduced",
+        "source_recovery": {
+          "coordinate": "net.sourceforge.javacsv:javacsv:2.0",
+          "license_evidence": "CsvReader.java and CsvWriter.java retain original LGPL-2.1-or-later headers. Historical AllTests.java has no file header; final license review remains open.",
+          "limitations": "Contemporaneous publisher source recovery and exact binary identity; no byte-identical rebuild or product acceptance claimed.",
+          "publisher_binary": {
+            "byte_equal_selected_artifact": true,
+            "date": "2006.12.20.20.01.26",
+            "revision": "1.2",
+            "sha256": "c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed"
+          },
+          "publisher_url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip",
+          "selected_sources": [
+            {
+              "date": "2006.12.20.19.59.50",
+              "path": "src/com/csvreader/CsvReader.java",
+              "revision": "1.9",
+              "sha256": "659de2080f9641e3d0ee3446eaa9b4ea1a8b3c30a3a6c470fcddcce7646867b4",
+              "size": 47667
+            },
+            {
+              "date": "2006.11.02.04.35.07",
+              "path": "src/com/csvreader/CsvWriter.java",
+              "revision": "1.8",
+              "sha256": "adc1bb26bec625bb661d8e5902daaa98f69b8c10d7160e5531bbf41ad727b977",
+              "size": 15716
+            },
+            {
+              "date": "2006.11.02.04.35.29",
+              "path": "src/AllTests.java",
+              "revision": "1.4",
+              "sha256": "f51edc54a4679ffd3ec1a09b6d3ce37971d1ba0e2b038f818c5fd4d0942c90fe",
+              "size": 71224
+            },
+            {
+              "date": "2006.12.12.19.37.18",
+              "path": "build.xml",
+              "revision": "1.3",
+              "sha256": "e13866b5101f12cfbaffa77d76cb4dc90d32cb2ae9fd3819b95bb772dcd20866",
+              "size": 679
+            }
+          ],
+          "snapshot_sha256": "608624c41a5b499e7f0085854fb39e359c1e34a133506ddf16c86331703263d3",
+          "source_capsule": {
+            "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-research/javacsv-2.0-recovered/javacsv-2.0-recovered-sources.tar.gz",
+            "revision": "CVS CsvReader.java 1.9; CsvWriter.java 1.8; AllTests.java 1.4; build.xml 1.3",
+            "sha256": "7d0022112ccafbf27c940e80756f2591f6f7c8686d075af87cd57040bd9cffbe",
+            "size": 18729,
+            "url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip"
+          }
+        },
+        "jdk_binaries": {
+          "javac": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+            "sha256": "50d09f424b513525af1f0b05cd948ed7890a8d60fef7f7797e20892705b0067d"
+          },
+          "java": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+            "sha256": "f5aed21d3a0b0f4b05d3a3f9fe71263916d5bc0d47b53aa52a3340b90f0b4805"
+          }
+        },
+        "dependencies": [
+          {
+            "acquired_at": "2026-09-19T22:14:31.600336+00:00",
+            "classification": "artifact",
+            "final_url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+            "maven_path": "junit/junit/4.13.2/junit-4.13.2.jar",
+            "original_url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "repository": "central",
+            "schema_version": 1,
+            "sha256": "8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3",
+            "size": 384581,
+            "status": 200
+          },
+          {
+            "acquired_at": "2026-09-19T22:14:31.725675+00:00",
+            "classification": "artifact",
+            "final_url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+            "maven_path": "org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "original_url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "repository": "central",
+            "schema_version": 1,
+            "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "size": 45024,
+            "status": 200
+          }
+        ],
+        "commands": [
+          {
+            "label": "compile",
+            "argv": [
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+              "--release",
+              "8",
+              "-encoding",
+              "ISO-8859-1",
+              "-cp",
+              "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+              "-d",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/classes",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/src/AllTests.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/src/NativeTestRunner.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/src/com/csvreader/CsvReader.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/src/com/csvreader/CsvWriter.java"
+            ],
+            "exit_code": 0,
+            "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/compile.log",
+            "log_sha256": "5a20fc7a14a19535b9918b37b8b0f2d2f686539362cacacacd5bb9e7a931091c"
+          },
+          {
+            "label": "native-tests",
+            "argv": [
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+              "-Dline.separator=\r\n",
+              "-cp",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/classes:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+              "NativeTestRunner",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/classes"
+            ],
+            "exit_code": 0,
+            "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/native-tests.log",
+            "log_sha256": "851ed461b4c2e51f14b70a682811d5e6aa49ae1d990d20231ba8ee1c687ad8a0"
+          }
+        ],
+        "outputs": [
+          {
+            "path": "classes/AllTests$FailingReader.class",
+            "size": 632,
+            "sha256": "0c43276d405a1018053d6322adc6641758eecab532a61836cd0d5ef0d6b49e91"
+          },
+          {
+            "path": "classes/AllTests.class",
+            "size": 35549,
+            "sha256": "9294101958d74bf879dba8dd9a294a354e30c0cb49e11454c91e8101d2118c2d"
+          },
+          {
+            "path": "classes/NativeTestRunner.class",
+            "size": 2227,
+            "sha256": "d7fe9d34f7a5b1c531b85882a058655c4b54bfeb7cfd88ed985ec814fd4de99e"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$ColumnBuffer.class",
+            "size": 544,
+            "sha256": "80e407cee3536e02eb4b749752f7eba78609bca3dd1edca63494c464c583e9c6"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$ComplexEscape.class",
+            "size": 525,
+            "sha256": "3278ae6d79920ac8acddf4d2415b00b5624936209795a8891bfb6bfaa3714cb6"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$DataBuffer.class",
+            "size": 656,
+            "sha256": "71f455fe3afa85d308e33397a672dc46cae2e9a6eb095a49599bcbbe06aedef4"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$HeadersHolder.class",
+            "size": 587,
+            "sha256": "d0113b43ffbb829dcfd24f236a74f6333b2fb037954774d04341376a8a75bb30"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$Letters.class",
+            "size": 812,
+            "sha256": "f32c437570d469938f32cd63e7bfb9c2bc3fb1530bac0c7e38dab94625b7bb5c"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$RawRecordBuffer.class",
+            "size": 551,
+            "sha256": "1de0bccd67dcc223b51d3170803b5872e9581deaf7137a5f5aa353ac2f968024"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$StaticSettings.class",
+            "size": 586,
+            "sha256": "bf3ce5d01e1d595a0c5d8a4b3e1ca762494eabb59aa8c1efada2cb752d4539d4"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$UserSettings.class",
+            "size": 971,
+            "sha256": "e3531fb2099f9ee8bbd62dbcadb7f747bf66d7082eefb98dd5422ffa86c16ca8"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader.class",
+            "size": 16174,
+            "sha256": "5b9c041e5f77a4c278a20547b1a77750b3258b2794dcdeeb58a629986689839c"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter$Letters.class",
+            "size": 651,
+            "sha256": "792a2452ac37609a38145163e2d5694a2d20c286494df7fbd784678df2ee4710"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter$UserSettings.class",
+            "size": 753,
+            "sha256": "de1980e683ff7bade0c58cfaba3b2786e0519472c1dd0833808f5e3171386742"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter.class",
+            "size": 6652,
+            "sha256": "88d6189e9bf2814efc6190df3c86910d69c286c19eba66f2aff61fb8b5d43fe0"
+          }
+        ],
+        "passed": true
+      },
+      "native_count": {
+        "run": 105,
+        "failures": 0,
+        "ignored": 0
+      },
+      "failed_test_names": [],
+      "offline_receipts": [
+        {
+          "schema_version": 1,
+          "started_utc": "2026-09-20T19:26:55.594032+00:00",
+          "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+            "--release",
+            "8",
+            "-encoding",
+            "ISO-8859-1",
+            "-cp",
+            "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "-d",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/classes",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/src/AllTests.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/src/NativeTestRunner.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/src/com/csvreader/CsvReader.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/src/com/csvreader/CsvWriter.java"
+          ],
+          "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+          "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+          "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+          "limitations": [
+            "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+            "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+            "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+          ],
+          "status": "completed",
+          "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+          "closed_inherited_fds": [],
+          "kernel_state": {
+            "no_new_privs": 1,
+            "seccomp_mode": 2,
+            "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+          },
+          "probes": [
+            {
+              "family": "AF_INET",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_INET6",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 0,
+              "errno_name": "SUCCESS",
+              "expected_errno": 0,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socketpair send/recv",
+              "errno": 0,
+              "passed": true
+            }
+          ],
+          "command_exit_code": 0,
+          "finished_utc": "2026-09-20T19:26:56.070746+00:00"
+        },
+        {
+          "schema_version": 1,
+          "started_utc": "2026-09-20T19:26:56.100934+00:00",
+          "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+            "-Dline.separator=\r\n",
+            "-cp",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/classes:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "NativeTestRunner",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/classes"
+          ],
+          "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+          "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+          "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+          "limitations": [
+            "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+            "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+            "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+          ],
+          "status": "completed",
+          "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+          "closed_inherited_fds": [],
+          "kernel_state": {
+            "no_new_privs": 1,
+            "seccomp_mode": 2,
+            "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+          },
+          "probes": [
+            {
+              "family": "AF_INET",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_INET6",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 0,
+              "errno_name": "SUCCESS",
+              "expected_errno": 0,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socketpair send/recv",
+              "errno": 0,
+              "passed": true
+            }
+          ],
+          "command_exit_code": 0,
+          "finished_utc": "2026-09-20T19:26:56.220338+00:00"
+        }
+      ]
+    },
+    {
+      "run_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03",
+      "result": {
+        "line_separator": "host",
+        "tested_library": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed",
+        "purpose": "isolated compatibility probe, not GIS acceptance",
+        "java_target": "--release 8; original Java 5 output is not reproduced",
+        "source_recovery": {
+          "coordinate": "net.sourceforge.javacsv:javacsv:2.0",
+          "license_evidence": "CsvReader.java and CsvWriter.java retain original LGPL-2.1-or-later headers. Historical AllTests.java has no file header; final license review remains open.",
+          "limitations": "Contemporaneous publisher source recovery and exact binary identity; no byte-identical rebuild or product acceptance claimed.",
+          "publisher_binary": {
+            "byte_equal_selected_artifact": true,
+            "date": "2006.12.20.20.01.26",
+            "revision": "1.2",
+            "sha256": "c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed"
+          },
+          "publisher_url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip",
+          "selected_sources": [
+            {
+              "date": "2006.12.20.19.59.50",
+              "path": "src/com/csvreader/CsvReader.java",
+              "revision": "1.9",
+              "sha256": "659de2080f9641e3d0ee3446eaa9b4ea1a8b3c30a3a6c470fcddcce7646867b4",
+              "size": 47667
+            },
+            {
+              "date": "2006.11.02.04.35.07",
+              "path": "src/com/csvreader/CsvWriter.java",
+              "revision": "1.8",
+              "sha256": "adc1bb26bec625bb661d8e5902daaa98f69b8c10d7160e5531bbf41ad727b977",
+              "size": 15716
+            },
+            {
+              "date": "2006.11.02.04.35.29",
+              "path": "src/AllTests.java",
+              "revision": "1.4",
+              "sha256": "f51edc54a4679ffd3ec1a09b6d3ce37971d1ba0e2b038f818c5fd4d0942c90fe",
+              "size": 71224
+            },
+            {
+              "date": "2006.12.12.19.37.18",
+              "path": "build.xml",
+              "revision": "1.3",
+              "sha256": "e13866b5101f12cfbaffa77d76cb4dc90d32cb2ae9fd3819b95bb772dcd20866",
+              "size": 679
+            }
+          ],
+          "snapshot_sha256": "608624c41a5b499e7f0085854fb39e359c1e34a133506ddf16c86331703263d3",
+          "source_capsule": {
+            "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-research/javacsv-2.0-recovered/javacsv-2.0-recovered-sources.tar.gz",
+            "revision": "CVS CsvReader.java 1.9; CsvWriter.java 1.8; AllTests.java 1.4; build.xml 1.3",
+            "sha256": "7d0022112ccafbf27c940e80756f2591f6f7c8686d075af87cd57040bd9cffbe",
+            "size": 18729,
+            "url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip"
+          }
+        },
+        "jdk_binaries": {
+          "javac": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+            "sha256": "50d09f424b513525af1f0b05cd948ed7890a8d60fef7f7797e20892705b0067d"
+          },
+          "java": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+            "sha256": "f5aed21d3a0b0f4b05d3a3f9fe71263916d5bc0d47b53aa52a3340b90f0b4805"
+          }
+        },
+        "dependencies": [
+          {
+            "acquired_at": "2026-09-19T22:14:31.600336+00:00",
+            "classification": "artifact",
+            "final_url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+            "maven_path": "junit/junit/4.13.2/junit-4.13.2.jar",
+            "original_url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "repository": "central",
+            "schema_version": 1,
+            "sha256": "8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3",
+            "size": 384581,
+            "status": 200
+          },
+          {
+            "acquired_at": "2026-09-19T22:14:31.725675+00:00",
+            "classification": "artifact",
+            "final_url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+            "maven_path": "org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "original_url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "repository": "central",
+            "schema_version": 1,
+            "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "size": 45024,
+            "status": 200
+          }
+        ],
+        "commands": [
+          {
+            "label": "compile",
+            "argv": [
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+              "--release",
+              "8",
+              "-encoding",
+              "ISO-8859-1",
+              "-cp",
+              "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+              "-d",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/classes",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/src/AllTests.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/src/NativeTestRunner.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/src/com/csvreader/CsvReader.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/src/com/csvreader/CsvWriter.java"
+            ],
+            "exit_code": 0,
+            "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/compile.log",
+            "log_sha256": "9a321bd93684d302af079fd050dcd19d99d79cea6472a3c9338a5de2c47c8d9d"
+          },
+          {
+            "label": "native-tests",
+            "argv": [
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+              "-cp",
+              "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/classes:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+              "NativeTestRunner",
+              "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed"
+            ],
+            "exit_code": 1,
+            "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/native-tests.log",
+            "log_sha256": "6c3f20b358ba6fbd7721a65318ffe0463802b4f18396d15e72ad8e0fa224fd09"
+          }
+        ],
+        "outputs": [
+          {
+            "path": "classes/AllTests$FailingReader.class",
+            "size": 632,
+            "sha256": "0c43276d405a1018053d6322adc6641758eecab532a61836cd0d5ef0d6b49e91"
+          },
+          {
+            "path": "classes/AllTests.class",
+            "size": 35549,
+            "sha256": "9294101958d74bf879dba8dd9a294a354e30c0cb49e11454c91e8101d2118c2d"
+          },
+          {
+            "path": "classes/NativeTestRunner.class",
+            "size": 2227,
+            "sha256": "d7fe9d34f7a5b1c531b85882a058655c4b54bfeb7cfd88ed985ec814fd4de99e"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$ColumnBuffer.class",
+            "size": 544,
+            "sha256": "80e407cee3536e02eb4b749752f7eba78609bca3dd1edca63494c464c583e9c6"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$ComplexEscape.class",
+            "size": 525,
+            "sha256": "3278ae6d79920ac8acddf4d2415b00b5624936209795a8891bfb6bfaa3714cb6"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$DataBuffer.class",
+            "size": 656,
+            "sha256": "71f455fe3afa85d308e33397a672dc46cae2e9a6eb095a49599bcbbe06aedef4"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$HeadersHolder.class",
+            "size": 587,
+            "sha256": "d0113b43ffbb829dcfd24f236a74f6333b2fb037954774d04341376a8a75bb30"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$Letters.class",
+            "size": 812,
+            "sha256": "f32c437570d469938f32cd63e7bfb9c2bc3fb1530bac0c7e38dab94625b7bb5c"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$RawRecordBuffer.class",
+            "size": 551,
+            "sha256": "1de0bccd67dcc223b51d3170803b5872e9581deaf7137a5f5aa353ac2f968024"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$StaticSettings.class",
+            "size": 586,
+            "sha256": "bf3ce5d01e1d595a0c5d8a4b3e1ca762494eabb59aa8c1efada2cb752d4539d4"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$UserSettings.class",
+            "size": 971,
+            "sha256": "e3531fb2099f9ee8bbd62dbcadb7f747bf66d7082eefb98dd5422ffa86c16ca8"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader.class",
+            "size": 16174,
+            "sha256": "5b9c041e5f77a4c278a20547b1a77750b3258b2794dcdeeb58a629986689839c"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter$Letters.class",
+            "size": 651,
+            "sha256": "792a2452ac37609a38145163e2d5694a2d20c286494df7fbd784678df2ee4710"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter$UserSettings.class",
+            "size": 753,
+            "sha256": "de1980e683ff7bade0c58cfaba3b2786e0519472c1dd0833808f5e3171386742"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter.class",
+            "size": 6652,
+            "sha256": "88d6189e9bf2814efc6190df3c86910d69c286c19eba66f2aff61fb8b5d43fe0"
+          }
+        ],
+        "passed": false
+      },
+      "native_count": {
+        "run": 105,
+        "failures": 16,
+        "ignored": 0
+      },
+      "failed_test_names": [
+        "test118",
+        "test119",
+        "test120",
+        "test121",
+        "test122",
+        "test123",
+        "test131",
+        "test132",
+        "test54",
+        "test56",
+        "test57",
+        "test58",
+        "test71",
+        "test73",
+        "test74",
+        "test75"
+      ],
+      "offline_receipts": [
+        {
+          "schema_version": 1,
+          "started_utc": "2026-09-20T19:27:56.492782+00:00",
+          "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+            "--release",
+            "8",
+            "-encoding",
+            "ISO-8859-1",
+            "-cp",
+            "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "-d",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/classes",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/src/AllTests.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/src/NativeTestRunner.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/src/com/csvreader/CsvReader.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/src/com/csvreader/CsvWriter.java"
+          ],
+          "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+          "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+          "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+          "limitations": [
+            "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+            "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+            "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+          ],
+          "status": "completed",
+          "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+          "closed_inherited_fds": [],
+          "kernel_state": {
+            "no_new_privs": 1,
+            "seccomp_mode": 2,
+            "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+          },
+          "probes": [
+            {
+              "family": "AF_INET",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_INET6",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 0,
+              "errno_name": "SUCCESS",
+              "expected_errno": 0,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socketpair send/recv",
+              "errno": 0,
+              "passed": true
+            }
+          ],
+          "command_exit_code": 0,
+          "finished_utc": "2026-09-20T19:27:56.966448+00:00"
+        },
+        {
+          "schema_version": 1,
+          "started_utc": "2026-09-20T19:27:56.999765+00:00",
+          "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+            "-cp",
+            "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-03/classes:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "NativeTestRunner",
+            "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed"
+          ],
+          "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+          "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+          "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+          "limitations": [
+            "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+            "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+            "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+          ],
+          "status": "completed",
+          "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+          "closed_inherited_fds": [],
+          "kernel_state": {
+            "no_new_privs": 1,
+            "seccomp_mode": 2,
+            "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+          },
+          "probes": [
+            {
+              "family": "AF_INET",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_INET6",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 0,
+              "errno_name": "SUCCESS",
+              "expected_errno": 0,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socketpair send/recv",
+              "errno": 0,
+              "passed": true
+            }
+          ],
+          "command_exit_code": 1,
+          "finished_utc": "2026-09-20T19:27:57.151294+00:00"
+        }
+      ]
+    },
+    {
+      "run_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04",
+      "result": {
+        "line_separator": "crlf",
+        "tested_library": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed",
+        "purpose": "isolated compatibility probe, not GIS acceptance",
+        "java_target": "--release 8; original Java 5 output is not reproduced",
+        "source_recovery": {
+          "coordinate": "net.sourceforge.javacsv:javacsv:2.0",
+          "license_evidence": "CsvReader.java and CsvWriter.java retain original LGPL-2.1-or-later headers. Historical AllTests.java has no file header; final license review remains open.",
+          "limitations": "Contemporaneous publisher source recovery and exact binary identity; no byte-identical rebuild or product acceptance claimed.",
+          "publisher_binary": {
+            "byte_equal_selected_artifact": true,
+            "date": "2006.12.20.20.01.26",
+            "revision": "1.2",
+            "sha256": "c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed"
+          },
+          "publisher_url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip",
+          "selected_sources": [
+            {
+              "date": "2006.12.20.19.59.50",
+              "path": "src/com/csvreader/CsvReader.java",
+              "revision": "1.9",
+              "sha256": "659de2080f9641e3d0ee3446eaa9b4ea1a8b3c30a3a6c470fcddcce7646867b4",
+              "size": 47667
+            },
+            {
+              "date": "2006.11.02.04.35.07",
+              "path": "src/com/csvreader/CsvWriter.java",
+              "revision": "1.8",
+              "sha256": "adc1bb26bec625bb661d8e5902daaa98f69b8c10d7160e5531bbf41ad727b977",
+              "size": 15716
+            },
+            {
+              "date": "2006.11.02.04.35.29",
+              "path": "src/AllTests.java",
+              "revision": "1.4",
+              "sha256": "f51edc54a4679ffd3ec1a09b6d3ce37971d1ba0e2b038f818c5fd4d0942c90fe",
+              "size": 71224
+            },
+            {
+              "date": "2006.12.12.19.37.18",
+              "path": "build.xml",
+              "revision": "1.3",
+              "sha256": "e13866b5101f12cfbaffa77d76cb4dc90d32cb2ae9fd3819b95bb772dcd20866",
+              "size": 679
+            }
+          ],
+          "snapshot_sha256": "608624c41a5b499e7f0085854fb39e359c1e34a133506ddf16c86331703263d3",
+          "source_capsule": {
+            "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-research/javacsv-2.0-recovered/javacsv-2.0-recovered-sources.tar.gz",
+            "revision": "CVS CsvReader.java 1.9; CsvWriter.java 1.8; AllTests.java 1.4; build.xml 1.3",
+            "sha256": "7d0022112ccafbf27c940e80756f2591f6f7c8686d075af87cd57040bd9cffbe",
+            "size": 18729,
+            "url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip"
+          }
+        },
+        "jdk_binaries": {
+          "javac": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+            "sha256": "50d09f424b513525af1f0b05cd948ed7890a8d60fef7f7797e20892705b0067d"
+          },
+          "java": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+            "sha256": "f5aed21d3a0b0f4b05d3a3f9fe71263916d5bc0d47b53aa52a3340b90f0b4805"
+          }
+        },
+        "dependencies": [
+          {
+            "acquired_at": "2026-09-19T22:14:31.600336+00:00",
+            "classification": "artifact",
+            "final_url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+            "maven_path": "junit/junit/4.13.2/junit-4.13.2.jar",
+            "original_url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "repository": "central",
+            "schema_version": 1,
+            "sha256": "8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3",
+            "size": 384581,
+            "status": 200
+          },
+          {
+            "acquired_at": "2026-09-19T22:14:31.725675+00:00",
+            "classification": "artifact",
+            "final_url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+            "maven_path": "org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "original_url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "repository": "central",
+            "schema_version": 1,
+            "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "size": 45024,
+            "status": 200
+          }
+        ],
+        "commands": [
+          {
+            "label": "compile",
+            "argv": [
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+              "--release",
+              "8",
+              "-encoding",
+              "ISO-8859-1",
+              "-cp",
+              "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+              "-d",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/classes",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/src/AllTests.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/src/NativeTestRunner.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/src/com/csvreader/CsvReader.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/src/com/csvreader/CsvWriter.java"
+            ],
+            "exit_code": 0,
+            "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/compile.log",
+            "log_sha256": "74b60ac70ed920511b8f6fc6b4677fbdc80165249f940cc775c615388927fd52"
+          },
+          {
+            "label": "native-tests",
+            "argv": [
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+              "-Dline.separator=\r\n",
+              "-cp",
+              "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/classes:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+              "NativeTestRunner",
+              "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed"
+            ],
+            "exit_code": 0,
+            "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/native-tests.log",
+            "log_sha256": "001f63561d144afc04c12977c8010989d93e8c1a591e04f655567e8da824d56a"
+          }
+        ],
+        "outputs": [
+          {
+            "path": "classes/AllTests$FailingReader.class",
+            "size": 632,
+            "sha256": "0c43276d405a1018053d6322adc6641758eecab532a61836cd0d5ef0d6b49e91"
+          },
+          {
+            "path": "classes/AllTests.class",
+            "size": 35549,
+            "sha256": "9294101958d74bf879dba8dd9a294a354e30c0cb49e11454c91e8101d2118c2d"
+          },
+          {
+            "path": "classes/NativeTestRunner.class",
+            "size": 2227,
+            "sha256": "d7fe9d34f7a5b1c531b85882a058655c4b54bfeb7cfd88ed985ec814fd4de99e"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$ColumnBuffer.class",
+            "size": 544,
+            "sha256": "80e407cee3536e02eb4b749752f7eba78609bca3dd1edca63494c464c583e9c6"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$ComplexEscape.class",
+            "size": 525,
+            "sha256": "3278ae6d79920ac8acddf4d2415b00b5624936209795a8891bfb6bfaa3714cb6"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$DataBuffer.class",
+            "size": 656,
+            "sha256": "71f455fe3afa85d308e33397a672dc46cae2e9a6eb095a49599bcbbe06aedef4"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$HeadersHolder.class",
+            "size": 587,
+            "sha256": "d0113b43ffbb829dcfd24f236a74f6333b2fb037954774d04341376a8a75bb30"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$Letters.class",
+            "size": 812,
+            "sha256": "f32c437570d469938f32cd63e7bfb9c2bc3fb1530bac0c7e38dab94625b7bb5c"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$RawRecordBuffer.class",
+            "size": 551,
+            "sha256": "1de0bccd67dcc223b51d3170803b5872e9581deaf7137a5f5aa353ac2f968024"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$StaticSettings.class",
+            "size": 586,
+            "sha256": "bf3ce5d01e1d595a0c5d8a4b3e1ca762494eabb59aa8c1efada2cb752d4539d4"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$UserSettings.class",
+            "size": 971,
+            "sha256": "e3531fb2099f9ee8bbd62dbcadb7f747bf66d7082eefb98dd5422ffa86c16ca8"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader.class",
+            "size": 16174,
+            "sha256": "5b9c041e5f77a4c278a20547b1a77750b3258b2794dcdeeb58a629986689839c"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter$Letters.class",
+            "size": 651,
+            "sha256": "792a2452ac37609a38145163e2d5694a2d20c286494df7fbd784678df2ee4710"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter$UserSettings.class",
+            "size": 753,
+            "sha256": "de1980e683ff7bade0c58cfaba3b2786e0519472c1dd0833808f5e3171386742"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter.class",
+            "size": 6652,
+            "sha256": "88d6189e9bf2814efc6190df3c86910d69c286c19eba66f2aff61fb8b5d43fe0"
+          }
+        ],
+        "passed": true
+      },
+      "native_count": {
+        "run": 105,
+        "failures": 0,
+        "ignored": 0
+      },
+      "failed_test_names": [],
+      "offline_receipts": [
+        {
+          "schema_version": 1,
+          "started_utc": "2026-09-20T19:28:35.701235+00:00",
+          "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+            "--release",
+            "8",
+            "-encoding",
+            "ISO-8859-1",
+            "-cp",
+            "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "-d",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/classes",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/src/AllTests.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/src/NativeTestRunner.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/src/com/csvreader/CsvReader.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/src/com/csvreader/CsvWriter.java"
+          ],
+          "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+          "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+          "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+          "limitations": [
+            "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+            "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+            "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+          ],
+          "status": "completed",
+          "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+          "closed_inherited_fds": [],
+          "kernel_state": {
+            "no_new_privs": 1,
+            "seccomp_mode": 2,
+            "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+          },
+          "probes": [
+            {
+              "family": "AF_INET",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_INET6",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 0,
+              "errno_name": "SUCCESS",
+              "expected_errno": 0,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socketpair send/recv",
+              "errno": 0,
+              "passed": true
+            }
+          ],
+          "command_exit_code": 0,
+          "finished_utc": "2026-09-20T19:28:36.183156+00:00"
+        },
+        {
+          "schema_version": 1,
+          "started_utc": "2026-09-20T19:28:36.211475+00:00",
+          "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+            "-Dline.separator=\r\n",
+            "-cp",
+            "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-04/classes:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "NativeTestRunner",
+            "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed"
+          ],
+          "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+          "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+          "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+          "limitations": [
+            "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+            "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+            "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+          ],
+          "status": "completed",
+          "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+          "closed_inherited_fds": [],
+          "kernel_state": {
+            "no_new_privs": 1,
+            "seccomp_mode": 2,
+            "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+          },
+          "probes": [
+            {
+              "family": "AF_INET",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_INET6",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 0,
+              "errno_name": "SUCCESS",
+              "expected_errno": 0,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socketpair send/recv",
+              "errno": 0,
+              "passed": true
+            }
+          ],
+          "command_exit_code": 0,
+          "finished_utc": "2026-09-20T19:28:36.335148+00:00"
+        }
+      ]
+    },
+    {
+      "run_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05",
+      "result": {
+        "line_separator": "crlf",
+        "tested_library": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/classes",
+        "purpose": "isolated compatibility probe, not GIS acceptance",
+        "java_target": "--release 8; original Java 5 output is not reproduced",
+        "source_recovery": {
+          "coordinate": "net.sourceforge.javacsv:javacsv:2.0",
+          "license_evidence": "CsvReader.java and CsvWriter.java retain original LGPL-2.1-or-later headers. Historical AllTests.java has no file header; final license review remains open.",
+          "limitations": "Contemporaneous publisher source recovery and exact binary identity; no byte-identical rebuild or product acceptance claimed.",
+          "publisher_binary": {
+            "byte_equal_selected_artifact": true,
+            "date": "2006.12.20.20.01.26",
+            "revision": "1.2",
+            "sha256": "c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed"
+          },
+          "publisher_url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip",
+          "selected_sources": [
+            {
+              "date": "2006.12.20.19.59.50",
+              "path": "src/com/csvreader/CsvReader.java",
+              "revision": "1.9",
+              "sha256": "659de2080f9641e3d0ee3446eaa9b4ea1a8b3c30a3a6c470fcddcce7646867b4",
+              "size": 47667
+            },
+            {
+              "date": "2006.11.02.04.35.07",
+              "path": "src/com/csvreader/CsvWriter.java",
+              "revision": "1.8",
+              "sha256": "adc1bb26bec625bb661d8e5902daaa98f69b8c10d7160e5531bbf41ad727b977",
+              "size": 15716
+            },
+            {
+              "date": "2006.11.02.04.35.29",
+              "path": "src/AllTests.java",
+              "revision": "1.4",
+              "sha256": "f51edc54a4679ffd3ec1a09b6d3ce37971d1ba0e2b038f818c5fd4d0942c90fe",
+              "size": 71224
+            },
+            {
+              "date": "2006.12.12.19.37.18",
+              "path": "build.xml",
+              "revision": "1.3",
+              "sha256": "e13866b5101f12cfbaffa77d76cb4dc90d32cb2ae9fd3819b95bb772dcd20866",
+              "size": 679
+            }
+          ],
+          "snapshot_sha256": "608624c41a5b499e7f0085854fb39e359c1e34a133506ddf16c86331703263d3",
+          "source_capsule": {
+            "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure-research/javacsv-2.0-recovered/javacsv-2.0-recovered-sources.tar.gz",
+            "revision": "CVS CsvReader.java 1.9; CsvWriter.java 1.8; AllTests.java 1.4; build.xml 1.3",
+            "sha256": "7d0022112ccafbf27c940e80756f2591f6f7c8686d075af87cd57040bd9cffbe",
+            "size": 18729,
+            "url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip"
+          }
+        },
+        "jdk_binaries": {
+          "javac": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+            "sha256": "50d09f424b513525af1f0b05cd948ed7890a8d60fef7f7797e20892705b0067d"
+          },
+          "java": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+            "sha256": "f5aed21d3a0b0f4b05d3a3f9fe71263916d5bc0d47b53aa52a3340b90f0b4805"
+          }
+        },
+        "dependencies": [
+          {
+            "acquired_at": "2026-09-19T22:14:31.600336+00:00",
+            "classification": "artifact",
+            "final_url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+            "maven_path": "junit/junit/4.13.2/junit-4.13.2.jar",
+            "original_url": "https://repo.maven.apache.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+            "repository": "central",
+            "schema_version": 1,
+            "sha256": "8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3",
+            "size": 384581,
+            "status": 200
+          },
+          {
+            "acquired_at": "2026-09-19T22:14:31.725675+00:00",
+            "classification": "artifact",
+            "final_url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+            "maven_path": "org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "original_url": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "repository": "central",
+            "schema_version": 1,
+            "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "size": 45024,
+            "status": 200
+          }
+        ],
+        "commands": [
+          {
+            "label": "compile",
+            "argv": [
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+              "--release",
+              "8",
+              "-encoding",
+              "ISO-8859-1",
+              "-cp",
+              "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+              "-d",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/classes",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/src/AllTests.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/src/NativeTestRunner.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/src/com/csvreader/CsvReader.java",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/src/com/csvreader/CsvWriter.java"
+            ],
+            "exit_code": 0,
+            "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/compile.log",
+            "log_sha256": "c4e046b60769812d516865ded7f0fde84257525616c567758b901b395740b7dc"
+          },
+          {
+            "label": "native-tests",
+            "argv": [
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+              "-Dline.separator=\r\n",
+              "-cp",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/classes:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+              "NativeTestRunner",
+              "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/classes"
+            ],
+            "exit_code": 0,
+            "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/native-tests.log",
+            "log_sha256": "a18ddc8c47521aeb8c56494f9a7af7e94a84287dd471ab9a95a6bd0bae4ea9da"
+          }
+        ],
+        "outputs": [
+          {
+            "path": "classes/AllTests$FailingReader.class",
+            "size": 632,
+            "sha256": "0c43276d405a1018053d6322adc6641758eecab532a61836cd0d5ef0d6b49e91"
+          },
+          {
+            "path": "classes/AllTests.class",
+            "size": 35549,
+            "sha256": "9294101958d74bf879dba8dd9a294a354e30c0cb49e11454c91e8101d2118c2d"
+          },
+          {
+            "path": "classes/NativeTestRunner.class",
+            "size": 2227,
+            "sha256": "d7fe9d34f7a5b1c531b85882a058655c4b54bfeb7cfd88ed985ec814fd4de99e"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$ColumnBuffer.class",
+            "size": 544,
+            "sha256": "80e407cee3536e02eb4b749752f7eba78609bca3dd1edca63494c464c583e9c6"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$ComplexEscape.class",
+            "size": 525,
+            "sha256": "3278ae6d79920ac8acddf4d2415b00b5624936209795a8891bfb6bfaa3714cb6"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$DataBuffer.class",
+            "size": 656,
+            "sha256": "71f455fe3afa85d308e33397a672dc46cae2e9a6eb095a49599bcbbe06aedef4"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$HeadersHolder.class",
+            "size": 587,
+            "sha256": "d0113b43ffbb829dcfd24f236a74f6333b2fb037954774d04341376a8a75bb30"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$Letters.class",
+            "size": 812,
+            "sha256": "f32c437570d469938f32cd63e7bfb9c2bc3fb1530bac0c7e38dab94625b7bb5c"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$RawRecordBuffer.class",
+            "size": 551,
+            "sha256": "1de0bccd67dcc223b51d3170803b5872e9581deaf7137a5f5aa353ac2f968024"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$StaticSettings.class",
+            "size": 586,
+            "sha256": "bf3ce5d01e1d595a0c5d8a4b3e1ca762494eabb59aa8c1efada2cb752d4539d4"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader$UserSettings.class",
+            "size": 971,
+            "sha256": "e3531fb2099f9ee8bbd62dbcadb7f747bf66d7082eefb98dd5422ffa86c16ca8"
+          },
+          {
+            "path": "classes/com/csvreader/CsvReader.class",
+            "size": 16174,
+            "sha256": "5b9c041e5f77a4c278a20547b1a77750b3258b2794dcdeeb58a629986689839c"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter$Letters.class",
+            "size": 651,
+            "sha256": "792a2452ac37609a38145163e2d5694a2d20c286494df7fbd784678df2ee4710"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter$UserSettings.class",
+            "size": 753,
+            "sha256": "de1980e683ff7bade0c58cfaba3b2786e0519472c1dd0833808f5e3171386742"
+          },
+          {
+            "path": "classes/com/csvreader/CsvWriter.class",
+            "size": 6652,
+            "sha256": "88d6189e9bf2814efc6190df3c86910d69c286c19eba66f2aff61fb8b5d43fe0"
+          }
+        ],
+        "native_result": {
+          "run": 105,
+          "failures": 0,
+          "ignored": 0,
+          "complete_success": true
+        },
+        "passed": true
+      },
+      "native_count": {
+        "run": 105,
+        "failures": 0,
+        "ignored": 0
+      },
+      "failed_test_names": [],
+      "offline_receipts": [
+        {
+          "schema_version": 1,
+          "started_utc": "2026-09-20T19:29:30.937023+00:00",
+          "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+            "--release",
+            "8",
+            "-encoding",
+            "ISO-8859-1",
+            "-cp",
+            "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "-d",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/classes",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/src/AllTests.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/src/NativeTestRunner.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/src/com/csvreader/CsvReader.java",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/src/com/csvreader/CsvWriter.java"
+          ],
+          "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+          "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+          "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+          "limitations": [
+            "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+            "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+            "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+          ],
+          "status": "completed",
+          "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+          "closed_inherited_fds": [],
+          "kernel_state": {
+            "no_new_privs": 1,
+            "seccomp_mode": 2,
+            "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+          },
+          "probes": [
+            {
+              "family": "AF_INET",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_INET6",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 0,
+              "errno_name": "SUCCESS",
+              "expected_errno": 0,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socketpair send/recv",
+              "errno": 0,
+              "passed": true
+            }
+          ],
+          "command_exit_code": 0,
+          "finished_utc": "2026-09-20T19:29:31.398818+00:00"
+        },
+        {
+          "schema_version": 1,
+          "started_utc": "2026-09-20T19:29:31.432753+00:00",
+          "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+            "-Dline.separator=\r\n",
+            "-cp",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/classes:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+            "NativeTestRunner",
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/classes"
+          ],
+          "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.42",
+          "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+          "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+          "limitations": [
+            "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+            "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+            "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+          ],
+          "status": "completed",
+          "resolved_executable": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/java",
+          "closed_inherited_fds": [],
+          "kernel_state": {
+            "no_new_privs": 1,
+            "seccomp_mode": 2,
+            "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+          },
+          "probes": [
+            {
+              "family": "AF_INET",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_INET6",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 1,
+              "errno_name": "EPERM",
+              "expected_errno": 1,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socket(SOCK_STREAM)",
+              "errno": 0,
+              "errno_name": "SUCCESS",
+              "expected_errno": 0,
+              "passed": true
+            },
+            {
+              "family": "AF_UNIX",
+              "operation": "socketpair send/recv",
+              "errno": 0,
+              "passed": true
+            }
+          ],
+          "command_exit_code": 0,
+          "finished_utc": "2026-09-20T19:29:31.567256+00:00"
+        }
+      ]
+    }
+  ],
+  "conclusion": "Publisher CVS binary1.2 exactly matches Maven2.0; contemporaneous source compiled. Rebuilt and original library each pass105 unchanged native tests under explicitly configured CRLF; both retain same16 historical Windows-newline assertions failing under actual Linux defaults. No skipped tests, no product acceptance or original-toolchain byte reproducibility claimed.",
+  "tooling_tests": 148,
+  "package_tests": 175,
+  "schemas": 4
+}
