@@ -212,6 +212,58 @@ class InventoryTests(unittest.TestCase):
             self.assertIn("error", parsed)
             self.assertEqual(parsed["declarations"], [])
 
+    def test_pom_dtd_declarations_are_refused_across_xml_encodings(self):
+        declarations = (
+            '<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>',
+            '<!DOCTYPE project>',
+            '<!DOCTYPE project SYSTEM "urn:ambisgis:test:pom-dtd">',
+        )
+        for declaration in declarations:
+            value = '&sample;' if '<!ENTITY' in declaration else 'Example license'
+            xml = (declaration + '<project><licenses><license><name>' + value
+                   + '</name></license></licenses></project>')
+            variants = {encoding: xml.encode(encoding) for encoding in
+                        ('utf-8', 'utf-8-sig', 'utf-16', 'utf-16-le', 'utf-16-be')}
+            variants['utf-16-be-bom'] = b'\xfe\xff' + xml.encode('utf-16-be')
+            for encoding, data in variants.items():
+                with self.subTest(declaration=declaration, encoding=encoding):
+                    parsed = inventory.pom_licenses(data)
+                    self.assertEqual(parsed['declarations'], [])
+                    self.assertEqual(parsed.get('error'),
+                                     'DTD/entity declarations are not interpreted')
+                    self.assertFalse(parsed.get('license_approval', False))
+
+    def test_benign_pom_licenses_are_parsed_across_xml_encodings(self):
+        xml = ('<project xmlns="http://maven.apache.org/POM/4.0.0">'
+               '<licenses><license><name>Example café license</name>'
+               '</license></licenses></project>')
+        variants = {encoding: xml.encode(encoding) for encoding in
+                    ('utf-8', 'utf-8-sig', 'utf-16', 'utf-16-le', 'utf-16-be')}
+        variants['utf-16-be-bom'] = b'\xfe\xff' + xml.encode('utf-16-be')
+        for encoding, data in variants.items():
+            with self.subTest(encoding=encoding):
+                parsed = inventory.pom_licenses(data)
+                self.assertNotIn('error', parsed)
+                self.assertEqual(parsed['declarations'], [{'name': 'Example café license'}])
+                self.assertFalse(parsed['inherited_licenses_resolved'])
+                self.assertFalse(parsed['license_approval'])
+
+    def test_encoded_pom_dtd_remains_an_explicit_inventory_gap(self):
+        self.retain(self.base + '.jar', jar())
+        self.retain(self.base + '-sources.jar', jar({'Example.java': b'class Example {}'}))
+        xml = ('<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>'
+               '<project><licenses><license><name>&sample;</name>'
+               '</license></licenses></project>')
+        self.retain(self.base + '.pom', xml.encode('utf-16'))
+        report, _ = inventory.make_report(self.custody)
+        self.assertTrue(report['verification']['valid'])
+        self.assertFalse(report['source_coverage_complete'])
+        self.assertEqual(len(report['missing_sources']), 1)
+        self.assertEqual(report['missing_sources'][0]['kind'], 'pom')
+        self.assertEqual(report['pom_licenses'][0]['error'],
+                         'DTD/entity declarations are not interpreted')
+        self.assertFalse(report['build_ready'])
+
     def test_reports_never_overwrite_existing_output_or_notice_directory(self):
         self.complete_gav()
         report, contents = inventory.make_report(self.custody)
