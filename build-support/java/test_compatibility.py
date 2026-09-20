@@ -78,6 +78,30 @@ class CompatibilityTests(unittest.TestCase):
             self.assertEqual(result['result_exit_code'], 1)
             self.assertEqual(result['changed_original_source_files'], ['pom.xml'])
 
+    def test_source_verification_error_after_maven_success_fails_receipt(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            original_sha = compatibility.sha
+            original_hashed = False
+
+            def unreadable_after_execution(path):
+                nonlocal original_hashed
+                if path == root / 'output/work/source/pom.xml':
+                    if original_hashed:
+                        raise PermissionError('original source became unreadable')
+                    original_hashed = True
+                return original_sha(path)
+
+            with patch('compatibility.sha', side_effect=unreadable_after_execution):
+                result = self.fixture(root)
+            self.assertEqual(result['exit_code'], 0)
+            self.assertEqual(result['result_exit_code'], 1)
+            self.assertEqual(result['status'], 'failed')
+            self.assertEqual(result['error']['type'], 'PermissionError')
+            self.assertEqual(result['error']['message'], 'original source became unreadable')
+            self.assertNotIn('changed_original_source_files', result)
+            self.assertEqual(json.loads((root / 'output/result.json').read_text()), result)
+
     def test_native_failure_cannot_be_masked_by_zero_maven_exit(self):
         with tempfile.TemporaryDirectory() as tmp:
             result = self.fixture(Path(tmp), xml='<testsuite name="org.geotools.xml.Test" tests="2" errors="1"/>')

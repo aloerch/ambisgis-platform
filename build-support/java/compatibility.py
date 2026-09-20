@@ -222,6 +222,7 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
             report['result_exit_code'] = 1
     except BaseException as error:
         report['error'] = {'type': type(error).__name__, 'message': str(error)}
+        report['result_exit_code'] = 1
     finally:
         report['duration_seconds'] = round(time.monotonic() - start, 3)
         source = output / 'work/source'
