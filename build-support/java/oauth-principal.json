@@ -1,0 +1,34 @@
+[
+  {
+    "path": "geoserver/src/community/security/oauth2-geonode/src/main/java/org/geoserver/security/oauth2/services/GeoNodeTokenServices.java",
+    "before_sha256": "7a0206c4de99eb26c23e3b0a0d6279c2b685d09927f7a7db037ef74ec3657736",
+    "after_sha256": "358ff9aeb7b7ad6e2a7b0ab0faccd89930583fe36a2119c925e4e07a7d0bf61e",
+    "replacements": [
+      [
+        "import org.springframework.http.HttpHeaders;",
+        "import org.springframework.http.HttpHeaders;\nimport org.springframework.security.oauth2.common.exceptions.InvalidTokenException;"
+      ],
+      [
+        "        map.put(\"user_name\", map.get(\"issued_to\")); // GeoNode sends 'client_id' as 'issued_to'",
+        "        Object principal = map.get(\"issued_to\");\n        if (!(principal instanceof String username) || username.isBlank()) {\n            throw new InvalidTokenException(\"Token validation response has no valid principal\");\n        }\n        map.put(\"user_name\", username);"
+      ]
+    ],
+    "purpose": "reject malformed successful GeoNode responses without a nonblank string principal"
+  },
+  {
+    "path": "geoserver/src/community/security/oauth2-geonode/src/test/java/org/geoserver/security/oauth2/OAuth2RestTemplateTest.java",
+    "before_sha256": "f4dc7db2d801b3c45113df93ddf3af3e2bef7fe97ba47162f2c84c2c8943c12a",
+    "after_sha256": "c90d079d5f1cdac6e4d59e075ef2b15f5375c2fc88f2b5907106726aa149be85",
+    "replacements": [
+      [
+        "            body.put(\"client_id\", clientId);",
+        "            body.put(\"client_id\", clientId);\n            body.put(\"issued_to\", \"fixture-reader\");"
+      ],
+      [
+        "        assertEquals(\"1234\", auth.getOAuth2Request().getClientId());",
+        "        assertEquals(\"1234\", auth.getOAuth2Request().getClientId());\n        assertEquals(\"fixture-reader\", auth.getName());\n        assertTrue(auth.isAuthenticated());"
+      ]
+    ],
+    "purpose": "make existing positive mock match actual owned GeoNode response and strengthen principal assertion"
+  }
+]

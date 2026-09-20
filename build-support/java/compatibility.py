@@ -13,10 +13,11 @@ import shutil
 import subprocess
 import sys
 import time
-import xml.etree.ElementTree as ET
+import zipfile
+from native_reports import parse_report
 
 from resolution import prepare, command, execute, maven_inventory, sha, write_json
-from resolution_inventory import verify_custody, read_file, walk_files
+from resolution_inventory import verify_custody, read_file, walk_files, checked_path
 import toolchain
 
 TARGETS = {
@@ -26,18 +27,20 @@ TARGETS = {
     'geofence': 'org.geoserver.geofence:geofence-persistence-pg-test',
     'importer': 'org.geoserver.importer:gs-importer-core',
     'oauth': 'org.geoserver.community:gs-sec-oauth2-geonode',
+    'webapp': 'org.geoserver.web:gs-web-app',
 }
 
 TEST_PACKAGES = {'referencing': 'org/geotools/referencing/', 'xml': 'org/geotools/xml/',
                  'mapfish': 'org/mapfish/', 'geofence': 'org/geoserver/geofence/',
-                 'importer': 'org/geoserver/importer/', 'oauth': 'org/geoserver/security/'}
+                 'importer': 'org/geoserver/importer/', 'oauth': 'org/geoserver/security/', 'webapp': 'org/geoserver/web/'}
 
 TARGET_MODULES = {'referencing': 'geotools/modules/library/referencing/',
                   'xml': 'geotools/modules/library/xml/',
                   'mapfish': 'mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/',
                   'geofence': 'geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/',
                   'importer': 'geoserver/src/extension/importer/core/',
-                  'oauth': 'geoserver/src/community/security/oauth2-geonode/'}
+                  'oauth': 'geoserver/src/community/security/oauth2-geonode/',
+                  'webapp': 'geoserver/src/web/app/'}
 
 
 def materialize(custody, destination):
@@ -69,15 +72,87 @@ def materialize(custody, destination):
     return rows
 
 
+
+
+TEST_AGENT_PATH = 'net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar'
+TEST_AGENT_SHA256 = '316d2c0795c2a4d4c4756f2e6f9349837c7430ac34e0477ead874d05f5cc19e5'
+
+
+def startup_test_agent(retained, rows):
+    """Use the original Mockito instrumentation at startup; forbid dynamic attach."""
+    selected = [r for r in rows if r['maven_path'] == TEST_AGENT_PATH]
+    if len(selected) != 1 or selected[0]['sha256'] != TEST_AGENT_SHA256:
+        raise ValueError('expected retained Mockito instrumentation agent is missing')
+    path = retained / TEST_AGENT_PATH
+    checked_path(path)
+    if sha(path) != TEST_AGENT_SHA256:
+        raise ValueError('retained Mockito instrumentation agent changed')
+    with zipfile.ZipFile(path) as archive:
+        manifest = archive.read('META-INF/MANIFEST.MF').decode('utf-8')
+    if 'Premain-Class: net.bytebuddy.agent.Installer' not in manifest:
+        raise ValueError('retained instrumentation agent has no expected startup entry')
+    return {'path': TEST_AGENT_PATH, 'sha256': TEST_AGENT_SHA256,
+            'java_option': '-javaagent:' + str(path),
+            'purpose': 'original inline Mockito instrumentation without Unix-socket self-attachment',
+            'native_assertions_changed': False}
+
+
+def prime_runtime_repository(rows, retained, local, output):
+    """Stage verified retained providers before Maven -o; never fetch or replace."""
+    staged = []
+    for row in rows:
+        relative = Path(row['maven_path'])
+        if relative.is_absolute() or '..' in relative.parts:
+            raise ValueError('unsafe retained runtime artifact path')
+        source, destination = retained / relative, local / relative
+        checked_path(source)
+        if source.is_symlink() or sha(source) != row['sha256']:
+            raise ValueError('retained runtime input changed before staging')
+        if source.name.endswith(('.sha1', '.sha256', '.sha512', '.md5', '.asc')):
+            # Maven normalizes cached checksum text. Publisher sidecars remain
+            # retained evidence and are not runtime resolution artifacts.
+            continue
+        copied = not destination.exists()
+        if copied:
+            current = local
+            checked_path(current, directory=True)
+            for part in relative.parts[:-1]:
+                current = current / part
+                if current.is_symlink():
+                    raise ValueError('runtime repository parent is a symlink')
+                if not current.exists():
+                    current.mkdir()
+                checked_path(current, directory=True)
+            with destination.open('xb') as stream, source.open('rb') as incoming:
+                shutil.copyfileobj(incoming, stream)
+        checked_path(destination)
+        if destination.is_symlink() or sha(destination) != row['sha256']:
+            raise ValueError('runtime repository conflicts with retained artifact: ' + row['maven_path'])
+        # Enhanced Local Repository Manager tracks availability per repository.
+        # Record the actual controlled file-mirror origin for these copied bytes.
+        origins = destination.parent / '_remote.repositories'
+        if origins.is_symlink():
+            raise ValueError('runtime repository origin file is a symlink')
+        line = destination.name + '>ambisgis-custody='
+        previous = origins.read_text() if origins.exists() else ''
+        if line not in previous.splitlines():
+            with origins.open('a') as stream:
+                if previous and not previous.endswith('\n'): stream.write('\n')
+                stream.write(line + '\n')
+        staged.append({'maven_path': row['maven_path'], 'sha256': row['sha256'], 'copied': copied})
+    write_json(output / 'runtime-staged-inputs.json', staged)
+    return {'files': len(staged), 'copied': sum(row['copied'] for row in staged),
+            'manifest_sha256': sha(output / 'runtime-staged-inputs.json'), 'network_acquisition': False}
+
+
 def test_reports(root):
     reports, skipped_cases = [], []
     for path in sorted(root.rglob('TEST-*.xml')):
         if path.parent.name not in ('surefire-reports', 'failsafe-reports'):
             continue
-        suite = ET.parse(path).getroot()
+        suite, counts = parse_report(path.read_bytes(), str(path))
         reports.append({'path': path.relative_to(root).as_posix(), 'sha256': sha(path),
-                        'name': suite.get('name'), **{key: int(suite.get(key, '0'))
-                         for key in ('tests', 'failures', 'errors', 'skipped')}})
+                        'name': suite.get('name'), **counts})
         for case in suite.findall('testcase'):
             skipped = case.find('skipped')
             if skipped is not None:
@@ -101,9 +176,23 @@ def verify_network_receipt(path, exit_code):
     return {'path': str(path), 'sha256': sha(path), 'verified': True}
 
 
+def verify_execution_network(report, output):
+    if report.get('runtime_network') == 'controlled-loopback':
+        import loopback_exec
+        expected = report['tooling_manifest']['java/loopback_exec.py']
+        if sha(Path(loopback_exec.__file__)) != expected:
+            raise ValueError('loopback verifier differs from retained executed tooling')
+        report['runtime_network_verified'] = loopback_exec.verify_receipt(output / 'network-loopback.json', report['exit_code'])
+        if report['runtime_network_verified'].get('runner_sha256') != expected:
+            raise ValueError('loopback receipt runner differs from retained tooling')
+        if report.get('build_exit_code') != 0 or not report.get('build_network_denial_verified'):
+            raise ValueError('runtime success requires the preceding network-denied build')
+    else:
+        report['network_denial'] = verify_network_receipt(output / 'network-denial.json', report['exit_code'])
+        report['network_denial_verified'] = True
+
+
 def validate_execution(report, output, target, tests):
-    report['network_denial'] = verify_network_receipt(output / 'network-denial.json', report['exit_code'])
-    report['network_denial_verified'] = True
     native = report['native_tests']
     if native['failures'] or native['errors']:
         raise ValueError('native failures must not be hidden by Maven exit zero')
@@ -116,7 +205,7 @@ def validate_execution(report, output, target, tests):
         report['target_executed_tests'] = sum(r['tests'] - r['skipped'] for r in selected)
 
 
-def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None):
+def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None, runtime_http=False, oauth_redaction=False, oauth_principal=False):
     if target not in TARGETS or stage not in ('test', 'package') or tests not in ('all', 'target', 'schema-resolver', 'compile-only'):
         raise ValueError('unsupported bounded target or lifecycle')
     if repair not in ('none', 'xmlcodegen-emf') or (tests == 'schema-resolver' and target != 'xml'):
@@ -125,6 +214,12 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
         raise ValueError('PostgreSQL fixture requires both paths and GeoFence target')
     if (gdal_prefix is None) != (gdal_archive is None) or (gdal_prefix and target != 'importer'):
         raise ValueError('GDAL fixture requires both paths and importer target')
+    if oauth_principal and not oauth_redaction:
+        raise ValueError('OAuth principal repair requires the diagnostic repair')
+    if oauth_redaction and (target != 'oauth' or not runtime_http):
+        raise ValueError('OAuth diagnostic repair requires its controlled HTTP probe')
+    if runtime_http and (target not in ('xml', 'mapfish', 'oauth') or tests == 'compile-only' or timeout < 30):
+        raise ValueError('controlled HTTP runtime requires a tested XML/MapFish/OAuth target and timeout >=30')
     output.mkdir(parents=True, exist_ok=False)
     report = {'schema_version': 1, 'runner_sha256': sha(Path(__file__)), 'started_at': datetime.now(timezone.utc).isoformat(),
               'target': target, 'stage': stage, 'test_selection': tests, 'purpose': 'exploratory-compatibility-probe',
@@ -166,6 +261,17 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
             report['repair'] = {**manifest, 'exit_code': applied.returncode, 'output': applied.stdout + applied.stderr}
             if applied.returncode or sha(patched) != manifest['after_sha256']:
                 raise ValueError('source patch output verification failed')
+        if target == 'webapp':
+            import combined_logging_patch
+            report['aggregate_lifecycle_repair'] = combined_logging_patch.prepare(work / 'source')
+        if runtime_http:
+            if target in ('xml', 'mapfish'):
+                import http_fixtures
+                report['http_fixture'] = http_fixtures.prepare(work / 'source', output, target)
+            else:
+                import oauth_fixture
+                report['oauth_fixture'] = oauth_fixture.prepare(work / 'source', redact=oauth_redaction, principal=oauth_principal)
+            report['runtime_network'] = 'controlled-loopback'
         if postgres_prefix is not None:
             import geofence_fixture
             database, report['postgres_fixture'] = geofence_fixture.start(
@@ -209,8 +315,32 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
         if postgres_prefix is not None:
             cmd += ['-Dmaven.compiler.testRelease=17']
             report['fixture_test_release'] = 17
-        offline = Path(__file__).resolve().parents[1] / 'postgis/offline_exec.py'
-        guarded = [sys.executable, str(offline), '--evidence', str(output / 'network-denial.json'), '--', *cmd]
+        offline = tooling / 'postgis/offline_exec.py'
+        if runtime_http:
+            # First compile/package every prerequisite with all Internet sockets
+            # denied. Runtime then uses the same retained inputs and Maven -o.
+            build_cmd = [sys.executable, str(offline), '--evidence', str(output / 'network-denial-build.json'),
+                         '--', *cmd, '-DskipTests=true']
+            report.update(build_command=build_cmd, build_environment=dict(env), java_build_run=True)
+            with (output / 'build.log').open('x') as stream:
+                report['build_exit_code'] = execute(build_cmd, work / 'source', env, stream, timeout)
+            report['build_log_sha256'] = sha(output / 'build.log')
+            report['build_network_denial'] = verify_network_receipt(output / 'network-denial-build.json', report['build_exit_code'])
+            report['build_network_denial_verified'] = True
+            if report['build_exit_code']:
+                raise ValueError('network-denied compilation failed; HTTP runtime was not started')
+            report['runtime_repository_staging'] = prime_runtime_repository(rows, output / 'retained-repository', local, output)
+            report['startup_test_agent'] = startup_test_agent(output / 'retained-repository', rows)
+            properties = [report['startup_test_agent']['java_option'], *report.get('http_fixture', {}).get('java_properties', [])]
+            if properties:
+                if any(any(c.isspace() or c in '\"\'' for c in value) for value in properties):
+                    raise ValueError('HTTP fixture JVM property paths must not contain whitespace or quotes')
+                env['JAVA_TOOL_OPTIONS'] = ' '.join(properties)
+            loopback = tooling / 'java/loopback_exec.py'
+            guarded = [sys.executable, str(loopback), '--evidence', str(output / 'network-loopback.json'),
+                       '--timeout', str(timeout - 15), '--', *cmd, '--offline']
+        else:
+            guarded = [sys.executable, str(offline), '--evidence', str(output / 'network-denial.json'), '--', *cmd]
         report.update(command=guarded, environment=env, java_build_run=True)
         with (output / 'maven.log').open('x') as stream:
             report['exit_code'] = execute(guarded, work / 'source', env, stream, timeout)
@@ -227,6 +357,10 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
         report['duration_seconds'] = round(time.monotonic() - start, 3)
         source = output / 'work/source'
         try:
+            for relative, digest in report['tooling_manifest'].items():
+                if sha(tooling / relative) != digest:
+                    raise ValueError('retained executed tooling changed: ' + relative)
+            report['retained_tooling_unchanged'] = True
             after = maven_inventory(source)
             report['source_maven_files_unchanged'] = all(after.get(k) == v for k, v in before.items()) if before is not None else None
             report['generated_maven_files'] = {k: v for k, v in after.items() if before is not None and k not in before}
@@ -236,9 +370,13 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
                 raise ValueError('Maven source/configuration changed during execution')
             log = output / 'maven.log'
             report['log_sha256'] = sha(log) if log.exists() else None
+            if report['exit_code'] is not None:
+                verify_execution_network(report, output)
             report['native_tests'] = test_reports(source) if source.exists() else None
             report['built_jars'] = [{'path': p.relative_to(source).as_posix(), 'sha256': sha(p), 'size': p.stat().st_size}
                                     for p in sorted(source.rglob('*.jar')) if p.parent.name == 'target']
+            if runtime_http and target in ('xml', 'mapfish') and report.get('exit_code') is not None:
+                report['http_fixture_finalization'] = http_fixtures.finalize(output, target)
             if report['result_exit_code'] == 0:
                 validate_execution(report, output, target, tests)
         except BaseException as error:
@@ -269,9 +407,12 @@ def main():
     parser.add_argument('--repair', choices=('none', 'xmlcodegen-emf'), default='none')
     parser.add_argument('--tests', choices=('all', 'target', 'schema-resolver', 'compile-only'), default='all')
     parser.add_argument('--timeout', type=int, default=1200)
+    parser.add_argument('--oauth-redaction', action='store_true', help='apply the guarded OAuth diagnostic-only repair')
+    parser.add_argument('--oauth-principal', action='store_true', help='apply guarded nonblank principal validation; requires diagnostic repair and security review')
+    parser.add_argument('--runtime-http', action='store_true', help='compile with sockets denied, then run real tests under verified loopback control')
     args = parser.parse_args()
     result = probe(args.audit_custody.resolve(), args.custody.resolve(), args.toolchain_custody.resolve(),
-                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive)
+                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive, args.runtime_http, args.oauth_redaction, args.oauth_principal)
     print(json.dumps(result, indent=2))
     return result['result_exit_code']
 

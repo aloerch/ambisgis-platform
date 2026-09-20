@@ -1,0 +1,144 @@
+{
+  "captured_at": "2026-09-20T22:00:42.942476+00:00",
+  "reconciled_at": "2026-09-20T22:02:04.222001+00:00",
+  "read_only": true,
+  "mutation_count": 0,
+  "identity": {
+    "login": "aloerch",
+    "id": 15285626,
+    "node_id": "MDQ6VXNlcjE1Mjg1NjI2"
+  },
+  "repository": {
+    "id": 1376927351,
+    "node_id": "R_kgDOUhI-dw",
+    "full_name": "aloerch/ambisgis-platform"
+  },
+  "project_identity": {
+    "id": "PVT_kwHOAOk9es4Bj_k-",
+    "number": 2,
+    "owner": {
+      "id": "MDQ6VXNlcjE1Mjg1NjI2",
+      "__typename": "User",
+      "login": "aloerch"
+    },
+    "public": true,
+    "closed": false
+  },
+  "phase_selection": {
+    "phase": "B",
+    "integration_commit": "a9ec191658be027b40118fd35e145729202fe55d",
+    "merged_reviewed_tree": "c792696b68a235dc1d21260858b81fe6e4beb5f6",
+    "reviewed_pr56_head": "35d84b5fe80c246e90636ddf8ee5855b94460452",
+    "prerequisite_merges": {
+      "54": "8393fc46b9b979b05faa416f5998e0159ecd1e33",
+      "55": "bb3680802d7f7d5c500180ec12e66d32d81d0aa0",
+      "57": "8bf1217c8c078c26558da4b3318feda07a9c4ce1",
+      "56": "a9ec191658be027b40118fd35e145729202fe55d"
+    },
+    "all_merges_are_ancestors": true,
+    "phase_a_remaining": "none after exact prepared-head owner merge"
+  },
+  "initial_audit_exit_code": 1,
+  "initial_audit_all_checks_passed": false,
+  "initial_failed_comparison": "views_fields_repository_links_unchanged",
+  "reconciliation_complete": true,
+  "engineering_blocked": false,
+  "task_count": 66,
+  "pr_item_count": 4,
+  "total_items": 70,
+  "archived_item_count": 0,
+  "field_count": 24,
+  "view_count": 7,
+  "repository_link_count": 15,
+  "delivery": {
+    "FND-02": "In progress",
+    "GOV-02": "Merged"
+  },
+  "queue_filter": "is:pr is:open",
+  "queue_membership": [],
+  "pagination": {
+    "connections": 110,
+    "pages": 110,
+    "terminal_connections": 110,
+    "archive_query": "archivedStates:[ARCHIVED,NOT_ARCHIVED]"
+  },
+  "preserved_checks": {
+    "66_unique_tasks": true,
+    "four_unique_pr_contents": true,
+    "total_items_70": true,
+    "all_item_identities_unchanged": true,
+    "all_archive_decisions_unchanged": true,
+    "all_task_fields_unchanged": true,
+    "no_parent_acceptance_on_pr_items": true,
+    "parent_evidence_unchanged": true,
+    "all_pagination_complete": true,
+    "fnd02_in_progress_gov02_merged": true,
+    "all_prerequisites_owner_merged": true,
+    "pr56_expected_reviewed_head": true
+  },
+  "reconciled_view_changes": [
+    {
+      "view_id": "PVTV_lAHOAOk9es4Bj_k-zgLt_dE",
+      "number": 2,
+      "name": "Product backlog",
+      "changed_fields": [
+        "updatedAt",
+        "configuration.visibleFields order"
+      ],
+      "previous_updated_at": "2026-09-20T20:03:28Z",
+      "observed_updated_at": "2026-09-20T21:48:59Z",
+      "changed_field": {
+        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+        "name": "Delivery",
+        "dataType": "SINGLE_SELECT"
+      },
+      "previous_one_based_position": 14,
+      "observed_one_based_position": 4,
+      "all_other_view_values_unchanged": true,
+      "disposition": "Preserve observed manual configuration; no corrective mutation or repeated owner UI step."
+    }
+  ],
+  "item_changes": [
+    {
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72aCk",
+      "content": {
+        "__typename": "PullRequest",
+        "id": "PR_kwDOUhI-d88AAAABEVLddg",
+        "number": 56,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/56",
+        "repository": {
+          "nameWithOwner": "aloerch/ambisgis-platform"
+        }
+      },
+      "changed_keys": [
+        "field_values",
+        "values"
+      ],
+      "old_values": {
+        "Title": "GOV-02: expose incremental PR reviews and reconcile merged tracking",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/56 ; parent task https://github.com/aloerch/ambisgis-platform/issues/9",
+        "Status": "Todo"
+      },
+      "new_values": {
+        "Title": "GOV-02: expose incremental PR reviews and reconcile merged tracking",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/56 ; parent task https://github.com/aloerch/ambisgis-platform/issues/9",
+        "Status": "Done"
+      },
+      "old_archive": false,
+      "new_archive": false
+    }
+  ],
+  "limitations": [
+    "Readback compares represented task fields; inherited adapter does not expand assignee/label values.",
+    "Queue membership derives from complete API content/state/filter readback; browser UI inspection was not performed.",
+    "A read-only audit cannot itself verify who changed view configuration."
+  ],
+  "raw_evidence_directory": "/home/revelberry/Projects/AmbisGIS/source-archives/java-http-auth/project-before",
+  "immutable_baseline": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/pr-review-visibility/preparation-20260920-01/project/readback.json",
+    "sha256": "771c2e3ef5827396c23096b7adecb53f1c70b5016bd04e67519ef178a48f8a7f",
+    "captured_at": "2026-09-20T21:39:28.543196+00:00",
+    "copied_to_audit": false
+  },
+  "fresh_readback_sha256": "dd75e6b79f60a333230313babaf66fcb3ca4377339ca8b84c4cf7cb79852c9e3"
+}

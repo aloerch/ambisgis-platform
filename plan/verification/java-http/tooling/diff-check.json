@@ -1,0 +1,17 @@
+{
+  "ordinary_staged_diff_check_exit": 2,
+  "reason": "New unified diff files contain required single-space blank context markers. No added source line has trailing whitespace. Patch application and guarded outputs passed in native runs.",
+  "non_patch_staged_diff_check_exit": 0,
+  "patches": [
+    {
+      "path": "build-support/java/fixtures/http/xml.patch",
+      "added_source_trailing_whitespace_lines": [],
+      "blank_context_markers": 2
+    },
+    {
+      "path": "build-support/java/fixtures/http/mapfish.patch",
+      "added_source_trailing_whitespace_lines": [],
+      "blank_context_markers": 7
+    }
+  ]
+}

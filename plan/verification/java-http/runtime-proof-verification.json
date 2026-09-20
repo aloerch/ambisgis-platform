@@ -1,0 +1,50 @@
+{
+  "purpose": "independent retained-proof verification, not repeated native execution",
+  "runs": [
+    {
+      "run": "xml-http-04",
+      "result_sha256": "bf4578d2407a88609df765ffcdd02f90ce153a1415d857722405bb1df9bc930c",
+      "loopback_sha256": "6f0757b16be7188f564ad070a4e17382d96a7b9ef1dac3ab34fbf897d18108fc",
+      "snapshot_receipt_current_hashes_equal": true,
+      "probes": {
+        "schema_version": 1,
+        "parent_probes": 79,
+        "exec_child_probes": 79,
+        "all_passed": true
+      },
+      "datagram_packets_received": 0,
+      "broker_sockets_closed": true,
+      "task_process_group_stopped": true
+    },
+    {
+      "run": "mapfish-http-05",
+      "result_sha256": "291f825004a061c505e1046d2222d773abb38586fca3d254d6279159d349089e",
+      "loopback_sha256": "6f0757b16be7188f564ad070a4e17382d96a7b9ef1dac3ab34fbf897d18108fc",
+      "snapshot_receipt_current_hashes_equal": true,
+      "probes": {
+        "schema_version": 1,
+        "parent_probes": 79,
+        "exec_child_probes": 79,
+        "all_passed": true
+      },
+      "datagram_packets_received": 0,
+      "broker_sockets_closed": true,
+      "task_process_group_stopped": true
+    },
+    {
+      "run": "oauth-http-principal-01",
+      "result_sha256": "fe9f1091fcf0266dd10abed4a6f07c138b0163729461b753a434f0abd8ec2862",
+      "loopback_sha256": "6f0757b16be7188f564ad070a4e17382d96a7b9ef1dac3ab34fbf897d18108fc",
+      "snapshot_receipt_current_hashes_equal": true,
+      "probes": {
+        "schema_version": 1,
+        "parent_probes": 79,
+        "exec_child_probes": 79,
+        "all_passed": true
+      },
+      "datagram_packets_received": 0,
+      "broker_sockets_closed": true,
+      "task_process_group_stopped": true
+    }
+  ]
+}

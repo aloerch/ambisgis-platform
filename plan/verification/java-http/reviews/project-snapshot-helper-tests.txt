@@ -1,0 +1,12 @@
+test_existing_task_change_is_reported_without_correction (test_snapshot.SnapshotTests.test_existing_task_change_is_reported_without_correction) ... ok
+test_only_new_linked_pr_is_allowed (test_snapshot.SnapshotTests.test_only_new_linked_pr_is_allowed) ... ok
+test_other_head_is_not_the_expected_review (test_snapshot.SnapshotTests.test_other_head_is_not_the_expected_review) ... ok
+test_parent_acceptance_cannot_be_copied_to_pr (test_snapshot.SnapshotTests.test_parent_acceptance_cannot_be_copied_to_pr) ... ok
+test_reconciled_baseline_preserves_human_view_order (test_snapshot.SnapshotTests.test_reconciled_baseline_preserves_human_view_order) ... ok
+test_transport_refuses_mutations_before_subprocess (test_snapshot.SnapshotTests.test_transport_refuses_mutations_before_subprocess) ... ok
+test_view_reorder_is_reported_without_reset (test_snapshot.SnapshotTests.test_view_reorder_is_reported_without_reset) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.028s
+
+OK

@@ -1,0 +1,25 @@
+{
+  "task": "FND-02",
+  "repository": "aloerch/ambisgis-platform",
+  "branch": "fnd-02/java-http-auth-compatibility",
+  "base": "a9ec191658be027b40118fd35e145729202fe55d",
+  "tested_implementation_head": "54b2f8cf13edad7075a13b3636e9163697d16560",
+  "tested_implementation_tree": "6e9bc21f74fde6b7cccd62b0a5dfa276d7da7021",
+  "pr": {
+    "id": "PR_kwDOUhI-d88AAAABEWBeXA",
+    "number": 58,
+    "url": "https://github.com/aloerch/ambisgis-platform/pull/58",
+    "state": "OPEN",
+    "headRefName": "fnd-02/java-http-auth-compatibility",
+    "headRefOid": "54b2f8cf13edad7075a13b3636e9163697d16560",
+    "baseRefName": "ambisgis/main",
+    "author": {
+      "login": "aloerch"
+    }
+  },
+  "project_item": "PVTI_lAHOAOk9es4Bj_k-zg73LaU",
+  "project_mutations": 2,
+  "project_outcome": "project/publication-outcome.json",
+  "release_or_security_acceptance": false,
+  "final_publication_commit": "Documentary follow-up to this implementation head; actual final head is recorded in PR readback and final task issue comment."
+}

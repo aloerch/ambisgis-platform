@@ -1,0 +1,38 @@
+{
+  "native_reexecution": false,
+  "reports": [
+    {
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/xml-02/work/source",
+      "counts": {
+        "tests": 298,
+        "failures": 0,
+        "errors": 1,
+        "skipped": 4,
+        "passed": 293
+      },
+      "reports": 35
+    },
+    {
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/mapfish-03/work/source",
+      "counts": {
+        "tests": 84,
+        "failures": 0,
+        "errors": 24,
+        "skipped": 6,
+        "passed": 54
+      },
+      "reports": 24
+    },
+    {
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/oauth-native-01/work/source",
+      "counts": {
+        "tests": 684,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "passed": 683
+      },
+      "reports": 138
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+test_changed_agent_bytes_fail (test_startup_agent.StartupAgentTests.test_changed_agent_bytes_fail) ... ok
+test_missing_or_wrong_retained_identity_fails (test_startup_agent.StartupAgentTests.test_missing_or_wrong_retained_identity_fails) ... ok
+test_only_pinned_retained_agent_is_selected (test_startup_agent.StartupAgentTests.test_only_pinned_retained_agent_is_selected) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK

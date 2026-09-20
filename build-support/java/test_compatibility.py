@@ -8,7 +8,7 @@ import compatibility
 
 
 class CompatibilityTests(unittest.TestCase):
-    def fixture(self, root, xml='<testsuite name="org.geotools.xml.SchemaResolverTest" tests="2" failures="0" errors="0" skipped="0"/>', network=True, mutate=False, code=0, database=None):
+    def fixture(self, root, xml='<testsuite name="org.geotools.xml.SchemaResolverTest" tests="2" failures="0" errors="0" skipped="0"><testcase classname="org.geotools.xml.SchemaResolverTest" name="first"/><testcase classname="org.geotools.xml.SchemaResolverTest" name="second"/></testsuite>', network=True, mutate=False, code=0, database=None):
         def prepare(_custody, output):
             (output / 'source').mkdir(parents=True)
             (output / 'source/pom.xml').write_text('<project/>')
@@ -52,18 +52,18 @@ class CompatibilityTests(unittest.TestCase):
             root = Path(tmp)
             result = self.fixture(root, xml='<broken')
             self.assertEqual(result['result_exit_code'], 1)
-            self.assertEqual(result['finalization_error']['type'], 'ParseError')
+            self.assertEqual(result['finalization_error']['type'], 'AuditError')
             self.assertTrue((root / 'output/result.json').is_file())
 
     def test_no_matching_target_tests_is_not_success(self):
         with tempfile.TemporaryDirectory() as tmp:
-            result = self.fixture(Path(tmp), xml='<testsuite name="unrelated.Test" tests="2"/>')
+            result = self.fixture(Path(tmp), xml='<testsuite name="unrelated.Test" tests="2" failures="0" errors="0" skipped="0"><testcase classname="unrelated.Test" name="first"/><testcase classname="unrelated.Test" name="second"/></testsuite>')
             self.assertEqual(result['result_exit_code'], 1)
             self.assertIn('no executed tests', result['finalization_error']['message'])
 
     def test_only_skipped_target_is_not_success(self):
         with tempfile.TemporaryDirectory() as tmp:
-            result = self.fixture(Path(tmp), xml='<testsuite name="org.geotools.xml.Test" tests="2" skipped="2"/>')
+            result = self.fixture(Path(tmp), xml='<testsuite name="org.geotools.xml.Test" tests="2" failures="0" errors="0" skipped="2"><testcase classname="org.geotools.xml.Test" name="first"><skipped/></testcase><testcase classname="org.geotools.xml.Test" name="second"><skipped/></testcase></testsuite>')
             self.assertEqual(result['result_exit_code'], 1)
 
     def test_missing_network_receipt_is_not_success(self):
@@ -104,7 +104,7 @@ class CompatibilityTests(unittest.TestCase):
 
     def test_native_failure_cannot_be_masked_by_zero_maven_exit(self):
         with tempfile.TemporaryDirectory() as tmp:
-            result = self.fixture(Path(tmp), xml='<testsuite name="org.geotools.xml.Test" tests="2" errors="1"/>')
+            result = self.fixture(Path(tmp), xml='<testsuite name="org.geotools.xml.Test" tests="2" failures="0" errors="1" skipped="0"><testcase classname="org.geotools.xml.Test" name="first"><error/></testcase><testcase classname="org.geotools.xml.Test" name="second"/></testsuite>')
             self.assertEqual(result['exit_code'], 0)
             self.assertEqual(result['result_exit_code'], 1)
 

@@ -1,0 +1,29 @@
+{
+  "namespace_probe": {
+    "command": [
+      "unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "true"
+    ],
+    "exit_code": 1,
+    "stderr": "unshare: unshare failed: Operation not permitted",
+    "attempts": 1
+  },
+  "loopback_bind": {
+    "IPv4": true,
+    "IPv6": true
+  },
+  "landlock_abi": 10,
+  "landlock_rejected_as_sufficient_isolation": "network rules select ports, not destination addresses",
+  "seccomp_user_notification_supported": true,
+  "unprivileged_SO_BINDTODEVICE_lo": true,
+  "host_firewall_changed": false,
+  "host_security_changed": false,
+  "references": [
+    "https://www.kernel.org/doc/html/v7.2/userspace-api/landlock.html",
+    "https://www.kernel.org/doc/html/latest/userspace-api/seccomp_filter.html"
+  ],
+  "scope": "capability discovery only; complete runtime enforcement requires separate tested receipts"
+}

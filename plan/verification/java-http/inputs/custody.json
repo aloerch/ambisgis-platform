@@ -1,0 +1,9 @@
+{
+  "snapshot": "/home/revelberry/Projects/AmbisGIS/source-archives/java-http-auth/maven-custody-snapshot-01.json",
+  "sha256": "1aceac6b1a24a4327b43754de9f88d12619057d6b498079f88dfe5b71f3fe18b",
+  "file_count": 30971,
+  "size": 1123830406,
+  "parent_custody": "/home/revelberry/Projects/AmbisGIS/source-archives/java-compatibility/maven",
+  "parent_preserved": true,
+  "source_build_acceptance": false
+}

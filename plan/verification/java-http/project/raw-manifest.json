@@ -1,0 +1,40 @@
+{
+  "directory": "/home/revelberry/Projects/AmbisGIS/source-archives/java-http-auth/project-before",
+  "files": [
+    {
+      "path": "manifest.json",
+      "bytes": 715,
+      "sha256": "4a72fc0e1b89a9e7140bd9331bb5251ec82e20658e4c029aa7807dbca6053b24"
+    },
+    {
+      "path": "outcome.json",
+      "bytes": 7450,
+      "sha256": "ed3dcb18209b9001082bc748764d75fb3c00b8ae5cf53cadb93171f773160239"
+    },
+    {
+      "path": "pagination.json",
+      "bytes": 36796,
+      "sha256": "6f9f0f68c7621bdff1d7550b2cde9e0212d215c31aed582be9134a3bf806a77b"
+    },
+    {
+      "path": "read-only-audit.py",
+      "bytes": 12732,
+      "sha256": "78adb97a65b306147ee3ab0b4cbd58c2bd42e2055fb2e4de40e3832bf29c7fca"
+    },
+    {
+      "path": "readback-requests.jsonl",
+      "bytes": 186319,
+      "sha256": "127f8f8590b5e41e917d557a6a2c754498a0be07805246b5df4413ffb3d8f184"
+    },
+    {
+      "path": "readback.json",
+      "bytes": 292707,
+      "sha256": "dd75e6b79f60a333230313babaf66fcb3ca4377339ca8b84c4cf7cb79852c9e3"
+    },
+    {
+      "path": "reconciliation.json",
+      "bytes": 5098,
+      "sha256": "51e4f8d66bf8bb0c35b1753fcdb86fc78e092c57522ef221e4afd06b0a8085e5"
+    }
+  ]
+}

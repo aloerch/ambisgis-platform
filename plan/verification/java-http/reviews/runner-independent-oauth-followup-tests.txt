@@ -1,0 +1,12 @@
+test_bad_expected_output_fails_before_mutation_or_receipt (test_oauth_fixture.OAuthFixtureIntegrityTests.test_bad_expected_output_fails_before_mutation_or_receipt) ... ok
+test_changed_source_rejected_before_any_overlay (test_oauth_fixture.OAuthFixtureIntegrityTests.test_changed_source_rejected_before_any_overlay) ... ok
+test_existing_fixture_is_preserved_before_source_repair (test_oauth_fixture.OAuthFixtureIntegrityTests.test_existing_fixture_is_preserved_before_source_repair) ... ok
+test_later_input_mismatch_does_not_partially_apply_group (test_oauth_fixture.OAuthFixtureIntegrityTests.test_later_input_mismatch_does_not_partially_apply_group) ... ok
+test_principal_requires_diagnostic_repair_before_source_access (test_oauth_fixture.OAuthFixtureIntegrityTests.test_principal_requires_diagnostic_repair_before_source_access) ... ok
+test_symlink_cannot_mutate_retained_original (test_oauth_fixture.OAuthFixtureIntegrityTests.test_symlink_cannot_mutate_retained_original) ... ok
+test_unrepaired_overlay_preserves_sources_and_reports_actual_fixture_scope (test_oauth_fixture.OAuthFixtureIntegrityTests.test_unrepaired_overlay_preserves_sources_and_reports_actual_fixture_scope) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.004s
+
+OK

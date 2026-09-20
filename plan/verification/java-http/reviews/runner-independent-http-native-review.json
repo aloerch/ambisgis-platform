@@ -1,0 +1,219 @@
+[
+  {
+    "run": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/mapfish-http-05",
+    "result_sha256": "291f825004a061c505e1046d2222d773abb38586fca3d254d6279159d349089e",
+    "compatibility_runner_sha256": "ef6a3ed51fb9ad1440184d8269296ca0fd5d82158c824ef3028b458676d18e88",
+    "loopback_runner_sha256": "6f0757b16be7188f564ad070a4e17382d96a7b9ef1dac3ab34fbf897d18108fc",
+    "all_checks_passed": true,
+    "checks": {
+      "result_success": true,
+      "retained_tooling_hashes": true,
+      "executed_runner_matches_snapshot_and_review": true,
+      "source_checks_recorded": true,
+      "all_changed_fixture_hashes_match": true,
+      "all_retained_test_and_data_hashes_match": true,
+      "native_report_counts_match": true,
+      "fixture_completion_matches_result": true,
+      "response_events_hash_matches": true,
+      "actual_negative_responses_observed": true
+    },
+    "native_totals": {
+      "tests": 77,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 6
+    },
+    "passed": 71,
+    "skipped_cases": [
+      {
+        "detail": "",
+        "message": "",
+        "name": "testCreateTransformerBBoxDef_Geodetic",
+        "suite": "org.mapfish.print.config.layout.MapBlockTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testCreateTransformerCenterDef_Geodetic",
+        "suite": "org.mapfish.print.config.layout.MapBlockTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testRequireMatrixIdsOrTileOrigin",
+        "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testRequireMatrixIdsOrZoomOffset",
+        "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testRequireMatrixIdsOrFormatSuffix",
+        "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testValidConfig",
+        "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+      }
+    ],
+    "fixture_finalization": {
+      "all_owned_servers_stopped": true,
+      "completed_responses": [
+        {
+          "count": 2,
+          "path": "/500",
+          "status": 500
+        },
+        {
+          "count": 1,
+          "path": "/capabilities",
+          "status": 200
+        },
+        {
+          "count": 1,
+          "path": "/e2egeoserver/gwc/service/wmts",
+          "status": 200
+        },
+        {
+          "count": 4,
+          "path": "/notImage",
+          "status": 200
+        },
+        {
+          "count": 5,
+          "path": "/testServer",
+          "status": 200
+        }
+      ],
+      "events_sha256": "9ee470450f03ec3fc006c17f183b94f19ce5c82f6354c24e0661e80ce428399e",
+      "hosts_unchanged": true,
+      "response_evidence": "headers/body written and response stream closed; client assertions remain authoritative",
+      "servers_ready": 15,
+      "servers_stopped": 16,
+      "target": "mapfish"
+    },
+    "network_probes": {
+      "schema_version": 1,
+      "parent_probes": 79,
+      "exec_child_probes": 79,
+      "all_passed": true
+    },
+    "datagram_packets_received": 0,
+    "task_process_group_stopped": true,
+    "broker_sockets_closed": true,
+    "reviewed_fixture_source_changes": [
+      {
+        "after_sha256": "7cc0db7a965ae77a3882ab33612c4f6ea19883e078c850bf794775e52534cded",
+        "before_sha256": "f2a797ee2f58419976394d6896143d64fa6587cf14cc4e579bc3e7b2d17b8810",
+        "patch_sha256": "f3da0b82d720efb178dd1db05078e14fb84ccb443db39cb450db12c98c003255",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/FakeHttpd.java"
+      },
+      {
+        "after_sha256": "ec37f2cad49281e96cb8eb61659af40950da0144f015b1fe54b0053c2fa7c6b9",
+        "before_sha256": "d26f249635d94d6cefa224e56c73a188cb65fd88c5ef18b5a7bdcfbd077664f0",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/MapTestBasic.java",
+        "reason": "Shared test Config retains native HttpClient behavior and explicitly binds its client source address to loopback; prevents inherited null-address wildcard prebind without changing assertions or runtime enforcement."
+      },
+      {
+        "after_sha256": "636eb50358c422b6a431a8865b97004dd5174d286ce581befd66ac3493eb309f",
+        "before_sha256": "cd7affb851b1015ece6033c53c5458ba4fdadff92f5ffd14c15553bf2c5eb0e8",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/PdfTestCase.java",
+        "reason": "This independent test fixture Config also uses HttpClient3.1; explicitly bind its client source address to loopback so original PDF/legend HTTP response assertions exercise their owned endpoint instead of wildcard-bind denial."
+      },
+      {
+        "after_sha256": "c38144ca9936cc3cd48660a886069a43203a4148020f55447f3e211f394ef4b7",
+        "before_sha256": "1398d1c51df463d3dd4ee39a2e829cc4743f650385a937c81b0aeb70ffed0fa4",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/config/layout/LegendsBlockTest.java",
+        "reason": "This independent test fixture Config also uses HttpClient3.1; explicitly bind its client source address to loopback so original PDF/legend HTTP response assertions exercise their owned endpoint instead of wildcard-bind denial."
+      }
+    ],
+    "retained_fixture_recipe_hashes": {
+      "java/http_fixtures.py": "c98fc2facce8093c6cd031e27a47a2f679551d60954ea8d8f8c34e2ee5e7ef7f",
+      "java/fixtures/http/manifest.json": "9a64834940361661ea290ded6d09a156a2d5b18434501e22a5b499f965b95d2a",
+      "java/fixtures/http/mapfish.patch": "f3da0b82d720efb178dd1db05078e14fb84ccb443db39cb450db12c98c003255",
+      "java/fixtures/http/xml.patch": "c4e6c048019e31f1a881cebc4365abfb7ee64965fef345cbeb4fca7a8665f606"
+    }
+  },
+  {
+    "run": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/xml-http-04",
+    "result_sha256": "bf4578d2407a88609df765ffcdd02f90ce153a1415d857722405bb1df9bc930c",
+    "compatibility_runner_sha256": "778e3fd341d205717bd86ce590430cf06fc7b4ddcbed6d62815bf13c224d486f",
+    "loopback_runner_sha256": "6f0757b16be7188f564ad070a4e17382d96a7b9ef1dac3ab34fbf897d18108fc",
+    "all_checks_passed": true,
+    "checks": {
+      "result_success": true,
+      "retained_tooling_hashes": true,
+      "executed_runner_matches_snapshot_and_review": true,
+      "source_checks_recorded": true,
+      "all_changed_fixture_hashes_match": true,
+      "all_retained_test_and_data_hashes_match": true,
+      "native_report_counts_match": true
+    },
+    "native_totals": {
+      "tests": 302,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 4
+    },
+    "passed": 298,
+    "skipped_cases": [
+      {
+        "detail": "",
+        "message": "",
+        "name": "testOneFeature",
+        "suite": "org.geotools.xml.GMLParserTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testMoreFeatures",
+        "suite": "org.geotools.xml.GMLParserTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testOneFeatureWrite",
+        "suite": "org.geotools.xml.GMLParserTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testOneFeatureWriteWithHints",
+        "suite": "org.geotools.xml.GMLParserTest"
+      }
+    ],
+    "fixture_finalization": {
+      "hosts_unchanged": true,
+      "target": "xml"
+    },
+    "network_probes": {
+      "schema_version": 1,
+      "parent_probes": 79,
+      "exec_child_probes": 79,
+      "all_passed": true
+    },
+    "datagram_packets_received": 0,
+    "task_process_group_stopped": true,
+    "broker_sockets_closed": true,
+    "reviewed_fixture_source_changes": [
+      {
+        "after_sha256": "f30eae787289be18ff439ea7df7caf506fb7e310889c97e2d0881ac43c2ef8f7",
+        "before_sha256": "669f65363a84486d200c9bdbb11a0eb5c1b2a7ab4684a2797e6ab935558c77d7",
+        "patch_sha256": "c4e6c048019e31f1a881cebc4365abfb7ee64965fef345cbeb4fca7a8665f606",
+        "path": "geotools/modules/library/xml/src/test/java/org/geotools/xml/resolver/SchemaCacheTest.java"
+      }
+    ],
+    "retained_fixture_recipe_hashes": {
+      "java/http_fixtures.py": "f9e4421ead041ebd2aa54c6bcf456d213422f3ff5742cbe1791d78654dab6cbc",
+      "java/fixtures/http/manifest.json": "05cee6cf3fb06c1e8a64c2187a13769eebf030b667ba963a6636e871a44ff575",
+      "java/fixtures/http/mapfish.patch": "9592babea5983d1613b7cf0961eb3ca869a442c2396b4489f01998b53c2afbec",
+      "java/fixtures/http/xml.patch": "c4e6c048019e31f1a881cebc4365abfb7ee64965fef345cbeb4fca7a8665f606"
+    }
+  }
+]

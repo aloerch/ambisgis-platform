@@ -1,0 +1,16 @@
+{
+  "task": "FND-02",
+  "phase": "B",
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "repository_node": "R_kgDOUhI-dw",
+  "authenticated_owner": "aloerch",
+  "owner_id": 15285626,
+  "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-http",
+  "branch": "fnd-02/java-http-auth-compatibility",
+  "base": "a9ec191658be027b40118fd35e145729202fe55d",
+  "base_tree": "c792696b68a235dc1d21260858b81fe6e4beb5f6",
+  "phase_a_remaining": false,
+  "claim": "https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5752979174",
+  "original_plan_uncommitted_status_preserved": true
+}

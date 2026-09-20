@@ -1,0 +1,34 @@
+{
+  "retained_directory": "/home/revelberry/Projects/AmbisGIS/source-archives/java-http-auth/project-published",
+  "files": [
+    {
+      "path": "outcome.json",
+      "bytes": 4334,
+      "sha256": "327f88ee53e27c3676b58fc8d7da5f43e26e75d9c5e69d347b38218b02eadb01"
+    },
+    {
+      "path": "pagination.json",
+      "bytes": 37127,
+      "sha256": "eb6944c14c35a890178e753adf77c336dc09d892ea60ffe460f713422db6330a"
+    },
+    {
+      "path": "readback-requests.jsonl",
+      "bytes": 189065,
+      "sha256": "568377af373705b89bc0a303ecd9150aa6d614e4445318a17eff6358c7de318a"
+    },
+    {
+      "path": "readback.json",
+      "bytes": 296067,
+      "sha256": "ec7e6d04bc77837e7e3000786211114b636260b163fe41d3f5bd91775d8a2778"
+    },
+    {
+      "path": "snapshot.py",
+      "bytes": 15604,
+      "sha256": "112e2bbd74d0a8528d58531b5828a06c5331be544716270fabc85e72370094f5"
+    }
+  ],
+  "mutation_receipt": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-http-auth/project-add58/result.json",
+    "sha256": "1e89b755df3858ac280670216e7cd6396208d8009470be9bbdde04d0baf1e850"
+  }
+}

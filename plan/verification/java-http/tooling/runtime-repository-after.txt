@@ -1,0 +1,9 @@
+test_existing_different_bytes_are_not_overwritten (test_runtime_repository.RuntimeRepositoryTests.test_existing_different_bytes_are_not_overwritten) ... ok
+test_missing_provider_staged_with_origin_and_verified_bytes (test_runtime_repository.RuntimeRepositoryTests.test_missing_provider_staged_with_origin_and_verified_bytes) ... ok
+test_publisher_sidecar_is_retained_without_overwriting_normalized_cache (test_runtime_repository.RuntimeRepositoryTests.test_publisher_sidecar_is_retained_without_overwriting_normalized_cache) ... ok
+test_retained_drift_prevents_staging (test_runtime_repository.RuntimeRepositoryTests.test_retained_drift_prevents_staging) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK

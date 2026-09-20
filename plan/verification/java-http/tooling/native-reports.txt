@@ -1,0 +1,11 @@
+test_actual_records_required_not_claimed_suite_count (test_native_reports.NativeReportTests.test_actual_records_required_not_claimed_suite_count) ... ok
+test_child_failure_cannot_be_hidden_by_zero_counter (test_native_reports.NativeReportTests.test_child_failure_cannot_be_hidden_by_zero_counter) ... ok
+test_counts_and_case_identities_are_required (test_native_reports.NativeReportTests.test_counts_and_case_identities_are_required) ... ok
+test_encoding_aware_dtd_guard_retained_for_reports (test_native_reports.NativeReportTests.test_encoding_aware_dtd_guard_retained_for_reports) ... ok
+test_flaky_retry_is_not_a_pass (test_native_reports.NativeReportTests.test_flaky_retry_is_not_a_pass) ... ok
+test_pass_skip_and_class_rule_error_accounted (test_native_reports.NativeReportTests.test_pass_skip_and_class_rule_error_accounted) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

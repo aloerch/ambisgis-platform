@@ -1,0 +1,142 @@
+{
+  "purpose": "exact-ldap-input-exposed-by-real-owned-webapp-package",
+  "parent_custody": "/home/revelberry/Projects/AmbisGIS/source-archives/java-compatibility/maven",
+  "destination": "/home/revelberry/Projects/AmbisGIS/source-archives/java-http-auth/maven",
+  "parent_artifacts_verified": 10874,
+  "source_to_binary_correspondence": false,
+  "signature_trust_verified": false,
+  "acquisitions": [
+    {
+      "acquired_at": "2026-09-19T23:06:39.099823+00:00",
+      "classification": "upstream-pom-metadata",
+      "final_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.pom",
+      "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+      "maven_path": "org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.pom",
+      "original_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.pom",
+      "repository": "central",
+      "schema_version": 1,
+      "sha256": "ffaa5b09e0c53eb20469c1282501a52493a80ea7debd36f223ece53edb836dcd",
+      "size": 7424,
+      "status": 200,
+      "declared_licenses": {
+        "declarations": [
+          {
+            "name": "The Apache Software License, Version 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+            "distribution": "repo"
+          }
+        ],
+        "inherited_licenses_resolved": false,
+        "license_approval": false
+      }
+    },
+    {
+      "schema_version": 1,
+      "repository": "central",
+      "maven_path": "org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.jar",
+      "original_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.jar",
+      "final_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.jar",
+      "status": 200,
+      "sha256": "a04716f816153f7a83e8f80c5e6aa774158d6bcbcf916fe0eee6316734738d0f",
+      "size": 378219,
+      "classification": "artifact",
+      "acquired_at": "2026-09-20T22:18:03.678050+00:00",
+      "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+      "notices": [
+        {
+          "entry": "META-INF/notice.txt",
+          "entry_index": 338,
+          "size": 785,
+          "sha256": "6905e7f41e0fdf32dc8793d56e7810106d81175cde4af75e9b46723945ffab2e"
+        },
+        {
+          "entry": "META-INF/license.txt",
+          "entry_index": 339,
+          "size": 11355,
+          "sha256": "eaec857d32d071f0a7a59b8dbeccb1cf299b9f0b460246ad3d5050c6370f2a25"
+        }
+      ],
+      "notice_errors": []
+    },
+    {
+      "schema_version": 1,
+      "repository": "central",
+      "maven_path": "org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE-sources.jar",
+      "original_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE-sources.jar",
+      "final_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE-sources.jar",
+      "status": 200,
+      "sha256": "053ff10a5d6a45a061fcfa24dd86cb35a1f13712cdcea513cbcdca26bc463967",
+      "size": 358742,
+      "classification": "artifact",
+      "acquired_at": "2026-09-20T22:18:03.872135+00:00",
+      "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+      "notices": [],
+      "notice_errors": []
+    },
+    {
+      "schema_version": 1,
+      "repository": "central",
+      "maven_path": "org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.jar.sha1",
+      "original_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.jar.sha1",
+      "final_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.jar.sha1",
+      "status": 200,
+      "sha256": "c6dee5bfb21bfdce6d6a38164a30ea70a04652c68a8a43416a8c75201ad01ffc",
+      "size": 40,
+      "classification": "artifact",
+      "acquired_at": "2026-09-20T22:18:04.025557+00:00",
+      "license_status": "unreviewed; artifact and POM retention is not license acceptance"
+    },
+    {
+      "schema_version": 1,
+      "repository": "central",
+      "maven_path": "org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE-sources.jar.sha1",
+      "original_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE-sources.jar.sha1",
+      "final_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE-sources.jar.sha1",
+      "status": 200,
+      "sha256": "8168b804074ac816eb66183d4894f50bef7906113c3dedba854e7d9b32ffe397",
+      "size": 40,
+      "classification": "artifact",
+      "acquired_at": "2026-09-20T22:18:04.314655+00:00",
+      "license_status": "unreviewed; artifact and POM retention is not license acceptance"
+    },
+    {
+      "acquired_at": "2026-09-19T23:06:39.241689+00:00",
+      "classification": "upstream-pom-metadata",
+      "final_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.pom.sha1",
+      "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+      "maven_path": "org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.pom.sha1",
+      "original_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.pom.sha1",
+      "repository": "central",
+      "schema_version": 1,
+      "sha256": "a826f4d63d3d046fa5c76469783cf32469f8d3651e49bd4c597cea3e2f14dcc0",
+      "size": 40,
+      "status": 200
+    },
+    {
+      "schema_version": 1,
+      "repository": "central",
+      "maven_path": "org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.jar.asc",
+      "original_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.jar.asc",
+      "final_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE.jar.asc",
+      "status": 200,
+      "sha256": "47be446dd504756318fdf941ea085d953c2f20bab494493dd4238a1d10deb7f5",
+      "size": 475,
+      "classification": "artifact",
+      "acquired_at": "2026-09-20T22:18:04.599285+00:00",
+      "license_status": "unreviewed; artifact and POM retention is not license acceptance"
+    },
+    {
+      "schema_version": 1,
+      "repository": "central",
+      "maven_path": "org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE-sources.jar.asc",
+      "original_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE-sources.jar.asc",
+      "final_url": "https://repo.maven.apache.org/maven2/org/springframework/ldap/spring-ldap-core/2.3.2.RELEASE/spring-ldap-core-2.3.2.RELEASE-sources.jar.asc",
+      "status": 200,
+      "sha256": "924a9f300e83a3ab3957232bd63daab6456330e077e41dda2687d3c68b4ac048",
+      "size": 475,
+      "classification": "artifact",
+      "acquired_at": "2026-09-20T22:18:04.897177+00:00",
+      "license_status": "unreviewed; artifact and POM retention is not license acceptance"
+    }
+  ]
+}
