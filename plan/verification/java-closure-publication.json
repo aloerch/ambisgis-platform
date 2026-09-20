@@ -1,0 +1,16 @@
+{
+  "recorded_at": "2026-09-20T19:52:43.288528+00:00",
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "pr": 57,
+  "url": "https://github.com/aloerch/ambisgis-platform/pull/57",
+  "state": "OPEN",
+  "initial_tested_head": "6bf922428076e8f238431cefa12cea1ba4987d2a",
+  "head_branch": "fnd-02/java-source-compatibility",
+  "base_branch": "fnd-02/java-toolchain-resolution",
+  "base_head": "9e1b2e1bca26d00b200a39f58a4a0890d43fca98",
+  "no_pr_merged": true,
+  "project_item_added": false,
+  "task_delivery": "In progress",
+  "acceptance": "bounded engineering checkpoint only; no source/product/legal/security/release acceptance"
+}

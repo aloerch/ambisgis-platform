@@ -5,9 +5,11 @@ Repository: `aloerch/ambisgis-platform`, database ID `1376927351`, node
 worktree: `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure`.
 Branch: `fnd-02/java-source-compatibility`, based on corrected PR #55 head
 `9e1b2e1bca26d00b200a39f58a4a0890d43fca98`. FND-02 remains **In progress**.
-No PR was merged by this session. The published engineering PR and its exact
-final tested head are recorded in its review summary and the session handoff;
-verify the live head before any owner-approved merge.
+The new engineering checkpoint is **[PR #57](https://github.com/aloerch/ambisgis-platform/pull/57), open and unmerged**,
+initial implementation/tested head `6bf922428076e8f238431cefa12cea1ba4987d2a`.
+The publication follow-up changes handoff/status records only. Its exact final
+tested review head is in the PR summary and session handoff; verify the live
+head before any owner-approved merge. No PR was merged by this session.
 
 ## OWNER ACTIONS
 
@@ -16,7 +18,7 @@ verify the live head before any owner-approved merge.
 | [#54](https://github.com/aloerch/ambisgis-platform/pull/54) | `b15a785f350d347c0c2c4ff07ac6e5681c1d9746` | First Java checkpoint: review audit and normal integration of owner-merged main, then separately authorize merge to `ambisgis/main`. Accepts audit evidence, not Java compilation, source closure or product baseline. |
 | [#55](https://github.com/aloerch/ambisgis-platform/pull/55) | `9e1b2e1bca26d00b200a39f58a4a0890d43fca98` | After #54 merges, verify actual main, integrate normally, retarget to main and recheck remaining diff/tests/current head. Accepts retained toolchain/dependency resolution, not runtime or source/legal acceptance. Never merge into an obsolete audit branch. |
 | [#56](https://github.com/aloerch/ambisgis-platform/pull/56) | `28c9d79757b98bdedd44b5d7486835f9e4b71e63` | Independent governance review/merge to main. Accepts narrow Project visibility correction and preservation regression, not Java/product progress. |
-| Engineering branch above | Exact final tested head in published PR summary | Review new source recovery/compile/native evidence as a separate checkpoint. Merge only after #55 is owner-merged, actual base is verified/retargeted and current diff/tests are reviewed. No acceptance of unresolved source, license/security, full tuple or release gates. |
+| [#57](https://github.com/aloerch/ambisgis-platform/pull/57) | Initial implementation `6bf922428076e8f238431cefa12cea1ba4987d2a`; final tested head in PR summary | Review new source recovery/compile/native evidence as a separate checkpoint. Merge only after #55 is owner-merged, actual base is verified/retargeted and current diff/tests are reviewed. No acceptance of unresolved source, license/security, full tuple or release gates. |
 
 At reconciliation #54 and #55 both read `stack: null`, `stackEntry: null`:
 these are ordinary dependent branch PRs, not a GitHub-managed stack. The original
