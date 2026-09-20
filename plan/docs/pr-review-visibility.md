@@ -6,6 +6,11 @@ items. FND-02 stays **In progress** with all of its fields unchanged. The count
 is **66 planned task issues + 2 PR items = 68 Project items**, not 68 tasks.
 GOV-02 is **Merged** after the actual owner merge of PR #52; it is not Released.
 
+This separate correction is open for review in [PR #56](https://github.com/aloerch/ambisgis-platform/pull/56),
+branch `gov-02/pr-review-visibility`, targeting `ambisgis/main`. It may be
+reviewed independently of Java PRs #54/#55. PR #56 was not added as a Project
+item because the current authorization names only #54/#55.
+
 ## Verified identity and exact changes
 
 Readback on 2026-09-20 verified authenticated `aloerch` (ID `15285626`),
