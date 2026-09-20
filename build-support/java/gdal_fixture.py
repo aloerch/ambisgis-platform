@@ -39,11 +39,12 @@ def prepare(prefix, archive, output):
     staged = []
     for name in ('gdal_translate', 'gdaladdo', 'gdalwarp'):
         source = prefix / 'bin' / name
-        if not any(row['path'] == str(source) for row in verified):
+        expected_binary = next((row['sha256'] for row in verified if row['path'] == str(source)), None)
+        if expected_binary is None:
             raise ValueError('required GDAL binary absent from frozen archive')
         destination = binaries / name
         shutil.copy2(source, destination)
-        if sha(source) != sha(destination):
+        if sha(destination) != expected_binary:
             raise ValueError('staged GDAL binary changed')
         staged.append({'path': str(destination), 'sha256': sha(destination)})
     return {'archive': str(archive), 'archive_sha256': expected['sha256'],

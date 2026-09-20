@@ -1,5 +1,6 @@
 """Check retained native archive handling before exposing binaries to Java tests."""
 import os
+import shutil
 from pathlib import Path
 import tarfile
 import tempfile
@@ -39,6 +40,18 @@ class GdalFixtureTests(unittest.TestCase):
             with patch('gdal_fixture.json.loads', return_value=expected), self.assertRaisesRegex(ValueError, 'differs'):
                 gdal_fixture.prepare(prefix, archive, output)
             self.assertFalse((output / 'native-bin').exists())
+
+    def test_binary_changed_between_verification_and_copy_is_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            prefix, archive, output, expected = self.inputs(Path(tmp))
+            original_copy = shutil.copy2
+            def changed_copy(source, destination):
+                source.write_bytes(b'changed after archive verification')
+                return original_copy(source, destination)
+            with patch('gdal_fixture.json.loads', return_value=expected), \
+                 patch('gdal_fixture.shutil.copy2', side_effect=changed_copy), \
+                 self.assertRaisesRegex(ValueError, 'staged GDAL binary changed'):
+                gdal_fixture.prepare(prefix, archive, output)
 
     def test_changed_archive_refused_before_staging(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -1,0 +1,9 @@
+test_binary_changed_between_verification_and_copy_is_refused (test_gdal_fixture.GdalFixtureTests.test_binary_changed_between_verification_and_copy_is_refused) ... ok
+test_changed_archive_refused_before_staging (test_gdal_fixture.GdalFixtureTests.test_changed_archive_refused_before_staging) ... ok
+test_changed_installed_binary_refused_before_staging (test_gdal_fixture.GdalFixtureTests.test_changed_installed_binary_refused_before_staging) ... ok
+test_verified_hardlinks_preserve_all_original_bytes (test_gdal_fixture.GdalFixtureTests.test_verified_hardlinks_preserve_all_original_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.007s
+
+OK
