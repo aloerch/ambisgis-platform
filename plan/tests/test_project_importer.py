@@ -297,6 +297,31 @@ class ProjectImporterTests(unittest.TestCase):
         self.assertEqual(item, before_item)
         self.assertEqual(self.api.writes, [])
 
+    def test_extra_pr_items_and_review_view_survive_dry_run_and_apply(self):
+        project = self.seed_complete()
+        for number, archived in ((54, False), (55, True)):
+            project['items'].append({
+                'id': f'TEST_PR_ITEM_{number}', 'isArchived': archived,
+                'type': 'PULL_REQUEST',
+                'content': {'__typename': 'PullRequest', 'id': f'TEST_PR_{number}',
+                            'number': number,
+                            'url': f'https://github.com/aloerch/ambisgis-platform/pull/{number}',
+                            'repository': {'nameWithOwner': 'aloerch/ambisgis-platform'}},
+                'values': {'Evidence': f'Human checkpoint evidence {number}'}})
+        project['views'].append({'id': 'TEST_PR_REVIEW_VIEW', 'name': 'PR review queue',
+                                 'layout': 'TABLE_LAYOUT', 'filter': 'is:pr is:open'})
+        before = copy.deepcopy(project)
+        self.run_import()
+        report = self.run_import(apply=True)
+        self.assertEqual(report['verified_issues'], 66)
+        self.assertEqual(len(project['items']), 68)
+        self.assertEqual(project, before)
+        self.assertEqual(self.api.writes, [])
+        for item in project['items'][-2:]:
+            self.assertNotIn('Task ID', item['values'])
+            self.assertNotIn('Delivery', item['values'])
+        self.assertEqual(len(json.loads(self.receipt.read_text())['issues']), 66)
+
     def test_checked_acceptance_conflicts_without_erasing_human_progress(self):
         self.seed_complete()
         issue = self.issues['FND-01']

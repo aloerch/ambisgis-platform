@@ -44,6 +44,17 @@ Open the created Project and configure each saved view using its view menu, then
 
 Record actual saved view IDs, supported configuration readback and attributed owner verification in GOV-02. GitHub distinguishes [board columns from horizontal grouping](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/customizing-the-board-layout). The manifest uses `column_field` for the former and `group_by` for the latter; these are local desired settings, not GraphQL input names. Merely creating a view name/layout does not satisfy its acceptance.
 
+## Incremental PR reviews
+
+The task views are complemented by the existing [PR review queue](https://github.com/users/aloerch/projects/2/views/7),
+filtered `is:pr is:open` independently of a parent task's Delivery/Review gate.
+See [its verified setup and incremental-add procedure](pr-review-visibility.md).
+At the 2026-09-20 capture, 66 planned task issues plus PRs #54/#55 total 68
+Project items. PRs carry their own content/item identity and Evidence, never
+another copy of the parent's Task ID. The importer preserves extra PR items
+(including archive state) and this additional manual view; it still verifies
+66 planned tasks. Do not rerun the full importer to add review checkpoints.
+
 ## Tests and limits
 
 Run `python3 -m unittest discover -s tests -v` and `python3 tools/validate_package.py --require-schemas` in the validation environment. Stateful fake API tests cover collisions, pagination, scope errors, partial GraphQL failures, response loss, interruption, body conflicts, human progress and unchanged reruns. Live receipt/readback evidence is separate. These are governance/package tests, not database, rendering, browser, notebook, security-release or GIS acceptance tests.

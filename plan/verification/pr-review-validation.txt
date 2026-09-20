@@ -1,0 +1,34 @@
+PR review visibility validation — 2026-09-20
+Repository: aloerch/ambisgis-platform (1376927351)
+Branch: gov-02/pr-review-visibility
+Base: fc77ab978e567ce5d55e3428d1249a3b332da09d
+Worktree: /home/revelberry/Projects/AmbisGIS/ambisgis-platform-pr-review
+Working directory for checks: plan/
+
+Verified retained environment: /tmp/ambisgis-validation-venv/bin/python
+Python 3.13; jsonschema imported from that environment.
+The default host Python lacks jsonschema; no package checks were attempted
+in that host environment. See pr-review-preflight-diagnostics.txt.
+
+PATH=/tmp/ambisgis-validation-venv/bin:$PATH python3 -m unittest discover -s tests -v
+Exit 0: 176 tests passed in 7.918 seconds, no failures/errors/skips.
+Includes the new active/archived extra-PR and manual-view preservation case.
+Full output: pr-review-tests.txt.
+
+PATH=/tmp/ambisgis-validation-venv/bin:$PATH python3 tools/validate_package.py --require-schemas
+Exit 0: plan references/acyclic dependencies passed (15 repositories,
+66 planned tasks, 24 requirements, 65 sources), all four schemas/examples pass.
+Full output: pr-review-schemas.txt.
+
+git diff --check
+Exit 0, no whitespace errors.
+
+Live verification after six targeted Project mutations:
+68 Project items = 66 unique planned task issues + 2 existing PR contents.
+No archived items. PR54/55 have no Task ID/Delivery/Review gate.
+FND-02 fields unchanged; Delivery remains In progress.
+GOV-02 Delivery corrected to Merged; other fields and PR52 Evidence preserved.
+Existing six views identical. Queue saved filter is:pr is:open unchanged;
+Repository/Evidence visible alongside existing columns.
+Complete before/after snapshots and exact mutation responses retained.
+No full importer rerun and no GIS/database/Jupyter/Java acceptance run.
