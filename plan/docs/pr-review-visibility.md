@@ -1,5 +1,26 @@
 # Incremental PR review visibility
 
+## Current preparation (2026-09-20, after owner merge of #57)
+
+This run prepares **PR #56 only**, on `gov-02/pr-review-visibility`, against
+verified `ambisgis/main` at `8bf1217c8c078c26558da4b3318feda07a9c4ce1`.
+The owner actually merged #54, #55 and #57; the #57 merge tree exactly equals
+its reviewed tree. The older 68-item observation and #56-addition restriction
+below describe the original correction, before subsequent authorized additions.
+They do not describe current Project membership or authorize replaying mutations.
+
+The later authorized #55 preparation added #56/#57, yielding 66 planned tasks
+and four PR items. See [the current #56 review/handoff](pr-56-review.md) for
+fresh complete readback, validation, exact source preservation and owner action.
+No accepted view setup needs repeating. GOV-02 remains Merged; FND-02 remains
+In progress. Under this request, Phase A stops after preparing #56; the owner
+will review/merge it and rerun the request before Phase B engineering begins.
+
+## Original correction snapshot (2026-09-20, before the later PR additions)
+
+The remaining sections retain the original correction's observations, mutation
+scope and validation. Their current-tense wording applies to that capture.
+
 The existing [PR review queue, view 7](https://github.com/users/aloerch/projects/2/views/7)
 now contains the two existing open PRs #54/#55 as separate unarchived Project
 items. FND-02 stays **In progress** with all of its fields unchanged. The count

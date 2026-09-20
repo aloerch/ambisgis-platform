@@ -49,8 +49,10 @@ Record actual saved view IDs, supported configuration readback and attributed ow
 The task views are complemented by the existing [PR review queue](https://github.com/users/aloerch/projects/2/views/7),
 filtered `is:pr is:open` independently of a parent task's Delivery/Review gate.
 See [its verified setup and incremental-add procedure](pr-review-visibility.md).
-At the 2026-09-20 capture, 66 planned task issues plus PRs #54/#55 total 68
-Project items. PRs carry their own content/item identity and Evidence, never
+At the original 2026-09-20 capture, 66 planned task issues plus PRs #54/#55
+totaled 68 Project items. Later authorized additions retained #56/#57 too;
+see [current readback](pr-56-review.md). These are dated observations, never
+instructions to reset membership. PRs carry their own content/item identity and Evidence, never
 another copy of the parent's Task ID. The importer preserves extra PR items
 (including archive state) and this additional manual view; it still verifies
 66 planned tasks. Do not rerun the full importer to add review checkpoints.

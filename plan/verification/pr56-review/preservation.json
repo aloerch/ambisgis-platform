@@ -1,0 +1,33 @@
+{
+  "base": "8bf1217c8c078c26558da4b3318feda07a9c4ce1",
+  "checks": {
+    "build-support/java": {
+      "changed_tracked_paths": []
+    },
+    "build-support/postgis": {
+      "changed_tracked_paths": []
+    },
+    "build-support/jupyter": {
+      "changed_tracked_paths": []
+    },
+    "plan/adrs": {
+      "changed_tracked_paths": []
+    },
+    "plan/verification": {
+      "changed_tracked_paths": [
+        "plan/verification/pr-review-after.json",
+        "plan/verification/pr-review-before.json",
+        "plan/verification/pr-review-mutations.json",
+        "plan/verification/pr-review-preflight-diagnostics.txt",
+        "plan/verification/pr-review-schemas.txt",
+        "plan/verification/pr-review-tests.txt",
+        "plan/verification/pr-review-validation.txt",
+        "plan/verification/pr-review-wrong-directory.txt"
+      ]
+    },
+    "governance_regression_exact_original": true
+  },
+  "final_working_files_checked_against_base": 320,
+  "all_inherited_files_identical": true,
+  "java_tree": "d6ca199d12cb0e963748b5a6a58a8cca0e3c72dd"
+}

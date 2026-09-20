@@ -1,0 +1,222 @@
+{
+  "timestamp": "2026-09-20T21:37:41.427987+00:00",
+  "owner": {
+    "login": "aloerch",
+    "id": 15285626
+  },
+  "repository": {
+    "full_name": "aloerch/ambisgis-platform",
+    "id": 1376927351,
+    "node_id": "R_kgDOUhI-dw"
+  },
+  "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-pr-review",
+  "remote": "origin\thttps://github.com/aloerch/ambisgis-platform.git (fetch)\norigin\thttps://github.com/aloerch/ambisgis-platform.git (push)\n",
+  "cli": {
+    "path": "/tmp/ambisgis-gh-067dpbju/gh_2.101.0_linux_amd64/bin/gh",
+    "sha256": "ea857a3f0f7d4276cf5848b236542c5048e2eaa7bdd1b6ddec238f8793e74bff"
+  },
+  "phase": "A",
+  "prs": {
+    "54": {
+      "number": 54,
+      "node_id": "PR_kwDOUhI-d88AAAABEQiDOg",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-09-20T20:09:12Z",
+      "merge_commit_sha": "8393fc46b9b979b05faa416f5998e0159ecd1e33",
+      "mergeable": null,
+      "mergeable_state": "unknown",
+      "auto_merge": null,
+      "body": "The selected Java versions do not yet have a complete extension/source closure. This bounded audit inventories 519 POMs and six Maven configurations from 70 retained inputs (902,064,509 bytes), records printing/profile/bootstrap provenance gaps, and provides custody/recovery checks. The inherited malformed archetype POM deliberately leaves the actual static inventory at exit 1; enumeration is complete, XML interpretation is not.\n\nCurrent tested head: `b15a785f350d347c0c2c4ff07ac6e5681c1d9746`. Base: `ambisgis/main` at `fc77ab978e567ce5d55e3428d1249a3b332da09d`. GitHub readback: **MERGEABLE / CLEAN**. The only integration conflicts were GOV-02 paragraphs in both STATUS files. A normal merge preserves the cited audit commits, merged database/Jupyter evidence, and all approved GOV-02 corrections. PR #52 is merged; its older open/in-review wording is historical.\n\nFresh validation after integration: **28 Java audit/custody tests + 175 package tests passed**, with no failures/skips; strict plan validation and all four schema/example checks passed. [Fresh test receipts](https://github.com/aloerch/ambisgis-platform/blob/b15a785f350d347c0c2c4ff07ac6e5681c1d9746/plan/verification/java-audit-integration-package-tests.txt), [audit evidence](https://github.com/aloerch/ambisgis-platform/blob/b15a785f350d347c0c2c4ff07ac6e5681c1d9746/plan/docs/java-dependency-audit.md), [handoff and merge-order guidance](https://github.com/aloerch/ambisgis-platform/blob/b15a785f350d347c0c2c4ff07ac6e5681c1d9746/plan/docs/java-audit-handoff.md). Database/Jupyter native tests were not rerun. The initial host-schema failure and all prior audit evidence remain preserved.\n\nOwner decision: review and approve this bounded audit/tooling checkpoint for a separate merge into main. Acceptance would not approve Java compilation/runtime behavior, the selected product tuple, licenses/security, FND-07/FND-08, or complete FND-02. FND-02 remains In progress. Review blocks merging only; source/compatibility engineering continues separately.\n\nPR #55 depends on this ordinary branch PR; supported GitHub `stack` and `stackEntry` are null for both. After an explicitly approved #54 merge, verify the actual merged main, integrate it into #55 without rewriting history, retarget #55 to main, and assess its current diff/tests before a separate decision. Do not merge #55 into an obsolete intermediate branch. This update does not authorize any merge.\n\nRefs #3.\n",
+      "head": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+      "head_ref": "fnd-02/java-dependency-audit",
+      "base": "ambisgis/main",
+      "merged_by": "aloerch"
+    },
+    "55": {
+      "number": 55,
+      "node_id": "PR_kwDOUhI-d88AAAABEQ97wg",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-09-20T20:50:29Z",
+      "merge_commit_sha": "bb3680802d7f7d5c500180ec12e66d32d81d0aa0",
+      "mergeable": null,
+      "mergeable_state": "unknown",
+      "auto_merge": null,
+      "body": "Prepare **PR #55 only** for the next owner review, in the chosen order **#54 \u2192 #55 \u2192 #57 \u2192 #56**. PR #54 was actually merged by `aloerch` at `8393fc46b9b979b05faa416f5998e0159ecd1e33` on 2026-09-20T20:09:12Z. No earlier unresolved review request or thread was found. No PR was merged by this session and auto-merge remains disabled.\n\n- **Reviewed/tested head:** `8eeb408f296b7c6152fae2ef5edef65161f674ac`\n- **Target:** `ambisgis/main`, verified base `8393fc46b9b979b05faa416f5998e0159ecd1e33`\n- **Full tested Git tree:** `c7353aa55c9cd874ec8b98ad38e70839f5e50a3b`\n- **Tested Java implementation subtree:** `5edbdebeedf57771301c5048171cb85fa1f03b83`\n- **Branch:** `fnd-02/java-toolchain-resolution`\n\nNormal merge `00eb480490942c0a83ce220cfa9fe0a656f9aa54` incorporates actual main without conflicts or rewriting history. Before the narrow review fix, its tree exactly equaled the prior #55 tree; its diff against main was byte-identical to the original remaining checkpoint against #54. Database/Jupyter evidence and GOV-02 corrections remain preserved. The PR is explicitly retargeted to main after the prerequisite actually merged; these are ordinary dependent branches, not a managed stack.\n\nThe checkpoint retains Temurin 17.0.20.1+1/Maven 3.9.16 distributions/sources, origin-locked selected Maven inputs, inspected schema resources, and tooling/receipts for retained-file model/dependency replay. Historical successful resolution covered 157 selected modules; **it did not compile Java or run native/runtime tests**. The relevant implementation is toolchain/proxy/resolution/replay/source-inventory code and ADR 003; #57's source-recovery/native probes and #56's governance implementation are not included.\n\nIndependent engineering review found one material parser-policy defect: encoded DTD/entity declarations could bypass an ASCII byte guard in POM license inventory. Commit `8e9b978` corrects declaration rejection with encoding-aware callbacks, plus three meaningful regressions. The original failing run is preserved. No dependency, version, profile, component or retained artifact changed. The integrator reviewed the repair. This is engineering review, not human approval.\n\n**Fresh checks at the exact final head:**\n\n| Check | Actual result |\n|---|---|\n| Complete Java tooling suite | 143 passed, zero failures/errors/skips |\n| Required package suite from plan/ | 175 passed, zero failures/errors/skips |\n| Strict plan/schema validation |Passed; all four schemas/examples |\n| Focused parser regressions | 31 passed; original 31-test red run retained |\n| Full corrected source/notice inventory |Exit 2 as expected: 10,802 records / 10,792 blobs verified, 64 missing classifiers remain |\n| Inventory comparison |All semantic fields identical to the original report after removing only timestamp/fresh notice-output paths; all 2,824 POM/license rows unchanged |\n| Frozen custody/toolchain | 34,118 files / 1,682,220,066 bytes unchanged; installed 342 files / 208 symlinks / 103 directories verified |\n\nFull Maven replays and Java/database/Jupyter native suites were **not rerun**. The merge changed no implementation; the only code correction affects license-inventory parsing and is exercised by the real full inventory plus focused/full tooling tests. Native evidence from #57 remains separately reviewable. A single trailing-space diagnostic in original failed unittest stdout is retained verbatim; code/documentation whitespace checks pass when that exact evidence file is excluded.\n\nReview [the actionable report](https://github.com/aloerch/ambisgis-platform/blob/8eeb408f296b7c6152fae2ef5edef65161f674ac/plan/docs/pr-55-review.md), [ancestry proof](https://github.com/aloerch/ambisgis-platform/blob/8eeb408f296b7c6152fae2ef5edef65161f674ac/plan/verification/pr55-review/ancestry.json), [actual tooling checks](https://github.com/aloerch/ambisgis-platform/blob/8eeb408f296b7c6152fae2ef5edef65161f674ac/plan/verification/pr55-review/tooling-tests.txt), [inventory comparison](https://github.com/aloerch/ambisgis-platform/blob/8eeb408f296b7c6152fae2ef5edef65161f674ac/plan/verification/pr55-review/real-inventory-check.json), [ADR 003](https://github.com/aloerch/ambisgis-platform/blob/8eeb408f296b7c6152fae2ef5edef65161f674ac/plan/adrs/003-java-resolution-candidate.md), and [original resolution evidence](https://github.com/aloerch/ambisgis-platform/blob/8eeb408f296b7c6152fae2ef5edef65161f674ac/plan/docs/java-resolution-evidence.md). Exact-final-head receipts and full raw inventory/discussion logs are retained at `/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/review-pr55-01`.\n\nThe authorized Project correction added only existing PRs #56/#57 with Evidence links to their parent issues #9/#3. Verified count: **66 planned tasks + four PR items = 70 items**, all unarchived. Saved `is:pr is:open` membership is #55/#56/#57; merged #54 remains retained. All existing item fields/archive states, views and repository links are unchanged. No Task ID/Delivery/Review gate was copied, and FND-02 stays In progress. [Actual Project receipts](https://github.com/aloerch/ambisgis-platform/blob/8eeb408f296b7c6152fae2ef5edef65161f674ac/plan/verification/pr55-review/project/README.md). No live importer, workflow, secret or unrelated-repository change occurred.\n\n**Owner decision:** accept or request changes to this bounded custody/resolution checkpoint and its narrow parser correction. Acceptance supports your separate merge of #55 into main; it does not authorize this agent to merge, enable auto-merge, approve later PRs, or close FND-02. Full source/binary closure, 64 classifier gaps, file-level licensing/security, toolchain trust/bootstrap, schema repackaging/rights, logging mediation and component/runtime/product/release acceptance remain open. GitHub mergeability alone is not the basis for this review report.\n\nAfter your actual #55 merge and next request, #57 is the next preparation. #56 is technically independent but last in your order; it currently conflicts with main and was deliberately left unprepared. Neither later PR head or base was changed by this session.\n\nRefs #3.\n\nFinal live readback: **OPEN / MERGEABLE / CLEAN**, target `ambisgis/main` at the base recorded above; no outstanding review requests or unresolved threads. Auto-merge is null/disabled. GitHub reports no hosted status-check rollup; the actual local checks and engineering review above, not mergeability alone, support this report.\n",
+      "head": "8eeb408f296b7c6152fae2ef5edef65161f674ac",
+      "head_ref": "fnd-02/java-toolchain-resolution",
+      "base": "ambisgis/main",
+      "merged_by": "aloerch"
+    },
+    "57": {
+      "number": 57,
+      "node_id": "PR_kwDOUhI-d88AAAABEVWAzA",
+      "state": "closed",
+      "merged": true,
+      "merged_at": "2026-09-20T21:32:22Z",
+      "merge_commit_sha": "8bf1217c8c078c26558da4b3318feda07a9c4ce1",
+      "mergeable": null,
+      "mergeable_state": "unknown",
+      "auto_merge": null,
+      "body": "Prepare only this bounded FND-02 source-recovery/compatibility checkpoint for owner review. Required order: **#54 \u2192 #55 \u2192 #57 \u2192 #56**. #54/#55 are actually owner-merged; #56 is technically independent and has not been prepared in this run.\n\n- **Exact reviewed/pushed head:** `bfcec2dfc1470b5a159cb46a2bc42140c742203a`\n- **Full tested Git tree:** `7bb7ce83f8bfc900a707de8524b2efafb4a74f16`\n- **Tested Java subtree:** `d6ca199d12cb0e963748b5a6a58a8cca0e3c72dd`\n- **Branch:** `fnd-02/java-source-compatibility`\n- **Target:** `ambisgis/main` at `bb3680802d7f7d5c500180ec12e66d32d81d0aa0`\n- **Fresh GitHub state:** `MERGEABLE / CLEAN`; open, auto-merge disabled. No review requests/unresolved threads and no GitHub CI checks reported. Local test results below are separate from human approval.\n\n## Scope and ancestry\n\nOwner `aloerch` merged #55 on 2026-09-20T20:50:29Z from reviewed head `8eeb408f296b7c6152fae2ef5edef65161f674ac`; merge/current main `bb3680802d7f7d5c500180ec12e66d32d81d0aa0` has that exact reviewed tree. #54 merge `8393fc46b9b979b05faa416f5998e0159ecd1e33` and database/Jupyter/GOV-02 merge commits are verified ancestors.\n\nNormal merge `dc250cd854ae87bfb80657148efe937a69c381dc` combines old #57 head `7d3063f89c20b5e028b0151a6648a79e4ef14a83` and actual main. Only two STATUS files conflicted; both evidence sets and newer governance corrections are preserved. Before review repairs, the remaining Java diff was byte-identical to the old dependent diff, with all 96 changed paths retained. #55's encoding-aware parser/tests remain unchanged. Explicit retargeting followed #55's actual merge; no rebase/reset/force-push or managed-stack assumption.\n\nRemaining implementation covers the 64-artifact structural source supplement, recovered-source probes, bounded compilation/native runners, EMF repair, GeoFence Unix fixture, verified GDAL staging and isolated logging witness. #56's importer preservation implementation remains separate.\n\n## Changes since the previous checkpoint\n\nIndependent review reproduced and fixed two material issues:\n1. Source accounting duplicated the old ASCII POM declaration guard and accepted UTF-16 entity declarations. It now reuses #55's encoding-aware guard and retains declaration formatting; two meaningful encoding regressions added.\n2. A post-Maven source-hash exception could leave the compatibility receipt successful. The exception now forces failure; its regression preserves Maven exit zero and the actual error while asserting a failed receipt.\n\nBoth failing runs are preserved. No additional material finding remains in the scoped engineering reviews. Current handoff/STATUS and Project observations are reconciled. Final package checking also caught two empty raw stdout captures mislabeled `.json`; only their extensions changed to `.stdout`, preserving bytes and diagnostic evidence.\n\n## Actual verification\n\nAt exact published head `bfcec2dfc1470b5a159cb46a2bc42140c742203a`: **218 Java tooling tests + 175 package tests + four strict schema/example checks passed**, no failures/errors/skips.\n\n- Corrected real 64-artifact accounting is byte-identical to the before report. Actual exit2 explicitly retains **12 unresolved + four partial**; 48 structural dispositions do not establish reproducible source-to-binary closure.\n- **Fresh selected native XML resolver probe: 12 passed**, zero failures/errors/skips; actual socket denial, toolchain/custody and unchanged-source checks passed. This is not broad XML/native reexecution.\n- Five original custody snapshots and installed toolchain reverified unchanged. Historical 22 receipt pairs and 533 native XML report hashes/counts checked read-only.\n- Broad XML, MapFish, referencing, GeoFence, importer/GDAL, recovered-source, logging, database and Jupyter native suites were **not rerun**. Historical failures/skips remain explicit.\n- Whole-diff whitespace diagnostics are confined to six retained CRLF JavaCSV logs and one original failing unittest line; these raw bytes are preserved, with source/docs checks clean when excluding those exact outputs.\n\n[Actionable review report](https://github.com/aloerch/ambisgis-platform/blob/bfcec2dfc1470b5a159cb46a2bc42140c742203a/plan/docs/pr-57-review.md) \u00b7 [Committed checks/independent reviews](https://github.com/aloerch/ambisgis-platform/tree/bfcec2dfc1470b5a159cb46a2bc42140c742203a/plan/verification/pr57-review) \u00b7 [Current handoff](https://github.com/aloerch/ambisgis-platform/blob/bfcec2dfc1470b5a159cb46a2bc42140c742203a/plan/docs/java-source-closure-handoff.md)\n\nExact final-check receipt and full raw evidence:\n`/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/review-pr57-preparation-01/final-checks.json`\n\nFinal output SHA256: tooling `bd1ad19f2ee481259da3f32d1dccc08732101c3c193889d46a4269791a05935b`, package `5419724a0c33457839212d2e6ac5853102ef28e3da3ca64692b1ee1cbed245d0`, schemas `5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a`.\n\n## Project and acceptance boundary\n\nRead-only complete pagination confirms **66 planned tasks + four PR items =70 items**, all unarchived. Saved `is:pr is:open` matches #57/#56; merged #54/#55 remain retained. Parent Evidence, task fields, views and archive decisions are preserved; FND-02 remains In progress and GOV-02 Merged. Zero Project mutations; no importer rerun.\n\n**Owner decision:** accept this bounded evidence checkpoint and its two review repairs for your separate GitHub merge, or identify changes required. GitHub mergeability is only one observation, not acceptance.\n\nAcceptance does not close 12 unresolved/four partial source cases, broad XML/MapFish socket-fixture failures, JavaCSV Linux-default failures, proprietary database skips, combined logging/OAuth/policy/runtime gaps, schema rights/repackaging, host/toolchain/source-binary closure, canonical baselines, security/license/product gates, FND-02, FND-07/FND-08, P1/P6 or release. It does not authorize an agent merge, auto-merge, later-head approval, #56 acceptance, branch deletion or the next HTTP/XML/printing/logging/OAuth slice.\n\n**No PR was merged. #56 is next and remains unprepared.**\n",
+      "head": "bfcec2dfc1470b5a159cb46a2bc42140c742203a",
+      "head_ref": "fnd-02/java-source-compatibility",
+      "base": "ambisgis/main",
+      "merged_by": "aloerch"
+    },
+    "56": {
+      "number": 56,
+      "node_id": "PR_kwDOUhI-d88AAAABEVLddg",
+      "state": "open",
+      "merged": false,
+      "merged_at": null,
+      "merge_commit_sha": null,
+      "mergeable": false,
+      "mergeable_state": "dirty",
+      "auto_merge": null,
+      "body": "Incremental PR review was hidden behind task-level Delivery/gate filters while FND-02 correctly remained In progress. This correction preserves the existing PR review queue (`is:pr is:open`), adds existing PRs #54/#55 by content ID, exposes Repository/Evidence, and records complete before/after snapshots. There are 66 planned tasks plus two PR items (68 total); PR items have no Task ID/Delivery/Review gate. All six earlier views and other task fields remain unchanged.\n\nGOV-02's stale In review value is reconciled to Merged using owner `aloerch`'s actual PR #52 merge `fc77ab978e567ce5d55e3428d1249a3b332da09d` and the accepted roadmap limitation. No previous view verification needs repeating. This does not imply Released or product acceptance.\n\nTested head: `28c9d79757b98bdedd44b5d7486835f9e4b71e63`; base: `ambisgis/main` at `fc77ab978e567ce5d55e3428d1249a3b332da09d`. Fresh GitHub readback: OPEN, CLEAN, MERGEABLE. Validation: 176 package tests passed without skips; strict plan checks and all four schema/examples passed. The new regression proves importer dry-run/apply preserves extra active/archived PR items and the manual queue without changing the 66 task identities. No live importer rerun occurred. A final discovery command initially used the repository root and failed before running tests; its diagnostic is retained and both checks passed from `plan/` at this exact head.\n\nReview `plan/docs/pr-review-visibility.md` and `plan/verification/pr-review-{before,mutations,after}.json`. Supported readback confirms the saved filter/columns and membership from actual open PR content plus archive state. The schema has no Linked issues field or per-view items connection; Evidence links parent issue #3 and no browser inspection is claimed.\n\nOwner decision: approve this tracking correction for a separate merge into main. It is independent of Java PR #54/#55 and blocks only its own merge, not engineering. Queue setup requires no owner UI action. No PR merge is authorized by this submission; workflows, secrets, source branches and product acceptance remain outside its scope.\n\nRefs #9.\n",
+      "head": "28c9d79757b98bdedd44b5d7486835f9e4b71e63",
+      "head_ref": "gov-02/pr-review-visibility",
+      "base": "ambisgis/main",
+      "merged_by": null
+    }
+  },
+  "main": "8bf1217c8c078c26558da4b3318feda07a9c4ce1",
+  "main_tree": "7bb7ce83f8bfc900a707de8524b2efafb4a74f16",
+  "worktrees": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform",
+      "branch": "ambisgis/main",
+      "head": "3e7581a06b000856ea9b27468cc415612c28b4b0",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-db-validation",
+      "branch": "fnd-02/database-validation",
+      "head": "9e88f6d400bda30f7b2192b6f13f011e999967c0",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-dependencies",
+      "branch": "fnd-02/dependency-inputs",
+      "head": "1deeaef1eaf49ee925752e9f56faa0d085eba900",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov01",
+      "branch": "gov-01/project-importer",
+      "head": "3c4a95415049f574caacb52528edd177ef4b69f7",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov02",
+      "branch": "gov-02/saved-view-reconciliation",
+      "head": "e19bc4960866d89c749e1d2d68427dd586130d2f",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java",
+      "branch": "fnd-02/java-dependency-audit",
+      "head": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure",
+      "branch": "fnd-02/java-source-compatibility",
+      "head": "bfcec2dfc1470b5a159cb46a2bc42140c742203a",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-compatibility",
+      "branch": "fnd-02/java-compatibility-probes",
+      "head": "c1aa7893e93b314af010bd9e01c9b7210591f5b8",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-inventory",
+      "branch": "fnd-02/java-resolution-inventory",
+      "head": "a20e6da2b3278c866f899a841be34d922688ae1c",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-proxy",
+      "branch": "fnd-02/java-offline-replay",
+      "head": "f569ef3d480a87013c30e107c782995a10e62658",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-resolution",
+      "branch": "fnd-02/java-toolchain-resolution",
+      "head": "8eeb408f296b7c6152fae2ef5edef65161f674ac",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-source-closure",
+      "branch": "fnd-02/java-source-provenance",
+      "head": "2a30c457cfbf00be36b164f9cbc25873002d278a",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-tool",
+      "branch": "fnd-02/java-audit-tool",
+      "head": "f9760feff99a5cafbd968c6a279194604009f9d5",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-toolchain",
+      "branch": "fnd-02/java-toolchain-custody",
+      "head": "cb0314f6c60ca9b53a6eed6ff41746cc57884130",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-javacsv",
+      "branch": "fnd-02/javacsv-source-recovery",
+      "head": "a658665d7440268f5a6d72b6ec55a47fefe7214b",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jupyter",
+      "branch": "fnd-02/jupyter-runtime",
+      "head": "d1b39132c1b003f354589026a7e211021aac1c56",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-offline",
+      "branch": "fnd-02/offline-runner",
+      "head": "038e2fd1df1e11be8e45a9f7d5273b55cd338abf",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-pr-review",
+      "branch": "gov-02/pr-review-visibility",
+      "head": "28c9d79757b98bdedd44b5d7486835f9e4b71e63",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser",
+      "branch": "review/fnd-02-resolution-parser",
+      "head": "1c318dc92fd02d2b791a7d9235c88b8f55b6321a",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review57-compat",
+      "branch": "review/fnd-02-compat-finalization",
+      "head": "71e747401bc249420fe547caff6e518c9eb274db",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review57-parser",
+      "branch": "review/fnd-02-source-parser",
+      "head": "fc376c13deecae500c312775a4bce6e068a1cb68",
+      "status": ""
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source",
+      "branch": "fnd-02/source-evidence",
+      "head": "1c3a9b7f85c45cb8f00ac2ebe70041b2fbd755b9",
+      "status": ""
+    }
+  ],
+  "processes": "    PID    PPID COMMAND             ELAPSED\n      1       0 bwrap            2-15:16:05\n     22       1 code             2-15:16:05\n     26      22 code             2-15:16:05\n     28      22 zypak-sandbox <  2-15:16:05\n     30       1 cat              2-15:16:05\n     31       1 cat              2-15:16:05\n     33       1 bwrap            2-15:16:05\n     34      33 code             2-15:16:05\n     58       1 chrome_crashpad  2-15:16:05\n     82      26 code             2-15:16:05\n     88      22 code             2-15:16:05\n    154      34 code             2-15:16:05\n    177      22 code             2-15:16:05\n    200      22 code             2-15:16:04\n    267      22 code             2-15:16:04\n    452     177 code             2-15:16:03\n    601      22 gsettings        2-15:16:02\n   1087      34 code             2-15:13:28\n   8585      22 code             1-13:15:33\n   8606      22 code             1-13:15:33\n   8634    8606 codex            1-13:15:32\n   8894    8634 codex-code-mode  1-13:13:04\n   9797     200 sh               1-13:06:48\n 380147    8606 code             1-00:41:28\n 469379    8634 sh                    00:02\n 469380  469379 python3               00:02\n 469579  469380 ps                    00:00\n"
+}

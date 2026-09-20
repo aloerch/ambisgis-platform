@@ -1,0 +1,193 @@
+{
+  "timestamp": "2026-09-20T21:40:17.956851+00:00",
+  "response": {
+    "data": {
+      "repository": {
+        "p54": {
+          "number": 54,
+          "state": "MERGED",
+          "headRefOid": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+          "baseRefName": "ambisgis/main",
+          "baseRefOid": "fc77ab978e567ce5d55e3428d1249a3b332da09d",
+          "mergeStateStatus": "UNKNOWN",
+          "mergeable": "UNKNOWN",
+          "reviewDecision": null,
+          "autoMergeRequest": null,
+          "mergedAt": "2026-09-20T20:09:12Z",
+          "mergedBy": {
+            "login": "aloerch"
+          },
+          "mergeCommit": {
+            "oid": "8393fc46b9b979b05faa416f5998e0159ecd1e33"
+          },
+          "reviewRequests": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "reviewThreads": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "comments": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "reviews": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "statusCheckRollup": null
+        },
+        "p55": {
+          "number": 55,
+          "state": "MERGED",
+          "headRefOid": "8eeb408f296b7c6152fae2ef5edef65161f674ac",
+          "baseRefName": "ambisgis/main",
+          "baseRefOid": "8393fc46b9b979b05faa416f5998e0159ecd1e33",
+          "mergeStateStatus": "UNKNOWN",
+          "mergeable": "UNKNOWN",
+          "reviewDecision": null,
+          "autoMergeRequest": null,
+          "mergedAt": "2026-09-20T20:50:29Z",
+          "mergedBy": {
+            "login": "aloerch"
+          },
+          "mergeCommit": {
+            "oid": "bb3680802d7f7d5c500180ec12e66d32d81d0aa0"
+          },
+          "reviewRequests": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "reviewThreads": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "comments": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "reviews": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "statusCheckRollup": null
+        },
+        "p57": {
+          "number": 57,
+          "state": "MERGED",
+          "headRefOid": "bfcec2dfc1470b5a159cb46a2bc42140c742203a",
+          "baseRefName": "ambisgis/main",
+          "baseRefOid": "bb3680802d7f7d5c500180ec12e66d32d81d0aa0",
+          "mergeStateStatus": "UNKNOWN",
+          "mergeable": "UNKNOWN",
+          "reviewDecision": null,
+          "autoMergeRequest": null,
+          "mergedAt": "2026-09-20T21:32:22Z",
+          "mergedBy": {
+            "login": "aloerch"
+          },
+          "mergeCommit": {
+            "oid": "8bf1217c8c078c26558da4b3318feda07a9c4ce1"
+          },
+          "reviewRequests": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "reviewThreads": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "comments": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "reviews": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "statusCheckRollup": null
+        },
+        "p56": {
+          "number": 56,
+          "state": "OPEN",
+          "headRefOid": "28c9d79757b98bdedd44b5d7486835f9e4b71e63",
+          "baseRefName": "ambisgis/main",
+          "baseRefOid": "fc77ab978e567ce5d55e3428d1249a3b332da09d",
+          "mergeStateStatus": "DIRTY",
+          "mergeable": "CONFLICTING",
+          "reviewDecision": null,
+          "autoMergeRequest": null,
+          "mergedAt": null,
+          "mergedBy": null,
+          "mergeCommit": null,
+          "reviewRequests": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "reviewThreads": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "comments": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "reviews": {
+            "nodes": [],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": null
+            }
+          },
+          "statusCheckRollup": null
+        }
+      }
+    }
+  }
+}

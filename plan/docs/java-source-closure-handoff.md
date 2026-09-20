@@ -1,5 +1,16 @@
 # FND-02 Java source and compatibility — continuation handoff
 
+**Current-state note (2026-09-20T21:32:22Z owner merge):** Owner `aloerch`
+merged #57 at `8bf1217c8c078c26558da4b3318feda07a9c4ce1` from reviewed head
+`bfcec2dfc1470b5a159cb46a2bc42140c742203a`; the merge preserves the exact
+reviewed tree `7bb7ce83f8bfc900a707de8524b2efafb4a74f16`. The records below
+describe that earlier preparation. Its separate owner merge decision is now
+complete; its engineering/source/product limitations remain. The current run
+selects **Phase A, prepare #56 only**; see [its review/handoff](pr-56-review.md).
+The current request authorizes Phase B after its prerequisites are verified
+on a later rerun; older authorization wording below applies to the earlier
+session. No Phase B engineering is started by this preparation.
+
 Repository: `aloerch/ambisgis-platform`, database ID `1376927351`, node
 `R_kgDOUhI-dw`; authenticated owner `aloerch` (ID `15285626`).
 Worktree: `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure`.

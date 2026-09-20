@@ -1,0 +1,14 @@
+{
+  "merge": "7b9b334fcac40e19291c96a4e009584c1b00b944",
+  "parents": [
+    "28c9d79757b98bdedd44b5d7486835f9e4b71e63",
+    "8bf1217c8c078c26558da4b3318feda07a9c4ce1"
+  ],
+  "tree": "ee2e3f4f2960489e4cd7d766de15070913b986f6",
+  "conflicts": [
+    "STATUS.md",
+    "plan/STATUS.md"
+  ],
+  "resolution": "Paragraph reconciliation preserves governance correction and main Java/database/Jupyter evidence; dated observations retained, current merge/phase wording corrected.",
+  "java_tree": "d6ca199d12cb0e963748b5a6a58a8cca0e3c72dd"
+}
