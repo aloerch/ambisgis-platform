@@ -1,0 +1,26 @@
+--- a/geotools/build/maven/xmlcodegen/pom.xml
++++ b/geotools/build/maven/xmlcodegen/pom.xml
+@@ -48,6 +48,23 @@
+   <!-- =========================================================== -->
+   <!--     Dependency Management                                   -->
+   <!-- =========================================================== -->
++  <!-- AmbisGIS experiment: use the exact existing platform BOM EMF versions
++       for this build-plugin reactor, whose parent does not import that BOM. -->
++  <dependencyManagement>
++    <dependencies>
++      <dependency>
++        <groupId>org.eclipse.emf</groupId>
++        <artifactId>org.eclipse.emf.common</artifactId>
++        <version>2.15.0</version>
++      </dependency>
++      <dependency>
++        <groupId>org.eclipse.emf</groupId>
++        <artifactId>org.eclipse.emf.ecore</artifactId>
++        <version>2.15.0</version>
++      </dependency>
++    </dependencies>
++  </dependencyManagement>
++
+   <dependencies>
+     <dependency>
+       <groupId>org.apache.maven</groupId>

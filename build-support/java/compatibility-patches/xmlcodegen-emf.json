@@ -1,0 +1,7 @@
+{
+  "name": "xmlcodegen-emf",
+  "path": "geotools/build/maven/xmlcodegen/pom.xml",
+  "before_sha256": "b38eec6700f979f23d89ab69094090c81faecbaf71000d1f8b719a61d2b049b6",
+  "after_sha256": "bf9d93ada08207b72f98754a19d9f9cec4b17264c43deb08ecea2eab4e5702d1",
+  "rationale": "Pin the build-plugin reactor to the same EMF2.15.0 selected by owned platform-dependencies/pom.xml, avoiding unretained transitive version-range metadata."
+}
