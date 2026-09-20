@@ -1,0 +1,24 @@
+[
+  {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "output": "java-resolution-package-tests.txt"
+  },
+  {
+    "command": [
+      "python3",
+      "tools/validate_package.py",
+      "--require-schemas"
+    ],
+    "exit_code": 0,
+    "output": "java-resolution-schemas.txt"
+  }
+]

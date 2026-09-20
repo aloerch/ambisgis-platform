@@ -1,0 +1,460 @@
+{
+  "generated_at": "2026-09-19T23:20:49.232512+00:00",
+  "report": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/evidence-01/maven-final-inventory-02.json",
+    "sha256": "40bf793ae266b557a0ee63efd9067f5ace81ea34c6fdf8b0a84d12830471dd67",
+    "size": 17795207
+  },
+  "source_coverage_complete": false,
+  "source_binary_correspondence_established": false,
+  "gaps": [
+    {
+      "binary_path": "antlr/antlr/2.7.7/antlr-2.7.7.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "antlr/antlr/2.7.7/antlr-2.7.7-sources.jar"
+    },
+    {
+      "binary_path": "asm/asm/3.2/asm-3.2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "asm/asm/3.2/asm-3.2-sources.jar"
+    },
+    {
+      "binary_path": "asm/asm/3.3.1/asm-3.3.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "asm/asm/3.3.1/asm-3.3.1-sources.jar"
+    },
+    {
+      "binary_path": "asm/asm-commons/3.2/asm-commons-3.2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "asm/asm-commons/3.2/asm-commons-3.2-sources.jar"
+    },
+    {
+      "binary_path": "asm/asm-tree/3.2/asm-tree-3.2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "asm/asm-tree/3.2/asm-tree-3.2-sources.jar"
+    },
+    {
+      "binary_path": "biz/aQute/bndlib/0.0.145/bndlib-0.0.145.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "biz/aQute/bndlib/0.0.145/bndlib-0.0.145-sources.jar"
+    },
+    {
+      "binary_path": "classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2-sources.jar"
+    },
+    {
+      "binary_path": "com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9-sources.jar"
+    },
+    {
+      "binary_path": "com/google/code/findbugs/jsr305/2.0.0/jsr305-2.0.0.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "com/google/code/findbugs/jsr305/2.0.0/jsr305-2.0.0-sources.jar"
+    },
+    {
+      "binary_path": "com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1-sources.jar"
+    },
+    {
+      "binary_path": "com/google/code/typica/typica/1.3/typica-1.3.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "com/google/code/typica/typica/1.3/typica-1.3-sources.jar"
+    },
+    {
+      "binary_path": "com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava-sources.jar"
+    },
+    {
+      "binary_path": "com/h2database/h2/1.1.119/h2-1.1.119.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "com/h2database/h2/1.1.119/h2-1.1.119-sources.jar"
+    },
+    {
+      "binary_path": "com/jcraft/jsch/0.1.23/jsch-0.1.23.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "com/jcraft/jsch/0.1.23/jsch-0.1.23-sources.jar"
+    },
+    {
+      "binary_path": "com/jcraft/jsch/0.1.38/jsch-0.1.38.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "com/jcraft/jsch/0.1.38/jsch-0.1.38-sources.jar"
+    },
+    {
+      "binary_path": "com/vladsch/flexmark/flexmark-all/0.42.14/flexmark-all-0.42.14.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "com/vladsch/flexmark/flexmark-all/0.42.14/flexmark-all-0.42.14-sources.jar"
+    },
+    {
+      "binary_path": "commons-codec/commons-codec/1.2/commons-codec-1.2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "commons-codec/commons-codec/1.2/commons-codec-1.2-sources.jar"
+    },
+    {
+      "binary_path": "commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2-sources.jar"
+    },
+    {
+      "binary_path": "commons-lang/commons-lang/1.0/commons-lang-1.0.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "commons-lang/commons-lang/1.0/commons-lang-1.0-sources.jar"
+    },
+    {
+      "binary_path": "commons-logging/commons-logging-api/1.0.4/commons-logging-api-1.0.4.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "commons-logging/commons-logging-api/1.0.4/commons-logging-api-1.0.4-sources.jar"
+    },
+    {
+      "binary_path": "de/zeigermann/xml/xml-im-exporter/1.1/xml-im-exporter-1.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "de/zeigermann/xml/xml-im-exporter/1.1/xml-im-exporter-1.1-sources.jar"
+    },
+    {
+      "binary_path": "dom4j/dom4j/1.1/dom4j-1.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "dom4j/dom4j/1.1/dom4j-1.1-sources.jar"
+    },
+    {
+      "binary_path": "doxia/doxia-core/1.0-alpha-4/doxia-core-1.0-alpha-4.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "doxia/doxia-core/1.0-alpha-4/doxia-core-1.0-alpha-4-sources.jar"
+    },
+    {
+      "binary_path": "doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4-sources.jar"
+    },
+    {
+      "binary_path": "geronimo-spec/geronimo-spec-jta/1.0.1B-rc4/geronimo-spec-jta-1.0.1B-rc4.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "geronimo-spec/geronimo-spec-jta/1.0.1B-rc4/geronimo-spec-jta-1.0.1B-rc4-sources.jar"
+    },
+    {
+      "binary_path": "jakarta-regexp/jakarta-regexp/1.4/jakarta-regexp-1.4.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "jakarta-regexp/jakarta-regexp/1.4/jakarta-regexp-1.4-sources.jar"
+    },
+    {
+      "binary_path": "jline/jline/0.9.1/jline-0.9.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "jline/jline/0.9.1/jline-0.9.1-sources.jar"
+    },
+    {
+      "binary_path": "nekohtml/xercesMinimal/1.9.6.2/xercesMinimal-1.9.6.2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "nekohtml/xercesMinimal/1.9.6.2/xercesMinimal-1.9.6.2-sources.jar"
+    },
+    {
+      "binary_path": "net/sourceforge/javacsv/javacsv/2.0/javacsv-2.0.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "net/sourceforge/javacsv/javacsv/2.0/javacsv-2.0-sources.jar"
+    },
+    {
+      "binary_path": "org/apache/ant/ant/1.8.1/ant-1.8.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/apache/ant/ant/1.8.1/ant-1.8.1-sources.jar"
+    },
+    {
+      "binary_path": "org/apache/ant/ant-launcher/1.8.1/ant-launcher-1.8.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/apache/ant/ant-launcher/1.8.1/ant-launcher-1.8.1-sources.jar"
+    },
+    {
+      "binary_path": "org/apache/ant/ant-nodeps/1.8.1/ant-nodeps-1.8.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/apache/ant/ant-nodeps/1.8.1/ant-nodeps-1.8.1-sources.jar"
+    },
+    {
+      "binary_path": "org/apache/bcel/bcel/5.2/bcel-5.2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/apache/bcel/bcel/5.2/bcel-5.2-sources.jar"
+    },
+    {
+      "binary_path": "org/apache/servicemix/bundles/org.apache.servicemix.bundles.antlr/2.7.7_5/org.apache.servicemix.bundles.antlr-2.7.7_5.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/apache/servicemix/bundles/org.apache.servicemix.bundles.antlr/2.7.7_5/org.apache.servicemix.bundles.antlr-2.7.7_5-sources.jar"
+    },
+    {
+      "binary_path": "org/apache/velocity/velocity/1.5/velocity-1.5.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/apache/velocity/velocity/1.5/velocity-1.5-sources.jar"
+    },
+    {
+      "binary_path": "org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0-sources.jar"
+    },
+    {
+      "binary_path": "org/aspectj/aspectjrt/1.5.4/aspectjrt-1.5.4.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/aspectj/aspectjrt/1.5.4/aspectjrt-1.5.4-sources.jar"
+    },
+    {
+      "binary_path": "org/aspectj/aspectjweaver/1.5.4/aspectjweaver-1.5.4.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/aspectj/aspectjweaver/1.5.4/aspectjweaver-1.5.4-sources.jar"
+    },
+    {
+      "binary_path": "org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10-sources.jar"
+    },
+    {
+      "binary_path": "org/codehaus/plexus/plexus-interactivity-jline/1.0-alpha-5/plexus-interactivity-jline-1.0-alpha-5.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/codehaus/plexus/plexus-interactivity-jline/1.0-alpha-5/plexus-interactivity-jline-1.0-alpha-5-sources.jar"
+    },
+    {
+      "binary_path": "org/eclipse/core/resources/3.3.0-v20070604/resources-3.3.0-v20070604.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/eclipse/core/resources/3.3.0-v20070604/resources-3.3.0-v20070604-sources.jar"
+    },
+    {
+      "binary_path": "org/eclipse/jdt/core/3.1.1/core-3.1.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/eclipse/jdt/core/3.1.1/core-3.1.1-sources.jar"
+    },
+    {
+      "binary_path": "org/netbeans/lib/cvsclient/20060125/cvsclient-20060125.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/netbeans/lib/cvsclient/20060125/cvsclient-20060125-sources.jar"
+    },
+    {
+      "binary_path": "org/sonatype/sisu/sisu-inject-plexus/2.1.1/sisu-inject-plexus-2.1.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "org/sonatype/sisu/sisu-inject-plexus/2.1.1/sisu-inject-plexus-2.1.1-sources.jar"
+    },
+    {
+      "binary_path": "oro/oro/2.0.7/oro-2.0.7.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "oro/oro/2.0.7/oro-2.0.7-sources.jar"
+    },
+    {
+      "binary_path": "picocontainer/picocontainer/1.2/picocontainer-1.2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "picocontainer/picocontainer/1.2/picocontainer-1.2-sources.jar"
+    },
+    {
+      "binary_path": "plexus/plexus-utils/1.0.3/plexus-utils-1.0.3.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "plexus/plexus-utils/1.0.3/plexus-utils-1.0.3-sources.jar"
+    },
+    {
+      "binary_path": "postgresql/postgresql/8.3-603.jdbc4/postgresql-8.3-603.jdbc4.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "postgresql/postgresql/8.3-603.jdbc4/postgresql-8.3-603.jdbc4-sources.jar"
+    },
+    {
+      "binary_path": "regexp/regexp/1.2/regexp-1.2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "regexp/regexp/1.2/regexp-1.2-sources.jar"
+    },
+    {
+      "binary_path": "velocity/velocity/1.5/velocity-1.5.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "velocity/velocity/1.5/velocity-1.5-sources.jar"
+    },
+    {
+      "binary_path": "xerces/xercesImpl/2.7.1/xercesImpl-2.7.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "xerces/xercesImpl/2.7.1/xercesImpl-2.7.1-sources.jar"
+    },
+    {
+      "binary_path": "xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "xerces/xercesImpl/2.9.1/xercesImpl-2.9.1-sources.jar"
+    },
+    {
+      "binary_path": "xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04-sources.jar"
+    },
+    {
+      "binary_path": "xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "central",
+      "required_path": "xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1-sources.jar"
+    },
+    {
+      "binary_path": "com/oracle/ojdbc14/10.2.0.3.0/ojdbc14-10.2.0.3.0.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "osgeo",
+      "required_path": "com/oracle/ojdbc14/10.2.0.3.0/ojdbc14-10.2.0.3.0-sources.jar"
+    },
+    {
+      "binary_path": "it/geosolutions/jgridshift/jgridshift-core/1.3/jgridshift-core-1.3.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "osgeo",
+      "required_path": "it/geosolutions/jgridshift/jgridshift-core/1.3/jgridshift-core-1.3-sources.jar"
+    },
+    {
+      "binary_path": "javax/media/jai_imageio/1.1/jai_imageio-1.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "osgeo",
+      "required_path": "javax/media/jai_imageio/1.1/jai_imageio-1.1-sources.jar"
+    },
+    {
+      "binary_path": "net/sf/json-lib/json-lib/2.4.2-geoserver/json-lib-2.4.2-geoserver.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "osgeo",
+      "required_path": "net/sf/json-lib/json-lib/2.4.2-geoserver/json-lib-2.4.2-geoserver-sources.jar"
+    },
+    {
+      "binary_path": "net/sourceforge/groboutils/groboutils-core/5/groboutils-core-5.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "osgeo",
+      "required_path": "net/sourceforge/groboutils/groboutils-core/5/groboutils-core-5-sources.jar"
+    },
+    {
+      "binary_path": "opendap/opendap/2.1/opendap-2.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "osgeo",
+      "required_path": "opendap/opendap/2.1/opendap-2.1-sources.jar"
+    },
+    {
+      "binary_path": "org/apache/xml/xml-commons-resolver/1.2/xml-commons-resolver-1.2.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "osgeo",
+      "required_path": "org/apache/xml/xml-commons-resolver/1.2/xml-commons-resolver-1.2-sources.jar"
+    },
+    {
+      "binary_path": "org/huldra/math/bigint/0.7.1/bigint-0.7.1.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "osgeo",
+      "required_path": "org/huldra/math/bigint/0.7.1/bigint-0.7.1-sources.jar"
+    },
+    {
+      "binary_path": "org/marlin/marlin/0.9.4.8/marlin-0.9.4.8.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "osgeo",
+      "required_path": "org/marlin/marlin/0.9.4.8/marlin-0.9.4.8-sources.jar"
+    },
+    {
+      "binary_path": "org/opengeo/geodb/0.9/geodb-0.9.jar",
+      "kind": "sources",
+      "reason": "not retained from binary origin",
+      "repository": "osgeo",
+      "required_path": "org/opengeo/geodb/0.9/geodb-0.9-sources.jar"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "scope": "Selected PR55 review preparation only; subsequent PR57/56 not prepared",
+  "owner": "aloerch",
+  "repository_id": 1376927351,
+  "review_order": [
+    54,
+    55,
+    57,
+    56
+  ],
+  "selected_pr": 55,
+  "pr54_owner_merge": "8393fc46b9b979b05faa416f5998e0159ecd1e33",
+  "normal_integration_commit": "00eb480490942c0a83ce220cfa9fe0a656f9aa54",
+  "parser_correction_commit": "8e9b9785d0d64390d0169e2af486048a000b2b27",
+  "tested_java_subtree": "5edbdebeedf57771301c5048171cb85fa1f03b83",
+  "checks": [
+    {
+      "path": "plan/verification/pr55-review/tooling-tests.txt",
+      "count": 143,
+      "exit_code": 0,
+      "sha256": "f3a30ad164573f9b754ccdcd272caf5d12a64d4063935bf571af05485783c5f3"
+    },
+    {
+      "path": "plan/verification/pr55-review/package-tests.txt",
+      "count": 175,
+      "exit_code": 0,
+      "sha256": "095043be33576545df4b1673468daa5fd665ac70a3bd8fa08e167ab4d477e1df"
+    },
+    {
+      "path": "plan/verification/pr55-review/schemas.txt",
+      "count": 4,
+      "exit_code": 0,
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    }
+  ],
+  "full_inventory_rerun_exit": 2,
+  "inventory_semantics_unchanged": true,
+  "native_tests_rerun": false,
+  "maven_replays_rerun": false,
+  "omission_reason": "Only POM license inventory implementation changed; exercised by focused/full tooling tests and actual full retained inventory. Maven execution/dependencies/components are unchanged.",
+  "independent_review": "One encoded-DTD parser policy finding corrected; no other material finding; no human approval claimed.",
+  "project_changes": "Only existing PR56/57 added with parent Evidence; previous field/archive/view state unchanged.",
+  "remaining": "64 historical source-classifier gaps, actual dependency mediation/runtime compatibility, schema rights/repackaging, toolchain trust/bootstrap and product/legal/security/release acceptance remain outside checkpoint.",
+  "raw_evidence_retained_copy": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/review-pr55-01",
+  "no_merge_or_auto_merge": true
+}

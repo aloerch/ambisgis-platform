@@ -1,0 +1,97 @@
+[
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform",
+    "head": "3e7581a06b000856ea9b27468cc415612c28b4b0",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-db-validation",
+    "head": "9e88f6d400bda30f7b2192b6f13f011e999967c0",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-dependencies",
+    "head": "1deeaef1eaf49ee925752e9f56faa0d085eba900",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov01",
+    "head": "3c4a95415049f574caacb52528edd177ef4b69f7",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov02",
+    "head": "e19bc4960866d89c749e1d2d68427dd586130d2f",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java",
+    "head": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-closure",
+    "head": "7d3063f89c20b5e028b0151a6648a79e4ef14a83",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-compatibility",
+    "head": "c1aa7893e93b314af010bd9e01c9b7210591f5b8",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-inventory",
+    "head": "a20e6da2b3278c866f899a841be34d922688ae1c",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-proxy",
+    "head": "f569ef3d480a87013c30e107c782995a10e62658",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-resolution",
+    "head": "9e1b2e1bca26d00b200a39f58a4a0890d43fca98",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-source-closure",
+    "head": "2a30c457cfbf00be36b164f9cbc25873002d278a",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-tool",
+    "head": "f9760feff99a5cafbd968c6a279194604009f9d5",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-toolchain",
+    "head": "cb0314f6c60ca9b53a6eed6ff41746cc57884130",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-javacsv",
+    "head": "a658665d7440268f5a6d72b6ec55a47fefe7214b",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jupyter",
+    "head": "d1b39132c1b003f354589026a7e211021aac1c56",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-offline",
+    "head": "038e2fd1df1e11be8e45a9f7d5273b55cd338abf",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-pr-review",
+    "head": "28c9d79757b98bdedd44b5d7486835f9e4b71e63",
+    "status": ""
+  },
+  {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source",
+    "head": "1c3a9b7f85c45cb8f00ac2ebe70041b2fbd755b9",
+    "status": ""
+  }
+]

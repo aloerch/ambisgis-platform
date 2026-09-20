@@ -1,0 +1,9 @@
+{
+  "reviewed_commit": "00eb480490942c0a83ce220cfa9fe0a656f9aa54",
+  "reviewed_tree": "a0f44cb1d9526de25d934a9123ab5a62007189a4",
+  "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser",
+  "files": {
+    "build-support/java/resolution_inventory.py": "cdfb605475bf856fb28bfc7deae1f2ef990aff9b6f7e9babcc294e78a52bd9aa",
+    "build-support/java/test_resolution_inventory.py": "a06c237adb5addb55c1d9ac6a032796f5772e7c4aef9a03c1338ed76b72141ca"
+  }
+}

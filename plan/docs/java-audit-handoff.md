@@ -1,5 +1,14 @@
 # FND-02 Java audit — resumption record
 
+Current state, 20 September 2026: PR #54 was owner-merged at
+`8393fc46b9b979b05faa416f5998e0159ecd1e33`. Earlier open/unmerged observations
+below remain historical. Only the next [PR #55 review](pr-55-review.md) is being
+prepared; no prior evidence or cited history is replaced.
+
+Continuation: [Java toolchain/resolution handoff](java-resolution-handoff.md)
+records the subsequent checkpoint on its separate branch. The observations
+below remain the original audit checkpoint; its branch and custody are preserved.
+
 The bounded Java dependency audit is reviewable in [PR #54](https://github.com/aloerch/ambisgis-platform/pull/54), **open and unmerged**, on branch `fnd-02/java-dependency-audit` in
 `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java`, repository
 `aloerch/ambisgis-platform` (ID `1376927351`). It starts from actual owner merge

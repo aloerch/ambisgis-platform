@@ -1,0 +1,168 @@
+{
+  "comments": {
+    "nodes": [],
+    "pages": [
+      {
+        "hasNextPage": false,
+        "endCursor": null
+      }
+    ]
+  },
+  "reviews": {
+    "nodes": [],
+    "pages": [
+      {
+        "hasNextPage": false,
+        "endCursor": null
+      }
+    ]
+  },
+  "reviewRequests": {
+    "nodes": [],
+    "pages": [
+      {
+        "hasNextPage": false,
+        "endCursor": null
+      }
+    ]
+  },
+  "reviewThreads": {
+    "nodes": [],
+    "pages": [
+      {
+        "hasNextPage": false,
+        "endCursor": null
+      }
+    ]
+  },
+  "body": "This bounded checkpoint retains Temurin 17.0.20.1+1 / Maven 3.9.16 and resolves the explicit 157-module core/GeoNode extension candidate. Both retained-file effective-model and dependency-acquisition replays succeeded under actual IPv4/IPv6 socket denial. This is dependency resolution; no Java compilation, native test or runtime test was performed by this checkpoint.\n\nCurrent tested head: `9e1b2e1bca26d00b200a39f58a4a0890d43fca98`. Base: `fnd-02/java-dependency-audit` at `b15a785f350d347c0c2c4ff07ac6e5681c1d9746` (PR #54). GitHub readback: **MERGEABLE / CLEAN**. A normal merge integrates corrected #54 and owner-merged GOV-02 main, preserving all original implementation commits, archives, snapshots and failed-run evidence. Subsequent source-closure engineering stays separate.\n\nFrozen custody verifies 34,118 files / 1,682,220,066 bytes. The final source inventory exits 2 with 64 missing classifiers. Exact inputs, notices, 19 inspected schema-resource archives and original failed passes remain retained. Full source closure, actual dependency mediation/bindings, MapFish/GeoFence compatibility, schema rights, extension/bootstrap choices and host/toolchain closure remain explicit gaps.\n\nFresh integration validation: **140 Java tooling tests + 175 package tests passed**, no failures/errors/skips; strict plan validation and all four schema/example checks passed. [Fresh package test receipts](https://github.com/aloerch/ambisgis-platform/blob/9e1b2e1bca26d00b200a39f58a4a0890d43fca98/plan/verification/java-resolution-integration-package-tests.txt), [checkpoint evidence](https://github.com/aloerch/ambisgis-platform/blob/9e1b2e1bca26d00b200a39f58a4a0890d43fca98/plan/docs/java-resolution-evidence.md), [machine receipts](https://github.com/aloerch/ambisgis-platform/blob/9e1b2e1bca26d00b200a39f58a4a0890d43fca98/plan/verification/java-resolution.json), [ADR 003](https://github.com/aloerch/ambisgis-platform/blob/9e1b2e1bca26d00b200a39f58a4a0890d43fca98/plan/adrs/003-java-resolution-candidate.md), [handoff](https://github.com/aloerch/ambisgis-platform/blob/9e1b2e1bca26d00b200a39f58a4a0890d43fca98/plan/docs/java-resolution-handoff.md). Historical Maven replays and database/Jupyter native tests were not rerun for this base/documentation integration.\n\nOwner decision: review this retained-input resolution checkpoint independently from #54. Merge order is #54 first; then verify its actual merge, integrate main normally, explicitly retarget #55 to main, and recheck the remaining diff/current tested head before the separate #55 merge decision. Both GitHub `stack` and `stackEntry` are null: no managed-stack or automatic-retarget assumption applies. Do not merge into the obsolete audit branch. No merge is authorized now.\n\nAcceptance would establish this bounded custody/resolution checkpoint only, not Java compilation/runtime acceptance, full source/license/security closure, a product baseline, FND-07/FND-08, or FND-02 completion. FND-02 stays In progress. Pending review blocks merging only; source/compatibility work continues separately.\n\nRefs #3.\n",
+  "mergedBy": null,
+  "commits": {
+    "nodes": [
+      {
+        "commit": {
+          "oid": "3a4599f1a8b59b6f86900b72dfd182f5f200d572",
+          "messageHeadline": "Retain Maven acquisitions through bounded loopback custody proxy"
+        }
+      },
+      {
+        "commit": {
+          "oid": "57e4efc5fba36637105b7d8f38afdcacf300dc5a",
+          "messageHeadline": "Freeze the first retained origin for combined Maven routes"
+        }
+      },
+      {
+        "commit": {
+          "oid": "c59f6b47a8b5ae3bfc19740aba78146cbc4d8387",
+          "messageHeadline": "Retain fixed Java toolchain distributions sources and custody verifier"
+        }
+      },
+      {
+        "commit": {
+          "oid": "e30157267a294911aaf7e8c80440c1b0b883acd8",
+          "messageHeadline": "Atomically publish complete Maven custody bytes and records"
+        }
+      },
+      {
+        "commit": {
+          "oid": "cd7bc02e3bfe5701a7e65b941184b9f80b2cdde6",
+          "messageHeadline": "Enforce owned namespace policy on malformed artifact coordinates"
+        }
+      },
+      {
+        "commit": {
+          "oid": "7c5d6e383246a99d39eeec69c0c6dedbac9732ee",
+          "messageHeadline": "Restrict Maven moving-version checks to the coordinate version directory"
+        }
+      },
+      {
+        "commit": {
+          "oid": "cae768c1022782e49360265569b0df2d282d83f4",
+          "messageHeadline": "Verify installed Java tool bytes against retained distributions"
+        }
+      },
+      {
+        "commit": {
+          "oid": "f9f76400b555d3bbd8a0d9900ce13ad5763f36f9",
+          "messageHeadline": "Inventory Maven custody and candidate source coverage"
+        }
+      },
+      {
+        "commit": {
+          "oid": "c0437e1f292ad4bac9ba757adceb0597ac9cf4a0",
+          "messageHeadline": "Resolve explicit Java candidate models with retained-input replay guards"
+        }
+      },
+      {
+        "commit": {
+          "oid": "bd3cc88b23a633f03d45249d429eb298c9e21692",
+          "messageHeadline": "Validate nine pinned XML schema source capsules before acquisition"
+        }
+      },
+      {
+        "commit": {
+          "oid": "04f1fd4f3e7518634b99241041376703f8235ab8",
+          "messageHeadline": "Revalidate schema source capsules in Maven inventory"
+        }
+      },
+      {
+        "commit": {
+          "oid": "4063151a5186633c6ffbc38f2ffeb6e96c72cc6a",
+          "messageHeadline": "Match inventory checksum syntax to replay validation"
+        }
+      },
+      {
+        "commit": {
+          "oid": "38192160813e46fb08d39426f264135599466696",
+          "messageHeadline": "Replay pinned Maven dependency acquisition with retained files and so\u2026"
+        }
+      },
+      {
+        "commit": {
+          "oid": "15862ffb1db035790b0a856151e4412511efe3df",
+          "messageHeadline": "Terminate surviving resolver process-group children after leader exit"
+        }
+      },
+      {
+        "commit": {
+          "oid": "07541d2262d31961d919f46d0ebaa4b1648e0ff1",
+          "messageHeadline": "Validate ten additional fixed transitive schema resource capsules"
+        }
+      },
+      {
+        "commit": {
+          "oid": "dbb522988d4e0a26d2f1e4bc28b55e5273ed80e9",
+          "messageHeadline": "Retain one byte-pinned W3C documentation stylesheet instruction as in\u2026"
+        }
+      },
+      {
+        "commit": {
+          "oid": "4a39cce829dbf29e463083eccdb2131ff935eb4e",
+          "messageHeadline": "Traverse replay selection files safely and retain preparation failure\u2026"
+        }
+      },
+      {
+        "commit": {
+          "oid": "48b95a984dcf04ff52f4611f90e6219c6ad723cb",
+          "messageHeadline": "Record retained Java resolution, source gaps and network-denied replay"
+        }
+      },
+      {
+        "commit": {
+          "oid": "f0cf3ea903a214264bb2e302f947e5c42de5b8c0",
+          "messageHeadline": "Record PR55 publication and verified FND-02 Project evidence"
+        }
+      },
+      {
+        "commit": {
+          "oid": "9e1b2e1bca26d00b200a39f58a4a0890d43fca98",
+          "messageHeadline": "Reconcile Java resolution checkpoint with corrected audit base"
+        }
+      }
+    ],
+    "pageInfo": {
+      "hasNextPage": false,
+      "endCursor": "MjA"
+    }
+  }
+}

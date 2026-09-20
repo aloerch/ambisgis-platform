@@ -1,0 +1,105 @@
+{
+  "data": {
+    "viewer": {
+      "login": "aloerch",
+      "databaseId": 15285626
+    },
+    "repository": {
+      "id": "R_kgDOUhI-dw",
+      "databaseId": 1376927351,
+      "url": "https://github.com/aloerch/ambisgis-platform",
+      "defaultBranchRef": {
+        "name": "ambisgis/main",
+        "target": {
+          "oid": "8393fc46b9b979b05faa416f5998e0159ecd1e33"
+        }
+      },
+      "p54": {
+        "id": "PR_kwDOUhI-d88AAAABEQiDOg",
+        "number": 54,
+        "title": "Audit retained Java sources and GeoNode extension dependencies",
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/54",
+        "state": "MERGED",
+        "isDraft": false,
+        "mergedAt": "2026-09-20T20:09:12Z",
+        "closedAt": "2026-09-20T20:09:12Z",
+        "headRefName": "fnd-02/java-dependency-audit",
+        "headRefOid": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+        "baseRefName": "ambisgis/main",
+        "baseRefOid": "fc77ab978e567ce5d55e3428d1249a3b332da09d",
+        "mergeable": "UNKNOWN",
+        "mergeStateStatus": "UNKNOWN",
+        "reviewDecision": null,
+        "autoMergeRequest": null,
+        "mergeCommit": {
+          "oid": "8393fc46b9b979b05faa416f5998e0159ecd1e33"
+        },
+        "stack": null,
+        "stackEntry": null
+      },
+      "p55": {
+        "id": "PR_kwDOUhI-d88AAAABEQ97wg",
+        "number": 55,
+        "title": "FND-02: retain Java toolchain and replay selected dependency inputs",
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/55",
+        "state": "OPEN",
+        "isDraft": false,
+        "mergedAt": null,
+        "closedAt": null,
+        "headRefName": "fnd-02/java-toolchain-resolution",
+        "headRefOid": "9e1b2e1bca26d00b200a39f58a4a0890d43fca98",
+        "baseRefName": "fnd-02/java-dependency-audit",
+        "baseRefOid": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+        "mergeable": "MERGEABLE",
+        "mergeStateStatus": "CLEAN",
+        "reviewDecision": null,
+        "autoMergeRequest": null,
+        "mergeCommit": null,
+        "stack": null,
+        "stackEntry": null
+      },
+      "p57": {
+        "id": "PR_kwDOUhI-d88AAAABEVWAzA",
+        "number": 57,
+        "title": "FND-02: recover Java sources and exercise component compatibility",
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/57",
+        "state": "OPEN",
+        "isDraft": false,
+        "mergedAt": null,
+        "closedAt": null,
+        "headRefName": "fnd-02/java-source-compatibility",
+        "headRefOid": "7d3063f89c20b5e028b0151a6648a79e4ef14a83",
+        "baseRefName": "fnd-02/java-toolchain-resolution",
+        "baseRefOid": "9e1b2e1bca26d00b200a39f58a4a0890d43fca98",
+        "mergeable": "MERGEABLE",
+        "mergeStateStatus": "CLEAN",
+        "reviewDecision": null,
+        "autoMergeRequest": null,
+        "mergeCommit": null,
+        "stack": null,
+        "stackEntry": null
+      },
+      "p56": {
+        "id": "PR_kwDOUhI-d88AAAABEVLddg",
+        "number": 56,
+        "title": "GOV-02: expose incremental PR reviews and reconcile merged tracking",
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/56",
+        "state": "OPEN",
+        "isDraft": false,
+        "mergedAt": null,
+        "closedAt": null,
+        "headRefName": "gov-02/pr-review-visibility",
+        "headRefOid": "28c9d79757b98bdedd44b5d7486835f9e4b71e63",
+        "baseRefName": "ambisgis/main",
+        "baseRefOid": "fc77ab978e567ce5d55e3428d1249a3b332da09d",
+        "mergeable": "UNKNOWN",
+        "mergeStateStatus": "UNKNOWN",
+        "reviewDecision": null,
+        "autoMergeRequest": null,
+        "mergeCommit": null,
+        "stack": null,
+        "stackEntry": null
+      }
+    }
+  }
+}
