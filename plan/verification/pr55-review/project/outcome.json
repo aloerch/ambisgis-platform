@@ -1,0 +1,71 @@
+{
+  "all_preexisting_item_fields_and_archive_states_unchanged": true,
+  "all_views_fields_and_repository_links_unchanged": true,
+  "task_count": 66,
+  "distinct_task_ids": 66,
+  "pr_item_count": 4,
+  "total_items": 70,
+  "archived_item_count": 0,
+  "queue_filter": "is:pr is:open",
+  "actual_queue_membership": [
+    55,
+    56,
+    57
+  ],
+  "queue_membership_method": "Full Project item/content enumeration plus live PR state and saved filter; no browser inspection claimed.",
+  "pr_items": [
+    {
+      "number": 54,
+      "content_id": "PR_kwDOUhI-d88AAAABEQiDOg",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72Eq8",
+      "state": "MERGED",
+      "archived": false,
+      "values": {
+        "Title": "Audit retained Java sources and GeoNode extension dependencies",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/54 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3 (FND-02 remains In progress)",
+        "Status": "Done"
+      }
+    },
+    {
+      "number": 55,
+      "content_id": "PR_kwDOUhI-d88AAAABEQ97wg",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72Erw",
+      "state": "OPEN",
+      "archived": false,
+      "values": {
+        "Title": "FND-02: retain Java toolchain and replay selected dependency inputs",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/55 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3 (FND-02 remains In progress)",
+        "Status": "Todo"
+      }
+    },
+    {
+      "number": 56,
+      "content_id": "PR_kwDOUhI-d88AAAABEVLddg",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72aCk",
+      "state": "OPEN",
+      "archived": false,
+      "values": {
+        "Title": "GOV-02: expose incremental PR reviews and reconcile merged tracking",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/56 ; parent task https://github.com/aloerch/ambisgis-platform/issues/9",
+        "Status": "Todo"
+      }
+    },
+    {
+      "number": 57,
+      "content_id": "PR_kwDOUhI-d88AAAABEVWAzA",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72aDY",
+      "state": "OPEN",
+      "archived": false,
+      "values": {
+        "Title": "FND-02: recover Java sources and exercise component compatibility",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/57 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3",
+        "Status": "Todo"
+      }
+    }
+  ],
+  "mutations_count": 4,
+  "delivery": {
+    "FND-02": "In progress",
+    "GOV-02": "Merged"
+  }
+}
