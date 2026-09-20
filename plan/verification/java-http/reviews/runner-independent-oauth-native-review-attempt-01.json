@@ -1,0 +1,164 @@
+{
+  "run": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/oauth-http-principal-01",
+  "result_sha256": "fe9f1091fcf0266dd10abed4a6f07c138b0163729461b753a434f0abd8ec2862",
+  "checks": {
+    "result_success": true,
+    "retained_tooling": true,
+    "executed_runner": true,
+    "executed_snapshot_path": true,
+    "build_snapshot_path": true,
+    "source_checks_recorded": true,
+    "network_hash_matches_snapshot": true,
+    "native_counts_match": true,
+    "17_real_http_scenarios_pass": false,
+    "17_transport_checks_pass": true,
+    "authorization_decisions_pass": true,
+    "candidate_after_hashes_match": true,
+    "native_expected_totals": true
+  },
+  "all_checks_passed": false,
+  "totals": {
+    "tests": 688,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 1
+  },
+  "passed": 687,
+  "http_cases": [
+    {
+      "name": "missing-token",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "empty-token",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "wrong-client",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "wrong-secret",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "invalid",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "unauthorized",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "server-error",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "malformed",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "missing-client",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "invalid-geonode",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "expired-geonode",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "missing-principal",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "empty-principal",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "blank-principal",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    },
+    {
+      "name": "non-string-principal",
+      "expected": "denied",
+      "observed": "denied",
+      "authenticated": "false",
+      "passed": "true"
+    }
+  ],
+  "transport": [
+    [
+      "true",
+      "17",
+      "17",
+      "0"
+    ]
+  ],
+  "authorization_decisions": [
+    [
+      "valid",
+      "true",
+      "true"
+    ],
+    [
+      "role-injection",
+      "true",
+      "true"
+    ]
+  ],
+  "network_probes": {
+    "schema_version": 1,
+    "parent_probes": 79,
+    "exec_child_probes": 79,
+    "all_passed": true
+  },
+  "datagram_packets_received": 0,
+  "task_process_group_stopped": true,
+  "broker_sockets_closed": true,
+  "artifact_boundary": "Separate source-built OAuth candidate; no patched aggregate WAR or deployment is claimed."
+}

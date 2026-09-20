@@ -1,0 +1,18 @@
+test_database_cleanup_runs_when_result_parsing_fails (test_compatibility.CompatibilityTests.test_database_cleanup_runs_when_result_parsing_fails) ... ok
+test_database_shutdown_failure_is_recorded_and_fails_run (test_compatibility.CompatibilityTests.test_database_shutdown_failure_is_recorded_and_fails_run) ... ok
+test_malformed_xml_preserves_failed_receipt (test_compatibility.CompatibilityTests.test_malformed_xml_preserves_failed_receipt) ... ok
+test_maven_failure_is_preserved (test_compatibility.CompatibilityTests.test_maven_failure_is_preserved) ... ok
+test_missing_network_receipt_is_not_success (test_compatibility.CompatibilityTests.test_missing_network_receipt_is_not_success) ... ok
+test_native_failure_cannot_be_masked_by_zero_maven_exit (test_compatibility.CompatibilityTests.test_native_failure_cannot_be_masked_by_zero_maven_exit) ... ok
+test_no_matching_target_tests_is_not_success (test_compatibility.CompatibilityTests.test_no_matching_target_tests_is_not_success) ... ok
+test_only_skipped_target_is_not_success (test_compatibility.CompatibilityTests.test_only_skipped_target_is_not_success) ... ok
+test_original_source_mutation_is_not_success (test_compatibility.CompatibilityTests.test_original_source_mutation_is_not_success) ... ok
+test_outputs_never_overwrite_previous_run (test_compatibility.CompatibilityTests.test_outputs_never_overwrite_previous_run) ... ok
+test_source_verification_error_after_maven_success_fails_receipt (test_compatibility.CompatibilityTests.test_source_verification_error_after_maven_success_fails_receipt) ... ok
+test_target_tests_and_network_receipt_required_for_success (test_compatibility.CompatibilityTests.test_target_tests_and_network_receipt_required_for_success) ... ok
+test_unknown_stage_repair_and_target_refused (test_compatibility.CompatibilityTests.test_unknown_stage_repair_and_target_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.092s
+
+OK

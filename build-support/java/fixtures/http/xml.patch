@@ -1,0 +1,11 @@
+--- a/geotools/modules/library/xml/src/test/java/org/geotools/xml/resolver/SchemaCacheTest.java
++++ b/geotools/modules/library/xml/src/test/java/org/geotools/xml/resolver/SchemaCacheTest.java
+@@ -50,7 +50,7 @@
+ 
+     @ClassRule
+     public static WireMockClassRule classRule =
+-            new WireMockClassRule(WireMockConfiguration.options().dynamicPort());
++            new WireMockClassRule(WireMockConfiguration.options().bindAddress("127.0.0.1").dynamicPort());
+ 
+     @Rule
+     public WireMockClassRule service = classRule;

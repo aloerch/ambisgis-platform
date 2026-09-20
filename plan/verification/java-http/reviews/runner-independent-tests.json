@@ -1,0 +1,30 @@
+{
+  "started": "2026-09-20T22:41:26.524718+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-m",
+    "unittest",
+    "test_compatibility",
+    "test_native_reports",
+    "test_http_runtime",
+    "test_runtime_repository",
+    "test_startup_agent",
+    "-v"
+  ],
+  "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-http/build-support/java",
+  "exit_code": 0,
+  "source_sha256": {
+    "compatibility.py": "3b5ce414449b94e10735cb197ce31118265e7eebd8dcdbb966557a3f81a098a2",
+    "native_reports.py": "5ae4497118ac4e36d1b5a5a40a54ea2014bfe7c310f2091040540ce65db5289b",
+    "test_compatibility.py": "136efaffbc2b45a8049035f2371259429a48b8adbd0b90ff16a58a755b08a51e",
+    "test_native_reports.py": "86a555f982b12f7cd1d63ef5f2a71de36db16cfe564a63bd724b0a856fbad6ca",
+    "test_http_runtime.py": "3f74ee9775005209c2125d996fe9ec68c80ec31fa26ecdf29b93de7bc3f17e1f",
+    "test_runtime_repository.py": "9c13c0d8c6762f1485293c5c734b1c225930fd1c19bda2e4862260fd8bdac238",
+    "test_startup_agent.py": "1333f98ffce5986f081b7a1617096db2c3ad867dd85e7b4660ad98f534d9a24b",
+    "audit.py": "cfba3557792085ce93a9fd869409cd3124d1dd55d1e4c26851bde3a1a487478f",
+    "source_closure.py": "ef885b98ead7381dc358cc37b17b5c0294ef7eeaf08a0aba92e1fe526d8861ef"
+  },
+  "source_changed_during_tests": {},
+  "log_sha256": "38ab730e3d2afa994e1aa85eec513bffa411b273a31aaa697c116db5986d6042",
+  "native_tests_run": false
+}

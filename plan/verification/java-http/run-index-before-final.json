@@ -1,0 +1,1856 @@
+{
+  "schema_version": 1,
+  "purpose": "retained observed run index; no acceptance claim",
+  "runs": [
+    {
+      "run": "combined-logging-baseline-01",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/combined-logging-baseline-01/result.json",
+      "receipt_sha256": "16c7a1b01f977e53a33e54f5dc5d3eb26fe50f04da3c452ea0085389c630956b",
+      "result_exit_code": 0,
+      "acceptance_build": false,
+      "evidence_files": [
+        {
+          "name": "classpath.json",
+          "sha256": "a78768e62b04aede96c930346af9dd61e86500ca61b9061a05f891463bbd2788",
+          "size": 59292
+        },
+        {
+          "name": "compile-network.json",
+          "sha256": "16f1534206f8fc0297dd975ae26b0a58f920e8b21dddff784c0799ba175006d4",
+          "size": 45362
+        },
+        {
+          "name": "compile.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "name": "result.json",
+          "sha256": "16c7a1b01f977e53a33e54f5dc5d3eb26fe50f04da3c452ea0085389c630956b",
+          "size": 152711
+        },
+        {
+          "name": "runtime-network.json",
+          "sha256": "4e568be13c5d87dda90bdd2d83fc71f858c51d0f4b4dd69c17ab7f42420734ec",
+          "size": 45435
+        },
+        {
+          "name": "runtime.log",
+          "sha256": "2ea0cf76a3183b2da5cfd428e6d5a6ddcb281abc79fdaf452348bd3bf9277de3",
+          "size": 2194
+        },
+        {
+          "name": "started.json",
+          "sha256": "28fae178b02f998ba3a63f82a880f9271167bd64f5cde260ec0a0a43f1296606",
+          "size": 404
+        }
+      ]
+    },
+    {
+      "run": "combined-logging-reviewed-02",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/combined-logging-reviewed-02/result.json",
+      "receipt_sha256": "3449af697df73eae5776c24421cc6be335271bfe07f90be9b241acc25acf8c4f",
+      "result_exit_code": 0,
+      "acceptance_build": false,
+      "evidence_files": [
+        {
+          "name": "classpath.json",
+          "sha256": "a78768e62b04aede96c930346af9dd61e86500ca61b9061a05f891463bbd2788",
+          "size": 59292
+        },
+        {
+          "name": "compile-network.json",
+          "sha256": "83bd1abf8f9e0d0e915442348cc2f3fa7ccdc8dddc5d45181968c2395b40f582",
+          "size": 45362
+        },
+        {
+          "name": "compile.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        {
+          "name": "result.json",
+          "sha256": "3449af697df73eae5776c24421cc6be335271bfe07f90be9b241acc25acf8c4f",
+          "size": 152711
+        },
+        {
+          "name": "runtime-network.json",
+          "sha256": "26430a6d8e9319ef2dd0ffd07a113d4692054f5fd942721c3bab64f53f1a7591",
+          "size": 45435
+        },
+        {
+          "name": "runtime.log",
+          "sha256": "ecb142475602ef923118b6159d9dce51440f4ea018c15512ab43046628bc0bf1",
+          "size": 2194
+        },
+        {
+          "name": "started.json",
+          "sha256": "28fae178b02f998ba3a63f82a880f9271167bd64f5cde260ec0a0a43f1296606",
+          "size": 404
+        }
+      ]
+    },
+    {
+      "run": "mapfish-http-01",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/mapfish-http-01/result.json",
+      "receipt_sha256": "f1d9c9b763623bec6c6252ea6ed29bb873575a698ba80387ab9eda3267f83f5f",
+      "status": "failed",
+      "started_at": "2026-09-20T22:16:25.504022+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "build_exit_code": 0,
+      "target": "mapfish",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "482e094bb01bf5bda8ac7b7eed1822b2c8391c25b62270b17b47ff24e6ad295c",
+      "source_manifest_sha256": "1180faade715820b33df1acbae5de4d851246a343d462f38d15d8c7d6e63105b",
+      "input_manifest_sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+      "log_sha256": "3961431fe9b39e22b5dcdaa45bac6f49191de29a816f24b51816d99d88573550",
+      "build_log_sha256": "dab60369d0291bf7fd873dcc4cffd7104831b7892eb5f2e91764829c8d7e174f",
+      "finalization_error": {
+        "message": "[Errno 2] No such file or directory: '/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/mapfish-http-01/http-fixture/events.jsonl'",
+        "type": "FileNotFoundError"
+      },
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 0,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 0,
+        "suite_reports": 0
+      },
+      "nonpassing_suites": [],
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "dab60369d0291bf7fd873dcc4cffd7104831b7892eb5f2e91764829c8d7e174f",
+          "size": 217879
+        },
+        {
+          "name": "maven.log",
+          "sha256": "3961431fe9b39e22b5dcdaa45bac6f49191de29a816f24b51816d99d88573550",
+          "size": 213376
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "6d347677b73221cfa35b34794d5a92855f208407884fec30fdc6829b07515095",
+          "size": 2931
+        },
+        {
+          "name": "network-loopback.json",
+          "sha256": "38767d92eb78d07cd8da7be33eefd622ee0b877e0113f33998b9ed576e78bf01",
+          "size": 2453
+        },
+        {
+          "name": "network-loopback.probes.json",
+          "sha256": "e31e45c0990ac07b8209a3cc19e527d84a27149b612ba6259560055f0de65667",
+          "size": 5851
+        },
+        {
+          "name": "result.json",
+          "sha256": "f1d9c9b763623bec6c6252ea6ed29bb873575a698ba80387ab9eda3267f83f5f",
+          "size": 43747
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+          "size": 8645917
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "1180faade715820b33df1acbae5de4d851246a343d462f38d15d8c7d6e63105b",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "b385582d68e6e0cfa3a68eb57919ddb82a9787234d825eca4bda5ad945cb6dc6",
+          "size": 6782
+        }
+      ]
+    },
+    {
+      "run": "mapfish-http-02",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/mapfish-http-02/result.json",
+      "receipt_sha256": "a8707f5ec1b2e7cd8fd8de3d75140b3b34dfa3780d349df9fbb28115b3c24eff",
+      "status": "failed",
+      "started_at": "2026-09-20T22:20:33.333363+00:00",
+      "result_exit_code": 1,
+      "exit_code": null,
+      "build_exit_code": 0,
+      "target": "mapfish",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "8d8affb72eff1d5617767ba2018ea2cba542e5b20bb8b2f2ea56ab08786706f8",
+      "source_manifest_sha256": "1180faade715820b33df1acbae5de4d851246a343d462f38d15d8c7d6e63105b",
+      "input_manifest_sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+      "log_sha256": null,
+      "build_log_sha256": "373708879447c74e7e00fada43a748a5b1c14535726566e2c262e5d4525db59d",
+      "error": {
+        "message": "runtime repository conflicts with retained artifact",
+        "type": "ValueError"
+      },
+      "source_maven_files_unchanged": true,
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 0,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 0,
+        "suite_reports": 0
+      },
+      "nonpassing_suites": [],
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "373708879447c74e7e00fada43a748a5b1c14535726566e2c262e5d4525db59d",
+          "size": 217879
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "d3e0e1bd0881316af7429fc6bfb1958b17c2725ec27024e7b4fd282955a50bb2",
+          "size": 2931
+        },
+        {
+          "name": "result.json",
+          "sha256": "a8707f5ec1b2e7cd8fd8de3d75140b3b34dfa3780d349df9fbb28115b3c24eff",
+          "size": 41288
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+          "size": 8645917
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "1180faade715820b33df1acbae5de4d851246a343d462f38d15d8c7d6e63105b",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "666f7ff38f385263aa8e9b7b4d35f1843ef10d327c52cc1bc30c61ef23f12277",
+          "size": 6889
+        }
+      ]
+    },
+    {
+      "run": "mapfish-http-03",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/mapfish-http-03/result.json",
+      "receipt_sha256": "587d0b9c0dfe69246041f063d15c4f6829ca54937f767a3550a46dfd3651957c",
+      "status": "failed",
+      "started_at": "2026-09-20T22:28:11.295287+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "build_exit_code": 0,
+      "target": "mapfish",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "b9b5c43baa965b653d4f91f5a234f80077e0dfdd2483aa07944357e48f078b40",
+      "source_manifest_sha256": "1180faade715820b33df1acbae5de4d851246a343d462f38d15d8c7d6e63105b",
+      "input_manifest_sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+      "log_sha256": "94006ff4d5a87c026cef347a04eb3790c731d7b3d7d3e54346eb91dcf09f6974",
+      "build_log_sha256": "544b6391d7ab2ba6b42fb98b12321e615645c97b01b11fe7f3ef44b894ce7132",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "http_fixture_finalization": {
+        "all_owned_servers_stopped": true,
+        "events_sha256": "ac1fcd22a8302cd1f18769ccf13de6ac9ef8e5e5511ecabffd8af3bea1abfaa7",
+        "hosts_unchanged": true,
+        "servers_ready": 15,
+        "servers_stopped": 16,
+        "target": "mapfish"
+      },
+      "native_tests": {
+        "errors": 6,
+        "failures": 5,
+        "passed": 60,
+        "skipped": 6,
+        "skipped_cases": [
+          {
+            "detail": "",
+            "message": "",
+            "name": "testCreateTransformerBBoxDef_Geodetic",
+            "suite": "org.mapfish.print.config.layout.MapBlockTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testCreateTransformerCenterDef_Geodetic",
+            "suite": "org.mapfish.print.config.layout.MapBlockTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testRequireMatrixIdsOrTileOrigin",
+            "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testRequireMatrixIdsOrZoomOffset",
+            "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testRequireMatrixIdsOrFormatSuffix",
+            "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testValidConfig",
+            "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+          }
+        ],
+        "tests": 77,
+        "suite_reports": 24
+      },
+      "nonpassing_suites": [
+        {
+          "errors": 0,
+          "failures": 3,
+          "name": "org.mapfish.print.PDFUtilsTest",
+          "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.PDFUtilsTest.xml",
+          "sha256": "d56208d7d298838e278ae088cc467266486887d34f65547a076cb2adaf20b336",
+          "skipped": 0,
+          "tests": 6
+        },
+        {
+          "errors": 1,
+          "failures": 0,
+          "name": "org.mapfish.print.config.layout.LegendsBlockTest",
+          "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.layout.LegendsBlockTest.xml",
+          "sha256": "afeb50372bf0f4fa3350c0fc5a883c5283d4849ae8b6408e0294da7ad1321080",
+          "skipped": 0,
+          "tests": 1
+        },
+        {
+          "errors": 3,
+          "failures": 0,
+          "name": "org.mapfish.print.config.layout.MapBlockTest",
+          "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.layout.MapBlockTest.xml",
+          "sha256": "e6ec5637a8fda3b75fc2c3539918b5d4515268f59113408770fb17ae21743a9f",
+          "skipped": 2,
+          "tests": 5
+        },
+        {
+          "errors": 0,
+          "failures": 1,
+          "name": "org.mapfish.print.map.readers.WMTSMapReaderTest",
+          "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.WMTSMapReaderTest.xml",
+          "sha256": "501a4862740b726108059ba688fa7f3888ae0c43e24d8bacf560b7fbf520a0fe",
+          "skipped": 4,
+          "tests": 6
+        },
+        {
+          "errors": 0,
+          "failures": 1,
+          "name": "org.mapfish.print.map.readers.WMTSServiceInfoTest",
+          "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.WMTSServiceInfoTest.xml",
+          "sha256": "60e212528a6b508d0762d22e63ad907d4cea2aab8da296ca863bc44ea2c0b6e3",
+          "skipped": 0,
+          "tests": 1
+        },
+        {
+          "errors": 2,
+          "failures": 0,
+          "name": "org.mapfish.print.map.renderers.vector.LabelRendererTest",
+          "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.renderers.vector.LabelRendererTest.xml",
+          "sha256": "1e068b6fa119ff3913dcc78364f3dccb795f243b709107e084031000e8ad4660",
+          "skipped": 0,
+          "tests": 2
+        }
+      ],
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "544b6391d7ab2ba6b42fb98b12321e615645c97b01b11fe7f3ef44b894ce7132",
+          "size": 217879
+        },
+        {
+          "name": "maven.log",
+          "sha256": "94006ff4d5a87c026cef347a04eb3790c731d7b3d7d3e54346eb91dcf09f6974",
+          "size": 305877
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "c185e43a78fddc8276c6b09c7b56995a5882c669da1c67d105eafa543d5eb254",
+          "size": 2931
+        },
+        {
+          "name": "network-loopback.json",
+          "sha256": "7014a06e8eda8943e0efa2547609cb12d57125d5999f97d1d1abc6e15eba46e1",
+          "size": 2612
+        },
+        {
+          "name": "network-loopback.probes.json",
+          "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+          "size": 12029
+        },
+        {
+          "name": "result.json",
+          "sha256": "587d0b9c0dfe69246041f063d15c4f6829ca54937f767a3550a46dfd3651957c",
+          "size": 54949
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+          "size": 8652101
+        },
+        {
+          "name": "runtime-staged-inputs.json",
+          "sha256": "7b8704e6e2d26aa7764bcca6c98805d5640486ecc5e04e55d2a96eac3830efbe",
+          "size": 913460
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "1180faade715820b33df1acbae5de4d851246a343d462f38d15d8c7d6e63105b",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "3d1e27fc05b3cf4f7cf2f5b3dd3b71cf5a00855de881ade42d15266f695f94cf",
+          "size": 6889
+        }
+      ]
+    },
+    {
+      "run": "mapfish-http-04",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/mapfish-http-04/result.json",
+      "receipt_sha256": "dd599f3c13ca3d92436fdb147dd3207212a37f06f4c5e2a4dd3b81b2ae4ec97d",
+      "status": "failed",
+      "started_at": "2026-09-20T22:40:54.961147+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "build_exit_code": 0,
+      "target": "mapfish",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "3b5ce414449b94e10735cb197ce31118265e7eebd8dcdbb966557a3f81a098a2",
+      "source_manifest_sha256": "b6e4d98b40fbc677b78119d78ae1272c41989bb368eb5a55277cba47d758bb8e",
+      "input_manifest_sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+      "log_sha256": "c38ce33c8d71fed2635659a14f82c938df454aaf1f917ce8937b6a71bfaf7b73",
+      "build_log_sha256": "d46520a07f2db459e28cfec8b538b5240f2be7832f124ca5b4718c13dc677e1e",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "http_fixture_finalization": {
+        "all_owned_servers_stopped": true,
+        "events_sha256": "f6b75ee89da9c71690e42da51ae1fe316fc8c83f550e40253e941ccc3e2abb35",
+        "hosts_unchanged": true,
+        "servers_ready": 15,
+        "servers_stopped": 16,
+        "target": "mapfish"
+      },
+      "native_tests": {
+        "errors": 0,
+        "failures": 3,
+        "passed": 68,
+        "skipped": 6,
+        "skipped_cases": [
+          {
+            "detail": "",
+            "message": "",
+            "name": "testCreateTransformerBBoxDef_Geodetic",
+            "suite": "org.mapfish.print.config.layout.MapBlockTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testCreateTransformerCenterDef_Geodetic",
+            "suite": "org.mapfish.print.config.layout.MapBlockTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testRequireMatrixIdsOrTileOrigin",
+            "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testRequireMatrixIdsOrZoomOffset",
+            "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testRequireMatrixIdsOrFormatSuffix",
+            "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testValidConfig",
+            "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+          }
+        ],
+        "tests": 77,
+        "suite_reports": 24
+      },
+      "nonpassing_suites": [
+        {
+          "errors": 0,
+          "failures": 3,
+          "name": "org.mapfish.print.PDFUtilsTest",
+          "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.PDFUtilsTest.xml",
+          "sha256": "a08376d53af9821c2547d3274aec6019785f98c05bbac6d711dad8a28594bbea",
+          "skipped": 0,
+          "tests": 6
+        },
+        {
+          "errors": 0,
+          "failures": 0,
+          "name": "org.mapfish.print.config.layout.MapBlockTest",
+          "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.layout.MapBlockTest.xml",
+          "sha256": "cd1127d561890b3fb0a8529f618d4f5db98382fd415fd19fea1d53eac062642d",
+          "skipped": 2,
+          "tests": 5
+        },
+        {
+          "errors": 0,
+          "failures": 0,
+          "name": "org.mapfish.print.map.readers.WMTSMapReaderTest",
+          "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.WMTSMapReaderTest.xml",
+          "sha256": "dfb0b2c4e5d3fabc55bbc138039bd2961d7990a0482dac6a0cd3173d728ef40c",
+          "skipped": 4,
+          "tests": 6
+        }
+      ],
+      "runtime_network": {
+        "runner_sha256": "6f0757b16be7188f564ad070a4e17382d96a7b9ef1dac3ab34fbf897d18108fc",
+        "network_probes": {
+          "all_passed": true,
+          "exec_child_probes": 79,
+          "parent_probes": 79,
+          "schema_version": 1
+        },
+        "datagram_packets_received": 0,
+        "broker_sockets_closed": true,
+        "task_process_group_stopped": true,
+        "result_exit_code": 1
+      },
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "d46520a07f2db459e28cfec8b538b5240f2be7832f124ca5b4718c13dc677e1e",
+          "size": 217879
+        },
+        {
+          "name": "maven.log",
+          "sha256": "c38ce33c8d71fed2635659a14f82c938df454aaf1f917ce8937b6a71bfaf7b73",
+          "size": 225864
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "45fef6bca31327fb61a7046950d1d15585093543970bfb9133e6aea1bab6cce3",
+          "size": 2931
+        },
+        {
+          "name": "network-loopback.json",
+          "sha256": "6fb8164dcedda94235c35c086caa5dbdb3cc35a6c632302335651be12ba11424",
+          "size": 2610
+        },
+        {
+          "name": "network-loopback.probes.json",
+          "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+          "size": 12029
+        },
+        {
+          "name": "result.json",
+          "sha256": "dd599f3c13ca3d92436fdb147dd3207212a37f06f4c5e2a4dd3b81b2ae4ec97d",
+          "size": 59043
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+          "size": 8652101
+        },
+        {
+          "name": "runtime-staged-inputs.json",
+          "sha256": "7b8704e6e2d26aa7764bcca6c98805d5640486ecc5e04e55d2a96eac3830efbe",
+          "size": 913460
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "b6e4d98b40fbc677b78119d78ae1272c41989bb368eb5a55277cba47d758bb8e",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "de4e98cb133738451b6fb7e6dd507dc465dc9cd5c0ceb3e1968ade492d05067c",
+          "size": 7092
+        }
+      ]
+    },
+    {
+      "run": "oauth-diagnostics-baseline-01",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/oauth-diagnostics-baseline-01/result.json",
+      "receipt_sha256": "c2d39f693f6dca23511ce517c1db42ca06110648033463e4e81a74a42f73ae82",
+      "exit_code": 1,
+      "log_sha256": "8feff255be682a60cc3e46e4fa87967caed1454fb444e294c97a264f6314f920",
+      "evidence_files": [
+        {
+          "name": "network.json",
+          "sha256": "814148c35bba79fbd400667376257f5ff791df00672cdcd145cd28118d705cee",
+          "size": 43416
+        },
+        {
+          "name": "result.json",
+          "sha256": "c2d39f693f6dca23511ce517c1db42ca06110648033463e4e81a74a42f73ae82",
+          "size": 42418
+        },
+        {
+          "name": "runtime.log",
+          "sha256": "8feff255be682a60cc3e46e4fa87967caed1454fb444e294c97a264f6314f920",
+          "size": 1058
+        }
+      ]
+    },
+    {
+      "run": "oauth-fixture-compile-01",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/oauth-fixture-compile-01/result.json",
+      "receipt_sha256": "ea848207a85b54463af58468f7ff10845ff0433df25389835d877e97701356ea",
+      "exit_code": 0,
+      "log_sha256": "dece862a32d4e989fd23df958ea691a7e58fa3157857498e3049c7e8b6c37239",
+      "evidence_files": [
+        {
+          "name": "compile.log",
+          "sha256": "dece862a32d4e989fd23df958ea691a7e58fa3157857498e3049c7e8b6c37239",
+          "size": 110
+        },
+        {
+          "name": "network.json",
+          "sha256": "ac8f94a7976ed1e8ea048057b441ec7d73f55b2d836edb059b848ce8d1c113ac",
+          "size": 43606
+        },
+        {
+          "name": "result.json",
+          "sha256": "ea848207a85b54463af58468f7ff10845ff0433df25389835d877e97701356ea",
+          "size": 84412
+        }
+      ]
+    },
+    {
+      "run": "oauth-http-baseline-01",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/oauth-http-baseline-01/result.json",
+      "receipt_sha256": "f679846cadf44c46a2b7830cffda1e9c3be6b359f43c4bfd65f626350adce8c3",
+      "status": "failed",
+      "started_at": "2026-09-20T22:17:00.521008+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "build_exit_code": 0,
+      "target": "oauth",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "482e094bb01bf5bda8ac7b7eed1822b2c8391c25b62270b17b47ff24e6ad295c",
+      "source_manifest_sha256": "b716454c44580c88850af94dfe0cbcfee0271891e857b1df39a7240ed65e234a",
+      "input_manifest_sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+      "log_sha256": "f60e94fd38f9227b79e98c514029f62ff28ea04e8816b851ca7441e60c590489",
+      "build_log_sha256": "57cb2ae7c6eb47c66bc963315faa9091bcf0021fa2387f94d54ece538a4d313c",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 0,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 0,
+        "suite_reports": 0
+      },
+      "nonpassing_suites": [],
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "57cb2ae7c6eb47c66bc963315faa9091bcf0021fa2387f94d54ece538a4d313c",
+          "size": 426995
+        },
+        {
+          "name": "maven.log",
+          "sha256": "f60e94fd38f9227b79e98c514029f62ff28ea04e8816b851ca7441e60c590489",
+          "size": 324911
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "c9a768bf05ec6153879323be865a8cbc6bdc8bde311642b70283c6549bdab974",
+          "size": 2988
+        },
+        {
+          "name": "network-loopback.json",
+          "sha256": "edf38e51af7874d731d234b1eb9d67da539f9d68153d6044eb039218b853d755",
+          "size": 2510
+        },
+        {
+          "name": "network-loopback.probes.json",
+          "sha256": "e31e45c0990ac07b8209a3cc19e527d84a27149b612ba6259560055f0de65667",
+          "size": 5851
+        },
+        {
+          "name": "result.json",
+          "sha256": "f679846cadf44c46a2b7830cffda1e9c3be6b359f43c4bfd65f626350adce8c3",
+          "size": 51409
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+          "size": 8645917
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "b716454c44580c88850af94dfe0cbcfee0271891e857b1df39a7240ed65e234a",
+          "size": 6626082
+        },
+        {
+          "name": "started.json",
+          "sha256": "4c98102b78c6d5731e719183f2e896ff7cf7eb956df554ba27de555e41728cec",
+          "size": 6781
+        }
+      ]
+    },
+    {
+      "run": "oauth-http-baseline-02",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/oauth-http-baseline-02/result.json",
+      "receipt_sha256": "64ce9db72debba3985bc103aacfc1ef8fc702b884a47e8c9972c764cf40ac074",
+      "status": "failed",
+      "started_at": "2026-09-20T22:20:40.874496+00:00",
+      "result_exit_code": 1,
+      "exit_code": null,
+      "build_exit_code": 0,
+      "target": "oauth",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "8d8affb72eff1d5617767ba2018ea2cba542e5b20bb8b2f2ea56ab08786706f8",
+      "source_manifest_sha256": "b716454c44580c88850af94dfe0cbcfee0271891e857b1df39a7240ed65e234a",
+      "input_manifest_sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+      "log_sha256": null,
+      "build_log_sha256": "5f8d83a952988e4fd3092e26a5082fe65d960cc76f6b3171c430d3b0d105b8d4",
+      "error": {
+        "message": "runtime repository conflicts with retained artifact",
+        "type": "ValueError"
+      },
+      "source_maven_files_unchanged": true,
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 0,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 0,
+        "suite_reports": 0
+      },
+      "nonpassing_suites": [],
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "5f8d83a952988e4fd3092e26a5082fe65d960cc76f6b3171c430d3b0d105b8d4",
+          "size": 426995
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "646ec0213f01cdcaa60049bda54a2aeae2a37f6bd4db839e32dfa21f7aa4dc26",
+          "size": 2988
+        },
+        {
+          "name": "result.json",
+          "sha256": "64ce9db72debba3985bc103aacfc1ef8fc702b884a47e8c9972c764cf40ac074",
+          "size": 49400
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+          "size": 8652101
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "b716454c44580c88850af94dfe0cbcfee0271891e857b1df39a7240ed65e234a",
+          "size": 6626082
+        },
+        {
+          "name": "started.json",
+          "sha256": "b12336eb868c1ad7d92f02597a4ade547f59be700f9bc270f03de28d7dcc1b7c",
+          "size": 6888
+        }
+      ]
+    },
+    {
+      "run": "oauth-http-baseline-03",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/oauth-http-baseline-03/result.json",
+      "receipt_sha256": "153925ada59ed6f10b2bafd9be19b2719961cec8f98ffae572d3373a5332f435",
+      "status": "failed",
+      "started_at": "2026-09-20T22:29:46.409214+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "build_exit_code": 0,
+      "target": "oauth",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "07c9917505baa4d166a4988e129145bc9650fb809c9a713fc835813082bc5f8d",
+      "source_manifest_sha256": "801f83c13bf737d2da700baa0be9c29a8a13bd58ede4a8da0926aad3a6d1f465",
+      "input_manifest_sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+      "log_sha256": "c76731a3c525722c8d14fb73e47a178275aeee52c8b94706257ac683ceb5a2cb",
+      "build_log_sha256": "b064c8dded7bf5ab44dad4568d4ad4918cf95a6b26f2eace497bcb7bcee8ffd4",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 25,
+        "failures": 13,
+        "passed": 94,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 132,
+        "suite_reports": 31
+      },
+      "nonpassing_suites": [
+        {
+          "errors": 10,
+          "failures": 0,
+          "name": "org.geoserver.security.ResourceAccessManagerWrapperTest",
+          "path": "geoserver/src/main/target/surefire-reports/TEST-org.geoserver.security.ResourceAccessManagerWrapperTest.xml",
+          "sha256": "1a5f9cf2e2c714634c96336900731c689dc34f5e82aff6f259200c3344e3b4ec",
+          "skipped": 0,
+          "tests": 10
+        },
+        {
+          "errors": 1,
+          "failures": 0,
+          "name": "org.geoserver.security.csp.CSPHeaderDAOTest",
+          "path": "geoserver/src/main/target/surefire-reports/TEST-org.geoserver.security.csp.CSPHeaderDAOTest.xml",
+          "sha256": "c3c566cd9cf469210d3f0fdbc1c057c1f6d912e4b506fc5883acf7961036cd3b",
+          "skipped": 0,
+          "tests": 1
+        },
+        {
+          "errors": 0,
+          "failures": 13,
+          "name": "org.geoserver.security.csp.CSPHttpResponseWrapperTest",
+          "path": "geoserver/src/main/target/surefire-reports/TEST-org.geoserver.security.csp.CSPHttpResponseWrapperTest.xml",
+          "sha256": "4b8c88bf0da6d9079d723349da4348297365ee41519b602cf488114a1bff2ce8",
+          "skipped": 0,
+          "tests": 13
+        },
+        {
+          "errors": 1,
+          "failures": 0,
+          "name": "org.geoserver.security.csp.ContentSecurityPolicyTest",
+          "path": "geoserver/src/main/target/surefire-reports/TEST-org.geoserver.security.csp.ContentSecurityPolicyTest.xml",
+          "sha256": "2ade2fda2d0bc77eb3f5f7ebdbff74aa4fd187ac580e5e34ea6f295429f81511",
+          "skipped": 0,
+          "tests": 1
+        },
+        {
+          "errors": 1,
+          "failures": 0,
+          "name": "org.geoserver.security.decorators.SecuredFeatureTypeInfoTest",
+          "path": "geoserver/src/main/target/surefire-reports/TEST-org.geoserver.security.decorators.SecuredFeatureTypeInfoTest.xml",
+          "sha256": "e07ec0437d50fdf6fc94ee7cc1ce27bdac8d36ed773477958bb7e3b829d8b8a1",
+          "skipped": 0,
+          "tests": 4
+        },
+        {
+          "errors": 4,
+          "failures": 0,
+          "name": "org.geoserver.security.filter.GeoServerRoleResolversTest",
+          "path": "geoserver/src/main/target/surefire-reports/TEST-org.geoserver.security.filter.GeoServerRoleResolversTest.xml",
+          "sha256": "960a5f889dbe01842cd3496ab420af1b92fb8b91f0243b555403f2a3ddd0b5eb",
+          "skipped": 0,
+          "tests": 4
+        },
+        {
+          "errors": 2,
+          "failures": 0,
+          "name": "org.geoserver.security.impl.DefaultResourceAccessManagerTest",
+          "path": "geoserver/src/main/target/surefire-reports/TEST-org.geoserver.security.impl.DefaultResourceAccessManagerTest.xml",
+          "sha256": "7ecefe9e36d4775a52b53d10699c2f6d8f7dbcd0670eeaf4c4adbc0410d46abf",
+          "skipped": 0,
+          "tests": 2
+        },
+        {
+          "errors": 1,
+          "failures": 0,
+          "name": "org.geoserver.security.impl.LayerGroupContainmentCacheTest",
+          "path": "geoserver/src/main/target/surefire-reports/TEST-org.geoserver.security.impl.LayerGroupContainmentCacheTest.xml",
+          "sha256": "4743567c4b9537fc1b0b59c513230402c6f279b5ad75aa74dba68f193c2fd4df",
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "errors": 4,
+          "failures": 0,
+          "name": "org.geoserver.security.password.ConfigurationPasswordEncryptionHelperTest",
+          "path": "geoserver/src/main/target/surefire-reports/TEST-org.geoserver.security.password.ConfigurationPasswordEncryptionHelperTest.xml",
+          "sha256": "a4a78451049be1ef974974b6a2e127a52a4518a15c3de2068322034b7c82e808",
+          "skipped": 0,
+          "tests": 4
+        },
+        {
+          "errors": 1,
+          "failures": 0,
+          "name": "org.geoserver.security.rememberme.GeoServerTokenBasedRememberMeServicesTest",
+          "path": "geoserver/src/main/target/surefire-reports/TEST-org.geoserver.security.rememberme.GeoServerTokenBasedRememberMeServicesTest.xml",
+          "sha256": "ebf28a5417110d77a019088dbf50b86498f3c5b7c9eebf0009d14188ac7d9d4a",
+          "skipped": 0,
+          "tests": 1
+        }
+      ],
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "b064c8dded7bf5ab44dad4568d4ad4918cf95a6b26f2eace497bcb7bcee8ffd4",
+          "size": 427391
+        },
+        {
+          "name": "maven.log",
+          "sha256": "c76731a3c525722c8d14fb73e47a178275aeee52c8b94706257ac683ceb5a2cb",
+          "size": 490232
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "8ad8a948b91711ee2e63bd93c43b5e29c77b747c6adff06a05587b6fd7d8fb12",
+          "size": 2988
+        },
+        {
+          "name": "network-loopback.json",
+          "sha256": "99d65aef4eeaf2ea053d027b43b304eded2cf7b1b5ba4f2f5480e68b3ade785b",
+          "size": 2661
+        },
+        {
+          "name": "network-loopback.probes.json",
+          "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+          "size": 12029
+        },
+        {
+          "name": "result.json",
+          "sha256": "153925ada59ed6f10b2bafd9be19b2719961cec8f98ffae572d3373a5332f435",
+          "size": 64041
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+          "size": 8652101
+        },
+        {
+          "name": "runtime-staged-inputs.json",
+          "sha256": "c0285605ff741c6e4c3c81009442c4ef1b4f7e490260db74bc8a606b031b94c0",
+          "size": 913673
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "801f83c13bf737d2da700baa0be9c29a8a13bd58ede4a8da0926aad3a6d1f465",
+          "size": 6626082
+        },
+        {
+          "name": "started.json",
+          "sha256": "e264503543481b69a3a7d48a87929f60768feae0f4eca5456ddd581873f99f4a",
+          "size": 6888
+        }
+      ]
+    },
+    {
+      "run": "oauth-http-baseline-04",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/oauth-http-baseline-04/result.json",
+      "receipt_sha256": "c1898c22a7704908438517c5436f558d641b09ad14d28f652280d7025b295a61",
+      "status": "failed",
+      "started_at": "2026-09-20T22:32:32.358036+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "build_exit_code": 0,
+      "target": "oauth",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "778e3fd341d205717bd86ce590430cf06fc7b4ddcbed6d62815bf13c224d486f",
+      "source_manifest_sha256": "801f83c13bf737d2da700baa0be9c29a8a13bd58ede4a8da0926aad3a6d1f465",
+      "input_manifest_sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+      "log_sha256": "f0b5153b2a26ffd25f05859ce4eab7f9306e45fe69310841719478662121a40b",
+      "build_log_sha256": "94071e77d7709dea9bf38b562d2722c80b878b6a22ce9513a4378bf616921e8e",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 4,
+        "passed": 683,
+        "skipped": 1,
+        "skipped_cases": [
+          {
+            "detail": "",
+            "message": "",
+            "name": "testSSL",
+            "suite": "org.geoserver.security.auth.AuthenticationFilterTest"
+          }
+        ],
+        "tests": 688,
+        "suite_reports": 140
+      },
+      "nonpassing_suites": [
+        {
+          "errors": 0,
+          "failures": 3,
+          "name": "org.geoserver.security.oauth2.AmbisgisGeoNodeDiagnosticsTest",
+          "path": "geoserver/src/community/security/oauth2-geonode/target/surefire-reports/TEST-org.geoserver.security.oauth2.AmbisgisGeoNodeDiagnosticsTest.xml",
+          "sha256": "ed7c42ea32e491279cd02259962cbc8f6f11a61fef0be9ed12bb4c56b9089d48",
+          "skipped": 0,
+          "tests": 3
+        },
+        {
+          "errors": 0,
+          "failures": 1,
+          "name": "org.geoserver.security.oauth2.AmbisgisGeoNodeHttpTest",
+          "path": "geoserver/src/community/security/oauth2-geonode/target/surefire-reports/TEST-org.geoserver.security.oauth2.AmbisgisGeoNodeHttpTest.xml",
+          "sha256": "dc7535c1c206bcdfedf4005182dd629e47d79ceb868a29e0bd104c9fd5df3383",
+          "skipped": 0,
+          "tests": 1
+        },
+        {
+          "errors": 0,
+          "failures": 0,
+          "name": "org.geoserver.security.auth.AuthenticationFilterTest",
+          "path": "geoserver/src/security/security-tests/target/surefire-reports/TEST-org.geoserver.security.auth.AuthenticationFilterTest.xml",
+          "sha256": "820152dead0728da4beede5671c34647cb456566b3c1836e798d08730b3adb84",
+          "skipped": 1,
+          "tests": 11
+        }
+      ],
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "94071e77d7709dea9bf38b562d2722c80b878b6a22ce9513a4378bf616921e8e",
+          "size": 427391
+        },
+        {
+          "name": "independent-network-verification.json",
+          "sha256": "1f92efd3dd87b90c26c4b349916a0fffb68f71a015f862357cb486605c4527dc",
+          "size": 2664
+        },
+        {
+          "name": "maven.log",
+          "sha256": "f0b5153b2a26ffd25f05859ce4eab7f9306e45fe69310841719478662121a40b",
+          "size": 476162
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "8b5d3c73ea42a0b1508defedc9edcc5217f236cd0635c7b77a079563cade4af0",
+          "size": 2988
+        },
+        {
+          "name": "network-loopback.json",
+          "sha256": "2f88c6499fecdd812302423c15a5fe516c41a87a2a50f7892531fc6267d6593c",
+          "size": 2664
+        },
+        {
+          "name": "network-loopback.probes.json",
+          "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+          "size": 12029
+        },
+        {
+          "name": "result.json",
+          "sha256": "c1898c22a7704908438517c5436f558d641b09ad14d28f652280d7025b295a61",
+          "size": 109540
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+          "size": 8652101
+        },
+        {
+          "name": "runtime-staged-inputs.json",
+          "sha256": "c0285605ff741c6e4c3c81009442c4ef1b4f7e490260db74bc8a606b031b94c0",
+          "size": 913673
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "801f83c13bf737d2da700baa0be9c29a8a13bd58ede4a8da0926aad3a6d1f465",
+          "size": 6626082
+        },
+        {
+          "name": "started.json",
+          "sha256": "270ced31ab3c4d92b819ec1228a5f711ad5d30aa0129847e8c00b61f10105403",
+          "size": 6888
+        }
+      ]
+    },
+    {
+      "run": "oauth-native-01",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/oauth-native-01/result.json",
+      "receipt_sha256": "8d9401894d63fada549faca5d35a2cf813d0d03db3f2b8c3b1ba9b5329eab7ab",
+      "status": "succeeded",
+      "started_at": "2026-09-20T22:00:44.712409+00:00",
+      "result_exit_code": 0,
+      "exit_code": 0,
+      "target": "oauth",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "66d6c920e06bd7e22bea8466dc9647588abe02c11f331b113e54b321629892bc",
+      "source_manifest_sha256": "e855e8e8b36e552114b8b878258f022063957e3086d0f6ec296355a6bba77fb1",
+      "input_manifest_sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+      "log_sha256": "f2584e70633e2601d29d96db2eaaa4264249a6088acdee7890273fdeaca88a0b",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "target_executed_tests": 7,
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 683,
+        "skipped": 1,
+        "skipped_cases": [
+          {
+            "detail": "",
+            "message": "",
+            "name": "testSSL",
+            "suite": "org.geoserver.security.auth.AuthenticationFilterTest"
+          }
+        ],
+        "tests": 684,
+        "suite_reports": 138
+      },
+      "nonpassing_suites": [
+        {
+          "errors": 0,
+          "failures": 0,
+          "name": "org.geoserver.security.auth.AuthenticationFilterTest",
+          "path": "geoserver/src/security/security-tests/target/surefire-reports/TEST-org.geoserver.security.auth.AuthenticationFilterTest.xml",
+          "sha256": "5bddae0725aa2ae0fba4be18ece76ca4c72ae16b21c16d0ccb8208914338c1b9",
+          "skipped": 1,
+          "tests": 11
+        }
+      ],
+      "evidence_files": [
+        {
+          "name": "maven.log",
+          "sha256": "f2584e70633e2601d29d96db2eaaa4264249a6088acdee7890273fdeaca88a0b",
+          "size": 471099
+        },
+        {
+          "name": "network-denial.json",
+          "sha256": "366b6d24a7eecb667c12d21f5efc09571e6523a3b607d558921d525547f86674",
+          "size": 2936
+        },
+        {
+          "name": "result.json",
+          "sha256": "8d9401894d63fada549faca5d35a2cf813d0d03db3f2b8c3b1ba9b5329eab7ab",
+          "size": 101339
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+          "size": 8645917
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "e855e8e8b36e552114b8b878258f022063957e3086d0f6ec296355a6bba77fb1",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "ac8a93bbc32f6285d329d9593df18377d25ea6fa1d13e30ba29d5f6ed3aba6d8",
+          "size": 4534
+        }
+      ]
+    },
+    {
+      "run": "webapp-baseline-01",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/webapp-baseline-01/result.json",
+      "receipt_sha256": "4c10036614394e3c4d9f5d9a96f755ef8ff6f398f417e409ad5b69b28de6c7f9",
+      "status": "failed",
+      "started_at": "2026-09-20T22:01:58.440782+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "target": "webapp",
+      "stage": "package",
+      "test_selection": "compile-only",
+      "runner_sha256": "9797264727cb772ba41d1d56f768b48ff67aff5c39261f1f326c7ba9ef640daa",
+      "source_manifest_sha256": "e855e8e8b36e552114b8b878258f022063957e3086d0f6ec296355a6bba77fb1",
+      "input_manifest_sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+      "log_sha256": "0ba3987aa4a1adb85b779ada685fd1216f04dceb2613e19849263c20f81178dd",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 0,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 0,
+        "suite_reports": 0
+      },
+      "nonpassing_suites": [],
+      "evidence_files": [
+        {
+          "name": "maven.log",
+          "sha256": "0ba3987aa4a1adb85b779ada685fd1216f04dceb2613e19849263c20f81178dd",
+          "size": 426903
+        },
+        {
+          "name": "network-denial.json",
+          "sha256": "29514d3d683e1036547d13813948b9fef43429b516207ae2a34628bcc53f9dc7",
+          "size": 2794
+        },
+        {
+          "name": "result.json",
+          "sha256": "4c10036614394e3c4d9f5d9a96f755ef8ff6f398f417e409ad5b69b28de6c7f9",
+          "size": 45993
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+          "size": 8645917
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "e855e8e8b36e552114b8b878258f022063957e3086d0f6ec296355a6bba77fb1",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "e699031e3bda7d83580964ea2210d66ad992a4d515c756e7b75c2293c154c403",
+          "size": 4541
+        }
+      ]
+    },
+    {
+      "run": "webapp-baseline-02",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/webapp-baseline-02/result.json",
+      "receipt_sha256": "a69864325a1c79d9e8aa30da4b05caa1c2da85f4979d3b597ea23a4abf0105f6",
+      "status": "failed",
+      "started_at": "2026-09-20T22:10:03.671358+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "target": "webapp",
+      "stage": "package",
+      "test_selection": "compile-only",
+      "runner_sha256": "aaf226d6cabb427da7e2c8a30ded908e9e69479bb2ac724d129c845c782d2d5a",
+      "source_manifest_sha256": "8166075fedd8b19d70881e90a9a8c2a139a017b56d9735de541c286c8f2bf2d7",
+      "input_manifest_sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+      "log_sha256": "2ffed00fd64d84172d1427c14d0dabcfcf73ff61f09f5873b6c2af241a33542e",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 0,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 0,
+        "suite_reports": 0
+      },
+      "nonpassing_suites": [],
+      "evidence_files": [
+        {
+          "name": "maven.log",
+          "sha256": "2ffed00fd64d84172d1427c14d0dabcfcf73ff61f09f5873b6c2af241a33542e",
+          "size": 438662
+        },
+        {
+          "name": "network-denial.json",
+          "sha256": "e28c8aaf213983da8cb100841c40cf61bd115ab5688dc37e1edc41ae8ab4411f",
+          "size": 2794
+        },
+        {
+          "name": "result.json",
+          "sha256": "a69864325a1c79d9e8aa30da4b05caa1c2da85f4979d3b597ea23a4abf0105f6",
+          "size": 50500
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+          "size": 8645917
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "8166075fedd8b19d70881e90a9a8c2a139a017b56d9735de541c286c8f2bf2d7",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "74c2507a9e728d44bbdfc766cd5ba36d6900285f8143ee2ff66b741969619f25",
+          "size": 5933
+        }
+      ]
+    },
+    {
+      "run": "webapp-baseline-03",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/webapp-baseline-03/result.json",
+      "receipt_sha256": "3fe85a380ebd9bbe9b808eea2192fd321eea6615835ceab91576e17f7593b1fd",
+      "status": "failed",
+      "started_at": "2026-09-20T22:13:23.664367+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "target": "webapp",
+      "stage": "package",
+      "test_selection": "compile-only",
+      "runner_sha256": "aaf226d6cabb427da7e2c8a30ded908e9e69479bb2ac724d129c845c782d2d5a",
+      "source_manifest_sha256": "e6c656eace5ac63c1e8a24ede2b06c43c903be84ffeb114db6d61c1d575e1cb8",
+      "input_manifest_sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+      "log_sha256": "ed934be679ec8920772a609bce82feca90e95a6fdf60655993c3144c5e1d86fe",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 0,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 0,
+        "suite_reports": 0
+      },
+      "nonpassing_suites": [],
+      "evidence_files": [
+        {
+          "name": "maven.log",
+          "sha256": "ed934be679ec8920772a609bce82feca90e95a6fdf60655993c3144c5e1d86fe",
+          "size": 534351
+        },
+        {
+          "name": "network-denial.json",
+          "sha256": "0f52edd24985dd657d74f4f618fd596caa465d65c3018e68cfa64a2c4fb7c01d",
+          "size": 2794
+        },
+        {
+          "name": "result.json",
+          "sha256": "3fe85a380ebd9bbe9b808eea2192fd321eea6615835ceab91576e17f7593b1fd",
+          "size": 74321
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+          "size": 8645917
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "e6c656eace5ac63c1e8a24ede2b06c43c903be84ffeb114db6d61c1d575e1cb8",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "bbbb4db52a8bace92b3a08fcaf970cde67d016116e3fcc55649c4a6fe66051e3",
+          "size": 6485
+        }
+      ]
+    },
+    {
+      "run": "webapp-baseline-04",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/webapp-baseline-04/result.json",
+      "receipt_sha256": "6dadad485c9f057783c509bf32d944d093cc461e2a07d5f1f9e420ad87341b49",
+      "status": "succeeded",
+      "started_at": "2026-09-20T22:18:50.396764+00:00",
+      "result_exit_code": 0,
+      "exit_code": 0,
+      "target": "webapp",
+      "stage": "package",
+      "test_selection": "compile-only",
+      "runner_sha256": "482e094bb01bf5bda8ac7b7eed1822b2c8391c25b62270b17b47ff24e6ad295c",
+      "source_manifest_sha256": "e6c656eace5ac63c1e8a24ede2b06c43c903be84ffeb114db6d61c1d575e1cb8",
+      "input_manifest_sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+      "log_sha256": "13d3d0f4868f171dce853e64e4a48ebf1a7e02a7b8ce4a3672d808d3892f8f0e",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 0,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 0,
+        "suite_reports": 0
+      },
+      "nonpassing_suites": [],
+      "evidence_files": [
+        {
+          "name": "maven.log",
+          "sha256": "13d3d0f4868f171dce853e64e4a48ebf1a7e02a7b8ce4a3672d808d3892f8f0e",
+          "size": 637421
+        },
+        {
+          "name": "network-denial.json",
+          "sha256": "1bf20687f6512bd553b553f7ca91986454107dfeeb13f6f85f2240d944b701ac",
+          "size": 2794
+        },
+        {
+          "name": "result.json",
+          "sha256": "6dadad485c9f057783c509bf32d944d093cc461e2a07d5f1f9e420ad87341b49",
+          "size": 84492
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+          "size": 8652101
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "e6c656eace5ac63c1e8a24ede2b06c43c903be84ffeb114db6d61c1d575e1cb8",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "5288eb08ef784ef4efc0e1402a374d5f2539ab7ffa0a227f3419936d596e16e8",
+          "size": 6788
+        }
+      ]
+    },
+    {
+      "run": "xml-http-01",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/xml-http-01/result.json",
+      "receipt_sha256": "2e89afc9d39b4b0da5f408007cae54be03c66d8e926bac81685da3eb8fcf13b3",
+      "status": "failed",
+      "started_at": "2026-09-20T22:16:23.811542+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "build_exit_code": 0,
+      "target": "xml",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "482e094bb01bf5bda8ac7b7eed1822b2c8391c25b62270b17b47ff24e6ad295c",
+      "source_manifest_sha256": "ab635bf238d4eeafc282cf160d7ff5ab21ebc4f238ffe80ba120ea0cd418d852",
+      "input_manifest_sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+      "log_sha256": "2a3c0d6be002b96249560cdd0f8b7a36c2493cbd57c15e10702d88b0b663014b",
+      "build_log_sha256": "d644a0aa03f1538340aaf0e58a5f7ebbd00a7e9f21c430f1d41ed60d96e7ad14",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "http_fixture_finalization": {
+        "hosts_unchanged": true,
+        "target": "xml"
+      },
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 0,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 0,
+        "suite_reports": 0
+      },
+      "nonpassing_suites": [],
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "d644a0aa03f1538340aaf0e58a5f7ebbd00a7e9f21c430f1d41ed60d96e7ad14",
+          "size": 61237
+        },
+        {
+          "name": "maven.log",
+          "sha256": "2a3c0d6be002b96249560cdd0f8b7a36c2493cbd57c15e10702d88b0b663014b",
+          "size": 54499
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "c18e90760c29a56b2a7a0a05f8cc4c1d99553105824aa1cd0010e99781ce0826",
+          "size": 2912
+        },
+        {
+          "name": "network-loopback.json",
+          "sha256": "72b412052a99221cc2fc2bd836b65c3e18f16fcaf1e9e806b1ed46a26276240a",
+          "size": 2431
+        },
+        {
+          "name": "network-loopback.probes.json",
+          "sha256": "e31e45c0990ac07b8209a3cc19e527d84a27149b612ba6259560055f0de65667",
+          "size": 5851
+        },
+        {
+          "name": "result.json",
+          "sha256": "2e89afc9d39b4b0da5f408007cae54be03c66d8e926bac81685da3eb8fcf13b3",
+          "size": 52600
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+          "size": 8645917
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "ab635bf238d4eeafc282cf160d7ff5ab21ebc4f238ffe80ba120ea0cd418d852",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "2f3f793a0394d23f715a87eb57f9fb43e09c10c363be8eaf0386b18bbfb69669",
+          "size": 6778
+        }
+      ]
+    },
+    {
+      "run": "xml-http-02",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/xml-http-02/result.json",
+      "receipt_sha256": "c9039da02f4b26f4ebc7f9218c52b377f04763314a7270824a7993b80660ea54",
+      "status": "failed",
+      "started_at": "2026-09-20T22:20:34.659944+00:00",
+      "result_exit_code": 1,
+      "exit_code": null,
+      "build_exit_code": 0,
+      "target": "xml",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "8d8affb72eff1d5617767ba2018ea2cba542e5b20bb8b2f2ea56ab08786706f8",
+      "source_manifest_sha256": "ab635bf238d4eeafc282cf160d7ff5ab21ebc4f238ffe80ba120ea0cd418d852",
+      "input_manifest_sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+      "log_sha256": null,
+      "build_log_sha256": "8074ad97bcf6e56b4632c665be6805dd0fb725c76f20170efb8cbbd7eb0ecc5b",
+      "error": {
+        "message": "runtime repository conflicts with retained artifact",
+        "type": "ValueError"
+      },
+      "source_maven_files_unchanged": true,
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 0,
+        "skipped": 0,
+        "skipped_cases": [],
+        "tests": 0,
+        "suite_reports": 0
+      },
+      "nonpassing_suites": [],
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "8074ad97bcf6e56b4632c665be6805dd0fb725c76f20170efb8cbbd7eb0ecc5b",
+          "size": 61237
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "d33f488336d7b1c067298a5e6e712097efdee5bfe754328b08c15c2b70566530",
+          "size": 2912
+        },
+        {
+          "name": "result.json",
+          "sha256": "c9039da02f4b26f4ebc7f9218c52b377f04763314a7270824a7993b80660ea54",
+          "size": 50312
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "05d807701e46a6a4f99e444e30920a8604e8a1e3ad4d56290e74910e3840f270",
+          "size": 8645917
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "ab635bf238d4eeafc282cf160d7ff5ab21ebc4f238ffe80ba120ea0cd418d852",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "269ce0ea6bc477b13da0861eaa8dbd098f4aa5042ff82079232b2b0b601f8925",
+          "size": 6885
+        }
+      ]
+    },
+    {
+      "run": "xml-http-03",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/xml-http-03/result.json",
+      "receipt_sha256": "a7a0cd686b1552e500f5a31ef8d3f8d5384eb5c79d3f166eab1ad0f06164c997",
+      "status": "failed",
+      "started_at": "2026-09-20T22:28:10.147900+00:00",
+      "result_exit_code": 1,
+      "exit_code": 1,
+      "build_exit_code": 0,
+      "target": "xml",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "b9b5c43baa965b653d4f91f5a234f80077e0dfdd2483aa07944357e48f078b40",
+      "source_manifest_sha256": "ab635bf238d4eeafc282cf160d7ff5ab21ebc4f238ffe80ba120ea0cd418d852",
+      "input_manifest_sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+      "log_sha256": "2b6b9dc606b0aa2ad6993c4865def4fc415562c1fa9be61cf018bf691e014797",
+      "build_log_sha256": "95b3a05f9da9e53de8ad9f5fdd9b84fec742cdb2fb55b7ef2861e5b5035142a4",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "http_fixture_finalization": {
+        "hosts_unchanged": true,
+        "target": "xml"
+      },
+      "native_tests": {
+        "errors": 16,
+        "failures": 0,
+        "passed": 282,
+        "skipped": 4,
+        "skipped_cases": [
+          {
+            "detail": "",
+            "message": "",
+            "name": "testOneFeature",
+            "suite": "org.geotools.xml.GMLParserTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testMoreFeatures",
+            "suite": "org.geotools.xml.GMLParserTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testOneFeatureWrite",
+            "suite": "org.geotools.xml.GMLParserTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testOneFeatureWriteWithHints",
+            "suite": "org.geotools.xml.GMLParserTest"
+          }
+        ],
+        "tests": 302,
+        "suite_reports": 35
+      },
+      "nonpassing_suites": [
+        {
+          "errors": 11,
+          "failures": 0,
+          "name": "org.geotools.xml.DocumentFactoryTest",
+          "path": "geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.DocumentFactoryTest.xml",
+          "sha256": "ef45dfb400f338801b40ad5e7cdded58a50f290068f8b3b29b6268e7fa4babfc",
+          "skipped": 0,
+          "tests": 11
+        },
+        {
+          "errors": 0,
+          "failures": 0,
+          "name": "org.geotools.xml.GMLParserTest",
+          "path": "geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.GMLParserTest.xml",
+          "sha256": "e5b06ba8209c76232cba79a67ba380a57c3c1fb0da7f49f26159dc66b2764afe",
+          "skipped": 4,
+          "tests": 10
+        },
+        {
+          "errors": 4,
+          "failures": 0,
+          "name": "org.geotools.xml.gml.GMLComplexTypesTest",
+          "path": "geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.gml.GMLComplexTypesTest.xml",
+          "sha256": "41e57eb50c370917088b175712f0591cf029df866abfe8be52f1abc5efe206df",
+          "skipped": 0,
+          "tests": 4
+        },
+        {
+          "errors": 1,
+          "failures": 0,
+          "name": "org.geotools.xml.xsi.XSISimpleTypesTest",
+          "path": "geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.xsi.XSISimpleTypesTest.xml",
+          "sha256": "fd04370320fdff9a68bf78b1d82c35812e67332c7d046db34016f19995731171",
+          "skipped": 0,
+          "tests": 5
+        }
+      ],
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "95b3a05f9da9e53de8ad9f5fdd9b84fec742cdb2fb55b7ef2861e5b5035142a4",
+          "size": 61237
+        },
+        {
+          "name": "maven.log",
+          "sha256": "2b6b9dc606b0aa2ad6993c4865def4fc415562c1fa9be61cf018bf691e014797",
+          "size": 183837
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "9d4b80345f735a17a13ef13c34825facf3be191e9f1d1113ea9cba01c8fe1432",
+          "size": 2912
+        },
+        {
+          "name": "network-loopback.json",
+          "sha256": "935e3d100fd4e978abe3b824ea5f65401771dfaec27e23277168e6fca8429d17",
+          "size": 2585
+        },
+        {
+          "name": "network-loopback.probes.json",
+          "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+          "size": 12029
+        },
+        {
+          "name": "result.json",
+          "sha256": "a7a0cd686b1552e500f5a31ef8d3f8d5384eb5c79d3f166eab1ad0f06164c997",
+          "size": 66549
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+          "size": 8652101
+        },
+        {
+          "name": "runtime-staged-inputs.json",
+          "sha256": "94051c168965b3d96d4253fd6d7b8c83797d97ffbd4161efe228d47f548d8985",
+          "size": 912792
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "ab635bf238d4eeafc282cf160d7ff5ab21ebc4f238ffe80ba120ea0cd418d852",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "cbbbb0b4d4b9bb966dd8b1170a0dd4879a56d27bcb1444ac2a630ba457b5efce",
+          "size": 6885
+        }
+      ]
+    },
+    {
+      "run": "xml-http-04",
+      "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/xml-http-04/result.json",
+      "receipt_sha256": "bf4578d2407a88609df765ffcdd02f90ce153a1415d857722405bb1df9bc930c",
+      "status": "succeeded",
+      "started_at": "2026-09-20T22:31:47.092245+00:00",
+      "result_exit_code": 0,
+      "exit_code": 0,
+      "build_exit_code": 0,
+      "target": "xml",
+      "stage": "package",
+      "test_selection": "target",
+      "runner_sha256": "778e3fd341d205717bd86ce590430cf06fc7b4ddcbed6d62815bf13c224d486f",
+      "source_manifest_sha256": "ab635bf238d4eeafc282cf160d7ff5ab21ebc4f238ffe80ba120ea0cd418d852",
+      "input_manifest_sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+      "log_sha256": "af8ca6a759be216f8e2c4b4f10736adba25a87c353609bb4adca63a9b2fd7d09",
+      "build_log_sha256": "0b2b3186487e9cf59ab670322e72f70b85a283a5f366da0e4a717ff764789990",
+      "source_maven_files_unchanged": true,
+      "changed_original_source_files": [],
+      "target_executed_tests": 298,
+      "acceptance_build": false,
+      "full_source_closure": false,
+      "http_fixture_finalization": {
+        "hosts_unchanged": true,
+        "target": "xml"
+      },
+      "native_tests": {
+        "errors": 0,
+        "failures": 0,
+        "passed": 298,
+        "skipped": 4,
+        "skipped_cases": [
+          {
+            "detail": "",
+            "message": "",
+            "name": "testOneFeature",
+            "suite": "org.geotools.xml.GMLParserTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testMoreFeatures",
+            "suite": "org.geotools.xml.GMLParserTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testOneFeatureWrite",
+            "suite": "org.geotools.xml.GMLParserTest"
+          },
+          {
+            "detail": "",
+            "message": "",
+            "name": "testOneFeatureWriteWithHints",
+            "suite": "org.geotools.xml.GMLParserTest"
+          }
+        ],
+        "tests": 302,
+        "suite_reports": 35
+      },
+      "nonpassing_suites": [
+        {
+          "errors": 0,
+          "failures": 0,
+          "name": "org.geotools.xml.GMLParserTest",
+          "path": "geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.GMLParserTest.xml",
+          "sha256": "35ea82ba5e268d904c52a5395f3bd370e18a6bb7ae3be216fae3f5e18ed0187f",
+          "skipped": 4,
+          "tests": 10
+        }
+      ],
+      "runtime_network": {
+        "runner_sha256": "6f0757b16be7188f564ad070a4e17382d96a7b9ef1dac3ab34fbf897d18108fc",
+        "network_probes": {
+          "all_passed": true,
+          "exec_child_probes": 79,
+          "parent_probes": 79,
+          "schema_version": 1
+        },
+        "datagram_packets_received": 0,
+        "broker_sockets_closed": true,
+        "task_process_group_stopped": true,
+        "result_exit_code": 0
+      },
+      "evidence_files": [
+        {
+          "name": "build.log",
+          "sha256": "0b2b3186487e9cf59ab670322e72f70b85a283a5f366da0e4a717ff764789990",
+          "size": 61237
+        },
+        {
+          "name": "maven.log",
+          "sha256": "af8ca6a759be216f8e2c4b4f10736adba25a87c353609bb4adca63a9b2fd7d09",
+          "size": 62733
+        },
+        {
+          "name": "network-denial-build.json",
+          "sha256": "4cab6e3ec4fbc69e9c3c7c9fbc505c7167807352a5bd6bb00e5022c1c6cbb4cf",
+          "size": 2912
+        },
+        {
+          "name": "network-loopback.json",
+          "sha256": "76b5f54283e182eee704b878afe7f035d26a9f7bb37a1ef6654b81f2a2c1b2a1",
+          "size": 2584
+        },
+        {
+          "name": "network-loopback.probes.json",
+          "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+          "size": 12029
+        },
+        {
+          "name": "result.json",
+          "sha256": "bf4578d2407a88609df765ffcdd02f90ce153a1415d857722405bb1df9bc930c",
+          "size": 70026
+        },
+        {
+          "name": "retained-inputs.json",
+          "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+          "size": 8652101
+        },
+        {
+          "name": "runtime-staged-inputs.json",
+          "sha256": "94051c168965b3d96d4253fd6d7b8c83797d97ffbd4161efe228d47f548d8985",
+          "size": 912792
+        },
+        {
+          "name": "source-inputs.json",
+          "sha256": "ab635bf238d4eeafc282cf160d7ff5ab21ebc4f238ffe80ba120ea0cd418d852",
+          "size": 6625687
+        },
+        {
+          "name": "started.json",
+          "sha256": "0a60a232064b51146011e536a6aa71cb20e116dc359b1bd2fadb2a2164745020",
+          "size": 6885
+        }
+      ]
+    }
+  ]
+}

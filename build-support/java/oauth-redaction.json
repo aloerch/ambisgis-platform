@@ -1,0 +1,32 @@
+[
+  {
+    "path": "geoserver/src/community/security/oauth2-geonode/src/main/java/org/geoserver/security/oauth2/services/GeoNodeTokenServices.java",
+    "before_sha256": "17ed77734adb1450ab122c5216f07fd3e91cd2ee66d4e21c6235717d60463fbe",
+    "after_sha256": "7a0206c4de99eb26c23e3b0a0d6279c2b685d09927f7a7db037ef74ec3657736",
+    "replacements": [
+      [
+        "LOGGER.debug(\"Original map = \" + map);",
+        "LOGGER.debug(\"Received GeoNode token validation response\");"
+      ],
+      [
+        "LOGGER.debug(\"Transformed = \" + map);",
+        "LOGGER.debug(\"Converted GeoNode token validation response\");"
+      ]
+    ]
+  },
+  {
+    "path": "geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthRemoteTokenServices.java",
+    "before_sha256": "1f34ba9a1a75dba8f9c0f0eab329b9edb9a2ee8832186114ec3101f516ba75ef",
+    "after_sha256": "5778bc882ec5275957454de9606af4b5f879cda5b684d6fd5dc21f5fde1de74b",
+    "replacements": [
+      [
+        "throw new InvalidTokenException(accessToken);",
+        "throw new InvalidTokenException(\"Token validation denied\");"
+      ],
+      [
+        "logger.debug(\"check_token returned error: \" + checkTokenResponse.get(\"error\"));",
+        "logger.debug(\"Token validation endpoint returned an error\");"
+      ]
+    ]
+  }
+]

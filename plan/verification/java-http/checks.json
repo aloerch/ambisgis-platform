@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "command": "/tmp/ambisgis-validation-venv/bin/python3 -m unittest discover -s build-support/java -p 'test_*.py' -v",
+      "working_directory": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-http",
+      "exit_code": 0,
+      "tests": 300,
+      "seconds": 4.394,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "log": "plan/verification/java-http/tooling/java-tests-final.txt",
+      "sha256": "ed1984106fd708eac56e25f8febe24d01480edb04e59b25675112bbb081cd541"
+    },
+    {
+      "command": "/tmp/ambisgis-validation-venv/bin/python3 -m unittest discover -s tests -v",
+      "working_directory": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-http/plan",
+      "exit_code": 0,
+      "tests": 176,
+      "seconds": 8.064,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "log": "plan/verification/java-http/tooling/package-tests.txt",
+      "sha256": "315cbea667ca4b94492b4705e1c705a42f94e3ae630a329293c4ed1790537be7"
+    },
+    {
+      "command": "/tmp/ambisgis-validation-venv/bin/python3 tools/validate_package.py --require-schemas",
+      "working_directory": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-http/plan",
+      "exit_code": 0,
+      "schemas_examples": 4,
+      "log": "plan/verification/java-http/tooling/schemas.txt",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    }
+  ],
+  "native_evidence": "run-index.json",
+  "scope": "tooling and plan package checks are not GIS acceptance"
+}

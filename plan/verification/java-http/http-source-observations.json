@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "purpose": "read-only HTTP fixture dependency observations",
+  "source_binary_correspondence_established": false,
+  "provenance_report_sha256": "a1d291276e3d5fd245ec1819f18c96e33c819bfb0a5f9ecbe2017c3a80a63836",
+  "historical_classpaths": [
+    {
+      "target": "xml",
+      "report": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/xml-02/work/source/geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.resolver.SchemaCacheTest.xml",
+      "report_sha256": "709ac8f530f6cbc98c74b7eb820131bfbb021129e9d1b52e235817b71596a13a",
+      "observed_source_supplement_inputs": [
+        {
+          "gav": "it.geosolutions.jgridshift:jgridshift-core:1.3",
+          "binary_sha256": "303eb6a6f6f87369f6b9e3dcacefd6f9b0ad55920cd65a7f162ab9a23401c722",
+          "disposition": "retained-source-coverage",
+          "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+          "source_binary_correspondence_established": false
+        },
+        {
+          "gav": "org.apache.xml:xml-commons-resolver:1.2",
+          "binary_sha256": "47dcde8986019314ef78ae7280a94973a21d2ed95075a40a000b42da956429e1",
+          "disposition": "retained-source-coverage",
+          "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+          "source_binary_correspondence_established": false
+        }
+      ]
+    },
+    {
+      "target": "mapfish",
+      "report": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/mapfish-03/work/source/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.PDFUtilsTest.xml",
+      "report_sha256": "cdcbde361b2acfe6ef644ea4a3a2609fb7219fa6b2fb51bb8b36ed864bef80dc",
+      "observed_source_supplement_inputs": [
+        {
+          "gav": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "binary_sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
+          "disposition": "metadata-only-no-java-classes",
+          "remaining": "Verifier checks absence of class files and allows only Maven/JAR/license metadata; transitive component sources and assembly recipe remain required.",
+          "source_binary_correspondence_established": false
+        },
+        {
+          "gav": "commons-codec:commons-codec:1.2",
+          "binary_sha256": "9898a3b3857676128987b975d0b0f035becf3da5cf677266a34d6636f2b80542",
+          "disposition": "partial-source-coverage",
+          "remaining": "Retained1.2 binary contains SoundexUtils absent from official CODEC_1_2 source tag. Investigate repackaging/version mismatch; cannot treat matching18/19 class filenames as exact source closure.",
+          "source_binary_correspondence_established": false
+        },
+        {
+          "gav": "xerces:xercesImpl:2.7.1",
+          "binary_sha256": "245d51eb7a494d4ec422292f8bd37f098330caca0532864dfa31250b65347054",
+          "disposition": "retained-source-coverage",
+          "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+          "source_binary_correspondence_established": false
+        },
+        {
+          "gav": "xml-apis:xml-apis-ext:1.3.04",
+          "binary_sha256": "d0b4887dc34d57de49074a58affad439a013d0baffa1a8034f8ef2a5ea191646",
+          "disposition": "retained-source-coverage",
+          "remaining": "Source and per-file notices retained; W3C/SAC/SVG rights, byte-for-byte rebuild, and actual runtime usage remain unverified.",
+          "source_binary_correspondence_established": false
+        },
+        {
+          "gav": "it.geosolutions.jgridshift:jgridshift-core:1.3",
+          "binary_sha256": "303eb6a6f6f87369f6b9e3dcacefd6f9b0ad55920cd65a7f162ab9a23401c722",
+          "disposition": "retained-source-coverage",
+          "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+          "source_binary_correspondence_established": false
+        },
+        {
+          "gav": "javax.media:jai_imageio:1.1",
+          "binary_sha256": "2b40befa9340e15759c68867df08905c6c6400df379ec7802120386325a565d3",
+          "disposition": "unresolved-source",
+          "remaining": "Successor jai-imageio source tags begin1.2; exact original1.1 source not identified. java.net download attempt retained original Windows binary installer, NOT source and never executed. Required MapFish codec capability remains; source/native and redistribution evidence unresolved.",
+          "source_binary_correspondence_established": false
+        },
+        {
+          "gav": "org.huldra.math:bigint:0.7.1",
+          "binary_sha256": "aae42edfa250950238c856ca4c723bdf116b1ae61115708a36da12af444a8824",
+          "disposition": "retained-source-coverage",
+          "remaining": "Correspondence beyond class/source identity, full rebuild inputs, affected runtime tests and legal/security review remain open.",
+          "source_binary_correspondence_established": false
+        }
+      ]
+    }
+  ],
+  "retained_http_archives": [
+    {
+      "maven_path": "org/wiremock/wiremock-standalone/3.11.0/wiremock-standalone-3.11.0.jar",
+      "sha256": "85f47eecd54ddf6aa275c9a3ceaf8e200cad30d26b529a706dd55e3bf3a4787e",
+      "size": 19351379,
+      "record": "/home/revelberry/Projects/AmbisGIS/source-archives/java-compatibility/maven/records/central/org/wiremock/wiremock-standalone/3.11.0/wiremock-standalone-3.11.0.jar.json",
+      "record_sha256": "d5db404f51d9a3a3895aa361195ef72e8e85858e062beaf267b6575e5a800894",
+      "java_files": 0,
+      "class_files": 9612,
+      "relocated_wiremock_class_files": 8876,
+      "wiremock_package_java_files": 0
+    },
+    {
+      "maven_path": "org/wiremock/wiremock-standalone/3.11.0/wiremock-standalone-3.11.0-sources.jar",
+      "sha256": "7389c56e21016ee138b54173d75b5ed8df237f247a6e063c546a8d1320f3ae68",
+      "size": 3900428,
+      "record": "/home/revelberry/Projects/AmbisGIS/source-archives/java-compatibility/maven/records/central/org/wiremock/wiremock-standalone/3.11.0/wiremock-standalone-3.11.0-sources.jar.json",
+      "record_sha256": "809931b2f8d966f05bfe111e30b4cd2c0dfd9de738d66a9f751add1dded0c78b",
+      "java_files": 574,
+      "class_files": 0,
+      "relocated_wiremock_class_files": 0,
+      "wiremock_package_java_files": 1
+    },
+    {
+      "maven_path": "org/json/json/20231013/json-20231013.jar",
+      "sha256": "0f18192df289114e17aa1a0d0a7f8372cc9f5c7e4f7e39adcf8906fe714fa7d3",
+      "size": 74702,
+      "record": "/home/revelberry/Projects/AmbisGIS/source-archives/java-compatibility/maven/records/central/org/json/json/20231013/json-20231013.jar.json",
+      "record_sha256": "dee59aa73d1f50eb92d3e28ebf2c517dafb8d28764ac8f3ada4838cac6496465",
+      "java_files": 0,
+      "class_files": 29,
+      "relocated_wiremock_class_files": 0,
+      "wiremock_package_java_files": 0
+    },
+    {
+      "maven_path": "org/json/json/20231013/json-20231013-sources.jar",
+      "sha256": "fc65cb53ae955d07f62478485446a544a0aba1e0ab8522688ee875dbbf11766e",
+      "size": 73772,
+      "record": "/home/revelberry/Projects/AmbisGIS/source-archives/java-compatibility/maven/records/central/org/json/json/20231013/json-20231013-sources.jar.json",
+      "record_sha256": "f5c30497171e998316cd3d4469fb1b3102db19859987efd9898920b7783f478e",
+      "java_files": 24,
+      "class_files": 0,
+      "relocated_wiremock_class_files": 0,
+      "wiremock_package_java_files": 0
+    },
+    {
+      "maven_path": "org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar",
+      "sha256": "c8bc7e1c51a6d4ce72f40d2ebbabf1c4b68bfe76e732104b04381b493478e9d6",
+      "size": 785639,
+      "record": "/home/revelberry/Projects/AmbisGIS/source-archives/java-compatibility/maven/records/central/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar.json",
+      "record_sha256": "5c02b4c70951905e59c882d0b23173e9631c64b514176c7413c095f57052189d",
+      "java_files": 0,
+      "class_files": 470,
+      "relocated_wiremock_class_files": 0,
+      "wiremock_package_java_files": 0
+    },
+    {
+      "maven_path": "org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14-sources.jar",
+      "sha256": "55b01f9f4cbec9ac646866a4b64b176570d79e293a556796b5b0263d047ef8e6",
+      "size": 732725,
+      "record": "/home/revelberry/Projects/AmbisGIS/source-archives/java-compatibility/maven/records/central/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14-sources.jar.json",
+      "record_sha256": "33ceb09d73b33693a703f5bd8e900662428028d754aca09dd775eda72e54388e",
+      "java_files": 426,
+      "class_files": 0,
+      "relocated_wiremock_class_files": 0,
+      "wiremock_package_java_files": 0
+    },
+    {
+      "maven_path": "commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar",
+      "sha256": "dbd4953d013e10e7c1cc3701a3e6ccd8c950c892f08d804fabfac21705930443",
+      "size": 305001,
+      "record": "/home/revelberry/Projects/AmbisGIS/source-archives/java-compatibility/maven/records/central/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar.json",
+      "record_sha256": "2ec228f36a434bdb9f30c0fb1869130ec6d7b382b8d80919e0a24abf4cc549be",
+      "java_files": 0,
+      "class_files": 167,
+      "relocated_wiremock_class_files": 0,
+      "wiremock_package_java_files": 0
+    },
+    {
+      "maven_path": "commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1-sources.jar",
+      "sha256": "4515ecc3e3629e3d4134ee058a3fee61038dd6d2fa6bd7b6b619a2dd06c22406",
+      "size": 439405,
+      "record": "/home/revelberry/Projects/AmbisGIS/source-archives/java-compatibility/maven/records/central/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1-sources.jar.json",
+      "record_sha256": "9dddd1e63e56b62a6ac1eb6dd81d81d0b273d237b14911f86338c41b00302311",
+      "java_files": 160,
+      "class_files": 0,
+      "relocated_wiremock_class_files": 0,
+      "wiremock_package_java_files": 0
+    }
+  ],
+  "limitations": [
+    "Classpath presence does not prove every dependency class executed.",
+    "Source-classifier retention does not establish a reproducible build or license/security acceptance.",
+    "WireMock standalone contains relocated dependency classes absent from its own source classifier; dependency source and shading assembly correspondence remain open.",
+    "This observation does not change the 64-artifact source-gap dispositions or acquire new dependencies."
+  ]
+}

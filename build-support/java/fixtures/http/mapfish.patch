@@ -1,0 +1,188 @@
+--- a/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/FakeHttpd.java
++++ b/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/FakeHttpd.java
+@@ -28,6 +28,13 @@
+ 
+ import java.io.*;
+ import java.net.InetSocketAddress;
++import java.net.HttpURLConnection;
++import java.net.Proxy;
++import java.net.URL;
++import java.nio.charset.StandardCharsets;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.nio.file.StandardOpenOption;
+ import java.util.concurrent.atomic.AtomicInteger;
+ 
+ /**
+@@ -89,17 +96,24 @@
+     }
+ 
+     public static final Logger LOGGER = LogManager.getLogger(FakeHttpd.class);
+-    private final static AtomicInteger portInc = new AtomicInteger(20732);
+     private final HttpServer server;
+-    private int port;
++    private final int port;
++    private boolean stopped;
+ 
+     public FakeHttpd(Route... routes) {
+-        this.port = portInc.incrementAndGet();
+-        try {
+-            this.server = HttpServer.create(new InetSocketAddress(port), 0);
+-            addRoutes(routes);
++        try {
++            this.server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
++            this.port = server.getAddress().getPort();
+         } catch (IOException e) {
+             throw new RuntimeException(e);
++        }
++        try {
++            addRoutes(routes);
++            addRoutes(Route.textResponse("/__ambisgis_ready", "ready"));
++            record("bound");
++        } catch (RuntimeException e) {
++            server.stop(0);
++            throw e;
+         }
+     }
+ 
+@@ -115,13 +129,68 @@
+         return port;
+     }
+ 
+-    public void start() {
+-        server.start();
+-    }
+-
+-
+-    public void shutdown() throws IOException, InterruptedException {
+-        server.stop(1);
++    public synchronized void start() {
++        HttpURLConnection connection = null;
++        try {
++            server.start();
++            connection = (HttpURLConnection) new URL(
++                    "http://127.0.0.1:" + port + "/__ambisgis_ready").openConnection(Proxy.NO_PROXY);
++            connection.setConnectTimeout(2000);
++            connection.setReadTimeout(2000);
++            if (connection.getResponseCode() != 200) {
++                throw new IOException("Fixture readiness failed");
++            }
++            connection.getInputStream().close();
++            record("ready");
++        } catch (IOException | RuntimeException e) {
++            server.stop(0);
++            stopped = true;
++            record("stopped");
++            throw new RuntimeException("Loopback fixture startup failed", e);
++        } finally {
++            if (connection != null) connection.disconnect();
++        }
++    }
++
++
++    public synchronized void shutdown() throws IOException, InterruptedException {
++        if (!stopped) {
++            server.stop(1);
++            stopped = true;
++            record("stopped");
++        }
++    }
++
++    private void record(String event) {
++        recordEvent(event, port);
++    }
++
++    private static void recordEvent(String event, int port) {
++        appendEvent("{\"event\":\"" + event + "\",\"port\":" + port + "}\n");
++    }
++
++    private static void recordResponse(HttpExchange exchange, int status) {
++        String path = exchange.getRequestURI().getPath();
++        if ("/__ambisgis_ready".equals(path)) return;
++        // Only retained fixture paths are recorded; never query, headers or body.
++        if (!("/500".equals(path) || "/notImage".equals(path) ||
++              "/capabilities".equals(path) || "/testServer".equals(path) ||
++              "/e2egeoserver/gwc/service/wmts".equals(path))) {
++            throw new IllegalStateException("Unreviewed fixture response path");
++        }
++        appendEvent("{\"event\":\"response\",\"port\":" + exchange.getLocalAddress().getPort()
++                + ",\"path\":\"" + path + "\",\"status\":" + status + "}\n");
++    }
++
++    private static synchronized void appendEvent(String line) {
++        String path = System.getProperty("ambisgis.fixture.events");
++        if (path == null) throw new IllegalStateException("Fixture event path is required");
++        try {
++            Files.write(Paths.get(path), line.getBytes(StandardCharsets.UTF_8),
++                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
++        } catch (IOException e) {
++            throw new RuntimeException("Cannot retain fixture lifecycle evidence", e);
++        }
+     }
+ 
+     public static class HttpAnswerer implements HttpHandler {
+@@ -180,6 +249,7 @@
+                 stream.write(body);
+                 stream.close();
+             }
++            recordResponse(httpExchange, status);
+         }
+     }
+ }
+--- a/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/MapTestBasic.java
++++ b/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/MapTestBasic.java
+@@ -79,7 +79,15 @@
+         final MapBlock mapBlock = new MapBlock();
+         mainPage.setItems(new ArrayList<Block>(Arrays.asList(mapBlock)));
+         layout.setMainPage(mainPage);
+-        Config config = new Config();
++        Config config = new Config() {
++            @Override
++            public org.apache.commons.httpclient.HttpClient getHttpClient(java.net.URI uri) {
++                org.apache.commons.httpclient.HttpClient client = super.getHttpClient(uri);
++                // The controlled fixture binds both sides explicitly to loopback.
++                client.getHostConfiguration().setLocalAddress(java.net.InetAddress.getLoopbackAddress());
++                return client;
++            }
++        };
+         try {
+             config.setThreadResources(this.threadResources);
+             config.setMetricRegistry(new MetricRegistry());
+--- a/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/PdfTestCase.java
++++ b/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/PdfTestCase.java
+@@ -105,7 +105,15 @@
+         final MapBlock mapBlock = new MapBlock();
+         mainPage.setItems(new ArrayList<Block>(Arrays.asList(mapBlock)));
+         layout.setMainPage(mainPage);
+-        Config config = new Config();
++        Config config = new Config() {
++            @Override
++            public org.apache.commons.httpclient.HttpClient getHttpClient(java.net.URI uri) {
++                org.apache.commons.httpclient.HttpClient client = super.getHttpClient(uri);
++                // The controlled fixture binds both sides explicitly to loopback.
++                client.getHostConfiguration().setLocalAddress(java.net.InetAddress.getLoopbackAddress());
++                return client;
++            }
++        };
+         config.setThreadResources(this.threadResources);
+         config.setMetricRegistry(new MetricRegistry());
+         try {
+--- a/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/config/layout/LegendsBlockTest.java
++++ b/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/test/java/org/mapfish/print/config/layout/LegendsBlockTest.java
+@@ -109,7 +109,15 @@
+                 //To change body of implemented methods use File | Settings | File Templates.
+             }
+         };
+-        Config config = new Config();
++        Config config = new Config() {
++            @Override
++            public org.apache.commons.httpclient.HttpClient getHttpClient(java.net.URI uri) {
++                org.apache.commons.httpclient.HttpClient client = super.getHttpClient(uri);
++                // The controlled fixture binds both sides explicitly to loopback.
++                client.getHostConfiguration().setLocalAddress(java.net.InetAddress.getLoopbackAddress());
++                return client;
++            }
++        };
+         config.setThreadResources(this.threadResources);
+         config.setBrokenUrlPlaceholder(Constants.ImagePlaceHolderConstants.DEFAULT);
+         config.setMetricRegistry(new MetricRegistry());

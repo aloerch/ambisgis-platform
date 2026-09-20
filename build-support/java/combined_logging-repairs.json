@@ -1,0 +1,18 @@
+[
+  {
+    "path": "geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/model/pom.xml",
+    "before_sha256": "051cdc2bdcc0e0e8f0d5888e0251efad7ec448e61ecde2145f8786a47ae888b5",
+    "after_sha256": "094b82a9cc3f24a417980901431354b83371b5adbf88a1b880f3b5006739b272",
+    "before": "<phase>verify</phase>",
+    "after": "<phase>package</phase>",
+    "reason": "attach owned model sources before downstream package consumption"
+  },
+  {
+    "path": "geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/pom.xml",
+    "before_sha256": "05f5eef5f6d8c2ab3605f094f9728f4ce8690693811e857fb5411115e3dfaa54",
+    "after_sha256": "74d462e31ac38d422596c59fd61cd9d967ddc02c36c0c06bc5d30584628a3bef",
+    "before": "    <dependencyManagement>\n        <dependencies>\n",
+    "after": "    <dependencyManagement>\n        <dependencies>\n\n            <!-- AmbisGIS fixed candidate: match the retained GeoTools platform EMF inputs. -->\n            <dependency>\n                <groupId>org.eclipse.emf</groupId>\n                <artifactId>org.eclipse.emf.common</artifactId>\n                <version>2.15.0</version>\n            </dependency>\n            <dependency>\n                <groupId>org.eclipse.emf</groupId>\n                <artifactId>org.eclipse.emf.ecore</artifactId>\n                <version>2.15.0</version>\n            </dependency>\n",
+    "reason": "resolve transitive EMF ranges to retained GeoTools platform 2.15.0 inputs"
+  }
+]

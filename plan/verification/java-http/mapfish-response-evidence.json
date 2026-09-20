@@ -1,0 +1,68 @@
+{
+  "acceptance_build": false,
+  "attempt": "mapfish-http-05",
+  "events_sha256": "9ee470450f03ec3fc006c17f183b94f19ce5c82f6354c24e0661e80ce428399e",
+  "fixture_completed_sha256": "a0018cf76427c34d79a5e02b293ab210bc10c209259bc6251a111d1f45e31f3c",
+  "purpose": "Correlate native PDF/legend expected-error assertions with owned fixture responses; do not classify unrelated JDK initialization denials.",
+  "reports": [
+    {
+      "case_names": [
+        "testGetImageDirectWMSError",
+        "testGetImageDirectHTTPError",
+        "testPlaceholder",
+        "testRenderString_Scale",
+        "testRenderString_ScaleForMultipleMaps",
+        "testClearMapProvidersPrivateKeys"
+      ],
+      "completed_responses_matched_by_report_endpoint": [
+        {
+          "count": 2,
+          "path": "/500",
+          "status": 500
+        },
+        {
+          "count": 1,
+          "path": "/notImage",
+          "status": 200
+        }
+      ],
+      "http_500_message_occurrences": 2,
+      "native_case_counts": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 6
+      },
+      "non_image_message_occurrences": 1,
+      "operation_not_permitted_occurrences_in_this_report": 0,
+      "report": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/mapfish-http-05/work/source/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.PDFUtilsTest.xml",
+      "sha256": "b9660b6dd80db7b7b8bf1cd651fcfa223c128eff4df736604501879a3c4705eb"
+    },
+    {
+      "case_names": [
+        "testBrokenUrl"
+      ],
+      "completed_responses_matched_by_report_endpoint": [
+        {
+          "count": 3,
+          "path": "/notImage",
+          "status": 200
+        }
+      ],
+      "http_500_message_occurrences": 0,
+      "native_case_counts": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 1
+      },
+      "non_image_message_occurrences": 1,
+      "operation_not_permitted_occurrences_in_this_report": 0,
+      "report": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-http/mapfish-http-05/work/source/mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.layout.LegendsBlockTest.xml",
+      "sha256": "e6d2826710ab9aeaef798485128dc3e193c6f8874fca7a4eba239a8966e79960"
+    }
+  ],
+  "schema_version": 1,
+  "target": "mapfish",
+  "verified": true
+}

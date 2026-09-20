@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "plan/verification/java-http/project",
+    "-p",
+    "test_snapshot.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "script_sha256": "112e2bbd74d0a8528d58531b5828a06c5331be544716270fabc85e72370094f5",
+  "tests_sha256": "32111743364f03bac4dddd6701ad642d3cd08c03a1425eab6655f62e9790b971",
+  "log_sha256": "6acbd7a66ea5c6d96828d035c829965d3d902ceecd71c9b311396428e3fc6d03",
+  "live_api_requests": 0,
+  "remote_mutations": 0
+}

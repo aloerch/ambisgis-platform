@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "test_oauth_fixture",
+    "-v"
+  ],
+  "exit_code": 0,
+  "files": {
+    "oauth_fixture.py": "ae8b5772f0fd16fd02028f19b18d0cfe855af3120a0b79cb8b7f0fbd64a12538",
+    "test_oauth_fixture.py": "2167764c0146ed57a5f2611f9db0a3bd6069ba2aa509572ff33a18496f9151b7",
+    "oauth-principal.json": "847d041e65ee54e23356f4f5c67bbac3e9dabd2a7066f8aef6c35a26e77e1f62",
+    "oauth-redaction.json": "454de3891baa5767a1e7ecb7cc4d8114fccb33db53bd5ce62fe1473f34107490"
+  },
+  "log_sha256": "0a030c624b4b25a36f63027413cb42619ceac157e29384c128192680a7dfbfe7"
+}
