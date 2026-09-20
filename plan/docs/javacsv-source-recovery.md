@@ -93,6 +93,7 @@ python3 build-support/java/javacsv_recovery.py \
 python3 build-support/java/javacsv_probe.py \
   --sources /new/recovered-source-directory \
   --jdk /retained/jdk-17.0.20.1+1 --maven-custody /retained/maven \
+  --toolchain-custody /retained/toolchain-archives \
   --run /new/probe-directory --line-separator crlf
 ```
 
@@ -108,6 +109,45 @@ without failures/errors/skips in those tooling/package suites. Evidence is in
 These counts are separate from the native runs above. Database/Jupyter
 native checks were not repeated. No workflow, remote PR, release or task
 progress changed in this engineering slice.
+
+## Probe guard review follow-up
+
+The initial runs and their failures remain unchanged. Review identified that
+the first probe recorded Java executable hashes without itself enforcing the
+retained extracted toolchain, inherited the caller's environment, and did not
+validate its socket-denial receipts before reporting success. These guards
+are now enforced within the recipe; the historical independent toolchain
+verification is not substituted for the new checks.
+
+The current probe requires `--toolchain-custody` and verifies every installed
+JDK/Maven file/link with `toolchain.verify_extracted` before execution. It
+requires the exact retained JDK root and pinned JUnit/Hamcrest hashes. Only
+`PATH=/usr/bin:/bin`, `LANG=C.UTF-8` and `LC_ALL=C.UTF-8` reach subprocesses;
+JVM options/agents, classpaths and credentials are not inherited. It copies
+and compiles only the selected hashed source files, and rechecks both original
+custody and local copied source bytes after each step and on completion.
+
+Both command receipts must report **completed**, the matching argv/exit,
+`no_new_privs`, and unique successful AF_INET/AF_INET6 `EPERM` denial probes.
+Each command has a bounded timeout (default/maximum 300 seconds); the existing
+process-group runner terminates and then kills remaining descendants after
+a two-second grace period. Errors/timeouts retain logs and a failed result.
+
+Fresh **`javacsv-06` compiled and passed all 105 native tests, zero failures
+or ignores**, with explicit historical CRLF. Its class-origin guard points to
+the newly compiled classes. Both denial receipts and unchanged-source checks
+passed; toolchain verification checked 342 files and 208 symlinks. See
+[the fresh result](../verification/javacsv-hardened-probe.json) and
+`verification/javacsv-06-*-offline.json` / `javacsv-06-*.log`.
+
+Eight new adversarial guard tests cover bad toolchain custody, inherited JVM
+options, missing/wrong denial evidence, altered/symlinked sources, extra
+unselected source files and timeout failure retention. The updated complete
+Java tooling suite passed **156 tests**, the plan suite passed **175 tests**,
+and all four schemas/examples passed, without failures/errors/skips. Fresh
+outputs are `verification/javacsv-hardened-{tooling,package}-tests.txt` and
+`javacsv-hardened-package-schemas.txt`. These guard/native results still make
+no host/toolchain-closure, license/security or product-acceptance claim.
 
 ## Separate json-lib finding
 
