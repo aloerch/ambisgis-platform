@@ -1,0 +1,38 @@
+{
+  "commit": "fc376c13deecae500c312775a4bce6e068a1cb68",
+  "tree": "484dc12b278d736d70ddc71a4842366e3f3feaf2",
+  "branch": "review/fnd-02-source-parser",
+  "base": "dc250cd854ae87bfb80657148efe937a69c381dc",
+  "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review57-parser",
+  "changed_files": [
+    "build-support/java/source_closure.py",
+    "build-support/java/test_source_closure.py"
+  ],
+  "focused_tests": {
+    "source_closure": 36,
+    "shared_inventory": 31,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "before_failure_observations": 12,
+  "file_sha256": {
+    "build-support/java/source_closure.py": "ef885b98ead7381dc358cc37b17b5c0294ef7eeaf08a0aba92e1fe526d8861ef",
+    "build-support/java/test_source_closure.py": "a4a5dce19b7605aad08a7575fe545441a7222950c983fc28550a224d704e83cc",
+    "build-support/java/resolution_inventory.py": "77864a6fe8547effb39cc6b48fbcf712252fbb7a7a12cab64424aeda298d48dc",
+    "build-support/java/test_resolution_inventory.py": "1c44daaf95bb65dc6ea16dabde5048c3f20accb5eecc0a19ef49bc79020d4335"
+  },
+  "notes_sha256": "50349703ebf0ce7bff7fe216c439f0e1f18fd5465ad31f4649c08fecaa476730",
+  "evidence_sha256": {
+    "after-resolution_inventory-tests.txt": "15514d32f4f3f85ab6378c9ea57f671a355fbb2c6b1fec22192b215a69d7e489",
+    "after-source_closure-tests.txt": "98931d9d5933e503998c395a049a7144c1043710aabf6a55f69bf6d6c26bce8b",
+    "after-tests.json": "dcfc556f43f74bed7296c2f02b501b4081e72617f4958571beb315b263d7184a",
+    "before-hashes.json": "7a2278b73dda7605ec4f65a2cb7b5687911fef2fc192472c710f4c0d9851cd45",
+    "before-tests.json": "2f2aff4e209ec1a3722a08294f339a3f67fe45d847a846edd658ad0a8dd79bd3",
+    "before-tests.txt": "fd6876924010fceab19b4b05a5c294c029b841a861a876238db13d0223939a5d",
+    "original-reproducer.json": "023a65800b4412e89a194868468697911ff6964bfbc63927e068a6f6fb747ade"
+  },
+  "human_approval": false,
+  "remote_changes": false,
+  "frozen_custody_changes": false
+}

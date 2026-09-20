@@ -159,3 +159,29 @@ or license approval. Stop acquisition before taking a final inventory snapshot.
 
 Primary goal references: [Maven effective POM](https://maven.apache.org/plugins/maven-help-plugin/effective-pom-mojo.html)
 and [Maven go-offline](https://maven.apache.org/plugins/maven-dependency-plugin/go-offline-mojo.html).
+
+## Source recovery and real compatibility probes
+
+The subsequent bounded engineering slice includes actual compilation and native
+component tests. Read [ADR 004](../../plan/adrs/004-java-source-and-compatibility-probes.md)
+and the [current handoff](../../plan/docs/java-source-closure-handoff.md).
+Earlier audit/resolution results above retain their original, narrower scope.
+
+`source_closure.py` verifies the explicit 64-gap source supplement and reports
+structural mappings, generated inputs, embedded sources, metadata-only artifacts
+and unresolved/partial cases separately. It never promotes those mappings to
+source-to-binary or legal approval. Source restoration is an explicit hash-locked
+operation; it does not update the original frozen custody.
+
+`compatibility.py` compiles and tests selected referencing/XML/importer/GeoFence/
+MapFish/OAuth targets from disposable copies with retained inputs and Internet
+socket denial. Use `--help` and the recorded successful or failed command in the
+compatibility evidence, always with a fresh output path. The controlled EMF patch
+is opt-in. `geofence_fixture.py` supports the real private Unix-socket PostgreSQL
+fixture; `logging_probe.py` checks exact retained logging providers.
+
+`huldra_probe.py`, `javacsv_recovery.py`, `javacsv_probe.py` and
+`jgridshift_probe.py` provide bounded recovered-source recipes. Their native-test,
+class-origin, source/API and platform limitations are documented separately.
+These probes are not a product build, full source closure, canonical baseline,
+or a no-upstream release rebuild. Required package checks remain separate.

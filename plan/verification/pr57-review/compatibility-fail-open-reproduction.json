@@ -1,0 +1,13 @@
+{
+  "status": "succeeded",
+  "result_exit_code": 0,
+  "exit_code": 0,
+  "error": {
+    "type": "PermissionError",
+    "message": "review fixture: source became unreadable after Maven exit zero"
+  },
+  "changed_original_source_files": null,
+  "source_maven_files_unchanged": true,
+  "network_denial_verified": true,
+  "target_executed_tests": 2
+}

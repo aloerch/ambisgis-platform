@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "verified_files": 2914,
+  "native_tests_rerun": false,
+  "purpose": "Verify final stricter staging against actual retained bytes; importer07 remains the native-test evidence.",
+  "archive_sha256": "8605ce69555eecf216a9d80a0aa954a16aa2a30d030597be9fe7a05f3ab6bb55",
+  "staged_binaries": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/gdal-final-guard-01/native-bin/gdal_translate",
+      "sha256": "f794d8506490944509543e29d830d8528224e5c6dcc56a600560b6cf56434090"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/gdal-final-guard-01/native-bin/gdaladdo",
+      "sha256": "2cc8771219608836631ee9c2aa9697f0dc77cc74fa5d110a2b85c16ec6fafe9c"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/gdal-final-guard-01/native-bin/gdalwarp",
+      "sha256": "7d70cc40908fd80d05c532e56468c393bd0371a91d1020104e96b0980346a81a"
+    }
+  ],
+  "full_receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/gdal-final-guard-01/result.json"
+}

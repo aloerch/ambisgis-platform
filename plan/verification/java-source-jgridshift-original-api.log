@@ -1,0 +1,79 @@
+Compiled from "GridShift.java"
+public class au.com.objectix.jgridshift.GridShift implements java.io.Serializable {
+  public au.com.objectix.jgridshift.GridShift();
+  public double getLatSeconds();
+  public double getLatDegrees();
+  public double getLatShiftSeconds();
+  public double getLatShiftDegrees();
+  public double getShiftedLatSeconds();
+  public double getShiftedLatDegrees();
+  public boolean isLatAccuracyAvailable();
+  public double getLatAccuracySeconds();
+  public double getLatAccuracyDegrees();
+  public double getLatAccuracyMetres();
+  public double getLonPositiveWestSeconds();
+  public double getLonPositiveEastDegrees();
+  public double getLonShiftPositiveWestSeconds();
+  public double getLonShiftPositiveEastDegrees();
+  public double getShiftedLonPositiveWestSeconds();
+  public double getShiftedLonPositiveEastDegrees();
+  public boolean isLonAccuracyAvailable();
+  public double getLonAccuracySeconds();
+  public double getLonAccuracyDegrees();
+  public double getLonAccuracyMetres();
+  public void setLatSeconds(double);
+  public void setLatDegrees(double);
+  public void setLatAccuracyAvailable(boolean);
+  public void setLatAccuracySeconds(double);
+  public void setLatShiftSeconds(double);
+  public void setLonPositiveWestSeconds(double);
+  public void setLonPositiveEastDegrees(double);
+  public void setLonAccuracyAvailable(boolean);
+  public void setLonAccuracySeconds(double);
+  public void setLonShiftPositiveWestSeconds(double);
+  public java.lang.String getSubGridName();
+  public void setSubGridName(java.lang.String);
+  public void copy(au.com.objectix.jgridshift.GridShift);
+}
+Compiled from "GridShiftFile.java"
+public class au.com.objectix.jgridshift.GridShiftFile implements java.io.Serializable {
+  public au.com.objectix.jgridshift.GridShiftFile();
+  public void loadGridShiftFile(java.io.InputStream, boolean) throws java.io.IOException;
+  public void loadGridShiftFile(java.io.RandomAccessFile) throws java.io.IOException;
+  public boolean gridShiftForward(au.com.objectix.jgridshift.GridShift) throws java.io.IOException;
+  public boolean gridShiftReverse(au.com.objectix.jgridshift.GridShift) throws java.io.IOException;
+  public boolean isLoaded();
+  public void unload() throws java.io.IOException;
+  public java.lang.String toString();
+  public au.com.objectix.jgridshift.SubGrid[] getSubGridTree();
+  public java.lang.String getFromEllipsoid();
+  public java.lang.String getToEllipsoid();
+}
+Compiled from "SubGrid.java"
+public class au.com.objectix.jgridshift.SubGrid implements java.lang.Cloneable,java.io.Serializable {
+  public au.com.objectix.jgridshift.SubGrid(java.io.InputStream, boolean, boolean) throws java.io.IOException;
+  public au.com.objectix.jgridshift.SubGrid(java.io.RandomAccessFile, long, boolean) throws java.io.IOException;
+  public au.com.objectix.jgridshift.SubGrid getSubGridForCoord(double, double);
+  public au.com.objectix.jgridshift.GridShift interpolateGridShift(au.com.objectix.jgridshift.GridShift) throws java.io.IOException;
+  public java.lang.String getParentSubGridName();
+  public java.lang.String getSubGridName();
+  public int getNodeCount();
+  public int getSubGridCount();
+  public au.com.objectix.jgridshift.SubGrid getSubGrid(int);
+  public void setSubGridArray(au.com.objectix.jgridshift.SubGrid[]);
+  public java.lang.String toString();
+  public java.lang.String getDetails();
+  public java.lang.Object clone();
+  public double getMaxLat();
+  public double getMaxLon();
+  public double getMinLat();
+  public double getMinLon();
+}
+Compiled from "Util.java"
+public class au.com.objectix.jgridshift.Util {
+  public static final int getIntLE(byte[], int);
+  public static final int getIntBE(byte[], int);
+  public static final int getInt(byte[], boolean);
+  public static final float getFloat(byte[], boolean);
+  public static final double getDouble(byte[], boolean);
+}

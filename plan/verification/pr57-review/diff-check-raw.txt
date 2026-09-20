@@ -1,0 +1,44 @@
+plan/verification/javacsv-01-native-tests.log:43: trailing whitespace.
++org.junit.ComparisonFailure: expected:<"1,2",3[
+plan/verification/javacsv-01-native-tests.log:129: trailing whitespace.
++org.junit.ComparisonFailure: expected:<1,2[
+plan/verification/javacsv-01-native-tests.log:130: trailing whitespace.
++1,2
+plan/verification/javacsv-01-native-tests.log:217: trailing whitespace.
++org.junit.ComparisonFailure: expected:<"#123"[
+plan/verification/javacsv-01-native-tests.log:218: trailing whitespace.
++\#123
+plan/verification/javacsv-01-native-tests.log:643: trailing whitespace.
++org.junit.ComparisonFailure: expected:<1[
+plan/verification/javacsv-01-native-tests.log:644: trailing whitespace.
++#blah
+plan/verification/javacsv-02-native-tests.log:1: trailing whitespace.
++AMBISGIS_LIBRARY_ORIGIN file:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-02/classes/
+plan/verification/javacsv-02-native-tests.log:2: trailing whitespace.
++AMBISGIS_JUNIT_RESULT run=105 failures=0 ignored=0
+plan/verification/javacsv-03-native-tests.log:44: trailing whitespace.
++org.junit.ComparisonFailure: expected:<"1,2",3[
+plan/verification/javacsv-03-native-tests.log:130: trailing whitespace.
++org.junit.ComparisonFailure: expected:<1,2[
+plan/verification/javacsv-03-native-tests.log:131: trailing whitespace.
++1,2
+plan/verification/javacsv-03-native-tests.log:218: trailing whitespace.
++org.junit.ComparisonFailure: expected:<"#123"[
+plan/verification/javacsv-03-native-tests.log:219: trailing whitespace.
++\#123
+plan/verification/javacsv-03-native-tests.log:644: trailing whitespace.
++org.junit.ComparisonFailure: expected:<1[
+plan/verification/javacsv-03-native-tests.log:645: trailing whitespace.
++#blah
+plan/verification/javacsv-04-native-tests.log:1: trailing whitespace.
++AMBISGIS_LIBRARY_ORIGIN file:/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven/blobs/sha256/c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed
+plan/verification/javacsv-04-native-tests.log:2: trailing whitespace.
++AMBISGIS_JUNIT_RESULT run=105 failures=0 ignored=0
+plan/verification/javacsv-05-native-tests.log:1: trailing whitespace.
++AMBISGIS_LIBRARY_ORIGIN file:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-05/classes/
+plan/verification/javacsv-05-native-tests.log:2: trailing whitespace.
++AMBISGIS_JUNIT_RESULT run=105 failures=0 ignored=0
+plan/verification/javacsv-06-native-tests.log:1: trailing whitespace.
++AMBISGIS_LIBRARY_ORIGIN file:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/javacsv-06/classes/
+plan/verification/javacsv-06-native-tests.log:2: trailing whitespace.
++AMBISGIS_JUNIT_RESULT run=105 failures=0 ignored=0

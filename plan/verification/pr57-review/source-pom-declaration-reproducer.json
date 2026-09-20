@@ -1,0 +1,48 @@
+{
+  "reviewed_commit": "7d3063f89c20b5e028b0151a6648a79e4ef14a83",
+  "source_file_sha256": {
+    "source_closure.py": "a0bf10359066764c30e9d861b45c65c73991c62b235bdb6181dd8a5a5862dab4",
+    "resolution_inventory.py": "cdfb605475bf856fb28bfc7deae1f2ef990aff9b6f7e9babcc294e78a52bd9aa",
+    "test_source_closure.py": "9df05a9292aa5962a3a8154c778b22de7189e5755174ce9ea8856defba88c4e4"
+  },
+  "observations": [
+    {
+      "encoding": "utf-8",
+      "input_sha256": "3f9cced860a42a7614f93607b5aac676116dec8c0ede239e94bbe03306c370c2",
+      "accepted": false,
+      "error": "POM DTD/entity forbidden"
+    },
+    {
+      "encoding": "utf-16",
+      "input_sha256": "9ae67e2da55fc76fa4bd03b1727e808634fdbf452e16cf067e9e25711aaa260f",
+      "accepted": true,
+      "pom_declarations": [
+        {
+          "name": "ENTITY_EXPANDED"
+        }
+      ]
+    },
+    {
+      "encoding": "utf-16-le",
+      "input_sha256": "92ff2acfd63385aba8f8aa95bfe13018486f4a977538a873826adea64ea40f74",
+      "accepted": true,
+      "pom_declarations": [
+        {
+          "name": "ENTITY_EXPANDED"
+        }
+      ]
+    },
+    {
+      "encoding": "utf-16-be",
+      "input_sha256": "766b4eb24294fa8213bd279a8c7e419499d5942542d39a2d84fe14dc24b71107",
+      "accepted": true,
+      "pom_declarations": [
+        {
+          "name": "ENTITY_EXPANDED"
+        }
+      ]
+    }
+  ],
+  "selected_checkout_changed": false,
+  "frozen_custody_changed": false
+}

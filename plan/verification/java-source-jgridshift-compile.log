@@ -1,0 +1,7 @@
+warning: [options] bootstrap class path not set in conjunction with -source 7
+warning: [options] source value 7 is obsolete and will be removed in a future release
+warning: [options] target value 7 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Note: /home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/source/au/com/objectix/jgridshift/GridShiftFile.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+4 warnings

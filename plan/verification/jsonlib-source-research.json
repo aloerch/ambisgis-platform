@@ -1,0 +1,61 @@
+{
+  "coordinate": "net.sf.json-lib:json-lib:2.4.2-geoserver",
+  "disposition": "source candidate recovered, exact 2.4.2-geoserver publisher revision unproven; do not mark closed",
+  "candidate_revision": "1ff8dc03730cb00afb4628350f3106f35c122d34",
+  "source_archive": {
+    "key": "jsonlib-limitfix-source",
+    "url": "https://codeload.github.com/fernandor777/Json-lib/tar.gz/1ff8dc03730cb00afb4628350f3106f35c122d34",
+    "retrieved_at": "2026-09-20T19:19:10.209345+00:00",
+    "status": 200,
+    "final_url": "https://codeload.github.com/fernandor777/Json-lib/tar.gz/1ff8dc03730cb00afb4628350f3106f35c122d34",
+    "content_type": "application/x-gzip",
+    "sha256": "221c662bbafa7f722746c00f625ae7f30c06354be0d8eccfa0ca363c747bf14b",
+    "size": 1283689,
+    "path": "blobs/sha256/221c662bbafa7f722746c00f625ae7f30c06354be0d8eccfa0ca363c747bf14b"
+  },
+  "source_pom": {
+    "key": "jsonlib-limitfix-pom",
+    "url": "https://raw.githubusercontent.com/fernandor777/Json-lib/1ff8dc03730cb00afb4628350f3106f35c122d34/pom.xml",
+    "retrieved_at": "2026-09-20T19:19:10.207122+00:00",
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/fernandor777/Json-lib/1ff8dc03730cb00afb4628350f3106f35c122d34/pom.xml",
+    "content_type": "text/plain; charset=utf-8",
+    "sha256": "07a660c45fb147580581213cc590cbd2e78fa526d16de06511ab04deaae639c9",
+    "size": 13104,
+    "path": "blobs/sha256/07a660c45fb147580581213cc590cbd2e78fa526d16de06511ab04deaae639c9"
+  },
+  "selected_pom": {
+    "acquired_at": "2026-09-19T23:06:21.498450+00:00",
+    "classification": "upstream-pom-metadata",
+    "final_url": "https://repo.osgeo.org/repository/release/net/sf/json-lib/json-lib/2.4.2-geoserver/json-lib-2.4.2-geoserver.pom",
+    "license_status": "unreviewed; artifact and POM retention is not license acceptance",
+    "maven_path": "net/sf/json-lib/json-lib/2.4.2-geoserver/json-lib-2.4.2-geoserver.pom",
+    "original_url": "https://repo.osgeo.org/repository/release/net/sf/json-lib/json-lib/2.4.2-geoserver/json-lib-2.4.2-geoserver.pom",
+    "repository": "osgeo",
+    "schema_version": 1,
+    "sha256": "1140cd503e4be4c3b5e425b89c6d12a5a0ba7983f5cb05800b7c00fd37a88e1e",
+    "size": 13104,
+    "status": 200
+  },
+  "pom_difference": [
+    "--- selected-2.4.2\n",
+    "+++ source-2.4.1\n",
+    "@@ -7,7 +7,7 @@\n",
+    "    <groupId>net.sf.json-lib</groupId>",
+    "    <artifactId>json-lib</artifactId>",
+    "    <packaging>jar</packaging>",
+    "-   <version>2.4.2-geoserver</version>",
+    "+   <version>2.4.1-geoserver</version>",
+    "    <name>json-lib</name>",
+    " ",
+    "    <url>http://json-lib.sourceforge.net</url>"
+  ],
+  "publisher_manifest": "Manifest-Version: 1.0\r\nArchiver-Version: Plexus Archiver\r\nBuilt-By: fernando\r\nCreated-By: Apache Maven 3.5.3\r\nBuild-Jdk: 1.8.0_222\r\n\r\n",
+  "rationale": "Actual GeoServer PR3736/GEOS-9321 author fernandor777 has limit-fix-2.4 branch; source POM differs from published POM only at 2.4.1 vs2.4.2. This is strong candidate evidence, not proof no uncommitted code change went into2.4.2.",
+  "license": {
+    "path": "LICENSE.txt",
+    "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+    "declared": "Apache-2.0; preserve source file notices; legal review open"
+  },
+  "next_action": "Compare publisher2.4.2 classes against controlled candidate compile and affected native tests; if exact history unavailable, deliberate source-owned replacement must record compatibility and version/provenance decision separately."
+}

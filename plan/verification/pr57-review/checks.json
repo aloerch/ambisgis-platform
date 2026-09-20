@@ -1,0 +1,29 @@
+{
+  "code_head": "c3c12251b61777df79d2ef1ddd8cfb8fdc108c16",
+  "java_tree": "d6ca199d12cb0e963748b5a6a58a8cca0e3c72dd",
+  "main": "bb3680802d7f7d5c500180ec12e66d32d81d0aa0",
+  "checks": [
+    {
+      "command": "python3 -m unittest discover -s build-support/java -p test_*.py -v",
+      "cwd": "root",
+      "exit": 0,
+      "output": "tooling-tests.txt",
+      "sha256": "f870fd34566019d779cd0f1a18b5f3a86bd2fb0ce254d234869c2810769e0b69"
+    },
+    {
+      "command": "PATH=/tmp/ambisgis-validation-venv/bin:$PATH python3 -m unittest discover -s tests -v",
+      "cwd": "plan",
+      "exit": 0,
+      "output": "package-tests.txt",
+      "sha256": "912a5164442f0c3def8a28df9b7e6fa1f344b7ddac157414ef9a0b09fd097831"
+    },
+    {
+      "command": "PATH=/tmp/ambisgis-validation-venv/bin:$PATH python3 tools/validate_package.py --require-schemas",
+      "cwd": "plan",
+      "exit": 0,
+      "output": "schemas.txt",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    }
+  ],
+  "final_head_receipt": "Final full tree/head recorded after evidence commit in published PR body and persistent final-checks.json."
+}

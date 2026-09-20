@@ -1,0 +1,30 @@
+{
+  "checks": [
+    {
+      "kind": "tooling",
+      "count": 212,
+      "exit_code": 0,
+      "path": "plan/verification/java-closure-integration-tooling.txt",
+      "sha256": "2093f4d6d34b005eab0f55d15c1f91898c8dbf6491517f57507b23793601a8b7"
+    },
+    {
+      "kind": "package",
+      "count": 175,
+      "exit_code": 0,
+      "path": "plan/verification/java-closure-integration-package.txt",
+      "sha256": "c0a4ef1291ca83f62bf86df6ffcf7e8be56e3907934a9cd3f4166ab929a8f919"
+    },
+    {
+      "kind": "schemas",
+      "count": 4,
+      "exit_code": 0,
+      "path": "plan/verification/java-closure-integration-schemas.txt",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    }
+  ],
+  "native_suite_results": "java-compatibility.json; javacsv-hardened-probe.json; java-recovered-source-probes.json; java-source-jgridshift-result.json",
+  "purpose": "combined implementation verification, separate from GIS acceptance",
+  "full_source_closure": false,
+  "product_acceptance": false,
+  "independent_review": "PR/Project identities, dependency order and source boundaries verified; GDAL archive/hardlink/env review found no defect affecting importer07; reusable helper findings fixed and tested."
+}
