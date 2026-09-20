@@ -1,0 +1,45 @@
+[
+  {
+    "name": "audit-tests",
+    "argv": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "build-support/java",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-tool",
+    "exit_code": 0,
+    "recorded_at": "2026-09-19T21:35:29.270283+00:00"
+  },
+  {
+    "name": "host-package-tests",
+    "argv": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-tool/plan",
+    "exit_code": 0,
+    "recorded_at": "2026-09-19T21:35:37.123248+00:00"
+  },
+  {
+    "name": "host-strict-validation",
+    "argv": [
+      "python3",
+      "tools/validate_package.py",
+      "--require-schemas"
+    ],
+    "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-tool/plan",
+    "exit_code": 1,
+    "recorded_at": "2026-09-19T21:35:37.153436+00:00"
+  }
+]

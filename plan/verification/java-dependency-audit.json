@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "task": "FND-02",
+  "delivery": "In progress",
+  "scope": "Static owned Java/GeoNode dependency audit; closure and builds incomplete",
+  "observed_at": "2026-09-19T21:43:20.000263+00:00",
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "branch": "fnd-02/java-dependency-audit",
+  "base": "12bd2c5c88ab8573add1b483f1d53b4024649b39",
+  "claim": "https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5745404216",
+  "repository_identities": [
+    {
+      "default_branch": "ambisgis/main",
+      "full_name": "aloerch/ambisgis-platform",
+      "id": 1376927351,
+      "parent": null
+    },
+    {
+      "default_branch": "main",
+      "full_name": "aloerch/ambisgis-geotools",
+      "id": 1376927869,
+      "parent": "geotools/geotools"
+    },
+    {
+      "default_branch": "main",
+      "full_name": "aloerch/ambisgis-geowebcache",
+      "id": 1376927892,
+      "parent": "GeoWebCache/geowebcache"
+    },
+    {
+      "default_branch": "main",
+      "full_name": "aloerch/ambisgis-geoserver",
+      "id": 1376927947,
+      "parent": "geoserver/geoserver"
+    },
+    {
+      "default_branch": "master",
+      "full_name": "aloerch/ambisgis-geonode",
+      "id": 1376927978,
+      "parent": "GeoNode/geonode"
+    }
+  ],
+  "prior_jupyter_pr": {
+    "headRefOid": "d1b39132c1b003f354589026a7e211021aac1c56",
+    "mergeCommit": {
+      "oid": "12bd2c5c88ab8573add1b483f1d53b4024649b39"
+    },
+    "mergedAt": "2026-09-19T20:58:39Z",
+    "mergedBy": {
+      "id": "MDQ6VXNlcjE1Mjg1NjI2",
+      "is_bot": false,
+      "login": "aloerch",
+      "name": "Dr. Andre"
+    },
+    "state": "MERGED"
+  },
+  "separate_governance_pr": {
+    "baseRefName": "ambisgis/main",
+    "headRefOid": "e19bc4960866d89c749e1d2d68427dd586130d2f",
+    "state": "OPEN"
+  },
+  "custody": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-audit",
+    "files": 70,
+    "bytes": 902064509,
+    "manifest": "build-support/java/inputs.json",
+    "manifest_sha256": "58afe0a757446e69e40ba3630f3361a464686254eca35ac691ef8cec4090957b",
+    "verification_log": "java-audit-custody.txt"
+  },
+  "static_inventory": {
+    "record": "java-audit-declarations.json",
+    "exit_code": 1,
+    "tracked_poms": 519,
+    "maven_configs": 6,
+    "malformed_poms": 1,
+    "tracked_file_enumeration_complete": true,
+    "xml_interpretation_complete": false,
+    "sha256": "e94d6d50282bd3222a49839f3fd1aa583e9a205c94a710242f873ed2ef019f80"
+  },
+  "tests": {
+    "audit_and_custody": {
+      "passed": 28,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "log": "java-audit-tool-tests.txt"
+    },
+    "package": {
+      "passed": 175,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "log": "java-audit-package-tests.txt"
+    },
+    "strict_schemas": {
+      "passed": 4,
+      "log": "java-audit-schemas.txt"
+    },
+    "initial_host_python": {
+      "tests_run": 175,
+      "skips": 7,
+      "strict_validation_exit": 1,
+      "reason": "Host Python lacks jsonschema; final required checks passed in the retained validation venv",
+      "logs": "java-audit-initial-host-checks/"
+    },
+    "real_source_recovery": "java-audit-recovery.json"
+  },
+  "host_tool_paths": {
+    "java": null,
+    "javac": null,
+    "mvn": null
+  },
+  "unrun": [
+    "Java compilation/native/runtime tests",
+    "effective Maven resolution",
+    "full dependency/toolchain retention",
+    "database/Jupyter native or runtime repeat",
+    "GIS publication/render/auth/recovery tests",
+    "upstream-disconnected build and independent repair"
+  ],
+  "remaining": [
+    "MapFish source/artifact provenance or explicit tested fixed-source substitution",
+    "GeoNode importer/WPS/profile/bootstrap selection and license provenance",
+    "Exact JDK/Maven plus complete parent/BOM/plugin/test/native/source closure",
+    "Human license/security review and canonical full-tuple acceptance"
+  ],
+  "next_ready": "Retain exact Java toolchains and resolve the explicitly selected extension graph, including the printing source decision, before a controlled build",
+  "review": {
+    "pull_request": "https://github.com/aloerch/ambisgis-platform/pull/54",
+    "implementation_commit": "514e90f41ddc12e5c2d03bd50ad339859d70beeb",
+    "status": "OPEN; no merge authorized",
+    "head_note": "Subsequent evidence-only commits may advance the PR head; use live PR readback"
+  },
+  "project_evidence_record": "java-audit-project-evidence.json"
+}

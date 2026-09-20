@@ -1,0 +1,33 @@
+test_duplicate_paths_fail (test_acquisition.AuditCustodyTests.test_duplicate_paths_fail) ... ok
+test_missing_input_fails (test_acquisition.AuditCustodyTests.test_missing_input_fails) ... ok
+test_path_escape_and_aliases_fail (test_acquisition.AuditCustodyTests.test_path_escape_and_aliases_fail) ... ok
+test_restore_does_not_fetch_external_evidence (test_acquisition.AuditCustodyTests.test_restore_does_not_fetch_external_evidence) ... ok
+test_restore_never_overwrites_changed_input (test_acquisition.AuditCustodyTests.test_restore_never_overwrites_changed_input) ... ok
+test_restore_preflights_all_destinations (test_acquisition.AuditCustodyTests.test_restore_preflights_all_destinations) ... ok
+test_same_size_tampering_fails (test_acquisition.AuditCustodyTests.test_same_size_tampering_fails) ... ok
+test_symlink_input_and_parent_fail (test_acquisition.AuditCustodyTests.test_symlink_input_and_parent_fail) ... ok
+test_valid_custody_does_not_imply_build_ready (test_acquisition.AuditCustodyTests.test_valid_custody_does_not_imply_build_ready) ... ok
+test_exact_archive_recovers_without_network (test_acquisition.OwnedRecoveryTests.test_exact_archive_recovers_without_network) ... ok
+test_promisor_clone_fails_before_recovery (test_acquisition.OwnedRecoveryTests.test_promisor_clone_fails_before_recovery) ... ok
+test_unmatched_archive_hash_is_not_published (test_acquisition.OwnedRecoveryTests.test_unmatched_archive_hash_is_not_published) ... ok
+test_wrong_owned_remote_fails (test_acquisition.OwnedRecoveryTests.test_wrong_owned_remote_fails) ... ok
+test_deployment_targets_preserved_without_selection_or_execution (test_audit.DeclarationTests.test_deployment_targets_preserved_without_selection_or_execution) ... ok
+test_inheritance_and_profiles_remain_unresolved (test_audit.DeclarationTests.test_inheritance_and_profiles_remain_unresolved) ... ok
+test_malformed_and_entity_input_fail_without_repair (test_audit.DeclarationTests.test_malformed_and_entity_input_fail_without_repair) ... ok
+test_management_plugin_and_profile_contexts_and_policies_preserved (test_audit.DeclarationTests.test_management_plugin_and_profile_contexts_and_policies_preserved) ... ok
+test_snapshot_indirection_and_ranges_are_findings_not_resolutions (test_audit.DeclarationTests.test_snapshot_indirection_and_ranges_are_findings_not_resolutions) ... ok
+test_different_tag_object_with_same_peeled_commit_rejected (test_audit.SourceTests.test_different_tag_object_with_same_peeled_commit_rejected) ... ok
+test_malformed_pom_retained_and_cli_returns_nonzero (test_audit.SourceTests.test_malformed_pom_retained_and_cli_returns_nonzero) ... ok
+test_moved_tag_rejected (test_audit.SourceTests.test_moved_tag_rejected) ... ok
+test_multiple_origin_urls_rejected (test_audit.SourceTests.test_multiple_origin_urls_rejected) ... ok
+test_output_never_overwrites_existing_file_or_symlink (test_audit.SourceTests.test_output_never_overwrites_existing_file_or_symlink) ... ok
+test_pinned_objects_ignore_dirty_checkout_and_are_deterministic (test_audit.SourceTests.test_pinned_objects_ignore_dirty_checkout_and_are_deterministic) ... ok
+test_promisor_input_rejected_without_fetch (test_audit.SourceTests.test_promisor_input_rejected_without_fetch) ... ok
+test_symlink_pom_rejected (test_audit.SourceTests.test_symlink_pom_rejected) ... ok
+test_wrong_owned_origin_rejected (test_audit.SourceTests.test_wrong_owned_origin_rejected) ... ok
+test_wrong_push_origin_rejected (test_audit.SourceTests.test_wrong_push_origin_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.204s
+
+OK

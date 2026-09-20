@@ -1,0 +1,1 @@
+Plan references and acyclic dependencies: PASS {'repositories': 15, 'tasks': 66, 'requirements': 24, 'sources': 65}

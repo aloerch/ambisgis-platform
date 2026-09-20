@@ -1,0 +1,43 @@
+FND-02 Java dependency audit — independent engineering review
+
+Reviewed by a separate agent context, then inspected by the integrator.
+Scope: build-support/java/{audit,acquisition}.py, their tests, audit findings,
+ADR 002, recorded source archives and declaration inventory. No security,
+license, canonical-baseline or product acceptance approval is inferred.
+
+Initial findings:
+1. Static auditor omitted distributionManagement despite documentation claiming
+   deployment destinations were retained. Added root/profile deployment records
+   and a regression test covering release/snapshot/site destinations.
+2. Recovery Git execution inherited environment/configuration and lacked explicit
+   partial-clone handling. Added isolated configuration, disabled protocols,
+   replacement objects and lazy fetching, partial/promisor rejection, and actual
+   local-Git recovery tests (success, wrong origin, promisor, hash mismatch).
+
+Independent re-review found both issues resolved and no remaining blocker for
+this bounded audit tooling. It independently verified the declaration inventory
+SHA256 e94d6d50282bd3222a49839f3fd1aa583e9a205c94a710242f873ed2ef019f80,
+519 represented POMs, four deployment records, and 838 original malformed
+archetype-POM bytes matching the retained Git blob. It checked the final manifest
+matches 70 files / 902,064,509 bytes and that all 77 selected notice candidates
+match their actual archive member sizes/hashes. The notice heuristic is not a
+complete legal/file review. No additional tests were claimed by the reviewer.
+
+Integrator execution passed 28 audit/custody tests, 175 package tests and four
+schema/example checks in the retained validation environment. Actual GWC archive
+recovery succeeded from local owned Git objects. Full outputs/commands are in
+java-audit-checks.json and java-audit-recovery.json. Initial host-schema skips and
+strict failure remain under java-audit-initial-host-checks/.
+
+Actual declaration audit EXIT 1 remains a finding, not a passing build: the
+inherited GeoServer archetype POM has an unbound namespace prefix. Enumeration
+is complete; XML interpretation/effective Maven resolution/closure are not.
+No Java build/native/runtime or full GIS test ran. Human license/security review,
+fixed printing source, extension selection and complete retained build inputs
+remain required before their corresponding acceptance.
+
+Diff inspection: source/docs pass git diff --cached --check when preserved raw
+initial-host logs are excluded. The complete check flags one trailing space in
+host-package-tests.stderr.txt:98 (a native subprocess interrupted unittest's
+inline progress output). The original output is deliberately unmodified; this
+is not an implementation or test failure.

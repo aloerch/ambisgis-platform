@@ -1,0 +1,87 @@
+{
+  "observed_at": "2026-09-19T21:36:50.151585+00:00",
+  "command": [
+    "python3",
+    "build-support/java/audit.py",
+    "--owned-root",
+    "/home/revelberry/Projects/AmbisGIS",
+    "--output",
+    "/home/revelberry/Projects/AmbisGIS/source-archives/java-audit/declarations.json"
+  ],
+  "exit_code": 1,
+  "stdout": "Wrote static declaration inventory to /home/revelberry/Projects/AmbisGIS/source-archives/java-audit/declarations.json\n",
+  "stderr": "audit incomplete: malformed/unsupported XML retained as diagnostics\n",
+  "inventory_sha256": "e94d6d50282bd3222a49839f3fd1aa583e9a205c94a710242f873ed2ef019f80",
+  "independent_repeat_hash_equal": true,
+  "sources": [
+    {
+      "repository": "aloerch/ambisgis-geotools",
+      "commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+      "poms": 196,
+      "configs": 2,
+      "parse_errors": [],
+      "gitlinks": [],
+      "counts": {
+        "dependencies": 1636,
+        "plugins": 257,
+        "repositories": 36,
+        "distribution_management": 2,
+        "profiles": 63,
+        "findings": 671
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-geowebcache",
+      "commit": "59640420454b73f1e04e8409cc6ed43f4b24fed2",
+      "poms": 22,
+      "configs": 1,
+      "parse_errors": [],
+      "gitlinks": [],
+      "counts": {
+        "dependencies": 225,
+        "plugins": 43,
+        "repositories": 3,
+        "distribution_management": 1,
+        "profiles": 11,
+        "findings": 92
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-geoserver",
+      "commit": "e0673323400321c0f3409fbae68b4871dc328d8a",
+      "poms": 301,
+      "configs": 3,
+      "parse_errors": [
+        {
+          "error": "ambisgis-geoserver/src/maven/archetype/pom.xml: malformed XML: unbound prefix: line 7, column 0",
+          "source_path": "src/maven/archetype/pom.xml"
+        }
+      ],
+      "gitlinks": [],
+      "counts": {
+        "dependencies": 2787,
+        "plugins": 152,
+        "repositories": 8,
+        "distribution_management": 1,
+        "profiles": 328,
+        "findings": 1674
+      }
+    },
+    {
+      "repository": "aloerch/ambisgis-geonode",
+      "commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+      "poms": 0,
+      "configs": 0,
+      "parse_errors": [],
+      "gitlinks": [],
+      "counts": {
+        "dependencies": 0,
+        "plugins": 0,
+        "repositories": 0,
+        "distribution_management": 0,
+        "profiles": 0,
+        "findings": 0
+      }
+    }
+  ]
+}

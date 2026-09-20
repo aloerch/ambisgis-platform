@@ -1,0 +1,1170 @@
+{
+  "schema_version": 1,
+  "purpose": "Exact source inputs for static Java/GeoNode dependency audit; NOT a dependency closure or build lock",
+  "observed_at": "2026-09-19T21:27:18.927544+00:00",
+  "files": [
+    {
+      "path": "geotools-aac73e9b89821331e77f67f1dd0921e541a78cfc.tar",
+      "sha256": "12751323cbb3ab841e26d726c6d28c6d90d6e625af19885669d41f934f4c9452",
+      "size": 460216320,
+      "origin": {
+        "kind": "owned-git-archive",
+        "repository": "https://github.com/aloerch/ambisgis-geotools.git",
+        "commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+        "prefix": "geotools/"
+      }
+    },
+    {
+      "path": "geowebcache-59640420454b73f1e04e8409cc6ed43f4b24fed2.tar",
+      "sha256": "640bb88e9d211279bab50a06ba84f43fa41544f864df15480a48d3e671322949",
+      "size": 13322240,
+      "origin": {
+        "kind": "owned-git-archive",
+        "repository": "https://github.com/aloerch/ambisgis-geowebcache.git",
+        "commit": "59640420454b73f1e04e8409cc6ed43f4b24fed2",
+        "prefix": "geowebcache/"
+      }
+    },
+    {
+      "path": "geoserver-e0673323400321c0f3409fbae68b4871dc328d8a.tar",
+      "sha256": "b714ba387f9e4eb8a12cae71244d2f2c9b0cda7ccf871c92c5ced779d7d032a4",
+      "size": 337203200,
+      "origin": {
+        "kind": "owned-git-archive",
+        "repository": "https://github.com/aloerch/ambisgis-geoserver.git",
+        "commit": "e0673323400321c0f3409fbae68b4871dc328d8a",
+        "prefix": "geoserver/"
+      }
+    },
+    {
+      "path": "geonode-a1db97e81dfc26c16bb4ee1a5d2b408877af66c9.tar",
+      "sha256": "865d1119d38079833c95c827f7fb88ad0625420417ce02c55c840f2f32511e23",
+      "size": 83517440,
+      "origin": {
+        "kind": "owned-git-archive",
+        "repository": "https://github.com/aloerch/ambisgis-geonode.git",
+        "commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+        "prefix": "geonode/"
+      }
+    },
+    {
+      "path": "declarations.json",
+      "sha256": "e94d6d50282bd3222a49839f3fd1aa583e9a205c94a710242f873ed2ef019f80",
+      "size": 6369140,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/geofence-3.8.3.tar.gz",
+      "sha256": "e8ab3b56579fa680c275e7070bcb9032050d89a4aaaad80f9f26253f73d4264c",
+      "size": 219429,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/geofence-tags.json",
+      "sha256": "e2923028c6d496a7e2bb71b1ad5e928eb24709a446c04cb28497c5457f08b4b6",
+      "size": 13472,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/geonode-docker-repo.json",
+      "sha256": "c9531317df97e0dee3342686a795d9c0530ebf6a9bfee20ee53dc85439ed4274",
+      "size": 6430,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/geoserver-ext-repo.json",
+      "sha256": "70c13c70fb63984fe060bf4a3b00730cfc779a63c046ea6cfd92298afed5f5b8",
+      "size": 6612,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/mapfish-2.4.1.tar.gz",
+      "sha256": "8374f4949f02693287efff4988d7c4ee141bc2d9576641fb539d0cd5757c067c",
+      "size": 741814,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/mapfish-2.4.1.tar.gz..gitmodules",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/mapfish-2.4.1.tar.gz.pom.xml",
+      "sha256": "5cbc9f800a382c7918dfd8af29045e7a5f9dd3da65689ab5271424f7e6ebf0ce",
+      "size": 14755,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/mapfish-snapshot-metadata.xml",
+      "sha256": "1a59c76b7107e68286f222798a667a054227d310e49c8afc371ec970c3eeace3",
+      "size": 773,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/mapfish-snapshot.pom",
+      "sha256": "01a3233e60ac166321d2383366bf302e5e2ddd6268704a91b068866f7a94bd28",
+      "size": 14762,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/mapfish-tags.json",
+      "sha256": "e2994a05e0ea9a5e2f5f4cbb50d55e30f43755101670f18840076bb2a377e6be",
+      "size": 11025,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "dependency-research/receipt.json",
+      "sha256": "54dc226ca803fceb2375a51e0fc01ad3bb17593b9f99d9b076f05ca9d67a8a41",
+      "size": 2278,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/archive-validation.json",
+      "sha256": "fc52838995ef1775e994ecfbc4e1e1662df9e9d595c03f662cf3b70930df9433",
+      "size": 555,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/.github/actions/build_and_push/action.yml",
+      "sha256": "ca1e6459a254643380f8ef9d0a0a415162fa28469290b91b57b5a67b16ac0b18",
+      "size": 843,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/.github/workflows/latest.yml",
+      "sha256": "f97f326e39648ab26932c19cb2f81cc13ef496bd4f76f54e3f2261fd3da9eee9",
+      "size": 2849,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/.github/workflows/manual_build.yml",
+      "sha256": "fd34eb91f4b952255d87cdcb1586c709e8d919106ef431cad8962a1e03f8c7f1",
+      "size": 1309,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/.github/workflows/release.yml",
+      "sha256": "cb9415fc1d2bfb9c80bf49c60e0c8e2783dfc9adb605081697cfc593ca29e4ad",
+      "size": 2943,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/docker/geoserver/Dockerfile",
+      "sha256": "bdf6f0c61d3f337af01ef047f12c62a6dc8c77db3af37720e069ee5368aaf6cf",
+      "size": 2467,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/docker/geoserver/README.md",
+      "sha256": "954d0e13ca76aa7a83a1d7f40d5f8bd96cb178681da20a174aa203f2129ca24e",
+      "size": 5273,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/docker/geoserver/applicationContext.xml",
+      "sha256": "524ea6b8b150a640f2db940dc0d19deb7d8575eb15193c397f9275b7361dfb1b",
+      "size": 354,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/docker/geoserver/entrypoint.sh",
+      "sha256": "6dfbaa6fc78aeea48e69b3913e2309076b1f1f16fef67b49f58b696c2e5e1175",
+      "size": 11277,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/docker/geoserver/set_geoserver_auth.sh",
+      "sha256": "59001e0750a76c03483632dc3b357a05ae61946e45df183d60f4ed2ddbcd0362",
+      "size": 3224,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/docker/geoserver/tasks.py",
+      "sha256": "919ce0c121130355317e39566da944eb464be133fc9e34afdc99892161079f68",
+      "size": 3090,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/docker/geoserver/templates/geofence/geofence-datasource-ovr.properties.j2",
+      "sha256": "89ee92e7d174086a9651b5101135f5b13dddebea74fd5bce23d6adfadbb39a3b",
+      "size": 905,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/docker/geoserver_data/Dockerfile",
+      "sha256": "ba3635d51a96828a844011e900772022b909661e2f0d162d369ac35e835667fd",
+      "size": 706,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker/docker/geoserver_data/download.sh",
+      "sha256": "bece9e769cb70934c09fc073414da918e49ca54d8525689f1e1c80a66feef8f8",
+      "size": 702,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-0fef6e4ea794d2bb225e1e7d392b580ebf885a1c.tar.gz",
+      "sha256": "e6349c856e5961dca8052cad6a8aaf0277f22332ec12ed8f9e2d42e09e722367",
+      "size": 27178,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/02e756cc2284001a2d4b8bd982c63cfbbe730223.json",
+      "sha256": "49c9cd8af0ff5e446f95b0c5e3fd9937ebd18d6131a245b58bb7c2a674e91d4f",
+      "size": 1456,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/03da0b293f9c49d46337741a7c45309ea913b672.json",
+      "sha256": "af35e8ac907a276077d536cef3b8c6a96ad1be59aefcb9525c24f5951b5f78c8",
+      "size": 2103,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/04dcea616a96050953e424cc660d53532f3517ba.json",
+      "sha256": "758bdbe28ae8a2f554c9b8ae5886ecc6b0341ff09913af86c59b66a1c8f0e989",
+      "size": 1262,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/0528e3f39898473384f6373d8af7a0133972d527.json",
+      "sha256": "f1ed1b5bafcee001811cf0daefcbb3cc9cee485aa37453546ba06c86931c3cec",
+      "size": 782,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/352ccb253f3452c33402b9b971b43304b764f3ff.json",
+      "sha256": "b8745baa904bab7ccc77e5df11d4fbdbd073c415c7be8ab3148a3062c8d9eace",
+      "size": 7563,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/3a71130a84b5d8598dd831844f02e2b670aae03a.json",
+      "sha256": "896748e8859c7e9e6107a386dd045337f018c9006f414f49687bdad3e3c4c2c9",
+      "size": 4739,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/3cd552c3f7cc852bf584c774a8b3e850fc02b98d.json",
+      "sha256": "9fbbb8b01219f4c3687bcf45b5369b10b4c4ecd58210a13535b6b3203f8ab4a1",
+      "size": 1544,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/4d65c7cd58ae797b8404c1cc00fcd8192e7d68fe.json",
+      "sha256": "a40e1766ad87602548d7099880ac181dc3e1e6e0b0f108331bc29cd188c82cbc",
+      "size": 4223,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/5c8d5eebfd2b66f30f5cacda6fe6b4f77848252c.json",
+      "sha256": "c42422a1fbb398203aa45ef3d229d1958bb227cacbfd1befb542dbcceaabceb7",
+      "size": 1270,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/5f6f9b3269f70b2362c66a6fed0b7c6523921af7.json",
+      "sha256": "9079e18eb62c1ef0a118dcdea6d30c526e760781956518a218c39f47db34dbd9",
+      "size": 4553,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/ac4e0d71348c3f5f4ad73db481faad27689dcd7f.json",
+      "sha256": "a19c7e402e55ae26a8e48615d1b7ffb842f23a5aecfa7db614d18840300c8a0b",
+      "size": 3697,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/ae3cebe5816a374a5df729c936e50dc9fbcf7703.json",
+      "sha256": "c3173ea8ae953ae19c2f31d991cc19fbdb43d084206b2273f9ac7ee48f4d7808",
+      "size": 4351,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-blobs/e7d395fd44a080ba87f68ca3f764417ef614174b.json",
+      "sha256": "bf0b3101e3156e723d766266bf39b34fa3a3565fc0e489a16488fc88a2e0f8a4",
+      "size": 15834,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-branches.json",
+      "sha256": "c59de6d877d926129d6ac546bca8990c15a406e63ce7e5fdf233e81166e7dd0d",
+      "size": 5481,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-repository.json",
+      "sha256": "c9531317df97e0dee3342686a795d9c0530ebf6a9bfee20ee53dc85439ed4274",
+      "size": 6430,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-selected-commit.json",
+      "sha256": "1e9a2f73afc38f65cbb8f85dbbb84f50b12a7b6d8313b4ffcd7856e19ff04022",
+      "size": 6985,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-tags.json",
+      "sha256": "8ed801d9101d382a28a1e6f185459e3b1131b5f303bcc94b3532fdc02701127b",
+      "size": 28003,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geonode-docker-tree.json",
+      "sha256": "80ad25d67d8cffb997c6af336ec24cae865110ac6a7c2ac62380ef9412760489",
+      "size": 11139,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext/.github/workflows/artifacts.sh",
+      "sha256": "4f978e43a1b0a53fdd8eddaa37ed9322fe060811f1e6688effe4c7be26d27439",
+      "size": 673,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext/.github/workflows/build.yaml",
+      "sha256": "19900a111bd84432ffb81994db25fdaf5c7d6b1ecb293b01f44af79aba23cd38",
+      "size": 2180,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext/README.md",
+      "sha256": "e94683fa773431b08170dcf174d74e04fe613596160dc58a948d64cf95352719",
+      "size": 866,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext/data/README.rst",
+      "sha256": "255ec291496feb4bf032043fad29fedc89221e36c199890d4d44bd12fdf2053c",
+      "size": 184,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext/data/controlflow.properties",
+      "sha256": "387214ff1fb3fdc748eebdf7048761ed0de9710d582a8c6db20df86f2c8ae50f",
+      "size": 786,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext/data/download.properties",
+      "sha256": "42b4ff7d0e16acd30de7e2640f6d2d8781731cf3999b32bb71b426466d2d8d76",
+      "size": 215,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext/data/wps.xml",
+      "sha256": "39b3a4e242c03ddc4ad869fe2d9eaaca06a256235e4ead0d09c7d08a1d81ff0f",
+      "size": 1904,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-b4e2fc4b7596cae051ee233417f39e3e33b5e6c5.tar.gz",
+      "sha256": "c5fc10ffd52e7807e5aa0370666a8f7f3b8a63864a6107b12b47496c891aa265",
+      "size": 90990,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-blobs/0b2d76517905b28b53d24ed6ed89e27f39b46571.json",
+      "sha256": "79750532d3cc7809ffc6ac6b0483970f8f6c67f9d4d8f247e3065b40690def7e",
+      "size": 559,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-blobs/3acd7d72d71b96893e2b774789cd0609baea93d2.json",
+      "sha256": "c7dd3db36376c7590c66d860fe326f739a77cf53089c1e72fa72b2e719e171a4",
+      "size": 1385,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-blobs/92a9ed56c2c7bdf7c09a9a9e0b48a676cc4723dd.json",
+      "sha256": "7d68072acc766916fb247c133fc971f8449ddd0860b527262ce00c1130c5df34",
+      "size": 1231,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-blobs/b872f17d997cb38737f333576528ddeda984ef6f.json",
+      "sha256": "6baf3f8fbd3b49fde1698d3ddeae830a031b3c762d2d3f5f149aadc3e9cc4d5a",
+      "size": 599,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-blobs/b912297dba28f228abe26db3de3a34e5b047bcd2.json",
+      "sha256": "4d40aced91dea1adb9cd9a97234bac823f5c3b661c75630290bee7473b15759b",
+      "size": 3308,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-blobs/bb8251a31d886087346425eee734a4e776a23f50.json",
+      "sha256": "07489174373d994abec5846edf61a8ad16b4d8eda499b8b7ce7a9bf75bc3382f",
+      "size": 1497,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-blobs/f84a969d5ae103b6a2a0bcff8905de1d10084450.json",
+      "sha256": "6c100f4ec9568bd519a6ff32e49df3144eb44ae2dcf919a990a8b4cb8431e091",
+      "size": 2928,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-branches.json",
+      "sha256": "6530082d6ba90d57a12c91308cb39d2923ef486d5b97673d6f243afcab52b336",
+      "size": 12952,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-repository.json",
+      "sha256": "70c13c70fb63984fe060bf4a3b00730cfc779a63c046ea6cfd92298afed5f5b8",
+      "size": 6612,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-selected-commit.json",
+      "sha256": "f24caff773798361a124810332ed08ee3c76576fbf5cd0ce5b567bce8914479f",
+      "size": 5479,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-tags.json",
+      "sha256": "de2f92ebcfbc1f1540296b05d01529a86c80e25f42c8f2e51cc818e7dc252919",
+      "size": 1333,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/geoserver-geonode-ext-tree.json",
+      "sha256": "eb150b00e7520e6adc2b7c9e210c97c5de7941278cada997b1a56e89290dd0c3",
+      "size": 71819,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    },
+    {
+      "path": "geonode-research/manifest.json",
+      "sha256": "6e984a35ee43fd32a53e4f2dce855fb4709fa23b70295c9550d771b1c8962f15",
+      "size": 22229,
+      "origin": {
+        "kind": "retained-audit-evidence",
+        "provenance": "See research receipt/manifest; declarations.json regenerates from pinned owned source"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "name": "geotools",
+      "repository": "https://github.com/aloerch/ambisgis-geotools.git",
+      "commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+      "tag": "34.5",
+      "tag_object": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+      "tree": "acfbe55e74aa9cc9d1134fadeefc4218390ad9ad",
+      "path": "geotools-aac73e9b89821331e77f67f1dd0921e541a78cfc.tar",
+      "format": "git archive --format=tar --prefix=geotools/"
+    },
+    {
+      "name": "geowebcache",
+      "repository": "https://github.com/aloerch/ambisgis-geowebcache.git",
+      "commit": "59640420454b73f1e04e8409cc6ed43f4b24fed2",
+      "tag": "1.28.5",
+      "tag_object": "59640420454b73f1e04e8409cc6ed43f4b24fed2",
+      "tree": "94d71be52ff87f0550f31388d2ff7ddb5fbb12c9",
+      "path": "geowebcache-59640420454b73f1e04e8409cc6ed43f4b24fed2.tar",
+      "format": "git archive --format=tar --prefix=geowebcache/"
+    },
+    {
+      "name": "geoserver",
+      "repository": "https://github.com/aloerch/ambisgis-geoserver.git",
+      "commit": "e0673323400321c0f3409fbae68b4871dc328d8a",
+      "tag": "2.28.5",
+      "tag_object": "e0673323400321c0f3409fbae68b4871dc328d8a",
+      "tree": "301d12cda0cfa1ac23185ce460de614f6d13a6dd",
+      "path": "geoserver-e0673323400321c0f3409fbae68b4871dc328d8a.tar",
+      "format": "git archive --format=tar --prefix=geoserver/"
+    },
+    {
+      "name": "geonode",
+      "repository": "https://github.com/aloerch/ambisgis-geonode.git",
+      "commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+      "tag": "5.1.0",
+      "tag_object": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+      "tree": "b42b136e1fc5e80f064315b4a352e8126c2e4ba7",
+      "path": "geonode-a1db97e81dfc26c16bb4ee1a5d2b408877af66c9.tar",
+      "format": "git archive --format=tar --prefix=geonode/"
+    }
+  ],
+  "notices": [
+    {
+      "source": "geotools",
+      "path": "geotools/LICENSE.md",
+      "size": 26338,
+      "sha256": "994ce1902a23c74519b5d118c6bbb657edabce91dd6b7cc825d86bb8f5c9780f"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/docs/LICENSE.md",
+      "size": 18588,
+      "sha256": "f24d7c154bbac9af201f87e95ebb91138a53e31d197cf1611c3f42645be80f38"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/docs/LICENSE.txt",
+      "size": 600,
+      "sha256": "20face798ed61a6c7a88c46c99aa772282f9f58e3886c21ae1ac998c48456741"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/docs/user/extension/mbstyle/spec/LICENSE.md",
+      "size": 1505,
+      "sha256": "ea33accadd55d329437665d001f41e4df6b02066fd5fd2af9514d4359e0a7f42"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/docs/user/welcome/license.rst",
+      "size": 3421,
+      "sha256": "cf7333de1ea0745abb89dff356c54bfcebbd1bed11d5ec3ff0e8cc6ac3b7d92c"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/brewer/LICENSE.txt",
+      "size": 2319,
+      "sha256": "19d44b06befc6ef5fd5a9d3246fc3bf900061cf89f3b583c719767c543bacf42"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/graph/LICENSE.txt",
+      "size": 639,
+      "sha256": "1ce12dbf431630c05dae383bbfc4e710bb78caa9c1d8293e395535d04af1f1b3"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/wms/LICENSE.txt",
+      "size": 639,
+      "sha256": "1ce12dbf431630c05dae383bbfc4e710bb78caa9c1d8293e395535d04af1f1b3"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/xsd/xsd-core/LICENSE.txt",
+      "size": 1808,
+      "sha256": "d4ebd03f81d8279c1ce9c90f60100bbdc6bfa8ea990885fdaff516a76d26d033"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/xsd/xsd-filter/LICENSE.txt",
+      "size": 640,
+      "sha256": "02680043f08902f1d78e6deac327b60abfc4909427265981657c72f841c43681"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/xsd/xsd-gml2/LICENSE.txt",
+      "size": 640,
+      "sha256": "02680043f08902f1d78e6deac327b60abfc4909427265981657c72f841c43681"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/xsd/xsd-gml3/LICENSE.txt",
+      "size": 640,
+      "sha256": "02680043f08902f1d78e6deac327b60abfc4909427265981657c72f841c43681"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/xsd/xsd-kml/LICENSE.txt",
+      "size": 640,
+      "sha256": "02680043f08902f1d78e6deac327b60abfc4909427265981657c72f841c43681"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/xsd/xsd-ows/LICENSE.txt",
+      "size": 640,
+      "sha256": "02680043f08902f1d78e6deac327b60abfc4909427265981657c72f841c43681"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/xsd/xsd-sld/LICENSE.txt",
+      "size": 640,
+      "sha256": "02680043f08902f1d78e6deac327b60abfc4909427265981657c72f841c43681"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/xsd/xsd-wcs/LICENSE.txt",
+      "size": 640,
+      "sha256": "02680043f08902f1d78e6deac327b60abfc4909427265981657c72f841c43681"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/xsd/xsd-wfs/LICENSE.txt",
+      "size": 640,
+      "sha256": "02680043f08902f1d78e6deac327b60abfc4909427265981657c72f841c43681"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/extension/xsd/xsd-wps/LICENSE.txt",
+      "size": 640,
+      "sha256": "02680043f08902f1d78e6deac327b60abfc4909427265981657c72f841c43681"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/library/coverage/LICENSE.txt",
+      "size": 639,
+      "sha256": "bfa1ad65aa3feccfd743c0c03917a573dcd41fceffdae90c6f65d3bb6f6ad221"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/library/main/LICENSE.txt",
+      "size": 645,
+      "sha256": "a2996bcb9d237924eb429af8c63bdca956ed6a077507eed9b0fa78fde6b9f1be"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/library/metadata/LICENSE.txt",
+      "size": 1147,
+      "sha256": "904dd1506268f3a8d5238172a2b1c05d159d54c5db9261415eb41bbd48e35223"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/library/referencing/LICENSE.txt",
+      "size": 638,
+      "sha256": "8590fe10ff5b9a1c8204c349553a03dcc46fa6648a86e5693548b045ec98c59b"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/arcgrid/LICENSE.txt",
+      "size": 639,
+      "sha256": "bfa1ad65aa3feccfd743c0c03917a573dcd41fceffdae90c6f65d3bb6f6ad221"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/coverage-multidim/LICENSE.txt",
+      "size": 639,
+      "sha256": "bfa1ad65aa3feccfd743c0c03917a573dcd41fceffdae90c6f65d3bb6f6ad221"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/epsg-extension/LICENSE.txt",
+      "size": 639,
+      "sha256": "bfa1ad65aa3feccfd743c0c03917a573dcd41fceffdae90c6f65d3bb6f6ad221"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/epsg-hsql/LICENSE.txt",
+      "size": 644,
+      "sha256": "5d3b4154cd7c384b59334d42aeaec62e3924aa3c0466c334e996172ff98458a8"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/epsg-postgresql/LICENSE.txt",
+      "size": 644,
+      "sha256": "5d3b4154cd7c384b59334d42aeaec62e3924aa3c0466c334e996172ff98458a8"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/epsg-wkt/LICENSE.txt",
+      "size": 644,
+      "sha256": "5d3b4154cd7c384b59334d42aeaec62e3924aa3c0466c334e996172ff98458a8"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/feature-pregeneralized/LICENSE.txt",
+      "size": 644,
+      "sha256": "5d3b4154cd7c384b59334d42aeaec62e3924aa3c0466c334e996172ff98458a8"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/geotiff/LICENSE.txt",
+      "size": 639,
+      "sha256": "bfa1ad65aa3feccfd743c0c03917a573dcd41fceffdae90c6f65d3bb6f6ad221"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/grassraster/LICENSE.txt",
+      "size": 693,
+      "sha256": "17a228fbf478b4b02dc7436324b0e95daf469c16fc8a69ac605d06be153831b1"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/image/LICENSE.txt",
+      "size": 639,
+      "sha256": "bfa1ad65aa3feccfd743c0c03917a573dcd41fceffdae90c6f65d3bb6f6ad221"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/imageio-ext-gdal/LICENSE.txt",
+      "size": 639,
+      "sha256": "bfa1ad65aa3feccfd743c0c03917a573dcd41fceffdae90c6f65d3bb6f6ad221"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/imagemosaic/LICENSE.html",
+      "size": 914,
+      "sha256": "8cd6a62be11a5df0bb14212813b1ba7d33c0f4a0ab49f3de73ffa4f9593cc75a"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/imagemosaic/LICENSE.txt",
+      "size": 639,
+      "sha256": "bfa1ad65aa3feccfd743c0c03917a573dcd41fceffdae90c6f65d3bb6f6ad221"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/imagepyramid/LICENSE.html",
+      "size": 914,
+      "sha256": "8cd6a62be11a5df0bb14212813b1ba7d33c0f4a0ab49f3de73ffa4f9593cc75a"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/imagepyramid/LICENSE.txt",
+      "size": 639,
+      "sha256": "bfa1ad65aa3feccfd743c0c03917a573dcd41fceffdae90c6f65d3bb6f6ad221"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/jdbc/jdbc-hana/NOTICE.txt",
+      "size": 141,
+      "sha256": "023410305b8e6378898fdc738142aac5ed0b9b0a83b69d0fb2753244ec2f2017"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/plugin/jp2k/LICENSE.txt",
+      "size": 639,
+      "sha256": "bfa1ad65aa3feccfd743c0c03917a573dcd41fceffdae90c6f65d3bb6f6ad221"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/unsupported/arcgis-rest/LICENSE.txt",
+      "size": 639,
+      "sha256": "10f951281b2b3b0aadeacfd608ead03230d3f4af7995a67b5a5e82bf1a79e7d8"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/unsupported/example/NOTICE.txt",
+      "size": 140,
+      "sha256": "469b9dd99d0881d85156fefc6d610ff0323ef1fc3144dc6214ef332c61f7a017"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/unsupported/javafx/NOTICE.txt",
+      "size": 140,
+      "sha256": "469b9dd99d0881d85156fefc6d610ff0323ef1fc3144dc6214ef332c61f7a017"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/unsupported/sdmx/LICENSE.txt",
+      "size": 639,
+      "sha256": "10f951281b2b3b0aadeacfd608ead03230d3f4af7995a67b5a5e82bf1a79e7d8"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/modules/unsupported/swing/LICENSE.txt",
+      "size": 588,
+      "sha256": "3a7fa09f11825326dffdaae16a29cccc8885af6e35de749d9721b01db00e53ea"
+    },
+    {
+      "source": "geotools",
+      "path": "geotools/tutorials/LICENSE.md",
+      "size": 6961,
+      "sha256": "661544cef4dce19d82bcb5920e5effe621d07bb679383aad8e72cfcc9c64d59e"
+    },
+    {
+      "source": "geowebcache",
+      "path": "geowebcache/documentation/en/theme/_static/blueprint/AUTHORS",
+      "size": 1325,
+      "sha256": "f92f3a2af75451384d3aaf22c0afc56a446380323de0cbcbdca778082e5e2177"
+    },
+    {
+      "source": "geowebcache",
+      "path": "geowebcache/documentation/en/theme/_static/blueprint/LICENSE",
+      "size": 16748,
+      "sha256": "f452378814d84281b89660f559ddf155c2201e0aba5ecb97e98ebdc549025ff9"
+    },
+    {
+      "source": "geowebcache",
+      "path": "geowebcache/geowebcache/LICENSE.txt",
+      "size": 7639,
+      "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c"
+    },
+    {
+      "source": "geowebcache",
+      "path": "geowebcache/geowebcache/core/src/main/resources/org/geowebcache/rest/webresources/openlayers/license.txt",
+      "size": 1860,
+      "sha256": "b44d6ba2797a87b5b12ee8a3d3196aab2a217b79c8618d2dd611ccaf541775fa"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/LICENSE.md",
+      "size": 28659,
+      "sha256": "6681935183785ff6e95f184ff4f490fa5167c22ab0b4a64f8352a959842b24b8"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/doc/en/LICENSE.md",
+      "size": 17067,
+      "sha256": "25c0e9af39d70a0e5a200f3ea1111d86e82879e69f51783c126c9ba3561bfcc9"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/doc/en/themes/geoserver/static/blueprint/AUTHORS",
+      "size": 1325,
+      "sha256": "f92f3a2af75451384d3aaf22c0afc56a446380323de0cbcbdca778082e5e2177"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/doc/en/themes/geoserver/static/blueprint/LICENSE",
+      "size": 16748,
+      "sha256": "f452378814d84281b89660f559ddf155c2201e0aba5ecb97e98ebdc549025ff9"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/doc/en/user/source/introduction/license.rst",
+      "size": 924,
+      "sha256": "c970900a31f4fa45f7637e6d6d3026925b9b55c71fdea5365616bbab3c138720"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/doc/zhCN/user/source/introduction/license.rst",
+      "size": 677,
+      "sha256": "74b2846f1eae7ddd48164bfb3f1e18580d0bc3a147424da8d114dc75c06fafee"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/licenses/NOTICE.md",
+      "size": 28671,
+      "sha256": "b24d129328a176f3da51cb240eed8bd242653dd96ce63c6c6acefb60166ae79d"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/community/gsr/LICENSE.md",
+      "size": 17067,
+      "sha256": "25c0e9af39d70a0e5a200f3ea1111d86e82879e69f51783c126c9ba3561bfcc9"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/community/gsr/NOTICE.md",
+      "size": 85833,
+      "sha256": "fe51aeed52be9dae2a36c84e1610f3ad7f1c2775d6dd2190ff6402345cfbf02a"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/community/jms-cluster/activemqBroker/src/main/webapp/META-INF/LICENSE",
+      "size": 75126,
+      "sha256": "d362dbe01ac3867408e072b7ce9a6d5a6fc3364f8ade87b7b90377cd728c3425"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/community/jms-cluster/activemqBroker/src/main/webapp/META-INF/NOTICE",
+      "size": 4665,
+      "sha256": "d14c79f16932df9c9296c81d2a245b7524cad1b1ee5f585c5bcf56413433c2b1"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/community/jms-cluster/activemqBroker/src/main/webapp/WEB-INF/classes/META-INF/LICENSE",
+      "size": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/community/jms-cluster/activemqBroker/src/main/webapp/WEB-INF/classes/META-INF/NOTICE",
+      "size": 180,
+      "sha256": "0cff196d5b03a4ded481c6163a971f620f88befef124d2b0f740163b8e7e3349"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/extension/dxf/LICENSE.txt",
+      "size": 984,
+      "sha256": "79fb26c3950c57e8b88556dd46b47bbb3056e4eabd56fd4b9d4ed8c334db095a"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/release/extensions/LICENSE.md",
+      "size": 396,
+      "sha256": "9f8d046c4044a7f8d5c8e7adefd4dc65697f9dea9ec6cc8de4e47f1886f5c201"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/release/extensions/LICENSE_GS.md",
+      "size": 229,
+      "sha256": "338941c6aa91ae7450530a846c5266bd72923ecde8ec650aa09bff1565d143d2"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/release/extensions/LICENSE_GT.md",
+      "size": 216,
+      "sha256": "71bdfd80727bb9340d950ac87807b976c561fef3f7dd5379b7fb19aa266933d7"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/release/installer/win/build/wrapper/LICENSE.txt",
+      "size": 930,
+      "sha256": "05fa12e1d2a82d7cad68c78fc84e53ca3053d721d7af6b7fdab7bad858d758ab"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/release/src/markdown/LICENSE.md",
+      "size": 28659,
+      "sha256": "6681935183785ff6e95f184ff4f490fa5167c22ab0b4a64f8352a959842b24b8"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/web/core/src/main/java/org/geoserver/web/css/blueprint/AUTHORS",
+      "size": 1325,
+      "sha256": "f92f3a2af75451384d3aaf22c0afc56a446380323de0cbcbdca778082e5e2177"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/web/core/src/main/java/org/geoserver/web/css/blueprint/LICENSE",
+      "size": 16748,
+      "sha256": "f452378814d84281b89660f559ddf155c2201e0aba5ecb97e98ebdc549025ff9"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/web/core/src/main/java/org/geoserver/web/wicket/js/codemirror/LICENSE",
+      "size": 918,
+      "sha256": "409094d9790fecd337f53f4de1a669a6fd77c3360af7cdce05433a870458d34d"
+    },
+    {
+      "source": "geoserver",
+      "path": "geoserver/src/wms/src/test/resources/org/geoserver/wms/legendgraphic/LICENSE-Anarchist_Mustache.ttf",
+      "size": 4450,
+      "sha256": "254f2c3725b61fc32d4531843fc26e15fdc86822c8ef63d5927055736f40489b"
+    },
+    {
+      "source": "geonode",
+      "path": "geonode/AUTHORS",
+      "size": 3029,
+      "sha256": "8f8109ce4ea0aaef7e7e6ae9b17c92faf55ca89c1a451afb727fc35867518e74"
+    },
+    {
+      "source": "geonode",
+      "path": "geonode/LICENSE",
+      "size": 36001,
+      "sha256": "90ef058cd188d1fbf4a2337f4e2bf4671236aa5eaf435432d7c40b498f032edf"
+    },
+    {
+      "source": "geonode",
+      "path": "geonode/docs/LICENSE",
+      "size": 20954,
+      "sha256": "ef1143f93b421454c9dbf42b3feb6038ffdce3738ab72c532b6368dd6487951d"
+    },
+    {
+      "source": "geonode",
+      "path": "geonode/geonode/templates/pinax/notifications/notice_settings.html",
+      "size": 2187,
+      "sha256": "2f4ed4789f60991aecf29fe479674b25189051626353d92e0e146ee17a3a22bb"
+    },
+    {
+      "source": "geonode",
+      "path": "geonode/geonode/tests/suite/LICENSE",
+      "size": 1494,
+      "sha256": "9d6d4195cbe8fbfc49c570e991dc2b19f20f1ee01bcf54b28e7891e8c0c88c0f"
+    }
+  ],
+  "audit_inventory": {
+    "path": "declarations.json",
+    "sha256": "e94d6d50282bd3222a49839f3fd1aa583e9a205c94a710242f873ed2ef019f80",
+    "exit_code": 1,
+    "tracked_pom_count": 519,
+    "xml_errors": [
+      {
+        "repository": "aloerch/ambisgis-geoserver",
+        "error": "ambisgis-geoserver/src/maven/archetype/pom.xml: malformed XML: unbound prefix: line 7, column 0",
+        "source_path": "src/maven/archetype/pom.xml"
+      }
+    ]
+  },
+  "limitations": [
+    "No effective Maven resolution or selected build profile",
+    "No complete transitive sources/artifacts/toolchains",
+    "Class B recipe and MapFish sources are audit candidates, not accepted substitutions",
+    "Not a build/release lock or license approval"
+  ]
+}
