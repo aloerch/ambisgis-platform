@@ -83,3 +83,28 @@ absent `/usr/bin/gh`; pushes use the verified retained CLI via a per-command
 helper override, without changing global credentials/configuration. No process
 is left running. No PR merge, source-fork default, workflow, secret, deployment,
 release or full-product acceptance was performed by this audit.
+
+
+## Checkpoint integration, 20 September 2026
+
+PR #52 is owner-merged at `fc77ab978e567ce5d55e3428d1249a3b332da09d`.
+The earlier GOV-02 open/in-review statements above are historical. PR #54's
+actual merge conflict was limited to the GOV-02 paragraph in root and plan
+STATUS files. Integrating that main commit preserves the Java audit and merged
+database/Jupyter evidence while retaining all GOV-02 tooling, accepted filter
+settings and roadmap limitation. No source-closure engineering is added here.
+
+Supported GitHub GraphQL readback returns both `stack: null` and
+`stackEntry: null` for PRs #54 and #55. They are ordinary dependent branch PRs.
+Review #54 against `ambisgis/main` first; after an explicit owner-approved merge,
+verify the actual merged main, integrate it normally into #55, retarget #55 to
+`ambisgis/main`, and recheck its diff/tests before its separate merge decision.
+Do not merge #55 into a stale intermediate branch. No merge is authorized by
+this integration. The subsequent dependency-resolution work remains in #55;
+source-closure and compilation work is separately reviewable.
+
+Fresh audit/tooling and package/schema checks for this integration are retained
+in `plan/verification/java-audit-integration-*.txt`. Database/Jupyter native
+tests were not rerun. Audit acceptance remains a bounded evidence/tooling
+checkpoint, not a Java build, baseline/license/security approval or completed
+FND-02 task.

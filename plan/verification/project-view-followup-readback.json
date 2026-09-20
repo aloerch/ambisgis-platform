@@ -1,0 +1,1515 @@
+{
+  "captured_at": "2026-09-19T21:25:32.834870+00:00",
+  "purpose": "Read-only follow-up to owner issue 9 comment 5745381847; prior dated evidence retained separately.",
+  "query_path": "project-view-readback.graphql",
+  "readback": {
+    "data": {
+      "viewer": {
+        "login": "aloerch"
+      },
+      "repository": {
+        "databaseId": 1376927351,
+        "nameWithOwner": "aloerch/ambisgis-platform"
+      },
+      "user": {
+        "id": "MDQ6VXNlcjE1Mjg1NjI2",
+        "projectV2": {
+          "id": "PVT_kwHOAOk9es4Bj_k-",
+          "number": 2,
+          "title": "AmbisGIS \u2014 Product Development",
+          "url": "https://github.com/users/aloerch/projects/2",
+          "public": true,
+          "closed": false,
+          "views": {
+            "nodes": [
+              {
+                "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_Ac",
+                "number": 1,
+                "name": "View 1",
+                "layout": "TABLE_LAYOUT",
+                "filter": "",
+                "updatedAt": "2026-09-19T18:42:05Z",
+                "fields": {
+                  "nodes": [
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                      "name": "Title",
+                      "dataType": "TITLE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                      "name": "Assignees",
+                      "dataType": "ASSIGNEES"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                      "name": "Linked pull requests",
+                      "dataType": "LINKED_PULL_REQUESTS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                      "name": "Sub-issues progress",
+                      "dataType": "SUB_ISSUES_PROGRESS"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                      "name": "Delivery",
+                      "dataType": "SINGLE_SELECT"
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "NQ"
+                  }
+                },
+                "configuration": {
+                  "visibleFields": {
+                    "nodes": [
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                        "name": "Title",
+                        "dataType": "TITLE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                        "name": "Assignees",
+                        "dataType": "ASSIGNEES"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                        "name": "Linked pull requests",
+                        "dataType": "LINKED_PULL_REQUESTS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                        "name": "Sub-issues progress",
+                        "dataType": "SUB_ISSUES_PROGRESS"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                        "name": "Delivery",
+                        "dataType": "SINGLE_SELECT"
+                      }
+                    ],
+                    "pageInfo": {
+                      "hasNextPage": false,
+                      "endCursor": "NQ"
+                    }
+                  }
+                },
+                "groupByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                },
+                "verticalGroupByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                },
+                "sortByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                }
+              },
+              {
+                "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_dE",
+                "number": 2,
+                "name": "Product backlog",
+                "layout": "TABLE_LAYOUT",
+                "filter": "-delivery:Cancelled",
+                "updatedAt": "2026-09-19T18:31:41Z",
+                "fields": {
+                  "nodes": [
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                      "name": "Title",
+                      "dataType": "TITLE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                      "name": "Assignees",
+                      "dataType": "ASSIGNEES"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CY",
+                      "name": "Labels",
+                      "dataType": "LABELS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                      "name": "Linked pull requests",
+                      "dataType": "LINKED_PULL_REQUESTS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cg",
+                      "name": "Milestone",
+                      "dataType": "MILESTONE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Ck",
+                      "name": "Repository",
+                      "dataType": "REPOSITORY"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cs",
+                      "name": "Reviewers",
+                      "dataType": "REVIEWERS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cw",
+                      "name": "Parent issue",
+                      "dataType": "PARENT_ISSUE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                      "name": "Sub-issues progress",
+                      "dataType": "SUB_ISSUES_PROGRESS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C4",
+                      "name": "Created",
+                      "dataType": "CREATED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C8",
+                      "name": "Updated",
+                      "dataType": "UPDATED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DA",
+                      "name": "Closed",
+                      "dataType": "CLOSED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                      "name": "Task ID",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                      "name": "Delivery",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                      "name": "Phase",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                      "name": "Component",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                      "name": "Priority",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+                      "name": "Risk",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+                      "name": "Review gate",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HA",
+                      "name": "Target release",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+                      "name": "Evidence",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4IA",
+                      "name": "Start date",
+                      "dataType": "DATE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4I8",
+                      "name": "Target date",
+                      "dataType": "DATE"
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "MjM"
+                  }
+                },
+                "configuration": {
+                  "visibleFields": {
+                    "nodes": [
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                        "name": "Title",
+                        "dataType": "TITLE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                        "name": "Assignees",
+                        "dataType": "ASSIGNEES"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CY",
+                        "name": "Labels",
+                        "dataType": "LABELS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                        "name": "Linked pull requests",
+                        "dataType": "LINKED_PULL_REQUESTS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cg",
+                        "name": "Milestone",
+                        "dataType": "MILESTONE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Ck",
+                        "name": "Repository",
+                        "dataType": "REPOSITORY"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cs",
+                        "name": "Reviewers",
+                        "dataType": "REVIEWERS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cw",
+                        "name": "Parent issue",
+                        "dataType": "PARENT_ISSUE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                        "name": "Sub-issues progress",
+                        "dataType": "SUB_ISSUES_PROGRESS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C4",
+                        "name": "Created",
+                        "dataType": "CREATED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C8",
+                        "name": "Updated",
+                        "dataType": "UPDATED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DA",
+                        "name": "Closed",
+                        "dataType": "CLOSED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                        "name": "Task ID",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                        "name": "Delivery",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                        "name": "Phase",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                        "name": "Component",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                        "name": "Priority",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+                        "name": "Risk",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+                        "name": "Review gate",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HA",
+                        "name": "Target release",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+                        "name": "Evidence",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4IA",
+                        "name": "Start date",
+                        "dataType": "DATE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4I8",
+                        "name": "Target date",
+                        "dataType": "DATE"
+                      }
+                    ],
+                    "pageInfo": {
+                      "hasNextPage": false,
+                      "endCursor": "MjM"
+                    }
+                  }
+                },
+                "groupByFields": {
+                  "nodes": [
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                      "name": "Phase",
+                      "dataType": "SINGLE_SELECT"
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "MQ"
+                  }
+                },
+                "verticalGroupByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                },
+                "sortByFields": {
+                  "nodes": [
+                    {
+                      "direction": "ASC",
+                      "field": {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                        "name": "Priority",
+                        "dataType": "SINGLE_SELECT"
+                      }
+                    },
+                    {
+                      "direction": "ASC",
+                      "field": {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                        "name": "Task ID",
+                        "dataType": "TEXT"
+                      }
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "Mg"
+                  }
+                }
+              },
+              {
+                "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_dc",
+                "number": 3,
+                "name": "Execution board",
+                "layout": "BOARD_LAYOUT",
+                "filter": "",
+                "updatedAt": "2026-09-19T18:34:55Z",
+                "fields": {
+                  "nodes": [
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                      "name": "Title",
+                      "dataType": "TITLE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                      "name": "Assignees",
+                      "dataType": "ASSIGNEES"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CY",
+                      "name": "Labels",
+                      "dataType": "LABELS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                      "name": "Linked pull requests",
+                      "dataType": "LINKED_PULL_REQUESTS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cg",
+                      "name": "Milestone",
+                      "dataType": "MILESTONE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Ck",
+                      "name": "Repository",
+                      "dataType": "REPOSITORY"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cs",
+                      "name": "Reviewers",
+                      "dataType": "REVIEWERS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cw",
+                      "name": "Parent issue",
+                      "dataType": "PARENT_ISSUE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                      "name": "Sub-issues progress",
+                      "dataType": "SUB_ISSUES_PROGRESS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C4",
+                      "name": "Created",
+                      "dataType": "CREATED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C8",
+                      "name": "Updated",
+                      "dataType": "UPDATED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DA",
+                      "name": "Closed",
+                      "dataType": "CLOSED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                      "name": "Task ID",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                      "name": "Delivery",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                      "name": "Phase",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                      "name": "Component",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                      "name": "Priority",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+                      "name": "Risk",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+                      "name": "Review gate",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HA",
+                      "name": "Target release",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+                      "name": "Evidence",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4IA",
+                      "name": "Start date",
+                      "dataType": "DATE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4I8",
+                      "name": "Target date",
+                      "dataType": "DATE"
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "MjM"
+                  }
+                },
+                "configuration": {
+                  "visibleFields": {
+                    "nodes": [
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                        "name": "Title",
+                        "dataType": "TITLE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                        "name": "Assignees",
+                        "dataType": "ASSIGNEES"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CY",
+                        "name": "Labels",
+                        "dataType": "LABELS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                        "name": "Linked pull requests",
+                        "dataType": "LINKED_PULL_REQUESTS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cg",
+                        "name": "Milestone",
+                        "dataType": "MILESTONE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Ck",
+                        "name": "Repository",
+                        "dataType": "REPOSITORY"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cs",
+                        "name": "Reviewers",
+                        "dataType": "REVIEWERS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cw",
+                        "name": "Parent issue",
+                        "dataType": "PARENT_ISSUE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                        "name": "Sub-issues progress",
+                        "dataType": "SUB_ISSUES_PROGRESS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C4",
+                        "name": "Created",
+                        "dataType": "CREATED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C8",
+                        "name": "Updated",
+                        "dataType": "UPDATED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DA",
+                        "name": "Closed",
+                        "dataType": "CLOSED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                        "name": "Task ID",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                        "name": "Delivery",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                        "name": "Phase",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                        "name": "Component",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                        "name": "Priority",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+                        "name": "Risk",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+                        "name": "Review gate",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HA",
+                        "name": "Target release",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+                        "name": "Evidence",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4IA",
+                        "name": "Start date",
+                        "dataType": "DATE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4I8",
+                        "name": "Target date",
+                        "dataType": "DATE"
+                      }
+                    ],
+                    "pageInfo": {
+                      "hasNextPage": false,
+                      "endCursor": "MjM"
+                    }
+                  }
+                },
+                "groupByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                },
+                "verticalGroupByFields": {
+                  "nodes": [
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                      "name": "Delivery",
+                      "dataType": "SINGLE_SELECT"
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "MQ"
+                  }
+                },
+                "sortByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                }
+              },
+              {
+                "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_xc",
+                "number": 4,
+                "name": "Release roadmap",
+                "layout": "ROADMAP_LAYOUT",
+                "filter": "",
+                "updatedAt": "2026-09-19T18:37:14Z",
+                "fields": {
+                  "nodes": [
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                      "name": "Title",
+                      "dataType": "TITLE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                      "name": "Assignees",
+                      "dataType": "ASSIGNEES"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4CU",
+                      "name": "Status",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                      "name": "Linked pull requests",
+                      "dataType": "LINKED_PULL_REQUESTS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                      "name": "Sub-issues progress",
+                      "dataType": "SUB_ISSUES_PROGRESS"
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "NQ"
+                  }
+                },
+                "configuration": {
+                  "visibleFields": {
+                    "nodes": [],
+                    "pageInfo": {
+                      "hasNextPage": false,
+                      "endCursor": null
+                    }
+                  }
+                },
+                "groupByFields": {
+                  "nodes": [
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                      "name": "Phase",
+                      "dataType": "SINGLE_SELECT"
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "MQ"
+                  }
+                },
+                "verticalGroupByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                },
+                "sortByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                }
+              },
+              {
+                "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_xk",
+                "number": 5,
+                "name": "Review and approvals",
+                "layout": "TABLE_LAYOUT",
+                "filter": "delivery:\"In review\",Blocked review-gate:\"Human approval\",Security,\"Data migration\",\"License/Brand\",Release",
+                "updatedAt": "2026-09-19T21:12:43Z",
+                "fields": {
+                  "nodes": [
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                      "name": "Title",
+                      "dataType": "TITLE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                      "name": "Assignees",
+                      "dataType": "ASSIGNEES"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CY",
+                      "name": "Labels",
+                      "dataType": "LABELS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                      "name": "Linked pull requests",
+                      "dataType": "LINKED_PULL_REQUESTS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cg",
+                      "name": "Milestone",
+                      "dataType": "MILESTONE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Ck",
+                      "name": "Repository",
+                      "dataType": "REPOSITORY"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cs",
+                      "name": "Reviewers",
+                      "dataType": "REVIEWERS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cw",
+                      "name": "Parent issue",
+                      "dataType": "PARENT_ISSUE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                      "name": "Sub-issues progress",
+                      "dataType": "SUB_ISSUES_PROGRESS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C4",
+                      "name": "Created",
+                      "dataType": "CREATED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C8",
+                      "name": "Updated",
+                      "dataType": "UPDATED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DA",
+                      "name": "Closed",
+                      "dataType": "CLOSED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                      "name": "Task ID",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                      "name": "Delivery",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                      "name": "Phase",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                      "name": "Component",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                      "name": "Priority",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+                      "name": "Risk",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+                      "name": "Review gate",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HA",
+                      "name": "Target release",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+                      "name": "Evidence",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4IA",
+                      "name": "Start date",
+                      "dataType": "DATE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4I8",
+                      "name": "Target date",
+                      "dataType": "DATE"
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "MjM"
+                  }
+                },
+                "configuration": {
+                  "visibleFields": {
+                    "nodes": [
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                        "name": "Title",
+                        "dataType": "TITLE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                        "name": "Assignees",
+                        "dataType": "ASSIGNEES"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CY",
+                        "name": "Labels",
+                        "dataType": "LABELS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                        "name": "Linked pull requests",
+                        "dataType": "LINKED_PULL_REQUESTS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cg",
+                        "name": "Milestone",
+                        "dataType": "MILESTONE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Ck",
+                        "name": "Repository",
+                        "dataType": "REPOSITORY"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cs",
+                        "name": "Reviewers",
+                        "dataType": "REVIEWERS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cw",
+                        "name": "Parent issue",
+                        "dataType": "PARENT_ISSUE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                        "name": "Sub-issues progress",
+                        "dataType": "SUB_ISSUES_PROGRESS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C4",
+                        "name": "Created",
+                        "dataType": "CREATED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C8",
+                        "name": "Updated",
+                        "dataType": "UPDATED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DA",
+                        "name": "Closed",
+                        "dataType": "CLOSED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                        "name": "Task ID",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                        "name": "Delivery",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                        "name": "Phase",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                        "name": "Component",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                        "name": "Priority",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+                        "name": "Risk",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+                        "name": "Review gate",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HA",
+                        "name": "Target release",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+                        "name": "Evidence",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4IA",
+                        "name": "Start date",
+                        "dataType": "DATE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4I8",
+                        "name": "Target date",
+                        "dataType": "DATE"
+                      }
+                    ],
+                    "pageInfo": {
+                      "hasNextPage": false,
+                      "endCursor": "MjM"
+                    }
+                  }
+                },
+                "groupByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                },
+                "verticalGroupByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                },
+                "sortByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                }
+              },
+              {
+                "id": "PVTV_lAHOAOk9es4Bj_k-zgLt_x4",
+                "number": 6,
+                "name": "Source and security maintenance",
+                "layout": "TABLE_LAYOUT",
+                "filter": "component:Platform,Governance,\"Security/Release\" -delivery:Cancelled",
+                "updatedAt": "2026-09-19T18:40:44Z",
+                "fields": {
+                  "nodes": [
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                      "name": "Title",
+                      "dataType": "TITLE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                      "name": "Assignees",
+                      "dataType": "ASSIGNEES"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CY",
+                      "name": "Labels",
+                      "dataType": "LABELS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                      "name": "Linked pull requests",
+                      "dataType": "LINKED_PULL_REQUESTS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cg",
+                      "name": "Milestone",
+                      "dataType": "MILESTONE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Ck",
+                      "name": "Repository",
+                      "dataType": "REPOSITORY"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cs",
+                      "name": "Reviewers",
+                      "dataType": "REVIEWERS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cw",
+                      "name": "Parent issue",
+                      "dataType": "PARENT_ISSUE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                      "name": "Sub-issues progress",
+                      "dataType": "SUB_ISSUES_PROGRESS"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C4",
+                      "name": "Created",
+                      "dataType": "CREATED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C8",
+                      "name": "Updated",
+                      "dataType": "UPDATED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DA",
+                      "name": "Closed",
+                      "dataType": "CLOSED"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                      "name": "Task ID",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                      "name": "Delivery",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                      "name": "Phase",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                      "name": "Component",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                      "name": "Priority",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+                      "name": "Risk",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+                      "name": "Review gate",
+                      "dataType": "SINGLE_SELECT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HA",
+                      "name": "Target release",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+                      "name": "Evidence",
+                      "dataType": "TEXT"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4IA",
+                      "name": "Start date",
+                      "dataType": "DATE"
+                    },
+                    {
+                      "id": "PVTF_lAHOAOk9es4Bj_k-zhix4I8",
+                      "name": "Target date",
+                      "dataType": "DATE"
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "MjM"
+                  }
+                },
+                "configuration": {
+                  "visibleFields": {
+                    "nodes": [
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+                        "name": "Title",
+                        "dataType": "TITLE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+                        "name": "Assignees",
+                        "dataType": "ASSIGNEES"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CY",
+                        "name": "Labels",
+                        "dataType": "LABELS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+                        "name": "Linked pull requests",
+                        "dataType": "LINKED_PULL_REQUESTS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cg",
+                        "name": "Milestone",
+                        "dataType": "MILESTONE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Ck",
+                        "name": "Repository",
+                        "dataType": "REPOSITORY"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cs",
+                        "name": "Reviewers",
+                        "dataType": "REVIEWERS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4Cw",
+                        "name": "Parent issue",
+                        "dataType": "PARENT_ISSUE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+                        "name": "Sub-issues progress",
+                        "dataType": "SUB_ISSUES_PROGRESS"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C4",
+                        "name": "Created",
+                        "dataType": "CREATED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4C8",
+                        "name": "Updated",
+                        "dataType": "UPDATED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DA",
+                        "name": "Closed",
+                        "dataType": "CLOSED"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+                        "name": "Task ID",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+                        "name": "Delivery",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4E8",
+                        "name": "Phase",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                        "name": "Component",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FE",
+                        "name": "Priority",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FI",
+                        "name": "Risk",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+                        "name": "Review gate",
+                        "dataType": "SINGLE_SELECT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HA",
+                        "name": "Target release",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+                        "name": "Evidence",
+                        "dataType": "TEXT"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4IA",
+                        "name": "Start date",
+                        "dataType": "DATE"
+                      },
+                      {
+                        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4I8",
+                        "name": "Target date",
+                        "dataType": "DATE"
+                      }
+                    ],
+                    "pageInfo": {
+                      "hasNextPage": false,
+                      "endCursor": "MjM"
+                    }
+                  }
+                },
+                "groupByFields": {
+                  "nodes": [
+                    {
+                      "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4FA",
+                      "name": "Component",
+                      "dataType": "SINGLE_SELECT"
+                    }
+                  ],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": "MQ"
+                  }
+                },
+                "verticalGroupByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                },
+                "sortByFields": {
+                  "nodes": [],
+                  "pageInfo": {
+                    "hasNextPage": false,
+                    "endCursor": null
+                  }
+                }
+              }
+            ],
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": "Ng"
+            }
+          }
+        }
+      },
+      "viewType": {
+        "fields": [
+          {
+            "name": "configuration"
+          },
+          {
+            "name": "createdAt"
+          },
+          {
+            "name": "fields"
+          },
+          {
+            "name": "filter"
+          },
+          {
+            "name": "fullDatabaseId"
+          },
+          {
+            "name": "groupByFields"
+          },
+          {
+            "name": "id"
+          },
+          {
+            "name": "layout"
+          },
+          {
+            "name": "name"
+          },
+          {
+            "name": "number"
+          },
+          {
+            "name": "project"
+          },
+          {
+            "name": "sortByFields"
+          },
+          {
+            "name": "updatedAt"
+          },
+          {
+            "name": "verticalGroupByFields"
+          }
+        ]
+      },
+      "configurationType": {
+        "fields": [
+          {
+            "name": "visibleFields"
+          }
+        ]
+      }
+    }
+  },
+  "owner_comment": {
+    "id": 5745381847,
+    "node_id": "IC_kwDOUhI-d88AAAABVnOR1w",
+    "html_url": "https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5745381847",
+    "created_at": "2026-09-19T21:19:59Z",
+    "updated_at": "2026-09-19T21:19:59Z",
+    "author_association": "OWNER",
+    "body": "https://github.com/users/aloerch/projects/2/views/5\nFilter now contains delivery:\"In review\",Blocked review-gate:\"Human approval\",Security,\"Data migration\",\"License/Brand\",Release\n\nhttps://github.com/users/aloerch/projects/2/views/4\nRoadmap view type displays a calendar of dates and the view settings do not contain a fields selection option, unlike tables and boards. The request to pick visible fields and hide the Status field may be erroneous."
+  },
+  "owner_login": "aloerch",
+  "delivery_query": "query DeliveryReadback { viewer { login } user(login: \"aloerch\") { projectV2(number: 2) { id items(first: 100) { nodes { id isArchived content { ... on Issue { number repository { nameWithOwner } } } task: fieldValueByName(name: \"Task ID\") { ... on ProjectV2ItemFieldTextValue { text } } delivery: fieldValueByName(name: \"Delivery\") { ... on ProjectV2ItemFieldSingleSelectValue { name } } evidence: fieldValueByName(name: \"Evidence\") { ... on ProjectV2ItemFieldTextValue { text } } } pageInfo { hasNextPage endCursor } } } } }",
+  "delivery_page_info": {
+    "hasNextPage": false,
+    "endCursor": "Y3Vyc29yOnYyOpK5MDAwMDAwMDAuMDE1MTUxNTE1MTUxNTE1Mc4O7bWH"
+  },
+  "delivery_items_read": 66,
+  "selected_delivery_items": [
+    {
+      "id": "PVTI_lAHOAOk9es4Bj_k-zg7tpsE",
+      "isArchived": false,
+      "content": {
+        "number": 2,
+        "repository": {
+          "nameWithOwner": "aloerch/ambisgis-platform"
+        }
+      },
+      "task": {
+        "text": "FND-01"
+      },
+      "delivery": {
+        "name": "Merged"
+      },
+      "evidence": {
+        "text": "https://github.com/aloerch/ambisgis-platform/pull/1"
+      }
+    },
+    {
+      "id": "PVTI_lAHOAOk9es4Bj_k-zg7tpvY",
+      "isArchived": false,
+      "content": {
+        "number": 3,
+        "repository": {
+          "nameWithOwner": "aloerch/ambisgis-platform"
+        }
+      },
+      "task": {
+        "text": "FND-02"
+      },
+      "delivery": {
+        "name": "In progress"
+      },
+      "evidence": {
+        "text": "https://github.com/aloerch/ambisgis-platform/pull/51"
+      }
+    },
+    {
+      "id": "PVTI_lAHOAOk9es4Bj_k-zg7tqCI",
+      "isArchived": false,
+      "content": {
+        "number": 8,
+        "repository": {
+          "nameWithOwner": "aloerch/ambisgis-platform"
+        }
+      },
+      "task": {
+        "text": "GOV-01"
+      },
+      "delivery": {
+        "name": "Merged"
+      },
+      "evidence": {
+        "text": "https://github.com/aloerch/ambisgis-platform/pull/50"
+      }
+    },
+    {
+      "id": "PVTI_lAHOAOk9es4Bj_k-zg7tqFE",
+      "isArchived": false,
+      "content": {
+        "number": 9,
+        "repository": {
+          "nameWithOwner": "aloerch/ambisgis-platform"
+        }
+      },
+      "task": {
+        "text": "GOV-02"
+      },
+      "delivery": {
+        "name": "Blocked"
+      },
+      "evidence": {
+        "text": "https://github.com/aloerch/ambisgis-platform/pull/50"
+      }
+    }
+  ],
+  "pull_request": {
+    "baseRefName": "ambisgis/main",
+    "headRefName": "gov-02/saved-view-reconciliation",
+    "headRefOid": "cb871e82f15be7363c3dc0e786923e9572d77d11",
+    "mergeCommit": null,
+    "reviews": [],
+    "state": "OPEN"
+  },
+  "pagination_connections_checked": 32,
+  "project_mutations": 0,
+  "limitations": [
+    "No personal agent UI inspection.",
+    "Roadmap dates remain attributed to owner comment 5744517566.",
+    "No saved-slice readback is provided by the retained query.",
+    "Roadmap fields and configuration.visibleFields do not establish rendered Status visibility; the owner reports no fields selection control."
+  ]
+}

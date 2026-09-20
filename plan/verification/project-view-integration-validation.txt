@@ -1,0 +1,49 @@
+GOV-02 current-main integration validation — 2026-09-19
+Worktree: /home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov02
+Branch: gov-02/saved-view-reconciliation
+PR: https://github.com/aloerch/ambisgis-platform/pull/52
+Initial branch head: cb871e82f15be7363c3dc0e786923e9572d77d11
+Scoped follow-up commit: 6773ce7cee6cdc17ded7413fe45890e3fa4dd592
+Integrated main: 12bd2c5c88ab8573add1b483f1d53b4024649b39
+Local merge commit: 453eacb9724a477a75642e708b0c20082d612b38
+
+Before local writes, authenticated aloerch, repository ID1376927351,
+expected worktree/branch/origin and exactly eight expected changed/new files
+were verified. Local origin/ambisgis/main and live GitHub branch readback both
+matched the integrated main commit above.
+
+The scoped follow-up was committed first. A local git merge --no-ff of the
+verified main commit reported conflicts only in STATUS.md and plan/STATUS.md.
+Both were resolved by retaining main verbatim except its GOV-02 paragraph,
+which now reports the In review candidate and the dated live Blocked observation.
+All non-GOV-02 status paragraphs were programmatically compared with main and
+matched exactly. Both parent commits of the local merge were checked.
+
+All build-support content and Jupyter/database handoff/candidate/evidence files
+match integrated main: git diff --exit-code returned 0 for the checked paths.
+No Jupyter/FND-02 implementation or existing native evidence was replaced.
+The final difference from main is the existing GOV-02 board-column correction,
+its tests/spec/generated references, saved-view evidence and scoped follow-up.
+
+After integration, from plan/:
+/tmp/ambisgis-validation-venv/bin/python -m unittest discover -s tests -v
+Exit 0: 175 tests passed in 7.926s; zero failures, errors or skips.
+Full output: project-view-integration-tests.txt
+
+/tmp/ambisgis-validation-venv/bin/python tools/validate_package.py --require-schemas
+Exit 0: plan references and acyclic dependencies PASS
+15 repositories, 66 tasks, 24 requirements, 65 sources.
+JSON Schema 2020-12 and format/example checks PASS (4 schemas/examples).
+Full output: project-view-integration-schemas.txt
+
+git diff --check: exit 0. Final scoped diff against integrated main inspected.
+Historical readback and validation receipts were retained unchanged.
+
+This record describes local commits/integration and package/governance checks.
+There was no push, remote merge, Project mutation, issue comment/closure,
+importer execution, workflow change, secret installation, deployment or release.
+Fresh GIS/database/Jupyter native/runtime tests were not repeated for this
+GOV-02 correction; their current-main evidence remains historical.
+Live GOV-02 Blocked is the dated follow-up observation, not a reset command.
+In review is proposed; applicable review precedes Verified and an actual
+approved merge of PR52 into main must precede Merged.
