@@ -1,0 +1,1 @@
+{"build_ready": false, "output": "/tmp/ambisgis-next-review/corrected-real-inventory.json", "source_gap_count": 64, "verification": {"errors": [], "orphan_blobs": [], "record_count": 10802, "valid": true, "verified_blob_count": 10792, "verified_record_count": 10802}}

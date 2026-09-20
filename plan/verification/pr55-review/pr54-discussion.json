@@ -1,0 +1,74 @@
+{
+  "comments": {
+    "nodes": [],
+    "pages": [
+      {
+        "hasNextPage": false,
+        "endCursor": null
+      }
+    ]
+  },
+  "reviews": {
+    "nodes": [],
+    "pages": [
+      {
+        "hasNextPage": false,
+        "endCursor": null
+      }
+    ]
+  },
+  "reviewRequests": {
+    "nodes": [],
+    "pages": [
+      {
+        "hasNextPage": false,
+        "endCursor": null
+      }
+    ]
+  },
+  "reviewThreads": {
+    "nodes": [],
+    "pages": [
+      {
+        "hasNextPage": false,
+        "endCursor": null
+      }
+    ]
+  },
+  "body": "The selected Java versions do not yet have a complete extension/source closure. This bounded audit inventories 519 POMs and six Maven configurations from 70 retained inputs (902,064,509 bytes), records printing/profile/bootstrap provenance gaps, and provides custody/recovery checks. The inherited malformed archetype POM deliberately leaves the actual static inventory at exit 1; enumeration is complete, XML interpretation is not.\n\nCurrent tested head: `b15a785f350d347c0c2c4ff07ac6e5681c1d9746`. Base: `ambisgis/main` at `fc77ab978e567ce5d55e3428d1249a3b332da09d`. GitHub readback: **MERGEABLE / CLEAN**. The only integration conflicts were GOV-02 paragraphs in both STATUS files. A normal merge preserves the cited audit commits, merged database/Jupyter evidence, and all approved GOV-02 corrections. PR #52 is merged; its older open/in-review wording is historical.\n\nFresh validation after integration: **28 Java audit/custody tests + 175 package tests passed**, with no failures/skips; strict plan validation and all four schema/example checks passed. [Fresh test receipts](https://github.com/aloerch/ambisgis-platform/blob/b15a785f350d347c0c2c4ff07ac6e5681c1d9746/plan/verification/java-audit-integration-package-tests.txt), [audit evidence](https://github.com/aloerch/ambisgis-platform/blob/b15a785f350d347c0c2c4ff07ac6e5681c1d9746/plan/docs/java-dependency-audit.md), [handoff and merge-order guidance](https://github.com/aloerch/ambisgis-platform/blob/b15a785f350d347c0c2c4ff07ac6e5681c1d9746/plan/docs/java-audit-handoff.md). Database/Jupyter native tests were not rerun. The initial host-schema failure and all prior audit evidence remain preserved.\n\nOwner decision: review and approve this bounded audit/tooling checkpoint for a separate merge into main. Acceptance would not approve Java compilation/runtime behavior, the selected product tuple, licenses/security, FND-07/FND-08, or complete FND-02. FND-02 remains In progress. Review blocks merging only; source/compatibility engineering continues separately.\n\nPR #55 depends on this ordinary branch PR; supported GitHub `stack` and `stackEntry` are null for both. After an explicitly approved #54 merge, verify the actual merged main, integrate it into #55 without rewriting history, retarget #55 to main, and assess its current diff/tests before a separate decision. Do not merge #55 into an obsolete intermediate branch. This update does not authorize any merge.\n\nRefs #3.\n",
+  "mergedBy": {
+    "login": "aloerch"
+  },
+  "commits": {
+    "nodes": [
+      {
+        "commit": {
+          "oid": "cfc6e8d7f932ae9919c0e307a5b581f73ee8c5d7",
+          "messageHeadline": "Add pinned static Java dependency declaration audit"
+        }
+      },
+      {
+        "commit": {
+          "oid": "514e90f41ddc12e5c2d03bd50ad339859d70beeb",
+          "messageHeadline": "Retain Java audit inputs and document unresolved extension build closure"
+        }
+      },
+      {
+        "commit": {
+          "oid": "c2ec4bfd37ba1afa789330972f103d0e6c977fdf",
+          "messageHeadline": "Record Java audit PR and verified Project evidence link"
+        }
+      },
+      {
+        "commit": {
+          "oid": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+          "messageHeadline": "Merge approved GOV-02 corrections into Java audit checkpoint"
+        }
+      }
+    ],
+    "pageInfo": {
+      "hasNextPage": false,
+      "endCursor": "NA"
+    }
+  }
+}

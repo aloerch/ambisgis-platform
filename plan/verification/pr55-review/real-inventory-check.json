@@ -1,0 +1,41 @@
+{
+  "command": [
+    "python3",
+    "build-support/java/resolution_inventory.py",
+    "--custody",
+    "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/maven",
+    "--output",
+    "/tmp/ambisgis-next-review/corrected-real-inventory.json"
+  ],
+  "exit_code": 2,
+  "verification": {
+    "errors": [],
+    "orphan_blobs": [],
+    "record_count": 10802,
+    "valid": true,
+    "verified_blob_count": 10792,
+    "verified_record_count": 10802
+  },
+  "source_gap_count": 64,
+  "pom_records": 2824,
+  "source_coverage_binary_count": 1746,
+  "original_report": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-resolution/evidence-01/maven-final-inventory-02.json",
+    "sha256": "40bf793ae266b557a0ee63efd9067f5ace81ea34c6fdf8b0a84d12830471dd67"
+  },
+  "new_report": {
+    "path": "/tmp/ambisgis-next-review/corrected-real-inventory.json",
+    "sha256": "06e810925f20532a5e8a2b0baa3f1f459a956635dd250e9704a7fca4f7652103",
+    "size": 17795207
+  },
+  "comparison_normalization": [
+    "generated_at",
+    "notices[].entries[].retained_path (fresh destination only)"
+  ],
+  "changed_semantic_fields": [],
+  "all_inventory_semantics_equal": true,
+  "build_ready": false,
+  "license_approval": false,
+  "parser_sha256": "77864a6fe8547effb39cc6b48fbcf712252fbb7a7a12cab64424aeda298d48dc",
+  "tested_java_subtree": "5edbdebeedf57771301c5048171cb85fa1f03b83"
+}

@@ -1,0 +1,2 @@
+Plan references and acyclic dependencies: PASS {'repositories': 15, 'tasks': 66, 'requirements': 24, 'sources': 65}
+JSON Schema 2020-12 and format/example checks: PASS (4 schemas/examples)

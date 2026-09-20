@@ -3,9 +3,11 @@
 This checkpoint retains the selected JDK/Maven distributions and sources and
 resolves an explicit Java/GeoNode extension candidate. It does not accept a Java
 build, full transitive source closure, native/runtime compatibility or a product
-release. FND-02 remains **In progress**. [PR #55](https://github.com/aloerch/ambisgis-platform/pull/55) is open and unmerged, stacked on the audit branch.
-The preceding audit remains reviewable
-in [PR #54](https://github.com/aloerch/ambisgis-platform/pull/54).
+release. FND-02 remains **In progress**. [PR #55](https://github.com/aloerch/ambisgis-platform/pull/55) is open and unmerged. The [current review preparation](pr-55-review.md) targets
+`ambisgis/main` after the actual owner merge of
+[PR #54](https://github.com/aloerch/ambisgis-platform/pull/54) at
+`8393fc46b9b979b05faa416f5998e0159ecd1e33`. The numerical replay and inventory
+results below remain the original checkpoint; fresh review checks are separate.
 
 The authoritative numeric results, exact command receipts and retained artifact
 hashes are in [machine evidence](../verification/java-resolution.json). Read

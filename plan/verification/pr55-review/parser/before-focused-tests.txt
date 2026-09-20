@@ -1,0 +1,249 @@
+test_acquisition_is_explicit_origin_preserving_and_deduplicated (test_resolution_inventory.InventoryTests.test_acquisition_is_explicit_origin_preserving_and_deduplicated) ... ok
+test_benign_pom_licenses_are_parsed_across_xml_encodings (test_resolution_inventory.InventoryTests.test_benign_pom_licenses_are_parsed_across_xml_encodings) ... ok
+test_complete_coverage_remains_candidate_and_not_build_ready (test_resolution_inventory.InventoryTests.test_complete_coverage_remains_candidate_and_not_build_ready) ... ok
+test_corrupt_custody_does_not_acquire_sources (test_resolution_inventory.InventoryTests.test_corrupt_custody_does_not_acquire_sources) ... ok
+test_default_cli_does_not_fetch_or_modify_custody (test_resolution_inventory.InventoryTests.test_default_cli_does_not_fetch_or_modify_custody) ... ok
+test_duplicate_record_keys_are_rejected (test_resolution_inventory.InventoryTests.test_duplicate_record_keys_are_rejected) ... ok
+test_encoded_pom_dtd_remains_an_explicit_inventory_gap (test_resolution_inventory.InventoryTests.test_encoded_pom_dtd_remains_an_explicit_inventory_gap) ... FAIL
+test_every_record_is_checked_after_one_invalid_record (test_resolution_inventory.InventoryTests.test_every_record_is_checked_after_one_invalid_record) ... ok
+test_forged_resource_verified_flag_cannot_skip_source_acquisition (test_resolution_inventory.InventoryTests.test_forged_resource_verified_flag_cannot_skip_source_acquisition) ... ok
+test_hash_and_size_tampering_fail_integrity (test_resolution_inventory.InventoryTests.test_hash_and_size_tampering_fail_integrity) ... ok
+test_invalid_source_zip_and_pom_are_explicit_gaps (test_resolution_inventory.InventoryTests.test_invalid_source_zip_and_pom_are_explicit_gaps) ... ok
+test_malformed_or_executable_schema_capsules_never_count_as_sources (test_resolution_inventory.InventoryTests.test_malformed_or_executable_schema_capsules_never_count_as_sources) ... ok
+test_metadata_and_sidecars_are_preserved_without_becoming_binaries (test_resolution_inventory.InventoryTests.test_metadata_and_sidecars_are_preserved_without_becoming_binaries) ... ok
+test_notice_bytes_are_retained_by_hash_without_path_extraction (test_resolution_inventory.InventoryTests.test_notice_bytes_are_retained_by_hash_without_path_extraction) ... ok
+test_notice_size_bound_is_explicit_and_not_silent (test_resolution_inventory.InventoryTests.test_notice_size_bound_is_explicit_and_not_silent) ... ok
+test_partial_schema_capsule_cannot_count_as_complete_sources (test_resolution_inventory.InventoryTests.test_partial_schema_capsule_cannot_count_as_complete_sources) ... ok
+test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) ... 
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>', encoding='utf-16') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>', encoding='utf-16-le') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>', encoding='utf-16-be') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>', encoding='utf-16-be-bom') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project>', encoding='utf-16') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project>', encoding='utf-16-le') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project>', encoding='utf-16-be') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project>', encoding='utf-16-be-bom') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project SYSTEM "urn:ambisgis:test:pom-dtd">', encoding='utf-16') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project SYSTEM "urn:ambisgis:test:pom-dtd">', encoding='utf-16-le') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project SYSTEM "urn:ambisgis:test:pom-dtd">', encoding='utf-16-be') ... FAIL
+  test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project SYSTEM "urn:ambisgis:test:pom-dtd">', encoding='utf-16-be-bom') ... FAIL
+test_pom_entities_and_non_project_xml_are_not_interpreted (test_resolution_inventory.InventoryTests.test_pom_entities_and_non_project_xml_are_not_interpreted) ... ok
+test_record_path_identity_is_checked (test_resolution_inventory.InventoryTests.test_record_path_identity_is_checked) ... ok
+test_release_group_names_are_not_moving_version_aliases (test_resolution_inventory.InventoryTests.test_release_group_names_are_not_moving_version_aliases) ... ok
+test_reports_never_overwrite_existing_output_or_notice_directory (test_resolution_inventory.InventoryTests.test_reports_never_overwrite_existing_output_or_notice_directory) ... ok
+test_same_gav_other_repository_is_not_silent_source_correspondence (test_resolution_inventory.InventoryTests.test_same_gav_other_repository_is_not_silent_source_correspondence) ... ok
+test_schema_capsule_cannot_skip_recorded_content_validation (test_resolution_inventory.InventoryTests.test_schema_capsule_cannot_skip_recorded_content_validation) ... ok
+test_schema_checksum_grammar_matches_proxy_replay_policy (test_resolution_inventory.InventoryTests.test_schema_checksum_grammar_matches_proxy_replay_policy) ... ok
+test_schema_checksum_requires_same_origin_archive_and_validated_bytes (test_resolution_inventory.InventoryTests.test_schema_checksum_requires_same_origin_archive_and_validated_bytes) ... ok
+test_schema_validation_manifest_must_match_actual_capsule (test_resolution_inventory.InventoryTests.test_schema_validation_manifest_must_match_actual_capsule) ... ok
+test_snapshot_paths_and_snapshot_repository_urls_rejected (test_resolution_inventory.InventoryTests.test_snapshot_paths_and_snapshot_repository_urls_rejected) ... ok
+test_symlink_record_blob_and_directory_are_not_followed (test_resolution_inventory.InventoryTests.test_symlink_record_blob_and_directory_are_not_followed) ... ok
+test_test_and_native_classifiers_use_base_version_sources (test_resolution_inventory.InventoryTests.test_test_and_native_classifiers_use_base_version_sources) ... ok
+test_unknown_jar_coordinate_is_a_gap (test_resolution_inventory.InventoryTests.test_unknown_jar_coordinate_is_a_gap) ... ok
+test_validated_schema_capsule_is_own_source_with_explicit_notice_gaps (test_resolution_inventory.InventoryTests.test_validated_schema_capsule_is_own_source_with_explicit_notice_gaps) ... ok
+
+======================================================================
+FAIL: test_encoded_pom_dtd_remains_an_explicit_inventory_gap (test_resolution_inventory.InventoryTests.test_encoded_pom_dtd_remains_an_explicit_inventory_gap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 260, in test_encoded_pom_dtd_remains_an_explicit_inventory_gap
+    self.assertFalse(report['source_coverage_complete'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>', encoding='utf-16')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'ENTITY_EXPANDED'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'ENTITY_EXPANDED'}
+
+- [{'name': 'ENTITY_EXPANDED'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>', encoding='utf-16-le')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'ENTITY_EXPANDED'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'ENTITY_EXPANDED'}
+
+- [{'name': 'ENTITY_EXPANDED'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>', encoding='utf-16-be')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'ENTITY_EXPANDED'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'ENTITY_EXPANDED'}
+
+- [{'name': 'ENTITY_EXPANDED'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project [<!ENTITY sample "ENTITY_EXPANDED">]>', encoding='utf-16-be-bom')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'ENTITY_EXPANDED'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'ENTITY_EXPANDED'}
+
+- [{'name': 'ENTITY_EXPANDED'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project>', encoding='utf-16')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'Example license'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'Example license'}
+
+- [{'name': 'Example license'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project>', encoding='utf-16-le')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'Example license'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'Example license'}
+
+- [{'name': 'Example license'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project>', encoding='utf-16-be')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'Example license'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'Example license'}
+
+- [{'name': 'Example license'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project>', encoding='utf-16-be-bom')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'Example license'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'Example license'}
+
+- [{'name': 'Example license'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project SYSTEM "urn:ambisgis:test:pom-dtd">', encoding='utf-16')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'Example license'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'Example license'}
+
+- [{'name': 'Example license'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project SYSTEM "urn:ambisgis:test:pom-dtd">', encoding='utf-16-le')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'Example license'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'Example license'}
+
+- [{'name': 'Example license'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project SYSTEM "urn:ambisgis:test:pom-dtd">', encoding='utf-16-be')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'Example license'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'Example license'}
+
+- [{'name': 'Example license'}]
++ []
+
+======================================================================
+FAIL: test_pom_dtd_declarations_are_refused_across_xml_encodings (test_resolution_inventory.InventoryTests.test_pom_dtd_declarations_are_refused_across_xml_encodings) (declaration='<!DOCTYPE project SYSTEM "urn:ambisgis:test:pom-dtd">', encoding='utf-16-be-bom')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser/build-support/java/test_resolution_inventory.py", line 231, in test_pom_dtd_declarations_are_refused_across_xml_encodings
+    self.assertEqual(parsed['declarations'], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'name': 'Example license'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'name': 'Example license'}
+
+- [{'name': 'Example license'}]
++ []
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.048s
+
+FAILED (failures=13)

@@ -1,0 +1,50 @@
+{
+  "remaining_raw_evidence_root": "/tmp/ambisgis-next-review/project",
+  "retained_raw_files": [
+    {
+      "name": "README.md",
+      "size": 2770,
+      "sha256": "025839d03f243c46b0508cf12d90d83b7bcc1e375b8df90b67b60d2fe3fe267d"
+    },
+    {
+      "name": "after.json",
+      "size": 292097,
+      "sha256": "8b5eb040151b1eb33acae6acd5545babbca22ff7c6ea7173be68e6430935cba8"
+    },
+    {
+      "name": "apply-requests.jsonl",
+      "size": 638205,
+      "sha256": "7f9d4341e88be3d69f41cef9e0a43e2b732399006121b28d430e1725275a4fcf"
+    },
+    {
+      "name": "before-requests.jsonl",
+      "size": 183649,
+      "sha256": "3adc55c853f92f960cabea7146ba373b40ffb52030689208a9c77fd997efa619"
+    },
+    {
+      "name": "before.json",
+      "size": 288573,
+      "sha256": "1b1f4ed45777f7bb80ac2e784ef85120dfaed9c9426470d53ff6b9abbbd6adf6"
+    },
+    {
+      "name": "files.sha256",
+      "size": 652,
+      "sha256": "b4d0721db58814f5cc4f39d17ec9ba85f1279e2bf283b8259a7894f99a47e836"
+    },
+    {
+      "name": "mutations.json",
+      "size": 2378,
+      "sha256": "5273ed61faeff077f9a513b0271078a0cefab1e2bef6933449994a710fe9bb44"
+    },
+    {
+      "name": "operation-script.py",
+      "size": 8431,
+      "sha256": "009f0ad800e8e8e3c2e815b89dc3f9cd23cd024debf60f2bc4eaede9e03591af"
+    },
+    {
+      "name": "outcome.json",
+      "size": 2498,
+      "sha256": "2e8ef4fbf0572d01a216f3d8326ce218f4d854f3bfe7857ae532d51abee66ab8"
+    }
+  ]
+}

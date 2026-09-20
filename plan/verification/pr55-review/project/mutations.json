@@ -1,0 +1,70 @@
+{
+  "authorization": "User-selected review preparation; only existing PR56/57 additions and their parent Evidence links. No task transitions, archive decisions, view edits, merges, importer run, or issue/PR messages.",
+  "started_at": "2026-09-20T20:15:21.240568+00:00",
+  "operations": [
+    {
+      "operation": "addProjectV2ItemById",
+      "content": {
+        "id": "PR_kwDOUhI-d88AAAABEVLddg",
+        "number": 56,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/56",
+        "state": "OPEN",
+        "mergedAt": null,
+        "headRefOid": "28c9d79757b98bdedd44b5d7486835f9e4b71e63",
+        "baseRefName": "ambisgis/main"
+      },
+      "response": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg72aCk",
+        "isArchived": false
+      }
+    },
+    {
+      "operation": "updateProjectV2ItemFieldValue",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72aCk",
+      "field": {
+        "__typename": "ProjectV2Field",
+        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+        "name": "Evidence",
+        "dataType": "TEXT",
+        "options": []
+      },
+      "value": "https://github.com/aloerch/ambisgis-platform/pull/56 ; parent task https://github.com/aloerch/ambisgis-platform/issues/9",
+      "response": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg72aCk"
+      }
+    },
+    {
+      "operation": "addProjectV2ItemById",
+      "content": {
+        "id": "PR_kwDOUhI-d88AAAABEVWAzA",
+        "number": 57,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/57",
+        "state": "OPEN",
+        "mergedAt": null,
+        "headRefOid": "7d3063f89c20b5e028b0151a6648a79e4ef14a83",
+        "baseRefName": "fnd-02/java-toolchain-resolution"
+      },
+      "response": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg72aDY",
+        "isArchived": false
+      }
+    },
+    {
+      "operation": "updateProjectV2ItemFieldValue",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg72aDY",
+      "field": {
+        "__typename": "ProjectV2Field",
+        "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+        "name": "Evidence",
+        "dataType": "TEXT",
+        "options": []
+      },
+      "value": "https://github.com/aloerch/ambisgis-platform/pull/57 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3",
+      "response": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg72aDY"
+      }
+    }
+  ],
+  "existing_items": [],
+  "finished_at": "2026-09-20T20:15:27.351079+00:00"
+}

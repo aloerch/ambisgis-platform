@@ -24,6 +24,7 @@ import stat
 from typing import Callable
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
+from xml.parsers import expat
 import zipfile
 import zlib
 
@@ -305,9 +306,18 @@ def acquire_sources(custody: Path | str, records: list[dict], fetch: Callable | 
 
 
 def pom_licenses(data: bytes) -> dict:
-    if b"<!DOCTYPE" in data.upper() or b"<!ENTITY" in data.upper():
-        return {"declarations": [], "error": "DTD/entity declarations are not interpreted"}
+    # Inspect declarations through XML callbacks before building the tree so the
+    # refusal also applies to UTF-16 and other encodings recognized by Expat.
+    parser = expat.ParserCreate()
+
+    def refuse_declaration(*unused):
+        raise ValueError("DTD/entity declarations are not interpreted")
+
+    parser.StartDoctypeDeclHandler = refuse_declaration
+    parser.EntityDeclHandler = refuse_declaration
+    parser.ExternalEntityRefHandler = refuse_declaration
     try:
+        parser.Parse(data, True)
         root = ET.fromstring(data)
         if root.tag == "{http://maven.apache.org/POM/4.0.0}project":
             licenses = root.findall("m:licenses/m:license", _NS)
@@ -319,7 +329,7 @@ def pom_licenses(data: bytes) -> dict:
                                   for child in license_element}
                                  for license_element in licenses],
                 "inherited_licenses_resolved": False, "license_approval": False}
-    except (ET.ParseError, ValueError) as exc:
+    except (expat.ExpatError, ET.ParseError, ValueError) as exc:
         return {"declarations": [], "error": str(exc), "license_approval": False}
 
 

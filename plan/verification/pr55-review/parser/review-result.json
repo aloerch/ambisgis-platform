@@ -1,0 +1,46 @@
+{
+  "base_commit": "00eb480490942c0a83ce220cfa9fe0a656f9aa54",
+  "branch": "review/fnd-02-resolution-parser",
+  "changed_files": [
+    "build-support/java/resolution_inventory.py",
+    "build-support/java/test_resolution_inventory.py"
+  ],
+  "commit": "1c318dc92fd02d2b791a7d9235c88b8f55b6321a",
+  "evidence": {
+    "after-focused-tests.txt": "03efb1cb73d3521044eeeaba9094f72ffda2f40526111123d7d6e375f06b4cc9",
+    "after-result.json": "8422a29fb6225e508c7c9c346fe5ec64a770ed8c6ab77a9afe69fd6be2ce6e35",
+    "before-focused-tests.txt": "c368f3d5e904bfd8904ba9f18348a5af91cbc23edc0d766132ea7a0241725257",
+    "before-result.json": "17cebc73ba73b4d7ce0a96fee19cdf85014a733aa649f3b69eaaa36ed2eabdb7",
+    "reproduce_and_test.py": "c4af31d0531184111158e465bd846c16c5b98c887dcca0e5aaeaf5ea01191fbb",
+    "retained-pom-impact.json": "76aff7d9ab35352e77d8f1ee208c00342fb9ec83bca0b2c3161cd1d350a8ddb7",
+    "reviewed-file-hashes.json": "0fc4bd1cc66a1d0c279369a8d8d5c1697adb25cf05893eaaecce3e090190fa9b"
+  },
+  "focused_tests": {
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "skips": 0,
+    "tests": 31
+  },
+  "frozen_custody_changed": false,
+  "git_diff_check_passed": true,
+  "impact": {
+    "changed_blobs": 0,
+    "retained_pom_records": 2824,
+    "utf16_bom_or_nul_prefix_records": 0
+  },
+  "original_regression_observation": {
+    "exit_code": 1,
+    "failure_reports": 13,
+    "tests": 31
+  },
+  "remote_changes": false,
+  "repaired_file_hashes": {
+    "build-support/java/resolution_inventory.py": "77864a6fe8547effb39cc6b48fbcf712252fbb7a7a12cab64424aeda298d48dc",
+    "build-support/java/test_resolution_inventory.py": "1c44daaf95bb65dc6ea16dabde5048c3f20accb5eecc0a19ef49bc79020d4335"
+  },
+  "task": "PR55 narrow parser-policy review correction",
+  "tree": "5362baf1f5e7669c002b3cd10cf4ad2ba9e4c8db",
+  "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-review55-parser",
+  "worktree_clean": true
+}

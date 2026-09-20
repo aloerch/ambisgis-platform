@@ -1,5 +1,21 @@
 # FND-02 Java resolution — resumption record
 
+## Current review preparation — 20 September 2026
+
+PR #54 is actually owner-merged at `8393fc46b9b979b05faa416f5998e0159ecd1e33`.
+The selected next review is **[PR #55](https://github.com/aloerch/ambisgis-platform/pull/55)**,
+branch `fnd-02/java-toolchain-resolution`, prepared against `ambisgis/main`.
+Read [the current review report](pr-55-review.md) for verified ancestry, exact
+tested source identity, the parser correction, actual checks and owner decision.
+The chosen order is #54 → #55 → #57 → #56. Only #55 is prepared this session;
+#56's technical independence does not change that review order. No merge or
+auto-merge is authorized. FND-02 remains In progress.
+
+The following original checkpoint and earlier integration observations are
+historical; their archives, failed runs and cited commits remain preserved.
+
+## Original resolution checkpoint
+
 Worktree: `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-resolution`.
 Repository: `aloerch/ambisgis-platform` (ID `1376927351`). Branch:
 `fnd-02/java-toolchain-resolution`, based on audit head
