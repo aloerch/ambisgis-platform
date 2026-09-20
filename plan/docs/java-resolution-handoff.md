@@ -107,3 +107,12 @@ into an obsolete intermediate branch. A review of #55 accepts retained-input
 resolution evidence only; it does not accept compilation, runtime compatibility,
 source/license closure, product baselines or FND-02 completion. Engineering may
 continue on a separate branch while both merge decisions are pending.
+
+
+## Subsequent source and compatibility engineering
+
+A separate continuation now compiles recovered/owned sources and runs actual
+native component tests. Read the [current source/compatibility handoff](java-source-closure-handoff.md)
+for exact owner review order, native results, remaining gaps and retained failure
+evidence. This append does not change the resolution-only acceptance boundary
+of PR #55; the new implementation is reviewed separately.

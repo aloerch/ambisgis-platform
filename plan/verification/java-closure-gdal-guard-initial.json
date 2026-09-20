@@ -1,0 +1,9 @@
+{
+  "command": "python3 -m unittest discover -s build-support/java -p 'test_gdal_fixture.py' -v",
+  "exit_code": 1,
+  "tests": 7,
+  "failures": 1,
+  "failed_test": "test_relative_prefix_produces_absolute_native_environment",
+  "observation": "Path.absolute produced an absolute path with parent traversal segments rather than its normalized prefix; equality assertion failed. Other six tests passed.",
+  "repair": "Reject a symlink prefix, then normalize supplied prefix/archive/output with Path.resolve. Final results retained in integration tooling log."
+}

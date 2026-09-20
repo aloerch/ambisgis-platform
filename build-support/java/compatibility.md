@@ -95,3 +95,8 @@ cd plan
 python3 -m unittest discover -s tests -v
 python3 tools/validate_package.py --require-schemas
 ```
+
+Final integration guards normalize native fixture paths, reject directory
+symlinks/unrecorded installed paths, and compare staged binaries with the original
+archive digests. A fresh staging-only check verifies the actual retained tree;
+the earlier importer native results are not represented as rerun by that check.

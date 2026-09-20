@@ -63,5 +63,34 @@ class GdalFixtureTests(unittest.TestCase):
             self.assertFalse((output / 'native-bin').exists())
 
 
+    def test_extra_native_library_is_refused_before_staging(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            prefix, archive, output, expected = self.inputs(Path(tmp))
+            (prefix / 'lib').mkdir()
+            (prefix / 'lib/unrecorded.so').write_bytes(b'not retained')
+            with patch('gdal_fixture.json.loads', return_value=expected), self.assertRaisesRegex(ValueError, 'unrecorded'):
+                gdal_fixture.prepare(prefix, archive, output)
+            self.assertFalse((output / 'native-bin').exists())
+
+    def test_directory_symlink_is_refused_even_when_file_bytes_match(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            prefix, archive, output, expected = self.inputs(root)
+            (prefix / 'bin').rename(root / 'elsewhere')
+            (prefix / 'bin').symlink_to(root / 'elsewhere', target_is_directory=True)
+            with patch('gdal_fixture.json.loads', return_value=expected), self.assertRaisesRegex(ValueError, 'directory differs'):
+                gdal_fixture.prepare(prefix, archive, output)
+            self.assertFalse((output / 'native-bin').exists())
+
+    def test_relative_prefix_produces_absolute_native_environment(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            prefix, archive, output, expected = self.inputs(root)
+            with patch('gdal_fixture.json.loads', return_value=expected):
+                report = gdal_fixture.prepare(Path(os.path.relpath(prefix)), archive, output)
+            self.assertEqual(report['environment']['GDAL_DATA'], str(prefix / 'share/gdal'))
+            self.assertTrue(all(Path(row['path']).is_absolute() for row in report['verified_files']))
+
+
 if __name__ == '__main__':
     unittest.main()

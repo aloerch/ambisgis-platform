@@ -147,3 +147,14 @@ accept this bounded implementation/evidence checkpoint without approving a
 product baseline or licensing/security gates; no such approval is needed to
 continue the listed engineering work. No PR merge or external publication was
 performed by this delegated slice.
+
+## Combined-branch review verification
+
+The combined source/compatibility branch passed **212 Java tooling tests**,
+**175 package tests** and **four schema/example checks**. Final GDAL guards also
+reject directory symlinks, extra installed files, relative-path ambiguity and
+changes during copying. Seven targeted guard tests passed. A fresh staging check
+reverified all 2,914 real installed files and the three exact tool outputs; it
+did not rerun Java or historical database suites. Importer-07 retains its original
+runner hash and remains the native-test evidence. Initial path-normalization
+regression failure is retained in `java-closure-gdal-guard-initial.json`.

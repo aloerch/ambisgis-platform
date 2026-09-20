@@ -1,0 +1,43 @@
+{
+  "data": {
+    "viewer": {
+      "login": "aloerch",
+      "databaseId": 15285626
+    },
+    "repository": {
+      "id": "R_kgDOUhI-dw",
+      "databaseId": 1376927351,
+      "defaultBranchRef": {
+        "name": "ambisgis/main",
+        "target": {
+          "oid": "fc77ab978e567ce5d55e3428d1249a3b332da09d"
+        }
+      },
+      "p54": {
+        "state": "OPEN",
+        "headRefOid": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+        "baseRefName": "ambisgis/main",
+        "baseRefOid": "fc77ab978e567ce5d55e3428d1249a3b332da09d",
+        "mergeable": "MERGEABLE",
+        "mergeStateStatus": "CLEAN"
+      },
+      "p55": {
+        "state": "OPEN",
+        "headRefOid": "9e1b2e1bca26d00b200a39f58a4a0890d43fca98",
+        "baseRefName": "fnd-02/java-dependency-audit",
+        "baseRefOid": "b15a785f350d347c0c2c4ff07ac6e5681c1d9746",
+        "mergeable": "MERGEABLE",
+        "mergeStateStatus": "CLEAN"
+      },
+      "p56": {
+        "state": "OPEN",
+        "headRefOid": "28c9d79757b98bdedd44b5d7486835f9e4b71e63",
+        "baseRefName": "ambisgis/main",
+        "baseRefOid": "fc77ab978e567ce5d55e3428d1249a3b332da09d",
+        "mergeable": "MERGEABLE",
+        "mergeStateStatus": "CLEAN"
+      }
+    }
+  },
+  "captured_at": "2026-09-20T19:49:52.923023+00:00"
+}
