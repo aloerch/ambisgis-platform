@@ -364,9 +364,9 @@ class MutationAndCapabilityTests(unittest.TestCase):
             api.set_field("P1", "ITEM1", field, "Unknown")
         self.assertEqual(len(runner.calls), 1)
 
-    def test_view_creation_does_not_invent_grouping_or_sort_inputs(self):
+    def test_view_creation_does_not_invent_column_grouping_or_sort_inputs(self):
         runner = QueueRunner(response({"data": {"createProjectV2View": {"projectV2View": {"id": "V1", "layout": "BOARD_LAYOUT"}}}}))
-        GitHubProjectAPI(read_only=False, runner=runner).create_view("P1", {"name": "Execution board", "layout": "BOARD", "group_by": "Delivery"})
+        GitHubProjectAPI(read_only=False, runner=runner).create_view("P1", {"name": "Execution board", "layout": "BOARD", "column_field": "Delivery", "group_by": "Phase", "sort": ["Priority"]})
         payload = json.loads(runner.calls[0][1]["input"])["variables"]["input"]
         self.assertEqual(payload, {"projectId": "P1", "name": "Execution board", "layout": "BOARD_LAYOUT"})
 

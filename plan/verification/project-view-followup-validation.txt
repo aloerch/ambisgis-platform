@@ -1,0 +1,42 @@
+GOV-02 owner follow-up validation — 2026-09-19
+Worktree: /home/revelberry/Projects/AmbisGIS/ambisgis-platform-gov02
+Branch: gov-02/saved-view-reconciliation
+Starting head: cb871e82f15be7363c3dc0e786923e9572d77d11
+PR: https://github.com/aloerch/ambisgis-platform/pull/52
+Authenticated owner aloerch, repository aloerch/ambisgis-platform ID1376927351,
+origin remote and clean starting worktree verified before edits.
+
+From plan/:
+/tmp/ambisgis-validation-venv/bin/python -m unittest discover -s tests -v
+Exit 0: 175 tests passed in 7.920s; zero failures, errors or skips.
+Full output: project-view-followup-tests.txt
+
+/tmp/ambisgis-validation-venv/bin/python tools/validate_package.py --require-schemas
+Exit 0: plan references and acyclic dependencies PASS
+15 repositories, 66 tasks, 24 requirements, 65 sources.
+JSON Schema 2020-12 and format/example checks PASS (4 schemas/examples).
+Full output: project-view-followup-schemas.txt
+
+git diff --check
+Exit 0. Scoped evidence/runbook/status diff inspected.
+
+Fresh read-only receipt: project-view-followup-readback.json
+Captured 2026-09-19T21:25:32.834870+00:00.
+Owner/repository/Project identities verified. No GraphQL errors.
+Six saved views and all 66 items read; 32 connection pageInfo checks complete.
+Fresh view5 filter agrees exactly with owner comment 5745381847, including Release.
+Roadmap Phase grouping, empty filter/sort/column grouping, empty visibleFields,
+and fields containing Status are recorded without inferring rendered visibility.
+The owner's no-fields-picker observation is attributed; no personal UI inspection,
+no derived Status mapping, and no saved-slice readback is claimed.
+Live Delivery readback: FND-01 Merged, GOV-01 Merged, FND-02 In progress,
+GOV-02 Blocked. PR52 OPEN at starting head, no review or merge recorded.
+
+Historical evidence and outputs remain unchanged. No importer execution, Project
+mutation, issue comment/closure, commit, push, merge, workflow or release action
+was performed by this bounded follow-up. In review is a proposed next transition
+for the integrator; applicable review of the documented limitation precedes
+Verified, and actual approved merge readback precedes Merged.
+
+These are package/governance checks. No GIS product acceptance, database/native
+build, notebook runtime or new rendering evidence is claimed by these checks.

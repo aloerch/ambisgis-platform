@@ -85,3 +85,25 @@ Git's inherited credential helper points to absent `/usr/bin/gh`; use the verifi
 CLI via a per-command helper override. Global credentials/configuration remain
 unchanged. No task process remains running. No Java compilation/native/runtime test, deployment, release or
 full-product acceptance was performed by this checkpoint.
+
+
+## Checkpoint integration, 20 September 2026
+
+PR #54 was reconciled with owner-merged main `fc77ab978e567ce5d55e3428d1249a3b332da09d`
+using normal merge `b15a785f350d347c0c2c4ff07ac6e5681c1d9746`. Its only
+conflicts were the two GOV-02 STATUS paragraphs. This branch now integrates
+that correction with a normal merge, preserving all resolution implementation,
+archives, failed-run receipts and cited commits. Fresh integration results are
+in `plan/verification/java-resolution-integration-*.txt`. Database/Jupyter native
+checks and Maven resolution replays were not rerun for this documentation/base
+integration; their earlier results remain historical.
+
+Both PRs have `stack: null` and `stackEntry: null` in supported GitHub readback.
+They are ordinary dependent branch PRs. Owner order: review/approve #54 against
+main first. After its explicit approved merge, verify the actual merged commit,
+integrate main into #55 without rewriting history, retarget #55 to main, then
+review the remaining diff and current tested head separately. Do not merge #55
+into an obsolete intermediate branch. A review of #55 accepts retained-input
+resolution evidence only; it does not accept compilation, runtime compatibility,
+source/license closure, product baselines or FND-02 completion. Engineering may
+continue on a separate branch while both merge decisions are pending.
