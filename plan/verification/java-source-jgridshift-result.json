@@ -1,0 +1,135 @@
+{
+  "scope": "JGridShift recovered source compilation/public API probe",
+  "source_binary_correspondence_established": false,
+  "product_acceptance": false,
+  "native_tests": "not run; retained historical core tree has no test source files",
+  "stages": [
+    {
+      "stage": "compile",
+      "command": [
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-source-closure/build-support/postgis/offline_exec.py",
+        "--evidence",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/compile-network.json",
+        "--",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javac",
+        "-proc:none",
+        "-source",
+        "7",
+        "-target",
+        "7",
+        "-d",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/classes",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/source/au/com/objectix/jgridshift/GridShift.java",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/source/au/com/objectix/jgridshift/GridShiftFile.java",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/source/au/com/objectix/jgridshift/SubGrid.java",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/source/au/com/objectix/jgridshift/Util.java"
+      ],
+      "exit_code": 0,
+      "log_sha256": "f01e656aef1d4a140d190ffb0c72fa213b398f8fac8a2199e54f7acae65dcaf4",
+      "network_receipt_verified": true
+    },
+    {
+      "stage": "original-api",
+      "command": [
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-source-closure/build-support/postgis/offline_exec.py",
+        "--evidence",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/original-api-network.json",
+        "--",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javap",
+        "-public",
+        "-classpath",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/original.jar",
+        "au.com.objectix.jgridshift.GridShift",
+        "au.com.objectix.jgridshift.GridShiftFile",
+        "au.com.objectix.jgridshift.SubGrid",
+        "au.com.objectix.jgridshift.Util"
+      ],
+      "exit_code": 0,
+      "log_sha256": "8992fcbef9b27f3902d1b6ffd5b5cd847f49e91460f1209efb46214eea1afd70",
+      "network_receipt_verified": true
+    },
+    {
+      "stage": "compiled-api",
+      "command": [
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-source-closure/build-support/postgis/offline_exec.py",
+        "--evidence",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/compiled-api-network.json",
+        "--",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin/javap",
+        "-public",
+        "-classpath",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-source-closure/jgridshift-02/classes",
+        "au.com.objectix.jgridshift.GridShift",
+        "au.com.objectix.jgridshift.GridShiftFile",
+        "au.com.objectix.jgridshift.SubGrid",
+        "au.com.objectix.jgridshift.Util"
+      ],
+      "exit_code": 0,
+      "log_sha256": "8992fcbef9b27f3902d1b6ffd5b5cd847f49e91460f1209efb46214eea1afd70",
+      "network_receipt_verified": true
+    }
+  ],
+  "toolchain": {
+    "verified": true,
+    "destination": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain",
+    "distribution_roots": [
+      "apache-maven-3.9.16",
+      "jdk-17.0.20.1+1"
+    ],
+    "files": 342,
+    "symlinks": 208,
+    "directories": 103
+  },
+  "source_archive": {
+    "path": "blobs/sha256/6d29d614b7a5b42415ab08a3fc8a9c42a6990519a0c868a59adf7fd5692a07f4",
+    "sha256": "6d29d614b7a5b42415ab08a3fc8a9c42a6990519a0c868a59adf7fd5692a07f4",
+    "size": 47827,
+    "url": "https://codeload.github.com/geosolutions-it/jgridshift/tar.gz/dc0cc5768341a0f4c125cb6a0c5f0ac4a0ea1e15",
+    "revision": "dc0cc5768341a0f4c125cb6a0c5f0ac4a0ea1e15",
+    "receipt": "receipts/jgridshift13-source.json",
+    "identity_evidence": "Historical groupId-change commit: root/core POM it.geosolutions.jgridshift:jgridshift-core:1.3. Later getters not assumed to be in binary."
+  },
+  "source_files": [
+    {
+      "path": "source/au/com/objectix/jgridshift/GridShift.java",
+      "sha256": "35f57509b9276b17bf53b2bb34a0c8671b97d0043142f5339214b1d383ead327"
+    },
+    {
+      "path": "source/au/com/objectix/jgridshift/GridShiftFile.java",
+      "sha256": "e98fd07d33254b04c3c2036eac70155ed426ce6a8fb91d5f3edd9edee5f898bd"
+    },
+    {
+      "path": "source/au/com/objectix/jgridshift/SubGrid.java",
+      "sha256": "5cc0657fc1516c0c3b0055ebc7d21f301d4de6d428272a052cad8dc77854e450"
+    },
+    {
+      "path": "source/au/com/objectix/jgridshift/Util.java",
+      "sha256": "e1ca30e482b003d2851af312af9226dc9971460fc8638de81e2ae194d8d82efb"
+    }
+  ],
+  "core_test_sources": [],
+  "source_files_unchanged": true,
+  "public_api_equal": true,
+  "compiled_classes": [
+    {
+      "path": "classes/au/com/objectix/jgridshift/GridShift.class",
+      "sha256": "c41820d400ea2d1c6863a0ebbd7a94e03c9934aa46e16400910562c65ac3d216"
+    },
+    {
+      "path": "classes/au/com/objectix/jgridshift/GridShiftFile.class",
+      "sha256": "251759c637030983bb34944fa838159b0c37f19c58d72a0b18bea7e55920e0df"
+    },
+    {
+      "path": "classes/au/com/objectix/jgridshift/SubGrid.class",
+      "sha256": "100447cc8eac4c459af93273f79dbe0d0426a48ba1072c0f8d09e73a92b34955"
+    },
+    {
+      "path": "classes/au/com/objectix/jgridshift/Util.class",
+      "sha256": "7935674592abcccc73ca0c6e2bbb95b963876cad15e4171cbe4f56676e991e72"
+    }
+  ],
+  "status": "passed"
+}

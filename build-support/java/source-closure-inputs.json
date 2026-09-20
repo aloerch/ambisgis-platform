@@ -1,0 +1,1366 @@
+{
+  "schema_version": 1,
+  "custody_root": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure",
+  "frozen_custody_unchanged": true,
+  "artifacts": {
+    "antlr:antlr:2.7.7": {
+      "sources": [
+        {
+          "path": "blobs/sha256/853aeb021aef7586bda29e74a6b03006bcb565a755c86b66032d8ec31b67dbb9",
+          "sha256": "853aeb021aef7586bda29e74a6b03006bcb565a755c86b66032d8ec31b67dbb9",
+          "size": 1816180,
+          "url": "https://www.antlr2.org/download/antlr-2.7.7.tar.gz",
+          "revision": "antlr-2.7.7.tar.gz",
+          "receipt": "receipts/antlr277-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-antlr-antlr-2.7.7.json",
+        "receipts/antlr277-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": [
+        {
+          "gav": "antlr:antlr:2.7.7",
+          "kind": "actual-test-classpath-presence",
+          "module": "model",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/antlr/antlr/2.7.7/antlr-2.7.7.jar",
+          "artifact_sha256": "88fbda4b912596b9f56e8e12e580cc954bacfb51776ecfddd3e18fc1cf56dc4c",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/model/target/surefire-reports/TEST-org.geoserver.geofence.core.model.Base64EncodersTest.xml",
+          "test_report_sha256": "ffb68c71b7f73724ca668a69af246f9701b583eaeef22a3f5904b6b18e52b6fe",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        },
+        {
+          "gav": "antlr:antlr:2.7.7",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/antlr/antlr/2.7.7/antlr-2.7.7.jar",
+          "artifact_sha256": "88fbda4b912596b9f56e8e12e580cc954bacfb51776ecfddd3e18fc1cf56dc4c",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        },
+        {
+          "gav": "antlr:antlr:2.7.7",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence-pg-test",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/antlr/antlr/2.7.7/antlr-2.7.7.jar",
+          "artifact_sha256": "88fbda4b912596b9f56e8e12e580cc954bacfb51776ecfddd3e18fc1cf56dc4c",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "56955c8dd1d539d1a6cadb0565119eb59545a686097a607e843fa284dc915bb6",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        }
+      ]
+    },
+    "asm:asm:3.2": {
+      "sources": [
+        {
+          "path": "blobs/sha256/2733442fcc4371e2c3bb16fd2aa328990b2e0eb464500ce197bdaf91654fd27c",
+          "sha256": "2733442fcc4371e2c3bb16fd2aa328990b2e0eb464500ce197bdaf91654fd27c",
+          "size": 338180,
+          "url": "https://repo.maven.apache.org/maven2/asm/asm-all/3.2/asm-all-3.2-sources.jar",
+          "revision": "asm-all-3.2-sources.jar",
+          "receipt": "receipts/asm32-all-sources.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-asm-asm-3.2.json",
+        "receipts/asm32-all-sources.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "asm:asm:3.3.1": {
+      "sources": [
+        {
+          "path": "blobs/sha256/59d4838be6fb59578a2e410f6c6f1f6762395afbd6ff9fe88013ffac883f606a",
+          "sha256": "59d4838be6fb59578a2e410f6c6f1f6762395afbd6ff9fe88013ffac883f606a",
+          "size": 345386,
+          "url": "https://repo.maven.apache.org/maven2/asm/asm-all/3.3.1/asm-all-3.3.1-sources.jar",
+          "revision": "asm-all-3.3.1-sources.jar",
+          "receipt": "receipts/asm331-all-sources.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-asm-asm-3.3.1.json",
+        "receipts/asm331-all-sources.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "asm:asm-commons:3.2": {
+      "sources": [
+        {
+          "path": "blobs/sha256/2733442fcc4371e2c3bb16fd2aa328990b2e0eb464500ce197bdaf91654fd27c",
+          "sha256": "2733442fcc4371e2c3bb16fd2aa328990b2e0eb464500ce197bdaf91654fd27c",
+          "size": 338180,
+          "url": "https://repo.maven.apache.org/maven2/asm/asm-all/3.2/asm-all-3.2-sources.jar",
+          "revision": "asm-all-3.2-sources.jar",
+          "receipt": "receipts/asm32-all-sources.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-asm-asm-commons-3.2.json",
+        "receipts/asm32-all-sources.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "asm:asm-tree:3.2": {
+      "sources": [
+        {
+          "path": "blobs/sha256/2733442fcc4371e2c3bb16fd2aa328990b2e0eb464500ce197bdaf91654fd27c",
+          "sha256": "2733442fcc4371e2c3bb16fd2aa328990b2e0eb464500ce197bdaf91654fd27c",
+          "size": 338180,
+          "url": "https://repo.maven.apache.org/maven2/asm/asm-all/3.2/asm-all-3.2-sources.jar",
+          "revision": "asm-all-3.2-sources.jar",
+          "receipt": "receipts/asm32-all-sources.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-asm-asm-tree-3.2.json",
+        "receipts/asm32-all-sources.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "biz.aQute:bndlib:0.0.145": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-biz.aQute-bndlib-0.0.145.json"
+      ],
+      "remaining": "Original binary includes Java sources; verifier maps class SourceFile attributes to retained embedded files. Rebuild comparison, full project/test inputs and legal review remain open.",
+      "observed_use": []
+    },
+    "classworlds:classworlds:1.1-alpha-2": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-classworlds-classworlds-1.1-alpha-2.json",
+        "receipts/classworlds112-source.json",
+        "receipts/git-tags-codehaus-plexus-plexus-classworlds.json"
+      ],
+      "remaining": "Exact corresponding source/revision not yet retained; investigate retained POM SCM/release metadata. No functionality removed and artifact not considered unused.",
+      "observed_use": []
+    },
+    "com.google.code.findbugs:jsr305:1.3.9": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-com.google.code.findbugs-jsr305-1.3.9.json"
+      ],
+      "remaining": "Original binary includes Java sources; verifier maps class SourceFile attributes to retained embedded files. Rebuild comparison, full project/test inputs and legal review remain open.",
+      "observed_use": []
+    },
+    "com.google.code.findbugs:jsr305:2.0.0": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-com.google.code.findbugs-jsr305-2.0.0.json"
+      ],
+      "remaining": "Original binary includes Java sources; verifier maps class SourceFile attributes to retained embedded files. Rebuild comparison, full project/test inputs and legal review remain open.",
+      "observed_use": []
+    },
+    "com.google.code.findbugs:jsr305:2.0.1": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-com.google.code.findbugs-jsr305-2.0.1.json"
+      ],
+      "remaining": "Original binary includes Java sources; verifier maps class SourceFile attributes to retained embedded files. Rebuild comparison, full project/test inputs and legal review remain open.",
+      "observed_use": []
+    },
+    "com.google.code.typica:typica:1.3": {
+      "sources": [
+        {
+          "path": "blobs/sha256/a14f675a673853da6b674e188015fd71450944e8d7bb8c4b178a1f0f62a27fa5",
+          "sha256": "a14f675a673853da6b674e188015fd71450944e8d7bb8c4b178a1f0f62a27fa5",
+          "size": 652292,
+          "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/typica/typica-1.3.zip",
+          "revision": "typica-1.3.zip",
+          "receipt": "receipts/typica13-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-com.google.code.typica-typica-1.3.json",
+        "receipts/typica13-source.json",
+        "receipts/typica13-source-src.json",
+        "receipts/typica-downloads.json",
+        "receipts/typica-source-archive.json"
+      ],
+      "remaining": "Original release ZIP contains binary/docs, no Java source; source-specific download403 and full GoogleCode source-history download timed out. Need archive history/tag1.3 including generated bindings and third-party Base64 class.",
+      "observed_use": []
+    },
+    "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-com.google.guava-listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.json"
+      ],
+      "remaining": "Verifier checks absence of class files and allows only Maven/JAR/license metadata; transitive component sources and assembly recipe remain required.",
+      "observed_use": [
+        {
+          "gav": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "kind": "actual-test-classpath-presence",
+          "module": "referencing",
+          "run": "referencing-01",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/fresh-m2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+          "artifact_sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/work/source/geotools/modules/library/referencing/target/surefire-reports/TEST-org.geotools.geometry.GeneralBoundsTest.xml",
+          "test_report_sha256": "6ef17daa88766f06f087ec1587da01a0cf21e9e530e9c643475cbd7b9fa58f36",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        },
+        {
+          "gav": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+          "artifact_sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        },
+        {
+          "gav": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence-pg-test",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+          "artifact_sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "56955c8dd1d539d1a6cadb0565119eb59545a686097a607e843fa284dc915bb6",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        }
+      ]
+    },
+    "com.h2database:h2:1.1.119": {
+      "sources": [
+        {
+          "path": "blobs/sha256/8c92d3e7aa7c972d8f43d75638b9827bc222005c2837af36145a8a7fdf20d827",
+          "sha256": "8c92d3e7aa7c972d8f43d75638b9827bc222005c2837af36145a8a7fdf20d827",
+          "size": 2269673,
+          "url": "https://codeload.github.com/h2database/h2database/tar.gz/1c2cd4513fc6a2a55ed1c87a8f98deaa074d4124",
+          "revision": "1c2cd4513fc6a2a55ed1c87a8f98deaa074d4124",
+          "receipt": "receipts/h211119-source.json",
+          "identity_evidence": "Historical release commit: Constants.java BUILD_ID=119, BUILD_DATE=2009-09-26, VERSION_MAJOR=1, VERSION_MINOR=1."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-com.h2database-h2-1.1.119.json",
+        "receipts/h211119-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "com.jcraft:jsch:0.1.23": {
+      "sources": [
+        {
+          "path": "blobs/sha256/0dd725b886a4496d190ae7547ea3fdbfd39333272d7e2716366d54efe5234e04",
+          "sha256": "0dd725b886a4496d190ae7547ea3fdbfd39333272d7e2716366d54efe5234e04",
+          "size": 214878,
+          "url": "https://downloads.sourceforge.net/project/jsch/jsch/0.1.23/jsch-0.1.23.zip",
+          "revision": "jsch-0.1.23.zip",
+          "receipt": "receipts/jsch0123-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-com.jcraft-jsch-0.1.23.json",
+        "receipts/jsch0123-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "com.jcraft:jsch:0.1.38": {
+      "sources": [
+        {
+          "path": "blobs/sha256/cd76aee155256c528baf5f379c5ce60dd39757fa00689e96a7e54354aab090df",
+          "sha256": "cd76aee155256c528baf5f379c5ce60dd39757fa00689e96a7e54354aab090df",
+          "size": 270042,
+          "url": "https://downloads.sourceforge.net/project/jsch/jsch/0.1.38/jsch-0.1.38.zip",
+          "revision": "jsch-0.1.38.zip",
+          "receipt": "receipts/jsch0138-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-com.jcraft-jsch-0.1.38.json",
+        "receipts/jsch0138-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "com.vladsch.flexmark:flexmark-all:0.42.14": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-com.vladsch.flexmark-flexmark-all-0.42.14.json"
+      ],
+      "remaining": "Verifier checks absence of class files and allows only Maven/JAR/license metadata; transitive component sources and assembly recipe remain required.",
+      "observed_use": []
+    },
+    "commons-codec:commons-codec:1.2": {
+      "sources": [
+        {
+          "path": "blobs/sha256/39f7e447b3b405d413b3be9033e21bf8378e4894b7642acea5104df202b346c1",
+          "sha256": "39f7e447b3b405d413b3be9033e21bf8378e4894b7642acea5104df202b346c1",
+          "size": 70118,
+          "url": "https://codeload.github.com/apache/commons-codec/tar.gz/2c0905a09d5d04db7e572172bf2ead04293477a2",
+          "revision": "2c0905a09d5d04db7e572172bf2ead04293477a2",
+          "receipt": "receipts/apache-commons-codec-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-commons-codec-commons-codec-1.2.json",
+        "receipts/apache-commons-codec-source.json"
+      ],
+      "remaining": "Retained1.2 binary contains SoundexUtils absent from official CODEC_1_2 source tag. Investigate repackaging/version mismatch; cannot treat matching18/19 class filenames as exact source closure.",
+      "observed_use": []
+    },
+    "commons-dbcp:commons-dbcp:1.2.2": {
+      "sources": [
+        {
+          "path": "blobs/sha256/27c09aecd9254eecb9b945206af1e6af7cffa75317b562ac4e536bdfc127bbb4",
+          "sha256": "27c09aecd9254eecb9b945206af1e6af7cffa75317b562ac4e536bdfc127bbb4",
+          "size": 527777,
+          "url": "https://codeload.github.com/apache/commons-dbcp/tar.gz/fd29853b85d1b4e6fbf8ed13a8adf2e38ba92c70",
+          "revision": "fd29853b85d1b4e6fbf8ed13a8adf2e38ba92c70",
+          "receipt": "receipts/dbcp122-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-commons-dbcp-commons-dbcp-1.2.2.json",
+        "receipts/dbcp122-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": [
+        {
+          "gav": "commons-dbcp:commons-dbcp:1.2.2",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2.jar",
+          "artifact_sha256": "fd8813beda8e5a3dcc912b9f9944a9f33c6abf856125690092cbcb061039bdaa",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        },
+        {
+          "gav": "commons-dbcp:commons-dbcp:1.2.2",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence-pg-test",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/commons-dbcp/commons-dbcp/1.2.2/commons-dbcp-1.2.2.jar",
+          "artifact_sha256": "fd8813beda8e5a3dcc912b9f9944a9f33c6abf856125690092cbcb061039bdaa",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "56955c8dd1d539d1a6cadb0565119eb59545a686097a607e843fa284dc915bb6",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        }
+      ]
+    },
+    "commons-lang:commons-lang:1.0": {
+      "sources": [
+        {
+          "path": "blobs/sha256/34653c41628a972487ca8ada94be929e503af20fdc36cfac8617c78e1198b36f",
+          "sha256": "34653c41628a972487ca8ada94be929e503af20fdc36cfac8617c78e1198b36f",
+          "size": 91085,
+          "url": "https://codeload.github.com/apache/commons-lang/tar.gz/2d274d7cedc148ee3fa8cf4f48904dfd82172bda",
+          "revision": "2d274d7cedc148ee3fa8cf4f48904dfd82172bda",
+          "receipt": "receipts/apache-commons-lang-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-commons-lang-commons-lang-1.0.json",
+        "receipts/apache-commons-lang-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "commons-logging:commons-logging-api:1.0.4": {
+      "sources": [
+        {
+          "path": "blobs/sha256/b42f263681c8cf4593416bf78333c8feb63268227101961c248dd03865d65c4c",
+          "sha256": "b42f263681c8cf4593416bf78333c8feb63268227101961c248dd03865d65c4c",
+          "size": 100937,
+          "url": "https://codeload.github.com/apache/commons-logging/tar.gz/9be283a2368ac4cd20c40a79aae1e7b06a1d6af1",
+          "revision": "9be283a2368ac4cd20c40a79aae1e7b06a1d6af1",
+          "receipt": "receipts/apache-commons-logging-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-commons-logging-commons-logging-api-1.0.4.json",
+        "receipts/apache-commons-logging-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "de.zeigermann.xml:xml-im-exporter:1.1": {
+      "sources": [
+        {
+          "path": "blobs/sha256/26b7ec388b39f2094af8d270dde5d84c46839328e5c58446f3dd2e857b153c76",
+          "sha256": "26b7ec388b39f2094af8d270dde5d84c46839328e5c58446f3dd2e857b153c76",
+          "size": 235161,
+          "url": "https://downloads.sourceforge.net/project/xml-im-exporter/xml-im-exporter/1.1/xml-im-exporter1.1.tgz",
+          "revision": "xml-im-exporter1.1.tgz",
+          "receipt": "receipts/xmlimexporter11-source-actual.json",
+          "identity_evidence": "Exact publisher revision identified in retained release metadata; structural class coverage computed independently; no rebuilt binary claim."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-de.zeigermann.xml-xml-im-exporter-1.1.json",
+        "receipts/xmlimexporter11-source-actual.json"
+      ],
+      "remaining": "Source-to-binary correspondence, complete dependency inputs and license/security approval remain open.",
+      "observed_use": []
+    },
+    "dom4j:dom4j:1.1": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-dom4j-dom4j-1.1.json",
+        "receipts/dom4j11-source.json",
+        "receipts/dom4j-files.json",
+        "receipts/dom4j-archive.json",
+        "receipts/git-tags-dom4j-dom4j.json"
+      ],
+      "remaining": "Exact corresponding source/revision not yet retained; investigate retained POM SCM/release metadata. No functionality removed and artifact not considered unused.",
+      "observed_use": []
+    },
+    "doxia:doxia-core:1.0-alpha-4": {
+      "sources": [
+        {
+          "path": "blobs/sha256/9a5700adf35e13b3a8a736f1dc29ca69a22487001b2950e26adfef14ec89e2e9",
+          "sha256": "9a5700adf35e13b3a8a736f1dc29ca69a22487001b2950e26adfef14ec89e2e9",
+          "size": 350909,
+          "url": "https://codeload.github.com/apache/maven-doxia/tar.gz/e414d0269170ed48a651f3bfcdbb39e1bde3d999",
+          "revision": "e414d0269170ed48a651f3bfcdbb39e1bde3d999",
+          "receipt": "receipts/apache-maven-doxia-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-doxia-doxia-core-1.0-alpha-4.json",
+        "receipts/apache-maven-doxia-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "doxia:doxia-sink-api:1.0-alpha-4": {
+      "sources": [
+        {
+          "path": "blobs/sha256/6f10da79ed80bd5e0f8a9d6462ca7ceaa861195f23f4f1a7704901f7ad7c10bb",
+          "sha256": "6f10da79ed80bd5e0f8a9d6462ca7ceaa861195f23f4f1a7704901f7ad7c10bb",
+          "size": 1518,
+          "url": "https://codeload.github.com/apache/maven-doxia/tar.gz/fcadc562b53866df6d53bdb10334b57d8fa82019",
+          "revision": "fcadc562b53866df6d53bdb10334b57d8fa82019",
+          "receipt": "receipts/maven-doxia-sink-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-doxia-doxia-sink-api-1.0-alpha-4.json",
+        "receipts/maven-doxia-sink-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "geronimo-spec:geronimo-spec-jta:1.0.1B-rc4": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-geronimo-spec-geronimo-spec-jta-1.0.1B-rc4.json",
+        "receipts/geronimo-jta10-tag.json",
+        "receipts/geronimo-specs-oldtags.json"
+      ],
+      "remaining": "Exact corresponding source/revision not yet retained; investigate retained POM SCM/release metadata. No functionality removed and artifact not considered unused.",
+      "observed_use": []
+    },
+    "jakarta-regexp:jakarta-regexp:1.4": {
+      "sources": [
+        {
+          "path": "blobs/sha256/c4e34004123f4f72f5cac293795f3c547691baa5cdfcd1198852d525e3cdc563",
+          "sha256": "c4e34004123f4f72f5cac293795f3c547691baa5cdfcd1198852d525e3cdc563",
+          "size": 137768,
+          "url": "https://archive.apache.org/dist/jakarta/regexp/source/jakarta-regexp-1.4.tar.gz",
+          "revision": "jakarta-regexp-1.4.tar.gz",
+          "receipt": "receipts/regexp14-source-dir.json",
+          "identity_evidence": "Official archived Apache release source at exact version; per-class coverage checked independently."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-jakarta-regexp-jakarta-regexp-1.4.json",
+        "receipts/regexp14-source-dir.json"
+      ],
+      "remaining": "Retained exact publisher release sources; independent rebuild and final rights/security approval remain open.",
+      "observed_use": []
+    },
+    "jline:jline:0.9.1": {
+      "sources": [
+        {
+          "path": "blobs/sha256/e7a9f7d0b1f9efad374c9251b27ec554603f864ca374a3f017608b8d4fd55eb9",
+          "sha256": "e7a9f7d0b1f9efad374c9251b27ec554603f864ca374a3f017608b8d4fd55eb9",
+          "size": 522338,
+          "url": "https://downloads.sourceforge.net/project/jline/jline/0.9.1/jline-src-0_9_1.jar",
+          "revision": "jline-src-0_9_1.jar",
+          "receipt": "receipts/jline091-source-actual.json",
+          "identity_evidence": "Exact publisher revision identified in retained release metadata; structural class coverage computed independently; no rebuilt binary claim."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-jline-jline-0.9.1.json",
+        "receipts/jline091-source-actual.json"
+      ],
+      "remaining": "Source-to-binary correspondence, complete dependency inputs and license/security approval remain open.",
+      "observed_use": []
+    },
+    "nekohtml:xercesMinimal:1.9.6.2": {
+      "sources": [
+        {
+          "path": "blobs/sha256/a7207b8bdf89720db7f9e438978475b6bbeed7e5ce356ac6bc36e30369a27cd7",
+          "sha256": "a7207b8bdf89720db7f9e438978475b6bbeed7e5ce356ac6bc36e30369a27cd7",
+          "size": 6084707,
+          "url": "https://codeload.github.com/apache/xerces2-j/tar.gz/0b71ee9573711bf0e239be3d9ed0e574b91fd4b2",
+          "revision": "0b71ee9573711bf0e239be3d9ed0e574b91fd4b2",
+          "receipt": "receipts/xerces281-source.json",
+          "identity_evidence": "Original NekoHTML1.9.6.2 build.xml declares xerces-2.8.1 for bundled minimal Xerces; original distribution and exact Apache Xerces2.8.1 source commit retained. Exact minimal-binary byte comparison recorded separately. Original distribution embedded xercesMinimal.jar SHA25695b8b357d19f63797dd7d67622fd3f18374d64acbc6584faba1c7759a31e8438 exactly equals selected Maven binary; corresponding full Xerces source class mapping is structural evidence, not rebuild equivalence."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-nekohtml-xercesMinimal-1.9.6.2.json",
+        "receipts/xerces281-source.json",
+        "receipts/neko1962-source-correctpath.json"
+      ],
+      "remaining": "Source-to-binary correspondence, complete dependency inputs and license/security approval remain open.",
+      "observed_use": []
+    },
+    "net.sourceforge.javacsv:javacsv:2.0": {
+      "sources": [
+        {
+          "path": "blobs/sha256/7d0022112ccafbf27c940e80756f2591f6f7c8686d075af87cd57040bd9cffbe",
+          "url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip",
+          "revision": "CVS CsvReader.java 1.9; CsvWriter.java 1.8; AllTests.java 1.4; build.xml 1.3",
+          "sha256": "7d0022112ccafbf27c940e80756f2591f6f7c8686d075af87cd57040bd9cffbe",
+          "size": 18729,
+          "receipt": "receipts/javacsv-recovery.json",
+          "identity_evidence": "RCS original binary revision1.2 matches selected Maven SHA exactly; contemporaneous CsvReader1.9/CsvWriter1.8 reconstructed with retained extraction evidence. New compilation is not byte-identical to original.",
+          "derived_from": {
+            "path": "blobs/sha256/608624c41a5b499e7f0085854fb39e359c1e34a133506ddf16c86331703263d3",
+            "sha256": "608624c41a5b499e7f0085854fb39e359c1e34a133506ddf16c86331703263d3",
+            "size": 225143,
+            "url": "https://sourceforge.net/code-snapshots/cvs/j/ja/javacsv.zip",
+            "recipe": "build-support/java/javacsv_recovery.py; see independent recovery receipt"
+          }
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-net.sourceforge.javacsv-javacsv-2.0.json",
+        "receipts/javacsv-cvs-snapshot.json",
+        "receipts/javacsv-recovery.json"
+      ],
+      "remaining": "Original core headers LGPL2.1-or-later; historical AllTests source lacks header. Parent records compile and105 native tests under historical CRLF plus16 Linux newline failures; full runtime/license acceptance remains open.",
+      "observed_use": [
+        {
+          "gav": "net.sourceforge.javacsv:javacsv:2.0",
+          "kind": "actual-test-classpath-presence",
+          "module": "referencing",
+          "run": "referencing-01",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/fresh-m2/net/sourceforge/javacsv/javacsv/2.0/javacsv-2.0.jar",
+          "artifact_sha256": "c287e9d431e4e05a0f7c9c023d133edf8a40112885cdb6e81b07773eee4680ed",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/work/source/geotools/modules/library/referencing/target/surefire-reports/TEST-org.geotools.geometry.GeneralBoundsTest.xml",
+          "test_report_sha256": "6ef17daa88766f06f087ec1587da01a0cf21e9e530e9c643475cbd7b9fa58f36",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        }
+      ]
+    },
+    "org.apache.ant:ant:1.8.1": {
+      "sources": [
+        {
+          "path": "blobs/sha256/81cb8ab6199767b4a7b03d7052741a673a4b6baa31d64ccb4c0c49f7f404add6",
+          "sha256": "81cb8ab6199767b4a7b03d7052741a673a4b6baa31d64ccb4c0c49f7f404add6",
+          "size": 7064257,
+          "url": "https://codeload.github.com/apache/ant/tar.gz/511c9956704a6023d1d1b1403d36f58eab10266b",
+          "revision": "511c9956704a6023d1d1b1403d36f58eab10266b",
+          "receipt": "receipts/apache-ant-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.apache.ant-ant-1.8.1.json",
+        "receipts/apache-ant-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "org.apache.ant:ant-launcher:1.8.1": {
+      "sources": [
+        {
+          "path": "blobs/sha256/81cb8ab6199767b4a7b03d7052741a673a4b6baa31d64ccb4c0c49f7f404add6",
+          "sha256": "81cb8ab6199767b4a7b03d7052741a673a4b6baa31d64ccb4c0c49f7f404add6",
+          "size": 7064257,
+          "url": "https://codeload.github.com/apache/ant/tar.gz/511c9956704a6023d1d1b1403d36f58eab10266b",
+          "revision": "511c9956704a6023d1d1b1403d36f58eab10266b",
+          "receipt": "receipts/apache-ant-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.apache.ant-ant-launcher-1.8.1.json",
+        "receipts/apache-ant-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "org.apache.ant:ant-nodeps:1.8.1": {
+      "sources": [
+        {
+          "path": "blobs/sha256/81cb8ab6199767b4a7b03d7052741a673a4b6baa31d64ccb4c0c49f7f404add6",
+          "sha256": "81cb8ab6199767b4a7b03d7052741a673a4b6baa31d64ccb4c0c49f7f404add6",
+          "size": 7064257,
+          "url": "https://codeload.github.com/apache/ant/tar.gz/511c9956704a6023d1d1b1403d36f58eab10266b",
+          "revision": "511c9956704a6023d1d1b1403d36f58eab10266b",
+          "receipt": "receipts/apache-ant-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.apache.ant-ant-nodeps-1.8.1.json",
+        "receipts/apache-ant-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "org.apache.bcel:bcel:5.2": {
+      "sources": [
+        {
+          "path": "blobs/sha256/6c9d9fc14a9a91a59a57ede8cfc41cf30abfe3b837024d1bf6dc7d518dbb004c",
+          "sha256": "6c9d9fc14a9a91a59a57ede8cfc41cf30abfe3b837024d1bf6dc7d518dbb004c",
+          "size": 888647,
+          "url": "https://codeload.github.com/apache/commons-bcel/tar.gz/b546dfdaaaee9eec23c4d0bbe1454a2d6edcaca2",
+          "revision": "b546dfdaaaee9eec23c4d0bbe1454a2d6edcaca2",
+          "receipt": "receipts/apache-commons-bcel-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.apache.bcel-bcel-5.2.json",
+        "receipts/apache-commons-bcel-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "org.apache.servicemix.bundles:org.apache.servicemix.bundles.antlr:2.7.7_5": {
+      "sources": [
+        {
+          "path": "blobs/sha256/853aeb021aef7586bda29e74a6b03006bcb565a755c86b66032d8ec31b67dbb9",
+          "sha256": "853aeb021aef7586bda29e74a6b03006bcb565a755c86b66032d8ec31b67dbb9",
+          "size": 1816180,
+          "url": "https://www.antlr2.org/download/antlr-2.7.7.tar.gz",
+          "revision": "antlr-2.7.7.tar.gz",
+          "receipt": "receipts/antlr277-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.apache.servicemix.bundles-org.apache.servicemix.bundles.antlr-2.7.7_5.json",
+        "receipts/antlr277-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "org.apache.velocity:velocity:1.5": {
+      "sources": [
+        {
+          "path": "blobs/sha256/7d6598871657e5f71176b0e4c8b6c369ab2d808acc6272a646716943c34363e5",
+          "sha256": "7d6598871657e5f71176b0e4c8b6c369ab2d808acc6272a646716943c34363e5",
+          "size": 988900,
+          "url": "https://codeload.github.com/apache/velocity-engine/tar.gz/c2413d5c78e416636184c36b3854fdfca7e29806",
+          "revision": "c2413d5c78e416636184c36b3854fdfca7e29806",
+          "receipt": "receipts/apache-velocity-engine-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.apache.velocity-velocity-1.5.json",
+        "receipts/apache-velocity-engine-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "org.apache.velocity:velocity-tools:2.0": {
+      "sources": [
+        {
+          "path": "blobs/sha256/b680ad76a395333df0e4bd659f09a9aa0ac8d3feac53842eac798ef97eb2e189",
+          "sha256": "b680ad76a395333df0e4bd659f09a9aa0ac8d3feac53842eac798ef97eb2e189",
+          "size": 483244,
+          "url": "https://codeload.github.com/apache/velocity-tools/tar.gz/261bf1924b2bdc40efbac3aa8152ee82a544cd2d",
+          "revision": "261bf1924b2bdc40efbac3aa8152ee82a544cd2d",
+          "receipt": "receipts/apache-velocity-tools-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.apache.velocity-velocity-tools-2.0.json",
+        "receipts/apache-velocity-tools-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "org.aspectj:aspectjrt:1.5.4": {
+      "sources": [
+        {
+          "path": "blobs/sha256/8e5a46848fdc41286df4888dddb34e1fa437f3f2cd602cb70c4d993ce71206cf",
+          "sha256": "8e5a46848fdc41286df4888dddb34e1fa437f3f2cd602cb70c4d993ce71206cf",
+          "size": 46520592,
+          "url": "https://codeload.github.com/eclipse-aspectj/aspectj/tar.gz/b50c23b0a214e315791677a5bfef990db271ecd9",
+          "revision": "b50c23b0a214e315791677a5bfef990db271ecd9",
+          "receipt": "receipts/eclipse-aspectj-aspectj-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.aspectj-aspectjrt-1.5.4.json",
+        "receipts/eclipse-aspectj-aspectj-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": [
+        {
+          "gav": "org.aspectj:aspectjrt:1.5.4",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/org/aspectj/aspectjrt/1.5.4/aspectjrt-1.5.4.jar",
+          "artifact_sha256": "ea6dbd45089605b17840d35dd2474ec9a687929334903801e42e1f2e07fc40fb",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        },
+        {
+          "gav": "org.aspectj:aspectjrt:1.5.4",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence-pg-test",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/org/aspectj/aspectjrt/1.5.4/aspectjrt-1.5.4.jar",
+          "artifact_sha256": "ea6dbd45089605b17840d35dd2474ec9a687929334903801e42e1f2e07fc40fb",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "56955c8dd1d539d1a6cadb0565119eb59545a686097a607e843fa284dc915bb6",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        }
+      ]
+    },
+    "org.aspectj:aspectjweaver:1.5.4": {
+      "sources": [
+        {
+          "path": "blobs/sha256/8e5a46848fdc41286df4888dddb34e1fa437f3f2cd602cb70c4d993ce71206cf",
+          "sha256": "8e5a46848fdc41286df4888dddb34e1fa437f3f2cd602cb70c4d993ce71206cf",
+          "size": 46520592,
+          "url": "https://codeload.github.com/eclipse-aspectj/aspectj/tar.gz/b50c23b0a214e315791677a5bfef990db271ecd9",
+          "revision": "b50c23b0a214e315791677a5bfef990db271ecd9",
+          "receipt": "receipts/eclipse-aspectj-aspectj-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.aspectj-aspectjweaver-1.5.4.json",
+        "receipts/eclipse-aspectj-aspectj-source.json"
+      ],
+      "remaining": "Five embedded com.bea.jvm classes absent from retained AspectJ source release; runtime interfaces originate in bundled BEA inputs. Must locate exact source/rights or justify and test capability-preserving change; no waiver.",
+      "observed_use": [
+        {
+          "gav": "org.aspectj:aspectjweaver:1.5.4",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/org/aspectj/aspectjweaver/1.5.4/aspectjweaver-1.5.4.jar",
+          "artifact_sha256": "a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        },
+        {
+          "gav": "org.aspectj:aspectjweaver:1.5.4",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence-pg-test",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/org/aspectj/aspectjweaver/1.5.4/aspectjweaver-1.5.4.jar",
+          "artifact_sha256": "a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "56955c8dd1d539d1a6cadb0565119eb59545a686097a607e843fa284dc915bb6",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        }
+      ]
+    },
+    "org.codehaus.plexus:plexus-i18n:1.0-beta-10": {
+      "sources": [
+        {
+          "path": "blobs/sha256/fb55166a09b692aa9255633c048a7e559584fe5e8a5d1f864ba84975ddb9955a",
+          "sha256": "fb55166a09b692aa9255633c048a7e559584fe5e8a5d1f864ba84975ddb9955a",
+          "size": 10374,
+          "url": "https://codeload.github.com/codehaus-plexus/plexus-i18n/tar.gz/d5aaf49970fc3e95408f4f9cd1b856fa72be130f",
+          "revision": "d5aaf49970fc3e95408f4f9cd1b856fa72be130f",
+          "receipt": "receipts/codehaus-plexus-plexus-i18n-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.codehaus.plexus-plexus-i18n-1.0-beta-10.json",
+        "receipts/codehaus-plexus-plexus-i18n-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "org.codehaus.plexus:plexus-interactivity-jline:1.0-alpha-5": {
+      "sources": [
+        {
+          "path": "blobs/sha256/5d7add504fcda54424010cc7c468bf8f4d59b9b78ba5dfc653eca29acc547bac",
+          "sha256": "5d7add504fcda54424010cc7c468bf8f4d59b9b78ba5dfc653eca29acc547bac",
+          "size": 4565,
+          "url": "https://codeload.github.com/codehaus-plexus/plexus-interactivity/tar.gz/485bff7cd7db3da988b6ba101bdf4cf1b3440778",
+          "revision": "485bff7cd7db3da988b6ba101bdf4cf1b3440778",
+          "receipt": "receipts/codehaus-plexus-plexus-interactivity-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.codehaus.plexus-plexus-interactivity-jline-1.0-alpha-5.json",
+        "receipts/codehaus-plexus-plexus-interactivity-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "org.eclipse.core:resources:3.3.0-v20070604": {
+      "sources": [
+        {
+          "path": "blobs/sha256/5f823608feec1f781f7c620db927346862a6a4bdc44e5757cd197fa524f881b6",
+          "sha256": "5f823608feec1f781f7c620db927346862a6a4bdc44e5757cd197fa524f881b6",
+          "size": 1015136,
+          "url": "https://codeload.github.com/eclipse-platform/eclipse.platform.resources/tar.gz/6b83c35367107bf518dd226becd626391ac6cbb3",
+          "revision": "6b83c35367107bf518dd226becd626391ac6cbb3",
+          "receipt": "receipts/eclipse-resources330-source.json",
+          "identity_evidence": "Exact publisher revision identified in retained receipt/metadata; class coverage computed independently. Rebuild correspondence not established."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.eclipse.core-resources-3.3.0-v20070604.json",
+        "receipts/eclipse-resources330-source.json",
+        "receipts/eclipse-resource-exact-qualifier.json"
+      ],
+      "remaining": "Official R3_3 source supplies matching class names and3.3.0.qualifier manifest; exact v20070604 qualifier-to-commit correspondence remains unverified (unauthenticated API403 retained). Structural candidate is not exact binary source acceptance.",
+      "observed_use": []
+    },
+    "org.eclipse.jdt:core:3.1.1": {
+      "sources": [
+        {
+          "path": "blobs/sha256/8f08b918e5b356637e29feda3060c759445045d890aabcb5f3e96c1c3d2eeada",
+          "sha256": "8f08b918e5b356637e29feda3060c759445045d890aabcb5f3e96c1c3d2eeada",
+          "size": 4759587,
+          "url": "https://codeload.github.com/eclipse-jdt/eclipse.jdt.core/tar.gz/cff2b8465481125045dc3f834a1434cbd8018f1a",
+          "revision": "cff2b8465481125045dc3f834a1434cbd8018f1a",
+          "receipt": "receipts/eclipse-jdt311-source.json",
+          "identity_evidence": "Exact publisher revision identified in retained receipt/metadata; class coverage computed independently. Rebuild correspondence not established."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.eclipse.jdt-core-3.1.1.json",
+        "receipts/eclipse-jdt311-source.json"
+      ],
+      "remaining": "Correspondence beyond class/source identity, full rebuild inputs, affected runtime tests and legal/security review remain open.",
+      "observed_use": []
+    },
+    "org.netbeans.lib:cvsclient:20060125": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-org.netbeans.lib-cvsclient-20060125.json",
+        "receipts/netbeans20060125-src.json"
+      ],
+      "remaining": "Original NetBeans5.0 source URL returns HTML200, not a source archive. Need exact historical javacvs module revision for20060125 and SPL notice; no source claim from HTML.",
+      "observed_use": []
+    },
+    "org.sonatype.sisu:sisu-inject-plexus:2.1.1": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-org.sonatype.sisu-sisu-inject-plexus-2.1.1.json",
+        "receipts/sisu211-plexus-source.json",
+        "receipts/sisu211-bean-source.json",
+        "receipts/sisu211-tags.json",
+        "receipts/git-tags-sonatype-sisu-inject.json"
+      ],
+      "remaining": "Exact corresponding source/revision not yet retained; investigate retained POM SCM/release metadata. No functionality removed and artifact not considered unused.",
+      "observed_use": []
+    },
+    "oro:oro:2.0.7": {
+      "sources": [
+        {
+          "path": "blobs/sha256/5ee78cc5ee1bab2485231deaba7fc2f05a691874cc97ba2fb955301bc03dc68a",
+          "sha256": "5ee78cc5ee1bab2485231deaba7fc2f05a691874cc97ba2fb955301bc03dc68a",
+          "size": 342625,
+          "url": "https://archive.apache.org/dist/jakarta/oro/source/jakarta-oro-2.0.7.tar.gz",
+          "revision": "jakarta-oro-2.0.7.tar.gz",
+          "receipt": "receipts/apache-oro-source.json",
+          "identity_evidence": "Official archived Apache release source at exact version; per-class coverage checked independently."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-oro-oro-2.0.7.json",
+        "receipts/apache-oro-source.json"
+      ],
+      "remaining": "Retained exact publisher release sources; independent rebuild and final rights/security approval remain open.",
+      "observed_use": []
+    },
+    "picocontainer:picocontainer:1.2": {
+      "sources": [
+        {
+          "path": "blobs/sha256/d8ebaaa7db49c194cc5c40cc87b57524e43f77689db62742c7b9ff80e33031aa",
+          "sha256": "d8ebaaa7db49c194cc5c40cc87b57524e43f77689db62742c7b9ff80e33031aa",
+          "size": 705257,
+          "url": "https://codeload.github.com/picocontainer/picocontainer1/tar.gz/75132e8d7ac76ac609e2362641edaec7c82efcee",
+          "revision": "75132e8d7ac76ac609e2362641edaec7c82efcee",
+          "receipt": "receipts/pico12-source.json",
+          "identity_evidence": "Official picocontainer-1.2 tag; root POM version 1.2 but child parent retains 1.2-SNAPSHOT, recorded discrepancy. Fixed commit archive; no snapshot resolution."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-picocontainer-picocontainer-1.2.json",
+        "receipts/pico12-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "plexus:plexus-utils:1.0.3": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-plexus-plexus-utils-1.0.3.json",
+        "receipts/plexus103-sources-relocated.json",
+        "receipts/plexus-utils103-tag.json"
+      ],
+      "remaining": "Exact corresponding source/revision not yet retained; investigate retained POM SCM/release metadata. No functionality removed and artifact not considered unused.",
+      "observed_use": []
+    },
+    "postgresql:postgresql:8.3-603.jdbc4": {
+      "sources": [
+        {
+          "path": "blobs/sha256/74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140",
+          "sha256": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140",
+          "size": 524088,
+          "url": "https://codeload.github.com/pgjdbc/pgjdbc/tar.gz/8a2eef81e45d07130e2d86bc8a18cc14642e2741",
+          "revision": "8a2eef81e45d07130e2d86bc8a18cc14642e2741",
+          "receipt": "receipts/pgjdbc-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-postgresql-postgresql-8.3-603.jdbc4.json",
+        "receipts/pgjdbc-source.json"
+      ],
+      "remaining": "Five Java templates and thirteen gettext translation inputs/recipe retained; generation, exact GNU gettext version, native closure, driver source compilation and real database tests remain open.",
+      "generated_classes": {
+        "org/postgresql/translation/messages_cs": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/cs.po",
+          "source_sha256": "0657eedc60e97b39549cdb5fc57e17590ac50fd9823938c963cf1cb42ebfec76",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_de": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/de.po",
+          "source_sha256": "ff0eb74a0e94037ea8e1075afd4ebc69af3e8a178080397cdb106f6b98cfa992",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_es": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/es.po",
+          "source_sha256": "e45b7cebffbf62ee1e0e30bf2595a58c9cdc11752c06e59cad70e7c2d058266a",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_fr": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/fr.po",
+          "source_sha256": "2a1a08885dbc4091e7e4324c82ee338b094c69f3b331a74b52fc9d82963c68fd",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_it": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/it.po",
+          "source_sha256": "1d4493dd4ed384701258c9214167417bb18f5a364b171357826d4620b2fbe998",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_nl": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/nl.po",
+          "source_sha256": "934f89069a7678e5edc5e87e47d46ac67ac6f6decd0078f1e842561f3dc48c98",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_pl": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/pl.po",
+          "source_sha256": "77d38d2101629063657af8c449f914802edb7ba030f862262c8313f150d6b34f",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_pt_BR": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/pt_BR.po",
+          "source_sha256": "dca6cd4a68f2526efd672b1091ae96adb60cf4f5609be1c24af8f8e87099d377",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_ru": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/ru.po",
+          "source_sha256": "85ca5218eb3045f2d6c0df7bfb628c782bb4429dcf5919dfb5b4bdc66027fe6f",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_sr": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/sr.po",
+          "source_sha256": "b294c7a6d1a84eded46079b8266e30a1cd393fbd122a7dc0983790cc073876e3",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_tr": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/tr.po",
+          "source_sha256": "b4cb76a7741c9919d40f10a475c17016f7aebf373673f659da0fce4920db22e0",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_zh_CN": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/zh_CN.po",
+          "source_sha256": "047897c0ef9d76b21d9d8b56202ae30c1963bbe45f883d180a63206ad9323cd9",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        },
+        "org/postgresql/translation/messages_zh_TW": {
+          "source_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/org/postgresql/translation/zh_TW.po",
+          "source_sha256": "d88bdda802935e1de621912808ecbc123361b0433d9b51ff8942bb0f3935b83c",
+          "recipe_member": "74a1b087cd5e073fa209bc9bd85ca2272d5750ac3c175ce91d0f051f2a930140/pgjdbc-8a2eef81e45d07130e2d86bc8a18cc14642e2741/update-translations.sh",
+          "recipe_sha256": "5cfa3850c3accdc67c87cdb70641289994bd24f5e3f7db01ea1b882542d34a0e",
+          "mechanism": "Retained update-translations.sh invokes GNU gettext msgfmt -j -l LANGUAGE -r org.postgresql.translation.messages over this PO file; generation was not executed and gettext toolchain remains unresolved."
+        }
+      },
+      "observed_use": []
+    },
+    "regexp:regexp:1.2": {
+      "sources": [
+        {
+          "path": "blobs/sha256/a9d8ea8c2c530c1d1fe2cfe9e58bf6308d0548d1ae827801f81429827a76881f",
+          "sha256": "a9d8ea8c2c530c1d1fe2cfe9e58bf6308d0548d1ae827801f81429827a76881f",
+          "size": 949102,
+          "url": "https://archive.apache.org/dist/jakarta/regexp/source/jakarta-regexp-1.2.tar.gz",
+          "revision": "jakarta-regexp-1.2.tar.gz",
+          "receipt": "receipts/regexp12-source-dir.json",
+          "identity_evidence": "Official archived Apache release source at exact version; per-class coverage checked independently."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-regexp-regexp-1.2.json",
+        "receipts/regexp12-source-dir.json"
+      ],
+      "remaining": "Retained exact publisher release sources; independent rebuild and final rights/security approval remain open.",
+      "observed_use": []
+    },
+    "velocity:velocity:1.5": {
+      "sources": [
+        {
+          "path": "blobs/sha256/7d6598871657e5f71176b0e4c8b6c369ab2d808acc6272a646716943c34363e5",
+          "sha256": "7d6598871657e5f71176b0e4c8b6c369ab2d808acc6272a646716943c34363e5",
+          "size": 988900,
+          "url": "https://codeload.github.com/apache/velocity-engine/tar.gz/c2413d5c78e416636184c36b3854fdfca7e29806",
+          "revision": "c2413d5c78e416636184c36b3854fdfca7e29806",
+          "receipt": "receipts/apache-velocity-engine-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-velocity-velocity-1.5.json",
+        "receipts/apache-velocity-engine-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "xerces:xercesImpl:2.7.1": {
+      "sources": [
+        {
+          "path": "blobs/sha256/8ec858aa189701e0652bdfc4cc75b6d84fdd038145526fcd47a332ce8838e27e",
+          "sha256": "8ec858aa189701e0652bdfc4cc75b6d84fdd038145526fcd47a332ce8838e27e",
+          "size": 5905642,
+          "url": "https://codeload.github.com/apache/xerces2-j/tar.gz/772ff29bb64fdbf2ef8e40b2cd201161c4440783",
+          "revision": "772ff29bb64fdbf2ef8e40b2cd201161c4440783",
+          "receipt": "receipts/xerces271-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-xerces-xercesImpl-2.7.1.json",
+        "receipts/xerces271-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "xerces:xercesImpl:2.9.1": {
+      "sources": [
+        {
+          "path": "blobs/sha256/21a0c7be61f0d64eba147481705689bc13f20e095fd7a97bf205190f01919508",
+          "sha256": "21a0c7be61f0d64eba147481705689bc13f20e095fd7a97bf205190f01919508",
+          "size": 6406072,
+          "url": "https://codeload.github.com/apache/xerces2-j/tar.gz/9ff21a2175d527d31fd67db747e50b0b95574289",
+          "revision": "9ff21a2175d527d31fd67db747e50b0b95574289",
+          "receipt": "receipts/xerces291-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-xerces-xercesImpl-2.9.1.json",
+        "receipts/xerces291-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": []
+    },
+    "xml-apis:xml-apis-ext:1.3.04": {
+      "sources": [
+        {
+          "path": "blobs/sha256/8e8a412aeb95644eaf14ec1a5cfd04833e38cac4a01b83d73d7de2368a35a597",
+          "sha256": "8e8a412aeb95644eaf14ec1a5cfd04833e38cac4a01b83d73d7de2368a35a597",
+          "size": 345726,
+          "url": "https://archive.apache.org/dist/xml/commons/source/xml-commons-external-1.3.04-src.tar.gz",
+          "revision": "xml-commons-external-1.3.04",
+          "receipt": "receipts/xmlcommons-external-source-correct-path.json",
+          "identity_evidence": "Official Apache XML Commons External1.3.04 source distribution, which includes xml-apis-ext classes; original publisher release retained."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-xml-apis-xml-apis-ext-1.3.04.json",
+        "receipts/xmlcommons1304-source.json",
+        "receipts/git-tags-apache-xml-commons-external.json",
+        "receipts/xmlcommons-external-source-correct-path.json"
+      ],
+      "remaining": "Source and per-file notices retained; W3C/SAC/SVG rights, byte-for-byte rebuild, and actual runtime usage remain unverified.",
+      "observed_use": []
+    },
+    "xmlpull:xmlpull:1.1.3.1": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-xmlpull-xmlpull-1.1.3.1.json",
+        "receipts/xmlpull1131-source.json",
+        "receipts/xmlpull1131-source-central.json"
+      ],
+      "remaining": "Exact corresponding source/revision not yet retained; investigate retained POM SCM/release metadata. No functionality removed and artifact not considered unused.",
+      "observed_use": []
+    },
+    "com.oracle:ojdbc14:10.2.0.3.0": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-com.oracle-ojdbc14-10.2.0.3.0.json"
+      ],
+      "remaining": "Provided dependency of gt-imagemosaic. No corresponding Oracle source has been retained. Requires source/license access or a capability-preserving implementation change with real tests; no silent removal.",
+      "observed_use": []
+    },
+    "it.geosolutions.jgridshift:jgridshift-core:1.3": {
+      "sources": [
+        {
+          "path": "blobs/sha256/6d29d614b7a5b42415ab08a3fc8a9c42a6990519a0c868a59adf7fd5692a07f4",
+          "sha256": "6d29d614b7a5b42415ab08a3fc8a9c42a6990519a0c868a59adf7fd5692a07f4",
+          "size": 47827,
+          "url": "https://codeload.github.com/geosolutions-it/jgridshift/tar.gz/dc0cc5768341a0f4c125cb6a0c5f0ac4a0ea1e15",
+          "revision": "dc0cc5768341a0f4c125cb6a0c5f0ac4a0ea1e15",
+          "receipt": "receipts/jgridshift13-source.json",
+          "identity_evidence": "Historical groupId-change commit: root/core POM it.geosolutions.jgridshift:jgridshift-core:1.3. Later getters not assumed to be in binary."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-it.geosolutions.jgridshift-jgridshift-core-1.3.json",
+        "receipts/jgridshift13-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": [
+        {
+          "gav": "it.geosolutions.jgridshift:jgridshift-core:1.3",
+          "kind": "actual-test-classpath-presence",
+          "module": "referencing",
+          "run": "referencing-01",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/fresh-m2/it/geosolutions/jgridshift/jgridshift-core/1.3/jgridshift-core-1.3.jar",
+          "artifact_sha256": "303eb6a6f6f87369f6b9e3dcacefd6f9b0ad55920cd65a7f162ab9a23401c722",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/referencing-01/work/source/geotools/modules/library/referencing/target/surefire-reports/TEST-org.geotools.geometry.GeneralBoundsTest.xml",
+          "test_report_sha256": "6ef17daa88766f06f087ec1587da01a0cf21e9e530e9c643475cbd7b9fa58f36",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        },
+        {
+          "gav": "it.geosolutions.jgridshift:jgridshift-core:1.3",
+          "kind": "actual-test-classpath-presence",
+          "module": "xml",
+          "run": "xml-schema-03",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/xml-schema-03/fresh-m2/it/geosolutions/jgridshift/jgridshift-core/1.3/jgridshift-core-1.3.jar",
+          "artifact_sha256": "303eb6a6f6f87369f6b9e3dcacefd6f9b0ad55920cd65a7f162ab9a23401c722",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/xml-schema-03/work/source/geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.SchemaFactoryResolveTest.xml",
+          "test_report_sha256": "991f262fff740059fb9acfa02220588cd46adf9842f779f9e1fc2222735f6230",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        }
+      ]
+    },
+    "javax.media:jai_imageio:1.1": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-javax.media-jai_imageio-1.1.json",
+        "receipts/jai-imageio-tags.json",
+        "receipts/jai-imageio11-tree.json",
+        "receipts/jai-source-release-index.json",
+        "receipts/jai-imageio11-src.json"
+      ],
+      "remaining": "Successor jai-imageio source tags begin1.2; exact original1.1 source not identified. java.net download attempt retained original Windows binary installer, NOT source and never executed. Required MapFish codec capability remains; source/native and redistribution evidence unresolved.",
+      "observed_use": []
+    },
+    "net.sf.json-lib:json-lib:2.4.2-geoserver": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-net.sf.json-lib-json-lib-2.4.2-geoserver.json",
+        "receipts/jsonlib-history.json",
+        "receipts/jsonlib-branches.json"
+      ],
+      "remaining": "Exact corresponding source/revision not yet retained; investigate retained POM SCM/release metadata. No functionality removed and artifact not considered unused.",
+      "observed_use": []
+    },
+    "net.sourceforge.groboutils:groboutils-core:5": {
+      "sources": [
+        {
+          "path": "blobs/sha256/9d6ed0f1b75897dac6a25cd68fb671174d1d16487cee3a13af96e54963bd013a",
+          "sha256": "9d6ed0f1b75897dac6a25cd68fb671174d1d16487cee3a13af96e54963bd013a",
+          "size": 3266839,
+          "url": "https://downloads.sourceforge.net/project/groboutils/Utils/5/GroboUtils-5-src.zip",
+          "revision": "GroboUtils-5-src.zip",
+          "receipt": "receipts/groboutils5-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-net.sourceforge.groboutils-groboutils-core-5.json",
+        "receipts/groboutils5-source.json",
+        "receipts/groboutils5-thirdparty.json"
+      ],
+      "remaining": "Original release source covers388/1006 classes; selected jar bundles BCEL, QDox and other third-party classes. Original thirdparty archive retained but contains binaries rather than corresponding complete sources; cannot claim closed.",
+      "observed_use": []
+    },
+    "opendap:opendap:2.1": {
+      "sources": [],
+      "investigation": [
+        "receipts/alternate-opendap-opendap-2.1.json",
+        "receipts/opendap21-source.json",
+        "receipts/opendap-tags.json"
+      ],
+      "remaining": "Exact corresponding source/revision not yet retained; investigate retained POM SCM/release metadata. No functionality removed and artifact not considered unused.",
+      "observed_use": []
+    },
+    "org.apache.xml:xml-commons-resolver:1.2": {
+      "sources": [
+        {
+          "path": "blobs/sha256/53915f3c5181ec712d18fde7f13a90c53d94a1b2f69f20b604424dbb2be5b227",
+          "sha256": "53915f3c5181ec712d18fde7f13a90c53d94a1b2f69f20b604424dbb2be5b227",
+          "size": 99626,
+          "url": "https://repo.maven.apache.org/maven2/xml-resolver/xml-resolver/1.2/xml-resolver-1.2-sources.jar",
+          "revision": "xml-resolver-1.2-sources.jar",
+          "receipt": "receipts/xml-resolver12-central.json",
+          "identity_evidence": "Official XML Resolver 1.2 source classifier under xml-resolver:xml-resolver:1.2; OSGeo coordinate is repackaged. Per-class mapping does not prove unmodified repackaging."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.apache.xml-xml-commons-resolver-1.2.json",
+        "receipts/xml-resolver12-central.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": [
+        {
+          "gav": "org.apache.xml:xml-commons-resolver:1.2",
+          "kind": "actual-test-classpath-presence",
+          "module": "xml",
+          "run": "xml-schema-03",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/xml-schema-03/fresh-m2/org/apache/xml/xml-commons-resolver/1.2/xml-commons-resolver-1.2.jar",
+          "artifact_sha256": "47dcde8986019314ef78ae7280a94973a21d2ed95075a40a000b42da956429e1",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/xml-schema-03/work/source/geotools/modules/library/xml/target/surefire-reports/TEST-org.geotools.xml.SchemaFactoryResolveTest.xml",
+          "test_report_sha256": "991f262fff740059fb9acfa02220588cd46adf9842f779f9e1fc2222735f6230",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        }
+      ]
+    },
+    "org.huldra.math:bigint:0.7.1": {
+      "sources": [
+        {
+          "path": "blobs/sha256/3985701f0a8ef56a0d5408f2bfac9890e01efeb70751e946b9c34a3d1647a497",
+          "sha256": "3985701f0a8ef56a0d5408f2bfac9890e01efeb70751e946b9c34a3d1647a497",
+          "size": 53932,
+          "url": "https://codeload.github.com/aaime/Huldra/tar.gz/efb66d8bfe782a66a78cb8c4b7ddd2be7212a9f9",
+          "revision": "efb66d8bfe782a66a78cb8c4b7ddd2be7212a9f9",
+          "receipt": "receipts/huldra-071-source.json",
+          "identity_evidence": "Exact publisher revision identified in retained receipt/metadata; class coverage computed independently. Rebuild correspondence not established."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.huldra.math-bigint-0.7.1.json",
+        "receipts/huldra-071-source.json"
+      ],
+      "remaining": "Correspondence beyond class/source identity, full rebuild inputs, affected runtime tests and legal/security review remain open.",
+      "observed_use": []
+    },
+    "org.marlin:marlin:0.9.4.8": {
+      "sources": [
+        {
+          "path": "blobs/sha256/60fc2008c33f01281ce75dbbfe04c1771ddb9544746ed32c3dbef551ee60270a",
+          "sha256": "60fc2008c33f01281ce75dbbfe04c1771ddb9544746ed32c3dbef551ee60270a",
+          "size": 252197,
+          "url": "https://codeload.github.com/bourgesl/marlin-renderer/tar.gz/5b1cbb57c39082cc444807daec401dd033754af7",
+          "revision": "5b1cbb57c39082cc444807daec401dd033754af7",
+          "receipt": "receipts/marlin-0948-jdk-source.json",
+          "identity_evidence": "Exact publisher revision identified in retained release metadata; structural class coverage computed independently; no rebuilt binary claim."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.marlin-marlin-0.9.4.8.json",
+        "receipts/marlin-0948-jdk-source.json"
+      ],
+      "remaining": "Exact release source covers85/87 classes. Publisher archive (byte-identical selected binary) includes OGLRenderQueue and QueueFlusher absent from release source. The preceding deleted OGLRenderQueue.java differs in volatile/thread-constructor API, proven by parent compilation/javap; do not attach it as exact source. Clean owned source build/profile decision still required.",
+      "observed_use": []
+    },
+    "org.opengeo:geodb:0.9": {
+      "sources": [
+        {
+          "path": "blobs/sha256/dddab4d02b4e74a3833dc38aae4d0b0c2790468348ec75eccd56acc2ef07a4a7",
+          "sha256": "dddab4d02b4e74a3833dc38aae4d0b0c2790468348ec75eccd56acc2ef07a4a7",
+          "size": 25437,
+          "url": "https://codeload.github.com/jdeolive/geodb/tar.gz/2fc3c9e42c6ebf7113f4eff1a3c7c2fcb277ff2d",
+          "revision": "2fc3c9e42c6ebf7113f4eff1a3c7c2fcb277ff2d",
+          "receipt": "receipts/jdeolive-geodb-source.json",
+          "identity_evidence": "Authoritative fixed release source URL/tag; class SourceFile mappings computed independently. Source-to-binary equivalence remains unproven."
+        }
+      ],
+      "investigation": [
+        "receipts/alternate-org.opengeo-geodb-0.9.json",
+        "receipts/jdeolive-geodb-source.json"
+      ],
+      "remaining": "Compile/rebuild comparison, source build dependencies, test/native closure and final license/security review remain open.",
+      "observed_use": [
+        {
+          "gav": "org.opengeo:geodb:0.9",
+          "kind": "actual-test-classpath-presence",
+          "module": "persistence",
+          "run": "geofence-06",
+          "artifact_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/fresh-m2/org/opengeo/geodb/0.9/geodb-0.9.jar",
+          "artifact_sha256": "661f4100005e7d3537b2e3f9b6c0c01d0a64c41644f57fdd0fcfdb89d2a7217e",
+          "test_report_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-compatibility/geofence-06/work/source/geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence/target/surefire-reports/TEST-org.geoserver.geofence.core.dao.GFUserDAOTest.xml",
+          "test_report_sha256": "860e73cef546e130de607d178da74dffb86b1e1e435172277f3d8f81aecfdab2",
+          "limitation": "Presence on the actual test JVM classpath does not prove every dependency class executed."
+        }
+      ]
+    }
+  }
+}
