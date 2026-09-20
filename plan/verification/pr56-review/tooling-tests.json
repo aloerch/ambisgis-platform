@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/tmp/ambisgis-validation-venv/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "build-support/java",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-pr-review",
+  "started": "2026-09-20T21:39:20.850966+00:00",
+  "exit_code": 0,
+  "log_sha256": "1dd43196b5f868c1ead5e12ae0c63a65b303b7517bb4c9fd202c8301c3a5a91b"
+}

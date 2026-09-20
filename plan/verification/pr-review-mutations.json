@@ -1,0 +1,98 @@
+{
+  "started_at": "2026-09-20T19:06:43.508798+00:00",
+  "authorization": "User request 2026-09-20 task 3; no PR merge authority",
+  "pr52": {
+    "id": "PR_kwDOUhI-d88AAAABEP0alg",
+    "state": "MERGED",
+    "mergedAt": "2026-09-19T21:54:27Z",
+    "mergedBy": {
+      "login": "aloerch"
+    },
+    "mergeCommit": {
+      "oid": "fc77ab978e567ce5d55e3428d1249a3b332da09d"
+    },
+    "baseRefName": "ambisgis/main",
+    "headRefOid": "e19bc4960866d89c749e1d2d68427dd586130d2f"
+  },
+  "operations": [
+    {
+      "operation": "addProjectV2ItemById",
+      "content": {
+        "id": "PR_kwDOUhI-d88AAAABEQiDOg",
+        "number": 54,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/54",
+        "state": "OPEN"
+      },
+      "response": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg72Eq8",
+        "isArchived": false
+      }
+    },
+    {
+      "operation": "updateProjectV2ItemFieldValue",
+      "item": "PVTI_lAHOAOk9es4Bj_k-zg72Eq8",
+      "field": "Evidence",
+      "value": "https://github.com/aloerch/ambisgis-platform/pull/54 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3 (FND-02 remains In progress)",
+      "response": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg72Eq8"
+      }
+    },
+    {
+      "operation": "addProjectV2ItemById",
+      "content": {
+        "id": "PR_kwDOUhI-d88AAAABEQ97wg",
+        "number": 55,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/55",
+        "state": "OPEN"
+      },
+      "response": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg72Erw",
+        "isArchived": false
+      }
+    },
+    {
+      "operation": "updateProjectV2ItemFieldValue",
+      "item": "PVTI_lAHOAOk9es4Bj_k-zg72Erw",
+      "field": "Evidence",
+      "value": "https://github.com/aloerch/ambisgis-platform/pull/55 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3 (FND-02 remains In progress)",
+      "response": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg72Erw"
+      }
+    },
+    {
+      "operation": "updateProjectV2View",
+      "viewId": "PVTV_lAHOAOk9es4Bj_k-zgLu0DU",
+      "configuration": {
+        "visibleFieldIds": [
+          "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+          "PVTF_lAHOAOk9es4Bj_k-zhix4CQ",
+          "PVTF_lAHOAOk9es4Bj_k-zhix4Cc",
+          "PVTF_lAHOAOk9es4Bj_k-zhix4C0",
+          "PVTSSF_lAHOAOk9es4Bj_k-zhix4E4",
+          "PVTF_lAHOAOk9es4Bj_k-zhix4DE",
+          "PVTSSF_lAHOAOk9es4Bj_k-zhix4GE",
+          "PVTF_lAHOAOk9es4Bj_k-zhix4Ck",
+          "PVTF_lAHOAOk9es4Bj_k-zhix4HE"
+        ]
+      },
+      "preserved_filter": "is:pr is:open",
+      "response": {
+        "id": "PVTV_lAHOAOk9es4Bj_k-zgLu0DU",
+        "name": "PR review queue",
+        "layout": "TABLE_LAYOUT",
+        "filter": "is:pr is:open"
+      }
+    },
+    {
+      "operation": "updateProjectV2ItemFieldValue",
+      "item": "PVTI_lAHOAOk9es4Bj_k-zg7tqFE",
+      "field": "Delivery",
+      "before": "In review",
+      "value": "Merged",
+      "response": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg7tqFE"
+      }
+    }
+  ],
+  "finished_at": "2026-09-20T19:06:47.539085+00:00"
+}

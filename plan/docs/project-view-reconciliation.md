@@ -1,5 +1,15 @@
 # GOV-02 saved-view reconciliation
 
+**Current-state correction (2026-09-20):** Owner `aloerch` merged PR #52 at
+`fc77ab978e567ce5d55e3428d1249a3b332da09d` on 2026-09-19T21:54:27Z.
+Live GOV-02 Delivery has now been reconciled to **Merged**, with its Evidence
+link retained. The earlier In review/Blocked statements below describe the
+historical review sequence; their requested owner review has occurred.
+Previously accepted settings and the explicit roadmap limitation require no
+repeat verification. See [the separate PR queue correction](pr-review-visibility.md)
+for the new incremental-review visibility evidence. No Released or product
+acceptance claim follows from this governance merge.
+
 GOV-02 is now **In review** in [PR #52](https://github.com/aloerch/ambisgis-platform/pull/52). The owner resolved the review filter and reported that the roadmap has no visible-fields picker. The unsupported instruction to hide Status through that picker is withdrawn; the exact layout limitation is retained for review below. At the initial follow-up readback, live Delivery still read **Blocked**; the later verified review transition is recorded below. No approval, merge or whole-task completion is claimed. FND-02 continues independently.
 
 This reconciliation uses the owner's [initial 2026-09-19 verification](https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5744517566), [follow-up at 21:19:59 UTC](https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5745381847), and [fresh supported GraphQL readback](../verification/project-view-followup-readback.json) captured at `2026-09-19T21:25:32.834870+00:00`. The [earlier 19:05:54 UTC capture](../verification/project-view-readback.json) is preserved as historical evidence. The agent did not personally inspect the UI. The initial comment's unfilled “Remaining exceptions” placeholder is not additional evidence.

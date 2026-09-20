@@ -1,0 +1,27 @@
+Read-only preflight diagnostics — 2026-09-20
+
+1. Introspection query used __Type.inputFields three times.
+GitHub response: INTROSPECTION_LIMIT_EXCEEDED
+"Introspection fields may only be used 2 times, but some fields were used more than that: __Type.inputFields (3)"
+The adapter rejected partial/error data. Removed the third introspection from
+this query; ProjectV2ViewConfigurationInput was already verified separately
+by the adapter capabilities query. Subsequent introspection passed.
+
+2. Passing the saved GraphQL file with its leading comments to _graphql
+failed local classification:
+GitHubAPIError: GraphQL operation does not match its read/write classification.
+Removed comment lines before submitting the unchanged read-only query.
+Subsequent supported readback passed. No mutation followed either failed read.
+
+3. Searching java-resolution-validation* found no matching file. Located
+previous validation environment in project-view-integration-validation.txt.
+Host python3 import jsonschema failed with ModuleNotFoundError.
+Verified the existing /tmp/ambisgis-validation-venv/bin/python import instead;
+all required checks ran there, with no installation or scope escalation.
+
+4. Final PR publication verification initially invoked unittest discovery
+from the repository root instead of plan/. It failed before running tests:
+ImportError: Start directory is not importable: 'tests'.
+Full diagnostic: pr-review-wrong-directory.txt. Corrected the working directory
+to plan/ and reran both required commands; this invocation is not counted as
+any passing test. The earlier 176 passing tests already ran from plan/.

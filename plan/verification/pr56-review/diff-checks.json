@@ -1,0 +1,25 @@
+[
+  {
+    "label": "incoming-history",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit": 2,
+    "raw_output": "/home/revelberry/Projects/AmbisGIS/source-archives/pr-review-visibility/preparation-20260920-01/incoming-history-diff-check.txt",
+    "sha256": "b720407eb15eb8010e158c04f6847a50fbd88b542e3292021ae9105f80af8b1f"
+  },
+  {
+    "label": "scoped",
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "origin/ambisgis/main",
+      "--check"
+    ],
+    "exit": 0
+  }
+]
