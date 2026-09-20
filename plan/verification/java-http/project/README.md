@@ -101,3 +101,16 @@ unchanged 70-item baseline. Raw snapshots, pagination, request/response bodies,
 comparison and executed script are retained in the new output directory.
 Seven offline comparator/transport tests pass; no live call was made while
 preparing this helper. Their evidence is in `../reviews/project-snapshot-helper-tests.*`.
+
+## PR #58 publication
+
+The authorized addition made exactly two Project mutations: add PR content
+`PR_kwDOUhI-d88AAAABEWBeXA` as item `PVTI_lAHOAOk9es4Bj_k-zg73LaU`, and set Evidence
+to the PR URL plus parent issue #3. No existing item was changed. The complete
+post-write [outcome](publication-outcome.json) passes every preservation check:
+71 total items, 66 unique tasks, five unique PRs, no archived items, only #58 in
+the unchanged `is:pr is:open` queue, FND-02 In progress and GOV-02 Merged.
+All 111 connection pages terminate; all prior values and the reconciled human
+view-column order match. Existing assignee/label values are not expanded by the
+adapter; this run did not write them. The [manifest](publication-manifest.json)
+references retained complete queries/readbacks without duplicating them.

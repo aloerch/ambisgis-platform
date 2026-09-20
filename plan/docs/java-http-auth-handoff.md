@@ -3,8 +3,12 @@
 This is a tested development candidate in `aloerch/ambisgis-platform`, branch
 `fnd-02/java-http-auth-compatibility`, based on
 `a9ec191658be027b40118fd35e145729202fe55d`. It does not complete FND-02 or accept a
-GIS release. Exact publication identity will be recorded in the PR and publication
-receipt after the final checks.
+GIS release. The candidate is [PR #58](https://github.com/aloerch/ambisgis-platform/pull/58),
+open against `ambisgis/main`. Tested implementation commit `54b2f8cf13edad7075a13b3636e9163697d16560` has tree
+`6e9bc21f74fde6b7cccd62b0a5dfa276d7da7021`. The following publication-only commit changes documentation and tracking
+evidence; its final head is recorded in the PR and task issue comment. The
+[publication receipt](../verification/java-http/publication.json) binds exact
+repository, branch, PR and Project item identities.
 
 ## Prerequisites and workspace
 
@@ -172,3 +176,26 @@ store, followed by a patched aggregate packaging check. Preserve inherited skips
 and source gaps; do not claim the fixture IDP as actual GeoNode server acceptance. The owner reviews this one development PR and its
 security-sensitive changes; no merge, auto-merge, deployment or release is
 performed by this session.
+
+## Publication and owner action
+
+PR #58 is open and was read back as mergeable; auto-merge is disabled and no
+GitHub status checks were reported. Project #2 now has 66 task items and five PR
+items = 71, with only #58 matching the saved `is:pr is:open` queue. Exactly two
+Project mutations added that one content ID and set its parent Evidence link.
+The complete readback preserved all 70 prior items/archive decisions, represented
+task values, seven views including human column order, 24 fields and 15 repository
+links. No Task ID, Delivery or Review gate was assigned to the PR.
+[Publication readback](../verification/java-http/project/publication-outcome.json)
+records 111 fully terminated connection pages; raw readback is retained outside
+Git by hash. Existing assignee/label values are not expanded by the inherited
+adapter and were not written.
+
+Owner review should inspect the OAuth diagnostic/principal candidates, trusted-test
+egress limitations and independent evidence before merging this development PR.
+That gate blocks merging/acceptance, not the separately bounded engineering next
+step above. FND-02 remains In progress; neither this PR nor its future merge would
+complete source closure, security, licenses or release acceptance. Remote changes
+are the task claim/handoff comments, this feature branch/PR and its one Project
+item/Evidence link. No PR merge, automatic merge, branch deletion, fork default,
+workflow, secret, production service or release was changed.

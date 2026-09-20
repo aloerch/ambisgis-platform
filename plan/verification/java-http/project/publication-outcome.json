@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "all_prior_items_preserved": true,
+    "prior_archive_decisions_preserved": true,
+    "66_unique_task_ids": true,
+    "all_task_fields_preserved": true,
+    "project_identity_and_configuration_preserved": true,
+    "all_view_configuration_and_human_order_preserved": true,
+    "fnd02_in_progress_gov02_merged": true,
+    "no_parent_acceptance_fields_on_pr_items": true,
+    "unique_item_and_pr_content_ids": true,
+    "expected_total_and_pr_counts": true,
+    "only_expected_new_item": true,
+    "expected_pr_identity": true,
+    "expected_pr_item_unarchived_and_parent_linked": true,
+    "all_pagination_complete": true
+  },
+  "added_items": [
+    {
+      "id": "PVTI_lAHOAOk9es4Bj_k-zg73LaU",
+      "isArchived": false,
+      "type": "PULL_REQUEST",
+      "content": {
+        "__typename": "PullRequest",
+        "id": "PR_kwDOUhI-d88AAAABEWBeXA",
+        "number": 58,
+        "url": "https://github.com/aloerch/ambisgis-platform/pull/58",
+        "repository": {
+          "nameWithOwner": "aloerch/ambisgis-platform"
+        }
+      },
+      "field_values": [
+        {
+          "__typename": "ProjectV2ItemFieldRepositoryValue"
+        },
+        {
+          "__typename": "ProjectV2ItemFieldTextValue",
+          "text": "FND-02: verify controlled Java HTTP fixtures and OAuth guards",
+          "field": {
+            "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+            "name": "Title"
+          }
+        },
+        {
+          "__typename": "ProjectV2ItemFieldTextValue",
+          "text": "https://github.com/aloerch/ambisgis-platform/pull/58 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3",
+          "field": {
+            "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+            "name": "Evidence"
+          }
+        },
+        {
+          "__typename": "ProjectV2ItemFieldSingleSelectValue",
+          "name": "Todo",
+          "optionId": "f75ad846",
+          "field": {
+            "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4CU",
+            "name": "Status"
+          }
+        }
+      ],
+      "values": {
+        "Title": "FND-02: verify controlled Java HTTP fixtures and OAuth guards",
+        "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/58 ; parent task https://github.com/aloerch/ambisgis-platform/issues/3",
+        "Status": "Todo"
+      }
+    }
+  ],
+  "removed_items": [],
+  "changed_prior_items": [],
+  "expected_pr": {
+    "id": "PR_kwDOUhI-d88AAAABEWBeXA",
+    "number": 58,
+    "url": "https://github.com/aloerch/ambisgis-platform/pull/58",
+    "state": "OPEN",
+    "isDraft": false,
+    "mergedAt": null,
+    "mergedBy": null,
+    "mergeCommit": null,
+    "headRefName": "fnd-02/java-http-auth-compatibility",
+    "headRefOid": "54b2f8cf13edad7075a13b3636e9163697d16560",
+    "baseRefName": "ambisgis/main",
+    "author": {
+      "login": "aloerch"
+    },
+    "headRepository": {
+      "id": "R_kgDOUhI-dw",
+      "nameWithOwner": "aloerch/ambisgis-platform"
+    }
+  },
+  "task_count": 66,
+  "pr_item_count": 5,
+  "total_items": 71,
+  "archived_item_count": 0,
+  "queue_membership": [
+    58
+  ],
+  "captured_at": "2026-09-20T23:00:41.207835+00:00",
+  "read_only": true,
+  "mutation_count": 0,
+  "all_checks_passed": true,
+  "baseline": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-http-auth/project-before/readback.json",
+    "sha256": "dd75e6b79f60a333230313babaf66fcb3ca4377339ca8b84c4cf7cb79852c9e3"
+  },
+  "local": {
+    "repository": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-http",
+    "branch": "fnd-02/java-http-auth-compatibility",
+    "head": "54b2f8cf13edad7075a13b3636e9163697d16560"
+  },
+  "gh_sha256": "ea857a3f0f7d4276cf5848b236542c5048e2eaa7bdd1b6ddec238f8793e74bff",
+  "adapter_sha256": "2285d2ba5eb367df7f8e641399011bed237d60febb8dc1393f96d653f197cfd9",
+  "queue_filter": "is:pr is:open",
+  "queue_membership_method": "Fully paginated API content plus live PR state and saved filter; not browser inspection",
+  "pagination": {
+    "connections": 111,
+    "pages": 111,
+    "archive_query": "archivedStates:[ARCHIVED,NOT_ARCHIVED]"
+  },
+  "limitations": [
+    "Inherited adapter does not expand assignee/label values.",
+    "Comparison never writes or resets human planning changes.",
+    "Human view ordering is compared to the reconciled project-before, not the older PR56 preparation."
+  ]
+}
