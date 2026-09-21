@@ -177,3 +177,14 @@ pixels for the omitted layer's marker color in every known feature neighborhood.
 The same color tolerances apply to presence and absence checks. This rejects a
 combined cached response or ignored `LAYERS` parameter, in addition to detecting
 missing requested content.
+
+`runtime-03` passed the full functional witness and cleanup, including legible UI
+text and all six server HTTP responses. Visual review still identified the source
+font manager's optional Open Sans installation failure under loopback containment.
+Exact `qgsfontmanager.cpp` defines `fonts/downloadMissingFonts` (default true) and
+returns before attempting a download when false. The disposable fixture profile
+now disables that optional acquisition; desktop verifies the effective setting
+and records, without dismissing, all remaining message-bar text. An installation
+failure still fails the witness. No additional fonts are acquired and no browser
+or transport security control changes. Final acceptance requires a fresh attempt
+with this setting; the previous functional pass and its warning remain retained.

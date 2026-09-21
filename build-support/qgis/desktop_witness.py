@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 import time
 
-from qgis.core import QgsProject, QgsRectangle
+from qgis.core import QgsProject, QgsRectangle, QgsSettings
 from qgis.PyQt.QtCore import QTimer, Qt
 from qgis.PyQt.QtGui import QFontInfo, QImage, QPainter, QRawFont
 from qgis.PyQt.QtWidgets import QApplication
@@ -76,6 +76,9 @@ class DesktopWitness:
             if self.phase == 0:
                 require(iface is not None and iface.mainWindow().isVisible(), 'real QGIS desktop not visible in offscreen window system')
                 require(Path('/proc/self/exe').resolve() == Path(CONFIG['desktop']).resolve(), 'wrong desktop executable')
+                require(QgsSettings().value('fonts/downloadMissingFonts',True,type=bool) is False,
+                        'optional font downloads were not disabled in the disposable profile')
+                self.report['font_downloads_enabled'] = False
                 self.report['font'] = desktop_font_witness()
                 self.report['layers_initial'] = check_layers(QgsProject.instance())
                 iface.mainWindow().resize(1200,950)
@@ -102,6 +105,10 @@ class DesktopWitness:
                     self.canvas.setExtent(QgsRectangle(0,0,4,4)); self.canvas.refresh(); self.phase = 4
                     self.report['phases'].append('save action, clear desktop project, reopen saved file')
                 elif self.phase == 4:
+                    self.report['startup_messages'] = [item.text() for item in iface.messageBar().items()]
+                    require(not any('font installation failed' in message.lower()
+                                    for message in self.report['startup_messages']),
+                            'optional font download failure remained in desktop')
                     self.capture('desktop-reopened')
                     self.report['loaded_origins'] = loaded_origins(CONFIG)
                     self.report['provider_origins'] = provider_origins(CONFIG)

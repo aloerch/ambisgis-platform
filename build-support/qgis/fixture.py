@@ -103,6 +103,8 @@ def generate(config):
         # Exact app/main.cpp reads these before constructing desktop widgets.
         settings.setValue('app/fontFamily',font_families[0])
         settings.setValue('app/fontPointSize',12)
+        # Exact QgsFontManager checks this before attempting optional downloads.
+        settings.setValue('fonts/downloadMissingFonts',False)
         settings.setValue('core/httpsfeedqgisorg/disabled',True)
         settings.setValue('qgis/checkVersion',False); settings.setValue('plugins/checkOnStart',False); settings.sync()
         report = {'result_exit_code':0,'assets':assets,'layers':layers,'qgis_version':Qgis.QGIS_VERSION,
