@@ -5,13 +5,34 @@ from pathlib import Path
 import time
 
 from qgis.core import QgsProject, QgsRectangle
-from qgis.PyQt.QtCore import QTimer
-from qgis.PyQt.QtGui import QImage
+from qgis.PyQt.QtCore import QTimer, Qt
+from qgis.PyQt.QtGui import QFontInfo, QImage, QPainter, QRawFont
+from qgis.PyQt.QtWidgets import QApplication
 from qgis.utils import iface
 from runtime_common import check_layers, image_witness, loaded_origins, provider_origins, python_origins, require, save, sha
 
 CONFIG = json.loads(Path(os.environ['AMBISGIS_QGIS_RUNTIME_CONFIG']).read_text())
 OUTPUT = Path(CONFIG['output'])
+
+
+def desktop_font_witness():
+    expected = json.loads((OUTPUT/'fixture-result.json').read_text())['font']['families'][0]
+    font = QApplication.font()
+    require(QFontInfo(font).family() == expected, 'desktop did not select retained UI font')
+    require(QFontInfo(iface.mainWindow().menuBar().font()).family() == expected,
+            'desktop menu did not inherit retained UI font')
+    text = 'F02-04 QGIS local_points database_points'
+    raw = QRawFont.fromFont(font)
+    require(raw.isValid() and all(raw.glyphIndexesForString(text)), 'desktop UI font lacks fixture glyphs')
+    image = QImage(600,64,QImage.Format_ARGB32); image.fill(Qt.white)
+    painter = QPainter(image); painter.setFont(font); painter.setPen(Qt.black)
+    painter.drawText(10,36,text); painter.end()
+    dark = sum(max(image.pixelColor(x,y).getRgb()[:3]) < 128
+               for x in range(image.width()) for y in range(image.height()))
+    require(dark > 100, 'desktop default font renders blank text')
+    path = OUTPUT/'desktop-ui-font.png'; require(image.save(str(path)), 'desktop font capture failed')
+    return {'family':QFontInfo(font).family(),'point_size':font.pointSizeF(),
+            'glyphs_available':True,'dark_pixels':dark,'render_sha256':sha(path)}
 
 
 class DesktopWitness:
@@ -55,6 +76,7 @@ class DesktopWitness:
             if self.phase == 0:
                 require(iface is not None and iface.mainWindow().isVisible(), 'real QGIS desktop not visible in offscreen window system')
                 require(Path('/proc/self/exe').resolve() == Path(CONFIG['desktop']).resolve(), 'wrong desktop executable')
+                self.report['font'] = desktop_font_witness()
                 self.report['layers_initial'] = check_layers(QgsProject.instance())
                 iface.mainWindow().resize(1200,950)
                 self.canvas.setExtent(QgsRectangle(0,0,4,4)); self.canvas.refresh()

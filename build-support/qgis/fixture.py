@@ -62,6 +62,8 @@ def generate(config):
         require(Path(qgis._core.__file__).resolve().is_relative_to(Path(config['qgis_prefix']).resolve()), 'host PyQGIS imported')
         font_id = QFontDatabase.addApplicationFont(config['font_file'])
         require(font_id >= 0, 'retained font failed to load')
+        font_families = QFontDatabase.applicationFontFamilies(font_id)
+        require(bool(font_families), 'retained font has no family')
         assets = make_data(output, config['gdal_library'])
         project = QgsProject.instance(); project.setCrs(QgsCoordinateReferenceSystem('EPSG:4326'))
         project.setTitle('F02-04 synthetic spatial witness')
@@ -98,12 +100,15 @@ def generate(config):
         require(abs(intersection.area()-1.0)<1e-12 and intersection.isGeosEqual(QgsGeometry.fromWkt('POLYGON((1 1,2 1,2 2,1 2,1 1))')), 'GEOS intersection failed')
         profile = output/'profiles/profiles/f02-04/QGIS/QGIS3.ini'; profile.parent.mkdir(parents=True)
         settings = QSettings(str(profile), QSettings.IniFormat)
+        # Exact app/main.cpp reads these before constructing desktop widgets.
+        settings.setValue('app/fontFamily',font_families[0])
+        settings.setValue('app/fontPointSize',12)
         settings.setValue('core/httpsfeedqgisorg/disabled',True)
         settings.setValue('qgis/checkVersion',False); settings.setValue('plugins/checkOnStart',False); settings.sync()
         report = {'result_exit_code':0,'assets':assets,'layers':layers,'qgis_version':Qgis.QGIS_VERSION,
             'project_sha256':sha(output/'fixture.qgs'),'bindings':str(qgis._core.__file__),
             'loaded_origins':loaded_origins(config),'provider_origins':provider_origins(config),'python_origins':python_origins(config),'font':{'path':config['font_file'],'sha256':sha(config['font_file']),
-                'families':QFontDatabase.applicationFontFamilies(font_id)},
+                'families':font_families},
             'crs':{'source':'EPSG:4326','target':'EPSG:3857','input':[1,1],'expected':expected,
                 'actual':[projected.x(),projected.y()],'tolerance_m':1e-6,'ballpark_allowed':False,'fallback_allowed':False,
                 'resource_sha256':sha(Path(os.environ['PROJ_DATA'])/'proj.db')},

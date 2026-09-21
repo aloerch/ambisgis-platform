@@ -161,3 +161,13 @@ had called `QApplication.exit` directly, bypassing exact `QgisApp::fileExit`'s
 Exit action; success still requires both a successful witness receipt and process
 exit zero. Each subprocess retains a separate command receipt even on nonzero
 exit, timeout or capture failure. The failed attempt is not accepted.
+
+Independent review of the second attempt also found blank interface text. The
+supervised `font-preflight-01` proved that the retained font was valid but the
+offscreen application's default font family was empty; explicit use of its
+`QGIS Vera Sans` family rendered real glyphs. Fixture profile generation now sets
+the exact source's `app/fontFamily` and `app/fontPointSize` settings before desktop
+widget construction. The desktop witness checks the actual application/menu font
+and glyph availability, and requires visible dark pixels when rendering with
+that existing application font. It never substitutes a font within the witness.
+Full application captures remain required for visual review.
