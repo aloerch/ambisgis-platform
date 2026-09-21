@@ -6,9 +6,10 @@ import tempfile
 import unittest
 from unittest.mock import patch
 import sys
+from types import SimpleNamespace
 
 sys.path.insert(0,str(Path(__file__).resolve().parent))
-from runtime_common import POINTS, SAMPLES, image_witness, inventory, loaded_origins
+from runtime_common import POINTS, SAMPLES, image_witness, inventory, loaded_origins, python_origins
 from runtime import build_environment, private_write, redact, validate_config
 from runtime_child import server
 
@@ -90,6 +91,12 @@ class RuntimeGuards(unittest.TestCase):
             self.assertNotEqual(config['provider_path'],env['QGIS_PLUGINPATH'])
             self.assertEqual([],list((root/'empty-plugins').iterdir()))
             self.assertEqual('disable',env['GDAL_DRIVER_PATH'])
+
+    def test_host_pyqt_module_fallback_rejected(self):
+        config={'qgis_prefix':'/tmp/staged-qgis','support_prefix':'/tmp/retained-support'}
+        with patch.dict(sys.modules,{'PyQt5.QtCore':SimpleNamespace(__file__='/usr/lib64/python3.13/site-packages/PyQt5/QtCore.so')}):
+            with self.assertRaisesRegex(AssertionError,'unretained Python binding module'):
+                python_origins(config)
 
     def test_empty_profile_rejected(self):
         with self.assertRaisesRegex(AssertionError,'retained input'): validate_config({})

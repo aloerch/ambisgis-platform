@@ -48,6 +48,10 @@ def loaded_origins(config, pid=None):
     for p in names:
         if Path(p).name.startswith(('libqgis_', 'libprovider_')):
             require(Path(p).resolve().is_relative_to(roots[0]), 'unretained QGIS library/provider mapping')
+        if '/PyQt5/' in p:
+            require(Path(p).resolve().is_relative_to(roots[3]), 'unretained PyQt binding mapping')
+        if '/qgis/_' in p:
+            require(Path(p).resolve().is_relative_to(roots[0]), 'unretained QGIS binding mapping')
     selected = {}
     for prefix, allowed in expectations.items():
         found = sorted(p for p in names if Path(p).name.startswith(prefix))
@@ -149,3 +153,19 @@ def provider_origins(config):
     return {'native_registry_directory': str(actual), 'application_plugin_path': QgsApplication.pluginPath(),
             'optional_python_plugin_path': os.environ.get('QGIS_PLUGINPATH'),
             'core_linked_providers': ['ogr', 'gdal'], 'dynamic_provider': 'postgres', 'resources': resources}
+
+
+def python_origins(config):
+    """Reject host-package fallback for both compiled and pure Python bindings."""
+    import sys
+    roots = {'qgis': Path(config['qgis_prefix']).resolve(), 'PyQt5': Path(config['support_prefix']).resolve()}
+    result = {}
+    for name, module in sorted(sys.modules.copy().items()):
+        family = name.split('.', 1)[0]
+        if family not in roots or not getattr(module, '__file__', None):
+            continue
+        path = Path(module.__file__).resolve()
+        require(path.is_relative_to(roots[family]), 'unretained Python binding module: '+name)
+        result[name] = {'path': str(path), 'sha256': sha(path)}
+    require('qgis._core' in result and 'PyQt5.QtCore' in result, 'required Python binding origins absent')
+    return result
