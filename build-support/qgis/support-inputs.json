@@ -1194,6 +1194,66 @@
       "publisher_digest": "44985f4f2d2ffb8b97a17fa7bffcc2fdf1ec2b6b825d6a1dc73c8586c5d242cdcde578914d296ce9e660564e520e8dae5460ab6f6564cb548fccc1f4dd865cf9",
       "source_rpm": "Mesa-26.2.2-2.1.src.rpm",
       "license": "MIT"
+    },
+    {
+      "name": "libfcgi0",
+      "arch": "x86_64",
+      "epoch": "0",
+      "version": "2.4.7",
+      "release": "1.7",
+      "location": "x86_64/libfcgi0-2.4.7-1.7.x86_64.rpm",
+      "publisher_digest_algorithm": "sha512",
+      "publisher_digest": "eb80d9cd77f282970af7bd24237354cb0cb9f2b67bf64bcc8deac695de1acef97c4901640a637fe74adfde2b8471df719f6ce1e2e54f7c8368c36f097d76b63a",
+      "source_rpm": "FastCGI-2.4.7-1.7.src.rpm",
+      "license": "OML"
+    },
+    {
+      "name": "freexl-devel",
+      "arch": "x86_64",
+      "epoch": "0",
+      "version": "2.0.0",
+      "release": "1.9",
+      "location": "x86_64/freexl-devel-2.0.0-1.9.x86_64.rpm",
+      "publisher_digest_algorithm": "sha512",
+      "publisher_digest": "599ec508923f14a19c9814f4854364dc33ed1dab6fcea6dc75b23bd1c153f266d1a4ff0f7e67c48ab139da6b4a7f0b11c7921d20856ffc25dc4d5d938672cdbd",
+      "source_rpm": "freexl-2.0.0-1.9.src.rpm",
+      "license": "GPL-2.0-or-later OR MPL-1.1 OR LGPL-2.1-or-later"
+    },
+    {
+      "name": "librttopo-devel",
+      "arch": "x86_64",
+      "epoch": "0",
+      "version": "1.1.0",
+      "release": "3.7",
+      "location": "x86_64/librttopo-devel-1.1.0-3.7.x86_64.rpm",
+      "publisher_digest_algorithm": "sha512",
+      "publisher_digest": "d8440cc2900f7b72ac75b9e5ed418ec4df1497a6c4dbb755e6bd51039ce2f85b043e6b67d8e170f265af13b7e4855bfd589b3d39dcec29afd6d4fcc4a46a05c3",
+      "source_rpm": "librttopo-1.1.0-3.7.src.rpm",
+      "license": "GPL-2.0-or-later"
+    },
+    {
+      "name": "minizip-devel",
+      "arch": "x86_64",
+      "epoch": "0",
+      "version": "1.3.1",
+      "release": "3.3",
+      "location": "x86_64/minizip-devel-1.3.1-3.3.x86_64.rpm",
+      "publisher_digest_algorithm": "sha512",
+      "publisher_digest": "2513888078d8fef9602488db6a31aa7572033e4676599ee2dc7ddf73ec23fd72573b9d8c60602cee5f3131225c7d4af1f3ed23a5a2b89f4cf37724b2a1cde413",
+      "source_rpm": "zlib-1.3.1-3.3.src.rpm",
+      "license": "Zlib"
+    },
+    {
+      "name": "timezone",
+      "arch": "x86_64",
+      "epoch": "0",
+      "version": "2026d",
+      "release": "1.1",
+      "location": "x86_64/timezone-2026d-1.1.x86_64.rpm",
+      "publisher_digest_algorithm": "sha512",
+      "publisher_digest": "e959fc7daabcadd3f82976db208148021244923c726a551d5259ccdcd86c9007e8f907ed6f51613f4ba01b5258f65cace7a964a85c1403981bb79bb5e36e1203",
+      "source_rpm": "timezone-2026d-1.1.src.rpm",
+      "license": "BSD-3-Clause AND LicenseRef-SUSE-Public-Domain"
     }
   ],
   "source_metadata": {
@@ -1693,6 +1753,18 @@
       "publisher_digest": "3644546640313bb6ca3a1613956a6d35fe2f140dc1241ffdf1b5aa25c44f51d03eb4b8ba429df01369e7e7ec786548444dc8ce13c17851f39131794d36db923a",
       "source_rpm": "",
       "license": "BSD-3-Clause AND GPL-3.0-or-later"
+    },
+    {
+      "name": "timezone",
+      "arch": "src",
+      "epoch": "0",
+      "version": "2026d",
+      "release": "1.1",
+      "location": "src/timezone-2026d-1.1.src.rpm",
+      "publisher_digest_algorithm": "sha512",
+      "publisher_digest": "fe41d365155b6b890e79763de8635d0df13ce23b3b5d38b0a6d6df7d89296c06b85263cb4168cfe1e709ef138e9cd9246207790b1060555451322f101e95eac0",
+      "source_rpm": "",
+      "license": "BSD-3-Clause AND LicenseRef-SUSE-Public-Domain"
     },
     {
       "name": "zlib",
