@@ -9,7 +9,7 @@ import sys
 from types import SimpleNamespace
 
 sys.path.insert(0,str(Path(__file__).resolve().parent))
-from runtime_common import POINTS, SAMPLES, image_witness, inventory, loaded_origins, python_origins
+from runtime_common import POINTS, SAMPLES, image_witness, inventory, loaded_origins, python_origins, selected_xml_origin
 from runtime import build_environment, private_write, redact, validate_config
 from runtime_child import server
 
@@ -84,13 +84,14 @@ class RuntimeGuards(unittest.TestCase):
         with tempfile.TemporaryDirectory() as name:
             root=Path(name); font=root/'fixture.ttf'; font.write_bytes(b'fixture font')
             config={'python':sys.executable,'qgis_prefix':name,'database_prefix':name,
-                    'spatial_prefix':name,'font_file':str(font),'qt_plugins':name,
+                    'spatial_prefix':name,'xml_prefix':str(root/'selected-xml'),'font_file':str(font),'qt_plugins':name,
                     'library_paths':[name],'python_paths':[name], 'provider_path':str(root/'native-providers')}
             env=build_environment(config,root)
             self.assertEqual(str(root/'empty-plugins'),env['QGIS_PLUGINPATH'])
             self.assertNotEqual(config['provider_path'],env['QGIS_PLUGINPATH'])
             self.assertEqual([],list((root/'empty-plugins').iterdir()))
             self.assertEqual('disable',env['GDAL_DRIVER_PATH'])
+            self.assertEqual(str(root/'selected-xml/lib'),env['LD_LIBRARY_PATH'].split(':')[0])
 
     def test_host_pyqt_module_fallback_rejected(self):
         config={'qgis_prefix':'/tmp/staged-qgis','support_prefix':'/tmp/retained-support'}
@@ -98,16 +99,32 @@ class RuntimeGuards(unittest.TestCase):
             with self.assertRaisesRegex(AssertionError,'unretained Python binding module'):
                 python_origins(config)
 
+    def test_original_or_host_xml_fallback_rejected(self):
+        config={'xml_prefix':'/tmp/retained-xml'}
+        for path in ('/usr/lib64/libxml2.so.2','/tmp/original-native/lib/libxml2.so.2'):
+            with self.subTest(path=path), self.assertRaisesRegex(AssertionError,'unselected libxml2 mapping'):
+                selected_xml_origin(config,[path])
+
+    def test_multiple_xml_mappings_rejected(self):
+        config={'xml_prefix':'/tmp/retained-xml'}
+        with self.assertRaisesRegex(AssertionError,'multiple libxml2'):
+            selected_xml_origin(config,['/tmp/retained-xml/lib/libxml2.so','/usr/lib64/libxml2.so.2'])
+
+    def test_exact_selected_xml_mapping_accepted(self):
+        config={'xml_prefix':'/tmp/retained-xml'}
+        path='/tmp/retained-xml/lib/libxml2.so'
+        self.assertEqual(path,selected_xml_origin(config,[path,path]))
+
     def test_empty_profile_rejected(self):
         with self.assertRaisesRegex(AssertionError,'retained input'): validate_config({})
 
     def test_missing_loaded_engine_is_failure(self):
-        config={key:'/tmp' for key in ('qgis_prefix','spatial_prefix','database_prefix','support_prefix')}
+        config={key:'/tmp' for key in ('qgis_prefix','spatial_prefix','database_prefix','support_prefix','xml_prefix')}
         with patch('pathlib.Path.read_text',return_value=''):
             with self.assertRaisesRegex(AssertionError,'mapping absent'): loaded_origins(config)
 
     def test_unretained_qgis_mapping_rejected(self):
-        config={key:'/tmp/retained' for key in ('qgis_prefix','spatial_prefix','database_prefix','support_prefix')}
+        config={key:'/tmp/retained' for key in ('qgis_prefix','spatial_prefix','database_prefix','support_prefix','xml_prefix')}
         with patch('pathlib.Path.read_text',return_value='1-2 r-xp 0 0:0 0 /usr/lib64/libqgis_core.so.3\n'):
             with self.assertRaisesRegex(AssertionError,'unretained QGIS'): loaded_origins(config)
 

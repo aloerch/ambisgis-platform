@@ -37,7 +37,7 @@ def redact(value, sensitive):
 
 def validate_config(config):
     for key in ('python','qgis_prefix','spatial_prefix','database_prefix','database_evidence',
-                'support_prefix','qt_plugins','font_file','gdal_library'):
+                'support_prefix','xml_prefix','qt_plugins','font_file','gdal_library'):
         require(key in config and Path(config[key]).is_absolute() and Path(config[key]).exists(), 'missing absolute retained input: '+key)
     for key in ('library_paths','python_paths'):
         require(isinstance(config.get(key),list) and config[key], 'explicit input paths required: '+key)
@@ -48,6 +48,9 @@ def validate_config(config):
         require(Path(config[key]).is_file() and Path(config[key]).is_relative_to(prefix), 'owned staged executable missing: '+key)
     require(Path(config['gdal_library']).resolve().is_relative_to(Path(config['spatial_prefix']).resolve()) or
             Path(config['gdal_library']).resolve().is_relative_to(Path(config['database_prefix']).resolve()), 'GDAL must come from retained native prefix')
+    xml = Path(config['xml_prefix']).resolve()
+    require((xml/'lib/libxml2.so').is_file() and (xml/'lib/libxml2.so').resolve().is_relative_to(xml),
+            'selected QGIS libxml2 artifact missing or outside its retained prefix')
     return config
 
 
@@ -60,11 +63,13 @@ def build_environment(config, output):
     if not font.exists(): shutil.copyfile(config['font_file'],font)
     (output/'fonts.conf').write_text('<?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd"><fontconfig><dir>'+escape(str(output/'fonts'))+'</dir><cachedir>'+escape(str(output/'font-cache'))+'</cachedir></fontconfig>\n')
     prefix = Path(config['qgis_prefix']); native = Path(config['database_prefix'])
+    xml_library = str(Path(config['xml_prefix']).resolve()/'lib')
+    library_paths = [xml_library, *[path for path in config['library_paths'] if Path(path).resolve() != Path(xml_library)]]
     env = {'PATH':str(Path(config['python']).parent)+':'+str(prefix/'bin')+':'+str(native/'bin')+':/usr/bin:/bin',
            'HOME':str(output/'home'),'LANG':'C.UTF-8','LC_ALL':'C.UTF-8',
            'XDG_CONFIG_HOME':str(output/'config'),'XDG_CACHE_HOME':str(output/'cache'),
            'XDG_DATA_HOME':str(output/'data'),'XDG_RUNTIME_DIR':str(output/'runtime-dir'),'TMPDIR':str(output/'tmp'),
-           'LD_LIBRARY_PATH':':'.join(config['library_paths']),
+           'LD_LIBRARY_PATH':':'.join(library_paths),
            'PYTHONPATH':str(HERE)+':'+':'.join(config['python_paths']),
            'PYTHONNOUSERSITE':'1','PYTHONPYCACHEPREFIX':str(output/'cache/python'),
            'QT_PLUGIN_PATH':config['qt_plugins'],'QT_QPA_PLATFORM':'offscreen',
@@ -116,7 +121,7 @@ def run(config_path, output):
         config = validate_config(json.loads(config_path.read_text()))
         config.update(output=str(output),config_path=str(output/'runtime-config.json'),pgpass=str(output/'pgpass'))
         environment = build_environment(config,output)
-        roots = {key:Path(config[key]).resolve() for key in ('qgis_prefix','spatial_prefix','database_prefix')}
+        roots = {key:Path(config[key]).resolve() for key in ('qgis_prefix','spatial_prefix','database_prefix','xml_prefix')}
         before = {key:inventory(path) for key,path in roots.items()}
         save(output/'artifact-integrity-before.json',before)
         tooling = output/'tooling'

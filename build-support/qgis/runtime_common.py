@@ -32,6 +32,18 @@ def inventory(root):
             if p.is_file() and '__pycache__' not in p.parts}
 
 
+def selected_xml_origin(config, mapped_files):
+    """Require one mapped libxml2, exactly the selected QGIS-specific build."""
+    require('xml_prefix' in config, 'selected xml_prefix is required')
+    root = Path(config['xml_prefix']).resolve()
+    expected = (root/'lib/libxml2.so').resolve()
+    require(expected.is_relative_to(root), 'selected libxml2 link escapes its retained prefix')
+    found = {Path(path).resolve() for path in mapped_files if Path(path).name.startswith('libxml2.so')}
+    require(len(found) == 1, 'required libxml2 mapping absent or multiple libxml2 copies loaded')
+    require(found == {expected}, 'unselected libxml2 mapping; original native or host fallback is forbidden')
+    return str(expected)
+
+
 def loaded_origins(config, pid=None):
     """Actual mappings, with selected engines constrained to retained prefixes."""
     pid = pid or os.getpid()
@@ -44,6 +56,7 @@ def loaded_origins(config, pid=None):
     expectations = {'libqgis_core': roots[:1], 'libgdal.so': roots[1:3],
                     'libproj.so': roots[1:3], 'libgeos_c.so': roots[1:3],
                     'libpq.so': roots[1:3], 'libQt5Core.so': roots[3:],
+                    'libxml2.so': [Path(config['xml_prefix']).resolve()],
                     'libprovider_postgres.so': [Path(config.get('provider_path', roots[0]/'lib/qgis/plugins')).resolve()]}
     for p in names:
         if Path(p).name.startswith(('libqgis_', 'libprovider_')):
@@ -52,6 +65,7 @@ def loaded_origins(config, pid=None):
             require(Path(p).resolve().is_relative_to(roots[3]), 'unretained PyQt binding mapping')
         if '/qgis/_' in p:
             require(Path(p).resolve().is_relative_to(roots[0]), 'unretained QGIS binding mapping')
+    selected_xml_origin(config, names)
     selected = {}
     for prefix, allowed in expectations.items():
         found = sorted(p for p in names if Path(p).name.startswith(prefix))

@@ -16,7 +16,7 @@ public JSON configuration and a **new** retained attempt directory:
 ```
 
 Required configuration keys are `python`, `qgis_prefix`, `spatial_prefix`,
-`database_prefix`, `database_evidence`, `support_prefix`, `qt_plugins`,
+`database_prefix`, `database_evidence`, `support_prefix`, `xml_prefix`, `qt_plugins`,
 `font_file`, `gdal_library`, `library_paths` and `python_paths`. Paths are absolute;
 the last two values are ordered directory lists. `spatial_prefix` may be the
 separate QGIS GDAL extension prefix; `database_prefix` remains the verified
@@ -124,3 +124,13 @@ The retained complete attempt receipts control desktop/server evidence state.
 GDAL close/flush return-value guard, under the unchanged loopback supervisor.
 Its retained script snapshots and verified network receipt establish egress
 containment for that data-generation preflight; QGIS runtime remains separate.
+
+The explicit `xml_prefix` selects the separately built libxml2 2.14.6 profile
+with its HTTP compatibility API required by retained SpatiaLite. Its `lib` directory
+is prepended to QGIS runtime library search even if a caller supplied a different
+order. Every actual runtime must map exactly one libxml2, resolving to that
+prefix's `lib/libxml2.so`; host and original native-library fallback both fail.
+The XML prefix participates in before/after integrity checks. PostgreSQL's
+unchanged helper environment continues using only its original verified prefix;
+this QGIS-only dependency selection does not overwrite or replace that database
+profile. HTTP API availability does not relax loopback egress enforcement.
