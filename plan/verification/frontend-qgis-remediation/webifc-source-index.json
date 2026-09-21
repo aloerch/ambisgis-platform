@@ -1,0 +1,418 @@
+{
+  "status": "inventory-requires-success-receipt",
+  "version": "0.0.50",
+  "source_revision": "b55d8bde10067415d4536b23c27edcc13acf217c",
+  "source_tree": "bdda258d5fbfe4abebdbc057d58e17436dc9c585",
+  "lock_sha256": "2acaf74533658f8c54423449487d9a520a9c0eb51ae3906976a3cc618b90470f",
+  "sources": [
+    {
+      "name": "webifc",
+      "revision": "b55d8bde10067415d4536b23c27edcc13acf217c",
+      "repository": "https://github.com/ThatOpen/engine_web-ifc",
+      "archive": {
+        "path": "webifc-source.tar.gz",
+        "bytes": 112889803,
+        "sha256": "8da14825b1b205766a1d762fe687749c58ca1228dc0db8273cad0f1e63461333"
+      }
+    },
+    {
+      "name": "fastfloat",
+      "revision": "2b2395f9ac836ffca6404424bcc252bff7aa80e4",
+      "repository": "https://github.com/fastfloat/fast_float",
+      "archive": {
+        "path": "dependencies/fastfloat-2b2395f9ac836ffca6404424bcc252bff7aa80e4.tar.gz",
+        "bytes": 84808,
+        "sha256": "230d20e4e4ac1f6a9df92c4d746c6ec536cdb0c085bc8635d4b88cead5dc22cb"
+      }
+    },
+    {
+      "name": "tinynurbs",
+      "revision": "2fc6562d71665312c6298f7c340bace1bcf1b7a1",
+      "repository": "https://github.com/pradeep-pyro/tinynurbs",
+      "archive": {
+        "path": "dependencies/tinynurbs-2fc6562d71665312c6298f7c340bace1bcf1b7a1.tar.gz",
+        "bytes": 466448,
+        "sha256": "7f3063c864353970f3262bfc31cf014ee3b484938ad6a0db4e01a7c647d2967d"
+      }
+    },
+    {
+      "name": "tinycpptest",
+      "revision": "12e42c8ac6e032ce450fb3f772ebdfd1ddc6008c",
+      "repository": "https://github.com/kovacsv/TinyCppTest",
+      "archive": {
+        "path": "dependencies/tinycpptest-12e42c8ac6e032ce450fb3f772ebdfd1ddc6008c.tar.gz",
+        "bytes": 5122,
+        "sha256": "256c4889a313eea0727fcf01eebdf61234fbdf1a47241df6a53f73186287ba1d"
+      }
+    },
+    {
+      "name": "glm",
+      "revision": "bf71a834948186f4097caa076cd2663c69a10e1e",
+      "repository": "https://github.com/g-truc/glm",
+      "archive": {
+        "path": "dependencies/glm-bf71a834948186f4097caa076cd2663c69a10e1e.tar.gz",
+        "bytes": 4369431,
+        "sha256": "70ad78e872c145f0164d54da833b651914c184edc65958906937b9739fb8fb1b"
+      }
+    },
+    {
+      "name": "earcut",
+      "revision": "4811a2b69b91f6127a75e780de6e2113609ddabb",
+      "repository": "https://github.com/mapbox/earcut.hpp",
+      "archive": {
+        "path": "dependencies/earcut-4811a2b69b91f6127a75e780de6e2113609ddabb.tar.gz",
+        "bytes": 160535,
+        "sha256": "312dc29d1bfb0bf2246f82aa8154be7ce0ff771455ea703dd2d6c1b236c9a7bd"
+      }
+    },
+    {
+      "name": "cdt",
+      "revision": "4d0c9026b8ec846fe544897e7111f8f9080d5f8a",
+      "repository": "https://github.com/artem-ogre/CDT",
+      "archive": {
+        "path": "dependencies/cdt-4d0c9026b8ec846fe544897e7111f8f9080d5f8a.tar.gz",
+        "bytes": 1543987,
+        "sha256": "2e0b35429d29482402f22ac788336019385582d73cfccadf85e7c4970b1fee0c"
+      }
+    },
+    {
+      "name": "spdlog",
+      "revision": "7e635fca68d014934b4af8a1cf874f63989352b7",
+      "repository": "https://github.com/gabime/spdlog",
+      "archive": {
+        "path": "dependencies/spdlog-7e635fca68d014934b4af8a1cf874f63989352b7.tar.gz",
+        "bytes": 251147,
+        "sha256": "1010aa76cdea700e8c693aa29e58ceb0ea51c8f020e2b15c81318e2c05562aec"
+      }
+    },
+    {
+      "name": "fuzzy",
+      "revision": "28251ebc68144e9b4613e0c289304c040e01ccf8",
+      "repository": "https://github.com/tomvandig/fuzzy-bools",
+      "archive": {
+        "path": "dependencies/fuzzy-28251ebc68144e9b4613e0c289304c040e01ccf8.tar.gz",
+        "bytes": 603565,
+        "sha256": "ac5e2ede2e033d6b1d95ac1c1141e0a101ef6be20c54c3ed092dd8e37c0f9289"
+      }
+    }
+  ],
+  "source_members_manifest": {
+    "path": "source-members.json",
+    "bytes": 543114,
+    "sha256": "c8235cd3301f41cf7aeb814c2e904ad5b3bbfc7f9f81cd4a4a1128bd152c96f8"
+  },
+  "notices": [
+    {
+      "path": "notices/webifc/LICENSE.md",
+      "bytes": 16770,
+      "sha256": "40fb05c51ff5e96285f32fba1783a22dccc26871791c378b1e7986e9046c8d5d"
+    },
+    {
+      "path": "notices/fastfloat/LICENSE-APACHE",
+      "bytes": 10767,
+      "sha256": "097a889aa954d04e088b790b10a4014d6189561d0a6013935a73ce3d4ddaaf06"
+    },
+    {
+      "path": "notices/fastfloat/LICENSE-BOOST",
+      "bytes": 1337,
+      "sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b"
+    },
+    {
+      "path": "notices/fastfloat/LICENSE-MIT",
+      "bytes": 1079,
+      "sha256": "e562f3f974ced7e69dd1db77b820b36bcf8f30377f1aa105723fba449c53c4e6"
+    },
+    {
+      "path": "notices/tinynurbs/LICENSE",
+      "bytes": 1523,
+      "sha256": "1347f9b571f2b03cbfc494d9dbc205e0c04250f6d982e79b186c0b886314a40a"
+    },
+    {
+      "path": "notices/tinycpptest/LICENSE.md",
+      "bytes": 1070,
+      "sha256": "e8fbb8711bd456d1be53e4a2dfc4c70ddd29f67c5c04d050273a12287a2429dd"
+    },
+    {
+      "path": "notices/glm/copying.txt",
+      "bytes": 2865,
+      "sha256": "62d2d642c7d054d4fb4c9b42faad617d6c88fcd91e317f8035aa9f277cc159c3"
+    },
+    {
+      "path": "notices/earcut/LICENSE",
+      "bytes": 738,
+      "sha256": "828f2aed51b6526881a236758ec9b08cd69928fbfc70346d9d44a0b3a3444fe1"
+    },
+    {
+      "path": "notices/earcut/test/comparison/libtess2/LICENSE.txt",
+      "bytes": 1577,
+      "sha256": "582c43ef2eb5aba92c6fb92913194a966989ffb044aef5dee0e37590029a86a5"
+    },
+    {
+      "path": "notices/cdt/CDT/LICENSE",
+      "bytes": 16726,
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+    },
+    {
+      "path": "notices/cdt/LICENSE",
+      "bytes": 16726,
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+    },
+    {
+      "path": "notices/cdt/docs/doxygen-custom/doxygen-awesome/LICENSE",
+      "bytes": 1065,
+      "sha256": "a848f4935f110d45ae18cc4149b9613776648c6dc5e596f247b501b3d2503134"
+    },
+    {
+      "path": "notices/cdt/visualizer/LICENSE",
+      "bytes": 16726,
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+    },
+    {
+      "path": "notices/spdlog/LICENSE",
+      "bytes": 1348,
+      "sha256": "a7241a379cb98d37788f82c2fc2e484c3ae85dae881fd3406f0637644850926f"
+    },
+    {
+      "path": "notices/spdlog/include/spdlog/fmt/bundled/fmt.license.rst",
+      "bytes": 1408,
+      "sha256": "825c9324e70f8c839c8ba910543dd4a7daee243b86ef960594c11381a19980b8"
+    },
+    {
+      "path": "notices/fuzzy/LICENSE.md",
+      "bytes": 16769,
+      "sha256": "b56d003d45853518d0a992e37839a5bd5dcb3e721f90d95848e298c2bed347c2"
+    },
+    {
+      "path": "notices/fuzzy/deps/glm/copying.txt",
+      "bytes": 2865,
+      "sha256": "62d2d642c7d054d4fb4c9b42faad617d6c88fcd91e317f8035aa9f277cc159c3"
+    }
+  ],
+  "source_blob_count": 132,
+  "wasm_compile_inputs": [
+    "src/wasm/geometry/IfcGeometryLoader.cpp",
+    "src/wasm/geometry/IfcGeometryProcessor.cpp",
+    "src/wasm/geometry/representation/IfcCurve.cpp",
+    "src/wasm/geometry/representation/IfcGeometry.cpp",
+    "src/wasm/parsing/IfcFileStream.cpp",
+    "src/wasm/parsing/IfcLoader.cpp",
+    "src/wasm/parsing/IfcTokenChunk.cpp",
+    "src/wasm/parsing/IfcTokenStream.cpp",
+    "src/wasm/parsing/string_parsing.cpp",
+    "src/wasm/schema/IfcSchemaManager.cpp",
+    "src/wasm/schema/schema-functions.cpp",
+    "src/wasm/web-ifc-api.cpp"
+  ],
+  "bindings": [
+    "ExtendLineStorage",
+    "LoadAllGeometry",
+    "GetAllCrossSections2D",
+    "GetAllCrossSections3D",
+    "GetAllAlignments",
+    "OpenModel",
+    "CreateModel",
+    "GetMaxExpressID",
+    "CloseModel",
+    "GetModelSize",
+    "IsModelOpen",
+    "GetGeometry",
+    "GetFlatMesh",
+    "StreamMeshes",
+    "GetCoordinationMatrix",
+    "StreamAllMeshes",
+    "StreamAllMeshesWithTypes",
+    "GetLine",
+    "GetLineType",
+    "GetHeaderLine",
+    "WriteLine",
+    "RemoveLine",
+    "WriteHeaderLine",
+    "SaveModel",
+    "ValidateExpressID",
+    "GetNextExpressID",
+    "GetLineIDsWithType",
+    "GetInversePropertyForItem",
+    "GetAllLines",
+    "SetGeometryTransformation",
+    "SetLogLevel",
+    "GetNameFromTypeCode",
+    "GetTypeCodeFromName",
+    "IsIfcElement",
+    "GetVersion"
+  ],
+  "build_evidence": [
+    {
+      "path": "src/wasm/CMakeLists.txt",
+      "sha256": "46af07d4d53328a2314fa01b4deb68a85129a7d4e0707205e5d27181bc21e261"
+    },
+    {
+      "path": "src/wasm/web-ifc-api.cpp",
+      "sha256": "b2add19e61afce23e2f18ed23d65886544569e805f0eea1e89cfc7a0da98ec23"
+    },
+    {
+      "path": "src/wasm/version.h",
+      "sha256": "e68d53c9cf42e57e957f04d8f820ce681c2f7dfd0973ced916d75aeb0ba74d31"
+    },
+    {
+      "path": "src/web-ifc-api.ts",
+      "sha256": "aff02107de897d216d5ffb1b59c93064922961df67dc1d2752f7e16418f59971"
+    },
+    {
+      "path": "src/ifc-schema.ts",
+      "sha256": "2a1dbaee11976837a269a95371d4dedec7a56f674f25bf6c7cc685339488ffac"
+    },
+    {
+      "path": "src/schema-generator/gen_functional_types.ts",
+      "sha256": "ae0e1d06d51d15ebf7ca0607e23050874862c0e6eb9b4be25c2efe2ae3a73bb6"
+    },
+    {
+      "path": "src/schema-generator/IFC2X3.exp",
+      "sha256": "d9fb3c5ba80063edcaab7b1d411f9d7868d757259b045897fc97ba66cb1c36a1"
+    },
+    {
+      "path": "src/schema-generator/IFC4.exp",
+      "sha256": "a2704ba20a1b3d0b7d9b61d6fd37d0baa3b4996ba3e90d968a1d2ca2819d1046"
+    },
+    {
+      "path": "src/schema-generator/IFC4X3.exp",
+      "sha256": "e1203007c688280a2635f103c08dda0fdc37dfca5a0df870a01623d5ae5bae97"
+    },
+    {
+      "path": "package.json",
+      "sha256": "cd1f86d92658bdd190abc10a5d02a25a55a6918cc3682df7b7f925b9a2004415"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "c77027a327c8afc46dd9115b80a7ce457d36041a36f7d776570a59a9fc21654a"
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "15434148394579cd437dc3bf14c8915bd9d328bfb9288a5e8d71f035134f0e1b"
+    },
+    {
+      "path": ".github/workflows/publish.yml",
+      "sha256": "cee85918128fc1f5860592978600a19bd8b6eac9617f30fa644849ee7d1eb1cf"
+    },
+    {
+      "path": ".github/workflows/jest.yml",
+      "sha256": "479fdd9a06c8ba563878b4c3d8e86eeb86059ddc1a726f4ca677054db7fe27ab"
+    }
+  ],
+  "package_assets": [
+    {
+      "path": "README.md",
+      "bytes": 5007,
+      "sha256": "b4e59c306c5938e0a56969b56c3f28f2209338a7e33f4bc7394362740082f924",
+      "identical_package_paths": [
+        "README.md"
+      ]
+    },
+    {
+      "path": "helpers/log.d.ts",
+      "bytes": 503,
+      "sha256": "ebce8fe80811fd1088ff016eab8b5dadde985499edd8635c034e27f8d624da91",
+      "identical_package_paths": [
+        "helpers/log.d.ts"
+      ]
+    },
+    {
+      "path": "helpers/properties.d.ts",
+      "bytes": 3481,
+      "sha256": "4b88e4274b8e3f0780b16e06e746caa3a80d88599a0b3438bdfb0dd6f7f1817c",
+      "identical_package_paths": [
+        "helpers/properties.d.ts"
+      ]
+    },
+    {
+      "path": "ifc-schema.d.ts",
+      "bytes": 2101477,
+      "sha256": "3074c041ebf8b80406499d993c9b64acf5ff229a08e5f957dfda0c154b22b670",
+      "identical_package_paths": [
+        "ifc-schema.d.ts"
+      ]
+    },
+    {
+      "path": "package.json",
+      "bytes": 4721,
+      "sha256": "cd1f86d92658bdd190abc10a5d02a25a55a6918cc3682df7b7f925b9a2004415",
+      "identical_package_paths": [
+        "package.json"
+      ]
+    },
+    {
+      "path": "web-ifc-api-node.d.ts",
+      "bytes": 17630,
+      "sha256": "9721a37837bc55e435503aa07e4f2ff1e80bb4f057f977d089626cfedc2e7d4c",
+      "identical_package_paths": [
+        "web-ifc-api-node.d.ts",
+        "web-ifc-api.d.ts"
+      ]
+    },
+    {
+      "path": "web-ifc-api-node.js",
+      "bytes": 5100601,
+      "sha256": "b9b80c88aae71258b42e54b2810a9cd56e180c8b51373a95f7b8b3b27af06030",
+      "identical_package_paths": [
+        "web-ifc-api-node.js"
+      ]
+    },
+    {
+      "path": "web-ifc-api.d.ts",
+      "bytes": 17630,
+      "sha256": "9721a37837bc55e435503aa07e4f2ff1e80bb4f057f977d089626cfedc2e7d4c",
+      "identical_package_paths": [
+        "web-ifc-api-node.d.ts",
+        "web-ifc-api.d.ts"
+      ]
+    },
+    {
+      "path": "web-ifc-api.js",
+      "bytes": 5036646,
+      "sha256": "0ca2ffc1aa752e94c735281605a947d92c95b75bb8fc65fbe05ed8d03fb18a42",
+      "identical_package_paths": [
+        "web-ifc-api.js"
+      ]
+    },
+    {
+      "path": "web-ifc-mt.wasm",
+      "bytes": 1160534,
+      "sha256": "797f6e0be82d95c22292894e8c9c8e8e70eb46d20b519b3f081a8df1e91208ca",
+      "identical_package_paths": [
+        "web-ifc-mt.wasm"
+      ]
+    },
+    {
+      "path": "web-ifc-mt.worker.js",
+      "bytes": 2239,
+      "sha256": "bd5198db7adbc606a2749e446b2340a654add76aaa7339850d0aa4507b69187f",
+      "identical_package_paths": [
+        "web-ifc-mt.worker.js"
+      ]
+    },
+    {
+      "path": "web-ifc-node.wasm",
+      "bytes": 1140374,
+      "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6",
+      "identical_package_paths": [
+        "web-ifc-node.wasm",
+        "web-ifc.wasm"
+      ]
+    },
+    {
+      "path": "web-ifc.wasm",
+      "bytes": 1140374,
+      "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6",
+      "identical_package_paths": [
+        "web-ifc-node.wasm",
+        "web-ifc.wasm"
+      ]
+    }
+  ],
+  "limits": [
+    "Publisher source/byte/binding evidence supports correspondence, not a byte-identical WASM rebuild.",
+    "Native probe compiles parser/geometry dependencies, not Emscripten-only web-ifc-api.cpp.",
+    "Browser/Node WASM paths have identical bytes; compilation origins cannot be distinguished by filename.",
+    "MT bindings are checked but multithreaded browser behavior is not accepted here.",
+    "Distribution/source delivery and full generated-runtime/toolchain closure remain unaccepted."
+  ]
+}

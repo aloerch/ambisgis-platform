@@ -117,11 +117,19 @@ def configure_database(database, output):
     return password
 
 
+def validate_output(output):
+    output = Path(output).resolve()
+    roots = (TASK, TASK.parent/'frontend-qgis-remediation'/'qgis')
+    require(any(output.is_relative_to(root) and output != root for root in roots),
+            'runtime output must be a fresh child of a retained QGIS task root')
+    require(not output.exists(), 'runtime output already exists')
+    return output
+
+
 def run(config_path, output):
     import configured_auth_database
     import loopback_exec
-    output = output.resolve()
-    require(output.is_relative_to(TASK) and output != TASK,'runtime output must be a fresh child of qgis-candidate')
+    output = validate_output(output)
     output.mkdir(parents=True,exist_ok=False,mode=0o700); output.chmod(0o700)
     database = None; values = []; snapshot = None; supervisor = None; before = None; roots = None
     report = {'result_exit_code':1,'cleanup':{},'scope':'F02-04 Linux synthetic vector/raster/CRS/PostGIS desktop/server smoke',

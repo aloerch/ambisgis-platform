@@ -1,8 +1,9 @@
 # FND-02 owner-decision register
 
 Generated from [the authoritative internal manifest](../candidates/fnd-02-candidate.json). Edit that manifest and regenerate.
+Candidate: `fnd-02-frontend-qgis-proposal-2`. Manifest schema version: 1.
 Full hashes, individual member paths and retained locations are in its `affected`, `records` and linked evidence fields. The summaries below do not replace those identities.
-Inventory validity, candidate selection and owner/distribution acceptance are separate. All proposed binary/resource changes are unexecuted variants.
+Inventory validity, candidate selection and owner/distribution acceptance are separate. Findings apply to this candidate; historical tests do not establish acceptance of changed artifacts.
 
 | Finding | Disposition | Blocks adoption | Blocks distribution | Gate |
 |---|---|---|---|---|
@@ -45,12 +46,12 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 | F06-FE-TAFFY | investigation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-FE-EMITTER | investigation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-FE-JSONP | investigation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
-| F06-FE-WEBIFC | selection-blocker | true | true | F02-06 / License-Brand; distribution compliance before delivery |
+| F06-FE-WEBIFC | obligation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-FE-GENERATED | investigation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
-| F06-QGIS-SRC-01 | selection-blocker | true | true | F02-06 / License-Brand; distribution compliance before delivery |
+| F06-QGIS-SRC-01 | resolved | false | false | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-QGIS-SRC-02 | selection-blocker | true | true | F02-06 / License-Brand; distribution compliance before delivery |
-| F06-QGIS-SRC-03 | selection-blocker | true | true | F02-06 / License-Brand; distribution compliance before delivery |
-| F06-QGIS-SRC-04 | selection-blocker | true | true | F02-06 / License-Brand; distribution compliance before delivery |
+| F06-QGIS-SRC-03 | resolved | false | false | F02-06 / License-Brand; distribution compliance before delivery |
+| F06-QGIS-SRC-04 | resolved | false | false | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-QGIS-ICONS | obligation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-QGIS-COLORBREWER | obligation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-QGIS-FONT | investigation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
@@ -63,7 +64,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 | F06-TECH-TEST-SCOPE | investigation | false | false | F02-06 C3 accurate record; affected feature/FND-08 gate for later remediation |
 | F06-TECH-QGIS-PROFILE | later-gate | false | false | FND-03/FND-05 and relevant product feature acceptance; FND-08 input closure |
 | F06-TECH-CONTAINMENT | later-gate | false | true | Security/operations/deployment gate; F02-06 records limits |
-| F06-FE-RECIPE | selection-blocker | true | true | F02-06 source-to-artifact proposal selection |
+| F06-FE-RECIPE | resolved | false | false | F02-06 source-to-artifact proposal selection |
 
 ## Shared approval boundaries
 
@@ -71,7 +72,9 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 
 **B2:** No permission to waive third-party restrictions, alter selected bytes, redistribute, deploy, change fork defaults, or reuse historical tests for a changed artifact. Owner acceptance of accurate investigation is distinct from adoption.
 
-**B3:** No selected-file replacement in this PR, no assumed reproducible output, no attaching old tests to new bytes, no distribution or final task acceptance.
+**B3:** Current owner prompt authorizes only the exact 1129 named exclusions and new private stage. Review is separate from adoption, third-party permission, distribution, final FND-02 acceptance or later gates; historical artifacts retain original restrictions.
+
+**B4:** Original baseline artifacts/receipts remain unchanged. This PR proposes only separately identified and freshly tested replay bytes; no assumed reproducibility, old-test transfer, candidate adoption, distribution or final task acceptance.
 
 ## F02-JAVA-classworlds — Java
 
@@ -972,26 +975,26 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 
 ## F06-FE-WEBIFC — frontend
 
-**Disposition:** selection-blocker · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Disposition:** obligation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
 
 **Exact scope:** `web-ifc` 0.0.50
 
-**Membership / consumers:** Shipped but unexercised IFC/model capability, including unnecessary Node-target files in browser static tree; a 2D viewer pass cannot exclude it.
+**Membership / consumers:** baseline: Shipped but unexercised IFC/model capability, including unnecessary Node-target files in browser static tree; a 2D viewer pass cannot exclude it.; proposed variant: All 13 browser-static IFC assets remain shipped and byte-unchanged. Fresh Node-WASM API/box geometry/save-reopen probes exercise the retained Node path; browser/MT runtime and full 3D behavior remain unexercised.
 
-**Evidence establishes:** All 13 retained web-ifc 0.0.50 files are copied byte-for-byte into selected dist, including browser/Node APIs, declaration files and three WASM entries (browser+Node SHA256 94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6; MT 797f6e0be82d95c22292894e8c9c8e8e70eb46d20b519b3f081a8df1e91208ca). npm gitHead b55d8bde10067415d4536b23c27edcc13acf217c has identical package.json/README to tar and a retained historical MPL-2.0 LICENSE.md. CMake identifies eight fixed third-party source commits.
+**Evidence establishes:** original baseline: All 13 retained web-ifc 0.0.50 files are copied byte-for-byte into selected dist, including browser/Node APIs, declaration files and three WASM entries (browser+Node SHA256 94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6; MT 797f6e0be82d95c22292894e8c9c8e8e70eb46d20b519b3f081a8df1e91208ca). npm gitHead b55d8bde10067415d4536b23c27edcc13acf217c has identical package.json/README to tar and a retained historical MPL-2.0 LICENSE.md. CMake identifies eight fixed third-party source commits.; proposed variant: Exact npm gitHead source (132 blobs verified against historical publisher Git tree), all eight pinned CMake dependencies and nested notices are retained in a real local source stage. Historical compile/link/TypeScript/schema/toolchain records map all 13 unchanged assets; 35 bindings and 1,137 numeric schema exports agree. Bounded offline native parser/geometry compilation, six upstream tests, and real unchanged Node-WASM box geometry/save/reopen pass with final source/tooling integrity.
 
-**Still unknown:** MPL root-source evidence does not prove every embedded WASM dependency/license or exact corresponding-source/toolchain mapping. Main C++/TS source and pinned transitive build inputs have not all been retained here; no Emscripten rebuild has run. This is specific to shipped optional IFC binaries, not a demand to bootstrap all compilers now.
+**Still unknown:** No independent byte-identical Emscripten/WASM rebuild, complete compiler/generated-runtime custody, browser/MT runtime or general 3D acceptance. Browser/Node WASM share identical bytes; original compilation target origin remains ambiguous. Final source distribution and combined/generated-code obligations remain unaccepted.
 
-**Recommended course:** Retain exact 0.0.50 selection provisionally, recover main and eight pinned source inputs/terms and source-to-WASM provenance, then supply MPL source availability/notice plan. Withhold adoption of IFC-shipping selection until required source/rights applicability is supported.
+**Recommended course:** Retain the unchanged IFC family with the actual indexed historical source/notice stage. Complete applicable controlled source delivery/notices before distribution; FND-08 owns broader toolchain rebuild/repair.
 
-**Alternatives and required tests:** Select a separately built profile omitting the optional IFC import/copy path and unused Node API/WASM assets while preserving required 2D map/portal capabilities; verify no stale module references, new full dist membership, native/browser tests.; Use a source-owned compatible IFC implementation if IFC is desired but current source mapping cannot be established; dedicated IFC geometry tests and newly hashed frontend outputs required.
+**Alternatives and required tests:** historical baseline options not authorized in this run: Select a separately built profile omitting the optional IFC import/copy path and unused Node API/WASM assets while preserving required 2D map/portal capabilities; verify no stale module references, new full dist membership, native/browser tests.; Use a source-owned compatible IFC implementation if IFC is desired but current source mapping cannot be established; dedicated IFC geometry tests and newly hashed frontend outputs required.; current course: Retain IFC and exact usable source evidence as authorized; neither feature exclusion nor a different implementation was selected.
 
-**Owner action / effect:** Choose retain-with-source-evidence as preferred, or explicitly approve a separate optional-IFC exclusion variant. Neither choice approves current redistribution or old-tests-on-new-bytes.
+**Owner action / effect:** Current prompt authorized retaining IFC and source recovery. Review this narrow source-evidence remediation for the proposed variant; owner adoption and distribution are separate, pending decisions.
 
-**Closing evidence:** Exact source/embedded-dependency notices and adequate source availability close the current blocker; independent byte-identical/toolchain rebuild and repair demonstration remain FND-08 if source usability is established. An exclusion variant closes by manifest absence+new affected tests.
+**Closing evidence:** condition: Exact source/embedded-dependency notices and adequate source availability close the current blocker; independent byte-identical/toolchain rebuild and repair demonstration remain FND-08 if source usability is established. An exclusion variant closes by manifest absence+new affected tests.; result: Narrow source/embedded-dependency availability and usability condition is demonstrated by exact retained sources/notices, source/build/asset mapping and bounded final integrity-checked probes. Distribution-only notice/source/generated-runtime obligations remain; no historical artifact is retroactively cleared.
 
-**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json); `finding-input-187` (workspace:build-worktrees/candidate-selection/frontend-recovered/retrieval.json); `finding-input-240` (workspace:build-worktrees/frontend-completion/retained-01/vendor/registry/50fb39b19293526d506ea75a562e733fc21e0fd8402e267caab9cd937567b6b9.tgz)
+**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json); `finding-input-187` (workspace:build-worktrees/candidate-selection/frontend-recovered/retrieval.json); `finding-input-240` (workspace:build-worktrees/frontend-completion/retained-01/vendor/registry/50fb39b19293526d506ea75a562e733fc21e0fd8402e267caab9cd937567b6b9.tgz); [remediation-authorization](../verification/frontend-qgis-remediation/authorization.json); [webifc-remediation-index](../verification/frontend-qgis-remediation/webifc-evidence.json); `webifc-source-stage-success` (workspace:build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/success.json); `webifc-source-stage-index` (workspace:build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/index.json); `webifc-native-success` (workspace:build-worktrees/frontend-qgis-remediation/webifc/native-03/success.json); `webifc-source-availability` (workspace:build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/SOURCE-AVAILABILITY.txt)
 
 ## F06-FE-GENERATED — frontend
 
@@ -1018,95 +1021,95 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 
 ## F06-QGIS-SRC-01 — qgis-resources
 
-**Disposition:** selection-blocker · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Disposition:** resolved · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
 
-**Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 256; evidence pointer: qgis_resources/0; notice paths: resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/alpen/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/drumma/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/electroluv/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/hana/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/phill/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/rotten/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/rphnick/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/sugar/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/tvr/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/vredeling/COPYING.xml
+**Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 256; evidence pointer: qgis_resources/0; notice paths: resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/alpen/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/drumma/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/electroluv/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/hana/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/phill/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/rotten/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/rphnick/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/sugar/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/tvr/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/vredeling/COPYING.xml; path: workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix; excluded named svg count: 256; applicability: New proposed resource-selection variant only; original source/stage remains historically restricted.
 
-**Membership / consumers:** Optional palettes distributed to desktop users, not merely tests; required rendering/CRS/PostGIS capability is independent of these named palettes.
+**Membership / consumers:** baseline: Optional palettes distributed to desktop users, not merely tests; required rendering/CRS/PostGIS capability is independent of these named palettes.; proposed variant: Exactly 256 named SVG paths for this finding are excluded from selection-03. Original source/stage and notices remain preserved; general styling/rendering remains available.
 
-**Evidence establishes:** 19 notices name CC BY-NC-SA 3.0 and distribute=noncomm. All 256 SVGs and relevant COPYING.xml files are actually staged in build-06/prefix/share/qgis/resources/cpt-city-qgis-min, with source/stage/manifest equality verified.
+**Evidence establishes:** original baseline: 19 notices name CC BY-NC-SA 3.0 and distribute=noncomm. All 256 SVGs and relevant COPYING.xml files are actually staged in build-06/prefix/share/qgis/resources/cpt-city-qgis-min, with source/stage/manifest equality verified.; proposed variant: All 256 specified paths and active catalogue references omitted; original notice/metadata bytes preserved outside the active archive. Deterministic complete before/after inventory, source qrc/magic/SQLite/XML audit and fresh native file/model checks bind selection-03. Runtime-07 passes actual palette chooser, retained colors, styling/save-reopen, tested omitted-ramp serialized/rendered colors, desktop/PostGIS/server GetMap/restart and final integrity/cleanup.
 
-**Still unknown:** Root QGIS GPL and upstream installation do not establish broader permissions; exact intended-distribution applicability remains unestablished.
+**Still unknown:** No remaining selection uncertainty for this excluded group in the new stage. Original palette/source archives retain their original restrictions and are not approved public distribution bundles. Other resource/notice obligations and SRC-02 remain separate.
 
-**Recommended course:** Propose omitting/replacing these optional NC palettes in a new distribution variant with independently authored or verified compatible ramps; keep coloring/raster/vector styling capability.
+**Recommended course:** Review/adopt this exact tested resource selection as part of the variant, keeping original archives/notices as custody evidence and retaining general styling capabilities.
 
 **Alternatives and required tests:** Retain unchanged assets only after exact authoritative permission/applicability is supported for intended use and distribution; preserve notices/credit and any enforceable conditions. Do not contact authors without separate permission.
 
-**Owner action / effect:** Approve the coherent optional-palette replacement/exclusion batch (1,129 affected palettes across these four non-overlapping groups), or request specified permission-evidence recovery. Adoption of current resource-bearing distribution remains blocked; independent engineering can proceed.
+**Owner action / effect:** Implementation was authorized by the current prompt. Review the new bounded remediation; this finding closure does not adopt the overall blocked candidate or grant distribution permission.
 
-**Closing evidence:** For replacement/exclusion: new resource-selection manifest, stage/hash audit proves all specified paths removed/replaced and notices preserved; test palette chooser, saved-project fallback, styling and affected desktop/server rendering. Prior selected artifact stays unchanged and its smoke is not assigned to new variant. For retention: exact permission evidence and qualified scope review.
+**Closing evidence:** condition: For replacement/exclusion: new resource-selection manifest, stage/hash audit proves all specified paths removed/replaced and notices preserved; test palette chooser, saved-project fallback, styling and affected desktop/server rendering. Prior selected artifact stays unchanged and its smoke is not assigned to new variant. For retention: exact permission evidence and qualified scope review.; result: Demonstrated for the specified named paths and fresh stage/runtime evidence. No alternate copies found for this group; this variant-specific selection blocker is resolved. Original artifact remains unchanged and is not retroactively cleared.
 
-**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json)
+**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json); [remediation-authorization](../verification/frontend-qgis-remediation/authorization.json); [qgis-remediation-index](../verification/frontend-qgis-remediation/qgis-evidence.json); `qgis-selection-result` (workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/result.json); `qgis-selection-native-resources` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/resource-result.json); `qgis-selection-smoke` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/result.json)
 
 ## F06-QGIS-SRC-02 — qgis-resources
 
 **Disposition:** selection-blocker · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
-**Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 138; evidence pointer: qgis_resources/1; notice paths: resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml; resources/cpt-city-qgis-min/td/COPYING.xml
+**Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 138; evidence pointer: qgis_resources/1; notice paths: resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml; resources/cpt-city-qgis-min/td/COPYING.xml; path: workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix; excluded named svg count: 138; applicability: New proposed resource-selection variant only; original source/stage remains historically restricted.
 
-**Membership / consumers:** Optional palettes distributed to desktop users, not merely tests; required rendering/CRS/PostGIS capability is independent of these named palettes.
+**Membership / consumers:** baseline: Optional palettes distributed to desktop users, not merely tests; required rendering/CRS/PostGIS capability is independent of these named palettes.; proposed variant: Exactly 138 named SVG paths for this finding are excluded from selection-03. Original source/stage and notices remain preserved; general styling/rendering remains available.
 
-**Evidence establishes:** neo10 and td say Free to use but explicitly distribute=no; td also says None specified. All 138 SVGs and relevant COPYING.xml files are actually staged in build-06/prefix/share/qgis/resources/cpt-city-qgis-min, with source/stage/manifest equality verified.
+**Evidence establishes:** original baseline: neo10 and td say Free to use but explicitly distribute=no; td also says None specified. All 138 SVGs and relevant COPYING.xml files are actually staged in build-06/prefix/share/qgis/resources/cpt-city-qgis-min, with source/stage/manifest equality verified.; proposed variant: All 138 specified paths and active catalogue references omitted; original notice/metadata bytes preserved outside the active archive. Deterministic complete before/after inventory, source qrc/magic/SQLite/XML audit and fresh native file/model checks bind selection-03. Runtime-07 passes actual palette chooser, retained colors, styling/save-reopen, tested omitted-ramp serialized/rendered colors, desktop/PostGIS/server GetMap/restart and final integrity/cleanup.
 
-**Still unknown:** Root QGIS GPL and upstream installation do not establish broader permissions; exact intended-distribution applicability remains unestablished.
+**Still unknown:** Retained gmt/GMT_dem1.svg has exactly the excluded td/DEM_print.svg bytes (SHA256 0ba1cad3e42202036ab6a86663a09d377eb84eb22584df0e4dbc9fdee54cf602) under a different GMT GPLv2/distribute=yes notice. Exact origin/applicability is unproved; notice alone does not clear bytes.
 
-**Recommended course:** Propose replacing/omitting these optional ramps from a new distribution variant unless an authoritative redistribution grant is recovered.
+**Recommended course:** Recover authoritative exact GMT/td provenance and applicable terms, or authorize a separate one-file exclusion with catalogue/stage/native/desktop/server revalidation. Do not remove beyond the current 1129 authorization.
 
 **Alternatives and required tests:** Retain unchanged assets only after exact authoritative permission/applicability is supported for intended use and distribution; preserve notices/credit and any enforceable conditions. Do not contact authors without separate permission.
 
-**Owner action / effect:** Approve the coherent optional-palette replacement/exclusion batch (1,129 affected palettes across these four non-overlapping groups), or request specified permission-evidence recovery. Adoption of current resource-bearing distribution remains blocked; independent engineering can proceed.
+**Owner action / effect:** Review the implemented exact exclusions and retained blocker. Decide provenance recovery or a separately authorized one-file GMT exclusion. This gates candidate adoption/distribution, not independent engineering.
 
-**Closing evidence:** For replacement/exclusion: new resource-selection manifest, stage/hash audit proves all specified paths removed/replaced and notices preserved; test palette chooser, saved-project fallback, styling and affected desktop/server rendering. Prior selected artifact stays unchanged and its smoke is not assigned to new variant. For retention: exact permission evidence and qualified scope review.
+**Closing evidence:** condition: For replacement/exclusion: new resource-selection manifest, stage/hash audit proves all specified paths removed/replaced and notices preserved; test palette chooser, saved-project fallback, styling and affected desktop/server rendering. Prior selected artifact stays unchanged and its smoke is not assigned to new variant. For retention: exact permission evidence and qualified scope review.; result: Demonstrated for the specified named paths and fresh stage/runtime evidence. Not fully met: a byte-identical excluded td palette survives under retained GMT provenance/notice scope.
 
-**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json)
+**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json); [remediation-authorization](../verification/frontend-qgis-remediation/authorization.json); [qgis-remediation-index](../verification/frontend-qgis-remediation/qgis-evidence.json); `qgis-selection-result` (workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/result.json); `qgis-selection-native-resources` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/resource-result.json); `qgis-selection-smoke` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/result.json)
 
 ## F06-QGIS-SRC-03 — qgis-resources
 
-**Disposition:** selection-blocker · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Disposition:** resolved · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
 
-**Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 690; evidence pointer: qgis_resources/2; notice paths: resources/cpt-city-qgis-min/es/COPYING.xml
+**Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 690; evidence pointer: qgis_resources/2; notice paths: resources/cpt-city-qgis-min/es/COPYING.xml; path: workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix; excluded named svg count: 690; applicability: New proposed resource-selection variant only; original source/stage remains historically restricted.
 
-**Membership / consumers:** Optional palettes distributed to desktop users, not merely tests; required rendering/CRS/PostGIS capability is independent of these named palettes.
+**Membership / consumers:** baseline: Optional palettes distributed to desktop users, not merely tests; required rendering/CRS/PostGIS capability is independent of these named palettes.; proposed variant: Exactly 690 named SVG paths for this finding are excluded from selection-03. Original source/stage and notices remain preserved; general styling/rendering remains available.
 
-**Evidence establishes:** custom resource distribution requires credit, free sharing and original preview/name preservation; no preview PNG/JPEG in subtree; 2009 author-approval remark is unverified. All 690 SVGs and relevant COPYING.xml files are actually staged in build-06/prefix/share/qgis/resources/cpt-city-qgis-min, with source/stage/manifest equality verified.
+**Evidence establishes:** original baseline: custom resource distribution requires credit, free sharing and original preview/name preservation; no preview PNG/JPEG in subtree; 2009 author-approval remark is unverified. All 690 SVGs and relevant COPYING.xml files are actually staged in build-06/prefix/share/qgis/resources/cpt-city-qgis-min, with source/stage/manifest equality verified.; proposed variant: All 690 specified paths and active catalogue references omitted; original notice/metadata bytes preserved outside the active archive. Deterministic complete before/after inventory, source qrc/magic/SQLite/XML audit and fresh native file/model checks bind selection-03. Runtime-07 passes actual palette chooser, retained colors, styling/save-reopen, tested omitted-ramp serialized/rendered colors, desktop/PostGIS/server GetMap/restart and final integrity/cleanup.
 
-**Still unknown:** Root QGIS GPL and upstream installation do not establish broader permissions; exact intended-distribution applicability remains unestablished.
+**Still unknown:** No remaining selection uncertainty for this excluded group in the new stage. Original palette/source archives retain their original restrictions and are not approved public distribution bundles. Other resource/notice obligations and SRC-02 remain separate.
 
-**Recommended course:** Propose replacement/omission of these optional converted ramps; alternatively recover the exact historical inclusion permission and original preview scope, then obtain qualified applicability review.
+**Recommended course:** Review/adopt this exact tested resource selection as part of the variant, keeping original archives/notices as custody evidence and retaining general styling capabilities.
 
 **Alternatives and required tests:** Retain unchanged assets only after exact authoritative permission/applicability is supported for intended use and distribution; preserve notices/credit and any enforceable conditions. Do not contact authors without separate permission.
 
-**Owner action / effect:** Approve the coherent optional-palette replacement/exclusion batch (1,129 affected palettes across these four non-overlapping groups), or request specified permission-evidence recovery. Adoption of current resource-bearing distribution remains blocked; independent engineering can proceed.
+**Owner action / effect:** Implementation was authorized by the current prompt. Review the new bounded remediation; this finding closure does not adopt the overall blocked candidate or grant distribution permission.
 
-**Closing evidence:** For replacement/exclusion: new resource-selection manifest, stage/hash audit proves all specified paths removed/replaced and notices preserved; test palette chooser, saved-project fallback, styling and affected desktop/server rendering. Prior selected artifact stays unchanged and its smoke is not assigned to new variant. For retention: exact permission evidence and qualified scope review.
+**Closing evidence:** condition: For replacement/exclusion: new resource-selection manifest, stage/hash audit proves all specified paths removed/replaced and notices preserved; test palette chooser, saved-project fallback, styling and affected desktop/server rendering. Prior selected artifact stays unchanged and its smoke is not assigned to new variant. For retention: exact permission evidence and qualified scope review.; result: Demonstrated for the specified named paths and fresh stage/runtime evidence. No alternate copies found for this group; this variant-specific selection blocker is resolved. Original artifact remains unchanged and is not retroactively cleared.
 
-**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json)
+**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json); [remediation-authorization](../verification/frontend-qgis-remediation/authorization.json); [qgis-remediation-index](../verification/frontend-qgis-remediation/qgis-evidence.json); `qgis-selection-result` (workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/result.json); `qgis-selection-native-resources` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/resource-result.json); `qgis-selection-smoke` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/result.json)
 
 ## F06-QGIS-SRC-04 — qgis-resources
 
-**Disposition:** selection-blocker · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Disposition:** resolved · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
 
-**Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 45; evidence pointer: qgis_resources/3; notice paths: resources/cpt-city-qgis-min/jm/COPYING.xml
+**Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 45; evidence pointer: qgis_resources/3; notice paths: resources/cpt-city-qgis-min/jm/COPYING.xml; path: workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix; excluded named svg count: 45; applicability: New proposed resource-selection variant only; original source/stage remains historically restricted.
 
-**Membership / consumers:** Optional palettes distributed to desktop users, not merely tests; required rendering/CRS/PostGIS capability is independent of these named palettes.
+**Membership / consumers:** baseline: Optional palettes distributed to desktop users, not merely tests; required rendering/CRS/PostGIS capability is independent of these named palettes.; proposed variant: Exactly 45 named SVG paths for this finding are excluded from selection-03. Original source/stage and notices remain preserved; general styling/rendering remains available.
 
-**Evidence establishes:** Attribution required label is narrower than full text: personal/nontransferable permission and derivative delivery to clients for internal use, plus unmodified-copy agreement/attribution clauses. All 45 SVGs and relevant COPYING.xml files are actually staged in build-06/prefix/share/qgis/resources/cpt-city-qgis-min, with source/stage/manifest equality verified.
+**Evidence establishes:** original baseline: Attribution required label is narrower than full text: personal/nontransferable permission and derivative delivery to clients for internal use, plus unmodified-copy agreement/attribution clauses. All 45 SVGs and relevant COPYING.xml files are actually staged in build-06/prefix/share/qgis/resources/cpt-city-qgis-min, with source/stage/manifest equality verified.; proposed variant: All 45 specified paths and active catalogue references omitted; original notice/metadata bytes preserved outside the active archive. Deterministic complete before/after inventory, source qrc/magic/SQLite/XML audit and fresh native file/model checks bind selection-03. Runtime-07 passes actual palette chooser, retained colors, styling/save-reopen, tested omitted-ramp serialized/rendered colors, desktop/PostGIS/server GetMap/restart and final integrity/cleanup.
 
-**Still unknown:** Root QGIS GPL and upstream installation do not establish broader permissions; exact intended-distribution applicability remains unestablished.
+**Still unknown:** No remaining selection uncertainty for this excluded group in the new stage. Original palette/source archives retain their original restrictions and are not approved public distribution bundles. Other resource/notice obligations and SRC-02 remain separate.
 
-**Recommended course:** Propose replacement/omission of these optional converted ramps unless authoritative evidence establishes that public product redistribution of these converted palettes is permitted.
+**Recommended course:** Review/adopt this exact tested resource selection as part of the variant, keeping original archives/notices as custody evidence and retaining general styling capabilities.
 
 **Alternatives and required tests:** Retain unchanged assets only after exact authoritative permission/applicability is supported for intended use and distribution; preserve notices/credit and any enforceable conditions. Do not contact authors without separate permission.
 
-**Owner action / effect:** Approve the coherent optional-palette replacement/exclusion batch (1,129 affected palettes across these four non-overlapping groups), or request specified permission-evidence recovery. Adoption of current resource-bearing distribution remains blocked; independent engineering can proceed.
+**Owner action / effect:** Implementation was authorized by the current prompt. Review the new bounded remediation; this finding closure does not adopt the overall blocked candidate or grant distribution permission.
 
-**Closing evidence:** For replacement/exclusion: new resource-selection manifest, stage/hash audit proves all specified paths removed/replaced and notices preserved; test palette chooser, saved-project fallback, styling and affected desktop/server rendering. Prior selected artifact stays unchanged and its smoke is not assigned to new variant. For retention: exact permission evidence and qualified scope review.
+**Closing evidence:** condition: For replacement/exclusion: new resource-selection manifest, stage/hash audit proves all specified paths removed/replaced and notices preserved; test palette chooser, saved-project fallback, styling and affected desktop/server rendering. Prior selected artifact stays unchanged and its smoke is not assigned to new variant. For retention: exact permission evidence and qualified scope review.; result: Demonstrated for the specified named paths and fresh stage/runtime evidence. No alternate copies found for this group; this variant-specific selection blocker is resolved. Original artifact remains unchanged and is not retroactively cleared.
 
-**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json)
+**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json); [remediation-authorization](../verification/frontend-qgis-remediation/authorization.json); [qgis-remediation-index](../verification/frontend-qgis-remediation/qgis-evidence.json); `qgis-selection-result` (workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/result.json); `qgis-selection-native-resources` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/resource-result.json); `qgis-selection-smoke` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/result.json)
 
 ## F06-QGIS-ICONS — qgis-resources
 
@@ -1386,23 +1389,23 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 
 ## F06-FE-RECIPE — frontend selected build-01 provenance
 
-**Disposition:** selection-blocker · **Gate:** F02-06 source-to-artifact proposal selection · **Criteria:** C1, C3
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
+**Disposition:** resolved · **Gate:** F02-06 source-to-artifact proposal selection · **Criteria:** C1, C3
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B4** applies.
 
-**Exact scope:** path: build-worktrees/frontend-completion/build-01/receipt.json; selected output record: frontend-output
+**Exact scope:** path: build-worktrees/frontend-completion/build-01/receipt.json; selected output record: frontend-output; path: workspace:build-worktrees/frontend-qgis-remediation/frontend/replay-02/build/output-manifest.json; applicability: New proposed replay variant; distinct from baseline build-01.
 
-**Membership / consumers:** Selected build-01 payload is the served browser-smoke-06 payload. The later final build recipe was exercised in build-03, which is a different output.
+**Membership / consumers:** baseline: Selected build-01 payload is the served browser-smoke-06 payload. The later final build recipe was exercised in build-03, which is a different output.; proposed variant: Selected replay-02 outputs are the freshly served browser-02 payload, with separate frozen recipe, native and restart evidence. Original build-01 remains historical.
 
-**Evidence establishes:** Exact owned source bundles, locked install inputs, npm compile command and output/served manifests are retained. There is no retained build-01 recipe snapshot or executed build.py hash in its receipt/success records. Later code hashes cannot establish earlier execution.
+**Evidence establishes:** original baseline: Exact owned source bundles, locked install inputs, npm compile command and output/served manifests are retained. There is no retained build-01 recipe snapshot or executed build.py hash in its receipt/success records. Later code hashes cannot establish earlier execution.; proposed variant: Original immutable records/history did not establish executed build-01 recipe. Authorized replay-02 physically executes frozen tooling; exact owned commits, retained input/lock, source patches, invocation, output/served manifests and fresh native/browser/restart/cleanup are bound. All frozen tooling and artifacts match after runtime.
 
-**Still unknown:** Exact complete orchestration recipe bytes executed for selected build-01 remain unverified; source and artifact hashes do not supply that missing identity link.
+**Still unknown:** Original build-01 recipe identity remains unverified. New replay has five inherited lint errors, five webpack warnings and nonidentical raw output, explicitly recorded; no source/distribution or full browser/3D product acceptance.
 
-**Recommended course:** First recover an immutable original build-01 recipe snapshot or contemporaneous execution-bound code identity from retained history, then verify it against the existing command/input/output evidence without rerunning the unchanged smoke.
+**Recommended course:** Review the separately tested replay-02 selection; keep build-01 and the failed replay-01 post-audit as historical records.
 
-**Alternatives and required tests:** option: If original execution identity cannot be recovered, approve a separately identified replay variant; implementation: Use the exact reviewed retained inputs and frozen known recipe; retain complete executed tooling/source/input/output identities. Keep the old build-01 as historical evidence.; retest: Build that variant and run affected native checks and public browser/backend restart against its new exact served bytes. Do not relabel build-01 tests.
+**Alternatives and required tests:** historical baseline options: option: If original execution identity cannot be recovered, approve a separately identified replay variant; implementation: Use the exact reviewed retained inputs and frozen known recipe; retain complete executed tooling/source/input/output identities. Keep the old build-01 as historical evidence.; retest: Build that variant and run affected native checks and public browser/backend restart against its new exact served bytes. Do not relabel build-01 tests.; current course: The owner prompt already authorized the fallback; replay-02 is implemented and freshly tested. Review the result, without requesting duplicate course authorization.
 
-**Owner action / effect:** Choose original-evidence recovery first; authorize a separately tested replay variant only if the exact earlier recipe identity cannot be established. Adoption remains blocked while the link is missing; independent engineering can continue.
+**Owner action / effect:** Implementation was authorized by the current prompt. Review/adopt the exact new variant separately; this evidence closure does not grant distribution rights or FND-02 acceptance.
 
-**Closing evidence:** Exact original execution-bound recipe plus source/input/output chain, or reviewed new variant manifest with its own producing receipt and affected tests.
+**Closing evidence:** condition: Exact original execution-bound recipe plus source/input/output chain, or reviewed new variant manifest with its own producing receipt and affected tests.; result: Met for the proposed replay-02 only: executed frozen recipe/source/input/output identities, 358+152 native passes, current guards, actual public viewer zoom/reload/restart and final integrity/cleanup. Inherited lint failure remains explicit.
 
-**Original evidence:** `frontend-build` (workspace:build-worktrees/frontend-completion/build-01/success.json); `frontend-output` (workspace:build-worktrees/frontend-completion/build-01/output-manifest.json); `frontend-compile-command` (workspace:build-worktrees/frontend-completion/build-01/compile-command.json); `frontend-compile-network` (workspace:build-worktrees/frontend-completion/build-01/compile-network.json)
+**Original evidence:** `frontend-build` (workspace:build-worktrees/frontend-completion/build-01/success.json); `frontend-output` (workspace:build-worktrees/frontend-completion/build-01/output-manifest.json); `frontend-compile-command` (workspace:build-worktrees/frontend-completion/build-01/compile-command.json); `frontend-compile-network` (workspace:build-worktrees/frontend-completion/build-01/compile-network.json); [remediation-authorization](../verification/frontend-qgis-remediation/authorization.json); [frontend-replay-index](../verification/frontend-qgis-remediation/frontend-evidence.json); `frontend-replay-result` (workspace:build-worktrees/frontend-qgis-remediation/frontend/replay-02/replay-result.json); `frontend-replay-final-integrity` (workspace:build-worktrees/frontend-qgis-remediation/frontend/final-integrity.json)

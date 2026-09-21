@@ -1,0 +1,47 @@
+{
+  "recorded_at": "2026-09-21T19:55:16.680004+00:00",
+  "task": "FND-02/F02-06",
+  "authorization_source": "Current owner request attached to this session, not PR #65 merge.",
+  "request_sha256": "ae8990982bc0a6b7b842278f54639502c740c23d243725878413a1a37a80f899",
+  "retained_request": "workspace:build-worktrees/frontend-qgis-remediation/recovery/owner-request.txt",
+  "baseline": {
+    "repository": "aloerch/ambisgis-platform",
+    "repository_id": 1376927351,
+    "integration_branch": "ambisgis/main",
+    "reviewed_pr": 65,
+    "reviewed_head": "bc60bbcbfccb840853c858a29ca9ec3ae4292656",
+    "merge_commit": "b31e81ad7bfe328d5a8b3ea579eff09e6a0086e7",
+    "candidate_id": "fnd-02-tested-proposal-1",
+    "manifest_sha256": "18d80d6e7520e3a16db023bbff87cd2dc20a33ba921bd4f26e49a67d71a0aace"
+  },
+  "implementation_authorized": {
+    "F06-FE-WEBIFC": "Retain IFC. Recover exact web-ifc 0.0.50 C++/TypeScript and eight pinned embedded dependencies with notices and adequate source/build/WASM evidence.",
+    "F06-FE-RECIPE": "Try immutable original execution identity recovery first; if unavailable, execute a separately identified frozen retained-input replay and affected native/browser/restart tests.",
+    "F06-QGIS-SRC-01": "Exclude exact 256 palettes from 19 recorded noncommercial notice scopes in a new private resource stage.",
+    "F06-QGIS-SRC-02": "Exclude exact 138 recorded neo10/td palettes in the new resource stage.",
+    "F06-QGIS-SRC-03": "Exclude exact 690 recorded es palettes in the new resource stage.",
+    "F06-QGIS-SRC-04": "Exclude exact 45 recorded jm palettes in the new resource stage."
+  },
+  "capability_constraints": [
+    "Retain IFC and general 3D functionality.",
+    "Preserve QGIS generic ramps, vector/raster styling, rendering, PostGIS, desktop and server.",
+    "Retain separate 265 ColorBrewer palettes unchanged and their notice/naming obligations."
+  ],
+  "not_authorized": [
+    "Java dependency replacements or unrelated upgrades",
+    "Oracle/ojdbc17 profile exclusion",
+    "IFC exclusion",
+    "New public repositories or upstream contact",
+    "Merge/auto-merge or old-branch deletion",
+    "Workflow/secret installation or source-fork defaults",
+    "External binary/source publication, release or deployment"
+  ],
+  "acceptance": {
+    "implementation_choice": "authorized",
+    "remediation_evidence": "Determined individually by subsequent actual results.",
+    "owner_variant_adoption": "pending",
+    "distribution_permission": "not granted",
+    "F02-07": "documentary binding prepared; owner acceptance pending",
+    "F02-08": "unaccepted"
+  }
+}

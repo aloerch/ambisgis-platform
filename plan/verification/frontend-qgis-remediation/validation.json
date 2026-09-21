@@ -1,0 +1,486 @@
+{
+  "task": "FND-02/F02-06",
+  "implementation_commit": "660208bd87fa508c627b223a121c299c278ea0bc",
+  "baseline_manifest": {
+    "root": "platform",
+    "path": "plan/candidates/fnd-02-candidate-baseline-1.json",
+    "sha256": "18d80d6e7520e3a16db023bbff87cd2dc20a33ba921bd4f26e49a67d71a0aace",
+    "bytes": 414971
+  },
+  "variant_manifest": {
+    "root": "platform",
+    "path": "plan/candidates/fnd-02-candidate.json",
+    "sha256": "3c59d99834b53f8778143db70f754272bce9920ca05071586d4f3629cdd625a0",
+    "bytes": 538061
+  },
+  "candidate_id": "fnd-02-frontend-qgis-proposal-2",
+  "schema_version": 1,
+  "candidate_revision": 2,
+  "inventory": {
+    "archive_members_checked": 80,
+    "bindings_checked": 313,
+    "combinations": 7,
+    "coverage": "Only listed records, bindings, archive members and complete inventory trees; linked transitive locks are not recursively certified.",
+    "inventory_entries_checked": 22136,
+    "profiles": 10,
+    "record_bytes_hashed": 6033884963,
+    "records_hashed": 390,
+    "roots": 11,
+    "source_repositories_checked": 11,
+    "status": "valid"
+  },
+  "baseline_inventory": {
+    "archive_members_checked": 80,
+    "bindings_checked": 81,
+    "combinations": 7,
+    "coverage": "Only listed records, bindings, archive members and complete inventory trees; linked transitive locks are not recursively certified.",
+    "inventory_entries_checked": 11729,
+    "profiles": 10,
+    "record_bytes_hashed": 5885085982,
+    "records_hashed": 243,
+    "roots": 11,
+    "source_repositories_checked": 11,
+    "status": "valid"
+  },
+  "selection": {
+    "blockers": [
+      "F02-JAVA-aspectj154",
+      "F02-JAVA-xmlpull1131",
+      "F02-JAVA-jai-imageio11",
+      "F02-JAVA-json-lib",
+      "F02-JAVA-marlin0948",
+      "F02-JAVA-ojdbc17-source-placeholder",
+      "F06-QGIS-SRC-02"
+    ],
+    "findings": 58,
+    "profile_unknowns": {
+      "browser-test": [
+        "Exact browser/Playwright Node/toolchain source/bootstrap correspondence unresolved; retained tooling lock identifies actual bytes."
+      ],
+      "database-native": [
+        "Host compiler, linker, libc/libstdc++ and selected feature-library source/bootstrap closure unresolved; exact historical identities in database-snapshot."
+      ],
+      "frontend-build": [
+        "Original build-01 executed orchestration identity remains unknown; that original finding is not retroactively closed. New frozen replay has execution-bound tooling, source/input/output and fresh runtime evidence.",
+        "Node binary retained; publisher source/bootstrap and host library closure remain later gates.",
+        "Distribution/source/notice and generated-code obligations remain; no new owner adoption."
+      ],
+      "geonode-python": [
+        "Ten originally absent-sdist records are reconciled in findings: eight source-bearing wheels retain relevant Python code/notices; exact gsimporter source and uap-core source recovered. Native/generated source correspondence and specific notice/generator obligations remain separate.",
+        "Host Python 3.12.14 was not independently source rebuilt; interpreter/bootstrap and support library closure remain open."
+      ],
+      "gwc-cache-fixture": [
+        "Trusted fixture loopback containment with documented PostgreSQL setsid exception is not hostile-code/filesystem isolation."
+      ],
+      "java-selected-aggregate": [
+        "The original ledger remains 48 structural / 12 unresolved / four partial. Consolidated findings account for all16 plus the selected ojdbc17 placeholder-source problem; six Java adoption blockers remain, not 48 reproduced source builds.",
+        "Publisher toolchain sources retained but source-to-binary/bootstrap closure and full host runtime not established."
+      ],
+      "notebook-python": [
+        "Python/no-sdist and generated/shaded dependency source sufficiency remain separate findings.",
+        "Host Python and nine unretained host libraries/bootstrap closure remain open; exact historical identifiers in retained reports."
+      ],
+      "qgis-desktop-server": [
+        "All 265 unchanged ColorBrewer palettes and their acknowledgement/naming terms remain separately obligated; icons/fonts/support/source/bootstrap and original archive distribution remain unaccepted.",
+        "SRC-02 needs authoritative provenance for retained GMT duplicate or a separately authorized one-file exclusion with affected staging/tests. Current exact-1129 authority does not remove a 1130th palette."
+      ],
+      "qgis-native-support": [
+        "Broader host compiler/base-library source/bootstrap closure remains open, distinct from required selected-input source sufficiency."
+      ]
+    },
+    "status": "blocked"
+  },
+  "acceptance": {
+    "distribution_permission": false,
+    "owner_acceptance": false,
+    "status": "not-granted"
+  },
+  "implementation_files": [
+    {
+      "root": "platform",
+      "path": "plan/tools/validate_candidate.py",
+      "sha256": "25102e16c961480a29e1ab153cf4e864615f5c4b6e57433c5c465cb2bd33af8d",
+      "bytes": 20242
+    },
+    {
+      "root": "platform",
+      "path": "plan/tests/test_candidate.py",
+      "sha256": "bb36af569891cef3f8908a8d06523c365cfa044fa93bb4ab09c5fc0697296d18",
+      "bytes": 11645
+    },
+    {
+      "root": "platform",
+      "path": "plan/tests/test_candidate_variant.py",
+      "sha256": "48d214fde7c4d0a7ea011d44a8b66574c66dfd6107e5f25d75691c9c9aca8313",
+      "bytes": 3271
+    },
+    {
+      "root": "platform",
+      "path": "build-support/frontend/replay.py",
+      "sha256": "06d5fe77b14c146c187ae3581c512c7caea42e6cb2333f5ab0b4bc0e6b3a0315",
+      "bytes": 4420
+    },
+    {
+      "root": "platform",
+      "path": "build-support/frontend/webifc_sources.py",
+      "sha256": "07f5c110c3a4834244286ebfde5e680334ada9c482f3e8a5b68547534dd90965",
+      "bytes": 12400
+    },
+    {
+      "root": "platform",
+      "path": "build-support/frontend/webifc_native_probe.py",
+      "sha256": "60f8b8231b5399f727b6b3a50f05e0626eb42524ea9f8123e088ac2e0c5ef3b9",
+      "bytes": 7555
+    },
+    {
+      "root": "platform",
+      "path": "build-support/frontend/webifc_probe.cjs",
+      "sha256": "59a603a847fdcf40b67e87823d6176b167ae07b623c422fc24bac2e0e7d22a19",
+      "bytes": 2535
+    },
+    {
+      "root": "platform",
+      "path": "build-support/qgis/resource_selection.py",
+      "sha256": "6d3523522b4de1f7142e6895025aee19c854a623dacb67430c8eb92b98e28591",
+      "bytes": 19245
+    },
+    {
+      "root": "platform",
+      "path": "build-support/qgis/resource_witness.py",
+      "sha256": "0a13985f57c660a939849e6725eab62e2987a2687429a6ad17dbbde8f86f12a3",
+      "bytes": 14858
+    },
+    {
+      "root": "platform",
+      "path": "build-support/qgis/runtime.py",
+      "sha256": "d2fa6e2eb06abd5c3241e94b4fd85f2434deb42d5eecd47d2f29bad070b205f6",
+      "bytes": 17384
+    },
+    {
+      "root": "platform",
+      "path": "build-support/qgis/desktop_witness.py",
+      "sha256": "0086717a1c47b0f67cb23a8942cd0f7878b30301fa551f857acedc6e03a2ddc8",
+      "bytes": 7863
+    }
+  ],
+  "checks": {
+    "full_package": {
+      "tests": 245,
+      "passed": true,
+      "skipped": 0,
+      "seconds": 9.316
+    },
+    "schemas_examples": {
+      "count": 4,
+      "passed": true
+    },
+    "frontend_guards": {
+      "tests": 39,
+      "passed": true,
+      "seconds": 0.013
+    },
+    "qgis_guards": {
+      "tests": 71,
+      "passed": true,
+      "seconds": 0.53
+    },
+    "final_manifest_regressions": {
+      "tests": 41,
+      "passed": true
+    },
+    "baseline_and_variant_eligibility_exit": 2,
+    "report_drift": false
+  },
+  "execution": {
+    "full_run": {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/validation-01/result.json",
+      "sha256": "273ad7278ed555cc0309ba8e44e08d733e72b70e1a8d28952498c318f630e877",
+      "bytes": 8346
+    },
+    "final_manifest_run": {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/validation-final/result.json",
+      "sha256": "775ff6509fd850e2130aceea0469e3f4044f02714ad7505fb278273bd0b9c30a",
+      "bytes": 3844
+    },
+    "full_commands": [
+      {
+        "name": "baseline-inventory",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "tools/validate_candidate.py",
+          "candidates/fnd-02-candidate-baseline-1.json",
+          "--workspace-root",
+          "/home/revelberry/Projects/AmbisGIS"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 4.811,
+        "passed": true
+      },
+      {
+        "name": "baseline-eligibility",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "tools/validate_candidate.py",
+          "candidates/fnd-02-candidate-baseline-1.json",
+          "--workspace-root",
+          "/home/revelberry/Projects/AmbisGIS",
+          "--eligibility"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "seconds": 4.781,
+        "passed": true
+      },
+      {
+        "name": "baseline-report",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "tools/validate_candidate.py",
+          "candidates/fnd-02-candidate-baseline-1.json",
+          "--workspace-root",
+          "/home/revelberry/Projects/AmbisGIS",
+          "--report"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 4.797,
+        "passed": true
+      },
+      {
+        "name": "variant-inventory",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "tools/validate_candidate.py",
+          "candidates/fnd-02-candidate.json",
+          "--workspace-root",
+          "/home/revelberry/Projects/AmbisGIS"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 6.31,
+        "passed": true
+      },
+      {
+        "name": "variant-eligibility",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "tools/validate_candidate.py",
+          "candidates/fnd-02-candidate.json",
+          "--workspace-root",
+          "/home/revelberry/Projects/AmbisGIS",
+          "--eligibility"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "seconds": 6.314,
+        "passed": true
+      },
+      {
+        "name": "variant-report",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "tools/validate_candidate.py",
+          "candidates/fnd-02-candidate.json",
+          "--workspace-root",
+          "/home/revelberry/Projects/AmbisGIS",
+          "--report"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 6.341,
+        "passed": true
+      },
+      {
+        "name": "package-tests",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-v"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 9.475,
+        "passed": true
+      },
+      {
+        "name": "package-schemas",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "tools/validate_package.py",
+          "--require-schemas"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 0.116,
+        "passed": true
+      },
+      {
+        "name": "frontend-guards",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "build-support/frontend",
+          "-p",
+          "test_*.py",
+          "-v"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 0.073,
+        "passed": true
+      },
+      {
+        "name": "qgis-guards",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "build-support/qgis",
+          "-p",
+          "test_*.py",
+          "-v"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 0.634,
+        "passed": true
+      }
+    ],
+    "final_commands": [
+      {
+        "name": "variant-inventory",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "tools/validate_candidate.py",
+          "candidates/fnd-02-candidate.json",
+          "--workspace-root",
+          "/home/revelberry/Projects/AmbisGIS"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 6.396,
+        "passed": true
+      },
+      {
+        "name": "variant-eligibility",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "tools/validate_candidate.py",
+          "candidates/fnd-02-candidate.json",
+          "--workspace-root",
+          "/home/revelberry/Projects/AmbisGIS",
+          "--eligibility"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 2,
+        "expected_exit_code": 2,
+        "seconds": 6.34,
+        "passed": true
+      },
+      {
+        "name": "variant-report",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "tools/validate_candidate.py",
+          "candidates/fnd-02-candidate.json",
+          "--workspace-root",
+          "/home/revelberry/Projects/AmbisGIS",
+          "--report"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 6.388,
+        "passed": true
+      },
+      {
+        "name": "candidate-tests",
+        "argv": [
+          "/tmp/ambisgis-validation-venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_candidate*.py",
+          "-v"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation/plan",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "seconds": 1.361,
+        "passed": true
+      }
+    ],
+    "review_correction_scope": "After full suite, only finding/profile wording changed; final manifest integrity/eligibility/report and all41 candidate regressions reran. No executable or artifact changed."
+  },
+  "independent_reviews": [
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/recovery/frontend-independent-review.json",
+      "sha256": "a516172ad196b99c1958a1d7a3a6e76db5a166338c0afdc58a90d6c5c08725a3",
+      "bytes": 2118
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/frontend/qgis-independent-review.json",
+      "sha256": "b13e5aae3f037cb5ee0e0000ea54f341732aa410385991c3d27ab0699f345016",
+      "bytes": 5627
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/recovery/candidate-independent-review.json",
+      "sha256": "227ceb83e5c91556f1ed429d0e2583614324a912f770855d5dc1c4ca4a8f8270",
+      "bytes": 6290
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/recovery/qgis-candidate-review.json",
+      "sha256": "fac09732d752fbafb8105120cee0d7fec9a83eca776741d10d686e7ae0c3de3a",
+      "bytes": 2765
+    }
+  ],
+  "final_process_audit": {
+    "root": "workspace",
+    "path": "build-worktrees/frontend-qgis-remediation/recovery/final-process-audit.json",
+    "sha256": "af1b9f3a2fc50141a08b73c49850ded015c13c6c471d7b5c83e925e7e6d35372",
+    "bytes": 278
+  },
+  "recovery": {
+    "root": "workspace",
+    "path": "build-worktrees/frontend-qgis-remediation/recovery/pre-publication.json",
+    "sha256": "575bbb6fd628b732740b7ea78a7370ca1a00d3e83a321402411a3d93dc941ba4",
+    "bytes": 8081
+  },
+  "assembler": {
+    "root": "workspace",
+    "path": "build-worktrees/frontend-qgis-remediation/assemble-candidate.py",
+    "sha256": "db9901df319eb9d79cefc71d0eb9cc3739a4b44ae35f834d16024cdc9f022a7a",
+    "bytes": 34042
+  },
+  "limits": "Inventory/package tests are not GIS product acceptance. Fresh component executions are indexed separately; unchanged backend/native evidence retains original scope. Owner adoption/distribution/F02-07/F02-08 unaccepted."
+}

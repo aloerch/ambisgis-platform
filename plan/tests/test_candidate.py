@@ -133,6 +133,15 @@ class CandidateTests(unittest.TestCase):
         self.assertEqual(result,m.render_report(copy.deepcopy(self.doc)))
         self.assertIn('source correspondence unresolved',result)
         self.assertIn('No distribution',result)
+    def test_report_identifies_selected_manifest_and_candidate(self):
+        self.doc['candidate_id']='new-reviewed-variant-2'
+        report=m.render_report(self.doc,'fnd-02-candidate-baseline-1.json')
+        self.assertIn('../candidates/fnd-02-candidate-baseline-1.json',report)
+        self.assertIn('new-reviewed-variant-2',report)
+        self.assertNotIn('All proposed binary/resource changes are unexecuted',report)
+        for unsafe in ('../outside.json', '.', '..'):
+            with self.assertRaises(ValueError):m.render_report(self.doc,unsafe)
+
     def test_cli_exit_semantics(self):
         from unittest.mock import patch
         from contextlib import redirect_stdout,redirect_stderr
@@ -142,8 +151,13 @@ class CandidateTests(unittest.TestCase):
         with redirect_stdout(io.StringIO()),redirect_stderr(io.StringIO()):
             self.assertEqual(m.main(args),0)
             self.assertEqual(m.main(args+['--eligibility']),2)
+            self.assertEqual(m.main(args+['--report','--eligibility']),2)
             (self.path/'artifact').unlink()
             self.assertEqual(m.main(args),1)
+            report=io.StringIO()
+            with redirect_stdout(report):
+                self.assertEqual(m.main(args+['--report']),1)
+            self.assertEqual(report.getvalue(),'')
 
 
 

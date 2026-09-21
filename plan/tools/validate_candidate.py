@@ -252,7 +252,8 @@ def validate(document, mappings, repository_manifest=None):
             'execution':'Read-only integrity verification; no historical runtime/build test was reexecuted.'}
 
 
-def render_report(document):
+def render_report(document, manifest_name='fnd-02-candidate.json'):
+    require(manifest_name not in ('.', '..') and Path(manifest_name).name == manifest_name and bool(re.fullmatch(r'[A-Za-z0-9_.-]+', manifest_name)), 'Unsafe report manifest name')
     records={r['id']:r for r in document['records']}
     boundaries=list(dict.fromkeys(f['approval_excludes'] for f in document['findings']))
     def prose(value):
@@ -284,9 +285,10 @@ def render_report(document):
         else: label='`'+name+'` (workspace:'+loc['path']+')'
         return label+(' at `'+ref['pointer']+'`' if 'pointer' in ref else '')
     lines=['# FND-02 owner-decision register','',
-           'Generated from [the authoritative internal manifest](../candidates/fnd-02-candidate.json). Edit that manifest and regenerate.',
+           'Generated from [the authoritative internal manifest](../candidates/'+manifest_name+'). Edit that manifest and regenerate.',
+           'Candidate: `'+document['candidate_id']+'`. Manifest schema version: '+str(document['schema_version'])+'.',
            'Full hashes, individual member paths and retained locations are in its `affected`, `records` and linked evidence fields. The summaries below do not replace those identities.',
-           'Inventory validity, candidate selection and owner/distribution acceptance are separate. All proposed binary/resource changes are unexecuted variants.','',
+           'Inventory validity, candidate selection and owner/distribution acceptance are separate. Findings apply to this candidate; historical tests do not establish acceptance of changed artifacts.','',
            '| Finding | Disposition | Blocks adoption | Blocks distribution | Gate |', '|---|---|---|---|---|']
     for f in document['findings']:
         lines.append('| '+f['id']+' | '+f['classification']+' | '+str(f['blocks']['candidate_adoption']).lower()+' | '+str(f['blocks']['distribution']).lower()+' | '+f['gate'].replace('|','/')+' |')
@@ -315,7 +317,7 @@ def main(argv=None):
         document=read_json(args.manifest)
         result=validate(document,{'platform':args.platform_root,'workspace':args.workspace_root})
         result['manifest_sha256']=sha(args.manifest)
-        if args.report: print(render_report(document))
+        if args.report: print(render_report(document, args.manifest.name))
         else: print(json.dumps(result,indent=2,sort_keys=True))
         return 2 if args.eligibility else 0
     except Exception as exc:

@@ -1,0 +1,597 @@
+{
+  "schema_version": 1,
+  "finding": "F06-FE-WEBIFC",
+  "recommendation": "Source-evidence closing condition demonstrated for new variant review; retain distribution obligation. No adoption/redistribution approval.",
+  "implementation_authority": "Current user bounded frontend/QGIS remediation prompt, choice A; not PR #65.",
+  "baseline_commit": "b31e81ad7bfe328d5a8b3ea579eff09e6a0086e7",
+  "source_revision": "b55d8bde10067415d4536b23c27edcc13acf217c",
+  "source_tree": "bdda258d5fbfe4abebdbc057d58e17436dc9c585",
+  "source_archives": [
+    {
+      "name": "webifc",
+      "revision": "b55d8bde10067415d4536b23c27edcc13acf217c",
+      "repository": "https://github.com/ThatOpen/engine_web-ifc",
+      "archive": {
+        "path": "webifc-source.tar.gz",
+        "bytes": 112889803,
+        "sha256": "8da14825b1b205766a1d762fe687749c58ca1228dc0db8273cad0f1e63461333"
+      }
+    },
+    {
+      "name": "fastfloat",
+      "revision": "2b2395f9ac836ffca6404424bcc252bff7aa80e4",
+      "repository": "https://github.com/fastfloat/fast_float",
+      "archive": {
+        "path": "dependencies/fastfloat-2b2395f9ac836ffca6404424bcc252bff7aa80e4.tar.gz",
+        "bytes": 84808,
+        "sha256": "230d20e4e4ac1f6a9df92c4d746c6ec536cdb0c085bc8635d4b88cead5dc22cb"
+      }
+    },
+    {
+      "name": "tinynurbs",
+      "revision": "2fc6562d71665312c6298f7c340bace1bcf1b7a1",
+      "repository": "https://github.com/pradeep-pyro/tinynurbs",
+      "archive": {
+        "path": "dependencies/tinynurbs-2fc6562d71665312c6298f7c340bace1bcf1b7a1.tar.gz",
+        "bytes": 466448,
+        "sha256": "7f3063c864353970f3262bfc31cf014ee3b484938ad6a0db4e01a7c647d2967d"
+      }
+    },
+    {
+      "name": "tinycpptest",
+      "revision": "12e42c8ac6e032ce450fb3f772ebdfd1ddc6008c",
+      "repository": "https://github.com/kovacsv/TinyCppTest",
+      "archive": {
+        "path": "dependencies/tinycpptest-12e42c8ac6e032ce450fb3f772ebdfd1ddc6008c.tar.gz",
+        "bytes": 5122,
+        "sha256": "256c4889a313eea0727fcf01eebdf61234fbdf1a47241df6a53f73186287ba1d"
+      }
+    },
+    {
+      "name": "glm",
+      "revision": "bf71a834948186f4097caa076cd2663c69a10e1e",
+      "repository": "https://github.com/g-truc/glm",
+      "archive": {
+        "path": "dependencies/glm-bf71a834948186f4097caa076cd2663c69a10e1e.tar.gz",
+        "bytes": 4369431,
+        "sha256": "70ad78e872c145f0164d54da833b651914c184edc65958906937b9739fb8fb1b"
+      }
+    },
+    {
+      "name": "earcut",
+      "revision": "4811a2b69b91f6127a75e780de6e2113609ddabb",
+      "repository": "https://github.com/mapbox/earcut.hpp",
+      "archive": {
+        "path": "dependencies/earcut-4811a2b69b91f6127a75e780de6e2113609ddabb.tar.gz",
+        "bytes": 160535,
+        "sha256": "312dc29d1bfb0bf2246f82aa8154be7ce0ff771455ea703dd2d6c1b236c9a7bd"
+      }
+    },
+    {
+      "name": "cdt",
+      "revision": "4d0c9026b8ec846fe544897e7111f8f9080d5f8a",
+      "repository": "https://github.com/artem-ogre/CDT",
+      "archive": {
+        "path": "dependencies/cdt-4d0c9026b8ec846fe544897e7111f8f9080d5f8a.tar.gz",
+        "bytes": 1543987,
+        "sha256": "2e0b35429d29482402f22ac788336019385582d73cfccadf85e7c4970b1fee0c"
+      }
+    },
+    {
+      "name": "spdlog",
+      "revision": "7e635fca68d014934b4af8a1cf874f63989352b7",
+      "repository": "https://github.com/gabime/spdlog",
+      "archive": {
+        "path": "dependencies/spdlog-7e635fca68d014934b4af8a1cf874f63989352b7.tar.gz",
+        "bytes": 251147,
+        "sha256": "1010aa76cdea700e8c693aa29e58ceb0ea51c8f020e2b15c81318e2c05562aec"
+      }
+    },
+    {
+      "name": "fuzzy",
+      "revision": "28251ebc68144e9b4613e0c289304c040e01ccf8",
+      "repository": "https://github.com/tomvandig/fuzzy-bools",
+      "archive": {
+        "path": "dependencies/fuzzy-28251ebc68144e9b4613e0c289304c040e01ccf8.tar.gz",
+        "bytes": 603565,
+        "sha256": "ac5e2ede2e033d6b1d95ac1c1141e0a101ef6be20c54c3ed092dd8e37c0f9289"
+      }
+    }
+  ],
+  "main_source_files_verified_against_publisher_tree": 132,
+  "selected_wasm_cpp_translation_units": [
+    "src/wasm/geometry/IfcGeometryLoader.cpp",
+    "src/wasm/geometry/IfcGeometryProcessor.cpp",
+    "src/wasm/geometry/representation/IfcCurve.cpp",
+    "src/wasm/geometry/representation/IfcGeometry.cpp",
+    "src/wasm/parsing/IfcFileStream.cpp",
+    "src/wasm/parsing/IfcLoader.cpp",
+    "src/wasm/parsing/IfcTokenChunk.cpp",
+    "src/wasm/parsing/IfcTokenStream.cpp",
+    "src/wasm/parsing/string_parsing.cpp",
+    "src/wasm/schema/IfcSchemaManager.cpp",
+    "src/wasm/schema/schema-functions.cpp",
+    "src/wasm/web-ifc-api.cpp"
+  ],
+  "selected_native_third_party_headers": {
+    "cdt": 10,
+    "earcut": 1,
+    "fastfloat": 9,
+    "fuzzy": 14,
+    "glm": 154,
+    "spdlog": 36,
+    "tinycpptest": 1,
+    "tinynurbs": 16
+  },
+  "selected_native_total_headers": 241,
+  "historical_emscripten_declaration": "3.1.44 (Dockerfile and publish/test workflows); not an execution-bound publisher compiler digest",
+  "asset_change": false,
+  "wasm_assets": [
+    {
+      "path": "web-ifc-mt.wasm",
+      "bytes": 1160534,
+      "sha256": "797f6e0be82d95c22292894e8c9c8e8e70eb46d20b519b3f081a8df1e91208ca",
+      "identical_package_paths": [
+        "web-ifc-mt.wasm"
+      ]
+    },
+    {
+      "path": "web-ifc-node.wasm",
+      "bytes": 1140374,
+      "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6",
+      "identical_package_paths": [
+        "web-ifc-node.wasm",
+        "web-ifc.wasm"
+      ]
+    },
+    {
+      "path": "web-ifc.wasm",
+      "bytes": 1140374,
+      "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6",
+      "identical_package_paths": [
+        "web-ifc-node.wasm",
+        "web-ifc.wasm"
+      ]
+    }
+  ],
+  "source_bindings_count": 35,
+  "numeric_schema_declaration_exports": 1137,
+  "native_probe": {
+    "retained_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03",
+    "status": "passed",
+    "upstream_tests": 6,
+    "commands": [
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/offline_exec.py",
+          "--evidence",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/configure-network.json",
+          "--",
+          "cmake",
+          "-S",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/source/src/wasm",
+          "-B",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/build",
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+          "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+          "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
+          "-DFETCHCONTENT_SOURCE_DIR_FASTFLOAT=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/fastfloat",
+          "-DFETCHCONTENT_SOURCE_DIR_TINYNURBS=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/tinynurbs",
+          "-DFETCHCONTENT_SOURCE_DIR_TINYCPPTEST=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/tinycpptest",
+          "-DFETCHCONTENT_SOURCE_DIR_GLM=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/glm",
+          "-DFETCHCONTENT_SOURCE_DIR_EARCUT=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/earcut",
+          "-DFETCHCONTENT_SOURCE_DIR_CDT=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/cdt",
+          "-DFETCHCONTENT_SOURCE_DIR_SPDLOG=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/spdlog",
+          "-DFETCHCONTENT_SOURCE_DIR_FUZZY=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/fuzzy"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03",
+        "exit_code": 0,
+        "elapsed_seconds": 0.1935148710035719
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/offline_exec.py",
+          "--evidence",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/build-network.json",
+          "--",
+          "cmake",
+          "--build",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/build",
+          "--parallel",
+          "2"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03",
+        "exit_code": 0,
+        "elapsed_seconds": 46.024063232005574
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/offline_exec.py",
+          "--evidence",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/native-tests-network.json",
+          "--",
+          "ctest",
+          "--test-dir",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/build",
+          "-VV",
+          "-L",
+          "web-ifc"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03",
+        "exit_code": 0,
+        "elapsed_seconds": 0.03998452000087127
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/offline_exec.py",
+          "--evidence",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/wasm-probe-network.json",
+          "--",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/toolchain/node-v24.18.1-linux-x64/bin/node",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc_probe.cjs",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/static/mapstore/dist/js/web-ifc",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc-box.ifc"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03",
+        "exit_code": 0,
+        "elapsed_seconds": 0.16494433203479275
+      }
+    ],
+    "source_integrity": {
+      "verified_files": 3190,
+      "allowed_mutation": "Historical CMake fuzzy src/ to fuzzy/ directory rename only; all file bytes unchanged"
+    },
+    "wasm_geometry": {
+      "status": "passed",
+      "version": "0.0.50",
+      "fixture_sha256": "ee057f970ffe2285e499b9cb4bfb2233e042995cff249fe5674ecab2415237ae",
+      "wasm_sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6",
+      "meshes": 1,
+      "triangles": 12,
+      "bounds": [
+        [
+          -1,
+          1
+        ],
+        [
+          -1.5,
+          1.5
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "save_reopen": true
+    }
+  },
+  "source_stage": {
+    "root": "workspace",
+    "path": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/success.json",
+    "bytes": 642,
+    "sha256": "0b79f148fa7af0fe78c1eb1a870f020cf77167e65cba1761231306d2ac2cb6d2"
+  },
+  "guards": {
+    "tests": 13,
+    "status": "passed",
+    "command": {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "build-support/frontend",
+        "-p",
+        "test_webifc_sources.py",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-webifc",
+      "exit_code": 0,
+      "elapsed_seconds": 0.045121779025066644
+    }
+  },
+  "failures": [
+    {
+      "attempt": "wasm-01",
+      "outcome": "failed: incorrect retained Node path; no API execution or network receipt"
+    },
+    {
+      "attempt": "wasm-02",
+      "outcome": "failed: engine errors on missing rectangle placement despite command exit zero; no acceptance transferred"
+    }
+  ],
+  "earlier_retained_attempts": [
+    "native-01 and native-02 (native compile and six tests passed; final frozen native-03 adds full post-build source integrity)",
+    "wasm-03 (corrected fixture passes; final native-03 is selected)",
+    "source-stage-01 and source-stage-02 (retained development stages; source-stage-03 selected)"
+  ],
+  "limits": [
+    "Publisher source/byte/binding evidence supports correspondence, not a byte-identical WASM rebuild.",
+    "Native probe compiles parser/geometry dependencies, not Emscripten-only web-ifc-api.cpp.",
+    "Browser/Node WASM paths have identical bytes; compilation origins cannot be distinguished by filename.",
+    "MT bindings are checked but multithreaded browser behavior is not accepted here.",
+    "Distribution/source delivery and full generated-runtime/toolchain closure remain unaccepted.",
+    "All relevant retained historical third-party terms remain applicable; no final License/Brand or distribution acceptance.",
+    "No independently byte-identical Emscripten rebuild; native target excludes web-ifc-api.cpp.",
+    "No newly changed frontend or loader assets; browser/MT behavior and full 3D product acceptance not claimed.",
+    "No service/credential/listener changes; no external distribution."
+  ],
+  "records": [
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/success.json",
+      "bytes": 642,
+      "sha256": "0b79f148fa7af0fe78c1eb1a870f020cf77167e65cba1761231306d2ac2cb6d2"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/index.json",
+      "bytes": 13664,
+      "sha256": "7f03d910d9dba4a48cddcaa973636c118d030fe068fc2a8d284db9bfa7761260"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/stage-manifest.json",
+      "bytes": 6105,
+      "sha256": "271d1408451a26ee6585827d701b68bcba9f10fce864a0fddc18242abf5587b3"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/source-members.json",
+      "bytes": 543114,
+      "sha256": "c8235cd3301f41cf7aeb814c2e904ad5b3bbfc7f9f81cd4a4a1128bd152c96f8"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/SOURCE-AVAILABILITY.txt",
+      "bytes": 938,
+      "sha256": "c82253c616e3d3b21b094bf73fe3d8e9c28be6b04a95f072e28876cdc34c9d15"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/success.json",
+      "bytes": 11242,
+      "sha256": "cb4a254cbfa5d4473be3e1496cad07f98ef5ae2cd45f780b414eb3ce3fd21a76"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/toolchain-identities.json",
+      "bytes": 1919,
+      "sha256": "329f6e4e7d269a117e000cf343f72c5972ce3bff84f2958e854abd4894726159"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/schema-correspondence.json",
+      "bytes": 324,
+      "sha256": "e1f8948a806295184199712b15a675deeaa47be0a245d893118780eb5a46975d"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/source-guards-command.json",
+      "bytes": 299,
+      "sha256": "7e797337df02f1f98fed8b959d4c29075fe2229d44992e129552d4e28ba5d810"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/source-guards.log",
+      "bytes": 1497,
+      "sha256": "ea998ba047a10a846a8db33bbfa3e206b718766f535f546285c113f080a1e6c3"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/stage-03-command.json",
+      "bytes": 608,
+      "sha256": "fea61be9b715b196db1c3f3d704810ae482b14fedd0fa1ddbb058beea0874203"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/stage-03.log",
+      "bytes": 92,
+      "sha256": "0d0dad435bdd39bbd5e858b53ddcbdf8fddcacce2a8fc54d5f749b0dc208e05b"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/frozen-native-03-command.json",
+      "bytes": 772,
+      "sha256": "c0da13a862c2031c996b4de570a9074df414ad5e08e35ff5dce6bc4da5a390d5"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/frozen-native-03.log",
+      "bytes": 62,
+      "sha256": "dbd6fd96dc396c35f12066b20f0fc5f81c48ff1bccdb267714a11fa0767980c7"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/wasm-01.log",
+      "bytes": 143,
+      "sha256": "fc7c4425eaaced5e3cdc645eb53d4e7d385c3f75af9bd2246a5a2aeeafd79950"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/wasm-02.log",
+      "bytes": 2203,
+      "sha256": "272e6b96459c8619f995a1e9857f5cc79fe54ec0b38f8cdbf3c9de5f9506f165"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/wasm-02-command.json",
+      "bytes": 830,
+      "sha256": "529b3d08b3c6b708b26c44dc1c95a30776553895e29d12f9e1fcc9dc169da852"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/wasm-02-network.json",
+      "bytes": 2274,
+      "sha256": "d4cfbc749e96c37994d8892244c54b8cdbcc673827705354064d31c85f22c0a6"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/wasm-03.log",
+      "bytes": 2055,
+      "sha256": "3bc08b54849f6d8d1fbc36efafa1a2d46c562611b905541dba7a4da9fa3fbeb0"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/wasm-03-command.json",
+      "bytes": 831,
+      "sha256": "2d591ec2a7da9dbccc89db9b9e8d38c48bc01c15f0d5a4d34906c5257ec98de6"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/wasm-03-network.json",
+      "bytes": 2274,
+      "sha256": "ca9fbb00dd357038bea0e46aeac071ecfe1aca4b2f219b9170a586b6b62efe72"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build-command.json",
+      "bytes": 652,
+      "sha256": "3584e7db863cabd704de490c999be9d7467028892992f737820645d878f44d77"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/configure-command.json",
+      "bytes": 2153,
+      "sha256": "99fe7de4bb95df0f74b878c01ba7fb1878a4c43daea0742c5523097cfb492db9"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/native-tests-command.json",
+      "bytes": 672,
+      "sha256": "a829021193e7007a5ce448cd5ca924acec84ea9132fa6775c30f4084fab1ffdb"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/wasm-probe-command.json",
+      "bytes": 1044,
+      "sha256": "2751867308497431a59b28c5950d5507f66570ff271c347ee6df2826375d2fc0"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build-network.json",
+      "bytes": 1884,
+      "sha256": "578042803d8e3918d55a87e60aa9c418b52b100e165c76cd0ab80d6c5e6bd44a"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/configure-network.json",
+      "bytes": 3381,
+      "sha256": "845fd150610fdc288286e69c7829150f4d6843e5704100cfe8dde1eac0e95351"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/native-tests-network.json",
+      "bytes": 1896,
+      "sha256": "1bde6753726daf9a76233375265c62b1637182e1fe958939366f41e7e8f50ae9"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/wasm-probe-network.json",
+      "bytes": 2378,
+      "sha256": "0ede70e03708a51e026621ec0a98d06215823e03a082730e401ebb126daafa5e"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build/CMakeFiles/web-ifc-test.dir/link.txt",
+      "bytes": 930,
+      "sha256": "3caefd070822df9e3b1079d6f61d33227d5745ef13d0e448740f7d313f01f4b2"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build/CMakeFiles/web-ifc.dir/link.txt",
+      "bytes": 803,
+      "sha256": "ae88de0ef75dc3a9df519fb946849caaf1ef106a3ee2644269f0f56cf787e713"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build/web-ifc",
+      "bytes": 1395400,
+      "sha256": "d5d5b451632cd1485e65347b7ebf121815156569594b8dd8f62b1250f55cfaff"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build/web-ifc-test",
+      "bytes": 1360816,
+      "sha256": "7eeb16fde58f398e346925b9f5f76a3fbf0149d0dbcc10fb38a1d61e0f01b701"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build/compile_commands.json",
+      "bytes": 47163,
+      "sha256": "b0921b756d0ae31a19db6fa1d5e03c28b24567cca6e4b3877bb22b3de5536f3a"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/selected-native-headers.json",
+      "bytes": 11300,
+      "sha256": "816767f2a8e99ed5417fc5e8f267a0a29675ea0dddfde359c9e68bfcc0553ac2"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/offline_exec.py",
+      "bytes": 9932,
+      "sha256": "ed658e05bc1cde8b008835b146bf2be73487313f581ce66da31d5644b3766ace"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc-box.ifc",
+      "bytes": 980,
+      "sha256": "ee057f970ffe2285e499b9cb4bfb2233e042995cff249fe5674ecab2415237ae"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc_native_probe.py",
+      "bytes": 7555,
+      "sha256": "60f8b8231b5399f727b6b3a50f05e0626eb42524ea9f8123e088ac2e0c5ef3b9"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc_probe.cjs",
+      "bytes": 2535,
+      "sha256": "59a603a847fdcf40b67e87823d6176b167ae07b623c422fc24bac2e0e7d22a19"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc_sources.py",
+      "bytes": 12400,
+      "sha256": "07f5c110c3a4834244286ebfde5e680334ada9c482f3e8a5b68547534dd90965"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build.log",
+      "bytes": 402324,
+      "sha256": "6168c6d5354b2726570297f617738218ed0e9af999299437a3c9ffb95fe64f4c"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/configure.log",
+      "bytes": 1769,
+      "sha256": "785331bd82492fb52a9782774bff8e60f5502157148d13296a9c5594c4151ee5"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/native-tests.log",
+      "bytes": 1642,
+      "sha256": "6169df6e6a84ace17f3b1999c24749213108552ff305d5380a88e73c666fc346"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/wasm-probe.log",
+      "bytes": 2055,
+      "sha256": "3bc08b54849f6d8d1fbc36efafa1a2d46c562611b905541dba7a4da9fa3fbeb0"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/source-input-manifest.json",
+      "bytes": 831980,
+      "sha256": "ef850d1f2ad86540fafd9cf80cb7f1181a20e731fd57150ec20c56e57f51f879"
+    }
+  ]
+}
