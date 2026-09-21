@@ -119,8 +119,11 @@ class Matrix:
             c.request(method, '/geoserver' + path, body=body, headers=h)
             response = c.getresponse(); data = response.read()
             text = data.decode('utf-8', errors='replace')
-            response_headers = {key.lower():value for key,value in response.getheaders()}
-            leaks = sum(value in (text + str(response_headers)) for value in self.identity.sensitive())
+            raw_headers = response.getheaders()
+            response_headers = {key.lower():value for key,value in raw_headers}
+            cookies = [value for key,value in raw_headers if key.lower() == 'set-cookie']
+            if cookies: response_headers['set-cookie'] = '; '.join(cookies)
+            leaks = sum(value in (text + str(raw_headers)) for value in self.identity.sensitive())
             if leaks: self.leaks.append({'case': name, 'count': leaks})
             ok = response.status in expected and not leaks
             if contains in ('PUBLIC_WITNESS','PRIVATE_WITNESS'):
@@ -128,10 +131,10 @@ class Matrix:
                 ok = ok and validate_geojson(text,contains)
             elif contains is not None: ok = ok and contains in text
             for value in excludes: ok = ok and value not in text
-            ok = ok and (not response_headers.get('location') or (response.status == 201 and method == 'POST')) and '<form' not in text.lower()
+            ok = ok and (not any(value for key,value in raw_headers if key.lower() == 'location') or (response.status == 201 and method == 'POST')) and '<form' not in text.lower()
             self.rows.append({'case': name, 'method': method, 'path': path, 'expected_status': list(expected), 'status': response.status,
                               'body_sha256': hashlib.sha256(data).hexdigest(), 'body_size': len(data),
-                              'content_type': response_headers.get('content-type'), 'content_assertion': contains,
+                              'content_type': response_headers.get('content-type'), 'content_assertion': contains, 'set_cookie_header_count': len(cookies),
                               'verification_calls': len(self.identity.calls) - before, 'passed': bool(ok)})
             return response.status, text, response_headers
         finally:
@@ -231,10 +234,11 @@ def exercise(matrix, fixture, restart=False):
     # Incidental sessions must not carry reader identity without fresh credentials.
     _,_,headers = matrix.request('session-reader',wfs('private_points'),identity.token('reader'),contains='PRIVATE_WITNESS',excludes=())
     cookie = headers.get('set-cookie','').split(';')[0]
+    cookie_header_observed = matrix.rows[-1]['set_cookie_header_count'] > 0
     if cookie:
         matrix.request('session-without-bearer',wfs('private_points'),headers={'Cookie':cookie},expected=(401,403,404))
         matrix.request('session-outsider',wfs('private_points'),identity.token('outsider'),headers={'Cookie':cookie},expected=(401,403,404))
-    matrix.rows.append({'case':'session-policy','passed':not cookie if fixture.get('stateless_bearer_authentication') else True,'incidental_session_cookie_observed':bool(cookie),'stateless_bearer_authentication':fixture.get('stateless_bearer_authentication',False),
+    matrix.rows.append({'case':'session-policy','passed':not cookie_header_observed if fixture.get('stateless_bearer_authentication') else True,'incidental_session_cookie_observed':cookie_header_observed,'stateless_bearer_authentication':fixture.get('stateless_bearer_authentication',False),
                         'logout_scope':'Stateless service mode must create no session; browser login/logout is outside this fixture.' if fixture.get('stateless_bearer_authentication') else 'Legacy OAuth created authenticated sessions; service fixture cookie denial checks remain required.'})
 
 

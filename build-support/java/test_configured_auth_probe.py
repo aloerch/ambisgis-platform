@@ -135,6 +135,17 @@ class MatrixEvidenceTests(unittest.TestCase):
         self.assertTrue(matrix.leaks)
         self.assertNotIn('fixture-sensitive-token', json.dumps(matrix.rows))
 
+    def test_earlier_duplicate_header_secret_and_redirect_cannot_be_hidden(self):
+        matrix = self.request(403, 'denied', headers=(('Set-Cookie', 'fixture-sensitive-token'),
+                                                    ('set-cookie', 'innocent')), expected=(401,403,404))
+        self.assertFalse(matrix.rows[-1]['passed'])
+        self.assertTrue(matrix.leaks)
+        self.assertEqual(matrix.rows[-1]['set_cookie_header_count'], 2)
+        self.assertNotIn('fixture-sensitive-token', json.dumps(matrix.rows))
+        matrix = self.request(200, json.dumps(feature()), headers=(('Location','/login'), ('location','')),
+                              contains='PRIVATE_WITNESS')
+        self.assertFalse(matrix.rows[-1]['passed'])
+
     def test_marker_echo_is_not_a_positive_gis_read(self):
         matrix = self.request(200, '<Exception>PRIVATE_WITNESS</Exception>', contains='PRIVATE_WITNESS')
         self.assertFalse(matrix.rows[-1]['passed'])
