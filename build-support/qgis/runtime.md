@@ -152,3 +152,12 @@ X server and permits that preliminary check; Qt still must load the retained
 offscreen platform, which the runtime mapping guard verifies. The failed attempt
 and its successful database cleanup, credential scrubbing and artifact integrity
 receipt remain retained. This repair introduces no physical-display claim.
+
+`runtime-02` then completed six real desktop canvas renders, zoom, save and reopen,
+but the process crashed during shutdown. The retained system crash metadata
+identifies project layer-tree removal after its view was destroyed. The harness
+had called `QApplication.exit` directly, bypassing exact `QgisApp::fileExit`'s
+`closeProject()` step. Shutdown now triggers `iface.actionExit()`, the real File
+Exit action; success still requires both a successful witness receipt and process
+exit zero. Each subprocess retains a separate command receipt even on nonzero
+exit, timeout or capture failure. The failed attempt is not accepted.

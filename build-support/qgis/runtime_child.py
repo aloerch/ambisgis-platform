@@ -34,6 +34,7 @@ class Capture:
     def finish(self):
         self.thread.join(10)
         require(not self.thread.is_alive() and not self.errors, 'diagnostic capture failed')
+        self.process.stdout.close()
         require(not self.secret_hits, 'secret emitted in child diagnostic')
 
 
@@ -49,14 +50,31 @@ def stop(process, capture):
 
 
 def command(argv, config, name, secrets, timeout=120):
-    process = subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, errors='replace')
-    capture = Capture(process, Path(config['output'])/(name+'.log'), secrets)
+    output = Path(config['output'])
+    result = {'command':argv,'result_exit_code':1}
+    process = None; capture = None
     try:
+        process = subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, errors='replace')
+        capture = Capture(process, output/(name+'.log'), secrets)
         code = process.wait(timeout=timeout)
-        capture.finish(); require(code == 0, name+' exited unsuccessfully')
-        return {'command':argv,'exit_code':code,'log_sha256':sha(capture.path)}
+        capture.finish()
+        require(code == 0, name+' exited unsuccessfully: '+str(code))
+        result['result_exit_code'] = 0
+    except BaseException as error:
+        message = str(error)
+        for secret in secrets:
+            if secret: message = message.replace(secret,'[REDACTED_FIXTURE_VALUE]')
+        result['error'] = {'type':type(error).__name__,'message':message}
+        raise
     finally:
-        if process.poll() is None: stop(process,capture)
+        try:
+            if process is not None and process.poll() is None: stop(process,capture)
+        finally:
+            result['exit_code'] = process.returncode if process is not None else None
+            result['pid'] = process.pid if process is not None else None
+            if capture is not None and capture.path.is_file(): result['log_sha256'] = sha(capture.path)
+            save(output/(name+'-command.json'),result)
+    return result
 
 
 def server(config, secrets):

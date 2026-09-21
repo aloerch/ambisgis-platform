@@ -11,7 +11,7 @@ from types import SimpleNamespace
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from runtime_common import POINTS, SAMPLES, image_witness, inventory, loaded_origins, python_origins, selected_xml_origin, validate_mapped_origins
 from runtime import build_environment, private_write, redact, validate_config
-from runtime_child import server
+from runtime_child import command, server
 
 
 class Color:
@@ -70,6 +70,15 @@ class RuntimeGuards(unittest.TestCase):
         with tempfile.TemporaryDirectory() as name:
             path=Path(name)/'artifact'; path.write_text('a'); before=inventory(name)
             path.write_text('b'); self.assertNotEqual(before,inventory(name))
+
+    def test_nonzero_child_exit_retains_command_receipt(self):
+        with tempfile.TemporaryDirectory() as name:
+            with self.assertRaisesRegex(AssertionError,'exited unsuccessfully: 7'):
+                command([sys.executable,'-c','raise SystemExit(7)'],{'output':name},'synthetic',[])
+            receipt=json.loads((Path(name)/'synthetic-command.json').read_text())
+            self.assertEqual(7,receipt['exit_code'])
+            self.assertEqual(1,receipt['result_exit_code'])
+            self.assertIn('log_sha256',receipt)
 
     def test_server_failure_preserves_partial_failed_receipt(self):
         with tempfile.TemporaryDirectory() as name:

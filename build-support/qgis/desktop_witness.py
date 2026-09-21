@@ -7,7 +7,6 @@ import time
 from qgis.core import QgsProject, QgsRectangle
 from qgis.PyQt.QtCore import QTimer
 from qgis.PyQt.QtGui import QImage
-from qgis.PyQt.QtWidgets import QApplication
 from qgis.utils import iface
 from runtime_common import check_layers, image_witness, loaded_origins, provider_origins, python_origins, require, save, sha
 
@@ -42,10 +41,13 @@ class DesktopWitness:
         self.closed = True; self.timer.stop()
         if error: self.report['error'] = {'type':type(error).__name__,'message':str(error)}
         self.report['result_exit_code'] = code
+        self.report['shutdown'] = 'native File Exit action (includes closeProject)'
         try: save(OUTPUT/'desktop-result.json',self.report)
         finally:
             QgsProject.instance().setDirty(False)
-            QApplication.instance().exit(code)
+            # Native File Exit closes the project before widgets are destroyed.
+            # The assertion receipt preserves failures even though File Exit returns 0.
+            iface.actionExit().trigger()
 
     def tick(self):
         try:
