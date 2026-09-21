@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "reviewer": "java_source agent; independent of aggregate implementation",
+  "scope": "Source profile, content-pinned mirror replacement, WAR class inventory and runtime renderer binding. Candidate adoption/license/security approval excluded.",
+  "reviewed_files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/no_oracle.py",
+      "sha256": "c25da7a68e4a39ea160405bc32f1b959940bf74ad22e2a46e6723b80e3e00d3d",
+      "bytes": 4955
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/no-oracle-repairs.json",
+      "sha256": "c579132c8243cc51348de3cc68f2bc02a32855ae9801b4d973db4224d0ad0272",
+      "bytes": 4139
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/variant_inputs.py",
+      "sha256": "f6147112e861f9592a390d9bab072a36b658f88540f54720fcdce365f61ebba0",
+      "bytes": 3543
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/compatibility.py",
+      "sha256": "0508265fcc3c61d0c5a8700a4ff508859635cbbb12c52d89c68fa0f8444767dc",
+      "bytes": 36711
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/aggregate_evidence.py",
+      "sha256": "9c8c095b57cc49f1018c62566f19511bdb1586eb15c97e8ac8e5897bdceb50e9",
+      "bytes": 23106
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/runtime_profile.py",
+      "sha256": "815f73bbe8f1faeed208cde85116fc789566598ef71a7eb97c21dc3d8807d462",
+      "bytes": 1932
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/runtime_inputs.py",
+      "sha256": "ac7ea0b7bdee2b1def01552703065969a6fda765a9493172ae23e6fee8e633b3",
+      "bytes": 7905
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/runtime-fixtures/ConfiguredGeoServerRuntime.java",
+      "sha256": "a156a57144cee189aa9eb779b87feaea3e711ed56b2be096f615d96e3110f9bf",
+      "bytes": 28741
+    }
+  ],
+  "aggregate_build": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-02/result.json",
+    "sha256": "10508f0c406cef2253e35093a1c46ff3a9820e9503d3d4525a27dfddc9e4cc8c",
+    "bytes": 110839
+  },
+  "variant_inputs": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-02/variant-inputs.json",
+    "sha256": "e0d41008d6bb057d507ecbd8d5e0d900a4a3beecd55c81fe1f25f4d18e546cb6",
+    "bytes": 6283
+  },
+  "findings": [
+    {
+      "outcome": "checked",
+      "detail": "NO-ORACLE source edits require exact inspected before SHA and single-match before text, verify after SHA, remove active importer/driver dependency edges and one Oracle UI class only, retaining original source and notices plus shared PostGIS mosaic abstractions."
+    },
+    {
+      "outcome": "checked",
+      "detail": "Oracle driver Maven groups are absent from fresh mirror and resolved fresh-m2. Final inventory rejects known Oracle drivers/providers/native libraries by class identities and original byte fingerprints; required PostGIS/mosaic/importer classes remain. It explicitly does not claim arbitrary unknown rewritten code is detectable by scan."
+    },
+    {
+      "outcome": "checked",
+      "detail": "All mapping inputs validate prior to writes. Original retained artifacts are hash checked, replacements and source evidence hash checked, sourcevariant identity remains explicit, stale detached signatures are removed only from fresh local mirror and checksum sidecars regenerated. Donor namespace publication is absent."
+    },
+    {
+      "outcome": "checked",
+      "detail": "Runtime profile binds renderer member, renderer hash and WAR hash. Launcher rechecks profile/renderer integrity then supplies explicit headless/noOpenGL Java desktop patch. Runtime fixture asserts actual selected engine resource origin; no silent default renderer acceptance."
+    },
+    {
+      "outcome": "bounded-limitation",
+      "detail": "An aggregate package with tests skipped does not independently establish every mosaic/native test compilation or runtime path. Actual final-WAR PostGIS mosaic/runtime receipts are required separately. Java7+AspectJ loadtime weaving and imaging native renderer regression are explicit retained limitations."
+    }
+  ],
+  "new_blocking_code_defects": []
+}

@@ -127,7 +127,7 @@ def compile_launcher(java_home, staged, output):
         write_json(output / 'result.json', report)
 
 
-def launcher_command(java_home, staged, compiled, war, data, runtime, port=0):
+def launcher_command(java_home, staged, compiled, war, data, runtime, port=0, java_profile=None):
     """Recheck compiler evidence and every launcher/runtime byte before execution."""
     compiled = Path(compiled)
     report = json.loads((compiled / 'result.json').read_text())
@@ -148,6 +148,8 @@ def launcher_command(java_home, staged, compiled, war, data, runtime, port=0):
     if not isinstance(port, int) or isinstance(port, bool) or not 0 <= port <= 65535:
         raise ValueError('invalid servlet fixture port')
     cp = str((compiled / 'classes').resolve()) + os.pathsep + classpath(staged)
-    return [str(Path(java_home) / 'bin/java'), '-Djava.awt.headless=true', '-cp', cp,
+    import runtime_profile
+    options = runtime_profile.flags(java_profile, war)
+    return [str(Path(java_home) / 'bin/java'), *options, '-Djava.awt.headless=true', '-cp', cp,
             'ConfiguredGeoServerRuntime', str(Path(war).absolute()), str(Path(data).absolute()),
             str(Path(runtime).absolute()), str(port)]

@@ -1,0 +1,15 @@
+AmbisGIS json-lib source variant; not upstream 2.4.2-geoserver.
+Complete source: fernandor777/Json-lib revision
+1ff8dc03730cb00afb4628350f3106f35c122d34 (POM 2.4.1-geoserver).
+Copyright 2002-2009 the original author or authors; Apache License 2.0
+headers and LICENSE.txt are preserved without changing their assertions.
+This product includes software developed by Douglas Crockford
+(http://www.crockford.com), as declared by the original POM.
+Files retaining @author JSON.org: JSONArray.java, JSONObject.java,
+JSONException.java, JSONNull.java, util/JSONTokener.java,
+util/JSONBuilder.java, util/JSONStringer.java.
+Original-version source/binary identity is NOT established by this variant.
+The Apache headers/POM do not independently settle the original JSON-derived
+file licensing chain. Exact applicable historical JSON.org permission and
+redistribution reconciliation remain a review/adoption blocker; this notice
+neither grants rights nor declares those obligations discharged.

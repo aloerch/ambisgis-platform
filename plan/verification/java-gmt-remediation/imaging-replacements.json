@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "variant_id": "java-gmt-imaging-proposal-2",
+  "replacements": [
+    {
+      "maven_path": "org/marlin/marlin/0.9.4.8/marlin-0.9.4.8.jar",
+      "original_sha256": "44c3c3620102749844e58f668523f073db127efbd0b233ec9b13b3205db1362f",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/ambisgis-marlin-0.9.4.8-headless-temurin17-2.jar",
+      "sha256": "14633f73fed7e30553927201309bcaf407a9f5462fce87692f196859f33d074a",
+      "variant_id": "ambisgis-marlin-0.9.4.8-headless-temurin17-2",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/result.json",
+          "sha256": "50a5e990bc52125712a66afcc0106cad299388593a2bde808d430bc55920c410"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure/blobs/sha256/60fc2008c33f01281ce75dbbfe04c1771ddb9544746ed32c3dbef551ee60270a",
+          "sha256": "60fc2008c33f01281ce75dbbfe04c1771ddb9544746ed32c3dbef551ee60270a"
+        }
+      ]
+    },
+    {
+      "maven_path": "javax/media/jai_imageio/1.1/jai_imageio-1.1.jar",
+      "original_sha256": "2b40befa9340e15759c68867df08905c6c6400df379ec7802120386325a565d3",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-03/ambisgis-jai-imageio-1.1-java-temurin17-1.jar",
+      "sha256": "51dc61ca6724ba307f7d8407aa276e2c56c11d6ad6093d62820abef0ab0880f2",
+      "variant_id": "ambisgis-jai-imageio-1.1-java-temurin17-1",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-03/result.json",
+          "sha256": "dbddb3e2effb9bba4061f8c73cd33813d1af407f561268e031751a6b42c54087"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-gmt-remediation/imaging/f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+          "sha256": "f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68"
+        }
+      ]
+    }
+  ]
+}

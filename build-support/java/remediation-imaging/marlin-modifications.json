@@ -1,0 +1,12 @@
+[
+  {
+    "path": "src/main/java/sun/java2d/marlin/DMarlinRenderingEngine.java",
+    "before_sha256": "17f1528be58aed1676d3d926a5caa1d35f4327c0c1d5148b17931485fd28c35d",
+    "after_sha256": "8b1e64eec7fbbdec62d31ce66f90e4880f694c9c660c88c0aaad0287f7cb8809"
+  },
+  {
+    "path": "src/main/java/sun/java2d/marlin/Version.java",
+    "before_sha256": "8be3ecfc490c2cac9a9c01ef6cc7361591e3eca74bf9317dab9600a79f9af822",
+    "after_sha256": "3067cf4f29413b3197c205eac6f9cd1023e1ec86bc5986494604ece8c77b2cac"
+  }
+]

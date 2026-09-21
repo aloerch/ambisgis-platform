@@ -111,6 +111,67 @@ public final class ConfiguredGeoServerRuntime {
         Files.writeString(runtime.resolve("gwc-runtime.json"), result, StandardOpenOption.CREATE_NEW);
     }
 
+    /** Explicit candidate witness: exact patched renderer and discovered NO-ORACLE providers. */
+    private static void candidateSummary(ClassLoader loader, Path runtime) throws Exception {
+        String rendererPath = System.getProperty("ambisgis.fixture.renderer");
+        if (rendererPath == null) return;
+        if (!java.awt.GraphicsEnvironment.isHeadless() || !"false".equals(System.getProperty("sun.java2d.opengl")))
+            throw new IllegalStateException("headless renderer profile was not selected");
+        Object renderer = Class.forName("sun.java2d.pipe.RenderingEngine").getMethod("getInstance").invoke(null);
+        Class<?> rendererType = renderer.getClass();
+        if (!rendererType.getName().equals("sun.java2d.marlin.DMarlinRenderingEngine"))
+            throw new IllegalStateException("renderer fallback is forbidden");
+        java.net.URL rendererResource = rendererType.getResource("DMarlinRenderingEngine.class");
+        if (rendererResource == null || !rendererResource.getProtocol().equals("jar"))
+            throw new IllegalStateException("renderer did not load from a retained JAR");
+        Path rendererJar = Path.of(((java.net.JarURLConnection) rendererResource.openConnection()).getJarFileURL().toURI()).toRealPath();
+        if (!rendererJar.equals(Path.of(rendererPath).toRealPath()))
+            throw new IllegalStateException("loaded renderer is not the selected WAR member");
+        java.awt.image.BufferedImage image = new java.awt.image.BufferedImage(80, 80, java.awt.image.BufferedImage.TYPE_INT_ARGB);
+        java.awt.Graphics2D graphics = image.createGraphics();
+        try {
+            graphics.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING, java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+            graphics.setColor(new java.awt.Color(255, 0, 0, 128));
+            graphics.fill(new java.awt.geom.Ellipse2D.Double(10.3, 10.3, 50.4, 50.4));
+            graphics.setColor(java.awt.Color.BLUE);
+            graphics.setStroke(new java.awt.BasicStroke(3, java.awt.BasicStroke.CAP_ROUND, java.awt.BasicStroke.JOIN_ROUND));
+            graphics.draw(new java.awt.geom.Line2D.Double(4.3, 70.4, 72.1, 4.8));
+        } finally { graphics.dispose(); }
+        int fractional = 0;
+        for (int y = 0; y < 80; y++) for (int x = 0; x < 80; x++) {
+            int alpha = image.getRGB(x, y) >>> 24;
+            if (alpha > 0 && alpha < 128) fractional++;
+        }
+        if ((image.getRGB(0, 0) >>> 24) != 0 || fractional < 20)
+            throw new IllegalStateException("selected renderer did not exercise transparency and antialiasing");
+        javax.imageio.ImageIO.write(image, "PNG", runtime.resolve("renderer-witness.png").toFile());
+        List<String> providers = new ArrayList<>();
+        java.util.Iterator<?> factories = (java.util.Iterator<?>) loader.loadClass("org.geotools.api.data.DataStoreFinder")
+                .getMethod("getAvailableDataStores").invoke(null);
+        boolean postgis = false;
+        while (factories.hasNext()) {
+            String name = factories.next().getClass().getName();
+            if (name.startsWith("org.geotools.data.oracle.")) throw new IllegalStateException("Oracle provider remains exposed");
+            if (name.equals("org.geotools.data.postgis.PostgisNGDataStoreFactory")) postgis = true;
+            providers.add(quote(name));
+        }
+        if (!postgis) throw new IllegalStateException("PostGIS provider unavailable");
+        for (String name : List.of("oracle.jdbc.OracleDriver", "oracle.jdbc.driver.OracleDriver", "oracle.sql.STRUCT",
+                "org.geotools.data.oracle.OracleNGDataStoreFactory", "org.geoserver.importer.web.OraclePanel")) {
+            try { loader.loadClass(name); throw new IllegalStateException("excluded Oracle class loadable: " + name); }
+            catch (ClassNotFoundException expected) { /* Explicit unsupported profile. */ }
+        }
+        for (Object source : loader.loadClass("org.geoserver.importer.web.ImportDataPage$Source").getEnumConstants())
+            if (((Enum<?>) source).name().equals("ORACLE")) throw new IllegalStateException("Oracle importer option is exposed");
+        Collections.sort(providers);
+        String result = "{\"renderer_class\":" + quote(rendererType.getName())
+                + ",\"renderer_resource\":" + quote(rendererResource.toString())
+                + ",\"renderer_jar_sha256\":" + quote(hash(rendererJar))
+                + ",\"fractional_alpha_pixels\":" + fractional + ",\"oracle_classes_absent\":true,\"postgis_available\":true,\"providers\":["
+                + String.join(",", providers) + "]}";
+        Files.writeString(runtime.resolve("candidate-runtime.json"), result, StandardOpenOption.CREATE_NEW);
+    }
+
     private static String securitySummary(ClassLoader loader, Class<?> extensions) throws Exception {
         Class<?> managerType = loader.loadClass("org.geoserver.security.GeoServerSecurityManager");
         Object manager = extensions.getMethod("bean", Class.class).invoke(null, managerType);
@@ -334,6 +395,7 @@ public final class ConfiguredGeoServerRuntime {
                 if (!roleLogger.isLoggable(java.util.logging.Level.FINE)) throw new IllegalStateException("role capture inactive");
                 roleLogger.fine("AMBISGIS_CONFIGURED_ROLE_LOG_CAPTURE_CONTROL");
             }
+            candidateSummary(loader, runtime);
             if (Boolean.getBoolean("ambisgis.fixture.gwc")) gwcSummary(loader, extensions, runtime);
             String json = "{\"port\":" + connector.getLocalPort() + ",\"host\":\"127.0.0.1\","
                     + "\"context_path\":\"/geoserver\",\"war_sha256\":" + quote(warHash)

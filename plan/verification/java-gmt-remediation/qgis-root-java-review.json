@@ -1,0 +1,31 @@
+{
+  "checks": [
+    "bad source-evidence hash rejected before repository mutation",
+    "replacement output and four regenerated checksum rows agree; donor signature removed",
+    "original donor identity retained separately from explicit local variant identity",
+    "Oracle coordinate families excluded and PostgreSQL coordinate retained",
+    "All five no-Oracle repaired paths match after hashes in actual no-oracle-importer-01 source; patched POMs parse successfully.",
+    "Actual image-mosaic PostGIS and SQLServer sources import shared catalog/oracle abstractions; keeping those classes is required and no active main source imports Oracle JDBC classes.",
+    "Importer enum Oracle option removed and OraclePanel.java excluded at compiler boundary; source/HTML/notices remain retained.",
+    "Actual importer attempt reports112 passes and6 explicit Oracle/SQLServer online skips, including8 ImporterMosaicTest passes; this is not final-WAR acceptance."
+  ],
+  "files": {
+    "build-support/java/compatibility.py": "0508265fcc3c61d0c5a8700a4ff508859635cbbb12c52d89c68fa0f8444767dc",
+    "build-support/java/no-oracle-repairs.json": "c579132c8243cc51348de3cc68f2bc02a32855ae9801b4d973db4224d0ad0272",
+    "build-support/java/no_oracle.py": "96f415c374ce60c29f745f11a37835e800fb23afd9ab2d8e73f62b957195804e",
+    "build-support/java/variant_inputs.py": "f6147112e861f9592a390d9bab072a36b658f88540f54720fcdce365f61ebba0"
+  },
+  "final_acceptance_checks_still_required": [
+    "Verify final WAR lacks Oracle driver/native files and Oracle datastore SPI/advertisement; mirror coordinate filtering alone does not establish artifact absence.",
+    "Prove real PostGIS-backed mosaic/index service using exact final WAR; importer unit cases alone do not establish that result.",
+    "Source/output provenance records are hash-guarded references; exact component build source/terms/compatibility must remain verified by component receipts.",
+    "Bind final aggregate invocation/tooling/source manifest and post-run current source identities; current helper hashes above identify this review scope."
+  ],
+  "material_findings": [],
+  "nonblocking_observations": [
+    "Repair snippets span dependency XML boundaries but full-file before/after hashes and parsed actual patched POMs establish precise intended output; no broad Oracle-named source removal.",
+    "Retained optional historical Oracle profiles and testcontainers Oracle declarations remain dormant and must not be described as complete source independence."
+  ],
+  "result_exit_code": 0,
+  "reviewer_scope": "Independent QGIS agent review of root integrator Java source/profile changes; read-only code review plus disposable guard probes."
+}

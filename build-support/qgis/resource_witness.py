@@ -55,8 +55,9 @@ def run(config):
             ramp = QgsCptCityColorRamp(rel.removesuffix(".svg"), "")
             require(Path(ramp.fileName()) == base/rel and not QFile(ramp.fileName()).open(QIODevice.ReadOnly), "omitted named ramp file still opens: "+rel)
             excluded += 1
-        require(excluded == 1129, "incorrect excluded native ramp count")
-        progress("1129 excluded native QFile opens failed")
+        expected_excluded = 1130 if selection.get("additional_exclusion_authorization") else 1129
+        require(excluded == expected_excluded, "incorrect excluded native ramp count")
+        progress(f"{excluded} excluded native QFile opens failed")
         for row in selection["colorbrewer"]:
             rel = row["path"].removeprefix("share/qgis/resources/cpt-city-qgis-min/")
             ramp = QgsCptCityColorRamp(rel.removesuffix(".svg"), "")
@@ -79,7 +80,7 @@ def run(config):
             require(not model.findPath(path).isValid(),"omitted native palette still selectable")
             paths.add(path)
         require(model.findPath("cb/seq/Blues").isValid(),"retained native collection path missing")
-        progress("native collection model excluded 1129 paths and retained Blues")
+        progress(f"native collection model excluded {excluded} paths and retained Blues")
         resources=[]; iterator=QDirIterator(":",QDirIterator.Subdirectories)
         while iterator.hasNext():
             path=iterator.next()
@@ -145,31 +146,37 @@ def run(config):
         # Serialized symbols remain explicit even when their source ramp is
         # unavailable. Synthetic colors avoid copying an omitted palette into
         # this fixture or introducing any extra palette asset.
-        missing=QgsCptCityColorRamp("td/DEM_print","",False,False)
-        require(not QFile(missing.fileName()).exists(),"expected omitted reference unexpectedly present")
-        missing_load_status = missing.loadFile()
-        v.renderer().setSourceColorRamp(missing)
-        missing_path=output/"omitted-ramp-project.qgs"
-        require(reopened.write(str(missing_path)),"omitted-reference project save failed")
-        require("td/DEM_print" in missing_path.read_text(),"omitted reference not serialized")
-        again=QgsProject();require(again.read(str(missing_path)),"omitted-reference project reopen failed")
-        retained=again.mapLayersByName("palette_vector")[0]
-        after_colors=[i.symbol().color().name() for i in retained.renderer().ranges()]
-        require(after_colors == before_vector,"serialized style silently substituted after omitted ramp reopen")
-        require(not QFile(retained.renderer().sourceColorRamp().fileName()).exists(),"missing source ramp found in alternate stage")
-        settings.setLayers([retained]);job=QgsMapRendererSequentialJob(settings);job.start();job.waitForFinished()
-        require(job.renderedImage() == vector_image,"omitted-reference reopened rendering changed")
-        require(job.renderedImage().save(str(output/"omitted-ramp-vector.png")),"omitted-reference render capture failed")
-        progress("omitted reference preserved serialized and rendered symbol colors")
+        omitted_projects = []
+        references = ["td/DEM_print"]
+        if expected_excluded == 1130: references.append("gmt/GMT_dem1")
+        for reference in references:
+            missing=QgsCptCityColorRamp(reference,"",False,False)
+            require(not QFile(missing.fileName()).exists(),"expected omitted reference unexpectedly present")
+            missing_load_status = missing.loadFile()
+            v.renderer().setSourceColorRamp(missing)
+            missing_path=output/(reference.replace("/","-")+"-omitted-ramp-project.qgs")
+            require(reopened.write(str(missing_path)),"omitted-reference project save failed")
+            require(reference in missing_path.read_text(),"omitted reference not serialized")
+            again=QgsProject();require(again.read(str(missing_path)),"omitted-reference project reopen failed")
+            retained=again.mapLayersByName("palette_vector")[0]
+            after_colors=[i.symbol().color().name() for i in retained.renderer().ranges()]
+            require(after_colors == before_vector,"serialized style silently substituted after omitted ramp reopen")
+            require(not QFile(retained.renderer().sourceColorRamp().fileName()).exists(),"missing source ramp found in alternate stage")
+            settings.setLayers([retained]);job=QgsMapRendererSequentialJob(settings);job.start();job.waitForFinished()
+            require(job.renderedImage() == vector_image,"omitted-reference reopened rendering changed")
+            require(job.renderedImage().save(str(output/(reference.replace("/","-")+"-omitted-ramp-vector.png"))),"omitted-reference render capture failed")
+            progress("omitted reference preserved serialized and rendered symbol colors")
+            omitted_projects.append({"reference":reference,"serialized_colors_preserved":after_colors,"rendered_colors_preserved":True,"source_ramp_file_exists":False,"inherited_loadFile_return":missing_load_status,
+                "inherited_loadFile_limitation":"Returns true despite missing file; the witness uses native QFile failure and archive-model exclusion, never that boolean as availability.",
+                "project_sha256":sha(missing_path),"limitation":"Serialized renderer colors survive; unavailable ramp cannot support reclassification. No complete saved-project compatibility claimed."})
+            again.clear()
         report.update(result_exit_code=0,excluded_named_ramp_files_unopenable=excluded,retained_colorbrewer_loadable=265,
                       retained_native_endpoint_assertions=530,
                       native_model_paths=len(paths),compiled_palette_resources=resources,
                       ramp_dialog={"scheme":chosen.schemeName(),"variant":chosen.variantName(),"capture_sha256":sha(output/"palette-dialog.png")},
                       generic_gradient=True,vector_colors=before_vector,raster_colors=before_raster,
                       save_reopen={"vector":True,"raster":True,"project_sha256":sha(project_path)},
-                      omitted_saved_project={"reference":"td/DEM_print","serialized_colors_preserved":after_colors,"rendered_colors_preserved":True,"source_ramp_file_exists":False,"inherited_loadFile_return":missing_load_status,
-                        "inherited_loadFile_limitation":"Returns true despite missing file; the witness uses native QFile failure and archive-model exclusion, never that boolean as availability.",
-                        "project_sha256":sha(missing_path),"limitation":"Serialized renderer colors survive; unavailable ramp cannot support reclassification. No complete saved-project compatibility claimed."},
+                      omitted_saved_project=omitted_projects[0],omitted_saved_projects=omitted_projects,
                       manifest_sha256=sha(manifest))
         # Explicitly destroy standalone projects while the desktop is alive.
         again.clear();reopened.clear();project.clear()

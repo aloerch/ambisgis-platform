@@ -1,0 +1,277 @@
+{
+  "source_sha256": "f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+  "excluded_sources": [
+    {
+      "path": "com/sun/media/imageioimpl/plugins/clib/CLibImageReader.java",
+      "sha256": "7a63e7ba50d490f93f462cb0b58519a7a9014e0da4ac4fa402ad145732b947ab",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/clib/CLibImageWriter.java",
+      "sha256": "16500ee06d7c245ef4b09d41f19bcf02dc1b65d3d043dc189f337b99103f31e8",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageReader.java",
+      "sha256": "1dd1f5f3b75e2564c4dbb264fd6cee97db3b9a54bd72a436d1d9f86c2c4d0d00",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageReaderSpi.java",
+      "sha256": "defa9ad6cb9a1a8543aa7382494d2f6dcca3cfe417402e149dab36fecb107041",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageWriter.java",
+      "sha256": "a030ec00b5dc0596451de12a25f1c3997e85e36fe5533d7486d5cbc7ebd1f4e0",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageWriterSpi.java",
+      "sha256": "8ca87cb3a65d802ff23b08462bfad1de51d490ba9dae209ffce02bc21add2954",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGMetadata.java",
+      "sha256": "2b8e084ca48d7cc926e738590d1ca6a2d5dc0f9ac0d6d036c641069dc95f35da",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderCodecLib.java",
+      "sha256": "dc068ddea347bbbc1b4790caa5af837f20929f4e3109e10bda4b2146a5a77725",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderCodecLibSpi.java",
+      "sha256": "f142d4713286c8dd588474a62a4a137972c775a40418cc175c7e399df361d716",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterCodecLib.java",
+      "sha256": "14ba2e261a3c488b943fdeed4b79cdb39b5c273af46060d647696c2cc583aaf2",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterCodecLibSpi.java",
+      "sha256": "565d30a1f9d73b22baf48fe06b2024999aa778d6ef68cfcc8a8ac94a5d988241",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KRenderedImageCodecLib.java",
+      "sha256": "6d2949d5f12766b5d413ba80f7e92dabd988856d9e989f6518ba097b26775ecf",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/MediaLibAccessor.java",
+      "sha256": "b591deb7526108869164ef78fdc89ecdc0e960e3d134c995e5c76b0ff2c23efd",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGImageReader.java",
+      "sha256": "ea1bd448fd5e40043b511999a79e63e447152f859373b8613905931bb2e02f06",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGImageReaderSpi.java",
+      "sha256": "8b0ec450b0a9eced5f14c06054067a96bf8422bec629a0eca644694fedcde741",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGImageWriter.java",
+      "sha256": "06c44391507abad71d54a27d1dd21885c5778ee0f56aab5846d00e85bfc0a1d5",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGImageWriterSpi.java",
+      "sha256": "046f45486be2adcfa78620b3635384410ee473a88cb8dfe713d815861beb3c27",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGMetadata.java",
+      "sha256": "0bd09492403bc6f9444f20111b4eb9ba4cf472164f0cc141a385fc659179b263",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGMetadataFormat.java",
+      "sha256": "405aa4ee26fa28725bdfecbfb891ac7c6317709d3e183d731642ef4495f53490",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGMetadataFormatResources.java",
+      "sha256": "d8cc4cc48b4cb9521f703a92bb6cca8cc4f1af1a2c021d6dc4056c05ed39730d",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibFaxDecompressor.java",
+      "sha256": "17c1b714d31d801efc172a22f640893077193c0323bbb51d83540be17b61bf66",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibRLECompressor.java",
+      "sha256": "a2d766e04cebe836cd41d99171012c47a36305980f6bc3803922ae34a08f8cde",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibT4Compressor.java",
+      "sha256": "ba086a39a00db8456bd111bafd95e1b752cf351855dc3c523b9630836bf7d1c0",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibT6Compressor.java",
+      "sha256": "38ca5b28eb78689a716073453e650e05661c1f1bc4eed06bb85da2da1ced1b01",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/I18N.java",
+      "sha256": "46f7390643574872ca945ec217a5006e2fa17b04cf7c2c066e2239cfce48f427",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageIOCollectionImage.java",
+      "sha256": "232b87aaae4c6f21e7a9630ab41ea5ec6dfc08eab14ef516fb74ee018c94952c",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageReadCIF.java",
+      "sha256": "4ee26be5913d81079685c475303a99936a41f6cadb0b703dbf269cd41b503a33",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageReadCRIF.java",
+      "sha256": "cf363f377b8c95b58291b5d1458d884588aa2413ec84db9974c9e3df2521ed91",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageReadOpImage.java",
+      "sha256": "a5e2ea6918d835f98c037abfae6909fed7de782908a608cfa44289b0e1dbd909",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageReadWriteSpi.java",
+      "sha256": "1f4e6defa1b4092735dc3e424113745a9b9f70024cb76c90c167e594e9d28ffb",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageWriteCIF.java",
+      "sha256": "6d8d7e697d71ee385806b2e0fd206b113fb1d5098e0d9751867c963f79f8a5f2",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageWriteCRIF.java",
+      "sha256": "72cd8ebf608ed53e7e726f76d3a9069cea6be9dfa2cfc4a118e9f1efc877b2e6",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/PixelReplacementImage.java",
+      "sha256": "a094e2bbedc99020d8a8509047dbbc4c9af627413f5b72f8d28e13e9b02b629e",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/properties",
+      "sha256": "06e95e3f89d2b9b3bc132f20af606e70a35e388f931caaffe93009bfa885dd5d",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/I18N.java",
+      "sha256": "af8cf3143cc9937654b9694e7f356291e62de99faa07a7a00609b69f075e6187",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/ImageReadDescriptor.java",
+      "sha256": "01e0303a8836f2e9e80ffa0e6c40470cf080fc515d6d2508d124f5fc5d337647",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/ImageWriteDescriptor.java",
+      "sha256": "ee7bc3e8532d91092ba64621440ea8bf1f560af2798e5ed68ace826feb24d7ff",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/PrintProps.java",
+      "sha256": "eb28d00843f6fc6f700bbfbe1eaba71047bb0c7c954594b48395e998cf0d2157",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/package.html",
+      "sha256": "373787319bebaa402c81a8fa6d83ec2aa24fa1a46949aac87750d5e679326ace",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/properties",
+      "sha256": "dc2990299b4d7dd4d7c976a4ea0474e816b3f09acc5618680163ee39e50a699d",
+      "reason": "inactive javax.media.jai bridge"
+    }
+  ],
+  "excluded_archive_binaries": [
+    {
+      "path": "src/share/jclib4jai/clibwrapper_jiio.jar",
+      "sha256": "c33d584ffebe04d2c3e48ef20146c5001e4a41050c66ad53dbbd381ff5bfd05a",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/linux/amd64/libclib_jiio.so",
+      "sha256": "e42e67114e88d46d9bea04be43522e2e22a30f1d72a8d6a04590714649510dd9",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/linux/i386/libclib_jiio.so",
+      "sha256": "bcff30f5a17a470b06adbe262af0ea854d2735c182f0c8d85a04d1eb1d4333b4",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/amd64/libclib_jiio.so",
+      "sha256": "2837f11d8c52b33913839e66f9f2a07e40e1a27f6ca1a6a25b16086d5b64491c",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/i386/libclib_jiio.so",
+      "sha256": "234490488b088c593433b7167fa166cd4ec801bd0806bcc9500a434ea6e4b374",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparc/libclib_jiio.so",
+      "sha256": "0055bdc51b9b4f5080dcf8aee1933082a98660387c1affd15518519990a4a7f0",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparc/libclib_jiio_vis.so",
+      "sha256": "5a72144117761effd648b47bf214ee2321bc4bbb1401e80850cb9df0ffdab604",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparc/libclib_jiio_vis2.so",
+      "sha256": "758efb955cf6e47356ad58c91f6112c4254213e61afab824a01da3e69f7ae14e",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparcv9/libclib_jiio.so",
+      "sha256": "f0d038a4dbdcb873b38d4830accd5eb6168910dd05a4f611d0ec4e0e96e98774",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparcv9/libclib_jiio_vis.so",
+      "sha256": "688eb7315e6ba97fb6c8fd1149451c7c8f65b039bb6d4d86a75b07ddcd6a3773",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparcv9/libclib_jiio_vis2.so",
+      "sha256": "f2b8c4cdfb64dbb60bbc2eed5e946f19c9b28ee159fb7c13af9cafd500aa74b9",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/windows/i386/clib_jiio.dll",
+      "sha256": "fdfcc35b676691cbc9cc8df51231ef1d2f89d3d8372ec799c82e6d580f4cb229",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/windows/i386/clib_jiio_sse2.dll",
+      "sha256": "40b47267a68b1514ad1fb8cdae62ec2e7eb19e9c08795e64bd326c68585539d0",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/windows/i386/clib_jiio_util.dll",
+      "sha256": "2acd144832a7f53495ba2ed1f8c2c9baf87f7d49dce1f557f63f015f5a36a0f0",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    }
+  ]
+}

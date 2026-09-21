@@ -1,0 +1,67 @@
+{
+  "reviewer": "root integrator",
+  "scope": "Source/dependency boundary, deterministic replacement identity, exact-runtime origin, selected notices, no-Oracle retained mosaic and actual failure interpretation",
+  "reviewed": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/no_oracle.py",
+      "sha256": "c25da7a68e4a39ea160405bc32f1b959940bf74ad22e2a46e6723b80e3e00d3d",
+      "bytes": 4955
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/no-oracle-repairs.json",
+      "sha256": "c579132c8243cc51348de3cc68f2bc02a32855ae9801b4d973db4224d0ad0272",
+      "bytes": 4139
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/variant_inputs.py",
+      "sha256": "f6147112e861f9592a390d9bab072a36b658f88540f54720fcdce365f61ebba0",
+      "bytes": 3543
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/runtime_profile.py",
+      "sha256": "815f73bbe8f1faeed208cde85116fc789566598ef71a7eb97c21dc3d8807d462",
+      "bytes": 1932
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/compatibility.py",
+      "sha256": "0508265fcc3c61d0c5a8700a4ff508859635cbbb12c52d89c68fa0f8444767dc",
+      "bytes": 36711
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/aggregate_evidence.py",
+      "sha256": "9c8c095b57cc49f1018c62566f19511bdb1586eb15c97e8ac8e5897bdceb50e9",
+      "bytes": 23106
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/build.py",
+      "sha256": "17ecf61fd440a449dc57aa51264cd1fc7e45558d8aa4b1e9efe8506169e5d72d",
+      "bytes": 10720
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/build_imageio.py",
+      "sha256": "8fd13136fffd4b9aac7d7f2e264f7ec449d44ab38e540fb117e44a96d0dfc681",
+      "bytes": 9577
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/build_marlin.py",
+      "sha256": "a78abdcd7cc65c30cf0a86045211aae0cf1abcd27dcbe0e5615429df51a19767",
+      "bytes": 7430
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation_mosaic.py",
+      "sha256": "4146379ef5908f18c8eca4db8badd3a6575e5f9df726314a75b7997f1abbf598",
+      "bytes": 22462
+    }
+  ],
+  "war": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044",
+    "bytes": 141720153
+  },
+  "findings": [
+    "Marlin unused helper notice ambiguity addressed by source exclusion/variant2 and fresh aggregate02matrix; original source/history retained",
+    "Inherited nativeJSON/Marlin/LTW failures remain explicit; no tolerance/security setting weakened",
+    "JSON-derived grants/JJ2000 terms still adoption blockers; no legalclearance claim"
+  ],
+  "result": "No additional material implementation defect found in reviewed scope; independent component reviews and ownersecurity/license checkpoint remain separate"
+}

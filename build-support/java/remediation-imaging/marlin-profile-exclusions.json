@@ -1,0 +1,12 @@
+{
+  "source_sha256": "60fc2008c33f01281ce75dbbfe04c1771ddb9544746ed32c3dbef551ee60270a",
+  "excluded_benchmark": {
+    "path": "src/main/java/sun/java2d/marlin/TestArrayCacheInt.java",
+    "sha256": "395f9411b3a656a528eafe57ac0c352b6132760dedbf158319975174e6eebf9f",
+    "reason": "Only unselected JMH benchmark consumer; zero production references; TODO header does not establish file-specific Classpath exception."
+  },
+  "excluded_missing_original_sources": [
+    "sun/java2d/opengl/OGLRenderQueue.java"
+  ],
+  "terms_scope": "All42 source files supplying selected83 classes explicitly retain original GPL2+Classpath headers. No permission inferred from the omitted benchmark TODO header."
+}

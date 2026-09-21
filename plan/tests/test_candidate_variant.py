@@ -12,7 +12,7 @@ class CandidateVariantTests(unittest.TestCase):
     def setUpClass(cls):
         cls.baseline_path=PLAN/'candidates/fnd-02-candidate-baseline-1.json'
         cls.baseline=json.loads(cls.baseline_path.read_text())
-        cls.variant=json.loads((PLAN/'candidates/fnd-02-candidate.json').read_text())
+        cls.variant=json.loads((PLAN/'candidates/fnd-02-candidate-parent-2.json').read_text())
 
     def test_original_manifest_is_preserved_byte_for_byte(self):
         self.assertEqual(hashlib.sha256(self.baseline_path.read_bytes()).hexdigest(),

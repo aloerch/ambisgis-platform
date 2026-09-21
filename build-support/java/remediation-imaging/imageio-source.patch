@@ -1,0 +1,211 @@
+--- a/com/sun/media/imageioimpl/common/ImageUtil.java
++++ b/com/sun/media/imageioimpl/common/ImageUtil.java
+@@ -87,7 +87,7 @@
+ import javax.imageio.spi.ServiceRegistry;
+ import javax.imageio.stream.ImageInputStream;
+ 
+-import com.sun.medialib.codec.jiio.Util;
++// AmbisGIS: unused proprietary codecLib import removed.
+ 
+ public class ImageUtil {
+     /* XXX testing only
+--- a/com/sun/media/imageioimpl/common/PackageUtil.java
++++ b/com/sun/media/imageioimpl/common/PackageUtil.java
+@@ -46,7 +46,7 @@
+ 
+ import java.security.AccessController;
+ import java.security.PrivilegedAction;
+-import com.sun.medialib.codec.jiio.Util;
++// AmbisGIS Java-only profile has no proprietary codecLib dependency.
+ 
+ public class PackageUtil {
+     /**
+@@ -76,7 +76,7 @@
+         // Set codecLib flag.
+         try {
+             // Check for codecLib availability.
+-            isCodecLibAvailable = Util.isCodecLibAvailable();
++            isCodecLibAvailable = false; // AmbisGIS: Java-only source build.
+         } catch(Throwable e) {
+             // A Throwable is equivalent to unavailable. Throwable is used
+             // in case an Error rather than an Exception is thrown.
+--- a/com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderSpi.java
++++ b/com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderSpi.java
+@@ -55,7 +55,7 @@
+ 
+ import com.sun.media.imageioimpl.common.PackageUtil;
+ 
+-import com.sun.medialib.codec.jiio.Util;
++// AmbisGIS: unused proprietary codecLib import removed.
+ 
+ public class J2KImageReaderSpi extends ImageReaderSpi {
+ 
+--- a/com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterSpi.java
++++ b/com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterSpi.java
+@@ -60,7 +60,7 @@
+ 
+ import com.sun.media.imageioimpl.common.PackageUtil;
+ 
+-import com.sun.medialib.codec.jiio.Util;
++// AmbisGIS: unused proprietary codecLib import removed.
+ 
+ public class J2KImageWriterSpi extends ImageWriterSpi {
+     private static String [] readerSpiNames =
+--- a/com/sun/media/imageioimpl/plugins/jpeg2000/RenderedImageSrc.java
++++ b/com/sun/media/imageioimpl/plugins/jpeg2000/RenderedImageSrc.java
+@@ -915,6 +915,10 @@
+         else
+             sm = src.getSampleModel();
+ 
++        // AmbisGIS: packed INT RGB channels are unsigned bit fields, not signed INT samples.
++        if (sm instanceof java.awt.image.SinglePixelPackedSampleModel && sm.getSampleSize(c) < 32)
++            return false;
++
+         if (sm.getDataType() == DataBuffer.TYPE_USHORT ||
+             sm.getDataType() == DataBuffer.TYPE_BYTE)
+             return false;
+--- a/com/sun/media/imageioimpl/plugins/tiff/TIFFImageReader.java
++++ b/com/sun/media/imageioimpl/plugins/tiff/TIFFImageReader.java
+@@ -1213,20 +1213,7 @@
+                        BaselineTIFFTagSet.COMPRESSION_CCITT_T_6) {
+ 
+                 // Try to create the codecLib decompressor.
+-                if(PackageUtil.isCodecLibAvailable()) {
+-                    try {
+-                        this.decompressor =
+-                            new TIFFCodecLibFaxDecompressor(compression);
+-                        if(DEBUG) {
+-                            System.out.println
+-                                ("Using codecLib T.6 decompressor");
+-                        }
+-                    } catch (RuntimeException re) {
+-                        if(DEBUG) {
+-                            System.out.println(re);
+-                        }
+-                    }
+-                }
++                /* AmbisGIS: native codecLib unavailable in the Java-only profile. */
+ 
+                 // Fall back to the Java decompressor.
+                 if (this.decompressor == null) {
+@@ -1238,21 +1225,7 @@
+             } else if (compression ==
+                        BaselineTIFFTagSet.COMPRESSION_CCITT_T_4) {
+ 
+-                if(PackageUtil.isCodecLibAvailable()) {
+-                    // Try to create the codecLib decompressor.
+-                    try {
+-                        this.decompressor =
+-                            new TIFFCodecLibFaxDecompressor(compression);
+-                        if(DEBUG) {
+-                            System.out.println
+-                                ("Using codecLib T.4 decompressor");
+-                        }
+-                    } catch (RuntimeException re) {
+-                        if(DEBUG) {
+-                            System.out.println(re);
+-                        }
+-                    }
+-                }
++                /* AmbisGIS: native codecLib unavailable in the Java-only profile. */
+ 
+                 // Fall back to the Java decompressor.
+                 if (this.decompressor == null) {
+--- a/com/sun/media/imageioimpl/plugins/tiff/TIFFImageWriter.java
++++ b/com/sun/media/imageioimpl/plugins/tiff/TIFFImageWriter.java
+@@ -841,19 +841,7 @@
+ 
+         if (compressor == null) {
+             if (compression == BaselineTIFFTagSet.COMPRESSION_CCITT_RLE) {
+-                if(PackageUtil.isCodecLibAvailable()) {
+-                    try {
+-                        compressor = new TIFFCodecLibRLECompressor();
+-                        if(DEBUG) {
+-                            System.out.println
+-                                ("Using codecLib RLE compressor");
+-                        }
+-                    } catch(RuntimeException e) {
+-                        if(DEBUG) {
+-                            System.out.println(e);
+-                        }
+-                    }
+-                }
++                /* AmbisGIS: native codecLib unavailable in the Java-only profile. */
+ 
+                 if(compressor == null) {
+                     compressor = new TIFFRLECompressor();
+@@ -868,19 +856,7 @@
+                 }
+             } else if (compression ==
+                        BaselineTIFFTagSet.COMPRESSION_CCITT_T_4) {
+-                if(PackageUtil.isCodecLibAvailable()) {
+-                    try {
+-                        compressor = new TIFFCodecLibT4Compressor();
+-                        if(DEBUG) {
+-                            System.out.println
+-                                ("Using codecLib T.4 compressor");
+-                        }
+-                    } catch(RuntimeException e) {
+-                        if(DEBUG) {
+-                            System.out.println(e);
+-                        }
+-                    }
+-                }
++                /* AmbisGIS: native codecLib unavailable in the Java-only profile. */
+ 
+                 if(compressor == null) {
+                     compressor = new TIFFT4Compressor();
+@@ -895,19 +871,7 @@
+                 }
+             } else if (compression ==
+                        BaselineTIFFTagSet.COMPRESSION_CCITT_T_6) {
+-                if(PackageUtil.isCodecLibAvailable()) {
+-                    try {
+-                        compressor = new TIFFCodecLibT6Compressor();
+-                        if(DEBUG) {
+-                            System.out.println
+-                                ("Using codecLib T.6 compressor");
+-                        }
+-                    } catch(RuntimeException e) {
+-                        if(DEBUG) {
+-                            System.out.println(e);
+-                        }
+-                    }
+-                }
++                /* AmbisGIS: native codecLib unavailable in the Java-only profile. */
+ 
+                 if(compressor == null) {
+                     compressor = new TIFFT6Compressor();
+--- a/jj2000/j2k/entropy/decoder/StdEntropyDecoder.java
++++ b/jj2000/j2k/entropy/decoder/StdEntropyDecoder.java
+@@ -623,7 +623,7 @@
+         if (DO_TIMING) {
+             time = new long[src.getNumComps()];
+             // If we are timing make sure that 'finalize' gets called.
+-            System.runFinalizersOnExit(true);
++            // AmbisGIS Temurin17: removed obsolete finalization request in disabled timing path.
+         }
+ 
+         // Initialize internal variables
+--- a/jj2000/j2k/entropy/encoder/EBCOTRateAllocator.java
++++ b/jj2000/j2k/entropy/encoder/EBCOTRateAllocator.java
+@@ -220,7 +220,7 @@
+         // If we do timing create necessary structures
+         if (DO_TIMING) {
+             // If we are timing make sure that 'finalize' gets called.
+-            System.runFinalizersOnExit(true);
++            // AmbisGIS Temurin17: removed obsolete finalization request in disabled timing path.
+             // The System.runFinalizersOnExit() method is deprecated in Java
+             // 1.2 since it can cause a deadlock in some cases. However, here
+             // we use it only for profiling purposes and is disabled in
+--- a/jj2000/j2k/entropy/encoder/StdEntropyCoder.java
++++ b/jj2000/j2k/entropy/encoder/StdEntropyCoder.java
+@@ -956,7 +956,7 @@
+         if (DO_TIMING) {
+             time = new long[src.getNumComps()];
+             // If we are timing make sure that 'finalize' gets called.
+-            System.runFinalizersOnExit(true);
++            // AmbisGIS Temurin17: removed obsolete finalization request in disabled timing path.
+         }
+ 
+         // If using multithreaded implementation get necessasry objects

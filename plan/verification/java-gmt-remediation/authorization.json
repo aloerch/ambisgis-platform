@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "task": "FND-02/F02-06",
+  "authorization_source": "Explicit current owner request, separately from merge #66",
+  "prompt_sha256": "6e42867a58866efb8d1b2309c7e0fe357edefb2879997cf40cf658b0cdb0a323",
+  "parent_candidate": "fnd-02-frontend-qgis-proposal-2",
+  "parent_manifest_sha256": "3c59d99834b53f8778143db70f754272bce9920ca05071586d4f3629cdd625a0",
+  "repository": {
+    "owner": "aloerch",
+    "owner_id": 15285626,
+    "name": "aloerch/ambisgis-platform",
+    "id": 1376927351,
+    "node_id": "R_kgDOUhI-dw"
+  },
+  "verified_main": "6b2e2fd7edc91746748d916d34af01f0a681e342",
+  "merged_pr": 66,
+  "reviewed_head": "776a5ac382c3f526603e29c97dc213a6fe98d067",
+  "branch": "fnd-02/java-gmt-selection-remediation",
+  "authorized": [
+    "Fresh proposed successor using current variant as parent",
+    "One additional exact gmt/GMT_dem1.svg exclusion, catalogue corrections and affected QGIS tests; retain 265 ColorBrewer palettes",
+    "Explicit NO-ORACLE Java variant excluding gt-jdbc-oracle/ojdbc17 and bundled native libraries while retaining non-Oracle mosaics, PostGIS, printing and authorization",
+    "Exact source recovery or narrowly compatible complete-source variants for AspectJ, xmlpull, json-lib, Marlin and JAI ImageIO with affected tests",
+    "One coherent aggregate and fresh changed-artifact combinations",
+    "One platform PR and deduplicated Project #2 membership; parent FND-02 remains In progress"
+  ],
+  "not_authorized": [
+    "Candidate adoption or licensing clearance",
+    "Distribution, merge, auto-merge, release or deployment",
+    "Source-fork default changes, automatic donor synchronization, repository creation, workflows or secrets",
+    "Maintainer contact, purchases, external terms acceptance or access-control bypass",
+    "Host security changes or a new containment exception"
+  ]
+}

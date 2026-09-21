@@ -1,0 +1,927 @@
+{
+  "schema_version": 1,
+  "task": "FND-02/F02-06",
+  "component_scope": [
+    "F02-JAVA-aspectj154",
+    "F02-JAVA-xmlpull1131",
+    "F02-JAVA-json-lib"
+  ],
+  "authorization": "Owner prompt attached 03851536-8b73-4ead-8b0f-fcd76a1b0ff7; source-built compatible variants authorized, adoption/rights/distribution not authorized",
+  "build": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/result.json",
+    "sha256": "77a941141930eb97c6027e7b1ce9691b23ae503306f0f3704b64acd9d6d6d58f",
+    "bytes": 8923
+  },
+  "source_manifest": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source-manifest.json",
+    "sha256": "62197a848249ea498699ae4e59854d2ec8d4f0304bd03bbdacb87c863e4d00aa",
+    "bytes": 1772168
+  },
+  "focused_probes": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/probe-05/result.json",
+    "sha256": "66dedbc421c12d5f03ef04397cf6c8dc7a58088c2dbe3bcb2fdedccb99075ffc",
+    "bytes": 907443
+  },
+  "replacements": [
+    {
+      "variant_id": "aspectjrt-1.5.4-ambisgis-temurin17-1",
+      "original_maven_path": "org/aspectj/aspectjrt/1.5.4/aspectjrt-1.5.4.jar",
+      "original_sha256": "ea6dbd45089605b17840d35dd2474ec9a687929334903801e42e1f2e07fc40fb",
+      "source_manifest_sha256": "62197a848249ea498699ae4e59854d2ec8d4f0304bd03bbdacb87c863e4d00aa",
+      "new_source_output": true,
+      "not_upstream_release": true,
+      "replacement_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/artifacts/aspectjrt-1.5.4-ambisgis-temurin17-1.jar",
+      "replacement_sha256": "5bf41bf5474d618423d2a6d8042468cf4e7e57db8895604f205d75fe61d5090b",
+      "source_manifest_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source-manifest.json",
+      "artifact_members_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/aspectjrt-members.json"
+    },
+    {
+      "variant_id": "aspectjweaver-1.5.4-ambisgis-temurin17-1",
+      "original_maven_path": "org/aspectj/aspectjweaver/1.5.4/aspectjweaver-1.5.4.jar",
+      "original_sha256": "a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed",
+      "source_manifest_sha256": "62197a848249ea498699ae4e59854d2ec8d4f0304bd03bbdacb87c863e4d00aa",
+      "new_source_output": true,
+      "not_upstream_release": true,
+      "replacement_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/artifacts/aspectjweaver-1.5.4-ambisgis-temurin17-1.jar",
+      "replacement_sha256": "e35095ad483cc38a2cf17777f74f9a59abafed1fcabc7cf951b1fbf8153370d6",
+      "source_manifest_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source-manifest.json",
+      "artifact_members_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/aspectjweaver-members.json"
+    },
+    {
+      "variant_id": "xmlpull-1.1.3-api-ambisgis-xpp3-source-1",
+      "original_maven_path": "xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar",
+      "original_sha256": "34e08ee62116071cbb69c0ed70d15a7a5b208d62798c59f2120bb8929324cb63",
+      "source_manifest_sha256": "62197a848249ea498699ae4e59854d2ec8d4f0304bd03bbdacb87c863e4d00aa",
+      "new_source_output": true,
+      "not_upstream_release": true,
+      "replacement_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/artifacts/xmlpull-1.1.3-api-ambisgis-xpp3-source-1.jar",
+      "replacement_sha256": "fb4f2393e1cdf1c078a7800312eac6d1392ebd27c3015d06c25401d3bd705573",
+      "source_manifest_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source-manifest.json",
+      "artifact_members_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/xmlpull-members.json"
+    },
+    {
+      "variant_id": "json-lib-2.4.1-ambisgis-source-1",
+      "original_maven_path": "net/sf/json-lib/json-lib/2.4.2-geoserver/json-lib-2.4.2-geoserver.jar",
+      "original_sha256": "c1de06da06183458cd8e4975e3b07e1d1d82a9f6e0a4438ed3d5dd8040983d2d",
+      "source_manifest_sha256": "62197a848249ea498699ae4e59854d2ec8d4f0304bd03bbdacb87c863e4d00aa",
+      "new_source_output": true,
+      "not_upstream_release": true,
+      "replacement_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/artifacts/json-lib-2.4.1-ambisgis-source-1.jar",
+      "replacement_sha256": "92c744bdb2ed2a6ff255af473f271bf3954e00ab037ed5649a39056eeab2fbf2",
+      "source_manifest_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source-manifest.json",
+      "artifact_members_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/json-lib-members.json"
+    }
+  ],
+  "jrockit_reference_trace": {
+    "scope": "All 369 baseline WAR libraries, constant-pool byte references in all class members",
+    "matches": [
+      {
+        "jar": "aspectjweaver-1.5.4.jar",
+        "sha256": "a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed",
+        "classes": [
+          "org/aspectj/weaver/loadtime/JRockitAgent$1.class",
+          "org/aspectj/weaver/loadtime/JRockitAgent$ThreadLocalStack.class",
+          "org/aspectj/weaver/loadtime/JRockitAgent.class",
+          "com/bea/jvm/ClassLibrary.class",
+          "com/bea/jvm/ClassPreProcessor.class",
+          "com/bea/jvm/JVM.class",
+          "com/bea/jvm/JVMFactory.class",
+          "com/bea/jvm/NotAvailableException.class"
+        ]
+      }
+    ],
+    "omission": "Five com.bea.jvm binary classes and source JRockitAgent are excluded from fresh source compilation/packaging; no non-AspectJ consumer reference found. No unsupported JRockit capability claim."
+  },
+  "original_source_revisions": {
+    "aspectj": "b50c23b0a214e315791677a5bfef990db271ecd9",
+    "json-lib": "1ff8dc03730cb00afb4628350f3106f35c122d34; POM 2.4.1-geoserver; NOT corresponding 2.4.2",
+    "xmlpull": "Four org.xmlpull.v1 API source files from publisher xpp3:1.1.4c source archive; distinct API variant, no original-byte correspondence claim"
+  },
+  "changes": {
+    "aspectj": [
+      "Compile all runtime/weaver modules, including Java5 source roots and complete bundled BCEL sources",
+      "Omit only source JRockitAgent plus absent-source five BEA classes",
+      "Version.java text identifies distinct source build",
+      "Partition rt-owned class packages into runtime JAR; weaver has no duplicate runtime classes",
+      "Include retained EPL1.0 and BCEL notices"
+    ],
+    "xmlpull": [
+      "Compile exactly four API files without source edits",
+      "Retain original author public-domain dedication separately retrieved from xmlpull.org",
+      "Do not package another provider or duplicate parser APIs; selected MXParser remains unchanged"
+    ],
+    "json-lib": [
+      "Compile all 51 production Java sources including optional API surfaces; no copied classes",
+      "Distinct 2.4.1-derived source output, original 2.4.2 bytes preserved",
+      "Add explicit original Crockford and JSON.org source-attribution notice and unresolved-rights disclosure",
+      "No source compatibility repairs required by tested API/contract comparisons; no relabeling as original release"
+    ]
+  },
+  "tests": {
+    "focused_assertions": [
+      {
+        "name": "json-differential",
+        "passed": true,
+        "baseline": [
+          "builder-depth:null=100",
+          "builder-depth:8=8",
+          "builder-depth:0=100",
+          "builder-depth:bad=100",
+          "json-contracts=213"
+        ],
+        "variant": [
+          "builder-depth:null=100",
+          "builder-depth:8=8",
+          "builder-depth:0=100",
+          "builder-depth:bad=100",
+          "json-contracts=213"
+        ]
+      },
+      {
+        "name": "xml-differential",
+        "passed": true,
+        "baseline": [
+          "xml-provider=io.github.xstream.mxparser.MXParser",
+          "xml-contracts=10"
+        ],
+        "variant": [
+          "xml-provider=io.github.xstream.mxparser.MXParser",
+          "xml-contracts=10"
+        ]
+      },
+      {
+        "name": "proxy-differential",
+        "passed": true,
+        "baseline": [
+          "aspectj-proxy-contracts=2"
+        ],
+        "variant": [
+          "aspectj-proxy-contracts=2"
+        ]
+      },
+      {
+        "name": "json-lib-2.4.2-geoserver.jar-public-api-identical",
+        "passed": true,
+        "required": true
+      },
+      {
+        "name": "xmlpull-1.1.3.1.jar-public-api-identical",
+        "passed": true,
+        "required": true
+      },
+      {
+        "name": "aspectjweaver-1.5.4.jar-public-api-identical",
+        "passed": false,
+        "required": false
+      },
+      {
+        "name": "aspectj-effective-public-api",
+        "passed": true
+      },
+      {
+        "name": "actual-load-time-weaving-baseline",
+        "passed": true
+      },
+      {
+        "name": "actual-load-time-weaving-variant",
+        "passed": true
+      },
+      {
+        "name": "native-net.sf.json.util.TestJSONBuilder",
+        "passed": true
+      },
+      {
+        "name": "native-net.sf.json.util.TestJSONTokener",
+        "passed": true
+      },
+      {
+        "name": "native-net.sf.json.util.TestJSONUtils",
+        "passed": true
+      },
+      {
+        "name": "native-net.sf.json.TestJSONArray",
+        "passed": true
+      },
+      {
+        "name": "native-net.sf.json.TestJSONObject",
+        "passed": false,
+        "inherited_failure_reproduced": true,
+        "required": false
+      },
+      {
+        "name": "native-net.sf.json.TestJSONSerializer",
+        "passed": true
+      },
+      {
+        "name": "no-duplicate-replacement-or-BEA-definitions",
+        "passed": true,
+        "errors": []
+      }
+    ],
+    "json_native": {
+      "run": 359,
+      "passed": 357,
+      "failures": 2,
+      "inherited_failure_names": [
+        "testElement_Collection2_exclusions_ignoreDefault",
+        "testElement_Bean_exclusions_ignoreDefault"
+      ],
+      "baseline_reproduced": true,
+      "reason": "Original tests require JavaBean class property; current selected commons-beanutils suppresses that property. No unsafe introspection setting enabled."
+    },
+    "load_time_weaving": "Actual advice ran for genuine compiler-produced Java5 classfile target with ordinary Temurin17 verifier. Both original and replacement reject Java7-target aspect clinit due missing stackmap. No -noverify or classfile header edit. Explicit test-only --add-opens java.base/java.lang; deployed profile need not activate LTW.",
+    "final_war": "Final aggregate02 WAR e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044 passes source/war-probe-02:213 JSON,10 XML/XStream,2 actual Spring AspectJ advice assertions plus real legacyJava5 loadtime weaving. Every targeted origin and replacement/source-manifest hash verified; no duplicate target class.",
+    "native_geoFence": {
+      "run": 62,
+      "passed": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "stage": "package",
+      "scope": "GeoFence source-native suite under frozen-build-tooling-01 including27 PostgreSQLDAO cases. OlderMarlin1 mapping present but renderer unused; final exactWAR2 persistence separately proved.",
+      "network_denial_verified": true,
+      "postgres_cluster_stopped": true
+    },
+    "exact_war_geoFence": {
+      "run": 27,
+      "passed": 27,
+      "failures": 0,
+      "skipped": 0,
+      "war_sha256": "e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044",
+      "checks": [
+        "Actual native PostgreSQLDAO tests using freshly extracted exactWAR production jars",
+        "Seven production CodeSource origin assertions including AspectJrt/weaver, realGeoFenceDAO/model, SpringTx,Hibernate,PostgreSQL",
+        "gfUserDAO is actual SpringAdvised proxy with TransactionInterceptor",
+        "Real PostgreSQL JDBC product identity",
+        "Actual transaction rollback leaves no row; commit persists then cleanup removes row",
+        "Test classes and only retainedJUnit4.13/Hamcrest1.3 supplements cannot shadow WAR production classes",
+        "FinalWAR and classpath hashes unchanged after execution",
+        "VerifiedAF_INET/AF_INET6 denial; freshAF_UNIX supervisedPostgreSQL fixture stopped"
+      ],
+      "scope": "Native test applicationContext configuration with finalWAR libraries; deployed HTTP authorization acceptance remains separate."
+    }
+  },
+  "remaining_closing_conditions": {
+    "F02-JAVA-aspectj154": "Final exactWAR source/API/advice and actualPostgreSQLDAO/proxy/commit/rollback checks pass. Selected profile must not rely on unsupported Java7+loadtime weaving; configured deployment authorization and distribution notice/review gates remain candidate-wide.",
+    "F02-JAVA-xmlpull1131": "Final exactWAR fourAPI/MXParser/XStream checks pass; no original1.1.3.1 source/binary equivalence claimed. Actual service consumer evidence and final notices/review remain candidate-wide.",
+    "F02-JAVA-json-lib": "BLOCKED: exact historical JSON-derived permission chain not recovered; Apache headers/POM and @author JSON.org do not independently settle applicability. Final aggregate actual WFS/REST/OAuth/role contracts also pending. Native inherited failures stay recorded."
+  },
+  "recovery": [
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/XmlPullParser.json",
+        "sha256": "ac358130e02ca36df32d0c652a799d4f5807886b7b3aa5a9536baf77e3a8b229",
+        "bytes": 221
+      },
+      "observation": {
+        "url": "https://www.xmlpull.org/v1/download/unpacked/src/java/api/org/xmlpull/v1/XmlPullParser.java",
+        "sha256": "bd93a3ce8db7beeff36a33cc482b98b00b488c3227db6bb244da3a137e255d1d",
+        "size": 32574,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/bd93a3ce8db7beeff36a33cc482b98b00b488c3227db6bb244da3a137e255d1d",
+        "sha256": "bd93a3ce8db7beeff36a33cc482b98b00b488c3227db6bb244da3a137e255d1d",
+        "bytes": 32574
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/XmlPullParserException.json",
+        "sha256": "97344772f9e19787988fd4e411ed4f703caf73a4cedbe021909fe9c598cc0e0a",
+        "bytes": 229
+      },
+      "observation": {
+        "url": "https://www.xmlpull.org/v1/download/unpacked/src/java/api/org/xmlpull/v1/XmlPullParserException.java",
+        "sha256": "f641bed898d5b1ec21f3e6057b5336680073f366e262a671c9d8949b4330cc50",
+        "size": 2047,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/f641bed898d5b1ec21f3e6057b5336680073f366e262a671c9d8949b4330cc50",
+        "sha256": "f641bed898d5b1ec21f3e6057b5336680073f366e262a671c9d8949b4330cc50",
+        "bytes": 2047
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/XmlPullParserFactory.json",
+        "sha256": "7bd215b28a85600290968ed2baeac63a149161753be9815bfdfb94980f16f6f4",
+        "bytes": 228
+      },
+      "observation": {
+        "url": "https://www.xmlpull.org/v1/download/unpacked/src/java/api/org/xmlpull/v1/XmlPullParserFactory.java",
+        "sha256": "c4f83c1635eb119d49ba682f4c4a11e91fb303177e9189c2c26de07a33712d4c",
+        "size": 16620,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/c4f83c1635eb119d49ba682f4c4a11e91fb303177e9189c2c26de07a33712d4c",
+        "sha256": "c4f83c1635eb119d49ba682f4c4a11e91fb303177e9189c2c26de07a33712d4c",
+        "bytes": 16620
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/XmlSerializer.json",
+        "sha256": "7ea8e2ff096cd0f9ea307f7a103eef66826006202118a43a51ed5a8985a90c14",
+        "bytes": 147
+      },
+      "observation": {
+        "url": "https://www.xmlpull.org/v1/download/unpacked/src/java/api/org/xmlpull/v1/XmlSerializer.java",
+        "error": "HTTP Error 404: Not Found"
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/ecj-3.26.0-sources.jar.json",
+        "sha256": "7b805289f297aca1d1561b74f5b45fd14ea72848d492444ceac2f99dfe1e3611",
+        "bytes": 202
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/org/eclipse/jdt/ecj/3.26.0/ecj-3.26.0-sources.jar",
+        "sha256": "4cb55998b273debd2f99b31c5acfa50abb49f6880a38ebb17d407e26cff7c36a",
+        "bytes": 2255761
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/4cb55998b273debd2f99b31c5acfa50abb49f6880a38ebb17d407e26cff7c36a",
+        "sha256": "4cb55998b273debd2f99b31c5acfa50abb49f6880a38ebb17d407e26cff7c36a",
+        "bytes": 2255761
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/ecj-3.26.0.jar.json",
+        "sha256": "5b60e2ef598b0ec7ffcbfcdb180faa5f29d8dd8c55b1eb946cd6b9b98fe900a3",
+        "bytes": 194
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/org/eclipse/jdt/ecj/3.26.0/ecj-3.26.0.jar",
+        "sha256": "ac0ba5876eaf7ebb47749a0d1be179c51f194b9dd0b875d1c09e1b530f5a2db5",
+        "bytes": 3133846
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/ac0ba5876eaf7ebb47749a0d1be179c51f194b9dd0b875d1c09e1b530f5a2db5",
+        "sha256": "ac0ba5876eaf7ebb47749a0d1be179c51f194b9dd0b875d1c09e1b530f5a2db5",
+        "bytes": 3133846
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/ecj-3.26.0.pom.json",
+        "sha256": "ae47b6efa3bdf7d21830b7ad2be72225134a33c0fcc8414421159d8b1697f327",
+        "bytes": 191
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/org/eclipse/jdt/ecj/3.26.0/ecj-3.26.0.pom",
+        "sha256": "d902a54ef9c4d52fa047f01a7a0566e19aa5846505c81b90dfffe6560450d2cb",
+        "bytes": 1669
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/d902a54ef9c4d52fa047f01a7a0566e19aa5846505c81b90dfffe6560450d2cb",
+        "sha256": "d902a54ef9c4d52fa047f01a7a0566e19aa5846505c81b90dfffe6560450d2cb",
+        "bytes": 1669
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/epl-license.json",
+        "sha256": "d95b2d447da2b01e81f85f4470bda31520a26834642ac62959e702f624e00f3f",
+        "bytes": 172
+      },
+      "observation": {
+        "url": "https://www.eclipse.org/legal/epl-v10.html",
+        "sha256": "a40741b59364cc49449255e9b9bfe1fcfe6a2e7ab4d37ca89db3bacbfb14e9d2",
+        "size": 12637,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/a40741b59364cc49449255e9b9bfe1fcfe6a2e7ab4d37ca89db3bacbfb14e9d2",
+        "sha256": "a40741b59364cc49449255e9b9bfe1fcfe6a2e7ab4d37ca89db3bacbfb14e9d2",
+        "bytes": 12637
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/groovy-all-1.7.5-sources.jar.json",
+        "sha256": "2cf2bb2794388017af5b062088fb28d3f17dd2d4cb50f72698442545104550a0",
+        "bytes": 234
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-all/1.7.5/groovy-all-1.7.5-sources.jar",
+        "sha256": "ed9b154d0ff53a60afbccaa66a4369914b26f02c46a4df0233a4309eba813c85",
+        "size": 2052669,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/ed9b154d0ff53a60afbccaa66a4369914b26f02c46a4df0233a4309eba813c85",
+        "sha256": "ed9b154d0ff53a60afbccaa66a4369914b26f02c46a4df0233a4309eba813c85",
+        "bytes": 2052669
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/groovy-all-1.7.5.jar.json",
+        "sha256": "79bb312370228083e7f388b4872658267b7c4e96a2949cedb45edb582d915a2e",
+        "bytes": 226
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-all/1.7.5/groovy-all-1.7.5.jar",
+        "sha256": "712adaad46a5ed20c49d0f815b493fe2beaa72de7106e481c1cc4ce2923dcb9e",
+        "size": 5482221,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/712adaad46a5ed20c49d0f815b493fe2beaa72de7106e481c1cc4ce2923dcb9e",
+        "sha256": "712adaad46a5ed20c49d0f815b493fe2beaa72de7106e481c1cc4ce2923dcb9e",
+        "bytes": 5482221
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/groovy-all-1.7.5.pom.json",
+        "sha256": "6c43d21162005827d626805e195e641d6ca26b634d756b39f4eb9232405d0ff9",
+        "bytes": 224
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-all/1.7.5/groovy-all-1.7.5.pom",
+        "sha256": "2b2472da906a20888ae1da6a387dc8a269aa999d50aef4c38ec78626a097083d",
+        "size": 27373,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/2b2472da906a20888ae1da6a387dc8a269aa999d50aef4c38ec78626a097083d",
+        "sha256": "2b2472da906a20888ae1da6a387dc8a269aa999d50aef4c38ec78626a097083d",
+        "bytes": 27373
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/oro-2.0.8-sources.jar.json",
+        "sha256": "79e600f4d99b3868c58b099ff643c3fab99ed9076ed9ee7958ed879a4884549e",
+        "bytes": 203
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/oro/oro/2.0.8/oro-2.0.8-sources.jar",
+        "sha256": "b4c4929e937d0464807f4a17e3a0f46f69148514edb303981a41b3e5b2a815d2",
+        "size": 239964,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/b4c4929e937d0464807f4a17e3a0f46f69148514edb303981a41b3e5b2a815d2",
+        "sha256": "b4c4929e937d0464807f4a17e3a0f46f69148514edb303981a41b3e5b2a815d2",
+        "bytes": 239964
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/oro-2.0.8.jar.json",
+        "sha256": "65c6d0a59b4b1b6afcef66d04b1ce1d12611e32879643a574a72cb4085124487",
+        "bytes": 194
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/oro/oro/2.0.8/oro-2.0.8.jar",
+        "sha256": "e00ccdad5df7eb43fdee44232ef64602bf63807c2d133a7be83ba09fd49af26e",
+        "size": 65261,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/e00ccdad5df7eb43fdee44232ef64602bf63807c2d133a7be83ba09fd49af26e",
+        "sha256": "e00ccdad5df7eb43fdee44232ef64602bf63807c2d133a7be83ba09fd49af26e",
+        "bytes": 65261
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/oro-2.0.8.pom.json",
+        "sha256": "d1464669e30358bfb29c8f31501868eec6d7679ca1a6137cefbd6e0bfb28c599",
+        "bytes": 192
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/oro/oro/2.0.8/oro-2.0.8.pom",
+        "sha256": "9aa9dfeb2e85e1d5e7932c87140697cecc2b0fadd933d679fd420a2e43831a82",
+        "size": 140,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/9aa9dfeb2e85e1d5e7932c87140697cecc2b0fadd933d679fd420a2e43831a82",
+        "sha256": "9aa9dfeb2e85e1d5e7932c87140697cecc2b0fadd933d679fd420a2e43831a82",
+        "bytes": 140
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/xmlpull-license.json",
+        "sha256": "df90a60a5fb8b3df756ef334444043d19ca3efb49a4191c4352936691ee68a61",
+        "bytes": 184
+      },
+      "observation": {
+        "url": "https://www.xmlpull.org/v1/download/unpacked/LICENSE.txt",
+        "sha256": "4eeafa29d1d9a0cdbdad0f5178cd553527329b57b5808ffe912cb9c698343612",
+        "size": 370,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/4eeafa29d1d9a0cdbdad0f5178cd553527329b57b5808ffe912cb9c698343612",
+        "sha256": "4eeafa29d1d9a0cdbdad0f5178cd553527329b57b5808ffe912cb9c698343612",
+        "bytes": 370
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/xom-1.1-sources.jar.json",
+        "sha256": "d97e73795f5b8d7929a1763d5643765f4dc8508ba2a172c1344ed576bad77069",
+        "bytes": 199
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/xom/xom/1.1/xom-1.1-sources.jar",
+        "sha256": "815e8e523a7bb3172820c1b42ff19002370dabf3a467aaae1c59495c6d7c9204",
+        "size": 636499,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/815e8e523a7bb3172820c1b42ff19002370dabf3a467aaae1c59495c6d7c9204",
+        "sha256": "815e8e523a7bb3172820c1b42ff19002370dabf3a467aaae1c59495c6d7c9204",
+        "bytes": 636499
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/xom-1.1.jar.json",
+        "sha256": "af0acd152b67735c4e25d58df2eb7cd75000d24fe6ed9f9ba30a3f2aab7c104c",
+        "bytes": 191
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/xom/xom/1.1/xom-1.1.jar",
+        "sha256": "05d513cce3f19c1bc4b06c545431da10dbd2f96b4e83aa715d2fe92b06d951a7",
+        "size": 431568,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/05d513cce3f19c1bc4b06c545431da10dbd2f96b4e83aa715d2fe92b06d951a7",
+        "sha256": "05d513cce3f19c1bc4b06c545431da10dbd2f96b4e83aa715d2fe92b06d951a7",
+        "bytes": 431568
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/xom-1.1.pom.json",
+        "sha256": "7ce8c2e783cdcb0760c10f3b676d9df204334e84e8e675f157602c9ce1e7f306",
+        "bytes": 189
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/xom/xom/1.1/xom-1.1.pom",
+        "sha256": "788e55a34f2894a82f05c97346271395bc1d63740b2b96594fcf5bab2dd422dd",
+        "size": 1785,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/788e55a34f2894a82f05c97346271395bc1d63740b2b96594fcf5bab2dd422dd",
+        "sha256": "788e55a34f2894a82f05c97346271395bc1d63740b2b96594fcf5bab2dd422dd",
+        "bytes": 1785
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/xpp3-binary.json",
+        "sha256": "6ab2a5955e232f6fa7590ca6e284ad5b4f5ffab7e2d8921c2e16ff5f3f7ae29d",
+        "bytes": 200
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar",
+        "sha256": "0341395a481bb887803957145a6a37879853dd625e9244c2ea2509d9bb7531b9",
+        "size": 120069,
+        "status": 200
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/0341395a481bb887803957145a6a37879853dd625e9244c2ea2509d9bb7531b9",
+        "sha256": "0341395a481bb887803957145a6a37879853dd625e9244c2ea2509d9bb7531b9",
+        "bytes": 120069
+      }
+    },
+    {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/xpp3-source.json",
+        "sha256": "fe40557ff90e061aec2d0187d59f0eccd0399112b959a9470600f652c892577d",
+        "bytes": 259
+      },
+      "observation": {
+        "url": "https://repo.maven.apache.org/maven2/xpp3/xpp3/1.1.4c/xpp3-1.1.4c-sources.jar",
+        "sha256": "113c8174cda963aa8c9e46f59945838dbe1a094cc736e476d640453e07d9e9c6",
+        "size": 128334,
+        "status": 200,
+        "retrieved": "2026-09-21T23:09:39.473374+00:00"
+      },
+      "blob": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/recovery/113c8174cda963aa8c9e46f59945838dbe1a094cc736e476d640453e07d9e9c6",
+        "sha256": "113c8174cda963aa8c9e46f59945838dbe1a094cc736e476d640453e07d9e9c6",
+        "bytes": 128334
+      }
+    }
+  ],
+  "preserved_attempts": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-01",
+      "logs": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-01/aspectj.log",
+          "sha256": "987bb1ebd46b1acc515e73b8a356e02f93f9140fab570416e0a45311d9d9c11b",
+          "bytes": 9619
+        }
+      ],
+      "network_receipts": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-01/aspectj-network.json",
+          "sha256": "4d9df507629b98b1bc14b354a741f057bf96d696f4aa0146c66be33c2c2d73be",
+          "bytes": 2187
+        }
+      ]
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-02",
+      "logs": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-02/aspectj.log",
+          "sha256": "7cc3498e8991653073b46b2c8fdb39ab1beb6b48e90486fbcb7a895a09b78035",
+          "bytes": 29088
+        }
+      ],
+      "network_receipts": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-02/aspectj-network.json",
+          "sha256": "1e7617ced2541bc127b031dedfe187046e2fbe74183a5d4e29fc9b464edde822",
+          "bytes": 2222
+        }
+      ]
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-03",
+      "logs": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-03/api.log",
+          "sha256": "9627ac76233134660ce7dbb13fe1261a046fe39496a6ea572755f6edb2d9f64b",
+          "bytes": 5034
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-03/aspectj.log",
+          "sha256": "eaab1ed1273c334955688a8a1bd5a268dbc2500934acfc1820d5d0b66a7c1370",
+          "bytes": 25914
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-03/rest.log",
+          "sha256": "37badc70ed81ea9397aa8a16c6ac955997581af5ed92d890b465b7ecfc538892",
+          "bytes": 13592
+        }
+      ],
+      "network_receipts": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-03/api-network.json",
+          "sha256": "69256e51a9b67689bda122f25d75347c7b1e5d44857f3c6354937349e239c6ba",
+          "bytes": 1824
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-03/aspectj-network.json",
+          "sha256": "eb6637ae14b06a76db841c400878d459d5af86114b69f11af70709ac8cf50d56",
+          "bytes": 2499
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-03/rest-network.json",
+          "sha256": "498591550aa2e464ead325c7e6cede5b34e70049ec5f0bf9fd3e663d7f36c118",
+          "bytes": 1829
+        }
+      ]
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-04",
+      "logs": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-04/compile.log",
+          "sha256": "eaab1ed1273c334955688a8a1bd5a268dbc2500934acfc1820d5d0b66a7c1370",
+          "bytes": 25914
+        }
+      ],
+      "network_receipts": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-04/network.json",
+          "sha256": "feab706bfbef07a4465630aceb36ca79a53e673db5699fb4c5fe485589b42256",
+          "bytes": 2491
+        }
+      ]
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-05",
+      "logs": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-05/compile.log",
+          "sha256": "eaab1ed1273c334955688a8a1bd5a268dbc2500934acfc1820d5d0b66a7c1370",
+          "bytes": 25914
+        }
+      ],
+      "network_receipts": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/attempt-05/network.json",
+          "sha256": "29ebd72d745033aae951cb87125412669619c6989dac29f1540cb639e3bd5a80",
+          "bytes": 2491
+        }
+      ]
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/probe-01",
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/probe-01/result.json",
+        "sha256": "12197d7a4faeae9a42a7e06bc006c36ee003c59dcad6e333816412809bed2b8f",
+        "bytes": 772800
+      }
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/probe-02",
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/probe-02/result.json",
+        "sha256": "89d4ca4e75b1071ae166050ed05f9da1c92c5b2e5dbad2c944221af715d71a1e",
+        "bytes": 819728
+      }
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/probe-03",
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/probe-03/result.json",
+        "sha256": "331a9fa2b109e5fe54f0990afe70f484c491b6a670f555e47f3967cfe76c70f9",
+        "bytes": 754648
+      }
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/probe-04",
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/probe-04/result.json",
+        "sha256": "90de969a8bf9cda8609a9cd996c4027da78f365a3f9c3158fa19d0a8e89dcc1f",
+        "bytes": 754835
+      }
+    }
+  ],
+  "recipe_files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/AspectJApi.java",
+      "sha256": "1139f2f32146a49f864394c8c64c0ded510ec3b1afa4712e31ab9b97fbb71792",
+      "bytes": 2169
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/GeofenceWarTests.java",
+      "sha256": "50fddeaa222d56191172ceb7150b6e02ad8fbe899db25bc8528cbd1272635340",
+      "bytes": 3993
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/SourceContracts.java",
+      "sha256": "ba1e912e32d2f5c27604f15cd19a88695865d592a67f8827c3773da74635765b",
+      "bytes": 6338
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/build.py",
+      "sha256": "17ecf61fd440a449dc57aa51264cd1fc7e45558d8aa4b1e9efe8506169e5d72d",
+      "bytes": 10720
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/inputs.json",
+      "sha256": "83b5a25e8326aca96451f7dc491bfd4de98940bea1b2200605a1910f866bb6e4",
+      "bytes": 5881
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/json-notice.txt",
+      "sha256": "3e5ce1660de2af73196b5e2c1938385931f216fb72a0a58304f300f1e79bafba",
+      "bytes": 983
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/probe.py",
+      "sha256": "8ff89277ec6dfa46b1a334f0c94de64e92a24a5652f92bd11ca0e893a024d034",
+      "bytes": 9385
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/war_geofence_probe.py",
+      "sha256": "25c513b71084f3ebb9c4d926c01f0d2917f608d5082342def0209218be2b5440",
+      "bytes": 6252
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/war_probe.py",
+      "sha256": "ef5f20aff6757d2466c98b96ba185db3de84671bd0a846e185e0db357117c73d",
+      "bytes": 6199
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/weaving/Main.java",
+      "sha256": "59490ce98979de415eafb91a1c6b07ef605627236fd1b6ac74ff0f9f735f3682",
+      "bytes": 304
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/weaving/Target.java",
+      "sha256": "99191c53c40a9135bab7860c927fbd7460a1132d96e2f697af81b0480874163c",
+      "bytes": 93
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/weaving/WitnessAspect.java",
+      "sha256": "ad29ebab0812a646503dd493a637b6230dd9a02ea1b759de4efb685462b4fb12",
+      "bytes": 275
+    }
+  ],
+  "executed_recipe_recovery": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01-recipe-recovery/receipt.json",
+    "sha256": "08929a66819d87cb70e11dd42551ea44c01c5118c8dd874f9dfb176d89323502"
+  },
+  "preceding_war_probe": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/war-probe-01/result.json",
+    "sha256": "eea445d6d217856cfa7a3d2ee610307e5ff04c965c4faa81082da6512b9a4885",
+    "bytes": 421950,
+    "war": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-01/work/source/geoserver/src/web/app/target/geoserver.war",
+      "sha256": "05931c11c95fa30f4d6875c8766f78a77dcbffec06b8fcbb4110e33676922a58"
+    },
+    "status": "passed",
+    "assertions": [
+      {
+        "name": "json",
+        "passed": true
+      },
+      {
+        "name": "xml",
+        "passed": true
+      },
+      {
+        "name": "proxy",
+        "passed": true
+      },
+      {
+        "name": "real-legacy-bytecode-weaving",
+        "passed": true,
+        "limitation": "Java5 target fixture; baseline and variant both fail Java7 target stackmap verification, preserved in source/probe-01."
+      }
+    ]
+  },
+  "final_war_probe": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/war-probe-02/result.json",
+    "sha256": "96460c76522ec815d94bb5c27616bbdeb7eacbc22575d6e4a5f6d84086b511bb",
+    "bytes": 421950
+  },
+  "final_war_geoFence_persistence_probe": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/war-geofence-probe-01/result.json",
+    "sha256": "288c2c50dfccd6a631c31369e801523b4fb321bf300e6ecf5e151a55b01cf7a8",
+    "bytes": 207712
+  },
+  "native_geoFence_tests": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/geofence-native-02/result.json",
+    "sha256": "90814fc115cffea334f8eba8bb18e7e24117c96a83598e289146b7b9fcb9903f",
+    "bytes": 52500
+  },
+  "preserved_geoFence_lifecycle_failure": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/geofence-native-01/result.json",
+    "sha256": "272ac0f9645b2b73fd40ccae33bd3128fdefb2970114af3a2e2da6cca93d1360",
+    "bytes": 47989
+  },
+  "final_probe_recipe_recovery": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/final-probe-recipe-recovery/receipt.json",
+    "sha256": "724766a0715adf140e9324230a864ed02dd6fd8b7c69c11760921a1d9a911d11",
+    "bytes": 3237
+  },
+  "source_tree_verification": {
+    "manifest": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source-manifest.json",
+      "sha256": "62197a848249ea498699ae4e59854d2ec8d4f0304bd03bbdacb87c863e4d00aa",
+      "bytes": 1772168
+    },
+    "files_verified": 9358,
+    "selected_roots": [
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source/aspectj",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source/xmlpull",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source/json"
+    ],
+    "original_archive_inputs": {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-source/inputs.json",
+      "sha256": "83b5a25e8326aca96451f7dc491bfd4de98940bea1b2200605a1910f866bb6e4",
+      "bytes": 5881
+    },
+    "note": "Complete retained extracted tree lock is verified after all probes; archive/revision identities, source subset/edits and notices are recorded in pinned input/build records. Artifact-member manifests preserve packaged notice hashes."
+  },
+  "artifact_member_manifests": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/aspectjrt-members.json",
+      "sha256": "d82fd74d672c991e392cee6dd10be77160a8dabc39d93d215a0582ad4f618a18",
+      "bytes": 23693
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/aspectjweaver-members.json",
+      "sha256": "2600a353bb388caf175af2c937bd3f5c6baeb80892f52ce8909dd94068dfaa68",
+      "bytes": 169424
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/xmlpull-members.json",
+      "sha256": "c154623ef08dfe94826249e745fa5bc4ce21b4d69ace2919dc663b3a56472125",
+      "bytes": 1105
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/json-lib-members.json",
+      "sha256": "2ebf1a418eef71758afe83b2d4aa2ad60b4e1eaa58395e9b30a82000dbd61916",
+      "bytes": 15156
+    }
+  ],
+  "independent_imaging_review": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/source-imaging-review.json",
+    "sha256": "f914d1941db3a6f81b637851ad3ba6684452504c3d29c8b6381dd56e55cbf476",
+    "bytes": 24270
+  }
+}

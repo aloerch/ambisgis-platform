@@ -242,6 +242,9 @@ def run(args):
                 'servlet': str(output / 'servlet'), 'launcher': str(output / 'launcher'),
                 'war': inventory['war_path'], 'war_sha256': expected_war,
                 'database_properties': str(database.properties_path)}
+            import runtime_profile
+            invocation['runtime']['java_profile'] = runtime_profile.load(getattr(args, 'java_profile', None), inventory, output)
+            result['java_profile'] = invocation['runtime']['java_profile']
         save(output / 'invocation.json', invocation)
         # Snapshot the exact executed harness so later edits cannot alter retained attempts.
         destination = output / 'tooling'
@@ -314,4 +317,5 @@ if __name__ == '__main__':
     parser.add_argument('--strict-roles', action='store_true')
     parser.add_argument('--build', type=Path)
     parser.add_argument('--war-sha256')
+    parser.add_argument('--java-profile', type=Path)
     raise SystemExit(run(parser.parse_args()))

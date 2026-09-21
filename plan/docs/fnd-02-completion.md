@@ -5,10 +5,11 @@
 [#65](https://github.com/aloerch/ambisgis-platform/pull/65), reviewed head
 `bc60bbcbfccb840853c858a29ca9ec3ae4292656`, merge
 `b31e81ad7bfe328d5a8b3ea579eff09e6a0086e7`, accepts the consolidation checkpoint.
-The current owner prompt separately authorizes the implemented frontend/IFC and
-QGIS resource-selection courses. The [new variant](fnd-02-candidate-proposal.md)
-needs review; neither that prompt nor #65 adopts its artifacts or permits distribution.
-Original criteria, eight pass conditions and historical evidence remain unchanged.
+The current owner prompt separately authorizes the Java source/codec/rendering,
+NO-ORACLE and one-file GMT changes in proposed revision 3. Owner-merged #66
+(`6b2e2fd7edc91746748d916d34af01f0a681e342`) is the exact parent checkpoint;
+it does not adopt this successor or grant distribution permission. Original
+criteria, eight pass conditions and historical evidence remain unchanged.
 
 ## Unchanged live criteria
 
@@ -40,8 +41,8 @@ the separate boundary table.
 | F02-02 | C1, C3 | Bounded build/replay executed; retain these exact inputs and carry identities and limitations into F02-06. | [Fresh frontend handoff](frontend-completion-handoff.md), [commands/hashes](../verification/frontend-completion/evidence.json): three clean builds, 2,410-entry lock, 2,022 registry archives, exact retained helper/Git inputs, 960 dist files, 358 client + 152 selected framework native passes. | Audited scripts; fixed retained `@mapstore/project` and `@mapstore/patcher` inputs; complete lock; clean build and fresh retained-input replay; actual native checks/exclusions and output manifest. No byte-identical claim without comparison. | No remaining build-execution blocker. Five inherited lint errors and five webpack warnings are recorded; selection/rights decisions remain F02-06. | FND-02 | **Demonstrated bounded build/replay; bounded #62 checkpoint owner-accepted.** Not byte-identical; exact build paths/fullhash explain differences. |
 | F02-03 | C3 | Bounded public viewer executed; preserve the served build and successful restart evidence. | [Browser evidence](../verification/frontend-completion/browser-evidence-summary.json), [complete output manifest](../verification/frontend-completion/served-build-output-manifest.json), [handoff](frontend-completion-handoff.md): smoke-06 passes both service phases, 43 artifact hashes/109 responses per phase, six rendering witnesses, actual zoom/reload. | Real backend configuration/metadata and layer requests; loaded entry/chunk hashes match the output manifest; meaningful DOM/network/rendering plus pan/zoom or visibility evidence; no missing chunks, blocking console errors or unexpected external assets; same artifacts pass restart. | No remaining public-smoke execution blocker. Expected native anonymous userinfo 401 retained; broader private access/SSO remains outside this row. | FND-02 | **Demonstrated bounded public browser/backend smoke; bounded #62 checkpoint owner-accepted.** |
 | F02-04 | C1, C3 | Bounded owned QGIS desktop/server candidate build at `1a4cda5f2620e7374e5926fc955a7d2d06493e15`, with exact Qt/Python/native-library inputs and basic PostGIS/CRS/rendering compatibility. | [Owned QGIS handoff](qgis-candidate-handoff.md): exact source and retained support/spatial/XML inputs, staged desktop/server artifacts, 66 C++ cases and 16 Python tests with no failures or skips; readable desktop rendering, zoom/save/reopen, six actual WMS requests, server restart, selected-library origins and cleanup. Failed attempts and explicit profile/test omissions remain retained. | Actual desktop/server artifacts and startup; known local vector/raster/CRS witness with the selected GEOS/PROJ/GDAL/PostGIS combination; relevant native checks and explicit omissions. | No remaining bounded build/native/runtime execution blocker. Owner accepted bounded #63; selected-input reconciliation and source/license findings remain F02-06. | FND-02 | **Demonstrated bounded owned desktop/server build, native tests and runtime smoke; bounded #63 checkpoint owner-accepted.** |
-| F02-05 | C3 | Close only uncovered selected-component smoke links: integrated browser/GeoNode/GeoServer via F02-03; QGIS/spatial libraries via F02-04; verify embedded GeoWebCache tile response and reuse exact database, Java and Hub/Lab results. | [PostGIS](postgis-slice-evidence.md), [Jupyter](jupyter-slice-evidence.md), [Java native probes](java-compatibility-evidence.md), [controlled XML/MapFish/OAuth](java-http-auth-handoff.md), [QGIS](qgis-candidate-handoff.md), [#61](../verification/geonode-role-propagation/evidence.json), [compact final matrix](fnd-02-combination-smoke.md), [fresh tile/restart index](../verification/combination-gwc/evidence.json). | One compact final matrix names exact artifacts and actual positive smoke/restart evidence for each selected combination; fresh runs only for missing/changed links. No full publishing, policy, cartographic-parity or spatial-notebook profile claim. | No remaining bounded smoke execution gap: actual embedded WMTS public/reader MISS → HIT → persistent-restart HIT, scoped protected-tile denials, invalid/positive controls, integrity and cleanup all pass. Owner-merged #64 accepts this bounded checkpoint only. | FND-02 | **Demonstrated bounded combination matrix and embedded cache smoke; bounded #64 checkpoint owner-accepted.** Six combinations reuse exact historical profiles; no simultaneous whole-tuple claim. |
-| F02-06 | C1, C2, C3 | Consolidate one exact candidate source/runtime/dependency proposal, selected-file/license inventory and explicit selection-blocker dispositions, referencing existing locks rather than copying receipts. | [Baseline](../candidates/fnd-02-candidate-baseline-1.json), [new authoritative variant](../candidates/fnd-02-candidate.json), [proposal](fnd-02-candidate-proposal.md), generated [58-finding register](fnd-02-owner-decisions.md), [fresh remediation handoff](frontend-qgis-remediation-handoff.md) and [validation](../verification/frontend-qgis-remediation/validation.json). | All eleven source roots, guarded patches, runtime/tool identities, lock/artifact hashes and retained notices are linked; no floating selected input. GeoNode header/full-text discrepancy, GeoTools scope, relevant Java gaps and frontend/QGIS rights each have a specific resolution or recorded blocker and proposed owner decision. | Seven adoption blockers remain: six unchanged Java source/profile findings and F06-QGIS-SRC-02, whose excluded td/DEM_print bytes also occur under a retained GMT notice. Five targeted adoption blockers have demonstrated variant-only remediation. IFC/ColorBrewer and all other distribution obligations remain separate. | FND-02 | **#65 consolidation checkpoint accepted; new bounded frontend/QGIS remediation demonstrated. Variant adoption blocked; owner review pending.** |
+| F02-05 | C3 | Close only uncovered selected-component smoke links: integrated browser/GeoNode/GeoServer via F02-03; QGIS/spatial libraries via F02-04; verify embedded GeoWebCache tile response and reuse exact database, Java and Hub/Lab results. | [PostGIS](postgis-slice-evidence.md), [Jupyter](jupyter-slice-evidence.md), [Java native probes](java-compatibility-evidence.md), [controlled XML/MapFish/OAuth](java-http-auth-handoff.md), [QGIS](qgis-candidate-handoff.md), [#61](../verification/geonode-role-propagation/evidence.json), [compact final matrix](fnd-02-combination-smoke.md), [fresh tile/restart index](../verification/combination-gwc/evidence.json). | One compact final matrix names exact artifacts and actual positive smoke/restart evidence for each selected combination; fresh runs only for missing/changed links. No full publishing, policy, cartographic-parity or spatial-notebook profile claim. | Final revision3 changed-WAR consumers and QGIS stage have fresh scoped matrix evidence; database/Jupyter and frontend compiled/native inputs reuse exact historical results. No simultaneous whole-product acceptance. | FND-02 | **Demonstrated bounded matrix; earlier #64 acceptance remains historical. Revision3 checkpoint review pending.** |
+| F02-06 | C1, C2, C3 | Consolidate one exact candidate source/runtime/dependency proposal, selected-file/license inventory and explicit selection-blocker dispositions, referencing existing locks rather than copying receipts. | [Immutable parent](../candidates/fnd-02-candidate-parent-2.json), [new authoritative variant](../candidates/fnd-02-candidate.json), [proposal](fnd-02-candidate-proposal.md), generated [58-finding register](fnd-02-owner-decisions.md), [Java/GMT handoff](java-gmt-remediation-handoff.md) and exact component/runtime indexes. | All eleven source roots, guarded patches, runtime/tool identities, lock/artifact hashes and retained notices are linked; no floating selected input. GeoNode header/full-text discrepancy, GeoTools scope, relevant Java gaps and frontend/QGIS rights each have a specific resolution or recorded blocker and proposed owner decision. | Two adoption blockers remain: JSON.org-derived grant chain and JJ2000 combination terms. Five targeted source/profile/resource findings have variant-only remediation. All unrelated distribution/later obligations remain. | FND-02 | **#65/#66 prior checkpoints preserved; new Java/GMT engineering demonstrated. Variant adoption blocked; owner checkpoint review pending.** |
 | F02-07 | C4 | Bind the proposal to the existing selective maintenance rule; record the approving owner/decision when obtained. | [Chapter 11 §§6–7](11-independent-product-and-source-ownership.md), [chapter 08](08-repositories-and-licensing.md), [decision index](../DECISIONS.md), guarded Java/GeoNode repairs in #58–#61.  [Candidate maintenance binding](fnd-02-candidate-proposal.md). | Proposal explicitly selects owned revisions/retained inputs; later imports/backports/independent fixes require AmbisGIS review, affected tests and a manifest change. Donor releases/disclosures are advisory; no auto-sync or unsupported indefinite freeze. | Documentary binding prepared; no new approving owner decision recorded. | FND-02 | **Documentary binding prepared; owner policy/criterion acceptance pending.** |
 | F02-08 | C1–C4 | Produce the final criterion-by-criterion acceptance report, including unresolved findings and exact owner decision scope. | This checklist and its linked component receipts; owner merges are historical checkpoint evidence only. | Every unchanged criterion independently evidenced; unresolved selection problems addressed as the criterion permits; explicit later owner acceptance of full FND-02. | Explicit C1–C4 review and owner decisions remain: accept the accurate C2 investigation record within its permitted scope, resolve adoption blockers before adopting a component/variant, and approve final maintenance/criterion acceptance. No later task is accepted. | FND-02 | **Missing.** Keep In progress in this session. |
 
@@ -55,35 +56,32 @@ decisions**, then F02-07 maintenance-policy binding and F02-08 final acceptance.
 
 ## This session
 
-F02-06 now proposes `fnd-02-frontend-qgis-proposal-2`, schema version 1,
-from the immutable `fnd-02-tested-proposal-1` baseline. New frozen frontend
-replay-02/native/browser-02 and QGIS selection-03/runtime-07 evidence replaces
-only those selected combinations. The six Java blockers, WAR/wheels, database,
-notebook and five other scoped combinations retain their exact previous evidence.
-Native hash checks of unchanged inputs are not new runtime acceptance.
+F02-06 proposes `fnd-02-java-gmt-proposal-3` (schema 1/revision 3), preserving both
+original and revision 2 manifests and all original sources/artifacts. One coherent
+final aggregate-02 selects complete-source variants for AspectJ, XMLPull, json-lib,
+Marlin and JAI ImageIO plus explicit NO-ORACLE/headless behavior. An earlier
+aggregate is retained after a file-level notice audit justified omitting unused
+Marlin benchmark helper classes. QGIS adds only the recorded GMT alias exclusion:
+1,130 cumulative palettes omitted; all 265 ColorBrewer palettes remain unchanged.
 
-Exact web-ifc 0.0.50 source, all eight pinned embedded dependencies and notices
-are locally staged; native/WASM probes support the narrow source-availability
-condition. Distribution and broader generated-code/toolchain gates remain.
-The original frontend recipe identity was not recoverable; the authorized fresh
-replay has its own executed recipe and new browser evidence. Five inherited lint
-errors remain failed. QGIS omits exactly 1,129 named palettes, retains all 265
-ColorBrewer palettes and their obligations, and freshly passes palette, styling,
-save/reopen, desktop and server/restart checks. A byte-identical retained GMT
-palette prevents closure of SRC-02; the other three group findings resolve only
-for this variant. Failed attempts remain retained.
+Fresh exact-WAR XML/JSON/proxy/weaving, actual PostgreSQL GeoFence transactions,
+codec/MapFish/renderer, strict GeoNode authorization, browser, PostGISvector/mosaic
+and GWC/cache/restart evidence is scoped in the [handoff](java-gmt-remediation-handoff.md).
+Whole historical Java and QGIS native suites are not relabeled as reruns.
+Unchanged frontend replay02/native/IFC and database/notebook results are reused
+with integrity checks. Inherited frontend lint, JSON introspection, Java7 LTW and
+Marlin degenerate-line limitations remain explicit; no failing test is erased.
 
-C2 may accept an accurate investigation record without adopting blocked artifacts.
-Seven adoption blockers remain, plus distinct distribution obligations. F02-07's
-maintenance binding is prepared, and F02-08 remains unaccepted. The smallest
-remaining QGIS decision is authoritative provenance for `gmt/GMT_dem1.svg` or a
-separately authorized one-file exclusion with affected staging/tests. Recommend
-one coordinated Java source/codec/rendering batch next, with an explicit Oracle
-support decision and one affected aggregate build/test plan. No such Java change
-was made in this session.
+Five targeted findings close for this selection. JSON-derived grant-chain and
+JJ2000 combination-license closing conditions remain unsatisfied. C2 can accept
+an accurate investigation record without adopting blocked artifacts. The finite
+next action is compatible source/terms repair for those two components, then one
+affected aggregate/matrix. F02-07 is documentary and F02-08 remains unaccepted.
+No new milestone or later-task acceptance is created.
 
 ## Historical Java ledger baseline and current reconciliation
 
+This entire historical subsection describes the pre-remediation #61 selection.
 The current [decision register](fnd-02-owner-decisions.md) supersedes this dated
 selection analysis where new exact-file evidence resolves or expands a finding;
 the original ledger remains unchanged. In particular, absence of old ojdbc14 did

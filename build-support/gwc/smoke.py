@@ -73,16 +73,24 @@ def run(args):
         java_home = tools / 'jdk-17.0.20.1+1'
         result['java_toolchain'] = toolchain.verify_extracted(TASK / 'source-archives/java-resolution/toolchain',
             json.loads((HERE.parent / 'java/toolchain-inputs.json').read_text()),tools)
-        build = ROLE / 'aggregate-repaired-02'
+        build = args.build.resolve() if getattr(args, 'build', None) else ROLE / 'aggregate-repaired-02'
+        expected_war = getattr(args, 'war_sha256', None) or WAR_SHA
+        if bool(getattr(args, 'build', None)) != bool(getattr(args, 'war_sha256', None)):
+            raise ValueError('variant build and exact WAR hash must be supplied together')
+        if json.loads((build / 'result.json').read_text()).get('result_exit_code') != 0:
+            raise ValueError('selected aggregate build did not succeed')
         inventory = combined_logging_probe.packaged_classpath(build,output)
-        if inventory['war_sha256'] != WAR_SHA: raise ValueError('retained #61 WAR digest mismatch')
+        if inventory['war_sha256'] != expected_war: raise ValueError('retained #61 WAR digest mismatch')
         save(output / 'application-inventory.json',inventory)
         result['servlet_inputs'] = runtime_inputs.stage(TASK / 'source-archives/java-http-auth/maven',output / 'servlet')
         result['launcher'] = runtime_inputs.compile_launcher(java_home,output / 'servlet',output / 'launcher')
         invocation = {'config':str(config_path),'python':str(args.python),'environment':env,'runtime':{
             'source':str(build / 'work/source'),'java_home':str(java_home),'servlet':str(output / 'servlet'),
-            'launcher':str(output / 'launcher'),'war':inventory['war_path'],'war_sha256':WAR_SHA,
+            'launcher':str(output / 'launcher'),'war':inventory['war_path'],'war_sha256':expected_war,
             'database_properties':str(database.properties_path)}}
+        import runtime_profile
+        invocation['runtime']['java_profile'] = runtime_profile.load(getattr(args, 'java_profile', None), inventory, output)
+        result['java_profile'] = invocation['runtime']['java_profile']
         snapshot = output / 'tooling'
         for component in ('gwc','frontend','geonode','java','postgis'):
             for source in (HERE.parent / component).rglob('*'):
@@ -112,7 +120,7 @@ def run(args):
         if tree_manifest(snapshot) != tooling: raise RuntimeError('executed tooling changed')
         if {'servlet':tree_manifest(output/'servlet'),'launcher':tree_manifest(output/'launcher')} != staged_before: raise RuntimeError('staged container or launcher changed')
         if digest(__file__) != result['runner_sha256']: raise RuntimeError('outer runner changed during execution')
-        if digest(inventory['war_path']) != WAR_SHA: raise RuntimeError('WAR changed during run')
+        if digest(inventory['war_path']) != expected_war: raise RuntimeError('WAR changed during run')
         if code or result['backend']['result_exit_code']: raise RuntimeError('backend or network proof failed')
         result['result_exit_code'] = 0
     except Exception as error:
@@ -153,6 +161,9 @@ def run(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--build',type=Path)
+    parser.add_argument('--war-sha256')
+    parser.add_argument('--java-profile',type=Path)
     parser.add_argument('--output',required=True,type=Path)
     parser.add_argument('--python',type=Path,default=ROLE / 'run-003/venv/bin/python')
     raise SystemExit(run(parser.parse_args()))

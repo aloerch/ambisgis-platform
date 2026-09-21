@@ -1,0 +1,23 @@
+{
+  "checks": [
+    "Pinned parent manifest and selection prevent extending an unrelated resource stage.",
+    "Only one exact alias path/hash is added to exclusions; no broad GMT directory removal.",
+    "Seven catalogue removals preserve other GMT ramps and notice; all other file modes/bytes retained except documented README count.",
+    "Existing original selection mode retained; all75 QGIS guards pass.",
+    "Actual stage/native runtime/loaded paths and no fallback, both missing-project references, server restart and cleanup pass.",
+    "All compact evidence receipt and screenshot references verified against actual files.",
+    "Historical66 C++/16 Python suites explicitly integrity-only; no license/source provenance declaration inferred from identical bytes."
+  ],
+  "files": {
+    "build-support/qgis/README.md": "e4e48a349f3ba8596bf2d438a6026a59f9bc558193a8751a8dac761e28a0b1e1",
+    "build-support/qgis/resource_selection.py": "03a0562feeca2201c1882c9f4b45b72885a814c1ff89fb2d6019f21278079954",
+    "build-support/qgis/resource_witness.py": "19944fe5b113e32aa70d2ab8172c043e7a675017290a042ac93646ebdee4746a",
+    "build-support/qgis/runtime.py": "ba8ecd72b4f69b0dca22bfb4be32e7ee916a7656754556a009c0797c254878e1",
+    "build-support/qgis/test_resource_selection.py": "27660992778f3f19fc0edd46105f29ea7523c97bf62e26b125e6853785281224",
+    "plan/docs/java-gmt-qgis-handoff.md": "5f99b2f9aea96ff7e3dac8712dcc02264a19b0e9bb267dd9bafe6a5e420af375"
+  },
+  "independent_review_status": "Requested from root integrator; pending at author handoff.",
+  "material_findings": [],
+  "result_exit_code": 0,
+  "scope": "QGIS author self-review; independent integrator review remains separate"
+}

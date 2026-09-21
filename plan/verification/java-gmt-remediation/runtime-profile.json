@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "profile": "NO-ORACLE-headless-Temurin17",
+  "war_sha256": "05931c11c95fa30f4d6875c8766f78a77dcbffec06b8fcbb4110e33676922a58",
+  "renderer_member": "WEB-INF/lib/marlin-0.9.4.8.jar",
+  "renderer_sha256": "cd6a80959246faa017b9dc522b9b8dd9b54cdc50b34396e2950175055f80565e"
+}

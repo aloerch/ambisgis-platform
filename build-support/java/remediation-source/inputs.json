@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "jdk": "build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1",
+  "toolchain_custody": "source-archives/java-resolution/toolchain",
+  "inputs": {
+    "aspectj-source": {
+      "path": "source-archives/java-source-closure/blobs/sha256/8e5a46848fdc41286df4888dddb34e1fa437f3f2cd602cb70c4d993ce71206cf",
+      "sha256": "8e5a46848fdc41286df4888dddb34e1fa437f3f2cd602cb70c4d993ce71206cf",
+      "bytes": 46520592
+    },
+    "json-source": {
+      "path": "source-archives/java-source-closure-research/blobs/sha256/221c662bbafa7f722746c00f625ae7f30c06354be0d8eccfa0ca363c747bf14b",
+      "sha256": "221c662bbafa7f722746c00f625ae7f30c06354be0d8eccfa0ca363c747bf14b",
+      "bytes": 1283689
+    },
+    "xpp3-source": {
+      "path": "build-worktrees/java-gmt-remediation/source/recovery/113c8174cda963aa8c9e46f59945838dbe1a094cc736e476d640453e07d9e9c6",
+      "sha256": "113c8174cda963aa8c9e46f59945838dbe1a094cc736e476d640453e07d9e9c6",
+      "bytes": 128334,
+      "url": "https://repo.maven.apache.org/maven2/xpp3/xpp3/1.1.4c/xpp3-1.1.4c-sources.jar"
+    },
+    "xmlpull-license": {
+      "path": "build-worktrees/java-gmt-remediation/source/recovery/4eeafa29d1d9a0cdbdad0f5178cd553527329b57b5808ffe912cb9c698343612",
+      "sha256": "4eeafa29d1d9a0cdbdad0f5178cd553527329b57b5808ffe912cb9c698343612",
+      "bytes": 370,
+      "url": "https://www.xmlpull.org/v1/download/unpacked/LICENSE.txt"
+    },
+    "epl-license": {
+      "path": "build-worktrees/java-gmt-remediation/source/recovery/a40741b59364cc49449255e9b9bfe1fcfe6a2e7ab4d37ca89db3bacbfb14e9d2",
+      "sha256": "a40741b59364cc49449255e9b9bfe1fcfe6a2e7ab4d37ca89db3bacbfb14e9d2",
+      "bytes": 12637,
+      "url": "https://www.eclipse.org/legal/epl-v10.html"
+    },
+    "groovy": {
+      "path": "build-worktrees/java-gmt-remediation/source/recovery/712adaad46a5ed20c49d0f815b493fe2beaa72de7106e481c1cc4ce2923dcb9e",
+      "sha256": "712adaad46a5ed20c49d0f815b493fe2beaa72de7106e481c1cc4ce2923dcb9e",
+      "bytes": 5482221,
+      "role": "compile-dependency",
+      "url": "https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-all/1.7.5/groovy-all-1.7.5.jar"
+    },
+    "xom": {
+      "path": "build-worktrees/java-gmt-remediation/source/recovery/05d513cce3f19c1bc4b06c545431da10dbd2f96b4e83aa715d2fe92b06d951a7",
+      "sha256": "05d513cce3f19c1bc4b06c545431da10dbd2f96b4e83aa715d2fe92b06d951a7",
+      "bytes": 431568,
+      "role": "compile-dependency",
+      "url": "https://repo.maven.apache.org/maven2/xom/xom/1.1/xom-1.1.jar"
+    },
+    "oro": {
+      "path": "build-worktrees/java-gmt-remediation/source/recovery/e00ccdad5df7eb43fdee44232ef64602bf63807c2d133a7be83ba09fd49af26e",
+      "sha256": "e00ccdad5df7eb43fdee44232ef64602bf63807c2d133a7be83ba09fd49af26e",
+      "bytes": 65261,
+      "role": "compile-dependency",
+      "url": "https://repo.maven.apache.org/maven2/oro/oro/2.0.8/oro-2.0.8.jar"
+    },
+    "commons-beanutils": {
+      "path": "build-worktrees/java-gmt-remediation/source/baseline-libs/commons-beanutils-1.11.0.jar",
+      "sha256": "9e44ba68ec9a3f21286fa2a8bbb003b735c0f69101bb43144b79f4f8aaa74709",
+      "bytes": 246806,
+      "role": "compile-dependency"
+    },
+    "commons-collections": {
+      "path": "build-worktrees/java-gmt-remediation/source/baseline-libs/commons-collections-3.2.2.jar",
+      "sha256": "eeeae917917144a68a741d4c0dff66aa5c5c5fd85593ff217bced3fc8ca783b8",
+      "bytes": 588337,
+      "role": "compile-dependency"
+    },
+    "commons-lang": {
+      "path": "build-worktrees/java-gmt-remediation/source/baseline-libs/commons-lang-2.6.jar",
+      "sha256": "50f11b09f877c294d56f24463f47d28f929cf5044f648661c0f0cfbae9a2f49c",
+      "bytes": 284220,
+      "role": "compile-dependency"
+    },
+    "commons-logging": {
+      "path": "build-worktrees/java-gmt-remediation/source/baseline-libs/commons-logging-1.3.5.jar",
+      "sha256": "6d7a744e4027649fbb50895df9497d109f98c766a637062fe8d2eabbb3140ba4",
+      "bytes": 73737,
+      "role": "compile-dependency"
+    },
+    "ezmorph": {
+      "path": "build-worktrees/java-gmt-remediation/source/baseline-libs/ezmorph-1.0.6.jar",
+      "sha256": "2be06a2380f8656426b5c610db694bbd75314caf3e9191affcd7942721398ed7",
+      "bytes": 86487,
+      "role": "compile-dependency"
+    },
+    "regexp": {
+      "path": "build-worktrees/geonode-role-propagation/aggregate-repaired-02/fresh-m2/regexp/regexp/1.2/regexp-1.2.jar",
+      "sha256": "9c7af278c4abb7021c3cc9e544ae6503d57b9e4474c4296671e173c9ab1a9e58",
+      "bytes": 29871,
+      "role": "compile-dependency"
+    },
+    "junit": {
+      "path": "build-worktrees/geonode-role-propagation/aggregate-repaired-02/fresh-m2/junit/junit/4.13.2/junit-4.13.2.jar",
+      "sha256": "8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3",
+      "bytes": 384581,
+      "role": "compile-dependency"
+    }
+  },
+  "originals": {
+    "aspectjrt": {
+      "maven_path": "org/aspectj/aspectjrt/1.5.4/aspectjrt-1.5.4.jar",
+      "sha256": "ea6dbd45089605b17840d35dd2474ec9a687929334903801e42e1f2e07fc40fb"
+    },
+    "aspectjweaver": {
+      "maven_path": "org/aspectj/aspectjweaver/1.5.4/aspectjweaver-1.5.4.jar",
+      "sha256": "a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed"
+    },
+    "xmlpull": {
+      "maven_path": "xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar",
+      "sha256": "34e08ee62116071cbb69c0ed70d15a7a5b208d62798c59f2120bb8929324cb63"
+    },
+    "json-lib": {
+      "maven_path": "net/sf/json-lib/json-lib/2.4.2-geoserver/json-lib-2.4.2-geoserver.jar",
+      "sha256": "c1de06da06183458cd8e4975e3b07e1d1d82a9f6e0a4438ed3d5dd8040983d2d"
+    }
+  },
+  "variants": {
+    "aspectjrt": "aspectjrt-1.5.4-ambisgis-temurin17-1",
+    "aspectjweaver": "aspectjweaver-1.5.4-ambisgis-temurin17-1",
+    "xmlpull": "xmlpull-1.1.3-api-ambisgis-xpp3-source-1",
+    "json-lib": "json-lib-2.4.1-ambisgis-source-1"
+  }
+}

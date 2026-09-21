@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "scope": "Independent review of candidate assembly, acceptance documentation and preservation guard by imaging implementer; not independent review of that implementer's own source changes, legal clearance, owner acceptance or whole-product verification. No files other than this review record were edited by this reviewer during the review.",
+  "reviewer": "java_imaging sub-agent; candidate assembled by root integrator",
+  "reviewed_at_utc": "2026-09-21T23:54:24.193993+00:00",
+  "review_state": "complete-all-five-corrections-verified",
+  "observed_candidate_id": "fnd-02-java-gmt-proposal-3",
+  "observed_candidate_records": 723,
+  "checks": [
+    "All 58 finding IDs preserved; exactly seven authorized findings changed, each retaining complete deep-equal parent finding under original_vs_variant.",
+    "Immutable parent revision 2 SHA256 3c59d99834b53f8778143db70f754272bce9920ca05071586d4f3629cdd625a0 retained; eleven source-owned roots unchanged.",
+    "Four live criteria and all eight existing pass-condition cells equal owner-merged parent; FND-02 In progress and F02-08 Missing retained.",
+    "JAI ImageIO JJ2000 and JSON-derived rights remain selection-blocker, candidate_adoption true and distribution true; source/technical success does not waive rights.",
+    "All 390 parent records retained; four moved QGIS recipe locations preserve original hashes/bytes in retained parent worktree rather than assigning new recipes to old results.",
+    "Changed Java combinations select java-gmt-war SHA256 e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044; QGIS selects fresh stage; unchanged database/notebook combinations and frontend output identities preserved.",
+    "Exact final WAR imaging receipt remains partial-native-renderer-failure: upstream Marlin 46/48 pass, two byte-identical baseline/current failure diagnostics; codec/MapFish stages pass. Handwritten handoff/proposal/completion state inherited JSON, Marlin, Java7 LTW and frontend lint failures.",
+    "Final browser, GeoNode, GWC and QGIS runtime receipts inspected: result_exit_code 0 and cleanup records retained. GWC service stop/credential invalidation/mosaic cleanup inspected.",
+    "Historical STATUS/matrix/Java-ledger paragraphs explicitly labeled preserved history; no retroactive closure of original source mismatch or original binary provenance."
+  ],
+  "focused_guard": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tests.test_candidate_java_gmt_variant",
+      "-v"
+    ],
+    "cwd": "plan",
+    "exit_code": 0,
+    "tests_run": 6,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "final_readback_rerun_exit_code": 0,
+    "final_readback_output": "test_changed_consumers_select_new_war_and_resource_stage (tests.test_candidate_java_gmt_variant.JavaGmtVariantTests.test_changed_consumers_select_new_war_and_resource_stage) ... ok\ntest_database_notebook_combinations_and_frontend_bytes_unchanged (tests.test_candidate_java_gmt_variant.JavaGmtVariantTests.test_database_notebook_combinations_and_frontend_bytes_unchanged) ... ok\ntest_eight_pass_conditions_and_four_criteria_preserved (tests.test_candidate_java_gmt_variant.JavaGmtVariantTests.test_eight_pass_conditions_and_four_criteria_preserved) ... ok\ntest_only_seven_authorized_findings_change (tests.test_candidate_java_gmt_variant.JavaGmtVariantTests.test_only_seven_authorized_findings_change) ... ok\ntest_parent_and_source_authority_preserved (tests.test_candidate_java_gmt_variant.JavaGmtVariantTests.test_parent_and_source_authority_preserved) ... ok\ntest_unresolved_rights_still_block_adoption (tests.test_candidate_java_gmt_variant.JavaGmtVariantTests.test_unresolved_rights_still_block_adoption) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.011s\n\nOK\n"
+  },
+  "findings": [
+    {
+      "id": "CAND-DOC-01",
+      "severity": "documentation-correction",
+      "location": "profiles/qgis-desktop-server/unknowns",
+      "finding": "Active profile still carried parent exact-1129 authorization restriction after authorized 1130th GMT omission.",
+      "requested_fix": "Scope original uncertainty to historical parent and name authorized revision-3 omission.",
+      "state": "fixed-verified-final-readback"
+    },
+    {
+      "id": "CAND-DOC-02",
+      "severity": "documentation-correction",
+      "location": "profiles/gwc-cache-fixture/coverage",
+      "finding": "Active profile still claimed same #61 WAR and historical 64-library match after selecting aggregate-02.",
+      "requested_fix": "Describe final revision-3 WAR and fresh exact-library/runtime evidence.",
+      "state": "fixed-verified-final-readback"
+    },
+    {
+      "id": "CAND-DOC-03",
+      "severity": "evidence-scope-correction",
+      "location": "findings/F02-JAVA-marlin0948/unknown and closure.remaining; profiles/java-selected-aggregate/limitations; combinations/java-native/scope",
+      "finding": "Handwritten docs disclosed 46/48 native Marlin result, but active finding/profile/combination omitted the inherited two native failures.",
+      "requested_fix": "Carry 46/48 plus unchanged original/variant failures into authoritative active scope; preserve failed probe status.",
+      "state": "fixed-verified-final-readback"
+    },
+    {
+      "id": "CAND-DOC-04",
+      "severity": "documentation-correction",
+      "location": "profiles/frontend-build/limitations",
+      "finding": "Assets said to be served from final WAR; static frontend is served with the WAR backend.",
+      "requested_fix": "Say freshly served with final Java/GMT WAR.",
+      "state": "fixed-verified-final-readback"
+    },
+    {
+      "id": "CAND-DOC-05",
+      "severity": "generated-document-refresh",
+      "location": "plan/docs/fnd-02-owner-decisions.md",
+      "finding": "Generated register still describes revision2 while current proposal links it as revision3.",
+      "requested_fix": "Regenerate using unchanged validator after final manifest edits.",
+      "state": "fixed-verified-final-readback"
+    }
+  ],
+  "not_claimed": [
+    "No new native GIS suite execution in this document review.",
+    "No endorsement of rights compatibility or owner adoption/distribution.",
+    "Full package and inventory validation are separate integrator receipts; this review independently ran the six scoped candidate guards and checked final accepted corrections."
+  ],
+  "final_readback_at_utc": "2026-09-21T23:56:54.090332+00:00",
+  "final_candidate": {
+    "path": "plan/candidates/fnd-02-candidate.json",
+    "sha256": "8083a10deee529363e15925941c28e5a1e1f3030716f0cac7154c39466efbb90",
+    "bytes": 836241,
+    "candidate_revision": 3
+  },
+  "final_generated_register": {
+    "path": "plan/docs/fnd-02-owner-decisions.md",
+    "sha256": "f192087e65d45fa3873135f24a9555e766ba2e95ea0c0c31c2cfad7f95a44915",
+    "bytes": 167344
+  },
+  "initial_reviewed_files": [
+    {
+      "path": "plan/candidates/fnd-02-candidate.json",
+      "sha256": "4f277d3f708bb953d09cbd6a482092d65158c3fb47923fa7c0c7d2185596d124",
+      "bytes": 834804
+    },
+    {
+      "path": "plan/candidates/fnd-02-candidate-parent-2.json",
+      "sha256": "3c59d99834b53f8778143db70f754272bce9920ca05071586d4f3629cdd625a0",
+      "bytes": 538061
+    },
+    {
+      "path": "plan/docs/java-gmt-remediation-handoff.md",
+      "sha256": "430cd278e9b18da8241600e686501bc349ca52cffdadd07b88de2e7059f4b5b2",
+      "bytes": 8436
+    },
+    {
+      "path": "plan/docs/fnd-02-candidate-proposal.md",
+      "sha256": "62d236c69e076d3eda0999ef1cd7ad1a5e8e2bfb5c1b1d62d6b3059b6fc9e39f",
+      "bytes": 4988
+    },
+    {
+      "path": "plan/docs/fnd-02-completion.md",
+      "sha256": "339ec98b56c224aba0857759ac99d7efc715fd36476d4d021ca20845ebd22ed4",
+      "bytes": 19350
+    },
+    {
+      "path": "plan/docs/fnd-02-combination-smoke.md",
+      "sha256": "8d9eef7badf7b332fa887c266975d25221fe8bec5167da4ee2da68f6a7754932",
+      "bytes": 25550
+    },
+    {
+      "path": "plan/STATUS.md",
+      "sha256": "6fa9a7c59bae4b9779d8fd809e5a4cdfea8731c4a820a2710c60a0486d94910f",
+      "bytes": 36253
+    },
+    {
+      "path": "plan/tests/test_candidate_java_gmt_variant.py",
+      "sha256": "a37775b4cd04c46538f9fec78a30f2d61643ad23e52b7747b37d071e075809e5",
+      "bytes": 3385
+    },
+    {
+      "path": "plan/tests/test_candidate_variant.py",
+      "sha256": "5a66933c83c4a4d2694f1912073a2eea01f4eca65269bc2bc84d62fc979be59f",
+      "bytes": 3280
+    }
+  ],
+  "final_reviewed_files": [
+    {
+      "path": "plan/candidates/fnd-02-candidate.json",
+      "sha256": "8083a10deee529363e15925941c28e5a1e1f3030716f0cac7154c39466efbb90",
+      "bytes": 836241
+    },
+    {
+      "path": "plan/candidates/fnd-02-candidate-parent-2.json",
+      "sha256": "3c59d99834b53f8778143db70f754272bce9920ca05071586d4f3629cdd625a0",
+      "bytes": 538061
+    },
+    {
+      "path": "plan/docs/java-gmt-remediation-handoff.md",
+      "sha256": "430cd278e9b18da8241600e686501bc349ca52cffdadd07b88de2e7059f4b5b2",
+      "bytes": 8436
+    },
+    {
+      "path": "plan/docs/fnd-02-candidate-proposal.md",
+      "sha256": "62d236c69e076d3eda0999ef1cd7ad1a5e8e2bfb5c1b1d62d6b3059b6fc9e39f",
+      "bytes": 4988
+    },
+    {
+      "path": "plan/docs/fnd-02-completion.md",
+      "sha256": "339ec98b56c224aba0857759ac99d7efc715fd36476d4d021ca20845ebd22ed4",
+      "bytes": 19350
+    },
+    {
+      "path": "plan/docs/fnd-02-combination-smoke.md",
+      "sha256": "8d9eef7badf7b332fa887c266975d25221fe8bec5167da4ee2da68f6a7754932",
+      "bytes": 25550
+    },
+    {
+      "path": "plan/STATUS.md",
+      "sha256": "6fa9a7c59bae4b9779d8fd809e5a4cdfea8731c4a820a2710c60a0486d94910f",
+      "bytes": 36253
+    },
+    {
+      "path": "plan/tests/test_candidate_java_gmt_variant.py",
+      "sha256": "a37775b4cd04c46538f9fec78a30f2d61643ad23e52b7747b37d071e075809e5",
+      "bytes": 3385
+    },
+    {
+      "path": "plan/tests/test_candidate_variant.py",
+      "sha256": "5a66933c83c4a4d2694f1912073a2eea01f4eca65269bc2bc84d62fc979be59f",
+      "bytes": 3280
+    },
+    {
+      "path": "plan/docs/fnd-02-owner-decisions.md",
+      "sha256": "f192087e65d45fa3873135f24a9555e766ba2e95ea0c0c31c2cfad7f95a44915",
+      "bytes": 167344
+    }
+  ],
+  "review_outcome": "No unresolved correction in the reviewed candidate/doc/acceptance scope. The two adoption blockers and inherited native failures remain unresolved engineering/rights limitations; this review is not acceptance."
+}

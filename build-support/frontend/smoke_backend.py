@@ -154,7 +154,7 @@ def run_child(invocation):
             env = invocation['environment']
         else:
             cmd = runtime_inputs.launcher_command(Path(runtime['java_home']), Path(runtime['servlet']), Path(runtime['launcher']),
-                Path(runtime['war']), output / 'geoserver-data', output / ('geoserver-' + label), port=urlsplit(config['geoserver_url']).port)
+                Path(runtime['war']), output / 'geoserver-data', output / ('geoserver-' + label), port=urlsplit(config['geoserver_url']).port, java_profile=runtime.get('java_profile'))
             cmd[1:1] = ['-Dsun.net.client.defaultReadTimeout=1500', '-Dsun.net.client.defaultConnectTimeout=1500']
             env = {'PATH': str(Path(runtime['java_home']) / 'bin') + ':/usr/bin:/bin', 'LANG': 'C.UTF-8'}
         process = subprocess.Popen(cmd, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, errors='replace')

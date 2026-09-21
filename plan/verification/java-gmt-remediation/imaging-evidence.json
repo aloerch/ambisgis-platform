@@ -1,0 +1,1367 @@
+{
+  "scope": "F02-06 source-built imaging proposal; not adoption, license clearance, distribution or release.",
+  "authorization": "2026-09-21 user remediation prompt selects complete-source Java codec and headless Temurin17 renderer variants; PR66 merge does not grant adoption.",
+  "status": "technical-components-tested-with-inherited-native-renderer-failures-and-JJ2000-adoption-blocker",
+  "mapping": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/imaging-replacements.json",
+    "sha256": "f0edd1d1ab30dfa3af4ee29ecc9b8634313534662557762b2288b1574c8c7285",
+    "bytes": 2142
+  },
+  "mapping_predecessor": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/imaging-replacements-predecessor-1.json",
+    "sha256": "582ced041990ce9d94589cce4c74930fb5458c8764a86a2c94e3f95a459ade01",
+    "bytes": 2142
+  },
+  "variants": [
+    {
+      "maven_path": "org/marlin/marlin/0.9.4.8/marlin-0.9.4.8.jar",
+      "original_sha256": "44c3c3620102749844e58f668523f073db127efbd0b233ec9b13b3205db1362f",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/ambisgis-marlin-0.9.4.8-headless-temurin17-2.jar",
+      "sha256": "14633f73fed7e30553927201309bcaf407a9f5462fce87692f196859f33d074a",
+      "variant_id": "ambisgis-marlin-0.9.4.8-headless-temurin17-2",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/result.json",
+          "sha256": "50a5e990bc52125712a66afcc0106cad299388593a2bde808d430bc55920c410"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure/blobs/sha256/60fc2008c33f01281ce75dbbfe04c1771ddb9544746ed32c3dbef551ee60270a",
+          "sha256": "60fc2008c33f01281ce75dbbfe04c1771ddb9544746ed32c3dbef551ee60270a"
+        }
+      ]
+    },
+    {
+      "maven_path": "javax/media/jai_imageio/1.1/jai_imageio-1.1.jar",
+      "original_sha256": "2b40befa9340e15759c68867df08905c6c6400df379ec7802120386325a565d3",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-03/ambisgis-jai-imageio-1.1-java-temurin17-1.jar",
+      "sha256": "51dc61ca6724ba307f7d8407aa276e2c56c11d6ad6093d62820abef0ab0880f2",
+      "variant_id": "ambisgis-jai-imageio-1.1-java-temurin17-1",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-03/result.json",
+          "sha256": "dbddb3e2effb9bba4061f8c73cd33813d1af407f561268e031751a6b42c54087"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-gmt-remediation/imaging/f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+          "sha256": "f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68"
+        }
+      ]
+    }
+  ],
+  "inventory_summary": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/inventory-03/summary.json",
+    "sha256": "394c71c125bdcf2b2b433ee72b36139acd5b7723effea28545f3dbc068ed4b1c",
+    "bytes": 1357
+  },
+  "inventory_records": [
+    {
+      "variant_id": "ambisgis-marlin-0.9.4.8-headless-temurin17-2",
+      "inventory": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/inventory-03/ambisgis-marlin-0.9.4.8-headless-temurin17-2-inventory.json",
+        "sha256": "af1aca08b8e636b36ae13c7098e5a3f6bc3ed87f1bf7c47c79c1cf3c4aa88858",
+        "bytes": 123382
+      },
+      "original_source_classes": 85,
+      "original_classes": 87,
+      "variant_source_classes": 83,
+      "variant_classes": 83,
+      "omitted_classes": 4,
+      "other_library_reference_count": 0,
+      "notices": 1
+    },
+    {
+      "variant_id": "ambisgis-jai-imageio-1.1-java-temurin17-1",
+      "inventory": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/inventory-03/ambisgis-jai-imageio-1.1-java-temurin17-1-inventory.json",
+        "sha256": "30c71e6b158398a1ee282365929ecd770ce4dafe6d8e27839ce8ec74a7ee40db",
+        "bytes": 749230
+      },
+      "original_source_classes": 559,
+      "original_classes": 559,
+      "variant_source_classes": 515,
+      "variant_classes": 515,
+      "omitted_classes": 44,
+      "other_library_reference_count": 2,
+      "notices": 3
+    }
+  ],
+  "selected_header_terms": [
+    {
+      "variant_id": "ambisgis-marlin-0.9.4.8-headless-temurin17-2",
+      "selected_source_files": 42,
+      "header_terms": {
+        "GPL-2.0-only with Classpath exception": 42
+      }
+    },
+    {
+      "variant_id": "ambisgis-jai-imageio-1.1-java-temurin17-1",
+      "selected_source_files": 312,
+      "header_terms": {
+        "Sun BSD with nuclear disclaimer": 165,
+        "JJ2000 conforming-product restriction": 147
+      }
+    }
+  ],
+  "source_acquisition": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-gmt-remediation/imaging/f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+      "sha256": "f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+      "bytes": 10035769
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-gmt-remediation/imaging/jai-11-acquisition.json",
+      "sha256": "de1348d346b9246750ab8b8bb67547d8cf6d6a91da2152830c5266e1a1e75fb6",
+      "bytes": 223
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-gmt-remediation/imaging/jai-imageio-core-tags.json",
+      "sha256": "e48b9e931a82be3ee21083fe4a992ee0b96e1275968f9133867976a18b1c66c9",
+      "bytes": 4934
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-gmt-remediation/imaging/jai-imageio-jpeg2000-tags.json",
+      "sha256": "0451b97a8493ae85b3293be5aef028a785772bac141846b6ee007c6694d2f396",
+      "bytes": 9842
+    }
+  ],
+  "selected_builds": [
+    {
+      "run": "marlin-04",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/result.json",
+        "sha256": "50a5e990bc52125712a66afcc0106cad299388593a2bde808d430bc55920c410",
+        "bytes": 67832
+      },
+      "status": "passed",
+      "error": null,
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/compile.log",
+            "sha256": "1e44bc9e2ea315e789cac623990171bdc275022725ed343684df7e1dac01f2ea",
+            "bytes": 32530
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/compile-network.json",
+            "sha256": "da56613b3e53182cbf3a5e34abdcfbd4f985eff13f53dfc6415a31b5ff6f01a5",
+            "bytes": 9098
+          }
+        },
+        {
+          "name": "witness-compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/witness-compile.log",
+            "sha256": "4e293cdf3c418af8961105e3f81ce7ce25b1ddf3275c99bb6f49464f53c03db2",
+            "bytes": 987
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/witness-compile-network.json",
+            "sha256": "b78ae41f0295646080b10ba2f5ccbdcc7566bcadd33d518128c30a793b875b03",
+            "bytes": 2236
+          }
+        },
+        {
+          "name": "render",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/render.log",
+            "sha256": "87dc766281625b433a10365155152cd690fe984e51590a67944d61847dd51e01",
+            "bytes": 404
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/render-network.json",
+            "sha256": "0429cc2ddafa26c94a4c47c3e94afc4a2b13c3d857a897ea10152ac4f224efbd",
+            "bytes": 2728
+          }
+        },
+        {
+          "name": "reject-opengl",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/reject-opengl.log",
+            "sha256": "268fd140c69535dd1be6c197d255a88c10d1cb0dee541fcf4b0da19f2a26e65c",
+            "bytes": 223
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/reject-opengl-network.json",
+            "sha256": "244d488bc14b8a7ab1a2cb53e05e0b9c8ebbb83631a95c99a50732fd19d2fb96",
+            "bytes": 2760
+          }
+        },
+        {
+          "name": "reject-unpatched",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/reject-unpatched.log",
+            "sha256": "f01bc435580b2e45a4a3e43e3dea8a7b83038d5050319ee969be47ad60a4068c",
+            "bytes": 218
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/reject-unpatched-network.json",
+            "sha256": "a26a05afea5c4af8783da4d6976675747438268c6384e26a46d82205da88e649",
+            "bytes": 2444
+          }
+        }
+      ]
+    },
+    {
+      "run": "imageio-04",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-04/result.json",
+        "sha256": "6fb9732e844518ed6eb9087c059f7a7e2d92da51978872b6b7e1a4c242cf062d",
+        "bytes": 193136
+      },
+      "status": "built-technical-tests-pending",
+      "error": null,
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-04/compile.log",
+            "sha256": "6e0314e3983aca2f3a652990aa2bdb701bc80040ef35b762231365549779c966",
+            "bytes": 34777
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-04/compile-network.json",
+            "sha256": "8e48ede3a402150675f7d2aab93755c5fe8d129db9d994ff852dcb9cf69fc7e9",
+            "bytes": 54065
+          }
+        }
+      ]
+    }
+  ],
+  "identical_rebuilds": {
+    "marlin_variant1": [
+      "marlin-02",
+      "marlin-03"
+    ],
+    "imageio_variant1": [
+      "imageio-03",
+      "imageio-04"
+    ],
+    "limitation": "Marlin variant2 is a new source selection; predecessor repeatability does not falsely claim a second variant2 rebuild."
+  },
+  "final_war": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044"
+  },
+  "final_war_probe": {
+    "run": "final-war-probe-02",
+    "receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/result.json",
+      "sha256": "8ee8227ce36c59c9db880aad6d65c064a3755b030a2b403fea17b5732279d744",
+      "bytes": 251838
+    },
+    "status": "partial-native-renderer-failure",
+    "error": null,
+    "stages": [
+      {
+        "name": "compile",
+        "exit_code": 0,
+        "network_verified": true,
+        "log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/compile.log",
+          "sha256": "403441c877fb7eaacbffade3f05032dec7818614c7f9f26aa26138fe8e252a18",
+          "bytes": 969
+        },
+        "network_receipt": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/compile-network.json",
+          "sha256": "7e4d12d1512fd6d3d6889e2a5836980d6a464ff620222f96eab9b34de21476ae",
+          "bytes": 49655
+        }
+      },
+      {
+        "name": "providers-roundtrip",
+        "exit_code": 0,
+        "network_verified": true,
+        "log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/providers-roundtrip.log",
+          "sha256": "ddd5b83cf8c6f0fd9603e24abe00cddc78a3b58635357b9803bf59eb88a49e59",
+          "bytes": 12354
+        },
+        "network_receipt": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/providers-roundtrip-network.json",
+          "sha256": "43b61831f171cb036b044c45e0b2748468517022d4d4ba004fc5f9573aa00ae2",
+          "bytes": 49716
+        }
+      },
+      {
+        "name": "native-renderer",
+        "exit_code": 1,
+        "network_verified": true,
+        "log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/native-renderer.log",
+          "sha256": "ec69625ea50bb8ef3e2c735420d33c8badf960487ae84827ce08cc5ad468b692",
+          "bytes": 2148
+        },
+        "network_receipt": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/native-renderer-network.json",
+          "sha256": "ad050f4fe0d5842c4b4a9a7ee33efec1c8a1004c3ec7bbc3987ba08e31db00c6",
+          "bytes": 49609
+        }
+      },
+      {
+        "name": "mapfish",
+        "exit_code": 0,
+        "network_verified": true,
+        "log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/mapfish.log",
+          "sha256": "c53a38ed5f4c5b5c054e047c18df6ac790dda107935fcafd176e8473a6c5dd8c",
+          "bytes": 625
+        },
+        "network_receipt": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/mapfish-network.json",
+          "sha256": "efbbce536f6539642fd84d2505d781fcccc96383490e2f71a8a84ab11d89d860",
+          "bytes": 49729
+        }
+      }
+    ]
+  },
+  "final_renderer": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/libs/marlin-0.9.4.8.jar",
+    "sha256": "14633f73fed7e30553927201309bcaf407a9f5462fce87692f196859f33d074a"
+  },
+  "final_fixture_sources": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/ImageIOWitness.java",
+      "sha256": "0a81b3bc75916adcead80914c267167559abbc0cd5ffa5e05a017b2554445826"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/RenderingWitness.java",
+      "sha256": "b51daceab256e245264a5595dfcb7e3f74b972affb4d5533cc1cd3c35817e7da"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/JoinMiterRedundantLineSegmentsTest.java",
+      "sha256": "c9d120bd0ded1632d5966f066b3c1f81ed4e2b076f0781b5007e6fbe56f444cc"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/NativeRenderingWitness.java",
+      "sha256": "f983f111f9f5c64b10d61ceb5faf8f2850c2395cf677b63affe38def2527e2bf"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/MapFishImagingWitness.java",
+      "sha256": "a1e90f2c3ae9be9aa028d6ea53ce3207a4d490fe40b2287745da74b2d5cfaaac"
+    }
+  ],
+  "final_codec_fixtures": [
+    {
+      "path": "fixtures/CCITT_RLE.tif",
+      "sha256": "c77c52e34394f60c6a17eaaa9f5cdc051821a54aa7e3de889a441de4bda3f186"
+    },
+    {
+      "path": "fixtures/CCITT_T.4.tif",
+      "sha256": "84d86df8474f9fb2cd6c572e43c6237425d0b84da6af41a4bbf385d261109bf1"
+    },
+    {
+      "path": "fixtures/CCITT_T.6.tif",
+      "sha256": "9f23d9264ac40ef84684510bbe22eff166203cad7a328e7a9e2383cece99d223"
+    },
+    {
+      "path": "fixtures/JPEG-automatic.img",
+      "sha256": "168823f211bdf5e574fe84c558aa7c71a379ffb1be1ec806e71060e44ccf6a7d"
+    },
+    {
+      "path": "fixtures/JPEG2000-automatic.img",
+      "sha256": "d7855b050f69cfb0077d280a4ab717da92bc348e3f4cb4a62550daf2598a6d79"
+    },
+    {
+      "path": "fixtures/JPEG2000-selected.img",
+      "sha256": "d7855b050f69cfb0077d280a4ab717da92bc348e3f4cb4a62550daf2598a6d79"
+    },
+    {
+      "path": "fixtures/PNG-automatic.img",
+      "sha256": "3f0e1e7817752dbf3b0b76c5f646bf54fc44185e817a1d1cd98381ced2279764"
+    },
+    {
+      "path": "fixtures/TIFF-automatic.img",
+      "sha256": "fec143a5eaeb526f616d99580d3934f8075d035678cd668ab384808b82fada9e"
+    },
+    {
+      "path": "fixtures/TIFF-selected-geo.img",
+      "sha256": "ecf79b56da4f2ca7ba6837c7017468cf030e5279a3a62d1b7cb3f96587badcdb"
+    }
+  ],
+  "final_print_fixtures": [
+    {
+      "path": "print-fixtures/known.png",
+      "sha256": "3f0e1e7817752dbf3b0b76c5f646bf54fc44185e817a1d1cd98381ced2279764"
+    },
+    {
+      "path": "print-fixtures/pdf-decoded.png",
+      "sha256": "04d656dfbe52b9b8aad92eed91f28c437c8a08dcc2cd302cddc8a7e09ef2a495"
+    },
+    {
+      "path": "print-fixtures/print.pdf",
+      "sha256": "ab890bda7d7bdfdc7deb804d5e7ddd21560e3a0a128248b76714fb21b6057ad0"
+    },
+    {
+      "path": "print-fixtures/print.png",
+      "sha256": "04d656dfbe52b9b8aad92eed91f28c437c8a08dcc2cd302cddc8a7e09ef2a495"
+    },
+    {
+      "path": "print-fixtures/print.tiff",
+      "sha256": "5bb2e5c5c865ee0b776a15ef29b44da33be20b0473d98f6750877baf2136149e"
+    },
+    {
+      "path": "print-fixtures/print.yaml",
+      "sha256": "b701a03121e9844ae86c6a5e3b205f1dfa8265d71f9b67e91dcfd36be0f01eed"
+    }
+  ],
+  "final_executed_tooling": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/executed-tooling/ImageIOWitness.java",
+      "sha256": "0a81b3bc75916adcead80914c267167559abbc0cd5ffa5e05a017b2554445826",
+      "bytes": 7233
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/executed-tooling/JoinMiterRedundantLineSegmentsTest.java",
+      "sha256": "c9d120bd0ded1632d5966f066b3c1f81ed4e2b076f0781b5007e6fbe56f444cc",
+      "bytes": 13597
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/executed-tooling/MapFishImagingWitness.java",
+      "sha256": "a1e90f2c3ae9be9aa028d6ea53ce3207a4d490fe40b2287745da74b2d5cfaaac",
+      "bytes": 3213
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/executed-tooling/NativeRenderingWitness.java",
+      "sha256": "f983f111f9f5c64b10d61ceb5faf8f2850c2395cf677b63affe38def2527e2bf",
+      "bytes": 391
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/executed-tooling/RenderingWitness.java",
+      "sha256": "b51daceab256e245264a5595dfcb7e3f74b972affb4d5533cc1cd3c35817e7da",
+      "bytes": 3180
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/executed-tooling/probe_imageio.py",
+      "sha256": "63d45c0669f28bb27994e3bab82bf34731bb4212886b54d8a340fd9434dc226f",
+      "bytes": 6303
+    }
+  ],
+  "final_matrix": [
+    {
+      "check": "full ImageIO reader/writer/input/output provider origins and actual ordered selection",
+      "status": "passed"
+    },
+    {
+      "check": "PNG RGBA, JPEG smooth RGB, TIFF RGB, GeoTIFF pixel scale/tiepoint/EPSG4326, lossless JPEG2000 packed RGB",
+      "status": "passed",
+      "jpeg_tolerance": {
+        "mean_absolute_channel_error_max": 3,
+        "maximum_channel_error_max": 12,
+        "observed_mean": 0.5513020833333333,
+        "observed_maximum": 3
+      },
+      "lossless_and_alpha_pixels": "exact"
+    },
+    {
+      "check": "source-built Java TIFF CCITT RLE/T.4/T.6",
+      "status": "passed",
+      "fixture": "97x81 bilevel checker patterns; exact decoded pixels"
+    },
+    {
+      "check": "exact patched renderer class/resource/manifest/hash and known transparent geometry",
+      "status": "passed",
+      "concurrency": "128 tasks, 8 threads in each codec/native/MapFish JVM",
+      "pixel_sha256": "fd9ae18d0231cd67ea1d0d42077ec71eed8512480ba1628ba2e8db9508bcae09"
+    },
+    {
+      "check": "retained original JoinMiterRedundantLineSegmentsTest",
+      "status": "failed",
+      "passed": 46,
+      "failed": 2,
+      "cases": [
+        41,
+        45
+      ],
+      "description": "moveTo/close/lineTo degenerate path; pure and normalized direct-draw cases; original publisher fails identically; no tolerance or golden substitution"
+    },
+    {
+      "check": "real MapFish PDF, PNG and TIFF output",
+      "status": "passed",
+      "pdf": "one page and required text; decoded raster content",
+      "decoded_dimensions": [
+        595,
+        842
+      ],
+      "colored_pixels_each": 18620
+    }
+  ],
+  "publisher_native_comparison": {
+    "receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/publisher-native-comparison-01/result.json",
+      "sha256": "06e180a7a9efaaed9c6e36b415db1a39d9df60d51842af40516861c46baba20f",
+      "bytes": 818
+    },
+    "network": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/publisher-native-comparison-01/network.json",
+      "sha256": "44ed7f5e8cbaedfde203944aa75dee36800dc251f17baafe2f610e311c7bd535",
+      "bytes": 2427
+    },
+    "log": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/publisher-native-comparison-01/native.log",
+      "sha256": "24581a6b0f98f7d9c87be4acf46b1cf836a50b754c923ac65b1e7f82d49d5c2b",
+      "bytes": 123301
+    },
+    "fixture_comparison": [
+      {
+        "baseline": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/publisher-native-comparison-01/failure-41.png",
+          "sha256": "c0386339ed52d1edf1f846751343fbe8c35e1a6a0af7497bb418552801b0eb0a",
+          "bytes": 1033
+        },
+        "final": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/failure-41.png",
+          "sha256": "c0386339ed52d1edf1f846751343fbe8c35e1a6a0af7497bb418552801b0eb0a",
+          "bytes": 1033
+        },
+        "identical": true
+      },
+      {
+        "baseline": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/publisher-native-comparison-01/failure-45.png",
+          "sha256": "ce79a0d81642fb3a58908a4558daf1f3913ef0691a4eb281a82e83d96a77e804",
+          "bytes": 1184
+        },
+        "final": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/failure-45.png",
+          "sha256": "ce79a0d81642fb3a58908a4558daf1f3913ef0691a4eb281a82e83d96a77e804",
+          "bytes": 1184
+        },
+        "identical": true
+      }
+    ],
+    "renderer_origin": "exact original marlin-0.9.4.8.jar; class-load log verified"
+  },
+  "findings": [
+    {
+      "id": "F02-JAVA-marlin0948",
+      "technical_source_profile": "selected83/83 classes source mapped; no OGL or unused benchmark classes;42 explicit GPL2+Classpath file headers",
+      "native_status": "46/48 original upstream regression cases pass;2 inherited failures remain explicit",
+      "remaining": "Owner/source/profile/security and distribution review ungranted; inherited degenerate-path limitation remains; original OGL predecessor mismatch preserved."
+    },
+    {
+      "id": "F02-JAVA-jai-imageio11",
+      "technical_source_profile": "recovered original559/559 source coverage; selected515/515 source-built classes and required tested formats preserved",
+      "adoption_blocker": true,
+      "remaining": "Separate JJ2000 conforming-product terms do not establish compatibility with GPL MapFish combination; source recovery and successful format tests do not waive this condition."
+    }
+  ],
+  "failed_and_predecessor_runs": [
+    {
+      "run": "marlin-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-01/result.json",
+        "sha256": "468a76a68f0904f15da6af60fbc2d129f8df93b16b1e36c342d6ac6581cd8185",
+        "bytes": 47894
+      },
+      "status": "failed",
+      "error": "compile failed",
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-01/compile.log",
+            "sha256": "72a6c07998568758e8ec0a4d1f18557d0fc4bb4d113ace997e44ec4d3f15f10c",
+            "bytes": 32792
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-01/compile-network.json",
+            "sha256": "5dc91dd3e53401735e08a3807add0f12419fc95e7f5d4ce18f0243b9a025c684",
+            "bytes": 9257
+          }
+        }
+      ]
+    },
+    {
+      "run": "marlin-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/result.json",
+        "sha256": "e2e18b2ce4c97f85b52f8fb3789f1c1ed7dc5be58bf9300cbeb59dbbcc4fba1d",
+        "bytes": 67422
+      },
+      "status": "passed",
+      "error": null,
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/compile.log",
+            "sha256": "8bceca8381e7d2827e4c27856a151e9a7a16e92ddbe96a0670a18bba2a527e6f",
+            "bytes": 32530
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/compile-network.json",
+            "sha256": "f487db9db7c8db8ca8651b0304d4167974208749649b58e41302fabf94d0b524",
+            "bytes": 9257
+          }
+        },
+        {
+          "name": "witness-compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/witness-compile.log",
+            "sha256": "403441c877fb7eaacbffade3f05032dec7818614c7f9f26aa26138fe8e252a18",
+            "bytes": 969
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/witness-compile-network.json",
+            "sha256": "0e9552131cf785549af025d1e93fd82a16959c6926a9c9f7d0bf84cd41f45609",
+            "bytes": 2230
+          }
+        },
+        {
+          "name": "render",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/render.log",
+            "sha256": "9ecbe8c5162bcec5b8aaee6811e51f63453b827266119ba653650e37ae2b36b7",
+            "bytes": 404
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/render-network.json",
+            "sha256": "371de456b3cbfc9159eeeb9526e1de6b59105d8c57434816c6edc46c06789d3d",
+            "bytes": 2728
+          }
+        },
+        {
+          "name": "reject-opengl",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/reject-opengl.log",
+            "sha256": "268fd140c69535dd1be6c197d255a88c10d1cb0dee541fcf4b0da19f2a26e65c",
+            "bytes": 223
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/reject-opengl-network.json",
+            "sha256": "101c1110a28ef228e7873e9040abbf0614f9f3e5d1df01c803a46e38974d5a74",
+            "bytes": 2760
+          }
+        },
+        {
+          "name": "reject-unpatched",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/reject-unpatched.log",
+            "sha256": "f01bc435580b2e45a4a3e43e3dea8a7b83038d5050319ee969be47ad60a4068c",
+            "bytes": 218
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-02/reject-unpatched-network.json",
+            "sha256": "b6f16d2aa5d9d086e3b6ec7cf0a80105cd1d94b5c622fca5f30417515bcc248a",
+            "bytes": 2444
+          }
+        }
+      ]
+    },
+    {
+      "run": "marlin-03",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/result.json",
+        "sha256": "87042894a5494c6025ceba0715996c98ca1ce86bc1216b2c94b576307f1b035d",
+        "bytes": 67947
+      },
+      "status": "passed",
+      "error": null,
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/compile.log",
+            "sha256": "f177854de712dc5370b3fc8f6eb70d4cb1a17933da3e9e61f59246a9fcd4f19a",
+            "bytes": 32530
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/compile-network.json",
+            "sha256": "68af05247db8122e428178ac9118c09c7f36e1471ef783309a5189319135a21d",
+            "bytes": 9257
+          }
+        },
+        {
+          "name": "witness-compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/witness-compile.log",
+            "sha256": "403441c877fb7eaacbffade3f05032dec7818614c7f9f26aa26138fe8e252a18",
+            "bytes": 969
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/witness-compile-network.json",
+            "sha256": "6f82bc0ca4738902be1a8622f9e6db7f830f440dc72acba0a5bcb66309947424",
+            "bytes": 2230
+          }
+        },
+        {
+          "name": "render",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/render.log",
+            "sha256": "168cd93dedb21907e5548a69f502f0f8c7a62536cd112edcb8447b28f9a2a43c",
+            "bytes": 404
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/render-network.json",
+            "sha256": "6c799e0aa83b8fdcf7b4aadd1f4860a4616e0bb965ef9e03426b293dbc426624",
+            "bytes": 2728
+          }
+        },
+        {
+          "name": "reject-opengl",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/reject-opengl.log",
+            "sha256": "268fd140c69535dd1be6c197d255a88c10d1cb0dee541fcf4b0da19f2a26e65c",
+            "bytes": 223
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/reject-opengl-network.json",
+            "sha256": "cbc9161e63eed912f4db6647605daffdecc60bec739700d1532a03287c794480",
+            "bytes": 2760
+          }
+        },
+        {
+          "name": "reject-unpatched",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/reject-unpatched.log",
+            "sha256": "f01bc435580b2e45a4a3e43e3dea8a7b83038d5050319ee969be47ad60a4068c",
+            "bytes": 218
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-03/reject-unpatched-network.json",
+            "sha256": "24cd929b94f1883978724636e1c3bf943338b20ba2e0c80cc0cf3af84e7fe7f6",
+            "bytes": 2444
+          }
+        }
+      ]
+    },
+    {
+      "run": "imageio-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-01/result.json",
+        "sha256": "280ecb8f7a0e4b0a9fc64d5fd6ecc1b604a9aa3e39b61baee953f61c2b4cae78",
+        "bytes": 192340
+      },
+      "status": "failed",
+      "error": "compile failed",
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-01/compile.log",
+            "sha256": "591ac4302e7ecd172315ab11fb3ca41c9c31053d9560a8d1c8bcae0cf0fd7fa8",
+            "bytes": 36684
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-01/compile-network.json",
+            "sha256": "9bda2c3dcd6a99686911e6de2bb8593d48dae54f48b54452abbc49bddb902a22",
+            "bytes": 54065
+          }
+        }
+      ]
+    },
+    {
+      "run": "imageio-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-02/result.json",
+        "sha256": "baa010c1f3d0b2c5d2c3f04f4042ab854466cece0ae7d1c4b39b6008df8fc12e",
+        "bytes": 192610
+      },
+      "status": "built-technical-tests-pending",
+      "error": null,
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-02/compile.log",
+            "sha256": "b7158abb51cb7b274929c141534211504bf4cbde2b51d5a5ce6944ef6523a294",
+            "bytes": 34777
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-02/compile-network.json",
+            "sha256": "397c3e21ac42d32d87b39cffe87c9e28d7ec7418197c22289f1aa898c370f953",
+            "bytes": 54065
+          }
+        }
+      ]
+    },
+    {
+      "run": "imageio-03",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-03/result.json",
+        "sha256": "dbddb3e2effb9bba4061f8c73cd33813d1af407f561268e031751a6b42c54087",
+        "bytes": 192610
+      },
+      "status": "built-technical-tests-pending",
+      "error": null,
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-03/compile.log",
+            "sha256": "4caf3a362a6bd2d0b4072c3fb79bcb2bec729ed58b4ed183892c2fdb569215c2",
+            "bytes": 34777
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-03/compile-network.json",
+            "sha256": "bb5f2d4378e14b9c1cad24a68011352d29b32624e0a69ca0c2d66453491b14b9",
+            "bytes": 54065
+          }
+        }
+      ]
+    },
+    {
+      "run": "baseline-probe-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/baseline-probe-01/result.json",
+        "sha256": "b4f33cea29f381624320c98b722db253d3ba456cb68e800009a10e41a86a11c5",
+        "bytes": 149968
+      },
+      "status": "failed",
+      "error": "providers-roundtrip failed",
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/baseline-probe-01/compile.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/baseline-probe-01/compile-network.json",
+            "sha256": "2529f49b4acd7ccac800aef30916deac924807ea9017fdb812b3313ae8901148",
+            "bytes": 48924
+          }
+        },
+        {
+          "name": "providers-roundtrip",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/baseline-probe-01/providers-roundtrip.log",
+            "sha256": "5decd990f8fa258b181273674db1844341b4c2acb6124ead4db753b0c0e97786",
+            "bytes": 10538
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/baseline-probe-01/providers-roundtrip-network.json",
+            "sha256": "83c40c2563daae83c341b5ea5dc6a5e602bac8d92aad0273f2a3538213c5100a",
+            "bytes": 48960
+          }
+        }
+      ]
+    },
+    {
+      "run": "variant-probe-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-01/result.json",
+        "sha256": "cb8d18bdbf46c793803aba89faa32718b635f585b8d2be5268895fa808a59d6c",
+        "bytes": 149526
+      },
+      "status": "failed",
+      "error": "providers-roundtrip failed",
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-01/compile.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-01/compile-network.json",
+            "sha256": "34559032534bce63bee9ed6490a7f2aaa40339ae335689d2f0e36daa4ba2b36b",
+            "bytes": 48579
+          }
+        },
+        {
+          "name": "providers-roundtrip",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-01/providers-roundtrip.log",
+            "sha256": "b59c511c1a43824d6ec1d98363a1b0736724d4e3a4a1c1aabebff7362a14e50f",
+            "bytes": 10899
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-01/providers-roundtrip-network.json",
+            "sha256": "66315c5e7bb57a00b855d6bcd1b71a8b2f6255792b099ebcc9ff931724cac071",
+            "bytes": 48614
+          }
+        }
+      ]
+    },
+    {
+      "run": "variant-probe-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-02/result.json",
+        "sha256": "f34d2482312b15dc892dc769e2a83c64bdc570092fd8e940107331f230131ee6",
+        "bytes": 149526
+      },
+      "status": "failed",
+      "error": "providers-roundtrip failed",
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-02/compile.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-02/compile-network.json",
+            "sha256": "ce26f77c26e909a602c70792a92da77394fa60f174bdd7737509eacc96d67d83",
+            "bytes": 48579
+          }
+        },
+        {
+          "name": "providers-roundtrip",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-02/providers-roundtrip.log",
+            "sha256": "c9cc4f5d98f017e98aa91e8951a4fe7b57d8953c1b4a9c8d06ceb4080cfb0911",
+            "bytes": 10998
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-02/providers-roundtrip-network.json",
+            "sha256": "5f60a91c42f191424b0f3366ffd2083f6443051dad44ac0fdfb3a8003ea96174",
+            "bytes": 48614
+          }
+        }
+      ]
+    },
+    {
+      "run": "variant-probe-03",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-03/result.json",
+        "sha256": "406c4726ec90862718f6a6768c02d531a00bd17b586c2611c88710158bcb2942",
+        "bytes": 149526
+      },
+      "status": "failed",
+      "error": "providers-roundtrip failed",
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-03/compile.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-03/compile-network.json",
+            "sha256": "d61bd87e14376eb326c71ea7382281a658c3780d739eceaa6f4a13aca9c2e1e1",
+            "bytes": 48579
+          }
+        },
+        {
+          "name": "providers-roundtrip",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-03/providers-roundtrip.log",
+            "sha256": "6586f91d753e3f7d8c09830fa7618bc1afc563d1abf833bb9ee92701744186e0",
+            "bytes": 11085
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-03/providers-roundtrip-network.json",
+            "sha256": "973d90a062c9c5dce28e173682a37fa01c067a88a9aa3c66774b3e533363c202",
+            "bytes": 48614
+          }
+        }
+      ]
+    },
+    {
+      "run": "variant-probe-04",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-04/result.json",
+        "sha256": "4758bc89261bcdf30cb5ea806cba9ddf5d25ece0bbf435cef3263db6eda14f99",
+        "bytes": 150360
+      },
+      "status": "passed",
+      "error": null,
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-04/compile.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-04/compile-network.json",
+            "sha256": "20889b2ada3d74455b9f4b332ca67037458fa78d49118431d9d1be91f55b1183",
+            "bytes": 48579
+          }
+        },
+        {
+          "name": "providers-roundtrip",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-04/providers-roundtrip.log",
+            "sha256": "8be24da938e829d2e191a27aa6888761d09de7b6e3535abc45a073b1bdd52afb",
+            "bytes": 11876
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-04/providers-roundtrip-network.json",
+            "sha256": "82d414f9fc4702a43a476af9b8522f6053046d2299166c59dbc595c92823c931",
+            "bytes": 48614
+          }
+        }
+      ]
+    },
+    {
+      "run": "variant-probe-05",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-05/result.json",
+        "sha256": "c6354c89289fda3bfb7e090252712a5ab4294fc34a1608eb0a212740386850a3",
+        "bytes": 197548
+      },
+      "status": "passed",
+      "error": null,
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-05/compile.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-05/compile-network.json",
+            "sha256": "6209c36e5f93286ae3aa517049f30338456df760e678ef625065aa3d76822237",
+            "bytes": 48714
+          }
+        },
+        {
+          "name": "providers-roundtrip",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-05/providers-roundtrip.log",
+            "sha256": "3437d9a6995a9fb550d6cd2f52791b6732587fb74d5f31332d611c858ed9df27",
+            "bytes": 11876
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-05/providers-roundtrip-network.json",
+            "sha256": "7ad4011a3415739db1801596698870332ec9a713f749d3f92b8e22ccb475ea3b",
+            "bytes": 48614
+          }
+        },
+        {
+          "name": "mapfish",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-05/mapfish.log",
+            "sha256": "60f03daecc83b697cf0e89e46f9fb0d9ac8ee408c7f08304f146da2296ebcdd8",
+            "bytes": 556
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-05/mapfish-network.json",
+            "sha256": "98bb4949147cca008b6768fe421d509c454a2b3eef4b4cef54c2323180e83570",
+            "bytes": 48627
+          }
+        }
+      ]
+    },
+    {
+      "run": "variant-probe-06",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-06/result.json",
+        "sha256": "50ddc67316ffd37e806bf5270bb7caf0ca2e6c83831b582f5e54a404aa318797",
+        "bytes": 200021
+      },
+      "status": "passed",
+      "error": null,
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-06/compile.log",
+            "sha256": "403441c877fb7eaacbffade3f05032dec7818614c7f9f26aa26138fe8e252a18",
+            "bytes": 969
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-06/compile-network.json",
+            "sha256": "5c469980c74855495de2898e8c08796b1dbb1324ff15374e424d599cc710ca7d",
+            "bytes": 48913
+          }
+        },
+        {
+          "name": "providers-roundtrip",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-06/providers-roundtrip.log",
+            "sha256": "dfba57c4ff7622e91d65fa824192a8b8cbf9247352cc9a115096464ce0f2c510",
+            "bytes": 12089
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-06/providers-roundtrip-network.json",
+            "sha256": "4d5e2e8746a5c0a99f600c66201d5c3c0e9349466613c54fa930eae5d9d42050",
+            "bytes": 48614
+          }
+        },
+        {
+          "name": "mapfish",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-06/mapfish.log",
+            "sha256": "8841afa536e3ade75ecb0e71208d756298ddb352e4a1d3234ae20ee84202bf29",
+            "bytes": 237
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/variant-probe-06/mapfish-network.json",
+            "sha256": "298ec65862b09b81baf0a38651999c4492d8dc65be9168b24ab48e65990d8ab5",
+            "bytes": 48627
+          }
+        }
+      ]
+    },
+    {
+      "run": "final-war-probe-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-01/result.json",
+        "sha256": "65b14fb0207900137c628c2ccac33176784fd0c2b6c36f097a4c48e9bc8a3517",
+        "bytes": 202413
+      },
+      "status": "passed",
+      "error": null,
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-01/compile.log",
+            "sha256": "403441c877fb7eaacbffade3f05032dec7818614c7f9f26aa26138fe8e252a18",
+            "bytes": 969
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-01/compile-network.json",
+            "sha256": "d4c7eb489f6a665138c412df1cde487cdc2b169fc27949847ea8626ebda3f48b",
+            "bytes": 49373
+          }
+        },
+        {
+          "name": "providers-roundtrip",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-01/providers-roundtrip.log",
+            "sha256": "8fa098d3a74af5314aecc08df21e83218df9ff9cf3441ef50030861e0711c476",
+            "bytes": 12357
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-01/providers-roundtrip-network.json",
+            "sha256": "16f4a8a7e3e2af5c451a8ba55a47e56dfe8ab2567f367d0e21fabcd582c3c2ef",
+            "bytes": 49716
+          }
+        },
+        {
+          "name": "mapfish",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-01/mapfish.log",
+            "sha256": "9cbed1bafdc393918df744dd94f18a7af474f1197a6b75641fa3f67eb66d6e4c",
+            "bytes": 625
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-01/mapfish-network.json",
+            "sha256": "b86d1aa0e1d7e5a6e21da2e36c7d8cb9a4a0131b0c9c9f828b1de1d3cc831001",
+            "bytes": 49729
+          }
+        }
+      ]
+    },
+    {
+      "run": "native-renderer-probe-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/native-renderer-probe-01/result.json",
+        "sha256": "808196faede42dd48d037dfb601fe8ed348dc22ac9ec5eb34da1c2fa76b3def5",
+        "bytes": 206674
+      },
+      "status": "failed",
+      "error": "native-renderer failed",
+      "stages": [
+        {
+          "name": "compile",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/native-renderer-probe-01/compile.log",
+            "sha256": "403441c877fb7eaacbffade3f05032dec7818614c7f9f26aa26138fe8e252a18",
+            "bytes": 969
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/native-renderer-probe-01/compile-network.json",
+            "sha256": "f661a911d2bad8f956295224c48e146c9c40ee3c92fd95282828100853beabf2",
+            "bytes": 51875
+          }
+        },
+        {
+          "name": "providers-roundtrip",
+          "exit_code": 0,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/native-renderer-probe-01/providers-roundtrip.log",
+            "sha256": "840e2645c8c47fd1a576ad7b62550e76dd8452b54fcef58d8358969b78d25d2c",
+            "bytes": 12552
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/native-renderer-probe-01/providers-roundtrip-network.json",
+            "sha256": "a4ed35388131439b4fff6f72a9aef2fa381ac28658821150a8a5611a6243f574",
+            "bytes": 51948
+          }
+        },
+        {
+          "name": "native-renderer",
+          "exit_code": 1,
+          "network_verified": true,
+          "log": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/native-renderer-probe-01/native-renderer.log",
+            "sha256": "cc1a7ee236dcfb0332e5b0ddadffd4040b13a839b41c4cf49bb6b3ff143cdfac",
+            "bytes": 2154
+          },
+          "network_receipt": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/native-renderer-probe-01/native-renderer-network.json",
+            "sha256": "51ba38d511d9b17c14f0b0d65f788c923e3e75a24cea97d23d90d87e71bc8fd7",
+            "bytes": 51835
+          }
+        }
+      ]
+    }
+  ],
+  "not_run": [
+    "Full Marlin long/benchmark suites",
+    "Unrecovered vendor JAI native suite",
+    "Product-wide GIS acceptance; handled separately by parent matrix",
+    "Distribution/legal acceptance"
+  ],
+  "containment": {
+    "execution": "existing Linux AF_INET/AF_INET6 socket-denial runner; every completed final/build receipt verified",
+    "listeners": "none",
+    "credentials": "none",
+    "processes": "all invoked JVMs exited; final wrapper returns1 to preserve the native2/48 failures"
+  },
+  "reviewable_recipes": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/ImageIOWitness.java",
+      "sha256": "0a81b3bc75916adcead80914c267167559abbc0cd5ffa5e05a017b2554445826",
+      "bytes": 7233
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/MapFishImagingWitness.java",
+      "sha256": "a1e90f2c3ae9be9aa028d6ea53ce3207a4d490fe40b2287745da74b2d5cfaaac",
+      "bytes": 3213
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/NativeRenderingWitness.java",
+      "sha256": "f983f111f9f5c64b10d61ceb5faf8f2850c2395cf677b63affe38def2527e2bf",
+      "bytes": 391
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/RenderingWitness.java",
+      "sha256": "b51daceab256e245264a5595dfcb7e3f74b972affb4d5533cc1cd3c35817e7da",
+      "bytes": 3180
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/build_imageio.py",
+      "sha256": "8fd13136fffd4b9aac7d7f2e264f7ec449d44ab38e540fb117e44a96d0dfc681",
+      "bytes": 9577
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/build_marlin.py",
+      "sha256": "a78abdcd7cc65c30cf0a86045211aae0cf1abcd27dcbe0e5615429df51a19767",
+      "bytes": 7430
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/imageio-modifications.json",
+      "sha256": "a365179cdbffa4a6b25b5aa246f52738902b244d1cddb096d80c33a07b0f6baa",
+      "bytes": 2567
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/imageio-profile-exclusions.json",
+      "sha256": "45b575b9681365d01a41b16d4f19868d9993af9fe6f6980fdbf694d80f7835c7",
+      "bytes": 12798
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/imageio-source.patch",
+      "sha256": "01a0d95727d9a44a5e45f030878dcc7648c80102475e487c906e7fcbbc479879",
+      "bytes": 9036
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/inventory.py",
+      "sha256": "ced7057cb83ef5ed1567503288611f82329bb64422575bfc913497f032064073",
+      "bytes": 4903
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/marlin-modifications.json",
+      "sha256": "e892581d08e9b28033f22263da8f939550653cf3f2ffbef29dff2bdbaa1f100b",
+      "bytes": 508
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/marlin-profile-exclusions.json",
+      "sha256": "e008d091adda58343b0b018b5295257a838836678468a93cab58abc933678f67",
+      "bytes": 695
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/marlin-source.patch",
+      "sha256": "fefe13642e4d1ed2d22cd64a32a5290ea98922818ec995e70ac0bff2b77bc534",
+      "bytes": 1329
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/probe_imageio.py",
+      "sha256": "63d45c0669f28bb27994e3bab82bf34731bb4212886b54d8a340fd9434dc226f",
+      "bytes": 6303
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "path": "com/sun/media/imageioimpl/common/ImageUtil.java",
+    "before_sha256": "14d566373127d2dc7ae8ec2f2b92e05e08b94363af21f82e82dcdf54c2002473",
+    "after_sha256": "8d57dc32f3a0516dab2b04bbcfcd62c0fe39cd56b17330ffe90eb4c1f1cde424"
+  },
+  {
+    "path": "com/sun/media/imageioimpl/common/PackageUtil.java",
+    "before_sha256": "8cd98f21925b58312452245d2654a3ac86709fbe9a807a0fb35a834ea2996a4e",
+    "after_sha256": "2712abaac204455cb446c81e1ad0aba7bcf7b7a31aab7a679a71ab01a2d1186f"
+  },
+  {
+    "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderSpi.java",
+    "before_sha256": "7b2088f586919d13e6e95d230780b853fdcb2f47e667abd84f144d4745cf1830",
+    "after_sha256": "e5aad75daddb1ba89f0adaf1ce204df5c195675d04396b491b02f25de811ed3d"
+  },
+  {
+    "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterSpi.java",
+    "before_sha256": "074c88db9dc38888ccaac28f7cc5e51613efe3120be23b7b92147db9abeac17a",
+    "after_sha256": "06cb5cf07e5622ba480a83414b0e2fb6c1707a7719c034a039b7fb63314730aa"
+  },
+  {
+    "path": "com/sun/media/imageioimpl/plugins/jpeg2000/RenderedImageSrc.java",
+    "before_sha256": "4fefd03c4397a21f6a4306d835af026ea7abc10a3119ea00d47ee7136d83d6de",
+    "after_sha256": "022ccb70eabf3b4750b05b9703ec4914b2facfae03e997aaad892a36bdac8c3e"
+  },
+  {
+    "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFImageReader.java",
+    "before_sha256": "c7d2f6a0dde6a610a0ebbd0d5afa943d91f373f2b99f8f5bf7c189dfa90ec3c1",
+    "after_sha256": "5ebb664934e1a5545f49cbac6e22382fa880cd3a30ba2691eec1859e506cac7e"
+  },
+  {
+    "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFImageWriter.java",
+    "before_sha256": "124ecdf3a36bdf33b2fdd69ff8f20efd26ea49af7ef7b89c5ab6bfbc5dc3d69b",
+    "after_sha256": "c9b680e65153587f3eb9a6ae71d0f017f2816ffd42955b428b83e528a68c1734"
+  },
+  {
+    "path": "jj2000/j2k/entropy/decoder/StdEntropyDecoder.java",
+    "before_sha256": "837091bd8bcb3af4cbb3c80c771b28d6197aa39f3717eb01426a8604c5eb6478",
+    "after_sha256": "0f23913f8f2d65440ae92b1391901a7e8dc1e8c5d90b5b71c69f5eaa8d2b2924"
+  },
+  {
+    "path": "jj2000/j2k/entropy/encoder/EBCOTRateAllocator.java",
+    "before_sha256": "dfb0fb89b9af2d3f4aa934f9f941897a72509d3d1f2fb407ac317ff9832241ce",
+    "after_sha256": "f5eaa9d6ac340ab1b175207023ee1d52d4baa95818b5ab505b52184582f03d6c"
+  },
+  {
+    "path": "jj2000/j2k/entropy/encoder/StdEntropyCoder.java",
+    "before_sha256": "6ee6bbe3232cca4bf919c5c12212cc1818f0dd1ad663aa653004d7452738e485",
+    "after_sha256": "41b90658a81abd5967a32d891f8b9b6d621dcdb1a08f26cab0e80970e10ce470"
+  }
+]

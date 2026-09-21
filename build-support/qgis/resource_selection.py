@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Replayable private QGIS external-resource selection; never edits its baseline."""
 import argparse
+import copy
 from collections import Counter
 import json
 import os
@@ -22,6 +23,31 @@ EXPECTED = {"SRC-01":256, "SRC-02":138, "SRC-03":690, "SRC-04":45}
 BASELINE_SHA = "931e5f0523e1d9bdba6b2fbd27e6c208297456db696265beb961a57e77ed82c9"
 SOURCE_SHA = "229ce420ccf5f993eff29e58dc500f2fe7337395595989f947481c34c8cfb875"
 NOTICE_ROOT = "share/qgis/doc/ambisgis-resource-selection/"
+PARENT_MANIFEST_SHA = "4e65c76d2af1bc811dca913d0450d4ab614f5cf14c3c9022d544796e5130a8a3"
+PARENT_SELECTION_SHA = "b420a3e29ae619d0a17e1ff4991a45559b65c284f527f14c3915d72bb924c2fd"
+GMT_ALIAS = {"path":RESOURCE+"gmt/GMT_dem1.svg", "bytes":591,
+             "sha256":"0ba1cad3e42202036ab6a86663a09d377eb84eb22584df0e4dbc9fdee54cf602"}
+GMT_AUTHORIZATION = "Current owner Java/GMT remediation prompt section 2.A/5 explicitly authorizes only gmt/GMT_dem1.svg exclusion; PR #66 merge alone does not."
+
+
+def derive_gmt_successor(rows, parent):
+    """Extend the pinned selection-03 inventory by the single authorized alias."""
+    by_path = {row["path"]:row for row in rows}
+    require(len(by_path) == len(rows), "duplicate parent stage path")
+    for row in rows: safe_path(row["path"])
+    require(by_path.get(GMT_ALIAS["path"]) == GMT_ALIAS, "recorded GMT alias identity mismatch")
+    require(len(parent["exclusions"]) == 1129 and not set(parent["exclusions"]) & set(by_path),
+            "parent exclusions not preserved")
+    require({k:v["count"] for k,v in parent["groups"].items()} == EXPECTED, "parent grouping changed")
+    require(len(parent["colorbrewer"]) == 265 and all(by_path.get(row["path"]) == row for row in parent["colorbrewer"]),
+            "parent ColorBrewer identity changed")
+    selected = copy.deepcopy(parent)
+    selected["exclusions"][GMT_ALIAS["path"]] = "SRC-02"
+    selected["groups"]["SRC-02"]["files"].append(dict(GMT_ALIAS))
+    selected["groups"]["SRC-02"]["count"] += 1
+    selected["additional_exclusion_authorization"] = GMT_AUTHORIZATION
+    require(len(selected["exclusions"]) == 1130, "successor cumulative exclusion mismatch")
+    return selected
 
 
 def safe_path(value):
@@ -77,12 +103,13 @@ def derive_selection(rows, findings):
             "notice_hashes":notices, "colorbrewer":cb}
 
 
-def trim_catalogue(data, omitted_roots):
+def trim_catalogue(data, omitted_roots, omitted_schemes=()):
     root = ET.fromstring(data); removed = []
     for parent in root.iter():
         for element in list(parent):
             directory = element.get("dir")
-            if directory and any(directory == p or directory.startswith(p+"/") for p in omitted_roots):
+            if directory and (any(directory == p or directory.startswith(p+"/") for p in omitted_roots)
+                              or directory+"/"+element.get("file", "") in omitted_schemes):
                 require(element.tag in ("gradient", "collect"), "unexpected omitted-resource XML reference")
                 removed.append({"tag":element.tag,"attributes":dict(element.attrib)})
                 parent.remove(element)
@@ -165,7 +192,7 @@ def audit_packaged_references(prefix, selection):
                 # Native style XML and cpt-city catalogue semantic references.
                 if values.get("k", values.get("name")) == "schemeName":
                     value = values.get("v", values.get("value", ""))
-                    require(not any(value == d or value.startswith(d+"/") for d in omitted_dirs), "omitted ramp in packaged style")
+                    require(value not in omitted and not any(value == d or value.startswith(d+"/") for d in omitted_dirs), "omitted ramp in packaged style")
                 if element.tag == "gradient" and "dir" in values and "file" in values:
                     require(values["dir"]+"/"+values["file"] not in omitted, "omitted ramp in packaged catalogue")
     require(not containers, "packaged container needs explicit member audit")
@@ -176,20 +203,29 @@ def audit_packaged_references(prefix, selection):
 
 def run(args):
     started = time.monotonic(); output = args.output.resolve()
+    followup = bool(args.parent_selection)
     require(not output.exists() and not output.is_relative_to(args.baseline.resolve()), "fresh output outside baseline required")
     output.mkdir(parents=True, mode=0o700); output.chmod(0o700)
-    report = {"result_exit_code":1,"authorization":"Current owner remediation prompt; PR #65 accepted only the consolidation baseline.",
+    report = {"result_exit_code":1,"authorization":GMT_AUTHORIZATION if followup else "Current owner remediation prompt; PR #65 accepted only the consolidation baseline.",
               "scope":"New private external-resource variant; no source rewrite, compile, distribution permission or owner adoption."}
     producer = {name:file_ref(HERE/name) for name in ("resource_selection.py","common.py")}
     report["executed_recipe"] = {"command":[sys.executable,*sys.argv],"files_before":producer}
     try:
-        require(sha(args.manifest) == BASELINE_SHA, "baseline manifest identity mismatch")
+        require(sha(args.manifest) == (PARENT_MANIFEST_SHA if followup else BASELINE_SHA), "baseline manifest identity mismatch")
         rows = json.loads(args.manifest.read_text())["files"]
         verify_inventory(args.baseline, rows)
         rights_path = args.rights
         require(sha(rights_path) == "06718c9ed6178558bd6a846b9e403d9723d0202ca22bb7638ef564147156e751", "rights authority changed")
         rights = json.loads(rights_path.read_text())
-        selection = derive_selection(rows, rights["qgis_resources"])
+        if followup:
+            require(sha(args.parent_selection) == PARENT_SELECTION_SHA, "parent selection identity mismatch")
+            selection = derive_gmt_successor(rows, json.loads(args.parent_selection.read_text()))
+            report["parent_selection"] = file_ref(args.parent_selection)
+            report["excluded_alias"] = dict(GMT_ALIAS)
+            report["preserved_alias_scope_notice"] = file_ref(args.baseline/(RESOURCE+"gmt/COPYING.xml"))
+            report["original_provenance_limitation"] = "Identical bytes do not establish identical licensing; exclusion avoids unresolved provenance without invalidating the recorded GMT grant."
+        else:
+            selection = derive_selection(rows, rights["qgis_resources"])
         report["source_audit"] = source_audit(args.source_archive, selection)
         report["baseline_manifest"] = file_ref(args.manifest)
         report["rights_evidence"] = file_ref(rights_path)
@@ -201,10 +237,10 @@ def run(args):
         shutil.copytree(args.baseline, prefix, symlinks=True)
         for path in prefix.rglob("*"):
             if path.is_symlink(): require(path.resolve().is_relative_to(prefix), "stage symlink escapes new prefix")
-        removed = set(selection["exclusions"])
+        removed = {GMT_ALIAS["path"]} if followup else set(selection["exclusions"])
         for path in sorted(removed): (prefix/path).unlink()
         relocations = []
-        for root in selection["omitted_collection_roots"]:
+        for root in ([] if followup else selection["omitted_collection_roots"]):
             for path in sorted((prefix/root).rglob("*")):
                 if path.is_file():
                     relative = str(path.relative_to(prefix)); target = NOTICE_ROOT+"omitted-metadata/"+relative.removeprefix(RESOURCE)
@@ -218,11 +254,14 @@ def run(args):
         roots = [root.removeprefix(RESOURCE) for root in selection["omitted_collection_roots"]]
         changes = []
         for path in sorted((prefix/(RESOURCE+"selections")).glob("*.xml")):
-            data, refs = trim_catalogue(path.read_bytes(),roots)
+            data, refs = trim_catalogue(path.read_bytes(),roots, {"gmt/GMT_dem1"} if followup else ())
             if refs:
                 original = sha(path); path.write_bytes(data)
                 changes.append({"path":str(path.relative_to(prefix)),"before_sha256":original,"after_sha256":sha(path),"removed_references":refs})
-        notices = {"default-icons-LICENSE.TXT":"images/themes/default/LICENSE.TXT",
+        if followup:
+            require(len(changes) == 7 and sum(len(row["removed_references"]) for row in changes) == 7,
+                    "expected exact seven GMT catalogue references")
+        notices = {} if followup else {"default-icons-LICENSE.TXT":"images/themes/default/LICENSE.TXT",
                    "QGIS-Vera-COPYRIGHT.TXT":"tests/testdata/font/QGIS-Vera/COPYRIGHT.TXT",
                    "QGIS-Vera-README.txt":"tests/testdata/font/QGIS-Vera/QGIS-Vera-README.txt"}
         with tarfile.open(args.source_archive) as archive:
@@ -230,7 +269,7 @@ def run(args):
                 matches = [m for m in archive.getmembers() if m.isfile() and m.name.endswith("/"+member)]
                 require(len(matches) == 1,"notice member ambiguity")
                 (prefix/(NOTICE_ROOT+target)).write_bytes(archive.extractfile(matches[0]).read())
-        readme = ("Private proposed QGIS resource profile. Exactly 1,129 optional SVG palettes are omitted.\n"
+        readme = (f"Private proposed QGIS resource profile. Exactly {len(selection['exclusions']):,} optional SVG palettes are omitted.\n"
                   "The old source/stage remain custody records, not approved distribution bundles.\n"
                   "ColorBrewer: This product includes color specifications and designs developed by Cynthia Brewer (http://colorbrewer.org/).\n"
                   "Its exact acknowledgement, naming and notice terms remain in resources/cpt-city-qgis-min/cb/COPYING.xml.\n"
@@ -238,10 +277,15 @@ def run(args):
                   "Omitted collection metadata/notices are retained here outside the active palette archive.\n"
                   "Saved projects can retain serialized symbol/shader colors, but omitted named ramps cannot be selected or reloaded.\n"
                   "Reclassification from such a ramp requires an explicit user choice; full saved-project compatibility is not claimed.\n")
-        (prefix/(NOTICE_ROOT+"README.txt")).write_text(readme)
+        readme_path = prefix/(NOTICE_ROOT+"README.txt")
+        original_readme = sha(readme_path) if followup else None
+        readme_path.write_text(readme)
+        if followup:
+            report["notice_readme_change"] = {"path":NOTICE_ROOT+"README.txt", "before_sha256":original_readme, "after_sha256":sha(readme_path)}
         report["packaged_reference_audit"] = audit_packaged_references(prefix, selection)
         after = inventory(prefix); before_by = {r["path"]:r for r in rows}; after_by = {r["path"]:r for r in after}
         changed = {e["path"] for e in changes}
+        if followup: changed.add(NOTICE_ROOT+"README.txt")
         additions = set(after_by)-set(before_by)
         require(set(before_by)-set(after_by) == removed,"unexpected removed stage files")
         require({p for p in set(before_by)&set(after_by) if before_by[p] != after_by[p]} == changed,"unrelated staged bytes changed")
@@ -251,11 +295,11 @@ def run(args):
             require(stat.S_IMODE((args.baseline/p).lstat().st_mode) == stat.S_IMODE((prefix/p).lstat().st_mode),"unrelated stage mode changed")
         excluded_hashes = {r["sha256"] for g in selection["groups"].values() for r in g["files"]}
         alternate_copies = [r for r in after if r.get("sha256") in excluded_hashes]
-        expected_alias = {"path":RESOURCE+"gmt/GMT_dem1.svg", "bytes":591,
-                          "sha256":"0ba1cad3e42202036ab6a86663a09d377eb84eb22584df0e4dbc9fdee54cf602"}
-        require(alternate_copies == [expected_alias], "unexpected alternate excluded-palette copy")
+        expected_alias = GMT_ALIAS
+        require(alternate_copies == ([] if followup else [expected_alias]), "unexpected alternate excluded-palette copy")
+        require(not set(selection["exclusions"]) & set(after_by), "cumulative omitted palette remains")
         alias_notice = file_ref(prefix/(RESOURCE+"gmt/COPYING.xml"))
-        report["alternate_copy_blockers"] = [{"finding":"F06-QGIS-SRC-02", "retained":expected_alias,
+        report["alternate_copy_blockers"] = [] if followup else [{"finding":"F06-QGIS-SRC-02", "retained":expected_alias,
             "excluded_path":RESOURCE+"td/DEM_print.svg", "retained_scope_notice":alias_notice,
             "interpretation":"Byte-identical palette remains under separate GMT GPLv2 notice; exact named td path is absent. Differing provenance/notice scope remains unresolved; no extra deletion or clearance inferred."}]
         require(all(after_by[r["path"]] == r for r in selection["colorbrewer"]),"ColorBrewer altered")
@@ -265,7 +309,7 @@ def run(args):
         report.update(result_exit_code=0, selection=file_ref(output/"selection.json"), output_manifest=file_ref(output/"after-manifest.json"),
                       prefix=str(prefix), palette_counts={k:v["count"] for k,v in selection["groups"].items()},
                       retained_colorbrewer=265, before_entries=len(rows), after_entries=len(after),
-                      removed_palette_files=len(selection["exclusions"]), relocated_metadata=relocations, catalogue_changes=changes,
+                      removed_palette_files=len(selection["exclusions"]), newly_removed_palette_files=1 if followup else len(selection["exclusions"]), relocated_metadata=relocations, catalogue_changes=changes,
                       added_files=[after_by[p] for p in sorted(additions)], unchanged_files=len(set(before_by)&set(after_by))-len(changed),
                       baseline_unchanged=True, retained_modes_unchanged=True, alternate_exact_palette_copies=alternate_copies,
                       compile_steps=0, tooling=file_ref(output/"tooling.json"))
@@ -282,6 +326,7 @@ def run(args):
 if __name__ == "__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--baseline",type=Path,required=True);parser.add_argument("--manifest",type=Path,required=True)
+    parser.add_argument("--parent-selection",type=Path,help="Pinned selection-03 selection.json; explicitly selects the authorized one-file GMT follow-up")
     parser.add_argument("--rights",type=Path,default=PLATFORM/"plan/verification/candidate-selection/frontend-qgis-rights.json")
     parser.add_argument("--source-archive",type=Path,required=True);parser.add_argument("--output",type=Path,required=True)
     raise SystemExit(run(parser.parse_args()))

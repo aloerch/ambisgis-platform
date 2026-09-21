@@ -1,3 +1,39 @@
+# Implementation status — Java/GMT remediation variant
+
+**FND-02 remains In progress.** Proposed `fnd-02-java-gmt-proposal-3` (schema 1,
+revision 3) derives from verified owner-merged #66/main
+`6b2e2fd7edc91746748d916d34af01f0a681e342` on
+`fnd-02/java-gmt-selection-remediation`. Current prompt explicitly authorizes
+implementation; owner checkpoint review, adoption and distribution remain separate.
+
+Five of seven targeted adoption findings have variant-only remediation. JSON-derived
+grant-chain and JJ2000combination terms remain blockers. Final aggregate-02 selects
+six JARs from five complete-source components, explicit NO-ORACLE/headless Temurin17,
+and preserved required GIS/authentication/printing/cache functionality. QGIS adds
+only recordedGMTalias omission:1,130 total,265 ColorBrewer unchanged, zero compilation.
+All 58 finding IDs, eleven owned roots, four criteria and eight pass conditions remain.
+
+[Exact handoff](docs/java-gmt-remediation-handoff.md), [proposal](docs/fnd-02-candidate-proposal.md),
+[decision register](docs/fnd-02-owner-decisions.md), [matrix](docs/fnd-02-combination-smoke.md)
+and [checklist](docs/fnd-02-completion.md) distinguish fresh runtimes from historical
+native/integrityreuse. All failed attempts and inherited frontend/JSON/Marlin/LTW
+limits remain explicit. Next finite action: compatible source/terms repairs for
+JSON and JPEG2000, then affected aggregate checks. F02-07 documentary binding and
+F02-08 full criterion acceptance remain pending; no new milestone.
+
+Publication/validation evidence records final exact review head, tests and liveProject
+membership without promoting parent Delivery. No merge/release/distribution or
+source-fork/default/workflow/secret changes.
+
+Final validation: **251 package tests, four schemas, 383 Java guards, 39 frontend,
+75 QGIS and 59 GWC guards pass**; 15 containment guards pass. Inventory validates
+723 records, 50,817 complete-tree entries and 484 archive members. Integrity/report
+exit 0; eligibility exit 2. Native partial failures and two adoption blockers remain
+explicit. [Validation](verification/java-gmt-remediation/validation.json) binds the
+exact code/contracts and independent reviews. Task-owned services are stopped.
+
+# Preserved status — prior checkpoints
+
 # Implementation status — frontend/QGIS remediation variant
 
 **FND-02 remains In progress.** The new `fnd-02-frontend-qgis-proposal-2`
