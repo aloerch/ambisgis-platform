@@ -1,6 +1,6 @@
 # FND-02 combination smoke — F02-05
 
-**F02-05 bounded engineering evidence is demonstrated; [PR #64](https://github.com/aloerch/ambisgis-platform/pull/64) awaits owner checkpoint review. FND-02 remains In progress.** Owner-merged #63 accepts F02-04 only:
+**F02-05 bounded engineering evidence is owner-accepted through merged [PR #64](https://github.com/aloerch/ambisgis-platform/pull/64), reviewed `ee5be14d9d0d14f361dbd235dedc64b3fdb84db0`, merge `725d519820293f466b287d7f4cd779c36b9b7977` (verified during F02-06). FND-02 remains In progress.** Owner-merged #63 accepts F02-04 only:
 reviewed `c68f42baa8cb6d21d6b34dce07c2e4ad3ee64409`, merge
 `56186baf19dc6ee02d4152e019d2dd96c5ec1b3e`, verified current main at this slice's
 start. Historical open-PR prose creates no new F02-04 gate or resource-rights approval.
@@ -171,7 +171,10 @@ wrong-layer/coordinate cache evidence, misleading exceptions and a login form.
 All material findings were repaired; the final independent review has no open
 bounded harness finding. This does not replace owner security review.
 
-## Owner checkpoint and finite handoff
+## Historical owner-checkpoint handoff (accepted in #64)
+
+The review request below is preserved checkpoint history. F02-06 now proceeds in
+[the candidate proposal](fnd-02-candidate-proposal.md); it creates no new smoke gate.
 
 Review this new PR/head's fixture route/security configuration, native cache and
 protected-tile evidence, generated-file integrity guards, failures and precise

@@ -1,0 +1,3302 @@
+{
+  "scope": "Read-only exact selected #61 WAR byte inspection, not reexecution or source rebuild",
+  "war": {
+    "bytes": 149567723,
+    "path": "build-worktrees/geonode-role-propagation/aggregate-repaired-02/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "a3cea4ad28ca7c3447b2eeae7a631e624a9e50e7973972c43f2d7d91eab25a52"
+  },
+  "jar_count": 369,
+  "java_ledger_counts": {
+    "generated-source-input-coverage": 3,
+    "retained-source-coverage": 39,
+    "embedded-source-coverage": 4,
+    "unresolved-source": 12,
+    "metadata-only-no-java-classes": 2,
+    "partial-source-coverage": 4
+  },
+  "java_entries": [
+    {
+      "coordinate": "classworlds:classworlds:1.1-alpha-2",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/2bf4e59f3acd106fea6145a9a88fe8956509f8b9c0fdd11eb96fee757269e3f3",
+        "sha256": "2bf4e59f3acd106fea6145a9a88fe8956509f8b9c0fdd11eb96fee757269e3f3"
+      },
+      "class_count": 22,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "com.google.code.typica:typica:1.3",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/a02adf0b49f87ad8046a766378781139721f869b13fc77fb0b835c50265cd264",
+        "sha256": "a02adf0b49f87ad8046a766378781139721f869b13fc77fb0b835c50265cd264"
+      },
+      "class_count": 296,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "commons-codec:commons-codec:1.2",
+      "disposition": "partial-source-coverage",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/9898a3b3857676128987b975d0b0f035becf3da5cf677266a34d6636f2b80542",
+        "sha256": "9898a3b3857676128987b975d0b0f035becf3da5cf677266a34d6636f2b80542"
+      },
+      "class_count": 19,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {
+        "WEB-INF/lib/commons-codec-1.18.0.jar": {
+          "count": 19,
+          "class_examples": [
+            "org/apache/commons/codec/BinaryDecoder.class",
+            "org/apache/commons/codec/Decoder.class",
+            "org/apache/commons/codec/DecoderException.class",
+            "org/apache/commons/codec/BinaryEncoder.class",
+            "org/apache/commons/codec/Encoder.class",
+            "org/apache/commons/codec/EncoderException.class",
+            "org/apache/commons/codec/StringEncoder.class",
+            "org/apache/commons/codec/StringEncoderComparator.class"
+          ]
+        }
+      },
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "dom4j:dom4j:1.1",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/50bd5c21b5fbd27b8bbb5f8050544b53f49a4480fd347ce9c46d55c706015156",
+        "sha256": "50bd5c21b5fbd27b8bbb5f8050544b53f49a4480fd347ce9c46d55c706015156"
+      },
+      "class_count": 333,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {
+        "WEB-INF/lib/dom4j-2.1.4.jar": {
+          "count": 152,
+          "class_examples": [
+            "org/dom4j/dom/DOMText.class",
+            "org/dom4j/dom/DOMDocumentType.class",
+            "org/dom4j/dom/DOMDocumentFactory.class",
+            "org/dom4j/dom/DOMProcessingInstruction.class",
+            "org/dom4j/dom/DOMCDATA.class",
+            "org/dom4j/dom/DOMDocument.class",
+            "org/dom4j/dom/DOMEntityReference.class",
+            "org/dom4j/dom/DOMNamespace.class"
+          ]
+        }
+      },
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "geronimo-spec:geronimo-spec-jta:1.0.1B-rc4",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/ccb19f1567db059b4b45985d42bcfe4f3f7686b28dbe0589d05ef2ea46351c7d",
+        "sha256": "ccb19f1567db059b4b45985d42bcfe4f3f7686b28dbe0589d05ef2ea46351c7d"
+      },
+      "class_count": 17,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {
+        "WEB-INF/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar": {
+          "count": 14,
+          "class_examples": [
+            "javax/transaction/HeuristicCommitException.class",
+            "javax/transaction/HeuristicMixedException.class",
+            "javax/transaction/HeuristicRollbackException.class",
+            "javax/transaction/InvalidTransactionException.class",
+            "javax/transaction/NotSupportedException.class",
+            "javax/transaction/RollbackException.class",
+            "javax/transaction/Status.class",
+            "javax/transaction/Synchronization.class"
+          ]
+        }
+      },
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "org.aspectj:aspectjweaver:1.5.4",
+      "disposition": "partial-source-coverage",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed",
+        "sha256": "a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed"
+      },
+      "class_count": 1093,
+      "standalone_match": "WEB-INF/lib/aspectjweaver-1.5.4.jar",
+      "exact_class_content_matches": {
+        "WEB-INF/lib/aspectjweaver-1.5.4.jar": {
+          "count": 1093,
+          "class_examples": [
+            "org/aspectj/weaver/loadtime/Agent.class",
+            "org/aspectj/weaver/loadtime/ClassPreProcessorAgentAdapter.class",
+            "org/aspectj/asm/AsmManager$1.class",
+            "org/aspectj/asm/AsmManager$CanonicalFilePathMap.class",
+            "org/aspectj/asm/AsmManager$ModelInfo.class",
+            "org/aspectj/asm/AsmManager.class",
+            "org/aspectj/asm/HierarchyWalker.class",
+            "org/aspectj/asm/IElementHandleProvider.class"
+          ]
+        },
+        "WEB-INF/lib/aspectjrt-1.5.4.jar": {
+          "count": 127,
+          "class_examples": [
+            "org/aspectj/lang/Aspects14.class",
+            "org/aspectj/lang/JoinPoint$EnclosingStaticPart.class",
+            "org/aspectj/lang/JoinPoint$StaticPart.class",
+            "org/aspectj/lang/JoinPoint.class",
+            "org/aspectj/lang/NoAspectBoundException.class",
+            "org/aspectj/lang/ProceedingJoinPoint.class",
+            "org/aspectj/lang/Signature.class",
+            "org/aspectj/lang/SoftException.class"
+          ]
+        }
+      },
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "org.netbeans.lib:cvsclient:20060125",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/89baed753b393d5074d4b9b4ba4b9692af6cd0713199998fb294b99942c820a3",
+        "sha256": "89baed753b393d5074d4b9b4ba4b9692af6cd0713199998fb294b99942c820a3"
+      },
+      "class_count": 221,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "org.sonatype.sisu:sisu-inject-plexus:2.1.1",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/f8691468ca1fd730209edca9fe298c271bc81d0152324e75d439949cd37b9795",
+        "sha256": "f8691468ca1fd730209edca9fe298c271bc81d0152324e75d439949cd37b9795"
+      },
+      "class_count": 160,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "plexus:plexus-utils:1.0.3",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/a09e6d9746b4a72d0c77b96fafd240c2d7666f53fa82022cf8f6838f5e7786b2",
+        "sha256": "a09e6d9746b4a72d0c77b96fafd240c2d7666f53fa82022cf8f6838f5e7786b2"
+      },
+      "class_count": 67,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "xmlpull:xmlpull:1.1.3.1",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/34e08ee62116071cbb69c0ed70d15a7a5b208d62798c59f2120bb8929324cb63",
+        "sha256": "34e08ee62116071cbb69c0ed70d15a7a5b208d62798c59f2120bb8929324cb63"
+      },
+      "class_count": 4,
+      "standalone_match": "WEB-INF/lib/xmlpull-1.1.3.1.jar",
+      "exact_class_content_matches": {
+        "WEB-INF/lib/xmlpull-1.1.3.1.jar": {
+          "count": 4,
+          "class_examples": [
+            "org/xmlpull/v1/XmlPullParser.class",
+            "org/xmlpull/v1/XmlPullParserException.class",
+            "org/xmlpull/v1/XmlPullParserFactory.class",
+            "org/xmlpull/v1/XmlSerializer.class"
+          ]
+        }
+      },
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "com.oracle:ojdbc14:10.2.0.3.0",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/58828dfbda5c7fbd08bca87de1d623dadcaedd409c07eaa4fc426b7388113a49",
+        "sha256": "58828dfbda5c7fbd08bca87de1d623dadcaedd409c07eaa4fc426b7388113a49"
+      },
+      "class_count": 624,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {
+        "WEB-INF/lib/ojdbc17-23.26.2.0.0.jar": {
+          "count": 476,
+          "class_examples": [
+            "oracle/net/nt/ConnOption.class",
+            "oracle/net/nt/ConnStrategy.class",
+            "oracle/net/nt/CustomSSLSocketFactory.class",
+            "oracle/net/nt/NTAdapter.class",
+            "oracle/net/nt/TcpNTAdapter.class",
+            "oracle/net/nt/TcpsConfigure.class",
+            "oracle/net/nt/TcpsNTAdapter.class",
+            "oracle/net/jndi/CustomSSLSocketFactory.class"
+          ]
+        }
+      },
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "javax.media:jai_imageio:1.1",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/2b40befa9340e15759c68867df08905c6c6400df379ec7802120386325a565d3",
+        "sha256": "2b40befa9340e15759c68867df08905c6c6400df379ec7802120386325a565d3"
+      },
+      "class_count": 559,
+      "standalone_match": "WEB-INF/lib/jai_imageio-1.1.jar",
+      "exact_class_content_matches": {
+        "WEB-INF/lib/jai_imageio-1.1.jar": {
+          "count": 559,
+          "class_examples": [
+            "com/sun/media/imageio/plugins/bmp/BMPImageWriteParam.class",
+            "com/sun/media/imageio/plugins/bmp/I18N.class",
+            "com/sun/media/imageio/plugins/jpeg2000/J2KImageReadParam.class",
+            "com/sun/media/imageio/plugins/jpeg2000/J2KImageWriteParam.class",
+            "com/sun/media/imageio/plugins/pnm/PNMImageWriteParam.class",
+            "com/sun/media/imageio/plugins/tiff/BaselineTIFFTagSet$Artist.class",
+            "com/sun/media/imageio/plugins/tiff/BaselineTIFFTagSet$BitsPerSample.class",
+            "com/sun/media/imageio/plugins/tiff/BaselineTIFFTagSet$CellLength.class"
+          ]
+        }
+      },
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "net.sf.json-lib:json-lib:2.4.2-geoserver",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/c1de06da06183458cd8e4975e3b07e1d1d82a9f6e0a4438ed3d5dd8040983d2d",
+        "sha256": "c1de06da06183458cd8e4975e3b07e1d1d82a9f6e0a4438ed3d5dd8040983d2d"
+      },
+      "class_count": 83,
+      "standalone_match": "WEB-INF/lib/json-lib-2.4.2-geoserver.jar",
+      "exact_class_content_matches": {
+        "WEB-INF/lib/json-lib-2.4.2-geoserver.jar": {
+          "count": 83,
+          "class_examples": [
+            "net/sf/json/filters/TruePropertyFilter.class",
+            "net/sf/json/filters/NotPropertyFilter.class",
+            "net/sf/json/filters/AndPropertyFilter.class",
+            "net/sf/json/filters/MappingPropertyFilter.class",
+            "net/sf/json/filters/OrPropertyFilter.class",
+            "net/sf/json/filters/FalsePropertyFilter.class",
+            "net/sf/json/filters/CompositePropertyFilter.class",
+            "net/sf/json/JSONObject.class"
+          ]
+        }
+      },
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "net.sourceforge.groboutils:groboutils-core:5",
+      "disposition": "partial-source-coverage",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/3641e5f73033b051a722abffe37e8ead88587b691019cc36b228b3c48e9aa07b",
+        "sha256": "3641e5f73033b051a722abffe37e8ead88587b691019cc36b228b3c48e9aa07b"
+      },
+      "class_count": 1006,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {
+        "WEB-INF/lib/log4j-1.2-api-2.25.3.jar": {
+          "count": 88,
+          "class_examples": [
+            "org/apache/log4j/Appender.class",
+            "org/apache/log4j/AppenderSkeleton.class",
+            "org/apache/log4j/BasicConfigurator.class",
+            "org/apache/log4j/Category.class",
+            "org/apache/log4j/CategoryKey.class",
+            "org/apache/log4j/ConsoleAppender.class",
+            "org/apache/log4j/DefaultCategoryFactory.class",
+            "org/apache/log4j/FileAppender.class"
+          ]
+        }
+      },
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "opendap:opendap:2.1",
+      "disposition": "unresolved-source",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/9dea34ee3a3e12b47f160f32d3f45cd17aa2a089b8d2dcdad9cd6e8f2bebd20e",
+        "sha256": "9dea34ee3a3e12b47f160f32d3f45cd17aa2a089b8d2dcdad9cd6e8f2bebd20e"
+      },
+      "class_count": 257,
+      "standalone_match": null,
+      "exact_class_content_matches": {},
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    },
+    {
+      "coordinate": "org.marlin:marlin:0.9.4.8",
+      "disposition": "partial-source-coverage",
+      "binary": {
+        "path": "source-archives/java-resolution/maven/blobs/sha256/44c3c3620102749844e58f668523f073db127efbd0b233ec9b13b3205db1362f",
+        "sha256": "44c3c3620102749844e58f668523f073db127efbd0b233ec9b13b3205db1362f"
+      },
+      "class_count": 87,
+      "standalone_match": "WEB-INF/lib/marlin-0.9.4.8.jar",
+      "exact_class_content_matches": {
+        "WEB-INF/lib/marlin-0.9.4.8.jar": {
+          "count": 87,
+          "class_examples": [
+            "sun/java2d/ReentrantContextProvider.class",
+            "sun/java2d/ReentrantContextProviderCLQ.class",
+            "sun/java2d/ReentrantContext.class",
+            "sun/java2d/opengl/OGLRenderQueue$QueueFlusher.class",
+            "sun/java2d/opengl/OGLRenderQueue.class",
+            "sun/java2d/ReentrantContextProviderTL.class",
+            "sun/java2d/marlin/ArrayCacheDouble$Bucket.class",
+            "sun/java2d/marlin/ArrayCacheByte$Bucket.class"
+          ]
+        }
+      },
+      "same_name_different_bytes": {},
+      "selected_class_scan_limit": "All nested WEB-INF/lib class bytes and original names inspected; rewritten/relocated classes with changed bytes are not excluded. No global unused claim."
+    }
+  ],
+  "oracle_driver_actual": {
+    "coordinate": "com.oracle.database.jdbc:ojdbc17:23.26.2.0.0",
+    "war_member": "WEB-INF/lib/ojdbc17-23.26.2.0.0.jar",
+    "sha256": "96010f27fce64c285f9d1aab8f96357b8e00c49c9ad041ecf140c9d7d27eb3fb",
+    "bytes": 7719501,
+    "class_count": 2812,
+    "license": {
+      "member": "META-INF/license.txt",
+      "sha256": "6e2b82bc4990f8dfc8b4c64a802b6c89262e035aefc79672563db36d19b8a839",
+      "declaration": "Oracle Free Distribution, Hosting, and Use Terms and Conditions; version 1.0, 28 June 2022"
+    },
+    "native_members": [
+      {
+        "member": "nativelib/tcpfastopen/linux/aarch64/libtfojdbc1.so",
+        "sha256": "4911d87bc9b91e5110fdb07744c277cc09e0aac008c26c5d19adc6e78987c29b",
+        "bytes": 74440
+      },
+      {
+        "member": "nativelib/tcpfastopen/linux/x86_64/libtfojdbc1.so",
+        "sha256": "e809e7bc41e1e5071af2f70bcfa764f6719d65611b2dd061bbb74fec4335ebfe",
+        "bytes": 28824
+      }
+    ],
+    "source_classifier": {
+      "path": "source-archives/java-resolution/maven/blobs/sha256/25a9cb395eee4096d117e8146a48dfa2c748eea7884b0fa01d8a1b99f399d01d",
+      "sha256": "25a9cb395eee4096d117e8146a48dfa2c748eea7884b0fa01d8a1b99f399d01d",
+      "members": [
+        {
+          "path": "source.txt",
+          "sha256": "b08ed3c4c21f1880d52800f81a71e6f2ce73e572661f12d9984d5641a9d83292",
+          "text": "THIS IS A DUMMY SOURCE FILE\n\nOracle Corporation does not open source the Oracle JDBC driver\nand any other companion jars. Therefore, the source code is not \nincluded in this distribution. \n\n"
+        }
+      ]
+    },
+    "source_claim": "No usable Java or native source in this classifier."
+  },
+  "geonode_license_scope": {
+    "source_archive": "source-archives/geonode-identity-v2/owned-sources/geonode-a1db97e81dfc26c16bb4ee1a5d2b408877af66c9.tar",
+    "archive_sha256": "32ef8de1e193535587b8f4c85d9491ad990d1f4459df508f74d6f1cbca5ceeb9",
+    "commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+    "exact_notice_files": [
+      {
+        "path": "LICENSE",
+        "sha256": "90ef058cd188d1fbf4a2337f4e2bf4671236aa5eaf435432d7c40b498f032edf",
+        "bytes": 36001,
+        "first_lines": "GeoNode, open geospatial information server\nCopyright (C) 2014\u2013present Open Source Geospatial Foundation\nCopyright (C) 2001-2014 OpenPlans\n\nThis program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 2 of the License, or\n(at your option) any later version (collectively, \"GPL\").\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\n------------------------------------------------------------------------\nBelow is the complete text of the GNU General Public License v3.0.\n------------------------------------------------------------------------\n\n                    GNU GENERAL PUBLIC LICENSE\n                       Version 3, 29 June 2007\n\n Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n                            Preamble\n\n  The GNU General Public"
+      },
+      {
+        "path": "geonode/__init__.py",
+        "sha256": "0d08e6e1ce7ab35ebd77c539ac7b8d8d714b39cc97b1baeae55eba9d3516d513",
+        "bytes": 1548,
+        "first_lines": "#########################################################################\n#\n# Copyright (C) 2016 OSGeo\n#\n# This program is free software: you can redistribute it and/or modify\n# it under the terms of the GNU General Public License as published by\n# the Free Software Foundation, either version 3 of the License, or\n# (at your option) any later version.\n#\n# This program is distributed in the hope that it will be useful,\n# but WITHOUT ANY WARRANTY; without even the implied warranty of\n# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n# GNU General Public License for more details.\n#\n# You should have received a copy of the GNU General Public License\n# along with this program. If not, see <http://www.gnu.org/licenses/>.\n#\n#########################################################################\n\nimport os\n\n__version__ = (5, 1, 0, 'post', 1)\n\n\ndef get_version():\n    import geonode.version\n\n    return geonode.version.get_version(__version__)\n\n\n# PEP 440 compliant version string, referenced by pyproject.toml's dynamic\n# version (a plain string attribute, so setuptools doesn't have to stringify the\n# __version__ tuple, which would produce an invalid version like \"5.1.0.final.0\")"
+      },
+      {
+        "path": "pyproject.toml",
+        "sha256": "f8287c1511fde29cd9fc4a808f0f1fa8aec833009b65c8a6db43338e15dfba06",
+        "bytes": 5248,
+        "first_lines": "[build-system]\nrequires = [\"setuptools>=61.0\", \"pip >= 26.1.1\", \"wheel\"]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"GeoNode\"\ndynamic = [\"version\"]\ndescription = \"Open Source, Content Management System (CMS) for geospatial data.\"\nreadme = \"README.md\"\nrequires-python = \">=3.10\"\nauthors = [\n    {name = \"GeoNode Developers\", email = \"dev@geonode.org\"}\n]\nlicense = {text = \"GPL\"}\nclassifiers = [\n    \"Development Status :: 5 - Production/Stable\",\n    \"Environment :: Web Environment\",\n    \"Framework :: Django\",\n    \"Intended Audience :: Developers\",\n    \"Programming Language :: Python :: 3\",\n    \"Programming Language :: Python :: 3.10\",\n    \"Topic :: Scientific/Engineering :: GIS\",\n]\n\n# Core dependencies (consolidated from requirements.txt)\ndependencies = [\n    \"Pillow==12.2.0\",\n    \"lxml==6.1.1\",\n    \"psycopg2==2.9.12\",\n    \"Django==5.2.15\",\n\n    # Other\n    \"beautifulsoup4==4.12.3\",\n    \"hyperlink==21.0.0\",\n    \"urllib3==2.7.0\",\n    \"Paver==1.3.4\",\n    \"python-slugify==8.0.4\",\n    \"decorator==5.1.1\",\n    \"celery==5.6.3\",\n    \"tqdm==4.66.4\",\n    \"Deprecated==1.2.14\",\n    \"jsonschema==4.22.0\",\n    \"schema==0.7.7\",\n    \"rdflib==6.3.2\",\n    \"smart_open==7.0.4\",\n    \"PyMuPDF=="
+      }
+    ],
+    "wheel_license_members": [
+      {
+        "member": "geonode/__init__.py",
+        "sha256": "0d08e6e1ce7ab35ebd77c539ac7b8d8d714b39cc97b1baeae55eba9d3516d513"
+      },
+      {
+        "member": "geonode-5.1.0.post1.dist-info/licenses/LICENSE",
+        "sha256": "90ef058cd188d1fbf4a2337f4e2bf4671236aa5eaf435432d7c40b498f032edf"
+      }
+    ],
+    "python_header_scan": {
+      "counts": {
+        "GPL-v3-header": 657,
+        "no-matched-GPL-header": 490
+      },
+      "examples": {
+        "GPL-v3-header": [
+          "create-envfile.py",
+          "geonode/__init__.py",
+          "geonode/api/__init__.py",
+          "geonode/api/api.py",
+          "geonode/api/apps.py",
+          "geonode/api/authentication.py",
+          "geonode/api/authorization.py",
+          "geonode/api/paginator.py"
+        ],
+        "no-matched-GPL-header": [
+          "docs/hooks/inject_version.py",
+          "docs/pdf_event_hook.py",
+          "geonode/assets/__init__.py",
+          "geonode/assets/admin.py",
+          "geonode/assets/handlers.py",
+          "geonode/assets/local.py",
+          "geonode/assets/management/__init__.py",
+          "geonode/assets/management/commands/__init__.py"
+        ]
+      },
+      "limit": "First 2000 bytes pattern scan, not exhaustive file-level rights clearance; no-matched does not imply unlicensed."
+    }
+  },
+  "geotools_license_scope": {
+    "source_archive": "source-archives/java-audit/geotools-aac73e9b89821331e77f67f1dd0921e541a78cfc.tar",
+    "archive_sha256": "12751323cbb3ab841e26d726c6d28c6d90d6e625af19885669d41f934f4c9452",
+    "commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+    "exact_notice_files": [
+      {
+        "path": "LICENSE.md",
+        "sha256": "994ce1902a23c74519b5d118c6bbb657edabce91dd6b7cc825d86bb8f5c9780f",
+        "bytes": 26338,
+        "first_lines": "### GNU LESSER GENERAL PUBLIC LICENSE\n\nVersion 2.1, February 1999\n\n    Copyright (C) 1991, 1999 Free Software Foundation, Inc.\n    51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n    \n    Everyone is permitted to copy and distribute verbatim copies\n    of this license document, but changing it is not allowed.\n\n    [This is the first released version of the Lesser GPL.  It also counts\n     as the successor of the GNU Library Public License, version 2, hence\n     the version number 2.1.]\n\n### Preamble\n\nThe licenses for most software are designed to take away your freedom\nto share and change it. By contrast, the GNU General Public Licenses\nare intended to guarantee your freedom to share and change free\nsoftware--to make sure the software is free for all its users.\n\nThis license, the Lesser General Public License, applies to some\nspecially designated software packages--typically libraries--of the\nFree Software Foundation and other authors who decide to use it. You\ncan use it too, but we suggest you first think carefully about whether\nthis license or the ordinary General Public License is the better\nstrategy to use in any particular case, based on the explanations\nbelow.\n\nW"
+      },
+      {
+        "path": "licenses/README.md",
+        "sha256": "43920463752117334f1a8172c5b14c82832a02035a8e43ad806385249f9c45c9",
+        "bytes": 2423,
+        "first_lines": "# GeoTools license notice\n\nThe files in this library are part of GeoTools, an open source Java GIS \ntoolkit. See [geotools.org](https://geotools.org/) for details on the project.\n\nGeoTools files are covered by the copyright of the Open Source Geospatial\nFoundation (OSGeo) and others as documented in the file headers. See [about osgeo page](https://www.osgeo.org/about/) for details on the foundation.\n\nGeoTools source code is licensed to all under the terms of the GNU Lesser\nGeneral Public  License (LGPL), version 2 or later. The directory containing\nthis notice contains a copy of the LGPL, as a file named [LGPL](LGPL.md).\n\nThe standard header for the project is as follows:\n\n> This library is free software; you can redistribute it and/or <br/>\n> modify it under the terms of the GNU Lesser General Public <br/>\n> License as published by the Free Software Foundation; <br/>\n> version 2.1 of the License. <br/>\n> <br/>\n> This library is distributed in the hope that it will be useful, <br/>\n> but WITHOUT ANY WARRANTY; without even the implied warranty of <br/>\n> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the <br/>\n<a href=\"http://www.gnu.org/licenses/lgpl.txt\">GNU Lesser Gene"
+      },
+      {
+        "path": "licenses/header_osgeo.txt",
+        "sha256": "7e5f4a9fdb4c6c2286fe9c61bb1746280b06327cddfd691ac71504dbba6c6790",
+        "bytes": 644,
+        "first_lines": "/*\n *    GeoTools - The Open Source Java GIS Toolkit\n *    https://geotools.org\n *\n *    (C) 2021, Open Source Geospatial Foundation (OSGeo)\n *\n *    This library is free software; you can redistribute it and/or\n *    modify it under the terms of the GNU Lesser General Public\n *    License as published by the Free Software Foundation;\n *    version 2.1 of the License.\n *\n *    This library is distributed in the hope that it will be useful,\n *    but WITHOUT ANY WARRANTY; without even the implied warranty of\n *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n *    Lesser General Public License for more details.\n */\n\n"
+      },
+      {
+        "path": "modules/library/main/src/main/java/org/geotools/data/DataUtilities.java",
+        "sha256": "26afbe8fa1c32afcd9b5b46aa3700f43dad46d1db69881f34164589f2454a7a9",
+        "bytes": 114344,
+        "first_lines": "/*\n *    GeoTools - The Open Source Java GIS Toolkit\n *    http://geotools.org\n *\n *    (C) 2003-2016, Open Source Geospatial Foundation (OSGeo)\n *\n *    This library is free software; you can redistribute it and/or\n *    modify it under the terms of the GNU Lesser General Public\n *    License as published by the Free Software Foundation;\n *    version 2.1 of the License.\n *\n *    This library is distributed in the hope that it will be useful,\n *    but WITHOUT ANY WARRANTY; without even the implied warranty of\n *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n *    Lesser General Public License for more details.\n */\npackage org.geotools.data;\n\nimport java.io.Closeable;\nimport java.io.File;\nimport java.io.FileFilter;\nimport java.io.FilenameFilter;\nimport java.io.IOException;\nimport java.io.Serializable;\nimport java.lang.reflect.Array;\nimport java.math.BigDecimal;\nimport java.math.BigInteger;\nimport java.net.URI;\nimport java.net.URISyntaxException;\nimport java.net.URL;\nimport java.sql.Timestamp;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Collection;\nimport java.util.Collections;\nimport java.util.Comparator;\nimport java.util.Date;\nimpo"
+      },
+      {
+        "path": "modules/extension/brewer/src/main/java/org/geotools/brewer/color/ColorBrewer.java",
+        "sha256": "f412c70074afdf993c50eb955a2a64508fd2715e2adc32bcea13730966713703",
+        "bytes": 16567,
+        "first_lines": "/*\n *    GeoTools - The Open Source Java GIS Toolkit\n *    http://geotools.org\n *\n *    (C) 2005-2008, Open Source Geospatial Foundation (OSGeo)\n *\n *    This library is free software; you can redistribute it and/or\n *    modify it under the terms of the GNU Lesser General Public\n *    License as published by the Free Software Foundation;\n *    version 2.1 of the License.\n *\n *    This library is distributed in the hope that it will be useful,\n *    but WITHOUT ANY WARRANTY; without even the implied warranty of\n *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n *    Lesser General Public License for more details.\n */\npackage org.geotools.brewer.color;\n\nimport java.awt.Color;\nimport java.io.IOException;\nimport java.io.InputStream;\nimport java.net.URL;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.HashSet;\nimport java.util.List;\nimport java.util.Locale;\nimport java.util.Map;\nimport java.util.Set;\nimport java.util.StringTokenizer;\nimport java.util.logging.Level;\nimport javax.xml.parsers.DocumentBuilder;\nimport javax.xml.parsers.DocumentBuilderFactory;\nimport javax.xml.parsers.ParserConfigurationException;\nimport org.w3c.dom.Document;\nimpo"
+      },
+      {
+        "path": "licenses/Bitstream-Vera-Fonts.md",
+        "sha256": "8f82fbeab9c8a7af5cbd61a30e39c769ec42d1370abbf0ecb7bcbcf9c6689835",
+        "bytes": 6000,
+        "first_lines": "Bitstream Vera Fonts Copyright\n==============================\n\nThe fonts have a generous copyright, allowing derivative works (as\nlong as \"Bitstream\" or \"Vera\" are not in the names), and full\nredistribution (so long as they are not *sold* by themselves). They\ncan be be bundled, redistributed and sold with any software.\n\nThe fonts are distributed under the following copyright:\n\nCopyright\n---------\n\nCopyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream\nVera is a trademark of Bitstream, Inc.\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of the fonts accompanying this license (\"Fonts\") and associated\ndocumentation files (the \"Font Software\"), to reproduce and distribute\nthe Font Software, including without limitation the rights to use,\ncopy, merge, publish, distribute, and/or sell copies of the Font\nSoftware, and to permit persons to whom the Font Software is furnished\nto do so, subject to the following conditions:\n\nThe above copyright and trademark notices and this permission notice\nshall be included in all copies of one or more of the Font Software\ntypefaces.\n\nThe Font Software may be modified, altered, or added to, and in\nparticular the"
+      },
+      {
+        "path": "licenses/COLORBREWER.md",
+        "sha256": "af2d1abeb8fdf92fb4c411d5dfcce6bac4ea4033bf20b4cd0d612a4f18b56ee5",
+        "bytes": 1786,
+        "first_lines": "# Apache-Style Software License for ColorBrewer Color Schemes\n\nCopyright (c) 2002 Cynthia Brewer, Mark Harrower, and The Pennsylvania State University.\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use  this file except in compliance with the License. You may obtain a copy of the License at:\n\nhttp://www.apache.org/licenses/LICENSE-2.0 \n\nUnless required by applicable law or agreed to in writing, software distributed  under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR  CONDITIONS OF ANY KIND, either express or implied. See the License for the  specific language governing permissions and limitations under the License.\n\nRedistribution and use in source and binary forms, with or without modification, \nare permitted provided that the following conditions are met: \n\n1. Redistributions as source code must retain the above copyright notice, this  list of conditions and the following disclaimer. \n\n2. The end-user documentation included with the redistribution, if any, must  include the following acknowledgment: \"This product includes color specifications and designs developed by Cynthia Brewer (http://colorbrewer.org/).\" Alternately, th"
+      },
+      {
+        "path": "licenses/CreativeCommonsByAttribution.md",
+        "sha256": "582441af51c200f050e55ee378f75bc6d7dd009429bff798bf6ef13daa7b73ac",
+        "bytes": 17157,
+        "first_lines": "## creative commons\n\n# Attribution 4.0 International\n\nCreative Commons Corporation (\u201cCreative Commons\u201d) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an \u201cas-is\u201d basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible.\n\n### Using Creative Commons Public Licenses\n\nCreative Commons public licenses provide a standard set of terms and conditions that creators and other rights holders may use to share original works of authorship and other material subject to copyright and certain other rights specified in the public license below. The following considerations are for informational purposes only, are not exhaustive, and do not form part of our licenses.\n\n* __Considerations for licensors:__ Our public licenses are intended for use by those authorized to give the public permission to use ma"
+      },
+      {
+        "path": "licenses/EPSG.md",
+        "sha256": "3cb5d366eb824312c9e0c7a94e7d0d3bf3a6ee4901d017f3e3be245235daff1c",
+        "bytes": 7588,
+        "first_lines": "# EPSG Geodetic Parameter Dataset Terms of Use\n\n1. In this document the following definitions of terms apply:\n   \n   \u201cRegistry\u201d means the EPSG Geodetic Parameter Registry;\u201cEPSG Dataset\u201d means EPSG Geodetic Parameter Dataset;\u201cIOGP\u201d means the International Association of Oil and Gas Producers, incorporated in England as a company limited by guarantee (number 1832064);\u201cEPSG Facilities\u201d means the Registry, the EPSG Dataset (published through the Registry or through a downloadable MS-Access file or through a set of SQL scripts that enable a user to create an Oracle, MySQL, PostgreSQL or other database and populate that database with the EPSG Dataset) and associated documentation consisting of the Release Notes and Guidance Notes 7.1 and 7.2\n   \n   \u201cthe data\u201d means the geodetic parameter data and associated metadata, contained in the EPSG Dataset; it also refers to any subset of data from the EPSG Dataset.\n   \n2. The EPSG Facilities are published by IOGP at no charge. Distribution for profit is forbidden.\n   \n3. The EPSG Facilities are owned by IOGP. They are compiled by the Geodetic Subcommittee of the IOGP from publicly available and member-supplied information.\n\n4. In order to use the"
+      },
+      {
+        "path": "licenses/GeoTools.md",
+        "sha256": "17e4f4338f6364576cf201182a0419d96181e8cf265b73952bea2e9000a07fa4",
+        "bytes": 1862,
+        "first_lines": "# GeoTools license notice\n\nThe files in this library are part of GeoTools, an open source Java GIS \ntoolkit. See [geotools.org](https://geotools.org/) for details on the project.\n\nGeoTools files are covered by the copyright of the Open Source Geospatial\nFoundation (OSGeo) and others as documented in the file headers. See [about osgeo page](https://www.osgeo.org/about/) for details on the foundation.\n\nGeoTools source code is licensed to all under the terms of the GNU Lesser\nGeneral Public  License (LGPL), version 2 or later. The directory containing\nthis notice contains a copy of the LGPL, as a file named [LGPL](LGPL.md).\n\nThe standard header for the project is as follows:\n\n> This library is free software; you can redistribute it and/or <br/>\n> modify it under the terms of the GNU Lesser General Public <br/>\n> License as published by the Free Software Foundation; <br/>\n> version 2.1 of the License. <br/>\n> <br/>\n> This library is distributed in the hope that it will be useful, <br/>\n> but WITHOUT ANY WARRANTY; without even the implied warranty of <br/>\n> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the <br/>\n<a href=\"http://www.gnu.org/licenses/lgpl.txt\">GNU Lesser Gene"
+      },
+      {
+        "path": "licenses/HSQL.md",
+        "sha256": "93eb0babe75b422ea15923640a5c46ef3f22cb33986922f358740790ca824aa4",
+        "bytes": 1696,
+        "first_lines": "HSQL license (BSD 3-Clause License)\n===================================\n\n_Copyright (c) 2001-2004, The HSQL Development Group_ All rights reserved.\n\n> Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n>\n> 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.\n> \n> 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.\n> \n> 3. Neither the name of the HSQL Development Group nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.\n>\n> THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL HSQL DEVELOPMENT GROUP, HSQLDB.ORG, OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL"
+      },
+      {
+        "path": "licenses/LGPL.md",
+        "sha256": "caf27a8b2f4c7901ff2f62cb416cae4577c37587fd7608fcd61404eabc9669c7",
+        "bytes": 26434,
+        "first_lines": "### GNU LESSER GENERAL PUBLIC LICENSE\n\nVersion 2.1, February 1999\n\n    Copyright (C) 1991, 1999 Free Software Foundation, Inc.\n    51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\n    \n    Everyone is permitted to copy and distribute verbatim copies\n    of this license document, but changing it is not allowed.\n\n    [This is the first released version of the Lesser GPL.  It also counts\n     as the successor of the GNU Library Public License, version 2, hence\n     the version number 2.1.]\n\n### Preamble\n\nThe licenses for most software are designed to take away your freedom\nto share and change it. By contrast, the GNU General Public Licenses\nare intended to guarantee your freedom to share and change free\nsoftware--to make sure the software is free for all its users.\n\nThis license, the Lesser General Public License, applies to some\nspecially designated software packages--typically libraries--of the\nFree Software Foundation and other authors who decide to use it. You\ncan use it too, but we suggest you first think carefully about whether\nthis license or the ordinary General Public License is the better\nstrategy to use in any particular case, based on the explanations\nbelow.\n\nW"
+      },
+      {
+        "path": "licenses/OGC.md",
+        "sha256": "92e7f53513fd7e4c8459e9d33d709775ada098d594b5a6e20d00e67745cd8d4a",
+        "bytes": 2268,
+        "first_lines": "### OGC Software License, Version 1.0\n\nThis OGC work (including software, documents, or other related items) is being provided by the copyright holders under the following license. By obtaining, using and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions:\n\nPermission to use, copy, and modify this software and its documentation, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the software and documentation or portions thereof, including modifications, that you make:\n\n1. The full text of this NOTICE in a location viewable to users of the redistributed or derivative work.\n\n2. Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of any redistributed or derivative code: \"Copyright &copy; [$date-of-document] Open Geospatial Consortium, Inc. All Rights Reserved. http://www.opengeospatial.org/Legal/ (Hypertext is preferred, but a textual representati"
+      },
+      {
+        "path": "licenses/PostgreSQL.md",
+        "sha256": "64e8e182ccc063bd69e20e3903713dd05a33848471969f973bd8d2003fd8c9df",
+        "bytes": 1484,
+        "first_lines": "# PostgreSQL JDBC driver license (BSD-2-Clause License)\n\n**Copyright (c) 1997-2005, PostgreSQL Global Development Group**<br/>\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice,\n   this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice,\n   this list of conditions and the following disclaimer in the documentation\n   and/or other materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\nARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE\nLIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR\nCONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF\nSUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\nINTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIAB"
+      },
+      {
+        "path": "licenses/README.md",
+        "sha256": "43920463752117334f1a8172c5b14c82832a02035a8e43ad806385249f9c45c9",
+        "bytes": 2423,
+        "first_lines": "# GeoTools license notice\n\nThe files in this library are part of GeoTools, an open source Java GIS \ntoolkit. See [geotools.org](https://geotools.org/) for details on the project.\n\nGeoTools files are covered by the copyright of the Open Source Geospatial\nFoundation (OSGeo) and others as documented in the file headers. See [about osgeo page](https://www.osgeo.org/about/) for details on the foundation.\n\nGeoTools source code is licensed to all under the terms of the GNU Lesser\nGeneral Public  License (LGPL), version 2 or later. The directory containing\nthis notice contains a copy of the LGPL, as a file named [LGPL](LGPL.md).\n\nThe standard header for the project is as follows:\n\n> This library is free software; you can redistribute it and/or <br/>\n> modify it under the terms of the GNU Lesser General Public <br/>\n> License as published by the Free Software Foundation; <br/>\n> version 2.1 of the License. <br/>\n> <br/>\n> This library is distributed in the hope that it will be useful, <br/>\n> but WITHOUT ANY WARRANTY; without even the implied warranty of <br/>\n> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the <br/>\n<a href=\"http://www.gnu.org/licenses/lgpl.txt\">GNU Lesser Gene"
+      },
+      {
+        "path": "licenses/W3C.md",
+        "sha256": "6736e37f92df9c547ea75bf005ff7bcad0a75cfdac46ec27c7a6c1122763dfb2",
+        "bytes": 2648,
+        "first_lines": "W3C SOFTWARE AND DOCUMENT NOTICE AND LICENSE\n============================================\n\n> Status: This license takes effect 13 May, 2015.\n\nThis work is being provided by the copyright holders under the following license.\n\n## License\n\nBy obtaining and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions.\n\nPermission to copy, modify, and distribute this work, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the work or portions thereof, including modifications:\n\n* The full text of this NOTICE in a location viewable to users of the redistributed or derivative work.\n* Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, the [W3C Software and Document Short Notice](https://www.w3.org/Consortium/Legal/copyright-software-short-notice) should be included.\n* Notice of any changes or modifications, through a copyright statement on the new code or document such as \"This software or document includes material copied from or derived from \\[title and URI of the W3C d"
+      },
+      {
+        "path": "licenses/netCDF.md",
+        "sha256": "9cd33a66378e34280d452ab557237be0d288e519f0ac27e17df72b5778752d89",
+        "bytes": 1757,
+        "first_lines": "# netCDF-Java License (BSD 3-Clause License)\n\n_Copyright 1998-2018 University Corporation for Atmospheric Research/Unidata_<br/>\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice,\nthis list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice,\nthis list of conditions and the following disclaimer in the documentation\nand/or other materials provided with the distribution.\n\n3. Neither the name of the copyright holder nor the names of its contributors\nmay be used to endorse or promote products derived from this software without\nspecific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS\nOR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY\nAND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER\nOR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENT"
+      }
+    ],
+    "selected_resource_matches": [
+      {
+        "jar": "WEB-INF/lib/gt-xsd-sld-34.5.jar",
+        "member": "org/geotools/se/v1_1/FeatureStyle.xsd",
+        "sha256": "201b2f817612da7ffbbe1bfc1bb6b66a54d33c6c0dadebc9552effd1ef04506b",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/se/v1_1/FeatureStyle.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-sld-34.5.jar",
+        "member": "org/geotools/se/v1_1/Symbolizer.xsd",
+        "sha256": "d1061cb65ce17c9a2c8e2bff2a467aa1b71458c79478d3de08ee8990a208373c",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/se/v1_1/Symbolizer.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-sld-34.5.jar",
+        "member": "org/geotools/se/v1_1/common.xsd",
+        "sha256": "283e76a76102a85313e6cf80b0d4e15a60c4eb3b2a116fd91427615b38187493",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/se/v1_1/common.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-sld-34.5.jar",
+        "member": "org/geotools/sld/bindings/StyledLayerDescriptor.xsd",
+        "sha256": "c4cea8ff89cda65b406d4bec4645c6b8dddbf7f697b316be67fea469c14f65c9",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/sld/bindings/StyledLayerDescriptor.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-sld-34.5.jar",
+        "member": "org/geotools/sld/v1_1/DescribeLayer.xsd",
+        "sha256": "c07634d734a23049f25a81c5e2b1d3da28f6508f13d1c0fd603ea234dcc128e6",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/sld/v1_1/DescribeLayer.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-sld-34.5.jar",
+        "member": "org/geotools/sld/v1_1/GetMap.xsd",
+        "sha256": "452ed47dcfe787ac571f34913801835d2b4262f568e5e3f39e1b6d89ae1b7c05",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/sld/v1_1/GetMap.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-sld-34.5.jar",
+        "member": "org/geotools/sld/v1_1/StyledLayerDescriptor.xsd",
+        "sha256": "c6a41f35e7524ec16b20a08da5a45b1f2150fb52c283403ac8fa85b02416ab7b",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/sld/v1_1/StyledLayerDescriptor.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-sld-34.5.jar",
+        "member": "org/geotools/sld/v1_1/all.xsd",
+        "sha256": "e06147e5779055f16b1a8b22f653d2db3d85ede9d727438150747aeb66d79a60",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/sld/v1_1/all.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-sld-34.5.jar",
+        "member": "org/geotools/sld/v1_1/sld_capabilities.xsd",
+        "sha256": "380d2018a0e8821d4d28c30edc96ba7f9f34388352665ebb12329a51ff54827d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/sld/v1_1/sld_capabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-epsg-hsql-34.5.jar",
+        "member": "org/geotools/referencing/factory/epsg/hsql/EPSG.zip",
+        "sha256": "e9a92f1962a077b28a231dadf43ca03d1985d4eadf1b93eee406f4f9cee16e40",
+        "source_byte_matches": [
+          "modules/plugin/epsg-hsql/src/main/resources/org/geotools/referencing/factory/epsg/hsql/EPSG.zip"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wmts-34.5.jar",
+        "member": "org/geotools/wmts/wmts.xsd",
+        "sha256": "16229cdb215b877f43e5b586f068493f4184951cd4071ec523e21e2bd30290c7",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wmts/src/main/resources/org/geotools/wmts/wmts.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wmts-34.5.jar",
+        "member": "org/geotools/wmts/wmtsGetCapabilities_request.xsd",
+        "sha256": "159cfeeed0cec1729eb56449ecf83daa25fb1cec19920740e488d9831b0a5022",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wmts/src/main/resources/org/geotools/wmts/wmtsGetCapabilities_request.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wmts-34.5.jar",
+        "member": "org/geotools/wmts/wmtsGetCapabilities_response.xsd",
+        "sha256": "82edd6a398c468ea71b80df9b447b1b7e8acbdbddad19a0194d9ae1b265acc07",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wmts/src/main/resources/org/geotools/wmts/wmtsGetCapabilities_response.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wmts-34.5.jar",
+        "member": "org/geotools/wmts/wmtsGetFeatureInfo_request.xsd",
+        "sha256": "0cd8eaa10ecbaaea536a8b8d0bab46fefec6726b1e00e85b76b2a6e06360581e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wmts/src/main/resources/org/geotools/wmts/wmtsGetFeatureInfo_request.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wmts-34.5.jar",
+        "member": "org/geotools/wmts/wmtsGetFeatureInfo_response.xsd",
+        "sha256": "2e5ec0219029091547a42e3e8a7daedb98be12166d9d0cf1ea44ad6ead9cae6c",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wmts/src/main/resources/org/geotools/wmts/wmtsGetFeatureInfo_response.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wmts-34.5.jar",
+        "member": "org/geotools/wmts/wmtsGetTile_request.xsd",
+        "sha256": "038ea8b7ed4e3b9ac018652298f203e1abf6511e66df616896fd59b1e1332fcc",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wmts/src/main/resources/org/geotools/wmts/wmtsGetTile_request.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wmts-34.5.jar",
+        "member": "org/geotools/wmts/wmtsKVP.xsd",
+        "sha256": "f8783f318194332a76eca504eeb76df964cc54564d6380e23fc7ab9321f57526",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wmts/src/main/resources/org/geotools/wmts/wmtsKVP.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wmts-34.5.jar",
+        "member": "org/geotools/wmts/wmtsPayload_response.xsd",
+        "sha256": "0e2b8c0d66787eeaecf59dbd0522efc872f1b576421642db375ec2ccec234b90",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wmts/src/main/resources/org/geotools/wmts/wmtsPayload_response.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-brewer-34.5.jar",
+        "member": "org/geotools/brewer/color/resources/diverging.xml",
+        "sha256": "66364b4f6b2620eb7cc066778d6babc25dd6550cf5a33e6cb73e0c99699857f6",
+        "source_byte_matches": [
+          "modules/extension/brewer/src/main/resources/org/geotools/brewer/color/resources/diverging.xml"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-brewer-34.5.jar",
+        "member": "org/geotools/brewer/color/resources/qualitative.xml",
+        "sha256": "441412a8f09438a9794312e2d02e5f099bfd8d96324336561317c897b529ff5f",
+        "source_byte_matches": [
+          "modules/extension/brewer/src/main/resources/org/geotools/brewer/color/resources/qualitative.xml"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-brewer-34.5.jar",
+        "member": "org/geotools/brewer/color/resources/sequential.xml",
+        "sha256": "780c7858560e23bba3b87dd38fd1322e0b81ba0180011336085269530af9dd49",
+        "source_byte_matches": [
+          "modules/extension/brewer/src/main/resources/org/geotools/brewer/color/resources/sequential.xml"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/basicTypes.xsd",
+        "sha256": "bfde63308847f3946028fa77f109ba28eb1a183e2166b82a305130ba1e091c37",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/basicTypes.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/coordinateOperations.xsd",
+        "sha256": "2510cdebafe659df5b1dc912d680a09def55cd2d57d411e18e427006623c20c7",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/coordinateOperations.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/coordinateReferenceSystems.xsd",
+        "sha256": "538ff0492a7dbfa21ef586770681eaca6ecba739146dbe14336c4ca3668b311e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/coordinateReferenceSystems.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/coordinateSystems.xsd",
+        "sha256": "32cd5b5c0d1f3b181e81fe8ebcb0f0b0e7a383da3e68eedc7336a2c6ccf1ebe1",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/coordinateSystems.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/coverage.xsd",
+        "sha256": "9f5e15de787e7b8185ad02ae4420f96b76735cc072d3fac022773c3a07431cdc",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/coverage.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/dataQuality.xsd",
+        "sha256": "7425939a040aa78faa2b4ad1a28ed5a8f9975e0099f9ede36f784b4b73b00277",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/dataQuality.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/datums.xsd",
+        "sha256": "5b14c4509f91d600098d1c0f2ed9ba850d7f9ec78cf25bdab8a173671f3c199d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/datums.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/defaultStyle.xsd",
+        "sha256": "8a7fa4b47689d069ee3f08f47c84cd37bbf8fddaa3b6f465a34ddf9275d65f28",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/defaultStyle.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/dictionary.xsd",
+        "sha256": "64b2d68dc66fc440cf073b4357bb0d0c8f02b23e8719b8e734a8e71d7443e3fe",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/dictionary.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/direction.xsd",
+        "sha256": "ffbd0c2b7581a52f66cbe80adb2e7472e473f65e40114b593c158243b49d78c9",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/direction.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/dynamicFeature.xsd",
+        "sha256": "9cc1be34f43d04993d4c2ba1bee53573ff22c715f991f23f0665e618db60c819",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/dynamicFeature.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/feature.xsd",
+        "sha256": "7cb721d872eea9bf53486e13378f6a755096ff0121f2a840086c5c4362d30c6f",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/feature.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/geometryAggregates.xsd",
+        "sha256": "6c5b1872fc19b9904d59e5fcb3e05934685b4c48bc3e55beefd158650968973a",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/geometryAggregates.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/geometryBasic0d1d.xsd",
+        "sha256": "f8e7259a014a01463d7401e20be5c862fe17223422e7f3359e433889f792b00b",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/geometryBasic0d1d.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/geometryBasic2d.xsd",
+        "sha256": "015387ed3cd8141c89886ef5b68667893d8bccfba13eab8ccf4a029fedc09b4a",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/geometryBasic2d.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/geometryComplexes.xsd",
+        "sha256": "21deb4ba9af8f6ba17ca3b465a6793347821f0e1552eb8e0849f077a75195c74",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/geometryComplexes.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/geometryPrimitives.xsd",
+        "sha256": "5e6abf16a6db24054696f31e3c4cc33610c0838e2971abd118e46766bd17c75e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/geometryPrimitives.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/gml.xsd",
+        "sha256": "b1c2978d8948444cdd71a8d917603fab1ade3ead2cdbcf9af4791d5d05396d17",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/gml.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/gmlBase.xsd",
+        "sha256": "b51529d79e9d6d283fe3e2ea430e5a128c5e47ba96a5420716ae4788c745068f",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/gmlBase.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/gmlsf-deps.xsd",
+        "sha256": "a2494078b54152b1fa326327be78c3f67d396eac3f6c3f16ab4f9e48e3961ce1",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/gmlsf-deps.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/gmlsf.xsd",
+        "sha256": "f226864309eaa456a0aad50ce2d05abdbf5c74dee65d9cd158924713a7f20b14",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/gmlsf.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/gmlsf2.xsd",
+        "sha256": "4c6a93bbc3531554ecda6525f1bc428c621ae6bfa6c214e4bcb6ae846e7d07a3",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/gmlsf2.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/grids.xsd",
+        "sha256": "deab01968568c61e61931479277f113d4076948c04b2556dc8f0e31435ee94df",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/grids.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/measures.xsd",
+        "sha256": "914e9c065a2521de68f38f3b8497918c2c9e62347e433c962a8cb4a7ce15a3aa",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/measures.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/observation.xsd",
+        "sha256": "c47d93fba5f2942777d0beee43f85276dd013819e753f98a2c6c52a205290528",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/observation.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/referenceSystems.xsd",
+        "sha256": "c8e9115832d2c7860f7f93181615cd1ac86f9c7bc8dd813f347ae07687b83327",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/referenceSystems.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/smil/smil20-language.xsd",
+        "sha256": "71a6af850b0701b34c594ba749ed42ce621cf669b3cb0ec339ce9dd254314787",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/smil/smil20-language.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/smil/smil20.xsd",
+        "sha256": "68df248afb314c26bebee460e57e8a026d8fae07973da344a8800cd3440d1791",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/smil/smil20.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/smil/xml-mod.xsd",
+        "sha256": "e49b1d46eb586f7eec8cfd7f18a10b64fbc2d3f91124a21365e51d044627b6d9",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/smil/xml-mod.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/temporal.xsd",
+        "sha256": "f9d296250bb0a9ddf1db38f23fc2cd88dd861bbd4415a4382a4cb6221c3a23d4",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/temporal.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/temporalReferenceSystems.xsd",
+        "sha256": "d8693d8b991d2b884984f40d22d2ffb05634e3ae998741c68f991c377d775e46",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/temporalReferenceSystems.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/temporalTopology.xsd",
+        "sha256": "0d95f141bca0b676cbdff6473db9e2e8b1338f7bcb0787913d94406544ed237d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/temporalTopology.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/topology.xsd",
+        "sha256": "65083d6bec599873cb387c552ca5e7added39258a89f889af238c5e47c607783",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/topology.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/units.xsd",
+        "sha256": "a65b48cff25ea7059cb33fdfd84dda4b36d3d7df11f46e6c92bab1146414d526",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/units.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/basicTypes.xsd",
+        "sha256": "68aa241c15dd8a63aa64b5b0e33b528a53a077325e85f88e608db05f76cac40a",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/basicTypes.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/coordinateOperations.xsd",
+        "sha256": "ac406b3cbb90451c782a820aa7b0d75310d9f89ab6f79b38245a2ebe23bdd3c1",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/coordinateOperations.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/coordinateReferenceSystems.xsd",
+        "sha256": "716268aee7233cf31eb8f0ba88be6f47eec795390f6510ee7d0d8eb3d9564746",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/coordinateReferenceSystems.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/coordinateSystems.xsd",
+        "sha256": "a75f2d38e0eca10fb1c4caa4488ce59b7a01a09c2768ded75cd6315754120eeb",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/coordinateSystems.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/coverage.xsd",
+        "sha256": "8412fbb89f4c8d582604ac660e0b45e1496236088291a47403c49a27d0bfd979",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/coverage.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/datums.xsd",
+        "sha256": "e64376a8c11848c67777da5af4b5a560e7561dbd23e628553902e7eb944030f6",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/datums.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/defaultStyle.xsd",
+        "sha256": "d28424aad5cdc94f8bee627652383f68412f04defea8a5ba5e9203c33069e70f",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/defaultStyle.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/deprecatedTypes.xsd",
+        "sha256": "2b5ee6af24374fbdbefae7169fd7e08fc98836df38a71c32c3cad192b4208526",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/deprecatedTypes.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/dictionary.xsd",
+        "sha256": "15438b6575febb5f0694a45282deda457abda76f98c1f8bdcb730485bbc07086",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/dictionary.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/direction.xsd",
+        "sha256": "db395b7c1827eb9c4ba81ead8865a6ee4fbf50d6e42b9660bffbcc7050ce5f4d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/direction.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/dynamicFeature.xsd",
+        "sha256": "c276f7f8b71d64edbb39906123c96a9ee28db8c691413c4a5ad0124bffbc2ac2",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/dynamicFeature.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/feature.xsd",
+        "sha256": "a0a059dc2feaca8d1fb8f04a30c557226239c6404c1d1fb8986f9ce6189bf42e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/feature.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gco/basicTypes.xsd",
+        "sha256": "0bce87e49e1afec26b31a52255bd6ca0006407e370da62073dc871ea6844096f",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gco/basicTypes.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gco/gco.xsd",
+        "sha256": "376117a4bd9cdff1149590dded0c74061d19d5e0f152536095da26629521088a",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gco/gco.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gco/gcoBase.xsd",
+        "sha256": "bca83af6ad10851346c2ceb1f46cbea17124671101621a35758abba930c9f0c3",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gco/gcoBase.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/geometryAggregates.xsd",
+        "sha256": "7e2cb015024c0075c84e5718029c3483819f6eba51de474770ea3d662e9f1e29",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/geometryAggregates.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/geometryBasic0d1d.xsd",
+        "sha256": "805e56ded83cc6b343a38f72782caa574d6eca974ee4871eefbc3885ceccd4a8",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/geometryBasic0d1d.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/geometryBasic2d.xsd",
+        "sha256": "922cb08dc059661d54b485180866657cef11a9322bc03246b589d7083bc8cea7",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/geometryBasic2d.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/geometryComplexes.xsd",
+        "sha256": "1fb3a6c19ad27c683083ae9565be8c073f3a7d0d9a0a68bf42dcca3186569dca",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/geometryComplexes.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/geometryPrimitives.xsd",
+        "sha256": "7af33517754c318f82dc42146aabc52e5884a5658db3a6c82f241af0ba28a9f7",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/geometryPrimitives.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/applicationSchema.xsd",
+        "sha256": "a42a2074df5098d39b96bb0bb40a744125b346e7a8d14a3a705e5374f08307c4",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/applicationSchema.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/citation.xsd",
+        "sha256": "04bc4df77ff101dbe1f8053f25d5b50982f26c03c3ae25ed66364197b9654745",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/citation.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/constraints.xsd",
+        "sha256": "0344a0b21159361b8aadd79339f11482921438a2aa2cd155338a1b4457df9290",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/constraints.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/content.xsd",
+        "sha256": "892d210005944bbd10420bbd9e0ece942b91499851022cbac43a9a0f2b5578bd",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/content.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/dataQuality.xsd",
+        "sha256": "28b56ce0251d3f17a3d54da934bcf2bae08543f653ec426a0b3d2da845d93e3e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/dataQuality.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/distribution.xsd",
+        "sha256": "c6d2ea44582569633577c7cbfaad05c5ab7165a01ef93f53250215ea9b761d05",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/distribution.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/extent.xsd",
+        "sha256": "f862087a0cfc257a3164eaa57aa530b6bcae6f33f4af3a1ea9a4d6f1fd95e92b",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/extent.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/freeText.xsd",
+        "sha256": "203e42173f17927236a38598c71a3e995d7fdc30486469ad36c4b120d985a8f8",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/freeText.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/gmd.xsd",
+        "sha256": "31c8de7eea4d26ba03cd49275f46895157dca94f85ed10368f1750746651c317",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/gmd.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/identification.xsd",
+        "sha256": "03a286ff44e8f7c73dab50bcee08e37297434e35d2a681544baaa728f42c2e6e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/identification.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/maintenance.xsd",
+        "sha256": "337c07a23f850e6c6c61a286bb553eb558855761834dfb9fc0a30d019cda118b",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/maintenance.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/metadataApplication.xsd",
+        "sha256": "a00ea68a07d17fe4acc47696d64cd56a52772323a5ec9406cad212a0da2457ba",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/metadataApplication.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/metadataEntity.xsd",
+        "sha256": "a7dcd5937ab067529265e6aef13c9ab03d68b7b9ae0e04531b72efb542b2f181",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/metadataEntity.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/metadataExtension.xsd",
+        "sha256": "a7e3f93c0905ad143773fd32c3fe1bcb1ce42e26eb7a646e7bf83ccc56397f9f",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/metadataExtension.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/portrayalCatalogue.xsd",
+        "sha256": "0158a715278321e8069b5668d7efe6a796a59ed230ea57a7958dbcaa683813fa",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/portrayalCatalogue.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/referenceSystem.xsd",
+        "sha256": "3f77db29cf6988554e263fa0d9e9871795363873c6782bd820623b1b5bea248d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/referenceSystem.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmd/spatialRepresentation.xsd",
+        "sha256": "90385c17739bcecace87a963718fba1d4bdeb5799cd823d7b7f6d6ce4b2e2aab",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmd/spatialRepresentation.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gml.xsd",
+        "sha256": "988193270c23a4a0222c26ff70ded32af6735c683c53bab70fce158d19a59f59",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gml.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmlBase.xsd",
+        "sha256": "cb3f7e4c61bde4dda888e0d4a8fd135f2472326ed2de0734e0ad543d9a843728",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmlBase.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmx/catalogues.xsd",
+        "sha256": "620939a48f5d42ed74c17d2645182e78e68cb008e10b645e0f60a76d4b12cd6b",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmx/catalogues.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmx/codelistItem.xsd",
+        "sha256": "90503d59cc0379c7263cf0a2bd70246b43e80d7b740f5e7cf382936463cc8c41",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmx/codelistItem.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmx/crsItem.xsd",
+        "sha256": "da21bac1626820a5cb22a80c1b8c2ba398707008249b69645199377107814c0f",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmx/crsItem.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmx/extendedTypes.xsd",
+        "sha256": "5b1b6a34a2ba72c1a7c953245febf9209957bafe2406c41890471ac1ba92a9a3",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmx/extendedTypes.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmx/gmx.xsd",
+        "sha256": "ce18de4ca176fa34e529622a75b376ba296f7ec20a8b2385c3a6a13f51ed00a4",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmx/gmx.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmx/gmxUsage.xsd",
+        "sha256": "f3a1be131168dfd43c697542cd2031fb39881d0f05fcbd48ab049e1e329497f9",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmx/gmxUsage.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gmx/uomItem.xsd",
+        "sha256": "4f235b4c23673f728e6f6d56e23fbbd033486edb5051ff936e97b6197898ca21",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gmx/uomItem.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/grids.xsd",
+        "sha256": "32c8ff11ad680d19c2bae84d057f1c8e2241f33313481b01e422fbcdb66b3ea6",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/grids.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gsr/gsr.xsd",
+        "sha256": "45996393b0170f8fd2bed03d388c91829e096ffe33afa43464c19ffabf6b5f47",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gsr/gsr.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gsr/spatialReferencing.xsd",
+        "sha256": "9b0f4be6fcd9754153290e965c803fe4f5854776330763c6531212e240ba5519",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gsr/spatialReferencing.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gss/geometry.xsd",
+        "sha256": "fffc0d7581ba978b6a3f9ddaa20a876d0cc3a978e9dde8e58136de9b3bdd3f04",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gss/geometry.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gss/gss.xsd",
+        "sha256": "ce4bd1ea0b600f412f22bd5e4ff1dd65dd8e578f5de1d6ebc588dc26fb82407d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gss/gss.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gts/gts.xsd",
+        "sha256": "823b6eb47a22cd3d112050302b4ab93426f93ed0f6c1f069d5e6cc73d31a3e0b",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gts/gts.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/gts/temporalObjects.xsd",
+        "sha256": "06223f493fa38169f3304008f4d8694df430d41b7858b3b0bd714d23499d975b",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/gts/temporalObjects.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/measures.xsd",
+        "sha256": "ba556d2275c7b65485b660cde81cdcf68ba56e6f198bf27d8bf824190d052fa8",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/measures.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/observation.xsd",
+        "sha256": "367ab7651addb99d570b8aed4ed3380c1a64d0dda2866ad6763ff20acffb9ca7",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/observation.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/referenceSystems.xsd",
+        "sha256": "6bd660cfa14a4b148ad4e76fb376b33e409a46fac7d9b5cbb7a764b7f257fa53",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/referenceSystems.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/temporal.xsd",
+        "sha256": "81011b1d039926d8f5eb351158327aed8da9fe4ae334552a04cace6883f2db5c",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/temporal.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/temporalReferenceSystems.xsd",
+        "sha256": "8d8b256e145ce12333b0b534f35f6472013aa6d9f9578673cf3b5a56c84b473c",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/temporalReferenceSystems.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/temporalTopology.xsd",
+        "sha256": "1dc95c9595b6d60fa76acd22d095766ad911749aea37f3ea3ff5523fa19134f6",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/temporalTopology.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/topology.xsd",
+        "sha256": "d197511b4c4441f3dafd1f7a7980c30b597219ac4e196ecf97650474310f7a0f",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/topology.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/units.xsd",
+        "sha256": "ce0beafd078d39ab36ab13a981dbc0cbc55a9377c352df6837e81d78ce0d6cce",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/units.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/valueObjects.xsd",
+        "sha256": "6b8098955933acfa79e6b78a975b8ddc3c4195712afe5b8639025b764b0ea20e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/valueObjects.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/v3_2/xlinks.xsd",
+        "sha256": "574f4ce64fe145655e2854be9e1fee9b451ce3859628f7088dc40b3b5efd456e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/v3_2/xlinks.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml3-34.5.jar",
+        "member": "org/geotools/gml3/valueObjects.xsd",
+        "sha256": "71cea51655c70683d25faf87ad0fe33f98036e9ddaa43411fa635c5b6ea862df",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml3/src/main/resources/org/geotools/gml3/valueObjects.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml2-34.5.jar",
+        "member": "org/geotools/gml2/feature.xsd",
+        "sha256": "468b1772f25c759063ca1fede19828c0aa8ec9be7d731ac78887a65fa1475a3a",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml2/src/main/resources/org/geotools/gml2/feature.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-gml2-34.5.jar",
+        "member": "org/geotools/gml2/geometry.xsd",
+        "sha256": "bafcf113fd637d7a40ef25363af3431e328bc67e5f5c7dde72b80c278651e668",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-gml2/src/main/resources/org/geotools/gml2/geometry.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-filter-34.5.jar",
+        "member": "org/geotools/filter/v1_0/capabilities/filterCapabilities.xsd",
+        "sha256": "297012d763e2c97496f32effdd5c722b15afcc86e288fe222b8a2cdd03dde000",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-filter/src/main/resources/org/geotools/filter/v1_0/capabilities/filterCapabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-filter-34.5.jar",
+        "member": "org/geotools/filter/v1_0/expr.xsd",
+        "sha256": "fbab1fd78bb297cf9ea7bb284cf4811ba6271b3d11211b87b2313019bcfd970d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-filter/src/main/resources/org/geotools/filter/v1_0/expr.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-filter-34.5.jar",
+        "member": "org/geotools/filter/v1_0/filter.xsd",
+        "sha256": "112321f9e3cf0b0acdfbdecc12f4bb9cc4068bf16b7488d0230944523d264804",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-filter/src/main/resources/org/geotools/filter/v1_0/filter.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-filter-34.5.jar",
+        "member": "org/geotools/filter/v1_1/expr.xsd",
+        "sha256": "795ee3edffc5f4e54bad2f254cb44f886fc619d64c84399de14a3f2c76c6379c",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-filter/src/main/resources/org/geotools/filter/v1_1/expr.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-filter-34.5.jar",
+        "member": "org/geotools/filter/v1_1/filter.xsd",
+        "sha256": "e1d2ced2b391ce8ea4ebf251a7e6516bc22a9c24e4a6bfd3a1508ceda3aba43f",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-filter/src/main/resources/org/geotools/filter/v1_1/filter.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-filter-34.5.jar",
+        "member": "org/geotools/filter/v1_1/filterAll.xsd",
+        "sha256": "2156a44c6315cc8e5cd42392aacb203e690fcb3cafcceb263b931fa1ead85fe4",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-filter/src/main/resources/org/geotools/filter/v1_1/filterAll.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-filter-34.5.jar",
+        "member": "org/geotools/filter/v1_1/filterCapabilities.xsd",
+        "sha256": "30b5c5cfb9064729b380710d8514d94bc0f0eb8abd240a5a9189c187a088f235",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-filter/src/main/resources/org/geotools/filter/v1_1/filterCapabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-filter-34.5.jar",
+        "member": "org/geotools/filter/v1_1/sort.xsd",
+        "sha256": "77840619414ac32299f2934826e87c92176b964969643df1a89cf60768dc2880",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-filter/src/main/resources/org/geotools/filter/v1_1/sort.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/ows19115subset.xsd",
+        "sha256": "5186b7330d2b06b807f855bfcb80986528fc9054f4c589d53121973eb89c0b38",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/ows19115subset.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsAll.xsd",
+        "sha256": "5bfbf4833431275c6f11c17d44c19e3e65956fcdcbffbd3b40e26d65b8fd8f86",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsAll.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsCommon.xsd",
+        "sha256": "0f72b948564fa788dd4df4e563d269e25c21889e59f0b3350e2125fa44584718",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsCommon.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsContents.xsd",
+        "sha256": "cd86df73841359e37a5952bf50c131b5e2efe0d33f35bc6e8285f590e7d1b58c",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsContents.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsDataIdentification.xsd",
+        "sha256": "156628b60255d6429b32c3c6a0c1cd13688d1786b80935fc4edb645e9848f1e5",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsDataIdentification.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsDomainType.xsd",
+        "sha256": "a1da204d950a29e17de69f88eea3dcf8fd456bf2faf75bdba7bce88fb3603b78",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsDomainType.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsExceptionReport.xsd",
+        "sha256": "064c0496eda41301796d670f586bdbaad013bac966f6487c7ae642db9ef01dbc",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsExceptionReport.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsGetCapabilities.xsd",
+        "sha256": "bf30ea38076b2fb68619b1af501500d5991cb1823e11c048233cc1af86f0eb03",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsGetCapabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsGetResourceByID.xsd",
+        "sha256": "0c2509943f747baf64dbbacc378efa1c4a7ae742f1d4dc6bf31831f82bbf807e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsGetResourceByID.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsInputOutputData.xsd",
+        "sha256": "69c566e2922394d0c21ac73696e508991ea0cd242b6a77b2f95e140b7e291229",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsInputOutputData.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsManifest.xsd",
+        "sha256": "1fb177d1f9dac97160cd75fdcb3546944d15b761e2339645797c95463e0564fc",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsManifest.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsOperationsMetadata.xsd",
+        "sha256": "5448e49d6b69305aaa49ed975ebc71ff2cec948d6a3367885cc386cbf3b475cc",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsOperationsMetadata.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsServiceIdentification.xsd",
+        "sha256": "569be99ff11aafa77b7e8ebd66f52f2cdf9d8fb306f44fb6554f95855d674ed8",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsServiceIdentification.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v1_1/owsServiceProvider.xsd",
+        "sha256": "d4f534e5f7d34c135e8a53ca04b4ba2199391588963ba4cd198009dec860b002",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v1_1/owsServiceProvider.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/ows19115subset.xsd",
+        "sha256": "40286eaa0ad64cf7620cb63be88b69bdb3517b2b52f0aa6128a58a489d2d7011",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/ows19115subset.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsAdditionalParameters.xsd",
+        "sha256": "d53464c624c713592655409a4fab2ff065635ac2787aa3b9859a4c45b8511944",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsAdditionalParameters.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsAll.xsd",
+        "sha256": "784c3925c5864df4eb95b7b34d09c8e48b1dd4f9fd71376ef9eae1b66e35130e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsAll.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsCommon.xsd",
+        "sha256": "0f816bb3a27d8af4db4cd01732726be913dca2c0846e7ca434c4a375a0d92434",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsCommon.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsContents.xsd",
+        "sha256": "89caef3a0b8fbef7d7db3d046d8308f090e46b3dbd0926e81217f08ec2594577",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsContents.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsDataIdentification.xsd",
+        "sha256": "971072ee95c27638f3076be3a0f129d7d2e7419b01fa748b8428552ade06380e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsDataIdentification.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsDomainType.xsd",
+        "sha256": "878a26d69b9b0838e3e018447eec43199ac0c6b7865a27ab18c2c5d7124f1e25",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsDomainType.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsExceptionReport.xsd",
+        "sha256": "4eec63f80cc8c0efdbd11eef761a0fea939ec51bebfc7e7f5d700e18538dd6c9",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsExceptionReport.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsGetCapabilities.xsd",
+        "sha256": "53a83e321956b3f4813ebb9ab8e15f1746ec687755b6415feb27aa1d99a145f1",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsGetCapabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsGetResourceByID.xsd",
+        "sha256": "b5277f662cc546066415958042b4d2e060cd663e97de00b171e89650250d5d81",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsGetResourceByID.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsInputOutputData.xsd",
+        "sha256": "3ad82a41831752ae743c41582351709ce5516cf7a1b52e201d463c3cbd00473d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsInputOutputData.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsManifest.xsd",
+        "sha256": "75308400ce6fa3880250992d52f9e37707232a72a32ed175b634cda527c13930",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsManifest.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsOperationsMetadata.xsd",
+        "sha256": "fcf64897010e6a80622651e635a03e91be0207cc39f97284da954e0cda8d8fa3",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsOperationsMetadata.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsServiceIdentification.xsd",
+        "sha256": "0c7070b2a24c3dd71b7c7935a2d607137906b7f5be9c7602c845394b4a7a2c97",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsServiceIdentification.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/ows/v2_0/owsServiceProvider.xsd",
+        "sha256": "1475ef359aecda9b97479a7f7f25b3beb9b012bc5c7b3bc5f11eb60a86a1bd18",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/ows/v2_0/owsServiceProvider.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/xsd/ows/ows19115subset.xsd",
+        "sha256": "acece6315828426e490f6a0489583961b2e33b891514c9863aa77177b9135009",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/xsd/ows/ows19115subset.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/xsd/ows/owsAll.xsd",
+        "sha256": "a8fc259ecd0744dc4a2ad3e1f9440ad6f509a965ee8ac5986c42cbcff7fff4f6",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/xsd/ows/owsAll.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/xsd/ows/owsCommon.xsd",
+        "sha256": "08366ac7334854060ed8608dda11ef30a54662952a1a538c6d5878429908dc18",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/xsd/ows/owsCommon.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/xsd/ows/owsDataIdentification.xsd",
+        "sha256": "42fd428dfbfdcfd70b477a6f3d8c4937a94c51207c5c9b7433d4181ef2db8aea",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/xsd/ows/owsDataIdentification.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/xsd/ows/owsExceptionReport.xsd",
+        "sha256": "79cc1afa338bdb7256605388f2654d08aedf690c542fb6b1b9865877bd5d19ff",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/xsd/ows/owsExceptionReport.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/xsd/ows/owsGetCapabilities.xsd",
+        "sha256": "c67dc3d46f604d59d2780843c9913539c0103193418fa5e9eb85b39db3165eee",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/xsd/ows/owsGetCapabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/xsd/ows/owsOperationsMetadata.xsd",
+        "sha256": "ef464af46694969cef4db99dd7702cb8866d719fd8de987eb5446538d1540714",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/xsd/ows/owsOperationsMetadata.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/xsd/ows/owsServiceIdentification.xsd",
+        "sha256": "4f48211974adda0a7b64f84d939a9dfed7ca5c9598c38c8cdfc764e9f7d8ad6d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/xsd/ows/owsServiceIdentification.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-ows-34.5.jar",
+        "member": "org/geotools/xsd/ows/owsServiceProvider.xsd",
+        "sha256": "aa115a585199ce8a17f87cde86e426c59556211b25569e06895053a61a381f84",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-ows/src/main/resources/org/geotools/xsd/ows/owsServiceProvider.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/gml4wcs/gml4wcs.xsd",
+        "sha256": "d7aac41aed59af63163f18637a3b567bf9bf51a2fe160927f621828f203b2bec",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/gml4wcs/gml4wcs.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/describeCoverage.xsd",
+        "sha256": "2a5a3b26028f69bec5ed421e68b10e57d77e9f45404f16dd7b1209cc1622c089",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/describeCoverage.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/getCoverage.xsd",
+        "sha256": "4d0c8a613368bf7ced998611f16a3cc6e9646a0bd41a423d858c073bff17c191",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/getCoverage.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/owsBase.xsd",
+        "sha256": "d250739a76171b4fb768ccb82f086ca528efb899e0a98583b1ab61aad59ff560",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/owsBase.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v1_1/gml4wcs.xsd",
+        "sha256": "11ce83ad881069695848de6c44d5a687235e3c4ccbb91b7eb66ad47f91f01f0e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v1_1/gml4wcs.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v1_1/wcsAll.xsd",
+        "sha256": "49fc0bc4d50f96f1acc7a3df19a1895d63c8895a0b6719f71e7e133b33273251",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v1_1/wcsAll.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v1_1/wcsCommon.xsd",
+        "sha256": "00e8e7d3952973cd7b5cca0266a37fbd0657528addad79800b5c161273a9ab28",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v1_1/wcsCommon.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v1_1/wcsContents.xsd",
+        "sha256": "5b1cebf3f040836f9c87c27dc02a1c5083637b1652276d88eb99d846c42c8a8e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v1_1/wcsContents.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v1_1/wcsCoverages.xsd",
+        "sha256": "6f016843dcce91c9bce0a77fba27a35b0bb8fd64bb3be691dee61c36709b99a3",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v1_1/wcsCoverages.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v1_1/wcsDescribeCoverage.xsd",
+        "sha256": "5108652aeb8ab88040f7250ee997dc7e78ed4e82aca66f26c42caadeb8c3a678",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v1_1/wcsDescribeCoverage.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v1_1/wcsGetCapabilities.xsd",
+        "sha256": "2eff20bf6418c840e9090f7f5fe969a73420110c508a3c664e3f03cb9089e27f",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v1_1/wcsGetCapabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v1_1/wcsGetCoverage.xsd",
+        "sha256": "862bb641a2c268606ed4ad761de5d5143686f08d7e9557af29fff830e20efff2",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v1_1/wcsGetCoverage.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v1_1/wcsGridCRS.xsd",
+        "sha256": "cbc86aaaf87df8cb176d0b8b53efbb54ee2aa25e7d340431d9234eb1b8a78315",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v1_1/wcsGridCRS.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v1_1/wcsInterpolationMethod.xsd",
+        "sha256": "e3a0faacc1a06f92c34bed776c7e149164e03480d181684dfcd55986d69cba5b",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v1_1/wcsInterpolationMethod.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/int/v1_0/int.xsd",
+        "sha256": "b6d2bbe6d6cf8226664c3daf7c487cf05197326680231d4a611b663435f4ccd8",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/int/v1_0/int.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/range_subsetting/v1_0/rsub.xsd",
+        "sha256": "fb38250b36ecb9294510a7cc35306b86b6aedfb39b385760a549f749e778f8b9",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/range_subsetting/v1_0/rsub.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/scal/v1_0/scal.xsd",
+        "sha256": "ddcffdf24c53bea259e17cfca1db159f7e70a9b40049d1e0afa1a89858d330e8",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/scal/v1_0/scal.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcsAll.xsd",
+        "sha256": "d3d685a6f7e92b910502139763ec0a1af6f4116bcf55034a049dda0a1f984cd1",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcsAll.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcsCommon.xsd",
+        "sha256": "18e65118993778737ab8051caf3ede625bd43e24e010bab35ffd3cc0abc54ab0",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcsCommon.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcsDescribeCoverage.xsd",
+        "sha256": "219e248b5b82e129c7908716136839a22b96f06f2c293868de94de964141ead0",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcsDescribeCoverage.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcsGetCapabilities.xsd",
+        "sha256": "2e6e5f4bd6f0d4324a643b5c2aedf19d9b52452be81959293b955a11a14f9937",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcsGetCapabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcsGetCoverage.xsd",
+        "sha256": "e2ec1331b4ce2cd63cac1c5744b5b31b69984cda013e586242d5ac69b3fdef80",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcsGetCoverage.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcseo/v1_0/wcsEOAll.xsd",
+        "sha256": "178e6560bb95c9f3f7dd72f80f169c110bf95d65558f9005d850dad002565d9d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcseo/v1_0/wcsEOAll.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcseo/v1_0/wcsEOCommon.xsd",
+        "sha256": "74bd089148f3b5037dcdcc5eec3f24f526160ca5bc059fa6ebcc9e75311974ac",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcseo/v1_0/wcsEOCommon.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcseo/v1_0/wcsEOCoverage.xsd",
+        "sha256": "1846846d94f0e0904dc2d40b8f5743469005dc9e0450bbef3f0397a9942fbe93",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcseo/v1_0/wcsEOCoverage.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcseo/v1_0/wcsEODescribeEOCoverageSet.xsd",
+        "sha256": "fa4108304313c69c8042010605dc005400e2af7a07229594cd0c3c38bf47a5d4",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcseo/v1_0/wcsEODescribeEOCoverageSet.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcseo/v1_0/wcsEOGetCapabilities.xsd",
+        "sha256": "6fdbc5a8440d67083ce69986a82e174c2518a2030986f4eabb7cb77841eb469c",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcseo/v1_0/wcsEOGetCapabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/v2_0/wcseo/v1_0/wcsgs.xsd",
+        "sha256": "f529a778811ea271385cc4e4d5348d93ec8bc4fa032c927da72a55ed2242f80f",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/v2_0/wcseo/v1_0/wcsgs.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/values.xsd",
+        "sha256": "4158a395afc5261e955e22a1dd008c1682f45a00e7a42de1dde0bec07174ed41",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/values.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wcs-34.5.jar",
+        "member": "org/geotools/wcs/wcsCapabilities.xsd",
+        "sha256": "8572316a911b2216a1e0de34fbeeb4b55046b0f1243e5aed334e6e4c78aef221",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wcs/src/main/resources/org/geotools/wcs/wcsCapabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wfs-34.5.jar",
+        "member": "org/geotools/wfs/v1_0/OGC-exception.xsd",
+        "sha256": "1d3ee261e5d25cffcf202907c9bfe0679b4cc0feff274bd640e0cab429c63e0a",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wfs/src/main/resources/org/geotools/wfs/v1_0/OGC-exception.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wfs-34.5.jar",
+        "member": "org/geotools/wfs/v1_0/WFS-basic.xsd",
+        "sha256": "8b0117d8f3f1b48fc638d55796967a7dc19364b76bb59418ae4538ac5b5c5269",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wfs/src/main/resources/org/geotools/wfs/v1_0/WFS-basic.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wfs-34.5.jar",
+        "member": "org/geotools/wfs/v1_0/WFS-capabilities.xsd",
+        "sha256": "433f6c1f5312d16f29558f731c059660c5b761bdc7572ee7d56e4a99ba10ec4a",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wfs/src/main/resources/org/geotools/wfs/v1_0/WFS-capabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wfs-34.5.jar",
+        "member": "org/geotools/wfs/v1_0/WFS-transaction.xsd",
+        "sha256": "b510ba30b8371e0255857cfbae53ae9a6c47b025a1abd3871d504fadcf34111e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wfs/src/main/resources/org/geotools/wfs/v1_0/WFS-transaction.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wfs-34.5.jar",
+        "member": "org/geotools/wfs/v1_1/wfs.xsd",
+        "sha256": "0239bc90ed45789c07ed0cd787b1bfa92a9da5006c173309e282f520ab0b4437",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wfs/src/main/resources/org/geotools/wfs/v1_1/wfs.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-wfs-34.5.jar",
+        "member": "org/geotools/wfs/v2_0/wfs.xsd",
+        "sha256": "e99022fc725e5019f12c0ff43613e0d7e1d81ccee3fa92ed0de5f9f223a7503d",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-wfs/src/main/resources/org/geotools/wfs/v2_0/wfs.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-geopkg-34.5.jar",
+        "member": "org/geotools/geopkg/wps/xml/gpkg.xsd",
+        "sha256": "fb286d781ef85d465f85774496c156fbe8fa3e5d9f4d92be19c444e72be120b3",
+        "source_byte_matches": [
+          "modules/plugin/geopkg/src/main/resources/org/geotools/geopkg/wps/xml/gpkg.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-core-34.5.jar",
+        "member": "org/geotools/xlink/xlinks.xsd",
+        "sha256": "574f4ce64fe145655e2854be9e1fee9b451ce3859628f7088dc40b3b5efd456e",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-core/src/main/resources/org/geotools/xlink/xlinks.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-core-34.5.jar",
+        "member": "org/geotools/xs/XMLSchema.xsd",
+        "sha256": "2f690f10596815e0a233a96c5e3d8f589285b99e7458d24f6ca28075412975ac",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-core/src/main/resources/org/geotools/xs/XMLSchema.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-core-34.5.jar",
+        "member": "org/geotools/xsd/xml.xsd",
+        "sha256": "b5aedb46e7a6de5198db09b7bdc11cf4a79a8cbc0eae3944c142978d21a7f443",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-core/src/main/resources/org/geotools/xsd/xml.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-fes-34.5.jar",
+        "member": "org/geotools/filter/v2_0/expr.xsd",
+        "sha256": "d3f2dcddb07aa87792617c8d0cd0e3a36b727cd2cced348006a6e084f6793ab8",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-fes/src/main/resources/org/geotools/filter/v2_0/expr.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-fes-34.5.jar",
+        "member": "org/geotools/filter/v2_0/filter.xsd",
+        "sha256": "7446af9be9f5d86731de9dc9ceb772a411b057eb0109a2d86029651ff48f3c78",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-fes/src/main/resources/org/geotools/filter/v2_0/filter.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-fes-34.5.jar",
+        "member": "org/geotools/filter/v2_0/filterAll.xsd",
+        "sha256": "3746148c7d237c1b79bd28c255e5dfe473f255f279b16ae92fe8cfe9c09e1320",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-fes/src/main/resources/org/geotools/filter/v2_0/filterAll.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-fes-34.5.jar",
+        "member": "org/geotools/filter/v2_0/filterCapabilities.xsd",
+        "sha256": "24cc141d6a778245f8c7296ec3a74af2f1c1ae1b628b8962a9fdf49d1e134623",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-fes/src/main/resources/org/geotools/filter/v2_0/filterCapabilities.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-fes-34.5.jar",
+        "member": "org/geotools/filter/v2_0/query.xsd",
+        "sha256": "202ffdbb14691c2063489992da434d9c33fdc0115a239c01aa85e53d8622bd42",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-fes/src/main/resources/org/geotools/filter/v2_0/query.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-fes-34.5.jar",
+        "member": "org/geotools/filter/v2_0/sort.xsd",
+        "sha256": "46a5c82c6a8784f22511e7a3db7e6616271521cc114358a0b4dc2023e75d7176",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-fes/src/main/resources/org/geotools/filter/v2_0/sort.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xml-34.5.jar",
+        "member": "org/w3/www/2001/xml.xsd",
+        "sha256": "0ed94db44402526e7a683424d0bd4b65e5bc50e65d9b9a762b11b30bae06d0c8",
+        "source_byte_matches": [
+          "modules/library/xml/src/main/resources/org/w3/www/2001/xml.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-kml-34.5.jar",
+        "member": "org/geotools/kml/kml21.xsd",
+        "sha256": "c3739333445cc5fd9787d15ef827123da8b5626ee8de1d226061aa43bcd2fe42",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-kml/src/main/resources/org/geotools/kml/kml21.xsd"
+        ]
+      },
+      {
+        "jar": "WEB-INF/lib/gt-xsd-kml-34.5.jar",
+        "member": "org/geotools/kml/v22/ogckml22.xsd",
+        "sha256": "e2f0bb69b549ed610c69ce3ebe8fa75d4fd42db543127328b458f458d59ac610",
+        "source_byte_matches": [
+          "modules/extension/xsd/xsd-kml/src/main/resources/org/geotools/kml/v22/ogckml22.xsd"
+        ]
+      }
+    ],
+    "selected_jar_count": 50,
+    "resource_scan_scope": "All 50 selected gt-* jars inspected for notices, ColorBrewer, EPSG archives and XSD resources; exact byte matches reported. Generated EPSG data requires generation-chain notice mapping, not a source filename match."
+  },
+  "geonode_python_source_gaps": [
+    {
+      "name": "geonode-announcements",
+      "version": "2.0.2.2",
+      "wheel": "source-archives/geonode-identity-v2/wheels/geonode_announcements-2.0.2.2-py3-none-any.whl",
+      "sha256": "f4f26155d0c8319b7ece08688aaea802a91e182cd0ccf7ba8aad117af6800957",
+      "python_members": 13,
+      "native_members": [],
+      "license_declared": "MIT",
+      "license_expression": null,
+      "original_notices": [
+        {
+          "member": "geonode_announcements-2.0.2.2.dist-info/AUTHORS",
+          "sha256": "8f6ad1fc2b5118641c681d7281ca1fc2c63ecec10d109132954706a48b3fea78",
+          "bytes": 50,
+          "first_lines": "\n * Brian Rosner\n * James Tauber\n * Michael Trier\n"
+        },
+        {
+          "member": "geonode_announcements-2.0.2.2.dist-info/LICENSE",
+          "sha256": "9b940ed5a26c7ee3b4b11f5d62e4987a6e4749a24387ebaaf2f46c20447ad43f",
+          "bytes": 1056,
+          "first_lines": "Copyright (c) 2013 Brian Rosner\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the follow"
+        }
+      ],
+      "installed_match": {
+        "site_packages": "build-worktrees/geonode-role-propagation/run-003/venv/lib/python3.12/site-packages",
+        "equal_python_members": 13,
+        "missing": [],
+        "changed": []
+      },
+      "source_status": "no-sdist-published"
+    },
+    {
+      "name": "geonode-django-dynamic-model",
+      "version": "0.4.0",
+      "wheel": "source-archives/geonode-identity-v2/wheels/geonode_django_dynamic_model-0.4.0-py3-none-any.whl",
+      "sha256": "74c5a7d3ac5011ee22821f8b0eb784fdde49674a528916e7ecff9d4ee9786a55",
+      "python_members": 15,
+      "native_members": [],
+      "license_declared": "MIT",
+      "license_expression": null,
+      "original_notices": [
+        {
+          "member": "geonode_django_dynamic_model-0.4.0.dist-info/LICENSE",
+          "sha256": "55ab502dbfe8e605398d75f586daccddac8ce858ae9d0ce03bf55e2f40c54469",
+          "bytes": 1065,
+          "first_lines": "MIT License\n\nCopyright (c) 2018 rvinzent\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to t"
+        }
+      ],
+      "installed_match": {
+        "site_packages": "build-worktrees/geonode-role-propagation/run-003/venv/lib/python3.12/site-packages",
+        "equal_python_members": 15,
+        "missing": [],
+        "changed": []
+      },
+      "source_status": "no-sdist-published"
+    },
+    {
+      "name": "geonode-dynamic-rest",
+      "version": "2.3.0.2",
+      "wheel": "source-archives/geonode-identity-v2/wheels/geonode_dynamic_rest-2.3.0.2-py3-none-any.whl",
+      "sha256": "052428c7296a46e1e4e5dacf4e3595a9bb5fd4c8b7b106d8932f74e60a496eac",
+      "python_members": 67,
+      "native_members": [],
+      "license_declared": null,
+      "license_expression": null,
+      "original_notices": [
+        {
+          "member": "geonode_dynamic_rest-2.3.0.2.dist-info/licenses/LICENSE.md",
+          "sha256": "65bad31a739993eaad249733378a01666d7a4c8e78a21b13421865742d415a22",
+          "bytes": 1081,
+          "first_lines": "The MIT License (MIT)\n\nCopyright AltSchool, PBC (c) 2016\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do "
+        },
+        {
+          "member": "geonode_dynamic_rest-2.3.0.2.dist-info/licenses/LICENSE.txt",
+          "sha256": "65bad31a739993eaad249733378a01666d7a4c8e78a21b13421865742d415a22",
+          "bytes": 1081,
+          "first_lines": "The MIT License (MIT)\n\nCopyright AltSchool, PBC (c) 2016\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do "
+        }
+      ],
+      "installed_match": {
+        "site_packages": "build-worktrees/geonode-role-propagation/run-003/venv/lib/python3.12/site-packages",
+        "equal_python_members": 66,
+        "missing": [
+          "geonode_dynamic_rest-2.3.0.2.data/scripts/manage.py"
+        ],
+        "changed": [],
+        "pip_script_relocation": [
+          {
+            "wheel_member": "geonode_dynamic_rest-2.3.0.2.data/scripts/manage.py",
+            "installed_path": "build-worktrees/geonode-role-propagation/run-003/venv/bin/manage.py",
+            "exists": true,
+            "wheel_sha256": "a1a9655308e884186129d748f333879aa701a2320b95edcb270adc2512f3e15d",
+            "installed_sha256": "f1c15778779074978ccfaf210a569f4f7a385bad03862d52204cecb1e5eeb821",
+            "equals_after_first_line": true
+          }
+        ]
+      },
+      "source_status": "no-sdist-published"
+    },
+    {
+      "name": "geonode-oauth-toolkit",
+      "version": "2.2.3.1",
+      "wheel": "source-archives/geonode-identity-v2/wheels/geonode_oauth_toolkit-2.2.3.1-py2.py3-none-any.whl",
+      "sha256": "7f46917fa84b2085f45cce99c4fd32e4bfef553ddc6c70e88bab0bf50036a1f2",
+      "python_members": 55,
+      "native_members": [],
+      "license_declared": null,
+      "license_expression": null,
+      "original_notices": [
+        {
+          "member": "geonode_oauth_toolkit-2.2.3.1.dist-info/licenses/AUTHORS",
+          "sha256": "839b9b31c4e56f00b890ed7b5caf714f03a6e32bdd3613ff4bf06a7f7a693248",
+          "bytes": 833,
+          "first_lines": "Authors\n=======\n\nMassimiliano Pippi\nFederico Frenguelli\n\nContributors\n============\n\nAbhishek Patel\nAlan Crosswell\nAleksander Vaskevich\nAlessandro De Angelis\nAllisson Azevedo\nAnvesh Agarwal\nArist\u00f3bulo Meneses\nAryan Iyappan\nAsh Christopher\nAsif Saif Uddin\nBart Merenda\nBas van Oostveen\nDave Burkholder\nDavid Fischer\nDavid Smith\nDiego Garcia\nDulmandakh Sukhbaatar\nDylan Giesler\nEmanuele Palazzetti\nFederico Dolce\nFrederico Vieira\nHasan Ramezani\nHiroki K"
+        },
+        {
+          "member": "geonode_oauth_toolkit-2.2.3.1.dist-info/licenses/LICENSE",
+          "sha256": "454dd9d6eb20aa6cb072d8b9bc14447f4b6e187aeb260fa137382b240eac6768",
+          "bytes": 1560,
+          "first_lines": "Copyright (c) 2013, Massimiliano Pippi, Federico Frenguelli and contributors\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met: \n\n1. Redistributions of source code must retain the above copyright notice, this\n   list of conditions and the following disclaimer. \n2. Redistributions in binary form must reproduce the above copyright notic"
+        }
+      ],
+      "installed_match": {
+        "site_packages": "build-worktrees/geonode-role-propagation/run-003/venv/lib/python3.12/site-packages",
+        "equal_python_members": 54,
+        "missing": [],
+        "changed": [
+          "tests/migrations/0001_initial.py"
+        ],
+        "namespace_overlap": {
+          "path": "tests/migrations/0001_initial.py",
+          "installed_sha256": "592ae88353bb174d9983a8f92117ca69ef20ba31f86abe77f3315706f9878210",
+          "matching_other_wheels": [
+            "geonode_dynamic_rest-2.3.0.2-py3-none-any.whl"
+          ],
+          "scope": "Top-level tests package collision, outside oauth2_provider runtime package; no runtime source change inferred. A future package-native test environment must avoid ambiguous tests imports."
+        }
+      },
+      "source_status": "no-sdist-published"
+    },
+    {
+      "name": "geonode-pinax-notifications",
+      "version": "6.0.0.4",
+      "wheel": "source-archives/geonode-identity-v2/wheels/geonode_pinax_notifications-6.0.0.4-py3-none-any.whl",
+      "sha256": "021f32f9f26d8d506f79e457d03d5328ce64df0f5f60817f6cb32fd50c8246f0",
+      "python_members": 29,
+      "native_members": [],
+      "license_declared": "MIT",
+      "license_expression": null,
+      "original_notices": [
+        {
+          "member": "geonode_pinax_notifications-6.0.0.4.dist-info/licenses/AUTHORS",
+          "sha256": "5fcc6e4f5f2b5f15de16593e896b58f96d53e7a49b5e15c6d2fd1a3306fa6cbb",
+          "bytes": 782,
+          "first_lines": "Patrick Altman <paltman@gmail.com>\nNolan Brubaker <palendae@gmail.com>\nBrian Rosner <brosner@gmail.com>\nMichael Trier <mtrier@gmail.com>\nzio <dmitry@dzeta.pp.ua>\nBastien <bastien.rocheron@gmail.com>\nMassimiliano Pippi <masci@evonove.it>\npenguinvasion <statix0@gmail.com>\naert <dev.aert@gmail.com>\nThomas Schreiber <tom@rizu.fake>\nJens Page <jens.page@datajockey.org>\nAgustin Dahbar <agud.cba@gmail.com>\nSpencer Herzberg <spencer.herzberg@gmail.com>\nJ"
+        },
+        {
+          "member": "geonode_pinax_notifications-6.0.0.4.dist-info/licenses/LICENSE",
+          "sha256": "112b1f28d18a9e4489b6aa54f1460bb39f24fa24f58b255ccf5739f4f24f2c89",
+          "bytes": 1104,
+          "first_lines": "The MIT License (MIT)\n\nCopyright (c) 2012-present James Tauber and contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Softw"
+        }
+      ],
+      "installed_match": {
+        "site_packages": "build-worktrees/geonode-role-propagation/run-003/venv/lib/python3.12/site-packages",
+        "equal_python_members": 29,
+        "missing": [],
+        "changed": []
+      },
+      "source_status": "no-sdist-published"
+    },
+    {
+      "name": "geonode-pycsw",
+      "version": "3.0.0b1",
+      "wheel": "source-archives/geonode-identity-v2/wheels/geonode_pycsw-3.0.0b1-py3-none-any.whl",
+      "sha256": "9c000197c15fde87ed210edf6cf9dea248a10bd08b2454cd81283daf07607f25",
+      "python_members": 53,
+      "native_members": [],
+      "license_declared": "MIT",
+      "license_expression": null,
+      "original_notices": [
+        {
+          "member": "geonode_pycsw-3.0.0b1.dist-info/licenses/LICENSE.txt",
+          "sha256": "0ec168165f432e91f4b963a574d06bd6e436222b769a798b9668175179306549",
+          "bytes": 1238,
+          "first_lines": "The MIT License (MIT)\n=====================\n\nCopyright &copy; 2010-2025 Tom Kralidis\nCopyright &copy; 2011-2025 Angelos Tzotsos\nCopyright &copy; 2012-2015 Adam Hinz\nCopyright &copy; 2015-2021 Ricardo Garcia Silva\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto u"
+        }
+      ],
+      "installed_match": {
+        "site_packages": "build-worktrees/geonode-role-propagation/run-003/venv/lib/python3.12/site-packages",
+        "equal_python_members": 53,
+        "missing": [],
+        "changed": []
+      },
+      "source_status": "no-sdist-published"
+    },
+    {
+      "name": "geoserver-restconfig",
+      "version": "2.0.16",
+      "wheel": "source-archives/geonode-identity-v2/wheels/geoserver_restconfig-2.0.16-py3-none-any.whl",
+      "sha256": "9ff8250260920c1881dd4dc9663ff8d191ce0f70098c0ed806451cc767faa35b",
+      "python_members": 14,
+      "native_members": [],
+      "license_declared": "MIT",
+      "license_expression": null,
+      "original_notices": [
+        {
+          "member": "geoserver_restconfig-2.0.16.dist-info/licenses/LICENSE.txt",
+          "sha256": "d34d86603f22adbc44fb41a84c7bbd9b2b0b624cf808f458d0cf1eac06670181",
+          "bytes": 1086,
+          "first_lines": "The MIT License (MIT)\n\nCopyright (c) 2015 Boundless and Others\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished "
+        }
+      ],
+      "installed_match": {
+        "site_packages": "build-worktrees/geonode-role-propagation/run-003/venv/lib/python3.12/site-packages",
+        "equal_python_members": 14,
+        "missing": [],
+        "changed": []
+      },
+      "source_status": "no-sdist-published"
+    },
+    {
+      "name": "gn-arcrest",
+      "version": "10.5.6",
+      "wheel": "source-archives/geonode-identity-v2/wheels/gn_arcrest-10.5.6-py3-none-any.whl",
+      "sha256": "d59d1b288d053fcfebf198b42c3d1bfb4ec8caa2fdb7bce47d6b79dad8c84a13",
+      "python_members": 20,
+      "native_members": [],
+      "license_declared": "Apache Software License",
+      "license_expression": null,
+      "original_notices": [
+        {
+          "member": "gn_arcrest-10.5.6.dist-info/LICENSE",
+          "sha256": "ae59a6334c6ad6d483beab13e06525476eafc9e75f0f778877a45f7c616c33a7",
+          "bytes": 9146,
+          "first_lines": "Apache License \ufffd 2.0\r\n\r\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\r\n\r\n1. Definitions.\r\n\r\n\"License\" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.\r\n\r\n\"Licensor\" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.\r\n\r\n\"Legal Entity\" shall mean the union of the acting entity and all other entities th"
+        }
+      ],
+      "installed_match": {
+        "site_packages": "build-worktrees/geonode-role-propagation/run-003/venv/lib/python3.12/site-packages",
+        "equal_python_members": 12,
+        "missing": [
+          "gn_arcrest-10.5.6.data/scripts/convertcachestorageformat.py",
+          "gn_arcrest-10.5.6.data/scripts/createcacheschema.py",
+          "gn_arcrest-10.5.6.data/scripts/createservice.py",
+          "gn_arcrest-10.5.6.data/scripts/deletecache.py",
+          "gn_arcrest-10.5.6.data/scripts/managecachetiles.py",
+          "gn_arcrest-10.5.6.data/scripts/manageservice.py",
+          "gn_arcrest-10.5.6.data/scripts/managesite.py",
+          "gn_arcrest-10.5.6.data/scripts/reportcachestatus.py"
+        ],
+        "changed": [],
+        "pip_script_relocation": [
+          {
+            "wheel_member": "gn_arcrest-10.5.6.data/scripts/convertcachestorageformat.py",
+            "installed_path": "build-worktrees/geonode-role-propagation/run-003/venv/bin/convertcachestorageformat.py",
+            "exists": true,
+            "wheel_sha256": "48336ff171b29fd0208a9065d4fd8e77e5b7808d2c61b8071552e211d0cbf3ac",
+            "installed_sha256": "df93dbd9bfc834afbbae6b10b6d7ec66a1cb00183174e635bf9a02c9c610b2ff",
+            "equals_after_first_line": true
+          },
+          {
+            "wheel_member": "gn_arcrest-10.5.6.data/scripts/createcacheschema.py",
+            "installed_path": "build-worktrees/geonode-role-propagation/run-003/venv/bin/createcacheschema.py",
+            "exists": true,
+            "wheel_sha256": "f6741fa5f8294c523c1e0e39d6acd22721f351204d7739b980c0247fedeb5cd8",
+            "installed_sha256": "363aad9128281400a206e259da057ece91fe1fd7d034c3a4c88cc6e6bf7f7506",
+            "equals_after_first_line": true
+          },
+          {
+            "wheel_member": "gn_arcrest-10.5.6.data/scripts/createservice.py",
+            "installed_path": "build-worktrees/geonode-role-propagation/run-003/venv/bin/createservice.py",
+            "exists": true,
+            "wheel_sha256": "adb8b96b79ccf923a3cfffccbe057eb43e9676acbed853c8666a5eb676cd70c0",
+            "installed_sha256": "1c8c32740640e5fa3af605be56d72ef1b66778b6595a5c4b9bfff47b4ff48772",
+            "equals_after_first_line": true
+          },
+          {
+            "wheel_member": "gn_arcrest-10.5.6.data/scripts/deletecache.py",
+            "installed_path": "build-worktrees/geonode-role-propagation/run-003/venv/bin/deletecache.py",
+            "exists": true,
+            "wheel_sha256": "4e8df99dc85c6187dec472fcf508cd632a10d2151a1615a06e2adff172e8b72f",
+            "installed_sha256": "82e47fd4db120325203aa95cc8365f0490bf1ea7f84504769c41b5589a8b957d",
+            "equals_after_first_line": true
+          },
+          {
+            "wheel_member": "gn_arcrest-10.5.6.data/scripts/managecachetiles.py",
+            "installed_path": "build-worktrees/geonode-role-propagation/run-003/venv/bin/managecachetiles.py",
+            "exists": true,
+            "wheel_sha256": "b9e4688c45f0a1ac8e9c0fd7a30d811b6c0667352de3552cb89947ec9f292d8f",
+            "installed_sha256": "c27d0776968e07fc637c8ce0278f05a9fafb5167d0b6bb235c6429f8fdd6211b",
+            "equals_after_first_line": true
+          },
+          {
+            "wheel_member": "gn_arcrest-10.5.6.data/scripts/manageservice.py",
+            "installed_path": "build-worktrees/geonode-role-propagation/run-003/venv/bin/manageservice.py",
+            "exists": true,
+            "wheel_sha256": "9bbb74cdf68ff84b204ec77d3c669b39a4a1bfd9d5ff338d7b79de61390adcd6",
+            "installed_sha256": "83b12ebccd6b53939ab971eff1cf614a6747d42a58f064df995d94a4309a04ae",
+            "equals_after_first_line": true
+          },
+          {
+            "wheel_member": "gn_arcrest-10.5.6.data/scripts/managesite.py",
+            "installed_path": "build-worktrees/geonode-role-propagation/run-003/venv/bin/managesite.py",
+            "exists": true,
+            "wheel_sha256": "fc180477003751f68dab1752af5b7a097d43d98bc879344f49e3da86885e27fd",
+            "installed_sha256": "acf42ff73cec88f104316b547c3266b6ed8175d61c99f3f34f9b3d4b27f350b2",
+            "equals_after_first_line": true
+          },
+          {
+            "wheel_member": "gn_arcrest-10.5.6.data/scripts/reportcachestatus.py",
+            "installed_path": "build-worktrees/geonode-role-propagation/run-003/venv/bin/reportcachestatus.py",
+            "exists": true,
+            "wheel_sha256": "75d7f7366f07b9ba20edd048e19cfc1fe71ec7594a536f17ff352b0d82a6dec4",
+            "installed_sha256": "3a86df0c1ab75b6c108300268b0c36c5fa6c337338c1358fe1d57c3de8a7e0ef",
+            "equals_after_first_line": true
+          }
+        ]
+      },
+      "source_status": "no-sdist-published"
+    },
+    {
+      "name": "gn-gsimporter",
+      "version": "2.0.4",
+      "wheel": "source-archives/geonode-identity-v2/wheels/gn_gsimporter-2.0.4-py3-none-any.whl",
+      "sha256": "464121d754e6a547ab056fb35efb3691100dac2d36459c592f7ea81dcf554570",
+      "python_members": 6,
+      "native_members": [],
+      "license_declared": "MIT",
+      "license_expression": null,
+      "original_notices": [],
+      "installed_match": {
+        "site_packages": "build-worktrees/geonode-role-propagation/run-003/venv/lib/python3.12/site-packages",
+        "equal_python_members": 6,
+        "missing": [],
+        "changed": []
+      },
+      "source_status": "no-sdist-published"
+    },
+    {
+      "name": "ua-parser-builtins",
+      "version": "202606",
+      "wheel": "source-archives/geonode-identity-v2/wheels/ua_parser_builtins-202606-py3-none-any.whl",
+      "sha256": "13b483eb12a5419c1094ce02b7df705fefc6b5d869764b3ffbf6c940c6d014cb",
+      "python_members": 4,
+      "native_members": [],
+      "license_declared": "Apache 2.0",
+      "license_expression": null,
+      "original_notices": [],
+      "installed_match": {
+        "site_packages": "build-worktrees/geonode-role-propagation/run-003/venv/lib/python3.12/site-packages",
+        "equal_python_members": 4,
+        "missing": [],
+        "changed": []
+      },
+      "source_status": "no-sdist-published",
+      "generation": {
+        "revision_member": "REVISION",
+        "revision": "f87f3a9aea3916399d70e5cb2c2aedea5008d881",
+        "generated_members": [
+          "ua_parser_builtins/lazy.py",
+          "ua_parser_builtins/matchers.py",
+          "ua_parser_builtins/regexes.py"
+        ],
+        "generator_retained": false
+      }
+    }
+  ],
+  "jupyter_python": {
+    "distribution_count": 146,
+    "without_retained_sdist": [],
+    "native_record_count": 24,
+    "native_records": [
+      {
+        "name": "pycares",
+        "version": "5.0.1",
+        "wheel": "pycares-5.0.1-cp313-cp313-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "c257c6e7bf310cdb5823aa9d9a28f1e370fed8c653a968d38a954a8f8e0375ce",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "pycares/_cares.abi3.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/df/a0/9c823651872e6a0face3f0311de2a40c8bbcb9c8dcb15680bd019ac56ac7/pycares-5.0.1.tar.gz",
+            "path": "python-sources/pycares-5.0.1.tar.gz",
+            "sha256": "5a3c249c830432631439815f9a818463416f2a8cbdb1e988e78757de9ae75081"
+          }
+        ]
+      },
+      {
+        "name": "aiohttp",
+        "version": "3.14.3",
+        "wheel": "aiohttp-3.14.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "d7d2deec16eeedf55f2c7cf75b521ea3856a5177e123844f8fd0f114ce252cb5",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "aiohttp/_http_parser.cpython-313-x86_64-linux-gnu.so",
+          "aiohttp/_http_writer.cpython-313-x86_64-linux-gnu.so",
+          "aiohttp/_websocket/mask.cpython-313-x86_64-linux-gnu.so",
+          "aiohttp/_websocket/reader_c.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/58/d9/22ce5786ac0c1653ae8b6c23bded02c1686d11f0dbb45b31ce128e0df985/aiohttp-3.14.3.tar.gz",
+            "path": "python-sources/aiohttp-3.14.3.tar.gz",
+            "sha256": "9491196535a88924a60afd5b5f434b5b203b6cc616250878dbdb223a8f7844bc"
+          }
+        ]
+      },
+      {
+        "name": "multidict",
+        "version": "6.9.0",
+        "wheel": "multidict-6.9.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "c51fd8d59e72e45c64907bf7f81fbd94f4c8dcd1c8b2f23f4c2d7ede788fcfc3",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "multidict/_multidict.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/e7/59/84b6cad9ddfdd9471db727b0e987c60ecbdb6b206ba265e8c50e74a1ab80/multidict-6.9.0.tar.gz",
+            "path": "python-sources/multidict-6.9.0.tar.gz",
+            "sha256": "d7d32c0543494efbc9394e2b571725071d08e295993486bc9a43f6f89375ee01"
+          }
+        ]
+      },
+      {
+        "name": "yarl",
+        "version": "1.25.1",
+        "wheel": "yarl-1.25.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "be80550d9bfe83d9b62398a37081a90434e6df2d978ec345c3d2820de6beddab",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "yarl/_quoting_c.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/75/16/e8be8e2fb175bbf41a0680381a319f1199fae256588241a2ac8677eafb49/yarl-1.25.1.tar.gz",
+            "path": "python-sources/yarl-1.25.1.tar.gz",
+            "sha256": "03dd38de09bc213e9a8b29761eec33ee1d5318dac0e49d8af36e4d27830e23a7"
+          }
+        ]
+      },
+      {
+        "name": "pydantic_core",
+        "version": "2.46.5",
+        "wheel": "pydantic_core-2.46.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "6f7b393a8b3da82f5c1fc0751e6d01ac6c55b93c18226a60bdfba4a724efafd1",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "pydantic_core/_pydantic_core.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/af/f9/8a06bea35ef8daf588f707784c973a7046e0034c8d8cfb08828eeffb8b75/pydantic_core-2.46.5.tar.gz",
+            "path": "python-sources/pydantic_core-2.46.5.tar.gz",
+            "sha256": "10416c15b8839ecc4ef4d0885da76da6fd0f67333a0eb8aff6d93c4b8f2910fc"
+          }
+        ]
+      },
+      {
+        "name": "charset-normalizer",
+        "version": "3.5.1",
+        "wheel": "charset_normalizer-3.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "62b55f6722735a6c472f88361cde6640608773d9443cebdbb51abf436a1fcdd3",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "charset_normalizer/cd.cpython-313-x86_64-linux-gnu.so",
+          "charset_normalizer/md.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz",
+            "path": "python-sources/charset_normalizer-3.5.1.tar.gz",
+            "sha256": "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+          }
+        ]
+      },
+      {
+        "name": "SQLAlchemy",
+        "version": "2.0.54",
+        "wheel": "sqlalchemy-2.0.54-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "cad78d04254967bdbcccbed5e631d88fe4868530946ab0929aa45e9032849518",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "sqlalchemy/cyextension/collections.cpython-313-x86_64-linux-gnu.so",
+          "sqlalchemy/cyextension/immutabledict.cpython-313-x86_64-linux-gnu.so",
+          "sqlalchemy/cyextension/processors.cpython-313-x86_64-linux-gnu.so",
+          "sqlalchemy/cyextension/resultproxy.cpython-313-x86_64-linux-gnu.so",
+          "sqlalchemy/cyextension/util.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/29/9c/271aa905cf2964f841371a97f3e63ab692bf51b4423d0491e67bc7f64037/sqlalchemy-2.0.54.tar.gz",
+            "path": "python-sources/sqlalchemy-2.0.54.tar.gz",
+            "sha256": "baa8521e8ee9f24e75dfc7aaabc08020e551ef0d48d7c3e3536f5cddf277586b"
+          }
+        ]
+      },
+      {
+        "name": "tornado",
+        "version": "6.5.10",
+        "wheel": "tornado-6.5.10-cp39-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "sha256": "bdf942448169e5336451d0494d7e3d81cfa726d5aa312affdc4682dd62a62f6d",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "tornado/speedups.abi3.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/06/61/53d562a57b28c08eda40b258c0f975e360541943ad7c7bef897a40caafda/tornado-6.5.10.tar.gz",
+            "path": "python-sources/tornado-6.5.10.tar.gz",
+            "sha256": "a6b1ccd08c04b4a06fb5aeb381be99de5ad1e5375c1785e31d78c880feb57687"
+          }
+        ]
+      },
+      {
+        "name": "cryptography",
+        "version": "50.0.1",
+        "wheel": "cryptography-50.0.1-cp311-abi3-manylinux_2_34_x86_64.whl",
+        "sha256": "51afcfceb15597cf2635068e4ac9a56b2abde622edde17f37d85fd7b5306497a",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "cryptography/hazmat/bindings/_rust.abi3.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/bb/ad/5d6702db60b1e40b41ef513b6967ff5848f307d50f8449baf1634f5908f1/cryptography-50.0.1.tar.gz",
+            "path": "python-sources/cryptography-50.0.1.tar.gz",
+            "sha256": "5dd9bda1c12b4162f6ff568eeb5e0ff956c28d14406e875cfe8a63a2d414ff20"
+          }
+        ]
+      },
+      {
+        "name": "distlib",
+        "version": "0.4.3",
+        "wheel": "distlib-0.4.3-py2.py3-none-any.whl",
+        "sha256": "4b0ce306c966eb73bc3a7b6abad017c556dadd92c44701562cd528ac7fde4d5b",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "distlib/t32.exe",
+          "distlib/t64-arm.exe",
+          "distlib/t64.exe",
+          "distlib/w32.exe",
+          "distlib/w64-arm.exe",
+          "distlib/w64.exe"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/c9/02/bd72be9134d25ed783ecbbc38a539ffaefbf90c78418c7fb7229600dbac7/distlib-0.4.3.tar.gz",
+            "path": "python-sources/distlib-0.4.3.tar.gz",
+            "sha256": "f152097224a0ae24be5a0f6bae1b9359af82133bce63f98a95f86cae1aede9ed"
+          }
+        ]
+      },
+      {
+        "name": "cffi",
+        "version": "2.1.1",
+        "wheel": "cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "sha256": "a931079504ecc49efed7744c476a5c343a92fabf66dec2db95edb1b2fdc770e2",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "_cffi_backend.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/9e/ef/008a1939e372c06329a3fce4279c02f328488f3526744906eeec3da7ad5f/cffi-2.1.1.tar.gz",
+            "path": "python-sources/cffi-2.1.1.tar.gz",
+            "sha256": "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be"
+          }
+        ]
+      },
+      {
+        "name": "coverage",
+        "version": "7.16.1",
+        "wheel": "coverage-7.16.1-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "sha256": "6b3fd0f3435ebb7a7183b32a6062a8b755f08242ced1f3f22761d30b56b3c2a5",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "coverage/tracer.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/65/2d/c738872f477f5687152acae68635790387425d407ae37dd3d3a8a6692307/coverage-7.16.1.tar.gz",
+            "path": "python-sources/coverage-7.16.1.tar.gz",
+            "sha256": "f83981779bcf9dfa06fa0a8d4cb43e0faec1706328ce07aa3e7b665b4ac0f210"
+          }
+        ]
+      },
+      {
+        "name": "frozenlist",
+        "version": "1.8.0",
+        "wheel": "frozenlist-1.8.0-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+        "sha256": "fb30f9626572a76dfe4293c7194a09fb1fe93ba94c7d4f720dfae3b646b45027",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "frozenlist/_frozenlist.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/2d/f5/c831fac6cc817d26fd54c7eaccd04ef7e0288806943f7cc5bbf69f3ac1f0/frozenlist-1.8.0.tar.gz",
+            "path": "python-sources/frozenlist-1.8.0.tar.gz",
+            "sha256": "3ede829ed8d842f6cd48fc7081d7a41001a56f1f38603f9d49bf3020d59a31ad"
+          }
+        ]
+      },
+      {
+        "name": "greenlet",
+        "version": "3.5.6",
+        "wheel": "greenlet-3.5.6-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "f98e8215e172f567ce80eeaed9107fb4d32b6c44f26983d9b8334658136a205a",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "greenlet/_greenlet.cpython-313-x86_64-linux-gnu.so",
+          "greenlet/tests/_test_extension.cpython-313-x86_64-linux-gnu.so",
+          "greenlet/tests/_test_extension_cpp.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/3e/6e/0091f175ccd02b02bc8811bbcbcc6ac2e980be116e3b2f7a736ca322bf84/greenlet-3.5.6.tar.gz",
+            "path": "python-sources/greenlet-3.5.6.tar.gz",
+            "sha256": "8e67c43bdfc88d5fee6db0d3e40175b362fc95fb85f0412d233b9b203c53a575"
+          }
+        ]
+      },
+      {
+        "name": "debugpy",
+        "version": "1.8.22",
+        "wheel": "debugpy-1.8.22-cp313-cp313-manylinux_2_34_x86_64.whl",
+        "sha256": "c1ffb9953708b648ecf6acd2e5ad2c002bf68785ed618197dd4463a2a7226f39",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_cython.cpython-313-x86_64-linux-gnu.so",
+          "debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.cpython-313-x86_64-linux-gnu.so",
+          "debugpy/_vendored/pydevd/pydevd_attach_to_process/attach_linux_amd64.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/44/9d/3cb6693342acf96802dba89934a5b8da43c201d764ebd1f2c0514a3d42bd/debugpy-1.8.22.tar.gz",
+            "path": "python-sources/debugpy-1.8.22.tar.gz",
+            "sha256": "e489c7268e1c7b41e13b438d9c533d2a7af73fb59bf8cd30fead8286c1c39c4e"
+          }
+        ]
+      },
+      {
+        "name": "MarkupSafe",
+        "version": "3.0.3",
+        "wheel": "markupsafe-3.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "ccfcd093f13f0f0b7fdd0f198b90053bf7b2f02a3927a30e63f3ccc9df56b676",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "markupsafe/_speedups.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz",
+            "path": "python-sources/markupsafe-3.0.3.tar.gz",
+            "sha256": "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
+          }
+        ]
+      },
+      {
+        "name": "propcache",
+        "version": "0.5.4",
+        "wheel": "propcache-0.5.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "f85915e00dcb1cd9f2f890ead064ed40a27df06f0db65be427b29482ae357572",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "propcache/_helpers_c.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/b3/9a/9fbf4e4ec0c2d7f1c32519fff782ef467859b8faa9fbc5331a96f6395d43/propcache-0.5.4.tar.gz",
+            "path": "python-sources/propcache-0.5.4.tar.gz",
+            "sha256": "ff6b113f50bc066a698db5d944d2c6dc7507168dd3341e255a8892fd0715a558"
+          }
+        ]
+      },
+      {
+        "name": "psutil",
+        "version": "7.2.2",
+        "wheel": "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "psutil/_psutil_linux.abi3.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz",
+            "path": "python-sources/psutil-7.2.2.tar.gz",
+            "sha256": "0746f5f8d406af344fd547f1c8daa5f5c33dbc293bb8d6a16d80b4bb88f59372"
+          }
+        ]
+      },
+      {
+        "name": "PyYAML",
+        "version": "6.0.3",
+        "wheel": "pyyaml-6.0.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "0f29edc409a6392443abf94b9cf89ce99889a1dd5376d94316ae5145dfedd5d6",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "yaml/_yaml.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz",
+            "path": "python-sources/pyyaml-6.0.3.tar.gz",
+            "sha256": "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
+          }
+        ]
+      },
+      {
+        "name": "pyzmq",
+        "version": "27.2.0",
+        "wheel": "pyzmq-27.2.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "dea74fd65f1fc5f7fe167916a473ebe6ed6174e5e5d9de11ea6583661be6cf43",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "pyzmq.libs/libsodium-1c6bac97.so.26.4.0",
+          "pyzmq.libs/libzmq-82f916e6.so.5.2.5",
+          "zmq/backend/cython/_zmq.abi3.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/e7/8d/5b3d5631c2f4b4b8862f64cd0c9eb777b5710eeb5125b4be8dd0a200a4c0/pyzmq-27.2.0.tar.gz",
+            "path": "python-sources/pyzmq-27.2.0.tar.gz",
+            "sha256": "54d4259d1bfae24ecdb5ca79f7acc2eac6c286a02d6a0ae617797cb45f0726d3"
+          }
+        ]
+      },
+      {
+        "name": "rpds-py",
+        "version": "2026.6.3",
+        "wheel": "rpds_py-2026.6.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "acac386b453c2516111b50985d60ce46e7fadb5ea71ae7b25f4c946935bf27cf",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "rpds/rpds.cpython-313-x86_64-linux-gnu.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/aa/2a/9618a122aeb2a169a28b03889a2995fe297588964333d4a7d67bdf46e147/rpds_py-2026.6.3.tar.gz",
+            "path": "python-sources/rpds_py-2026.6.3.tar.gz",
+            "sha256": "1cebd1337c242e4ec2293e541f712b2da849b29f48f0c293684b71c0632625d4"
+          }
+        ]
+      },
+      {
+        "name": "argon2-cffi-bindings",
+        "version": "26.1.0",
+        "wheel": "argon2_cffi_bindings-26.1.0-cp310-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "27f1821903e2ceadcb88ec2b45ef190897b7682449c772f4d9b53e42c520cf29",
+        "roles": [
+          "hub",
+          "user"
+        ],
+        "native_members": [
+          "_argon2_cffi_bindings/_ffi.abi3.so"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/0b/43/bb8b6e8708d49a5ab36781333af092d9f483b198a2710d01281204640055/argon2_cffi_bindings-26.1.0.tar.gz",
+            "path": "python-sources/argon2_cffi_bindings-26.1.0.tar.gz",
+            "sha256": "63505c71542a44b68b1e38060450fb006404170da375feb31af153e7f9c6205d"
+          }
+        ]
+      },
+      {
+        "name": "pip",
+        "version": "26.2.1",
+        "wheel": "pip-26.2.1-py3-none-any.whl",
+        "sha256": "71138adf1f4ca900cdb7d289c21b7494329f2332b6d85f0e1c42108c0384ed3e",
+        "roles": [
+          "build"
+        ],
+        "native_members": [
+          "pip/_vendor/distlib/t32.exe",
+          "pip/_vendor/distlib/t64-arm.exe",
+          "pip/_vendor/distlib/t64.exe",
+          "pip/_vendor/distlib/w32.exe",
+          "pip/_vendor/distlib/w64-arm.exe",
+          "pip/_vendor/distlib/w64.exe"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz",
+            "path": "python-sources/pip-26.2.1.tar.gz",
+            "sha256": "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
+          }
+        ]
+      },
+      {
+        "name": "setuptools",
+        "version": "84.0.0",
+        "wheel": "setuptools-84.0.0-py3-none-any.whl",
+        "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670",
+        "roles": [
+          "build"
+        ],
+        "native_members": [
+          "setuptools/cli-32.exe",
+          "setuptools/cli-64.exe",
+          "setuptools/cli-arm64.exe",
+          "setuptools/cli.exe",
+          "setuptools/gui-32.exe",
+          "setuptools/gui-64.exe",
+          "setuptools/gui-arm64.exe",
+          "setuptools/gui.exe"
+        ],
+        "sources": [
+          {
+            "url": "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz",
+            "path": "python-sources/setuptools-84.0.0.tar.gz",
+            "sha256": "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+          }
+        ]
+      }
+    ],
+    "coverage_limit": "Source distributions and native members are inventoried; native/Rust/Cargo/generated transitive closure and binary correspondence are not certified by the lock."
+  },
+  "targeted_recovery": {
+    "retrievals": [
+      {
+        "label": "uap-core-source-f87f3a9",
+        "url": "https://codeload.github.com/ua-parser/uap-core/tar.gz/f87f3a9aea3916399d70e5cb2c2aedea5008d881",
+        "retrieved_at": "2026-09-21T19:00:24.954816+00:00",
+        "status": 200,
+        "final_url": "https://codeload.github.com/ua-parser/uap-core/tar.gz/f87f3a9aea3916399d70e5cb2c2aedea5008d881",
+        "sha256": "84e431814c20713ac24d8d8174f8bdf3ec7c9e442dabee8428fd25ee6f7bdb35",
+        "bytes": 849470
+      },
+      {
+        "label": "gsimporter-tags",
+        "url": "https://api.github.com/repos/GeoNode/gsimporter/tags?per_page=100",
+        "retrieved_at": "2026-09-21T19:00:25.377386+00:00",
+        "status": 200,
+        "final_url": "https://api.github.com/repos/GeoNode/gsimporter/tags?per_page=100",
+        "sha256": "809e34e3d8e7e9cda5e01b8e569537587a83965c784cc5ef05da85f381b42051",
+        "bytes": 4985
+      },
+      {
+        "label": "xmlpull-release-index",
+        "url": "https://www.xmlpull.org/v1/download.html",
+        "retrieved_at": "2026-09-21T19:00:25.588917+00:00",
+        "error": "HTTP Error 404: Not Found"
+      },
+      {
+        "label": "gsimporter-2.0.4-source",
+        "url": "https://codeload.github.com/GeoNode/gsimporter/tar.gz/bf1411b3760fcf54326be87b6d8a6b26fdf85dc2",
+        "revision": "bf1411b3760fcf54326be87b6d8a6b26fdf85dc2",
+        "retrieved_at": "2026-09-21T19:01:56.973841+00:00",
+        "status": 200,
+        "final_url": "https://codeload.github.com/GeoNode/gsimporter/tar.gz/bf1411b3760fcf54326be87b6d8a6b26fdf85dc2",
+        "sha256": "c483560c8422816d5731d5884d64be28d1ecb407d1ab9004aed6c3153aa5c291",
+        "bytes": 21141
+      }
+    ],
+    "gsimporter": {
+      "revision": "bf1411b3760fcf54326be87b6d8a6b26fdf85dc2",
+      "archive_sha256": "c483560c8422816d5731d5884d64be28d1ecb407d1ab9004aed6c3153aa5c291",
+      "source_matches": [
+        {
+          "member": "gsimporter/__init__.py",
+          "sha256": "9e36f84f527a5b891eb2a799180db6d3db6ac9ca28eefd1fa4ced5bc98b1f1f1",
+          "source_equal": true
+        },
+        {
+          "member": "gsimporter/_util.py",
+          "sha256": "6da908494bfa60be4374592b0c0370acbf2b2a2e622cbe87f0d46ea79c9d2ad3",
+          "source_equal": true
+        },
+        {
+          "member": "gsimporter/api.py",
+          "sha256": "9c3f15721b2ddd87b8963d0244dac79eb2cef7004083e181d4cdcef49fea02c9",
+          "source_equal": true
+        },
+        {
+          "member": "gsimporter/client.py",
+          "sha256": "41886672f2075957324ae2688ee1018367522e489d1507e9bd36c8b6c2f2ef19",
+          "source_equal": true
+        },
+        {
+          "member": "test/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "source_equal": true
+        },
+        {
+          "member": "test/uploadtests.py",
+          "sha256": "72c92b09e20986b08660685eb30be9ab85d6ace81dedcf18116798e23b696d5d",
+          "source_equal": true
+        }
+      ],
+      "setup_py_sha256": "5a3ecc3d12e3c77d6c4d4527e7e16fcd0ac56ecd7ce261ec22a63c07e0ae4d31",
+      "declaration": "setup.py author metadata declares MIT; exact publisher source has no standalone license/notice file.",
+      "full_notice_recovered": false
+    },
+    "uap_core": {
+      "revision": "f87f3a9aea3916399d70e5cb2c2aedea5008d881",
+      "archive_sha256": "84e431814c20713ac24d8d8174f8bdf3ec7c9e442dabee8428fd25ee6f7bdb35",
+      "files": [
+        {
+          "path": "LICENSE",
+          "sha256": "0c6f6cd66573dd12f68c71bffca774e58087c3c9168aed0eabf0a5ae10d3800f",
+          "bytes": 608
+        },
+        {
+          "path": "regexes.yaml",
+          "sha256": "b45490f4d0f4a56e2405949d7125afcccf6919c6bf8f363c04f79d374b51fa84",
+          "bytes": 222523
+        },
+        {
+          "path": "package.json",
+          "sha256": "92f830596dcb8a582f9802cc5b93e190d451ac18270eeab0cb77536fe64b0b98",
+          "bytes": 965
+        }
+      ],
+      "declaration": "Exact generated-wheel REVISION points to retained uap-core source; LICENSE declares Apache-2.0 with Google copyright. Generator revision and output equivalence remain unverified."
+    }
+  }
+}

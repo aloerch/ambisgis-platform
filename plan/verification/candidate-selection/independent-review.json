@@ -1,0 +1,234 @@
+{
+  "observed_at": "2026-09-21T19:24:40.509143+00:00",
+  "scope": "Independent engineering regression recheck of reported semantic bypasses, with a confirmed valid positive fixture before every negative case. Not native runtime tests, legal clearance or owner acceptance.",
+  "files": [
+    {
+      "path": "plan/tools/validate_candidate.py",
+      "sha256": "e725c470a9706bd8bcb20315dd8c89df00bad7b50cd118db3fb71e97c4ba39a6"
+    },
+    {
+      "path": "plan/contracts/fnd-02-candidate.schema.json",
+      "sha256": "1f4229b79bd082455d5369e151372fd93216109f4d311b74d6b695b9a16505a3"
+    },
+    {
+      "path": "plan/tests/test_candidate.py",
+      "sha256": "fa149962a0dcba2be7aa3d45268a3a52141f5cc8e6db78c93913dc0e2b22cc93"
+    }
+  ],
+  "reproduction_script_sha256": "eaa7e5797c6cd62f218ea351d6ee399c05e9e17847f96468e9a52bd92e21320b",
+  "cases": [
+    {
+      "case": "positive-baseline",
+      "positive_baseline_valid": true,
+      "expected": "accept",
+      "actual": "accept",
+      "passed": true,
+      "error": null
+    },
+    {
+      "case": "no-artifact-binding",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Unbound selected artifact: combination"
+    },
+    {
+      "case": "invalid-version-None",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValidationError: None is not of type 'string'"
+    },
+    {
+      "case": "invalid-version-latest",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Unresolved active floating version: profile"
+    },
+    {
+      "case": "invalid-version-master",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Unresolved active floating version: profile"
+    },
+    {
+      "case": "invalid-version-HEAD",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Unresolved active floating version: profile"
+    },
+    {
+      "case": "invalid-version-unknown",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Unresolved active floating version: profile"
+    },
+    {
+      "case": "invalid-version-unresolved",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Unresolved active floating version: profile"
+    },
+    {
+      "case": "unresolvable-finding-evidence-string",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValidationError: 'plan/verification/not-present.json' is not of type 'object'"
+    },
+    {
+      "case": "unresolvable-finding-evidence-record",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Unlinked finding evidence: unknown-source"
+    },
+    {
+      "case": "missing-evidence-pointer",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "KeyError: 'not_present'"
+    },
+    {
+      "case": "unlinked-evidence-record",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Unlinked finding evidence: unknown-source"
+    },
+    {
+      "case": "dropped-artifact-provenance",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValidationError: [] should be non-empty"
+    },
+    {
+      "case": "nullable-obligation-fields",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValidationError: None is not valid under any of the given schemas"
+    },
+    {
+      "case": "selection-blocker-no-adoption-effect",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Contradictory adoption blocker disposition: unknown-source"
+    },
+    {
+      "case": "obligation-hidden-adoption-block",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Contradictory adoption blocker disposition: unknown-source"
+    },
+    {
+      "case": "missing-source-binding",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValidationError: 'source_binding' is a required property"
+    },
+    {
+      "case": "source-commit-mismatch",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Evidence binding mismatch: {'record_id': 'receipt', 'pointer': '/source_commit', 'equals': 'cccccccccccccccccccccccccccccccccccccccc'}"
+    },
+    {
+      "case": "changed-bytes",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Changed bytes: artifact"
+    },
+    {
+      "case": "missing-bytes",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmppssf5he1/artifact'"
+    },
+    {
+      "case": "confined-recorded-symlink",
+      "positive_baseline_valid": true,
+      "expected": "accept",
+      "actual": "accept",
+      "passed": true,
+      "error": null
+    },
+    {
+      "case": "unconfined-symlink",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Path escapes mapped root: /tmp/tmpin41ukr_/artifact"
+    },
+    {
+      "case": "undeclared-symlink",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValueError: Unrecorded symlink: artifact"
+    },
+    {
+      "case": "existing-owned-commit-without-source-binding",
+      "positive_baseline_valid": true,
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "error": "ValidationError: 'source_binding' is a required property"
+    },
+    {
+      "case": "cli-distinct-exit-semantics",
+      "expected": [
+        0,
+        2,
+        1
+      ],
+      "actual": [
+        0,
+        2,
+        1
+      ],
+      "passed": true
+    }
+  ],
+  "passed": 25,
+  "failed": 0,
+  "new_must_fix_findings": [],
+  "review_limits": [
+    "Actual full candidate input validation is performed by integrator; this recheck validates guard semantics against real local fixture bytes and one actual owned source repository.",
+    "No builds, runtime services, downloads or shared-file changes executed."
+  ]
+}

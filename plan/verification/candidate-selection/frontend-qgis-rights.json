@@ -1,0 +1,2161 @@
+{
+  "scope": "Read-only retained-source/artifact inspection; no build or hooks executed, no artifacts altered",
+  "frontend_packages": [
+    {
+      "archive": "vendor/registry/59ad2f11de8e680fee427d3d558d72a6db55f566e265f0d5949d5cea110720eb.tgz",
+      "archive_sha256": "fca34f40f3baa968f8973f3f292d04930c1f9ab799c9fb1a5388083725d8c987",
+      "name": "chroma-js",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "6133dfa52decde48ab95779ec784da76ce40b154100969044f67b8e03819c550"
+        },
+        {
+          "path": "package/LICENSE-colors",
+          "sha256": "1440b90a615e5f0071597bbf438c8ca7873fe5b3a6d3d3e0fa31d46e62e778e9"
+        },
+        {
+          "path": "package/license.coffee",
+          "sha256": "45a9204625f07b535986c03bf86308d78131ba34d4981a1d3c327a899fe70f52"
+        },
+        {
+          "path": "package/docs/license.coffee",
+          "sha256": "63d0d8928cfbe128584b7bb56f289007e60f394947a65f5fe4bd4f193ae9388d"
+        }
+      ],
+      "version": "1.3.7",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "fca34f40f3baa968f8973f3f292d04930c1f9ab799c9fb1a5388083725d8c987",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "6133dfa52decde48ab95779ec784da76ce40b154100969044f67b8e03819c550",
+          "first_line": "chroma.js - JavaScript library for color conversions"
+        },
+        {
+          "path": "package/LICENSE-colors",
+          "sha256": "1440b90a615e5f0071597bbf438c8ca7873fe5b3a6d3d3e0fa31d46e62e778e9",
+          "first_line": "chroma.js includes colors from colorbrewer2.org,"
+        },
+        {
+          "path": "package/license.coffee",
+          "sha256": "45a9204625f07b535986c03bf86308d78131ba34d4981a1d3c327a899fe70f52",
+          "first_line": "###*"
+        },
+        {
+          "path": "package/docs/license.coffee",
+          "sha256": "63d0d8928cfbe128584b7bb56f289007e60f394947a65f5fe4bd4f193ae9388d",
+          "first_line": "###*"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/chroma-js"
+      ],
+      "direct_dependents": [
+        {
+          "path": "MapStore2",
+          "version": "0.13.0",
+          "kind": "dependencies",
+          "range": "1.3.7",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/chroma-js/package.json",
+            "version": "1.3.7",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/7a40c5d041eb0784c347c8d94917bd6c93c87247b758ca845ff035377a93e134.tgz",
+      "archive_sha256": "cac74e38cc79b753e72cd2b9435ae39e907a6d447aa8c881c424d3c863c3b38d",
+      "name": "emitter-component",
+      "observation": "Alternate metadata declares MIT but gives version 1.1.1 while package is 1.1.2; no complete notice text located.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/bower.json",
+          "sha256": "a22582d213e313dca3db0e61604d9bfca889fe42b765732355adaca845c3d210"
+        },
+        {
+          "path": "package/component.json",
+          "sha256": "34d8c079a5427455ffa065405346d71d37602ab80f69a82e273cfcbccf0aee8f"
+        }
+      ],
+      "version": "1.1.2",
+      "metadata_missing_only": false,
+      "verified_archive_sha256": "cac74e38cc79b753e72cd2b9435ae39e907a6d447aa8c881c424d3c863c3b38d",
+      "actual_license_evidence": [
+        {
+          "path": "package/bower.json",
+          "sha256": "a22582d213e313dca3db0e61604d9bfca889fe42b765732355adaca845c3d210",
+          "first_line": "{"
+        },
+        {
+          "path": "package/component.json",
+          "sha256": "34d8c079a5427455ffa065405346d71d37602ab80f69a82e273cfcbccf0aee8f",
+          "first_line": "{"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/emitter-component"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/vis",
+          "version": "4.21.0",
+          "kind": "dependencies",
+          "range": "^1.1.1",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/emitter-component/package.json",
+            "version": "1.1.2",
+            "matches_affected_version": true
+          }
+        }
+      ],
+      "bundle_witness": {
+        "path": "js/4152.337024cfcd227802.chunk.js",
+        "sha256": "dd6090f293764c208fcd8c95883a0a185fa92f5f16a8221df0920872ac7001d5",
+        "observation": "Minified module has matching full Emitter on/once/off/emit/listeners/hasListeners implementation; vis 4.21.0 prebundles this module. npm gitHead index.js is byte-identical to retained emitter tar. This is generated/embedded content, not absence because no standalone copied file."
+      },
+      "historical_source_metadata_delta": {
+        "package_version": {
+          "source_gitHead": "1.1.1",
+          "retained_tar": "1.1.2"
+        },
+        "repository_url": {
+          "source_gitHead": "https://github.com/component/emitter.git",
+          "retained_tar": "https://github.com/sindresorhus/component-emitter.git"
+        },
+        "funding": {
+          "source_gitHead": null,
+          "retained_tar": "https://github.com/sponsors/sindresorhus"
+        },
+        "code_and_readme_byte_match": true,
+        "interpretation": "Publisher gitHead/integrity links exact emitted code despite stale source package version; do not claim all package metadata match."
+      }
+    },
+    {
+      "archive": "vendor/registry/45ea6f348742ad0f71ced7087a9f8f891d5d4834c62f0bef8171ed2de5f9db87.tgz",
+      "archive_sha256": "f70add050d98249a37ee968e002c0ff8c5f41b6806668dd1da68288f4e43ea5e",
+      "name": "process",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "59a400d04c5078579acc27ddd6452c1bdf763f9506e01364700935fbb1a7c91b"
+        }
+      ],
+      "version": "0.5.2",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "f70add050d98249a37ee968e002c0ff8c5f41b6806668dd1da68288f4e43ea5e",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "59a400d04c5078579acc27ddd6452c1bdf763f9506e01364700935fbb1a7c91b",
+          "first_line": "(The MIT License)"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/global/node_modules/process"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/global",
+          "version": "4.3.2",
+          "kind": "dependencies",
+          "range": "~0.5.1",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/global/node_modules/process/package.json",
+            "version": "0.5.2",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/d6333a13ffe333b362c62dfe6a42c4d088c04346370d083d2ccc8babe04bcd9c.tgz",
+      "archive_sha256": "fb910474997f134ff1526946cdaf75c1560bd5d871593dac2ee3596038b58a97",
+      "name": "humanize",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "e9297c3b2ccc5022bf8e11f2c3510dbf1ae1dd8cc015f5c2d538dfb2c157615a"
+        }
+      ],
+      "version": "0.0.9",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "fb910474997f134ff1526946cdaf75c1560bd5d871593dac2ee3596038b58a97",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "e9297c3b2ccc5022bf8e11f2c3510dbf1ae1dd8cc015f5c2d538dfb2c157615a",
+          "first_line": "Copyright (c) 2012 Tai-Jin Lee http://www.taijinlee.com"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/humanize"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/webpack-bundle-size-analyzer",
+          "version": "2.0.2",
+          "kind": "dependencies",
+          "range": "0.0.9",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/humanize/package.json",
+            "version": "0.0.9",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/5f875ab63ddbd5091b6203cc9dca18feba2449198d1c9072c0b1dcb45c2ebde1.tgz",
+      "archive_sha256": "bfd7cba49c4553724649b7804de634b0c7f31aa0aec3f323f673bd45af741956",
+      "name": "jsonlint-lines",
+      "observation": "README contains MIT-labelled full permission/conditions/disclaimer text.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/README.md",
+          "sha256": "69aeb0a9c61182f4e90861bd3b392c3b390ceec38393cefc0f63fd0ea9990b4f"
+        }
+      ],
+      "version": "1.7.1",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "bfd7cba49c4553724649b7804de634b0c7f31aa0aec3f323f673bd45af741956",
+      "actual_license_evidence": [
+        {
+          "path": "package/README.md",
+          "sha256": "69aeb0a9c61182f4e90861bd3b392c3b390ceec38393cefc0f63fd0ea9990b4f",
+          "first_line": "JSON Lint"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/jsonlint-lines"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/@mapbox/geojsonhint",
+          "version": "3.3.0",
+          "kind": "dependencies",
+          "range": "^1.7.1",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/jsonlint-lines/package.json",
+            "version": "1.7.1",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/bd167cf611bee650823925e9c359e9bb0d4f4adfe79c1bb0686c985a33d666ea.tgz",
+      "archive_sha256": "d2a846d0f9f13da5ddb600b7c830edb0e3fe3a39180410a630b32c4b14f28177",
+      "name": "jsonlint-mod",
+      "observation": "README contains MIT-labelled full permission/conditions/disclaimer text.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/README.md",
+          "sha256": "962cceb5cfa4ebdd1e025a64ee2f3731fa126dd8985edafe4b08ea99724e2208"
+        }
+      ],
+      "version": "1.7.5",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "d2a846d0f9f13da5ddb600b7c830edb0e3fe3a39180410a630b32c4b14f28177",
+      "actual_license_evidence": [
+        {
+          "path": "package/README.md",
+          "sha256": "962cceb5cfa4ebdd1e025a64ee2f3731fa126dd8985edafe4b08ea99724e2208",
+          "first_line": "JSON Lint [![npm version](https://badge.fury.io/js/jsonlint-mod.svg)](https://badge.fury.io/js/jsonlint-mod)"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/jsonlint-mod"
+      ],
+      "direct_dependents": [
+        {
+          "path": "MapStore2",
+          "version": "0.13.0",
+          "kind": "dependencies",
+          "range": "1.7.5",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/jsonlint-mod/package.json",
+            "version": "1.7.5",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/82704746b517b9d0a0e4ed204dd4c79e447251e87e62ddf90ad86df1f22e9d88.tgz",
+      "archive_sha256": "c9ed2f0238fe967a180d515ddc9c9d1ba333236d4c952106fd20cad61b7c25f5",
+      "name": "jsonp",
+      "observation": "README/alternate metadata declare MIT; no complete notice text located.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/Readme.md",
+          "sha256": "7a897f63a81c235fab3d6a099c0a4c038c05674e7799d371690e33706300a3a0"
+        },
+        {
+          "path": "package/bower.json",
+          "sha256": "55037642156b9f13e75335a7e7d52d00ad0c629c2a3b4ad56fffe51559836f8f"
+        }
+      ],
+      "version": "0.2.1",
+      "metadata_missing_only": false,
+      "verified_archive_sha256": "c9ed2f0238fe967a180d515ddc9c9d1ba333236d4c952106fd20cad61b7c25f5",
+      "actual_license_evidence": [
+        {
+          "path": "package/Readme.md",
+          "sha256": "7a897f63a81c235fab3d6a099c0a4c038c05674e7799d371690e33706300a3a0",
+          "first_line": "# jsonp"
+        },
+        {
+          "path": "package/bower.json",
+          "sha256": "55037642156b9f13e75335a7e7d52d00ad0c629c2a3b4ad56fffe51559836f8f",
+          "first_line": "{"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/jsonp"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/react-share",
+          "version": "1.15.1",
+          "kind": "dependencies",
+          "range": "^0.2.1",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/jsonp/package.json",
+            "version": "0.2.1",
+            "matches_affected_version": true
+          }
+        }
+      ],
+      "bundle_witness": {
+        "observation": "Retained react-share 1.15.1 depends on exact jsonp 0.2.1. No __jp/jsonp got/jsonp req tokens found in selected 595 JS files; no full webpack module/stats closure was retained, so this bounded negative scan does not prove exclusion."
+      }
+    },
+    {
+      "archive": "vendor/registry/9ac308342a9bb89ef2fa249a49dd2d83b4922f735cad511c09af490c6828024e.tgz",
+      "archive_sha256": "cc1f6cec253c2155da5e955e5529f59021c8faa0451fcd4fb44f9f0b2814571d",
+      "name": "keycharm",
+      "observation": "README says user may choose Apache 2.0 or MIT; both full text files retained.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE-APACHE-2.0",
+          "sha256": "7a1da246f5e03ea6f987021848a3ff9d9e9a86a54adf96a216f2ee57a9a762d6"
+        },
+        {
+          "path": "package/LICENSE-MIT",
+          "sha256": "7909cb1efaa8bd800a6d33d73cb9538bfe56a7da61c1fd8b4afb9ddd557ec044"
+        },
+        {
+          "path": "package/README.md",
+          "sha256": "f2c8d95d64c43f87e8bce76d92e698b73cd848373e7fa8b6eee857680d7e71d9"
+        }
+      ],
+      "version": "0.2.0",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "cc1f6cec253c2155da5e955e5529f59021c8faa0451fcd4fb44f9f0b2814571d",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE-APACHE-2.0",
+          "sha256": "7a1da246f5e03ea6f987021848a3ff9d9e9a86a54adf96a216f2ee57a9a762d6",
+          "first_line": "Apache License"
+        },
+        {
+          "path": "package/LICENSE-MIT",
+          "sha256": "7909cb1efaa8bd800a6d33d73cb9538bfe56a7da61c1fd8b4afb9ddd557ec044",
+          "first_line": "The MIT License (MIT)"
+        },
+        {
+          "path": "package/README.md",
+          "sha256": "f2c8d95d64c43f87e8bce76d92e698b73cd848373e7fa8b6eee857680d7e71d9",
+          "first_line": "keycharm"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/keycharm"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/vis",
+          "version": "4.21.0",
+          "kind": "dependencies",
+          "range": "^0.2.0",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/keycharm/package.json",
+            "version": "0.2.0",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/9b3656f47bb31d259048fa17834dcca1b7e90b474f87bdd2e35c504ad3466cce.tgz",
+      "archive_sha256": "abcc8d31b80715e780984a0315d79bd4536bc841d89b050567ca37c938e8b2b1",
+      "name": "leaflet-extra-markers",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "a137787cb95cf48ddbc79cc4d4e3102967609afb7c90cdf03b62998383b367ef"
+        }
+      ],
+      "version": "1.0.6",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "abcc8d31b80715e780984a0315d79bd4536bc841d89b050567ca37c938e8b2b1",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "a137787cb95cf48ddbc79cc4d4e3102967609afb7c90cdf03b62998383b367ef",
+          "first_line": "The MIT License (MIT)"
+        }
+      ],
+      "dist_exact_file_matches": [
+        {
+          "archive_member": "package/dist/img/markers_default.png",
+          "sha256": "e8be9cf154f805775835152a3f6546136df2aad762c02d278937fac1a43f649b",
+          "dist_paths": [
+            "MapStore2/web/client/components/mapcontrols/annotations/img/markers_default.png",
+            "node_modules/leaflet-extra-markers/dist/img/markers_default.png"
+          ]
+        },
+        {
+          "archive_member": "package/dist/img/markers_default@2x.png",
+          "sha256": "d2961f713577fca2e04290db9f741ddc3aa32ebe4809fb6aee0f11e79dcf671f",
+          "dist_paths": [
+            "node_modules/leaflet-extra-markers/dist/img/markers_default@2x.png"
+          ]
+        },
+        {
+          "archive_member": "package/src/assets/img/markers_default.png",
+          "sha256": "e8be9cf154f805775835152a3f6546136df2aad762c02d278937fac1a43f649b",
+          "dist_paths": [
+            "MapStore2/web/client/components/mapcontrols/annotations/img/markers_default.png",
+            "node_modules/leaflet-extra-markers/dist/img/markers_default.png"
+          ]
+        },
+        {
+          "archive_member": "package/src/assets/img/markers_default@2x.png",
+          "sha256": "d2961f713577fca2e04290db9f741ddc3aa32ebe4809fb6aee0f11e79dcf671f",
+          "dist_paths": [
+            "node_modules/leaflet-extra-markers/dist/img/markers_default@2x.png"
+          ]
+        }
+      ],
+      "installed_lock_paths": [
+        "node_modules/leaflet-extra-markers"
+      ],
+      "direct_dependents": [
+        {
+          "path": "MapStore2",
+          "version": "0.13.0",
+          "kind": "dependencies",
+          "range": "1.0.6",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/leaflet-extra-markers/package.json",
+            "version": "1.0.6",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/d23e61e929d0913bcb80dbbbdca63b52dc6e07be3a14cb037232e7bfda0f0297.tgz",
+      "archive_sha256": "0e3f4bca13b376e0c76f88a3cca66b1580932894f0962ce2df89478e04044db4",
+      "name": "leaflet",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "6f1de7efe25e559e2ac324aabed7eea0df20da3828b54d75877a76e0c8715492"
+        }
+      ],
+      "version": "0.7.7",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "0e3f4bca13b376e0c76f88a3cca66b1580932894f0962ce2df89478e04044db4",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "6f1de7efe25e559e2ac324aabed7eea0df20da3828b54d75877a76e0c8715492",
+          "first_line": "Copyright (c) 2010-2013, Vladimir Agafonkin"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/leaflet-simple-graticule/node_modules/leaflet"
+      ],
+      "direct_dependents": []
+    },
+    {
+      "archive": "vendor/registry/a731c2f16422ef25c58585f6e153cd1256d9183fe47552d3190758f3aa39ece5.tgz",
+      "archive_sha256": "75fb106a1679153753968bfe3c1ceb390c86fb7d385a2f5a9350c255c43f055e",
+      "name": "lrucache",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "e5b5b8f3dbb50d4dbb347f4212858a570c52b086d6bb88355b756b0b89cb6eaf"
+        }
+      ],
+      "version": "1.0.3",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "75fb106a1679153753968bfe3c1ceb390c86fb7d385a2f5a9350c255c43f055e",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "e5b5b8f3dbb50d4dbb347f4212858a570c52b086d6bb88355b756b0b89cb6eaf",
+          "first_line": "The MIT License (MIT)"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/lrucache"
+      ],
+      "direct_dependents": [
+        {
+          "path": "MapStore2",
+          "version": "0.13.0",
+          "kind": "dependencies",
+          "range": "1.0.3",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/lrucache/package.json",
+            "version": "1.0.3",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/c3f199fc5e8083415a5dd2856c48f3f8e9c12e256d35c316641deda9fd5fd9ac.tgz",
+      "archive_sha256": "9603e80c5bbb8d64a9028462b9824f974ef463f62260c6f58e4853cbeef64be2",
+      "name": "nomnom",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "29dbc07c8e7e2e557c16096894fa6f7e469fa04d6f8f4f191a1efbd2ee9b1600"
+        }
+      ],
+      "version": "1.8.1",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "9603e80c5bbb8d64a9028462b9824f974ef463f62260c6f58e4853cbeef64be2",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "29dbc07c8e7e2e557c16096894fa6f7e469fa04d6f8f4f191a1efbd2ee9b1600",
+          "first_line": "Copyright (c) 2010 Heather Arthur"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/nomnom"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/jsonlint-lines",
+          "version": "1.7.1",
+          "kind": "dependencies",
+          "range": ">= 1.5.x",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/nomnom/package.json",
+            "version": "1.8.1",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/2c485de1f3d472fc9df01a3d8a848438019b01ea86e673e16e1ebbb0664a356c.tgz",
+      "archive_sha256": "8fc286c879eb4ac49ab405054956e3afbdfe696e48f360f2c4d6adb2cf053faf",
+      "name": "png-js",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "bdb26a2ec815931ed6a38f3416362566204ee85ecdef96702b636402da4c75c3"
+        }
+      ],
+      "version": "1.1.0",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "8fc286c879eb4ac49ab405054956e3afbdfe696e48f360f2c4d6adb2cf053faf",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "bdb26a2ec815931ed6a38f3416362566204ee85ecdef96702b636402da4c75c3",
+          "first_line": "MIT License"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/png-js"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/@foliojs-fork/pdfkit",
+          "version": "0.13.0",
+          "kind": "dependencies",
+          "range": "^1.0.0",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/png-js/package.json",
+            "version": "1.1.0",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/dfd7fc5915e71549702cc489151b01c420b1c2f721eb53616f6ad0fd9c7f8464.tgz",
+      "archive_sha256": "929011db54eb33989b48ae73411e1cda9f2aff3f9442e9abe168adbdf8c0bd5a",
+      "name": "react-dnd-test-backend",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "65a1f00f35ea469048896fbfec3c5faed7d3fe7c7e0be2a0478470b59d9e1439"
+        }
+      ],
+      "version": "2.6.0",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "929011db54eb33989b48ae73411e1cda9f2aff3f9442e9abe168adbdf8c0bd5a",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "65a1f00f35ea469048896fbfec3c5faed7d3fe7c7e0be2a0478470b59d9e1439",
+          "first_line": "The MIT License (MIT)"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/react-dnd-test-backend"
+      ],
+      "direct_dependents": [
+        {
+          "path": "MapStore2",
+          "version": "0.13.0",
+          "kind": "dependencies",
+          "range": "2.6.0",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/react-dnd-test-backend/package.json",
+            "version": "2.6.0",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/32244218c46b139a8d88345329106e19bb5bcb35b80b1d505ddff46b4b6e1859.tgz",
+      "archive_sha256": "c01eb814d59238f8cacd1444ae251fb7225e3b3c9bbd26548ce4a09f55e0bf7b",
+      "name": "spawn-command",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "0b0744f07404b91ad6f1690ded1f2f5da2b1a37b856ac02420353bd1dcbaad94"
+        }
+      ],
+      "version": "0.0.2",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "c01eb814d59238f8cacd1444ae251fb7225e3b3c9bbd26548ce4a09f55e0bf7b",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "0b0744f07404b91ad6f1690ded1f2f5da2b1a37b856ac02420353bd1dcbaad94",
+          "first_line": "Copyright (C) 2011 by Maciej Ma\u0142ecki"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/spawn-command"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/concurrently",
+          "version": "6.4.0",
+          "kind": "dependencies",
+          "range": "^0.0.2-1",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/spawn-command/package.json",
+            "version": "0.0.2",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/b08482e9709991bc0a5a0ade115d9d31670985bad7753c1eda9f96acc07eb8ee.tgz",
+      "archive_sha256": "5f8e006008dd2b1b4b947e64e04c7fccf4ef10331a70f398d493b9feb4de4a0a",
+      "name": "taffydb",
+      "observation": "Source header contains BSD-labelled terms; copyright line has no named holder/year. Preserve scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/taffy.js",
+          "sha256": "79fc972c5a5e1d9739d27d9028e4da45b56bcfa1960e13df1574ad0101659806"
+        }
+      ],
+      "version": "2.6.2",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "5f8e006008dd2b1b4b947e64e04c7fccf4ef10331a70f398d493b9feb4de4a0a",
+      "actual_license_evidence": [
+        {
+          "path": "package/taffy.js",
+          "sha256": "79fc972c5a5e1d9739d27d9028e4da45b56bcfa1960e13df1574ad0101659806",
+          "first_line": "/*"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/taffydb"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/@geosolutions/jsdoc",
+          "version": "3.4.4",
+          "kind": "dependencies",
+          "range": "2.6.2",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/taffydb/package.json",
+            "version": "2.6.2",
+            "matches_affected_version": true
+          }
+        },
+        {
+          "path": "node_modules/jsdoc-x/node_modules/jsdoc",
+          "version": "3.6.11",
+          "kind": "dependencies",
+          "range": "2.6.2",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/taffydb/package.json",
+            "version": "2.6.2",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/1d044fc8f58e8ee9f67f6166f39d9c7cf460ad78d9489bb39d6ddbe0c5cece3f.tgz",
+      "archive_sha256": "6280009744e6ea56d489de7a10fc47c6c5665dafe44f0174a911c5f2d0e49991",
+      "name": "mime",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "f9bd83d927784353ab0299e9b621b0e253be79a0d15331dcb21cc765e432b3cd"
+        }
+      ],
+      "version": "1.2.11",
+      "metadata_missing_only": true,
+      "verified_archive_sha256": "6280009744e6ea56d489de7a10fc47c6c5665dafe44f0174a911c5f2d0e49991",
+      "actual_license_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "f9bd83d927784353ab0299e9b621b0e253be79a0d15331dcb21cc765e432b3cd",
+          "first_line": "Copyright (c) 2010 Benjamin Thomas, Robert Kieffer"
+        }
+      ],
+      "dist_exact_file_matches": [],
+      "installed_lock_paths": [
+        "node_modules/url-loader/node_modules/mime"
+      ],
+      "direct_dependents": [
+        {
+          "path": "node_modules/url-loader",
+          "version": "0.5.7",
+          "kind": "dependencies",
+          "range": "1.2.x",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/url-loader/node_modules/mime/package.json",
+            "version": "1.2.11",
+            "matches_affected_version": true
+          }
+        }
+      ]
+    },
+    {
+      "archive": "vendor/registry/50fb39b19293526d506ea75a562e733fc21e0fd8402e267caab9cd937567b6b9.tgz",
+      "archive_sha256": "6baf141163e2390d8b4a3a1cafe83731f6ff5faa062c93e07dd71f6ddf03ccba",
+      "name": "web-ifc",
+      "observation": "No license declaration or license text located in bounded archive text scan (UTF-8 regular files <=2 MB); package includes WASM/runtime artifacts. Exact source/rights remains unresolved.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [],
+      "version": "0.0.50",
+      "metadata_missing_only": false,
+      "verified_archive_sha256": "6baf141163e2390d8b4a3a1cafe83731f6ff5faa062c93e07dd71f6ddf03ccba",
+      "actual_license_evidence": [],
+      "dist_exact_file_matches": [
+        {
+          "archive_member": "package/web-ifc-api-node.js",
+          "sha256": "b9b80c88aae71258b42e54b2810a9cd56e180c8b51373a95f7b8b3b27af06030",
+          "dist_paths": [
+            "js/web-ifc/web-ifc-api-node.js"
+          ]
+        },
+        {
+          "archive_member": "package/web-ifc-api.js",
+          "sha256": "0ca2ffc1aa752e94c735281605a947d92c95b75bb8fc65fbe05ed8d03fb18a42",
+          "dist_paths": [
+            "js/web-ifc/web-ifc-api.js"
+          ]
+        },
+        {
+          "archive_member": "package/web-ifc-mt.worker.js",
+          "sha256": "bd5198db7adbc606a2749e446b2340a654add76aaa7339850d0aa4507b69187f",
+          "dist_paths": [
+            "js/web-ifc/web-ifc-mt.worker.js"
+          ]
+        },
+        {
+          "archive_member": "package/package.json",
+          "sha256": "cd1f86d92658bdd190abc10a5d02a25a55a6918cc3682df7b7f925b9a2004415",
+          "dist_paths": [
+            "js/web-ifc/package.json"
+          ]
+        },
+        {
+          "archive_member": "package/README.md",
+          "sha256": "b4e59c306c5938e0a56969b56c3f28f2209338a7e33f4bc7394362740082f924",
+          "dist_paths": [
+            "js/web-ifc/README.md"
+          ]
+        },
+        {
+          "archive_member": "package/ifc-schema.d.ts",
+          "sha256": "3074c041ebf8b80406499d993c9b64acf5ff229a08e5f957dfda0c154b22b670",
+          "dist_paths": [
+            "js/web-ifc/ifc-schema.d.ts"
+          ]
+        },
+        {
+          "archive_member": "package/helpers/log.d.ts",
+          "sha256": "ebce8fe80811fd1088ff016eab8b5dadde985499edd8635c034e27f8d624da91",
+          "dist_paths": [
+            "js/web-ifc/helpers/log.d.ts"
+          ]
+        },
+        {
+          "archive_member": "package/helpers/properties.d.ts",
+          "sha256": "4b88e4274b8e3f0780b16e06e746caa3a80d88599a0b3438bdfb0dd6f7f1817c",
+          "dist_paths": [
+            "js/web-ifc/helpers/properties.d.ts"
+          ]
+        },
+        {
+          "archive_member": "package/web-ifc-api-node.d.ts",
+          "sha256": "9721a37837bc55e435503aa07e4f2ff1e80bb4f057f977d089626cfedc2e7d4c",
+          "dist_paths": [
+            "js/web-ifc/web-ifc-api-node.d.ts",
+            "js/web-ifc/web-ifc-api.d.ts"
+          ]
+        },
+        {
+          "archive_member": "package/web-ifc-api.d.ts",
+          "sha256": "9721a37837bc55e435503aa07e4f2ff1e80bb4f057f977d089626cfedc2e7d4c",
+          "dist_paths": [
+            "js/web-ifc/web-ifc-api-node.d.ts",
+            "js/web-ifc/web-ifc-api.d.ts"
+          ]
+        },
+        {
+          "archive_member": "package/web-ifc-mt.wasm",
+          "sha256": "797f6e0be82d95c22292894e8c9c8e8e70eb46d20b519b3f081a8df1e91208ca",
+          "dist_paths": [
+            "js/web-ifc/web-ifc-mt.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/web-ifc-node.wasm",
+          "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6",
+          "dist_paths": [
+            "js/web-ifc/web-ifc-node.wasm",
+            "js/web-ifc/web-ifc.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/web-ifc.wasm",
+          "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6",
+          "dist_paths": [
+            "js/web-ifc/web-ifc-node.wasm",
+            "js/web-ifc/web-ifc.wasm"
+          ]
+        }
+      ],
+      "installed_lock_paths": [
+        "node_modules/web-ifc"
+      ],
+      "direct_dependents": [
+        {
+          "path": "MapStore2",
+          "version": "0.13.0",
+          "kind": "dependencies",
+          "range": "0.0.50",
+          "actual_resolution": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/web-ifc/package.json",
+            "version": "0.0.50",
+            "matches_affected_version": true
+          }
+        }
+      ],
+      "historical_source_binding": {
+        "npm_gitHead": "b55d8bde10067415d4536b23c27edcc13acf217c",
+        "package_json_exact_match": true,
+        "readme_exact_match": true,
+        "license": "MPL-2.0 root text at exact revision; separate WASM transitive notice/source applicability remains"
+      }
+    }
+  ],
+  "frontend_native": [
+    {
+      "name": "@cesium/engine",
+      "version": "21.0.1",
+      "archive": "vendor/registry/264a31851d0686ffb2fd23cc2e8e9fb11c3e58f98509f1b3cc897c5b00bf46ac.tgz",
+      "sha256": "627d7f4e521156e04a4b1543027711335b501f0777a421d35d9b5a1a6aa25e1e",
+      "license_declaration": "Apache-2.0",
+      "notice_files": [
+        {
+          "path": "package/LICENSE.md",
+          "sha256": "1a1e0a70642c277baabd897794193ed0755accaa2bfe6b7b496f5dfa8d3b1c48"
+        }
+      ],
+      "files": [
+        {
+          "archive_member": "package/Source/ThirdParty/basis_transcoder.wasm",
+          "sha256": "96849a2719b431008533806199ad4e513ef5a5f632b87e452fb1eea961d5730e",
+          "bytes": 500839,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/basis_transcoder.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Source/ThirdParty/draco_decoder.wasm",
+          "sha256": "2516a4e43526d71787bf2f678f951329f7f858f8f15f42d4bc9e370b31a0da3a",
+          "bytes": 285948,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/draco_decoder.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Source/ThirdParty/wasm_splats_bg.wasm",
+          "sha256": "530cb068ddd94b7267db1e1690ebdfcd94c552b2886d79398438841c42a1a14d",
+          "bytes": 26522,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/wasm_splats_bg.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Source/ThirdParty/zip-module.wasm",
+          "sha256": "ff1ac8d983341625787f4445f8557d65d0a45ebc95f2f1a7c497364c0a535631",
+          "bytes": 50195,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/zip-module.wasm"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "@cesium/wasm-splats",
+      "version": "0.1.0-alpha.2",
+      "archive": "vendor/registry/235b9333d30157e99672517eec987d789cab84cbe8fed932219cd093aa2e0426.tgz",
+      "sha256": "21968397eb28ef243451e9e66f10ed529c3467784f6542ea5c0681f0618e79e0",
+      "license_declaration": "Apache-2.0",
+      "notice_files": [],
+      "files": [
+        {
+          "archive_member": "package/wasm_splats_bg.wasm",
+          "sha256": "530cb068ddd94b7267db1e1690ebdfcd94c552b2886d79398438841c42a1a14d",
+          "bytes": 26522,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/wasm_splats_bg.wasm"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "@zip.js/zip.js",
+      "version": "2.16.0",
+      "archive": "vendor/registry/dda49ee30b27875a6edf48129d4623783787ddd4f5e68af25251c54386f1a93d.tgz",
+      "sha256": "e1cbe8c30c270b85c718b947e714e1e7c5fda7004e5893dd4eb8fef41913b323",
+      "license_declaration": "BSD-3-Clause",
+      "notice_files": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "1b7ebc8d7889ed25491484ab2b102370742ca6c0b26650a0c62cc2269b579b84"
+        }
+      ],
+      "files": [
+        {
+          "archive_member": "package/dist/zip-module.wasm",
+          "sha256": "1ebaf6e62f247a005189493097f460bc9050f248755c55ecba34fd54257a6bb2",
+          "bytes": 55126,
+          "dist_exact_matches": []
+        },
+        {
+          "archive_member": "package/lib/core/streams/zlib-wasm/zlib-streams.wasm",
+          "sha256": "1ebaf6e62f247a005189493097f460bc9050f248755c55ecba34fd54257a6bb2",
+          "bytes": 55126,
+          "dist_exact_matches": []
+        }
+      ]
+    },
+    {
+      "name": "cesium",
+      "version": "1.134.1",
+      "archive": "vendor/registry/83720831f359e2b2bc4d12dc1fbf3155a970b7c1b267fe2aaf5eda3d6d441bb8.tgz",
+      "sha256": "bc476a75a2f8fcc8b227b3ea20e13dc3f443a70b8595841ee1cb253384ccba38",
+      "license_declaration": "Apache-2.0",
+      "notice_files": [
+        {
+          "path": "package/LICENSE.md",
+          "sha256": "5cf5c218c0b18b9e02e228bc045ff1afd55babc2dc811bd219e1a535c4c0ebdc"
+        }
+      ],
+      "files": [
+        {
+          "archive_member": "package/Build/Cesium/ThirdParty/basis_transcoder.wasm",
+          "sha256": "96849a2719b431008533806199ad4e513ef5a5f632b87e452fb1eea961d5730e",
+          "bytes": 500839,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/basis_transcoder.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Build/CesiumUnminified/ThirdParty/basis_transcoder.wasm",
+          "sha256": "96849a2719b431008533806199ad4e513ef5a5f632b87e452fb1eea961d5730e",
+          "bytes": 500839,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/basis_transcoder.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Source/ThirdParty/basis_transcoder.wasm",
+          "sha256": "96849a2719b431008533806199ad4e513ef5a5f632b87e452fb1eea961d5730e",
+          "bytes": 500839,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/basis_transcoder.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Build/Cesium/ThirdParty/draco_decoder.wasm",
+          "sha256": "2516a4e43526d71787bf2f678f951329f7f858f8f15f42d4bc9e370b31a0da3a",
+          "bytes": 285948,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/draco_decoder.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Build/CesiumUnminified/ThirdParty/draco_decoder.wasm",
+          "sha256": "2516a4e43526d71787bf2f678f951329f7f858f8f15f42d4bc9e370b31a0da3a",
+          "bytes": 285948,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/draco_decoder.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Source/ThirdParty/draco_decoder.wasm",
+          "sha256": "2516a4e43526d71787bf2f678f951329f7f858f8f15f42d4bc9e370b31a0da3a",
+          "bytes": 285948,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/draco_decoder.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Build/Cesium/ThirdParty/wasm_splats_bg.wasm",
+          "sha256": "530cb068ddd94b7267db1e1690ebdfcd94c552b2886d79398438841c42a1a14d",
+          "bytes": 26522,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/wasm_splats_bg.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Build/CesiumUnminified/ThirdParty/wasm_splats_bg.wasm",
+          "sha256": "530cb068ddd94b7267db1e1690ebdfcd94c552b2886d79398438841c42a1a14d",
+          "bytes": 26522,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/wasm_splats_bg.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Source/ThirdParty/wasm_splats_bg.wasm",
+          "sha256": "530cb068ddd94b7267db1e1690ebdfcd94c552b2886d79398438841c42a1a14d",
+          "bytes": 26522,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/wasm_splats_bg.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Build/Cesium/ThirdParty/zip-module.wasm",
+          "sha256": "ff1ac8d983341625787f4445f8557d65d0a45ebc95f2f1a7c497364c0a535631",
+          "bytes": 50195,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/zip-module.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Build/CesiumUnminified/ThirdParty/zip-module.wasm",
+          "sha256": "ff1ac8d983341625787f4445f8557d65d0a45ebc95f2f1a7c497364c0a535631",
+          "bytes": 50195,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/zip-module.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/Source/ThirdParty/zip-module.wasm",
+          "sha256": "ff1ac8d983341625787f4445f8557d65d0a45ebc95f2f1a7c497364c0a535631",
+          "bytes": 50195,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/zip-module.wasm"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "draco3d",
+      "version": "1.5.7",
+      "archive": "vendor/registry/15e760e2f240fce31e4a6c3d63ad2c3799b5c9b409c75898441336f4adb6cb9a.tgz",
+      "sha256": "f2d2b97a938c514dfc1a0f07564eee95b1d889f6862c9c9ccad3001eb0c6f26e",
+      "license_declaration": "Apache-2.0",
+      "notice_files": [],
+      "files": [
+        {
+          "archive_member": "package/draco_decoder.wasm",
+          "sha256": "2516a4e43526d71787bf2f678f951329f7f858f8f15f42d4bc9e370b31a0da3a",
+          "bytes": 285948,
+          "dist_exact_matches": [
+            "cesium/ThirdParty/draco_decoder.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/draco_encoder.wasm",
+          "sha256": "d2a3ac80c91980d5d321c116454834ff36264825c6d1794cc84e42288f158958",
+          "bytes": 370188,
+          "dist_exact_matches": []
+        }
+      ]
+    },
+    {
+      "name": "fsevents",
+      "version": "2.3.3",
+      "archive": "vendor/registry/50dd678a85d7e516b8b3108693ea348b6d27b15e97d0f13e9e0f35fce5b9475f.tgz",
+      "sha256": "c77e7a5d5ff31dd7acea7c44d4a0455e0528cdacbd24a8cb6c82b66d239b587e",
+      "license_declaration": "MIT",
+      "notice_files": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "2a8a5d6197bb97a018b8a190dd3ed853d750ca87c8e80c17aad41d6c6ff448e1"
+        }
+      ],
+      "files": [
+        {
+          "archive_member": "package/fsevents.node",
+          "sha256": "40f2f51199e4f5fc46fa6b985fb3461bb63e6cd86c62bfa9bcee45ed4438d5fb",
+          "bytes": 163626,
+          "dist_exact_matches": []
+        }
+      ]
+    },
+    {
+      "name": "three",
+      "version": "0.134.0",
+      "archive": "vendor/registry/75df7207ec4a6b4ac0ce453e7551cefbea322e12811bbd7c6a0bc82f98de2836.tgz",
+      "sha256": "d4d7e8b6d30d562218ff60232561eabcc6eda78d29df1c0e331544fc4dcdf9a9",
+      "license_declaration": "MIT",
+      "notice_files": [
+        {
+          "path": "package/examples/fonts/LICENSE",
+          "sha256": "35e8279356d7890871c4fce804d157e3f21456a7311ef2caab5cb4705c71b6bd"
+        },
+        {
+          "path": "package/LICENSE",
+          "sha256": "7dddf7c5b8fd10ee654db8857d75d104b5557889aa5a91fc4ca545ea7c07062f"
+        },
+        {
+          "path": "package/examples/fonts/droid/NOTICE",
+          "sha256": "38751245389e1e23f73e6f5384b5cbe7fa972cc4410c5adc9c04b082a0b9561a"
+        }
+      ],
+      "files": [
+        {
+          "archive_member": "package/examples/js/libs/ammo.wasm.wasm",
+          "sha256": "16be07b989963bddebfef66eab28a4387536eb37014d9df1531dab380bd96a93",
+          "bytes": 651386,
+          "dist_exact_matches": []
+        },
+        {
+          "archive_member": "package/examples/js/libs/basis/basis_transcoder.wasm",
+          "sha256": "79ae97d781e10a566659c689b7bb1de91726453f55f9f5e3bcc07a4e3904070f",
+          "bytes": 499935,
+          "dist_exact_matches": []
+        },
+        {
+          "archive_member": "package/examples/js/libs/draco/draco_decoder.wasm",
+          "sha256": "92322d1cabaa55c8e216c983e58670043b063af59d86a7b6ae8201452ff7987f",
+          "bytes": 281481,
+          "dist_exact_matches": []
+        },
+        {
+          "archive_member": "package/examples/js/libs/draco/gltf/draco_decoder.wasm",
+          "sha256": "32b19d590ca48d4478f74788170c7b713e0addf1f8dbab5cb07e3b2ad5f6e32e",
+          "bytes": 194983,
+          "dist_exact_matches": []
+        },
+        {
+          "archive_member": "package/examples/jsm/libs/rhino3dm/rhino3dm.wasm",
+          "sha256": "2af88efed5f1dcfaabb699cae720a549084a296fe5ba0296e44c5e3ea6d8b809",
+          "bytes": 2756292,
+          "dist_exact_matches": []
+        },
+        {
+          "archive_member": "package/examples/jsm/loaders/ifc/web-ifc.wasm",
+          "sha256": "c661389fe54c05ae0559d19a3b99bd73e3e313d167a445b4dcd7a603781cbbf8",
+          "bytes": 428259,
+          "dist_exact_matches": []
+        }
+      ]
+    },
+    {
+      "name": "three",
+      "version": "0.179.1",
+      "archive": "vendor/registry/19e45b0e733518f5366f8bdc0142947b29451b5845bcf1040de3a2632dbb3516.tgz",
+      "sha256": "8384b0c13ced6dd3f9f0f3beba730f94c8c6a4774e04185e08076407c490a3d9",
+      "license_declaration": "MIT",
+      "notice_files": [
+        {
+          "path": "package/examples/fonts/LICENSE",
+          "sha256": "35e8279356d7890871c4fce804d157e3f21456a7311ef2caab5cb4705c71b6bd"
+        },
+        {
+          "path": "package/LICENSE",
+          "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+        },
+        {
+          "path": "package/examples/fonts/droid/NOTICE",
+          "sha256": "38751245389e1e23f73e6f5384b5cbe7fa972cc4410c5adc9c04b082a0b9561a"
+        }
+      ],
+      "files": [
+        {
+          "archive_member": "package/examples/jsm/libs/ammo.wasm.wasm",
+          "sha256": "16be07b989963bddebfef66eab28a4387536eb37014d9df1531dab380bd96a93",
+          "bytes": 651386,
+          "dist_exact_matches": []
+        },
+        {
+          "archive_member": "package/examples/jsm/libs/basis/basis_transcoder.wasm",
+          "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a",
+          "bytes": 527333,
+          "dist_exact_matches": []
+        },
+        {
+          "archive_member": "package/examples/jsm/libs/draco/draco_decoder.wasm",
+          "sha256": "c55a594e8ffd18426d36b27fea9618af3df5e173640a3e56d46f09d76f0574f2",
+          "bytes": 285747,
+          "dist_exact_matches": []
+        },
+        {
+          "archive_member": "package/examples/jsm/libs/draco/gltf/draco_decoder.wasm",
+          "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac",
+          "bytes": 192420,
+          "dist_exact_matches": []
+        },
+        {
+          "archive_member": "package/examples/jsm/libs/rhino3dm/rhino3dm.wasm",
+          "sha256": "6b2db3e30f39828d53aedcd8d55def981c2ad438747cc2cacd6a2f2d0f77acfc",
+          "bytes": 2545991,
+          "dist_exact_matches": []
+        }
+      ]
+    },
+    {
+      "name": "web-ifc",
+      "version": "0.0.50",
+      "archive": "vendor/registry/50fb39b19293526d506ea75a562e733fc21e0fd8402e267caab9cd937567b6b9.tgz",
+      "sha256": "6baf141163e2390d8b4a3a1cafe83731f6ff5faa062c93e07dd71f6ddf03ccba",
+      "license_declaration": null,
+      "notice_files": [],
+      "files": [
+        {
+          "archive_member": "package/web-ifc-mt.wasm",
+          "sha256": "797f6e0be82d95c22292894e8c9c8e8e70eb46d20b519b3f081a8df1e91208ca",
+          "bytes": 1160534,
+          "dist_exact_matches": [
+            "js/web-ifc/web-ifc-mt.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/web-ifc-node.wasm",
+          "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6",
+          "bytes": 1140374,
+          "dist_exact_matches": [
+            "js/web-ifc/web-ifc-node.wasm",
+            "js/web-ifc/web-ifc.wasm"
+          ]
+        },
+        {
+          "archive_member": "package/web-ifc.wasm",
+          "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6",
+          "bytes": 1140374,
+          "dist_exact_matches": [
+            "js/web-ifc/web-ifc-node.wasm",
+            "js/web-ifc/web-ifc.wasm"
+          ]
+        }
+      ]
+    }
+  ],
+  "qgis_resources": [
+    {
+      "id": "SRC-01",
+      "subject": "COLOURlovers palette noncommercial terms",
+      "notice_files": [
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/COPYING.xml",
+          "sha256": "ff506da10cdff292831d8077c7a5c7c81cf2b40198c4eb9134b0a657da315779",
+          "selected_svg_files": 5
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/COPYING.xml",
+          "sha256": "f624180ffe75ff26178a8c614cf1cb37a92b25a41477eb6b7ae764bb9d1c0a4f",
+          "selected_svg_files": 18
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/COPYING.xml",
+          "sha256": "40d8fef301646f7a17e943576e13b517a4724026698f4831e9b7076ce21b0593",
+          "selected_svg_files": 16
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/alpen/COPYING.xml",
+          "sha256": "62bca4ad2ea59131ae9116c66b3b3d2cb23c2685b798dfe56d1c915c47bfb9a5",
+          "selected_svg_files": 20
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/COPYING.xml",
+          "sha256": "bdd528489358be373f7d23d2c2c2856deaaded68ee96bed9092f2ef2ce7e2512",
+          "selected_svg_files": 15
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/drumma/COPYING.xml",
+          "sha256": "315060fb0634f80e76cdbd98acf993cf4d367beca1fc106e6420d4df7471b5c4",
+          "selected_svg_files": 11
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/electroluv/COPYING.xml",
+          "sha256": "2a2efb0c3be5cdad1166059b46df9ae63ab7777481532ccdd8a6986d0ffd6090",
+          "selected_svg_files": 12
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml",
+          "sha256": "9e365c9e8bebeff36d6efb416adda1d191788f6c4ed39ce0cdeb9ab24281e17b",
+          "selected_svg_files": 35
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/hana/COPYING.xml",
+          "sha256": "1bfa63bacae4b40829237f6b78846d401bb0b3552fdbf44db39b48f829bcd2a1",
+          "selected_svg_files": 9
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/COPYING.xml",
+          "sha256": "dc85098083daecb5959df533b57680c9d3bb3daa3d72dfe5843bbb05be903454",
+          "selected_svg_files": 11
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/COPYING.xml",
+          "sha256": "e874b9a2e801a70ffb56f9c83625e15740e37548508a96cecd7fa4d4c17d41f7",
+          "selected_svg_files": 8
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/COPYING.xml",
+          "sha256": "298f5b26757232fdde1d524b4274ab8bc9ab598a449757a53fb17e008785fe76",
+          "selected_svg_files": 23
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/phill/COPYING.xml",
+          "sha256": "d305778392a335c3555386ab31c4817f386ba0df99d4c3e3eee52792611bd39e",
+          "selected_svg_files": 7
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/rotten/COPYING.xml",
+          "sha256": "902fbc6c367ad767be645b834e5fdb5b6e715f8d9481ae04351199682cc8da22",
+          "selected_svg_files": 5
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/rphnick/COPYING.xml",
+          "sha256": "5a8debecd3b361955b2164a4239a4da3513890222a39da7415dbfa9cd737283f",
+          "selected_svg_files": 7
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/COPYING.xml",
+          "sha256": "b2b338c4a41e0f7ad82e312205f5141c86c36e2903db243547b584c7b78be87e",
+          "selected_svg_files": 8
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/sugar/COPYING.xml",
+          "sha256": "bca8acbc572babddc80c0e11fc3388c6cd8ddd576e55b4caff6ed6e6bf51e497",
+          "selected_svg_files": 21
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/tvr/COPYING.xml",
+          "sha256": "a001965b198e3c17fdc2917bea0c555492726e8b355634148756c1530957dbc8",
+          "selected_svg_files": 5
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/vredeling/COPYING.xml",
+          "sha256": "873d3974824a20820e7cae65c93f0d2f368b3d62457dd666b491ec896d9fba17",
+          "selected_svg_files": 20
+        }
+      ],
+      "selected_svg_files": 256,
+      "observed_text": "Each notice names Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported and records qgis license=ccnc distribute=noncomm.",
+      "example_asset": {
+        "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/evad/3_girls_reclining.svg",
+        "sha256": "4437311691f18ec1b65277776f120cc2d6fc3eaed37886d229a823a3d1ca1ba8"
+      },
+      "question": "Resolve whether to omit/replace these assets or obtain suitable permission for intended product distribution; do not treat core code licensing as approval for these resources.",
+      "actual_staged_svg_counts": {
+        "jjg/ccolo": 256
+      },
+      "actual_staged_tree_binding": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build06-audit-01/output-manifest.json",
+        "sha256": "931e5f0523e1d9bdba6b2fbd27e6c208297456db696265beb961a57e77ed82c9",
+        "bytes": 1765200
+      },
+      "actual_staged_samples": [
+        {
+          "bytes": 767,
+          "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/Aphalara_Itadori.svg",
+          "sha256": "35c8a581b2737e5a7e742591f2db6f526617bc363ce29e1c4f13f1b2c725a2d5"
+        },
+        {
+          "bytes": 765,
+          "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/Bad_Kitten.svg",
+          "sha256": "411b19a6ae2a53aaa86d1cdf2bb9fdbc9cce8ef2f1cf6b397cf67da9a646b854"
+        }
+      ],
+      "notice_staging": [
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/COPYING.xml",
+            "sha256": "ff506da10cdff292831d8077c7a5c7c81cf2b40198c4eb9134b0a657da315779",
+            "bytes": 769
+          },
+          "staged": {
+            "bytes": 769,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/COPYING.xml",
+            "sha256": "ff506da10cdff292831d8077c7a5c7c81cf2b40198c4eb9134b0a657da315779"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/COPYING.xml",
+            "sha256": "f624180ffe75ff26178a8c614cf1cb37a92b25a41477eb6b7ae764bb9d1c0a4f",
+            "bytes": 759
+          },
+          "staged": {
+            "bytes": 759,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/COPYING.xml",
+            "sha256": "f624180ffe75ff26178a8c614cf1cb37a92b25a41477eb6b7ae764bb9d1c0a4f"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/COPYING.xml",
+            "sha256": "40d8fef301646f7a17e943576e13b517a4724026698f4831e9b7076ce21b0593",
+            "bytes": 757
+          },
+          "staged": {
+            "bytes": 757,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/COPYING.xml",
+            "sha256": "40d8fef301646f7a17e943576e13b517a4724026698f4831e9b7076ce21b0593"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/alpen/COPYING.xml",
+            "sha256": "62bca4ad2ea59131ae9116c66b3b3d2cb23c2685b798dfe56d1c915c47bfb9a5",
+            "bytes": 751
+          },
+          "staged": {
+            "bytes": 751,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/alpen/COPYING.xml",
+            "sha256": "62bca4ad2ea59131ae9116c66b3b3d2cb23c2685b798dfe56d1c915c47bfb9a5"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/COPYING.xml",
+            "sha256": "bdd528489358be373f7d23d2c2c2856deaaded68ee96bed9092f2ef2ce7e2512",
+            "bytes": 761
+          },
+          "staged": {
+            "bytes": 761,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/COPYING.xml",
+            "sha256": "bdd528489358be373f7d23d2c2c2856deaaded68ee96bed9092f2ef2ce7e2512"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/drumma/COPYING.xml",
+            "sha256": "315060fb0634f80e76cdbd98acf993cf4d367beca1fc106e6420d4df7471b5c4",
+            "bytes": 753
+          },
+          "staged": {
+            "bytes": 753,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/drumma/COPYING.xml",
+            "sha256": "315060fb0634f80e76cdbd98acf993cf4d367beca1fc106e6420d4df7471b5c4"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/electroluv/COPYING.xml",
+            "sha256": "2a2efb0c3be5cdad1166059b46df9ae63ab7777481532ccdd8a6986d0ffd6090",
+            "bytes": 761
+          },
+          "staged": {
+            "bytes": 761,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/electroluv/COPYING.xml",
+            "sha256": "2a2efb0c3be5cdad1166059b46df9ae63ab7777481532ccdd8a6986d0ffd6090"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml",
+            "sha256": "9e365c9e8bebeff36d6efb416adda1d191788f6c4ed39ce0cdeb9ab24281e17b",
+            "bytes": 749
+          },
+          "staged": {
+            "bytes": 749,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml",
+            "sha256": "9e365c9e8bebeff36d6efb416adda1d191788f6c4ed39ce0cdeb9ab24281e17b"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/hana/COPYING.xml",
+            "sha256": "1bfa63bacae4b40829237f6b78846d401bb0b3552fdbf44db39b48f829bcd2a1",
+            "bytes": 751
+          },
+          "staged": {
+            "bytes": 751,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/hana/COPYING.xml",
+            "sha256": "1bfa63bacae4b40829237f6b78846d401bb0b3552fdbf44db39b48f829bcd2a1"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/COPYING.xml",
+            "sha256": "dc85098083daecb5959df533b57680c9d3bb3daa3d72dfe5843bbb05be903454",
+            "bytes": 763
+          },
+          "staged": {
+            "bytes": 763,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/COPYING.xml",
+            "sha256": "dc85098083daecb5959df533b57680c9d3bb3daa3d72dfe5843bbb05be903454"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/COPYING.xml",
+            "sha256": "e874b9a2e801a70ffb56f9c83625e15740e37548508a96cecd7fa4d4c17d41f7",
+            "bytes": 759
+          },
+          "staged": {
+            "bytes": 759,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/COPYING.xml",
+            "sha256": "e874b9a2e801a70ffb56f9c83625e15740e37548508a96cecd7fa4d4c17d41f7"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/COPYING.xml",
+            "sha256": "298f5b26757232fdde1d524b4274ab8bc9ab598a449757a53fb17e008785fe76",
+            "bytes": 771
+          },
+          "staged": {
+            "bytes": 771,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/COPYING.xml",
+            "sha256": "298f5b26757232fdde1d524b4274ab8bc9ab598a449757a53fb17e008785fe76"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/phill/COPYING.xml",
+            "sha256": "d305778392a335c3555386ab31c4817f386ba0df99d4c3e3eee52792611bd39e",
+            "bytes": 751
+          },
+          "staged": {
+            "bytes": 751,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/phill/COPYING.xml",
+            "sha256": "d305778392a335c3555386ab31c4817f386ba0df99d4c3e3eee52792611bd39e"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/rotten/COPYING.xml",
+            "sha256": "902fbc6c367ad767be645b834e5fdb5b6e715f8d9481ae04351199682cc8da22",
+            "bytes": 753
+          },
+          "staged": {
+            "bytes": 753,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/rotten/COPYING.xml",
+            "sha256": "902fbc6c367ad767be645b834e5fdb5b6e715f8d9481ae04351199682cc8da22"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/rphnick/COPYING.xml",
+            "sha256": "5a8debecd3b361955b2164a4239a4da3513890222a39da7415dbfa9cd737283f",
+            "bytes": 755
+          },
+          "staged": {
+            "bytes": 755,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/rphnick/COPYING.xml",
+            "sha256": "5a8debecd3b361955b2164a4239a4da3513890222a39da7415dbfa9cd737283f"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/COPYING.xml",
+            "sha256": "b2b338c4a41e0f7ad82e312205f5141c86c36e2903db243547b584c7b78be87e",
+            "bytes": 761
+          },
+          "staged": {
+            "bytes": 761,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/COPYING.xml",
+            "sha256": "b2b338c4a41e0f7ad82e312205f5141c86c36e2903db243547b584c7b78be87e"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/sugar/COPYING.xml",
+            "sha256": "bca8acbc572babddc80c0e11fc3388c6cd8ddd576e55b4caff6ed6e6bf51e497",
+            "bytes": 753
+          },
+          "staged": {
+            "bytes": 753,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/sugar/COPYING.xml",
+            "sha256": "bca8acbc572babddc80c0e11fc3388c6cd8ddd576e55b4caff6ed6e6bf51e497"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/tvr/COPYING.xml",
+            "sha256": "a001965b198e3c17fdc2917bea0c555492726e8b355634148756c1530957dbc8",
+            "bytes": 747
+          },
+          "staged": {
+            "bytes": 747,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/tvr/COPYING.xml",
+            "sha256": "a001965b198e3c17fdc2917bea0c555492726e8b355634148756c1530957dbc8"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/ccolo/vredeling/COPYING.xml",
+            "sha256": "873d3974824a20820e7cae65c93f0d2f368b3d62457dd666b491ec896d9fba17",
+            "bytes": 759
+          },
+          "staged": {
+            "bytes": 759,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/ccolo/vredeling/COPYING.xml",
+            "sha256": "873d3974824a20820e7cae65c93f0d2f368b3d62457dd666b491ec896d9fba17"
+          },
+          "exists_staged": true
+        }
+      ]
+    },
+    {
+      "id": "SRC-02",
+      "subject": "Free-use labels with explicit no-distribution metadata",
+      "notices": [
+        {
+          "source_path": "resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml",
+          "sha256": "e83e66ea532c2c24fb2e379badf2b6e848fac0f6c56e553bdd9dadc5c1912d09"
+        },
+        {
+          "source_path": "resources/cpt-city-qgis-min/td/COPYING.xml",
+          "sha256": "da208d9658cfa8531e35f86d164f4d6619bab61c1bfa5298ca10fdcbfbb9ffc6"
+        }
+      ],
+      "selected_svg_files": {
+        "jjg/neo10": 135,
+        "td": 3
+      },
+      "observed_text": "Both notices say Free to use and record qgis distribute=no license=freeuse. The td notice additionally says None specified; neo10 supplies no license-text element.",
+      "question": "Resolve an adequate redistribution grant or remove/replace the assets; the importer inclusion and free-use label do not settle distribution scope.",
+      "actual_staged_svg_counts": {
+        "jjg/neo10": 135,
+        "td": 3
+      },
+      "actual_staged_tree_binding": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build06-audit-01/output-manifest.json",
+        "sha256": "931e5f0523e1d9bdba6b2fbd27e6c208297456db696265beb961a57e77ed82c9",
+        "bytes": 1765200
+      },
+      "actual_staged_samples": [
+        {
+          "bytes": 1117,
+          "path": "share/qgis/resources/cpt-city-qgis-min/jjg/neo10/base/blue.svg",
+          "sha256": "f96e4ec45b8983a4c6997a030b32de71bea6d0e075dd6d13887ba1da8336426b"
+        },
+        {
+          "bytes": 1111,
+          "path": "share/qgis/resources/cpt-city-qgis-min/jjg/neo10/base/cyan.svg",
+          "sha256": "968f8affe5c455fe25c5d0ce66d678357081b1e8523818e859e2d9417a6e8f2a"
+        },
+        {
+          "bytes": 648,
+          "path": "share/qgis/resources/cpt-city-qgis-min/td/DEM_poster.svg",
+          "sha256": "79513d6679f9dfc80adf2937a250c8b40a9559173d5c19a32e328508ea4ee47e"
+        },
+        {
+          "bytes": 591,
+          "path": "share/qgis/resources/cpt-city-qgis-min/td/DEM_print.svg",
+          "sha256": "0ba1cad3e42202036ab6a86663a09d377eb84eb22584df0e4dbc9fdee54cf602"
+        }
+      ],
+      "notice_staging": [
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml",
+            "sha256": "e83e66ea532c2c24fb2e379badf2b6e848fac0f6c56e553bdd9dadc5c1912d09",
+            "bytes": 679
+          },
+          "staged": {
+            "bytes": 679,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml",
+            "sha256": "e83e66ea532c2c24fb2e379badf2b6e848fac0f6c56e553bdd9dadc5c1912d09"
+          },
+          "exists_staged": true
+        },
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/td/COPYING.xml",
+            "sha256": "da208d9658cfa8531e35f86d164f4d6619bab61c1bfa5298ca10fdcbfbb9ffc6",
+            "bytes": 447
+          },
+          "staged": {
+            "bytes": 447,
+            "path": "share/qgis/resources/cpt-city-qgis-min/td/COPYING.xml",
+            "sha256": "da208d9658cfa8531e35f86d164f4d6619bab61c1bfa5298ca10fdcbfbb9ffc6"
+          },
+          "exists_staged": true
+        }
+      ]
+    },
+    {
+      "id": "SRC-03",
+      "subject": "ElvenSword custom redistribution and preview conditions",
+      "notice": {
+        "source_path": "resources/cpt-city-qgis-min/es/COPYING.xml",
+        "sha256": "f1a66b869fb2bd4bb3901f4a390006854d3851c78890000dcab0d2cc4106e323"
+      },
+      "selected_svg_files": 690,
+      "observed_text": "The notice permits personal/commercial artwork use but separately conditions resource redistribution on credit, free sharing, original preview/name preservation and restrictions on merged collections. A source remark reports approval for inclusion in a 2009 journal entry; that external permission was not verified here.",
+      "local_preview_observation": "No PNG or JPEG preview files were found in the es subtree; the resource files are converted SVG palettes. This is not proof that all possible attribution/preview mechanisms are absent.",
+      "question": "Determine whether the retained asset/preview/credit form and intended distribution satisfy the actual permission, or select replacement assets.",
+      "actual_staged_svg_counts": {
+        "es": 690
+      },
+      "actual_staged_tree_binding": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build06-audit-01/output-manifest.json",
+        "sha256": "931e5f0523e1d9bdba6b2fbd27e6c208297456db696265beb961a57e77ed82c9",
+        "bytes": 1765200
+      },
+      "actual_staged_samples": [
+        {
+          "bytes": 971,
+          "path": "share/qgis/resources/cpt-city-qgis-min/es/autumn/es_autumn_01.svg",
+          "sha256": "fcafa9392a46db4e59e6cdf51c134d98ef815b838c48b5193777cd3ff80a7e3f"
+        },
+        {
+          "bytes": 975,
+          "path": "share/qgis/resources/cpt-city-qgis-min/es/autumn/es_autumn_02.svg",
+          "sha256": "a925e5e5022554736f853d895a762d68074b4f3d8691d35ac78f4e7341c173cd"
+        }
+      ],
+      "notice_staging": [
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/es/COPYING.xml",
+            "sha256": "f1a66b869fb2bd4bb3901f4a390006854d3851c78890000dcab0d2cc4106e323",
+            "bytes": 2003
+          },
+          "staged": {
+            "bytes": 2003,
+            "path": "share/qgis/resources/cpt-city-qgis-min/es/COPYING.xml",
+            "sha256": "f1a66b869fb2bd4bb3901f4a390006854d3851c78890000dcab0d2cc4106e323"
+          },
+          "exists_staged": true
+        }
+      ]
+    },
+    {
+      "id": "SRC-04",
+      "subject": "Jim Mossman custom script-license wording on converted palettes",
+      "notice": {
+        "source_path": "resources/cpt-city-qgis-min/jm/COPYING.xml",
+        "sha256": "500ee139bab61eaab06fbc62bf477a2d7ae72c113e1a4f4866a69891f351f7b4"
+      },
+      "selected_svg_files": 45,
+      "observed_text": "The notice labels Attribution required, while its full agreement describes a personal nontransferable license and derivative works supplied for a client's own internal use; it also requires the agreement with unmodified copies and author attribution.",
+      "question": "Resolve applicability and intended redistribution rights for the converted palettes from the full text rather than relying on the short label.",
+      "actual_staged_svg_counts": {
+        "jm": 45
+      },
+      "actual_staged_tree_binding": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build06-audit-01/output-manifest.json",
+        "sha256": "931e5f0523e1d9bdba6b2fbd27e6c208297456db696265beb961a57e77ed82c9",
+        "bytes": 1765200
+      },
+      "actual_staged_samples": [
+        {
+          "bytes": 5371,
+          "path": "share/qgis/resources/cpt-city-qgis-min/jm/ad/ad-a.svg",
+          "sha256": "01c612b8eb5f9e4892730ef5e6c562cee1ac6662f8fd6dcc36efb70eef48f523"
+        },
+        {
+          "bytes": 5371,
+          "path": "share/qgis/resources/cpt-city-qgis-min/jm/ad/ad-b.svg",
+          "sha256": "94c7db8dfc69af355d015d6e04fced27a44bbacaeb4fbae6fb3ad1b484734f06"
+        }
+      ],
+      "notice_staging": [
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/jm/COPYING.xml",
+            "sha256": "500ee139bab61eaab06fbc62bf477a2d7ae72c113e1a4f4866a69891f351f7b4",
+            "bytes": 5030
+          },
+          "staged": {
+            "bytes": 5030,
+            "path": "share/qgis/resources/cpt-city-qgis-min/jm/COPYING.xml",
+            "sha256": "500ee139bab61eaab06fbc62bf477a2d7ae72c113e1a4f4866a69891f351f7b4"
+          },
+          "exists_staged": true
+        }
+      ]
+    },
+    {
+      "id": "SRC-05",
+      "subject": "Default icon notice delivery",
+      "notice": {
+        "source_path": "images/themes/default/LICENSE.TXT",
+        "sha256": "60c2d717f7b6b1416c340fae995e79f5ccece8db135f3f967b028b47c9159e49"
+      },
+      "observed_text": "The notice states CC BY-SA 3.0 and requests including the license file. doc/CONTRIBUTORS names Robert Szczepanek.",
+      "compiled_reachability": [
+        {
+          "source_path": "images/images.qrc",
+          "sha256": "cc8fc190a150619cf8a95431f63a8a9cfd987a7e1600b9105e01f11a3a01b261",
+          "example_line": 379
+        },
+        {
+          "source_path": "src/core/CMakeLists.txt",
+          "sha256": "150b380e0be58abfa5f4a8eb8e49d7795ea93e79249a85455bfe70a219585643",
+          "example_line": 2416
+        }
+      ],
+      "example_asset": {
+        "source_path": "images/themes/default/mActionPan.svg",
+        "sha256": "175e0a374e6be1a88585a1ab5b85ee72b58e23642055f16e6d2ae48efd5b9337"
+      },
+      "exact_notice_generated_install_references": 0,
+      "exact_notice_qrc_entries": 0,
+      "question": "Establish the product attribution/license delivery mechanism for compiled default icons; the exact retained LICENSE.TXT is neither in images.qrc nor referenced by generated install rules. No conclusion about all other notice mechanisms is made.",
+      "actual_staged_svg_counts": {},
+      "actual_staged_tree_binding": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build06-audit-01/output-manifest.json",
+        "sha256": "931e5f0523e1d9bdba6b2fbd27e6c208297456db696265beb961a57e77ed82c9",
+        "bytes": 1765200
+      },
+      "actual_staged_samples": [],
+      "notice_staging": [
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/images/themes/default/LICENSE.TXT",
+            "sha256": "60c2d717f7b6b1416c340fae995e79f5ccece8db135f3f967b028b47c9159e49",
+            "bytes": 917
+          },
+          "staged": null,
+          "exists_staged": false
+        }
+      ]
+    },
+    {
+      "id": "SRC-06",
+      "subject": "ColorBrewer acknowledgement and naming conditions",
+      "notice": {
+        "source_path": "resources/cpt-city-qgis-min/cb/COPYING.xml",
+        "sha256": "1373892ac6de3f5fd7d3ddf51534a52fb78a99109ccb5e906375fa706b435ad8"
+      },
+      "selected_svg_files": 265,
+      "observed_text": "The retained Apache-style Version1.1 text specifies a Cynthia Brewer acknowledgement in end-user documentation or normal in-product acknowledgements, notice preservation, and restrictions on endorsement/product naming.",
+      "question": "Map the required acknowledgement and naming terms into the product notice/brand review rather than treating Apache-style as a generic SPDX clearance.",
+      "actual_staged_svg_counts": {
+        "cb": 265
+      },
+      "actual_staged_tree_binding": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build06-audit-01/output-manifest.json",
+        "sha256": "931e5f0523e1d9bdba6b2fbd27e6c208297456db696265beb961a57e77ed82c9",
+        "bytes": 1765200
+      },
+      "actual_staged_samples": [
+        {
+          "bytes": 569,
+          "path": "share/qgis/resources/cpt-city-qgis-min/cb/div/BrBG_03.svg",
+          "sha256": "d14a47a94ab8c8e75d43fc0fcdc778df72df6a88ee5f877122368fe0ddca85c8"
+        },
+        {
+          "bytes": 641,
+          "path": "share/qgis/resources/cpt-city-qgis-min/cb/div/BrBG_04.svg",
+          "sha256": "965be520b0e9fc9fbae1c7316fdef3412831c9043a0a392c0c4821c3ba8fc9bb"
+        }
+      ],
+      "notice_staging": [
+        {
+          "source": {
+            "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/resources/cpt-city-qgis-min/cb/COPYING.xml",
+            "sha256": "1373892ac6de3f5fd7d3ddf51534a52fb78a99109ccb5e906375fa706b435ad8",
+            "bytes": 2826
+          },
+          "staged": {
+            "bytes": 2826,
+            "path": "share/qgis/resources/cpt-city-qgis-min/cb/COPYING.xml",
+            "sha256": "1373892ac6de3f5fd7d3ddf51534a52fb78a99109ccb5e906375fa706b435ad8"
+          },
+          "exists_staged": true
+        }
+      ]
+    }
+  ],
+  "qgis_icons": {
+    "qrc": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/images/images.qrc",
+      "sha256": "cc8fc190a150619cf8a95431f63a8a9cfd987a7e1600b9105e01f11a3a01b261",
+      "bytes": 60986
+    },
+    "generated_cpp": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/build/src/core/qgis_core_autogen/ENBQ3C7IWZ/qrc_images.cpp",
+      "sha256": "83f656bb46ef46f30283264c242ddd1abca0f9dd9d3b32ce8144684fc6bb71bc",
+      "bytes": 24699232
+    },
+    "pan_referenced": true,
+    "core_artifacts": [
+      {
+        "link": "libqgis_core.so.3.44.14",
+        "path": "lib/libqgis_core.so"
+      },
+      {
+        "bytes": 46798264,
+        "path": "lib/libqgis_core.so.3.44.14",
+        "sha256": "9714fc0eaf589204d165b9a792458745fc9183804d03694a71ae795b3282f8eb"
+      }
+    ],
+    "notice": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/images/themes/default/LICENSE.TXT",
+      "sha256": "60c2d717f7b6b1416c340fae995e79f5ccece8db135f3f967b028b47c9159e49",
+      "bytes": 917
+    },
+    "notice_bytes_present_in_staged_regular_files": []
+  },
+  "qgis_fonts": {
+    "selected_runtime_font": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/config-preflight-04/fonts/QGIS-Vera.ttf",
+      "sha256": "08a82cf71e13669f725bccdfeff7ed8dc0e43ffdeac22633074399098112d3e3",
+      "bytes": 66168
+    },
+    "source_font": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/tests/testdata/font/QGIS-Vera/QGIS-Vera.ttf",
+      "sha256": "08a82cf71e13669f725bccdfeff7ed8dc0e43ffdeac22633074399098112d3e3",
+      "bytes": 66168
+    },
+    "notice": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/tests/testdata/font/QGIS-Vera/COPYRIGHT.TXT",
+      "sha256": "1a05d79616fa484e2970fa5358db63f4aea304a8f16bebd0993607ab35b9c33d",
+      "bytes": 5955
+    },
+    "rename_readme": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/tests/testdata/font/QGIS-Vera/QGIS-Vera-README.txt",
+      "sha256": "cbe9210e9d3d63d912b8b81592134b8cd97bb6ac7dd0b6dd024246be6f57e266",
+      "bytes": 365
+    },
+    "staged_font_files": []
+  },
+  "qgis_support_terms": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/python313-qt5/LICENSE",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "bytes": 35147
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/python313-qt5-sip/LICENSE",
+      "sha256": "3859cfca971e429d6b79bdfeb1dc9e43aa9592f7295bf28fdd62824097909383",
+      "bytes": 1300
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/python313-sip6-devel/LICENSE",
+      "sha256": "84fc1e53af2832382178e0bbc46c256f10b02cb89508b19e3ff8a3c002f8ecea",
+      "bytes": 1300
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/python313-pyqt-builder/LICENSE",
+      "sha256": "84fc1e53af2832382178e0bbc46c256f10b02cb89508b19e3ff8a3c002f8ecea",
+      "bytes": 1300
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/libqscintilla2_qt5-15/LICENSE",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "bytes": 35147
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/libqwt6-qt5-6_3/COPYING",
+      "sha256": "d8737db330e1eeb439962e11654ab7f1aece3561d9415454a8c538643824ede6",
+      "bytes": 27946
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/libqt5-qtbase-common-devel/LICENSE.GPL3-EXCEPT",
+      "sha256": "0dbe024961f6ab5c52689cbd036c977975d0d0f6a67ff97762d96cb819dd5652",
+      "bytes": 36363
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/libqt5-qtbase-common-devel/LICENSE.LGPL3",
+      "sha256": "da7eabb7bafdf7d3ae5e9f223aa5bdc1eece45ac569dc21b3b037520b4464768",
+      "bytes": 7651
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/libqt5-qttools-devel/LICENSE.GPL3-EXCEPT",
+      "sha256": "0dbe024961f6ab5c52689cbd036c977975d0d0f6a67ff97762d96cb819dd5652",
+      "bytes": 36363
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/libqca-qt5-2/COPYING",
+      "sha256": "5df07007198989c622f5d41de8d703e7bef3d0e79d62e24332ee739a452af62a",
+      "bytes": 26436
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/share/licenses/libQt5Core5/LICENSE.QT-LICENSE-AGREEMENT",
+      "sha256": "cdedb2eb6e7c4ea8d41da6dc17120607cc88a40ab1f8a5a6c34497b703c90336",
+      "bytes": 113520
+    }
+  ],
+  "qgis_support_manifest": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-candidate/build-support/qgis/support-inputs.json",
+    "sha256": "7636a34b1823e071dc9662522d8f79be3085953eaed2d64ad6fcd34d1cb37d47",
+    "bytes": 77846
+  },
+  "frontend_generated_notice_indexes": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/cesium/ThirdParty.json",
+      "sha256": "8bbda82461379387fc0efd9c00ac7d474ee57f44f3984d21740769ca33018987",
+      "bytes": 3615
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/client/node_modules/cesium/ThirdParty.extra.json",
+      "sha256": "5fff210f16bcbe0d414a4f634ceb2b0564dad92065733c26ec3ee4aff89a4b10",
+      "bytes": 1532
+    }
+  ],
+  "frontend_selected_binary_output": [
+    {
+      "bytes": 500839,
+      "path": "cesium/ThirdParty/basis_transcoder.wasm",
+      "sha256": "96849a2719b431008533806199ad4e513ef5a5f632b87e452fb1eea961d5730e"
+    },
+    {
+      "bytes": 285948,
+      "path": "cesium/ThirdParty/draco_decoder.wasm",
+      "sha256": "2516a4e43526d71787bf2f678f951329f7f858f8f15f42d4bc9e370b31a0da3a"
+    },
+    {
+      "bytes": 26522,
+      "path": "cesium/ThirdParty/wasm_splats_bg.wasm",
+      "sha256": "530cb068ddd94b7267db1e1690ebdfcd94c552b2886d79398438841c42a1a14d"
+    },
+    {
+      "bytes": 50195,
+      "path": "cesium/ThirdParty/zip-module.wasm",
+      "sha256": "ff1ac8d983341625787f4445f8557d65d0a45ebc95f2f1a7c497364c0a535631"
+    },
+    {
+      "bytes": 1160534,
+      "path": "js/web-ifc/web-ifc-mt.wasm",
+      "sha256": "797f6e0be82d95c22292894e8c9c8e8e70eb46d20b519b3f081a8df1e91208ca"
+    },
+    {
+      "bytes": 1140374,
+      "path": "js/web-ifc/web-ifc-node.wasm",
+      "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6"
+    },
+    {
+      "bytes": 1140374,
+      "path": "js/web-ifc/web-ifc.wasm",
+      "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6"
+    }
+  ],
+  "historical_publisher_archive_bindings": [
+    {
+      "name": "web-ifc",
+      "version": "0.0.50",
+      "archive_sha256": "6baf141163e2390d8b4a3a1cafe83731f6ff5faa062c93e07dd71f6ddf03ccba",
+      "publisher_metadata_integrity_match": true,
+      "gitHead": "b55d8bde10067415d4536b23c27edcc13acf217c"
+    },
+    {
+      "name": "emitter-component",
+      "version": "1.1.2",
+      "archive_sha256": "cac74e38cc79b753e72cd2b9435ae39e907a6d447aa8c881c424d3c863c3b38d",
+      "publisher_metadata_integrity_match": true,
+      "gitHead": "a5631018f6984f585b44c0ac7982b0ff9686086f"
+    },
+    {
+      "name": "jsonp",
+      "version": "0.2.1",
+      "archive_sha256": "c9ed2f0238fe967a180d515ddc9c9d1ba333236d4c952106fd20cad61b7c25f5",
+      "publisher_metadata_integrity_match": true,
+      "gitHead": "790398945dc391ad2f06b365193a040a3dc01977"
+    }
+  ]
+}

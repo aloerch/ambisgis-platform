@@ -1,3 +1,39 @@
+# Implementation status — FND-02 candidate consolidation
+
+**F02-06 inventory consolidation is demonstrated; candidate adoption remains blocked.
+FND-02 remains In progress.** Current main/owner-merged #64 is
+`725d519820293f466b287d7f4cd779c36b9b7977`, reviewed head
+`ee5be14d9d0d14f361dbd235dedc64b3fdb84db0`; that accepts bounded F02-05 only.
+This session uses `fnd-02/candidate-selection-consolidation` in
+`ambisgis-platform-candidate`. Historical open-PR claims below are dated records.
+
+The [exact proposal](docs/fnd-02-candidate-proposal.md),
+[one manifest](candidates/fnd-02-candidate.json) and generated
+[owner-decision register](docs/fnd-02-owner-decisions.md) contain eleven owned roots,
+ten separate profiles, seven scoped combinations and 58 findings. Read-only
+validation checks hashes and complete selected output membership. It does not
+reexecute native suites or certify complete transitive source/rights closure.
+[Validation and handoff](verification/candidate-selection/validation.json) record
+actual commands, results and manifest identity.
+
+Twelve adoption blockers remain: AspectJ, xmlpull, JAI ImageIO, json-lib, Marlin,
+shipped ojdbc17 placeholder source, web-ifc source/WASM correspondence, four
+optional QGIS palette groups, and missing original frontend build-01 executed
+recipe identity. Recovered exact web-ifc MPL terms, Python source-bearing wheels,
+GeoNode/GeoTools file scope and notices narrow the decisions without granting
+rights. All original ledger cases and technical limits remain accounted for.
+
+The next authorized engineering prerequisite is review of the specific source /
+optional-profile / palette-remediation choices; then a separately identified
+variant only for approved changes, with affected builds and tests. Accepting an
+accurate C2 investigation record is distinct from adopting these components or
+allowing distribution. F02-07 documentary maintenance binding is prepared; no
+new owner decision or F02-08 acceptance is recorded. FND-03/FND-05/FND-07/FND-08
+and release gates remain unchanged. No merge, default/workflow change, binaries,
+deployment, services or upstream contact occurred.
+
+# Preserved status — earlier checkpoints
+
 # Implementation status — FND-02 combination/cache checkpoint
 
 **F02-05 bounded engineering evidence is demonstrated; [PR #64](https://github.com/aloerch/ambisgis-platform/pull/64) awaits owner checkpoint review. FND-02 remains In progress.** This slice starts from verified owner-merged
