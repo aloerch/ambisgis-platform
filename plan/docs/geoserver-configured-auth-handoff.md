@@ -7,8 +7,8 @@ remains **In progress**. This slice starts from the verified owner merge of
 [PR #58](https://github.com/aloerch/ambisgis-platform/pull/58),
 `b68e3d59bafb4bbf7b2007c76e5e59a25b4139e7`; reviewed source
 `c2d7f10a11c001cccb8679af71a94128265816ab` is its ancestor. The prior branch,
-worktrees and retained archives remain intact. New PR publication is recorded
-below after creation; no merge or release is authorized.
+worktrees and retained archives remain intact. [PR #59](https://github.com/aloerch/ambisgis-platform/pull/59) is open against
+`ambisgis/main`; no merge or release is authorized.
 
 ## Frozen implementation and actual results
 
@@ -182,6 +182,25 @@ accepted checkpoint, or continue independent unblocked source-custody work while
 this PR awaits review. Actual GeoNode/browser integration and unified AmbisGIS
 policy need their own acceptance. Do not promote Delivery or infer approval from
 this passing fixture.
+
+## Publication
+
+[PR #59](https://github.com/aloerch/ambisgis-platform/pull/59) was created at exact
+head `fa4e4a195cc6e3c4a47c93aad4222a46b57cd0ea`. This subsequent publication-only
+commit adds the PR/Project record without changing tested Java implementation
+`38ef3560a42af230fe75e20cc02578b12d8fcd2f` or its tree. The live PR and final issue #3
+handoff comment record the final review head, avoiding a self-referential Git hash.
+
+Project #2 membership was checked dynamically: 71 prior items became 72 after
+adding this separate PR identity and its parent Evidence link. A zero-write dry
+run preceded exactly two supported mutations. All prior represented fields,
+archives, Project metadata and view configuration/order were preserved; the saved
+`is:pr is:open` queue contains #59. FND-02 stays In progress; no parent planning
+fields were assigned to the PR. [Publication evidence](../verification/geoserver-auth/project/README.md)
+retains exact IDs and full pagination/readback hashes. No importer, merge,
+auto-merge, workflow activation, branch-default change, secret installation,
+deployment or release occurred. GitHub Actions is enabled at repository level but
+has zero workflows; that setting was read only and unchanged.
 
 ## Owner review
 
