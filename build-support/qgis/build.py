@@ -50,7 +50,10 @@ def check_config(cache, native, spatial, support):
     require(cache['SHA'][1]==COMMIT,'Missing owned source version')
     # Explicit discovery pins prevent a matching label from accepting host QGIS's spatial ABI.
     for key,root in [('GDAL_DIR',spatial),('GEOS_DIR',native),('PROJ_DIR',spatial),
-                     ('PostgreSQL_LIBRARY_RELEASE',native),('Qt5_DIR',support)]:
+                     ('PostgreSQL_LIBRARY_RELEASE',native),('Qt5_DIR',support),
+                     ('FCGI_INCLUDE_DIR',support),('FCGI_LIBRARY',support),('QWT_INCLUDE_DIR',support),
+                     ('QWT_LIBRARY',support),('pkgcfg_lib_PC_SPATIALITE_spatialite',support),
+                     ('pkgcfg_lib_PC_SPATIALITE_sqlite3',spatial),('pkgcfg_lib_PC_SPATIALITE_z',native)]:
         require(key in cache and Path(cache[key][1]).resolve().is_relative_to(root.resolve()),'Unexpected dependency origin: '+key)
 
 
@@ -90,7 +93,10 @@ def build(output,native,spatial,support,support_inventory,jobs):
             '-DCMAKE_CXX_FLAGS_RELEASE=-O1 -DNDEBUG','-DCMAKE_C_COMPILER=/usr/bin/gcc-15','-DCMAKE_CXX_COMPILER=/usr/bin/g++-15',
             '-DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF','-DCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY=OFF',
             '-DPython_EXECUTABLE=/usr/bin/python3.13',f'-DCMAKE_PREFIX_PATH={spatial};{native};{usr}',
-            f'-DSIP_BUILD_EXECUTABLE={usr}/bin/sip-build-3.13',f'-DQt5_DIR={usr}/lib64/cmake/Qt5',f'-DGDAL_DIR={spatial}/lib/cmake/gdal',
+            f'-DSIP_BUILD_EXECUTABLE={usr}/bin/sip-build-3.13',
+            f'-DFCGI_INCLUDE_DIR={usr}/include/fastcgi',f'-DFCGI_LIBRARY={usr}/lib64/libfcgi.so',
+            f'-DQWT_INCLUDE_DIR={usr}/include/qt5/qwt6',f'-DQWT_LIBRARY={usr}/lib64/libqwt-qt5.so',
+            f'-Dpkgcfg_lib_PC_SPATIALITE_z={native}/lib/libz.so',f'-DQt5_DIR={usr}/lib64/cmake/Qt5',f'-DGDAL_DIR={spatial}/lib/cmake/gdal',
             f'-DGEOS_DIR={native}/lib/cmake/GEOS',f'-DPROJ_DIR={spatial}/lib/cmake/proj',
             f'-DPostgreSQL_LIBRARY_RELEASE={native}/lib/libpq.so',f'-DPostgreSQL_INCLUDE_DIR={native}/include',
             f'-DPostgreSQL_TYPE_INCLUDE_DIR={native}/include/postgresql/server',f'-DSQLITE3_INCLUDE_DIR={spatial}/include',

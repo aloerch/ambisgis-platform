@@ -40,7 +40,12 @@ class BuildGuards(unittest.TestCase):
         rows.update({k:('PATH',v) for k,v in {'CMAKE_INSTALL_PREFIX':'/private/stage',
            'Python_EXECUTABLE':'/usr/bin/python3.13','SHA':build.COMMIT,'GDAL_DIR':'/private/spatial/cmake',
            'GEOS_DIR':'/private/native/cmake','PROJ_DIR':'/private/spatial/cmake',
-           'PostgreSQL_LIBRARY_RELEASE':'/private/native/lib/libpq.so','Qt5_DIR':'/private/support/qt'}.items()})
+           'PostgreSQL_LIBRARY_RELEASE':'/private/native/lib/libpq.so','Qt5_DIR':'/private/support/qt',
+           'FCGI_INCLUDE_DIR':'/private/support/include/fastcgi','FCGI_LIBRARY':'/private/support/lib/libfcgi.so',
+           'QWT_INCLUDE_DIR':'/private/support/include/qwt','QWT_LIBRARY':'/private/support/lib/libqwt.so',
+           'pkgcfg_lib_PC_SPATIALITE_spatialite':'/private/support/lib/libspatialite.so',
+           'pkgcfg_lib_PC_SPATIALITE_sqlite3':'/private/spatial/lib/libsqlite3.so',
+           'pkgcfg_lib_PC_SPATIALITE_z':'/private/native/lib/libz.so'}.items()})
         return rows
 
     def check(self,rows):
@@ -60,7 +65,7 @@ class BuildGuards(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'profile'):self.check(rows)
 
     def test_host_spatial_fallback_rejected(self):
-        for key in ('GDAL_DIR','GEOS_DIR','PROJ_DIR','PostgreSQL_LIBRARY_RELEASE','Qt5_DIR'):
+        for key in ('GDAL_DIR','GEOS_DIR','PROJ_DIR','PostgreSQL_LIBRARY_RELEASE','Qt5_DIR','FCGI_LIBRARY','QWT_INCLUDE_DIR','pkgcfg_lib_PC_SPATIALITE_sqlite3','pkgcfg_lib_PC_SPATIALITE_z'):
             with self.subTest(key=key):
                 rows=self.cache();rows[key]=('PATH','/usr/lib/unrecorded')
                 with self.assertRaisesRegex(ValueError,'origin'):self.check(rows)
