@@ -1254,6 +1254,30 @@
       "publisher_digest": "e959fc7daabcadd3f82976db208148021244923c726a551d5259ccdcd86c9007e8f907ed6f51613f4ba01b5258f65cace7a964a85c1403981bb79bb5e36e1203",
       "source_rpm": "timezone-2026d-1.1.src.rpm",
       "license": "BSD-3-Clause AND LicenseRef-SUSE-Public-Domain"
+    },
+    {
+      "name": "libzstd-devel",
+      "arch": "x86_64",
+      "epoch": "0",
+      "version": "1.5.7",
+      "release": "6.1",
+      "location": "x86_64/libzstd-devel-1.5.7-6.1.x86_64.rpm",
+      "publisher_digest_algorithm": "sha512",
+      "publisher_digest": "f4795faed121ffe1aaa7b1f3bb211e2b2920c49a06d2f7e8f4b568b221b0e0d1c6d04264833d70bfc1174c400cbf596680acc69086401b840e6216ee1a74bd2b",
+      "source_rpm": "zstd-1.5.7-6.1.src.rpm",
+      "license": "BSD-3-Clause AND GPL-2.0-only"
+    },
+    {
+      "name": "libzstd1",
+      "arch": "x86_64",
+      "epoch": "0",
+      "version": "1.5.7",
+      "release": "6.1",
+      "location": "x86_64/libzstd1-1.5.7-6.1.x86_64.rpm",
+      "publisher_digest_algorithm": "sha512",
+      "publisher_digest": "fc77a0b4460add1711a3ffa10c5da987482d75e57068a60e7e4c03633b5ef92b7442d0234abdc00e5076d9b81023a65a891c9cc59ec1197b5cb55d949ec67b2a",
+      "source_rpm": "zstd-1.5.7-6.1.src.rpm",
+      "license": "BSD-3-Clause AND GPL-2.0-only"
     }
   ],
   "source_metadata": {
@@ -1777,6 +1801,18 @@
       "publisher_digest": "d724ff21ec16632dbd137b8f649caf469d35acb230a0e08ba0b6bfe7e36c6c555ca43f32ab4aa95a2594d7e0cd724898398110dac01c889948bf0d2c97e0a698",
       "source_rpm": "",
       "license": "Zlib"
+    },
+    {
+      "name": "zstd",
+      "arch": "src",
+      "epoch": "0",
+      "version": "1.5.7",
+      "release": "6.1",
+      "location": "src/zstd-1.5.7-6.1.src.rpm",
+      "publisher_digest_algorithm": "sha512",
+      "publisher_digest": "36b119d826ecec46afd589797ee593c9489a45fbe8e8a1d18d58ee0d07b4708beea3374797606d559df03830e3b571e482deb40d04d81398d0d55e2a5d5a89fd",
+      "source_rpm": "",
+      "license": "BSD-3-Clause AND GPL-2.0-only"
     }
   ],
   "source_packages_unavailable": []
