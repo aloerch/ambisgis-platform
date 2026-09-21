@@ -1,0 +1,3102 @@
+{
+  "build": {
+    "compatibility_patch": {
+      "baseline_sha256": "f8287c1511fde29cd9fc4a808f0f1fa8aec833009b65c8a6db43338e15dfba06",
+      "changes": [
+        {
+          "after": "\"GDAL==3.10.3\"",
+          "before": "\"GDAL==3.8.4\"",
+          "reason": "Match the retained source-built GDAL 3.10.3 native library; candidate compatibility change, not approved product pin."
+        },
+        {
+          "after": "",
+          "before": "\"pylibmc==1.6.3\",",
+          "reason": "Headless profile uses Django local-memory caches; memcached and its native binding are omitted."
+        },
+        {
+          "after": "",
+          "before": "\"uWSGI==2.0.30\",",
+          "reason": "Headless loopback WSGI probe uses the Python WSGI server; the production process server is outside this slice."
+        }
+      ],
+      "patched_sha256": "9a742f25f300c8a3ebd480699dad38105de94e784c345a2d412998f234f3086c"
+    },
+    "frontend_scope": "Owned Python packages include inherited static assets; frontend source build, asset closure, browser and accessibility acceptance remain deferred.",
+    "name": "run-004",
+    "native_gdal_version": "3.10.3",
+    "network_evidence_limit": "Run004 build receipt alone is not network-denial proof; the separately indexed run005 replay retains namespace and outbound-denial proof. Runtime uses run004.",
+    "network_policy": "pip --no-index; external network denial must be recorded separately",
+    "owned_sources": [
+      {
+        "archive": "owned-sources/geonode-a1db97e81dfc26c16bb4ee1a5d2b408877af66c9.tar",
+        "commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+        "name": "geonode",
+        "repository": "ambisgis-geonode",
+        "repository_id": 1376927978,
+        "sha256": "32ef8de1e193535587b8f4c85d9491ad990d1f4459df508f74d6f1cbca5ceeb9"
+      },
+      {
+        "archive": "owned-sources/mapstore-client-7ca4822125b67999c97cb4aa1faa84b8a28eee9b.tar",
+        "commit": "7ca4822125b67999c97cb4aa1faa84b8a28eee9b",
+        "name": "mapstore-client",
+        "repository": "ambisgis-mapstore-client",
+        "repository_id": 1376928013,
+        "sha256": "c82f35b1d92b6822b7025e4f6adfe2df256c339bd756902319bf5430ef8fcb33"
+      }
+    ],
+    "profile": "geonode-identity-headless",
+    "python": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004/venv/bin/python",
+    "source_repair": {
+      "already_applied": false,
+      "applied": true,
+      "default": false,
+      "expected_files": {
+        "geonode/api/backend_tokeninfo.py": "a035daedd0b1794867af23b81f50bc6b2fa0c0e4de3d467f5b95d186f674c500",
+        "geonode/api/test_backend_tokeninfo.py": "3dbc733de3c7ed1bb183a3b4c418eda828d07060e5a60e86b7db84e42896e28a",
+        "geonode/api/views.py": "23a24a65657d3a8a56ba298e01520afc378edb8e12d5dabd9e1a1432158eeda2",
+        "geonode/security/middleware.py": "aeb3ffa97702196d1bd1190dad1353ece007b44f83576aca39f33a6d6872125d",
+        "geonode/settings.py": "101c2f802877a62df4ee5e602f401609a68e839920e0587f0a4e7bf735d0c057"
+      },
+      "files": [
+        {
+          "after_sha256": "a035daedd0b1794867af23b81f50bc6b2fa0c0e4de3d467f5b95d186f674c500",
+          "before_sha256": null,
+          "path": "geonode/api/backend_tokeninfo.py"
+        },
+        {
+          "after_sha256": "3dbc733de3c7ed1bb183a3b4c418eda828d07060e5a60e86b7db84e42896e28a",
+          "before_sha256": null,
+          "path": "geonode/api/test_backend_tokeninfo.py"
+        },
+        {
+          "after_sha256": "23a24a65657d3a8a56ba298e01520afc378edb8e12d5dabd9e1a1432158eeda2",
+          "before_sha256": "484d2abd190b568c72992cc1202e1d671b89a2ec249a2aaaa0741e1b00cf480c",
+          "path": "geonode/api/views.py"
+        },
+        {
+          "after_sha256": "aeb3ffa97702196d1bd1190dad1353ece007b44f83576aca39f33a6d6872125d",
+          "before_sha256": "5f6fc7a69be15bfa7a6dd68653a39f30ba63d9668cb9721c3a8d8309b85d830e",
+          "path": "geonode/security/middleware.py"
+        },
+        {
+          "after_sha256": "101c2f802877a62df4ee5e602f401609a68e839920e0587f0a4e7bf735d0c057",
+          "before_sha256": "652dea658029b136b393752cbaec676fdbf980619110ef293917c9d9a9b8ac75",
+          "path": "geonode/settings.py"
+        }
+      ],
+      "middleware_scope": "Only exact resolved verify_token view in strict mode skips user Basic resolution and session-expiry mutation; remaining middleware and CSRF configuration unchanged.",
+      "native_tests_source_sha256": "3dbc733de3c7ed1bb183a3b4c418eda828d07060e5a60e86b7db84e42896e28a",
+      "post_patch_tree_verification": "passed",
+      "recipe_inputs": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geonode-identity/build-support/geonode/verifier_repair.py",
+          "sha256": "c38738c6d37eae11c279901140b5d5bfd19f699951b7cb6b4ef4ad4782c801ea"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geonode-identity/build-support/geonode/verifier_tests.py",
+          "sha256": "3dbc733de3c7ed1bb183a3b4c418eda828d07060e5a60e86b7db84e42896e28a"
+        }
+      ],
+      "recipe_sha256": "c38738c6d37eae11c279901140b5d5bfd19f699951b7cb6b4ef4ad4782c801ea",
+      "repair": "geonode-strict-backend-tokeninfo",
+      "schema_version": 1,
+      "setting": "OAUTH2_BACKEND_TOKENINFO_STRICT",
+      "source_commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9"
+    },
+    "status": "passed"
+  },
+  "executed_source_verification": {
+    "commit": "08d1d910552f47d1ab8893c4a7fcd42c0cbacb44",
+    "passed": true,
+    "scope": "Every snapshotted GeoNode harness .py matches retained tooling manifest, frozen Git commit and current source. Documentation-only changes are outside this comparison.",
+    "subtree": "56ea403505f5e4b00d5776b978fe6aae69d3597d",
+    "subtree_path": "build-support/geonode",
+    "verified_python_files": [
+      {
+        "bytes": 11584,
+        "path": "build-support/geonode/acquire.py",
+        "sha256": "c770cd70bc3a8b08c3216dab5efc4b052d0976af3a2066924dc3a3403df3eb6e"
+      },
+      {
+        "bytes": 8520,
+        "path": "build-support/geonode/build.py",
+        "sha256": "06d16242d12dbfb9646bcb293460815d08178c90f8293294685590984d62f36b"
+      },
+      {
+        "bytes": 12901,
+        "path": "build-support/geonode/fixture_settings.py",
+        "sha256": "0e105accff09b983df9bfc7abeed0af214b3a9f30bd146501e807232d4c0514d"
+      },
+      {
+        "bytes": 6985,
+        "path": "build-support/geonode/inputs.py",
+        "sha256": "ddcd4e287a7005a48703fc81c54a8ac6de8aa27923a138ee500fcd15c4d3e98f"
+      },
+      {
+        "bytes": 2940,
+        "path": "build-support/geonode/installed.py",
+        "sha256": "7cc40e48454a77993378dd7636e1c8e9c004f50a52eed1e523e3916dc9a1d7f9"
+      },
+      {
+        "bytes": 53435,
+        "path": "build-support/geonode/journey.py",
+        "sha256": "41e66bf9e9b8982fa68b6fa41efe0b643527eaf3b54664653cff69fe98603198"
+      },
+      {
+        "bytes": 25273,
+        "path": "build-support/geonode/manage_fixture.py",
+        "sha256": "755dfc2313ddd8ea9204caa1270777a35c1166f1b1fd54b83545f3fed3f9b13b"
+      },
+      {
+        "bytes": 20607,
+        "path": "build-support/geonode/protocol_probe.py",
+        "sha256": "91052183e58bd6a79d7c803c090ff7516ea690537b54ba95ee739ebc00c99074"
+      },
+      {
+        "bytes": 18037,
+        "path": "build-support/geonode/run.py",
+        "sha256": "cdd14e00dd9286eeed9e14099e2947835659466625209aec48056fc6fc12eb69"
+      },
+      {
+        "bytes": 4322,
+        "path": "build-support/geonode/test_build.py",
+        "sha256": "b484b198ed1c4d15a421934f2dd1de16e213690fb0180b4f5bb680720dee609a"
+      },
+      {
+        "bytes": 9671,
+        "path": "build-support/geonode/test_fixture_settings.py",
+        "sha256": "09d98c7bc625d9b8e62ca561bf647b302e1647c55b3bfc804e41cccfda8d0e3a"
+      },
+      {
+        "bytes": 2231,
+        "path": "build-support/geonode/test_installed.py",
+        "sha256": "d35dd767acbc706e018b5432a6b3bcdca6e2454d9d16cc97405a59ec1865a5bb"
+      },
+      {
+        "bytes": 10738,
+        "path": "build-support/geonode/test_journey.py",
+        "sha256": "d9abbeb9751c9061771a59e566059fdf4355cff01486edafb2871168188267b0"
+      },
+      {
+        "bytes": 16471,
+        "path": "build-support/geonode/test_protocol_probe.py",
+        "sha256": "6b188aa67b85ebf9817edbef8cd6f0f0341f5ca157856ec474594b729fd5c143"
+      },
+      {
+        "bytes": 2577,
+        "path": "build-support/geonode/test_run.py",
+        "sha256": "724f0d60d8a20a46e34850c592ae0e81316a2793423f9ec93208ca2b60ab97a7"
+      },
+      {
+        "bytes": 1930,
+        "path": "build-support/geonode/test_transport_faults.py",
+        "sha256": "d09320fe42994c3d098c6f23fe2d44d7b561830b3b72b1aca8eb3eba4932b76c"
+      },
+      {
+        "bytes": 6480,
+        "path": "build-support/geonode/test_verifier_repair.py",
+        "sha256": "8609ab1ea7d1adc31281f5fb73b7c16781ad7ad0bcc992060bdcf8382a0b6ef8"
+      },
+      {
+        "bytes": 2702,
+        "path": "build-support/geonode/transport_faults.py",
+        "sha256": "64d014f380b95d1b7d4f4e8efe12025620d1a19ba4dd97ef10a30b95e10c9c37"
+      },
+      {
+        "bytes": 11540,
+        "path": "build-support/geonode/verifier_repair.py",
+        "sha256": "c38738c6d37eae11c279901140b5d5bfd19f699951b7cb6b4ef4ad4782c801ea"
+      },
+      {
+        "bytes": 16051,
+        "path": "build-support/geonode/verifier_tests.py",
+        "sha256": "3dbc733de3c7ed1bb183a3b4c418eda828d07060e5a60e86b7db84e42896e28a"
+      }
+    ]
+  },
+  "files": [
+    {
+      "bytes": 114,
+      "category": "acquisition",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/acquisition-v2/acquisition-receipt.json",
+      "sha256": "8a7966eba6398e389b25943bc6a0bc3275692864839ce6c119258beeb44bbe5f"
+    },
+    {
+      "bytes": 23101,
+      "category": "final-database",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/database/database-result.json",
+      "sha256": "5361cd04e65032b8f987c1b4b575c8e969b2725176798739463c92c47ec970cc"
+    },
+    {
+      "bytes": 6422,
+      "category": "final-resource-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/geoserver-initial/ready.json",
+      "sha256": "d9c2bfcaf75ba195fae30e8d76b75e80cde3eaf76e1b6b06da3de9439073a856"
+    },
+    {
+      "bytes": 13798,
+      "category": "final-resource-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/geoserver-initial/requests.jsonl",
+      "sha256": "d734eae0aa63c98b47c34040a984f7051555f6396fd807f4faf91b7aeba8d4b6"
+    },
+    {
+      "bytes": 6422,
+      "category": "final-resource-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/geoserver-restart/ready.json",
+      "sha256": "0622d09f2f27986330f4ca1d95e5dc661412c2e47550856a76eac578ce5271b5"
+    },
+    {
+      "bytes": 641,
+      "category": "final-resource-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/geoserver-restart/requests.jsonl",
+      "sha256": "1e8967716f0830502abe8961e7524fd4cd049b69ee0a9342b7872383c0d89630"
+    },
+    {
+      "bytes": 59290,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/application-inventory.json",
+      "sha256": "730ce3248388fd7c9668a9ded440365ec6c09afef850314143ef4f8a7f0d5a37"
+    },
+    {
+      "bytes": 289919,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/child-result.json",
+      "sha256": "285ed908f4556882dfcf743d6424adced6c54965dc58621f18a36563d7ea6742"
+    },
+    {
+      "bytes": 385354,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/installed-origin-after.json",
+      "sha256": "a98c40cd07caaf87d46214aefd6b2c158f962d5a8d3ffa8041bd5867e78970b7"
+    },
+    {
+      "bytes": 385354,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/installed-origin-before.json",
+      "sha256": "a98c40cd07caaf87d46214aefd6b2c158f962d5a8d3ffa8041bd5867e78970b7"
+    },
+    {
+      "bytes": 271094,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/journey-result.json",
+      "sha256": "9735f26d46ce6fec8529fc42e4555870f95352ed162e281e15b5621d982b9be6"
+    },
+    {
+      "bytes": 5262,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/native-tests.json",
+      "sha256": "9665da296687cfd4d824caff7add2dc4b794b3380a4ee45985534b027c6c8e1c"
+    },
+    {
+      "bytes": 1784,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/network-loopback.json",
+      "sha256": "30f260053e9962178ea7a8d1c7d2d52f98d3be29b69023111e97e85bad932e68"
+    },
+    {
+      "bytes": 12029,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/network-loopback.probes.json",
+      "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825"
+    },
+    {
+      "bytes": 341033,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/result.json",
+      "sha256": "01860e17864dfbde212ea06f57c7dad74cbbc50eebfd1f7e40795cddc545c84b"
+    },
+    {
+      "bytes": 343,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/runtime-role.json",
+      "sha256": "d574657ad6d0dfef05fd4127a982f42b1720756e0e7296a001b4f2d5311d6354"
+    },
+    {
+      "bytes": 11211,
+      "category": "final-runtime",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/tooling.json",
+      "sha256": "d1e0f6e7f16ed58420180a0487083cdb8e7e3af18744e25bdd38cf208a0c3d0c"
+    },
+    {
+      "bytes": 1111,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/check.log",
+      "sha256": "8eb5b7dd6dc75e64fa0937b441b724011faa66c201a4c3cd2500b7457ed810b5"
+    },
+    {
+      "bytes": 1663,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/cleanup.log",
+      "sha256": "f1d09408b357dc829a0e9e88178f62c3636e9b937332442901a4d6c99a314d07"
+    },
+    {
+      "bytes": 5004,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/geonode-restart.log",
+      "sha256": "35dd6d298b06f8fa53fee652b2319387d21029c40a9382bbebe6f64ed90f1227"
+    },
+    {
+      "bytes": 32471,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/geonode-runtime.log",
+      "sha256": "60a0be3a823c27a5564a82d87a854fdb69108075f290be8e733c846744ff1806"
+    },
+    {
+      "bytes": 10209,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/geoserver-fixture.json",
+      "sha256": "9d2c240529d13e93d9f931ac3e6b66197aa9effa9db18277d7392ecaf617b146"
+    },
+    {
+      "bytes": 551791,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/geoserver-initial.log",
+      "sha256": "eca294eccce85e70e4332b06ad3917a3a4431749621644c46e06c6a7886fa3ac"
+    },
+    {
+      "bytes": 33255,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/geoserver-restart.log",
+      "sha256": "00d8169425922b19b53f82c33913c2b97b22a90ebfffbbb236b5df0747ca7c38"
+    },
+    {
+      "bytes": 15382,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/initialize.log",
+      "sha256": "c14e4a8334645892fa89c8ec6af54f0fb25cf47ddfe04846795af20e83e4e716"
+    },
+    {
+      "bytes": 24982,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/migrate.log",
+      "sha256": "fc38dac8a18cf3d41eced25da0f33f4f6e2b041e42adb0aed5246f48d02d581f"
+    },
+    {
+      "bytes": 39434,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/migrations-migrate.json",
+      "sha256": "7701ab6403c251cce466f027d4d38406ac501a900424a6ddde572cb0fa793c34"
+    },
+    {
+      "bytes": 39439,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/migrations-native-tests.json",
+      "sha256": "625758eac50fee5fb451df081e10394d14f2c4e1e38575d6e59b09579d8696e2"
+    },
+    {
+      "bytes": 39436,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/migrations-provision.json",
+      "sha256": "5e1888926d204d741ea866c4202f6467101a96693eea6c20a088aa3161f44ff6"
+    },
+    {
+      "bytes": 39432,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/migrations-serve.json",
+      "sha256": "f599a65e882c7b8cff13d3937658876df7a0b56b772c368f11aecabce25de889"
+    },
+    {
+      "bytes": 8854,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/module-origins-check.json",
+      "sha256": "782dac55ed81716d1f76d5a31b88485ae6651fc6bebdef9ec75d02e4eb855794"
+    },
+    {
+      "bytes": 8856,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/module-origins-cleanup.json",
+      "sha256": "e34cb3e275af79419505417cdee6eefb3c1cdd210aceefc36782564d3c9d191e"
+    },
+    {
+      "bytes": 8859,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/module-origins-initialize.json",
+      "sha256": "c7fbdcab66f02a61605a5f4d89309ccfd4adf884a11a5457c9549cb07770447d"
+    },
+    {
+      "bytes": 8856,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/module-origins-migrate.json",
+      "sha256": "8eaa5ed3459a4f35cedad92ec71ae479262536a273a15fb6b9c14785e00a4641"
+    },
+    {
+      "bytes": 8855,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/module-origins-mutate.json",
+      "sha256": "1deb95205d21f2904d1b23327c7e6bd622597f83fe5769fd61375c5daccd22e7"
+    },
+    {
+      "bytes": 8861,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/module-origins-native-tests.json",
+      "sha256": "d9b4c1ceb1753f791bd4fc73e0992931515e9187fdf8623fbf6379b6e3586d60"
+    },
+    {
+      "bytes": 8858,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/module-origins-provision.json",
+      "sha256": "f5c80556f858ffe6e3f8e648bca000bf017a3d6da2bbe81cf76f95a0a92052ce"
+    },
+    {
+      "bytes": 8854,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/module-origins-serve.json",
+      "sha256": "83f5690d6083b57ace74b9ced9420cbb21235454f791808dcc2c16ff6f8d57a4"
+    },
+    {
+      "bytes": 1172,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/mutation-000.log",
+      "sha256": "3b1a3272e9d8a031caa6bdc67eadbb70a39378e7c1c8043631d461f5dedd6838"
+    },
+    {
+      "bytes": 1173,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/mutation-001.log",
+      "sha256": "c2d2cb343718295d5e128fedee614f438297e403e16c3ff9e236690a9d18293a"
+    },
+    {
+      "bytes": 1172,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/mutation-002.log",
+      "sha256": "e7fe39457c9a9e2b0cc1756a834a2d709fcbac98018d6c4e9b683ed28c376be9"
+    },
+    {
+      "bytes": 1178,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/mutation-003.log",
+      "sha256": "e0f05a85481d4777becb18b5a1d394160d3d76e0156e3558c089002857b06182"
+    },
+    {
+      "bytes": 1175,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/mutation-004.log",
+      "sha256": "475cdd6576d79398e05f85eb2c4d341dbc9107d7ef8e0b9d32a3638e7bb5971a"
+    },
+    {
+      "bytes": 1360,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/mutation-005.log",
+      "sha256": "bf95017b517419ff5374e0279ebea595a9c9c5a389553a61d803802d70192a8d"
+    },
+    {
+      "bytes": 1174,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/mutation-006.log",
+      "sha256": "1abd3621cbbe85822a4d9fc71146701f911a805526ec390881f83010e8273393"
+    },
+    {
+      "bytes": 23133,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/native-tests.log",
+      "sha256": "014ee4f59b5cded5c9c482cc08d399546e3f2e3448e8cfc9ddfb30154183ce0d"
+    },
+    {
+      "bytes": 1748,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/provision.log",
+      "sha256": "1c6c5e063453894635fce8bbdaffe212d08719fc73caa372a00d3ece182825aa"
+    },
+    {
+      "bytes": 370,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/static-initialization.json",
+      "sha256": "67fdde2bb3142877efd3fa69e58c6df6933e63f16b6ce51515dfe0e696b89373"
+    },
+    {
+      "bytes": 0,
+      "category": "final-runtime-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-04/supervisor.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 13387,
+      "category": "final-validation",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/geonode-harness-before-logout-fix.txt",
+      "sha256": "ea2fb243e0d9d9f48c52c2ef36c5cffc5dc400b9b459a47525241b184af31d9d"
+    },
+    {
+      "bytes": 13893,
+      "category": "final-validation",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/geonode-harness-final.txt",
+      "sha256": "015d1365bb70fd3d8fa8ee85e4c661f64c24ad317bf691d7181a6b3116258600"
+    },
+    {
+      "bytes": 13893,
+      "category": "final-validation",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/geonode-harness.txt",
+      "sha256": "66827d6b9b802095e230e845b790e7fcd8003a61628dac83e2b004895c356877"
+    },
+    {
+      "bytes": 55637,
+      "category": "final-validation",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/java-tooling.txt",
+      "sha256": "0f7fabc864c526093620ae96d3c00144024acce200c2b1fb2d5ade0214abab02"
+    },
+    {
+      "bytes": 189,
+      "category": "final-validation",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/plan-schemas.txt",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    },
+    {
+      "bytes": 26228,
+      "category": "final-validation",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/plan-tests.txt",
+      "sha256": "7aea65c84d89432ea721511853302d5b8d84aa90c237f376375bd941a3a221ee"
+    },
+    {
+      "bytes": 2208,
+      "category": "offline-build-network-proof",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/invocation.json",
+      "sha256": "d3da176f1142a8b163b30ef4fce3d69a461993ec63047703d956cb0c03a116a7"
+    },
+    {
+      "bytes": 1639,
+      "category": "offline-build-network-proof",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/network-proof.json",
+      "sha256": "5a017521517a7a6a248c7ea62a5c498545bc40736716a80dd7d73384f9690dd5"
+    },
+    {
+      "bytes": 215,
+      "category": "offline-build-network-proof",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/replay.log",
+      "sha256": "c744e296ebe520dd2ee8cdb08042734b4dfe2207c8ab7708e04f5e48b81cd300"
+    },
+    {
+      "bytes": 5333,
+      "category": "offline-build-network-proof",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/replay.py",
+      "sha256": "24eee029d50dd0758ef9f7f8a1e390c834da8d2f314fcf94e64447b58fa91b6c"
+    },
+    {
+      "bytes": 1538,
+      "category": "offline-build-network-proof",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/result.json",
+      "sha256": "ab5ef14f292588b546bca3d40c39c03233c8232cee1f8bfdb6fd44ec8fb393c3"
+    },
+    {
+      "bytes": 2175,
+      "category": "offline-build-network-proof",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005/invocation.json",
+      "sha256": "089ad5ddc296026572f9db25ad16093d030adbced6ac48596b0e941546151177"
+    },
+    {
+      "bytes": 1600,
+      "category": "offline-build-network-proof",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005/network-proof.json",
+      "sha256": "dcd8535352d6c220d608069ec06f618d901be86c71dda35c73bacfdda3098dab"
+    },
+    {
+      "bytes": 41,
+      "category": "offline-build-network-proof",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005/replay.log",
+      "sha256": "4d69979fb59692fb7b617490236d0ada274342bc085fd5bc9d82449d4a523a8c"
+    },
+    {
+      "bytes": 4987,
+      "category": "offline-build-network-proof",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005/replay.py",
+      "sha256": "f02cb623dadb259a7759f9d10fec56cadae5fd3274a78e300b740a93ff70a981"
+    },
+    {
+      "bytes": 1466,
+      "category": "offline-build-network-proof",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005/result.json",
+      "sha256": "e53e78a97059ae6b2fe865cac55534f1c3907296049521e977bdf578c56857fe"
+    },
+    {
+      "bytes": 83517440,
+      "category": "owned-source-archive",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/geonode-identity-v2/owned-sources/geonode-a1db97e81dfc26c16bb4ee1a5d2b408877af66c9.tar",
+      "sha256": "32ef8de1e193535587b8f4c85d9491ad990d1f4459df508f74d6f1cbca5ceeb9"
+    },
+    {
+      "bytes": 92149760,
+      "category": "owned-source-archive",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/geonode-identity-v2/owned-sources/mapstore-client-7ca4822125b67999c97cb4aa1faa84b8a28eee9b.tar",
+      "sha256": "c82f35b1d92b6822b7025e4f6adfe2df256c339bd756902319bf5430ef8fcb33"
+    },
+    {
+      "bytes": 128408,
+      "category": "prior-attempt",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-baseline-01/result.json",
+      "sha256": "5c68d94c8a4a4aa4c0d48c43e498a5d0717b07db060951ccc0696d87fbd2e75f"
+    },
+    {
+      "bytes": 183620,
+      "category": "prior-attempt",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-01/result.json",
+      "sha256": "f30968a07682b58834aa43abaee43e340aff0d7551fe440e4d0d11e7bc0fc5b0"
+    },
+    {
+      "bytes": 341053,
+      "category": "prior-attempt",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-02/result.json",
+      "sha256": "57b78c08322ef0d2e0465819025d1e484b60a5069dce22d73ca5fbeada97a0ac"
+    },
+    {
+      "bytes": 341130,
+      "category": "prior-attempt",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-03/result.json",
+      "sha256": "4436224c51d99b38e4fc62296bf771302779b9fa037699628161ac5a2260d15c"
+    },
+    {
+      "bytes": 26887,
+      "category": "prior-attempt",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-01/result.json",
+      "sha256": "ef3209b6dbcc4467ed8267195fb2a2606e9e7da46aa1f90208900616d2b065ed"
+    },
+    {
+      "bytes": 26689,
+      "category": "prior-attempt",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-02/result.json",
+      "sha256": "2448867224dd8cef52e874e198ad81fd993be31405d7bbf81718834f6a851199"
+    },
+    {
+      "bytes": 27263,
+      "category": "prior-attempt",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-03/result.json",
+      "sha256": "644fea4fa6f00c48c13044bec68c0115ba66f45e6f2cff70481ecaec45299027"
+    },
+    {
+      "bytes": 88843,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-baseline-01/child-result.json",
+      "sha256": "0c69b683acfa92840de67472505e1f736a08e23fb5d4b97cbefe8e6c8e6257c7"
+    },
+    {
+      "bytes": 82691,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-baseline-01/journey-result.json",
+      "sha256": "a33de1dd2a4690947bfce718d6cf242750ccdce3b80f1566f8e583f8f0dbd10b"
+    },
+    {
+      "bytes": 678,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-baseline-01/native-tests.json",
+      "sha256": "1ca64c9f7e1f381ff921cb2d567ff5c8a568e94414272848dc6b3416d3996d2b"
+    },
+    {
+      "bytes": 1783,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-baseline-01/network-loopback.json",
+      "sha256": "0820febe6a59ce835ae590fc8e8d671f481265b8f996ddcf6c57ad4a765d6f76"
+    },
+    {
+      "bytes": 10504,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-baseline-01/tooling.json",
+      "sha256": "00e0c5d598d85175a9d39cdc7c696058238a9955d9bb975681a3905b6ee5363a"
+    },
+    {
+      "bytes": 141115,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-01/child-result.json",
+      "sha256": "541df7ec257e31df62eae0e2e4790c15b5bd7178d0537564733e3c5b914e607e"
+    },
+    {
+      "bytes": 131848,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-01/journey-result.json",
+      "sha256": "6589075810e0ab928eb137b10587d7be0fb6b7b21ff783c149d7c68f532ae8ef"
+    },
+    {
+      "bytes": 5262,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-01/native-tests.json",
+      "sha256": "9665da296687cfd4d824caff7add2dc4b794b3380a4ee45985534b027c6c8e1c"
+    },
+    {
+      "bytes": 1783,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-01/network-loopback.json",
+      "sha256": "30207995ccc6f71a6addc601602da9cc3e31c15ccd9a36b6973d37b6b20e7773"
+    },
+    {
+      "bytes": 11211,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-01/tooling.json",
+      "sha256": "be9e5f4206684c026103d68df01577888ab56ec68cc6e47c3c945001e2b01251"
+    },
+    {
+      "bytes": 289927,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-02/child-result.json",
+      "sha256": "56264adb851dca56ff4b58c7ebca743984dcb5cf44b95c86ec7e02c8f2bf9679"
+    },
+    {
+      "bytes": 271010,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-02/journey-result.json",
+      "sha256": "656b5aa1e4255c5f0d45305b9ba4f3442386a3a03254573dcb3b787ac0c142da"
+    },
+    {
+      "bytes": 5262,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-02/native-tests.json",
+      "sha256": "9665da296687cfd4d824caff7add2dc4b794b3380a4ee45985534b027c6c8e1c"
+    },
+    {
+      "bytes": 1784,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-02/network-loopback.json",
+      "sha256": "3d73d399a380867f6f0094d2b6b6e8b11924a7dcbf615d53a7a3e48e5ebe5261"
+    },
+    {
+      "bytes": 11211,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-02/tooling.json",
+      "sha256": "c0782be9d5904052c38d361ddcc460fb49b1cb6d8386d734d0d12005f79db308"
+    },
+    {
+      "bytes": 290008,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-03/child-result.json",
+      "sha256": "e19497138ff2683c9493418b491d71a4896cbbf7a1b8fc0a44fd91a84b944be6"
+    },
+    {
+      "bytes": 271095,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-03/journey-result.json",
+      "sha256": "69be6456737e758294eeed9ba29a99d61c58bc58cb19623ff2df6590bc354ea3"
+    },
+    {
+      "bytes": 5262,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-03/native-tests.json",
+      "sha256": "9665da296687cfd4d824caff7add2dc4b794b3380a4ee45985534b027c6c8e1c"
+    },
+    {
+      "bytes": 1784,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-03/network-loopback.json",
+      "sha256": "78e49360d9f8c5fcfdb8664b711c00e1ab6baabb3bdd4ac7674049b7b3916192"
+    },
+    {
+      "bytes": 11211,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-03/tooling.json",
+      "sha256": "be6c4e19c9dbb6663ed3fae4b607bc7a5fee3bd51cfada7174783195473bdc4a"
+    },
+    {
+      "bytes": 566,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-01/child-result.json",
+      "sha256": "0a241ec400ea5fa12207aed166d97431f5254cdf6cf143706d107c647ec035e2"
+    },
+    {
+      "bytes": 1736,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-01/network-loopback.json",
+      "sha256": "8176c81e9ff6f9aa4930f9de2e40713823fc4030488e56dccae1f2e5d6c5e094"
+    },
+    {
+      "bytes": 10225,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-01/tooling.json",
+      "sha256": "e910ea703f38045f7c415d4b34f09b7feb793b9c3826ffac7257f775c3a09ef9"
+    },
+    {
+      "bytes": 380,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-02/child-result.json",
+      "sha256": "b1e0572e3840e1dfe595485756429aaaf764971ea806e7e98ed5df2945446157"
+    },
+    {
+      "bytes": 1736,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-02/network-loopback.json",
+      "sha256": "460c70ed63cbbe8653e6a7cae75273fbd2befe1f3e40c5f598b74f3fc94ffe27"
+    },
+    {
+      "bytes": 10410,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-02/tooling.json",
+      "sha256": "ab367a1bcae631d255d70a98ff03f6091221f0a3fc2cb4743d7f774147dadf26"
+    },
+    {
+      "bytes": 886,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-03/child-result.json",
+      "sha256": "461c5e096a55bed2d70ea104efb845213ef06461e22c80c6c70bc1569de20b10"
+    },
+    {
+      "bytes": 678,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-03/native-tests.json",
+      "sha256": "1ca64c9f7e1f381ff921cb2d567ff5c8a568e94414272848dc6b3416d3996d2b"
+    },
+    {
+      "bytes": 1739,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-03/network-loopback.json",
+      "sha256": "1b1db187b44455609a0494c6047b57d3ec1fe97f6a35e5cad9faea9bd5da0ba9"
+    },
+    {
+      "bytes": 10504,
+      "category": "prior-attempt-detail",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-03/tooling.json",
+      "sha256": "7910af42de6de26f6ab039b554634148241e7debc9a1400693de264ab4b6c430"
+    },
+    {
+      "bytes": 26147429,
+      "category": "replay-source-built-wheel",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-005/owned-wheels/django_geonode_mapstore_client-5.1.0-py3-none-any.whl",
+      "sha256": "e16537b0f0bb2ac9e17d13101192681659b89d310ab8a62be2153453b60fd7c3"
+    },
+    {
+      "bytes": 13646769,
+      "category": "replay-source-built-wheel",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-005/owned-wheels/geonode-5.1.0.post1-py3-none-any.whl",
+      "sha256": "11eb0ac5ea702e23bf9fe38db1a42f09a4674bb06f213e56cbc67de15fb95f3a"
+    },
+    {
+      "bytes": 314896,
+      "category": "retained-input-build-replay",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-005/build-receipt.json",
+      "sha256": "c7f30caf085a762d00f90add2e33a1d55ec250280d88c2cb006cc6be56136e50"
+    },
+    {
+      "bytes": 65225,
+      "category": "retained-input-build-replay",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-005/build.log",
+      "sha256": "aa5b9f369cd3477672c8a317f01c949e4f03ac4153c25b2cfb695aa50ef8eb50"
+    },
+    {
+      "bytes": 20626,
+      "category": "retained-input-build-replay",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-005/requirements.lock",
+      "sha256": "6ad2c48175ef936b5610e50c932d07df2ffecdc01b1bb02cc8d6f1804500fb7d"
+    },
+    {
+      "bytes": 13387,
+      "category": "retained-test-output",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/harness-final-01.txt",
+      "sha256": "ea2fb243e0d9d9f48c52c2ef36c5cffc5dc400b9b459a47525241b184af31d9d"
+    },
+    {
+      "bytes": 55637,
+      "category": "retained-test-output",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/java-tooling-final-01.txt",
+      "sha256": "0f7fabc864c526093620ae96d3c00144024acce200c2b1fb2d5ade0214abab02"
+    },
+    {
+      "bytes": 314896,
+      "category": "source-build",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004/build-receipt.json",
+      "sha256": "9b4b2075c4a1d345a7ab091a7122f90cf267e2bd74ee93c991f1ddb1e4dc4c73"
+    },
+    {
+      "bytes": 65225,
+      "category": "source-build",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004/build.log",
+      "sha256": "269fe498b5d2424e5df6497ec5fad5f5302020ed6ce05a2550f0cf5fa03dabd9"
+    },
+    {
+      "bytes": 20626,
+      "category": "source-build",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004/requirements.lock",
+      "sha256": "6ad2c48175ef936b5610e50c932d07df2ffecdc01b1bb02cc8d6f1804500fb7d"
+    },
+    {
+      "bytes": 26147429,
+      "category": "source-built-wheel",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004/owned-wheels/django_geonode_mapstore_client-5.1.0-py3-none-any.whl",
+      "sha256": "85c4a7ae7e6f353e22e6453ebd85dee34d0fa294d2f5bb84b9ff0f015d09ad2e"
+    },
+    {
+      "bytes": 13646769,
+      "category": "source-built-wheel",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004/owned-wheels/geonode-5.1.0.post1-py3-none-any.whl",
+      "sha256": "3fc83490a45280848ee8efa840bc820f8bdec53814419ce35baf275798f3abc7"
+    },
+    {
+      "bytes": 275812,
+      "category": "source-custody",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/geonode-identity-v2/manifest.json",
+      "sha256": "59aead3d62cca41ae126e60f988e82ca7043567f5df0aebdc0b838dd6a7176d1"
+    },
+    {
+      "bytes": 122256,
+      "category": "synthetic-regression",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/synthetic-regression-01/http-result.json",
+      "sha256": "85176761696d241263a21a2266302b08b591810e48500b111105c6a75b488eec"
+    },
+    {
+      "bytes": 1798,
+      "category": "synthetic-regression",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/synthetic-regression-01/network-loopback.json",
+      "sha256": "80d993f6f8caf6b8f4231697eba9eb9f17bf95fe543f58cc109b00714d29e1db"
+    },
+    {
+      "bytes": 12029,
+      "category": "synthetic-regression",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/synthetic-regression-01/network-loopback.probes.json",
+      "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825"
+    },
+    {
+      "bytes": 162973,
+      "category": "synthetic-regression",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/synthetic-regression-01/result.json",
+      "sha256": "d7abce8b0607f5bff5b020ff303d3500ba255cb8fbdff5f9edbb955ebf6b34a3"
+    },
+    {
+      "bytes": 7856,
+      "category": "synthetic-regression",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/synthetic-regression-01/tooling.json",
+      "sha256": "6d73b217f6a6d22777ab935cf9e11159ba53fa7b778b3d64e9b5d734cc05e22d"
+    }
+  ],
+  "final": {
+    "child_cleanup": {
+      "stored_credentials_invalidated": true
+    },
+    "child_result_exit_code": 0,
+    "cleanup": {
+      "private_config_scrubbed": true
+    },
+    "command_exit_code": 0,
+    "commands": [
+      {
+        "action": "check",
+        "diagnostic_secret_hits": 0,
+        "exit_code": 0,
+        "security_failures": null
+      },
+      {
+        "action": "migrate",
+        "diagnostic_secret_hits": 0,
+        "exit_code": 0,
+        "security_failures": null
+      },
+      {
+        "action": "initialize",
+        "diagnostic_secret_hits": 0,
+        "exit_code": 0,
+        "security_failures": null
+      },
+      {
+        "action": "native-tests",
+        "diagnostic_secret_hits": 0,
+        "exit_code": 0,
+        "security_failures": null
+      },
+      {
+        "action": "provision",
+        "diagnostic_secret_hits": 0,
+        "exit_code": 0,
+        "security_failures": null
+      }
+    ],
+    "database": {
+      "postgis_version": "3.5.7",
+      "result_exit_code": 0,
+      "started": true,
+      "stopped": true,
+      "transport": "127.0.0.1 TCP, SCRAM; Unix listeners disabled"
+    },
+    "database_supervisor_exception": "Existing #59 limitation: authenticated owned PostgreSQL alone runs outside unchanged supervisor because backend setsid is denied.",
+    "error_type": null,
+    "journey": {
+      "cache": {
+        "denial_observed_upper_bound_seconds": 2.0496,
+        "eventual_denial": true,
+        "immediate_revocation_claimed": false,
+        "passed": true,
+        "samples": [
+          {
+            "elapsed_after_revoke_seconds": 0.2126,
+            "status": 200
+          },
+          {
+            "elapsed_after_revoke_seconds": 0.4729,
+            "status": 200
+          },
+          {
+            "elapsed_after_revoke_seconds": 0.7325,
+            "status": 200
+          },
+          {
+            "elapsed_after_revoke_seconds": 0.9918,
+            "status": 200
+          },
+          {
+            "elapsed_after_revoke_seconds": 1.2512,
+            "status": 200
+          },
+          {
+            "elapsed_after_revoke_seconds": 1.5115,
+            "status": 200
+          },
+          {
+            "elapsed_after_revoke_seconds": 1.7713,
+            "status": 200
+          },
+          {
+            "elapsed_after_revoke_seconds": 2.0496,
+            "status": 403
+          }
+        ],
+        "stale_access_lower_bound_seconds": 1.7713,
+        "ttl_seconds": 2
+      },
+      "cleanup": {
+        "geonode-final": {
+          "capture_stopped": true,
+          "diagnostic_secret_hits": 0,
+          "process_stopped": true
+        },
+        "geonode-outage": {
+          "capture_stopped": true,
+          "diagnostic_secret_hits": 0,
+          "process_stopped": true
+        },
+        "geoserver-final": {
+          "capture_stopped": true,
+          "diagnostic_secret_hits": 0,
+          "process_stopped": true
+        },
+        "geoserver-initial": {
+          "capture_stopped": true,
+          "diagnostic_secret_hits": 0,
+          "process_stopped": true
+        },
+        "geoserver_config_scrubbed": true
+      },
+      "cookie_scope": "Real GeoNode session cookies sent to GeoServer confer no identity; native GeoServer JSESSIONID browser-context restoration is not newly proven.",
+      "coverage_limits": [
+        "No full browser JavaScript/SSO acceptance.",
+        "Concurrent verification global windows are not individual request attribution.",
+        "Malformed response adversaries remain the separate #59 synthetic regression.",
+        "Delay/truncation are explicitly injected transport faults after a real native200; native output is unchanged without the private fault control."
+      ],
+      "diagnostic_secret_hits": 0,
+      "error_type": null,
+      "expiry_cache": {
+        "configured_cache_ttl_seconds": 2,
+        "denial_observed": true,
+        "denial_upper_bound_after_mutation_completed_seconds": 4.2705,
+        "passed": true,
+        "samples": [
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 0.0398,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 0.2501,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 0.4597,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 0.6693,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 0.879,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 1.0887,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 1.2979,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 1.5085,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 1.7183,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 1.9281,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 2.1577,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 2.3677,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 2.5774,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 2.7861,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 2.9951,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 3.2046,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 3.414,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 3.6231,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 3.8339,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 4.0428,
+            "status": 200
+          },
+          {
+            "elapsed_after_expiry_mutation_completed_seconds": 4.2705,
+            "status": 403
+          }
+        ],
+        "source_expiry_seconds_after_mutation": 4,
+        "timing_scope": "Monotonic bounds measured after native ORM mutation command completes; no immediate-expiry claim."
+      },
+      "failed_cases": [],
+      "geoserver_requests": {
+        "failed": 0,
+        "passed": 176,
+        "records": 176
+      },
+      "geoserver_requests_by_round": {
+        "initial": 168,
+        "restart": 8
+      },
+      "identity_is_synthetic": false,
+      "late_diagnostic_secret_hits": 0,
+      "logger_capture_controls": {
+        "geonode-initial": 1,
+        "geonode-restart": 1,
+        "geoserver-initial-CACHE": 1,
+        "geoserver-initial-OAUTH": 1,
+        "geoserver-restart-CACHE": 1,
+        "geoserver-restart-OAUTH": 1
+      },
+      "oauth_http_requests": 102,
+      "protocol_assertions": {
+        "failed": 0,
+        "passed": 48,
+        "records": 48
+      },
+      "resource_request_correlation": {
+        "expected_count": 64,
+        "mixed_identity_worker_reuse": true,
+        "observed_records": 64,
+        "passed": true,
+        "scope": "Actual GeoServer resource request case/thread/status; no individual verifier attribution."
+      },
+      "restart": {
+        "geonode_recorded": true,
+        "geoserver_recorded": true
+      },
+      "result_exit_code": 0,
+      "role_authority": "Explicitly mirrored GeoServer XML users/roles with GeoFence; no automatic GeoNode role synchronization.",
+      "role_change": {
+        "after_cache_expiry": {
+          "elapsed_after_prime_seconds": 2.2822,
+          "status": 200,
+          "verification_call_delta_global": 1
+        },
+        "cached_request": {
+          "elapsed_after_prime_seconds": 1.6916,
+          "status": 200,
+          "verification_call_delta_global": 0
+        },
+        "comparison_limitation": "Local XML role remains both during cache validity and after fresh real verification; no automatic role projection or unified-policy revocation acceptance.",
+        "correlation_scope": "Sequential controlled verifier-call windows, not per-request trace attribution.",
+        "native_geonode_group_removed": true,
+        "passed": true
+      },
+      "source_log_redactions": {
+        "capture_scope": "WARNING and above source message text; exception class only; not a full DEBUG audit",
+        "invalid_counter_records": 0,
+        "logs": [
+          {
+            "counter_records": 28,
+            "invalid_counter_records": 0,
+            "log": "geonode-runtime.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          {
+            "counter_records": 0,
+            "invalid_counter_records": 0,
+            "log": "geoserver-initial.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          {
+            "counter_records": 1,
+            "invalid_counter_records": 0,
+            "log": "mutation-000.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          {
+            "counter_records": 1,
+            "invalid_counter_records": 0,
+            "log": "mutation-001.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          {
+            "counter_records": 1,
+            "invalid_counter_records": 0,
+            "log": "mutation-002.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          {
+            "counter_records": 1,
+            "invalid_counter_records": 0,
+            "log": "mutation-003.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          {
+            "counter_records": 1,
+            "invalid_counter_records": 0,
+            "log": "mutation-004.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          {
+            "counter_records": 1,
+            "invalid_counter_records": 0,
+            "log": "mutation-005.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          {
+            "counter_records": 1,
+            "invalid_counter_records": 0,
+            "log": "mutation-006.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          {
+            "counter_records": 5,
+            "invalid_counter_records": 0,
+            "log": "geonode-restart.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          {
+            "counter_records": 0,
+            "invalid_counter_records": 0,
+            "log": "geoserver-restart.log",
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          }
+        ],
+        "opaque_scope": "Conservative opaque candidates may include non-secret identifiers; reported separately.",
+        "passed": true,
+        "source_credential_field_redactions": 0,
+        "source_diagnostic_redactions": 0,
+        "source_opaque_value_redactions": 0,
+        "source_private_key_redactions": 0
+      },
+      "transport_faults": [
+        {
+          "elapsed_seconds": 1.5105,
+          "mode": "delay",
+          "native_response_controls": [
+            {
+              "event": "native_verifier_transport_fault",
+              "mode": "delay",
+              "native_body_bytes": 175,
+              "native_status": 200
+            }
+          ],
+          "native_valid_response_observed": true,
+          "passed": true,
+          "scope": "Explicit transport injection after real native token verification; fresh unprimed token."
+        },
+        {
+          "elapsed_seconds": 0.0257,
+          "mode": "truncate",
+          "native_response_controls": [
+            {
+              "event": "native_verifier_transport_fault",
+              "mode": "truncate",
+              "native_body_bytes": 175,
+              "native_status": 200
+            }
+          ],
+          "native_valid_response_observed": true,
+          "passed": true,
+          "scope": "Explicit transport injection after real native token verification; fresh unprimed token."
+        }
+      ],
+      "war_sha256_after": "8a79a2cf7647be2f28591d7f04f975dc84cb00baaaea35cb3d5f2f293ea8f39f"
+    },
+    "network": {
+      "broker_sockets_closed": true,
+      "command_exit_code": 0,
+      "datagram_packets_received": 0,
+      "datagram_sentinels_closed": true,
+      "limitations": [
+        "trusted test runner, not hostile-code/filesystem/process isolation",
+        "all existing loopback services remain reachable; use disposable fixture credentials only",
+        "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+        "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+      ],
+      "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+      "network_probes": {
+        "all_passed": true,
+        "exec_child_probes": 79,
+        "parent_probes": 79,
+        "schema_version": 1
+      },
+      "result_exit_code": 0,
+      "task_process_group_stopped": true
+    },
+    "result_exit_code": 0,
+    "tooling_unchanged": true
+  },
+  "generated_at_utc": "2026-09-21T04:31:26.574562+00:00",
+  "generator": {
+    "bytes": 24285,
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geonode-identity/plan/verification/geonode-identity/index_evidence.py",
+    "sha256": "0409ad94aca4b5278446ea9d0c736c55f07274af23aaa9cc9608b23f81a7eaab"
+  },
+  "implementation": {
+    "commit": "08d1d910552f47d1ab8893c4a7fcd42c0cbacb44",
+    "hash_scope": "Frozen implementation commit and build-support/geonode subtree; not a self-referential evidence commit.",
+    "tree": "56ea403505f5e4b00d5776b978fe6aae69d3597d"
+  },
+  "missing_optional": [
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/acquisition/acquisition-receipt.json"
+  ],
+  "native_tests": {
+    "errors": 0,
+    "expected_count": 38,
+    "expected_failures": 0,
+    "failures": 0,
+    "passed": true,
+    "scope": "Four unmodified native ORM encryption/auth handler tests plus the owned strict verifier regression suite when enabled; native Django TestCase rollback transactions on disposable catalog; real HTTP identity acceptance is separate",
+    "skips": 0,
+    "strict_verifier": true,
+    "tests_run": 38,
+    "unexpected_successes": 0
+  },
+  "offline_replay_attempts": [
+    {
+      "build_receipt_sha256": null,
+      "completed": true,
+      "name": "offline-replay-005",
+      "network": {
+        "different_from_host": true,
+        "interfaces": [
+          {
+            "flags": 8,
+            "index": 1,
+            "name": "lo",
+            "up": false
+          }
+        ],
+        "ipv4_routes": "",
+        "ipv6_routes_all_kernel_reject": null,
+        "outbound_probes": [
+          {
+            "denied": true,
+            "destination": "1.1.1.1",
+            "elapsed_seconds": 3.8e-05,
+            "errno": 101,
+            "exception_type": "OSError",
+            "family": "AF_INET",
+            "port": 443
+          },
+          {
+            "denied": false,
+            "destination": "2606:4700:4700::1111",
+            "elapsed_seconds": 1.9e-05,
+            "errno": 99,
+            "exception_type": "OSError",
+            "family": "AF_INET6",
+            "port": 443
+          }
+        ],
+        "passed": false,
+        "scope": "Same disconnected network namespace runs the subprocess build; no namespace privileges requested by build."
+      },
+      "passed": false,
+      "recipe_and_input_bytes_unchanged": true,
+      "subprocess_exit_code": 1
+    },
+    {
+      "build_receipt_sha256": "c7f30caf085a762d00f90add2e33a1d55ec250280d88c2cb006cc6be56136e50",
+      "completed": true,
+      "name": "offline-replay-005-attempt-02",
+      "network": {
+        "different_from_host": true,
+        "interfaces": [
+          {
+            "flags": 8,
+            "index": 1,
+            "name": "lo",
+            "up": false
+          }
+        ],
+        "ipv4_routes": "",
+        "ipv6_routes_all_kernel_reject": true,
+        "outbound_probes": [
+          {
+            "denied": true,
+            "destination": "1.1.1.1",
+            "elapsed_seconds": 3.3e-05,
+            "errno": 101,
+            "exception_type": "OSError",
+            "family": "AF_INET",
+            "port": 443
+          },
+          {
+            "denied": true,
+            "destination": "2606:4700:4700::1111",
+            "elapsed_seconds": 1.8e-05,
+            "errno": 99,
+            "exception_type": "OSError",
+            "family": "AF_INET6",
+            "port": 443
+          }
+        ],
+        "passed": true,
+        "scope": "Same disconnected network namespace runs the subprocess build; no namespace privileges requested by build."
+      },
+      "passed": true,
+      "recipe_and_input_bytes_unchanged": true,
+      "subprocess_exit_code": 0
+    }
+  ],
+  "prior_attempts": [
+    {
+      "name": "integration-baseline-01",
+      "result": {
+        "bytes": 128408,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-baseline-01/result.json",
+        "sha256": "5c68d94c8a4a4aa4c0d48c43e498a5d0717b07db060951ccc0696d87fbd2e75f"
+      },
+      "summary": {
+        "child_cleanup": {
+          "stored_credentials_invalidated": true
+        },
+        "child_result_exit_code": 1,
+        "cleanup": {
+          "private_config_scrubbed": true
+        },
+        "command_exit_code": 1,
+        "commands": [
+          {
+            "action": "check",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "migrate",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "native-tests",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "provision",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          }
+        ],
+        "database": {
+          "postgis_version": "3.5.7",
+          "result_exit_code": 0,
+          "started": true,
+          "stopped": true,
+          "transport": "127.0.0.1 TCP, SCRAM; Unix listeners disabled"
+        },
+        "database_supervisor_exception": "Existing #59 limitation: authenticated owned PostgreSQL alone runs outside unchanged supervisor because backend setsid is denied.",
+        "error_type": "RuntimeError",
+        "journey": {
+          "cleanup": {
+            "geonode-final": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geoserver-final": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geoserver_config_scrubbed": true
+          },
+          "cookie_scope": "Real GeoNode session cookies sent to GeoServer confer no identity; native GeoServer JSESSIONID browser-context restoration is not newly proven.",
+          "coverage_limits": [
+            "No full browser JavaScript/SSO acceptance.",
+            "Concurrent verification global windows are not individual request attribution.",
+            "Malformed response adversaries remain the separate #59 synthetic regression.",
+            "Unknown/removed principal and server response-delay injection are not covered by this journey."
+          ],
+          "diagnostic_secret_hits": 0,
+          "error_type": "ProtocolError",
+          "failed_cases": [
+            "wrong-application-bearer",
+            "fresh-disabled-owner",
+            "disabled-user-login",
+            "tokeninfo-missing-client-auth",
+            "tokeninfo-wrong-client-secret",
+            "tokeninfo-other-client-credentials",
+            "tokeninfo-second-application",
+            "tokeninfo-reader-session-outsider-bearer",
+            "roles-no-auth-/api/roles",
+            "tokeninfo-disabled-owner"
+          ],
+          "geoserver_requests": {
+            "failed": 2,
+            "passed": 64,
+            "records": 66
+          },
+          "geoserver_requests_by_round": {
+            "initial": 66
+          },
+          "identity_is_synthetic": false,
+          "late_diagnostic_secret_hits": 0,
+          "logger_capture_controls": {
+            "geonode-initial": 1,
+            "geonode-restart": 0,
+            "geoserver-initial-CACHE": 1,
+            "geoserver-initial-OAUTH": 1,
+            "geoserver-restart-CACHE": 0,
+            "geoserver-restart-OAUTH": 0
+          },
+          "oauth_http_requests": 80,
+          "protocol_assertions": {
+            "failed": 8,
+            "passed": 25,
+            "records": 33
+          },
+          "resource_request_correlation": {
+            "expected_count": null,
+            "mixed_identity_worker_reuse": null,
+            "observed_records": 0,
+            "passed": null,
+            "scope": null
+          },
+          "restart": {
+            "geonode_recorded": false,
+            "geoserver_recorded": false
+          },
+          "result_exit_code": 1,
+          "role_authority": "Explicitly mirrored GeoServer XML users/roles with GeoFence; no automatic GeoNode role synchronization.",
+          "war_sha256_after": "8a79a2cf7647be2f28591d7f04f975dc84cb00baaaea35cb3d5f2f293ea8f39f"
+        },
+        "network": {
+          "broker_sockets_closed": true,
+          "command_exit_code": 1,
+          "datagram_packets_received": 0,
+          "datagram_sentinels_closed": true,
+          "limitations": [
+            "trusted test runner, not hostile-code/filesystem/process isolation",
+            "all existing loopback services remain reachable; use disposable fixture credentials only",
+            "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+            "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+          ],
+          "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+          "network_probes": {
+            "all_passed": true,
+            "exec_child_probes": 79,
+            "parent_probes": 79,
+            "schema_version": 1
+          },
+          "result_exit_code": 1,
+          "task_process_group_stopped": true
+        },
+        "result_exit_code": 1,
+        "tooling_unchanged": true
+      }
+    },
+    {
+      "name": "integration-repaired-01",
+      "result": {
+        "bytes": 183620,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-01/result.json",
+        "sha256": "f30968a07682b58834aa43abaee43e340aff0d7551fe440e4d0d11e7bc0fc5b0"
+      },
+      "summary": {
+        "child_cleanup": {
+          "stored_credentials_invalidated": true
+        },
+        "child_result_exit_code": 1,
+        "cleanup": {
+          "private_config_scrubbed": true
+        },
+        "command_exit_code": 1,
+        "commands": [
+          {
+            "action": "check",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "migrate",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "initialize",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "native-tests",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "provision",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          }
+        ],
+        "database": {
+          "postgis_version": "3.5.7",
+          "result_exit_code": 0,
+          "started": true,
+          "stopped": true,
+          "transport": "127.0.0.1 TCP, SCRAM; Unix listeners disabled"
+        },
+        "database_supervisor_exception": "Existing #59 limitation: authenticated owned PostgreSQL alone runs outside unchanged supervisor because backend setsid is denied.",
+        "error_type": "RuntimeError",
+        "journey": {
+          "cleanup": {
+            "geonode-final": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geoserver-final": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geoserver_config_scrubbed": true
+          },
+          "cookie_scope": "Real GeoNode session cookies sent to GeoServer confer no identity; native GeoServer JSESSIONID browser-context restoration is not newly proven.",
+          "coverage_limits": [
+            "No full browser JavaScript/SSO acceptance.",
+            "Concurrent verification global windows are not individual request attribution.",
+            "Malformed response adversaries remain the separate #59 synthetic regression.",
+            "Delay/truncation are explicitly injected transport faults after a real native200; native output is unchanged without the private fault control."
+          ],
+          "diagnostic_secret_hits": 0,
+          "error_type": "ProtocolError",
+          "failed_cases": [
+            "disabled-user-login",
+            "tokeninfo-valid-reader",
+            "tokeninfo-reader-session-outsider-bearer",
+            "tokeninfo-active-unmapped-principal"
+          ],
+          "geoserver_requests": {
+            "failed": 0,
+            "passed": 69,
+            "records": 69
+          },
+          "geoserver_requests_by_round": {
+            "initial": 69
+          },
+          "identity_is_synthetic": false,
+          "late_diagnostic_secret_hits": 0,
+          "logger_capture_controls": {
+            "geonode-initial": 1,
+            "geonode-restart": 0,
+            "geoserver-initial-CACHE": 1,
+            "geoserver-initial-OAUTH": 1,
+            "geoserver-restart-CACHE": 0,
+            "geoserver-restart-OAUTH": 0
+          },
+          "oauth_http_requests": 84,
+          "protocol_assertions": {
+            "failed": 4,
+            "passed": 34,
+            "records": 38
+          },
+          "resource_request_correlation": {
+            "expected_count": null,
+            "mixed_identity_worker_reuse": null,
+            "observed_records": 0,
+            "passed": null,
+            "scope": null
+          },
+          "restart": {
+            "geonode_recorded": false,
+            "geoserver_recorded": false
+          },
+          "result_exit_code": 1,
+          "role_authority": "Explicitly mirrored GeoServer XML users/roles with GeoFence; no automatic GeoNode role synchronization.",
+          "transport_faults": [
+            {
+              "elapsed_seconds": 1.5116,
+              "mode": "delay",
+              "native_response_controls": [
+                {
+                  "event": "native_verifier_transport_fault",
+                  "mode": "delay",
+                  "native_body_bytes": 175,
+                  "native_status": 200
+                }
+              ],
+              "native_valid_response_observed": true,
+              "passed": true,
+              "scope": "Explicit transport injection after real native token verification; fresh unprimed token."
+            },
+            {
+              "elapsed_seconds": 0.0256,
+              "mode": "truncate",
+              "native_response_controls": [
+                {
+                  "event": "native_verifier_transport_fault",
+                  "mode": "truncate",
+                  "native_body_bytes": 175,
+                  "native_status": 200
+                }
+              ],
+              "native_valid_response_observed": true,
+              "passed": true,
+              "scope": "Explicit transport injection after real native token verification; fresh unprimed token."
+            }
+          ],
+          "war_sha256_after": "8a79a2cf7647be2f28591d7f04f975dc84cb00baaaea35cb3d5f2f293ea8f39f"
+        },
+        "network": {
+          "broker_sockets_closed": true,
+          "command_exit_code": 1,
+          "datagram_packets_received": 0,
+          "datagram_sentinels_closed": true,
+          "limitations": [
+            "trusted test runner, not hostile-code/filesystem/process isolation",
+            "all existing loopback services remain reachable; use disposable fixture credentials only",
+            "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+            "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+          ],
+          "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+          "network_probes": {
+            "all_passed": true,
+            "exec_child_probes": 79,
+            "parent_probes": 79,
+            "schema_version": 1
+          },
+          "result_exit_code": 1,
+          "task_process_group_stopped": true
+        },
+        "result_exit_code": 1,
+        "tooling_unchanged": true
+      }
+    },
+    {
+      "name": "integration-repaired-02",
+      "result": {
+        "bytes": 341053,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-02/result.json",
+        "sha256": "57b78c08322ef0d2e0465819025d1e484b60a5069dce22d73ca5fbeada97a0ac"
+      },
+      "summary": {
+        "child_cleanup": {
+          "stored_credentials_invalidated": true
+        },
+        "child_result_exit_code": 1,
+        "cleanup": {
+          "private_config_scrubbed": true
+        },
+        "command_exit_code": 1,
+        "commands": [
+          {
+            "action": "check",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "migrate",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "initialize",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "native-tests",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "provision",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          }
+        ],
+        "database": {
+          "postgis_version": "3.5.7",
+          "result_exit_code": 0,
+          "started": true,
+          "stopped": true,
+          "transport": "127.0.0.1 TCP, SCRAM; Unix listeners disabled"
+        },
+        "database_supervisor_exception": "Existing #59 limitation: authenticated owned PostgreSQL alone runs outside unchanged supervisor because backend setsid is denied.",
+        "error_type": "RuntimeError",
+        "journey": {
+          "cache": {
+            "denial_observed_upper_bound_seconds": 2.0385,
+            "eventual_denial": true,
+            "immediate_revocation_claimed": false,
+            "passed": true,
+            "samples": [
+              {
+                "elapsed_after_revoke_seconds": 0.2044,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 0.4637,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 0.7233,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 0.9824,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 1.2416,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 1.5004,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 1.7596,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 2.0385,
+                "status": 403
+              }
+            ],
+            "stale_access_lower_bound_seconds": 1.7596,
+            "ttl_seconds": 2
+          },
+          "cleanup": {
+            "geonode-final": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geonode-outage": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geoserver-final": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geoserver-initial": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geoserver_config_scrubbed": true
+          },
+          "cookie_scope": "Real GeoNode session cookies sent to GeoServer confer no identity; native GeoServer JSESSIONID browser-context restoration is not newly proven.",
+          "coverage_limits": [
+            "No full browser JavaScript/SSO acceptance.",
+            "Concurrent verification global windows are not individual request attribution.",
+            "Malformed response adversaries remain the separate #59 synthetic regression.",
+            "Delay/truncation are explicitly injected transport faults after a real native200; native output is unchanged without the private fault control."
+          ],
+          "diagnostic_secret_hits": 0,
+          "error_type": null,
+          "expiry_cache": {
+            "configured_cache_ttl_seconds": 2,
+            "denial_observed": true,
+            "denial_upper_bound_after_mutation_completed_seconds": 4.2789,
+            "passed": true,
+            "samples": [
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 0.0414,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 0.2512,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 0.4609,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 0.6701,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 0.8805,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 1.0917,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 1.3022,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 1.5126,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 1.7222,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 1.9318,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 2.1645,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 2.3734,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 2.583,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 2.7929,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 3.0019,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 3.211,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 3.4203,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 3.6293,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 3.8409,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 4.0506,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 4.2789,
+                "status": 403
+              }
+            ],
+            "source_expiry_seconds_after_mutation": 4,
+            "timing_scope": "Monotonic bounds measured after native ORM mutation command completes; no immediate-expiry claim."
+          },
+          "failed_cases": [
+            "native-geonode-logout"
+          ],
+          "geoserver_requests": {
+            "failed": 0,
+            "passed": 176,
+            "records": 176
+          },
+          "geoserver_requests_by_round": {
+            "initial": 168,
+            "restart": 8
+          },
+          "identity_is_synthetic": false,
+          "late_diagnostic_secret_hits": 0,
+          "logger_capture_controls": {
+            "geonode-initial": 1,
+            "geonode-restart": 1,
+            "geoserver-initial-CACHE": 1,
+            "geoserver-initial-OAUTH": 1,
+            "geoserver-restart-CACHE": 1,
+            "geoserver-restart-OAUTH": 1
+          },
+          "oauth_http_requests": 102,
+          "protocol_assertions": {
+            "failed": 1,
+            "passed": 47,
+            "records": 48
+          },
+          "resource_request_correlation": {
+            "expected_count": 64,
+            "mixed_identity_worker_reuse": true,
+            "observed_records": 64,
+            "passed": true,
+            "scope": "Actual GeoServer resource request case/thread/status; no individual verifier attribution."
+          },
+          "restart": {
+            "geonode_recorded": true,
+            "geoserver_recorded": true
+          },
+          "result_exit_code": 1,
+          "role_authority": "Explicitly mirrored GeoServer XML users/roles with GeoFence; no automatic GeoNode role synchronization.",
+          "role_change": {
+            "after_cache_expiry": {
+              "elapsed_after_prime_seconds": 2.2844,
+              "status": 200,
+              "verification_call_delta_global": 1
+            },
+            "cached_request": {
+              "elapsed_after_prime_seconds": 1.5917,
+              "status": 200,
+              "verification_call_delta_global": 0
+            },
+            "comparison_limitation": "Local XML role remains both during cache validity and after fresh real verification; no automatic role projection or unified-policy revocation acceptance.",
+            "correlation_scope": "Sequential controlled verifier-call windows, not per-request trace attribution.",
+            "native_geonode_group_removed": true,
+            "passed": true
+          },
+          "source_log_redactions": {
+            "capture_scope": "WARNING and above source message text; exception class only; not a full DEBUG audit",
+            "invalid_counter_records": 0,
+            "logs": [
+              {
+                "counter_records": 28,
+                "invalid_counter_records": 0,
+                "log": "geonode-runtime.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 0,
+                "invalid_counter_records": 0,
+                "log": "geoserver-initial.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-000.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-001.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-002.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-003.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-004.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-005.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-006.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 5,
+                "invalid_counter_records": 0,
+                "log": "geonode-restart.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 0,
+                "invalid_counter_records": 0,
+                "log": "geoserver-restart.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              }
+            ],
+            "opaque_scope": "Conservative opaque candidates may include non-secret identifiers; reported separately.",
+            "passed": true,
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          "transport_faults": [
+            {
+              "elapsed_seconds": 1.511,
+              "mode": "delay",
+              "native_response_controls": [
+                {
+                  "event": "native_verifier_transport_fault",
+                  "mode": "delay",
+                  "native_body_bytes": 175,
+                  "native_status": 200
+                }
+              ],
+              "native_valid_response_observed": true,
+              "passed": true,
+              "scope": "Explicit transport injection after real native token verification; fresh unprimed token."
+            },
+            {
+              "elapsed_seconds": 0.025,
+              "mode": "truncate",
+              "native_response_controls": [
+                {
+                  "event": "native_verifier_transport_fault",
+                  "mode": "truncate",
+                  "native_body_bytes": 175,
+                  "native_status": 200
+                }
+              ],
+              "native_valid_response_observed": true,
+              "passed": true,
+              "scope": "Explicit transport injection after real native token verification; fresh unprimed token."
+            }
+          ],
+          "war_sha256_after": "8a79a2cf7647be2f28591d7f04f975dc84cb00baaaea35cb3d5f2f293ea8f39f"
+        },
+        "network": {
+          "broker_sockets_closed": true,
+          "command_exit_code": 1,
+          "datagram_packets_received": 0,
+          "datagram_sentinels_closed": true,
+          "limitations": [
+            "trusted test runner, not hostile-code/filesystem/process isolation",
+            "all existing loopback services remain reachable; use disposable fixture credentials only",
+            "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+            "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+          ],
+          "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+          "network_probes": {
+            "all_passed": true,
+            "exec_child_probes": 79,
+            "parent_probes": 79,
+            "schema_version": 1
+          },
+          "result_exit_code": 1,
+          "task_process_group_stopped": true
+        },
+        "result_exit_code": 1,
+        "tooling_unchanged": true
+      }
+    },
+    {
+      "name": "integration-repaired-03",
+      "result": {
+        "bytes": 341130,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/integration-repaired-03/result.json",
+        "sha256": "4436224c51d99b38e4fc62296bf771302779b9fa037699628161ac5a2260d15c"
+      },
+      "summary": {
+        "child_cleanup": {
+          "stored_credentials_invalidated": true
+        },
+        "child_result_exit_code": 1,
+        "cleanup": {
+          "private_config_scrubbed": true
+        },
+        "command_exit_code": 1,
+        "commands": [
+          {
+            "action": "check",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "migrate",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "initialize",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "native-tests",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "provision",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          }
+        ],
+        "database": {
+          "postgis_version": "3.5.7",
+          "result_exit_code": 0,
+          "started": true,
+          "stopped": true,
+          "transport": "127.0.0.1 TCP, SCRAM; Unix listeners disabled"
+        },
+        "database_supervisor_exception": "Existing #59 limitation: authenticated owned PostgreSQL alone runs outside unchanged supervisor because backend setsid is denied.",
+        "error_type": "RuntimeError",
+        "journey": {
+          "cache": {
+            "denial_observed_upper_bound_seconds": 2.0514,
+            "eventual_denial": true,
+            "immediate_revocation_claimed": false,
+            "passed": true,
+            "samples": [
+              {
+                "elapsed_after_revoke_seconds": 0.2099,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 0.4701,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 0.7295,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 0.9892,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 1.2488,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 1.5086,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 1.7703,
+                "status": 200
+              },
+              {
+                "elapsed_after_revoke_seconds": 2.0514,
+                "status": 403
+              }
+            ],
+            "stale_access_lower_bound_seconds": 1.7703,
+            "ttl_seconds": 2
+          },
+          "cleanup": {
+            "geonode-final": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geonode-outage": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geoserver-final": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geoserver-initial": {
+              "capture_stopped": true,
+              "diagnostic_secret_hits": 0,
+              "process_stopped": true
+            },
+            "geoserver_config_scrubbed": true
+          },
+          "cookie_scope": "Real GeoNode session cookies sent to GeoServer confer no identity; native GeoServer JSESSIONID browser-context restoration is not newly proven.",
+          "coverage_limits": [
+            "No full browser JavaScript/SSO acceptance.",
+            "Concurrent verification global windows are not individual request attribution.",
+            "Malformed response adversaries remain the separate #59 synthetic regression.",
+            "Delay/truncation are explicitly injected transport faults after a real native200; native output is unchanged without the private fault control."
+          ],
+          "diagnostic_secret_hits": 0,
+          "error_type": null,
+          "expiry_cache": {
+            "configured_cache_ttl_seconds": 2,
+            "denial_observed": true,
+            "denial_upper_bound_after_mutation_completed_seconds": 4.3001,
+            "passed": true,
+            "samples": [
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 0.0409,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 0.2521,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 0.4622,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 0.6716,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 0.882,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 1.0931,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 1.3047,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 1.5185,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 1.7277,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 1.9385,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 2.1813,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 2.3912,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 2.6013,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 2.8111,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 3.0214,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 3.2315,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 3.4419,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 3.6521,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 3.8616,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 4.0716,
+                "status": 200
+              },
+              {
+                "elapsed_after_expiry_mutation_completed_seconds": 4.3001,
+                "status": 403
+              }
+            ],
+            "source_expiry_seconds_after_mutation": 4,
+            "timing_scope": "Monotonic bounds measured after native ORM mutation command completes; no immediate-expiry claim."
+          },
+          "failed_cases": [],
+          "geoserver_requests": {
+            "failed": 0,
+            "passed": 176,
+            "records": 176
+          },
+          "geoserver_requests_by_round": {
+            "initial": 168,
+            "restart": 8
+          },
+          "identity_is_synthetic": false,
+          "late_diagnostic_secret_hits": 0,
+          "logger_capture_controls": {
+            "geonode-initial": 1,
+            "geonode-restart": 1,
+            "geoserver-initial-CACHE": 1,
+            "geoserver-initial-OAUTH": 1,
+            "geoserver-restart-CACHE": 1,
+            "geoserver-restart-OAUTH": 1
+          },
+          "oauth_http_requests": 102,
+          "protocol_assertions": {
+            "failed": 0,
+            "passed": 48,
+            "records": 48
+          },
+          "resource_request_correlation": {
+            "expected_count": 64,
+            "mixed_identity_worker_reuse": false,
+            "observed_records": 64,
+            "passed": false,
+            "scope": "Actual GeoServer resource request case/thread/status; no individual verifier attribution."
+          },
+          "restart": {
+            "geonode_recorded": true,
+            "geoserver_recorded": true
+          },
+          "result_exit_code": 1,
+          "role_authority": "Explicitly mirrored GeoServer XML users/roles with GeoFence; no automatic GeoNode role synchronization.",
+          "role_change": {
+            "after_cache_expiry": {
+              "elapsed_after_prime_seconds": 2.282,
+              "status": 200,
+              "verification_call_delta_global": 1
+            },
+            "cached_request": {
+              "elapsed_after_prime_seconds": 1.6944,
+              "status": 200,
+              "verification_call_delta_global": 0
+            },
+            "comparison_limitation": "Local XML role remains both during cache validity and after fresh real verification; no automatic role projection or unified-policy revocation acceptance.",
+            "correlation_scope": "Sequential controlled verifier-call windows, not per-request trace attribution.",
+            "native_geonode_group_removed": true,
+            "passed": true
+          },
+          "source_log_redactions": {
+            "capture_scope": "WARNING and above source message text; exception class only; not a full DEBUG audit",
+            "invalid_counter_records": 0,
+            "logs": [
+              {
+                "counter_records": 28,
+                "invalid_counter_records": 0,
+                "log": "geonode-runtime.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 0,
+                "invalid_counter_records": 0,
+                "log": "geoserver-initial.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-000.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-001.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-002.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-003.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-004.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-005.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 1,
+                "invalid_counter_records": 0,
+                "log": "mutation-006.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 5,
+                "invalid_counter_records": 0,
+                "log": "geonode-restart.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              },
+              {
+                "counter_records": 0,
+                "invalid_counter_records": 0,
+                "log": "geoserver-restart.log",
+                "source_credential_field_redactions": 0,
+                "source_diagnostic_redactions": 0,
+                "source_opaque_value_redactions": 0,
+                "source_private_key_redactions": 0
+              }
+            ],
+            "opaque_scope": "Conservative opaque candidates may include non-secret identifiers; reported separately.",
+            "passed": true,
+            "source_credential_field_redactions": 0,
+            "source_diagnostic_redactions": 0,
+            "source_opaque_value_redactions": 0,
+            "source_private_key_redactions": 0
+          },
+          "transport_faults": [
+            {
+              "elapsed_seconds": 1.511,
+              "mode": "delay",
+              "native_response_controls": [
+                {
+                  "event": "native_verifier_transport_fault",
+                  "mode": "delay",
+                  "native_body_bytes": 175,
+                  "native_status": 200
+                }
+              ],
+              "native_valid_response_observed": true,
+              "passed": true,
+              "scope": "Explicit transport injection after real native token verification; fresh unprimed token."
+            },
+            {
+              "elapsed_seconds": 0.0266,
+              "mode": "truncate",
+              "native_response_controls": [
+                {
+                  "event": "native_verifier_transport_fault",
+                  "mode": "truncate",
+                  "native_body_bytes": 175,
+                  "native_status": 200
+                }
+              ],
+              "native_valid_response_observed": true,
+              "passed": true,
+              "scope": "Explicit transport injection after real native token verification; fresh unprimed token."
+            }
+          ],
+          "war_sha256_after": "8a79a2cf7647be2f28591d7f04f975dc84cb00baaaea35cb3d5f2f293ea8f39f"
+        },
+        "network": {
+          "broker_sockets_closed": true,
+          "command_exit_code": 1,
+          "datagram_packets_received": 0,
+          "datagram_sentinels_closed": true,
+          "limitations": [
+            "trusted test runner, not hostile-code/filesystem/process isolation",
+            "all existing loopback services remain reachable; use disposable fixture credentials only",
+            "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+            "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+          ],
+          "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+          "network_probes": {
+            "all_passed": true,
+            "exec_child_probes": 79,
+            "parent_probes": 79,
+            "schema_version": 1
+          },
+          "result_exit_code": 1,
+          "task_process_group_stopped": true
+        },
+        "result_exit_code": 1,
+        "tooling_unchanged": true
+      }
+    },
+    {
+      "name": "startup-01",
+      "result": {
+        "bytes": 26887,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-01/result.json",
+        "sha256": "ef3209b6dbcc4467ed8267195fb2a2606e9e7da46aa1f90208900616d2b065ed"
+      },
+      "summary": {
+        "child_cleanup": {},
+        "child_result_exit_code": 1,
+        "cleanup": {
+          "private_config_scrubbed": true
+        },
+        "command_exit_code": 1,
+        "commands": [
+          {
+            "action": "check",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "migrate",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 1,
+            "security_failures": null
+          }
+        ],
+        "database": {
+          "postgis_version": "3.5.7",
+          "result_exit_code": 0,
+          "started": true,
+          "stopped": true,
+          "transport": "127.0.0.1 TCP, SCRAM; Unix listeners disabled"
+        },
+        "database_supervisor_exception": "Existing #59 limitation: authenticated owned PostgreSQL alone runs outside unchanged supervisor because backend setsid is denied.",
+        "error_type": "RuntimeError",
+        "network": {
+          "broker_sockets_closed": true,
+          "command_exit_code": 1,
+          "datagram_packets_received": 0,
+          "datagram_sentinels_closed": true,
+          "limitations": [
+            "trusted test runner, not hostile-code/filesystem/process isolation",
+            "all existing loopback services remain reachable; use disposable fixture credentials only",
+            "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+            "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+          ],
+          "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+          "network_probes": {
+            "all_passed": true,
+            "exec_child_probes": 79,
+            "parent_probes": 79,
+            "schema_version": 1
+          },
+          "result_exit_code": 1,
+          "task_process_group_stopped": true
+        },
+        "result_exit_code": 1,
+        "tooling_unchanged": true
+      }
+    },
+    {
+      "name": "startup-02",
+      "result": {
+        "bytes": 26689,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-02/result.json",
+        "sha256": "2448867224dd8cef52e874e198ad81fd993be31405d7bbf81718834f6a851199"
+      },
+      "summary": {
+        "child_cleanup": {},
+        "child_result_exit_code": 1,
+        "cleanup": {
+          "private_config_scrubbed": true
+        },
+        "command_exit_code": 1,
+        "commands": [
+          {
+            "action": "check",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 1,
+            "security_failures": null
+          }
+        ],
+        "database": {
+          "postgis_version": "3.5.7",
+          "result_exit_code": 0,
+          "started": true,
+          "stopped": true,
+          "transport": "127.0.0.1 TCP, SCRAM; Unix listeners disabled"
+        },
+        "database_supervisor_exception": "Existing #59 limitation: authenticated owned PostgreSQL alone runs outside unchanged supervisor because backend setsid is denied.",
+        "error_type": "RuntimeError",
+        "network": {
+          "broker_sockets_closed": true,
+          "command_exit_code": 1,
+          "datagram_packets_received": 0,
+          "datagram_sentinels_closed": true,
+          "limitations": [
+            "trusted test runner, not hostile-code/filesystem/process isolation",
+            "all existing loopback services remain reachable; use disposable fixture credentials only",
+            "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+            "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+          ],
+          "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+          "network_probes": {
+            "all_passed": true,
+            "exec_child_probes": 79,
+            "parent_probes": 79,
+            "schema_version": 1
+          },
+          "result_exit_code": 1,
+          "task_process_group_stopped": true
+        },
+        "result_exit_code": 1,
+        "tooling_unchanged": true
+      }
+    },
+    {
+      "name": "startup-03",
+      "result": {
+        "bytes": 27263,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/startup-03/result.json",
+        "sha256": "644fea4fa6f00c48c13044bec68c0115ba66f45e6f2cff70481ecaec45299027"
+      },
+      "summary": {
+        "child_cleanup": {
+          "stored_credentials_invalidated": true
+        },
+        "child_result_exit_code": 0,
+        "cleanup": {
+          "private_config_scrubbed": true
+        },
+        "command_exit_code": 0,
+        "commands": [
+          {
+            "action": "check",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "migrate",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "native-tests",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          },
+          {
+            "action": "provision",
+            "diagnostic_secret_hits": 0,
+            "exit_code": 0,
+            "security_failures": null
+          }
+        ],
+        "database": {
+          "postgis_version": "3.5.7",
+          "result_exit_code": 0,
+          "started": true,
+          "stopped": true,
+          "transport": "127.0.0.1 TCP, SCRAM; Unix listeners disabled"
+        },
+        "database_supervisor_exception": "Existing #59 limitation: authenticated owned PostgreSQL alone runs outside unchanged supervisor because backend setsid is denied.",
+        "error_type": null,
+        "network": {
+          "broker_sockets_closed": true,
+          "command_exit_code": 0,
+          "datagram_packets_received": 0,
+          "datagram_sentinels_closed": true,
+          "limitations": [
+            "trusted test runner, not hostile-code/filesystem/process isolation",
+            "all existing loopback services remain reachable; use disposable fixture credentials only",
+            "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+            "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+          ],
+          "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+          "network_probes": {
+            "all_passed": true,
+            "exec_child_probes": 79,
+            "parent_probes": 79,
+            "schema_version": 1
+          },
+          "result_exit_code": 0,
+          "task_process_group_stopped": true
+        },
+        "result_exit_code": 0,
+        "tooling_unchanged": true
+      }
+    }
+  ],
+  "retained_input_build_replay": {
+    "manifest_sha256": "59aead3d62cca41ae126e60f988e82ca7043567f5df0aebdc0b838dd6a7176d1",
+    "name": "run-005",
+    "network_policy": "pip --no-index; external network denial must be recorded separately",
+    "same_manifest_as_runtime_build": true,
+    "same_repaired_source_outputs": true,
+    "scope": "Separate fresh build/install replay from retained inputs; final HTTP runtime uses run-004.",
+    "status": "passed"
+  },
+  "retained_root": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity",
+  "schema_version": 1,
+  "scope": "Bounded FND-02 GeoNode identity engineering evidence; no product/release acceptance.",
+  "selected_final_runtime": "integration-repaired-04",
+  "source_custody": {
+    "profile": "geonode-identity-headless",
+    "retained_file_records": 1391,
+    "scope": "Indexed manifest, not a declaration that all Python/native dependencies were rebuilt from source."
+  },
+  "synthetic_regression": {
+    "actual_http_requests": {
+      "failed": 0,
+      "passed": 177,
+      "records": 177
+    },
+    "identity_is_synthetic": true,
+    "network": {
+      "broker_sockets_closed": true,
+      "command_exit_code": 0,
+      "datagram_packets_received": 0,
+      "datagram_sentinels_closed": true,
+      "limitations": [
+        "trusted test runner, not hostile-code/filesystem/process isolation",
+        "all existing loopback services remain reachable; use disposable fixture credentials only",
+        "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+        "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+      ],
+      "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+      "network_probes": {
+        "all_passed": true,
+        "exec_child_probes": 79,
+        "parent_probes": 79,
+        "schema_version": 1
+      },
+      "result_exit_code": 0,
+      "task_process_group_stopped": true
+    },
+    "requests_by_round": {
+      "configured": 172,
+      "restart": 5
+    },
+    "result_exit_code": 0,
+    "scenario_records": {
+      "failed": 0,
+      "passed": 178,
+      "records": 178
+    },
+    "scope": "Separate preserved #59 configured-WAR regression; not real GeoNode issuance evidence.",
+    "war_sha256": "8a79a2cf7647be2f28591d7f04f975dc84cb00baaaea35cb3d5f2f293ea8f39f"
+  },
+  "test_outputs": [
+    {
+      "file": {
+        "bytes": 13387,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/geonode-harness-before-logout-fix.txt",
+        "sha256": "ea2fb243e0d9d9f48c52c2ef36c5cffc5dc400b9b459a47525241b184af31d9d"
+      },
+      "summary": {
+        "reported_duration_seconds": 0.179,
+        "reported_outcome": "OK",
+        "reported_tests": 93,
+        "scope": "Parsed retained unittest output; process exit status is not inferred."
+      }
+    },
+    {
+      "file": {
+        "bytes": 13893,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/geonode-harness-final.txt",
+        "sha256": "015d1365bb70fd3d8fa8ee85e4c661f64c24ad317bf691d7181a6b3116258600"
+      },
+      "summary": {
+        "reported_duration_seconds": 0.178,
+        "reported_outcome": "OK",
+        "reported_tests": 96,
+        "scope": "Parsed retained unittest output; process exit status is not inferred."
+      }
+    },
+    {
+      "file": {
+        "bytes": 13893,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/geonode-harness.txt",
+        "sha256": "66827d6b9b802095e230e845b790e7fcd8003a61628dac83e2b004895c356877"
+      },
+      "summary": {
+        "reported_duration_seconds": 0.211,
+        "reported_outcome": "OK",
+        "reported_tests": 96,
+        "scope": "Parsed retained unittest output; process exit status is not inferred."
+      }
+    },
+    {
+      "file": {
+        "bytes": 55637,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/java-tooling.txt",
+        "sha256": "0f7fabc864c526093620ae96d3c00144024acce200c2b1fb2d5ade0214abab02"
+      },
+      "summary": {
+        "reported_duration_seconds": 4.482,
+        "reported_outcome": "OK",
+        "reported_tests": 366,
+        "scope": "Parsed retained unittest output; process exit status is not inferred."
+      }
+    },
+    {
+      "file": {
+        "bytes": 189,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/plan-schemas.txt",
+        "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+      },
+      "summary": {
+        "scope": "retained command output; inspect linked file for actual result"
+      }
+    },
+    {
+      "file": {
+        "bytes": 26228,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/validation-final-01/plan-tests.txt",
+        "sha256": "7aea65c84d89432ea721511853302d5b8d84aa90c237f376375bd941a3a221ee"
+      },
+      "summary": {
+        "reported_duration_seconds": 8.035,
+        "reported_outcome": "OK",
+        "reported_tests": 176,
+        "scope": "Parsed retained unittest output; process exit status is not inferred."
+      }
+    },
+    {
+      "file": {
+        "bytes": 13387,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/harness-final-01.txt",
+        "sha256": "ea2fb243e0d9d9f48c52c2ef36c5cffc5dc400b9b459a47525241b184af31d9d"
+      },
+      "summary": {
+        "reported_duration_seconds": 0.179,
+        "reported_outcome": "OK",
+        "reported_tests": 93,
+        "scope": "Parsed retained unittest output; process exit status is not inferred."
+      }
+    },
+    {
+      "file": {
+        "bytes": 55637,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/java-tooling-final-01.txt",
+        "sha256": "0f7fabc864c526093620ae96d3c00144024acce200c2b1fb2d5ade0214abab02"
+      },
+      "summary": {
+        "reported_duration_seconds": 4.482,
+        "reported_outcome": "OK",
+        "reported_tests": 366,
+        "scope": "Parsed retained unittest output; process exit status is not inferred."
+      }
+    }
+  ]
+}
