@@ -1,0 +1,83 @@
+{
+  "acceptance": false,
+  "checks": {
+    "command": [
+      "/usr/bin/python3",
+      "-m",
+      "unittest",
+      "test_compatibility",
+      "test_aggregate_evidence",
+      "test_configured_auth_probe",
+      "test_configured_auth_fixture",
+      "test_runtime_inputs",
+      "-v"
+    ],
+    "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth/build-support/java",
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "log": "plan/verification/geoserver-auth/reviews/packaging-agent-tooling-tests.txt",
+    "log_sha256": "a89dec12171847460394c8178599a3135360a012315d78629e6109623b532e4a",
+    "skips": 0,
+    "tests": 56
+  },
+  "files_unchanged_during_checks": true,
+  "remaining_validation": [
+    "Full native final suite and exact aggregate03 HTTP/restart run were pending when this scoped tooling review was written.",
+    "Final human review of opt-in authentication behavior and all security-sensitive source changes remains required."
+  ],
+  "resolved_findings": [
+    {
+      "finding": "Witness strings alone could accept an error body as a GIS positive control.",
+      "resolution": "Strict FeatureCollection with one Point [1,2] and exact label; marker echoes, null/empty/wrong geometry and duplicate JSON members fail."
+    },
+    {
+      "finding": "Case-sensitive Location lookup could miss a redirect.",
+      "resolution": "Normalize response headers; negative regression covers lowercase location."
+    },
+    {
+      "finding": "Final exception receipt could write fixture secrets after file scanning.",
+      "resolution": "Recursively sanitize the complete receipt before exclusive write; redactions force failure."
+    },
+    {
+      "finding": "Scrub/digest errors could bypass final HTTP failure receipt; reader failure could be missed after a positive log control.",
+      "resolution": "Best-effort finalization preserves errors, joins log readers, records capture failures and writes a failed receipt; tests reach actual child failure paths."
+    },
+    {
+      "finding": "Selected-target native execution alone did not guarantee new injected regressions ran.",
+      "resolution": "Require every injected suite with exact declared case count, no missing/repeated suite or new skips."
+    },
+    {
+      "finding": "Earlier aggregate logging WAR lacked repaired OAuth sources.",
+      "resolution": "Fresh build, full library/file/class inventories and exact compiler-to-WAR identities; final stateless candidate additionally requires @Transient nested context class."
+    },
+    {
+      "finding": "Worker reuse was inferred from pool size.",
+      "resolution": "Passive native Jetty request telemetry proves mixed positive/negative decisions on reused workers without changing responses."
+    }
+  ],
+  "reviewed_at": "2026-09-21T00:06:21.446123+00:00",
+  "reviewed_boundaries": [
+    "Only the exact new WAR is copied into fresh runtime artifact directory; loaded application class origins are checked against extracted WAR JAR hashes.",
+    "No inherited data directory is activated; loaded fixture user/group role authority and stateless option are read back.",
+    "Fresh credential negatives require actual verifier calls. Parallel counter windows may overlap and must not be interpreted as per-request verifier attribution.",
+    "Nonzero cache reuse and later expiry are tested separately; immediate revocation is not claimed.",
+    "Denied administration operations have privileged state readbacks and same-route positive controls.",
+    "Application and synthetic identity endpoint use retained loopback supervisor; owned PostgreSQL is outside supervisor after measured setsid denial, with its limitation explicitly recorded.",
+    "Source/legal/production security closure is not granted by these harness or artifact checks."
+  ],
+  "reviewed_files": {
+    "build-support/java/aggregate_evidence.py": "2144875a49c35b2e1156d22ee5d43754833412faafcf926313f2ba768018b8df",
+    "build-support/java/compatibility.py": "8929b0bc0d99cbb7e4be028c0e62ce1e7d220f9188c9371508cb1d2308f32b42",
+    "build-support/java/configured_auth_database.py": "052c60cdb402b82c56a563ad2f928c3d0ec4870cabf0663752491f18df59d204",
+    "build-support/java/configured_auth_evidence.py": "5397577246b7ba753360f6f5e1635f5ec00fd9528ba356edd861f3948afce085",
+    "build-support/java/configured_auth_fixture.py": "fb0d1a7654b8464316e57f60ce04d9b7c7230fa3935d8a66d04497e8b7e0827a",
+    "build-support/java/configured_auth_probe.py": "210a17067820903eb96d3a3d4519530524110009b08d7d3f328b9b131d866520",
+    "build-support/java/runtime-fixtures/ConfiguredGeoServerRuntime.java": "8409fbe795c6422ab3e831f75a21a8a09717c610f9e7c122bfb981ee8fdbef6f",
+    "build-support/java/test_aggregate_evidence.py": "75120ff4428446233d70dc31f40a97541c77f8b69703835e1e349ae16d3aae21",
+    "build-support/java/test_compatibility.py": "d487046fe23f2c52a15f739dd54d089539a152040728e79bed1ef4bdd4c9e67d",
+    "build-support/java/test_configured_auth_probe.py": "bbb7555e3f970f5b853a7b3e280ad4b29290f6dcbc9173741b8e61334046ee94"
+  },
+  "reviewer": "aggregate_packaging subagent",
+  "scope": "Independent review of root HTTP harness and other-agent runtime/fixture; author validation of packaging/evidence helpers and their regressions."
+}
