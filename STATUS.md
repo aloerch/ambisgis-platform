@@ -1,4 +1,16 @@
-# Implementation status — 20 September 2026
+# Implementation status — 21 September 2026
+
+Current authorized FND-02 engineering is the source-owned GeoNode identity checkpoint in open [PR #60](https://github.com/aloerch/ambisgis-platform/pull/60), on `fnd-02/geonode-identity-integration`, based on verified owner-merged [PR #59](https://github.com/aloerch/ambisgis-platform/pull/59), merge `360b1e87b392d0e6cb8bf64fac543f75e6f27eb2`, reviewed head `c899ab0791ec87ef0a002b3953aa6a8268c4dc3e`. [PR #58](https://github.com/aloerch/ambisgis-platform/pull/58) is also merged at `b68e3d59bafb4bbf7b2007c76e5e59a25b4139e7`; dated open-review descriptions below are preserved history. **FND-02 remains In progress**; GOV-02 remains Merged.
+
+The owned GeoNode and client backend are built from retained source in a fresh network-denied Python environment. Actual migrations and authorization-code issuance expose and reproduce inherited client-authentication, application-binding and inactive-user defects. A guarded default-false source repair adds explicit strict backend verification and exact-view middleware handling; the unchanged #59 WAR is the resource server. The [current handoff](plan/docs/geonode-identity-handoff.md), [ADR 007](plan/adrs/007-geonode-backend-token-verification.md) and [indexed evidence](plan/verification/geonode-identity/evidence.json) record measured results, retained failures, artifact identities and exact resumption. A new human security review gates merging this checkpoint; the prior merge does not approve it.
+
+Final real identity integration passed **38 native Django tests**, **176 GeoServer HTTP requests** and **48 protocol assertions**, including actual issuance, restart and measured cache limits. **96 GeoNode harness tests, 366 Java tooling tests, 176 plan tests and four schema checks passed**. The separately rerun synthetic #59 regression passed 177 HTTP requests plus its session assertion. The repaired Python backend also rebuilt from retained inputs with explicit network-denial proof. Fixture processes stopped and credentials were invalidated.
+
+GeoNode groups and the comparison GeoServer XML roles are not automatically synchronized. Full frontend/browser SSO, unified identity/policy, publishing, source/toolchain closure, FND-07/FND-08, P1/P6 and license/security/release gates remain open. The Java ledger remains **48 structural / 12 unresolved / four partial**; the new GeoNode dependency inventory is separate. No merge, deployment or release was performed.
+
+Project #2 now has **73 items: 66 tasks + seven PRs**. The separate #60 item carries its Evidence link without copied task planning fields; only #60 matches `is:pr is:open`. [Publication reconciliation](plan/verification/geonode-identity/project/README.md) preserves the initially stale readback and proves all 72 prior items/views unchanged. No writes were replayed.
+
+## Preserved status record — 20 September 2026
 
 Current authorized **Phase B** is prepared in open [PR #58](https://github.com/aloerch/ambisgis-platform/pull/58), on `fnd-02/java-http-auth-compatibility`, from owner-merged #56 at `a9ec191658be027b40118fd35e145729202fe55d`; all #54/#55/#57/#56 prerequisites and the exact reviewed #56 tree are verified. No Phase A work remains. FND-02 stays **In progress** and GOV-02 stays **Merged**.
 

@@ -1,5 +1,10 @@
 # FND-02 configured GeoServer authorization handoff
 
+Subsequent live observation (21 September 2026): the owner merged #59 at
+`360b1e87b392d0e6cb8bf64fac543f75e6f27eb2` from reviewed head
+`c899ab0791ec87ef0a002b3953aa6a8268c4dc3e`. The open-review language below is
+preserved dated evidence; current work continues in the [GeoNode handoff](geonode-identity-handoff.md).
+
 Repository `aloerch/ambisgis-platform`; branch `fnd-02/geoserver-configured-auth`;
 worktree `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth`.
 Parent issue [FND-02 #3](https://github.com/aloerch/ambisgis-platform/issues/3)

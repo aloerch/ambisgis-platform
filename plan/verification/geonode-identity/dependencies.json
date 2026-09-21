@@ -1,0 +1,322 @@
+{
+  "build": {
+    "imports": "passed",
+    "network_command": [
+      "flatpak-spawn",
+      "--host",
+      "unshare",
+      "--user",
+      "--map-root-user",
+      "--net",
+      "python3.12",
+      "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geonode-identity/build-support/geonode/build.py",
+      "--strict-verifier",
+      "--custody",
+      "/home/revelberry/Projects/AmbisGIS/source-archives/geonode-identity-v2",
+      "--work",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004",
+      "--native-prefix",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/prefix"
+    ],
+    "network_evidence_scope": "Executed in a new unshare network namespace with no configured network interface; build receipt separately records pip --no-index. Host interpreter and native prefix remain required.",
+    "pip_check": "passed",
+    "requirements_lock_sha256": "6ad2c48175ef936b5610e50c932d07df2ffecdc01b1bb02cc8d6f1804500fb7d",
+    "status": "passed",
+    "strict_source_repair": {
+      "default": false,
+      "files": [
+        {
+          "after_sha256": "a035daedd0b1794867af23b81f50bc6b2fa0c0e4de3d467f5b95d186f674c500",
+          "before_sha256": null,
+          "path": "geonode/api/backend_tokeninfo.py"
+        },
+        {
+          "after_sha256": "3dbc733de3c7ed1bb183a3b4c418eda828d07060e5a60e86b7db84e42896e28a",
+          "before_sha256": null,
+          "path": "geonode/api/test_backend_tokeninfo.py"
+        },
+        {
+          "after_sha256": "23a24a65657d3a8a56ba298e01520afc378edb8e12d5dabd9e1a1432158eeda2",
+          "before_sha256": "484d2abd190b568c72992cc1202e1d671b89a2ec249a2aaaa0741e1b00cf480c",
+          "path": "geonode/api/views.py"
+        },
+        {
+          "after_sha256": "aeb3ffa97702196d1bd1190dad1353ece007b44f83576aca39f33a6d6872125d",
+          "before_sha256": "5f6fc7a69be15bfa7a6dd68653a39f30ba63d9668cb9721c3a8d8309b85d830e",
+          "path": "geonode/security/middleware.py"
+        },
+        {
+          "after_sha256": "101c2f802877a62df4ee5e602f401609a68e839920e0587f0a4e7bf735d0c057",
+          "before_sha256": "652dea658029b136b393752cbaec676fdbf980619110ef293917c9d9a9b8ac75",
+          "path": "geonode/settings.py"
+        }
+      ],
+      "native_tests_source_sha256": "3dbc733de3c7ed1bb183a3b4c418eda828d07060e5a60e86b7db84e42896e28a",
+      "post_patch_tree_verification": "passed",
+      "recipe_sha256": "c38738c6d37eae11c279901140b5d5bfd19f699951b7cb6b4ef4ad4782c801ea",
+      "repair": "geonode-strict-backend-tokeninfo",
+      "setting": "OAUTH2_BACKEND_TOKENINFO_STRICT",
+      "source_commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9"
+    },
+    "work": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004"
+  },
+  "compatibility_patch": {
+    "baseline_sha256": "f8287c1511fde29cd9fc4a808f0f1fa8aec833009b65c8a6db43338e15dfba06",
+    "changes": [
+      {
+        "after": "\"GDAL==3.10.3\"",
+        "before": "\"GDAL==3.8.4\"",
+        "reason": "Match the retained source-built GDAL 3.10.3 native library; candidate compatibility change, not approved product pin."
+      },
+      {
+        "after": "",
+        "before": "\"pylibmc==1.6.3\",",
+        "reason": "Headless profile uses Django local-memory caches; memcached and its native binding are omitted."
+      },
+      {
+        "after": "",
+        "before": "\"uWSGI==2.0.30\",",
+        "reason": "Headless loopback WSGI probe uses the Python WSGI server; the production process server is outside this slice."
+      }
+    ],
+    "patched_sha256": "9a742f25f300c8a3ebd480699dad38105de94e784c345a2d412998f234f3086c"
+  },
+  "counts": {
+    "extracted_license_notice_and_metadata_files": 552,
+    "installed_distributions": 211,
+    "manifest_files_excluding_manifest": 1391,
+    "owned_source_built_distributions": 2,
+    "retained_third_party_source_archives": 199,
+    "retained_wheels": 211,
+    "third_party_distribution_inventory": 209,
+    "third_party_distributions_with_retained_sdist": 199
+  },
+  "custody": "/home/revelberry/Projects/AmbisGIS/source-archives/geonode-identity-v2",
+  "evidence": {
+    "acquisition_receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/acquisition-v2/acquisition-receipt.json",
+      "sha256": "8a7966eba6398e389b25943bc6a0bc3275692864839ce6c119258beeb44bbe5f"
+    },
+    "build_receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004/build-receipt.json",
+      "sha256": "9b4b2075c4a1d345a7ab091a7122f90cf267e2bd74ee93c991f1ddb1e4dc4c73"
+    },
+    "manifest": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/geonode-identity-v2/manifest.json",
+      "sha256": "59aead3d62cca41ae126e60f988e82ca7043567f5df0aebdc0b838dd6a7176d1"
+    },
+    "python_components": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/geonode-identity-v2/python-components.json",
+      "sha256": "c07f6cd332e038ec745d80f9735149990acfd11af1e4ab7b4cf071b57cb2e35d"
+    },
+    "source_inputs": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/geonode-identity-v2/source-inputs.json",
+      "sha256": "75cea6ba6829c2bd360e6282e57821721f4f894a73a70728834b89299b6fd8de"
+    }
+  },
+  "installed_owned_provenance": {
+    "geonode": {
+      "commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+      "installed_wheel": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004/owned-wheels/geonode-5.1.0.post1-py3-none-any.whl",
+      "repository": "ambisgis-geonode",
+      "repository_id": 1376927978,
+      "sha256": "3fc83490a45280848ee8efa840bc820f8bdec53814419ce35baf275798f3abc7"
+    },
+    "mapstore-client": {
+      "commit": "7ca4822125b67999c97cb4aa1faa84b8a28eee9b",
+      "installed_wheel": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-004/owned-wheels/django_geonode_mapstore_client-5.1.0-py3-none-any.whl",
+      "repository": "ambisgis-mapstore-client",
+      "repository_id": 1376928013,
+      "sha256": "85c4a7ae7e6f353e22e6453ebd85dee34d0fa294d2f5bb84b9ff0f015d09ad2e"
+    }
+  },
+  "limitations": [
+    "Third-party wheels retained; full third-party source rebuild not demonstrated.",
+    "Host Python 3.12 interpreter provenance is a host prerequisite, not a rebuilt toolchain.",
+    "License declarations and notices are retained evidence, not legal approval.",
+    "Owned Python packages include inherited static assets; frontend source build, asset closure, browser and accessibility acceptance remain deferred.",
+    "No-sdist-published means no source distribution was present in the retained PyPI release metadata; Python content in a wheel does not establish complete corresponding source or build provenance.",
+    "Source-installed owned wheels take precedence over any publisher wheel with the same distribution name retained during dependency acquisition.",
+    "GDAL 3.10.3 is a guarded native compatibility candidate; the product pin has not been accepted.",
+    "The headless profile omits pylibmc and uWSGI, and uses local-memory cache and a loopback Python WSGI server.",
+    "Source inventories and notice extraction are evidence for human license review, not license approval."
+  ],
+  "native_gdal_version": "3.10.3",
+  "native_libraries": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/prefix/lib/libgdal.so",
+      "sha256": "0af33fb11925a8842368f0164558c07a461daaf68b09efe9ca8a87eb16787143"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/prefix/lib/libpq.so",
+      "sha256": "8738fafc7655c7b6b4f7b17890cfd11f207a633eda136ff7312e68334f537e09"
+    }
+  ],
+  "native_prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/prefix",
+  "offline_replay": {
+    "artifacts": {
+      "build_receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-005/build-receipt.json",
+        "sha256": "c7f30caf085a762d00f90add2e33a1d55ec250280d88c2cb006cc6be56136e50"
+      },
+      "invocation": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/invocation.json",
+        "sha256": "d3da176f1142a8b163b30ef4fce3d69a461993ec63047703d956cb0c03a116a7"
+      },
+      "network_proof": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/network-proof.json",
+        "sha256": "5a017521517a7a6a248c7ea62a5c498545bc40736716a80dd7d73384f9690dd5"
+      },
+      "replay_log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/replay.log",
+        "sha256": "c744e296ebe520dd2ee8cdb08042734b4dfe2207c8ab7708e04f5e48b81cd300"
+      },
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/result.json",
+        "sha256": "ab5ef14f292588b546bca3d40c39c03233c8232cee1f8bfdb6fd44ec8fb393c3"
+      },
+      "wrapper": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/replay.py",
+        "sha256": "24eee029d50dd0758ef9f7f8a1e390c834da8d2f314fcf94e64447b58fa91b6c"
+      }
+    },
+    "command": [
+      "flatpak-spawn",
+      "--host",
+      "python3.12",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005-attempt-02/replay.py"
+    ],
+    "imports": "passed",
+    "native_source_post_patch_verification": "passed",
+    "network_proof": {
+      "different_from_host": true,
+      "interfaces": [
+        {
+          "flags": 8,
+          "index": 1,
+          "name": "lo",
+          "up": false
+        }
+      ],
+      "ipv6_routes_all_kernel_reject": true,
+      "outbound_probes": [
+        {
+          "denied": true,
+          "destination": "1.1.1.1",
+          "elapsed_seconds": 3.3e-05,
+          "errno": 101,
+          "exception_type": "OSError",
+          "family": "AF_INET",
+          "port": 443
+        },
+        {
+          "denied": true,
+          "destination": "2606:4700:4700::1111",
+          "elapsed_seconds": 1.8e-05,
+          "errno": 99,
+          "exception_type": "OSError",
+          "family": "AF_INET6",
+          "port": 443
+        }
+      ],
+      "passed": true,
+      "scope": "Same disconnected network namespace runs the subprocess build; no namespace privileges requested by build."
+    },
+    "passed": true,
+    "pip_check": "passed",
+    "preserved_initial_proof_failure": {
+      "network_proof": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005/network-proof.json",
+        "sha256": "dcd8535352d6c220d608069ec06f618d901be86c71dda35c73bacfdda3098dab"
+      },
+      "reason": "Initial wrapper expected a header in empty IPv4 routes and no IPv6 rejection routes and did not classify EADDRNOTAVAIL as a denied IPv6 connection. It failed its assertions before starting any build. A fresh wrapper attempt recognizes these explicitly and preserves this failed result.",
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/offline-replay-005/result.json",
+        "sha256": "e53e78a97059ae6b2fe865cac55534f1c3907296049521e977bdf578c56857fe"
+      }
+    },
+    "recipe_and_input_bytes_unchanged": true,
+    "runtime_authority": "run-004 remains the input to the actual service integration; run-005 is a separate fresh reproduction check.",
+    "same_custody_manifest": true,
+    "same_source_repair_recipe": true,
+    "subprocess_exit_code": 0,
+    "work": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/run-005"
+  },
+  "owned_sources": [
+    {
+      "archive": "owned-sources/geonode-a1db97e81dfc26c16bb4ee1a5d2b408877af66c9.tar",
+      "commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+      "name": "geonode",
+      "repository": "ambisgis-geonode",
+      "repository_id": 1376927978,
+      "sha256": "32ef8de1e193535587b8f4c85d9491ad990d1f4459df508f74d6f1cbca5ceeb9"
+    },
+    {
+      "archive": "owned-sources/mapstore-client-7ca4822125b67999c97cb4aa1faa84b8a28eee9b.tar",
+      "commit": "7ca4822125b67999c97cb4aa1faa84b8a28eee9b",
+      "name": "mapstore-client",
+      "repository": "ambisgis-mapstore-client",
+      "repository_id": 1376928013,
+      "sha256": "c82f35b1d92b6822b7025e4f6adfe2df256c339bd756902319bf5430ef8fcb33"
+    }
+  ],
+  "profile": "geonode-identity-headless",
+  "resolution_constraints": [
+    "django-tastypie==0.14.7"
+  ],
+  "resolution_repair_reason": "django-tastypie 0.14.7 is within the candidate <0.15.0 constraint. The initial prefer-binary resolution selected 0.14.0 and failed native Django startup because it imports python_2_unicode_compatible removed from Django. The retained 0.14.7 sdist supplies the compatible implementation.",
+  "schema_version": 1,
+  "scope": "Owned backend wheel rebuild and retained dependency-wheel restore; not complete toolchain, native dependency, frontend, or third-party source rebuild.",
+  "source_distribution_gaps": [
+    {
+      "name": "geonode-announcements",
+      "source_status": "no-sdist-published",
+      "version": "2.0.2.2"
+    },
+    {
+      "name": "geonode-django-dynamic-model",
+      "source_status": "no-sdist-published",
+      "version": "0.4.0"
+    },
+    {
+      "name": "geonode-dynamic-rest",
+      "source_status": "no-sdist-published",
+      "version": "2.3.0.2"
+    },
+    {
+      "name": "geonode-oauth-toolkit",
+      "source_status": "no-sdist-published",
+      "version": "2.2.3.1"
+    },
+    {
+      "name": "geonode-pinax-notifications",
+      "source_status": "no-sdist-published",
+      "version": "6.0.0.4"
+    },
+    {
+      "name": "geonode-pycsw",
+      "source_status": "no-sdist-published",
+      "version": "3.0.0b1"
+    },
+    {
+      "name": "geoserver-restconfig",
+      "source_status": "no-sdist-published",
+      "version": "2.0.16"
+    },
+    {
+      "name": "gn-arcrest",
+      "source_status": "no-sdist-published",
+      "version": "10.5.6"
+    },
+    {
+      "name": "gn-gsimporter",
+      "source_status": "no-sdist-published",
+      "version": "2.0.4"
+    },
+    {
+      "name": "ua-parser-builtins",
+      "source_status": "no-sdist-published",
+      "version": "202606"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "all_passed": true,
+  "checks": {
+    "actual_evidence_link": true,
+    "all_72_prior_items_identical": true,
+    "fnd02_still_in_progress": true,
+    "fresh_readback_all_passed": true,
+    "no_task_delivery_review_gate_copied": true,
+    "one_expected_pr_added": true,
+    "project_fields_repositories_views_preserved": true,
+    "view_configuration_and_order_preserved": true
+  },
+  "files": [
+    {
+      "bytes": 297819,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-dry-run-01/after.json",
+      "sha256": "e55dc2325e2c204c989f1012b3a725d10d85be1b9ab6039d6d17c86cd923a1d4"
+    },
+    {
+      "bytes": 37458,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-dry-run-01/before-pagination.json",
+      "sha256": "3ffa495c7cc54ec01efe62363150b1b946dfc73ee3da67426a62428989dff873"
+    },
+    {
+      "bytes": 297819,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-dry-run-01/before.json",
+      "sha256": "9c48337905564ca0ca65708c4f1ff1c49dafb30e70d24c80514c402ebb6ef519"
+    },
+    {
+      "bytes": 1126,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-dry-run-01/manifest.json",
+      "sha256": "89ed98448fa748aa1270f32b150698e28814a972ef1c28099c6a75846fabd072"
+    },
+    {
+      "bytes": 2024,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-dry-run-01/outcome.json",
+      "sha256": "77a8769036166ab5a5d0981b5cc34b00de352c1c21977488ed5b52613b5c2351"
+    },
+    {
+      "bytes": 37458,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-dry-run-01/pagination.json",
+      "sha256": "3ffa495c7cc54ec01efe62363150b1b946dfc73ee3da67426a62428989dff873"
+    },
+    {
+      "bytes": 728,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-dry-run-01/plan.json",
+      "sha256": "1099bccce9918bddfc4d0c93b3bc54fdfb2af0e10ee1b182c87f5d27297a7226"
+    },
+    {
+      "bytes": 9908,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-dry-run-01/publication.py",
+      "sha256": "cc3b0fa79a118fc2336b804a87697a89f52f5da5c517d9cd9059a02af341f745"
+    },
+    {
+      "bytes": 381562,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-dry-run-01/readback-requests.jsonl",
+      "sha256": "3a6fc6a266ca86c5d9e56049dbc3c35d16ac70274ee72fe3a37438470039d284"
+    },
+    {
+      "bytes": 297819,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/after.json",
+      "sha256": "c8f30b78099e5bb8d715934dd4c340e1ed3d80bbdd914f3e5e415a9fa338b4f5"
+    },
+    {
+      "bytes": 37458,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/before-pagination.json",
+      "sha256": "3ffa495c7cc54ec01efe62363150b1b946dfc73ee3da67426a62428989dff873"
+    },
+    {
+      "bytes": 297819,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/before.json",
+      "sha256": "225ad6e47858fd44c7b9a66a9438d3a9c7736ca80c68072363fb1ba48a4c22f3"
+    },
+    {
+      "bytes": 1708,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/manifest.json",
+      "sha256": "2a8a23def75320e6874c00911679bcce4257a14c41bccc525b1e37a28ce56ec2"
+    },
+    {
+      "bytes": 160,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/mutation-1-completed.json",
+      "sha256": "d7bafdd45244788c11e80be2214ae387faf5c140431098a913992ac76fe2cd8d"
+    },
+    {
+      "bytes": 313,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/mutation-2-completed.json",
+      "sha256": "03395456714135b2345125580fdf6d35b26fc04cc312faa0df6168a7b261dd18"
+    },
+    {
+      "bytes": 1055,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/mutation-events.jsonl",
+      "sha256": "96bd6456ce0185b736915cb1b22b1b49b9d27530d35be3908b2a02aff2c73e03"
+    },
+    {
+      "bytes": 512,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/mutations.json",
+      "sha256": "87ea63806ec2620ea34cde2d65db881550d6b0efc6a99a42e3cd70bb4ce9fc89"
+    },
+    {
+      "bytes": 2574,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/outcome.json",
+      "sha256": "8351a3db9e23a3c05c0ba90562443b27898a2c74b2d8cf575fec8153ab75f1c5"
+    },
+    {
+      "bytes": 37458,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/pagination.json",
+      "sha256": "3ffa495c7cc54ec01efe62363150b1b946dfc73ee3da67426a62428989dff873"
+    },
+    {
+      "bytes": 727,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/plan.json",
+      "sha256": "8dd9658e8a8d2cf1ec9c6635c0b6da343d6e0105403fc9edda31d7126170ac7d"
+    },
+    {
+      "bytes": 9908,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/publication.py",
+      "sha256": "cc3b0fa79a118fc2336b804a87697a89f52f5da5c517d9cd9059a02af341f745"
+    },
+    {
+      "bytes": 381562,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-apply-01/readback-requests.jsonl",
+      "sha256": "8c7c9370efcabc536213bb6efd9ed2fe770245a3496c12f9417f767d8a6e65ff"
+    },
+    {
+      "bytes": 299565,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-readback-02/after.json",
+      "sha256": "53703ed64c233e60249a36df646a56a66b8d5a670a639bd4b7bc0bd4a247fa70"
+    },
+    {
+      "bytes": 37789,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-readback-02/before-pagination.json",
+      "sha256": "31019add6679335480630389fa4be27086ef0da517d97820ab8a5dc89087d970"
+    },
+    {
+      "bytes": 299565,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-readback-02/before.json",
+      "sha256": "ea2a6c1e8cd3f0691d0bb90be79d9c2d6956015f733406832d06f2c25d8cd115"
+    },
+    {
+      "bytes": 1126,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-readback-02/manifest.json",
+      "sha256": "27fc1aa3da1402f18c4c82b0ebbdcf765c2dd99b47506b186b97f28baefac0f3"
+    },
+    {
+      "bytes": 2206,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-readback-02/outcome.json",
+      "sha256": "0242f83d819c8faeb1d9fe6282be3673c61a82a13cbcedc2414b12fa1f45d4d9"
+    },
+    {
+      "bytes": 37789,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-readback-02/pagination.json",
+      "sha256": "31019add6679335480630389fa4be27086ef0da517d97820ab8a5dc89087d970"
+    },
+    {
+      "bytes": 639,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-readback-02/plan.json",
+      "sha256": "d2e234b65c29b0bb533c2a97e151c27142ad44e55cb212b0550aabf12167e7ad"
+    },
+    {
+      "bytes": 9908,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-readback-02/publication.py",
+      "sha256": "cc3b0fa79a118fc2336b804a87697a89f52f5da5c517d9cd9059a02af341f745"
+    },
+    {
+      "bytes": 383815,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-identity/project-readback-02/readback-requests.jsonl",
+      "sha256": "f2b886be84102dea1a07df6a3b423f9e76321f6105c1d415dd47b3918e7229b2"
+    }
+  ],
+  "initial_apply_readback": "Failed: API acknowledged add/Evidence but connection still returned72 items. Fresh read-only reconciliation returned73; original failure preserved.",
+  "items_after": 73,
+  "items_before": 72,
+  "mutations": 2,
+  "new_item_id": "PVTI_lAHOAOk9es4Bj_k-zg74tic",
+  "pr": 60,
+  "pr_items": 7,
+  "publication_head": "103a7544188c9f74f8241fd2b762bea6453e1bc0",
+  "queue_filter": "is:pr is:open",
+  "queue_membership": [
+    60
+  ],
+  "replayed_mutations": 0,
+  "scope": "API readback; no UI claim; existing human planning/views/archive states preserved",
+  "task_items": 66
+}

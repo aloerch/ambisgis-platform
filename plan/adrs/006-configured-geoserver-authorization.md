@@ -1,5 +1,10 @@
 # ADR 006: configured GeoServer authorization and aggregate runtime
 
+Subsequent observation (21 September 2026): owner-merged PR #59 is recorded at
+`360b1e87b392d0e6cb8bf64fac543f75e6f27eb2`; historical review statements below
+are not a request to repeat that review. New GeoNode security decisions are in
+[ADR 007](007-geonode-backend-token-verification.md).
+
 Status: engineering candidate; fresh human security review required before merge.
 Task: FND-02, issue #3. Builds on owner-merged PR #58.
 
