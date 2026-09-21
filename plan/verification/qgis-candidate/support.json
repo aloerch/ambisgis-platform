@@ -488,5 +488,171 @@
       },
       "observation": "The retained QGIS GPL text includes a Qt linking exception at lines282-292. That code exception does not itself describe the separately identified resource terms."
     }
+  },
+  "xml_profile": {
+    "state": "xml-profile-built",
+    "scope": "Isolated unchanged-source libxml2 build restoring HTTP ABI required by selected SpatiaLite; no QGIS product acceptance inferred",
+    "prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/prefix",
+    "source": {
+      "archive_root": "libxml2-2.14.6",
+      "artifact": "libxml2-2.14.6.tar.xz",
+      "build_recipe": "build.py, stage libxml2",
+      "bytes": 2327580,
+      "license_evidence": [
+        {
+          "bytes": 1314,
+          "original_path": "Copyright",
+          "retained_path": "licenses/libxml2/Copyright",
+          "sha256": "5d4873884a890122a4b9b20ad56ac6f7da1d796a5bfcf04a427970ac96217626"
+        },
+        {
+          "bytes": 1270,
+          "original_path": "result/html-tokenizer/NOTICE",
+          "retained_path": "licenses/libxml2/result/html-tokenizer/NOTICE",
+          "sha256": "d6a2cb265a0a249a234b89eeffa7f316ebe5bff546672a0a2b1a861dd2238460"
+        },
+        {
+          "bytes": 1270,
+          "original_path": "test/html-tokenizer/NOTICE",
+          "retained_path": "licenses/libxml2/test/html-tokenizer/NOTICE",
+          "sha256": "d6a2cb265a0a249a234b89eeffa7f316ebe5bff546672a0a2b1a861dd2238460"
+        }
+      ],
+      "name": "libxml2",
+      "required_inputs": [
+        "zlib"
+      ],
+      "review_status": "Candidate input only; license, provenance and security approval pending",
+      "sha256": "7ce458a0affeb83f0b55f1f4f9e0e55735dbfc1a9de124ee86fb4a66b597203a",
+      "source_url": "https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.6.tar.xz",
+      "usage": [
+        "build",
+        "runtime"
+      ],
+      "version": "2.14.6"
+    },
+    "source_archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/postgis-slice/libxml2-2.14.6.tar.xz",
+      "sha256": "7ce458a0affeb83f0b55f1f4f9e0e55735dbfc1a9de124ee86fb4a66b597203a",
+      "bytes": 2327580
+    },
+    "output_manifest": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/output-manifest.json",
+      "sha256": "ab6239d09ba6005d90dacdd3b024ee57dcbefe834f772f276066bfd29e61c436",
+      "bytes": 20108
+    },
+    "success": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/success.json",
+      "sha256": "4d9877559d3483a60862b4f62556f15bcacdb9cb5d17252d61871d9f20a91d54",
+      "bytes": 664
+    },
+    "recipe": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/recipe.json",
+      "sha256": "2635be41cfcd1298a4ac6e77fccc9603c5bdaf68ff8ef10f6fe7542dc5f4cf26",
+      "bytes": 7710
+    },
+    "source_manifest": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/source-manifest.json",
+      "sha256": "f73d8a41843689c7debef099b19877c8cf9f36c8392b8b47020cfe5ced921d4f",
+      "bytes": 625141
+    },
+    "recipe_snapshots": {
+      "common.py": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/recipe/common.py",
+        "sha256": "2ee5eb4ebdd71b1730769047bb9a89a7842bcd0790a586d1d0509438f0a34fce",
+        "bytes": 9617
+      },
+      "offline_exec.py": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/recipe/offline_exec.py",
+        "sha256": "ed658e05bc1cde8b008835b146bf2be73487313f581ce66da31d5644b3766ace",
+        "bytes": 9932
+      },
+      "postgis_acquisition.py": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/recipe/postgis_acquisition.py",
+        "sha256": "c7001c5e466c631fd28bee93ba995e64dd54d4a368bea8b709f17f97bcf417c1",
+        "bytes": 10826
+      },
+      "xml_profile.py": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/recipe/xml_profile.py",
+        "sha256": "d64aad1d677710fc38c7ab67c3cc04c34a5a3ff1285f83105bca90d09598a55e",
+        "bytes": 8225
+      }
+    },
+    "effective_options": {
+      "LIBXML2_WITH_HTTP": "ON",
+      "LIBXML2_WITH_PYTHON": "OFF",
+      "LIBXML2_WITH_LZMA": "OFF",
+      "LIBXML2_WITH_ICONV": "OFF",
+      "LIBXML2_WITH_ZLIB": "ON",
+      "CMAKE_INSTALL_LIBDIR": "lib",
+      "compiler": "/usr/bin/gcc-15",
+      "zlib": "retained original native1.3.1"
+    },
+    "configure_cache": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/build/CMakeCache.txt",
+      "sha256": "1557fc297f697e6feb3b7bb66dc2aaadf197d914ea4248db2be8253fa4c673be",
+      "bytes": 26877
+    },
+    "compile_log": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/compile.log",
+      "sha256": "bd5b9a7a0acac696d1237d838c3f22c2003066e95cea5c82b5e91d7d68022d3f",
+      "bytes": 9904
+    },
+    "exported_symbols": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/symbols.log",
+      "sha256": "27e89463631175122d0e649c611b829ba781d8d1ea2acfecad4bd32958c308c5",
+      "bytes": 55927
+    },
+    "abi_probe": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/abi_probe.py",
+      "sha256": "d021d96ae488e9685826f6ec1181ca126ec0a5f71df0449599333839d961064e",
+      "bytes": 1436
+    },
+    "abi_result": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/spatialite-abi.log",
+      "sha256": "bb6830416147451430fd828457c160ac2343de98e0388572a090ecdf6c0e20b8",
+      "bytes": 1617
+    },
+    "verification": {
+      "compile_steps": 48,
+      "source_files_unchanged": 3913,
+      "prefix_inventory_entries": 116,
+      "xmlNanoHTTPCleanup_exported": true,
+      "spatialite_rtld_now": "passed, version5.1.0",
+      "selected_loaded_origins": "New XML only; spatial04SQLite/PROJ; original nativeGEOS/zlib; support07SpatiaLite",
+      "native_spatial_support_full_inventories_unchanged": true,
+      "executed_helpers_unchanged": true
+    },
+    "network_evidence": {
+      "configure": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/configure-network.json",
+        "sha256": "dfb4f68f26ea2d683dd755e9c0f71484929ac6ee03c18cd8e48569107f2b7c48",
+        "bytes": 3183
+      },
+      "compile": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/compile-network.json",
+        "sha256": "f8423a4de9eee0ea025e4d15c032ad16d909082b1506aafa77f5ef23b72b9ce0",
+        "bytes": 1858
+      },
+      "stage": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/stage-network.json",
+        "sha256": "3ee23519ecfb6e31a41501a3d5b54794b0609603513f2a5245519cf8b630909b",
+        "bytes": 1833
+      },
+      "symbols": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/symbols-network.json",
+        "sha256": "f540e1e1a4171251d074d0f6364dbbb43d11399869aee9a5167f86f0295656e9",
+        "bytes": 1858
+      },
+      "spatialite-abi": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/spatialite-abi-network.json",
+        "sha256": "46585b9f05fa3611cb6bf24764e6de4a403ce9e045cb814f92c8f10706294c96",
+        "bytes": 2203
+      }
+    },
+    "network_scope": "Existing offline_exec no_new_privs/seccomp restrictions and four syscall probes pass for configure/build/install/symbol/ABI commands; HTTP API availability does not waive application network controls.",
+    "source_changes": [],
+    "global_installation": false,
+    "configure_note": "C-only project reports unused CMAKE_CXX_COMPILER; actual C compiler and effective requested options verified."
   }
 }
