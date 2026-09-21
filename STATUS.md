@@ -1,3 +1,16 @@
+# Current implementation status — FND-02 F02-05
+
+F02-05 bounded combination/cache engineering is demonstrated on
+`fnd-02/combination-gwc-smoke`; **FND-02 remains In progress**. See canonical
+[plan status](plan/STATUS.md), [compact matrix/handoff](plan/docs/fnd-02-combination-smoke.md)
+and [evidence index](plan/verification/combination-gwc/evidence.json).
+Owner review of this new checkpoint remains pending. Owner-merged #63 accepted
+bounded F02-04 only. The next finite row is F02-06; source/license decisions,
+F02-07/F02-08 and release acceptance remain open. Historical statuses below are
+preserved records, not current review obligations.
+
+# Preserved status — earlier checkpoints
+
 # Implementation status — 21 September 2026
 
 Current authorized FND-02 engineering is the source-owned GeoNode identity checkpoint in open [PR #60](https://github.com/aloerch/ambisgis-platform/pull/60), on `fnd-02/geonode-identity-integration`, based on verified owner-merged [PR #59](https://github.com/aloerch/ambisgis-platform/pull/59), merge `360b1e87b392d0e6cb8bf64fac543f75e6f27eb2`, reviewed head `c899ab0791ec87ef0a002b3953aa6a8268c4dc3e`. [PR #58](https://github.com/aloerch/ambisgis-platform/pull/58) is also merged at `b68e3d59bafb4bbf7b2007c76e5e59a25b4139e7`; dated open-review descriptions below are preserved history. **FND-02 remains In progress**; GOV-02 remains Merged.

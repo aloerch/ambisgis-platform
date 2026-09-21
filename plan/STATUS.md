@@ -1,3 +1,37 @@
+# Implementation status — FND-02 combination/cache checkpoint
+
+**F02-05 bounded engineering evidence is demonstrated; owner checkpoint review is
+pending. FND-02 remains In progress.** This slice starts from verified owner-merged
+[PR #63](https://github.com/aloerch/ambisgis-platform/pull/63), merge
+`56186baf19dc6ee02d4152e019d2dd96c5ec1b3e`, reviewed head
+`c68f42baa8cb6d21d6b34dce07c2e4ad3ee64409`. That accepts bounded F02-04 only;
+historical open-PR prose below is not a new review gate or resource-rights approval.
+
+The [compact matrix](docs/fnd-02-combination-smoke.md) and
+[index](verification/combination-gwc/evidence.json) bind six reused component
+combinations and fresh embedded GeoWebCache `smoke-07`: 30 real HTTP requests,
+ten decoded PNG witnesses, public and reader MISS/HIT/persistent-restart HIT,
+eight anonymous/outsider protected denials, invalid-layer and positive controls.
+Exact unchanged WAR, original security settings, full active security set,
+catalog/styles and persistent tiles pass integrity checks. Task services/database
+stop and credentials are invalidated/scrubbed; existing containment limits remain.
+Six failed attempts and independent negative regressions are preserved.
+
+Frozen tested implementation `4d58d7f17bba71bae60670fde2587f3fdbdf3307`, branch
+`fnd-02/combination-gwc-smoke`. Fresh checks pass: 59 new harness, 4 runtime input,
+7 configured-fixture, 15 loopback, 203 package tests and four strict schemas/examples.
+Unchanged full native component suites were not repeated. No aggregate/source
+repair or rebuild was necessary. The new task-local GWC security/route configuration
+requires owner review before merge; #63 approval does not approve this checkpoint.
+
+The [finite checklist](docs/fnd-02-completion.md) preserves all four criteria,
+eight row IDs and pass conditions. Next is **F02-06**, exact candidate proposal
+and source/license selection decisions, then F02-07 and F02-08. QGIS resource
+rights, frontend notices/web-ifc/lint/nonidentical replay and distinct Java source
+findings remain unchanged. No whole-task, license, release or deployment acceptance.
+
+# Preserved status — earlier checkpoints
+
 # Implementation status — FND-02 owned QGIS candidate
 
 Current authorized engineering is **F02-04** on `fnd-02/qgis-candidate-build`,

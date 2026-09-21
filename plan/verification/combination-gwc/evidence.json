@@ -1,0 +1,968 @@
+{
+  "base": {
+    "acceptance": "owner-accepted bounded F02-04, not resource-rights/whole-task acceptance",
+    "merge": "56186baf19dc6ee02d4152e019d2dd96c5ec1b3e",
+    "pr": 63,
+    "reviewed_head": "c68f42baa8cb6d21d6b34dce07c2e4ad3ee64409"
+  },
+  "current_payload_verification": {
+    "all_passed": true,
+    "frontend_original_files": 1038,
+    "frontend_served_files": 1038,
+    "helper_contracts": [
+      "qgis/common.verify_inventory",
+      "frontend/smoke.verify_manifest"
+    ],
+    "qgis_entries": 9235,
+    "qgis_files": 9228,
+    "qgis_symlinks": 7,
+    "suites_repeated": false
+  },
+  "fresh_checks": [
+    {
+      "command": "flatpak-spawn --host /home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/run-003/venv/bin/python -B -m unittest discover -s build-support/gwc -p test_*.py -v",
+      "count": 59,
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gwc",
+      "exit_code": 0,
+      "log": {
+        "bytes": 7132,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/gwc-tests.txt",
+        "sha256": "7027eed380a6decf1362bb3dd2227756d08296e83fa05bb381411e9b7075e9bf"
+      },
+      "scope": "harness tests, not native GIS suite"
+    },
+    {
+      "command": "flatpak-spawn --host /usr/bin/python3 -B -m unittest discover -s build-support/java -p test_runtime_inputs.py -v",
+      "count": 4,
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gwc",
+      "exit_code": 0,
+      "log": {
+        "bytes": 678,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/runtime-input-tests.txt",
+        "sha256": "111c07497a205a1761e3c03e01f288c00a53914dfaab3b421e1048a2f2f0b557"
+      },
+      "scope": "harness tests, not native GIS suite"
+    },
+    {
+      "command": "flatpak-spawn --host /usr/bin/python3 -B -m unittest discover -s build-support/java -p test_configured_auth_fixture.py -v",
+      "count": 7,
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gwc",
+      "exit_code": 0,
+      "log": {
+        "bytes": 1237,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/configured-fixture-tests.txt",
+        "sha256": "7586056d06c8c28cd495d5c28a0fa434eda7a9870a16737d9bee75fbde0f4f92"
+      },
+      "scope": "harness tests, not native GIS suite"
+    },
+    {
+      "command": "flatpak-spawn --host /usr/bin/python3 -B -m unittest discover -s build-support/java -p test_loopback_exec.py -v",
+      "count": 15,
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gwc",
+      "exit_code": 0,
+      "log": {
+        "bytes": 2401,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/loopback-tests.txt",
+        "sha256": "3337aa8611464365a5ea8ce183fee1d9dbe07ea60f125867affb2e0cdeaa1ca7"
+      },
+      "scope": "harness tests, not native GIS suite"
+    },
+    {
+      "command": "PATH=/tmp/ambisgis-validation-venv/bin:$PATH python3 -m unittest discover -s tests -v",
+      "count": 203,
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gwc/plan",
+      "exit_code": 0,
+      "log": {
+        "bytes": 29812,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/package-tests.txt",
+        "sha256": "506ff269015f5cf6249c667d53807d274e3ebb454a0370dc91dd302b646e6312"
+      },
+      "scope": "package checks, not product acceptance"
+    },
+    {
+      "command": "PATH=/tmp/ambisgis-validation-venv/bin:$PATH python3 tools/validate_package.py --require-schemas",
+      "count": 4,
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-gwc/plan",
+      "exit_code": 0,
+      "log": {
+        "bytes": 189,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/package-schemas.txt",
+        "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+      },
+      "scope": "package checks, not product acceptance"
+    }
+  ],
+  "implementation_commit": "4d58d7f17bba71bae60670fde2587f3fdbdf3307",
+  "limitations": [
+    "one EPSG:4326 matrix, one PNG tile per layer; no seeding, performance or complete OGC coverage",
+    "scoped protected-tile access, not cache revocation/user partitioning/multi-node acceptance",
+    "trusted fixture loopback controls with prior PostgreSQL-only exception; not hostile-code/host isolation",
+    "historical native suites keep their own artifact/profile and omissions",
+    "QGIS/frontend/source/license selection remains F02-06; no distribution approval"
+  ],
+  "references": {
+    "checklist-preserved.json": {
+      "bytes": 262,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/checklist-preserved.json",
+      "sha256": "6bcc1fdfbc64965b3bcec55925e7e713d87b86de6cc39b348e89c908f711ae34"
+    },
+    "independent-review-files.json": {
+      "bytes": 338,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/independent-review-files.json",
+      "sha256": "07202b9cb2e38454db3724442129860a741f9fed2f9d6016f2f57fb2df0cabb3"
+    },
+    "independent-review.md": {
+      "bytes": 4117,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/independent-review.md",
+      "sha256": "a410007c59f5e0579bf2c513c0d33f52f34a2e8414d0a207ec8eb4c74b1d57d1"
+    },
+    "payload-integrity.json": {
+      "bytes": 7132,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/payload-integrity.json",
+      "sha256": "5a56425a97b2d4c243a1de7a07e0038ba3bb41fd6a6cbd2b20ed91b041479962"
+    },
+    "payload-integrity.py": {
+      "bytes": 7969,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/payload-integrity.py",
+      "sha256": "69ce831dbf808cc780791be60bffd6571e41271804aa8f8abcb97d9ac54aa0a3"
+    },
+    "reuse-audit.json": {
+      "bytes": 128897,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/reuse-audit.json",
+      "sha256": "d1ce8c633294f4953c412e76062230962a7de7b452a7ec3988242fa2852a89e2"
+    },
+    "reuse-audit.py": {
+      "bytes": 5034,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/reuse-audit.py",
+      "sha256": "c385531b78795f45648205ea1827ef9909cf1c5e5be717034268a274b3ece4f5"
+    },
+    "review-final-pass.json": {
+      "bytes": 529,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/review-final-pass.json",
+      "sha256": "b3f18c120ab6790bf4b084f037c73fe96f8a5d3afa9439d87b18a1b80d97aa2d"
+    },
+    "review-final-pass.log": {
+      "bytes": 7014,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/review-final-pass.log",
+      "sha256": "e46d2bc42f2d2dd5e4553079bdb22d75f22b2b8d2a8bc24380f9742533495c02"
+    },
+    "review-prerepair-tests.py": {
+      "bytes": 8464,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/review-prerepair-tests.py",
+      "sha256": "2722c023cf200b8646055f011f20471be37f5f2914b3d264c723868b123958e7"
+    },
+    "review-prerepair.json": {
+      "bytes": 538,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/review-prerepair.json",
+      "sha256": "a7834e0a4669eddbc04de56cd0bc2c0522c2e7d7a5ce6f107916a69127e5a5d3"
+    },
+    "review-prerepair.log": {
+      "bytes": 8211,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/review-prerepair.log",
+      "sha256": "23124093556d7a5cb655e265e7143724a55160c44eff7093cc604e2094d644ba"
+    },
+    "smoke-07/application-inventory.json": {
+      "bytes": 59485,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/application-inventory.json",
+      "sha256": "46d3e61e8d44dc9df725362e242d292e3545b79820d3aec093c2e353d93fa0ce"
+    },
+    "smoke-07/backend-result.json": {
+      "bytes": 19325,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/backend-result.json",
+      "sha256": "1c26dbc25a378eb508cb51c0867b90ff702e9229049a442ab71101ae7d1d61d9"
+    },
+    "smoke-07/cache-configuration.json": {
+      "bytes": 3749,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/cache-configuration.json",
+      "sha256": "09828bb7b8f2c1f4737f95a04cecf2a2fbcf515b8e252e90dc689de834aa7887"
+    },
+    "smoke-07/database/database-result.json": {
+      "bytes": 22989,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/database/database-result.json",
+      "sha256": "09f223061ab419e11b6e70ebf98ccbb86b56ba50bb97038cc54fb0526151c276"
+    },
+    "smoke-07/fixture-origins.json": {
+      "bytes": 10415,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/fixture-origins.json",
+      "sha256": "fd668e47e164c5e62210de8b0d57820c1dd3575de3b6446ef330837aab161a81"
+    },
+    "smoke-07/geoserver-initial/gwc-runtime.json": {
+      "bytes": 4734,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/geoserver-initial/gwc-runtime.json",
+      "sha256": "6d8abc88c6bf3faa1bc659c13e18919016c453b82c3f3d45898b7fdcfbaef3c9"
+    },
+    "smoke-07/geoserver-initial/ready.json": {
+      "bytes": 7579,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/geoserver-initial/ready.json",
+      "sha256": "243e038e442557079adcfdbd6771788c295ed69e9a180de9c0f359369985c044"
+    },
+    "smoke-07/geoserver-restart/gwc-runtime.json": {
+      "bytes": 4734,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/geoserver-restart/gwc-runtime.json",
+      "sha256": "6d8abc88c6bf3faa1bc659c13e18919016c453b82c3f3d45898b7fdcfbaef3c9"
+    },
+    "smoke-07/geoserver-restart/ready.json": {
+      "bytes": 7579,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/geoserver-restart/ready.json",
+      "sha256": "e6d89d2261d721ca5eb71ab31d357b875826a8c752a3017f061a1b7bca8046a0"
+    },
+    "smoke-07/initial/capabilities-private_points.body": {
+      "bytes": 29165,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/capabilities-private_points.body",
+      "sha256": "ac4838b5035568056b7621a594fd4f0819e6b17b324184c2add1231ac5354ad7"
+    },
+    "smoke-07/initial/capabilities-private_points.json": {
+      "bytes": 1150,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/capabilities-private_points.json",
+      "sha256": "f6568e7775667564c14defefa3e05e73e2534cc528bcba93ea8468e85d7043ac"
+    },
+    "smoke-07/initial/capabilities-public_points.body": {
+      "bytes": 20004,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/capabilities-public_points.body",
+      "sha256": "a2b1f11c0abb6a11851eea21df2185f6825ff0906d262346357538f761e7ceee"
+    },
+    "smoke-07/initial/capabilities-public_points.json": {
+      "bytes": 1152,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/capabilities-public_points.json",
+      "sha256": "af4362560965559766e76beb4861725964ee82275f618c5938db7d504163f8b5"
+    },
+    "smoke-07/initial/configuration-private_points.body": {
+      "bytes": 559,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/configuration-private_points.body",
+      "sha256": "caf90c6330f2849aac9bfbb426eb22ef77a6830e91462211151688b20dbe0c88"
+    },
+    "smoke-07/initial/configuration-private_points.json": {
+      "bytes": 996,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/configuration-private_points.json",
+      "sha256": "8b111896a62b6b11f37e149642f8b0ea20ebe2f4e08227338595b59a6e764b0d"
+    },
+    "smoke-07/initial/configuration-public_points.body": {
+      "bytes": 557,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/configuration-public_points.body",
+      "sha256": "14b2edf24122612681fb2bc0adca046fd8cd664dbf10f045351949e14847a318"
+    },
+    "smoke-07/initial/configuration-public_points.json": {
+      "bytes": 992,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/configuration-public_points.json",
+      "sha256": "e10f6aedc4ddbd803d219df230d65ac0283c660b17c0be1498c0e92d1bc6fb46"
+    },
+    "smoke-07/initial/configure-private_points.body": {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/configure-private_points.body",
+      "sha256": "f416a4f26e245f38dd03086696551efaf86bf14208ed3cc3394d75b977de2c69"
+    },
+    "smoke-07/initial/configure-private_points.json": {
+      "bytes": 1085,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/configure-private_points.json",
+      "sha256": "2917815eac1438f9b0f7ed08d8edef34ff32d80d8786b3cc43016c1c540b1571"
+    },
+    "smoke-07/initial/configure-public_points.body": {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/configure-public_points.body",
+      "sha256": "f416a4f26e245f38dd03086696551efaf86bf14208ed3cc3394d75b977de2c69"
+    },
+    "smoke-07/initial/configure-public_points.json": {
+      "bytes": 1082,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/configure-public_points.json",
+      "sha256": "df6c2b0149a181d618b6a257240ea0b76a23b926a7a41d16a9be544b47944348"
+    },
+    "smoke-07/initial/invalid-layer.body": {
+      "bytes": 469,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/invalid-layer.body",
+      "sha256": "37c2fa3eb8f29a9a69587971c955cf4110605944e94a0e296c69c2f9bf0e1090"
+    },
+    "smoke-07/initial/invalid-layer.json": {
+      "bytes": 1392,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/invalid-layer.json",
+      "sha256": "d1ddbfd529848ae0b4bd0a4c71396fb9b638eb40ad86421ee81d52b483b86c06"
+    },
+    "smoke-07/initial/private-before-anonymous.body": {
+      "bytes": 308,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private-before-anonymous.body",
+      "sha256": "25f188d5d782f7f8a9f090e587952e56f8a52d212ec904d7f34f2e6ef3882480"
+    },
+    "smoke-07/initial/private-before-anonymous.json": {
+      "bytes": 1385,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private-before-anonymous.json",
+      "sha256": "5f2969764752bb04b3a337ed048e1ed1bbfa3e02e022ac67a91ebbde1beeb36d"
+    },
+    "smoke-07/initial/private-before-outsider.body": {
+      "bytes": 308,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private-before-outsider.body",
+      "sha256": "25f188d5d782f7f8a9f090e587952e56f8a52d212ec904d7f34f2e6ef3882480"
+    },
+    "smoke-07/initial/private-before-outsider.json": {
+      "bytes": 1381,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private-before-outsider.json",
+      "sha256": "de970c973703cbd0d93f54bdfbdfb758285fe77eb0d4eacbe0ef0ade85b582c4"
+    },
+    "smoke-07/initial/private-cached-anonymous.body": {
+      "bytes": 308,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private-cached-anonymous.body",
+      "sha256": "25f188d5d782f7f8a9f090e587952e56f8a52d212ec904d7f34f2e6ef3882480"
+    },
+    "smoke-07/initial/private-cached-anonymous.json": {
+      "bytes": 1385,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private-cached-anonymous.json",
+      "sha256": "68b59e9a646b688f47f7c594191a5ba876b677e8cff4e6c5aeefa223b04fe7ad"
+    },
+    "smoke-07/initial/private-cached-outsider.body": {
+      "bytes": 308,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private-cached-outsider.body",
+      "sha256": "25f188d5d782f7f8a9f090e587952e56f8a52d212ec904d7f34f2e6ef3882480"
+    },
+    "smoke-07/initial/private-cached-outsider.json": {
+      "bytes": 1383,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private-cached-outsider.json",
+      "sha256": "c55d19e11380091698227074bf402fc58aa296bd26785cca4fd8edd5812b9b44"
+    },
+    "smoke-07/initial/private_points-first-cache.json": {
+      "bytes": 804,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private_points-first-cache.json",
+      "sha256": "6121707901c7f977a017ed0397e28f41ccd8f6e3320c70997bdbf45a2333a9a4"
+    },
+    "smoke-07/initial/private_points-first-image.json": {
+      "bytes": 285,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private_points-first-image.json",
+      "sha256": "8ffe5afcb1a7a527459600de99727d4144343d79fa7d54fb45b845e50f1ac089"
+    },
+    "smoke-07/initial/private_points-first.body": {
+      "bytes": 2896,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private_points-first.body",
+      "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+    },
+    "smoke-07/initial/private_points-first.json": {
+      "bytes": 1760,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private_points-first.json",
+      "sha256": "a30168698fca644498f62fa64b286cf08b6c566919aec29f394e54adee0483ae"
+    },
+    "smoke-07/initial/private_points-repeat-cache.json": {
+      "bytes": 1048,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private_points-repeat-cache.json",
+      "sha256": "4dc005cff2b2ca6b92805c1045fcd693f6ff5b5f4a02b359623a759eeee0ad1b"
+    },
+    "smoke-07/initial/private_points-repeat-image.json": {
+      "bytes": 285,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private_points-repeat-image.json",
+      "sha256": "8ffe5afcb1a7a527459600de99727d4144343d79fa7d54fb45b845e50f1ac089"
+    },
+    "smoke-07/initial/private_points-repeat.body": {
+      "bytes": 2896,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private_points-repeat.body",
+      "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+    },
+    "smoke-07/initial/private_points-repeat.json": {
+      "bytes": 1759,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/private_points-repeat.json",
+      "sha256": "36f9a066402fcf4701c37c929663e9c1695107481c57b7ea76716a4fe350d217"
+    },
+    "smoke-07/initial/public_points-first-cache.json": {
+      "bytes": 334,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/public_points-first-cache.json",
+      "sha256": "6cb691e1cd3391608f14fd44f881cea995a339d5166b29f26f7d1c2ddbbbeeb8"
+    },
+    "smoke-07/initial/public_points-first-image.json": {
+      "bytes": 285,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/public_points-first-image.json",
+      "sha256": "8ffe5afcb1a7a527459600de99727d4144343d79fa7d54fb45b845e50f1ac089"
+    },
+    "smoke-07/initial/public_points-first.body": {
+      "bytes": 2896,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/public_points-first.body",
+      "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+    },
+    "smoke-07/initial/public_points-first.json": {
+      "bytes": 1760,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/public_points-first.json",
+      "sha256": "7accb2201f1591523d0a58dd6e029c604db24be26958e8d0d9dc4c44a52953ac"
+    },
+    "smoke-07/initial/public_points-repeat-cache.json": {
+      "bytes": 579,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/public_points-repeat-cache.json",
+      "sha256": "97967d0c7e24addf4b4a91beaa49b88ea3de93a2c67ca7b7df26973d8ace92ea"
+    },
+    "smoke-07/initial/public_points-repeat-image.json": {
+      "bytes": 285,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/public_points-repeat-image.json",
+      "sha256": "8ffe5afcb1a7a527459600de99727d4144343d79fa7d54fb45b845e50f1ac089"
+    },
+    "smoke-07/initial/public_points-repeat.body": {
+      "bytes": 2896,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/public_points-repeat.body",
+      "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+    },
+    "smoke-07/initial/public_points-repeat.json": {
+      "bytes": 1760,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/public_points-repeat.json",
+      "sha256": "902254e72655c7c36972ae82131e9757bd00efa79378b145f6708d345a461ee2"
+    },
+    "smoke-07/initial/result.json": {
+      "bytes": 3770,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/result.json",
+      "sha256": "f1cffc94aa146be31034767d8172c741f40344224918398899cfeca62258537f"
+    },
+    "smoke-07/initial/selected-private_points.json": {
+      "bytes": 800,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/selected-private_points.json",
+      "sha256": "c694f21659a23d82379019ce349f0aaaee7fbea9ac35e71a0f1b7ebe0003a255"
+    },
+    "smoke-07/initial/selected-public_points.json": {
+      "bytes": 799,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/selected-public_points.json",
+      "sha256": "241682dbbb7f0c57d85c6e68c756b74759f492d152d52f3bce70fda26dbf191e"
+    },
+    "smoke-07/initial/valid-control.body": {
+      "bytes": 2896,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/valid-control.body",
+      "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+    },
+    "smoke-07/initial/valid-control.json": {
+      "bytes": 1760,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/initial/valid-control.json",
+      "sha256": "54212e9787da3e9f0ce9b2e5a4b0839aaca80de92a318ffce2ea9ec27101b4d2"
+    },
+    "smoke-07/installed-origin-after.json": {
+      "bytes": 385591,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/installed-origin-after.json",
+      "sha256": "3d6cc812d46d95c3c85e560555b6a9219908baabbee040dffb60f22e959ad6ce"
+    },
+    "smoke-07/installed-origin-before.json": {
+      "bytes": 385591,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/installed-origin-before.json",
+      "sha256": "3d6cc812d46d95c3c85e560555b6a9219908baabbee040dffb60f22e959ad6ce"
+    },
+    "smoke-07/invocation.json": {
+      "bytes": 2399,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/invocation.json",
+      "sha256": "36a53924549f4b295188c0d9647c00c2c239065d2fbf6e5513108c3882250364"
+    },
+    "smoke-07/launcher/network-denial.json": {
+      "bytes": 3311,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/launcher/network-denial.json",
+      "sha256": "36355decfa6829ab84faafd8bea850ae567e8a1c33d8df952def15f1d759e5b5"
+    },
+    "smoke-07/launcher/result.json": {
+      "bytes": 3684,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/launcher/result.json",
+      "sha256": "8f325caf3a0d782d2f6a6359351c266d1c6f29959d6de45baa078307f3440a8a"
+    },
+    "smoke-07/network-loopback.json": {
+      "bytes": 1813,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/network-loopback.json",
+      "sha256": "d72268aa490f7f921b11c44a3f8ed8f2910ea49df5fe02f65c6f577ab27d750b"
+    },
+    "smoke-07/network-loopback.probes.json": {
+      "bytes": 12029,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/network-loopback.probes.json",
+      "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825"
+    },
+    "smoke-07/restart/capabilities-private_points.body": {
+      "bytes": 29165,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/capabilities-private_points.body",
+      "sha256": "ac4838b5035568056b7621a594fd4f0819e6b17b324184c2add1231ac5354ad7"
+    },
+    "smoke-07/restart/capabilities-private_points.json": {
+      "bytes": 1150,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/capabilities-private_points.json",
+      "sha256": "e3601ca65a59976d233854d3407bb0638fcf47a97f90bab0544b9f4241bda76a"
+    },
+    "smoke-07/restart/capabilities-public_points.body": {
+      "bytes": 20004,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/capabilities-public_points.body",
+      "sha256": "a2b1f11c0abb6a11851eea21df2185f6825ff0906d262346357538f761e7ceee"
+    },
+    "smoke-07/restart/capabilities-public_points.json": {
+      "bytes": 1153,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/capabilities-public_points.json",
+      "sha256": "a2a0131c923c1a1d8847fb139942ccf91036ff03b26109c2fb658b5cb7cde376"
+    },
+    "smoke-07/restart/configuration-private_points.body": {
+      "bytes": 749,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/configuration-private_points.body",
+      "sha256": "16651e50906868b08adebca34e119c690e595a7ebbc378d7c8deeb23ede2be3e"
+    },
+    "smoke-07/restart/configuration-private_points.json": {
+      "bytes": 996,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/configuration-private_points.json",
+      "sha256": "5331f74c1436b2c0d9ae1ea2b0193cf576ea77fd43828422e3006058b30e598b"
+    },
+    "smoke-07/restart/configuration-public_points.body": {
+      "bytes": 747,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/configuration-public_points.body",
+      "sha256": "4f6623984bfcbee79354a4639b59dc8261ecdb8a0911d79eec36c012d5199275"
+    },
+    "smoke-07/restart/configuration-public_points.json": {
+      "bytes": 992,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/configuration-public_points.json",
+      "sha256": "49e9896638f94bd4cd2a7981edc0bccb7d29930a94addc5b424ab062d4a4073b"
+    },
+    "smoke-07/restart/invalid-layer.body": {
+      "bytes": 469,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/invalid-layer.body",
+      "sha256": "37c2fa3eb8f29a9a69587971c955cf4110605944e94a0e296c69c2f9bf0e1090"
+    },
+    "smoke-07/restart/invalid-layer.json": {
+      "bytes": 1391,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/invalid-layer.json",
+      "sha256": "0a21ce73a38e501f8feb7a870e3a4c0010ef880a023110e0eb007c7ce4c13e70"
+    },
+    "smoke-07/restart/private-before-anonymous.body": {
+      "bytes": 308,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private-before-anonymous.body",
+      "sha256": "25f188d5d782f7f8a9f090e587952e56f8a52d212ec904d7f34f2e6ef3882480"
+    },
+    "smoke-07/restart/private-before-anonymous.json": {
+      "bytes": 1385,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private-before-anonymous.json",
+      "sha256": "0d9759e44d9bba22c728d759bbff918e26d0c2f5b02f1b6a10a34a7600810f4b"
+    },
+    "smoke-07/restart/private-before-outsider.body": {
+      "bytes": 308,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private-before-outsider.body",
+      "sha256": "25f188d5d782f7f8a9f090e587952e56f8a52d212ec904d7f34f2e6ef3882480"
+    },
+    "smoke-07/restart/private-before-outsider.json": {
+      "bytes": 1381,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private-before-outsider.json",
+      "sha256": "a253970b459894eccc993e640a6d5ccc9f3da629c541974cdb4f976ebc02713e"
+    },
+    "smoke-07/restart/private-cached-anonymous.body": {
+      "bytes": 308,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private-cached-anonymous.body",
+      "sha256": "25f188d5d782f7f8a9f090e587952e56f8a52d212ec904d7f34f2e6ef3882480"
+    },
+    "smoke-07/restart/private-cached-anonymous.json": {
+      "bytes": 1385,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private-cached-anonymous.json",
+      "sha256": "692746d98b683244d66a3f774629be28bb8a60c4e61d533feb5727c0af574e62"
+    },
+    "smoke-07/restart/private-cached-outsider.body": {
+      "bytes": 308,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private-cached-outsider.body",
+      "sha256": "25f188d5d782f7f8a9f090e587952e56f8a52d212ec904d7f34f2e6ef3882480"
+    },
+    "smoke-07/restart/private-cached-outsider.json": {
+      "bytes": 1382,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private-cached-outsider.json",
+      "sha256": "b19b59ede20b27c79f1daf022d51b6908f8bd1b411d82b10b8100177ee2101a8"
+    },
+    "smoke-07/restart/private_points-first-cache.json": {
+      "bytes": 1048,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private_points-first-cache.json",
+      "sha256": "4dc005cff2b2ca6b92805c1045fcd693f6ff5b5f4a02b359623a759eeee0ad1b"
+    },
+    "smoke-07/restart/private_points-first-image.json": {
+      "bytes": 285,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private_points-first-image.json",
+      "sha256": "8ffe5afcb1a7a527459600de99727d4144343d79fa7d54fb45b845e50f1ac089"
+    },
+    "smoke-07/restart/private_points-first.body": {
+      "bytes": 2896,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private_points-first.body",
+      "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+    },
+    "smoke-07/restart/private_points-first.json": {
+      "bytes": 1759,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private_points-first.json",
+      "sha256": "ad217211f05f41dedb273da741d8964c0d7984c8731832e59f138de639da2842"
+    },
+    "smoke-07/restart/private_points-repeat-cache.json": {
+      "bytes": 1048,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private_points-repeat-cache.json",
+      "sha256": "4dc005cff2b2ca6b92805c1045fcd693f6ff5b5f4a02b359623a759eeee0ad1b"
+    },
+    "smoke-07/restart/private_points-repeat-image.json": {
+      "bytes": 285,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private_points-repeat-image.json",
+      "sha256": "8ffe5afcb1a7a527459600de99727d4144343d79fa7d54fb45b845e50f1ac089"
+    },
+    "smoke-07/restart/private_points-repeat.body": {
+      "bytes": 2896,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private_points-repeat.body",
+      "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+    },
+    "smoke-07/restart/private_points-repeat.json": {
+      "bytes": 1758,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/private_points-repeat.json",
+      "sha256": "7299f7b355b8e96339870c6bc78ab75ed73426f210eefb6d2bd2cea0d5d1a31a"
+    },
+    "smoke-07/restart/public_points-first-cache.json": {
+      "bytes": 1047,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/public_points-first-cache.json",
+      "sha256": "cccaebdc9ff284e7fe0707c09854c043aed938e42a20d0eb2789e12b3c00f666"
+    },
+    "smoke-07/restart/public_points-first-image.json": {
+      "bytes": 285,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/public_points-first-image.json",
+      "sha256": "8ffe5afcb1a7a527459600de99727d4144343d79fa7d54fb45b845e50f1ac089"
+    },
+    "smoke-07/restart/public_points-first.body": {
+      "bytes": 2896,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/public_points-first.body",
+      "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+    },
+    "smoke-07/restart/public_points-first.json": {
+      "bytes": 1760,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/public_points-first.json",
+      "sha256": "da9b61a38c65e61cbceab55ad00c87dfbdb9a4d428751ec5e69d994ceff09771"
+    },
+    "smoke-07/restart/public_points-repeat-cache.json": {
+      "bytes": 1047,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/public_points-repeat-cache.json",
+      "sha256": "cccaebdc9ff284e7fe0707c09854c043aed938e42a20d0eb2789e12b3c00f666"
+    },
+    "smoke-07/restart/public_points-repeat-image.json": {
+      "bytes": 285,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/public_points-repeat-image.json",
+      "sha256": "8ffe5afcb1a7a527459600de99727d4144343d79fa7d54fb45b845e50f1ac089"
+    },
+    "smoke-07/restart/public_points-repeat.body": {
+      "bytes": 2896,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/public_points-repeat.body",
+      "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+    },
+    "smoke-07/restart/public_points-repeat.json": {
+      "bytes": 1760,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/public_points-repeat.json",
+      "sha256": "2e46433ad50c2be20a5fa2d710c1134b641310c2affb2d8788c6986c09fee10b"
+    },
+    "smoke-07/restart/result.json": {
+      "bytes": 3804,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/result.json",
+      "sha256": "961320957e3cb9a9c9457e88d3f3001f262c410db416fea9ca452f8f39899ed6"
+    },
+    "smoke-07/restart/selected-private_points.json": {
+      "bytes": 800,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/selected-private_points.json",
+      "sha256": "c694f21659a23d82379019ce349f0aaaee7fbea9ac35e71a0f1b7ebe0003a255"
+    },
+    "smoke-07/restart/selected-public_points.json": {
+      "bytes": 799,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/selected-public_points.json",
+      "sha256": "241682dbbb7f0c57d85c6e68c756b74759f492d152d52f3bce70fda26dbf191e"
+    },
+    "smoke-07/restart/valid-control.body": {
+      "bytes": 2896,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/valid-control.body",
+      "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+    },
+    "smoke-07/restart/valid-control.json": {
+      "bytes": 1759,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/restart/valid-control.json",
+      "sha256": "eb7dbc76b740f2e282e4aa294da9b3ae500c00256584fb143162388b779b3dc6"
+    },
+    "smoke-07/result.json": {
+      "bytes": 54823,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/result.json",
+      "sha256": "95f70873a5ac71179fa77dd289a543304c3f05bb2cfab30910bcd066e1b0a00f"
+    },
+    "smoke-07/security-active.json": {
+      "bytes": 2974,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/security-active.json",
+      "sha256": "00cdba0837214878f58af8a4479819439c109a733c5dc7a51d58f62a958d1a4d"
+    },
+    "smoke-07/security-configured.json": {
+      "bytes": 2471,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/security-configured.json",
+      "sha256": "a0353070541ba94e269f7ea7edf9f28915447f6de2748081716334ee41b651e7"
+    },
+    "smoke-07/security-startup-delta.json": {
+      "bytes": 210,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/security-startup-delta.json",
+      "sha256": "ef06bae1ab2a56fb41859d2e3263083a08f94821efab7c7023df2caed6c2302d"
+    },
+    "smoke-07/staged-runtime-manifest.json": {
+      "bytes": 1740,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/staged-runtime-manifest.json",
+      "sha256": "1b77d19b7b9716dc685758368dd20da460d7e75752fd5185cd13cc2019421bf3"
+    },
+    "smoke-07/tooling.json": {
+      "bytes": 13844,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-07/tooling.json",
+      "sha256": "21cab631510d93123928a729aa605e905e648a15922aaef876feb20e4574c2a8"
+    },
+    "source-audit-final.json": {
+      "bytes": 99775,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/source-audit-final.json",
+      "sha256": "433814cbc5a1f694157a5fafea58687368d2eee1856892e552b1e2beadd5d51a"
+    },
+    "source-audit-final.md": {
+      "bytes": 2902,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/source-audit-final.md",
+      "sha256": "aa2c1fb6a1b3935b745d906cf9670510e15942c6f57d150a88065431604d1c00"
+    },
+    "source-audit-final.py": {
+      "bytes": 9340,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/source-audit-final.py",
+      "sha256": "94a5702b580200e78f456d9850b8758fd6848a4a33156dcd7ab9bf060baccd0f"
+    }
+  },
+  "retained_failures": [
+    {
+      "attempt": "smoke-01",
+      "backend": {
+        "bytes": 6621,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-01/backend-result.json",
+        "sha256": "f866755bce48057880355a819d71e0c7607ea35a57a8b3134a4e43e54387d04a"
+      },
+      "cleanup": {
+        "geonode": true,
+        "geoserver": true,
+        "stored_credentials_invalidated": true
+      },
+      "error": {
+        "message": "scoped GWC layer administration failed",
+        "type": "ValueError"
+      },
+      "postgres_exit_code": 0,
+      "result": {
+        "bytes": 41287,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-01/result.json",
+        "sha256": "fa1d572a3bd8d67851cbc74f91c1037c3f77d593e8d3f1d5d942920bbcb6f1af"
+      },
+      "supervisor_exit_code": 1
+    },
+    {
+      "attempt": "smoke-02",
+      "backend": {
+        "bytes": 6621,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-02/backend-result.json",
+        "sha256": "217acef1fd52365b59b929865db785c6447225ee08c5d2e6b1931a066b456f11"
+      },
+      "cleanup": {
+        "geonode": true,
+        "geoserver": true,
+        "stored_credentials_invalidated": true
+      },
+      "error": {
+        "message": "scoped GWC layer administration failed",
+        "type": "ValueError"
+      },
+      "postgres_exit_code": 0,
+      "result": {
+        "bytes": 41287,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-02/result.json",
+        "sha256": "91a8fd403cb415e07b7d0a5bbff563d5cd720d7fd05da40b4f5af81609cd5829"
+      },
+      "supervisor_exit_code": 1
+    },
+    {
+      "attempt": "smoke-03",
+      "backend": {
+        "bytes": 6621,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-03/backend-result.json",
+        "sha256": "db0ce26ef104b0fe9d6bdd98989639ad96bb8ccd58a13739f0c5366e32f7b1c9"
+      },
+      "cleanup": {
+        "geonode": true,
+        "geoserver": true,
+        "stored_credentials_invalidated": true
+      },
+      "error": {
+        "message": "scoped GWC layer administration failed",
+        "type": "ValueError"
+      },
+      "postgres_exit_code": 0,
+      "result": {
+        "bytes": 41287,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-03/result.json",
+        "sha256": "537079455df66fcf514dc81142e36cc6e10b63e3ae0e9d6ac2ab6d0c6007b12c"
+      },
+      "supervisor_exit_code": 1
+    },
+    {
+      "attempt": "smoke-04",
+      "backend": {
+        "bytes": 7094,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-04/backend-result.json",
+        "sha256": "09f85fab526257e7060e8e57fe2db5eaea49423b48989abe6dac81bc474941db"
+      },
+      "cleanup": {
+        "geonode": true,
+        "geoserver": true,
+        "stored_credentials_invalidated": true
+      },
+      "error": {
+        "message": "not genuine OWS 1.1 protocol exception",
+        "type": "ValueError"
+      },
+      "postgres_exit_code": 0,
+      "result": {
+        "bytes": 41996,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-04/result.json",
+        "sha256": "f1beed4684eb5da24c8c22e41b45ff41e80b60b06da3f304c2a84f279f673934"
+      },
+      "supervisor_exit_code": 1
+    },
+    {
+      "attempt": "smoke-05",
+      "backend": {
+        "bytes": 11150,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-05/backend-result.json",
+        "sha256": "a385b1085863601ad31e6c08a60c92b5ebe4c3b8ab085379b6a8942e224263c7"
+      },
+      "cleanup": {
+        "geonode": true,
+        "geoserver": true,
+        "stored_credentials_invalidated": true
+      },
+      "error": {
+        "message": "security configuration changed",
+        "type": "RuntimeError"
+      },
+      "postgres_exit_code": 0,
+      "result": {
+        "bytes": 46332,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-05/result.json",
+        "sha256": "8f27d635607bd5e1c1aa9a107e708181cdff7eedc11c7548f007a3ff9f53c8e1"
+      },
+      "supervisor_exit_code": 1
+    },
+    {
+      "attempt": "smoke-06",
+      "backend": {
+        "bytes": 11150,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-06/backend-result.json",
+        "sha256": "ba31d3a677341375c84c8b529cf5869742ac55d3e6e4c8b60ca9758792fbefc6"
+      },
+      "cleanup": {
+        "geonode": true,
+        "geoserver": true,
+        "stored_credentials_invalidated": true
+      },
+      "error": {
+        "message": "security configuration changed",
+        "type": "RuntimeError"
+      },
+      "postgres_exit_code": 0,
+      "result": {
+        "bytes": 46332,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/smoke-06/result.json",
+        "sha256": "d3de508623361ba4b1901bb9079f461c5d316bbbded47be921ec161cbec9966f"
+      },
+      "supervisor_exit_code": 1
+    }
+  ],
+  "reused_reference_checks": {
+    "native_suites_rerun": false,
+    "passed": 300,
+    "records": 300,
+    "unique_paths": 294
+  },
+  "row": "F02-05",
+  "runtime": {
+    "attempt": "smoke-07",
+    "cache_files": {
+      "fixture_private_points/EPSG_4326_05/4_2/32_16.png": {
+        "bytes": 2896,
+        "inode": 15050339,
+        "mtime_ns": 1790014274353000000,
+        "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+      },
+      "fixture_public_points/EPSG_4326_05/4_2/32_16.png": {
+        "bytes": 2896,
+        "inode": 15050316,
+        "mtime_ns": 1790014273948000000,
+        "sha256": "09e004ea5ab2c00f1dde369fef6b0b29fe36aae3c585d8a2e11fe2ab582efa69"
+      }
+    },
+    "credentials": {
+      "geonode": true,
+      "geoserver": true,
+      "stored_credentials_invalidated": true
+    },
+    "datagram_packets_received": 0,
+    "diagnostic_secret_hits": 0,
+    "diagnostic_security_failures": 0,
+    "finished_at_utc": "2026-09-21T18:11:31.291058+00:00",
+    "gwc_http_requests": 30,
+    "invalid_layer_controls": 2,
+    "layer_administration_requests": 6,
+    "network_probes": {
+      "all_passed": true,
+      "exec_child_probes": 79,
+      "parent_probes": 79,
+      "schema_version": 1
+    },
+    "postgres_exit_code": 0,
+    "private_reader_sequence": [
+      "MISS",
+      "HIT",
+      "restart HIT"
+    ],
+    "protected_denials": 8,
+    "public_sequence": [
+      "MISS",
+      "HIT",
+      "restart HIT"
+    ],
+    "render": {
+      "expected_center": [
+        45.51111111111111,
+        164.9777777777778
+      ],
+      "opaque_pixels": 640,
+      "red_centroid": [
+        45.0,
+        164.5
+      ],
+      "red_pixels": 562,
+      "rgba_sha256": "16f0622efa09a8d90ad9c6b30fdaacf8ac04fd83c24ac048d0bda9d347fa8a7d",
+      "size": [
+        256,
+        256
+      ]
+    },
+    "restarts": 1,
+    "result_exit_code": 0,
+    "service_stops": [
+      {
+        "exit_code": 143,
+        "log_sha256": "574b1d84614beecf2c2ab7eb86f70ca83e58329cace2a312cc1321c519bab972",
+        "name": "geoserver",
+        "phase": "initial",
+        "pid": 861184,
+        "was_running": true
+      },
+      {
+        "exit_code": -15,
+        "log_sha256": "8744043c1a836b43ada0051adf182abaabef82788f07b02d12a5aea61711cd3a",
+        "name": "geonode",
+        "phase": "initial",
+        "pid": 861118,
+        "was_running": true
+      },
+      {
+        "exit_code": -15,
+        "log_sha256": "b56f88b45a77b4a51fc5ec04a2909d80823cf7d32699a4046eac4008a3d1ee41",
+        "name": "geonode",
+        "phase": "restart",
+        "pid": 861338,
+        "was_running": true
+      },
+      {
+        "exit_code": 143,
+        "log_sha256": "026bf9298c6b3114e9ec2920e59b44167e041de13e230099654f40a58dbbb375",
+        "name": "geoserver",
+        "phase": "restart",
+        "pid": 861384,
+        "was_running": true
+      }
+    ],
+    "started_at_utc": "2026-09-21T18:10:16.436958+00:00",
+    "task_group_stopped": true,
+    "valid_after_invalid_controls": 2,
+    "war_sha256": "a3cea4ad28ca7c3447b2eeae7a631e624a9e50e7973972c43f2d7d91eab25a52",
+    "wmts_requests": 24
+  },
+  "schema_version": 1,
+  "scope": "bounded selected-combination matrix and actual embedded cache smoke; owner review pending; FND-02 In progress",
+  "source_hashes": {
+    "gwc/backend.py": "34a1d34ef32e623dbf873c4367a4badb6b6780fe8cf1b55dcecf438d4fafbaa0",
+    "gwc/probe.py": "51ec59ed0fbf8069016e05aa8e6cc7fcc388789d84f1ef0ad8c8f65593298020",
+    "gwc/smoke.py": "a9fd3c82b9702f4b0348e2fce99fd636566292df2e583f1becbfb9ec34e69535",
+    "gwc/test_probe.py": "fe15f9bd2b086990e0040740f1b26441bfeea34a6b75a4933bd4b8026c55d009",
+    "java/runtime-fixtures/ConfiguredGeoServerRuntime.java": "1dbe4f5e3c491dff2af153227f36c2211a9e02ae4ce7e507ed87f3cbd73c0dfa"
+  },
+  "task": "FND-02"
+}
