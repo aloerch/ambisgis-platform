@@ -30,7 +30,7 @@ explicit additional one-file exclusion. Recommend one coordinated Java batch wit
 an Oracle-support choice and affected aggregate tests. F02-07/F02-08 remain
 unaccepted; no new milestone or later-task acceptance is introduced.
 
-Publication identity and Project readback are appended below after creation.
+Review [PR #66](https://github.com/aloerch/ambisgis-platform/pull/66). [Project evidence](plan/verification/frontend-qgis-remediation/project.json) records exactly two authorized writes: the separate PR item and its Evidence link to #66/issue #3. Live count is 78 → 79; all 78 prior items, fields/views/archive decisions and `is:pr is:open` remain preserved. Only #66 is in the open queue. An immediate list-readback failure is retained; a later read-only reconciliation passed without replaying writes. Parent Delivery stays In progress. The final pushed review head is recorded in issue #3; later publication documentation changes no tested artifact or manifest.
 
 # Preserved status — prior checkpoints
 

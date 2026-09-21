@@ -1,0 +1,105 @@
+{
+  "task": "FND-02/F02-06",
+  "pr": {
+    "baseRefName": "ambisgis/main",
+    "headRefName": "fnd-02/frontend-qgis-selection-remediation",
+    "headRefOid": "75fb2d61ec3acc33e4d99409bbebfc6923031990",
+    "id": "PR_kwDOUhI-d88AAAABEfALRg",
+    "isDraft": false,
+    "number": 66,
+    "state": "OPEN",
+    "url": "https://github.com/aloerch/ambisgis-platform/pull/66"
+  },
+  "project_url": "https://github.com/users/aloerch/projects/2",
+  "item_id": "PVTI_lAHOAOk9es4Bj_k-zg8Be6U",
+  "items_before": 78,
+  "items_after": 79,
+  "actual_mutations": [
+    {
+      "content_id": "PR_kwDOUhI-d88AAAABEfALRg",
+      "operation": "add_item",
+      "result": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg8Be6U",
+        "isArchived": false
+      }
+    },
+    {
+      "field_id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg8Be6U",
+      "operation": "set_field",
+      "result": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg8Be6U"
+      },
+      "value": "https://github.com/aloerch/ambisgis-platform/pull/66 | FND-02: https://github.com/aloerch/ambisgis-platform/issues/3"
+    }
+  ],
+  "queue_filter": "is:pr is:open",
+  "queue_membership": [
+    66
+  ],
+  "checks": {
+    "all_78_prior_items_exactly_preserved": true,
+    "exactly_one_authorized_new_item": true,
+    "fields_repositories_views_preserved": true,
+    "view_configuration_and_order_preserved": true,
+    "actual_pr_identity": true,
+    "evidence_link": true,
+    "not_archived_or_given_task_fields": true,
+    "parent_in_progress": true,
+    "readback_no_writes": true,
+    "saved_queue_membership": true
+  },
+  "all_passed": true,
+  "initial_apply_guard": "Failed immediate collection readback: both mutations succeeded but newly created item absent from first list. Original failed outcome retained unchanged. Later read-only snapshot finds exact item and full before-to-final comparison passes. No mutation replay.",
+  "references": [
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/project-dry-run-01/outcome.json",
+      "sha256": "ec8adf85f0f7fe9d20e2098d3c9eb4cdaa10b03b220c2894aa0d2efee7e4d3aa",
+      "bytes": 3068
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/project-apply-01/before.json",
+      "sha256": "2253335f31ab14482843d9c8621d569be0a852849647af6ced77fa7efa0886c8",
+      "bytes": 308344
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/project-apply-01/mutation-events.jsonl",
+      "sha256": "5b37bd1cce4655396efe56d2c0707a7c06aeda37d170fd9808276726ef5d48ed",
+      "bytes": 1055
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/project-apply-01/outcome.json",
+      "sha256": "067b7bac44aa35a2eb5b18d6787d31e1e5cda4a0984fe49645330c41cef0c779",
+      "bytes": 3618
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/project-apply-01/manifest.json",
+      "sha256": "272e877a6a927dc588a957a58080265b1dbc5e725bb70b02bae51843efd467e8",
+      "bytes": 1708
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/project-readback-02/after.json",
+      "sha256": "67987d8811a6272d03db625c629661700bf4b04b87906d36e4491a3e673c5268",
+      "bytes": 310094
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/project-readback-02/outcome.json",
+      "sha256": "92fe20ed980c3849c97157305e295c7fee8ac750c4ecdd1c8535b6a28e2cae32",
+      "bytes": 3250
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/project-readback-02/manifest.json",
+      "sha256": "83384cab27b41793eb2522004c66e01a12a4d678230a6a07e19f19fea8757719",
+      "bytes": 1126
+    }
+  ],
+  "limitations": "API readback, not a new UI approval. Existing supported adapter leaves unrelated assignee/label expansion unchanged; no such fields were written. FND-02 Delivery unmodified; F02-07/F02-08 unaccepted."
+}

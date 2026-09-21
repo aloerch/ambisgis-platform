@@ -9,7 +9,9 @@ Repository `aloerch/ambisgis-platform`; branch
 `fnd-02/frontend-qgis-selection-remediation`; worktree
 `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-remediation`.
 Frozen implementation/candidate commit: `660208bd87fa508c627b223a121c299c278ea0bc`.
-The later publication record and issue #3 pin the final pushed review head.
+Review [PR #66](https://github.com/aloerch/ambisgis-platform/pull/66). The
+[Project publication record](../verification/frontend-qgis-remediation/project.json)
+and issue #3 pin publication and final review identities.
 No merge or distribution has occurred.
 
 ## Owner actions and next finite decision
@@ -146,3 +148,19 @@ outputs and failed evidence remain preserved. Five unchanged backend combination
 reuse exact historical evidence; unrelated Java/database/Jupyter suites were not
 rerun. No workflow, secret, automatic synchronization, upstream contact, new
 repository, release or production change occurred.
+
+## Remote publication and preserved readback failure
+
+One PR (#66) and one separate Project #2 PR item were created. Project changes
+were exactly item membership and its Evidence link to PR #66/issue #3. No Task ID,
+Delivery or Review gate was copied. Actual count is 78 → 79, all 78 prior items
+and represented fields/views/archive decisions match, and unchanged `is:pr is:open`
+contains #66. Parent FND-02 remains In progress.
+
+The immediate post-write list omitted the accepted new item, so the original
+apply receipt correctly failed. `project-readback-02` then found the exact item
+with zero writes; a complete before-to-final reconciliation passed. The failed
+receipt remains unchanged. `project-reconciliation.json` and the committed compact
+index retain both observations. No mutation was repeated and no UI acceptance is
+claimed. Final head readback and the issue #3 evidence comment follow the final
+publication-documentation commit; tested implementation/manifest stay frozen.
