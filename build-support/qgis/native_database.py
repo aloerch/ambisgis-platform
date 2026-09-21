@@ -7,6 +7,7 @@ import hashlib
 import json
 from pathlib import Path
 import secrets
+import signal
 import subprocess
 import sys
 
@@ -69,6 +70,21 @@ def prepare(database, source, service_file):
             'full_donor_bootstrap_executed': False}
 
 
+def wait_supervisor(process, timeout, cleanup_timeout=45):
+    """Preserve the supervisor's own descendant reaping on timeout/interruption."""
+    try:
+        return process.wait(timeout=timeout)
+    except BaseException:
+        if process.poll() is None:
+            process.terminate()
+            try:
+                process.wait(timeout=cleanup_timeout)
+            except subprocess.TimeoutExpired as error:
+                # SIGKILL here would bypass the supervisor's process-group cleanup.
+                raise RuntimeError('native supervisor cleanup unresponsive') from error
+        raise
+
+
 def run(config, output):
     output = Path(output).absolute()
     output.mkdir(parents=True, mode=0o700, exist_ok=False)
@@ -76,6 +92,7 @@ def run(config, output):
               'database_control_limitation': 'Fresh PostgreSQL runs outside the retained loopback supervisor because native backend setsid is denied; authenticated loopback TCP only, Unix listeners disabled, owned PID shutdown. QGIS native clients stay supervised.',
               'scope': 'F02-04 selected native tests; no full provider suite or release acceptance'}
     database = None
+    supervisor = None
     recipes = [Path(__file__).resolve(), Path(native_tests.__file__).resolve(), native_tests.SELECTION,
                Path(loopback_exec.__file__).resolve(), Path(configured_auth_database.__file__).resolve()]
     result['recipe_sha256'] = {str(path): native_tests.sha(path) for path in recipes}
@@ -92,16 +109,29 @@ def run(config, output):
         command = [sys.executable, str(Path(loopback_exec.__file__).resolve()), '--evidence', str(network),
                    '--timeout', '2400', '--', sys.executable, str(Path(native_tests.__file__).resolve()),
                    '--config', str(invocation), '--output', str(output / 'native')]
-        with (output / 'supervisor.log').open('x') as log:
-            completed = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=2450)
         result['command'] = command
-        result['process_exit_code'] = completed.returncode
-        result['network'] = loopback_exec.verify_receipt(network, completed.returncode)
+        with (output / 'supervisor.log').open('x') as log:
+            supervisor = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT)
+            result['supervisor_pid'] = supervisor.pid
+            code = wait_supervisor(supervisor, timeout=2450)
+        result['process_exit_code'] = code
+        result['network'] = loopback_exec.verify_receipt(network, code)
         result['native'] = json.loads((output / 'native/native-result.json').read_text())
-        result['result_exit_code'] = 0 if completed.returncode == 0 and result['native']['result_exit_code'] == 0 else 1
-    except Exception as error:
+        result['result_exit_code'] = 0 if code == 0 and result['native']['result_exit_code'] == 0 else 1
+    except BaseException as error:
         result['error'] = {'type': type(error).__name__, 'message': str(error)}
     finally:
+        if supervisor is not None:
+            try:
+                if supervisor.poll() is None:
+                    supervisor.terminate()
+                    supervisor.wait(timeout=45)
+                result['supervisor_stopped'] = supervisor.poll() is not None
+                result['process_exit_code'] = supervisor.returncode
+            except BaseException as error:
+                result['result_exit_code'] = 1
+                result['supervisor_stopped'] = False
+                result['supervisor_cleanup_error'] = type(error).__name__
         if database is not None:
             try:
                 if database.receipt.get('started'):
@@ -111,7 +141,7 @@ def run(config, output):
                                  "EXECUTE format('ALTER ROLE %I NOLOGIN PASSWORD NULL', role_name); "
                                  "END LOOP; END $$;\n")
                     result['credentials_invalidated'] = True
-            except Exception as error:
+            except BaseException as error:
                 result['result_exit_code'] = 1
                 result['credential_cleanup_error'] = type(error).__name__
             try:
@@ -119,7 +149,7 @@ def run(config, output):
                 result['database'] = database.receipt
                 if not database.receipt.get('stopped') or database.receipt.get('result_exit_code') != 0:
                     result['result_exit_code'] = 1
-            except Exception as error:
+            except BaseException as error:
                 result['result_exit_code'] = 1
                 result['database_cleanup_error'] = type(error).__name__
     if any(native_tests.sha(path) != result['recipe_sha256'][str(path)] for path in recipes):
@@ -131,6 +161,10 @@ def run(config, output):
 
 
 if __name__ == '__main__':
+    def interrupted(signum, frame):
+        raise KeyboardInterrupt('native controller interrupted; cleaning task-owned services')
+
+    signal.signal(signal.SIGTERM, interrupted)
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)

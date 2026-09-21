@@ -96,3 +96,12 @@ these are not native QGIS results. A real owned PostgreSQL fixture preflight at
 five point rows and four polygon rows, invalidated credentials and stopped the
 cluster. QGIS native execution must be recorded separately after compilation;
 the presence of this selection or passing guard tests does not complete F02-04.
+
+The native controller uses `Popen.wait` with graceful supervisor termination on
+timeout or interruption, allowing the unchanged supervisor to reap descendants
+before database cleanup. The fourteen harness guards include real child-process
+timeout/KeyboardInterrupt checks and database cleanup ordering. An additional
+real loopback-supervisor timeout witness at
+`build-worktrees/qgis-candidate/native-supervisor-cleanup-01/result.json` confirmed
+its expected failed exit, stopped process group and disappearance of both owned
+child PIDs. These lifecycle checks are not QGIS native acceptance results.

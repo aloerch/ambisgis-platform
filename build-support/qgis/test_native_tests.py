@@ -1,6 +1,13 @@
 """Guards for evidence handling. These are not QGIS native acceptance tests."""
 import hashlib
 import json
+import os
+import signal
+import subprocess
+import sys
+import threading
+import time
+from unittest import mock
 from pathlib import Path
 import tempfile
 import unittest
@@ -108,6 +115,129 @@ class NativeEvidenceGuards(unittest.TestCase):
             selection = self.fixture(text)
             with self.assertRaises(ValueError):
                 native_database.fixture_sql(self.root, selection)
+
+
+class NativeSupervisorCleanupGuards(unittest.TestCase):
+    """Real process tests of graceful supervisor shutdown, plus DB ordering."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+
+    def start_surrogate(self):
+        # Models the existing supervisor's SIGTERM/finally/reap contract. Its
+        # child deliberately ignores SIGTERM, so SIGKILLing the supervisor
+        # (subprocess.run's timeout behavior) cannot pass these checks.
+        script = self.root / 'supervisor.py'
+        script.write_text("""import os, signal, subprocess, sys, time
+from pathlib import Path
+root=Path(sys.argv[1])
+def interrupted(signum, frame):
+    raise InterruptedError('controlled stop')
+signal.signal(signal.SIGTERM, interrupted)
+child=subprocess.Popen([sys.executable,'-c','import signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); time.sleep(60)'])
+(root/'child.pid').write_text(str(child.pid))
+try:
+    while True: time.sleep(.02)
+except InterruptedError:
+    pass
+finally:
+    child.kill()
+    child.wait(timeout=5)
+    (root/'reaped').write_text(str(child.pid))
+""")
+        process = subprocess.Popen([sys.executable, str(script), str(self.root)],
+                                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        self.addCleanup(self.cleanup_surrogate, process)
+        deadline = time.monotonic() + 5
+        while not (self.root / 'child.pid').exists():
+            if process.poll() is not None or time.monotonic() > deadline:
+                self.fail('surrogate did not start its owned child')
+            time.sleep(.01)
+        return process
+
+    def cleanup_surrogate(self, process):
+        if process.poll() is None:
+            process.terminate()
+            process.wait(timeout=5)
+        if (self.root / 'reaped').exists():
+            return
+        path = self.root / 'child.pid'
+        if path.exists():
+            try:
+                os.kill(int(path.read_text()), signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+
+    def assert_reaped(self, process):
+        self.assertIsNotNone(process.poll())
+        child = int((self.root / 'child.pid').read_text())
+        self.assertEqual((self.root / 'reaped').read_text(), str(child))
+        with self.assertRaises(ProcessLookupError):
+            os.kill(child, 0)
+
+    def test_timeout_allows_supervisor_to_reap_real_child(self):
+        process = self.start_surrogate()
+        with self.assertRaises(subprocess.TimeoutExpired):
+            native_database.wait_supervisor(process, timeout=.05, cleanup_timeout=5)
+        self.assert_reaped(process)
+
+    def test_keyboard_interrupt_allows_supervisor_to_reap_real_child(self):
+        process = self.start_surrogate()
+        timer = threading.Timer(.05, lambda: os.kill(os.getpid(), signal.SIGINT))
+        try:
+            with self.assertRaises(KeyboardInterrupt):
+                timer.start()
+                native_database.wait_supervisor(process, timeout=5, cleanup_timeout=5)
+        finally:
+            timer.cancel()
+            timer.join()
+        self.assert_reaped(process)
+
+    def test_interrupted_controller_records_failure_after_supervisor_then_db_cleanup(self):
+        calls = []
+        process = mock.Mock(pid=123, returncode=None)
+        process.poll.side_effect = lambda: process.returncode
+
+        def wait(timeout):
+            if not calls:
+                calls.append('interrupted')
+                raise KeyboardInterrupt('fixture interruption')
+            calls.append('supervisor-reaped')
+            process.returncode = 125
+            return 125
+
+        process.wait.side_effect = wait
+        process.terminate.side_effect = lambda: calls.append('supervisor-terminate')
+        database = mock.Mock()
+        database.receipt = {'started': True, 'stopped': False, 'result_exit_code': 0}
+
+        def invalidate(*args):
+            self.assertIsNotNone(process.returncode)
+            calls.append('credentials-invalidated')
+
+        def stop():
+            self.assertIsNotNone(process.returncode)
+            calls.append('database-stopped')
+            database.receipt['stopped'] = True
+
+        database.sql.side_effect = invalidate
+        database.stop.side_effect = stop
+        config = dict(qgis_source='unused', database_prefix='unused', database_evidence='unused')
+        with mock.patch.object(native_tests, 'load_selection', return_value={}), \
+             mock.patch.object(native_database.configured_auth_database, 'start', return_value=database), \
+             mock.patch.object(native_database, 'prepare', return_value={}), \
+             mock.patch.object(native_database.subprocess, 'Popen', return_value=process):
+            result = native_database.run(config, self.root / 'attempt')
+        self.assertEqual(result, 1)
+        self.assertEqual(calls, ['interrupted', 'supervisor-terminate', 'supervisor-reaped',
+                                 'credentials-invalidated', 'database-stopped'])
+        receipt = json.loads((self.root / 'attempt/result.json').read_text())
+        self.assertEqual(receipt['error']['type'], 'KeyboardInterrupt')
+        self.assertTrue(receipt['supervisor_stopped'])
+        self.assertTrue(receipt['credentials_invalidated'])
+        self.assertTrue(receipt['database']['stopped'])
 
 
 if __name__ == '__main__':
