@@ -27,6 +27,47 @@ class NativeEvidenceGuards(unittest.TestCase):
         path.write_text('<TestCase>' + body + '</TestCase>')
         return native_tests.parse_qtest(path, methods)
 
+    def xml_config(self):
+        prefix = self.root / 'selected-xml'
+        (prefix / 'lib').mkdir(parents=True, exist_ok=True)
+        (prefix / 'lib/libxml2.so').write_text('selected XML fixture')
+        return {'xml_prefix': str(prefix), 'database_prefix': str(self.root / 'original-native')}
+
+    def test_xml_prefix_is_mandatory_and_cannot_escape_to_original(self):
+        config = self.xml_config()
+        for value in (None, 'relative-xml', config['database_prefix']):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                native_tests.selected_xml_prefix(dict(config, xml_prefix=value))
+        outside = self.root / 'host-xml.so'
+        outside.write_text('host fallback fixture')
+        library = Path(config['xml_prefix']) / 'lib/libxml2.so'
+        library.unlink()
+        library.symlink_to(outside)
+        with self.assertRaises(ValueError):
+            native_tests.selected_xml_prefix(config)
+
+    def test_xml_origin_refuses_old_fallback_and_duplicate_mapping(self):
+        config = self.xml_config()
+        selected = str(Path(config['xml_prefix']) / 'lib/libxml2.so.16.0.6')
+        old = str(Path(config['database_prefix']) / 'lib/libxml2.so.16.0.6')
+        native_tests.check_xml_origin(config, [selected, selected])
+        for maps in ([], [old], [selected, old], [selected, '/usr/lib64/libxml2.so.2']):
+            with self.subTest(maps=maps), self.assertRaises(ValueError):
+                native_tests.check_xml_origin(config, maps)
+
+    def test_native_environment_prioritizes_selected_xml_over_old_native(self):
+        config = dict(self.xml_config(), qgis_build=str(self.root / 'build'),
+                      qgis_source=str(self.root / 'source'), spatial_prefix=str(self.root / 'spatial'),
+                      python=sys.executable, pg_service_file=str(self.root / 'service.conf'),
+                      qt_plugins=str(self.root / 'qt-plugins'), python_paths=[],
+                      library_paths=[str(self.root / 'original-native/lib')])
+        output = self.root / 'output'; output.mkdir()
+        env = native_tests.native_environment(config, output)
+        self.assertEqual(env['LD_LIBRARY_PATH'].split(':')[:4],
+                         [str(self.root / 'build/output/lib'),
+                          str(self.root / 'selected-xml/lib'), str(self.root / 'selected-xml/lib64'),
+                          str(self.root / 'original-native/lib')])
+
     def test_cpp_zero_selected_assertions_is_failure(self):
         result = self.qtest('<TestFunction name="initTestCase"><Incident type="pass"/></TestFunction>')
         self.assertEqual(result['result_exit_code'], 1)

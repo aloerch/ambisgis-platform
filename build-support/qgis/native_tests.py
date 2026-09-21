@@ -77,12 +77,31 @@ def verify_fixture_tree(source, selection):
     return actual
 
 
+def selected_xml_prefix(config):
+    value = config.get('xml_prefix')
+    if not isinstance(value, str) or not Path(value).is_absolute():
+        raise ValueError('native XML prefix must be explicitly selected')
+    prefix = Path(value).resolve()
+    library = prefix / 'lib/libxml2.so'
+    if (not library.is_file() or not library.resolve().is_relative_to(prefix)
+            or prefix == Path(config['database_prefix']).resolve()):
+        raise ValueError('native XML prefix must contain the separate compatible libxml2')
+    return prefix
+
+
+def check_xml_origin(config, maps):
+    prefix = selected_xml_prefix(config)
+    actual = {Path(path).resolve() for path in maps if Path(path).name.startswith('libxml2.so')}
+    if len(actual) != 1 or not next(iter(actual)).is_relative_to(prefix):
+        raise ValueError('native loaded library origin mismatch: libxml2 (one selected XML library required)')
+
+
 def native_environment(config, output):
     output = Path(output).resolve()
     build = Path(config['qgis_build']).resolve()
     source = Path(config['qgis_source']).resolve()
     spatial = Path(config['spatial_prefix']).resolve()
-    database = Path(config['database_prefix']).resolve()
+    xml = selected_xml_prefix(config)
     dirs = {key: output / name for key, name in {
         'HOME': 'home', 'XDG_CONFIG_HOME': 'config', 'XDG_CACHE_HOME': 'cache',
         'XDG_DATA_HOME': 'data', 'XDG_RUNTIME_DIR': 'runtime', 'TMPDIR': 'tmp',
@@ -106,7 +125,8 @@ def native_environment(config, output):
                QT_PLUGIN_PATH=str(config['qt_plugins']))
     env['PYTHONPATH'] = ':'.join([str(build / 'output/python'), str(source / 'tests/src/python'),
                                 *config['python_paths']])
-    env['LD_LIBRARY_PATH'] = ':'.join([str(build / 'output/lib'), *config['library_paths']])
+    env['LD_LIBRARY_PATH'] = ':'.join(dict.fromkeys([str(build / 'output/lib'),
+        str(xml / 'lib'), str(xml / 'lib64'), *config['library_paths']]))
     for key in ('FONTCONFIG_FILE', 'FONTCONFIG_PATH'):
         if config.get(key.lower()):
             env[key] = str(config[key.lower()])
@@ -202,7 +222,8 @@ def worker_preflight(config, selection):
     if not layer.isValid() or layer.featureCount() != 5:
         raise ValueError('native PostgreSQL provider cannot open source fixture')
     maps = sorted({line.split()[-1] for line in Path('/proc/self/maps').read_text().splitlines()
-                   if '/' in line and any(s in line for s in ('libqgis_', 'libgdal.', 'libgeos', 'libproj.', 'libpq.'))})
+                   if '/' in line and any(s in line for s in ('libqgis_', 'libgdal.', 'libgeos', 'libproj.', 'libpq.', 'libxml2.'))})
+    check_xml_origin(config, maps)
     required = {'libqgis_': build, 'libgdal.': Path(config['spatial_prefix']).resolve(),
                 'libgeos': Path(config['database_prefix']).resolve(),
                 'libproj.': Path(config.get('proj_prefix', config['spatial_prefix'])).resolve(),

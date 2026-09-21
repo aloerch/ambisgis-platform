@@ -105,3 +105,12 @@ real loopback-supervisor timeout witness at
 `build-worktrees/qgis-candidate/native-supervisor-cleanup-01/result.json` confirmed
 its expected failed exit, stopped process group and disappearance of both owned
 child PIDs. These lifecycle checks are not QGIS native acceptance results.
+
+The native configuration must explicitly provide `xml_prefix`, the separate
+compatible libxml2 profile selected for QGIS. Its library directories precede
+the original native prefix in the native client environment. The preflight
+requires exactly one resolved libxml2 in actual process mappings, inside that
+prefix; missing, original-prefix, host, or duplicate XML loading fails. This
+profile supplies the HTTP-enabled ABI required by retained SpatiaLite; the
+existing loopback network restrictions remain in force. The PostgreSQL helper
+continues using its original retained database environment.
