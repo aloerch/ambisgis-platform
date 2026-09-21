@@ -78,7 +78,9 @@ def build_environment(config, output):
            'LD_LIBRARY_PATH':':'.join(library_paths),
            'PYTHONPATH':str(HERE)+':'+':'.join(config['python_paths']),
            'PYTHONNOUSERSITE':'1','PYTHONPYCACHEPREFIX':str(output/'cache/python'),
-           'QT_PLUGIN_PATH':config['qt_plugins'],'QT_QPA_PLATFORM':'offscreen',
+           # Exact Unix main.cpp requires DISPLAY presence before Qt chooses offscreen.
+           # Empty value names no X server; the selected platform remains mandatory.
+           'DISPLAY':'','QT_PLUGIN_PATH':config['qt_plugins'],'QT_QPA_PLATFORM':'offscreen',
            'QT_QPA_PLATFORM_PLUGIN_PATH':str(Path(config['qt_plugins'])/'platforms'),
            'QT_QPA_FONTDIR':str(output/'fonts'),'FONTCONFIG_FILE':str(output/'fonts.conf'),
            'QGIS_PREFIX_PATH':config['qgis_prefix'],'QGIS_PLUGINPATH':str(output/'empty-plugins'),

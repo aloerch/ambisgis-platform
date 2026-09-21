@@ -91,6 +91,9 @@ class RuntimeGuards(unittest.TestCase):
             self.assertNotEqual(config['provider_path'],env['QGIS_PLUGINPATH'])
             self.assertEqual([],list((root/'empty-plugins').iterdir()))
             self.assertEqual('disable',env['GDAL_DRIVER_PATH'])
+            self.assertIn('DISPLAY',env)
+            self.assertEqual('',env['DISPLAY'])
+            self.assertEqual('offscreen',env['QT_QPA_PLATFORM'])
             self.assertEqual(str(root/'platforms'),env['QT_QPA_PLATFORM_PLUGIN_PATH'])
             self.assertEqual(str(root/'selected-xml/lib'),env['LD_LIBRARY_PATH'].split(':')[0])
 

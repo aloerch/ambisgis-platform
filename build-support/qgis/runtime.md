@@ -142,3 +142,13 @@ resolve exactly to `qt_plugins/platforms/libqoffscreen.so`;
 `QT_QPA_PLATFORM_PLUGIN_PATH` explicitly names that retained platform directory.
 Other loaded Qt and QCA plugins must come from the selected Qt plugin directory.
 All selected mappings are hashed, and missing or fallback origins fail the receipt.
+
+The first real staged attempt, `runtime-01`, passed fixture loading, restricted
+PostGIS access, CRS/geometry assertions and their actual loaded-origin checks.
+The desktop exited before Qt startup because exact `src/app/main.cpp:918` tests
+only whether `DISPLAY` exists, even when `QT_QPA_PLATFORM=offscreen`. The runtime
+environment therefore explicitly sets `DISPLAY` to the empty string: it names no
+X server and permits that preliminary check; Qt still must load the retained
+offscreen platform, which the runtime mapping guard verifies. The failed attempt
+and its successful database cleanup, credential scrubbing and artifact integrity
+receipt remain retained. This repair introduces no physical-display claim.
