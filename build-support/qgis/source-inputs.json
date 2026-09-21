@@ -1,0 +1,691 @@
+{
+  "schema_version": 1,
+  "scope": "F02-04 owned Linux desktop/server candidate, not release approval",
+  "repository": "aloerch/ambisgis-qgis",
+  "repository_id": 1376927721,
+  "commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+  "tree": "c8542e82e3c3810950f32ce8d58a16bfed12e6c8",
+  "tag": "final-3_44_14",
+  "tag_object": "3f5297ac71ddb19fc959bdff15147608f8901b38",
+  "archive": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/owned/qgis-3.44.14.tar",
+    "sha256": "229ce420ccf5f993eff29e58dc500f2fe7337395595989f947481c34c8cfb875",
+    "bytes": 1230551040,
+    "root": "qgis-3.44.14"
+  },
+  "native_inputs_manifest": {
+    "path": "../postgis/inputs.json",
+    "sha256": "2d89e7fde9ed25dee3a649abb7ecee59bc8e0065a1961acea3654d0a7a6e5a9a"
+  },
+  "historical_native_receipt": {
+    "path": "../../plan/verification/postgis-slice.json",
+    "sha256": "03c797d539e6e1b7c3ec5b3fbf25bf7d154d8cce85821fee16f095dfb276bdee"
+  },
+  "source_notices": [
+    {
+      "path": "COPYING",
+      "sha256": "dba313854f65a8d41b1777cf9d6cb5ddf692792be04d808b82c86c63909fbdf0",
+      "bytes": 18801
+    },
+    {
+      "path": "cmake/COPYING-CMAKE-SCRIPTS",
+      "sha256": "46cde7dc11e64c78d650b4851b88f6704b4665ff60f22a1caf68ceb15e217e5b",
+      "bytes": 1327
+    },
+    {
+      "path": "cmake/modules/coverage/LICENSE_1_0.txt",
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+      "bytes": 1338
+    },
+    {
+      "path": "debian/copyright",
+      "sha256": "0ac26446a021c52a0b826761b8f56a2dfaa5864feeb4cbf4c0a8967864b1c260",
+      "bytes": 102171
+    },
+    {
+      "path": "doc/AUTHORS",
+      "sha256": "ec73b33b86a6e42633e28b9612812c8ef871d04a7052aa99d17d332208896384",
+      "bytes": 2924
+    },
+    {
+      "path": "doc/LICENSE",
+      "sha256": "dba313854f65a8d41b1777cf9d6cb5ddf692792be04d808b82c86c63909fbdf0",
+      "bytes": 18801
+    },
+    {
+      "path": "external/PDF4QT/LICENSE.md",
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+      "bytes": 7652
+    },
+    {
+      "path": "external/PDF4QT/Pdf4QtLibCore/cmaps/LICENSE.txt",
+      "sha256": "feb8b068a417681821823ef2e8995072aa111121fa11f8664038f78717f4497c",
+      "bytes": 1453
+    },
+    {
+      "path": "external/astyle/LICENSE.md",
+      "sha256": "2e8480e753b7a1d100c80920f4250b1bc9f93a18c6a5953c42b11445218cd0fb",
+      "bytes": 1094
+    },
+    {
+      "path": "external/delaunator-cpp/LICENSE",
+      "sha256": "af36016db273642282db69831cf591d1e1c3a6fa29935773236b5fd7ae17835f",
+      "bytes": 1076
+    },
+    {
+      "path": "external/kdbush/LICENSE",
+      "sha256": "eeb9c9d04d930512cec46a5d7c08f418af9fbc50ebf481f09fcebcdf3fbb941c",
+      "bytes": 737
+    },
+    {
+      "path": "external/licensecheck/licensecheck.pl",
+      "sha256": "8b2c831a15412c1c17b1344579ec6e875dfca0553b0e60e9ed86d1800b5149c7",
+      "bytes": 29495
+    },
+    {
+      "path": "external/meshOptimizer/LICENSE.md",
+      "sha256": "edbe0afc70ea26a220ef88e9612d9ab88807b771b3a6bdc345bbbe266c61499c",
+      "bytes": 1079
+    },
+    {
+      "path": "external/o2/LICENSE",
+      "sha256": "85425784abf082b15caca1143c564817a8533c20a40eba9a77bd4fe67607342b",
+      "bytes": 1326
+    },
+    {
+      "path": "external/odbccpp/LICENSE",
+      "sha256": "58edf8ca278fc703f3124a5712a6a8b01fcbc43989195faba091284613981ba3",
+      "bytes": 11934
+    },
+    {
+      "path": "external/odbccpp/NOTICE",
+      "sha256": "ae6e5227783036f2e24bc0ccdb9b35fc683fef772be3774c2354514b5b40a3a0",
+      "bytes": 75
+    },
+    {
+      "path": "external/opencl-clhpp/LICENSE.txt",
+      "sha256": "a7f96abd6c4fecba48c3bc15901251d99f7c69c6e28dbe1827d181c93101a5d4",
+      "bytes": 1311
+    },
+    {
+      "path": "external/qt-unix-signals/LICENCE",
+      "sha256": "f5124c8a78c6c51182ea6684fab061e6f81d8d9e3680bd6cfb7777ed09a53266",
+      "bytes": 1085
+    },
+    {
+      "path": "external/spatialindex/AUTHORS",
+      "sha256": "a6a5e3601c822dde20e80654ec7c67ef8d91b6beb37ac5387ae3cc03a9869e0f",
+      "bytes": 391
+    },
+    {
+      "path": "external/spatialindex/COPYING",
+      "sha256": "b63ebfaca9d7ce582580f3e11acabc9d2e37c46ce234533f7fa8a6c7278898a0",
+      "bytes": 2484
+    },
+    {
+      "path": "external/untwine/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    },
+    {
+      "path": "external/wintoast/LICENSE.txt",
+      "sha256": "56104c59947d259e4cfa5f30d502aa5659eacfeedf281f981690cf196c57982a",
+      "bytes": 1089
+    },
+    {
+      "path": "images/themes/default/LICENSE.TXT",
+      "sha256": "60c2d717f7b6b1416c340fae995e79f5ccece8db135f3f967b028b47c9159e49",
+      "bytes": 917
+    },
+    {
+      "path": "images/themes/default/copyright_label.svg",
+      "sha256": "66d755590d3e129731f4b96e213750f8b4a0a82f66a1c9daba3ffe1f4d47437b",
+      "bytes": 3988
+    },
+    {
+      "path": "python/plugins/MetaSearch/LICENSE.txt",
+      "sha256": "ce55deef2cd8df001e124e6c5579082a1c91e9b621adada5fe11d2fda35de631",
+      "bytes": 858
+    },
+    {
+      "path": "python/plugins/db_manager/LICENSE",
+      "sha256": "70ac1324780e8fd70c60dab05f12352b8dab85f2a0d8b440632932cc2cdd86cd",
+      "bytes": 769
+    },
+    {
+      "path": "python/plugins/processing/algs/qgis/COPYING.fTools",
+      "sha256": "881082a1f0de5371171bbe9eeaa1b86b7892e746531b57a2e8b70b8fa58637b9",
+      "bytes": 293
+    },
+    {
+      "path": "python/plugins/processing/algs/qgis/COPYING.mmqgis",
+      "sha256": "f0b84ffab3240aaf66c7933b950ee08e6e3859423cf7b4fdbd7a2498132e6d8d",
+      "bytes": 386
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/arendal/COPYING.xml",
+      "sha256": "a3535921edcfd6ea9c2adc6c86495d20bd0b3ae5bf80159701069e067e8f2ecc",
+      "bytes": 1038
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/bhw/COPYING.xml",
+      "sha256": "eb0a2fefc9b40b8826ca51837414b8c601a9ae84c3d6da899ea1acfe7a9619c3",
+      "bytes": 852
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/cb/COPYING.xml",
+      "sha256": "1373892ac6de3f5fd7d3ddf51534a52fb78a99109ccb5e906375fa706b435ad8",
+      "bytes": 2826
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/cividis/COPYING.xml",
+      "sha256": "786d53daf20460f2ad8a485459d2810a382ef392a2adb0677241c1ad7b4bd2e5",
+      "bytes": 2940
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/cmocean/COPYING.xml",
+      "sha256": "2fbb6b5249208cdf19e80bdb6f109692168ad9027e3e990ee7ff9f17e39b1cb7",
+      "bytes": 1542
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/dca/COPYING.xml",
+      "sha256": "abf2199c04d952b913ca128fbb0fceb0ff71fbf71b67f6bf2506d67617ca933c",
+      "bytes": 489
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/dg/COPYING.xml",
+      "sha256": "27a1ded91388e1ed98e274ad0ca41616ee0b4ed92430eb4fa306178700a8d330",
+      "bytes": 990
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/ds/COPYING.xml",
+      "sha256": "83379e057a34f420791b369624bde0805154af9ed18c47cccbef9cee1b4799bf",
+      "bytes": 1258
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/ds9/COPYING.xml",
+      "sha256": "163c74b75bd9f50a64e43ea53c21daee6f6c88d60f1289b6c9c02619a68c3d1b",
+      "bytes": 462
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/es/COPYING.xml",
+      "sha256": "f1a66b869fb2bd4bb3901f4a390006854d3851c78890000dcab0d2cc4106e323",
+      "bytes": 2003
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/esdb/COPYING.xml",
+      "sha256": "b7921ba6ecf2061599f953dd0bce12ce41bac319a98999692704c07b6232738f",
+      "bytes": 784
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/fg/COPYING.xml",
+      "sha256": "08992a1a2c43f5e37654c636240e1a57bdd3dcf29e6fc03f0260c9465b5c7f76",
+      "bytes": 895
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/fme/COPYING.xml",
+      "sha256": "45315edb7fb1ae283128ac08d117ce7fef22be9d436cd68bc86a277073c77324",
+      "bytes": 647
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/fvl/COPYING.xml",
+      "sha256": "c0e4a73b8d04866f29478e96e80d01ef26a53757b644f862f37f6659be5e42ed",
+      "bytes": 1063
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/gacruxa/COPYING.xml",
+      "sha256": "d905c6c430aaeec26c4b795b46f5232b66fd4ffe3ac4eec7f214ff42a534cfc4",
+      "bytes": 545
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/gery/COPYING.xml",
+      "sha256": "88cda9ea3f222b9d4466822524de98569f3b8639cc8fcd55ddccdcd66372dbdd",
+      "bytes": 369
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/ggr/COPYING.xml",
+      "sha256": "520ef5977be03d8798e062bc607ef5e212093a044100dc288763ecb562e29fec",
+      "bytes": 658
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/gist/COPYING.xml",
+      "sha256": "76a231625c152f1298f62e7b8001b0bba30f24c732544484956ea8425db18017",
+      "bytes": 2996
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/gmt/COPYING.xml",
+      "sha256": "c1b562d4059cb5e2a4409f8f8c545970087379e64a58cb8ae053f306220f3837",
+      "bytes": 816
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/go2/button/COPYING.xml",
+      "sha256": "a70242dab044c00dd262b3b9866c553169d90e7b116904a0eb0dd974ce1213f7",
+      "bytes": 798
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/go2/ipod/COPYING.xml",
+      "sha256": "d7cc2ca6d8764b2e548d7c424f189840219edf1da310dafe8b6aa00203a7ec5f",
+      "bytes": 1027
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/go2/webtwo/COPYING.xml",
+      "sha256": "687e72a2d732e202a789fdab56cc00433baaf6724de5093e0a659adfb754686d",
+      "bytes": 833
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/gps/COPYING.xml",
+      "sha256": "379ffd7251d4f4ee1931537217266263f51199c4bc4bc0e46b399bd42b294b68",
+      "bytes": 635
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/grass/COPYING.xml",
+      "sha256": "43986b581896e85ae9b846bb9f1cbacc027b018ed10947b0effc7d846d819f08",
+      "bytes": 521
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/h5/COPYING.xml",
+      "sha256": "7de5a7a59a2a8abac1d6bc797870aa5d1a256bfef1c6199af44db39ea98f0aba",
+      "bytes": 1793
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/heine/COPYING.xml",
+      "sha256": "7e68ebef8157a4d104ef16de63d2aae4a1a33e2b90d310e042723ca5a3dd300f",
+      "bytes": 990
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/idv/COPYING.xml",
+      "sha256": "0d232409f7a17b8390d598583e4413d99eb99f9e564020c99ed3baa9a251b823",
+      "bytes": 616
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/imagej/COPYING.xml",
+      "sha256": "c7b5100356f4b233ec2f8b5d8de78d17653df586838931c53737ca9e0e89701d",
+      "bytes": 1315
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/cbac/COPYING.xml",
+      "sha256": "ce9133b9005289f9c7fb8dc92f37c9cd621531a6ff022df2beac74735d83949b",
+      "bytes": 594
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/cbcont/COPYING.xml",
+      "sha256": "ce9133b9005289f9c7fb8dc92f37c9cd621531a6ff022df2beac74735d83949b",
+      "bytes": 594
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/COPYING.xml",
+      "sha256": "ff506da10cdff292831d8077c7a5c7c81cf2b40198c4eb9134b0a657da315779",
+      "bytes": 769
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/COPYING.xml",
+      "sha256": "f624180ffe75ff26178a8c614cf1cb37a92b25a41477eb6b7ae764bb9d1c0a4f",
+      "bytes": 759
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/COPYING.xml",
+      "sha256": "40d8fef301646f7a17e943576e13b517a4724026698f4831e9b7076ce21b0593",
+      "bytes": 757
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/alpen/COPYING.xml",
+      "sha256": "62bca4ad2ea59131ae9116c66b3b3d2cb23c2685b798dfe56d1c915c47bfb9a5",
+      "bytes": 751
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/COPYING.xml",
+      "sha256": "bdd528489358be373f7d23d2c2c2856deaaded68ee96bed9092f2ef2ce7e2512",
+      "bytes": 761
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/drumma/COPYING.xml",
+      "sha256": "315060fb0634f80e76cdbd98acf993cf4d367beca1fc106e6420d4df7471b5c4",
+      "bytes": 753
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/electroluv/COPYING.xml",
+      "sha256": "2a2efb0c3be5cdad1166059b46df9ae63ab7777481532ccdd8a6986d0ffd6090",
+      "bytes": 761
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml",
+      "sha256": "9e365c9e8bebeff36d6efb416adda1d191788f6c4ed39ce0cdeb9ab24281e17b",
+      "bytes": 749
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/hana/COPYING.xml",
+      "sha256": "1bfa63bacae4b40829237f6b78846d401bb0b3552fdbf44db39b48f829bcd2a1",
+      "bytes": 751
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/COPYING.xml",
+      "sha256": "dc85098083daecb5959df533b57680c9d3bb3daa3d72dfe5843bbb05be903454",
+      "bytes": 763
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/COPYING.xml",
+      "sha256": "e874b9a2e801a70ffb56f9c83625e15740e37548508a96cecd7fa4d4c17d41f7",
+      "bytes": 759
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/COPYING.xml",
+      "sha256": "298f5b26757232fdde1d524b4274ab8bc9ab598a449757a53fb17e008785fe76",
+      "bytes": 771
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/phill/COPYING.xml",
+      "sha256": "d305778392a335c3555386ab31c4817f386ba0df99d4c3e3eee52792611bd39e",
+      "bytes": 751
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/rotten/COPYING.xml",
+      "sha256": "902fbc6c367ad767be645b834e5fdb5b6e715f8d9481ae04351199682cc8da22",
+      "bytes": 753
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/rphnick/COPYING.xml",
+      "sha256": "5a8debecd3b361955b2164a4239a4da3513890222a39da7415dbfa9cd737283f",
+      "bytes": 755
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/COPYING.xml",
+      "sha256": "b2b338c4a41e0f7ad82e312205f5141c86c36e2903db243547b584c7b78be87e",
+      "bytes": 761
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/sugar/COPYING.xml",
+      "sha256": "bca8acbc572babddc80c0e11fc3388c6cd8ddd576e55b4caff6ed6e6bf51e497",
+      "bytes": 753
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/tvr/COPYING.xml",
+      "sha256": "a001965b198e3c17fdc2917bea0c555492726e8b355634148756c1530957dbc8",
+      "bytes": 747
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/vredeling/COPYING.xml",
+      "sha256": "873d3974824a20820e7cae65c93f0d2f368b3d62457dd666b491ec896d9fba17",
+      "bytes": 759
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/dem/COPYING.xml",
+      "sha256": "8fbef4815622a51e96603b6d32e08495884a1435d69491587ca9f6f632dd537f",
+      "bytes": 401
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/hatch/COPYING.xml",
+      "sha256": "8fbef4815622a51e96603b6d32e08495884a1435d69491587ca9f6f632dd537f",
+      "bytes": 401
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/haxbyish/COPYING.xml",
+      "sha256": "346545c234f029c2db52c434c5758830b47f9615ec91538f1453c8846abfafaa",
+      "bytes": 521
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/misc/COPYING.xml",
+      "sha256": "8fbef4815622a51e96603b6d32e08495884a1435d69491587ca9f6f632dd537f",
+      "bytes": 401
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml",
+      "sha256": "e83e66ea532c2c24fb2e379badf2b6e848fac0f6c56e553bdd9dadc5c1912d09",
+      "bytes": 679
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/physics/COPYING.xml",
+      "sha256": "ad8e6f42c5b6a836d61069b2653dce4a71aa1ec2e3e76b08ed293b6f278f787e",
+      "bytes": 474
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/polarity/COPYING.xml",
+      "sha256": "ce75ec2e9582be264f46c864f6e299fc4b81d3300b92b852f139f125130d05b8",
+      "bytes": 578
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jjg/serrate/COPYING.xml",
+      "sha256": "ce9133b9005289f9c7fb8dc92f37c9cd621531a6ff022df2beac74735d83949b",
+      "bytes": 594
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/jm/COPYING.xml",
+      "sha256": "500ee139bab61eaab06fbc62bf477a2d7ae72c113e1a4f4866a69891f351f7b4",
+      "bytes": 5030
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/km/COPYING.xml",
+      "sha256": "137c77fb195ff0ba300eb618af6aaa61b4ddd1d99197e7c574d7da57dd750aef",
+      "bytes": 599
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/kst/COPYING.xml",
+      "sha256": "3f16ea55cf284ba547c7ca429b88b78f74bfebe3768aae11d990d0f1ad469031",
+      "bytes": 1223
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/mby/COPYING.xml",
+      "sha256": "c3e2b35f7b36c3fc70c8c51268f1db26a02eb5174e618536de4125c1ea546668",
+      "bytes": 652
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/mpl/COPYING.xml",
+      "sha256": "35eb3451afc03ad975eedf8f5025702c53a170a218899c43532ab7abdd6f1a65",
+      "bytes": 855
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/ncl/COPYING.xml",
+      "sha256": "55c6c8669ad1d641d161982060725c1ecbe6eaff4581aea55138ac1379ad24ff",
+      "bytes": 3143
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/nd/COPYING.xml",
+      "sha256": "6155848aa836db97da1983d6ab855b399b2110aae76d560c1c6d983404ecef73",
+      "bytes": 839
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/ngdc/COPYING.xml",
+      "sha256": "23090ef1774ffdb322900c2c6115b248c5a1cc39e8ebaf3c8f4fab060c42c851",
+      "bytes": 1195
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/nord/COPYING.xml",
+      "sha256": "92ee76460d4c7da3d202a6bdcc14db8af2566a17ee959d8bd93dde30699fff15",
+      "bytes": 577
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/ocal/COPYING.xml",
+      "sha256": "98053a82259f364363997f5661e6defa32d9518d0c3df02df4185283127800f1",
+      "bytes": 460
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/os/COPYING.xml",
+      "sha256": "b3a498db7db8cdb35b8f68665ebd220d3db32a1819a44312e4d53076c176be02",
+      "bytes": 684
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/pd/COPYING.xml",
+      "sha256": "2b66f0737208f84d92fbf0e37f8f723d5c786b3b10951a519fb9dbe17b6a5357",
+      "bytes": 341
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/pm/COPYING.xml",
+      "sha256": "4353409229def51b6291d5122d3ab34e2009e65c2122a5dc8494953e24915145",
+      "bytes": 585
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/pn/COPYING.xml",
+      "sha256": "f065f00eb6c70842594c42adf46f0ffffa27dc21eb20065b0c6f44cb893734bd",
+      "bytes": 710
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/rafi/COPYING.xml",
+      "sha256": "9208b758ca3d2dfe10a826d5a8ca82a05656a3e2280d9060eb20350b68c8ce09",
+      "bytes": 635
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/rf/COPYING.xml",
+      "sha256": "612ffba7d9dd59e6ef56dd79a34fb2067d7c9874881c6d9acf0a145dcab14ad4",
+      "bytes": 636
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/saga/COPYING.xml",
+      "sha256": "c33b567b2bfcb5a9acee0dfc82f664388bacae8bf1765b149d92be2b051ed184",
+      "bytes": 898
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/ssz/COPYING.xml",
+      "sha256": "c80755a2e152f267a73f29626ddda68d38c71ea36bd6bf1b793b0c40ada8fedd",
+      "bytes": 480
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/td/COPYING.xml",
+      "sha256": "da208d9658cfa8531e35f86d164f4d6619bab61c1bfa5298ca10fdcbfbb9ffc6",
+      "bytes": 447
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/tp/COPYING.xml",
+      "sha256": "edb4c9d754ca2a90d5b8faee9f0739d21ea01833d8d850a198a5af44baaf984d",
+      "bytes": 615
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/ukmo/COPYING.xml",
+      "sha256": "c616b99b6018cc30860da96679e454aa6964356fffdb1193a3ecc0573926d41f",
+      "bytes": 738
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wesson/COPYING.xml",
+      "sha256": "96a90d4d93743f58d6c8e528d8f2f1f8afce04260746f093ee2b1323cd2894fb",
+      "bytes": 849
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/country/COPYING.xml",
+      "sha256": "18a7d02255766847c710dd4ffa7084e633ea4a8e6d79b3db9f51a0b729727728",
+      "bytes": 792
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/encyclopedia/COPYING.xml",
+      "sha256": "a7014c6e0e2a206331b7ea5d86caf77d094bd65ace5a6c1440a6b01c3e7f90a3",
+      "bytes": 578
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/gay-flag/COPYING.xml",
+      "sha256": "b36ad4895406e60ecdc08ee3f985cfd06bd42ffd58b1e172ac7bf8409f19f227",
+      "bytes": 1020
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/ice/COPYING.xml",
+      "sha256": "5a9fde515aaed0a3a70c72ba5a0e1b79a36d4fab999845afb57108995f42b1e4",
+      "bytes": 1365
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/jarke/COPYING.xml",
+      "sha256": "ff70523af7182572e9ea2bbfdd6bf6b022da2bd3883097101a91152e68b3c766",
+      "bytes": 587
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/knutux/COPYING.xml",
+      "sha256": "760bed491eabc2f601569a43f5980067e6f5478fb9d774c3f754172ee7e71868",
+      "bytes": 627
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/life/COPYING.xml",
+      "sha256": "2f02dfff70048da046f5a58b6756255758604ce86e73c9da586b3956f09d541e",
+      "bytes": 838
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/lilleskut/COPYING.xml",
+      "sha256": "d11fe651cf3ae5a3232c9b5c6acdcddfcddfcac23a8df2ab19bae3bee7095413",
+      "bytes": 590
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/mars/COPYING.xml",
+      "sha256": "e38a820d65dae57601650343c45dc2d65bddb84089d5d745dbc2ee11bac5380a",
+      "bytes": 593
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/plumbago/COPYING.xml",
+      "sha256": "6cb3a23055ef1dce9f9de318bbf6bd1a4c731121b22731cdb859ff7f9b063f41",
+      "bytes": 594
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/precip/COPYING.xml",
+      "sha256": "e38a820d65dae57601650343c45dc2d65bddb84089d5d745dbc2ee11bac5380a",
+      "bytes": 593
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/schwarzwald/COPYING.xml",
+      "sha256": "eb0535893bf60059cc3ddb3a9f1a6e64c57e6e5b57e773e44825202b61e10cf7",
+      "bytes": 674
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/shadowxfox/COPYING.xml",
+      "sha256": "67829a645d2793f65f274d55dbc8e5aa3d5cdd918faeae43ad2d5eba2f4079ee",
+      "bytes": 597
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/stat/COPYING.xml",
+      "sha256": "b3df88a09058941d9cda93c7508ebc6f04cfcbc98e8be1b4cfdcdf1fe0e8f8f9",
+      "bytes": 573
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/strat/COPYING.xml",
+      "sha256": "158dd37a569708cd5d21e7b3b6a7506a526997866ca3c7e61118a9897c0be6d9",
+      "bytes": 799
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/template/COPYING.xml",
+      "sha256": "0c06323a4be2ff4320d12050f79046b7999ba140d59ca20db9182ad56cb296e4",
+      "bytes": 587
+    },
+    {
+      "path": "resources/cpt-city-qgis-min/wkp/tubs/COPYING.xml",
+      "sha256": "c766dbb9ad068f6841f351f728b49130a75ed8558427bb3fd09e4a00f1a28fab",
+      "bytes": 600
+    },
+    {
+      "path": "resources/metadata-ISO/licenses.csv",
+      "sha256": "da4815f4f3b438c3b3f80e1d1fc852d9dd7e04390ea7f44da355571e9e8e20c0",
+      "bytes": 290
+    },
+    {
+      "path": "resources/server/api/ogc/static/jsonFormatter/LICENSE",
+      "sha256": "bb242832ac5db6828a06c4e3e7da8e44c78da246d0c1c06a184526a0c5b79092",
+      "bytes": 1086
+    },
+    {
+      "path": "scripts/licenses",
+      "sha256": "eae395d02092feddca162065d5fffc064d9bd812263506dd0467b381d96deae4",
+      "bytes": 371
+    },
+    {
+      "path": "tests/testdata/cpt-city/cb/COPYING.xml",
+      "sha256": "cbe9a20af7d7ceeaad3a515105448dd4f10ea87e85b9c8ae267c35823a2f4ab5",
+      "bytes": 2766
+    },
+    {
+      "path": "tests/testdata/cpt-city/gmt/COPYING.xml",
+      "sha256": "da77befde454bb27cdbaece9e6b1f44ad80490125a97b580fa27435ad154e2d6",
+      "bytes": 819
+    },
+    {
+      "path": "tests/testdata/cpt-city/jjg/misc/COPYING.xml",
+      "sha256": "e62473a6e9e711fac3be49281f8600486245b43c2c568c49be6ed4e48e90f3ed",
+      "bytes": 401
+    },
+    {
+      "path": "tests/testdata/font/QGIS-DejaVu/AUTHORS",
+      "sha256": "915a742f0b242ea43fcbef934b6d24353b51351470f71d8a8d00c751892fad50",
+      "bytes": 842
+    },
+    {
+      "path": "tests/testdata/font/QGIS-DejaVu/LICENSE",
+      "sha256": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93",
+      "bytes": 8816
+    },
+    {
+      "path": "tests/testdata/font/QGIS-Vera/COPYRIGHT.TXT",
+      "sha256": "1a05d79616fa484e2970fa5358db63f4aea304a8f16bebd0993607ab35b9c33d",
+      "bytes": 5955
+    }
+  ]
+}
