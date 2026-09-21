@@ -9,6 +9,12 @@ checkpoint does not accept FND-03/FND-05/FND-07/FND-08 or any release gate.
 
 ## Exact build and replay
 
+Review [PR #62](https://github.com/aloerch/ambisgis-platform/pull/62). Frozen
+implementation/evidence commit: `2eb07794dc9fd014e8002112bd45a95309f8cf9e`;
+frontend tooling tree: `3228af78d063c9ae10e89ab6705dd380a4db6e38`.
+Publication-only documentation commits preserve that tree. Final pushed head is
+pinned by the closing issue evidence comment.
+
 Platform branch: `fnd-02/completion-frontend`; worktree:
 `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-frontend`.
 Owned client `7ca4822125b67999c97cb4aa1faa84b8a28eee9b` and exact owned MapStore
@@ -147,3 +153,7 @@ session. F02-05 combination/GWC gaps, F02-06 consolidated selection/license
 proposal, F02-07 maintenance-policy binding and F02-08 final criterion report and
 explicit owner acceptance remain. Do not return to an arbitrary Java gap or
 expand authorization work by default. FND-02 stays In progress.
+
+[Project publication/readback](../verification/frontend-completion/project/README.md)
+records 75 items (66 tasks + nine PRs), preservation of all 74 prior items/views,
+and #62 alone in the unchanged open-PR queue. FND-02 Delivery stays In progress.

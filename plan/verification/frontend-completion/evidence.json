@@ -427,6 +427,11 @@
       "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/review-front-browser.json",
       "sha256": "3ff640639745282d46cdf65f68522ad354d4a8585e49ea3a3203e7c36f9b3f9a",
       "bytes": 5912
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/final-task-process-audit-02.json",
+      "sha256": "174a2320ce7758a74447f5e2bd310ac7fd7f6fc3e6c91f27616597a6cbddd792",
+      "bytes": 300
     }
   ],
   "retained_failures": [
@@ -472,5 +477,9 @@
     "Frontend rights findings and existing Java/GeoNode selection blockers remain F02-06.",
     "No private-browser, SSO, full policy, publication or QGIS result.",
     "No merge, release, deployment, source default/workflow change."
-  ]
+  ],
+  "frozen_implementation_commit": "2eb07794dc9fd014e8002112bd45a95309f8cf9e",
+  "frontend_tooling_tree": "3228af78d063c9ae10e89ab6705dd380a4db6e38",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/62",
+  "project_publication": "project/README.md"
 }

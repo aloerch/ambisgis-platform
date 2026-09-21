@@ -1,6 +1,8 @@
 # Implementation status — owned frontend and finite FND-02 completion
 
-The current checkpoint is on `fnd-02/completion-frontend` from verified owner-merged
+The current checkpoint is [PR #62](https://github.com/aloerch/ambisgis-platform/pull/62),
+implementation `2eb07794dc9fd014e8002112bd45a95309f8cf9e`, on
+`fnd-02/completion-frontend` from verified owner-merged
 PR #61 / `ambisgis/main` `433cb7d8fb662b05bd1f67e8825938d0770a0d41`.
 **FND-02 remains In progress.** The [finite completion checklist](docs/fnd-02-completion.md)
 and [frontend handoff](docs/frontend-completion-handoff.md) are current authority.
@@ -28,6 +30,10 @@ gates merging. #61's approval does not approve new changes. Frontend rights/noti
 findings and the unchanged Java/GeoNode selection blockers remain F02-06. Required
 source or licensing problems are not waived by recording them. FND-03/FND-05/
 FND-07/FND-08 remain separate and unaccepted. No merge/release/deployment occurred.
+
+[Project publication](verification/frontend-completion/project/README.md) passed:
+75 items = 66 tasks + nine PRs; all 74 prior items/views preserved. Only #62
+matches the unchanged `is:pr is:open` queue; its item has no Task ID/Delivery.
 
 Next bounded engineering: **F02-04, owned QGIS desktop/server candidate build**,
 then missing combination/GWC smoke and consolidated candidate/license proposal.
