@@ -33,6 +33,8 @@ def run(stage, output, frontend, node):
     offline = HERE.parents[1] / "build-support/postgis/offline_exec.py"
     for path in (Path(__file__), HERE / "webifc_sources.py", HERE / "webifc_probe.cjs", HERE / "webifc-box.ifc", offline):
         shutil.copyfile(path, scripts / path.name)
+    frozen_tooling = [source.file_record(p, scripts) for p in sorted(scripts.iterdir())]
+    source_inputs = []
     for row in index["sources"]:
         archive = source.verified_file(stage / "retained", row["archive"])
         dest = output / ("source" if row["name"] == "webifc" else "dependencies/" + row["name"])
@@ -40,6 +42,11 @@ def run(stage, output, frontend, node):
             target = dest / path
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(data)
+            original = target.relative_to(output).as_posix()
+            compiled = original.replace("dependencies/fuzzy/src/", "dependencies/fuzzy/fuzzy/", 1) if original.startswith("dependencies/fuzzy/src/") else original
+            source_inputs.append({"path": compiled, "archive_member": path, "source": row["name"],
+                                  "bytes": len(data), "sha256": source.digest(data)})
+    (output / "source-input-manifest.json").write_text(json.dumps(source_inputs, indent=2) + "\n")
     build = output / "build"
     cmake = ["cmake", "-S", str(output / "source/src/wasm"), "-B", str(build),
              "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
@@ -70,6 +77,18 @@ def run(stage, output, frontend, node):
     source.verify_package_assets(frontend, npm)
     for row in json.loads((stage / "stage-manifest.json").read_text()):
         source.verified_file(stage, row)
+    for row in frozen_tooling:
+        source.verified_file(scripts, row)
+    expected = {row["path"] for row in source_inputs}
+    actual = set()
+    for root in (output / "source", output / "dependencies"):
+        for path in root.rglob("*"):
+            source.require(not path.is_symlink(), "symlink introduced into extracted source")
+            if path.is_file():
+                actual.add(path.relative_to(output).as_posix())
+    source.require(actual == expected, "extracted source membership changed")
+    for row in source_inputs:
+        source.verified_file(output, row)
     used = set()
     for path in build.rglob("*.o.d"):
         for name in re.findall(r"/[^\s\\]+", path.read_text()):
@@ -78,10 +97,11 @@ def run(stage, output, frontend, node):
                 used.add(p.relative_to(output / "dependencies").as_posix())
     (output / "selected-native-headers.json").write_text(json.dumps(sorted(used), indent=2) + "\n")
     artifact_paths = [build / "web-ifc", build / "web-ifc-test", build / "compile_commands.json",
-                      output / "selected-native-headers.json", *sorted(scripts.iterdir())]
+                      output / "selected-native-headers.json", output / "source-input-manifest.json", *sorted(scripts.iterdir())]
     artifact_paths += sorted(output.glob("*.log")) + sorted(output.glob("*-command.json")) + sorted(output.glob("*-network.json"))
     receipt = {"status": "passed", "source_stage_success_sha256": source.digest((stage / "success.json").read_bytes()),
                "source_revision": index["source_revision"], "native_tests": 6, "wasm_geometry_probe": wasm,
+               "source_integrity": {"verified_files": len(source_inputs), "allowed_mutation": "Historical CMake fuzzy src/ to fuzzy/ directory rename only; all file bytes unchanged"},
                "commands": results, "files": [source.file_record(p, output) for p in artifact_paths],
                "limits": ["Native C++ compiles parser/geometry, not Emscripten-only web-ifc-api.cpp.",
                           "Unchanged Node WASM geometry probe is not browser/MT or byte-identical source-WASM rebuild acceptance."]}

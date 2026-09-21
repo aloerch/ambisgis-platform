@@ -157,91 +157,95 @@
   "source_bindings_count": 35,
   "numeric_schema_declaration_exports": 1137,
   "native_probe": {
-    "retained_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02",
+    "retained_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03",
     "status": "passed",
     "upstream_tests": 6,
     "commands": [
       {
         "argv": [
           "/usr/bin/python3",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/offline_exec.py",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/offline_exec.py",
           "--evidence",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/configure-network.json",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/configure-network.json",
           "--",
           "cmake",
           "-S",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/source/src/wasm",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/source/src/wasm",
           "-B",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/build",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/build",
           "-DCMAKE_BUILD_TYPE=Release",
           "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
           "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
           "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
-          "-DFETCHCONTENT_SOURCE_DIR_FASTFLOAT=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/dependencies/fastfloat",
-          "-DFETCHCONTENT_SOURCE_DIR_TINYNURBS=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/dependencies/tinynurbs",
-          "-DFETCHCONTENT_SOURCE_DIR_TINYCPPTEST=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/dependencies/tinycpptest",
-          "-DFETCHCONTENT_SOURCE_DIR_GLM=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/dependencies/glm",
-          "-DFETCHCONTENT_SOURCE_DIR_EARCUT=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/dependencies/earcut",
-          "-DFETCHCONTENT_SOURCE_DIR_CDT=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/dependencies/cdt",
-          "-DFETCHCONTENT_SOURCE_DIR_SPDLOG=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/dependencies/spdlog",
-          "-DFETCHCONTENT_SOURCE_DIR_FUZZY=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/dependencies/fuzzy"
+          "-DFETCHCONTENT_SOURCE_DIR_FASTFLOAT=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/fastfloat",
+          "-DFETCHCONTENT_SOURCE_DIR_TINYNURBS=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/tinynurbs",
+          "-DFETCHCONTENT_SOURCE_DIR_TINYCPPTEST=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/tinycpptest",
+          "-DFETCHCONTENT_SOURCE_DIR_GLM=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/glm",
+          "-DFETCHCONTENT_SOURCE_DIR_EARCUT=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/earcut",
+          "-DFETCHCONTENT_SOURCE_DIR_CDT=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/cdt",
+          "-DFETCHCONTENT_SOURCE_DIR_SPDLOG=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/spdlog",
+          "-DFETCHCONTENT_SOURCE_DIR_FUZZY=/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/dependencies/fuzzy"
         ],
-        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02",
+        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03",
         "exit_code": 0,
-        "elapsed_seconds": 0.2233437750255689
+        "elapsed_seconds": 0.1935148710035719
       },
       {
         "argv": [
           "/usr/bin/python3",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/offline_exec.py",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/offline_exec.py",
           "--evidence",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/build-network.json",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/build-network.json",
           "--",
           "cmake",
           "--build",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/build",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/build",
           "--parallel",
           "2"
         ],
-        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02",
+        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03",
         "exit_code": 0,
-        "elapsed_seconds": 44.93618425296154
+        "elapsed_seconds": 46.024063232005574
       },
       {
         "argv": [
           "/usr/bin/python3",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/offline_exec.py",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/offline_exec.py",
           "--evidence",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/native-tests-network.json",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/native-tests-network.json",
           "--",
           "ctest",
           "--test-dir",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/build",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/build",
           "-VV",
           "-L",
           "web-ifc"
         ],
-        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02",
+        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03",
         "exit_code": 0,
-        "elapsed_seconds": 0.038910176954232156
+        "elapsed_seconds": 0.03998452000087127
       },
       {
         "argv": [
           "/usr/bin/python3",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/offline_exec.py",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/offline_exec.py",
           "--evidence",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/wasm-probe-network.json",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/wasm-probe-network.json",
           "--",
           "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/toolchain/node-v24.18.1-linux-x64/bin/node",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/webifc_probe.cjs",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc_probe.cjs",
           "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01/client/geonode_mapstore_client/static/mapstore/dist/js/web-ifc",
-          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/webifc-box.ifc"
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc-box.ifc"
         ],
-        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-02",
+        "cwd": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/webifc/native-03",
         "exit_code": 0,
-        "elapsed_seconds": 0.1690695180441253
+        "elapsed_seconds": 0.16494433203479275
       }
     ],
+    "source_integrity": {
+      "verified_files": 3190,
+      "allowed_mutation": "Historical CMake fuzzy src/ to fuzzy/ directory rename only; all file bytes unchanged"
+    },
     "wasm_geometry": {
       "status": "passed",
       "version": "0.0.50",
@@ -303,8 +307,8 @@
     }
   ],
   "earlier_retained_attempts": [
-    "native-01 (native compile and six encoding tests passed; final frozen native-02 is selected)",
-    "wasm-03 (corrected fixture passes; final native-02 is selected)",
+    "native-01 and native-02 (native compile and six tests passed; final frozen native-03 adds full post-build source integrity)",
+    "wasm-03 (corrected fixture passes; final native-03 is selected)",
     "source-stage-01 and source-stage-02 (retained development stages; source-stage-03 selected)"
   ],
   "limits": [
@@ -351,9 +355,9 @@
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/success.json",
-      "bytes": 10909,
-      "sha256": "69a68faae2e849646335e9fd4fea07857f45df2931847a681a93020c8aae1862"
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/success.json",
+      "bytes": 11242,
+      "sha256": "cb4a254cbfa5d4473be3e1496cad07f98ef5ae2cd45f780b414eb3ce3fd21a76"
     },
     {
       "root": "workspace",
@@ -393,13 +397,13 @@
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/frozen-native-02-command.json",
-      "bytes": 771,
-      "sha256": "22a16fda5d88d008edf14fa27a725a52b8eae68e2990c63ab8a1e54f24d86109"
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/frozen-native-03-command.json",
+      "bytes": 772,
+      "sha256": "c0da13a862c2031c996b4de570a9074df414ad5e08e35ff5dce6bc4da5a390d5"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/frozen-native-02.log",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/frozen-native-03.log",
       "bytes": 62,
       "sha256": "dbd6fd96dc396c35f12066b20f0fc5f81c48ff1bccdb267714a11fa0767980c7"
     },
@@ -447,141 +451,147 @@
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/build-command.json",
-      "bytes": 651,
-      "sha256": "5eb61e23bcd36ac59157dff3029754eb178e8b4ffb946b7071b7128772b803d1"
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build-command.json",
+      "bytes": 652,
+      "sha256": "3584e7db863cabd704de490c999be9d7467028892992f737820645d878f44d77"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/configure-command.json",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/configure-command.json",
       "bytes": 2153,
-      "sha256": "266eadac33b4b927f31916df0c736affd0bbf0cc0db0558b3f1b334c36577514"
+      "sha256": "99fe7de4bb95df0f74b878c01ba7fb1878a4c43daea0742c5523097cfb492db9"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/native-tests-command.json",
-      "bytes": 673,
-      "sha256": "059ed118f19b2e85fac7a4f94b637bc3c4ec41d2acc8529970cabde25e199c41"
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/native-tests-command.json",
+      "bytes": 672,
+      "sha256": "a829021193e7007a5ce448cd5ca924acec84ea9132fa6775c30f4084fab1ffdb"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/wasm-probe-command.json",
-      "bytes": 1043,
-      "sha256": "598a20841fc243c3cdfe26543c2dc5957c22341d967ea148b0103ca6e669157c"
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/wasm-probe-command.json",
+      "bytes": 1044,
+      "sha256": "2751867308497431a59b28c5950d5507f66570ff271c347ee6df2826375d2fc0"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/build-network.json",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build-network.json",
       "bytes": 1884,
-      "sha256": "6c86e4af3a97cbe64348467dcda56acc7ca349b7803f5b02957db91edaa9e443"
+      "sha256": "578042803d8e3918d55a87e60aa9c418b52b100e165c76cd0ab80d6c5e6bd44a"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/configure-network.json",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/configure-network.json",
       "bytes": 3381,
-      "sha256": "b6daf7976e9e2d0b5c1bfbc9fdcbb84fb6b0083a2e5817c6372a9e3379ac4b96"
+      "sha256": "845fd150610fdc288286e69c7829150f4d6843e5704100cfe8dde1eac0e95351"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/native-tests-network.json",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/native-tests-network.json",
       "bytes": 1896,
-      "sha256": "7d57cc0d01701ab6e4ebbbcffc202134eb4e371e6d8e164e00c2387e52e5cd9e"
+      "sha256": "1bde6753726daf9a76233375265c62b1637182e1fe958939366f41e7e8f50ae9"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/wasm-probe-network.json",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/wasm-probe-network.json",
       "bytes": 2378,
-      "sha256": "b7164440bdfe18b75fb49b244aa320590915f25030cdc477819524e0eba376a0"
+      "sha256": "0ede70e03708a51e026621ec0a98d06215823e03a082730e401ebb126daafa5e"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/build/CMakeFiles/web-ifc-test.dir/link.txt",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build/CMakeFiles/web-ifc-test.dir/link.txt",
       "bytes": 930,
       "sha256": "3caefd070822df9e3b1079d6f61d33227d5745ef13d0e448740f7d313f01f4b2"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/build/CMakeFiles/web-ifc.dir/link.txt",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build/CMakeFiles/web-ifc.dir/link.txt",
       "bytes": 803,
       "sha256": "ae88de0ef75dc3a9df519fb946849caaf1ef106a3ee2644269f0f56cf787e713"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/build/web-ifc",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build/web-ifc",
       "bytes": 1395400,
       "sha256": "d5d5b451632cd1485e65347b7ebf121815156569594b8dd8f62b1250f55cfaff"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/build/web-ifc-test",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build/web-ifc-test",
       "bytes": 1360816,
-      "sha256": "fc20f7f9529ca20a92a61417ffae8f6ba36c1735ed7d8c4a837cbbbf1da1e0e0"
+      "sha256": "7eeb16fde58f398e346925b9f5f76a3fbf0149d0dbcc10fb38a1d61e0f01b701"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/build/compile_commands.json",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build/compile_commands.json",
       "bytes": 47163,
-      "sha256": "9a4a5c35d0977fa94dcfb3fab9cc4dbc9a14d5540ad688de339250fb38c1c5fb"
+      "sha256": "b0921b756d0ae31a19db6fa1d5e03c28b24567cca6e4b3877bb22b3de5536f3a"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/selected-native-headers.json",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/selected-native-headers.json",
       "bytes": 11300,
       "sha256": "816767f2a8e99ed5417fc5e8f267a0a29675ea0dddfde359c9e68bfcc0553ac2"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/offline_exec.py",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/offline_exec.py",
       "bytes": 9932,
       "sha256": "ed658e05bc1cde8b008835b146bf2be73487313f581ce66da31d5644b3766ace"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/webifc-box.ifc",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc-box.ifc",
       "bytes": 980,
       "sha256": "ee057f970ffe2285e499b9cb4bfb2233e042995cff249fe5674ecab2415237ae"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/webifc_native_probe.py",
-      "bytes": 6127,
-      "sha256": "8a7cb42aeed87f51768a2b7efaaac7c3bb2025093d626bcf5ef713f8bd4237d5"
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc_native_probe.py",
+      "bytes": 7555,
+      "sha256": "60f8b8231b5399f727b6b3a50f05e0626eb42524ea9f8123e088ac2e0c5ef3b9"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/webifc_probe.cjs",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc_probe.cjs",
       "bytes": 2535,
       "sha256": "59a603a847fdcf40b67e87823d6176b167ae07b623c422fc24bac2e0e7d22a19"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/executed-tooling/webifc_sources.py",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/executed-tooling/webifc_sources.py",
       "bytes": 12400,
       "sha256": "07f5c110c3a4834244286ebfde5e680334ada9c482f3e8a5b68547534dd90965"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/build.log",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/build.log",
       "bytes": 402324,
-      "sha256": "0be7cae9d289ebeef2491a2b17a922fea509722c35c70389a35df5c525d9acdb"
+      "sha256": "6168c6d5354b2726570297f617738218ed0e9af999299437a3c9ffb95fe64f4c"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/configure.log",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/configure.log",
       "bytes": 1769,
-      "sha256": "6283ddedcb7fa9d1fc3b0d2d1bcdffd290638bb422915249c80257d04552f0ce"
+      "sha256": "785331bd82492fb52a9782774bff8e60f5502157148d13296a9c5594c4151ee5"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/native-tests.log",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/native-tests.log",
       "bytes": 1642,
-      "sha256": "108c4ea384085df0e90988070f4a71d3005213867b04b9925fc2e097c3c21def"
+      "sha256": "6169df6e6a84ace17f3b1999c24749213108552ff305d5380a88e73c666fc346"
     },
     {
       "root": "workspace",
-      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-02/wasm-probe.log",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/wasm-probe.log",
       "bytes": 2055,
       "sha256": "3bc08b54849f6d8d1fbc36efafa1a2d46c562611b905541dba7a4da9fa3fbeb0"
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/native-03/source-input-manifest.json",
+      "bytes": 831980,
+      "sha256": "ef850d1f2ad86540fafd9cf80cb7f1181a20e731fd57150ec20c56e57f51f879"
     }
   ]
 }

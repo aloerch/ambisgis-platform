@@ -83,14 +83,16 @@ finding. An independent byte-identical WASM rebuild remains undemonstrated.
 
 ## Executed bounded probes and failures
 
-`native-02` is the final frozen recipe run. It extracts the locked sources into
+`native-03` is the final frozen recipe run. It extracts the locked sources into
 fresh directories and runs the unmodified historical CMake source with local
 FETCHCONTENT_SOURCE_DIR overrides and FETCHCONTENT_FULLY_DISCONNECTED. CMake's
 inherited fuzzy src-to-fuzzy rename occurs only inside the fresh working copy.
 The recipe enables the host CMake minimum-policy compatibility setting; it does
 not patch source or remove diagnostics. Exact compiler/tool identities,
 compile_commands.json, link commands, source/header maps and warning logs are
-retained. Native parser/geometry compilation and all six upstream encoding tests
+retained. Frozen tooling and all 3,190 extracted source/dependency file bytes are
+verified again before success, permitting only the historical fuzzy directory
+rename. Native parser/geometry compilation and all six upstream encoding tests
 pass. The Emscripten-only web-ifc-api.cpp is not compiled by the native target.
 
 The same run executes a first-party synthetic IFC2X3 rectangular extrusion using
@@ -111,9 +113,9 @@ cannot overwrite prior evidence; an index is not success without its receipt.
 Earlier evidence remains retained: wasm-01 failed on an incorrect Node path.
 wasm-02 exited zero but emitted IFC errors because the synthetic rectangle
 omitted its explicit 2D placement; it is a failed probe, not acceptance.
-The corrected fixture and diagnostic guard pass wasm-03 and final native-02.
-Native-01 also compiled and passed six tests; native-02 supersedes it with a
-frozen replayable harness. source-stage-01/02 are retained development stages,
+The corrected fixture and diagnostic guard pass wasm-03 and final native-03.
+Native-01 and native-02 also compiled and passed six tests; native-03 supersedes
+them with a frozen replayable harness and complete post-build source integrity. source-stage-01/02 are retained development stages,
 not the final proposed availability stage. Warnings are kept verbatim.
 
 ## Replay
