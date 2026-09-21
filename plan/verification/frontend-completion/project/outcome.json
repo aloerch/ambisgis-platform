@@ -1,0 +1,101 @@
+{
+  "adapter_limit": "Inherited adapter does not expand assignee/label values; no such fields are written.",
+  "all_passed": true,
+  "checks": {
+    "all_prior_item_values_and_archive_decisions_preserved": true,
+    "all_project_fields_repositories_views_preserved": true,
+    "all_readback_pagination_complete": true,
+    "all_view_configuration_and_order_preserved": true,
+    "live_pr_still_open_at_exact_head": true,
+    "mutation_sequence_complete": true,
+    "only_expected_new_item": true,
+    "pr_has_no_parent_planning_fields": true,
+    "pr_identity_unique": true,
+    "pr_is_in_saved_open_queue": true,
+    "pr_item_unarchived": true,
+    "pr_linked_if_applied": true
+  },
+  "items_after": 75,
+  "items_before": 74,
+  "local_head": "2eb07794dc9fd014e8002112bd45a95309f8cf9e",
+  "mutations": [
+    {
+      "content_id": "PR_kwDOUhI-d88AAAABEYHZmA",
+      "operation": "add_item",
+      "result": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg75dbw",
+        "isArchived": false
+      }
+    },
+    {
+      "field_id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg75dbw",
+      "operation": "set_field",
+      "result": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg75dbw"
+      },
+      "value": "https://github.com/aloerch/ambisgis-platform/pull/62 | FND-02: https://github.com/aloerch/ambisgis-platform/issues/3"
+    }
+  ],
+  "pr_states": {
+    "p54": {
+      "id": "PR_kwDOUhI-d88AAAABEQiDOg",
+      "number": 54,
+      "state": "MERGED",
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/54"
+    },
+    "p55": {
+      "id": "PR_kwDOUhI-d88AAAABEQ97wg",
+      "number": 55,
+      "state": "MERGED",
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/55"
+    },
+    "p56": {
+      "id": "PR_kwDOUhI-d88AAAABEVLddg",
+      "number": 56,
+      "state": "MERGED",
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/56"
+    },
+    "p57": {
+      "id": "PR_kwDOUhI-d88AAAABEVWAzA",
+      "number": 57,
+      "state": "MERGED",
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/57"
+    },
+    "p58": {
+      "id": "PR_kwDOUhI-d88AAAABEWBeXA",
+      "number": 58,
+      "state": "MERGED",
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/58"
+    },
+    "p59": {
+      "id": "PR_kwDOUhI-d88AAAABEWVegA",
+      "number": 59,
+      "state": "MERGED",
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/59"
+    },
+    "p60": {
+      "id": "PR_kwDOUhI-d88AAAABEXbEsw",
+      "number": 60,
+      "state": "MERGED",
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/60"
+    },
+    "p61": {
+      "id": "PR_kwDOUhI-d88AAAABEXx1fA",
+      "number": 61,
+      "state": "MERGED",
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/61"
+    },
+    "p62": {
+      "id": "PR_kwDOUhI-d88AAAABEYHZmA",
+      "number": 62,
+      "state": "OPEN",
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/62"
+    }
+  },
+  "queue_filter": "is:pr is:open",
+  "queue_membership": [
+    62
+  ],
+  "scope": "New PR membership/Evidence only; FND-02 unchanged; API readback, no UI claim"
+}

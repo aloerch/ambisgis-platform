@@ -1,4 +1,46 @@
-# Implementation status — authoritative role propagation checkpoint
+# Implementation status — owned frontend and finite FND-02 completion
+
+The current checkpoint is [PR #62](https://github.com/aloerch/ambisgis-platform/pull/62),
+implementation `2eb07794dc9fd014e8002112bd45a95309f8cf9e`, on
+`fnd-02/completion-frontend` from verified owner-merged
+PR #61 / `ambisgis/main` `433cb7d8fb662b05bd1f67e8825938d0770a0d41`.
+**FND-02 remains In progress.** The [finite completion checklist](docs/fnd-02-completion.md)
+and [frontend handoff](docs/frontend-completion-handoff.md) are current authority.
+Earlier open-PR and arbitrary Java-gap next-action prose below is dated history.
+
+Owned client/MapStore now compile into six applications and 960 dist files.
+Three fresh retained-input builds pass with Node 24.18.1/npm 11.16.0 and a complete
+2,410-entry lock. Replay denies Internet sockets and uses fresh caches; absolute
+build paths/fullhash references prevent byte-identical output. The real GeoNode
+viewer and owned GeoServer public layer pass sandboxed Chromium load, zoom, reload
+and service restart. Each browser phase verifies 43 frontend artifacts across
+109 responses; all six canvas states contain the known local witness. Native
+proxy routes and strict token/role/stateless guards remain intact. Services,
+database and browser stopped; disposable credentials invalidated/scrubbed.
+
+Fresh checks: **358 client + 152 selected MapStore native cases**, **22 build guards**,
+**nine smoke artifact cases**, **15 loopback regressions**, **176 package tests**
+and **four strict schema checks** pass without skips. Nonmutating lint has **five
+inherited errors**; webpack has five recorded warnings. Failed attempts and
+independent review fixes are retained in the [evidence index](verification/frontend-completion/evidence.json).
+This is public browser compatibility, not SSO, full policy, publishing or release.
+
+F02-02/03 bounded engineering is demonstrated; owner review of the new PR still
+gates merging. #61's approval does not approve new changes. Frontend rights/notice
+findings and the unchanged Java/GeoNode selection blockers remain F02-06. Required
+source or licensing problems are not waived by recording them. FND-03/FND-05/
+FND-07/FND-08 remain separate and unaccepted. No merge/release/deployment occurred.
+
+[Project publication](verification/frontend-completion/project/README.md) passed:
+75 items = 66 tasks + nine PRs; all 74 prior items/views preserved. Only #62
+matches the unchanged `is:pr is:open` queue; its item has no Task ID/Delivery.
+
+Next bounded engineering: **F02-04, owned QGIS desktop/server candidate build**,
+then missing combination/GWC smoke and consolidated candidate/license proposal.
+Full FND-02 acceptance requires unchanged criterion evidence and an explicit later
+owner decision; no percentage or fixed prompt count is implied.
+
+# Preserved status record — authoritative role propagation checkpoint
 
 FND-02's source-owned GeoNode role-service implementation is frozen at
 `d935fb48a7e0721b1e25f67eccfe3ed836c890fc` on `fnd-02/geonode-role-propagation`,

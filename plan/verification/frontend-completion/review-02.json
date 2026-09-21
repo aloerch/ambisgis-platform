@@ -1,0 +1,82 @@
+{
+  "fixes_verified": [
+    "Complete consumed-file manifest, hashes and lengths required",
+    "Symlinked retained paths rejected",
+    "Existing output stays byte-unchanged on rejected CLI reuse",
+    "Archive metadata refuses traversal/absolute paths",
+    "Supplemental audit validates exact retained manifest and raw archive hashes",
+    "Supplemental inventory archive paths must be canonical and present in retained manifest"
+  ],
+  "independent_probes": {
+    "ancestor_symlink_rejected": true,
+    "audit_absolute_tar_member": {
+      "message": "Unsafe archive member",
+      "rejected": true
+    },
+    "audit_arbitrary_single_prefix_positive": true,
+    "audit_inventory_path_escape": {
+      "message": "Unmanifested inventory archive",
+      "rejected": true
+    },
+    "audit_inventory_sha_mismatch": {
+      "message": "Retained inventory archive changed",
+      "rejected": true
+    },
+    "audit_parent_tar_member": {
+      "message": "Unsafe archive member",
+      "rejected": true
+    },
+    "complete_manifest_positive": true,
+    "existing_output_cli_unchanged": true,
+    "same_size_hash_change": {
+      "message": "Input changed: node.tar.xz",
+      "rejected": true
+    },
+    "size_change": {
+      "message": "Input changed: node.tar.xz",
+      "rejected": true
+    },
+    "unsafe_metadata_member": {
+      "accepted": false,
+      "message": "Unsafe archive member"
+    }
+  },
+  "initial_reproduction": {
+    "path": "review-01-findings.json",
+    "sha256": "08aa8ca7e36db0cd7b9622c52e3d2241953f10dfe6198b189f738d5c77e59e7f"
+  },
+  "license_observations": {
+    "absent_package_json_declarations": 18,
+    "additional_readme_source_terms": 3,
+    "alternate_declarations_only": 2,
+    "clearance": false,
+    "filename_matched_notices": 12,
+    "no_terms_located": 1,
+    "path": "license-observations-02.json",
+    "sha256": "ace13b305fd54fee67e542559817ca569a960cc325098346a7a36abc97c284b7"
+  },
+  "limits": [
+    "Source/retention/receipt review does not accept source correspondence, licenses, native suites or browser integration.",
+    "Initial build-01 predates final guard changes; final-harness replay remains an integrator execution gate.",
+    "Twenty unit tests are harness checks, not twenty component/native test suites.",
+    "Audit parser expects one prefix/package.json; this matches the selected 2022 registry archives and three helpers, not all possible npm archive layouts."
+  ],
+  "remaining_material_findings": [],
+  "reviewed_files_sha256": {
+    "audit_inputs.py": "6f94f0a42bffb5b4301737619ad0353ac5d8adcd84e40e2a1862001efd50d7a6",
+    "build.py": "fe2c79d975539bc9a1ef61f70a359a4ed407e040e4b88eae20cc2c936a5a1d4f",
+    "retain.py": "4e46929e43710ff753ec60c9e456b642c34c933f864f8fa764500eea35414f52",
+    "test_build.py": "971e8baee0699a16ceab8e508908b26bd26606abdeadfbf3dd4d3520548f9729"
+  },
+  "scope": "Independent review of frontend input/build/audit guards; no frontend/native/browser execution claimed by this review.",
+  "suite": {
+    "command": "python3 -m unittest -v test_build",
+    "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-frontend/build-support/frontend",
+    "errors": 0,
+    "failures": 0,
+    "log": "review-02-tests.log",
+    "log_sha256": "c6705fd66bc63d216dbe6874f1eabf04afc3b388f72aafea17003d4aad2a9ccb",
+    "skips": 0,
+    "tests": 20
+  }
+}

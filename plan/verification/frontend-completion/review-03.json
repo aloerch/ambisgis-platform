@@ -1,0 +1,33 @@
+{
+  "binding": {
+    "lock_reference": "Exact retained package-lock.json SHA-256 compared with tracked dependency-lock.json",
+    "manifest_reference": "Unique manifest.json basename reference from tracked inputs.json, exact SHA-256 comparison",
+    "ordering": "Before retained manifest parsing/full validation, output creation and any toolchain execution",
+    "relocation": "Only content hashes compared; absolute retained-root metadata is not used to authorize content"
+  },
+  "files_sha256": {
+    "build.py": "638629d3fc8959a461c85468ac6ad074986fcefdd41d658b91338fe9e562a2af",
+    "dependency-lock.json": "92ba9e68eeb9f8efebf8bebefe7708faeda97ae87ca710f34f43c9b6e35621cf",
+    "inputs.json": "45c52c21f1ee302c26412cba18ad33d4d2304e81902fe28dabb388d281fb4eea",
+    "test_build.py": "4d13e4551e8939ba13afb4f9c41fde807575589132ff9ac3002ef0ddbe68a45e"
+  },
+  "focused_suite": {
+    "command": "python3 -m unittest -v test_build",
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/review-03-tests.log",
+    "log_sha256": "676042bdc9f59c72612435d1fef2fb3bb2ed3b4e52e663dc639c363aff66baf9",
+    "skips": 0,
+    "tests": 22
+  },
+  "independent_checks": {
+    "actual_retained_authority_matches": true,
+    "replaced_lock_rejected_before_output": true,
+    "replaced_manifest_rejected_before_output": true,
+    "same_manifest_lock_bytes_relocated": true
+  },
+  "pending_execution": "Integrator final clean build-03 will execute these exact guard changes; previous build receipts retain their own recipe identities.",
+  "remaining_material_findings": [],
+  "scope": "Independent final review of reviewed manifest/dependency-lock authority binding only; no native build/browser rerun by this reviewer."
+}
