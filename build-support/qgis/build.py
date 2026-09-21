@@ -34,6 +34,58 @@ TEST_TARGETS=['test_core_coordinatetransform','test_core_project','test_core_ogr
     'test_core_gdalprovider','test_provider_postgresprovider','test_server_serverquerystringparameter']
 
 
+GENERATED_SOURCE = 'python/plugins/grassprovider/description/algorithms.json'
+GENERATOR_IDENTITIES = {
+    'python/plugins/grassprovider/description_to_json.py': 'cabd076a4604962e01e48725adc5ffebee0416c090602c8de8e02ffb61b1fa88',
+    'python/plugins/grassprovider/parsed_description.py': '0ab8694202882791135fd26204e107603b19ca92839bb8aaa65fd9a06a6e2ce0',
+    'python/plugins/grassprovider/__init__.py': 'ce575c1d315b8eedf2dce5b54e9bbd6e306ef6343cd752d687f65a9a70338f47',
+    'python/plugins/grassprovider/CMakeLists.txt': 'a6f203d79cccf418e5409ac8f32a343f0adc1ee0d9f200a022ef60eb6b13e55f',
+}
+
+
+def verify_source_delta(source, before):
+    """Preserve every donor byte; permit only its pinned configure generator output."""
+    expected = {row['path']: row for row in before}
+    require(len(expected) == len(before) and GENERATED_SOURCE not in expected,
+            'Invalid original source inventory')
+    actual = {row['path']: row for row in inventory(source)}
+    require(all(actual.get(path) == row for path, row in expected.items()),
+            'Original source file changed or disappeared')
+    require(set(actual) - set(expected) == {GENERATED_SOURCE},
+            'Unexpected generated source files')
+    for path, digest in GENERATOR_IDENTITIES.items():
+        require(path in expected and expected[path].get('sha256') == digest,
+                'Unreviewed inherited generator identity: ' + path)
+    generated = actual[GENERATED_SOURCE]
+    require('sha256' in generated and not (source / GENERATED_SOURCE).is_symlink(),
+            'Generated metadata must be a regular file')
+    data = json.loads((source / GENERATED_SOURCE).read_text())
+    require(isinstance(data, list) and len(data) == 307
+            and all(isinstance(row, dict) and isinstance(row.get('name'), str) for row in data),
+            'Unexpected GRASS metadata structure')
+    return {'original_files_verified': len(before), 'added': [generated],
+            'generator_identities': GENERATOR_IDENTITIES, 'record_count': len(data)}
+
+
+def reproduce_generated_source(source, before, prefix, env, output):
+    result = verify_source_delta(source, before)
+    reproduced = output / 'regenerated-grass-algorithms.json'
+    run(['/usr/bin/python3.13', '-B', '-m', 'grassprovider.description_to_json',
+         source / 'python/plugins/grassprovider/description', reproduced],
+        source / 'python/plugins', env, output, 'generated-source-reproduce')
+    generated = source / GENERATED_SOURCE
+    require(sha(reproduced) == sha(generated), 'Independent generated metadata differs')
+    installed = prefix / 'share/qgis/python/plugins/grassprovider/description/algorithms.json'
+    require(installed.is_file() and not installed.is_symlink()
+            and sha(installed) == sha(generated), 'Staged generated metadata differs')
+    require(verify_source_delta(source, before) == result,
+            'Source changed during independent metadata reproduction')
+    result['reproduced_sha256'] = sha(reproduced)
+    result['installed_sha256'] = sha(installed)
+    save(output / 'generated-source-manifest.json', result)
+    return result
+
+
 def cache_entries(path):
     result={}
     for line in path.read_text().splitlines():
@@ -133,7 +185,7 @@ def build(output,native,spatial,support,support_inventory,jobs,xml=None):
         run(['ldd',prefix/'bin/qgis'],output,env,output,'desktop-linkage')
         run(['ldd',prefix/'bin/qgis_mapserver'],output,env,output,'server-linkage')
         for n in ('desktop-linkage','server-linkage'): require('not found' not in (output/(n+'.log')).read_text(),'Missing staged library')
-        verify_inventory(source,before)
+        reproduce_generated_source(source,before,prefix,env,output)
         verify_xml(xml)
         verify_inventory(support,support_rows)
         verify_inventory(spatial,spatial_doc['files'])
