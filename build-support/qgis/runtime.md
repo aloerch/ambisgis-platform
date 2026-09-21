@@ -27,7 +27,13 @@ PyQGIS and the selected retained PyQt/SIP support. The default executables are
 
 Optional explicit path overrides are `desktop`, `server`, `provider_path`,
 `proj_data` and `gdal_data`. Both executable overrides must remain inside the
-staged QGIS prefix. The compiled library/provider prefix and actual loaded
+staged QGIS prefix. `provider_path` is the expected native registry directory; it
+does not redirect Python plugin discovery. `QGIS_PLUGINPATH` names an empty
+task-owned directory because the selected source uses it for optional Python
+plugins. The fixture and desktop verify `QgsApplication.pluginPath()` and the
+provider registry separately, and actual mappings must include the staged
+PostgreSQL provider. OGR/GDAL providers are linked into the verified core library.
+The staged master and CRS resource databases are also identified and hashed. The compiled library/provider prefix and actual loaded
 mappings must match these paths; host QGIS and Qt cannot satisfy the witness.
 Support Qt5 mappings must be inside `support_prefix`. General host libraries are
 listed in actual mappings and remain the broader dependency-closure gate.

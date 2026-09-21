@@ -9,7 +9,7 @@ import sys
 
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from runtime_common import POINTS, SAMPLES, image_witness, inventory, loaded_origins
-from runtime import private_write, redact, validate_config
+from runtime import build_environment, private_write, redact, validate_config
 from runtime_child import server
 
 
@@ -78,6 +78,18 @@ class RuntimeGuards(unittest.TestCase):
             receipt=json.loads((Path(name)/'server-result.json').read_text())
             self.assertEqual(1,receipt['result_exit_code'])
             self.assertEqual([],receipt['runs'])
+
+    def test_python_plugin_search_is_empty_and_separate_from_native_registry(self):
+        with tempfile.TemporaryDirectory() as name:
+            root=Path(name); font=root/'fixture.ttf'; font.write_bytes(b'fixture font')
+            config={'python':sys.executable,'qgis_prefix':name,'database_prefix':name,
+                    'spatial_prefix':name,'font_file':str(font),'qt_plugins':name,
+                    'library_paths':[name],'python_paths':[name], 'provider_path':str(root/'native-providers')}
+            env=build_environment(config,root)
+            self.assertEqual(str(root/'empty-plugins'),env['QGIS_PLUGINPATH'])
+            self.assertNotEqual(config['provider_path'],env['QGIS_PLUGINPATH'])
+            self.assertEqual([],list((root/'empty-plugins').iterdir()))
+            self.assertEqual('disable',env['GDAL_DRIVER_PATH'])
 
     def test_empty_profile_rejected(self):
         with self.assertRaisesRegex(AssertionError,'retained input'): validate_config({})

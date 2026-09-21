@@ -69,11 +69,12 @@ def build_environment(config, output):
            'PYTHONNOUSERSITE':'1','PYTHONPYCACHEPREFIX':str(output/'cache/python'),
            'QT_PLUGIN_PATH':config['qt_plugins'],'QT_QPA_PLATFORM':'offscreen',
            'QT_QPA_FONTDIR':str(output/'fonts'),'FONTCONFIG_FILE':str(output/'fonts.conf'),
-           'QGIS_PREFIX_PATH':config['qgis_prefix'],'QGIS_PLUGINPATH':config.get('provider_path',str(prefix/'lib/qgis/plugins')),
+           'QGIS_PREFIX_PATH':config['qgis_prefix'],'QGIS_PLUGINPATH':str(output/'empty-plugins'),
            'QGIS_AUTH_DB_DIR_PATH':str(output/'auth'),'QGIS_SERVER_PARALLEL_RENDERING':'0','QGIS_SERVER_MAX_THREADS':'1',
            'QGIS_SERVER_LOG_LEVEL':'1','QGIS_SERVER_LOG_STDERR':'1',
            'PROJ_DATA':config.get('proj_data',str(native/'share/proj')),'PROJ_NETWORK':'OFF',
            'GDAL_DATA':config.get('gdal_data',str(Path(config['spatial_prefix'])/'share/gdal')),
+           'GDAL_DRIVER_PATH':'disable',
            'PGSERVICEFILE':str(output/'pg_service.conf'),'PGPASSFILE':str(output/'pgpass'),
            'AMBISGIS_QGIS_RUNTIME_CONFIG':str(output/'runtime-config.json')}
     return env

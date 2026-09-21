@@ -9,7 +9,7 @@ from qgis.PyQt.QtCore import QTimer
 from qgis.PyQt.QtGui import QImage
 from qgis.PyQt.QtWidgets import QApplication
 from qgis.utils import iface
-from runtime_common import check_layers, image_witness, loaded_origins, require, save, sha
+from runtime_common import check_layers, image_witness, loaded_origins, provider_origins, require, save, sha
 
 CONFIG = json.loads(Path(os.environ['AMBISGIS_QGIS_RUNTIME_CONFIG']).read_text())
 OUTPUT = Path(CONFIG['output'])
@@ -80,6 +80,7 @@ class DesktopWitness:
                 elif self.phase == 4:
                     self.capture('desktop-reopened')
                     self.report['loaded_origins'] = loaded_origins(CONFIG)
+                    self.report['provider_origins'] = provider_origins(CONFIG)
                     self.report['saved_project_sha256'] = sha(OUTPUT/'desktop-saved.qgs')
                     require(self.report['render_events'] >= 4, 'desktop event loop/canvas rendering not demonstrated')
                     self.finish(0); return

@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 import sys
 
-from runtime_common import POINTS, check_layers, loaded_origins, require, save, sha
+from runtime_common import POINTS, check_layers, loaded_origins, provider_origins, require, save, sha
 
 
 def make_data(output, gdal_library):
@@ -102,7 +102,7 @@ def generate(config):
         settings.setValue('qgis/checkVersion',False); settings.setValue('plugins/checkOnStart',False); settings.sync()
         report = {'result_exit_code':0,'assets':assets,'layers':layers,'qgis_version':Qgis.QGIS_VERSION,
             'project_sha256':sha(output/'fixture.qgs'),'bindings':str(qgis._core.__file__),
-            'loaded_origins':loaded_origins(config),'font':{'path':config['font_file'],'sha256':sha(config['font_file']),
+            'loaded_origins':loaded_origins(config),'provider_origins':provider_origins(config),'font':{'path':config['font_file'],'sha256':sha(config['font_file']),
                 'families':QFontDatabase.applicationFontFamilies(font_id)},
             'crs':{'source':'EPSG:4326','target':'EPSG:3857','input':[1,1],'expected':expected,
                 'actual':[projected.x(),projected.y()],'tolerance_m':1e-6,'ballpark_allowed':False,'fallback_allowed':False,

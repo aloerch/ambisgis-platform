@@ -43,7 +43,8 @@ def loaded_origins(config, pid=None):
     roots = [Path(config[k]).resolve() for k in ('qgis_prefix', 'spatial_prefix', 'database_prefix', 'support_prefix')]
     expectations = {'libqgis_core': roots[:1], 'libgdal.so': roots[1:3],
                     'libproj.so': roots[1:3], 'libgeos_c.so': roots[1:3],
-                    'libpq.so': roots[1:3], 'libQt5Core.so': roots[3:]}
+                    'libpq.so': roots[1:3], 'libQt5Core.so': roots[3:],
+                    'libprovider_postgres.so': [Path(config.get('provider_path', roots[0]/'lib/qgis/plugins')).resolve()]}
     for p in names:
         if Path(p).name.startswith(('libqgis_', 'libprovider_')):
             require(Path(p).resolve().is_relative_to(roots[0]), 'unretained QGIS library/provider mapping')
@@ -125,3 +126,26 @@ def image_witness(image, extent, *, raster=True, local=True, database=True):
                 require(count >= 8, name + ' marker missing or misplaced at feature ' + str(ident))
                 checks.append({'kind': name, 'feature_id': ident, 'matching_pixels': count})
     return {'width': image.width(), 'height': image.height(), 'extent': list(extent), 'checks': checks}
+
+
+def provider_origins(config):
+    """QGIS_PLUGINPATH controls Python plugins; native providers use this registry."""
+    from qgis.core import QgsApplication, QgsProviderRegistry
+    prefix = Path(config['qgis_prefix']).resolve()
+    expected = Path(config.get('provider_path', prefix/'lib/qgis/plugins')).resolve()
+    registry = QgsProviderRegistry.instance()
+    actual = Path(registry.libraryDirectory().absolutePath()).resolve()
+    require(expected.is_relative_to(prefix), 'native provider path is outside staged QGIS')
+    require(actual == expected and Path(QgsApplication.pluginPath()).resolve() == expected,
+            'native provider registry is not using the staged plugin directory')
+    require(all(registry.providerMetadata(name) is not None for name in ('ogr', 'gdal', 'postgres')),
+            'required native provider metadata missing')
+    resources = {}
+    for name, path in (('master_database', QgsApplication.qgisMasterDatabaseFilePath()),
+                       ('srs_database', QgsApplication.srsDatabaseFilePath())):
+        path = Path(path).resolve()
+        require(path.is_relative_to(prefix) and path.is_file(), 'QGIS resource outside stage: '+name)
+        resources[name] = {'path': str(path), 'sha256': sha(path)}
+    return {'native_registry_directory': str(actual), 'application_plugin_path': QgsApplication.pluginPath(),
+            'optional_python_plugin_path': os.environ.get('QGIS_PLUGINPATH'),
+            'core_linked_providers': ['ogr', 'gdal'], 'dynamic_provider': 'postgres', 'resources': resources}
