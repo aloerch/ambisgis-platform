@@ -230,6 +230,42 @@ def check_python_result(result, count):
             and not result.get('expected_failures') and not result.get('unexpected_successes'))
 
 
+def probe_database_permissions(connection):
+    """Prove scratch DDL works while original selected fixture tables stay read-only."""
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute('CREATE TABLE public.native_privilege_probe (id integer, g geometry)')
+            cursor.execute('INSERT INTO public.native_privilege_probe VALUES (1, ST_MakePoint(1,2))')
+            cursor.execute('CREATE INDEX ON public.native_privilege_probe USING gist (g)')
+            cursor.execute('ANALYZE public.native_privilege_probe')
+            cursor.execute('SELECT count(*) FROM public.native_privilege_probe')
+            if cursor.fetchone() != (1,):
+                raise ValueError('native scratch DDL/insert probe count mismatch')
+    finally:
+        connection.rollback()
+    denied = []
+    for operation, sql in (
+        ('UPDATE', 'UPDATE qgis_test."someData" SET cnt=cnt WHERE false'),
+        ('DELETE', 'DELETE FROM qgis_test."someData" WHERE false'),
+        ('INSERT', 'INSERT INTO qgis_test."someData"(pk) SELECT 2147483647 WHERE false'),
+    ):
+        error_code = None
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute(sql)
+        except Exception as error:
+            error_code = getattr(error, 'pgcode', None)
+            if error_code != '42501':
+                raise
+        finally:
+            connection.rollback()
+        if error_code != '42501':
+            raise ValueError('native base fixture unexpectedly permits ' + operation)
+        denied.append({'operation': operation, 'sqlstate': error_code})
+    return {'scratch_create_insert_index_analyze': True, 'scratch_probe_rolled_back': True,
+            'base_write_denials': denied}
+
+
 def worker_preflight(config, selection):
     from qgis import _core, _gui, _analysis, _server
     from qgis.core import QgsApplication, QgsProviderRegistry, QgsVectorLayer
@@ -262,6 +298,7 @@ def worker_preflight(config, selection):
             cursor.execute('SELECT current_database(), current_user, count(*) FROM qgis_test."someData"')
             if cursor.fetchone() != ('qgis_native', 'qgis_native_reader', 5):
                 raise ValueError('native PostgreSQL fixture identity/count mismatch')
+        permissions = probe_database_permissions(conn)
     # Force real provider and spatial-library loading before reading Linux origins.
     layer = QgsVectorLayer('service=qgis_test key=pk srid=4326 type=POINT '
                            'table="qgis_test"."someData" (geom)', 'native-preflight', 'postgres')
@@ -271,6 +308,7 @@ def worker_preflight(config, selection):
             if len(fields := line.split(maxsplit=5)) == 6 and fields[5].startswith('/')}
     maps = check_loaded_origins(config, maps)
     return {'modules': modules, 'drivers': drivers, 'providers': providers,
+            'database_permissions': permissions,
             'mapped_spatial_libraries': [{'path': p, 'sha256': sha(p)} for p in maps],
             'qgis_prefix': QgsApplication.prefixPath(),
             'resources': {'proj_db': str(Path(os.environ['PROJ_DATA']) / 'proj.db'),

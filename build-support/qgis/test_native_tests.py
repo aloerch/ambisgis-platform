@@ -130,6 +130,25 @@ class NativeEvidenceGuards(unittest.TestCase):
             with self.subTest(maps=changed), self.assertRaises(ValueError):
                 native_tests.check_loaded_origins(config, changed)
 
+    def test_permission_probe_rejects_accidental_base_write_grant(self):
+        connection = mock.MagicMock()
+        connection.cursor.return_value.__enter__.return_value.fetchone.return_value = (1,)
+        with self.assertRaisesRegex(ValueError, 'unexpectedly permits UPDATE'):
+            native_tests.probe_database_permissions(connection)
+        self.assertEqual(connection.rollback.call_count, 2)
+
+    def test_permission_probe_does_not_mislabel_transport_failure_as_denial(self):
+        connection = mock.MagicMock()
+        cursor = connection.cursor.return_value.__enter__.return_value
+        cursor.fetchone.return_value = (1,)
+        def execute(sql):
+            if sql.startswith('UPDATE'):
+                raise OSError('fixture connection lost')
+        cursor.execute.side_effect = execute
+        with self.assertRaisesRegex(OSError, 'fixture connection lost'):
+            native_tests.probe_database_permissions(connection)
+        self.assertEqual(connection.rollback.call_count, 2)
+
     def test_cpp_zero_selected_assertions_is_failure(self):
         result = self.qtest('<TestFunction name="initTestCase"><Incident type="pass"/></TestFunction>')
         self.assertEqual(result['result_exit_code'], 1)

@@ -50,7 +50,12 @@ runtime fixture. `native_database.py` reuses the existing retained database
 identity verifier and supervisor exception. It creates a fresh loopback TCP/SCRAM
 cluster, then `qgis_native` and `qgis_native_reader`. The reader has SELECT on
 fixture tables and USAGE on fixture sequences (the native default-value method
-advances a sequence); it cannot edit base tables. Setup uses the privileged
+advances a sequence), plus CREATE in this disposable database's public schema.
+The unchanged PostgreSQL-specific `testExtent` creates, populates, indexes,
+analyzes and drops `public.test_ext`; it overrides the inherited read-only
+extent method. The role cannot edit base fixture tables. Preflight proves the
+scratch DDL transaction succeeds and rolls it back, then requires real SQLSTATE
+42501 denials for UPDATE, DELETE and INSERT against the base point table. Setup uses the privileged
 fixture owner. The controller loads a hash-guarded **unchanged excerpt** of
 `tests/testdata/provider/testdata_pg.sql` containing the two required tables and
 schemas. The complete donor bootstrap also requires citext/pointcloud/topology
@@ -59,7 +64,7 @@ and extra roles, and is not executed or claimed by this selection.
 `native_database.py` accepts the runtime configuration keys `python`,
 `database_prefix`, `database_evidence`, `spatial_prefix`, `qt_plugins`,
 `library_paths`, `python_paths`, plus `qgis_source` and `qgis_build` for the fresh
-native source/build. `proj_prefix`, `proj_data`, `gdal_data`, `fontconfig_file` and
+native source/build. `proj_data`, `gdal_data`, `fontconfig_file` and
 `fontconfig_path` can explicitly identify retained resources. The QGIS binding and
 library origins are forced to the fresh build; supporting Python paths must
 include both retained `usr/lib64/python3.13/site-packages` and

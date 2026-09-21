@@ -46,7 +46,8 @@ def prepare(database, source, service_file):
     database.sql('native-fixture', sql, 'qgis_native')
     database.sql('native-grants', 'GRANT USAGE ON SCHEMA qgis_test TO qgis_native_reader;\n'
                  'GRANT SELECT ON ALL TABLES IN SCHEMA qgis_test TO qgis_native_reader;\n'
-                 'GRANT USAGE ON ALL SEQUENCES IN SCHEMA qgis_test TO qgis_native_reader;\n', 'qgis_native')
+                 'GRANT USAGE ON ALL SEQUENCES IN SCHEMA qgis_test TO qgis_native_reader;\n'
+                 'GRANT CREATE ON SCHEMA public TO qgis_native_reader;\n', 'qgis_native')
     hba = database.data / 'pg_hba.conf'
     text = hba.read_text()
     reject = 'host all all 0.0.0.0/0 reject\n'
@@ -66,7 +67,7 @@ def prepare(database, source, service_file):
             'sql_source_sha256': selection['source_sha256'][selection['database_fixture']['source']],
             'sql_excerpt_sha256': hashlib.sha256(sql.encode()).hexdigest(),
             'database': 'qgis_native', 'runtime_role': 'qgis_native_reader',
-            'runtime_permissions': 'SELECT tables, USAGE schema and sequences; default-value test advances fixture sequence',
+            'runtime_permissions': 'SELECT base tables, USAGE schema and sequences; CREATE in disposable public scratch schema for unchanged testExtent; no base-table writes',
             'full_donor_bootstrap_executed': False}
 
 
