@@ -30,7 +30,8 @@ class NativeEvidenceGuards(unittest.TestCase):
     def xml_config(self):
         prefix = self.root / 'selected-xml'
         (prefix / 'lib').mkdir(parents=True, exist_ok=True)
-        (prefix / 'lib/libxml2.so').write_text('selected XML fixture')
+        (prefix / 'lib/libxml2.so.16.0.6').write_text('selected XML fixture')
+        (prefix / 'lib/libxml2.so').symlink_to('libxml2.so.16.0.6')
         return {'xml_prefix': str(prefix), 'database_prefix': str(self.root / 'original-native')}
 
     def test_xml_prefix_is_mandatory_and_cannot_escape_to_original(self):
@@ -67,6 +68,67 @@ class NativeEvidenceGuards(unittest.TestCase):
                          [str(self.root / 'build/output/lib'),
                           str(self.root / 'selected-xml/lib'), str(self.root / 'selected-xml/lib64'),
                           str(self.root / 'original-native/lib')])
+        self.assertEqual(env['QT_QPA_PLATFORM_PLUGIN_PATH'], str(self.root / 'qt-plugins/platforms'))
+
+    def origin_fixture(self):
+        config = dict(self.xml_config(), spatial_prefix=str(self.root / 'spatial'),
+                      support_prefix=str(self.root / 'support'), qgis_build=str(self.root / 'build'),
+                      qt_plugins=str(self.root / 'support/usr/lib64/qt5/plugins'))
+        paths = [Path(config['xml_prefix']) / 'lib/libxml2.so.16.0.6']
+        for key, names in [('spatial_prefix', ('libgdal.so', 'libproj.so', 'libsqlite3.so')),
+                           ('database_prefix', ('libgeos.so', 'libgeos_c.so', 'libpq.so'))]:
+            for name in names:
+                link = Path(config[key]) / 'lib' / name
+                link.parent.mkdir(parents=True, exist_ok=True)
+                actual = link.with_name(name + '.1')
+                actual.write_text(name)
+                link.symlink_to(actual.name)
+                paths.append(actual)
+        for name in ('libQt5Core.so', 'libQt5Gui.so', 'libQt5Network.so', 'libqca-qt5.so'):
+            link = Path(config['support_prefix']) / 'usr/lib64' / name
+            link.parent.mkdir(parents=True, exist_ok=True)
+            actual = link.with_name(name + '.5')
+            actual.write_text(name)
+            link.symlink_to(actual.name)
+            paths.append(actual)
+        for path in (Path(config['qgis_build']) / 'output/lib/libqgis_core.so.3.44',
+                     Path(config['qt_plugins']) / 'platforms/libqoffscreen.so',
+                     Path(config['qt_plugins']) / 'crypto/libqca-ossl.so'):
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(path.name)
+            paths.append(path)
+        return config, paths
+
+    def test_native_spatial_origins_refuse_old_fallback_missing_and_duplicates(self):
+        config, paths = self.origin_fixture()
+        self.assertEqual(len(native_tests.check_loaded_origins(config, paths)), len(paths))
+        for stem in ('libgdal.so', 'libproj.so', 'libsqlite3.so', 'libgeos.so', 'libgeos_c.so', 'libpq.so'):
+            actual = next(path for path in paths if path.name.startswith(stem))
+            fallback = self.root / 'original-native/lib' / actual.name if stem in ('libgdal.so', 'libproj.so', 'libsqlite3.so') else self.root / 'spatial/lib' / actual.name
+            for changed in ([p for p in paths if p != actual],
+                            [fallback if p == actual else p for p in paths], [*paths, fallback]):
+                with self.subTest(stem=stem, maps=changed), self.assertRaises(ValueError):
+                    native_tests.check_loaded_origins(config, changed)
+        # A broad proj_prefix override must not authorize original-native PROJ.
+        actual = next(path for path in paths if path.name.startswith('libproj.so'))
+        fallback = self.root / 'original-native/lib' / actual.name
+        with self.assertRaises(ValueError):
+            native_tests.check_loaded_origins(dict(config, proj_prefix=config['database_prefix']),
+                                             [fallback if p == actual else p for p in paths])
+
+    def test_native_qt_guard_checks_all_modules_and_private_plugins(self):
+        config, paths = self.origin_fixture()
+        for stem in ('libQt5Gui.so', 'libQt5Network.so', 'libqca-qt5.so'):
+            actual = next(path for path in paths if path.name.startswith(stem))
+            with self.subTest(stem=stem), self.assertRaises(ValueError):
+                native_tests.check_loaded_origins(config, [Path('/usr/lib64') / actual.name if p == actual else p for p in paths])
+        offscreen = next(path for path in paths if path.name == 'libqoffscreen.so')
+        for changed in ([p for p in paths if p != offscreen],
+                        [Path('/usr/lib64/qt5/plugins/platforms/libqoffscreen.so') if p == offscreen else p for p in paths],
+                        [*paths, Path('/usr/lib64/qt5/plugins/imageformats/libqjpeg.so')],
+                        [*paths, Path('/usr/lib64/qt5/plugins/crypto/libqca-ossl.so')]):
+            with self.subTest(maps=changed), self.assertRaises(ValueError):
+                native_tests.check_loaded_origins(config, changed)
 
     def test_cpp_zero_selected_assertions_is_failure(self):
         result = self.qtest('<TestFunction name="initTestCase"><Incident type="pass"/></TestFunction>')

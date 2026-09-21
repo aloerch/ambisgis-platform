@@ -92,8 +92,53 @@ def selected_xml_prefix(config):
 def check_xml_origin(config, maps):
     prefix = selected_xml_prefix(config)
     actual = {Path(path).resolve() for path in maps if Path(path).name.startswith('libxml2.so')}
-    if len(actual) != 1 or not next(iter(actual)).is_relative_to(prefix):
+    if actual != {(prefix / 'lib/libxml2.so').resolve()}:
         raise ValueError('native loaded library origin mismatch: libxml2 (one selected XML library required)')
+
+
+def check_loaded_origins(config, maps):
+    """Require every selected engine/Qt mapping; reject mixed retained/host loads."""
+    paths = {Path(path).resolve() for path in maps}
+    check_xml_origin(config, paths)
+    spatial = Path(config['spatial_prefix']).resolve()
+    database = Path(config['database_prefix']).resolve()
+    support = Path(config['support_prefix']).resolve()
+    plugins = Path(config['qt_plugins']).resolve()
+    build = Path(config['qgis_build']).resolve()
+    if not plugins.is_relative_to(support):
+        raise ValueError('native Qt plugin configuration is outside selected support')
+    expected = {'libgdal.so': spatial, 'libproj.so': spatial, 'libsqlite3.so': spatial,
+                'libgeos.so': database, 'libgeos_c.so': database, 'libpq.so': database}
+    selected = {path for path in paths if path.name.startswith('libxml2.so')}
+    for stem, root in expected.items():
+        actual = {path for path in paths if path.name.startswith(stem)}
+        if actual != {(root / 'lib' / stem).resolve()}:
+            raise ValueError('native loaded library origin mismatch: ' + stem)
+        selected.update(actual)
+    qgis = {path for path in paths if path.name.startswith('libqgis_')}
+    if not qgis or any(not path.is_relative_to(build) for path in qgis):
+        raise ValueError('native loaded library origin mismatch: libqgis_')
+    selected.update(qgis)
+    qt = {path for path in paths if path.name.startswith(('libQt5', 'libqca-qt5.so'))}
+    if not any(path.name.startswith('libQt5Core.so') for path in qt):
+        raise ValueError('native required QtCore mapping absent')
+    for path in qt:
+        link = support / 'usr/lib64' / (path.name.split('.so', 1)[0] + '.so')
+        if path != link.resolve() or not path.is_relative_to(support):
+            raise ValueError('native loaded Qt library origin mismatch: ' + path.name)
+    selected.update(qt)
+    offscreen = {path for path in paths if path.name == 'libqoffscreen.so'}
+    if offscreen != {(plugins / 'platforms/libqoffscreen.so').resolve()}:
+        raise ValueError('native loaded offscreen plugin origin mismatch')
+    for path in paths:
+        plugin = (path.is_relative_to(plugins) or '/qt5/plugins/' in str(path)
+                  or '/qt/plugins/' in str(path)
+                  or (path.name.startswith('libqca-') and not path.name.startswith('libqca-qt5.so')))
+        if plugin:
+            if not path.is_relative_to(plugins):
+                raise ValueError('native loaded Qt plugin origin mismatch: ' + path.name)
+            selected.add(path)
+    return sorted(str(path) for path in selected)
 
 
 def native_environment(config, output):
@@ -122,7 +167,8 @@ def native_environment(config, output):
                PGSERVICEFILE=str(Path(config['pg_service_file']).resolve()),
                PROJ_DATA=str(config.get('proj_data', spatial / 'share/proj')),
                GDAL_DATA=str(config.get('gdal_data', spatial / 'share/gdal')),
-               QT_PLUGIN_PATH=str(config['qt_plugins']))
+               QT_PLUGIN_PATH=str(config['qt_plugins']),
+               QT_QPA_PLATFORM_PLUGIN_PATH=str(Path(config['qt_plugins']).resolve() / 'platforms'))
     env['PYTHONPATH'] = ':'.join([str(build / 'output/python'), str(source / 'tests/src/python'),
                                 *config['python_paths']])
     env['LD_LIBRARY_PATH'] = ':'.join(dict.fromkeys([str(build / 'output/lib'),
@@ -221,17 +267,9 @@ def worker_preflight(config, selection):
                            'table="qgis_test"."someData" (geom)', 'native-preflight', 'postgres')
     if not layer.isValid() or layer.featureCount() != 5:
         raise ValueError('native PostgreSQL provider cannot open source fixture')
-    maps = sorted({line.split()[-1] for line in Path('/proc/self/maps').read_text().splitlines()
-                   if '/' in line and any(s in line for s in ('libqgis_', 'libgdal.', 'libgeos', 'libproj.', 'libpq.', 'libxml2.'))})
-    check_xml_origin(config, maps)
-    required = {'libqgis_': build, 'libgdal.': Path(config['spatial_prefix']).resolve(),
-                'libgeos': Path(config['database_prefix']).resolve(),
-                'libproj.': Path(config.get('proj_prefix', config['spatial_prefix'])).resolve(),
-                'libpq.': Path(config['database_prefix']).resolve()}
-    for stem, allowed in required.items():
-        actual = [Path(path).resolve() for path in maps if stem in Path(path).name]
-        if not actual or any(not path.is_relative_to(allowed) for path in actual):
-            raise ValueError('native loaded library origin mismatch: ' + stem)
+    maps = {fields[5] for line in Path('/proc/self/maps').read_text().splitlines()
+            if len(fields := line.split(maxsplit=5)) == 6 and fields[5].startswith('/')}
+    maps = check_loaded_origins(config, maps)
     return {'modules': modules, 'drivers': drivers, 'providers': providers,
             'mapped_spatial_libraries': [{'path': p, 'sha256': sha(p)} for p in maps],
             'qgis_prefix': QgsApplication.prefixPath(),

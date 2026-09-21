@@ -114,3 +114,11 @@ prefix; missing, original-prefix, host, or duplicate XML loading fails. This
 profile supplies the HTTP-enabled ABI required by retained SpatiaLite; the
 existing loopback network restrictions remain in force. The PostgreSQL helper
 continues using its original retained database environment.
+
+Native preflight also requires the exact selected GDAL, PROJ and SQLite shared
+libraries from the spatial prefix, and GEOS, GEOS C and libpq from the original
+database prefix. Missing, duplicate or cross-prefix mappings fail. Every loaded
+Qt5 library and QCA library must resolve to its selected support library; every
+Qt plugin must belong to the configured plugin tree, including the exact
+offscreen platform plugin. `QT_QPA_PLATFORM_PLUGIN_PATH` pins that private
+platform directory. No original-native PROJ override is accepted.
