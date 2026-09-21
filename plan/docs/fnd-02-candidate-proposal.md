@@ -1,167 +1,115 @@
-# FND-02 exact candidate proposal — F02-06
+# FND-02 exact candidate proposal — frontend/QGIS revision 2
 
-This is an **internal candidate manifest**, not a comprehensive or certified SBOM,
-a release lock, legal clearance, or approval of fork defaults. The authoritative
-machine record is [fnd-02-candidate.json](../candidates/fnd-02-candidate.json);
-the [generated owner-decision register](fnd-02-owner-decisions.md) presents its
-findings and concrete alternatives. Inventory integrity, candidate selection and
-owner acceptance are deliberately separate results. The selected bytes remain the
-tested bytes; all proposed replacements/exclusions are unbuilt variants.
+**Inventory evidence is validated separately from candidate adoption and distribution.**
+The active [manifest](../candidates/fnd-02-candidate.json) is
+`fnd-02-frontend-qgis-proposal-2`, candidate revision 2, unchanged manifest schema 1.
+The [generated decision register](fnd-02-owner-decisions.md) presents all 58
+dispositions from the authoritative manifest. FND-02 remains **In progress**; the [eight-row checklist](fnd-02-completion.md)
+retains every original criterion and pass condition.
 
-The base is current `ambisgis/main` at
-`725d519820293f466b287d7f4cd779c36b9b7977`. Live verification confirms owner-merged
-[#64](https://github.com/aloerch/ambisgis-platform/pull/64), reviewed head
-`ee5be14d9d0d14f361dbd235dedc64b3fdb84db0`, at that merge. This accepts bounded
-F02-05 only. [The four criteria and eight pass conditions](fnd-02-completion.md)
-remain unchanged. FND-02 stays **In progress**.
+Owner-merged [#65](https://github.com/aloerch/ambisgis-platform/pull/65), reviewed
+head `bc60bbcbfccb840853c858a29ca9ec3ae4292656`, merge
+`b31e81ad7bfe328d5a8b3ea579eff09e6a0086e7`, accepted the consolidation checkpoint.
+Its exact [baseline manifest](../candidates/fnd-02-candidate-baseline-1.json),
+`fnd-02-tested-proposal-1`, remains byte-for-byte SHA-256
+`18d80d6e7520e3a16db023bbff87cd2dc20a33ba921bd4f26e49a67d71a0aace`.
+The [current prompt authorization](../verification/frontend-qgis-remediation/authorization.json)
+authorizes implementation of this separate variant; adoption and distribution
+remain unaccepted. It is not retrospective permission attributed to #65.
 
-## What the proposal selects
+## Selected changes and remaining decisions
 
-Eleven source roots come from the approved repository manifest. Exact commits,
-annotated tag objects, the MapStore gitlink, original provenance and retained
-acquisition history are distinguished. Acquisition snapshots are not approved
-product baselines. Ordered guarded changes and hashed recipes connect sources to
-specific builds; later documentation commits are not substituted for tested
-implementation trees.
+Only frontend-build and qgis-desktop-server profiles and their two combinations
+change. All eleven owned roots, eight other profiles, five other combinations,
+original records/archives/stages and non-targeted findings remain unchanged.
+The selected #61 WAR, GeoNode/client wheels, database and notebook artifacts are
+integrity-checked reuse, with their original native/runtime scope preserved.
 
-The [combination matrix](fnd-02-combination-smoke.md) supplies seven scoped
-combinations. Database/native, Java servlet, GeoNode Python, frontend/browser,
-QGIS spatial/XML/Qt/Python and notebook Python profiles retain their own versions
-and processes. Distinct versions across these processes are not automatically an
-ABI conflict. The successor #61 WAR is selected only for combinations that used
-it; older native Java probes retain their original scope. This proposal does not
-claim simultaneous execution of one global environment.
+- **Frontend recipe:** contemporaneous evidence did not establish the original
+  build-01 executed recipe. Authorized replay-02 physically executes a frozen
+  tooling snapshot into fresh trees. Its new native tests and browser-02 real
+  backend/load/zoom/reload/restart evidence bind the actual served bytes. Five
+  inherited lint errors still fail; five webpack warnings remain. Output differs
+  in six entry files and 506 renamed chunks; no byte-identical build claim.
+- **IFC retained:** exact web-ifc 0.0.50 C++/TypeScript source and eight pinned
+  dependency archives, nested notices, historical build/binding/toolchain inputs
+  and source availability index are retained. Offline native compilation/six
+  upstream tests and an unchanged Node-WASM synthetic box geometry/save/reopen
+  probe demonstrate bounded usability. All 13 frontend IFC assets remain unchanged;
+  browser/Node identical WASM bytes preserve origin ambiguity. No independent
+  Emscripten bootstrap or broader 3D/generated-runtime acceptance is claimed.
+- **QGIS resources:** deterministic selection-03 excludes the exact 1,129 named
+  optional palettes, corrects 19 catalogues, relocates 84 metadata files without
+  changing their bytes, adds notices and retains 265 ColorBrewer palettes. All
+  8,003 unrelated files and binary/mode identities remain unchanged; zero compile
+  steps were needed. Fresh runtime-07 verifies chooser, actual retained colors,
+  serialized vector/raster styles, desktop interaction, PostGIS/server GetMap and
+  restart from the selected prefix. Existing explicit renderer colors survive the
+  tested omitted-ramp project; absent named ramps cannot support reclassification.
 
-The index binds component input locks, selected source/patch/recipe records,
-producing receipts, output identities, smoke evidence and complete frontend/QGIS
-staged inventories. Coverage is explicit per record. Linked dependency locks are
-not a claim that all transitive source/generated contents or host tool bootstrap
-have been proved. Source-bearing wheels, classifier archives, embedded classes,
-WASM, fonts and palettes each require their actual evidence. Original failed
-attempts remain retained and are not counted as successful selections.
+Five targeted adoption blockers close for this variant. **Seven remain:** AspectJ,
+xmlpull, JAI ImageIO, json-lib, Marlin, shipped ojdbc17 source and QGIS SRC-02.
+The latter's removed `td/DEM_print.svg` is byte-identical to retained
+`gmt/GMT_dem1.svg`, SHA-256
+`0ba1cad3e42202036ab6a86663a09d377eb84eb22584df0e4dbc9fdee54cf602`.
+Different notices do not establish origin or broader permission. No 1,130th
+palette was silently removed. The smallest next choice is exact authoritative
+provenance recovery or a separately authorized one-file exclusion and affected
+staging/tests. This gates adoption/distribution, not independent engineering.
 
-## Read-only validation and retention mapping
+The IFC finding becomes a distribution/source/notice obligation, not blanket
+approval. ColorBrewer acknowledgement/naming, other retained resource/font/icon
+terms, original archives and all other distribution/later gates remain unchanged.
+Six Java blockers require one coordinated source/codec/rendering batch with one
+deliberate Oracle-support decision and one affected aggregate rebuild/test plan.
+No Java replacement, driver exclusion or WAR mutation is part of this checkpoint.
 
-Run from this worktree's actual `plan/` directory with Python and the existing
-`requirements-validation.txt` environment (JSON Schema support is required):
+## Validation and retained evidence
+
+Use the actual `plan/` directory and the retained JSON-Schema validation environment:
 
 ```sh
 python3 tools/validate_candidate.py --workspace-root /home/revelberry/Projects/AmbisGIS
 python3 tools/validate_candidate.py --workspace-root /home/revelberry/Projects/AmbisGIS --eligibility
 python3 tools/validate_candidate.py --workspace-root /home/revelberry/Projects/AmbisGIS --report
+python3 tools/validate_candidate.py candidates/fnd-02-candidate-baseline-1.json --workspace-root /home/revelberry/Projects/AmbisGIS
+python3 tools/validate_candidate.py candidates/fnd-02-candidate-baseline-1.json --workspace-root /home/revelberry/Projects/AmbisGIS --eligibility
+python3 tools/validate_candidate.py candidates/fnd-02-candidate-baseline-1.json --workspace-root /home/revelberry/Projects/AmbisGIS --report
 python3 -m unittest discover -s tests -v
 python3 tools/validate_package.py --require-schemas
 ```
 
-`platform` maps to this checkout (or explicit `--platform-root`); `workspace` maps
-to the supplied AmbisGIS retained-evidence directory. Manifest paths are confined
-relative paths, not arbitrary host paths. A missing mapping/file is an unsuccessful
-validation, not an invented hash. Retained files under `source-archives/` and
-`build-worktrees/` stay outside Git. Historical absolute paths inside original
-receipts are evidence; the resolver does not follow them as instructions.
+The supported positional manifest argument selects the baseline; default selects
+the variant. `--report` validates first and writes deterministic Markdown to stdout;
+only an explicit redirect changes the register. Report identity/link now reflects
+the selected manifest. Schema, path confinement, source identity, hashes, JSON
+assertions, archive membership, complete tree and eligibility checks are unchanged.
+Exit 0 is inventory validity; exit 1 is unsuccessful validation; eligibility
+remains exit 2 with ungranted owner/distribution acceptance. A nonzero eligibility
+result is not a failed integrity check. Hash verification is not native execution.
 
-The validator checks schema, duplicate JSON keys/identities, approved roots,
-source commits/tags/gitlink against owned repositories, record hashes, references,
-ordered recipes, JSON evidence assertions, named archive members and the named
-complete output trees. It uses the existing QGIS inventory comparison after
-checking path confinement and symlink identity/target confinement; frontend trees
-also require the integrated map entry. It never downloads, extracts archives,
-executes build hooks, starts services, modifies repositories, invokes an importer,
-or writes a report by default. `--report` prints deterministic Markdown to stdout;
-explicit shell redirection can update the checked-in register.
+[Validation](../verification/frontend-qgis-remediation/validation.json) records
+actual counts, timings, manifest and tool hashes. [The engineering handoff](frontend-qgis-resource-selection-handoff.md)
+indexes exact identities, commands, failures, independent reviews and containment.
+Component details: [frontend](frontend-remediation-handoff.md),
+[IFC](webifc-remediation-handoff.md), [QGIS](qgis-resource-selection-handoff.md).
+Retained source/build/runtime data stays under the supplied workspace mapping;
+missing files fail validation. Neither the index nor linked inventories claim
+complete transitive source rights or toolchain closure.
 
-Exit **0** means inventory integrity validation succeeded, even when documented
-selection blockers remain. Exit **1** means syntax/schema, references, identity,
-bytes, membership or availability failed. `--eligibility` exits **2** while owner
-acceptance/distribution permission remains ungranted; the tool cannot confer legal
-eligibility. Its JSON always names selection blockers and separates acceptance.
-Hash verification is not a new native test, reproducible build, source audit of
-every transitive byte, or legal opinion.
-
-## Selection and maintenance boundaries
-
-All known source/license findings are addressed in one generated register. It
-separates resolved evidence, implementable notice/source obligations, actual
-selection blockers, investigation records and justified later gates. Missing
-package metadata alone does not establish missing rights; a permissive root
-license does not cover unrelated bundled contents. GPL/LGPL and exceptions are
-preserved, without arbitrarily choosing an alternative. Qualified review is
-requested only for the exact applicability questions stated in the register.
-
-The smallest remediation batch is a **separate candidate variant**, after the
-specific owner choices in that register. Recover exact usable source and missing
-notice applicability first; where necessary, propose capability-preserving owned
-replacements or explicit exclusion of optional restricted material. Any changed
-WAR, wheel, resource tree or bundle requires new identities and affected builds /
-tests. Existing successful tests must not be attached to different bytes. Neither
-merging #64 nor accepting this accurate investigation record adopts the candidate
-or waives third-party rights.
+## Maintenance and acceptance boundaries
 
 This proposal binds F02-07 to [chapter 11 §§6–7](11-independent-product-and-source-ownership.md)
 and [chapter 08](08-repositories-and-licensing.md): selected owned revisions and
-retained exact inputs are authoritative; donor releases and security disclosures
-are advisory inputs reviewed by AmbisGIS. Imports, backports and independent
-repairs require provenance, affected tests and a new manifest revision. There is
-no automatic synchronization or unsupported indefinite freeze. This documentary
-binding records no new owner decision and does not satisfy F02-08.
+retained inputs are authoritative. Donor releases/disclosures are advisory inputs;
+imports, backports and independent repairs require AmbisGIS review, affected tests
+and a new manifest revision. There is no automatic synchronization or unsupported
+indefinite freeze. Documentary binding records no new owner policy acceptance.
+F02-08 and whole FND-02 acceptance remain pending.
 
-FND-03 policy, FND-05 publishing, FND-07 canonical baselines/custody, FND-08 full
-initial-spine source/bootstrap closure, OWN-02 repair/recovery and release signing /
-deployment remain their existing gates. Required unusable source or invalid rights
-cannot be deferred to these gates merely to approve a selection. No simulated
-repair or unchanged runtime suite was started for this consolidation.
-
-## Validation and engineering handoff
-
-Manifest format version **1**, candidate ID is recorded in the manifest. The
-[current validation receipt](../verification/candidate-selection/validation.json)
-pins its SHA256 and tool identities. Actual validation covers **243 records**,
-**11 owned repository/source bindings**, **10 profiles**, **seven combinations**,
-**81 JSON assertions**, **80 ZIP members**, and **11,729 staged entries** (QGIS,
-original/served frontend, and notebook static assets). It hashes about 5.9 GB of
-listed retained files, independently of tree verification; this is not the size
-of a product distribution. **239 package tests**, four existing schema/examples,
-the candidate schema/report drift check, and **25 independent guard cases** pass.
-No test was skipped. Original reviewed native/smoke results retain their dates.
-
-The 58 dispositions yield **12 adoption blockers**. The smallest coherent
-remediation proposal has three component batches, followed by targeted tests:
-
-- **Java:** recover exact json-lib 2.4.2-geoserver/xmlpull 1.1.3.1 source and terms;
-  propose complete source builds for AspectJ 1.5.4 and Marlin 0.9.4.8, a source-owned
-  MapFish codec alternative for JAI ImageIO 1.1, and explicit exclusion of optional
-  `gt-jdbc-oracle`/`ojdbc17` support (including both native driver libraries) if
-  the owner selects that baseline. Preserve printing, PostGIS, raster/mosaic,
-  rendering and authorization behavior; rebuild and retest affected exact WARs.
-- **Frontend:** select retain-with-source-evidence for web-ifc 0.0.50, or an explicit
-  optional-IFC exclusion variant preserving 2D capabilities. Resolve the original
-  build-01 executed-recipe identity gap from additional contemporaneous evidence;
-  if unavailable, select a separately identified build/replay with its own affected
-  native/browser/restart evidence. The current payload is unchanged.
-- **QGIS:** choose one optional-palette replacement/exclusion variant for the
-  **1,129** resources across four distinct notice scopes, or obtain applicable
-  permissions. Preserve styling/color-ramp capabilities and rerun affected resource,
-  desktop/render/server tests for new bytes. The **265** ColorBrewer palettes are a
-  separate notice obligation, not part of that restricted/unclear removal proposal.
-
-The register gives each alternative's exact paths, evidence, consumer impact,
-owner action, tests and closing evidence. Distribution-only notice/source and
-later delivery obligations also need their stated dispositions; adoption does not
-clear them. Newly recovered originals are retained under the explicit workspace
-mapping, including exact web-ifc/emitter/jsonp publisher records and historical
-source, uap-core revision and gsimporter revision. No maintainer was contacted or
-new legal terms accepted.
-
-A new chat should verify current main/PR state, this manifest hash and retained
-mapping first, read the decision register, and continue only the selected coherent
-remediation course. The final criterion package must distinguish acceptance of
-this accurate C2 investigation from adoption of a component and distribution.
-No fixed prompt count or additional smoke milestone is promised.
-
-Review [PR #65](https://github.com/aloerch/ambisgis-platform/pull/65), frozen
-implementation/evidence head `82b69845fd8550da612e026fed0755a5e9e00f50`.
-[Project readback](../verification/candidate-selection/project.json) confirms two
-writes, 77 → 78 items, all prior represented planning/view/archive data preserved,
-parent FND-02 In progress, and #65 in `is:pr is:open`. This is API verification,
-not a new UI acceptance. Later documentation commits preserve the manifest and
-code. The final pushed review head is recorded in issue #3.
+FND-03 policy, FND-05 publishing, FND-07 canonical baselines, FND-08 full initial
+source/bootstrap closure, OWN-02 repair/recovery and signing/deployment retain
+their gates. Required unusable source or invalid rights cannot be deferred merely
+to approve this selection. Review of this checkpoint accepts only its exact
+bounded remediation and accurate remaining-blocker record; merge is separate
+from component adoption, final criterion acceptance and distribution permission.
