@@ -18,3 +18,4 @@
 | Single-node Linux, one organization per deployment first | Baseline | Measured recovery before HA/SaaS claims. |
 | Exact component commits, artifact hashes and license closure | Unresolved P0 gate | Template is not a working lock; no invented values. |
 | Controlled Java HTTP and OAuth development probes | Candidate; human security review pending | [ADR 005](adrs/005-controlled-java-http-and-auth-probes.md): verified loopback egress, retained fixtures, actual packaged logging and bounded opaque-token repairs; no release/source/security acceptance. |
+| Configured GeoServer authorization and exact repaired aggregate | Engineering candidate; fresh human security review before merge | [ADR 006](adrs/006-configured-geoserver-authorization.md): synthetic opaque identity, real configured WFS/REST/role enforcement, explicit stateless mode, credential-safe diagnostics, exact-WAR restart and retained runtime limits. |

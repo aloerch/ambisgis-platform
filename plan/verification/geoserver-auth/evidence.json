@@ -1,0 +1,1468 @@
+{
+  "schema_version": 1,
+  "purpose": "FND-02 configured GeoServer authentication bounded component checkpoint; retained evidence index",
+  "implementation": {
+    "repository": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth",
+    "branch": "fnd-02/geoserver-configured-auth",
+    "head": "38ef3560a42af230fe75e20cc02578b12d8fcd2f",
+    "java_tree": "da58e1ee80e151fe1494acded0b6b3f9a85a32c0",
+    "build_support_clean_against_head": true,
+    "remote_changes_recorded_here": false
+  },
+  "retained_root": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth",
+  "final_runs": {
+    "aggregate": {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/result.json",
+        "sha256": "4d6a897374a9fa80e4ba9e54b992642b95edb7e2b8359d8903f5dd58335d48d7",
+        "size": 94786
+      },
+      "artifact": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/web/app/target/geoserver.war",
+        "sha256": "8a79a2cf7647be2f28591d7f04f975dc84cb00baaaea35cb3d5f2f293ea8f39f",
+        "size": 149472602
+      },
+      "profiles": [
+        "importer",
+        "oauth2-geonode",
+        "geofence-server",
+        "geofence-server-postgres",
+        "printing",
+        "postgis"
+      ],
+      "repair_application_order": [
+        "xmlcodegen-emf",
+        "aggregate-lifecycle",
+        "oauth-redaction",
+        "oauth-principal",
+        "configured-auth-diagnostics",
+        "configured-auth-stateless"
+      ],
+      "repair_manifests": {
+        "configured-auth-repairs.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/tooling/java/configured-auth-repairs.json",
+          "sha256": "d8a1aad62310f95d0223e28919ae1c3a5e245e3349cc0c81cce94e7275510006",
+          "size": 5833
+        },
+        "configured-auth-stateless.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/tooling/java/configured-auth-stateless.json",
+          "sha256": "9c9a3ebead39c52a8dd4288c03e90f0af8f6b17052741780d5263f56cefc2a00",
+          "size": 9898
+        },
+        "oauth-principal.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/tooling/java/oauth-principal.json",
+          "sha256": "847d041e65ee54e23356f4f5c67bbac3e9dabd2a7066f8aef6c35a26e77e1f62",
+          "size": 2031
+        },
+        "oauth-redaction.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/tooling/java/oauth-redaction.json",
+          "sha256": "454de3891baa5767a1e7ecb7cc4d8114fccb33db53bd5ce62fe1473f34107490",
+          "size": 1334
+        }
+      },
+      "repaired_source_outputs": {
+        "geoserver/src/community/security/oauth2-geonode/src/main/java/org/geoserver/security/oauth2/services/GeoNodeTokenServices.java": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/community/security/oauth2-geonode/src/main/java/org/geoserver/security/oauth2/services/GeoNodeTokenServices.java",
+          "sha256": "358ff9aeb7b7ad6e2a7b0ab0faccd89930583fe36a2119c925e4e07a7d0bf61e",
+          "size": 2288
+        },
+        "geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.java": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.java",
+          "sha256": "10087ce67cb39bbce3d0fce0651c2188a053d07601703f4addf7adaf83971dc3",
+          "size": 10483
+        },
+        "geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.java": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.java",
+          "sha256": "24574ed63cfb229e5b5ff58d7a07883c2b520b09be7cc21abc356b12121e44ed",
+          "size": 31186
+        },
+        "geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthRemoteTokenServices.java": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthRemoteTokenServices.java",
+          "sha256": "5778bc882ec5275957454de9606af4b5f879cda5b684d6fd5dc21f5fde1de74b",
+          "size": 5797
+        },
+        "geoserver/src/main/src/main/java/org/geoserver/security/auth/GuavaAuthenticationCacheImpl.java": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/main/src/main/java/org/geoserver/security/auth/GuavaAuthenticationCacheImpl.java",
+          "sha256": "338459e2baa9ecf894ae225b4827907739fb20869f5b531e51b91c50411c947c",
+          "size": 9158
+        }
+      },
+      "tests_skipped": true,
+      "native_tests_run": 0,
+      "inputs_and_logs": {
+        "source-inputs.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/source-inputs.json",
+          "sha256": "79eba5b972636d39c165a1456dba408e137957ff630966e1c47b3330675fda62",
+          "size": 6625687
+        },
+        "retained-inputs.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/retained-inputs.json",
+          "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+          "size": 8652101
+        },
+        "work/preparation.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/preparation.json",
+          "sha256": "69a88c8128efeebb87f1910215fcfee8a08c13603f0c15b724a6d4a37e09029c",
+          "size": 138896
+        },
+        "network-denial.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/network-denial.json",
+          "sha256": "189932821cd6a9cad7a5d7c9fae69458d16c249d6e4d157bf1f2a258409d002d",
+          "size": 2790
+        },
+        "maven.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/maven.log",
+          "sha256": "789c8d079a972c732801f26ebbd4eb7bd99040bab01c247ec683f62d94d19da6",
+          "size": 636733
+        }
+      }
+    },
+    "aggregate_inventory": {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-inventory/result.json",
+        "sha256": "8ee2fffa7c56c0dba66794d9168fdab01be133d9f9c9b17899a3a88cd28ca926",
+        "size": 80341
+      },
+      "counts": {
+        "class_entries": 77900,
+        "distinct_class_paths": 77691,
+        "jar_files": 83374,
+        "libraries": 368,
+        "war_files": 405
+      },
+      "manifests": {
+        "class-origins.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-inventory/class-origins.json",
+          "sha256": "a48f80612445b49ed8453fc5c5f66440923f57cf7cb04f3e3c0370e3c5ff6fe7",
+          "size": 16050576
+        },
+        "duplicate-classes.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-inventory/duplicate-classes.json",
+          "sha256": "4934032ed6b8ee75c5070b73aa88142c619c7791f4cb00c717a6fc26b2f7f25a",
+          "size": 56800
+        },
+        "jar-entries.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-inventory/jar-entries.json",
+          "sha256": "134f6b944180a7bc106e2742e3bc06b2f0a2b9f1d58b3bea62dab438fec8149c",
+          "size": 15955513
+        },
+        "library-origins.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-inventory/library-origins.json",
+          "sha256": "0121b2b872a05d10da2a60854dcfa9a8cbecaeaf58a441eef13528c57ce4576b",
+          "size": 109735
+        },
+        "war-entries.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-inventory/war-entries.json",
+          "sha256": "5641ed411924c1dfa539237eb716af0ff0b28e4772e9771589d3de7649ace944",
+          "size": 64393
+        }
+      },
+      "patched_class_count": 6,
+      "patched_classes": {
+        "org/geoserver/security/auth/GuavaAuthenticationCacheImpl.class": {
+          "class_sha256": "5c58709ffa2b5368bb4944c55ccbecf657a3e4964514585d0d44fbd81999a7ef",
+          "compiled_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/main/target/classes/org/geoserver/security/auth/GuavaAuthenticationCacheImpl.class",
+          "jar": "gs-main-2.28.5.jar",
+          "repair_markers_verified": true
+        },
+        "org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.class": {
+          "class_sha256": "3a7f819b9fb84ede1cf968259d74ef34919abc46562e0fdb43cbd807e943015c",
+          "compiled_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/community/security/oauth2/oauth2-core/target/classes/org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.class",
+          "jar": "gs-sec-oauth2-core-2.28.5.jar",
+          "repair_markers_verified": true
+        },
+        "org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter$StatelessBearerSecurityContext.class": {
+          "class_sha256": "e3688af0490104d4c94de3a81d7f53ce5b82a55b0fce502b75fb00d8b9e427d0",
+          "compiled_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/community/security/oauth2/oauth2-core/target/classes/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter$StatelessBearerSecurityContext.class",
+          "jar": "gs-sec-oauth2-core-2.28.5.jar",
+          "repair_markers_verified": true
+        },
+        "org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.class": {
+          "class_sha256": "1f5c29b377e9ad0da17e076276212936b446cf0f679eef185d0172701e862347",
+          "compiled_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/community/security/oauth2/oauth2-core/target/classes/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.class",
+          "jar": "gs-sec-oauth2-core-2.28.5.jar",
+          "repair_markers_verified": true
+        },
+        "org/geoserver/security/oauth2/GeoServerOAuthRemoteTokenServices.class": {
+          "class_sha256": "3ab0c2c71211c8b5a486f32196dabbdc171eb122b6c8df12ca297c33f80eefbb",
+          "compiled_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/community/security/oauth2/oauth2-core/target/classes/org/geoserver/security/oauth2/GeoServerOAuthRemoteTokenServices.class",
+          "jar": "gs-sec-oauth2-core-2.28.5.jar",
+          "repair_markers_verified": true
+        },
+        "org/geoserver/security/oauth2/services/GeoNodeTokenServices.class": {
+          "class_sha256": "a012d85042cbeaae5c8375560eb94db3eed264a50b74554d1ff405b8cc052c55",
+          "compiled_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/work/source/geoserver/src/community/security/oauth2-geonode/target/classes/org/geoserver/security/oauth2/services/GeoNodeTokenServices.class",
+          "jar": "gs-sec-oauth2-geonode-2.28.5.jar",
+          "repair_markers_verified": true
+        }
+      },
+      "duplicate_classes": {
+        "all_duplicates_resolved": false,
+        "identical_byte_names": 141,
+        "names": 144,
+        "scope": "all duplicates retained; no duplicate GeoServer security class or competing SLF4J provider",
+        "security_names": 0
+      }
+    },
+    "combined_logging": {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-logging/result.json",
+        "sha256": "6a5a2d207cc305cc6a0d2d42babc614eee75ba196c6af2ccc8f872a24e3fed0b",
+        "size": 159519
+      },
+      "emissions": {
+        "AMBISGIS_JUL_BRIDGE": 1,
+        "AMBISGIS_LOG4J1_API_BRIDGE": 1,
+        "AMBISGIS_NATIVE_GEOFENCE": 1,
+        "AMBISGIS_NATIVE_GEOSERVER": 1,
+        "AMBISGIS_NATIVE_OAUTH": 1,
+        "AMBISGIS_NATIVE_PRINTING": 1,
+        "AMBISGIS_NATIVE_PRINTING_COMMONS": 1
+      },
+      "evidence": {
+        "classpath.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-logging/classpath.json",
+          "sha256": "730ce3248388fd7c9668a9ded440365ec6c09afef850314143ef4f8a7f0d5a37",
+          "size": 59290
+        },
+        "compile.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-logging/compile.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        "compile-network.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-logging/compile-network.json",
+          "sha256": "4a580b2d9b41a1044b222a09322ae9b076599fcfa621c86a2b9850f0441a5d45",
+          "size": 44252
+        },
+        "runtime.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-logging/runtime.log",
+          "sha256": "813b32abecd77c13773b28acdb1a17fd15c50d6e6b6e517c134ef975cc6c770e",
+          "size": 2179
+        },
+        "runtime-network.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-logging/runtime-network.json",
+          "sha256": "00e0cfaa13e2d5443b18ab5e4050ecefef4492138542b20bb2827af3da30b59d",
+          "size": 44325
+        }
+      },
+      "application_requests_exercised": false
+    },
+    "native_security": {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/result.json",
+        "sha256": "35873f02163337cf99f2cfb065a1e641fb5707046e0b8e72e715c8edc82adb83",
+        "size": 124183
+      },
+      "tests": {
+        "tests": 708,
+        "passed": 707,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1,
+        "skipped_cases": [
+          {
+            "detail": "",
+            "message": "",
+            "name": "testSSL",
+            "suite": "org.geoserver.security.auth.AuthenticationFilterTest"
+          }
+        ]
+      },
+      "new_suites": [
+        {
+          "errors": 0,
+          "failures": 0,
+          "name": "org.geoserver.security.oauth2.AmbisgisStatelessOAuthFilterTest",
+          "path": "geoserver/src/community/security/oauth2/oauth2-core/target/surefire-reports/TEST-org.geoserver.security.oauth2.AmbisgisStatelessOAuthFilterTest.xml",
+          "sha256": "db89277c7b3ea5a7ee84a85008efd0377f6563c51f7869b6f8700875f325e0d4",
+          "skipped": 0,
+          "tests": 14
+        },
+        {
+          "errors": 0,
+          "failures": 0,
+          "name": "org.geoserver.security.oauth2.AmbisgisConfiguredDiagnosticsTest",
+          "path": "geoserver/src/community/security/oauth2-geonode/target/surefire-reports/TEST-org.geoserver.security.oauth2.AmbisgisConfiguredDiagnosticsTest.xml",
+          "sha256": "796eddf03377e5e06ebce70d12c42d4f3ca42a56ae7687870769d94a578bc496",
+          "skipped": 0,
+          "tests": 6
+        }
+      ],
+      "all_suite_xml_hashes_reverified": true,
+      "evidence": {
+        "source-inputs.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/source-inputs.json",
+          "sha256": "25f5cbe2916c3792390bab5bd2bcf71c846ed74d316cae75891ca4a86ad94e7f",
+          "size": 6626493
+        },
+        "retained-inputs.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/retained-inputs.json",
+          "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675",
+          "size": 8652101
+        },
+        "work/preparation.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/work/preparation.json",
+          "sha256": "69a88c8128efeebb87f1910215fcfee8a08c13603f0c15b724a6d4a37e09029c",
+          "size": 138896
+        },
+        "network-denial-build.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/network-denial-build.json",
+          "sha256": "25d124e21511a54b6d58f904188dd51aea411c3232a154b998ee29b0d4d3672e",
+          "size": 3020
+        },
+        "build.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/build.log",
+          "sha256": "fe26b0b3454702b94f14809e9fd46b0be783cae786d8971e620a4acfd52920d6",
+          "size": 442944
+        },
+        "maven.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/maven.log",
+          "sha256": "c82c35a445873810e180a4af3e7d96bdb140aedd6e5b319619a5bb9332770d0a",
+          "size": 489647
+        },
+        "network-loopback.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/network-loopback.json",
+          "sha256": "bfd5747a03568e955dc03d857ea9ed3913a48f88b9b6e567ec30816841b4ecc5",
+          "size": 2697
+        },
+        "network-loopback.probes.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/network-loopback.probes.json",
+          "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+          "size": 12029
+        }
+      }
+    },
+    "configured_runtime": {
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/result.json",
+        "sha256": "b7759ff1a102fbd335cfafc0a1c82a9a5f73d8d28832e6cf372ade374cc25643",
+        "size": 162471
+      },
+      "http_receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/http-result.json",
+        "sha256": "0e718f673eeb85592bb821bfaf850cc5bcb63f20e8458a6c29a74217ab927615",
+        "size": 122052
+      },
+      "artifact_sha256": "8a79a2cf7647be2f28591d7f04f975dc84cb00baaaea35cb3d5f2f293ea8f39f",
+      "assertion_records": 178,
+      "actual_http_requests": 177,
+      "passed": 178,
+      "failed": 0,
+      "records_by_round": {
+        "configured": 173,
+        "restart": 5
+      },
+      "application_class_origins_by_round": {
+        "configured": 12,
+        "restart": 12
+      },
+      "diagnostic_secret_hits": 0,
+      "response_secret_hits": 0,
+      "capture_errors": [],
+      "receipt_secret_redactions": 0,
+      "all_response_set_cookie_header_counts_zero": true,
+      "logger_capture_controls": {
+        "configured-CACHE": 1,
+        "configured-OAUTH": 1,
+        "restart-CACHE": 1,
+        "restart-OAUTH": 1
+      },
+      "protocol": {
+        "mode_counts": {
+          "admin": 19,
+          "blank-principal": 1,
+          "disabled": 1,
+          "disconnect": 1,
+          "empty-principal": 1,
+          "expired": 5,
+          "failure": 1,
+          "invalid": 4,
+          "malformed": 1,
+          "misleading-roles": 4,
+          "missing-client": 1,
+          "missing-principal": 1,
+          "non-string-principal": 1,
+          "outsider": 28,
+          "reader": 30,
+          "reader-misleading-roles": 4,
+          "root": 1,
+          "unauthorized": 1,
+          "unknown": 1
+        },
+        "per_row_verification_calls_scope": "Global counter deltas; sequential rows are isolated, concurrent row windows overlap and are not per-request attribution.",
+        "verify_calls": 106,
+        "violations": []
+      },
+      "worker_reuse": {
+        "sequential_requests": 32,
+        "threads": 5,
+        "mixed_authorization_on_reused_worker": true,
+        "parallel_requests": 32
+      },
+      "cache_observations": [
+        {
+          "case": "cache-prime",
+          "status": 200,
+          "verification_calls": 1
+        },
+        {
+          "case": "cache-after-revocation",
+          "status": 200,
+          "verification_calls": 0,
+          "observed_cached_allow": true
+        },
+        {
+          "case": "cache-after-expiry",
+          "status": 403,
+          "verification_calls": 1
+        }
+      ],
+      "immediate_revocation_proven": false,
+      "cleanup": {
+        "configured": {
+          "log_reader_stopped": true,
+          "process_stopped": true
+        },
+        "identity_stopped": true,
+        "last_reader_stopped": true,
+        "restart": {
+          "log_reader_stopped": true,
+          "process_stopped": true
+        }
+      },
+      "database": {
+        "started": true,
+        "stopped": true,
+        "postgres_exit_code": 0,
+        "transport": "127.0.0.1 TCP, SCRAM; Unix listeners disabled",
+        "server_identity": {
+          "data_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/database/data",
+          "listen_addresses": "127.0.0.1",
+          "server_port": 46575,
+          "unix_socket_directories": "",
+          "version_num": "150019"
+        }
+      },
+      "database_control_limitation": "Native PostgreSQL backends require setsid denied by retained supervisor (observed postgres-supervised-01); owned database runs outside supervisor with authenticated loopback-only TCP/no Unix, app and IDP remain supervised.",
+      "network": {
+        "runner_sha256": "6f0757b16be7188f564ad070a4e17382d96a7b9ef1dac3ab34fbf897d18108fc",
+        "network_probes": {
+          "all_passed": true,
+          "exec_child_probes": 79,
+          "parent_probes": 79,
+          "schema_version": 1
+        },
+        "broker_sockets_closed": true,
+        "task_process_group_stopped": true,
+        "datagram_packets_received": 0,
+        "limitations": [
+          "trusted test runner, not hostile-code/filesystem/process isolation",
+          "all existing loopback services remain reachable; use disposable fixture credentials only",
+          "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+          "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+        ]
+      },
+      "evidence": {
+        "tooling.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/tooling.json",
+          "sha256": "6d73b217f6a6d22777ab935cf9e11159ba53fa7b778b3d64e9b5d734cc05e22d",
+          "size": 7856
+        },
+        "application-inventory.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/application-inventory.json",
+          "sha256": "730ce3248388fd7c9668a9ded440365ec6c09afef850314143ef4f8a7f0d5a37",
+          "size": 59290
+        },
+        "fixture.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/fixture.json",
+          "sha256": "a1ae2bf96e526fc54313f68106640a959578e5d59ce2b89ceedd0208757edb38",
+          "size": 10216
+        },
+        "configured/ready.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/configured/ready.json",
+          "sha256": "10a05083bb6d27c195d0bfae5b0adb0c2efe7a955c0cc787b7e43b71cfcbdf3e",
+          "size": 6212
+        },
+        "restart/ready.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/restart/ready.json",
+          "sha256": "a31baf9292fc5f26a29804d63fd8d88bf3f25dca08cd21f34ffee46b10a7e950",
+          "size": 6170
+        },
+        "configured/requests.jsonl": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/configured/requests.jsonl",
+          "sha256": "e08132709f86c08efb110ed43b4aed0d391a813de1eb721fffe62fb2ba314f96",
+          "size": 13993
+        },
+        "restart/requests.jsonl": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/restart/requests.jsonl",
+          "sha256": "b8e6cccee35d66be8020286477248a1feaba97c3a179cc788d8a75dd4be06af5",
+          "size": 399
+        },
+        "network-loopback.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/network-loopback.json",
+          "sha256": "6c650472094dcc9e65f35ae5d8d4766f98f42c8d996c28ab7603a801aeef43ca",
+          "size": 1780
+        },
+        "network-loopback.probes.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/network-loopback.probes.json",
+          "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+          "size": 12029
+        },
+        "configured-runtime.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/configured-runtime.log",
+          "sha256": "d5fd2e7852ac9a6f328e8858138327420d31271d84876689e5478dfabb31a896",
+          "size": 743452
+        },
+        "restart-runtime.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/restart-runtime.log",
+          "sha256": "777958cb4626a8417e9475b3603192c92364599af26f5c7ac8306372bbd1eedc",
+          "size": 28947
+        },
+        "supervisor.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/supervisor.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        },
+        "database/database-result.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/database/database-result.json",
+          "sha256": "965bf3cef8e23cd5c32013176d7974435ef69d1ebf0f6bdc13b941d2d491d8a1",
+          "size": 21158
+        }
+      },
+      "fixture_retention_note": "Fixture configuration and logs are sanitized after execution; retained source hashes identify creation-time inputs, not a claim that scrubbed disposable configuration is byte-identical or replayable."
+    }
+  },
+  "tooling_snapshot_comparison": {
+    "aggregate-03": {
+      "files_rehashed": 86,
+      "snapshot_matches_recorded_hashes": true,
+      "differences_from_final_implementation": [
+        {
+          "file": "build-support/java/configured_auth_probe.py",
+          "retained_sha256": "210a17067820903eb96d3a3d4519530524110009b08d7d3f328b9b131d866520",
+          "final_sha256": "7077dc05652ef2fbc24cf8dd05c4b6d26768844f04316a9f46a5cb712fc40876"
+        },
+        {
+          "file": "build-support/java/test_configured_auth_probe.py",
+          "retained_sha256": "bbb7555e3f970f5b853a7b3e280ad4b29290f6dcbc9173741b8e61334046ee94",
+          "final_sha256": "8cb707a6301863dbfd6565250420f85188a0e7aa88897126690de60248f30a12"
+        }
+      ],
+      "interpretation": "Only HTTP harness and its Python test changed after this snapshot; neither executed in this packaging/native/logging run. All executed build/source/repair/native/logger inputs match final implementation."
+    },
+    "oauth-configured-final-02": {
+      "files_rehashed": 86,
+      "snapshot_matches_recorded_hashes": true,
+      "differences_from_final_implementation": [
+        {
+          "file": "build-support/java/configured_auth_probe.py",
+          "retained_sha256": "210a17067820903eb96d3a3d4519530524110009b08d7d3f328b9b131d866520",
+          "final_sha256": "7077dc05652ef2fbc24cf8dd05c4b6d26768844f04316a9f46a5cb712fc40876"
+        },
+        {
+          "file": "build-support/java/test_configured_auth_probe.py",
+          "retained_sha256": "bbb7555e3f970f5b853a7b3e280ad4b29290f6dcbc9173741b8e61334046ee94",
+          "final_sha256": "8cb707a6301863dbfd6565250420f85188a0e7aa88897126690de60248f30a12"
+        }
+      ],
+      "interpretation": "Only HTTP harness and its Python test changed after this snapshot; neither executed in this packaging/native/logging run. All executed build/source/repair/native/logger inputs match final implementation."
+    },
+    "aggregate-03-logging": {
+      "files_rehashed": 84,
+      "snapshot_matches_recorded_hashes": true,
+      "differences_from_final_implementation": [
+        {
+          "file": "build-support/java/configured_auth_probe.py",
+          "retained_sha256": "210a17067820903eb96d3a3d4519530524110009b08d7d3f328b9b131d866520",
+          "final_sha256": "7077dc05652ef2fbc24cf8dd05c4b6d26768844f04316a9f46a5cb712fc40876"
+        },
+        {
+          "file": "build-support/java/test_configured_auth_probe.py",
+          "retained_sha256": "bbb7555e3f970f5b853a7b3e280ad4b29290f6dcbc9173741b8e61334046ee94",
+          "final_sha256": "8cb707a6301863dbfd6565250420f85188a0e7aa88897126690de60248f30a12"
+        }
+      ],
+      "interpretation": "Only HTTP harness and its Python test changed after this snapshot; neither executed in this packaging/native/logging run. All executed build/source/repair/native/logger inputs match final implementation."
+    },
+    "aggregate-03-inventory": {
+      "files_rehashed": 11,
+      "snapshot_matches_recorded_hashes": true,
+      "differences_from_final_implementation": []
+    },
+    "configured-final-02": {
+      "files_rehashed": 80,
+      "snapshot_matches_recorded_hashes": true,
+      "differences_from_final_implementation": []
+    }
+  },
+  "validation": {
+    "checks": [
+      {
+        "name": "java-tooling",
+        "receipt": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/validation-final-03/result.json",
+          "sha256": "d73b8075a4698493b68d3c675444abe8551656d1a426aa52aaac900f099f05c8",
+          "size": 1286
+        },
+        "log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/validation-final-03/java-tooling.log",
+          "sha256": "cf7285701a2e76ade9d4a2359aa1f29cb7f8f32c58d4742cdade5ce0d1415a6e",
+          "size": 55637
+        },
+        "command": [
+          "/tmp/ambisgis-validation-venv/bin/python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "build-support/java",
+          "-v"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth",
+        "count": 366,
+        "kind": "Python unittest cases",
+        "exit_code": 0
+      },
+      {
+        "name": "plan-tests",
+        "receipt": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/validation-final-02/result.json",
+          "sha256": "f76dc132e4f9c91fbd36835722ce3c169086b8cb13ceb747c96480d0640c946f",
+          "size": 3070
+        },
+        "log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/validation-final-02/plan-tests.log",
+          "sha256": "2ca4b8da02fa0110d07deebfe85173194f76874c296f5dce890853fbc46e41bd",
+          "size": 26228
+        },
+        "command": [
+          "/tmp/ambisgis-validation-venv/bin/python3",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-v"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth/plan",
+        "count": 176,
+        "kind": "Python unittest cases",
+        "exit_code": 0
+      },
+      {
+        "name": "plan-schemas",
+        "receipt": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/validation-final-02/result.json",
+          "sha256": "f76dc132e4f9c91fbd36835722ce3c169086b8cb13ceb747c96480d0640c946f",
+          "size": 3070
+        },
+        "log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/validation-final-02/plan-schemas.log",
+          "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+          "size": 189
+        },
+        "command": [
+          "/tmp/ambisgis-validation-venv/bin/python3",
+          "tools/validate_package.py",
+          "--require-schemas"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth/plan",
+        "count": 4,
+        "kind": "schemas/examples",
+        "exit_code": 0
+      }
+    ],
+    "plan_check_reuse_basis": {
+      "prior_head": "74660ef37dc0cb2c9d8faea03c224cbb2f555d4d",
+      "final_head": "38ef3560a42af230fe75e20cc02578b12d8fcd2f",
+      "unchanged_paths": [
+        "plan/tests",
+        "plan/tools",
+        "plan/schemas",
+        "plan/examples"
+      ],
+      "git_diff_empty": true,
+      "scope": "Package checks, not GIS product tests."
+    }
+  },
+  "custody_and_limits": {
+    "original_java_source_dispositions": {
+      "structurally_accounted": 48,
+      "unresolved": 12,
+      "partial": 4,
+      "unchanged": true,
+      "reference": {
+        "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth/plan/verification/java-closure-integrated-source-check.json",
+        "sha256": "825bff1be9ab0281b87d90859305a63903aa15158069bbffa7d9baeeff355a8b",
+        "size": 764
+      }
+    },
+    "servlet_runtime": {
+      "manifest": {
+        "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth/build-support/java/runtime-inputs.json",
+        "sha256": "5f78d1404b249b2d468703e3e8a7f2de43fe71c1fb0e39db8e3a55de29faf118",
+        "size": 25840
+      },
+      "staging_receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/servlet-runtime/staged.json",
+        "sha256": "c63ee0d9103ac06150c63f00d875c5dc584fa7956bd8717197d275f71e6b525e",
+        "size": 1974
+      },
+      "runtime": "Jetty 10.0.25; Servlet 4.0 javax.servlet",
+      "coordinates": [
+        "org.eclipse.jetty:jetty-server:10.0.25",
+        "org.eclipse.jetty:jetty-http:10.0.25",
+        "org.eclipse.jetty:jetty-io:10.0.25",
+        "org.eclipse.jetty:jetty-util:10.0.25",
+        "org.eclipse.jetty:jetty-security:10.0.25",
+        "org.eclipse.jetty:jetty-servlet:10.0.25",
+        "org.eclipse.jetty:jetty-webapp:10.0.25",
+        "org.eclipse.jetty:jetty-xml:10.0.25",
+        "org.eclipse.jetty.toolchain:jetty-servlet-api:4.0.6",
+        "org.slf4j:slf4j-api:2.0.16"
+      ],
+      "artifact_count": 10,
+      "binary_source_pom_and_record_files_rehashed": 60,
+      "notice_entries_rehashed": 43,
+      "network_acquisition": false,
+      "limits": [
+        "Retained publisher binaries and matching source JARs/POMs are custody, not an independent source rebuild or licensing/security acceptance.",
+        "Servlet runtime has not been accepted for production.",
+        "Parent classpath contains servlet runtime only; application libraries load from the unchanged exact WAR.",
+        "Historical 48 accounted / 12 unresolved / four partial source dispositions remain unchanged."
+      ]
+    },
+    "full_source_closure": false,
+    "host_toolchain_closure": false,
+    "human_security_review_required": true,
+    "release_or_deployment_accepted": false,
+    "remaining_limits": [
+      "Inherited shaded/schema-rights/host-toolchain source gaps remain.",
+      "Synthetic GeoNode verification identity; component-local provisioned users/groups determine roles. No real identity-provider or unified product policy acceptance.",
+      "Opt-in stateless bearer mode defaults false; this fixture exercises configured true. Existing default browser behavior remains outside this fixture acceptance.",
+      "Native bearer cache allows a cached token after verifier revocation until expiry; immediate revocation is not established.",
+      "No production security, licensing/branding, release-signing, deployment, managed geodatabase or full GIS product acceptance."
+    ]
+  },
+  "review_snapshots": {
+    "interpretation": "Scoped agent review records bind their own historical file hashes; later root HTTP harness changes are bound by final runtime tooling and validation above. Author validation is distinguished from independent review in each record. Human security review remains pending.",
+    "files": [
+      {
+        "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth/plan/verification/geoserver-auth/reviews/fixture-agent-review.json",
+        "sha256": "aa67a9c0598b78c61946bc757968b2db96ba592071874390e46e9f9f60168752",
+        "size": 7453
+      },
+      {
+        "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth/plan/verification/geoserver-auth/reviews/packaging-agent-harness-review.json",
+        "sha256": "67dbc5a63f7eaa09af793be20a6c4744604133e79f60f14a813b584b9fb2e6b0",
+        "size": 5254
+      },
+      {
+        "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth/plan/verification/geoserver-auth/reviews/packaging-agent-tooling-tests.txt",
+        "sha256": "a89dec12171847460394c8178599a3135360a012315d78629e6109623b532e4a",
+        "size": 9375
+      },
+      {
+        "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geoserver-auth/plan/verification/geoserver-auth/reviews/stateless-review.json",
+        "sha256": "93d1e554962497122a9683e716d0f6875b50cb4802419e90fe0f805f7b0e792e",
+        "size": 10646
+      }
+    ]
+  },
+  "run_index": [
+    {
+      "run": "aggregate-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-01/result.json",
+        "sha256": "6ad0c2373112f583a6f8a007abdc9111c93a7be91c307db19fff502807d970e1",
+        "size": 87381
+      },
+      "result_exit_code": 0,
+      "native_tests": {
+        "tests": 0,
+        "passed": 0,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "note": "Development aggregate with prior OAuth repairs; superseded by aggregate-03."
+    },
+    {
+      "run": "aggregate-01-inventory",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-01-inventory/result.json",
+        "sha256": "ed2e94e882a97f35e39619b26ac029c5ba567eac3d85625315e671657bb2f55a",
+        "size": 69573
+      },
+      "result_exit_code": 0
+    },
+    {
+      "run": "aggregate-01-inventory-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-01-inventory-02/result.json",
+        "sha256": "523720c8b34663b48c7ca8d60c713cec74413a88fb7766e1aa46f2ac69df1c5a",
+        "size": 70763
+      },
+      "result_exit_code": 0
+    },
+    {
+      "run": "aggregate-01-logging",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-01-logging/result.json",
+        "sha256": "2981144ee84fea7eb96c79d1988a0a779d658993d8ff9dfb2387dcce72715e81",
+        "size": 157587
+      },
+      "result_exit_code": 0
+    },
+    {
+      "run": "aggregate-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-02/result.json",
+        "sha256": "553dea2f80cbe2ed423b89a96032ab31ea85e0500fb117236dc7fbf3979dde19",
+        "size": 94672
+      },
+      "result_exit_code": 0,
+      "native_tests": {
+        "tests": 0,
+        "passed": 0,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "note": "Development aggregate with initial stateless repair; predates response-commit persistence fix."
+    },
+    {
+      "run": "aggregate-02-inventory",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-02-inventory/result.json",
+        "sha256": "0663f05a58f637ad74a594edf18313ce3e95cd906d7b3af616afd6dafa5f05dd",
+        "size": 79763
+      },
+      "result_exit_code": 0
+    },
+    {
+      "run": "aggregate-02-logging",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-02-logging/result.json",
+        "sha256": "e05a87130c1f86ab6a55f1ac1eff6218c55e00bcae28f18873bf6c47887c557d",
+        "size": 159519
+      },
+      "result_exit_code": 0
+    },
+    {
+      "run": "aggregate-03",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03/result.json",
+        "sha256": "4d6a897374a9fa80e4ba9e54b992642b95edb7e2b8359d8903f5dd58335d48d7",
+        "size": 94786
+      },
+      "result_exit_code": 0,
+      "native_tests": {
+        "tests": 0,
+        "passed": 0,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "run": "aggregate-03-inventory",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-inventory/result.json",
+        "sha256": "8ee2fffa7c56c0dba66794d9168fdab01be133d9f9c9b17899a3a88cd28ca926",
+        "size": 80341
+      },
+      "result_exit_code": 0
+    },
+    {
+      "run": "aggregate-03-logging",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/aggregate-03-logging/result.json",
+        "sha256": "6a5a2d207cc305cc6a0d2d42babc614eee75ba196c6af2ccc8f872a24e3fed0b",
+        "size": 159519
+      },
+      "result_exit_code": 0
+    },
+    {
+      "run": "configured-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-01/result.json",
+        "sha256": "7d3cda9cd901f7a430d0ebd5b09f0c96983ec8fd72e38a0e48091ac79fc594f3",
+        "size": 927
+      },
+      "result_exit_code": 1,
+      "note": "Failed before application run: missing network-loopback helper snapshot.",
+      "diagnostics": {
+        "supervisor.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-01/supervisor.log",
+          "sha256": "d59a7863772a33adc4bd21d1f94ec44876d4f9dc8a9db22cb1c5f95505a690b3",
+          "size": 319
+        }
+      }
+    },
+    {
+      "run": "configured-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-02/result.json",
+        "sha256": "9624edfca5ab9c378297c2f7afc84df2e5d1fbe87e0d5433af1f1634fc4066be",
+        "size": 10228
+      },
+      "result_exit_code": 1,
+      "http_assertions": {
+        "records": 0,
+        "requests": 0,
+        "passed": 0,
+        "failed": 0,
+        "diagnostic_secret_hits": 0
+      },
+      "note": "Failed readiness; no HTTP scenario acceptance.",
+      "diagnostics": {
+        "http-result.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-02/http-result.json",
+          "sha256": "1c30fd01d36c3d6fa4109317691d8e815fca6cc08d93dde996d70fecfe97dec9",
+          "size": 357
+        },
+        "configured-runtime.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-02/configured-runtime.log",
+          "sha256": "33f0582566c8738dbfc988cc768fa600438f2c432e1e88b4645a52c886d786c4",
+          "size": 127639
+        },
+        "supervisor.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-02/supervisor.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      }
+    },
+    {
+      "run": "configured-03",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-03/result.json",
+        "sha256": "9ff7d8b37af32b03c96684f5f0699e7de2124fba4c87af0dd2ecb2fba9987c10",
+        "size": 32627
+      },
+      "result_exit_code": 1,
+      "http_assertions": {
+        "records": 0,
+        "requests": 0,
+        "passed": 0,
+        "failed": 0,
+        "diagnostic_secret_hits": 0
+      },
+      "note": "Failed readiness; no HTTP scenario acceptance.",
+      "diagnostics": {
+        "http-result.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-03/http-result.json",
+          "sha256": "639704ae9edbcbee61667109b82f74e3fb249d52492db4114fb21865591e8d0d",
+          "size": 471
+        },
+        "configured-runtime.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-03/configured-runtime.log",
+          "sha256": "6bb1aca3860d93a1a3f6f48188be76928fe34adf5b0730fac47b069a6eeddd95",
+          "size": 6960
+        },
+        "supervisor.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-03/supervisor.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      }
+    },
+    {
+      "run": "configured-04",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-04/result.json",
+        "sha256": "f4124cd117976e99fcb6131807e1d9c98d2a606d4d095d6eecd95dbc8ff6b0c4",
+        "size": 62600
+      },
+      "result_exit_code": 1,
+      "http_assertions": {
+        "records": 40,
+        "requests": 40,
+        "passed": 20,
+        "failed": 20,
+        "diagnostic_secret_hits": 36
+      },
+      "note": "Failed setup/positive control and authorization assertions; 36 diagnostic secret hits; retained as failure.",
+      "diagnostics": {
+        "http-result.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-04/http-result.json",
+          "sha256": "9eefceec99a8f27a655696f5db0b962e221ed8f380b466a9d3fc3e304828b024",
+          "size": 28641
+        },
+        "configured-runtime.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-04/configured-runtime.log",
+          "sha256": "9db06006f8b1a5a17b90c5fe3b7f9c33f386a8180f21c1845fa54546865e9f4c",
+          "size": 408729
+        },
+        "supervisor.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-04/supervisor.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      }
+    },
+    {
+      "run": "configured-05",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-05/result.json",
+        "sha256": "7f4cf2a0bb8424c0230c5e50f72ce9aafd9e0e302f285457fc95aa916f881406",
+        "size": 125669
+      },
+      "result_exit_code": 1,
+      "http_assertions": {
+        "records": 126,
+        "requests": 125,
+        "passed": 124,
+        "failed": 2,
+        "diagnostic_secret_hits": 107
+      },
+      "note": "Real session-without-bearer and session-outsider failures; 107 diagnostic secret hits; drove repairs.",
+      "diagnostics": {
+        "http-result.json": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-05/http-result.json",
+          "sha256": "06b4e194cafa6ff1d9d93f2fa1fa301d4798004b08b328102738a5db194e5f1b",
+          "size": 87692
+        },
+        "configured-runtime.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-05/configured-runtime.log",
+          "sha256": "6c13be667729dfdb697dc96806cd4715476a3ffb34d5c2fb6a1adcf1025f8f1e",
+          "size": 548948
+        },
+        "supervisor.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-05/supervisor.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0
+        }
+      }
+    },
+    {
+      "run": "configured-06",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-06/result.json",
+        "sha256": "ef34a622347176e4b57814388489cafbbe2d7af43d7169164e68e60299b6b4f3",
+        "size": 144658
+      },
+      "result_exit_code": 0,
+      "http_assertions": {
+        "records": 160,
+        "requests": 159,
+        "passed": 160,
+        "failed": 0,
+        "diagnostic_secret_hits": 0
+      },
+      "note": "Development aggregate passed configured scenarios before fresh final packaging; predates response-commit source fix."
+    },
+    {
+      "run": "configured-final-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-01/result.json",
+        "sha256": "b49018b15e550b8d7f890eae3ca4f20a509a0c9b26dc201464291cb186cd2a17",
+        "size": 162469
+      },
+      "result_exit_code": 0,
+      "http_assertions": {
+        "records": 178,
+        "requests": 177,
+        "passed": 178,
+        "failed": 0,
+        "diagnostic_secret_hits": 0
+      },
+      "note": "Final WAR passed earlier harness; superseded by final-02 raw duplicate-header and per-response cookie guards."
+    },
+    {
+      "run": "configured-final-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/configured-final-02/result.json",
+        "sha256": "b7759ff1a102fbd335cfafc0a1c82a9a5f73d8d28832e6cf372ade374cc25643",
+        "size": 162471
+      },
+      "result_exit_code": 0,
+      "http_assertions": {
+        "records": 178,
+        "requests": 177,
+        "passed": 178,
+        "failed": 0,
+        "diagnostic_secret_hits": 0
+      }
+    },
+    {
+      "run": "diagnostic-final-standalone-baseline-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/diagnostic-final-standalone-baseline-01/result.json",
+        "sha256": "cf739ebb38486300374311f07680a7b5615a30a8d9ff9ddb2ef020d7a0be0190",
+        "size": 72508
+      },
+      "stage_exit_codes": {
+        "compile": 0,
+        "native": 1
+      },
+      "note": "Final six diagnostic regressions fail on unrepaired classes.",
+      "diagnostics": {
+        "native.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/diagnostic-final-standalone-baseline-01/native.log",
+          "sha256": "1a68e36d220758d43c77ade5a6eb499720858d53368c6fcd3a1be075f33953a4",
+          "size": 4006
+        },
+        "compile.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/diagnostic-final-standalone-baseline-01/compile.log",
+          "sha256": "dece862a32d4e989fd23df958ea691a7e58fa3157857498e3049c7e8b6c37239",
+          "size": 110
+        }
+      }
+    },
+    {
+      "run": "diagnostic-final-standalone-repaired-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/diagnostic-final-standalone-repaired-01/result.json",
+        "sha256": "963ff9c875c9e54e99411ce774d842e2593d0a35f7473ff51cab1efc4a925ad1",
+        "size": 73730
+      },
+      "stage_exit_codes": {
+        "compile": 0,
+        "native": 0
+      },
+      "note": "Final six diagnostic regressions pass on repaired classes."
+    },
+    {
+      "run": "diagnostic-fixture-baseline-standalone-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/diagnostic-fixture-baseline-standalone-01/result.json",
+        "sha256": "1f8f39e83898dc932cd459e0fabb7a9117eb5a6d4def30dbc2c237f17a4e4be4",
+        "size": 409
+      },
+      "command_exit_code": 1,
+      "note": "Standalone unrepaired diagnostic fixture failed as expected.",
+      "diagnostics": {}
+    },
+    {
+      "run": "diagnostic-fixture-compile-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/diagnostic-fixture-compile-01/result.json",
+        "sha256": "f2056556f6e812534437619ff6185ec23b17841b1e57b30b73b58b246e9a211a",
+        "size": 362
+      },
+      "command_exit_code": 0,
+      "note": "Standalone fixture compilation only; not application acceptance."
+    },
+    {
+      "run": "oauth-configured-diagnostics-baseline-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-diagnostics-baseline-01/result.json",
+        "sha256": "35086abec7176b30d4e3d849539a34d5ea6da0017d313f6299c92dc3abcc0821",
+        "size": 118910
+      },
+      "result_exit_code": 1,
+      "native_tests": {
+        "tests": 694,
+        "passed": 688,
+        "failures": 5,
+        "errors": 0,
+        "skipped": 1
+      },
+      "note": "Expected diagnostic baseline failure: 5 failures in 694 cases; final standalone diagnostic fixture also demonstrates all 6 failing cases.",
+      "diagnostics": {
+        "maven.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-diagnostics-baseline-01/maven.log",
+          "sha256": "bcb173712b1297bc172cae3e02538439f04f97f6663e867e09e09d0576da80d9",
+          "size": 494432
+        },
+        "build.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-diagnostics-baseline-01/build.log",
+          "sha256": "872af7dbb32f259af9a325d979d5e8b8df75113826595587386fcc248910e94f",
+          "size": 443863
+        }
+      }
+    },
+    {
+      "run": "oauth-configured-diagnostics-repaired-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-diagnostics-repaired-01/result.json",
+        "sha256": "666dda453204a62908499a6d8d843ba613450c518c574ea175c64d238a7f21dc",
+        "size": 120167
+      },
+      "result_exit_code": 0,
+      "native_tests": {
+        "tests": 694,
+        "passed": 693,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1
+      },
+      "note": "Diagnostic repair passed native suite; superseded by final native suite."
+    },
+    {
+      "run": "oauth-configured-final-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-01/result.json",
+        "sha256": "a8a0b813680f7c0c8ad35b6ca49a74344fd528db7155cdb6b2c519b371e7c737",
+        "size": 124005
+      },
+      "result_exit_code": 0,
+      "native_tests": {
+        "tests": 706,
+        "passed": 705,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1
+      },
+      "note": "Initial 12-case stateless fixture passed; response-commit regression exposed remaining source defect."
+    },
+    {
+      "run": "oauth-configured-final-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/result.json",
+        "sha256": "35873f02163337cf99f2cfb065a1e641fb5707046e0b8e72e715c8edc82adb83",
+        "size": 124183
+      },
+      "result_exit_code": 0,
+      "native_tests": {
+        "tests": 708,
+        "passed": 707,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1
+      }
+    },
+    {
+      "run": "oauth-native-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-native-01/result.json",
+        "sha256": "8a1dbe16085bd99a352222ec3ab8960015451516546f4742ee1957364c9b38cf",
+        "size": 21982
+      },
+      "result_exit_code": 1,
+      "native_tests": {
+        "tests": 0,
+        "passed": 0,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "note": "Failed compilation before HTTP runtime; zero native tests.",
+      "diagnostics": {
+        "build.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-native-01/build.log",
+          "sha256": "d8bd5d6ecaecd7fdab8e74c6ef0fb43c82be9569a7208328bcdf7cecf3354405",
+          "size": 102898
+        }
+      }
+    },
+    {
+      "run": "oauth-native-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-native-02/result.json",
+        "sha256": "38e5e1c8f9fe948bb1ce625c34841375a9d776d4e51ba605600199f0eaabeb4d",
+        "size": 115397
+      },
+      "result_exit_code": 0,
+      "native_tests": {
+        "tests": 688,
+        "passed": 687,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1
+      },
+      "note": "Fresh retained prior-repair baseline; superseded by final native suite."
+    },
+    {
+      "run": "postgres-loopback-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/postgres-loopback-01/database-result.json",
+        "sha256": "f36a4e04223a83b110d45d09939a400528db0432b20b4b41fba69e36cfe94a35",
+        "size": 21332
+      },
+      "result_exit_code": 0,
+      "note": "Disposable owned database setup and cleanup control; no application authorization acceptance."
+    },
+    {
+      "run": "postgres-loopback-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/postgres-loopback-02/database-result.json",
+        "sha256": "56605dda84286433f1be219c27e3beca33991779826128c31b4952ebf5c4c092",
+        "size": 21569
+      },
+      "result_exit_code": 0,
+      "note": "Disposable owned database setup and cleanup control; no application authorization acceptance."
+    },
+    {
+      "run": "postgres-supervised-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/postgres-supervised-01/database-result.json",
+        "sha256": "ccefda0370dc7da5c40a107368f56af25f5d196d8ab9bc9658e9aa3a38624f23",
+        "size": 18355
+      },
+      "result_exit_code": 1,
+      "note": "PostgreSQL could not start under supervisor because native backend setsid is denied; limitation retained.",
+      "diagnostics": {
+        "postgres.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/postgres-supervised-01/postgres.log",
+          "sha256": "436a27c07f11bf78cb3bc6580fdf71fb7d83b99f3febea512d43d42148012dad",
+          "size": 1180
+        }
+      }
+    },
+    {
+      "run": "servlet-launcher-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/servlet-launcher-01/result.json",
+        "sha256": "3ed53c39de8dc40de5ebd6e46f7cacf92cb028cec3a945d2ee10858a749c2cab",
+        "size": 3660
+      },
+      "result_exit_code": 0,
+      "note": "Launcher compilation only; application_started=false. Final executed launcher identity is in configured-final-02."
+    },
+    {
+      "run": "servlet-launcher-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/servlet-launcher-02/result.json",
+        "sha256": "e2515a5195b4860027482eb662e1657a44a92f84bbcd4beba9d9b6848d85a695",
+        "size": 3660
+      },
+      "result_exit_code": 0,
+      "note": "Launcher compilation only; application_started=false. Final executed launcher identity is in configured-final-02."
+    },
+    {
+      "run": "servlet-launcher-03",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/servlet-launcher-03/result.json",
+        "sha256": "18a157c802c4d78d9f429eca9b666d1ccd1c2f94ced43b3f611eb7faf2748d42",
+        "size": 3660
+      },
+      "result_exit_code": 0,
+      "note": "Launcher compilation only; application_started=false. Final executed launcher identity is in configured-final-02."
+    },
+    {
+      "run": "servlet-launcher-04",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/servlet-launcher-04/result.json",
+        "sha256": "b18b44f3a1700916c63739035a428567e6d5f39021456f78e70c37b0a32fbd84",
+        "size": 3660
+      },
+      "result_exit_code": 0,
+      "note": "Launcher compilation only; application_started=false. Final executed launcher identity is in configured-final-02."
+    },
+    {
+      "run": "servlet-launcher-05",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/servlet-launcher-05/result.json",
+        "sha256": "db28154b96d99acc5f9a283316248c39a61f564d383ca4f295dbd39e394eea71",
+        "size": 3660
+      },
+      "result_exit_code": 0,
+      "note": "Launcher compilation only; application_started=false. Final executed launcher identity is in configured-final-02."
+    },
+    {
+      "run": "servlet-launcher-06",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/servlet-launcher-06/result.json",
+        "sha256": "83114cd05bedbff1e282f1417e29ce463b6bff861b1298fc5dd95e8aab9f5856",
+        "size": 3660
+      },
+      "result_exit_code": 0,
+      "note": "Launcher compilation only; application_started=false. Final executed launcher identity is in configured-final-02."
+    },
+    {
+      "run": "servlet-launcher-07",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/servlet-launcher-07/result.json",
+        "sha256": "eeaadce6d028953f86a7aaa64d2eaa54bd5707519e0b13f72fa80d671224ec69",
+        "size": 3660
+      },
+      "result_exit_code": 0,
+      "note": "Launcher compilation only; application_started=false. Final executed launcher identity is in configured-final-02."
+    },
+    {
+      "run": "servlet-launcher-08",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/servlet-launcher-08/result.json",
+        "sha256": "3a6696cfa48361a8dc61ff331cbaa05ba952f316e524f4defb28499334c9e1eb",
+        "size": 3660
+      },
+      "result_exit_code": 0,
+      "note": "Launcher compilation only; application_started=false. Final executed launcher identity is in configured-final-02."
+    },
+    {
+      "run": "servlet-runtime",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/servlet-runtime/staged.json",
+        "sha256": "c63ee0d9103ac06150c63f00d875c5dc584fa7956bd8717197d275f71e6b525e",
+        "size": 1974
+      },
+      "outcome": "custody staging receipt; no result exit code",
+      "note": "Custody staging only; no application start or independent source rebuild."
+    },
+    {
+      "run": "stateless-response-commit-baseline-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/stateless-response-commit-baseline-01/result.json",
+        "sha256": "ef88a5392415aa17a963b88b70cdb7462a51326c337ecf547f19787d1599aeff",
+        "size": 271
+      },
+      "result_exit_code": 1,
+      "note": "Failed before compile because container /tmp fixture was absent from host; no native tests.",
+      "diagnostics": {}
+    },
+    {
+      "run": "stateless-response-commit-baseline-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/stateless-response-commit-baseline-02/result.json",
+        "sha256": "e43cfdaec96a81e367972e834b3c77f944dedf45c304f76158c4685a9ef416ac",
+        "size": 1896
+      },
+      "stage_exit_codes": {
+        "compile": 0,
+        "native": 1
+      },
+      "note": "Real Spring repository wrapped-response baseline: 14 cases, 12 pass, 2 expected failures (sendError removes browser context; flush persists bearer context before finally).",
+      "diagnostics": {
+        "native.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/stateless-response-commit-baseline-02/native.log",
+          "sha256": "1c9a4f24c025a1d12769a50fa8e01949301964b7c2b4244cf154a5af7aa7a73f",
+          "size": 3091
+        },
+        "compile.log": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/stateless-response-commit-baseline-02/compile.log",
+          "sha256": "96cecbc9b4c495ddb4423978fe183526d1362327072dc6f64252c7f5d2021727",
+          "size": 237
+        }
+      }
+    },
+    {
+      "run": "validation-final-01",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/validation-final-01/result.json",
+        "sha256": "41b4f738296b1a438d1233f6fe3e69620138af8ab8f141fe78e376b5fd56ca89",
+        "size": 295
+      },
+      "result_exit_code": 1,
+      "note": "Environment failure before tests: validation venv was absent from host /tmp.",
+      "diagnostics": {}
+    },
+    {
+      "run": "validation-final-02",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/validation-final-02/result.json",
+        "sha256": "f76dc132e4f9c91fbd36835722ce3c169086b8cb13ceb747c96480d0640c946f",
+        "size": 3070
+      },
+      "result_exit_code": 0,
+      "note": "Java 365 cases superseded by validation-final-03; unchanged plan tests/schema checks remain applicable."
+    },
+    {
+      "run": "validation-final-03",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/validation-final-03/result.json",
+        "sha256": "d73b8075a4698493b68d3c675444abe8551656d1a426aa52aaac900f099f05c8",
+        "size": 1286
+      },
+      "result_exit_code": 0
+    }
+  ],
+  "final_cleanup": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/cleanup-final.json",
+    "sha256": "731947c57ed08a326acb02fba42e3719401553b48d65e920e2e233be8da6d2be",
+    "size": 76
+  }
+}

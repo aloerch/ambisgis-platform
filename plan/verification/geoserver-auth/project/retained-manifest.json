@@ -1,0 +1,137 @@
+[
+  {
+    "bytes": 189148,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-before/readback-requests.jsonl",
+    "sha256": "6cde94c085ee6f8baff960db274ad6e9c53b684dc92007a83dd207020210fa91"
+  },
+  {
+    "bytes": 296182,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-before/readback.json",
+    "sha256": "cb80f5316f45499e3824645f8b452844522877d87e8c36d72c5222a96e752081"
+  },
+  {
+    "bytes": 37127,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-before/pagination.json",
+    "sha256": "eb6944c14c35a890178e753adf77c336dc09d892ea60ffe460f713422db6330a"
+  },
+  {
+    "bytes": 297,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-before/manifest.json",
+    "sha256": "44c1e1d0789bdb64445158de4825279331d0ea2380e83fd7d9891322720e878e"
+  },
+  {
+    "bytes": 1418,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-before/snapshot-invocation.py",
+    "sha256": "c3179ede1f79a4e95435f7ef60267ee159c69732f3e153eff31c9d2c94f13eb5"
+  },
+  {
+    "bytes": 9901,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-dry-run/publication.py",
+    "sha256": "3639985a706836d71d30252826a79f8da96750864efe6653df339f7ccbb1dad5"
+  },
+  {
+    "bytes": 379295,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-dry-run/readback-requests.jsonl",
+    "sha256": "c15455f340b53c7b385dd5260018dd4fd1116d17f901599b348c7a504d21538d"
+  },
+  {
+    "bytes": 296064,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-dry-run/before.json",
+    "sha256": "f2b6313cf43d2a3886e98c2c6db00da5408e73ee0b223a89bb9ecc6c38ced9ff"
+  },
+  {
+    "bytes": 37127,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-dry-run/before-pagination.json",
+    "sha256": "061c5edc198290316c7bd17137e193c2891cf220883f3689814e23e7e20a390d"
+  },
+  {
+    "bytes": 725,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-dry-run/plan.json",
+    "sha256": "f5bf8755edcbf84efb7f0170570683eea6d668f3af029ac68879fee768a82fc2"
+  },
+  {
+    "bytes": 296064,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-dry-run/after.json",
+    "sha256": "128679ad95c80d8cae60f764a6012ff2957c455d92d363e454691e262233b06c"
+  },
+  {
+    "bytes": 37127,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-dry-run/pagination.json",
+    "sha256": "061c5edc198290316c7bd17137e193c2891cf220883f3689814e23e7e20a390d"
+  },
+  {
+    "bytes": 1850,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-dry-run/outcome.json",
+    "sha256": "02dd3d3015d46cd9af6201901502d7e36f6a5875f81b3931c8f8532955930bb6"
+  },
+  {
+    "bytes": 1126,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-dry-run/manifest.json",
+    "sha256": "3adcc5fd3107e4121b092fd81da944e9380061e0d7afaa977a96a54d621238b1"
+  },
+  {
+    "bytes": 9901,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/publication.py",
+    "sha256": "3639985a706836d71d30252826a79f8da96750864efe6653df339f7ccbb1dad5"
+  },
+  {
+    "bytes": 380519,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/readback-requests.jsonl",
+    "sha256": "330efacd741fcde2984b673959d17b90dfed9ea44fc1744552c3f1784d2b91d0"
+  },
+  {
+    "bytes": 296064,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/before.json",
+    "sha256": "2c883a85a49162fa10c31465d7ef4888d5d746f32dea013327738aa2f03c95ea"
+  },
+  {
+    "bytes": 37127,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/before-pagination.json",
+    "sha256": "061c5edc198290316c7bd17137e193c2891cf220883f3689814e23e7e20a390d"
+  },
+  {
+    "bytes": 724,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/plan.json",
+    "sha256": "80ca224c8922031e42a1c586cc4d0c78731616dca7c757d1ebbcea5fb2dd04b7"
+  },
+  {
+    "bytes": 1055,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/mutation-events.jsonl",
+    "sha256": "afc74d8d22826c6fe0dd04757dc8d4368ee29e8dad4352ad88773ea39b90ee5b"
+  },
+  {
+    "bytes": 160,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/mutation-1-completed.json",
+    "sha256": "96b988403b4370d611c890de4d343606529f76190bce561cb99c3f2835724c2f"
+  },
+  {
+    "bytes": 313,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/mutation-2-completed.json",
+    "sha256": "445ebcb7ab058cb21fa475ac238b32b5673e9182bc1e4846b13d6bfada53ff25"
+  },
+  {
+    "bytes": 512,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/mutations.json",
+    "sha256": "875c92f288fc804a397d1852e99868933289b1233bc059df373945b1ed6fd2ff"
+  },
+  {
+    "bytes": 297816,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/after.json",
+    "sha256": "327abaeb59daec920719f38ca2d2292b18d502f69c7c8f95a81ac0145460dc90"
+  },
+  {
+    "bytes": 37458,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/pagination.json",
+    "sha256": "3ffa495c7cc54ec01efe62363150b1b946dfc73ee3da67426a62428989dff873"
+  },
+  {
+    "bytes": 2577,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/outcome.json",
+    "sha256": "55caf92ba5d7b01a7dfc4a56d1d242f3b97f866e530b2dacf26b47ff3993aa0f"
+  },
+  {
+    "bytes": 1708,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/project-publication-applied/manifest.json",
+    "sha256": "1b5e6a2f0343975cede931c729c7778626d8d10de032106724709d20880b2c0c"
+  }
+]

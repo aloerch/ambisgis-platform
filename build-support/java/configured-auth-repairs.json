@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "scope": "Configured runtime diagnostic redaction only; authentication decisions unchanged; human security review required.",
+  "sources": [
+    {
+      "path": "geoserver/src/main/src/main/java/org/geoserver/security/auth/GuavaAuthenticationCacheImpl.java",
+      "purpose": "Remove raw authentication cache keys from FINE diagnostics; preserve all cache operations and keys.",
+      "before_sha256": "dfd402bfe7dff0da026700922e35aa7208e5bcdb2e6e8ff7c949faaaec4946f6",
+      "replacements": [
+        {
+          "before": "LOGGER.fine(\"AuthenticationCache removing \" + filterName + \", \" + cacheKey + \" entry\");",
+          "after": "LOGGER.fine(\"AuthenticationCache removing \" + filterName + \" entry\");",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.fine(\"AuthenticationCache removed \" + filterName + \", \" + cacheKey + \" entry\");",
+          "after": "LOGGER.fine(\"AuthenticationCache removed \" + filterName + \" entry\");",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.fine(\"AuthenticationCache has no entry for \" + filterName + \", \" + cacheKey);",
+          "after": "LOGGER.fine(\"AuthenticationCache has no entry for \" + filterName);",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.fine(\"AuthenticationCache found an entry for \" + filterName + \", \" + cacheKey);",
+          "after": "LOGGER.fine(\"AuthenticationCache found an entry for \" + filterName);",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.fine(\"AuthenticationCache adding new entry for \" + filterName + \", \" + cacheKey);",
+          "after": "LOGGER.fine(\"AuthenticationCache adding new entry for \" + filterName);",
+          "count": 2
+        },
+        {
+          "before": "LOGGER.fine(\"AuthenticationCache added new entry for \" + filterName + \", \" + cacheKey);",
+          "after": "LOGGER.fine(\"AuthenticationCache added new entry for \" + filterName);",
+          "count": 2
+        }
+      ],
+      "after_sha256": "338459e2baa9ecf894ae225b4827907739fb20869f5b531e51b91c50411c947c"
+    },
+    {
+      "path": "geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.java",
+      "purpose": "Remove credential/identity values and provider exception bodies/causes from native OAuth filter diagnostics without changing authentication decisions.",
+      "before_sha256": "ea5f5c9c29383f6de06251190e83fa1b5563e2f41e98b82e247544e681a8fe4b",
+      "replacements": [
+        {
+          "before": "LOGGER.fine(e.getLocalizedMessage());",
+          "after": "LOGGER.fine(\"Servlet logout reported an exception\");",
+          "count": 2
+        },
+        {
+          "before": "LOGGER.fine(\"Found Custom Session cookie: \" + c.getValue());",
+          "after": "LOGGER.fine(\"Found Custom Session cookie\");",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.log(Level.FINE, e1.getMessage(), e1);",
+          "after": "LOGGER.fine(\"OAuth principal resolution reported an exception\");",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.log(Level.FINE, \"preAuthenticatedPrincipal = \" + principal + \", trying to authenticate\");",
+          "after": "LOGGER.fine(\"Attempting OAuth principal authentication\");",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.log(\n                                Level.WARNING,\n                                \"Error while trying to fetch default Roles with the following Exception cause:\",\n                                e.getCause());",
+          "after": "LOGGER.warning(\"OAuth default role lookup reported an exception\");",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.log(Level.FINE, \"Authenticated OAuth request for principal {0}\", authentication.getPrincipal());",
+          "after": "LOGGER.fine(\"Authenticated OAuth request\");",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.log(\n                    Level.SEVERE,\n                    \"Oauth2 OIDC - an error occurred during token validation.  Most likely the token has expired or is invalid/modified.  \"\n                            + unauthorized.getMessage());",
+          "after": "LOGGER.severe(\"OAuth token validation endpoint rejected credentials\");",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.log(\n                            Level.WARNING,\n                            \"Error while trying to authenticate to OAuth2 Provider with the following Exception cause:\",\n                            e.getCause());",
+          "after": "LOGGER.warning(\"OAuth provider denied authentication\");",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.log(Level.SEVERE, \"Could not Authorize OAuth2 Resource due to the following exception:\", e);",
+          "after": "LOGGER.severe(\"OAuth provider could not be reached\");",
+          "count": 1
+        },
+        {
+          "before": "LOGGER.log(\n                            Level.SEVERE,\n                            \"Could not Authorize OAuth2 Resource due to the following exception:\",\n                            e.getCause());",
+          "after": "LOGGER.severe(\"OAuth credentials were rejected\");",
+          "count": 1
+        }
+      ],
+      "after_sha256": "662c887cdf078e91eeb479c10d81519c1b80e191d7e3cc2f8dbbf968645531b6"
+    }
+  ],
+  "fixtures": [
+    {
+      "file": "AmbisgisConfiguredDiagnosticsTest.java",
+      "path": "geoserver/src/community/security/oauth2-geonode/src/test/java/org/geoserver/security/oauth2/AmbisgisConfiguredDiagnosticsTest.java",
+      "sha256": "8a73455af79cafacc6e21039e71ead446b6bc7e083b2463836cbfece3cfcdf9b",
+      "test_count": 6
+    }
+  ]
+}

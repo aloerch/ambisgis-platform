@@ -1,0 +1,168 @@
+{
+  "reviewed_at": "2026-09-21T00:10:31.402822+00:00",
+  "reviewer": "independent servlet_runtime agent",
+  "scope": "Independent review of stateless OAuth source repair, guarded installer and fourteen native regressions authored by fixture_source_review agent; final response-commit delta and retained Spring source inspected.",
+  "file_sha256": {
+    "configured_auth_stateless.py": "47e2a74342151fe502a49764535d4c5e251bd55351d7e3f9f1bccab0cec2cb3a",
+    "configured-auth-stateless.json": "9c9a3ebead39c52a8dd4288c03e90f0af8f6b17052741780d5263f56cefc2a00",
+    "configured-auth-stateless-fixtures/AmbisgisStatelessOAuthFilterTest.java": "b9e84dade423a4fc59ea823e893320dc0d86186cb38093ec3f23bcb1af8ca9d2"
+  },
+  "findings": [
+    {
+      "id": "SR-01",
+      "severity": "material",
+      "status": "resolved",
+      "discovered_by": "fixture_source_review agent after initial source review",
+      "summary": "Spring session repository response-commit wrapper may save the current bearer/empty request context before the OAuth filter finally restores the original browser context.",
+      "impact": "An existing browser session can be transiently overwritten or removed, potentially affecting a concurrent request despite final restoration.",
+      "required_resolution": "Prevent persistence of the entire request-scoped context at every save point; add native tests with actual HttpSessionSecurityContextRepository commit wrapper asserting session content before filter finally.",
+      "resolution": "A directly @Transient-annotated SecurityContextImpl subclass is installed only for each opt-in service request. The retained Spring repository checks this annotation before both direct and response-commit saves, preventing session replacement/removal before the original browser context is restored in finally.",
+      "regression_baseline": {
+        "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/stateless-response-commit-baseline-02/result.json",
+        "sha256": "e43cfdaec96a81e367972e834b3c77f944dedf45c304f76158c4685a9ef416ac",
+        "fixture_sha256": "b9e84dade423a4fc59ea823e893320dc0d86186cb38093ec3f23bcb1af8ca9d2",
+        "tests": 14,
+        "passed": 12,
+        "failures": 2,
+        "failed_cases": [
+          "errorResponseWithoutBearerCannotRemoveBrowserContext",
+          "committedOutsiderResponseCannotReplaceBrowserContext"
+        ],
+        "native_log_sha256": "1c9a4f24c025a1d12769a50fa8e01949301964b7c2b4244cf154a5af7aa7a73f",
+        "compiled_candidate_receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-01/result.json",
+        "compiled_candidate_receipt_sha256": "a8a0b813680f7c0c8ad35b6ca49a74344fd528db7155cdb6b2c519b371e7c737",
+        "scope": "Same final fourteen-test fixture compiled separately against untouched native-final01 classes; actual Spring session repository and response wrapper expose removal/replacement during the filter chain before finally."
+      },
+      "final_native_receipt_sha256": "35873f02163337cf99f2cfb065a1e641fb5707046e0b8e72e715c8edc82adb83",
+      "final_passed_cases": [
+        "errorResponseWithoutBearerCannotRemoveBrowserContext",
+        "committedOutsiderResponseCannotReplaceBrowserContext"
+      ]
+    }
+  ],
+  "result": "No unresolved material source finding in this bounded review. SR-01 reproduced against the prior compiled candidate and resolved by the final transient context source with both response-commit regressions passing; final configured WAR HTTP evidence remains separately required.",
+  "checks": [
+    "Explicit default-false option survives serialized clone; historical branch remains default.",
+    "Fresh service SecurityContext ignores browser session identity and finally restores original context for the surrounding persistence filter.",
+    "Current bearer token selects the cache key; absent token does not use a custom-session cookie.",
+    "Direct native token verification avoids the session-scoped OAuth template; verified request attributes and configured role resolution remain.",
+    "Configured UserGroupService requires a known enabled user in opt-in mode; reserved root principal no longer bypasses configured roles.",
+    "Native tests assert cookie-only and mismatched-bearer denial, no session/template use, configured authorities, cache reuse/invalidation/expiry, and context restoration on downstream exception.",
+    "Guarded helper validates all exact source, output, replacement-count and native fixture identities before source writes.",
+    "Both native response-commit regressions use the actual Spring HttpSessionSecurityContextRepository and wrapped response, asserting browser session identity during sendError/flushBuffer before filter finally; both fail on prior source and pass on final source."
+  ],
+  "limitations": [
+    "Native stateless tests use mocked token/user/role services, real native filter/role resolution/cache and actual Spring session repository response wrapper; they supplement the real configured WAR HTTP matrix.",
+    "Human security review, canonical policy, browser SSO and production/release acceptance remain separate."
+  ],
+  "native_execution": {
+    "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-02/result.json",
+    "sha256": "35873f02163337cf99f2cfb065a1e641fb5707046e0b8e72e715c8edc82adb83",
+    "counts": {
+      "tests": 708,
+      "passed": 707,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1
+    },
+    "skipped_cases": [
+      {
+        "detail": "",
+        "message": "",
+        "name": "testSSL",
+        "suite": "org.geoserver.security.auth.AuthenticationFilterTest"
+      }
+    ],
+    "new_suites": [
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.geoserver.security.oauth2.AmbisgisStatelessOAuthFilterTest",
+        "path": "geoserver/src/community/security/oauth2/oauth2-core/target/surefire-reports/TEST-org.geoserver.security.oauth2.AmbisgisStatelessOAuthFilterTest.xml",
+        "sha256": "db89277c7b3ea5a7ee84a85008efd0377f6563c51f7869b6f8700875f325e0d4",
+        "skipped": 0,
+        "tests": 14
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.geoserver.security.oauth2.AmbisgisConfiguredDiagnosticsTest",
+        "path": "geoserver/src/community/security/oauth2-geonode/target/surefire-reports/TEST-org.geoserver.security.oauth2.AmbisgisConfiguredDiagnosticsTest.xml",
+        "sha256": "796eddf03377e5e06ebce70d12c42d4f3ca42a56ae7687870769d94a578bc496",
+        "skipped": 0,
+        "tests": 6
+      }
+    ],
+    "injected_suite_exact_count_guard": true,
+    "network_probes": {
+      "all_passed": true,
+      "exec_child_probes": 79,
+      "parent_probes": 79,
+      "schema_version": 1
+    },
+    "broker_sockets_closed": true,
+    "owned_process_group_stopped": true,
+    "scope": "Fresh full native OAuth/security reactor with final diagnostics and opt-in stateless repairs, including response-commit delta; actual native filter/cache/session repository with mocked token/user/role services. Does not replace final configured WAR HTTP evidence."
+  },
+  "source_output_sha256": {
+    "geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.java": "10087ce67cb39bbce3d0fce0651c2188a053d07601703f4addf7adaf83971dc3",
+    "geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.java": "24574ed63cfb229e5b5ff58d7a07883c2b520b09be7cc21abc356b12121e44ed"
+  },
+  "review_history": [
+    {
+      "reviewed_at": "2026-09-20T23:54:22.540149+00:00",
+      "scope": "Stateless OAuth source repair, guarded installer and twelve native regressions authored by fixture_source_review agent",
+      "file_sha256": {
+        "configured_auth_stateless.py": "47e2a74342151fe502a49764535d4c5e251bd55351d7e3f9f1bccab0cec2cb3a",
+        "configured-auth-stateless.json": "883cb7c397e0f947f2c70e90021f14bd678f4953209afd2c035f7dc8cffce318",
+        "configured-auth-stateless-fixtures/AmbisgisStatelessOAuthFilterTest.java": "0bcc98ca7129bbaa0ff2c5168487cce73a56ff5e902488b4c3245b50ae7bd89c"
+      },
+      "result": "Material response-commit persistence finding remains open; existing native cases pass but do not exercise save-before-finally.",
+      "native_execution": {
+        "receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geoserver-auth/oauth-configured-final-01/result.json",
+        "sha256": "a8a0b813680f7c0c8ad35b6ca49a74344fd528db7155cdb6b2c519b371e7c737",
+        "counts": {
+          "tests": 706,
+          "passed": 705,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 1
+        },
+        "new_suites": [
+          {
+            "errors": 0,
+            "failures": 0,
+            "name": "org.geoserver.security.oauth2.AmbisgisStatelessOAuthFilterTest",
+            "path": "geoserver/src/community/security/oauth2/oauth2-core/target/surefire-reports/TEST-org.geoserver.security.oauth2.AmbisgisStatelessOAuthFilterTest.xml",
+            "sha256": "3981a10d96279a741dfc53c7dfdec1ac78119e453ec60ea112b4e8a4ce5e71c3",
+            "skipped": 0,
+            "tests": 12
+          },
+          {
+            "errors": 0,
+            "failures": 0,
+            "name": "org.geoserver.security.oauth2.AmbisgisConfiguredDiagnosticsTest",
+            "path": "geoserver/src/community/security/oauth2-geonode/target/surefire-reports/TEST-org.geoserver.security.oauth2.AmbisgisConfiguredDiagnosticsTest.xml",
+            "sha256": "a6da47e0299d8129ae6d01f4c81a4c6da118e21d74838aaa048f2d9bbf85a735",
+            "skipped": 0,
+            "tests": 6
+          }
+        ],
+        "network_probes": {
+          "all_passed": true,
+          "exec_child_probes": 79,
+          "parent_probes": 79,
+          "schema_version": 1
+        },
+        "owned_process_group_stopped": true,
+        "scope": "Passing source candidate before response-commit fix; no proof for the newly identified persistence edge."
+      }
+    }
+  ],
+  "retained_dependency_review": {
+    "coordinate": "org.springframework.security:spring-security-web:5.8.16:sources",
+    "sha256": "bac950cfe76df728893cd67303f2fa49c5e0751da61449ab38eab75a5540b925",
+    "source_file": "org/springframework/security/web/context/HttpSessionSecurityContextRepository.java",
+    "inspected_behavior": "saveContextInHttpSession and SaveToSessionResponseWrapper.saveContext call isTransient(context) before session write/removal; isTransient resolves the runtime Transient annotation on the context class."
+  }
+}
