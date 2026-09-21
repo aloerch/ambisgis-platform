@@ -1,3 +1,39 @@
+# Implementation status — frontend/QGIS remediation variant
+
+**FND-02 remains In progress.** The new `fnd-02-frontend-qgis-proposal-2`
+(schema 1 / candidate revision 2) is implemented and freshly tested, awaiting
+owner review. #65's actual merge `b31e81ad7bfe328d5a8b3ea579eff09e6a0086e7`
+accepts consolidation only; the current prompt separately authorizes implementation.
+Frozen implementation/candidate commit: `660208bd87fa508c627b223a121c299c278ea0bc` on
+`fnd-02/frontend-qgis-selection-remediation`.
+
+Five targeted adoption blockers have variant-specific remediation: frozen frontend
+replay with actual new native/browser/restart evidence, exact retained IFC source
+and eight pinned dependencies, and three QGIS palette groups. Exactly 1,129 named
+palettes are omitted with 265 ColorBrewer palettes unchanged. **Seven adoption
+blockers remain:** six unchanged Java findings and QGIS SRC-02's identical GMT
+palette under unresolved provenance/terms. IFC, ColorBrewer and other distribution
+obligations stay explicit. Original baseline/archives/artifacts remain preserved.
+
+Fresh checks pass 245 package tests/four schemas, 39 frontend and 71 QGIS guards,
+41 final candidate regressions, 358+152 frontend native tests, browser restart,
+IFC native/WASM probes and QGIS resource/desktop/server restart. Five inherited
+frontend lint errors remain failed. Inventory/report pass; eligibility honestly
+exits 2. Task services stopped and fixture credentials invalidated/scrubbed.
+
+[Handoff](docs/frontend-qgis-remediation-handoff.md),
+[proposal](docs/fnd-02-candidate-proposal.md),
+[generated register](docs/fnd-02-owner-decisions.md) and unchanged
+[eight-row checklist](docs/fnd-02-completion.md) separate evidence, owner adoption
+and distribution. The finite next QGIS decision is provenance recovery or an
+explicit additional one-file exclusion. Recommend one coordinated Java batch with
+an Oracle-support choice and affected aggregate tests. F02-07/F02-08 remain
+unaccepted; no new milestone or later-task acceptance is introduced.
+
+Publication identity and Project readback are appended below after creation.
+
+# Preserved status — prior checkpoints
+
 # Implementation status — FND-02 candidate consolidation
 
 **F02-06 inventory consolidation is demonstrated; candidate adoption remains blocked.

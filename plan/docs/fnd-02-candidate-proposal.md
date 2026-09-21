@@ -41,7 +41,7 @@ integrity-checked reuse, with their original native/runtime scope preserved.
 - **QGIS resources:** deterministic selection-03 excludes the exact 1,129 named
   optional palettes, corrects 19 catalogues, relocates 84 metadata files without
   changing their bytes, adds notices and retains 265 ColorBrewer palettes. All
-  8,003 unrelated files and binary/mode identities remain unchanged; zero compile
+  8,003 unrelated entries and binary/mode identities remain unchanged; zero compile
   steps were needed. Fresh runtime-07 verifies chooser, actual retained colors,
   serialized vector/raster styles, desktop interaction, PostGIS/server GetMap and
   restart from the selected prefix. Existing explicit renderer colors survive the
@@ -89,7 +89,7 @@ remains exit 2 with ungranted owner/distribution acceptance. A nonzero eligibili
 result is not a failed integrity check. Hash verification is not native execution.
 
 [Validation](../verification/frontend-qgis-remediation/validation.json) records
-actual counts, timings, manifest and tool hashes. [The engineering handoff](frontend-qgis-resource-selection-handoff.md)
+actual counts, timings, manifest and tool hashes. [The engineering handoff](frontend-qgis-remediation-handoff.md)
 indexes exact identities, commands, failures, independent reviews and containment.
 Component details: [frontend](frontend-remediation-handoff.md),
 [IFC](webifc-remediation-handoff.md), [QGIS](qgis-resource-selection-handoff.md).

@@ -1,0 +1,39 @@
+{
+  "implementation_commit": "660208bd87fa508c627b223a121c299c278ea0bc",
+  "variant_manifest_sha256": "3c59d99834b53f8778143db70f754272bce9920ca05071586d4f3629cdd625a0",
+  "reviews": [
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/recovery/frontend-independent-review.json",
+      "sha256": "a516172ad196b99c1958a1d7a3a6e76db5a166338c0afdc58a90d6c5c08725a3",
+      "bytes": 2118
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/frontend/qgis-independent-review.json",
+      "sha256": "b13e5aae3f037cb5ee0e0000ea54f341732aa410385991c3d27ab0699f345016",
+      "bytes": 5627
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/recovery/candidate-independent-review.json",
+      "sha256": "227ceb83e5c91556f1ed429d0e2583614324a912f770855d5dc1c4ca4a8f8270",
+      "bytes": 6290
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/frontend-qgis-remediation/recovery/qgis-candidate-review.json",
+      "sha256": "fac09732d752fbafb8105120cee0d7fec9a83eca776741d10d686e7ae0c3de3a",
+      "bytes": 2765
+    }
+  ],
+  "outcome": "No outstanding material engineering review finding; SRC-02 GMT provenance remains an explicit adoption/distribution blocker.",
+  "fixed_findings": [
+    "Bind frontend lifecycle to actual lifecycle inventory, distinguish fresh execution from historical evidence.",
+    "Do not infer missing-ramp availability from inherited loadFile; real QFile/model and source endpoints exercised.",
+    "Avoid borrowed-pointer Python wrapper disposal; exercise actual native QModelIndex/chooser controls.",
+    "Use variant-specific report identity and prove reporting cannot bypass failed integrity; preserve eligibility exit2.",
+    "Clarify current authorization, historical alternatives and Node-WASM versus unexercised browser/MT scope."
+  ],
+  "scope": "Independent scoped engineering review, not license clearance, whole-product acceptance or owner approval."
+}
