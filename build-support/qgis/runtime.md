@@ -171,3 +171,9 @@ widget construction. The desktop witness checks the actual application/menu font
 and glyph availability, and requires visible dark pixels when rendering with
 that existing application font. It never substitutes a font within the witness.
 Full application captures remain required for visual review.
+
+The isolated local-only and database-only WMS requests also require zero matching
+pixels for the omitted layer's marker color in every known feature neighborhood.
+The same color tolerances apply to presence and absence checks. This rejects a
+combined cached response or ignored `LAYERS` parameter, in addition to detecting
+missing requested content.

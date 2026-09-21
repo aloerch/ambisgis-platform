@@ -186,10 +186,12 @@ def image_witness(image, extent, *, raster=True, local=True, database=True):
                   for ix in range(max(0, px-24), min(image.width(), px+25))
                   for iy in range(max(0, py-24), min(image.height(), py+25))]
         for enabled, name, rgb in ((local, 'local', (220, 20, 30)), (database, 'database', (20, 60, 230))):
+            count = sum(all(abs(a-b) <= 20 for a, b in zip(color, rgb)) for color in colors)
             if enabled:
-                count = sum(all(abs(a-b) <= 20 for a, b in zip(color, rgb)) for color in colors)
                 require(count >= 8, name + ' marker missing or misplaced at feature ' + str(ident))
-                checks.append({'kind': name, 'feature_id': ident, 'matching_pixels': count})
+            else:
+                require(count == 0, name + ' omitted marker unexpectedly rendered at feature ' + str(ident))
+            checks.append({'kind': name, 'feature_id': ident, 'matching_pixels': count, 'expected_present': enabled})
     return {'width': image.width(), 'height': image.height(), 'extent': list(extent), 'checks': checks}
 
 

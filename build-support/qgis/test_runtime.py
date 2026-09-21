@@ -28,11 +28,12 @@ class Image:
     def raster(self):
         for x,y,value in SAMPLES: self.pixels[self.xy(x,y)]=(value,value,value)
         return self
-    def markers(self, database=True, shift=0):
+    def markers(self, database=True, shift=0, local=True):
         for _,_,x,y in POINTS:
             px,py=self.xy(x,y)
-            for i in range(-4,5):
-                for j in range(-4,5): self.pixels[px+i+shift,py+j]=(220,20,30)
+            if local:
+                for i in range(-4,5):
+                    for j in range(-4,5): self.pixels[px+i+shift,py+j]=(220,20,30)
             if database:
                 for i in range(-2,3):
                     for j in range(-2,3): self.pixels[px+i+shift,py+j]=(20,60,230)
@@ -55,7 +56,19 @@ class RuntimeGuards(unittest.TestCase):
 
     def test_explicit_single_layer_map_guard(self):
         result=image_witness(Image().raster().markers(False),(0,0,4,4),database=False)
-        self.assertEqual(7,len(result['checks']))
+        self.assertEqual(10,len(result['checks']))
+        omitted=[check for check in result['checks'] if check['kind']=='database']
+        self.assertEqual([0,0,0],[check['matching_pixels'] for check in omitted])
+
+    def test_combined_render_rejected_when_either_layer_omitted(self):
+        for omitted in ('local','database'):
+            with self.subTest(omitted=omitted),self.assertRaisesRegex(AssertionError,omitted+' omitted marker'):
+                image_witness(Image().raster().markers(),(0,0,4,4),**{omitted:False})
+
+    def test_database_only_render_has_no_local_markers(self):
+        result=image_witness(Image().raster().markers(local=False),(0,0,4,4),local=False)
+        omitted=[check for check in result['checks'] if check['kind']=='local']
+        self.assertEqual([0,0,0],[check['matching_pixels'] for check in omitted])
 
     def test_redaction_scrubs_every_occurrence(self):
         self.assertEqual('[REDACTED_FIXTURE_VALUE] x [REDACTED_FIXTURE_VALUE]',redact('secret x secret',['secret']))
