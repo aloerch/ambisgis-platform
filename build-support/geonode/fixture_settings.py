@@ -65,6 +65,11 @@ def validate_database(value):
 def validate_config(value):
     if type(value.get("strict_verifier", False)) is not bool:
         raise ValueError("strict_verifier must be a JSON boolean")
+    if type(value.get("strict_roles", False)) is not bool:
+        raise ValueError("strict_roles must be a JSON boolean")
+    if value.get("strict_roles") and (not value.get("strict_verifier") or value.get("role_service_username") != "fixture-role-service"
+            or not isinstance(value.get("role_service_api_key"), str) or len(value["role_service_api_key"]) < 24):
+        raise ValueError("Strict roles require strict verifier and a dedicated generated service credential")
     require_loopback_url(value.get("site_url"), "site_url", trailing_slash=True)
     require_loopback_url(value.get("geoserver_url"), "geoserver_url", trailing_slash=True)
     require_loopback_url(value.get("redirect_uri"), "redirect_uri")
@@ -158,6 +163,8 @@ class SafeApplicationLog(logging.Formatter):
         if config_path:
             config = load_config(config_path)
             self.secrets = [config[key] for key in ("secret_key", "api_key", "client_secret", "second_client_secret")]
+            self.secrets += [config.get("role_service_api_key", "")]
+            self.secrets = [value for value in self.secrets if value]
             self.secrets += list(config["passwords"].values())
             self.secrets += [config[key]["password"] for key in ("database", "runtime_database") if key in config]
             if config.get("geoserver_admin_password"):
@@ -207,6 +214,12 @@ def owned_settings(config, runtime=False):
     source = importlib.import_module("geonode.settings")
     result = {key: value for key, value in vars(source).items() if key.isupper()}
     result.update(strict_verifier_options(config, source))
+    if config.get("strict_roles"):
+        if not hasattr(source, "OAUTH2_ROLE_SERVICE_STRICT"):
+            raise ValueError("Strict roles require rebuilt owned source support")
+        result.update(OAUTH2_ROLE_SERVICE_STRICT=True,
+                      OAUTH2_ROLE_SERVICE_USERNAME=config["role_service_username"],
+                      OAUTH2_ROLE_SERVICE_API_KEY=config["role_service_api_key"])
     key = config.get("oidc_rsa_private_key")
     if not key:
         keypath = Path(config["oidc_rsa_private_key_file"])

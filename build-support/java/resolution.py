@@ -51,7 +51,7 @@ def maven_inventory(root):
             if p.is_file() and (p.name == 'pom.xml' or '.mvn' in p.parts)}
 
 
-def prepare(custody, output):
+def prepare(custody, output, role_service=False):
     from acquisition import verify
     manifest = json.loads(Path(__file__).with_name('inputs.json').read_text())
     verify(custody, manifest)
@@ -78,14 +78,21 @@ def prepare(custody, output):
     (output / 'user').mkdir()
     write_json(output / 'preparation.json', {
         'schema_version': 1, 'purpose': 'experimental-resolution-only',
-        'source_archives': selected, 'roots': ROOTS, 'profiles': PROFILES, 'targets': TARGETS,
+        'source_archives': selected, 'roots': ROOTS, 'profiles': selected_profiles(role_service), 'targets': TARGETS,
         'properties': {'gt.version': '34.5', 'gt-version': '34.5', 'mf.version': '2.4.1'},
         'source_adoption_approved': False, 'build_acceptance': False,
         'poms': pom_inventory(source), 'maven_files': maven_inventory(source)})
     return output
 
 
-def command(work, java, maven, stage, local_repository, settings, log_id):
+def selected_profiles(role_service=False):
+    """Keep historical six-profile recipes stable; authkey is an explicit addition."""
+    if type(role_service) is not bool:
+        raise ValueError('role service selection must be boolean')
+    return [*PROFILES, *(['authkey'] if role_service else [])]
+
+
+def command(work, java, maven, stage, local_repository, settings, log_id, role_service=False):
     if stage not in ('effective', 'dependencies'):
         raise ValueError('only explicitly pinned resolution goals are allowed')
     goal = HELP if stage == 'effective' else DEPENDENCIES
@@ -94,7 +101,7 @@ def command(work, java, maven, stage, local_repository, settings, log_id):
            '-Dmaven.repo.local=' + str(local_repository),
            '-Dstyle.color=never', '-Dgt.version=34.5', '-Dgt-version=34.5',
            '-Dmf.version=2.4.1', '-Dspotless.apply.skip=true',
-           '-Dpom.fmt.skip=true', '-P' + ','.join(PROFILES),
+           '-Dpom.fmt.skip=true', '-P' + ','.join(selected_profiles(role_service)),
            '-pl', TARGETS, '-am', goal]
     if stage == 'effective':
         cmd += ['-Doutput=' + str(work / 'logs' / (log_id + '-effective.xml'))]

@@ -112,7 +112,20 @@ public final class ConfiguredGeoServerRuntime {
                     + ",\"allow_session_creation\":" + type.getMethod("isAllowSessionCreation").invoke(chain)
                     + ",\"disabled\":" + type.getMethod("isDisabled").invoke(chain) + "}");
         }
-        return "{\"filter_config_class\":" + quote(configType.getName())
+        Object roleService = managerType.getMethod("getActiveRoleService").invoke(manager);
+        Object resolver = extensions.getMethod("bean", String.class).invoke(null, "securityContextUserResolver");
+        if (resolver == null || !resolver.getClass().getName().equals("org.geoserver.geofence.server.internal.SecurityContextUserResolver"))
+            throw new IllegalStateException("unexpected GeoFence user resolver");
+        Object roleConfig = managerType.getMethod("loadRoleServiceConfig", String.class).invoke(manager, "fixture");
+        String roleDetails = "";
+        if (roleConfig.getClass().getName().equals("org.geoserver.security.GeoServerRestRoleServiceConfig")) {
+            roleDetails = ",\"strict_geonode_roles\":" + roleConfig.getClass().getMethod("isStrictGeoNodeRoles").invoke(roleConfig)
+                + ",\"role_cache_ms\":" + roleConfig.getClass().getMethod("getCacheExpirationTime").invoke(roleConfig);
+        }
+        return "{\"geofence_user_resolver_class\":" + quote(resolver.getClass().getName())
+                + ",\"active_role_service_class\":" + quote(roleService.getClass().getName())
+                + ",\"role_service_config_class\":" + quote(roleConfig.getClass().getName()) + roleDetails
+                + ",\"filter_config_class\":" + quote(configType.getName())
                 + ",\"role_source\":" + quote(String.valueOf(configType.getMethod("getRoleSource").invoke(oauthConfig)))
                 + ",\"user_group_service\":" + quote(String.valueOf(configType.getMethod("getUserGroupServiceName").invoke(oauthConfig)))
                 + ",\"stateless_option_supported\":" + optionSupported
@@ -213,7 +226,7 @@ public final class ConfiguredGeoServerRuntime {
             // Reflective diagnostics use the same context loader as servlet worker dispatch.
             Thread.currentThread().setContextClassLoader(loader);
             List<String> origins = new ArrayList<>();
-            for (String name : List.of("org.geoserver.security.GeoServerSecurityManager",
+            List<String> originNames = new ArrayList<>(List.of("org.geoserver.security.GeoServerSecurityManager",
                     "org.geoserver.security.auth.GuavaAuthenticationCacheImpl",
                     "org.geoserver.security.oauth2.GeoServerOAuth2FilterConfig",
                     "org.geoserver.security.oauth2.GeoNodeOAuth2FilterConfig",
@@ -223,7 +236,14 @@ public final class ConfiguredGeoServerRuntime {
                     "org.geoserver.security.oauth2.GeoServerAccessTokenConverter",
                     "org.geoserver.security.oauth2.services.GeoNodeTokenServices",
                     "org.geoserver.geofence.services.DefaultUserResolver",
-                    "org.mapfish.print.PDFUtils", "org.geoserver.importer.Importer")) {
+                    "org.geoserver.geofence.server.internal.SecurityContextUserResolver",
+                    "org.mapfish.print.PDFUtils", "org.geoserver.importer.Importer"));
+            try {
+                loader.loadClass("org.geoserver.security.GeoServerRestRoleService");
+                originNames.add("org.geoserver.security.GeoServerRestRoleService");
+                originNames.add("org.geoserver.security.GeoServerRestRoleServiceConfig");
+            } catch (ClassNotFoundException historical) { /* Previous aggregate lacks authkey. */ }
+            for (String name : originNames) {
                 Class<?> type = loader.loadClass(name);
                 String location = origin(type);
                 Path loadedJar = Path.of(URI.create(location)).toRealPath();
@@ -274,6 +294,20 @@ public final class ConfiguredGeoServerRuntime {
             if (!cacheLogger.isLoggable(java.util.logging.Level.FINE))
                 throw new IllegalStateException("cache FINE capture is not enabled");
             cacheLogger.fine("AMBISGIS_CONFIGURED_CACHE_LOG_CAPTURE_CONTROL");
+            if (originNames.contains("org.geoserver.security.GeoServerRestRoleService")) {
+                Class<?> roleType = loader.loadClass("org.geoserver.security.GeoServerRestRoleService");
+                Field roleLogField = null;
+                for (Class<?> owner = roleType; owner != null && roleLogField == null; owner = owner.getSuperclass()) {
+                    try { roleLogField = owner.getDeclaredField("LOGGER"); }
+                    catch (NoSuchFieldException parent) { /* inherited role-service logger */ }
+                }
+                if (roleLogField == null) throw new IllegalStateException("role logger missing");
+                roleLogField.setAccessible(true);
+                java.util.logging.Logger roleLogger = (java.util.logging.Logger) roleLogField.get(null);
+                roleLogger.setLevel(java.util.logging.Level.FINE);
+                if (!roleLogger.isLoggable(java.util.logging.Level.FINE)) throw new IllegalStateException("role capture inactive");
+                roleLogger.fine("AMBISGIS_CONFIGURED_ROLE_LOG_CAPTURE_CONTROL");
+            }
             String json = "{\"port\":" + connector.getLocalPort() + ",\"host\":\"127.0.0.1\","
                     + "\"context_path\":\"/geoserver\",\"war_sha256\":" + quote(warHash)
                     + ",\"deployed_war\":" + quote(deployedWar.toString())

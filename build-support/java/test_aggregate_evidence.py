@@ -75,6 +75,33 @@ class AggregateEvidenceTests(unittest.TestCase):
             self.assertEqual(result['result_exit_code'], 1)
             self.assertIn('omitted selected profiles', result['error']['message'])
 
+    def test_role_service_profile_cannot_drop_existing_profiles_or_omit_marker(self):
+        for profiles, marked in (([*evidence.PROFILES, 'authkey'], False),
+                                 (['authkey'], True), (evidence.PROFILES, True)):
+            with self.subTest(profiles=profiles, marked=marked), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                build = root / 'build'
+                (build / 'work').mkdir(parents=True)
+                (build / 'work/preparation.json').write_text(json.dumps({'profiles': profiles}))
+                (build / 'result.json').write_text(json.dumps({
+                    'role_service_profile': marked, 'command': ['-P' + ','.join(profiles)]}))
+                with patch('aggregate_evidence.packaged_classpath') as inventory:
+                    result = evidence.inspect(build, root / 'evidence')
+                inventory.assert_not_called()
+                self.assertEqual(result['result_exit_code'], 1)
+                self.assertIn('selected profiles differ', result['error']['message'])
+
+    def test_role_service_class_must_contain_identity_and_timeout_guards(self):
+        for spec in evidence.ROLE_SERVICE_CLASSES.values():
+            valid = '\0'.join(spec['present']).encode()
+            evidence.check_repaired_class(valid, spec)
+            markers = [spec['present'][0]]
+            if 'STRICT_DUPLICATE_DETECTION' in spec['present']:
+                markers += ['STRICT_DUPLICATE_DETECTION', 'FAIL_ON_TRAILING_TOKENS']
+            for marker in markers:
+                with self.subTest(marker=marker), self.assertRaises(ValueError):
+                    evidence.check_repaired_class(valid.replace(marker.encode(), b'absent'), spec)
+
     def test_repair_manifest_comes_from_verified_build_snapshot(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

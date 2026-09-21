@@ -295,5 +295,38 @@ class InjectedNativeEvidenceTests(unittest.TestCase):
                 compatibility.validate_execution(invalid, Path('/unused'), 'oauth', 'target')
 
 
+class RoleServiceModeTests(unittest.TestCase):
+    def test_role_service_repair_and_test_modes_fail_before_output_creation(self):
+        invalid = [
+            dict(target='xml', role_service=True),
+            dict(target='webapp', stage='package', tests='compile-only', role_service=True),
+            dict(target='webapp', stage='test', role_service=True, role_service_repair=True),
+            dict(target='webapp', stage='package', tests='compile-only', role_service=True,
+                 role_service_repair=True, role_service_tests=True),
+            dict(target='role-service', stage='package', tests='target', role_service_repair=True),
+            dict(target='role-service', stage='package', tests='all', runtime_http=True,
+                 role_service_tests=True),
+        ]
+        for options in invalid:
+            with self.subTest(options=options), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                arguments = dict(target='role-service', stage='package', tests='target')
+                arguments.update(options)
+                with self.assertRaises(ValueError):
+                    compatibility.probe(root, root, root, root, root / 'output', **arguments)
+                self.assertFalse((root / 'output').exists())
+
+    def test_matching_security_package_cannot_replace_inherited_role_tests(self):
+        for name, skipped, count in [
+                ('org.geoserver.security.UnrelatedTest', 0, 2),
+                ('org.geoserver.security.GeoServerRestRoleServiceTest', 1, 2),
+                ('org.geoserver.security.GeoServerRestRoleServiceTest', 0, 1)]:
+            report = {'native_tests': {'failures': 0, 'errors': 0, 'suites': [{
+                'name': name, 'path': compatibility.TARGET_MODULES['role-service'] + 'target/report.xml',
+                'tests': count, 'skipped': skipped}]}}
+            with self.subTest(name=name, skipped=skipped, count=count), self.assertRaises(ValueError):
+                compatibility.validate_execution(report, Path('/unused'), 'role-service', 'target')
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -100,3 +100,29 @@ Final integration guards normalize native fixture paths, reject directory
 symlinks/unrecorded installed paths, and compare staged binaries with the original
 archive digests. A fresh staging-only check verifies the actual retained tree;
 the earlier importer native results are not represented as rerun by that check.
+
+
+The owned GeoNode REST role service is packaged by explicitly adding
+`--role-service --role-service-repair` to the complete `webapp` recipe. This adds
+`authkey` to the existing six profiles; the historical recipe stays unchanged.
+Packaging requires all prior repairs (`--repair xmlcodegen-emf --oauth-redaction
+--oauth-principal --configured-auth-diagnostics --configured-auth-stateless`)
+and `--stage package --tests compile-only`. This includes the extension's source
+without enabling its URL-key authentication filter. Runtime configuration must
+select the REST role service and retain the bearer chains.
+
+For the two inherited REST role-service cases plus the guarded new regressions,
+use `--target role-service --stage package --tests target --runtime-http
+--repair xmlcodegen-emf --role-service-repair --role-service-tests`. The bounded
+selector excludes unrelated URL-key tests. Compilation and tests use fresh local
+repositories and the same retained custody; packaging success does not count as
+native test execution. New regression case counts must match their manifest,
+and both inherited cases must execute without skips. Omit only
+`--role-service-repair` for a separately retained failing baseline.
+
+`aggregate_evidence.py` verifies the explicit seven-profile recipe, source-built
+`gs-authkey` origin, role repair inputs/outputs and the compiled/packaged role
+service classes, including strict duplicate-key/trailing-token JSON guards,
+alongside all existing OAuth/logging/stateless checks. It
+refuses native test witnesses in the WAR and does not certify an unmodified
+authkey installation as the repaired authoritative-role candidate.

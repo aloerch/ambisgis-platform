@@ -48,6 +48,8 @@ def module_evidence(config, command):
                  "geonode.groups.models", "geonode_mapstore_client", "oauth2_provider.models")
     if getattr(settings, "OAUTH2_BACKEND_TOKENINFO_STRICT", False):
         module_names += ("geonode.api.backend_tokeninfo",)
+    if config.get("strict_roles"):
+        module_names += ("geonode.api.backend_roles",)
     for name in module_names:
         module = importlib.import_module(name)
         path = Path(module.__file__).resolve()
@@ -177,6 +179,15 @@ def provision(config):
             user.save()
             EmailAddress.objects.get_or_create(user=user, email=user.email, defaults={"verified": True, "primary": True})
             users[username] = user
+        if config.get("strict_roles"):
+            from django.contrib.auth.models import Permission
+            service = User.objects.create(username=config["role_service_username"],
+                email="fixture-role-service@example.invalid", is_active=True, is_staff=False, is_superuser=False)
+            service.set_unusable_password()
+            service.save(update_fields=["password"])
+            service.groups.clear()
+            for app_label, codename in (("people", "view_profile"), ("auth", "view_group")):
+                service.user_permissions.add(Permission.objects.get(content_type__app_label=app_label, codename=codename))
         group, _ = GroupProfile.objects.get_or_create(slug="fixture-readers", defaults={
             "title": "Synthetic fixture readers", "description": "Disposable integration principals", "access": "private",
         })
@@ -191,7 +202,7 @@ def provision(config):
                "disabled_login_redirect_path": reverse("moderator_contacted", kwargs={"inactive_user": users["fixture-disabled"].pk}),
                "applications": len(applications), "group": "fixture-readers", "skip_authorization": False,
                "pkce_required": True,
-               "geoserver_users": "manually mirrored XML comparison; no account synchronization claim"}
+               "geoserver_users": ("identity-only local records; authoritative HTTP role membership" if config.get("strict_roles") else "manually mirrored XML comparison; no account synchronization claim")}
     (Path(config["output"]) / "provisioning.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
     emit({"event": "provisioned", **receipt})
 
@@ -231,6 +242,8 @@ def native_tests(config):
     )
     if config.get("strict_verifier", False):
         labels += ("geonode.api.test_backend_tokeninfo.StrictBackendTokenInfoTests",)
+    if config.get("strict_roles"):
+        labels += ("geonode.api.test_backend_roles.StrictBackendRolesTests",)
     suite = unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromName(name) for name in labels)
     def test_ids(node):
         if isinstance(node, unittest.TestSuite):
@@ -247,7 +260,7 @@ def native_tests(config):
              "skips": [{"test": test.id(), "reason": reason} for test, reason in result.skipped],
              "expected_failures": [test.id() for test, _ in result.expectedFailures],
              "unexpected_successes": [test.id() for test in result.unexpectedSuccesses],
-             "scope": "Four unmodified native ORM encryption/auth handler tests plus the owned strict verifier regression suite when enabled; native Django TestCase rollback transactions on disposable catalog; real HTTP identity acceptance is separate"}
+             "scope": "Four unmodified native ORM encryption/auth handler tests plus the owned strict verifier and strict role regression suites when enabled; native Django TestCase rollback transactions on disposable catalog; real HTTP identity acceptance is separate"}
     value["passed"] = (result.testsRun == expected_count and expected_count >= 4 and result.wasSuccessful() and not result.skipped
                        and not result.expectedFailures and not result.unexpectedSuccesses)
     path = Path(config["output"]) / "native-tests.json"
@@ -268,7 +281,7 @@ def cleanup(config):
     from oauth2_provider.models import AccessToken, Grant, IDToken, RefreshToken, get_application_model
     User = get_user_model()
     with transaction.atomic():
-        users = list(User.objects.filter(username__in=FIXTURE_USERS))
+        users = list(User.objects.filter(username__in=FIXTURE_USERS + ((config["role_service_username"],) if config.get("strict_roles") else ())))
         if any(user.email != f"{user.username}@example.invalid" for user in users):
             raise RuntimeError("Refuse cleanup for users without fixture identity markers")
         user_ids = [user.pk for user in users]
@@ -287,7 +300,10 @@ def cleanup(config):
         Session.objects.filter(session_key__in=session_ids).delete()
         for user in users:
             user.set_unusable_password()
-            user.save(update_fields=["password"])
+            if user.username == config.get("role_service_username"):
+                user.is_active = False
+                user.user_permissions.clear()
+            user.save(update_fields=["password", "is_active"])
         counts["user_passwords_invalidated"] = len(users)
         counts["client_secrets_rotated"] = clients.count()
         for app in clients:
@@ -318,6 +334,12 @@ def mutate(args, config):
     if args.action in ("disable", "enable"):
         user.is_active = args.action == "enable"
         user.save(update_fields=["is_active"])
+    elif args.action in ("admin-promote", "admin-demote"):
+        if args.username != "fixture-admin":
+            raise ValueError("Administrator mutation is restricted to disposable fixture-admin")
+        user.is_superuser = args.action == "admin-promote"
+        user.is_staff = user.is_superuser
+        user.save(update_fields=["is_superuser", "is_staff"])
     elif args.action in ("group-add", "group-remove"):
         group = GroupProfile.objects.get(slug="fixture-readers")
         (group.join if args.action == "group-add" else group.leave)(user)
@@ -338,7 +360,11 @@ def mutate(args, config):
             token.save(update_fields=["expires"])
         else:
             token.revoke()
+    import time
     emit({"event": "fixture_mutation", "action": args.action, "username": args.username,
+          "ack_monotonic_ns": time.monotonic_ns(), "supported_orm_only": True,
+          "committed_active": user.is_active, "committed_superuser": user.is_superuser,
+          "committed_groups": list(user.groups.order_by("name").values_list("name", flat=True)),
           "expires_in_seconds": args.seconds if args.action == "expire-soon" else None})
 
 
@@ -380,12 +406,12 @@ def observed_application(application):
 
 def serve(config):
     from django.core.wsgi import get_wsgi_application
-    from transport_faults import controlled_transport
+    from transport_faults import controlled_transport, controlled_role_transport
     site = urlsplit(config["site_url"])
     if site.hostname != "127.0.0.1":
         raise ValueError("HTTP fixture listener requires site_url host 127.0.0.1")
     logging.getLogger("geonode.fixture").warning("AMBISGIS_GEONODE_LOG_CAPTURE_CONTROL")
-    with make_server(site.hostname, site.port, observed_application(controlled_transport(get_wsgi_application(), config)),
+    with make_server(site.hostname, site.port, observed_application(controlled_role_transport(controlled_transport(get_wsgi_application(), config), config)),
                      server_class=ThreadedWSGIServer, handler_class=QuietRequestHandler) as server:
         emit({"event": "listening", "host": site.hostname, "port": site.port, "application": "geonode.urls"})
         server.serve_forever()
@@ -395,8 +421,8 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", required=True, type=Path)
     parser.add_argument("command", choices=("check", "migrate", "provision", "serve", "mutate", "cleanup", "native-tests", "initialize"))
-    parser.add_argument("--action", choices=("revoke", "expire", "expire-soon", "disable", "enable", "group-add", "group-remove", "remove"))
-    parser.add_argument("--username", choices=FIXTURE_USERS, default="fixture-reader")
+    parser.add_argument("--action", choices=("revoke", "expire", "expire-soon", "disable", "enable", "group-add", "group-remove", "remove", "admin-promote", "admin-demote"))
+    parser.add_argument("--username", choices=FIXTURE_USERS + ("fixture-role-service",), default="fixture-reader")
     parser.add_argument("--token-file", type=Path)
     parser.add_argument("--seconds", type=int, choices=range(1, 16), default=5)
     args = parser.parse_args(argv)

@@ -13,6 +13,23 @@ Full inventories, source archives, downloaded artifacts and logs remain in the
 local custody and attempt directories identified below; private fixture files
 must not be copied into Git or published.
 
+## Authoritative membership continuation
+
+The strict role candidate is implemented by `roles_repair.py`, rebuilt with
+`build.py --strict-verifier --strict-roles`, and exercised by the same real
+issuance journey with `run.py --integration --strict-verifier --strict-roles
+--build <fresh-aggregate> --war-sha256 <verified-digest>`.
+The explicit build/digest are required for this candidate. See the
+[declared matrix](role-matrix.md), [ADR 008](../../plan/adrs/008-authoritative-geonode-role-service.md)
+and [handoff](../../plan/docs/geonode-role-propagation-handoff.md).
+
+Its role-service ApiKey belongs to a dedicated active read-only service identity
+and is separate from tokeninfo client credentials. Local GeoServer user records
+are identity-only; XML role grants are empty. Group changes use the native
+GeoNode ORM and authenticated actual role HTTP, then real packaged GeoServer and
+GeoFence enforcement. The historical comparison below remains reproducible
+without `--strict-roles`. It does not establish this new candidate's result.
+
 ## Source and dependency custody
 
 The owned GeoNode repository is `aloerch/ambisgis-geonode`, ID `1376927978`,
