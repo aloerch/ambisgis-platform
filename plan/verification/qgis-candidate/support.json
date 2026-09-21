@@ -2,14 +2,14 @@
   "schema_version": 1,
   "task": "F02-04",
   "scope": "Retained publisher supporting inputs and local toolchain preflight; not QGIS desktop/server acceptance or release approval",
-  "observed_at_utc": "2026-09-21T07:43:53.824151+00:00",
+  "observed_at_utc": "2026-09-21T07:55:09.129637+00:00",
   "owned_qgis_candidate": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
   "support_profile": {
-    "prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06",
+    "prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07",
     "manifest": {
       "path": "build-support/qgis/support-inputs.json",
-      "sha256": "0a58fccd0103ed8d8309f01d51a07bd3a3577ad489242b6a4fd2ee6882ebf1de",
-      "bytes": 76405
+      "sha256": "7636a34b1823e071dc9662522d8f79be3085953eaed2d64ad6fcd34d1cb37d47",
+      "bytes": 77846
     },
     "acquisition_recipe": {
       "path": "build-support/qgis/acquisition.py",
@@ -17,9 +17,9 @@
       "bytes": 12235
     },
     "inventory": {
-      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-inventory.json",
-      "sha256": "06de03811bcd7da6df84ece3f995c84a7493397dceacbe1d75b19f26b0402eac",
-      "bytes": 2846275
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-inventory.json",
+      "sha256": "aa837efdf41201593ba6d2a48ec7f8320fd8a70c3f456075503fe1f08dd8713a",
+      "bytes": 2848927
     },
     "inventory_verified_after_probes": true,
     "extra_prefix_files": 0
@@ -31,14 +31,14 @@
     "source_repository": "https://download.opensuse.org/source/tumbleweed/repo/oss",
     "acquisition_receipts": {
       "binaries": {
-        "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/acquisition-1789976407843248997.json",
-        "sha256": "c8ed964a38df53b8ffb29d61ea94a049723d615fc31818676cb889f8029251cf",
-        "bytes": 47052
+        "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/acquisition-1789977086894440615.json",
+        "sha256": "0aa400ca78f405fcd10c51b02e26c43ac9fee87b334093643a2ecd1f09d609e8",
+        "bytes": 47908
       },
       "sources": {
-        "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/acquisition-1789976411742931165.json",
-        "sha256": "8d181ae6167fbf4185859c549bc47316165420b613a19063ba5ebf0a66a76c8a",
-        "bytes": 19221
+        "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/acquisition-1789977090892022849.json",
+        "sha256": "b34224473e988c42a360ce28f8fef446d1305faaad61f800b3bb043a5e23cb3a",
+        "bytes": 19639
       }
     },
     "metadata": {
@@ -88,16 +88,16 @@
     "global_installation": false
   },
   "counts": {
-    "binary_packages": 104,
-    "source_packages": 43,
-    "binary_bytes": 82048039,
-    "source_bytes": 298562724,
-    "inventory_entries": 13454,
-    "notice_files": 334
+    "binary_packages": 106,
+    "source_packages": 44,
+    "binary_bytes": 82498979,
+    "source_bytes": 301092181,
+    "inventory_entries": 13469,
+    "notice_files": 338
   },
   "notices_and_sources": {
-    "support_notices": "334 file contents under support-06/usr/share/licenses are bound by the full inventory",
-    "support_source_retention": "All 43 exact corresponding source RPMs retained with publisher digest and RPM signature checks; source RPMs are retained packages, not proof of an independent rebuild",
+    "support_notices": "338 file contents under support-07/usr/share/licenses are bound by the full inventory",
+    "support_source_retention": "All 44 exact corresponding source RPMs retained with publisher digest and RPM signature checks; source RPMs are retained packages, not proof of an independent rebuild",
     "owned_qgis_source_manifest": {
       "repository_path": "build-support/qgis/source-inputs.json",
       "sha256": "c36214078c03ec7f6a6055fe1aa112b17e6696853e2687578daa8b253239188c"
@@ -112,52 +112,67 @@
     "license_clearance": false
   },
   "preflight": {
-    "directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe",
+    "directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe",
     "artifacts": {
       "CMakeLists.txt": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/CMakeLists.txt",
-        "sha256": "f137b8229c16ef868f438533c84741f7f9e848292e72957b60a33d1b741e18a7",
-        "bytes": 1374
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/CMakeLists.txt",
+        "sha256": "41892e2df9b689bcc8160c5d1eed02e80e00bd69c79a44d6b8845a38c5e77a76",
+        "bytes": 1627
       },
       "main.cpp": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/main.cpp",
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/main.cpp",
         "sha256": "0c99c57ac25ae38cfa52004ce830ea02d1fe5c5aec563735a0f56ea44657546c",
         "bytes": 298
       },
       "fcgi.cpp": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/fcgi.cpp",
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/fcgi.cpp",
         "sha256": "5a37e55e280e8ac18f8378c63b693ef0fb701152956dddd18f25ab3467931102",
         "bytes": 56
       },
+      "zstd.cpp": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/zstd.cpp",
+        "sha256": "5c43721f7f3fb3e7368742d23ffc97a235909d38befd9bbafffb04f27ce1b9c2",
+        "bytes": 512
+      },
       "configure.log": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/configure.log",
-        "sha256": "fe514a04822959a6cd56faf6146cd3ef0fe3bacb451f244704db8e7274e1ab74",
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/configure.log",
+        "sha256": "dfb33e7255e56f5aab2f9e3360f77bf815430d5ae0e45748939b902ec19306e4",
         "bytes": 17043
       },
       "build.log": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/build.log",
-        "sha256": "69e727b012ae1894ccd1eda695fbeb58a2a73f1e9a87f52144b08c710bac3b15",
-        "bytes": 196
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/build.log",
+        "sha256": "42b469c2c532e41deaa4e76de69496ee0252b6b5e8051fa811da11707194453d",
+        "bytes": 299
       },
       "probe-ldd.log": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/probe-ldd.log",
-        "sha256": "e89ad40675ac9587996bed00e7abfdb9d8630b44f14946296dea352a4f6cd2e9",
-        "bytes": 7249
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/probe-ldd.log",
+        "sha256": "7d480a213503c3d1b15572b04e47d361e51304786ccbd96f1d5c707121cdf1cc",
+        "bytes": 7302
       },
       "fcgi_probe-ldd.log": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/fcgi_probe-ldd.log",
-        "sha256": "4c03c7d48f6747b57704392557f3d1add1a7fdf28791dc4a7869f1c9f96b582e",
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/fcgi_probe-ldd.log",
+        "sha256": "179a9299ba5ec7578481198946b241bbeca94fb623e9d346b4f874b5bc4e52b5",
         "bytes": 594
       },
-      "fcgi-runtime.log": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/fcgi-runtime.log",
+      "zstd_probe-ldd.log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/zstd_probe-ldd.log",
+        "sha256": "0b05259d4e4a47fe56df2a43284e2bc0b0003043521309dd82fdc8a7b522e416",
+        "bytes": 452
+      },
+      "fcgi_probe-runtime.log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/fcgi_probe-runtime.log",
         "sha256": "bde294368bfed77c2cddf8cec271d398aee9cdbab3b26e1059281bd33adb0120",
         "bytes": 12
       },
+      "zstd_probe-runtime.log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/zstd_probe-runtime.log",
+        "sha256": "1cd4fce4a69661876da2d156b310a5586dbc67061898c86a1fff6614950dde31",
+        "bytes": 40
+      },
       "success.json": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/success.json",
-        "sha256": "aee3774f3814651cec4475a5144b807f6fc72c7cc115f95b0d5ccefcad7a9189",
-        "bytes": 843
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-qt-probe/success.json",
+        "sha256": "f4b369c6ac0db266b1cef2e8908ae3be2f376d80c3dc04e49db435d6d9840d2a",
+        "bytes": 871
       }
     },
     "qt_components_configured": 25,
@@ -180,7 +195,9 @@
       "usr/bin/sip-wheel"
     ],
     "alias_handling": "Use retained versioned Python3.13 launchers; generic alts aliases are unused",
-    "spatialite_development_libraries": "freexl, minizip and rttopo CMake linker paths resolve inside support-06/usr/lib64"
+    "spatialite_development_libraries": "freexl, minizip and rttopo CMake linker paths resolve inside support-07/usr/lib64",
+    "zstd_codec_roundtrip_exit_code": 0,
+    "zstd_version": "1.5.7"
   },
   "reproduction": {
     "extract_command": [
@@ -211,7 +228,8 @@
     "Owned spatial GEOS/PROJ/GDAL/SQLite/libpq origins and their ABI coherence are enforced by the product build and loaded-origin evidence, not by supporting RPM version labels.",
     "Host compiler, Python interpreter, libc/libstdc++, X11/xcb, fonts/fontconfig/freetype, ICU, audio/GStreamer and graphics-driver closure remain unresolved retained-input/bootstrap work; private libGL/GLX/GLdispatch resolve from this prefix.",
     "Optional MDAL HDF5/NetCDF dependencies were unavailable in actual QGIS configure; their dependent formats are excluded from this profile.",
-    "Publisher license metadata includes PyQt GPL/FLOSS/NonFree alternatives, QScintilla GPL-3.0-only, Qt LGPL/GPL and Qt-tool exceptions. Source custody and retained notices do not resolve license selection, redistribution/source-offer or trademark obligations; F02-06 and human rights review remain open."
+    "Publisher license metadata includes PyQt GPL/FLOSS/NonFree alternatives, QScintilla GPL-3.0-only, Qt LGPL/GPL and Qt-tool exceptions. Source custody and retained notices do not resolve license selection, redistribution/source-offer or trademark obligations; F02-06 and human rights review remain open.",
+    "COPC/EPT and internal laz-perf are enabled for coherent unmodified candidate compilation; ZSTD is retained for those paths. These point-cloud paths are selected for compilation but unexercised by this bounded checkpoint; PDAL and 3D remain disabled and no point-cloud product acceptance is claimed."
   ],
   "preserved_attempts": [
     "support-extract001-failed",
@@ -220,7 +238,8 @@
     "support-02",
     "support-03",
     "support-04",
-    "support-05"
+    "support-05",
+    "support-06"
   ],
   "acquisition_guard_tests": {
     "command": [
@@ -238,5 +257,236 @@
     "passed": 14,
     "failed": 0,
     "scope": "Acquisition/path/payload/source-pair guards; not GIS product tests"
+  },
+  "source_notice_review": {
+    "scope": "Bounded text scan of all 133 retained source notices, with full-text follow-up and build/install tracing for concrete selected-resource findings; not exhaustive license clearance or an audit of every source header",
+    "all_notice_content_hashes_verified": 133,
+    "candidate_commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+    "status": "Open F02-06 resource selection, notice and rights questions; no source or resource changes made",
+    "reachability": {
+      "resource_glob": {
+        "source_path": "resources/CMakeLists.txt",
+        "sha256": "30c2ff49df577b6ea6f0b2ecdfeb1aa7c648756ed757c7386580b862e0d8b708",
+        "lines": [
+          4,
+          18,
+          91
+        ]
+      },
+      "resource_install_helper": {
+        "source_path": "cmake/CopyResources.cmake",
+        "sha256": "ddbdf6cbd8a3cf2678bfcd1acab0fadd12727befd0715795f922a8e0c150e506",
+        "lines": [
+          37,
+          38,
+          39
+        ]
+      },
+      "generated_install_script": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-04/build/resources/cmake_install.cmake",
+        "sha256": "3b089e016a743ad38145968faed7fa7273544b5dd254b7d8c8ed0c3fb0cb4704",
+        "bytes": 2044029
+      },
+      "observation": "Every SVG counted below appears explicitly in build-04 generated install rules. The source resource glob and install helper do not filter COPYING.xml distribute/license metadata. Installation/runtime acceptance has not been inferred from those generated rules."
+    },
+    "findings": [
+      {
+        "id": "SRC-01",
+        "subject": "COLOURlovers palette noncommercial terms",
+        "notice_files": [
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/COPYING.xml",
+            "sha256": "ff506da10cdff292831d8077c7a5c7c81cf2b40198c4eb9134b0a657da315779",
+            "selected_svg_files": 5
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/COPYING.xml",
+            "sha256": "f624180ffe75ff26178a8c614cf1cb37a92b25a41477eb6b7ae764bb9d1c0a4f",
+            "selected_svg_files": 18
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/COPYING.xml",
+            "sha256": "40d8fef301646f7a17e943576e13b517a4724026698f4831e9b7076ce21b0593",
+            "selected_svg_files": 16
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/alpen/COPYING.xml",
+            "sha256": "62bca4ad2ea59131ae9116c66b3b3d2cb23c2685b798dfe56d1c915c47bfb9a5",
+            "selected_svg_files": 20
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/COPYING.xml",
+            "sha256": "bdd528489358be373f7d23d2c2c2856deaaded68ee96bed9092f2ef2ce7e2512",
+            "selected_svg_files": 15
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/drumma/COPYING.xml",
+            "sha256": "315060fb0634f80e76cdbd98acf993cf4d367beca1fc106e6420d4df7471b5c4",
+            "selected_svg_files": 11
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/electroluv/COPYING.xml",
+            "sha256": "2a2efb0c3be5cdad1166059b46df9ae63ab7777481532ccdd8a6986d0ffd6090",
+            "selected_svg_files": 12
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml",
+            "sha256": "9e365c9e8bebeff36d6efb416adda1d191788f6c4ed39ce0cdeb9ab24281e17b",
+            "selected_svg_files": 35
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/hana/COPYING.xml",
+            "sha256": "1bfa63bacae4b40829237f6b78846d401bb0b3552fdbf44db39b48f829bcd2a1",
+            "selected_svg_files": 9
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/COPYING.xml",
+            "sha256": "dc85098083daecb5959df533b57680c9d3bb3daa3d72dfe5843bbb05be903454",
+            "selected_svg_files": 11
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/COPYING.xml",
+            "sha256": "e874b9a2e801a70ffb56f9c83625e15740e37548508a96cecd7fa4d4c17d41f7",
+            "selected_svg_files": 8
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/COPYING.xml",
+            "sha256": "298f5b26757232fdde1d524b4274ab8bc9ab598a449757a53fb17e008785fe76",
+            "selected_svg_files": 23
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/phill/COPYING.xml",
+            "sha256": "d305778392a335c3555386ab31c4817f386ba0df99d4c3e3eee52792611bd39e",
+            "selected_svg_files": 7
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/rotten/COPYING.xml",
+            "sha256": "902fbc6c367ad767be645b834e5fdb5b6e715f8d9481ae04351199682cc8da22",
+            "selected_svg_files": 5
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/rphnick/COPYING.xml",
+            "sha256": "5a8debecd3b361955b2164a4239a4da3513890222a39da7415dbfa9cd737283f",
+            "selected_svg_files": 7
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/COPYING.xml",
+            "sha256": "b2b338c4a41e0f7ad82e312205f5141c86c36e2903db243547b584c7b78be87e",
+            "selected_svg_files": 8
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/sugar/COPYING.xml",
+            "sha256": "bca8acbc572babddc80c0e11fc3388c6cd8ddd576e55b4caff6ed6e6bf51e497",
+            "selected_svg_files": 21
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/tvr/COPYING.xml",
+            "sha256": "a001965b198e3c17fdc2917bea0c555492726e8b355634148756c1530957dbc8",
+            "selected_svg_files": 5
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/vredeling/COPYING.xml",
+            "sha256": "873d3974824a20820e7cae65c93f0d2f368b3d62457dd666b491ec896d9fba17",
+            "selected_svg_files": 20
+          }
+        ],
+        "selected_svg_files": 256,
+        "observed_text": "Each notice names Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported and records qgis license=ccnc distribute=noncomm.",
+        "example_asset": {
+          "source_path": "resources/cpt-city-qgis-min/jjg/ccolo/evad/3_girls_reclining.svg",
+          "sha256": "4437311691f18ec1b65277776f120cc2d6fc3eaed37886d229a823a3d1ca1ba8"
+        },
+        "question": "Resolve whether to omit/replace these assets or obtain suitable permission for intended product distribution; do not treat core code licensing as approval for these resources."
+      },
+      {
+        "id": "SRC-02",
+        "subject": "Free-use labels with explicit no-distribution metadata",
+        "notices": [
+          {
+            "source_path": "resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml",
+            "sha256": "e83e66ea532c2c24fb2e379badf2b6e848fac0f6c56e553bdd9dadc5c1912d09"
+          },
+          {
+            "source_path": "resources/cpt-city-qgis-min/td/COPYING.xml",
+            "sha256": "da208d9658cfa8531e35f86d164f4d6619bab61c1bfa5298ca10fdcbfbb9ffc6"
+          }
+        ],
+        "selected_svg_files": {
+          "jjg/neo10": 135,
+          "td": 3
+        },
+        "observed_text": "Both notices say Free to use and record qgis distribute=no license=freeuse. The td notice additionally says None specified; neo10 supplies no license-text element.",
+        "question": "Resolve an adequate redistribution grant or remove/replace the assets; the importer inclusion and free-use label do not settle distribution scope."
+      },
+      {
+        "id": "SRC-03",
+        "subject": "ElvenSword custom redistribution and preview conditions",
+        "notice": {
+          "source_path": "resources/cpt-city-qgis-min/es/COPYING.xml",
+          "sha256": "f1a66b869fb2bd4bb3901f4a390006854d3851c78890000dcab0d2cc4106e323"
+        },
+        "selected_svg_files": 690,
+        "observed_text": "The notice permits personal/commercial artwork use but separately conditions resource redistribution on credit, free sharing, original preview/name preservation and restrictions on merged collections. A source remark reports approval for inclusion in a 2009 journal entry; that external permission was not verified here.",
+        "local_preview_observation": "No PNG or JPEG preview files were found in the es subtree; the resource files are converted SVG palettes. This is not proof that all possible attribution/preview mechanisms are absent.",
+        "question": "Determine whether the retained asset/preview/credit form and intended distribution satisfy the actual permission, or select replacement assets."
+      },
+      {
+        "id": "SRC-04",
+        "subject": "Jim Mossman custom script-license wording on converted palettes",
+        "notice": {
+          "source_path": "resources/cpt-city-qgis-min/jm/COPYING.xml",
+          "sha256": "500ee139bab61eaab06fbc62bf477a2d7ae72c113e1a4f4866a69891f351f7b4"
+        },
+        "selected_svg_files": 45,
+        "observed_text": "The notice labels Attribution required, while its full agreement describes a personal nontransferable license and derivative works supplied for a client's own internal use; it also requires the agreement with unmodified copies and author attribution.",
+        "question": "Resolve applicability and intended redistribution rights for the converted palettes from the full text rather than relying on the short label."
+      },
+      {
+        "id": "SRC-05",
+        "subject": "Default icon notice delivery",
+        "notice": {
+          "source_path": "images/themes/default/LICENSE.TXT",
+          "sha256": "60c2d717f7b6b1416c340fae995e79f5ccece8db135f3f967b028b47c9159e49"
+        },
+        "observed_text": "The notice states CC BY-SA 3.0 and requests including the license file. doc/CONTRIBUTORS names Robert Szczepanek.",
+        "compiled_reachability": [
+          {
+            "source_path": "images/images.qrc",
+            "sha256": "cc8fc190a150619cf8a95431f63a8a9cfd987a7e1600b9105e01f11a3a01b261",
+            "example_line": 379
+          },
+          {
+            "source_path": "src/core/CMakeLists.txt",
+            "sha256": "150b380e0be58abfa5f4a8eb8e49d7795ea93e79249a85455bfe70a219585643",
+            "example_line": 2416
+          }
+        ],
+        "example_asset": {
+          "source_path": "images/themes/default/mActionPan.svg",
+          "sha256": "175e0a374e6be1a88585a1ab5b85ee72b58e23642055f16e6d2ae48efd5b9337"
+        },
+        "exact_notice_generated_install_references": 0,
+        "exact_notice_qrc_entries": 0,
+        "question": "Establish the product attribution/license delivery mechanism for compiled default icons; the exact retained LICENSE.TXT is neither in images.qrc nor referenced by generated install rules. No conclusion about all other notice mechanisms is made."
+      },
+      {
+        "id": "SRC-06",
+        "subject": "ColorBrewer acknowledgement and naming conditions",
+        "notice": {
+          "source_path": "resources/cpt-city-qgis-min/cb/COPYING.xml",
+          "sha256": "1373892ac6de3f5fd7d3ddf51534a52fb78a99109ccb5e906375fa706b435ad8"
+        },
+        "selected_svg_files": 265,
+        "observed_text": "The retained Apache-style Version1.1 text specifies a Cynthia Brewer acknowledgement in end-user documentation or normal in-product acknowledgements, notice preservation, and restrictions on endorsement/product naming.",
+        "question": "Map the required acknowledgement and naming terms into the product notice/brand review rather than treating Apache-style as a generic SPDX clearance."
+      }
+    ],
+    "owned_code_context": {
+      "notice": {
+        "source_path": "COPYING",
+        "sha256": "dba313854f65a8d41b1777cf9d6cb5ddf692792be04d808b82c86c63909fbdf0"
+      },
+      "observation": "The retained QGIS GPL text includes a Qt linking exception at lines282-292. That code exception does not itself describe the separately identified resource terms."
+    }
   }
 }
