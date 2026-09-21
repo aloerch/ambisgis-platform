@@ -37,6 +37,14 @@ linker `-rpath-link` prevents an indirect dependency from selecting old SQLite.
 `python_gdal.py` generates matching wrappers from the retained GDAL source and
 compiles only Python extensions against the selected spatial prefix.
 
+`xml_profile.py` builds the same retained libxml2 2.14.6 with HTTP support into
+a separate QGIS-only prefix. Retained SpatiaLite requires `xmlNanoHTTPCleanup`,
+which the earlier minimal XML build omits. The producer proves the symbol and
+actual SpatiaLite loading with strict relocation and exact native origins.
+QGIS configure/runtime/native tests explicitly select this new XML prefix; the
+original database environment and prefixes stay unchanged. HTTP implementation
+is compiled, while existing socket controls still deny external fetching.
+
 ## Execute
 
 Use host Python 3.13 and the exact absolute prefixes recorded by the manifests.
@@ -50,26 +58,35 @@ have unresolved broader source/bootstrap closure.
 
 ```sh
 python3 build-support/qgis/native_profile.py --help
+python3 build-support/qgis/xml_profile.py --help
 python3 build-support/qgis/python_gdal.py --help
 python3 build-support/qgis/build.py --help
+python3 build-support/qgis/reconcile.py --help
 python3 build-support/qgis/runtime.py --help
 python3 build-support/qgis/native_database.py --help
 ```
 
 The executed command JSONs in each retained attempt provide complete arguments,
 environment, start/end times, return codes and log hashes. `build.py` requires
-`--native`, `--spatial`, `--support`, `--support-inventory`, `--output` and bounded
+`--native`, `--spatial`, `--support`, `--support-inventory`, `--xml`, `--output` and bounded
 `--jobs` (selected: four). It freshly extracts the exact owned tar, runs configure,
 compiles production and six selected native-test targets, privately stages the
 artifacts, checks CRS database synchronization, inventories outputs and verifies
 input/source integrity. Executed recipes are copied into the attempt.
+The exact inherited GRASS metadata generator writes one new source-tree JSON
+file during configure. All original source entries must remain unchanged, no
+other addition is accepted, and that JSON must reproduce byte for byte offline
+and match the staged copy. `reconcile.py` separately audits the already completed
+build-06 whose original equality guard rejected this sole addition; it preserves
+the failure and never recompiles, reinstalls or calls that audit a rebuild.
 
 Desktop/core/GUI, server/services/plugins, analysis, Python/bindings, PostgreSQL,
 SpatiaLite, auth/OAuth2, GSL, printer and serial support stay enabled. The profile
 excludes 3D, PDAL/Draco, GRASS, Oracle/HANA, QtQuick application, gamepad,
 WebKit/WebEngine, OpenCL, crash-handler integration, QScintilla API generation and
-the server landing-page webapp. These features cannot be advertised as tested or
-available in this profile. Excluding the landing-page webapp also removes its
+the server landing-page webapp. These excluded native features cannot be advertised as tested or
+available in this profile. The inherited build still generates and installs GRASS
+processing-plugin descriptions; their presence does not supply a GRASS engine. Excluding the landing-page webapp also removes its
 inherited yarn network hook. Internal o2/spatialindex/poly2tri/MDAL/JSON use retained
 source; vcpkg and donor synchronization are disabled. COPC/EPT stay enabled with
 embedded laz-perf and retained ZSTD because the source has unconditional

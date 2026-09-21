@@ -1,4 +1,38 @@
-# Implementation status — owned frontend and finite FND-02 completion
+# Implementation status — FND-02 owned QGIS candidate
+
+Current authorized engineering is **F02-04** on `fnd-02/qgis-candidate-build`,
+from verified owner-merged [PR #62](https://github.com/aloerch/ambisgis-platform/pull/62)
+at `8e1717ddc9ea33d28f5460c858904723aec05949`, reviewed head
+`0db4c9190cee633b973a1f5ee9c87e1fa4061bf1`. **FND-02 remains In progress.**
+That owner merge accepts only the bounded frontend/checklist checkpoint.
+
+**F02-04 is demonstrated; owner checkpoint review remains pending.** The
+[QGIS handoff](docs/qgis-candidate-handoff.md) and
+[compact evidence index](verification/qgis-candidate/evidence.json) bind the clean
+owned QGIS desktop/server/PyQGIS build, 9,235 staged entries, 66 passing C++ cases
+and 16 Python tests, readable Qt offscreen desktop canvas/zoom/save/reopen, and six
+real WMS HTTP requests across a server restart. Exact loaded origins, integrity,
+network controls, secret invalidation and cleanup pass. The sole inherited
+source-generated metadata addition is separately reproduced and reconciled;
+failed build/runtime attempts remain preserved. No physical-display, full native
+suite, multiplatform or byte-identical rebuild claim is made.
+The [finite checklist](docs/fnd-02-completion.md) preserves all four criteria and
+eight rows. Fresh checks: 57 QGIS guards, 203 package tests, four schema/example
+checks and 15 shared loopback regressions. Historical component passes are reused
+only within their original scope.
+
+The [separate dependency inventory](docs/qgis-dependency-audit.md) records Qt,
+binding and QGIS rights questions; it does not grant license clearance or replace
+the unchanged Java 48 structural / 12 unresolved / four partial ledger. Frontend
+five lint errors, five webpack warnings, nonidentical replay and rights findings
+remain F02-06. No merge, release, deployment or source-fork default change occurred.
+
+The next finite engineering row is F02-05's missing
+selected-combination smoke, including the embedded GeoWebCache tile response;
+then F02-06/07/08. FND-05 publication and platform installers stay outside scope.
+The following status records are preserved history.
+
+# Preserved status — owned frontend and finite FND-02 completion
 
 The current checkpoint is [PR #62](https://github.com/aloerch/ambisgis-platform/pull/62),
 implementation `2eb07794dc9fd014e8002112bd45a95309f8cf9e`, on
