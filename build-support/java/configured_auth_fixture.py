@@ -322,7 +322,7 @@ def scrub_secrets(output):
             root = ET.parse(path).getroot()
             changed = False
             for element in root.iter():
-                if element.tag.rsplit('}', 1)[-1] in ('clientSecret', 'key'):
+                if element.tag.rsplit('}', 1)[-1] in ('clientSecret', 'key', 'authApiKey'):
                     element.text = 'REDACTED-DISPOSABLE-CREDENTIAL'
                     changed = True
                 if 'password' in element.attrib:

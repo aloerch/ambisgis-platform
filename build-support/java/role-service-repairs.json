@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "path": "geoserver/src/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleServiceConfig.java",
+      "purpose": "Opt-in exact GeoNode authority contract and finite configurable role transport timeouts",
+      "before_sha256": "ecd4fef48370a7c8dda0ea8f0cd510ca4d368547f332ca08f870ec00ddf7ff6a",
+      "after_sha256": "262d91ec77953d61a3b4065f348fbb47938dc310c94138e264adef84d5aa84aa",
+      "replacements": [
+        {
+          "before": "    private String authApiKey;",
+          "after": "    private String authApiKey;\n\n    /** Exact GeoNode user binding and canonical, atomic roles; disabled for legacy providers. */\n    private boolean strictGeoNodeRoles;\n\n    private int connectTimeout = 30000;\n\n    private int readTimeout = 30000;\n\n    public boolean isStrictGeoNodeRoles() {\n        return strictGeoNodeRoles;\n    }\n\n    public void setStrictGeoNodeRoles(boolean strictGeoNodeRoles) {\n        this.strictGeoNodeRoles = strictGeoNodeRoles;\n    }\n\n    public int getConnectTimeout() {\n        return connectTimeout > 0 ? connectTimeout : 30000;\n    }\n\n    public void setConnectTimeout(int connectTimeout) {\n        this.connectTimeout = connectTimeout;\n    }\n\n    public int getReadTimeout() {\n        return readTimeout > 0 ? readTimeout : 30000;\n    }\n\n    public void setReadTimeout(int readTimeout) {\n        this.readTimeout = readTimeout;\n    }",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "geoserver/src/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleService.java",
+      "purpose": "Per-service bounded role cache, exact opt-in GeoNode identity binding, atomic canonical roles and no administrative fallback",
+      "before_sha256": "64466a32c7876687f4a96e2565239e360ca48d343c31db76780e49e058fa58a1",
+      "after_sha256": "b75b69ed130403d81ec68c83eb124dd76f25800b2ff14cebf75237e502e164ef",
+      "replacements": [
+        {
+          "before": "import com.google.common.cache.Cache;",
+          "after": "import com.fasterxml.jackson.core.JsonParser;\nimport com.fasterxml.jackson.databind.DeserializationFeature;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.google.common.cache.Cache;",
+          "count": 1
+        },
+        {
+          "before": "import java.util.Collections;",
+          "after": "import java.util.ArrayList;\nimport java.util.Collections;",
+          "count": 1
+        },
+        {
+          "before": "    private RestTemplate restTemplate;",
+          "after": "    // JsonPath/json-smart accepts JavaScript-like syntax and duplicate keys. Strict\n    // membership responses require one complete unambiguous JSON document instead.\n    private static final ObjectMapper STRICT_JSON = new ObjectMapper()\n            .enable(JsonParser.Feature.STRICT_DUPLICATE_DETECTION)\n            .enable(DeserializationFeature.FAIL_ON_TRAILING_TOKENS);\n\n    private RestTemplate restTemplate;",
+          "count": 1
+        },
+        {
+          "before": "import java.net.URL;",
+          "after": "import java.net.URL;\nimport java.nio.charset.StandardCharsets;",
+          "count": 1
+        },
+        {
+          "before": "import java.util.List;",
+          "after": "import java.util.List;\nimport java.util.Locale;\nimport java.util.HexFormat;",
+          "count": 1
+        },
+        {
+          "before": "import org.springframework.web.client.RestTemplate;",
+          "after": "import org.springframework.web.client.RestTemplate;\nimport org.springframework.web.util.UriUtils;\nimport org.apache.http.impl.client.HttpClients;",
+          "count": 1
+        },
+        {
+          "before": "    static Cache<String, String> cachedResponses;",
+          "after": "    // Membership and service credentials are scoped to this configured service instance.\n    Cache<String, String> cachedResponses;",
+          "count": 1
+        },
+        {
+          "before": "        restRoleServiceConfig = (GeoServerRestRoleServiceConfig) config;",
+          "after": "        restRoleServiceConfig = (GeoServerRestRoleServiceConfig) config;\n        adminGroup = null;\n        groupAdminGroup = null;\n        restTemplate = null;\n        if (restRoleServiceConfig.isStrictGeoNodeRoles()\n                && (!isEmpty(restRoleServiceConfig.getAdminRoleName())\n                        || !isEmpty(restRoleServiceConfig.getGroupAdminRoleName()))) {\n            throw new IOException(\"Strict GeoNode mapping requires the authenticated admin-role endpoint\");\n        }",
+          "count": 1
+        },
+        {
+          "before": "                    try {\n                        List<Object> rolesString = JsonPath.read(",
+          "after": "                    if (restRoleServiceConfig.isStrictGeoNodeRoles()) {\n                        return strictUserRoles(json, username);\n                    }\n                    try {\n                        List<Object> rolesString = JsonPath.read(",
+          "count": 1
+        },
+        {
+          "before": "                    restRoleServiceConfig.getUsersRESTEndpoint() + \"/\" + username,\n                    restRoleServiceConfig.getUsersJSONPath().replace(\"${username}\", username),",
+          "after": "                    restRoleServiceConfig.getUsersRESTEndpoint() + \"/\"\n                            + UriUtils.encodePathSegment(username, StandardCharsets.UTF_8),\n                    restRoleServiceConfig.isStrictGeoNodeRoles()\n                            ? \"$.users\"\n                            : restRoleServiceConfig.getUsersJSONPath().replace(\"${username}\", username),",
+          "count": 1
+        },
+        {
+          "before": "        } catch (Exception ex) {\n            Logger.getLogger(getClass().getName()).log(Level.FINEST, null, ex);\n        }\n\n        return Collections.unmodifiableSortedSet(roles);\n    }\n\n    protected SortedSet<GeoServerRole> fixGeoServerRoles",
+          "after": "        } catch (Exception ex) {\n            // Never retain a prefix of a malformed role array or log a credential-bearing body.\n            LOGGER.fine(\"REST user-role lookup failed\");\n            roles.clear();\n        }\n\n        return Collections.unmodifiableSortedSet(roles);\n    }\n\n    private static Map<?, ?> strictObject(String json) throws IOException {\n        Object value = STRICT_JSON.readValue(json, Object.class);\n        if (!(value instanceof Map<?, ?> object)) throw new IOException(\"Invalid GeoNode JSON object\");\n        return object;\n    }\n\n    private List<String> strictRoleNames(String json) throws IOException {\n        Object value = strictObject(json).get(\"groups\");\n        if (!(value instanceof List<?> groups)) throw new IOException(\"Invalid GeoNode role-list response\");\n        List<String> result = new ArrayList<>();\n        for (Object group : groups) {\n            if (!(group instanceof String role)) throw new IOException(\"Invalid GeoNode role value\");\n            strictRole(role);\n            result.add(role);\n        }\n        return result;\n    }\n\n    private GeoServerRole strictRole(String role) throws IOException {\n        if (role == null || !role.matches(\"[a-z][a-z0-9_-]{0,149}\") || role.startsWith(\"role_\")\n                || Set.of(\"administrator\", \"group_admin\", \"group-admin\", \"authenticated\", \"anonymous\", \"any\", \"root\").contains(role)) {\n            throw new IOException(\"Noncanonical or reserved GeoNode role\");\n        }\n        return createRoleObject(role);\n    }\n\n    private SortedSet<GeoServerRole> strictUserRoles(String json, String username) throws IOException {\n        Object usersValue = strictObject(json).get(\"users\");\n        if (!(usersValue instanceof List<?> users)) throw new IOException(\"Invalid GeoNode users response\");\n        SortedSet<GeoServerRole> result = new TreeSet<>();\n        if (users.isEmpty()) return Collections.unmodifiableSortedSet(result);\n        if (users.size() != 1 || !(users.get(0) instanceof Map<?, ?> user)\n                || !username.equals(user.get(\"username\")) || !(user.get(\"groups\") instanceof List<?> groups)) {\n            throw new IOException(\"GeoNode role response does not bind the exact requested identity\");\n        }\n        for (Object group : groups) {\n            if (!(group instanceof String role)) throw new IOException(\"Invalid GeoNode role value\");\n            result.add(strictRole(role));\n        }\n        if (!result.isEmpty()) {\n            GeoServerRole admin = getAdminRole();\n            if (admin == null) throw new IOException(\"GeoNode administrative mapping unavailable\");\n            if (result.contains(admin)) {\n                result.clear();\n                result.add(GeoServerRole.ADMIN_ROLE);\n            }\n        }\n        return Collections.unmodifiableSortedSet(result);\n    }\n\n    protected SortedSet<GeoServerRole> fixGeoServerRoles",
+          "count": 1
+        },
+        {
+          "before": "if (roles.contains(GeoServerRole.ADMIN_ROLE) || roles.contains(adminRole)) {",
+          "after": "if (roles.contains(GeoServerRole.ADMIN_ROLE) || (adminRole != null && roles.contains(adminRole))) {",
+          "count": 1
+        },
+        {
+          "before": "                        for (String role : rolesString) {\n                            if (role.startsWith(rolePrefix)) {",
+          "after": "                        for (String role : rolesString) {\n                            if (restRoleServiceConfig.isStrictGeoNodeRoles()) {\n                                roles.add(strictRole(role));\n                                continue;\n                            }\n                            if (role.startsWith(rolePrefix)) {",
+          "count": 1
+        },
+        {
+          "before": "        } catch (Exception ex) {\n            Logger.getLogger(getClass().getName()).log(Level.FINEST, null, ex);\n        }\n\n        return Collections.unmodifiableSortedSet(roles);\n    }\n\n    @Override\n    public Map<String, String> getParentMappings()",
+          "after": "        } catch (Exception ex) {\n            LOGGER.fine(\"REST role-list lookup failed\");\n            roles.clear();\n        }\n\n        return Collections.unmodifiableSortedSet(roles);\n    }\n\n    @Override\n    public Map<String, String> getParentMappings()",
+          "count": 1
+        },
+        {
+          "before": "role.toUpperCase() : role",
+          "after": "role.toUpperCase(Locale.ROOT) : role",
+          "count": 1
+        },
+        {
+          "before": "                            String targetRole = JsonPath.read(json, restRoleServiceConfig.getAdminRoleJSONPath());\n\n                            if (targetRole.startsWith(rolePrefix)) {",
+          "after": "                            if (restRoleServiceConfig.isStrictGeoNodeRoles()) {\n                                Object targetRole = strictObject(json).get(\"adminRole\");\n                                // The controlled endpoint reserves this role exclusively for superusers.\n                                if (!\"admin\".equals(targetRole)) throw new IOException(\"Invalid GeoNode admin mapping\");\n                                return strictRole(\"admin\");\n                            }\n                            String targetRole = JsonPath.read(json, restRoleServiceConfig.getAdminRoleJSONPath());\n\n                            if (targetRole.startsWith(rolePrefix)) {",
+          "count": 1
+        },
+        {
+          "before": "            } catch (Exception ex) {\n                Logger.getLogger(getClass().getName()).log(Level.FINEST, null, ex);\n            }\n        }\n\n        try {\n            return getRoleByName(adminGroup);",
+          "after": "            } catch (Exception ex) {\n                LOGGER.fine(\"REST administrative-role lookup failed\");\n            }\n            return null;\n        }\n\n        try {\n            return getRoleByName(adminGroup);",
+          "count": 1
+        },
+        {
+          "before": "        factory.setReadTimeout(READ_TIMEOUT);\n        factory.setConnectTimeout(CONN_TIMEOUT);",
+          "after": "        factory.setReadTimeout(restRoleServiceConfig.getReadTimeout());\n        factory.setConnectTimeout(restRoleServiceConfig.getConnectTimeout());\n        factory.setConnectionRequestTimeout(restRoleServiceConfig.getConnectTimeout());\n        // An endpoint redirect must not forward the separate role-service credential.\n        factory.setHttpClient(HttpClients.custom().disableRedirectHandling().build());",
+          "count": 1
+        },
+        {
+          "before": "final String hash = getHash(restEndPoint);",
+          "after": "final String hash = cacheKey(restEndPoint, authApiKey);",
+          "count": 1
+        },
+        {
+          "before": "        final String encryptedString = new String(messageDigest.digest());\n\n        return encryptedString;",
+          "after": "        return HexFormat.of().formatHex(messageDigest.digest());",
+          "count": 1
+        },
+        {
+          "before": "    private static String getHash(String stringToEncrypt) throws NoSuchAlgorithmException {",
+          "after": "    private static String cacheKey(String endpoint, String credential) throws NoSuchAlgorithmException {\n        // Credential rotation cannot hit a response authorized with the previous key.\n        return getHash(endpoint + \"\\u0000\" + (credential == null ? \"\" : credential));\n    }\n\n    private static String getHash(String stringToEncrypt) throws NoSuchAlgorithmException {",
+          "count": 1
+        },
+        {
+          "before": "messageDigest.update(stringToEncrypt.getBytes());",
+          "after": "messageDigest.update(stringToEncrypt.getBytes(StandardCharsets.UTF_8));",
+          "count": 1
+        },
+        {
+          "before": "        } catch (ExecutionException e) {\n            LOGGER.log(Level.FINEST, e.getMessage(), e);\n            return null;\n        }",
+          "after": "        } catch (ExecutionException e) {\n            // Preserve failure as failure: callers must not treat null as a valid role set.\n            throw new IOException(\"REST role lookup unavailable\");\n        }",
+          "count": 1
+        },
+        {
+          "before": "                        List<String> rolesString = JsonPath.read(json, restRoleServiceConfig.getRolesJSONPath());",
+          "after": "                        List<String> rolesString = restRoleServiceConfig.isStrictGeoNodeRoles()\n                                ? strictRoleNames(json)\n                                : JsonPath.read(json, restRoleServiceConfig.getRolesJSONPath());",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "file": "AmbisGISRestRoleServiceTest.java",
+      "path": "geoserver/src/extension/authkey/src/test/java/org/geoserver/security/AmbisGISRestRoleServiceTest.java",
+      "sha256": "740be388f6e8dbca05ee6a3ea6648ebdd4b5d1dd7b1cb3d928696a3fe6546275",
+      "test_count": 37
+    }
+  ]
+}

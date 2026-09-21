@@ -40,6 +40,7 @@ def save(path, value, private=False):
 
 def private_values(config):
     values = [config[k] for k in ('secret_key', 'api_key', 'client_secret', 'second_client_secret')]
+    values += [config.get('role_service_api_key', '')]
     values += list(config['passwords'].values())
     values += [config[k]['password'] for k in ('database', 'runtime_database')]
     return values
@@ -198,7 +199,11 @@ def run(args):
                   'second_client_id': 'fixture-second-app-' + secrets.token_hex(12), 'second_client_secret': secrets.token_urlsafe(36),
                   'redirect_uri': 'http://127.0.0.1:' + str(port) + '/fixture-callback',
                   'passwords': {name: secrets.token_urlsafe(32) for name in ('fixture-reader', 'fixture-outsider', 'fixture-disabled', 'fixture-admin', 'fixture-unmapped')},
-                  'oidc_rsa_private_key_file': str(output / 'oidc-key.pem'), 'strict_verifier': args.strict_verifier}
+                  'oidc_rsa_private_key_file': str(output / 'oidc-key.pem'), 'strict_verifier': args.strict_verifier,
+                  'strict_roles': args.strict_roles, 'role_service_username': 'fixture-role-service',
+                  'role_service_api_key': secrets.token_urlsafe(36)}
+        if args.strict_roles and (not args.strict_verifier or (args.integration and (not args.build or not args.war_sha256))):
+            raise ValueError('strict roles require strict verifier, integration and explicit build/WAR digest')
         values = private_values(config)
         key = subprocess.run(['openssl', 'genpkey', '-algorithm', 'RSA', '-pkeyopt', 'rsa_keygen_bits:2048', '-out', config['oidc_rsa_private_key_file']], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         if key.returncode: raise RuntimeError('disposable RSA key generation failed')
@@ -217,20 +222,25 @@ def run(args):
             import combined_logging_probe
             import runtime_inputs
             import toolchain
-            build = TASK / 'build-worktrees/geoserver-auth/aggregate-03'
+            build = args.build.resolve() if args.build else TASK / 'build-worktrees/geoserver-auth/aggregate-03'
+            expected_war = args.war_sha256 or WAR_SHA256
+            build_result = json.loads((build / 'result.json').read_text())
+            if args.strict_roles:
+                if build_result.get('result_exit_code') != 0:
+                    raise ValueError('candidate aggregate build did not succeed')
             tools = TASK / 'build-worktrees/java-resolution/toolchain'
             java_home = tools / 'jdk-17.0.20.1+1'
             manifest = json.loads((HERE.parent / 'java/toolchain-inputs.json').read_text())
             result['toolchain'] = toolchain.verify_extracted(TASK / 'source-archives/java-resolution/toolchain', manifest, tools)
             inventory = combined_logging_probe.packaged_classpath(build, output)
-            if inventory['war_sha256'] != WAR_SHA256:
+            if inventory['war_sha256'] != expected_war:
                 raise ValueError('retained #59 WAR digest mismatch')
             save(output / 'application-inventory.json', inventory)
             result['runtime_inputs'] = runtime_inputs.stage(TASK / 'source-archives/java-http-auth/maven', output / 'servlet')
             result['launcher'] = runtime_inputs.compile_launcher(java_home, output / 'servlet', output / 'launcher')
             invocation['runtime'] = {'source': str(build / 'work/source'), 'java_home': str(java_home),
                 'servlet': str(output / 'servlet'), 'launcher': str(output / 'launcher'),
-                'war': inventory['war_path'], 'war_sha256': WAR_SHA256,
+                'war': inventory['war_path'], 'war_sha256': expected_war,
                 'database_properties': str(database.properties_path)}
         save(output / 'invocation.json', invocation)
         # Snapshot the exact executed harness so later edits cannot alter retained attempts.
@@ -301,4 +311,7 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--integration', action='store_true')
     parser.add_argument('--strict-verifier', action='store_true')
+    parser.add_argument('--strict-roles', action='store_true')
+    parser.add_argument('--build', type=Path)
+    parser.add_argument('--war-sha256')
     raise SystemExit(run(parser.parse_args()))

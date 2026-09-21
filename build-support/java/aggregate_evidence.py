@@ -9,7 +9,7 @@ from pathlib import Path, PurePosixPath
 import zipfile
 
 from combined_logging_probe import packaged_classpath
-from resolution import PROFILES, sha, write_json
+from resolution import PROFILES, selected_profiles, sha, write_json
 
 PATCHED_CLASSES = {
     'org/geoserver/security/oauth2/services/GeoNodeTokenServices.class': {
@@ -52,6 +52,15 @@ STATELESS_CLASSES = {
         'present': ['statelessBearerAuthentication', 'isStatelessBearerAuthentication', 'setStatelessBearerAuthentication'],
         'absent': []},
 }
+ROLE_SERVICE_CLASSES = {
+    'org/geoserver/security/GeoServerRestRoleService.class': {
+        'jar': 'gs-authkey-2.28.5.jar', 'module': 'geoserver/src/extension/authkey',
+        'present': ['strictUserRoles', 'cacheKey', 'isStrictGeoNodeRoles', 'strictObject',
+                    'strictRoleNames', 'STRICT_DUPLICATE_DETECTION', 'FAIL_ON_TRAILING_TOKENS'], 'absent': []},
+    'org/geoserver/security/GeoServerRestRoleServiceConfig.class': {
+        'jar': 'gs-authkey-2.28.5.jar', 'module': 'geoserver/src/extension/authkey',
+        'present': ['isStrictGeoNodeRoles', 'getConnectTimeout', 'getReadTimeout'], 'absent': []},
+}
 REQUIRED = {'gs-importer-core-2.28.5.jar', 'gs-importer-rest-2.28.5.jar',
             'gs-geofence-server-2.28.5.jar', 'geofence-persistence-3.8.3.jar',
             'gt-jdbc-postgis-34.5.jar', 'gs-printing-2.28.5.jar', 'print-lib-2.4.1.jar',
@@ -84,7 +93,7 @@ def retained_repair_manifest(build, result, name):
     """Read the exact recipe executed by this build, even after later fixture edits."""
     if '/' in name or '\\' in name or name not in (
             'oauth-redaction.json', 'oauth-principal.json', 'configured-auth-repairs.json',
-            'configured-auth-stateless.json'):
+            'configured-auth-stateless.json', 'role-service-repairs.json'):
         raise ValueError('unknown retained repair manifest')
     path = build / 'tooling/java' / name
     expected = result['tooling_manifest'].get('java/' + name)
@@ -114,11 +123,14 @@ def inspect(build, output):
         result = json.loads((build / 'result.json').read_text())
         source = build / 'work/source'
         preparation = json.loads((build / 'work/preparation.json').read_text())
-        if preparation['profiles'] != PROFILES:
+        role_service = result.get('role_service_profile', False)
+        profiles = selected_profiles(role_service)
+        if preparation['profiles'] != profiles:
             raise ValueError('aggregate selected profiles differ from retained recipe')
-        if '-P' + ','.join(PROFILES) not in result['command']:
+        if '-P' + ','.join(profiles) not in result['command']:
             raise ValueError('aggregate command omitted selected profiles')
-        report['profiles'] = PROFILES
+        report['profiles'] = profiles
+        report['role_service_profile'] = role_service
         report['packaging_tests_skipped'] = result.get('test_execution_skipped') is True
         repaired = result['aggregate_oauth_repair']
         if (repaired.get('authentication_decision_changed') is not True
@@ -126,7 +138,8 @@ def inspect(build, output):
                 or repaired.get('test_sources_unchanged') is not True):
             raise ValueError('require principal-repaired, main-source-only aggregate')
         inventory = packaged_classpath(build, output)
-        if not REQUIRED.issubset({row['name'] for row in inventory['libraries']}):
+        if not (REQUIRED | ({'gs-authkey-2.28.5.jar'} if role_service else set())).issubset(
+                {row['name'] for row in inventory['libraries']}):
             raise ValueError('aggregate selected module missing')
         report['classpath'] = inventory
         manifests = ['oauth-redaction.json', 'oauth-principal.json']
@@ -188,11 +201,31 @@ def inspect(build, output):
             expected_classes[filter_class] = {**expected_classes[filter_class],
                 'present': [*expected_classes[filter_class]['present'], 'isStatelessBearerAuthentication']}
             report['configured_auth_stateless'] = stateless
+        role_repair = result.get('role_service_repair')
+        if role_service:
+            if configured is None or stateless is None:
+                raise ValueError('role-service aggregate must preserve configured and stateless repairs')
+            # Profile presence alone is not a repaired authoritative-role candidate.
+            role_manifest = retained_repair_manifest(build, result, 'role-service-repairs.json')
+            if (role_repair is None or role_repair.get('repair_applied') is not True
+                    or role_repair.get('manifest_sha256') != sha(role_manifest)
+                    or role_repair.get('injected_sources') != []):
+                raise ValueError('role-service aggregate requires verified main-source-only repairs')
+            role_rows = json.loads(role_manifest.read_text())['sources']
+            identity_keys = ('path', 'before_sha256', 'after_sha256')
+            identities = lambda rows: [{key: row[key] for key in identity_keys} for row in rows]
+            if identities(role_repair.get('repairs', [])) != identities(role_rows):
+                raise ValueError('role-service aggregate repair rows missing or reordered')
+            final_source_outputs.update({row['path']: row['after_sha256'] for row in role_rows})
+            expected_classes.update(ROLE_SERVICE_CLASSES)
+            report['role_service_repair'] = role_repair
+        elif role_repair is not None:
+            raise ValueError('role-service repair receipt requires its packaged profile')
         for name, digest in final_source_outputs.items():
             if source_inputs.get(name) != digest or sha(source / name) != digest:
                 raise ValueError('final repaired source differs from recorded compiler input')
         report['final_repaired_source_outputs'] = final_source_outputs
-        names = manifests + (['configured-auth-repairs.json'] if configured else []) + (['configured-auth-stateless.json'] if stateless else [])
+        names = manifests + (['configured-auth-repairs.json'] if configured else []) + (['configured-auth-stateless.json'] if stateless else []) + (['role-service-repairs.json'] if role_service else [])
         report['executed_repair_manifests'] = {name: {'path': str(retained_repair_manifest(build, result, name)),
             'sha256': result['tooling_manifest']['java/' + name]} for name in names}
         report['build_repairs'] = {'xmlcodegen': result['repair'], 'lifecycle': result['aggregate_lifecycle_repair']}
@@ -201,6 +234,8 @@ def inspect(build, output):
             report['repair_application_order'].append('configured-auth-diagnostics')
         if stateless is not None:
             report['repair_application_order'].append('configured-auth-stateless')
+        if role_service:
+            report['repair_application_order'].append('role-service-repair')
         retained = json.loads((build / 'retained-inputs.json').read_text())
         library_origins = {}
         for library in inventory['libraries']:
@@ -211,6 +246,8 @@ def inspect(build, output):
                       for row in retained if Path(row['maven_path']).name == library['name'] and row['sha256'] == digest]
             if not built and not inputs:
                 raise ValueError('aggregate library has no retained or source-built origin')
+            if role_service and library['name'] == 'gs-authkey-2.28.5.jar' and not built:
+                raise ValueError('role-service module must be built from owned source')
             library_origins[library['name']] = {'sha256': digest, 'origins': built + inputs}
         war_entries, class_origins, jar_entries = [], defaultdict(list), {}
         with zipfile.ZipFile(inventory['war_path']) as archive:
@@ -226,7 +263,8 @@ def inspect(build, output):
                     if not name.endswith('.class'):
                         continue
                     if any(witness in name for witness in ('AmbisgisGeoNodeHttpTest', 'AmbisgisGeoNodeDiagnosticsTest',
-                                                          'AmbisgisConfiguredDiagnosticsTest', 'AmbisgisStatelessOAuthFilterTest')):
+                                                          'AmbisgisConfiguredDiagnosticsTest', 'AmbisgisStatelessOAuthFilterTest',
+                                                          'AmbisGISRestRoleServiceTest')):
                         raise ValueError('OAuth test witness leaked into aggregate application')
                     class_origins[name].append({'jar': jar['name'], 'sha256': digest})
                     if name in expected_classes:

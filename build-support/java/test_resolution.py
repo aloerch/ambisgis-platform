@@ -15,6 +15,19 @@ import replay_model
 
 
 class ResolutionTests(unittest.TestCase):
+    def test_role_service_profile_is_an_explicit_addition_to_unchanged_recipe(self):
+        original = list(resolution.PROFILES)
+        cmd, _ = resolution.command(Path('/task'), Path('/java'), Path('/maven'),
+                                    'dependencies', Path('/task/m2'), Path('/settings'), 'run',
+                                    role_service=True)
+        self.assertIn('-P' + ','.join([*original, 'authkey']), cmd)
+        self.assertEqual(resolution.PROFILES, original)
+        self.assertEqual(resolution.selected_profiles(), original)
+        self.assertNotIn('authkey', resolution.selected_profiles())
+        for value in ('authkey', ['authkey'], 1):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                resolution.selected_profiles(value)
+
     def test_only_pinned_model_or_dependency_goals(self):
         for stage in ('deploy', 'install', 'package', 'validate', 'verify', 'test'):
             with self.subTest(stage=stage), self.assertRaises(ValueError):

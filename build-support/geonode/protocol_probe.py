@@ -231,7 +231,8 @@ class OAuthBrowser:
     def request(self, method, path, *, form=None, headers=None):
         url = self._local(path)
         method = method.upper()
-        if method not in ('GET', 'POST') or (method == 'GET' and form is not None):
+        role_negative_method = method in ('PUT', 'DELETE') and urllib.parse.urlsplit(url).path in ('/api/roles', '/api/adminRole', '/api/users')
+        if (method not in ('GET', 'POST') and not role_negative_method) or (method == 'GET' and form is not None):
             raise ProtocolError('unsupported fixture HTTP operation')
         h = dict(headers or {})
         if any(k.lower() in ('host', 'cookie', 'proxy-authorization') for k in h):

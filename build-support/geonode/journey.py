@@ -1,4 +1,4 @@
-"""Real GeoNode issuance -> unchanged configured GeoServer WAR integration.
+"""Real GeoNode issuance -> exact packaged configured GeoServer WAR integration.
 
 The only identity adapter below reads passive request counts and provides secret
 redaction to the existing HTTP assertion helper. It implements no identity server,
@@ -271,6 +271,14 @@ def exercise(invocation, config, private):
                                   'Concurrent verification global windows are not individual request attribution.',
                                   'Malformed response adversaries remain the separate #59 synthetic regression.',
                                   'Delay/truncation are explicitly injected transport faults after a real native200; native output is unchanged without the private fault control.']}
+    strict_roles = config.get('strict_roles', False)
+    if strict_roles:
+        report['role_authority'] = 'GeoNode owns active membership; exact authenticated HTTP REST role service; local users identity-only.'
+        report['coverage_limits'] = [
+            'No full browser JavaScript/SSO or multi-node revocation acceptance.',
+            'Per-request GeoServer correlation does not attribute concurrent verifier calls.',
+            'Role transport/payload faults execute actual native endpoints, then alter explicitly identified transport fields or bytes.',
+            'Fixed GeoFence rules are not full GeoNode object-sharing synchronization.']
     identity = LiveEvidence(output / 'geonode-runtime.log', registry, browsers, private)
     data_dir = output / 'geoserver-data'
     matrices = []
@@ -367,8 +375,16 @@ def exercise(invocation, config, private):
             capture.finish()
             report['mutations'].append({'action': action, 'username': username, 'exit_code': code,
                                         'log_sha256': digest(capture.path), 'diagnostic_secret_hits': capture.leaks, 'requested_seconds': seconds})
-            if code or capture.leaks:
+            if code or capture.security_failures:
                 raise RuntimeError('GeoNode fixture mutation failed')
+            acknowledgments = []
+            for line in capture.path.read_text().splitlines():
+                try: record = json.loads(line)
+                except ValueError: continue
+                if record.get('event') == 'fixture_mutation': acknowledgments.append(record)
+            if len(acknowledgments) != 1: raise RuntimeError('missing unique committed mutation acknowledgment')
+            report['mutations'][-1]['committed_state'] = acknowledgments[0]
+            return acknowledgments[0]
         finally:
             if token_file is not None:
                 token_file.write_text('SCRUBBED DISPOSABLE TOKEN\n')
@@ -411,6 +427,10 @@ def exercise(invocation, config, private):
                         or active.get('role_source') != 'UserGroupService'
                         or active.get('user_group_service') != 'fixture'):
                     raise RuntimeError('loaded GeoServer identity configuration mismatch')
+                if strict_roles and (active.get('role_service_config_class') != 'org.geoserver.security.GeoServerRestRoleServiceConfig'
+                        or active.get('strict_geonode_roles') is not True or active.get('role_cache_ms') != 1000
+                        or 'org.geoserver.security.GeoServerRestRoleService' not in ready.get('application_class_origins', {})):
+                    raise RuntimeError('loaded authoritative REST role service does not match candidate')
                 report['geoserver_' + label] = ready
                 return ready['port']
             time.sleep(.2)
@@ -510,7 +530,7 @@ def exercise(invocation, config, private):
             tokeninfo_token=tokens['outsider'])
         # Role endpoint controls remain separate from opaque-token verification.
         role_client = client()
-        api_auth = 'ApiKey ' + config['api_key']
+        api_auth = 'ApiKey ' + config['role_service_api_key' if strict_roles else 'api_key']
         registry.add(api_auth)
         for path in ('/api/roles', '/api/users/fixture-reader', '/api/adminRole'):
             row('roles-no-auth-' + path, role_client.request('GET', path), (401, 403))
@@ -529,6 +549,9 @@ def exercise(invocation, config, private):
         properties = Path(runtime['database_properties']).read_text()
         registry.add(*(line.split('=', 1)[1] for line in properties.splitlines() if line.startswith('geofenceDataSource.password=')))
         (data_dir / 'geofence/geofence-datasource-ovr.properties').write_text(properties)
+        if strict_roles:
+            from role_fixture import configure
+            configure(data_dir, fixture, config)
         fixture['identity_is_synthetic'] = False
         fixture['identity_route'] = '/api/o/v4/tokeninfo'
         for item in fixture['files']:
@@ -604,43 +627,50 @@ def exercise(invocation, config, private):
             matrix.request('fresh-disabled-owner', wfs('private_points'), disabled_token, expected=(401, 403, 404))
         finally:
             mutate('enable')
-        # GeoNode group changes are real; mirrored XML is intentionally independent.
-        group_cached = issue()[2].access_token
-        matrix.request('group-change-cache-prime', wfs('private_points'), group_cached,
-                       contains='PRIVATE_WITNESS', excludes=()); matrix.require_last()
-        group_primed_at = time.monotonic()
-        mutate('group-remove')
-        try:
-            changed = role_client.request('GET', '/api/users/fixture-reader', headers={'Authorization': api_auth})
-            payload = parse(changed)
-            groups = next((u.get('groups', []) for u in payload.get('users', []) if u.get('username') == 'fixture-reader'), None)
-            group_removed = groups is not None and 'fixture-readers' not in groups
-            row('geonode-role-removal', changed, (200,), group_removed)
-            matrix.request('manual-xml-role-cached-after-geonode-group-removal', wfs('private_points'), group_cached,
-                           contains='PRIVATE_WITNESS', excludes=())
-            cached_row = matrix.rows[-1]
-            cached_elapsed = time.monotonic() - group_primed_at
-            # Explicitly establish the second request has outlived this cache entry.
-            time.sleep(max(0, fixture['cache_seconds'] + .25 - cached_elapsed))
-            matrix.request('manual-xml-role-after-cache-expiry', wfs('private_points'), group_cached,
-                           contains='PRIVATE_WITNESS', excludes=())
-            fresh_row = matrix.rows[-1]
-            report['role_change'] = {
-                'native_geonode_group_removed': group_removed,
-                'cached_request': {'status': cached_row['status'],
-                    'elapsed_after_prime_seconds': round(cached_elapsed, 4),
-                    'verification_call_delta_global': cached_row.get('verification_calls', 0)},
-                'after_cache_expiry': {'status': fresh_row['status'],
-                    'elapsed_after_prime_seconds': round(time.monotonic() - group_primed_at, 4),
-                    'verification_call_delta_global': fresh_row.get('verification_calls', 0)},
-                'passed': group_removed and cached_row['passed'] and fresh_row['passed']
-                    and cached_elapsed < fixture['cache_seconds'] and cached_row.get('verification_calls', 0) == 0
-                    and fresh_row.get('verification_calls', 0) >= 1,
-                'comparison_limitation': 'Local XML role remains both during cache validity and after fresh real verification; no automatic role projection or unified-policy revocation acceptance.',
-                'correlation_scope': 'Sequential controlled verifier-call windows, not per-request trace attribution.',
-            }
-        finally:
-            mutate('group-add')
+        if strict_roles:
+            from role_journey import exercise_roles
+            report['role_change'] = exercise_roles(matrix=matrix, report=report, config=config,
+                output=output, data_dir=data_dir, mutate=mutate, issue=issue, verify=verify,
+                row=row, parse=parse, role_client=role_client, api_auth=api_auth,
+                tokens=tokens, registry=registry)
+        else:
+            # GeoNode group changes are real; mirrored XML is intentionally independent.
+            group_cached = issue()[2].access_token
+            matrix.request('group-change-cache-prime', wfs('private_points'), group_cached,
+                           contains='PRIVATE_WITNESS', excludes=()); matrix.require_last()
+            group_primed_at = time.monotonic()
+            mutate('group-remove')
+            try:
+                changed = role_client.request('GET', '/api/users/fixture-reader', headers={'Authorization': api_auth})
+                payload = parse(changed)
+                groups = next((u.get('groups', []) for u in payload.get('users', []) if u.get('username') == 'fixture-reader'), None)
+                group_removed = groups is not None and 'fixture-readers' not in groups
+                row('geonode-role-removal', changed, (200,), group_removed)
+                matrix.request('manual-xml-role-cached-after-geonode-group-removal', wfs('private_points'), group_cached,
+                               contains='PRIVATE_WITNESS', excludes=())
+                cached_row = matrix.rows[-1]
+                cached_elapsed = time.monotonic() - group_primed_at
+                # Explicitly establish the second request has outlived this cache entry.
+                time.sleep(max(0, fixture['cache_seconds'] + .25 - cached_elapsed))
+                matrix.request('manual-xml-role-after-cache-expiry', wfs('private_points'), group_cached,
+                               contains='PRIVATE_WITNESS', excludes=())
+                fresh_row = matrix.rows[-1]
+                report['role_change'] = {
+                    'native_geonode_group_removed': group_removed,
+                    'cached_request': {'status': cached_row['status'],
+                        'elapsed_after_prime_seconds': round(cached_elapsed, 4),
+                        'verification_call_delta_global': cached_row.get('verification_calls', 0)},
+                    'after_cache_expiry': {'status': fresh_row['status'],
+                        'elapsed_after_prime_seconds': round(time.monotonic() - group_primed_at, 4),
+                        'verification_call_delta_global': fresh_row.get('verification_calls', 0)},
+                    'passed': group_removed and cached_row['passed'] and fresh_row['passed']
+                        and cached_elapsed < fixture['cache_seconds'] and cached_row.get('verification_calls', 0) == 0
+                        and fresh_row.get('verification_calls', 0) >= 1,
+                    'comparison_limitation': 'Local XML role remains both during cache validity and after fresh real verification; no automatic role projection or unified-policy revocation acceptance.',
+                    'correlation_scope': 'Sequential controlled verifier-call windows, not per-request trace attribution.',
+                }
+            finally:
+                mutate('group-add')
         # GeoNode sessionid cookies are not GeoServer JSESSIONID browser context.
         # This proves unrelated cookies confer no privilege; #59 native surrounding
         # GeoServer browser-context tests remain historical, not repeated here.
@@ -688,7 +718,7 @@ def exercise(invocation, config, private):
         with concurrent.futures.ThreadPoolExecutor(max_workers=8) as workers:
             list(workers.map(parallel, range(32)))
         passive = [json.loads(line) for line in (output / 'geoserver-initial/requests.jsonl').read_text().splitlines()]
-        expected_rows = {item['case']: item for item in matrix.rows if item['case'].startswith(('sequential-', 'parallel-'))}
+        expected_rows = {item['case']: item for item in matrix.rows if item['case'].startswith(('sequential-', 'parallel-', 'role-concurrent-'))}
         correlated = []
         for case, expected in sorted(expected_rows.items()):
             found = [item for item in passive if item.get('case') == case]
@@ -701,8 +731,8 @@ def exercise(invocation, config, private):
                 workers.setdefault(item['thread'], []).append(item['status'])
         mixed = any(200 in statuses and any(status in (401, 403, 404) for status in statuses) for statuses in workers.values())
         report['resource_request_correlation'] = {'scope': 'Actual GeoServer resource request case/thread/status; no individual verifier attribution.',
-            'requests': correlated, 'expected_count': 64, 'mixed_identity_worker_reuse': mixed,
-            'passed': len(correlated) == 64 and all(item['passed'] for item in correlated) and mixed}
+            'requests': correlated, 'expected_count': 96 if strict_roles else 64, 'mixed_identity_worker_reuse': mixed,
+            'passed': len(correlated) == (96 if strict_roles else 64) and all(item['passed'] for item in correlated) and mixed}
         # Removal is real catalog state, using an issued token never primed in GeoServer.
         mutate('remove', username='fixture-outsider')
         row('tokeninfo-removed-principal', verify(removed_outsider_token), (401, 403))
@@ -757,6 +787,11 @@ def exercise(invocation, config, private):
                            'immediate_revocation_claimed': False, 'passed': eventual,
                            'stale_access_lower_bound_seconds': max((s['elapsed_after_revoke_seconds'] for s in samples if s['status'] == 200), default=0),
                            'denial_observed_upper_bound_seconds': samples[-1]['elapsed_after_revoke_seconds'] if eventual else None}
+        if strict_roles:
+            role_restart_ack = mutate('group-remove')
+            time.sleep(3.3)
+            matrix.request('role-revoked-before-restart', wfs('private_points'), tokens['reader'], expected=(401, 403, 404))
+            matrix.require_last()
         # Stop the actual verifier; an unprimed issued token cannot borrow a cached identity.
         outage_token = issue()[2].access_token
         stopped('geonode', 'outage')
@@ -766,6 +801,11 @@ def exercise(invocation, config, private):
         port = start_geoserver('restart')
         restart = Matrix(port, identity, stateless=True)
         matrices.append(('restart', restart))
+        if strict_roles:
+            restart.request('restart-roles-remain-revoked', wfs('private_points'), tokens['reader'], expected=(401, 403, 404)); restart.require_last()
+            role_restored = mutate('group-add')
+            time.sleep(3.3)
+            report['role_change']['restart'] = {'removal': role_restart_ack, 'restoration': role_restored, 'passed': True}
         core(restart, tokens, restart=True)
         restart.request('restart-revoked', wfs('private_points'), cached, expected=(401, 403, 404))
         restart.request('restart-expired', wfs('private_points'), expired, expected=(401, 403, 404))
@@ -818,7 +858,7 @@ def exercise(invocation, config, private):
         for label in ('initial', 'restart'):
             gs_log = output / ('geoserver-' + label + '.log')
             gn_log = output / ('geonode-runtime.log' if label == 'initial' else 'geonode-restart.log')
-            for kind in ('OAUTH', 'CACHE'):
+            for kind in (('OAUTH', 'CACHE', 'ROLE') if strict_roles else ('OAUTH', 'CACHE')):
                 marker = 'AMBISGIS_CONFIGURED_' + kind + '_LOG_CAPTURE_CONTROL'
                 report['logger_capture_controls']['geoserver-' + label + '-' + kind] = gs_log.read_text().count(marker) if gs_log.exists() else 0
             marker = 'AMBISGIS_GEONODE_LOG_CAPTURE_CONTROL'

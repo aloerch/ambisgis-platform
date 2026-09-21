@@ -19,10 +19,13 @@ _ACTIVE_RECEIPT = None
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--strict-verifier', action='store_true', help='Apply the guarded opt-in GeoNode verifier source repair before rebuilding')
+    parser.add_argument('--strict-roles', action='store_true', help='Layer guarded read-only role authority on the strict verifier before rebuilding')
     parser.add_argument('--custody', required=True, type=Path)
     parser.add_argument('--work', required=True, type=Path)
     parser.add_argument('--native-prefix', required=True, type=Path)
     args = parser.parse_args()
+    if args.strict_roles and not args.strict_verifier:
+        parser.error('--strict-roles requires --strict-verifier')
     if sys.version_info[:2] != (3, 12):
         raise SystemExit('The recorded compatibility profile requires Python 3.12')
     if args.work.exists():
@@ -64,6 +67,7 @@ def main() -> None:
         verify_owned_tree(args.custody / item['archive'], Path(source_paths[item['name']]),
                           receipt['compatibility_patch']['patched_sha256'] if item['name'] == 'geonode' else None)
     source_repair = None
+    role_source_repair = None
     if args.strict_verifier:
         import verifier_repair
         geonode_source = Path(source_paths['geonode'])
@@ -73,12 +77,26 @@ def main() -> None:
             {'path': str(Path(verifier_repair.__file__)), 'sha256': sha256(Path(verifier_repair.__file__))},
             {'path': str(Path(__file__).with_name('verifier_tests.py')), 'sha256': sha256(Path(__file__).with_name('verifier_tests.py'))},
         ]
-        source_repair['expected_files'] = allowed_changes
+        source_repair['expected_files'] = dict(allowed_changes)
         for item in receipt['sources']:
             verify_owned_tree(args.custody / item['archive'], Path(source_paths[item['name']]),
                               receipt['compatibility_patch']['patched_sha256'] if item['name'] == 'geonode' else None,
                               allowed_changes=allowed_changes if item['name'] == 'geonode' else None)
         source_repair['post_patch_tree_verification'] = 'passed'
+        if args.strict_roles:
+            import roles_repair
+            role_source_repair = roles_repair.apply(geonode_source)
+            allowed_changes.update(roles_repair.expected_files())
+            role_source_repair['recipe_inputs'] = [
+                {'path': str(Path(roles_repair.__file__)), 'sha256': sha256(Path(roles_repair.__file__))},
+                {'path': str(Path(__file__).with_name('roles_tests.py')), 'sha256': sha256(Path(__file__).with_name('roles_tests.py'))},
+            ]
+            role_source_repair['expected_files'] = dict(allowed_changes)
+            for item in receipt['sources']:
+                verify_owned_tree(args.custody / item['archive'], Path(source_paths[item['name']]),
+                                  receipt['compatibility_patch']['patched_sha256'] if item['name'] == 'geonode' else None,
+                                  allowed_changes=allowed_changes if item['name'] == 'geonode' else None)
+            role_source_repair['post_patch_tree_verification'] = 'passed'
     venv = args.work / 'venv'
     if not (venv / 'bin/python').exists():
         run([sys.executable, '-m', 'venv', '--without-pip', venv], log=log, env=env)
@@ -110,7 +128,7 @@ def main() -> None:
     dump(args.work / 'build-receipt.json', {
         'status': 'passed', 'profile': 'geonode-identity-headless', 'python': str(py), 'sources': receipt['sources'],
         'source_paths': source_paths, 'source_python_hashes': source_hashes,
-        'compatibility_patch': receipt['compatibility_patch'], 'source_repair': source_repair, 'installed': installed,
+        'compatibility_patch': receipt['compatibility_patch'], 'source_repair': source_repair, 'role_source_repair': role_source_repair, 'installed': installed,
         'native_prefix': str(args.native_prefix),
         'native_libraries': [{'path': str(p), 'sha256': sha256(p.resolve())} for p in [args.native_prefix / 'lib/libgdal.so', args.native_prefix / 'lib/libpq.so'] if p.exists()], 'native_gdal_version': native_version,
         'manifest_sha256': sha256(args.custody / 'manifest.json'), 'requirements_lock_sha256': sha256(lock),

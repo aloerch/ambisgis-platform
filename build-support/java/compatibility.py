@@ -27,12 +27,13 @@ TARGETS = {
     'geofence': 'org.geoserver.geofence:geofence-persistence-pg-test',
     'importer': 'org.geoserver.importer:gs-importer-core',
     'oauth': 'org.geoserver.community:gs-sec-oauth2-geonode',
+    'role-service': 'org.geoserver.extension:gs-authkey',
     'webapp': 'org.geoserver.web:gs-web-app',
 }
 
 TEST_PACKAGES = {'referencing': 'org/geotools/referencing/', 'xml': 'org/geotools/xml/',
                  'mapfish': 'org/mapfish/', 'geofence': 'org/geoserver/geofence/',
-                 'importer': 'org/geoserver/importer/', 'oauth': 'org/geoserver/security/', 'webapp': 'org/geoserver/web/'}
+                 'importer': 'org/geoserver/importer/', 'oauth': 'org/geoserver/security/', 'webapp': 'org/geoserver/web/', 'role-service': 'org/geoserver/security/'}
 
 TARGET_MODULES = {'referencing': 'geotools/modules/library/referencing/',
                   'xml': 'geotools/modules/library/xml/',
@@ -40,7 +41,8 @@ TARGET_MODULES = {'referencing': 'geotools/modules/library/referencing/',
                   'geofence': 'geofence-132a1d16901b7039f974c8c30d7e7df042d8af4c/src/services/core/persistence-pg-test/',
                   'importer': 'geoserver/src/extension/importer/core/',
                   'oauth': 'geoserver/src/community/security/oauth2-geonode/',
-                  'webapp': 'geoserver/src/web/app/'}
+                  'webapp': 'geoserver/src/web/app/',
+                  'role-service': 'geoserver/src/extension/authkey/'}
 
 
 def materialize(custody, destination):
@@ -203,7 +205,12 @@ def validate_execution(report, output, target, tests):
         if sum(r['tests'] - r['skipped'] for r in selected) <= 0:
             raise ValueError('selected target reported no executed tests')
         report['target_executed_tests'] = sum(r['tests'] - r['skipped'] for r in selected)
-        for key in ('configured_auth_diagnostics', 'configured_auth_stateless'):
+        if target == 'role-service':
+            inherited = [row for row in selected
+                         if row['name'] == 'org.geoserver.security.GeoServerRestRoleServiceTest']
+            if len(inherited) != 1 or inherited[0]['tests'] != 2 or inherited[0]['skipped']:
+                raise ValueError('selected inherited role-service cases missing, repeated or skipped')
+        for key in ('configured_auth_diagnostics', 'configured_auth_stateless', 'role_service_repair'):
             fixture = report.get(key, {})
             expected = fixture.get('native_test_count', 0)
             if not expected:
@@ -266,7 +273,7 @@ def prepare_webapp_oauth(source, principal=False):
             'human_security_review_required': True, 'acceptance_build': False}
 
 
-def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None, runtime_http=False, oauth_redaction=False, oauth_principal=False, configured_auth_diagnostics=False, configured_auth_diagnostic_tests=False, configured_auth_stateless=False, configured_auth_stateless_tests=False):
+def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None, runtime_http=False, oauth_redaction=False, oauth_principal=False, configured_auth_diagnostics=False, configured_auth_diagnostic_tests=False, configured_auth_stateless=False, configured_auth_stateless_tests=False, role_service=False, role_service_repair=False, role_service_tests=False):
     if target not in TARGETS or stage not in ('test', 'package') or tests not in ('all', 'target', 'schema-resolver', 'compile-only'):
         raise ValueError('unsupported bounded target or lifecycle')
     if repair not in ('none', 'xmlcodegen-emf') or (tests == 'schema-resolver' and target != 'xml'):
@@ -292,11 +299,22 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
         native_oauth = target == 'oauth' and runtime_http and tests in ('all', 'target')
         if not (native_oauth or (aggregate_oauth and configured_auth_stateless and not configured_auth_stateless_tests)):
             raise ValueError('stateless bearer checks require tested OAuth HTTP mode or source-only aggregate packaging')
-    if runtime_http and (target not in ('xml', 'mapfish', 'oauth') or tests == 'compile-only' or timeout < 30):
-        raise ValueError('controlled HTTP runtime requires a tested XML/MapFish/OAuth target and timeout >=30')
+    if runtime_http and (target not in ('xml', 'mapfish', 'oauth', 'role-service') or tests == 'compile-only' or timeout < 30):
+        raise ValueError('controlled HTTP runtime requires a tested XML/MapFish/OAuth/role-service target and timeout >=30')
+    role_service = role_service or target == 'role-service'
+    if role_service and target not in ('role-service', 'webapp'):
+        raise ValueError('role service profile requires its native target or aggregate packaging')
+    if role_service and target == 'webapp' and not (
+            aggregate_oauth and repair == 'xmlcodegen-emf' and oauth_redaction
+            and oauth_principal and configured_auth_diagnostics and configured_auth_stateless):
+        raise ValueError('role-service aggregate must preserve all reviewed build and OAuth repairs')
+    if role_service_repair or role_service_tests:
+        native_role = target == 'role-service' and runtime_http and tests == 'target'
+        if not role_service or not (native_role or (aggregate_oauth and role_service_repair and not role_service_tests)):
+            raise ValueError('role service repairs require its selected native HTTP tests or source-only aggregate packaging')
     output.mkdir(parents=True, exist_ok=False)
     report = {'schema_version': 1, 'runner_sha256': sha(Path(__file__)), 'started_at': datetime.now(timezone.utc).isoformat(),
-              'target': target, 'stage': stage, 'test_selection': tests, 'purpose': 'exploratory-compatibility-probe',
+              'target': target, 'stage': stage, 'test_selection': tests, 'role_service_profile': role_service, 'purpose': 'exploratory-compatibility-probe',
               'acceptance_build': False, 'full_source_closure': False,
               'host_toolchain_closure': False, 'java_build_run': False,
               'exit_code': None, 'result_exit_code': 1, 'timeout_seconds': timeout}
@@ -323,7 +341,7 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
                             if a['role'] == 'distribution' and a['path'].startswith('OpenJDK'))
         maven = tools / next(a['root'] for a in manifest['archives']
                              if a['role'] == 'distribution' and a['path'].startswith('apache-maven'))
-        work = prepare(audit_custody, output / 'work')
+        work = prepare(audit_custody, output / 'work', role_service=True) if role_service else prepare(audit_custody, output / 'work')
         if repair != 'none':
             directory = Path(__file__).resolve().with_name('compatibility-patches')
             manifest = json.loads((directory / (repair + '.json')).read_text())
@@ -344,7 +362,7 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
             if target in ('xml', 'mapfish'):
                 import http_fixtures
                 report['http_fixture'] = http_fixtures.prepare(work / 'source', output, target)
-            else:
+            elif target == 'oauth':
                 import oauth_fixture
                 report['oauth_fixture'] = oauth_fixture.prepare(work / 'source', redact=oauth_redaction, principal=oauth_principal)
             report['runtime_network'] = 'controlled-loopback'
@@ -356,6 +374,10 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
             import configured_auth_stateless as stateless_repairs
             report['configured_auth_stateless'] = stateless_repairs.prepare(
                 work / 'source', repair=configured_auth_stateless, tests=configured_auth_stateless_tests)
+        if role_service_repair or role_service_tests:
+            import role_service_repair as role_repairs
+            report['role_service_repair'] = role_repairs.prepare(
+                work / 'source', repair=role_service_repair, tests=role_service_tests)
         if postgres_prefix is not None:
             import geofence_fixture
             database, report['postgres_fixture'] = geofence_fixture.start(
@@ -376,7 +398,7 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
                             '</url></mirror></mirrors></settings>\n')
         local = output / 'fresh-m2'
         local.mkdir()
-        cmd, env = command(work, java, maven, 'dependencies', local, settings, output.name)
+        cmd, env = command(work, java, maven, 'dependencies', local, settings, output.name, role_service=role_service)
         if gdal_prefix is not None:
             import gdal_fixture
             report['gdal_fixture'] = gdal_fixture.prepare(gdal_prefix, gdal_archive, output)
@@ -387,6 +409,8 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
             '-Dallow.test.failure.ignore=false']
         if tests == 'target':
             selector = '%regex[' + TEST_PACKAGES[target] + '.*Test.class],!%regex[.*OnlineTest.class],!%regex[.*StressTest.class]'
+            if target == 'role-service':
+                selector = 'org.geoserver.security.GeoServerRestRoleServiceTest,org.geoserver.security.AmbisGISRestRoleServiceTest'
             cmd += ['-Dtest=' + selector, '-Dsurefire.failIfNoSpecifiedTests=false']
             report['test_selector'] = selector
         elif tests == 'schema-resolver':
@@ -497,10 +521,13 @@ def main():
     parser.add_argument('--configured-auth-diagnostic-tests', action='store_true', help='inject native configured diagnostic regressions in controlled OAuth HTTP mode only')
     parser.add_argument('--configured-auth-stateless', action='store_true', help='apply guarded opt-in stateless bearer source support after configured diagnostic repairs')
     parser.add_argument('--configured-auth-stateless-tests', action='store_true', help='inject native stateless bearer regressions in controlled OAuth HTTP mode only')
+    parser.add_argument('--role-service', action='store_true', help='add the owned authkey module while preserving existing aggregate profiles')
+    parser.add_argument('--role-service-repair', action='store_true', help='apply guarded GeoNode REST role-service repairs')
+    parser.add_argument('--role-service-tests', action='store_true', help='inject selected role-service regressions in controlled HTTP mode only')
     parser.add_argument('--runtime-http', action='store_true', help='compile with sockets denied, then run real tests under verified loopback control')
     args = parser.parse_args()
     result = probe(args.audit_custody.resolve(), args.custody.resolve(), args.toolchain_custody.resolve(),
-                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive, args.runtime_http, args.oauth_redaction, args.oauth_principal, args.configured_auth_diagnostics, args.configured_auth_diagnostic_tests, args.configured_auth_stateless, args.configured_auth_stateless_tests)
+                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive, args.runtime_http, args.oauth_redaction, args.oauth_principal, args.configured_auth_diagnostics, args.configured_auth_diagnostic_tests, args.configured_auth_stateless, args.configured_auth_stateless_tests, args.role_service, args.role_service_repair, args.role_service_tests)
     print(json.dumps(result, indent=2))
     return result['result_exit_code']
 

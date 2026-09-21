@@ -1,0 +1,7175 @@
+{
+  "count_scope": "Protocol assertions overlap HTTP requests; internal role-service HTTP is additional traffic.",
+  "counts": {
+    "distinct_correlated_resource_requests": 96,
+    "geonode_harness_http": 156,
+    "geoserver_http": 393,
+    "initial": 384,
+    "protocol_assertions": 82,
+    "restart": 9
+  },
+  "diagnostic_secret_hits": 0,
+  "full_sanitized_retained_receipt": {
+    "bytes": 699926,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-03/journey-result.json",
+    "sha256": "40c89195935b19e0f7dd5f5d8cf54820affe7c996e64b0f52b379ef46477b029"
+  },
+  "geofence_rules_after_sha256": "e26088c6710b9c9eb84635386fc46aac0adcc025602fd679629a9806b9e4a36c",
+  "geofence_rules_before_sha256": "e26088c6710b9c9eb84635386fc46aac0adcc025602fd679629a9806b9e4a36c",
+  "late_diagnostic_secret_hits": 0,
+  "logger_capture_controls": {
+    "geonode-initial": 1,
+    "geonode-restart": 1,
+    "geoserver-initial-CACHE": 1,
+    "geoserver-initial-OAUTH": 1,
+    "geoserver-initial-ROLE": 1,
+    "geoserver-restart-CACHE": 1,
+    "geoserver-restart-OAUTH": 1,
+    "geoserver-restart-ROLE": 1
+  },
+  "protocol_assertions": [
+    {
+      "body_sha256": "312f6125507110d9e7aa52e651fb96b3203126890c69296d1e6fa1738c918e55",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "98c927127212386748d9b6f97ce3fab6fa9b027ef49f8d57f64a8c54e7320d9b",
+      "case": "http-issued-fixture-outsider",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "a0f961296efb934ebefb85adf463cd4f1685a4f304bd64ce6863e92c77a784a2",
+      "case": "http-issued-fixture-admin",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "fc4a9941536ec3d3635a3c2071e41a820885a67c77e6439cdf04621dc4d737ec",
+      "case": "http-issued-fixture-reader-second-client",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "ea4a39b37bfd58ee673752f9a2052d2656c8d808d951cd5427efb86a6191a6d2",
+      "case": "authorization-code-replay",
+      "expected_status": [
+        400,
+        401
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 400
+    },
+    {
+      "body_sha256": "ea4a39b37bfd58ee673752f9a2052d2656c8d808d951cd5427efb86a6191a6d2",
+      "case": "pkce-wrong-verifier",
+      "expected_status": [
+        400,
+        401
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 400
+    },
+    {
+      "body_sha256": null,
+      "case": "disabled-user-login",
+      "expected_status": [],
+      "kind": "protocol assertion",
+      "passed": true,
+      "status": null
+    },
+    {
+      "body_sha256": "9e94693687c5c684a952d699af6b474027c63c935a7152a48ab4ab39dae0e90d",
+      "case": "tokeninfo-valid-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": null,
+      "case": "tokeninfo-expiry-milliseconds",
+      "expected_status": [],
+      "kind": "protocol assertion",
+      "passed": true,
+      "status": null
+    },
+    {
+      "body_sha256": "191dab53c2894facc4ac5e74269abd5b889f3487c3f211f2af9203cd032dcc35",
+      "case": "tokeninfo-missing-client-auth",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "191dab53c2894facc4ac5e74269abd5b889f3487c3f211f2af9203cd032dcc35",
+      "case": "tokeninfo-wrong-client-secret",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "e1cd363caf4aea96d7a5fdad4565964cf163916c27e8e0279e57e90b3a32c2a1",
+      "case": "tokeninfo-other-client-credentials",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "e1cd363caf4aea96d7a5fdad4565964cf163916c27e8e0279e57e90b3a32c2a1",
+      "case": "tokeninfo-second-application",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "e1cd363caf4aea96d7a5fdad4565964cf163916c27e8e0279e57e90b3a32c2a1",
+      "case": "tokeninfo-invalid",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "82c0b1f2fed0e35c69e62bb610333cd223913b9d199072448a2cb382ddaaa1fa",
+      "case": "tokeninfo-reader-session-outsider-bearer",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "65aa9915df23c06b661fb6393f74337fef723eea4bb3d6ba9a5c1ba7a6ef213e",
+      "case": "roles-no-auth-/api/roles",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "65aa9915df23c06b661fb6393f74337fef723eea4bb3d6ba9a5c1ba7a6ef213e",
+      "case": "roles-wrong-key-/api/roles",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "9cd814e3ca08e49f3a3ef96c94bab36eba4a271e07f749bc8fc076bbb64eeb05",
+      "case": "roles-valid-key-/api/roles",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "65aa9915df23c06b661fb6393f74337fef723eea4bb3d6ba9a5c1ba7a6ef213e",
+      "case": "roles-no-auth-/api/users/fixture-reader",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "65aa9915df23c06b661fb6393f74337fef723eea4bb3d6ba9a5c1ba7a6ef213e",
+      "case": "roles-wrong-key-/api/users/fixture-reader",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "d8a83b2d26143793c86ad0225de78f7aba19c7b403fb9dcc8f0a827348dab33f",
+      "case": "roles-valid-key-/api/users/fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "65aa9915df23c06b661fb6393f74337fef723eea4bb3d6ba9a5c1ba7a6ef213e",
+      "case": "roles-no-auth-/api/adminRole",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "65aa9915df23c06b661fb6393f74337fef723eea4bb3d6ba9a5c1ba7a6ef213e",
+      "case": "roles-wrong-key-/api/adminRole",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "e2f8c008f3d1668ee3886f62d5bc1ebf9dd4204a70efe62959f03a8426abbfbc",
+      "case": "roles-valid-key-/api/adminRole",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c390edd123f68d241bf0baf5c1066f8dd5a917867fb591de9c3fd529e1fc0a2b",
+      "case": "http-issued-fixture-unmapped",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "40a9fe0c0b8759e221aebd9f1920a63745b6201305c0f645d436461b2e12f3c1",
+      "case": "tokeninfo-active-unmapped-principal",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "b0594a75c859692a60f2fd3ccfe8f8f4ff8ec7f6e3486ce5e894cb4f87230a2e",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "ef18b33f29cfd37a336e2c12d273457bf7839bc17fdfe3f0c7b058ff75eee6c1",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "41f3dec7a68ac59f10f934f75687218d97e078a1fae0682f31c8553394e45723",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e1cd363caf4aea96d7a5fdad4565964cf163916c27e8e0279e57e90b3a32c2a1",
+      "case": "tokeninfo-expired",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "4f82f7b1dd55894bbd48e683b5355a5b6ec15d3da29c58cfb9b67272a1209be1",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "native-revocation",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e1cd363caf4aea96d7a5fdad4565964cf163916c27e8e0279e57e90b3a32c2a1",
+      "case": "tokeninfo-revoked",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "4b0738acadf8c067d8fd34dadc21a378b156e70161ee9f782cce04ac2cb3240b",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e1cd363caf4aea96d7a5fdad4565964cf163916c27e8e0279e57e90b3a32c2a1",
+      "case": "tokeninfo-disabled-owner",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "65aa9915df23c06b661fb6393f74337fef723eea4bb3d6ba9a5c1ba7a6ef213e",
+      "case": "user-bearer",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "65aa9915df23c06b661fb6393f74337fef723eea4bb3d6ba9a5c1ba7a6ef213e",
+      "case": "confidential-client-is-not-role-key",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "65aa9915df23c06b661fb6393f74337fef723eea4bb3d6ba9a5c1ba7a6ef213e",
+      "case": "legacy-global-key-is-not-service-key",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "6deadf3fdf901db74038df71b1ebd974d5d7c4b0c7a6180de515503aafbd2b85",
+      "case": "read-only-role-endpoint-POST",
+      "expected_status": [
+        405
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 405
+    },
+    {
+      "body_sha256": "6deadf3fdf901db74038df71b1ebd974d5d7c4b0c7a6180de515503aafbd2b85",
+      "case": "read-only-role-endpoint-PUT",
+      "expected_status": [
+        405
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 405
+    },
+    {
+      "body_sha256": "6deadf3fdf901db74038df71b1ebd974d5d7c4b0c7a6180de515503aafbd2b85",
+      "case": "read-only-role-endpoint-DELETE",
+      "expected_status": [
+        405
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 405
+    },
+    {
+      "body_sha256": "386d664798fadef0ebe6ce579541ecf7ce34271795c2786ce0aa1e33357ba442",
+      "case": "unknown-role-identity",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "386d664798fadef0ebe6ce579541ecf7ce34271795c2786ce0aa1e33357ba442",
+      "case": "inactive-role-identity",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e9f43086e109e602c3ff327f1ca9942e62b9d332cf1ca00dcf38b026c652bd07",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d8a83b2d26143793c86ad0225de78f7aba19c7b403fb9dcc8f0a827348dab33f",
+      "case": "group-before-removal",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "5466de3804af94646cc2d095e5db38679e04f38d25b66e1ecbd6a5e84a4c4303",
+      "case": "group-after-removal",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6cffd37fc715ce7a8f7a6ef7151169bbf039c093329b7dc47b3bc13fcfd03353",
+      "case": "same-token-valid-after-group-removal",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "46ddcbc567a50f3524d137cff7241daa20a9383ad3debfe656b51d8b4e82b906",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d8a83b2d26143793c86ad0225de78f7aba19c7b403fb9dcc8f0a827348dab33f",
+      "case": "group-after-restoration",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "327ecfc47cef4bdc07b235cd64d6bea16c2a353e9d924e0cba0825244a176855",
+      "case": "same-token-valid-after-group-restoration",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6f37597357ffac72cc88874db4fd4894c75248c63985282ff379f3bca5cfacca",
+      "case": "admin-role-after-demotion",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "7bebe2eaa8a5a0b139324ed9ed71caeeb6c35baeb30ca5fde0ab054ecdc45ef9",
+      "case": "same-token-valid-after-admin-demotion",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "65aa9915df23c06b661fb6393f74337fef723eea4bb3d6ba9a5c1ba7a6ef213e",
+      "case": "revoked-role-service-key",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 401
+    },
+    {
+      "body_sha256": "2f33ad3f38bc0c3edd61b6a14cff14a18f08452cbab011a2ab408dfaeb080587",
+      "case": "tokeninfo-independent-of-service-key-revocation",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "b0fde0abb2c18dab169a2463c379aacef4482fad475c348709e39ae248cc96c9",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "cb26c28e7f757e6608942bd2bd56fa6b5d17e422fa4ef0ce606dc7d123a66f01",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d413b91069cb50dd5724cdf5bd69a5f3e93bb45ba301ecfa18158a72e9ffca4e",
+      "case": "tokeninfo-independent-role-fault-missing-credential",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "5dcb086c4aac51f1e4a5ca240933640da4f0476d1738076021c40b97f26c9827",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "385974190574209d5ad3096df6a731442d97ebae9fd925d12d07fe08703d2079",
+      "case": "tokeninfo-independent-role-fault-wrong-credential",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e8b2d27b029ba867cc33644167afb4a0cb4cd2f3e007d736dc72f568c7e3bdf8",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "ba871a09b6f35e558eadcc5d372d0ccd621bcefff074f66a2c273a610ec3f1c2",
+      "case": "tokeninfo-independent-role-fault-delay",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "34f579491658040b581fa47b9ee733e9034b961c453d36a1745e7aff3ba83aa6",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "385974190574209d5ad3096df6a731442d97ebae9fd925d12d07fe08703d2079",
+      "case": "tokeninfo-independent-role-fault-truncate",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "cc60ffc08be6d4efb705d4f2c2c8137e0f440fc380810e68a3ad68e7fa7bf3e5",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "385974190574209d5ad3096df6a731442d97ebae9fd925d12d07fe08703d2079",
+      "case": "tokeninfo-independent-role-fault-short-body",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e26be4bfec3882d3a370adf0236b89878a93c8b73b6b141bce0f04ee9e8cbcbe",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "385974190574209d5ad3096df6a731442d97ebae9fd925d12d07fe08703d2079",
+      "case": "tokeninfo-independent-role-fault-malformed",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "aa9509e7a9e64ca6da85e340ca1151e4cacddcc85d6cb32f22bc04a94ec7c972",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "92e7689bead76b0e44484c0588bbf49e94017aac031e9eac44f8049391c924db",
+      "case": "tokeninfo-independent-role-fault-duplicate-field",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "3902c683587748a6b11497dc158dbcf6da2b6f3d511ca5854e0cbaee981ab9ba",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "19d1cc203a4aaf7149d93763ffa35a4afee89116ce91922f679826cde1ff0db4",
+      "case": "tokeninfo-independent-role-fault-trailing-content",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "7defffe339037fcad1cd2e4c812c5f44bce4cf3152d64d8c6dbe1cfd39463ca1",
+      "case": "http-issued-fixture-outsider",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "native-geonode-logout",
+      "expected_status": [
+        302,
+        303
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 302
+    },
+    {
+      "body_sha256": "4189f6ce632799cf42d161ba0dc8a2a7411911db42e5832158d6af7875871375",
+      "case": "oauth-grant-after-browser-logout",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e1cd363caf4aea96d7a5fdad4565964cf163916c27e8e0279e57e90b3a32c2a1",
+      "case": "tokeninfo-removed-principal",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "df466422de7883c90c4d3ff25c6bf9b6b955719b2ad078da57b15d3256334b14",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e1cd363caf4aea96d7a5fdad4565964cf163916c27e8e0279e57e90b3a32c2a1",
+      "case": "tokeninfo-expired-after-cache-prime",
+      "expected_status": [
+        401,
+        403
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "10d2a1c4e4c028bda17e0ac8df2283d91c1c205dd424cc98c17c4616ac5d02f4",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "native-cache-token-revocation",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "899c01a0684ff449a1de97d19fc71b3f179cad9b8456d378b6fc71bfd4562c9e",
+      "case": "http-issued-fixture-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "909eb78564ef1ed1d55c4c13b42a5234073af8c5f894350d2f7db46be6d438b6",
+      "case": "restart-persisted-token",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e8d0088a7db2897894cdab7e4a14e26b097fc304ae7b7595fba1f66ab889c9b6",
+      "case": "restart-persisted-browser-session",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    }
+  ],
+  "resource_requests": [
+    {
+      "body_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "case": "provision-geofence-0",
+      "expected_status": [
+        200,
+        201
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 201
+    },
+    {
+      "body_sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+      "case": "provision-geofence-1",
+      "expected_status": [
+        200,
+        201
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 201
+    },
+    {
+      "body_sha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+      "case": "provision-geofence-2",
+      "expected_status": [
+        200,
+        201
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 201
+    },
+    {
+      "body_sha256": "8854116ded0cc12c92e6bffe484783276e38588610a4b2ed7b99fa4d39678697",
+      "case": "anonymous-public",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "86c4a14bfb7173a922b9603a5187ea3161e90c644f7801abd8c109dd285ba7ba",
+      "case": "reader-private",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "anonymous-private",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "outsider-private",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "c5ca02761f311868a6e1b83dbf57ab97cde5b4be2613e2e6d200e3cbac873f92",
+      "case": "reader-administration-denied",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "8064fe364e7dd137fd718c9bd793a018dcdebb2cd03f8e7012f64edd048817e3",
+      "case": "admin-workspaces",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "83057f03d56f0c7b240c276933456c3115ce786b306a474676bc50cf839ab892",
+      "case": "reader-/ows",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "5facaf8737c564cf45d11da6dfa6274b23a9ddf2e6c026980d3b69fafec3be61",
+      "case": "outsider-/ows",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "b11840d27eb1ac45d119cfecf4b439a675819e8dc18795f28d065aeb67e8b5b4",
+      "case": "reader-/fixture/ows",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c27ae6a5f10ab4302fcc6dbfa25ceb01620daf5449f5f1a6d8fe96d78faf288c",
+      "case": "outsider-/fixture/ows",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "eb60f26a22f8b3642ec7ea8b8bb90b545c00ff0d707fbaa1d5018409a3d421d4",
+      "case": "reader-/fixture/wfs",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "27a76f3cf291764c69388d2fd063877460047ceac18956ce425854bfcbf5565d",
+      "case": "outsider-/fixture/wfs",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "146348e75192c90bf78c0b9c62b186e4b22e93038128d8fbcca66d85df8ae874",
+      "case": "reader-wfs-post",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "outsider-wfs-post",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "7660dbaaf646b718606a4cf08ed8448f808af35f6fb189bd8826c5b635fc8d58",
+      "case": "denied-create-anonymous",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "a6a92448cb2c496522a05944617d71e6b02ca527ab7a15101177b009a400d10a",
+      "case": "absent-after-create-anonymous",
+      "expected_status": [
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "body_sha256": "e42b91b9aefc96342edf8d5e45501b2623673a85a3d50a06a7e6045c3580fbb0",
+      "case": "denied-create-reader",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "a6a92448cb2c496522a05944617d71e6b02ca527ab7a15101177b009a400d10a",
+      "case": "absent-after-create-reader",
+      "expected_status": [
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "body_sha256": "e42b91b9aefc96342edf8d5e45501b2623673a85a3d50a06a7e6045c3580fbb0",
+      "case": "denied-create-outsider",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "a6a92448cb2c496522a05944617d71e6b02ca527ab7a15101177b009a400d10a",
+      "case": "absent-after-create-outsider",
+      "expected_status": [
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "body_sha256": "45788ceeeed138e2e229d3e6a5076595e765248b997a5157e3fb6a00f4165079",
+      "case": "admin-create",
+      "expected_status": [
+        200,
+        201
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 201
+    },
+    {
+      "body_sha256": "a178fb041b46fe1137a7649d6f3f432289e3c597e732c88b475a68fb63104853",
+      "case": "admin-read",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "denied-delete-reader",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "a178fb041b46fe1137a7649d6f3f432289e3c597e732c88b475a68fb63104853",
+      "case": "present-after-delete-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "denied-delete-outsider",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "a178fb041b46fe1137a7649d6f3f432289e3c597e732c88b475a68fb63104853",
+      "case": "present-after-delete-outsider",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "admin-delete",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6216cebc99c5c68c2304d67ea6812ff7f5a7a960c56c60b7ff10099ae2b04d62",
+      "case": "denied-create-anonymous.xml",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "552f7dd84c47d101d1da94a1c2215952ccb60ac2826b6e83bc2afec0f04811fe",
+      "case": "absent-after-create-anonymous.xml",
+      "expected_status": [
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "body_sha256": "debec6e83f05fcd5411baf546778a466ddcec0053a2600f1b947b1889711b19a",
+      "case": "denied-create-reader.xml",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "552f7dd84c47d101d1da94a1c2215952ccb60ac2826b6e83bc2afec0f04811fe",
+      "case": "absent-after-create-reader.xml",
+      "expected_status": [
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "body_sha256": "debec6e83f05fcd5411baf546778a466ddcec0053a2600f1b947b1889711b19a",
+      "case": "denied-create-outsider.xml",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "552f7dd84c47d101d1da94a1c2215952ccb60ac2826b6e83bc2afec0f04811fe",
+      "case": "absent-after-create-outsider.xml",
+      "expected_status": [
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "body_sha256": "3f9ba099e315c86cc2d7124372b211bd7b798147bfe59976ca37d468ae5487ec",
+      "case": "admin-create.xml",
+      "expected_status": [
+        200,
+        201
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 201
+    },
+    {
+      "body_sha256": "3adafa06a013c4881323fca32b60f9eb4e9d717668f063a9b956348656d7db04",
+      "case": "admin-read.xml",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "denied-delete-reader.xml",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "3adafa06a013c4881323fca32b60f9eb4e9d717668f063a9b956348656d7db04",
+      "case": "present-after-delete-reader.xml",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "denied-delete-outsider.xml",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "3adafa06a013c4881323fca32b60f9eb4e9d717668f063a9b956348656d7db04",
+      "case": "present-after-delete-outsider.xml",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "admin-delete.xml",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "3913e96e0208e71b3b0faa160abec7694ce055a3573b5e6fecce4162a96d3f79",
+      "case": "denied-create-anonymous.json",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "10853e18f375cf0f61e866902246779805bd8234190939f60c6e2b84390b2f18",
+      "case": "absent-after-create-anonymous.json",
+      "expected_status": [
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "body_sha256": "c5ca02761f311868a6e1b83dbf57ab97cde5b4be2613e2e6d200e3cbac873f92",
+      "case": "denied-create-reader.json",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "10853e18f375cf0f61e866902246779805bd8234190939f60c6e2b84390b2f18",
+      "case": "absent-after-create-reader.json",
+      "expected_status": [
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "body_sha256": "c5ca02761f311868a6e1b83dbf57ab97cde5b4be2613e2e6d200e3cbac873f92",
+      "case": "denied-create-outsider.json",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "10853e18f375cf0f61e866902246779805bd8234190939f60c6e2b84390b2f18",
+      "case": "absent-after-create-outsider.json",
+      "expected_status": [
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "body_sha256": "e816dcfae60303a851686754f7f090c0e841584c748a2e220f50de4ef4727cbe",
+      "case": "admin-create.json",
+      "expected_status": [
+        200,
+        201
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 201
+    },
+    {
+      "body_sha256": "1726643e99afdf7c6dbeccf40dceb7ad4f2f0b249f24bd83126e0eba2d48bf43",
+      "case": "admin-read.json",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "denied-delete-reader.json",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "1726643e99afdf7c6dbeccf40dceb7ad4f2f0b249f24bd83126e0eba2d48bf43",
+      "case": "present-after-delete-reader.json",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "denied-delete-outsider.json",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "1726643e99afdf7c6dbeccf40dceb7ad4f2f0b249f24bd83126e0eba2d48bf43",
+      "case": "present-after-delete-outsider.json",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "admin-delete.json",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "empty-bearer",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "invalid-bearer",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "wrong-application-bearer",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "active-geonode-principal-absent-from-geoserver",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "native-verifier-transport-delay",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "native-verifier-transport-truncate",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "fresh-expired",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "fresh-revoked",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "fresh-disabled-owner",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "e26088c6710b9c9eb84635386fc46aac0adcc025602fd679629a9806b9e4a36c",
+      "case": "role-rules-before",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "1649d2cc0f22bdc83ba3b24cba2689c2dbfa6878911c233ed058e567454a4454",
+      "case": "authoritative-group-prime",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c8363bd2f2d0e9facda840be83f62fba229587776f189f9e22e54589e0a240cb",
+      "case": "group-removal-same-token-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c0696e38d2455ffc04266debc70c8c6b98a7ebbdfc362b3e3386960c71784368",
+      "case": "group-removal-same-token-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "group-removal-same-token-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "group-removal-same-token-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "group-removal-same-token-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "fresh-token-after-group-removal",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "stable-revoked-role-0",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "stable-revoked-role-1",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "stable-revoked-role-2",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "stable-revoked-role-3",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "stable-revoked-role-4",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-revoked-1",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-revoked-3",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-revoked-5",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "c787fc9cbeabbbb833ee2886d5bc6d652389b6ba124d02539d99664fd14a3b8c",
+      "case": "role-concurrent-revoked-0",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c787fc9cbeabbbb833ee2886d5bc6d652389b6ba124d02539d99664fd14a3b8c",
+      "case": "role-concurrent-revoked-4",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c787fc9cbeabbbb833ee2886d5bc6d652389b6ba124d02539d99664fd14a3b8c",
+      "case": "role-concurrent-revoked-6",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c787fc9cbeabbbb833ee2886d5bc6d652389b6ba124d02539d99664fd14a3b8c",
+      "case": "role-concurrent-revoked-2",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-revoked-9",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-revoked-7",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "0bc68a2475dbad654caf992eeeb156fbb99e7236e6aa7c2353960e52106e826e",
+      "case": "role-concurrent-revoked-10",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "0bc68a2475dbad654caf992eeeb156fbb99e7236e6aa7c2353960e52106e826e",
+      "case": "role-concurrent-revoked-8",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-revoked-13",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "deb2b0869d4c9da73d49a0dd1b99d4dff0e0d70d843200acb86c31ae4430bb3e",
+      "case": "role-concurrent-revoked-12",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "deb2b0869d4c9da73d49a0dd1b99d4dff0e0d70d843200acb86c31ae4430bb3e",
+      "case": "role-concurrent-revoked-14",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-revoked-11",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-revoked-15",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "a88667d2ee216c8985072cc2f5dfe1a22eecdf587cdd20e297d3c318c068cab6",
+      "case": "group-restoration-same-token-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "2a4d92eb3b15a1e69cf2999b53162b6b96106b233526791aa2acbe4bb2e01514",
+      "case": "group-restoration-same-token-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "954b4d9352f0ab013d8ca5d6aaf587c25158aa6ca71e822d3dd4cc4b1193a95a",
+      "case": "group-restoration-same-token-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "unconfigured-authkey-cannot-bypass-True",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "unconfigured-authkey-cannot-bypass-False",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "8064fe364e7dd137fd718c9bd793a018dcdebb2cd03f8e7012f64edd048817e3",
+      "case": "admin-before-demotion",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "8064fe364e7dd137fd718c9bd793a018dcdebb2cd03f8e7012f64edd048817e3",
+      "case": "administrator-demotion-same-token-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "8064fe364e7dd137fd718c9bd793a018dcdebb2cd03f8e7012f64edd048817e3",
+      "case": "administrator-demotion-same-token-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c5ca02761f311868a6e1b83dbf57ab97cde5b4be2613e2e6d200e3cbac873f92",
+      "case": "administrator-demotion-same-token-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "c5ca02761f311868a6e1b83dbf57ab97cde5b4be2613e2e6d200e3cbac873f92",
+      "case": "administrator-demotion-same-token-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "c5ca02761f311868a6e1b83dbf57ab97cde5b4be2613e2e6d200e3cbac873f92",
+      "case": "administrator-demotion-same-token-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "e42b91b9aefc96342edf8d5e45501b2623673a85a3d50a06a7e6045c3580fbb0",
+      "case": "demoted-admin-write-denied",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "8064fe364e7dd137fd718c9bd793a018dcdebb2cd03f8e7012f64edd048817e3",
+      "case": "administrator-restoration-same-token-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "8064fe364e7dd137fd718c9bd793a018dcdebb2cd03f8e7012f64edd048817e3",
+      "case": "administrator-restoration-same-token-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "8064fe364e7dd137fd718c9bd793a018dcdebb2cd03f8e7012f64edd048817e3",
+      "case": "administrator-restoration-same-token-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "ec618c54f4b80f1089e8c890ffa8693bcf88e8095e413c5c94046f65591e6f20",
+      "case": "demotion-denied-write-left-no-state",
+      "expected_status": [
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "body_sha256": "577d67af74c0225290a92690ec31bceef6b52f67ce5558393f18065a1b3801af",
+      "case": "service-revocation-warm-prime",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c95c5c9e05498cef1fec01fcdea4062f00c0c323537479772f0a2819c986df88",
+      "case": "role-service-revoked-warm-cache-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "1559a4865ed69646c3ecc62a7c496c420def757ebbdf305485aea929c434cdb2",
+      "case": "role-service-revoked-warm-cache-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-service-revoked-warm-cache-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-service-revoked-warm-cache-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-service-revoked-warm-cache-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "revoked-service-fresh-token",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "af91f9495051c1b9b2d393b54e4dfe85e3e7c67c37d3f508e69993e9fa458989",
+      "case": "role-service-recovery-same-token-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "3ed0a2b11fbb1aeca455b5cf92affce499ac5bd6e310d43f7b717d653606e7b0",
+      "case": "role-service-recovery-same-token-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "79bf3c4b2be336e5f6bdf57213afe76900372dfd4b37cdb61df600fc0fd882d7",
+      "case": "role-service-recovery-same-token-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "817643394436de791fe491eb08577ae219ebbe06ab7e38ecadc15b8542714db9",
+      "case": "role-fault-warm-prime-missing-credential",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "f08ff896ddf0adbccd3ba77da512bfb4d4b4e7a012ccfb91dcf2cc9d91a46d4c",
+      "case": "role-fault-missing-credential-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6bc52b85ab91d8b791bd1fca69018d5a51c2a625933c9025a409a00197d42131",
+      "case": "role-fault-missing-credential-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "abb580764b223632a7095087373cd76edc18dd4007e0aa01b302d17d4ad022e4",
+      "case": "role-fault-missing-credential-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "a746c91a88f508bd5b2d88d95ab1137891eba625c9ea8befc3a0e31d3eacea9a",
+      "case": "role-fault-missing-credential-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "0ad6398e73a9a8f984d422671f81bad1c0618fde7e8c41f11b312877659887eb",
+      "case": "role-fault-missing-credential-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-missing-credential-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-missing-credential-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-missing-credential-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-fresh-token-missing-credential",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-missing-credential-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-missing-credential-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-missing-credential-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-missing-credential-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-missing-credential-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-missing-credential-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "af309a51c5a9b2d59d61e702ab30f7d359d72f54dc44cd8357f4f61007a04562",
+      "case": "role-fault-recovery-missing-credential-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "3150d17d7d0a11f25f6f9706e2100045284ad719289bfffe86f0d1487fdd3be2",
+      "case": "role-fault-recovery-missing-credential-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "33872a1eb532d25c055c84beeb2587be5f9140f35cc87727d3398d2364295f8e",
+      "case": "role-fault-recovery-missing-credential-8",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "1fc6dbd0abea1a79e6802814b27c336b7d6c37fd2768ed1fd5811f047ec4defb",
+      "case": "role-fault-warm-prime-wrong-credential",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "5c8f24e62bb10080347a4bc7baef2d2e6ec4021778ee4c2f5b4b3bf431cdbca3",
+      "case": "role-fault-wrong-credential-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "ea9514a194b2f2459c53181163c7ab7f06dcb259b39d8260530481b0c8e9724b",
+      "case": "role-fault-wrong-credential-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9034ed0d479a0a312c72fa5d411c643f06839838b9b9c5300ed7ae045b9304a2",
+      "case": "role-fault-wrong-credential-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6d280fdf8f987aae79006cb2d617bf0a98ab6728bf0714c5ef44ad4a12c9990d",
+      "case": "role-fault-wrong-credential-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "b6439bbf91dead76023c71df9e583bed9c5d188a29888428e1969555612cb9f8",
+      "case": "role-fault-wrong-credential-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-wrong-credential-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-wrong-credential-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-wrong-credential-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-fresh-token-wrong-credential",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-wrong-credential-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-wrong-credential-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-wrong-credential-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-wrong-credential-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-wrong-credential-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-wrong-credential-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "8a0477bf3d15b4322b933d7b7050f8c3b940eddce796d1e441b790d3e756b654",
+      "case": "role-fault-recovery-wrong-credential-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "3d68645a3d0ebc0d98f1f772eed110c77841b4c1fd9e5ac096c1a7d0e0e810a5",
+      "case": "role-fault-recovery-wrong-credential-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "0ab261844a4a6ee064bbe4e854cac50df20e71d83138626ef735855a74aad227",
+      "case": "role-fault-recovery-wrong-credential-8",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "080090157f9cb362561dd354bbb95604db614e0583e60e88eb02139ff134e6f2",
+      "case": "role-fault-warm-prime-delay",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "ace9c6dcc4bd811ae6df2bc3fcbd242ca00cf70f44407a1c8a9c42fcc1ff664b",
+      "case": "role-fault-delay-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d88f0aed6ebb1c5cd7b0f48027d75035da135e7be345cb2a9a5f0e0b4b3f8d19",
+      "case": "role-fault-delay-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "5293db371f5398a8e6e31b5249c4e7a9f2b15320297fadacddbc5cc939d01a29",
+      "case": "role-fault-delay-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c2c84110929231d40211d3b3b3ccd252f715fd2ce3f052ec17202aace760727f",
+      "case": "role-fault-delay-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "ba68c5da1bd373c6375f80ef8f3d83b27e0e992f0c34018a98f35e83458f31e5",
+      "case": "role-fault-delay-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-delay-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-delay-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-delay-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-fresh-token-delay",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "779ce23daf41922b555a78b2eb954908c1fb6efd1b42dce5bc560b47c4184462",
+      "case": "role-fault-recovery-delay-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "0172998e8a54cbba86375314291e436ac269dba86a480897faebd1099a4f4a2d",
+      "case": "role-fault-recovery-delay-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6b271af5f5bdb3d37a7b96478329f7b475f3cc234c201739c9ce3f9fd91cf283",
+      "case": "role-fault-recovery-delay-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "61fa6a20174b3297ba3a1c10dd32b200be09d60e49eb0c90c9f1e9f79e1841b5",
+      "case": "role-fault-warm-prime-truncate",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d1aa8c3060e12de09cb062046468a7cac7e3e23f70cab95b4c191a7cea01ba31",
+      "case": "role-fault-truncate-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "2e067b96a5fef014562bbf4f39be99653c2c11cc739474ebcddd2c25da1860bb",
+      "case": "role-fault-truncate-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "a7ef8f8e877c22c2d7ce9d76af66b78d5921ddac03132a9de38dcae202e5628e",
+      "case": "role-fault-truncate-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "8a226e03c920f07e5c1a576330399c675ec370f6e67775662e0a8f588eadc74f",
+      "case": "role-fault-truncate-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6b72bd7d1262f0955496e322631339c60afbc991f5132956aaea7dc5b248d587",
+      "case": "role-fault-truncate-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-truncate-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-truncate-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-truncate-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-fresh-token-truncate",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-truncate-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-truncate-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-truncate-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-truncate-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-truncate-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-truncate-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "49cf1d19665942d9ba1a1211c5f922cb6d929167aaa0279669bbb48ac3207690",
+      "case": "role-fault-recovery-truncate-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d4b8923970d38f4f231d16cc0501b1a324701815f47e44d9fb7d2060988907c2",
+      "case": "role-fault-recovery-truncate-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "b5d08c4fc5c524f9ae82be640277804aa71740e0e6d29f1db67daeb0203dbf17",
+      "case": "role-fault-recovery-truncate-8",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "a6d4c5bc92c1ce773f8d4901fabdd3a6af24c538ca6af7b4f83a75f3487507fd",
+      "case": "role-fault-warm-prime-short-body",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "798bc396b11119ea87949770a1232ddd63b3341e8b10ae5086389c95f2950c90",
+      "case": "role-fault-short-body-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "4a3215cec7bb242dbaeee0d73ed7866773d415166fb7ee793b50b74bd843c791",
+      "case": "role-fault-short-body-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "a99bb310ecfde04d62bad5050c61db500d138813d221b4054df39501efe6fd89",
+      "case": "role-fault-short-body-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "f019a810900576a7293d9aeb6f049414ead019333dd977af66f7cb77c6bac031",
+      "case": "role-fault-short-body-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "602d4fd6a1747678c27a8253546714600cc1da1249f3a6a0588057c93fe66fec",
+      "case": "role-fault-short-body-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-short-body-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-short-body-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-short-body-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-fresh-token-short-body",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-short-body-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-short-body-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-short-body-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-short-body-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-short-body-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-short-body-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "2935be3fd6eacf7cfa98317469cfffae0368d45381851c150ca3d112588f28af",
+      "case": "role-fault-recovery-short-body-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "4d761dab4583d3c3ebd9df2e7e62413e642d6e51163a71e0536b2d4d7fb069f6",
+      "case": "role-fault-recovery-short-body-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "07e449d094f82560fb3d4d98b4ccba3991ae1e61a187795d684dda900e64d164",
+      "case": "role-fault-recovery-short-body-8",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "b235f7f8d8d9b0745e060c70f1dd92722b53266653dad8fa21b44e3c65db080e",
+      "case": "role-fault-warm-prime-malformed",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "bf64331cefd9dab6b70c4bede97cdb04d2d36eb40a0498082a35e9d70b9347dc",
+      "case": "role-fault-malformed-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "71d384f78fee8dc3f143a324b0e6ad13e3eb9b1ac37c691513246a8bf1ab89f6",
+      "case": "role-fault-malformed-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "aa98a46efa0781bad237f16aece401e2ec04612da66f1119a63456e83fe66151",
+      "case": "role-fault-malformed-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9f447c72e908ae6ddfb1b7a551274028c57af00ebdea4e8ec33cf5643810b78b",
+      "case": "role-fault-malformed-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "3b83b0a8e513582e84f937b3cbf4c125f46a477dafb61641c7d2fc26b3d74c6f",
+      "case": "role-fault-malformed-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-malformed-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-malformed-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-malformed-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-fresh-token-malformed",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-malformed-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-malformed-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-malformed-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-malformed-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-malformed-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-malformed-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "cc343622fb732eab4f664fc6ad7c1bcc58584fc6043f75a3048a5252c362c198",
+      "case": "role-fault-recovery-malformed-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "b8d35a50af77df576355acc47f9213e9edb34e74f6e3e90ff26d7b039a6f3e34",
+      "case": "role-fault-recovery-malformed-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "751fc9e1392c537740a75c0799e5a91b7eb02849ff64cbc95b07bf83a901994a",
+      "case": "role-fault-recovery-malformed-8",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d4b3d4ef02e32cc8fbc824c5c134e0d2fc83defd5deb4b5a43dbd49ee74ea3cd",
+      "case": "role-fault-warm-prime-duplicate-field",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6d432ce0d61468ffd475e133a21093854ff6fc701cae49d4b4a6ce0ca38f646e",
+      "case": "role-fault-duplicate-field-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "864fb9d46b65acb7a79f0792f0e8349c3c6a951019f935e974e2686a7244a664",
+      "case": "role-fault-duplicate-field-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6281b41e54c8650b8d11a66c79a79cf4e5e9f5d8cc796407f232d6ea1a6112e3",
+      "case": "role-fault-duplicate-field-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c18b6675115ba494399affeaa49930f8785c417f5820cee5ebee62407c5094ff",
+      "case": "role-fault-duplicate-field-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "a0f753e063c52ed7f69e8110efc06b9f05939536e5da97ca809290f749d0affa",
+      "case": "role-fault-duplicate-field-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-duplicate-field-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-duplicate-field-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-duplicate-field-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-fresh-token-duplicate-field",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-duplicate-field-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-duplicate-field-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-duplicate-field-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-duplicate-field-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-duplicate-field-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-duplicate-field-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "6eb5707d48d97b0ea8dc3edfecbe93ebded1590e598599c56b6f46c24d3e0bc3",
+      "case": "role-fault-recovery-duplicate-field-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d2ebebe37bb75e12866c5f5d8fb598a6a06bebdb492545964d176bc3070197e6",
+      "case": "role-fault-recovery-duplicate-field-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "b4b71a15a0de5e418d21574d9e14e0633c5403dd57442536e356996159fa0763",
+      "case": "role-fault-recovery-duplicate-field-8",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "a92bb9c5cc1cea1baa4c252446b2eb6c3d0cb48091c0830e0d90f58ed2005335",
+      "case": "role-fault-warm-prime-trailing-content",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "19ffc96af9c2c4536784c54b8bd730809acf52f0754c3af022eb2f7808707baa",
+      "case": "role-fault-trailing-content-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "27ea4f71704d8a11c56330d938369c298015bacc22d5fd99b0449ef72ce77692",
+      "case": "role-fault-trailing-content-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d4024d436c6a5e65dab67c540aaf3936f29ab6a13d185f537a4eeca2f0f64bad",
+      "case": "role-fault-trailing-content-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "7ab69255b524e203584b4dfe0e6ee6ec13e9b40e7d5f100694325dc4240d7cdd",
+      "case": "role-fault-trailing-content-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "3b925c248058ecc93ad7cc8946b8a37ba02bc4e6869003128d9027bff7c23972",
+      "case": "role-fault-trailing-content-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-trailing-content-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-trailing-content-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-trailing-content-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-fresh-token-trailing-content",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-trailing-content-0",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-trailing-content-1",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-trailing-content-2",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-trailing-content-3",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-trailing-content-4",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-fault-recovery-trailing-content-5",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "8c3edeea118d7354cc3a29bbbdbf28c1716f2bbcb9c887c7fda0d99d309e64e2",
+      "case": "role-fault-recovery-trailing-content-6",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "8a860d1969896dd7538734aaa2f6a9e667244df2d459b65b75da7d7af473309b",
+      "case": "role-fault-recovery-trailing-content-7",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "0fb155b16b03d848a452f02feb322f52b45e4791c52c8f7e83b2c625787e885e",
+      "case": "role-fault-recovery-trailing-content-8",
+      "expected_status": [
+        200,
+        201,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "755435f0bbef1767766fd039b36e757dc52ece780b1b5e40260ab0b01a3fa904",
+      "case": "role-concurrent-restored-0",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "578c342727be9abef187a7624e13150520e89123c8e29f72934682819fe530c0",
+      "case": "role-concurrent-restored-4",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d0a7dc196ce7786dce1e6a25dd2dee560b1b99dcc0324c074bed00b95fd13b49",
+      "case": "role-concurrent-restored-2",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "466af69f91c48b09d88bbb96724549fc235b4df0ede76cce828bd52dd4b4325c",
+      "case": "role-concurrent-restored-6",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-restored-7",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-restored-3",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-restored-5",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-restored-1",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-restored-11",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-restored-9",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "1176cf26898ea92d841fb5979d3eb5d6cd44e9e20772967ccc0f28c3507784cc",
+      "case": "role-concurrent-restored-8",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "1176cf26898ea92d841fb5979d3eb5d6cd44e9e20772967ccc0f28c3507784cc",
+      "case": "role-concurrent-restored-10",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-restored-13",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-concurrent-restored-15",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "197a5565d6310ae13e10bc05048eab70402f07071ef8b5b155e1688a3e925328",
+      "case": "role-concurrent-restored-14",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "522fa3855ba9f65d5503e523be304804f30a149d9895cce791ce1f21a0b267ed",
+      "case": "role-concurrent-restored-12",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "e26088c6710b9c9eb84635386fc46aac0adcc025602fd679629a9806b9e4a36c",
+      "case": "role-rules-after",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "reader-cookie-no-bearer",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "reader-cookie-outsider",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "afdc7ca6b0ac7c4215a177b666c1287e2eb04aa9e6719aa520a57285a5a02dda",
+      "case": "reader-cookie-reader",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "sequential-0",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "1ca9b1723d518ef9bbfcb8d7a1670f71abd49146f5a0f273fc9c2015809f0d09",
+      "case": "sequential-1",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "sequential-2",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "8687e2e9a99dc90fb562c511b8aa298eff1ea36f251b65da8497ff9415264cb9",
+      "case": "sequential-3",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "2e7d09ab104a148c51839c4c879cb51b5d09123aba0622a601e5aa769535172a",
+      "case": "sequential-4",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "sequential-5",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "4419f3c599af12c1e34097bd08c2db4d15589fbbe7e598ab420b3fad16851837",
+      "case": "sequential-6",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "sequential-7",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "sequential-8",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "11afa7a32a02089044ed56b24f061929a188a6aedc6b654f0d9db9c9845dfef3",
+      "case": "sequential-9",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "sequential-10",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "1d8b37adbe311e073a35208682aee5506c831839ccfd62649e89caec6a630fcb",
+      "case": "sequential-11",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "09e28eaf02770655066526703de8a9c27f1e9e91046ff20fae22b66ee0b1dbbf",
+      "case": "sequential-12",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "sequential-13",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "1c826e7339c19a2deba10d7b0c0f5106f8dead2742393511e48145fbaaa96bf9",
+      "case": "sequential-14",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "sequential-15",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "sequential-16",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "3d6730b09ee300163627e4d3593043600e406f663236e418a53d8ad2aa54b555",
+      "case": "sequential-17",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "sequential-18",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "083d1ce1a6faac81c8d3f50ef7d707ecf1ebb62d9d5f58269884430f68be56a6",
+      "case": "sequential-19",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "f5dc647f69f64ecd5effe8846ade23d6047ce9fa705daa4238527ce34f6d2e59",
+      "case": "sequential-20",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "sequential-21",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "92e5cc35899fbd7876e9e357f978f01f38388575b0e8464415856d8a39480f61",
+      "case": "sequential-22",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "sequential-23",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "sequential-24",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "44680ea5df01557fd4b6555c492ffddc256c9025cdc9d23d0ad902cc24fb2db0",
+      "case": "sequential-25",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "sequential-26",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "1fd6c978fb26339d1aa522f8856de8f2d7a9af12ef2a099295aa065c5c859fdf",
+      "case": "sequential-27",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c5f3a3df0d0d6a7a828dc93c4fc9012bd7309dc7c6815650c4f42bda8709f436",
+      "case": "sequential-28",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "sequential-29",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "8d2cdd4d7bf90e8ac3bf1e6035ea6a2b41947f74bf67fefb04897422f79472e2",
+      "case": "sequential-30",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "sequential-31",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "parallel-4",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "parallel-2",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "3e8de7e7497d7a8de86e38cbe9a7f5423142019428d66019623c7e1d09ed3111",
+      "case": "parallel-1",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "3e8de7e7497d7a8de86e38cbe9a7f5423142019428d66019623c7e1d09ed3111",
+      "case": "parallel-3",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "parallel-0",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "parallel-12",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "2ae0d979c9ec242d1b2e53331ffbadd33c7f79ceb2554292c4942f976212efbe",
+      "case": "parallel-11",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "parallel-10",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "95dc5efc57d420b10c03949b2285440d9cce6e2db281581d34d65b92b4112fae",
+      "case": "parallel-9",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "parallel-8",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "parallel-14",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "parallel-6",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "78d6bbddc76a7a45b398ea43b61948e8a7f35798fed9456abcdb81cc7ce3f7df",
+      "case": "parallel-15",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9fc8b3a7f6e119898227d1098d8118239c927d1316836753a7527511bd596547",
+      "case": "parallel-5",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9fc8b3a7f6e119898227d1098d8118239c927d1316836753a7527511bd596547",
+      "case": "parallel-7",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9fc8b3a7f6e119898227d1098d8118239c927d1316836753a7527511bd596547",
+      "case": "parallel-13",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "parallel-16",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "db84592dc29052545bff57cd1b67030fdc314ab5295abe6aabb5878ab025a74d",
+      "case": "parallel-17",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "09343f8224fc27d5882ab0261edf650c836ea5e5ea9c8fd0bb28fe23831ce81b",
+      "case": "parallel-19",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "parallel-22",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "parallel-20",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "09343f8224fc27d5882ab0261edf650c836ea5e5ea9c8fd0bb28fe23831ce81b",
+      "case": "parallel-23",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "parallel-18",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "213242682acc4a2b282a58b6518c8157ae52b8440a7a329c01bec6afda3ec827",
+      "case": "parallel-21",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "parallel-26",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "parallel-28",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "parallel-24",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "ec2043733cb7a599f6991af46440924ebd0e00cf88fa8934bd2795b92837c968",
+      "case": "parallel-27",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "bd9971fffb71deb39e15da985429c61c54701163333da7cc432770142f0418f9",
+      "case": "parallel-25",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "65ba72ccf2757d381442b1da51134888dfbdd1473ed5c009da84591939498320",
+      "case": "parallel-31",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "0a5ac18010f863db05794cfc1773a16245abf22b7cd0d92317cd18f060f07666",
+      "case": "parallel-29",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "parallel-30",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "fresh-removed-principal",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "a6dd60cec0f5d81de2616b3eac40fc6f7c99ebb02c472fa2756fb6e4b611ff29",
+      "case": "real-expiry-cache-prime",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d616b5c6837d7dd224732b4664b5883661378c70b5d0b1bdbed8b9185f58d761",
+      "case": "real-expiry-cache-observe-0",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "696763beafc66ba9d1e2a5cdf1be3028ff83809fd55073faf7efc2e70dea1333",
+      "case": "real-expiry-cache-observe-1",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "c9f44b27844ade9af4fc9cd0327bd082b49d90cc723565c35b0240457ad7e54b",
+      "case": "real-expiry-cache-observe-2",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "3b0ebfc62f7d76b4a32cb6a92d3ec7015c0040da22773471b48e13d4a9889d1f",
+      "case": "real-expiry-cache-observe-3",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6208edb5c81a2471990c5de01ea1be2c03437a7ab420f2a94561b57a1d42762c",
+      "case": "real-expiry-cache-observe-4",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "b1dd5a3393c77ad4adc9ec15cd2167a57579c4242613b4fac4b1f65385ac35bc",
+      "case": "real-expiry-cache-observe-5",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "1ef83159c894819116af78f9d280250e806887f8cbe6550414f2c724a722e971",
+      "case": "real-expiry-cache-observe-6",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "dbb9dbca3caa35a5839c67f75a797440f56d4bb23ee9b52f79ff6822a4792f53",
+      "case": "real-expiry-cache-observe-7",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "ec61a6f20d9f40da09bdef48c8c0f67572699cc1c35461bea6040b8b74eb58c1",
+      "case": "real-expiry-cache-observe-8",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "eb91970617dc8f2accdc1954103b7e1aa0f184499893d1f121ac639d6a1d4897",
+      "case": "real-expiry-cache-observe-9",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "6a9beda90fba40111c054211f3ecebb692857ec6cd189337e69c910ff6cffae4",
+      "case": "real-expiry-cache-observe-10",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9682a51c2cd315bd24d5aa1285b797385f252a8e35c37646c079b99fcca32967",
+      "case": "real-expiry-cache-observe-11",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "7b261b06aa36c9d3d3758350e0d41cb36d9dd00ba438eed7144a016dc055778d",
+      "case": "real-expiry-cache-observe-12",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "bf16ddbacf9bee8e44d13094559ce0246372ff19dc9ebddcaf7edb44db7ebc3a",
+      "case": "real-expiry-cache-observe-13",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "29b8d8cfd8465b1711bf4d67961f79db1897e7573aec47c197fdc761f4042eba",
+      "case": "real-expiry-cache-observe-14",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "ed54f6820757f4f00fce77f8156f8c9c4b14b6ffeff0b091de7ba5a65820deb6",
+      "case": "real-expiry-cache-observe-15",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "1083d2667bf69fe3c994576c257838c093bf7953ca11833d52be17cae76caea0",
+      "case": "real-expiry-cache-observe-16",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "114bd791cae96fa948ee759e1656163babc55651c347074b0c9e3dcf8acdd00f",
+      "case": "real-expiry-cache-observe-17",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "28b77502f325b6020865b793d12d72c3aebba66af320c3b1de873f4f071f4ffb",
+      "case": "real-expiry-cache-observe-18",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "ef47971547ca04b4346cd64c5ae798972507cdd648354fac125b094b5d0f9c1e",
+      "case": "real-expiry-cache-observe-19",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "real-expiry-cache-observe-20",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "5d41058b5570b7894df346dd086365978ecad7c6c5344241a5ebca6a467c19fa",
+      "case": "real-cache-prime",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "dca5eb2590233222455f66b18932f70617fc11a4cd69afd422dbc201be8dc47f",
+      "case": "real-cache-observe-0",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "47aa408ed5c52bf10c121fbfd9286fb1a749c4dabd6bb0e3ee3d931d878008a4",
+      "case": "real-cache-observe-1",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "d4b237e716ebb8f040474ac65423696cd8cfc6b6db870e3aef9b2ddbe7ff1772",
+      "case": "real-cache-observe-2",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "671315b7f8f4ffae7f47ba77ad980ac54ad9042a80a4d9fce8487eec387cfe59",
+      "case": "real-cache-observe-3",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "34e35f2087b23620a9a577d2da6b88166c8b8463228a83bba0c5f76091b22603",
+      "case": "real-cache-observe-4",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "15dfdcdfb1976b5a0504bb5f8c0df0fdd6b408865bd82063848d54ef843b1be7",
+      "case": "real-cache-observe-5",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9c7ce5f4c8bb03281380649d15357fd717dbefe8fc5b5833f575c8df8459c0a5",
+      "case": "real-cache-observe-6",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "real-cache-observe-7",
+      "expected_status": [
+        200,
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "role-revoked-before-restart",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "fresh-verifier-unavailable",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "577e1e56c6f6e6fc68d7126c226f34a5ff29397c340870b7385064705b14b387",
+      "case": "restart-roles-remain-revoked",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "3d7cc4a1619e63bebb80d44792a574e1e66fa9897420d50229cc6bbe535026ec",
+      "case": "anonymous-public",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "0e23468fba922f1e2a6f889975d180fc170319d4b56ef300c0e375afe23084d0",
+      "case": "reader-private",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "anonymous-private",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "outsider-private",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "c5ca02761f311868a6e1b83dbf57ab97cde5b4be2613e2e6d200e3cbac873f92",
+      "case": "reader-administration-denied",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "8064fe364e7dd137fd718c9bd793a018dcdebb2cd03f8e7012f64edd048817e3",
+      "case": "admin-workspaces",
+      "expected_status": [
+        200
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 200
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "restart-revoked",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    },
+    {
+      "body_sha256": "9639299126b74bdc464806b7338c155133558cfb72f0f3c7537179a3ab98dbc7",
+      "case": "restart-expired",
+      "expected_status": [
+        401,
+        403,
+        404
+      ],
+      "kind": "HTTP response",
+      "passed": true,
+      "status": 403
+    }
+  ],
+  "restart_revoked_membership_denied": true,
+  "result_exit_code": 0,
+  "role_configuration_unchanged_sha256": {
+    "geofence/geofence-server.properties": "ffe9cd11b10d113b951620778f72f8e0eb596db66788c4c67b361a7c0c4e206b",
+    "security/filter/fixture-oauth/config.xml": "559587f0d6af62c43e1eb57d5eb3d56b2737fa89d161e1909b44392c9b101957",
+    "security/role/fixture/config.xml": "87bea42881171982be59cee214907a0e6231be0f9e654881d8957d9dcf9166d5",
+    "security/role/fixture/roles.xml": "52e57ae4dd344850e47c3d02cbf9c855e929ee87293e241a667cfb50a2ebfe2c",
+    "security/usergroup/fixture/users.xml": "5f501ec8c6e9e25adeada86103876f10b34c2886f90b5c0349527c6ab272a204"
+  },
+  "role_endpoint_readbacks": [
+    {
+      "case": "unknown-role-identity",
+      "status": 200,
+      "users": []
+    },
+    {
+      "case": "inactive-role-identity",
+      "status": 200,
+      "users": []
+    },
+    {
+      "case": "group-before-removal",
+      "status": 200,
+      "users": [
+        {
+          "groups": [
+            "contributors",
+            "fixture-readers",
+            "registered-members"
+          ],
+          "username": "fixture-reader"
+        }
+      ]
+    },
+    {
+      "case": "group-after-removal",
+      "status": 200,
+      "users": [
+        {
+          "groups": [
+            "contributors",
+            "registered-members"
+          ],
+          "username": "fixture-reader"
+        }
+      ]
+    },
+    {
+      "case": "group-after-restoration",
+      "status": 200,
+      "users": [
+        {
+          "groups": [
+            "contributors",
+            "fixture-readers",
+            "registered-members"
+          ],
+          "username": "fixture-reader"
+        }
+      ]
+    },
+    {
+      "case": "admin-role-after-demotion",
+      "status": 200,
+      "users": [
+        {
+          "groups": [
+            "registered-members"
+          ],
+          "username": "fixture-admin"
+        }
+      ]
+    }
+  ],
+  "same_valid_token": true,
+  "source_redaction_counts": {
+    "source_credential_field_redactions": 0,
+    "source_diagnostic_redactions": 0,
+    "source_opaque_value_redactions": 0,
+    "source_private_key_redactions": 0
+  },
+  "transitions": [
+    {
+      "case": "group-removal-same-token",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": 1.084476,
+      "first_target_response_seconds": 1.084476,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 0.760808,
+      "passed": true,
+      "samples": [
+        {
+          "case": "group-removal-same-token-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.499196,
+          "request_start_after_ack_seconds": 0.488173,
+          "status": 200
+        },
+        {
+          "case": "group-removal-same-token-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.760808,
+          "request_start_after_ack_seconds": 0.749339,
+          "status": 200
+        },
+        {
+          "case": "group-removal-same-token-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.084476,
+          "request_start_after_ack_seconds": 1.010949,
+          "status": 403
+        },
+        {
+          "case": "group-removal-same-token-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.343142,
+          "request_start_after_ack_seconds": 1.334562,
+          "status": 403
+        },
+        {
+          "case": "group-removal-same-token-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.600277,
+          "request_start_after_ack_seconds": 1.593221,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "group-restoration-same-token",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": null,
+      "first_target_response_seconds": 0.559804,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 1.082163,
+      "passed": true,
+      "samples": [
+        {
+          "case": "group-restoration-same-token-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.559804,
+          "request_start_after_ack_seconds": 0.492163,
+          "status": 200
+        },
+        {
+          "case": "group-restoration-same-token-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.821721,
+          "request_start_after_ack_seconds": 0.809946,
+          "status": 200
+        },
+        {
+          "case": "group-restoration-same-token-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.082163,
+          "request_start_after_ack_seconds": 1.072115,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    },
+    {
+      "case": "administrator-demotion-same-token",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": 1.094112,
+      "first_target_response_seconds": 1.094112,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 0.775988,
+      "passed": true,
+      "samples": [
+        {
+          "case": "administrator-demotion-same-token-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.514814,
+          "request_start_after_ack_seconds": 0.50366,
+          "status": 200
+        },
+        {
+          "case": "administrator-demotion-same-token-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.775988,
+          "request_start_after_ack_seconds": 0.764928,
+          "status": 200
+        },
+        {
+          "case": "administrator-demotion-same-token-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.094112,
+          "request_start_after_ack_seconds": 1.026115,
+          "status": 403
+        },
+        {
+          "case": "administrator-demotion-same-token-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.350639,
+          "request_start_after_ack_seconds": 1.344203,
+          "status": 403
+        },
+        {
+          "case": "administrator-demotion-same-token-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.607412,
+          "request_start_after_ack_seconds": 1.600728,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "administrator-restoration-same-token",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": null,
+      "first_target_response_seconds": 0.543625,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 1.065615,
+      "passed": true,
+      "samples": [
+        {
+          "case": "administrator-restoration-same-token-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.543625,
+          "request_start_after_ack_seconds": 0.476859,
+          "status": 200
+        },
+        {
+          "case": "administrator-restoration-same-token-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.804853,
+          "request_start_after_ack_seconds": 0.793742,
+          "status": 200
+        },
+        {
+          "case": "administrator-restoration-same-token-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.065615,
+          "request_start_after_ack_seconds": 1.054977,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    },
+    {
+      "case": "role-service-revoked-warm-cache",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": 1.127973,
+      "first_target_response_seconds": 1.127973,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 0.757084,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-service-revoked-warm-cache-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.496078,
+          "request_start_after_ack_seconds": 0.486799,
+          "status": 200
+        },
+        {
+          "case": "role-service-revoked-warm-cache-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.757084,
+          "request_start_after_ack_seconds": 0.746199,
+          "status": 200
+        },
+        {
+          "case": "role-service-revoked-warm-cache-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.127973,
+          "request_start_after_ack_seconds": 1.007274,
+          "status": 403
+        },
+        {
+          "case": "role-service-revoked-warm-cache-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.386322,
+          "request_start_after_ack_seconds": 1.378094,
+          "status": 403
+        },
+        {
+          "case": "role-service-revoked-warm-cache-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.644939,
+          "request_start_after_ack_seconds": 1.636444,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "role-service-recovery-same-token",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": null,
+      "first_target_response_seconds": 0.463028,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 0.984486,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-service-recovery-same-token-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.463028,
+          "request_start_after_ack_seconds": 0.395921,
+          "status": 200
+        },
+        {
+          "case": "role-service-recovery-same-token-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.723611,
+          "request_start_after_ack_seconds": 0.713181,
+          "status": 200
+        },
+        {
+          "case": "role-service-recovery-same-token-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.984486,
+          "request_start_after_ack_seconds": 0.973777,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    },
+    {
+      "case": "role-fault-missing-credential",
+      "confirmation_deadline_seconds": 35,
+      "first_denial_response_seconds": 1.434803,
+      "first_target_response_seconds": 1.434803,
+      "first_transition_deadline_seconds": 15,
+      "last_permitted_response_seconds": 1.067699,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-missing-credential-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.022032,
+          "request_start_after_ack_seconds": 0.012672,
+          "status": 200
+        },
+        {
+          "case": "role-fault-missing-credential-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.284609,
+          "request_start_after_ack_seconds": 0.272196,
+          "status": 200
+        },
+        {
+          "case": "role-fault-missing-credential-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.545431,
+          "request_start_after_ack_seconds": 0.534805,
+          "status": 200
+        },
+        {
+          "case": "role-fault-missing-credential-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.80656,
+          "request_start_after_ack_seconds": 0.795592,
+          "status": 200
+        },
+        {
+          "case": "role-fault-missing-credential-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.067699,
+          "request_start_after_ack_seconds": 1.05671,
+          "status": 200
+        },
+        {
+          "case": "role-fault-missing-credential-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.434803,
+          "request_start_after_ack_seconds": 1.317849,
+          "status": 403
+        },
+        {
+          "case": "role-fault-missing-credential-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.691872,
+          "request_start_after_ack_seconds": 1.68489,
+          "status": 403
+        },
+        {
+          "case": "role-fault-missing-credential-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.949226,
+          "request_start_after_ack_seconds": 1.941957,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "role-fault-recovery-missing-credential",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": 0.006745,
+      "first_target_response_seconds": 1.61188,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 2.134366,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-recovery-missing-credential-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.006745,
+          "request_start_after_ack_seconds": 3.3e-05,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-missing-credential-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.264532,
+          "request_start_after_ack_seconds": 0.256822,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-missing-credential-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.521732,
+          "request_start_after_ack_seconds": 0.51462,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-missing-credential-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.778716,
+          "request_start_after_ack_seconds": 0.771815,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-missing-credential-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.037097,
+          "request_start_after_ack_seconds": 1.028813,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-missing-credential-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.295006,
+          "request_start_after_ack_seconds": 1.287192,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-missing-credential-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.61188,
+          "request_start_after_ack_seconds": 1.545093,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-missing-credential-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.873116,
+          "request_start_after_ack_seconds": 1.862015,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-missing-credential-8",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 2.134366,
+          "request_start_after_ack_seconds": 2.123295,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    },
+    {
+      "case": "role-fault-wrong-credential",
+      "confirmation_deadline_seconds": 35,
+      "first_denial_response_seconds": 1.434639,
+      "first_target_response_seconds": 1.434639,
+      "first_transition_deadline_seconds": 15,
+      "last_permitted_response_seconds": 1.067114,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-wrong-credential-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.022838,
+          "request_start_after_ack_seconds": 0.013,
+          "status": 200
+        },
+        {
+          "case": "role-fault-wrong-credential-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.284016,
+          "request_start_after_ack_seconds": 0.273016,
+          "status": 200
+        },
+        {
+          "case": "role-fault-wrong-credential-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.544967,
+          "request_start_after_ack_seconds": 0.534161,
+          "status": 200
+        },
+        {
+          "case": "role-fault-wrong-credential-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.80568,
+          "request_start_after_ack_seconds": 0.795119,
+          "status": 200
+        },
+        {
+          "case": "role-fault-wrong-credential-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.067114,
+          "request_start_after_ack_seconds": 1.055852,
+          "status": 200
+        },
+        {
+          "case": "role-fault-wrong-credential-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.434639,
+          "request_start_after_ack_seconds": 1.317269,
+          "status": 403
+        },
+        {
+          "case": "role-fault-wrong-credential-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.691123,
+          "request_start_after_ack_seconds": 1.684726,
+          "status": 403
+        },
+        {
+          "case": "role-fault-wrong-credential-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.947659,
+          "request_start_after_ack_seconds": 1.941199,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "role-fault-recovery-wrong-credential",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": 0.005823,
+      "first_target_response_seconds": 1.605645,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 2.124939,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-recovery-wrong-credential-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.005823,
+          "request_start_after_ack_seconds": 3.3e-05,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-wrong-credential-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.261996,
+          "request_start_after_ack_seconds": 0.255906,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-wrong-credential-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.518228,
+          "request_start_after_ack_seconds": 0.512075,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-wrong-credential-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.776484,
+          "request_start_after_ack_seconds": 0.768308,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-wrong-credential-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.033697,
+          "request_start_after_ack_seconds": 1.02657,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-wrong-credential-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.28975,
+          "request_start_after_ack_seconds": 1.283766,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-wrong-credential-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.605645,
+          "request_start_after_ack_seconds": 1.539826,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-wrong-credential-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.864907,
+          "request_start_after_ack_seconds": 1.85579,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-wrong-credential-8",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 2.124939,
+          "request_start_after_ack_seconds": 2.115068,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    },
+    {
+      "case": "role-fault-delay",
+      "confirmation_deadline_seconds": 35,
+      "first_denial_response_seconds": 10.436227,
+      "first_target_response_seconds": 10.436227,
+      "first_transition_deadline_seconds": 15,
+      "last_permitted_response_seconds": 1.074536,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-delay-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.028564,
+          "request_start_after_ack_seconds": 0.017533,
+          "status": 200
+        },
+        {
+          "case": "role-fault-delay-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.290931,
+          "request_start_after_ack_seconds": 0.278725,
+          "status": 200
+        },
+        {
+          "case": "role-fault-delay-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.551907,
+          "request_start_after_ack_seconds": 0.541118,
+          "status": 200
+        },
+        {
+          "case": "role-fault-delay-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.813704,
+          "request_start_after_ack_seconds": 0.802038,
+          "status": 200
+        },
+        {
+          "case": "role-fault-delay-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.074536,
+          "request_start_after_ack_seconds": 1.063877,
+          "status": 200
+        },
+        {
+          "case": "role-fault-delay-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 10.436227,
+          "request_start_after_ack_seconds": 1.324717,
+          "status": 403
+        },
+        {
+          "case": "role-fault-delay-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 10.694738,
+          "request_start_after_ack_seconds": 10.686315,
+          "status": 403
+        },
+        {
+          "case": "role-fault-delay-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 10.952597,
+          "request_start_after_ack_seconds": 10.944823,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "role-fault-recovery-delay",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": null,
+      "first_target_response_seconds": 0.075246,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 0.59575,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-recovery-delay-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.075246,
+          "request_start_after_ack_seconds": 8.6e-05,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-delay-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.335848,
+          "request_start_after_ack_seconds": 0.325402,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-delay-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.59575,
+          "request_start_after_ack_seconds": 0.585988,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    },
+    {
+      "case": "role-fault-truncate",
+      "confirmation_deadline_seconds": 35,
+      "first_denial_response_seconds": 1.393845,
+      "first_target_response_seconds": 1.393845,
+      "first_transition_deadline_seconds": 15,
+      "last_permitted_response_seconds": 1.072737,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-truncate-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.029578,
+          "request_start_after_ack_seconds": 0.020492,
+          "status": 200
+        },
+        {
+          "case": "role-fault-truncate-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.29012,
+          "request_start_after_ack_seconds": 0.279698,
+          "status": 200
+        },
+        {
+          "case": "role-fault-truncate-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.55094,
+          "request_start_after_ack_seconds": 0.54026,
+          "status": 200
+        },
+        {
+          "case": "role-fault-truncate-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.812152,
+          "request_start_after_ack_seconds": 0.801092,
+          "status": 200
+        },
+        {
+          "case": "role-fault-truncate-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.072737,
+          "request_start_after_ack_seconds": 1.062305,
+          "status": 200
+        },
+        {
+          "case": "role-fault-truncate-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.393845,
+          "request_start_after_ack_seconds": 1.322873,
+          "status": 403
+        },
+        {
+          "case": "role-fault-truncate-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.652081,
+          "request_start_after_ack_seconds": 1.643939,
+          "status": 403
+        },
+        {
+          "case": "role-fault-truncate-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.91042,
+          "request_start_after_ack_seconds": 1.90217,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "role-fault-recovery-truncate",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": 0.005466,
+      "first_target_response_seconds": 1.616322,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 2.136787,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-recovery-truncate-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.005466,
+          "request_start_after_ack_seconds": 4.2e-05,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-truncate-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.263528,
+          "request_start_after_ack_seconds": 0.255545,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-truncate-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.521184,
+          "request_start_after_ack_seconds": 0.513616,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-truncate-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.779496,
+          "request_start_after_ack_seconds": 0.771279,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-truncate-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.036588,
+          "request_start_after_ack_seconds": 1.029575,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-truncate-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.2942,
+          "request_start_after_ack_seconds": 1.286676,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-truncate-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.616322,
+          "request_start_after_ack_seconds": 1.544284,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-truncate-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.876435,
+          "request_start_after_ack_seconds": 1.866463,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-truncate-8",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 2.136787,
+          "request_start_after_ack_seconds": 2.126563,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    },
+    {
+      "case": "role-fault-short-body",
+      "confirmation_deadline_seconds": 35,
+      "first_denial_response_seconds": 1.460758,
+      "first_target_response_seconds": 1.460758,
+      "first_transition_deadline_seconds": 15,
+      "last_permitted_response_seconds": 1.064396,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-short-body-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.023823,
+          "request_start_after_ack_seconds": 0.013778,
+          "status": 200
+        },
+        {
+          "case": "role-fault-short-body-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.284043,
+          "request_start_after_ack_seconds": 0.273945,
+          "status": 200
+        },
+        {
+          "case": "role-fault-short-body-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.544541,
+          "request_start_after_ack_seconds": 0.534166,
+          "status": 200
+        },
+        {
+          "case": "role-fault-short-body-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.804651,
+          "request_start_after_ack_seconds": 0.794672,
+          "status": 200
+        },
+        {
+          "case": "role-fault-short-body-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.064396,
+          "request_start_after_ack_seconds": 1.054803,
+          "status": 200
+        },
+        {
+          "case": "role-fault-short-body-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.460758,
+          "request_start_after_ack_seconds": 1.314543,
+          "status": 403
+        },
+        {
+          "case": "role-fault-short-body-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.71891,
+          "request_start_after_ack_seconds": 1.710838,
+          "status": 403
+        },
+        {
+          "case": "role-fault-short-body-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.977149,
+          "request_start_after_ack_seconds": 1.968992,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "role-fault-recovery-short-body",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": 0.006491,
+      "first_target_response_seconds": 1.621904,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 2.141691,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-recovery-short-body-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.006491,
+          "request_start_after_ack_seconds": 3.6e-05,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-short-body-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.264211,
+          "request_start_after_ack_seconds": 0.256572,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-short-body-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.522108,
+          "request_start_after_ack_seconds": 0.514294,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-short-body-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.780347,
+          "request_start_after_ack_seconds": 0.772203,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-short-body-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.038767,
+          "request_start_after_ack_seconds": 1.030444,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-short-body-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.296954,
+          "request_start_after_ack_seconds": 1.28886,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-short-body-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.621904,
+          "request_start_after_ack_seconds": 1.547035,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-short-body-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.882047,
+          "request_start_after_ack_seconds": 1.872058,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-short-body-8",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 2.141691,
+          "request_start_after_ack_seconds": 2.13218,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    },
+    {
+      "case": "role-fault-malformed",
+      "confirmation_deadline_seconds": 35,
+      "first_denial_response_seconds": 1.382184,
+      "first_target_response_seconds": 1.382184,
+      "first_transition_deadline_seconds": 15,
+      "last_permitted_response_seconds": 1.064977,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-malformed-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.024446,
+          "request_start_after_ack_seconds": 0.015502,
+          "status": 200
+        },
+        {
+          "case": "role-fault-malformed-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.284128,
+          "request_start_after_ack_seconds": 0.27457,
+          "status": 200
+        },
+        {
+          "case": "role-fault-malformed-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.543959,
+          "request_start_after_ack_seconds": 0.534263,
+          "status": 200
+        },
+        {
+          "case": "role-fault-malformed-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.804589,
+          "request_start_after_ack_seconds": 0.794109,
+          "status": 200
+        },
+        {
+          "case": "role-fault-malformed-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.064977,
+          "request_start_after_ack_seconds": 1.054751,
+          "status": 200
+        },
+        {
+          "case": "role-fault-malformed-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.382184,
+          "request_start_after_ack_seconds": 1.315119,
+          "status": 403
+        },
+        {
+          "case": "role-fault-malformed-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.640627,
+          "request_start_after_ack_seconds": 1.632285,
+          "status": 403
+        },
+        {
+          "case": "role-fault-malformed-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.898493,
+          "request_start_after_ack_seconds": 1.890714,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "role-fault-recovery-malformed",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": 0.006167,
+      "first_target_response_seconds": 1.620104,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 2.140887,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-recovery-malformed-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.006167,
+          "request_start_after_ack_seconds": 3.2e-05,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-malformed-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.263736,
+          "request_start_after_ack_seconds": 0.256207,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-malformed-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.525697,
+          "request_start_after_ack_seconds": 0.51383,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-malformed-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.783715,
+          "request_start_after_ack_seconds": 0.77578,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-malformed-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.042027,
+          "request_start_after_ack_seconds": 1.033806,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-malformed-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.299551,
+          "request_start_after_ack_seconds": 1.292106,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-malformed-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.620104,
+          "request_start_after_ack_seconds": 1.54964,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-malformed-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.880605,
+          "request_start_after_ack_seconds": 1.870238,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-malformed-8",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 2.140887,
+          "request_start_after_ack_seconds": 2.130765,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    },
+    {
+      "case": "role-fault-duplicate-field",
+      "confirmation_deadline_seconds": 35,
+      "first_denial_response_seconds": 1.385761,
+      "first_target_response_seconds": 1.385761,
+      "first_transition_deadline_seconds": 15,
+      "last_permitted_response_seconds": 1.06541,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-duplicate-field-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.024618,
+          "request_start_after_ack_seconds": 0.016193,
+          "status": 200
+        },
+        {
+          "case": "role-fault-duplicate-field-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.285298,
+          "request_start_after_ack_seconds": 0.274743,
+          "status": 200
+        },
+        {
+          "case": "role-fault-duplicate-field-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.545212,
+          "request_start_after_ack_seconds": 0.535404,
+          "status": 200
+        },
+        {
+          "case": "role-fault-duplicate-field-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.805303,
+          "request_start_after_ack_seconds": 0.795343,
+          "status": 200
+        },
+        {
+          "case": "role-fault-duplicate-field-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.06541,
+          "request_start_after_ack_seconds": 1.055401,
+          "status": 200
+        },
+        {
+          "case": "role-fault-duplicate-field-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.385761,
+          "request_start_after_ack_seconds": 1.315544,
+          "status": 403
+        },
+        {
+          "case": "role-fault-duplicate-field-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.644394,
+          "request_start_after_ack_seconds": 1.63585,
+          "status": 403
+        },
+        {
+          "case": "role-fault-duplicate-field-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.902886,
+          "request_start_after_ack_seconds": 1.894484,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "role-fault-recovery-duplicate-field",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": 0.006738,
+      "first_target_response_seconds": 1.625306,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 2.146477,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-recovery-duplicate-field-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.006738,
+          "request_start_after_ack_seconds": 3.1e-05,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-duplicate-field-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.264538,
+          "request_start_after_ack_seconds": 0.25682,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-duplicate-field-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.525342,
+          "request_start_after_ack_seconds": 0.514615,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-duplicate-field-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.78322,
+          "request_start_after_ack_seconds": 0.775421,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-duplicate-field-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.044008,
+          "request_start_after_ack_seconds": 1.033301,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-duplicate-field-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.301855,
+          "request_start_after_ack_seconds": 1.294091,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-duplicate-field-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.625306,
+          "request_start_after_ack_seconds": 1.551944,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-duplicate-field-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.886618,
+          "request_start_after_ack_seconds": 1.875792,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-duplicate-field-8",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 2.146477,
+          "request_start_after_ack_seconds": 2.13675,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    },
+    {
+      "case": "role-fault-trailing-content",
+      "confirmation_deadline_seconds": 35,
+      "first_denial_response_seconds": 1.380636,
+      "first_target_response_seconds": 1.380636,
+      "first_transition_deadline_seconds": 15,
+      "last_permitted_response_seconds": 1.064978,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-trailing-content-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.02477,
+          "request_start_after_ack_seconds": 0.016875,
+          "status": 200
+        },
+        {
+          "case": "role-fault-trailing-content-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.284483,
+          "request_start_after_ack_seconds": 0.274909,
+          "status": 200
+        },
+        {
+          "case": "role-fault-trailing-content-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.545217,
+          "request_start_after_ack_seconds": 0.534612,
+          "status": 200
+        },
+        {
+          "case": "role-fault-trailing-content-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.8055,
+          "request_start_after_ack_seconds": 0.795367,
+          "status": 200
+        },
+        {
+          "case": "role-fault-trailing-content-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.064978,
+          "request_start_after_ack_seconds": 1.055612,
+          "status": 200
+        },
+        {
+          "case": "role-fault-trailing-content-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.380636,
+          "request_start_after_ack_seconds": 1.315107,
+          "status": 403
+        },
+        {
+          "case": "role-fault-trailing-content-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.638734,
+          "request_start_after_ack_seconds": 1.630719,
+          "status": 403
+        },
+        {
+          "case": "role-fault-trailing-content-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.897065,
+          "request_start_after_ack_seconds": 1.888828,
+          "status": 403
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": false
+    },
+    {
+      "case": "role-fault-recovery-trailing-content",
+      "confirmation_deadline_seconds": 7,
+      "first_denial_response_seconds": 0.008765,
+      "first_target_response_seconds": 1.621581,
+      "first_transition_deadline_seconds": 7,
+      "last_permitted_response_seconds": 2.140796,
+      "passed": true,
+      "samples": [
+        {
+          "case": "role-fault-recovery-trailing-content-0",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.008765,
+          "request_start_after_ack_seconds": 3.3e-05,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-trailing-content-1",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.267455,
+          "request_start_after_ack_seconds": 0.258858,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-trailing-content-2",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.52564,
+          "request_start_after_ack_seconds": 0.517546,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-trailing-content-3",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 0.784158,
+          "request_start_after_ack_seconds": 0.775727,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-trailing-content-4",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.041962,
+          "request_start_after_ack_seconds": 1.034236,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-trailing-content-5",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.300885,
+          "request_start_after_ack_seconds": 1.292042,
+          "status": 403
+        },
+        {
+          "case": "role-fault-recovery-trailing-content-6",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.621581,
+          "request_start_after_ack_seconds": 1.550977,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-trailing-content-7",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 1.881316,
+          "request_start_after_ack_seconds": 1.871727,
+          "status": 200
+        },
+        {
+          "case": "role-fault-recovery-trailing-content-8",
+          "content_valid": true,
+          "request_end_after_ack_seconds": 2.140796,
+          "request_start_after_ack_seconds": 2.131458,
+          "status": 200
+        }
+      ],
+      "stable_samples": 3,
+      "target_allowed": true
+    }
+  ]
+}
