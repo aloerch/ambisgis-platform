@@ -157,3 +157,11 @@ mapping first, read the decision register, and continue only the selected cohere
 remediation course. The final criterion package must distinguish acceptance of
 this accurate C2 investigation from adoption of a component and distribution.
 No fixed prompt count or additional smoke milestone is promised.
+
+Review [PR #65](https://github.com/aloerch/ambisgis-platform/pull/65), frozen
+implementation/evidence head `82b69845fd8550da612e026fed0755a5e9e00f50`.
+[Project readback](../verification/candidate-selection/project.json) confirms two
+writes, 77 → 78 items, all prior represented planning/view/archive data preserved,
+parent FND-02 In progress, and #65 in `is:pr is:open`. This is API verification,
+not a new UI acceptance. Later documentation commits preserve the manifest and
+code. The final pushed review head is recorded in issue #3.

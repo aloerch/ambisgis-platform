@@ -32,6 +32,15 @@ new owner decision or F02-08 acceptance is recorded. FND-03/FND-05/FND-07/FND-08
 and release gates remain unchanged. No merge, default/workflow change, binaries,
 deployment, services or upstream contact occurred.
 
+Review [PR #65](https://github.com/aloerch/ambisgis-platform/pull/65); frozen
+implementation/evidence head `82b69845fd8550da612e026fed0755a5e9e00f50`.
+[Project publication](verification/candidate-selection/project.json) used exactly
+two authorized writes: PR membership and its Evidence link to PR #65/issue #3.
+Actual count is 77 → 78; all prior represented item/field/view/archive states
+were preserved, and only #65 matches unchanged `is:pr is:open`. Parent Delivery
+stays In progress. Subsequent publication-documentation commits change no selected
+artifact, manifest or validator behavior. Final review head is pinned in issue #3.
+
 # Preserved status — earlier checkpoints
 
 # Implementation status — FND-02 combination/cache checkpoint
