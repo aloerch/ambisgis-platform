@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "package": "web-ifc",
+  "version": "0.0.50",
+  "main": {
+    "name": "webifc",
+    "revision": "b55d8bde10067415d4536b23c27edcc13acf217c",
+    "repository": "https://github.com/ThatOpen/engine_web-ifc",
+    "archive": {
+      "path": "webifc-source.tar.gz",
+      "bytes": 112889803,
+      "sha256": "8da14825b1b205766a1d762fe687749c58ca1228dc0db8273cad0f1e63461333"
+    }
+  },
+  "dependencies": [
+    {
+      "name": "fastfloat",
+      "revision": "2b2395f9ac836ffca6404424bcc252bff7aa80e4",
+      "repository": "https://github.com/fastfloat/fast_float",
+      "archive": {
+        "path": "dependencies/fastfloat-2b2395f9ac836ffca6404424bcc252bff7aa80e4.tar.gz",
+        "bytes": 84808,
+        "sha256": "230d20e4e4ac1f6a9df92c4d746c6ec536cdb0c085bc8635d4b88cead5dc22cb"
+      }
+    },
+    {
+      "name": "tinynurbs",
+      "revision": "2fc6562d71665312c6298f7c340bace1bcf1b7a1",
+      "repository": "https://github.com/pradeep-pyro/tinynurbs",
+      "archive": {
+        "path": "dependencies/tinynurbs-2fc6562d71665312c6298f7c340bace1bcf1b7a1.tar.gz",
+        "bytes": 466448,
+        "sha256": "7f3063c864353970f3262bfc31cf014ee3b484938ad6a0db4e01a7c647d2967d"
+      }
+    },
+    {
+      "name": "tinycpptest",
+      "revision": "12e42c8ac6e032ce450fb3f772ebdfd1ddc6008c",
+      "repository": "https://github.com/kovacsv/TinyCppTest",
+      "archive": {
+        "path": "dependencies/tinycpptest-12e42c8ac6e032ce450fb3f772ebdfd1ddc6008c.tar.gz",
+        "bytes": 5122,
+        "sha256": "256c4889a313eea0727fcf01eebdf61234fbdf1a47241df6a53f73186287ba1d"
+      }
+    },
+    {
+      "name": "glm",
+      "revision": "bf71a834948186f4097caa076cd2663c69a10e1e",
+      "repository": "https://github.com/g-truc/glm",
+      "archive": {
+        "path": "dependencies/glm-bf71a834948186f4097caa076cd2663c69a10e1e.tar.gz",
+        "bytes": 4369431,
+        "sha256": "70ad78e872c145f0164d54da833b651914c184edc65958906937b9739fb8fb1b"
+      }
+    },
+    {
+      "name": "earcut",
+      "revision": "4811a2b69b91f6127a75e780de6e2113609ddabb",
+      "repository": "https://github.com/mapbox/earcut.hpp",
+      "archive": {
+        "path": "dependencies/earcut-4811a2b69b91f6127a75e780de6e2113609ddabb.tar.gz",
+        "bytes": 160535,
+        "sha256": "312dc29d1bfb0bf2246f82aa8154be7ce0ff771455ea703dd2d6c1b236c9a7bd"
+      }
+    },
+    {
+      "name": "cdt",
+      "revision": "4d0c9026b8ec846fe544897e7111f8f9080d5f8a",
+      "repository": "https://github.com/artem-ogre/CDT",
+      "archive": {
+        "path": "dependencies/cdt-4d0c9026b8ec846fe544897e7111f8f9080d5f8a.tar.gz",
+        "bytes": 1543987,
+        "sha256": "2e0b35429d29482402f22ac788336019385582d73cfccadf85e7c4970b1fee0c"
+      }
+    },
+    {
+      "name": "spdlog",
+      "revision": "7e635fca68d014934b4af8a1cf874f63989352b7",
+      "repository": "https://github.com/gabime/spdlog",
+      "archive": {
+        "path": "dependencies/spdlog-7e635fca68d014934b4af8a1cf874f63989352b7.tar.gz",
+        "bytes": 251147,
+        "sha256": "1010aa76cdea700e8c693aa29e58ceb0ea51c8f020e2b15c81318e2c05562aec"
+      }
+    },
+    {
+      "name": "fuzzy",
+      "revision": "28251ebc68144e9b4613e0c289304c040e01ccf8",
+      "repository": "https://github.com/tomvandig/fuzzy-bools",
+      "archive": {
+        "path": "dependencies/fuzzy-28251ebc68144e9b4613e0c289304c040e01ccf8.tar.gz",
+        "bytes": 603565,
+        "sha256": "ac5e2ede2e033d6b1d95ac1c1141e0a101ef6be20c54c3ed092dd8e37c0f9289"
+      }
+    }
+  ],
+  "npm_package": {
+    "path": "web-ifc-0.0.50.tgz",
+    "bytes": 2400773,
+    "sha256": "6baf141163e2390d8b4a3a1cafe83731f6ff5faa062c93e07dd71f6ddf03ccba"
+  },
+  "metadata": [
+    {
+      "path": "acquisition-main.json",
+      "bytes": 1162,
+      "sha256": "2f3cd4b1002eca1bc63fbf8e4987afd085b6a0751d2e3f49c69900f14c536aa1"
+    },
+    {
+      "path": "acquisition-dependencies.json",
+      "bytes": 11391,
+      "sha256": "218b1565f992e1e507f1cdad8de8df1c750a21f938205e14a2b6c6345af21895"
+    },
+    {
+      "path": "publisher-commit.json",
+      "bytes": 5447,
+      "sha256": "89ae9474a1ba2676c0a7042e704fe7a49ac26486f105d95b49d78fbd12f6b137"
+    },
+    {
+      "path": "publisher-tree.json",
+      "bytes": 39027,
+      "sha256": "5d4bda579fef3e0cf30f111d0a361e62bcb8db8798855bf115eb99596c599472"
+    },
+    {
+      "path": "npm-web-ifc-0.0.50.json",
+      "bytes": 4925,
+      "sha256": "0b80491d2d58924c84069d2ebcaafd349b87e1e7219a97c2869ce43d54d0690b"
+    }
+  ]
+}
