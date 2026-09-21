@@ -1,4 +1,40 @@
-# Implementation status — 21 September 2026
+# Implementation status — authoritative role propagation checkpoint
+
+FND-02's source-owned GeoNode role-service implementation is frozen at
+`d935fb48a7e0721b1e25f67eccfe3ed836c890fc` on `fnd-02/geonode-role-propagation`,
+from verified owner-merged [PR #60](https://github.com/aloerch/ambisgis-platform/pull/60),
+main `a58eff30305de4f4f24b8f5c9075672c4745aa5f`. #60's older open-PR prose is historical.
+**FND-02 remains In progress; GOV-02 remains Merged.** Fresh human security review
+gates the new checkpoint's merge. See the [current handoff](docs/geonode-role-propagation-handoff.md),
+[ADR 008](adrs/008-authoritative-geonode-role-service.md) and
+[hash-bound evidence](verification/geonode-role-propagation/evidence.json).
+
+Actual GeoNode membership now controls configured GeoServer/GeoFence resources
+through authenticated HTTP; local XML supplies identities only and no role grants.
+The fresh complete seven-profile WAR is
+`a3cea4ad28ca7c3447b2eeae7a631e624a9e50e7973972c43f2d7d91eab25a52`.
+With the same valid token, group removal was first denied at **1.084476s** and
+administrator demotion at **1.094112s** after native committed acknowledgment;
+restoration returned access automatically. The single-process healthy test bound
+was seven seconds; delayed role transport has separately measured serial-call limits.
+
+Final execution passed **393 GeoServer HTTP requests**, **82 protocol assertions
+across 156 harness-driven GeoNode HTTP requests**, **70 native Django cases**,
+**39 native Java role cases**, and fresh **707 OAuth/security cases with one inherited
+skip**. **112 GeoNode harness / 379 Java tooling / 176 plan tests / four schema checks**
+passed without skips. Aggregate packaging skipped tests explicitly. Independent
+review found and resolved ambiguous JSON parsing; failures remain preserved.
+Both services/database stopped; disposable credentials were invalidated/scrubbed.
+
+This does not accept full object-sharing/unified policy, browser SSO, publishing,
+multi-node revocation, source/toolchain closure, FND-03/FND-07/FND-08, P1/P6 or
+license/security/release gates. Java source ledger stays **48 structural / 12
+unresolved / four partial**; GeoNode dependencies remain a separate inventory.
+No merge, deployment or release was performed. Publication readback records actual
+Project counts and preserves FND-02 Delivery and existing human planning.
+
+## Preserved status record — GeoNode identity checkpoint
+
 
 Current authorized FND-02 engineering is the source-owned GeoNode identity checkpoint in open [PR #60](https://github.com/aloerch/ambisgis-platform/pull/60), on `fnd-02/geonode-identity-integration`, based on verified owner-merged [PR #59](https://github.com/aloerch/ambisgis-platform/pull/59), merge `360b1e87b392d0e6cb8bf64fac543f75e6f27eb2`, reviewed head `c899ab0791ec87ef0a002b3953aa6a8268c4dc3e`. [PR #58](https://github.com/aloerch/ambisgis-platform/pull/58) is also merged at `b68e3d59bafb4bbf7b2007c76e5e59a25b4139e7`; dated open-review descriptions below are preserved history. **FND-02 remains In progress**; GOV-02 remains Merged.
 

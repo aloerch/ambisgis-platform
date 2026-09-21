@@ -3,8 +3,11 @@
 Repository `aloerch/ambisgis-platform`; branch `fnd-02/geonode-identity-integration`;
 worktree `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geonode-identity`.
 [FND-02 #3](https://github.com/aloerch/ambisgis-platform/issues/3) remains **In progress**.
-[PR #60](https://github.com/aloerch/ambisgis-platform/pull/60) is open against
-`ambisgis/main`; fresh owner security review gates merging. Its separate Project
+[PR #60](https://github.com/aloerch/ambisgis-platform/pull/60) was owner-merged at
+`a58eff30305de4f4f24b8f5c9075672c4745aa5f` from reviewed head
+`7dfe6288bf1383be29e18de467aa0801f798ba6f`. Its open-PR review prose below is historical;
+there is no remaining #60 merge obligation. The [role-propagation continuation](geonode-role-propagation-handoff.md)
+has its own fresh security review gate. Its separate Project
 item and preservation evidence are in the [publication record](../verification/geonode-identity/project/README.md).
 This checkpoint begins at verified main `360b1e87b392d0e6cb8bf64fac543f75e6f27eb2`:
 the owner merged [#59](https://github.com/aloerch/ambisgis-platform/pull/59) from

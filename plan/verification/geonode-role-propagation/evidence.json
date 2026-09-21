@@ -1,0 +1,305 @@
+{
+  "artifacts": {
+    "owned_python_wheels": [
+      {
+        "bytes": 26147429,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/run-003/owned-wheels/django_geonode_mapstore_client-5.1.0-py3-none-any.whl",
+        "sha256": "1ba859afca3993da35f05e838185fa027d0f9779a4cb26124dd638617157442b"
+      },
+      {
+        "bytes": 13652397,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/run-003/owned-wheels/geonode-5.1.0.post1-py3-none-any.whl",
+        "sha256": "d4194e17bfaa517d829b47550022bc0831a3fe0872483d968ecbf29251cd5c28"
+      }
+    ],
+    "war": {
+      "bytes": 149567723,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/aggregate-repaired-02/work/source/geoserver/src/web/app/target/geoserver.war",
+      "sha256": "a3cea4ad28ca7c3447b2eeae7a631e624a9e50e7973972c43f2d7d91eab25a52"
+    }
+  },
+  "checks": {
+    "aggregate_packaging_tests_skipped": true,
+    "geonode_harness": 112,
+    "geonode_native": 70,
+    "http": {
+      "distinct_correlated_resource_requests": 96,
+      "geonode_harness_http": 156,
+      "geoserver_http": 393,
+      "initial": 384,
+      "protocol_assertions": 82,
+      "restart": 9
+    },
+    "java_oauth_security_native": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 707,
+      "skip": "inherited AuthenticationFilterTest.testSSL",
+      "skips": 1,
+      "tests": 708
+    },
+    "java_role_native": 39,
+    "java_tooling": 379,
+    "plan_tests": 176,
+    "result_exit_code": 0,
+    "schemas": 4
+  },
+  "custody": {
+    "geonode_dependencies": "../geonode-identity/dependencies.json",
+    "new_java_library": "source-built gs-authkey only; no new or changed external dependency or download",
+    "root": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation",
+    "source_tuple_upgraded": false,
+    "third_party_source_build_or_license_acceptance": false,
+    "unchanged_java_ledger": {
+      "partial": 4,
+      "structural": 48,
+      "unresolved": 12
+    }
+  },
+  "evidence_minimization": "Public JSON selects validated non-secret scalars/role fixtures/hashes; raw fixture and readiness JSON are not copied.",
+  "guarded_patches": {
+    "geonode_roles": {
+      "bytes": 10354,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geonode-roles/build-support/geonode/roles_repair.py",
+      "sha256": "3116c9c70020d3ed88616c0e861febcc4b6273c219710bcd61746b8f9e1671c8"
+    },
+    "java_roles": {
+      "bytes": 15143,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geonode-roles/build-support/java/role-service-repairs.json",
+      "sha256": "39ff8d624c39a51b15c8d0a5543124d7c76844256d9bb58390b8c9577387c7ca"
+    }
+  },
+  "implementation": {
+    "base": "a58eff30305de4f4f24b8f5c9075672c4745aa5f",
+    "branch": "fnd-02/geonode-role-propagation",
+    "commit": "d935fb48a7e0721b1e25f67eccfe3ed836c890fc",
+    "executed_tooling_byte_matched_source_files": 120,
+    "geonode_tree": "c4543603a01b6999626f99f7900a5988594ceae4",
+    "java_tree": "e55a18232e9f59124fbd151b3135556ee736b227",
+    "repository": "aloerch/ambisgis-platform",
+    "repository_id": 1376927351
+  },
+  "operating_boundary": {
+    "database_exception": "Only disposable SCRAM loopback PostgreSQL is outside unchanged supervisor because native setsid is denied.",
+    "database_stopped": true,
+    "loopback_child_probes": 79,
+    "loopback_parent_probes": 79,
+    "owned_installed_files": 2843,
+    "private_config_scrubbed": true,
+    "stored_credentials_invalidated": true,
+    "task_process_group_stopped": true,
+    "tooling_unchanged": true,
+    "udp_packets": 0
+  },
+  "public_evidence": [
+    {
+      "bytes": 187720,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geonode-roles/plan/verification/geonode-role-propagation/http-results.json",
+      "sha256": "096edecaf05c3186810d020d5f87a9980b0744389ddc7ff153c4ea210491d2d7"
+    },
+    {
+      "bytes": 9833,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geonode-roles/plan/verification/geonode-role-propagation/configuration.json",
+      "sha256": "5f22c905a58c97bce0a2d37cd64212a758d321d69e3b7e9ede188f646d5de7ff"
+    },
+    {
+      "bytes": 8164,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-geonode-roles/plan/verification/geonode-role-propagation/native-geonode.json",
+      "sha256": "9d8a47083e1850e4426bf1b187f6044a4e0290ead0a3f3ea563c1759b69f984f"
+    }
+  ],
+  "purpose": "FND-02 bounded authoritative membership checkpoint; not full policy/source/release acceptance",
+  "retained_evidence": [
+    {
+      "bytes": 5212,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/build-native-summary-02.json",
+      "sha256": "6f84bde561af4dc3b5f8a579539042a59b5bb371b033f9d22a41aa02d02af448"
+    },
+    {
+      "bytes": 1411,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/authkey-dependency-delta-02.json",
+      "sha256": "8fbec8bec08cd4d62114697f4a5afc5305b925a5343a28c5d02dafb1aead81c8"
+    },
+    {
+      "bytes": 318528,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/run-003/build-receipt.json",
+      "sha256": "a89fc4d6075dbbeb0011661d0584ad03f2d02d8afb95a625b3bcdad28db4d525"
+    },
+    {
+      "bytes": 1879,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/build-proof-003/result.json",
+      "sha256": "37f3f88f4a5e724575a71625846f6cf62cf9aaf038ef9a079f2d94b48b150a01"
+    },
+    {
+      "bytes": 1666,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/build-proof-003/network-proof.json",
+      "sha256": "2790a1a4d721871bf518792caa2e013835d0cad52644c9a7a32f0fbd1a1edbbe"
+    },
+    {
+      "bytes": 5393,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/build-proof-003/replay.py",
+      "sha256": "3af31fea63ca1922b1ebee85b159776d43790ed2801e4e0796b936a69d1f399d"
+    },
+    {
+      "bytes": 98561,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/aggregate-repaired-02/result.json",
+      "sha256": "72d966a890259568a0a7b6c22ad42ee5694adb88d2da9d2c99261ba06d122adf"
+    },
+    {
+      "bytes": 6625687,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/aggregate-repaired-02/source-inputs.json",
+      "sha256": "e4f32e39aa234e76f4a072b459b407b164e3ce49845f473a0872646882e431f0"
+    },
+    {
+      "bytes": 8652101,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/aggregate-repaired-02/retained-inputs.json",
+      "sha256": "719a82bbeb9bd06aa4817d206d68697f13a7aee83292e5a8bde451ff56b9f675"
+    },
+    {
+      "bytes": 2874,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/aggregate-repaired-02/network-denial.json",
+      "sha256": "142c3d68de36e053068e09eacee234ea64ad2e85a29e4022dd6ec04bf8f12a0c"
+    },
+    {
+      "bytes": 84724,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/aggregate-repaired-02-inventory/result.json",
+      "sha256": "4ceebaa347e42aaefbcd3d37e3a1e9042cb69a22cc29fbbef60db6e0fe810d3d"
+    },
+    {
+      "bytes": 174576,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/aggregate-repaired-02-logging/result.json",
+      "sha256": "4b419dc0dd7a7dbd9b7f84865db3e1409003dbfa514a4bfd9f62eea5ca4f821e"
+    },
+    {
+      "bytes": 59372,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/role-native-baseline-03/result.json",
+      "sha256": "d127f09827927fa92590210bfc118ac1b82ed685c67e85954e8fb6c4f08c4caf"
+    },
+    {
+      "bytes": 59437,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/role-native-repaired-03/result.json",
+      "sha256": "eb5d6b0acf46538cc88780bc706deb1d2584054f7893f3861081f0c8f0391d45"
+    },
+    {
+      "bytes": 124900,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/oauth-native-regression-01/result.json",
+      "sha256": "39eee790f4256497d8358ef37b3cc13ea9329bfb45e90832613aba1a43a9140f"
+    },
+    {
+      "bytes": 821171,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-03/result.json",
+      "sha256": "2da8948e846617effe9fb8e5200b1870141f0b6ce768034c177df3c19e5d4e5d"
+    },
+    {
+      "bytes": 699926,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-03/journey-result.json",
+      "sha256": "40c89195935b19e0f7dd5f5d8cf54820affe7c996e64b0f52b379ef46477b029"
+    },
+    {
+      "bytes": 12248,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-03/tooling.json",
+      "sha256": "484b7663c0bd4ec95cebd8aa26f244306a431958fda56ef2cae3f6863e20284e"
+    },
+    {
+      "bytes": 1786,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-03/network-loopback.json",
+      "sha256": "8c514e8d05a19be83dcf50eae4ec61e6d95dbb6c31e6bd1b1d43bb21ead90e01"
+    },
+    {
+      "bytes": 385591,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-03/installed-origin-before.json",
+      "sha256": "3d6cc812d46d95c3c85e560555b6a9219908baabbee040dffb60f22e959ad6ce"
+    },
+    {
+      "bytes": 385591,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-03/installed-origin-after.json",
+      "sha256": "3d6cc812d46d95c3c85e560555b6a9219908baabbee040dffb60f22e959ad6ce"
+    },
+    {
+      "bytes": 15230,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/retained-review.json",
+      "sha256": "b04fddb88a70c5cf982203d2623bd4cc2f791490ce47f4b32fcc54702adc1bbb"
+    },
+    {
+      "bytes": 3654,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/retained-review.md",
+      "sha256": "09979ee9c9c4775d68e13d6a3ec0468198bb7914298188845b7a4e715194bb73"
+    },
+    {
+      "bytes": 1948,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/java-review-probes/parser-before-receipt.json",
+      "sha256": "5d2b016535f85ac7a41bc7be9c871a6e7e792c32c4a2677055f870a564eac737"
+    },
+    {
+      "bytes": 2815,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/java-review-probes/parser-after-receipt.json",
+      "sha256": "30325169811c17def1a74b0dc8c67aa21423cabcf7b1980d9d384a47f30b752d"
+    },
+    {
+      "bytes": 28320,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/native-01/result.json",
+      "sha256": "fad6a693e864625356e0acb8858ae166dc2614d7199c8014150bbdd4f1a3b0cf"
+    },
+    {
+      "bytes": 28683,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/native-02/result.json",
+      "sha256": "5142023a1c25b1abe942e8316686d612a94bc61333da7d752d43fb9eaba4005e"
+    },
+    {
+      "bytes": 175483,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-01/result.json",
+      "sha256": "bb72a57f37c8422ed189a82b2b0a7595cf518c92b0b5f0f0cc13090e4c68be69"
+    },
+    {
+      "bytes": 370747,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-02/result.json",
+      "sha256": "1d28d3ca300b74642c5ccfc8b2f1e7d6715ad4717607ca0d656d8f8440ac6dfe"
+    },
+    {
+      "bytes": 16451,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/geonode-harness-03.log",
+      "sha256": "95df90f989e421f3665cb00030ff61276f8303fffe3f0de79e17c563230ef6ce"
+    },
+    {
+      "bytes": 57796,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/java-tooling-final.log",
+      "sha256": "cdff7b44772f55e196c497b9a1968a84235e9918ca544998c520d7d5f8298a26"
+    },
+    {
+      "bytes": 26667,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/plan-tests-01.log",
+      "sha256": "53928e5b81c01af7d4fa6c061f1c68dd1b45dae5b784a185d9d1acca036368c6"
+    },
+    {
+      "bytes": 219,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/plan-schemas-01.log",
+      "sha256": "bff470db25e15db2d8c649b6006a9eccb6e49b0bb17c25cbc95e6099a007f933"
+    },
+    {
+      "bytes": 26228,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/plan-tests-02.log",
+      "sha256": "2043d213aeb8baf35bdf9b11e5e4f413b116bea6c72a75d88264c531d8d16e30"
+    },
+    {
+      "bytes": 189,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/plan-schemas-02.log",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    },
+    {
+      "bytes": 26228,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/plan-tests-final.log",
+      "sha256": "e74055c0651e172984f0a64e88d9d76190465387a0adcf7f16e6d628763a2f2a"
+    },
+    {
+      "bytes": 189,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/plan-schemas-final.log",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    },
+    {
+      "bytes": 11052,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/evidence-export.py",
+      "sha256": "ec7c1e241dc6326af7d4b1a64354b8c64350c9914e572e0e8e13a8b169aa1be7"
+    }
+  ],
+  "schema_version": 1
+}

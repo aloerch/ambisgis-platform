@@ -1,0 +1,220 @@
+{
+  "initial": {
+    "active_role_service_class": "org.geoserver.security.GeoServerRestRoleService",
+    "chains": [
+      {
+        "allow_session_creation": false,
+        "filters": [
+          "fixture-oauth",
+          "anonymous"
+        ],
+        "name": "rest"
+      },
+      {
+        "allow_session_creation": false,
+        "filters": [
+          "fixture-oauth",
+          "anonymous"
+        ],
+        "name": "default"
+      }
+    ],
+    "class_origins": {
+      "org.geoserver.geofence.server.internal.SecurityContextUserResolver": {
+        "definitions": 1,
+        "jar_sha256": "6bc38536d7c8b14ce20cafdf26588352970f2467d0f1da23f1a31458f344cf5f",
+        "war_entry": "WEB-INF/lib/gs-geofence-server-2.28.5.jar"
+      },
+      "org.geoserver.geofence.services.DefaultUserResolver": {
+        "definitions": 1,
+        "jar_sha256": "27ad68810f673fb037e50771f74f02856d378b0e431d8d297ade9dd9130a6a3e",
+        "war_entry": "WEB-INF/lib/geofence-services-impl-3.8.3.jar"
+      },
+      "org.geoserver.importer.Importer": {
+        "definitions": 1,
+        "jar_sha256": "d30f79b9f3c0e9bf689f81d8fd3d099831ae90dc620df82428b889bd5e882d60",
+        "war_entry": "WEB-INF/lib/gs-importer-core-2.28.5.jar"
+      },
+      "org.geoserver.security.GeoServerRestRoleService": {
+        "definitions": 1,
+        "jar_sha256": "0aabf6a6fd9d37ea764367eaa6e1c7c0ba94fb0f21ed14c424600b038a1b2d12",
+        "war_entry": "WEB-INF/lib/gs-authkey-2.28.5.jar"
+      },
+      "org.geoserver.security.GeoServerRestRoleServiceConfig": {
+        "definitions": 1,
+        "jar_sha256": "0aabf6a6fd9d37ea764367eaa6e1c7c0ba94fb0f21ed14c424600b038a1b2d12",
+        "war_entry": "WEB-INF/lib/gs-authkey-2.28.5.jar"
+      },
+      "org.geoserver.security.GeoServerSecurityManager": {
+        "definitions": 1,
+        "jar_sha256": "8dad3b2fc99f1150a9862f9cf59947cede032a72cab60cf7d5cb18242826d481",
+        "war_entry": "WEB-INF/lib/gs-main-2.28.5.jar"
+      },
+      "org.geoserver.security.auth.GuavaAuthenticationCacheImpl": {
+        "definitions": 1,
+        "jar_sha256": "8dad3b2fc99f1150a9862f9cf59947cede032a72cab60cf7d5cb18242826d481",
+        "war_entry": "WEB-INF/lib/gs-main-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoNodeOAuth2FilterConfig": {
+        "definitions": 1,
+        "jar_sha256": "ed3ff1dfc81909bae608a8ca98c9232a74835a4b20f0e12d37cfddeae7b4c234",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-geonode-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoServerAccessTokenConverter": {
+        "definitions": 1,
+        "jar_sha256": "17ed2cf289c24f89f26b9cccc790f78280207f12e62255bd22458997af225c7a",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-core-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoServerOAuth2FilterConfig": {
+        "definitions": 1,
+        "jar_sha256": "17ed2cf289c24f89f26b9cccc790f78280207f12e62255bd22458997af225c7a",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-core-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoServerOAuthAuthenticationFilter": {
+        "definitions": 1,
+        "jar_sha256": "17ed2cf289c24f89f26b9cccc790f78280207f12e62255bd22458997af225c7a",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-core-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoServerOAuthAuthenticationFilter$StatelessBearerSecurityContext": {
+        "definitions": 1,
+        "jar_sha256": "17ed2cf289c24f89f26b9cccc790f78280207f12e62255bd22458997af225c7a",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-core-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoServerOAuthRemoteTokenServices": {
+        "definitions": 1,
+        "jar_sha256": "17ed2cf289c24f89f26b9cccc790f78280207f12e62255bd22458997af225c7a",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-core-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.services.GeoNodeTokenServices": {
+        "definitions": 1,
+        "jar_sha256": "ed3ff1dfc81909bae608a8ca98c9232a74835a4b20f0e12d37cfddeae7b4c234",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-geonode-2.28.5.jar"
+      },
+      "org.mapfish.print.PDFUtils": {
+        "definitions": 1,
+        "jar_sha256": "2b31f3a95986096923d05867999f58a0b729eeabb656787d7165a480beca57f0",
+        "war_entry": "WEB-INF/lib/print-lib-2.4.1.jar"
+      }
+    },
+    "geofence_user_resolver_class": "org.geoserver.geofence.server.internal.SecurityContextUserResolver",
+    "local_users": "identity-only fixture records",
+    "retained_readiness": {
+      "bytes": 7879,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-03/geoserver-initial/ready.json",
+      "sha256": "065d3f7aaea18346302cc7464503ae0ef79e5ae705598bc215e63d2191ce0344"
+    },
+    "role_cache_ms": 1000,
+    "role_source": "UserGroupService",
+    "stateless_bearer": true,
+    "war_sha256": "a3cea4ad28ca7c3447b2eeae7a631e624a9e50e7973972c43f2d7d91eab25a52"
+  },
+  "restart": {
+    "active_role_service_class": "org.geoserver.security.GeoServerRestRoleService",
+    "chains": [
+      {
+        "allow_session_creation": false,
+        "filters": [
+          "fixture-oauth",
+          "anonymous"
+        ],
+        "name": "rest"
+      },
+      {
+        "allow_session_creation": false,
+        "filters": [
+          "fixture-oauth",
+          "anonymous"
+        ],
+        "name": "default"
+      }
+    ],
+    "class_origins": {
+      "org.geoserver.geofence.server.internal.SecurityContextUserResolver": {
+        "definitions": 1,
+        "jar_sha256": "6bc38536d7c8b14ce20cafdf26588352970f2467d0f1da23f1a31458f344cf5f",
+        "war_entry": "WEB-INF/lib/gs-geofence-server-2.28.5.jar"
+      },
+      "org.geoserver.geofence.services.DefaultUserResolver": {
+        "definitions": 1,
+        "jar_sha256": "27ad68810f673fb037e50771f74f02856d378b0e431d8d297ade9dd9130a6a3e",
+        "war_entry": "WEB-INF/lib/geofence-services-impl-3.8.3.jar"
+      },
+      "org.geoserver.importer.Importer": {
+        "definitions": 1,
+        "jar_sha256": "d30f79b9f3c0e9bf689f81d8fd3d099831ae90dc620df82428b889bd5e882d60",
+        "war_entry": "WEB-INF/lib/gs-importer-core-2.28.5.jar"
+      },
+      "org.geoserver.security.GeoServerRestRoleService": {
+        "definitions": 1,
+        "jar_sha256": "0aabf6a6fd9d37ea764367eaa6e1c7c0ba94fb0f21ed14c424600b038a1b2d12",
+        "war_entry": "WEB-INF/lib/gs-authkey-2.28.5.jar"
+      },
+      "org.geoserver.security.GeoServerRestRoleServiceConfig": {
+        "definitions": 1,
+        "jar_sha256": "0aabf6a6fd9d37ea764367eaa6e1c7c0ba94fb0f21ed14c424600b038a1b2d12",
+        "war_entry": "WEB-INF/lib/gs-authkey-2.28.5.jar"
+      },
+      "org.geoserver.security.GeoServerSecurityManager": {
+        "definitions": 1,
+        "jar_sha256": "8dad3b2fc99f1150a9862f9cf59947cede032a72cab60cf7d5cb18242826d481",
+        "war_entry": "WEB-INF/lib/gs-main-2.28.5.jar"
+      },
+      "org.geoserver.security.auth.GuavaAuthenticationCacheImpl": {
+        "definitions": 1,
+        "jar_sha256": "8dad3b2fc99f1150a9862f9cf59947cede032a72cab60cf7d5cb18242826d481",
+        "war_entry": "WEB-INF/lib/gs-main-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoNodeOAuth2FilterConfig": {
+        "definitions": 1,
+        "jar_sha256": "ed3ff1dfc81909bae608a8ca98c9232a74835a4b20f0e12d37cfddeae7b4c234",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-geonode-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoServerAccessTokenConverter": {
+        "definitions": 1,
+        "jar_sha256": "17ed2cf289c24f89f26b9cccc790f78280207f12e62255bd22458997af225c7a",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-core-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoServerOAuth2FilterConfig": {
+        "definitions": 1,
+        "jar_sha256": "17ed2cf289c24f89f26b9cccc790f78280207f12e62255bd22458997af225c7a",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-core-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoServerOAuthAuthenticationFilter": {
+        "definitions": 1,
+        "jar_sha256": "17ed2cf289c24f89f26b9cccc790f78280207f12e62255bd22458997af225c7a",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-core-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoServerOAuthAuthenticationFilter$StatelessBearerSecurityContext": {
+        "definitions": 1,
+        "jar_sha256": "17ed2cf289c24f89f26b9cccc790f78280207f12e62255bd22458997af225c7a",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-core-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.GeoServerOAuthRemoteTokenServices": {
+        "definitions": 1,
+        "jar_sha256": "17ed2cf289c24f89f26b9cccc790f78280207f12e62255bd22458997af225c7a",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-core-2.28.5.jar"
+      },
+      "org.geoserver.security.oauth2.services.GeoNodeTokenServices": {
+        "definitions": 1,
+        "jar_sha256": "ed3ff1dfc81909bae608a8ca98c9232a74835a4b20f0e12d37cfddeae7b4c234",
+        "war_entry": "WEB-INF/lib/gs-sec-oauth2-geonode-2.28.5.jar"
+      },
+      "org.mapfish.print.PDFUtils": {
+        "definitions": 1,
+        "jar_sha256": "2b31f3a95986096923d05867999f58a0b729eeabb656787d7165a480beca57f0",
+        "war_entry": "WEB-INF/lib/print-lib-2.4.1.jar"
+      }
+    },
+    "geofence_user_resolver_class": "org.geoserver.geofence.server.internal.SecurityContextUserResolver",
+    "local_users": "identity-only fixture records",
+    "retained_readiness": {
+      "bytes": 7879,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/integration-03/geoserver-restart/ready.json",
+      "sha256": "30d259923bd0b3ebc4c635660140182a7bb0b142e17ac269aa993f4009a004d1"
+    },
+    "role_cache_ms": 1000,
+    "role_source": "UserGroupService",
+    "stateless_bearer": true,
+    "war_sha256": "a3cea4ad28ca7c3447b2eeae7a631e624a9e50e7973972c43f2d7d91eab25a52"
+  }
+}
