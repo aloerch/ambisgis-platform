@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "task": "F02-04",
+  "scope": "Retained publisher supporting inputs and local toolchain preflight; not QGIS desktop/server acceptance or release approval",
+  "observed_at_utc": "2026-09-21T07:43:53.824151+00:00",
+  "owned_qgis_candidate": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+  "support_profile": {
+    "prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06",
+    "manifest": {
+      "path": "build-support/qgis/support-inputs.json",
+      "sha256": "0a58fccd0103ed8d8309f01d51a07bd3a3577ad489242b6a4fd2ee6882ebf1de",
+      "bytes": 76405
+    },
+    "acquisition_recipe": {
+      "path": "build-support/qgis/acquisition.py",
+      "sha256": "3d2b506eaa38d2f5d9b7e516d79d2d964ce03603cd87ed8796035ad68a03cb0d",
+      "bytes": 12235
+    },
+    "inventory": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-inventory.json",
+      "sha256": "06de03811bcd7da6df84ece3f995c84a7493397dceacbe1d75b19f26b0402eac",
+      "bytes": 2846275
+    },
+    "inventory_verified_after_probes": true,
+    "extra_prefix_files": 0
+  },
+  "custody": {
+    "root": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate",
+    "classification": "Publisher binary RPMs with matching retained source RPMs; supporting dependencies not independently source-built",
+    "binary_repository": "https://download.opensuse.org/tumbleweed/repo/oss",
+    "source_repository": "https://download.opensuse.org/source/tumbleweed/repo/oss",
+    "acquisition_receipts": {
+      "binaries": {
+        "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/acquisition-1789976407843248997.json",
+        "sha256": "c8ed964a38df53b8ffb29d61ea94a049723d615fc31818676cb889f8029251cf",
+        "bytes": 47052
+      },
+      "sources": {
+        "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/acquisition-1789976411742931165.json",
+        "sha256": "8d181ae6167fbf4185859c549bc47316165420b613a19063ba5ebf0a66a76c8a",
+        "bytes": 19221
+      }
+    },
+    "metadata": {
+      "binaries": {
+        "primary": {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/publisher-metadata/38b45070aac30a3a46bff0807b045393fbc904c1f0c46a583bcbf5e25ae5d0d9692c5c19990803f37bbd267a8b92a7c857dc86210c5039b817c5f2514c663b70-primary.xml.zst",
+          "sha256": "278cc6f01835a8748a1be81df60b245aa90726fdb8e67b7bf9d9670ae42fab5d",
+          "bytes": 17107321
+        },
+        "repomd": {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/publisher-metadata/repomd.xml",
+          "sha256": "0846426e40ee414a1da91953a757cc5e65a60c97e383d20c44106230ca7b61e6",
+          "bytes": 14119
+        },
+        "detached_signature": {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/publisher-metadata/repomd.xml.asc",
+          "sha256": "111caac682c96ffca79cba2f6b6bd38e27e3207765e6511dde114697cdf11e49",
+          "bytes": 827
+        },
+        "primary_digest_matches_repomd": true
+      },
+      "sources": {
+        "primary": {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/publisher-metadata/source-34539dc6a184691f514684a8e1516e71136360afc556c2b00e435a1b95efbcbe07e700595d1dddb2a0a098ac16d41bb2e2c35d00bb2570b5a0c2ab5a86e83a7c-primary.xml.zst",
+          "sha256": "7e1deca246cca518afa49732f83003afa14f98a168b64d2c516f84b0973584d8",
+          "bytes": 5470206
+        },
+        "repomd": {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/publisher-metadata/source-repomd.xml",
+          "sha256": "a6c34dceaa4c7372d2e23340a9617343ca3cff9ee1b0bf87b0dd07090f788862",
+          "bytes": 12269
+        },
+        "detached_signature": {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/publisher-metadata/source-repomd.xml.asc",
+          "sha256": "64f5e47d8a5f9b40a2efc5a4dbfddd86786eafbdb60f7050f5ccb15dbe4f03a4",
+          "bytes": 827
+        },
+        "primary_digest_matches_repomd": true
+      }
+    },
+    "metadata_origin": "Binary metadata copied from official repo-oss host cache; source metadata fetched explicitly over HTTPS",
+    "rpm_publisher_hash_and_signature_checks": "All selected RPMs match locked publisher hashes; all acquisition receipts record rpmkeys --checksig success against the host RPM trust store",
+    "metadata_detached_signature_status": "Retained; not separately verified in this checkpoint",
+    "exact_binary_source_pairs_verified": true,
+    "unavailable_source_rpms": [],
+    "rpm_scriptlets": "Recorded under retained rpm-inspection; never executed",
+    "global_installation": false
+  },
+  "counts": {
+    "binary_packages": 104,
+    "source_packages": 43,
+    "binary_bytes": 82048039,
+    "source_bytes": 298562724,
+    "inventory_entries": 13454,
+    "notice_files": 334
+  },
+  "notices_and_sources": {
+    "support_notices": "334 file contents under support-06/usr/share/licenses are bound by the full inventory",
+    "support_source_retention": "All 43 exact corresponding source RPMs retained with publisher digest and RPM signature checks; source RPMs are retained packages, not proof of an independent rebuild",
+    "owned_qgis_source_manifest": {
+      "repository_path": "build-support/qgis/source-inputs.json",
+      "sha256": "c36214078c03ec7f6a6055fe1aa112b17e6696853e2687578daa8b253239188c"
+    },
+    "owned_qgis_source_notice_records": 133,
+    "owned_qgis_source_archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/owned/qgis-3.44.14.tar",
+      "sha256": "229ce420ccf5f993eff29e58dc500f2fe7337395595989f947481c34c8cfb875",
+      "bytes": 1230551040,
+      "root": "qgis-3.44.14"
+    },
+    "license_clearance": false
+  },
+  "preflight": {
+    "directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe",
+    "artifacts": {
+      "CMakeLists.txt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/CMakeLists.txt",
+        "sha256": "f137b8229c16ef868f438533c84741f7f9e848292e72957b60a33d1b741e18a7",
+        "bytes": 1374
+      },
+      "main.cpp": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/main.cpp",
+        "sha256": "0c99c57ac25ae38cfa52004ce830ea02d1fe5c5aec563735a0f56ea44657546c",
+        "bytes": 298
+      },
+      "fcgi.cpp": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/fcgi.cpp",
+        "sha256": "5a37e55e280e8ac18f8378c63b693ef0fb701152956dddd18f25ab3467931102",
+        "bytes": 56
+      },
+      "configure.log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/configure.log",
+        "sha256": "fe514a04822959a6cd56faf6146cd3ef0fe3bacb451f244704db8e7274e1ab74",
+        "bytes": 17043
+      },
+      "build.log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/build.log",
+        "sha256": "69e727b012ae1894ccd1eda695fbeb58a2a73f1e9a87f52144b08c710bac3b15",
+        "bytes": 196
+      },
+      "probe-ldd.log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/probe-ldd.log",
+        "sha256": "e89ad40675ac9587996bed00e7abfdb9d8630b44f14946296dea352a4f6cd2e9",
+        "bytes": 7249
+      },
+      "fcgi_probe-ldd.log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/fcgi_probe-ldd.log",
+        "sha256": "4c03c7d48f6747b57704392557f3d1add1a7fdf28791dc4a7869f1c9f96b582e",
+        "bytes": 594
+      },
+      "fcgi-runtime.log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/fcgi-runtime.log",
+        "sha256": "bde294368bfed77c2cddf8cec271d398aee9cdbab3b26e1059281bd33adb0120",
+        "bytes": 12
+      },
+      "success.json": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-qt-probe/success.json",
+        "sha256": "aee3774f3814651cec4475a5144b807f6fc72c7cc115f95b0d5ccefcad7a9189",
+        "bytes": 843
+      }
+    },
+    "qt_components_configured": 25,
+    "qt_and_fastcgi_cpp_compilation_and_link": "passed",
+    "fcgi_initialization_exit_code": 0,
+    "unresolved_dynamic_libraries": 0,
+    "dangling_shared_library_symlinks": 0,
+    "unused_publisher_python_aliases": [
+      "usr/bin/f2py",
+      "usr/bin/idna",
+      "usr/bin/normalizer",
+      "usr/bin/numpy-config",
+      "usr/bin/pyqt-bundle",
+      "usr/bin/pyqt-qt-wheel",
+      "usr/bin/sip-build",
+      "usr/bin/sip-distinfo",
+      "usr/bin/sip-install",
+      "usr/bin/sip-module",
+      "usr/bin/sip-sdist",
+      "usr/bin/sip-wheel"
+    ],
+    "alias_handling": "Use retained versioned Python3.13 launchers; generic alts aliases are unused",
+    "spatialite_development_libraries": "freexl, minizip and rttopo CMake linker paths resolve inside support-06/usr/lib64"
+  },
+  "reproduction": {
+    "extract_command": [
+      "flatpak-spawn",
+      "--host",
+      "python3",
+      "build-support/qgis/acquisition.py",
+      "extract",
+      "--manifest",
+      "build-support/qgis/support-inputs.json",
+      "--retained",
+      "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate",
+      "--prefix",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-replay-FRESH"
+    ],
+    "preconditions": "Run from platform repository root; destination must not exist; exact retained RPMs required",
+    "private_include_flags": "-isystem <support>/usr/include for C and C++; explicit FCGI_INCLUDE_DIR=<support>/usr/include/fastcgi and QWT_INCLUDE_DIR=<support>/usr/include/qt5/qwt6",
+    "python_environment": [
+      "PYTHONNOUSERSITE=1",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONPATH includes both private lib64/python3.13/site-packages and lib/python3.13/site-packages"
+    ],
+    "qt_relocation": "qmake and CMake imports self-relocate; no qt.conf or imported-target edits",
+    "network_scope": "Acquisition is explicit; extraction and these CMake/link probes invoke no download hooks. The preflight is not a hostile-code sandbox."
+  },
+  "limitations": [
+    "The supporting probe does not start QGIS or establish desktop/server/provider/native-test acceptance.",
+    "Owned spatial GEOS/PROJ/GDAL/SQLite/libpq origins and their ABI coherence are enforced by the product build and loaded-origin evidence, not by supporting RPM version labels.",
+    "Host compiler, Python interpreter, libc/libstdc++, X11/xcb, fonts/fontconfig/freetype, ICU, audio/GStreamer and graphics-driver closure remain unresolved retained-input/bootstrap work; private libGL/GLX/GLdispatch resolve from this prefix.",
+    "Optional MDAL HDF5/NetCDF dependencies were unavailable in actual QGIS configure; their dependent formats are excluded from this profile.",
+    "Publisher license metadata includes PyQt GPL/FLOSS/NonFree alternatives, QScintilla GPL-3.0-only, Qt LGPL/GPL and Qt-tool exceptions. Source custody and retained notices do not resolve license selection, redistribution/source-offer or trademark obligations; F02-06 and human rights review remain open."
+  ],
+  "preserved_attempts": [
+    "support-extract001-failed",
+    "support-extract002-missing-linguist",
+    "support",
+    "support-02",
+    "support-03",
+    "support-04",
+    "support-05"
+  ],
+  "acquisition_guard_tests": {
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "plan/tests",
+      "-p",
+      "test_qgis_acquisition.py",
+      "-v"
+    ],
+    "passed": 14,
+    "failed": 0,
+    "scope": "Acquisition/path/payload/source-pair guards; not GIS product tests"
+  }
+}
