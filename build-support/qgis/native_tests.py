@@ -94,6 +94,7 @@ def native_environment(config, output):
     env.update(PATH=str(Path(config['python']).parent) + ':' + os.defpath,
                LC_ALL='C.UTF-8', QT_QPA_PLATFORM='offscreen', QT_HASH_SEED='1',
                PYTHONNOUSERSITE='1', PYTHONDONTWRITEBYTECODE='1', PROJ_NETWORK='OFF',
+               GDAL_DRIVER_PATH='disable', QGIS_TEST_REPORT=str(output / 'render-report'),
                QGIS_PREFIX_PATH=str(build / 'output'),
                QGIS_PLUGINPATH=str(build / 'output/lib/qgis/plugins'),
                QGIS_TEST_DATA_DIR=str(source / 'tests/testdata'),
