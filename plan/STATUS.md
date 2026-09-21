@@ -5,7 +5,10 @@ FND-02's source-owned GeoNode role-service implementation is frozen at
 from verified owner-merged [PR #60](https://github.com/aloerch/ambisgis-platform/pull/60),
 main `a58eff30305de4f4f24b8f5c9075672c4745aa5f`. #60's older open-PR prose is historical.
 **FND-02 remains In progress; GOV-02 remains Merged.** Fresh human security review
-gates the new checkpoint's merge. See the [current handoff](docs/geonode-role-propagation-handoff.md),
+gates [PR #61](https://github.com/aloerch/ambisgis-platform/pull/61), published at
+`7ebc480fae0dedc70271ed17756387f5fefedd07`; subsequent changes are publication
+documentation only. The final pushed review head is pinned in the FND-02 issue
+evidence comment. See the [current handoff](docs/geonode-role-propagation-handoff.md),
 [ADR 008](adrs/008-authoritative-geonode-role-service.md) and
 [hash-bound evidence](verification/geonode-role-propagation/evidence.json).
 
@@ -20,8 +23,8 @@ was seven seconds; delayed role transport has separately measured serial-call li
 
 Final execution passed **393 GeoServer HTTP requests**, **82 protocol assertions
 across 156 harness-driven GeoNode HTTP requests**, **70 native Django cases**,
-**39 native Java role cases**, and fresh **707 OAuth/security cases with one inherited
-skip**. **112 GeoNode harness / 379 Java tooling / 176 plan tests / four schema checks**
+**39 native Java role cases**, and fresh **708 OAuth/security cases: 707 passed,
+one inherited skip**. **112 GeoNode harness / 379 Java tooling / 176 plan tests / four schema checks**
 passed without skips. Aggregate packaging skipped tests explicitly. Independent
 review found and resolved ambiguous JSON parsing; failures remain preserved.
 Both services/database stopped; disposable credentials were invalidated/scrubbed.
@@ -30,8 +33,10 @@ This does not accept full object-sharing/unified policy, browser SSO, publishing
 multi-node revocation, source/toolchain closure, FND-03/FND-07/FND-08, P1/P6 or
 license/security/release gates. Java source ledger stays **48 structural / 12
 unresolved / four partial**; GeoNode dependencies remain a separate inventory.
-No merge, deployment or release was performed. Publication readback records actual
-Project counts and preserves FND-02 Delivery and existing human planning.
+No merge, deployment or release was performed. [Publication readback](verification/geonode-role-propagation/project/README.md)
+passed: **74 items = 66 tasks + eight PRs**; only #61 matches the preserved
+`is:pr is:open` filter. All 73 prior items, planning fields, archive decisions and
+views were preserved. FND-02 Delivery remains In progress.
 
 ## Preserved status record — GeoNode identity checkpoint
 

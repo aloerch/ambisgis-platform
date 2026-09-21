@@ -166,6 +166,24 @@ agent reviewed that contract. Human security review remains required. Automatic
 approval review refused an initial raw configuration/readiness export; a read-only
 field audit and explicit validated allowlist replaced it. No raw export occurred.
 
+## PR and Project publication
+
+Review [PR #61](https://github.com/aloerch/ambisgis-platform/pull/61) against
+`ambisgis/main`. Its publication snapshot head is
+`7ebc480fae0dedc70271ed17756387f5fefedd07`; the source implementation is frozen at
+`d935fb48a7e0721b1e25f67eccfe3ed836c890fc`. Later publication documentation commits
+leave both tooling trees unchanged. The final pushed head is pinned in the
+[FND-02 issue evidence comment](https://github.com/aloerch/ambisgis-platform/issues/3)
+after that push; verify the live PR head before reviewing.
+
+[Project publication evidence](../verification/geonode-role-propagation/project/README.md)
+records **74 items: 66 tasks + eight PRs**. Exactly two authorized writes added
+#61 by content identity and linked its Evidence; all 73 prior item values/archive
+decisions, fields, repositories and view configurations/order were preserved.
+No Task ID, Delivery or Review gate was copied to the PR. FND-02 stays In progress;
+only #61 matches the unchanged `is:pr is:open` queue. This is API readback, with no
+new UI setup claim. Final read-only verification uses a fresh retained directory.
+
 ## Resume and owner boundary
 
 From the new platform worktree, use fresh output directories; never overwrite an

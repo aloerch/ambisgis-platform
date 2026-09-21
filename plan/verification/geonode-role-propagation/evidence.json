@@ -108,6 +108,21 @@
       "sha256": "9d8a47083e1850e4426bf1b187f6044a4e0290ead0a3f3ea563c1759b69f984f"
     }
   ],
+  "publication": {
+    "final_review_head_record": "FND-02 issue evidence comment after documentation push",
+    "fnd02_delivery": "In progress",
+    "frozen_implementation": "d935fb48a7e0721b1e25f67eccfe3ed836c890fc",
+    "mutations": 2,
+    "open_pr_queue": [
+      61
+    ],
+    "pr": "https://github.com/aloerch/ambisgis-platform/pull/61",
+    "prior_items_preserved": 73,
+    "project_evidence": "project/README.md",
+    "project_items": 74,
+    "project_pr_item": "PVTI_lAHOAOk9es4Bj_k-zg75IZU",
+    "published_head": "7ebc480fae0dedc70271ed17756387f5fefedd07"
+  },
   "purpose": "FND-02 bounded authoritative membership checkpoint; not full policy/source/release acceptance",
   "retained_evidence": [
     {
