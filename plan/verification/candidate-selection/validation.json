@@ -1,0 +1,243 @@
+{
+  "acceptance": {
+    "distribution_permission": false,
+    "owner_acceptance": false,
+    "status": "not-granted"
+  },
+  "execution": "Read-only integrity verification; no historical runtime/build test was reexecuted.",
+  "inventory": {
+    "archive_members_checked": 80,
+    "bindings_checked": 81,
+    "combinations": 7,
+    "coverage": "Only listed records, bindings, archive members and complete inventory trees; linked transitive locks are not recursively certified.",
+    "inventory_entries_checked": 11729,
+    "profiles": 10,
+    "record_bytes_hashed": 5885085982,
+    "records_hashed": 243,
+    "roots": 11,
+    "source_repositories_checked": 11,
+    "status": "valid"
+  },
+  "manifest_sha256": "18d80d6e7520e3a16db023bbff87cd2dc20a33ba921bd4f26e49a67d71a0aace",
+  "selection": {
+    "blockers": [
+      "F02-JAVA-aspectj154",
+      "F02-JAVA-xmlpull1131",
+      "F02-JAVA-jai-imageio11",
+      "F02-JAVA-json-lib",
+      "F02-JAVA-marlin0948",
+      "F02-JAVA-ojdbc17-source-placeholder",
+      "F06-FE-WEBIFC",
+      "F06-QGIS-SRC-01",
+      "F06-QGIS-SRC-02",
+      "F06-QGIS-SRC-03",
+      "F06-QGIS-SRC-04",
+      "F06-FE-RECIPE"
+    ],
+    "findings": 58,
+    "profile_unknowns": {
+      "browser-test": [
+        "Exact browser/Playwright Node/toolchain source/bootstrap correspondence unresolved; retained tooling lock identifies actual bytes."
+      ],
+      "database-native": [
+        "Host compiler, linker, libc/libstdc++ and selected feature-library source/bootstrap closure unresolved; exact historical identities in database-snapshot."
+      ],
+      "frontend-build": [
+        "All18 absent declarations are reconciled; exact web-ifc0.0.50 MPL terms recovered, shipped WASM source correspondence and specified notice/attribution questions remain in findings.",
+        "Node binary retained; exact publisher source/bootstrap correspondence and native host library source closure are not established.",
+        "Selected build-01 executed build.py digest/snapshot is unavailable in its minimal receipt. Final retained replay recipe has later guards; exact source bundle/lock/command/output bytes remain known. Recover original executed recipe evidence or review an explicit replay variant; do not attach old browser passes to changed bytes."
+      ],
+      "geonode-python": [
+        "Ten originally absent-sdist records are reconciled in findings: eight source-bearing wheels retain relevant Python code/notices; exact gsimporter source and uap-core source recovered. Native/generated source correspondence and specific notice/generator obligations remain separate.",
+        "Host Python 3.12.14 was not independently source rebuilt; interpreter/bootstrap and support library closure remain open."
+      ],
+      "gwc-cache-fixture": [
+        "Trusted fixture loopback containment with documented PostgreSQL setsid exception is not hostile-code/filesystem isolation."
+      ],
+      "java-selected-aggregate": [
+        "The original ledger remains 48 structural / 12 unresolved / four partial. Consolidated findings account for all16 plus the selected ojdbc17 placeholder-source problem; six Java adoption blockers remain, not 48 reproduced source builds.",
+        "Publisher toolchain sources retained but source-to-binary/bootstrap closure and full host runtime not established."
+      ],
+      "notebook-python": [
+        "Python/no-sdist and generated/shaded dependency source sufficiency remain separate findings.",
+        "Host Python and nine unretained host libraries/bootstrap closure remain open; exact historical identifiers in retained reports."
+      ],
+      "qgis-desktop-server": [
+        "Support RPM source/bootstrap completeness and file-specific resource rights require findings; no automatic root-license coverage."
+      ],
+      "qgis-native-support": [
+        "Broader host compiler/base-library source/bootstrap closure remains open, distinct from required selected-input source sufficiency."
+      ]
+    },
+    "status": "blocked"
+  },
+  "verified_utc": "2026-09-21T19:26:18.410833+00:00",
+  "task": "FND-02 / F02-06",
+  "base_commit": "725d519820293f466b287d7f4cd779c36b9b7977",
+  "branch": "fnd-02/candidate-selection-consolidation",
+  "commands": [
+    {
+      "cwd": "plan",
+      "command": "python3 -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "tests": 239,
+      "failures": 0,
+      "skips": 0
+    },
+    {
+      "cwd": "plan",
+      "command": "python3 tools/validate_package.py --require-schemas",
+      "exit_code": 0,
+      "schemas_and_examples": 4
+    },
+    {
+      "cwd": "plan",
+      "command": "python3 tools/validate_candidate.py --workspace-root <workspace>",
+      "exit_code": 0,
+      "schema": "JSON Schema 2020-12 internal candidate manifest"
+    },
+    {
+      "cwd": "plan",
+      "command": "python3 tools/validate_candidate.py --workspace-root <workspace> --eligibility",
+      "exit_code": 2,
+      "meaning": "Inventory valid; selection blocked and no owner/distribution acceptance granted"
+    },
+    {
+      "cwd": "plan",
+      "command": "python3 tools/validate_candidate.py --workspace-root <workspace> --report",
+      "exit_code": 0,
+      "generated_report_matches": true
+    },
+    {
+      "cwd": "platform",
+      "command": "python3 -m unittest discover -s plan/tests -p test_candidate.py -v",
+      "exit_code": 0,
+      "tests": 36,
+      "failures": 0,
+      "skips": 0,
+      "scope": "Final affected check after deterministic report EOF normalization; existing full239-package run remains recorded."
+    }
+  ],
+  "environment": "IDE namespace; PATH explicitly used verified /tmp/ambisgis-validation-venv/bin Python3. No packages installed. Host namespace tools/process names inspected separately; no Java/PostgreSQL/QGIS/Jupyter/Chromium/Node service processes observed.",
+  "integrity_vs_execution": "No runtime/build/native suite rerun, no selected artifact edits. Hash verification is not native reexecution or rights clearance.",
+  "initial_integration_failure": {
+    "result": "unsuccessful",
+    "reason": "combination-matrix record initially referenced current documentation after its #64 acceptance annotation. Validator rejected changed bytes. The record now binds the preserved exact #64 document in ambisgis-platform-gwc; current annotation is separate."
+  },
+  "independent_review": {
+    "guard_cases": 25,
+    "passed": 25,
+    "failed": 0,
+    "report": "plan/verification/candidate-selection/independent-review.json",
+    "limits": "Independent engineering review/reproducer, not legal or owner acceptance. Integrator reran the independently authored reproducer after report-rendering changes; prior review receipt preserved.",
+    "final_code_delta": "After25-case recheck, only render_report final whitespace was normalized;36 final candidate/schema/report tests pass. Semantic guard implementation unchanged."
+  },
+  "retention_mapping": {
+    "platform": "this repository checkout",
+    "workspace": "explicit supplied AmbisGIS root; no receipt-supplied absolute path is executed",
+    "recovered_java": "workspace:build-worktrees/candidate-selection/java-recovered",
+    "recovered_frontend": "workspace:build-worktrees/candidate-selection/frontend-recovered",
+    "raw_report_paths": "Raw originals retain original acquisition namespaces/dates. Candidate records map exact preserved bytes to active root-relative locations."
+  },
+  "preservation": {
+    "four_original_criteria_unchanged": true,
+    "eight_ids_and_pass_conditions_unchanged": true,
+    "original_plan_modified_status_sha256": "6c377ce833aec7b6fecbf09ffdc20ab29f3e2dad8453c5b523d3dc7c6f4e83fd",
+    "previous_branches_archives_failed_attempts_preserved": true
+  },
+  "references": [
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/preflight.json",
+      "sha256": "7f81a701488deb937f9f9b83bd6aea22ed46ea8343491a1a3984649a8fb8de85",
+      "bytes": 3073
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/package-tests.txt",
+      "sha256": "22e258425e79ba884926f9211e2f1c5db9c9df91375e0cbf1c4733a0ac1311dc",
+      "bytes": 33424
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/package-schemas.txt",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+      "bytes": 189
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/inventory-validation-02.json",
+      "sha256": "46830057274fd349a09179005c725f2e6c2d030d4e398e5cf1fe95c9ccecd224",
+      "bytes": 3735
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/inventory-validation-final.json",
+      "sha256": "1725916f7bcc9eecfa1d7ceb12fb89678e2cb67081cdc9601bc86d411a84223c",
+      "bytes": 4003
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/independent-recheck.py",
+      "sha256": "eaa7e5797c6cd62f218ea351d6ee399c05e9e17847f96468e9a52bd92e21320b",
+      "bytes": 6305
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/independent-review-before-rendering.json",
+      "sha256": "5857a113c4350d3015b2fb9921ecbd76c72486e23c7e7d6565b8e748198daa58",
+      "bytes": 7229
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/frontend-qgis-review.json",
+      "sha256": "6d11ac5c064a2bb2299fc483482a74431fde098c6fa0a7fd6fb294f87637c53b",
+      "bytes": 3700
+    },
+    {
+      "root": "platform",
+      "path": "plan/tools/validate_candidate.py",
+      "sha256": "7b5b2b0301b28d2cb30541c9774e5a4a0e7ab276c09ab6f6baff515b43f6ebca",
+      "bytes": 19848
+    },
+    {
+      "root": "platform",
+      "path": "plan/contracts/fnd-02-candidate.schema.json",
+      "sha256": "1f4229b79bd082455d5369e151372fd93216109f4d311b74d6b695b9a16505a3",
+      "bytes": 18998
+    },
+    {
+      "root": "platform",
+      "path": "plan/tests/test_candidate.py",
+      "sha256": "fa149962a0dcba2be7aa3d45268a3a52141f5cc8e6db78c93913dc0e2b22cc93",
+      "bytes": 10823
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/eligibility.json",
+      "sha256": "1725916f7bcc9eecfa1d7ceb12fb89678e2cb67081cdc9601bc86d411a84223c",
+      "bytes": 4003
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/generated-report-check.json",
+      "sha256": "fa0871cd5ab5110f6a0badd410e552f70bfbbd6b2440524415ba62a589781cf5",
+      "bytes": 151
+    },
+    {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/candidate-tests-final.txt",
+      "sha256": "5bc6a84d9637b363b79cb946933f337b7c794a5eb7614d7939a3937f02f7a5e6",
+      "bytes": 3711
+    }
+  ],
+  "proposed_unexecuted_changes": "All58 dispositions are authoritative in candidate findings. No library/palette/IFC exclusion, replacement, source upgrade or binary variant was executed.",
+  "next_step": "Review PR/head and concrete12 adoption blockers; implement only approved coherent remediation variant, retain new input/output identities and affected tests; then final F02-07 maintenance and F02-08 C1\u2013C4 acceptance package. Accurate C2 investigation acceptance does not adopt components or authorize redistribution.",
+  "independent_completeness_review": {
+    "scope": "Separate inventory agent reviewed integrated roots/profiles/findings and baseline table/criteria preservation",
+    "result": "No new material error reported",
+    "findings_reviewed": 58,
+    "adoption_blockers": 12,
+    "limitations": "Engineering evidence review, not legal clearance or owner acceptance"
+  }
+}

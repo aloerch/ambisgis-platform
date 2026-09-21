@@ -1,0 +1,97 @@
+{
+  "adapter_limit": "Inherited adapter does not expand assignee/label values; no such fields are written.",
+  "all_passed": true,
+  "checks": {
+    "all_prior_item_values_and_archive_decisions_preserved": true,
+    "all_project_fields_repositories_views_preserved": true,
+    "all_readback_pagination_complete": true,
+    "all_view_configuration_and_order_preserved": true,
+    "live_pr_still_open_at_exact_head": true,
+    "mutation_sequence_complete": true,
+    "only_expected_new_item": true,
+    "pr_has_no_parent_planning_fields": true,
+    "pr_identity_unique": true,
+    "pr_is_in_saved_open_queue": true,
+    "pr_item_unarchived": true,
+    "pr_linked_if_applied": true
+  },
+  "items_after": 78,
+  "items_before": 77,
+  "local_head": "82b69845fd8550da612e026fed0755a5e9e00f50",
+  "mutations": [
+    {
+      "content_id": "PR_kwDOUhI-d88AAAABEecUKA",
+      "operation": "add_item",
+      "result": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg8A3bY",
+        "isArchived": false
+      }
+    },
+    {
+      "field_id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg8A3bY",
+      "operation": "set_field",
+      "result": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg8A3bY"
+      },
+      "value": "https://github.com/aloerch/ambisgis-platform/pull/65 | FND-02: https://github.com/aloerch/ambisgis-platform/issues/3"
+    }
+  ],
+  "queue_filter": "is:pr is:open",
+  "queue_membership": [
+    65
+  ],
+  "scope": "New PR membership/Evidence only; FND-02 unchanged; API readback, no UI claim",
+  "project": "https://github.com/users/aloerch/projects/2",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/65",
+  "parent_issue": "https://github.com/aloerch/ambisgis-platform/issues/3",
+  "parent_delivery": "In progress",
+  "implementation_head": "82b69845fd8550da612e026fed0755a5e9e00f50",
+  "changes": "Only PR membership and its Evidence field; no Task ID, Delivery or Review gate copied, no importer or view mutation.",
+  "authorization_review": "Initial automatic review rejected execution because attachment authorization was not recognized; no Project operation ran. Read-only extraction verified the explicit section7 user request, and the same two-write command was approved on resubmission.",
+  "namespace_recovery": "Initial IDE git push failed because credential helper /usr/bin/gh exists only on host. Host owner identity verified aloerch; push succeeded through host git without changing credential configuration.",
+  "references": {
+    "publication.py": {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/publication.py",
+      "sha256": "d2a0573280f5837a74c2e5022bbbca36e10a2281945244b81b3226469fe40ce0",
+      "bytes": 9953
+    },
+    "project-dry-run-01/outcome.json": {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/project-dry-run-01/outcome.json",
+      "sha256": "9be317b611a3e9b6a8e2c272758196f1a84c4306b81d97fc21775d59edce5086",
+      "bytes": 2894
+    },
+    "project-apply-01/before.json": {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/project-apply-01/before.json",
+      "sha256": "e17f572d6064453233cd8f60c3fee71364b614ef49152dd284983be059813fdd",
+      "bytes": 306576
+    },
+    "project-apply-01/after.json": {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/project-apply-01/after.json",
+      "sha256": "5b270c7f500d232a08b4331a93f8c7d2e55cc3efce3f5fd4738ec84667f12f12",
+      "bytes": 308342
+    },
+    "project-apply-01/pagination.json": {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/project-apply-01/pagination.json",
+      "sha256": "4d3e61417fa7ecdf17404e26f0192f426e54028568989a62eff2bf62784e5e5b",
+      "bytes": 39444
+    },
+    "project-apply-01/mutation-events.jsonl": {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/project-apply-01/mutation-events.jsonl",
+      "sha256": "5ace4ea8a3c43f71c70bf93cf77cc5f8ff53b4c67db92698e99aa094bddadf13",
+      "bytes": 1055
+    },
+    "project-apply-01/manifest.json": {
+      "root": "workspace",
+      "path": "build-worktrees/candidate-selection/project-apply-01/manifest.json",
+      "sha256": "90bc82abc26f20c8f41f4b33d340515b2dea208f0782be4bdb2df3dcbf655b00",
+      "bytes": 1708
+    }
+  }
+}
