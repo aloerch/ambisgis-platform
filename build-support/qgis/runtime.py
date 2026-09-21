@@ -46,8 +46,14 @@ def validate_config(config):
     for key, default in (('desktop',prefix/'bin/qgis'),('server',prefix/'bin/qgis_mapserver')):
         config[key] = str(Path(config.get(key,default)).resolve())
         require(Path(config[key]).is_file() and Path(config[key]).is_relative_to(prefix), 'owned staged executable missing: '+key)
-    require(Path(config['gdal_library']).resolve().is_relative_to(Path(config['spatial_prefix']).resolve()) or
-            Path(config['gdal_library']).resolve().is_relative_to(Path(config['database_prefix']).resolve()), 'GDAL must come from retained native prefix')
+    spatial = Path(config['spatial_prefix']).resolve()
+    require(Path(config['gdal_library']).resolve() == (spatial/'lib/libgdal.so').resolve() and
+            Path(config['gdal_library']).resolve().is_relative_to(spatial), 'GDAL must be the selected spatial artifact')
+    plugins = Path(config['qt_plugins']).resolve()
+    require(plugins.is_relative_to(Path(config['support_prefix']).resolve()) and
+            (plugins/'platforms/libqoffscreen.so').is_file() and
+            (plugins/'platforms/libqoffscreen.so').resolve().is_relative_to(plugins),
+            'selected Qt offscreen plugin missing or outside retained support')
     xml = Path(config['xml_prefix']).resolve()
     require((xml/'lib/libxml2.so').is_file() and (xml/'lib/libxml2.so').resolve().is_relative_to(xml),
             'selected QGIS libxml2 artifact missing or outside its retained prefix')
@@ -73,11 +79,12 @@ def build_environment(config, output):
            'PYTHONPATH':str(HERE)+':'+':'.join(config['python_paths']),
            'PYTHONNOUSERSITE':'1','PYTHONPYCACHEPREFIX':str(output/'cache/python'),
            'QT_PLUGIN_PATH':config['qt_plugins'],'QT_QPA_PLATFORM':'offscreen',
+           'QT_QPA_PLATFORM_PLUGIN_PATH':str(Path(config['qt_plugins'])/'platforms'),
            'QT_QPA_FONTDIR':str(output/'fonts'),'FONTCONFIG_FILE':str(output/'fonts.conf'),
            'QGIS_PREFIX_PATH':config['qgis_prefix'],'QGIS_PLUGINPATH':str(output/'empty-plugins'),
            'QGIS_AUTH_DB_DIR_PATH':str(output/'auth'),'QGIS_SERVER_PARALLEL_RENDERING':'0','QGIS_SERVER_MAX_THREADS':'1',
            'QGIS_SERVER_LOG_LEVEL':'1','QGIS_SERVER_LOG_STDERR':'1',
-           'PROJ_DATA':config.get('proj_data',str(native/'share/proj')),'PROJ_NETWORK':'OFF',
+           'PROJ_DATA':config.get('proj_data',str(Path(config['spatial_prefix'])/'share/proj')),'PROJ_NETWORK':'OFF',
            'GDAL_DATA':config.get('gdal_data',str(Path(config['spatial_prefix'])/'share/gdal')),
            'GDAL_DRIVER_PATH':'disable',
            'PGSERVICEFILE':str(output/'pg_service.conf'),'PGPASSFILE':str(output/'pgpass'),

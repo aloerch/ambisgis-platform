@@ -44,37 +44,84 @@ def selected_xml_origin(config, mapped_files):
     return str(expected)
 
 
+def validate_mapped_origins(config, mapped_files):
+    """Pure path checks over a /proc mapping snapshot; hashing happens afterwards."""
+    names = {str(path) for path in mapped_files}
+    qgis, spatial, native, support = [Path(config[key]).resolve() for key in
+                                    ('qgis_prefix', 'spatial_prefix', 'database_prefix', 'support_prefix')]
+    for value in names:
+        path = Path(value).resolve(); name = path.name
+        if name.startswith(('libqgis_', 'libprovider_')):
+            require(path.is_relative_to(qgis), 'unretained QGIS library/provider mapping')
+        if '/PyQt5/' in value:
+            require(path.is_relative_to(support), 'unretained PyQt binding mapping')
+        if '/qgis/_' in value:
+            require(path.is_relative_to(qgis), 'unretained QGIS binding mapping')
+        if name.startswith('libQt5'):
+            require(path.is_relative_to(support), 'unretained Qt module mapping: '+name)
+        if name.startswith('libQt6'):
+            raise AssertionError('unexpected Qt6 module in Qt5 candidate')
+        if name.startswith('libqca-'):
+            require(path.is_relative_to(support), 'unretained QCA library/plugin mapping: '+name)
+    selected_xml_origin(config, names)
+    plugins = Path(config['qt_plugins']).resolve()
+    require(plugins.is_relative_to(support), 'Qt plugin directory is outside retained support')
+    provider_dir = Path(config.get('provider_path', qgis/'lib/qgis/plugins')).resolve()
+    require(provider_dir.is_relative_to(qgis), 'PostgreSQL provider directory is outside staged QGIS')
+    required = {
+        'libqgis_core.so': qgis/'lib/libqgis_core.so',
+        'libgdal.so': spatial/'lib/libgdal.so',
+        'libproj.so': spatial/'lib/libproj.so',
+        'libsqlite3.so': spatial/'lib/libsqlite3.so',
+        'libgeos.so': native/'lib/libgeos.so',
+        'libgeos_c.so': native/'lib/libgeos_c.so',
+        'libpq.so': native/'lib/libpq.so',
+        'libxml2.so': Path(config['xml_prefix'])/'lib/libxml2.so',
+        'libprovider_postgres.so': provider_dir/'libprovider_postgres.so',
+        'libqoffscreen.so': plugins/'platforms/libqoffscreen.so',
+    }
+    owners = {'libqgis_core.so': qgis, 'libgdal.so': spatial, 'libproj.so': spatial,
+              'libsqlite3.so': spatial, 'libgeos.so': native, 'libgeos_c.so': native,
+              'libpq.so': native, 'libxml2.so': Path(config['xml_prefix']).resolve(),
+              'libprovider_postgres.so': provider_dir, 'libqoffscreen.so': plugins}
+    selected = {}
+    for prefix, expected in required.items():
+        require(expected.resolve().is_relative_to(owners[prefix]),
+                'selected runtime library link escapes expected prefix: '+prefix)
+        found = {Path(value).resolve() for value in names if Path(value).name.startswith(prefix)}
+        require(bool(found), 'required runtime mapping absent: '+prefix)
+        require(found == {expected.resolve()}, 'unselected runtime mapping: '+prefix)
+        selected[prefix] = [str(path) for path in sorted(found)]
+    qt_modules, qt_plugins, qca = set(), set(), set()
+    for value in names:
+        path = Path(value).resolve(); name = path.name
+        if name.startswith('libQt5'): qt_modules.add(str(path))
+        if name.startswith('libqca-'): qca.add(str(path))
+        plugin_path = ('/qt5/plugins/' in value or '/qt/plugins/' in value or
+                       '/qt5/plugins/' in str(path) or '/qt/plugins/' in str(path) or
+                       ('plugins' in path.parts and name.startswith('libq')) or
+                       (name.startswith('libqca-') and not name.startswith('libqca-qt5.so')))
+        if plugin_path:
+            require(path.is_relative_to(plugins), 'unretained Qt/QCA plugin mapping: '+name)
+            qt_plugins.add(str(path))
+    require(any(Path(path).name.startswith('libQt5Core.so') for path in qt_modules),
+            'required runtime mapping absent: libQt5Core.so')
+    selected.update(qt_modules=sorted(qt_modules), qt_plugins=sorted(qt_plugins), qca=sorted(qca))
+    return selected
+
+
 def loaded_origins(config, pid=None):
-    """Actual mappings, with selected engines constrained to retained prefixes."""
-    pid = pid or os.getpid()
-    names = set()
+    """Validate and hash actual native mappings from the executing process."""
+    pid = pid or os.getpid(); names = set()
     for line in Path(f'/proc/{pid}/maps').read_text().splitlines():
         fields = line.split(maxsplit=5)
         if len(fields) == 6 and fields[5].startswith('/'):
             names.add(fields[5].removesuffix(' (deleted)'))
-    roots = [Path(config[k]).resolve() for k in ('qgis_prefix', 'spatial_prefix', 'database_prefix', 'support_prefix')]
-    expectations = {'libqgis_core': roots[:1], 'libgdal.so': roots[1:3],
-                    'libproj.so': roots[1:3], 'libgeos_c.so': roots[1:3],
-                    'libpq.so': roots[1:3], 'libQt5Core.so': roots[3:],
-                    'libxml2.so': [Path(config['xml_prefix']).resolve()],
-                    'libprovider_postgres.so': [Path(config.get('provider_path', roots[0]/'lib/qgis/plugins')).resolve()]}
-    for p in names:
-        if Path(p).name.startswith(('libqgis_', 'libprovider_')):
-            require(Path(p).resolve().is_relative_to(roots[0]), 'unretained QGIS library/provider mapping')
-        if '/PyQt5/' in p:
-            require(Path(p).resolve().is_relative_to(roots[3]), 'unretained PyQt binding mapping')
-        if '/qgis/_' in p:
-            require(Path(p).resolve().is_relative_to(roots[0]), 'unretained QGIS binding mapping')
-    selected_xml_origin(config, names)
-    selected = {}
-    for prefix, allowed in expectations.items():
-        found = sorted(p for p in names if Path(p).name.startswith(prefix))
-        require(bool(found), 'required runtime mapping absent: ' + prefix)
-        require(all(any(Path(p).resolve().is_relative_to(root) for root in allowed) for p in found),
-                'unretained engine mapping: ' + prefix)
-        selected[prefix] = [{'path': p, 'sha256': sha(p)} for p in found]
+    selected = validate_mapped_origins(config, names)
     return {'pid': pid, 'executable': str(Path(f'/proc/{pid}/exe').resolve()),
-            'selected': selected, 'all_mapped_files': sorted(names),
+            'selected': {key: [{'path': path, 'sha256': sha(path)} for path in paths]
+                         for key, paths in selected.items()},
+            'all_mapped_files': sorted(names),
             'proj_data': os.environ.get('PROJ_DATA'), 'proj_network': os.environ.get('PROJ_NETWORK')}
 
 

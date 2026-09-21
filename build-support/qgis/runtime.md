@@ -134,3 +134,11 @@ The XML prefix participates in before/after integrity checks. PostgreSQL's
 unchanged helper environment continues using only its original verified prefix;
 this QGIS-only dependency selection does not overwrite or replace that database
 profile. HTTP API availability does not relax loopback egress enforcement.
+
+Final runtime origin checks require GDAL, PROJ and SQLite from the exact selected
+spatial prefix, and GEOS/GEOS C/libpq from the original native prefix. Every mapped
+Qt5 module must remain inside retained support. The active offscreen plugin must
+resolve exactly to `qt_plugins/platforms/libqoffscreen.so`;
+`QT_QPA_PLATFORM_PLUGIN_PATH` explicitly names that retained platform directory.
+Other loaded Qt and QCA plugins must come from the selected Qt plugin directory.
+All selected mappings are hashed, and missing or fallback origins fail the receipt.

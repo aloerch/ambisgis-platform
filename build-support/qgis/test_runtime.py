@@ -9,7 +9,7 @@ import sys
 from types import SimpleNamespace
 
 sys.path.insert(0,str(Path(__file__).resolve().parent))
-from runtime_common import POINTS, SAMPLES, image_witness, inventory, loaded_origins, python_origins, selected_xml_origin
+from runtime_common import POINTS, SAMPLES, image_witness, inventory, loaded_origins, python_origins, selected_xml_origin, validate_mapped_origins
 from runtime import build_environment, private_write, redact, validate_config
 from runtime_child import server
 
@@ -91,6 +91,7 @@ class RuntimeGuards(unittest.TestCase):
             self.assertNotEqual(config['provider_path'],env['QGIS_PLUGINPATH'])
             self.assertEqual([],list((root/'empty-plugins').iterdir()))
             self.assertEqual('disable',env['GDAL_DRIVER_PATH'])
+            self.assertEqual(str(root/'platforms'),env['QT_QPA_PLATFORM_PLUGIN_PATH'])
             self.assertEqual(str(root/'selected-xml/lib'),env['LD_LIBRARY_PATH'].split(':')[0])
 
     def test_host_pyqt_module_fallback_rejected(self):
@@ -114,6 +115,60 @@ class RuntimeGuards(unittest.TestCase):
         config={'xml_prefix':'/tmp/retained-xml'}
         path='/tmp/retained-xml/lib/libxml2.so'
         self.assertEqual(path,selected_xml_origin(config,[path,path]))
+
+    def mapped_fixture(self):
+        config={key:'/retained/'+label for key,label in (
+            ('qgis_prefix','qgis'),('spatial_prefix','spatial'),('database_prefix','native'),
+            ('support_prefix','support'),('xml_prefix','xml'))}
+        config['qt_plugins']='/retained/support/usr/lib64/qt5/plugins'
+        paths=[
+            '/retained/qgis/lib/libqgis_core.so',
+            '/retained/qgis/lib/qgis/plugins/libprovider_postgres.so',
+            '/retained/spatial/lib/libgdal.so', '/retained/spatial/lib/libproj.so',
+            '/retained/spatial/lib/libsqlite3.so', '/retained/native/lib/libgeos.so',
+            '/retained/native/lib/libgeos_c.so', '/retained/native/lib/libpq.so',
+            '/retained/xml/lib/libxml2.so', '/retained/support/usr/lib64/libQt5Core.so',
+            '/retained/support/usr/lib64/libQt5Gui.so',
+            '/retained/support/usr/lib64/qt5/plugins/platforms/libqoffscreen.so',
+            '/retained/support/usr/lib64/qt5/plugins/crypto/libqca-ossl.so']
+        return config,paths
+
+    def test_full_selected_mapping_set_accepted(self):
+        config,paths=self.mapped_fixture()
+        result=validate_mapped_origins(config,paths)
+        self.assertEqual(['/retained/spatial/lib/libsqlite3.so'],result['libsqlite3.so'])
+        self.assertEqual(2,len(result['qt_modules']))
+
+    def test_host_qt_gui_rejected_even_with_retained_core(self):
+        config,paths=self.mapped_fixture()
+        paths[paths.index('/retained/support/usr/lib64/libQt5Gui.so')]='/usr/lib64/libQt5Gui.so.5'
+        with self.assertRaisesRegex(AssertionError,'unretained Qt module'):
+            validate_mapped_origins(config,paths)
+
+    def test_original_gdal_proj_sqlite_fallbacks_rejected(self):
+        config,original=self.mapped_fixture()
+        for library in ('libgdal.so','libproj.so','libsqlite3.so'):
+            paths=original.copy();paths[paths.index('/retained/spatial/lib/'+library)]='/retained/native/lib/'+library
+            with self.subTest(library=library),self.assertRaisesRegex(AssertionError,'unselected runtime mapping'):
+                validate_mapped_origins(config,paths)
+
+    def test_host_offscreen_platform_fallback_rejected(self):
+        config,paths=self.mapped_fixture()
+        paths[paths.index(config['qt_plugins']+'/platforms/libqoffscreen.so')]='/usr/lib64/qt5/plugins/platforms/libqoffscreen.so'
+        with self.assertRaisesRegex(AssertionError,'unselected runtime mapping: libqoffscreen'):
+            validate_mapped_origins(config,paths)
+
+    def test_host_qt_image_plugin_rejected(self):
+        config,paths=self.mapped_fixture()
+        paths.append('/usr/lib64/qt5/plugins/imageformats/libqjpeg.so')
+        with self.assertRaisesRegex(AssertionError,'unretained Qt/QCA plugin'):
+            validate_mapped_origins(config,paths)
+
+    def test_host_qca_plugin_rejected(self):
+        config,paths=self.mapped_fixture()
+        paths.append('/usr/lib64/qca-qt5/crypto/libqca-ossl.so')
+        with self.assertRaisesRegex(AssertionError,'unretained QCA'):
+            validate_mapped_origins(config,paths)
 
     def test_empty_profile_rejected(self):
         with self.assertRaisesRegex(AssertionError,'retained input'): validate_config({})
