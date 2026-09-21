@@ -81,6 +81,11 @@ class DesktopWitness:
                 self.report['font_downloads_enabled'] = False
                 self.report['font'] = desktop_font_witness()
                 self.report['layers_initial'] = check_layers(QgsProject.instance())
+                if CONFIG.get('resource_manifest'):
+                    from resource_witness import run as resource_run
+                    self.timer.stop()
+                    try: self.report['resources'] = resource_run(CONFIG)
+                    finally: self.timer.start(250)
                 iface.mainWindow().resize(1200,950)
                 self.canvas.setExtent(QgsRectangle(0,0,4,4)); self.canvas.refresh()
                 self.last_render = self.report['render_events']; self.phase = 1

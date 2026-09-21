@@ -1,0 +1,438 @@
+{
+  "alternate_copy_blockers": [
+    {
+      "excluded_path": "share/qgis/resources/cpt-city-qgis-min/td/DEM_print.svg",
+      "finding": "F06-QGIS-SRC-02",
+      "interpretation": "Byte-identical palette remains under separate GMT GPLv2 notice; exact named td path is absent. Differing provenance/notice scope remains unresolved; no extra deletion or clearance inferred.",
+      "retained": {
+        "bytes": 591,
+        "path": "share/qgis/resources/cpt-city-qgis-min/gmt/GMT_dem1.svg",
+        "sha256": "0ba1cad3e42202036ab6a86663a09d377eb84eb22584df0e4dbc9fdee54cf602"
+      },
+      "retained_scope_notice": {
+        "bytes": 816,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix/share/qgis/resources/cpt-city-qgis-min/gmt/COPYING.xml",
+        "sha256": "c1b562d4059cb5e2a4409f8f8c545970087379e64a58cb8ae053f306220f3837"
+      }
+    }
+  ],
+  "authorization": "Current owner remediation prompt explicitly authorizes a NEW private optional-resource variant; PR #65 accepted the consolidation checkpoint only.",
+  "baseline_manifest": {
+    "bytes": 1765200,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build06-audit-01/output-manifest.json",
+    "sha256": "931e5f0523e1d9bdba6b2fbd27e6c208297456db696265beb961a57e77ed82c9"
+  },
+  "baseline_platform_commit": "b31e81ad7bfe328d5a8b3ea579eff09e6a0086e7",
+  "determinism": {
+    "scope": "Two independent copies yield identical selected file bytes/symlink targets. Manifest prefix differs. No binary rebuild claim.",
+    "stage_02_and_03_file_inventories_equal": true
+  },
+  "fresh_tests": {
+    "native_resource_assertions": "1129 native file-open denials and1129 author-model misses;265 retained native ramps/530 SVG endpoint checks; native chooser, generic gradient, styled vector/raster render and save/reopen; omitted-reference rendered colors preserved.",
+    "qgis_guard_tests": {
+      "note": "Includes14 new selection/path regressions; the deliberate interruption negative test prints a failed fixture receipt while its unittest passes.",
+      "passed": 71,
+      "seconds": 0.523
+    },
+    "shared_loopback_guard_tests": {
+      "passed": 15,
+      "seconds": 2.591
+    }
+  },
+  "implementation_files": {
+    "desktop_witness.py": {
+      "bytes": 7863,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-qgis-remediation/build-support/qgis/desktop_witness.py",
+      "sha256": "0086717a1c47b0f67cb23a8942cd0f7878b30301fa551f857acedc6e03a2ddc8"
+    },
+    "resource_selection.py": {
+      "bytes": 19245,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-qgis-remediation/build-support/qgis/resource_selection.py",
+      "sha256": "6d3523522b4de1f7142e6895025aee19c854a623dacb67430c8eb92b98e28591"
+    },
+    "resource_witness.py": {
+      "bytes": 14858,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-qgis-remediation/build-support/qgis/resource_witness.py",
+      "sha256": "0a13985f57c660a939849e6725eab62e2987a2687429a6ad17dbbde8f86f12a3"
+    },
+    "runtime.py": {
+      "bytes": 17384,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-qgis-remediation/build-support/qgis/runtime.py",
+      "sha256": "d2fa6e2eb06abd5c3241e94b4fd85f2434deb42d5eecd47d2f29bad070b205f6"
+    },
+    "test_resource_selection.py": {
+      "bytes": 6252,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-qgis-remediation/build-support/qgis/test_resource_selection.py",
+      "sha256": "ae95cf127131f25b761ef372624e69157e4b96896c022e2add95f9f1dabf915d"
+    }
+  },
+  "independent_review": {
+    "bytes": 5627,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/frontend/qgis-independent-review.json",
+    "sha256": "b13e5aae3f037cb5ee0e0000ea54f341732aa410385991c3d27ab0699f345016"
+  },
+  "metadata": {
+    "changed_catalogues": 19,
+    "notice_additions": "Exact original icon and QGIS Vera terms, unchanged ColorBrewer acknowledgement and restrictions; all original excluded-scope metadata preserved outside active archive.",
+    "relocated_files": 84,
+    "removed_catalogue_references": 100
+  },
+  "native_resources": {
+    "compiled_palette_resources": [],
+    "excluded_named_ramp_files_unopenable": 1129,
+    "generic_gradient": true,
+    "manifest_sha256": "4e65c76d2af1bc811dca913d0450d4ab614f5cf14c3c9022d544796e5130a8a3",
+    "native_model_paths": 1129,
+    "omitted_saved_project": {
+      "inherited_loadFile_limitation": "Returns true despite missing file; the witness uses native QFile failure and archive-model exclusion, never that boolean as availability.",
+      "inherited_loadFile_return": true,
+      "limitation": "Serialized renderer colors survive; unavailable ramp cannot support reclassification. No complete saved-project compatibility claimed.",
+      "project_sha256": "940e20669ac12ef5fec75ffb205c07e240909fc8ae8583cbdb4ced42c8001c27",
+      "reference": "td/DEM_print",
+      "rendered_colors_preserved": true,
+      "serialized_colors_preserved": [
+        "#f7fbff",
+        "#9ecae1",
+        "#4292c6"
+      ],
+      "source_ramp_file_exists": false
+    },
+    "paths": {
+      "package": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix/share/qgis",
+      "palette_archive": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix/share/qgis/resources/cpt-city-qgis-min",
+      "prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix"
+    },
+    "ramp_dialog": {
+      "capture_sha256": "d39fac375106c051e4b92765d8ee080d3160884002d926c26add2d0e34477057",
+      "scheme": "cb/seq/Blues",
+      "variant": "_09"
+    },
+    "ramp_dialog_observed": {
+      "scheme": "cb/seq/Blues",
+      "selected_name": "Blues_09",
+      "variant": "_09"
+    },
+    "raster_colors": [
+      "#f7fbff",
+      "#9ecae1",
+      "#4292c6",
+      "#08306b"
+    ],
+    "result_exit_code": 0,
+    "retained_colorbrewer_loadable": 265,
+    "retained_native_endpoint_assertions": 530,
+    "save_reopen": {
+      "project_sha256": "ac0bda7f277b273b67fee7e77553eaa369a02059fccfe12e74e4b8a50a0c30a9",
+      "raster": true,
+      "vector": true
+    },
+    "scope": "Fresh native desktop palette selection and local vector/raster serialized styling",
+    "seconds": 3.256,
+    "vector_colors": [
+      "#f7fbff",
+      "#9ecae1",
+      "#4292c6"
+    ]
+  },
+  "preserved_failures": [
+    {
+      "reason": "Strict same-byte scan correctly failed on retained GMT alias; recipe now records the known alias as an unresolved selection finding and rejects any other alias.",
+      "receipt": {
+        "bytes": 4315,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-01/result.json",
+        "sha256": "df0c68705d91664dfd2e17bcb71dff305fb56116277aac26804b6e5a7eeeb564"
+      }
+    },
+    {
+      "reason": "Controller path literal typo rejected before process startup; fixed and retained.",
+      "receipt": {
+        "bytes": 262,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-start-failure-01.txt",
+        "sha256": "24bceadf674c273739edaa046c9deebfc4ec6ab98bbeacf347da54426a5d0312"
+      }
+    },
+    {
+      "reason": "Bad test assumption: inherited loadFile returns true on missing SVG; revised to native QFile/model proof.",
+      "receipt": {
+        "bytes": 31220,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-01/result.json",
+        "sha256": "7f5b8cd857bc9e47e447657506c7e8ee62fce5957013aa280cf9f84d06ed95f8"
+      }
+    },
+    {
+      "reason": "Desktop SIGSEGV from temporary Python wrappers for C++-owned archive root pointers.",
+      "receipt": {
+        "bytes": 27731,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-02/result.json",
+        "sha256": "fe893ad4f5b690d809065104ff4b3fb09841d077fca73cdc8acd301822fca561"
+      }
+    },
+    {
+      "reason": "Endpoint oracle missed legal SVG default black at one Greys_09 endpoint.",
+      "receipt": {
+        "bytes": 31167,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-03/result.json",
+        "sha256": "64b34eb6daca31e7fdbb47362897b699258e540c3838dc3c5805e068f1b764b5"
+      }
+    },
+    {
+      "reason": "Repeated borrowed-pointer failure localized by Python fatal stack before correction to native QModelIndex API.",
+      "receipt": {
+        "bytes": 27732,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-04/result.json",
+        "sha256": "8f1007bd65393dfafa47ac54849a157fcc1aa50ccae080b83dc8bb98e9316f6e"
+      }
+    },
+    {
+      "reason": "Native chooser fixture did not select requested palette through its UI.",
+      "receipt": {
+        "bytes": 31197,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-05/result.json",
+        "sha256": "b6fbd240830cf501fc543e3c0289d13cb8cbaf5ae73b7be761e1757a089b54c8"
+      }
+    },
+    {
+      "reason": "Recorded empty native chooser scheme/variant; replaced programmatic reset with actual chooser controls.",
+      "receipt": {
+        "bytes": 31197,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-06/result.json",
+        "sha256": "2cabfeef9d0add9b68366a3de92ba273ffb3e757a00e71ed31722ba78b5edd02"
+      }
+    },
+    {
+      "reason": "Qt sourceModel wrapper required an explicit checked native browser-model cast; fixed in subsequent preflight.",
+      "receipt": {
+        "bytes": 3071,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/resource-probe-01/probe-result.json",
+        "sha256": "1182646b28b8ce0a0818034821cea413990df0554e45381887b2cd8634273fe4"
+      }
+    }
+  ],
+  "receipts": {
+    "loopback-guards-final.log": {
+      "bytes": 2401,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/loopback-guards-final.log",
+      "sha256": "a702ea14984d2ff22654c713695fa993980f1daaf443fd1eece4bd804bedec1a"
+    },
+    "native-api-diagnostics.json": {
+      "bytes": 2453,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/native-api-diagnostics.json",
+      "sha256": "53fbfe628cf9204a3edb951ca2e830eae2a33e16d721f6520e5f4d3f1a252af2"
+    },
+    "qgis-guards-final.log": {
+      "bytes": 9375,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/qgis-guards-final.log",
+      "sha256": "b5460e610faacb0c0b23abef4d36a927446f826a7e802251f19ebee6269f8e95"
+    },
+    "resource-probe-02/probe-result.json": {
+      "bytes": 3072,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/resource-probe-02/probe-result.json",
+      "sha256": "4bf1a918683bce3c5a5a027687cc5588df03815506a6a7a0db9808b6caa9c23d"
+    },
+    "runtime-07-execution.json": {
+      "bytes": 571,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-07-execution.json",
+      "sha256": "085100f1c65e9154ec19c937251adfc0bbfe8c5715051b048df05b631a9ea06d"
+    },
+    "runtime-07/artifact-integrity-after.json": {
+      "bytes": 1513128,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-07/artifact-integrity-after.json",
+      "sha256": "5dc35cea1a8ee387eb31846d2ad28bbeca9d2ab63cad39e8762a72b7f557c43d"
+    },
+    "runtime-07/artifact-integrity-before.json": {
+      "bytes": 1513128,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-07/artifact-integrity-before.json",
+      "sha256": "5dc35cea1a8ee387eb31846d2ad28bbeca9d2ab63cad39e8762a72b7f557c43d"
+    },
+    "runtime-07/desktop-result.json": {
+      "bytes": 67177,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-07/desktop-result.json",
+      "sha256": "289d4eefd8da1f102805b10e1c3107f22bebde5b758e01fb65e1640e5f1771d9"
+    },
+    "runtime-07/network-loopback.json": {
+      "bytes": 1782,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-07/network-loopback.json",
+      "sha256": "8cecfda75d7694fc260f5b929a96c03de482c4e92f00c5d9464930fa6718496a"
+    },
+    "runtime-07/resource-result.json": {
+      "bytes": 2185,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-07/resource-result.json",
+      "sha256": "9ea223863678eb6531c997c1656b34e664e477204aa0b8641f3ad20e5f914c0b"
+    },
+    "runtime-07/result.json": {
+      "bytes": 181606,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-07/result.json",
+      "sha256": "9d7be55906e6bd51da62ad1582ada3931105cf098a032931d8c81ab3d74b5898"
+    },
+    "runtime-07/runtime-config.json": {
+      "bytes": 3611,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-07/runtime-config.json",
+      "sha256": "929ef58e0d9511c10f20004fb2c4c491c627f623f57b3d8c93436b5752bbad64"
+    },
+    "runtime-07/server-result.json": {
+      "bytes": 75446,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-07/server-result.json",
+      "sha256": "ec4edf0fcb2c7ecaed7db773d8d9c3cc76132168eabbc36385e370a9ea72f605"
+    },
+    "runtime-07/tooling.json": {
+      "bytes": 2380,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-07/tooling.json",
+      "sha256": "cabff6a9473b628fc523fed4c12b17af0b312255215547729a37815878e94b38"
+    },
+    "runtime-config-02.json": {
+      "bytes": 3255,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/runtime-config-02.json",
+      "sha256": "213b185ce6935010be30afd2d795c1235b404003e994a633818ee652f54c0bf3"
+    },
+    "selection-03-command.log": {
+      "bytes": 147,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03-command.log",
+      "sha256": "3678d0284e9c901f6f975a2c08141806fd04adbcdef108f3076b3e6f01a09bf6"
+    },
+    "selection-03-execution.json": {
+      "bytes": 1337,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03-execution.json",
+      "sha256": "206d0183a9fe2954e7ba00564104e7510ea560cfb4bb4deab813b46941c26efd"
+    },
+    "selection-03-start.json": {
+      "bytes": 1046,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03-start.json",
+      "sha256": "320d5947ae532ef8b4075b634475e7bccff59b171338dd97978ec728cd13e55c"
+    },
+    "selection-03/after-manifest.json": {
+      "bytes": 1536431,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/after-manifest.json",
+      "sha256": "4e65c76d2af1bc811dca913d0450d4ab614f5cf14c3c9022d544796e5130a8a3"
+    },
+    "selection-03/before-manifest.json": {
+      "bytes": 1764848,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/before-manifest.json",
+      "sha256": "e88f426233cbb2030a1f227bad0dc9f79ff83c18b20bf0c9a85aa713b0123f2c"
+    },
+    "selection-03/result.json": {
+      "bytes": 77971,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/result.json",
+      "sha256": "8a38074910408c81b9ba784c37b8df35aef20bc78c8643280bfd1f352cce4929"
+    },
+    "selection-03/selection.json": {
+      "bytes": 408496,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/selection.json",
+      "sha256": "b420a3e29ae619d0a17e1ff4991a45559b65c284f527f14c3915d72bb924c2fd"
+    },
+    "selection-03/tooling.json": {
+      "bytes": 284,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/tooling.json",
+      "sha256": "c32df9bfa08598e3d5c3095cca2ddefc1266cfc6dbcf2ebd3a23f940d1f3f687"
+    }
+  },
+  "remaining_limits": [
+    "ColorBrewer, icons/fonts, Qt/Python/support and original source obligations stay open; no final distribution approval.",
+    "Source ramp loadFile returns true even for missing files; tests explicitly verify native file absence and model unavailability. Serialized renderer colors survive; reclassification from omitted named palettes is unsupported, and full saved-project compatibility is not claimed.",
+    "Inherited SIP borrowed QVector pointer conversion cannot safely be consumed through temporary Python rootItems lists; native browser QModelIndex path used by the witness and actual UI is tested. No general Python binding repair claimed.",
+    "Fresh desktop runs Qt offscreen; no physical-display, multi-platform, full renderer/provider/OGC or publishing acceptance."
+  ],
+  "runtime": {
+    "cleanup": {
+      "database_credentials_invalidated": true,
+      "diagnostic_secret_hits": [],
+      "private_files_scrubbed": true
+    },
+    "desktop_process_exit": 0,
+    "desktop_render_events": 8,
+    "integrity_unchanged": true,
+    "loaded_origins": "Each actual desktop/server mapping selects the NEW stage and retained native/support dependencies; native resource archive/prefix explicitly verified.",
+    "network": "Unchanged loopback supervisor proof passes, including79 parent/79 child checks; PostgreSQL-only documented exception retained.",
+    "result_exit_code": 0,
+    "seconds": 21.176,
+    "server_http_requests": 6,
+    "server_process_exits": [
+      0,
+      0
+    ],
+    "server_restart": true
+  },
+  "screenshots": {
+    "qgis-desktop-reopened-window.png": {
+      "bytes": 133971,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-qgis-remediation/plan/verification/frontend-qgis-remediation/qgis-desktop-reopened-window.png",
+      "sha256": "06eb57b0cd3002b661bb25b57f1c5674d212917ca9c2e872dfd0da13fd6aa5ce"
+    },
+    "qgis-palette-dialog.png": {
+      "bytes": 68980,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-qgis-remediation/plan/verification/frontend-qgis-remediation/qgis-palette-dialog.png",
+      "sha256": "d39fac375106c051e4b92765d8ee080d3160884002d926c26add2d0e34477057"
+    },
+    "qgis-server-combined.png": {
+      "bytes": 3237,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-qgis-remediation/plan/verification/frontend-qgis-remediation/qgis-server-combined.png",
+      "sha256": "31fbfb14ae87f3e09a976632daa93acab68c12e7aca9ccf65fe83a69c2e5cfd8"
+    }
+  },
+  "selection": {
+    "after_entries": 8110,
+    "baseline_unchanged": true,
+    "before_entries": 9235,
+    "compile_steps": 0,
+    "packaged_reference_audit": {
+      "active_xml_documents_scanned": 244,
+      "omitted_scheme_references": [],
+      "packaged_containers": [],
+      "regular_files_magic_scanned": 8103,
+      "scope": "Qt embedding independently checked against every source qrc and native runtime resource enumeration.",
+      "sqlite_databases": [
+        {
+          "path": "share/qgis/resources/data/world_map.gpkg",
+          "sha256": "01d293159d1b77bd9212b5252587853f61aa9e25b2387135f34afaba8d057190",
+          "text_values_scanned": 50001
+        },
+        {
+          "path": "share/qgis/resources/qgis.db",
+          "sha256": "580c202cbe47927f91ec9f880f5019db6745e45e406a1ec5938e4631315f7d1b",
+          "text_values_scanned": 652
+        },
+        {
+          "path": "share/qgis/resources/spatialite.db",
+          "sha256": "024cbdb6550bb482df2f0943a6e5877caecba8e1e72c377cbb2ab1c43e07c3c3",
+          "text_values_scanned": 10557
+        },
+        {
+          "path": "share/qgis/resources/srs.db",
+          "sha256": "8066250e17cd4eea0598d07f49a237bc0f474ed39af465544297791dcb66cca4",
+          "text_values_scanned": 98530
+        }
+      ]
+    },
+    "palette_counts": {
+      "SRC-01": 256,
+      "SRC-02": 138,
+      "SRC-03": 690,
+      "SRC-04": 45
+    },
+    "removed_palette_files": 1129,
+    "retained_colorbrewer": 265,
+    "retained_modes_unchanged": true,
+    "unchanged_files": 8003
+  },
+  "source_archive": {
+    "bytes": 1230551040,
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/owned/qgis-3.44.14.tar",
+    "sha256": "229ce420ccf5f993eff29e58dc500f2fe7337395595989f947481c34c8cfb875"
+  },
+  "source_qrc_count": 13,
+  "status": "Proposed resource variant; fresh bounded engineering passed; owner adoption and distribution permission remain separate.",
+  "targeted_findings": {
+    "F06-QGIS-SRC-01": "Variant selection remediation demonstrated:256 exact paths and active catalogue references excluded; original artifact unchanged.",
+    "F06-QGIS-SRC-02": "Still blocked:138 exact named paths omitted, but one byte-identical palette remains under different GMT provenance/notice scope.",
+    "F06-QGIS-SRC-03": "Variant selection remediation demonstrated:690 exact paths and active catalogue references excluded; original artifact unchanged.",
+    "F06-QGIS-SRC-04": "Variant selection remediation demonstrated:45 exact paths and active catalogue references excluded; original artifact unchanged."
+  },
+  "task": "FND-02/F02-06",
+  "unchanged_evidence": "Historical66 C++ QGIS cases/16 Python native cases, original whole build and broader Java/database/Jupyter evidence reused only within original scope. No new whole-native suite or3989-step rebuild.",
+  "variant_manifest": {
+    "bytes": 1536431,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/after-manifest.json",
+    "sha256": "4e65c76d2af1bc811dca913d0450d4ab614f5cf14c3c9022d544796e5130a8a3"
+  },
+  "variant_prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix",
+  "visual_review": "Agent viewed actual palette chooser (Blues_09 and remaining author list), legible desktop and combined native WMS captures; images copied unchanged alongside this index."
+}

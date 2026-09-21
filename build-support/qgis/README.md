@@ -117,3 +117,22 @@ Historical database, Java, frontend and Jupyter passes are reused only within
 their exact prior scope. The frontend five lint errors/five webpack warnings,
 nonidentical replay and source/rights findings remain F02-06; the Java
 48 structural/12 unresolved/four partial ledger is separate from QGIS inputs.
+
+## Proposed F02-06 resource-selection profile
+
+`resource_selection.py` creates a separate private stage from a verified compiled
+prefix. It derives exact named exclusions from the recorded notice scopes,
+corrects only affected catalogues, relocates their original metadata/notices, and
+preserves every unrelated file/mode. It binds complete before/after inventories,
+source archive members, executed tooling and all alternate copies. It does not
+rebuild or edit the baseline. Future reviewed source/build baselines must update
+the explicit inventory/source pins, not bypass their verification.
+
+The [resource handoff](../../plan/docs/qgis-resource-selection-handoff.md) records
+the 1,129 omissions, 265 unchanged ColorBrewer palettes, successful fresh native
+palette/desktop/server evidence, and the separately unresolved GMT/td byte alias.
+`resource_witness.py` runs through the real desktop with `resource_manifest` and
+`resource_selection` hash bindings in the runtime configuration. Native file
+availability/model checks deliberately do not trust the inherited `loadFile()`
+boolean for a missing palette. All pre-existing distribution and acceptance gates
+remain separate from this proposed resource profile.
