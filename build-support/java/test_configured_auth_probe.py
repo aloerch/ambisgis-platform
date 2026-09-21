@@ -108,7 +108,7 @@ class ReceiptEvidenceTests(unittest.TestCase):
 
 
 class MatrixEvidenceTests(unittest.TestCase):
-    def request(self, status, body, headers=(), expected=(200,), contains=None):
+    def request(self, status, body, headers=(), expected=(200,), contains=None, stateless=False):
         identity = Mock()
         identity.calls = []
         identity.sensitive.return_value = ['fixture-sensitive-token']
@@ -118,7 +118,7 @@ class MatrixEvidenceTests(unittest.TestCase):
         response.getheader.side_effect = lambda name, default=None: next((value for key, value in headers if key.lower() == name.lower()), default)
         connection = Mock()
         connection.getresponse.return_value = response
-        matrix = probe.Matrix(1, identity)
+        matrix = probe.Matrix(1, identity, stateless=stateless)
         matrix.request('review-control', '/wfs', connection=connection,
                        expected=expected, contains=contains, excludes=())
         return matrix
@@ -145,6 +145,14 @@ class MatrixEvidenceTests(unittest.TestCase):
         matrix = self.request(200, json.dumps(feature()), headers=(('Location','/login'), ('location','')),
                               contains='PRIVATE_WITNESS')
         self.assertFalse(matrix.rows[-1]['passed'])
+
+    def test_stateless_policy_rejects_every_cookie_header_even_empty_duplicates(self):
+        for status, headers in ((200, (('Set-Cookie', 'reader=session'),)),
+                                (403, (('Set-Cookie', ''), ('set-cookie', '')))):
+            with self.subTest(status=status):
+                matrix = self.request(status, 'response', headers=headers, expected=(status,), stateless=True)
+                self.assertFalse(matrix.rows[-1]['passed'])
+                self.assertEqual(matrix.rows[-1]['set_cookie_header_count'], len(headers))
 
     def test_marker_echo_is_not_a_positive_gis_read(self):
         matrix = self.request(200, '<Exception>PRIVATE_WITNESS</Exception>', contains='PRIVATE_WITNESS')

@@ -103,8 +103,9 @@ class Identity:
 
 
 class Matrix:
-    def __init__(self, port, identity):
+    def __init__(self, port, identity, stateless=False):
         self.port, self.identity = port, identity
+        self.stateless = stateless
         self.rows = []
         self.leaks = []
 
@@ -125,7 +126,7 @@ class Matrix:
             if cookies: response_headers['set-cookie'] = '; '.join(cookies)
             leaks = sum(value in (text + str(raw_headers)) for value in self.identity.sensitive())
             if leaks: self.leaks.append({'case': name, 'count': leaks})
-            ok = response.status in expected and not leaks
+            ok = response.status in expected and not leaks and not (self.stateless and cookies)
             if contains in ('PUBLIC_WITNESS','PRIVATE_WITNESS'):
                 from configured_auth_evidence import validate_geojson
                 ok = ok and validate_geojson(text,contains)
@@ -286,7 +287,7 @@ def child(config):
                 raise RuntimeError('actual loaded OAuth configuration is not stateless')
             if active.get('role_source')!='UserGroupService' or active.get('user_group_service')!='fixture':
                 raise RuntimeError('actual loaded role service differs from fixture')
-            matrix=Matrix(information['port'],identity)
+            matrix=Matrix(information['port'],identity,stateless=config.get('stateless',False))
             try:exercise(matrix,fixture,restart=round_name=='restart')
             finally:
                 report['scenario_results'].extend(dict(row,round=round_name) for row in matrix.rows)
