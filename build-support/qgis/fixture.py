@@ -44,7 +44,7 @@ def make_data(output, gdal_library):
         require(api('GDALRasterIO', integer, [ptr,integer,integer,integer,integer,integer,ptr,integer,integer,integer,integer,integer])(
             band,1,0,0,16,16,C.cast(values,ptr),16,16,1,0,0) == 0, 'raster values write failed')
     finally:
-        api('GDALClose',None,[ptr])(dataset)
+        require(api('GDALClose',integer,[ptr])(dataset) == 0, 'GeoTIFF flush/close failed')
     return {p.name: sha(p) for p in (output/'points.geojson', output/'known.tif')}
 
 

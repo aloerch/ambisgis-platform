@@ -113,3 +113,8 @@ Retained `gdalinfo`/`ogrinfo` read them, and real restricted PostgreSQL credenti
 setup, write denial, password invalidation and shutdown passed. These preflights
 are data/database setup evidence only; they do not claim QGIS compiled or ran.
 The retained complete attempt receipts control desktop/server evidence state.
+
+`runtime-data-preflight-03` repeated the same deterministic assets after the
+GDAL close/flush return-value guard, under the unchanged loopback supervisor.
+Its retained script snapshots and verified network receipt establish egress
+containment for that data-generation preflight; QGIS runtime remains separate.
