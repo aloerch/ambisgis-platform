@@ -1,7 +1,6 @@
 # Implementation status — FND-02 combination/cache checkpoint
 
-**F02-05 bounded engineering evidence is demonstrated; owner checkpoint review is
-pending. FND-02 remains In progress.** This slice starts from verified owner-merged
+**F02-05 bounded engineering evidence is demonstrated; [PR #64](https://github.com/aloerch/ambisgis-platform/pull/64) awaits owner checkpoint review. FND-02 remains In progress.** This slice starts from verified owner-merged
 [PR #63](https://github.com/aloerch/ambisgis-platform/pull/63), merge
 `56186baf19dc6ee02d4152e019d2dd96c5ec1b3e`, reviewed head
 `c68f42baa8cb6d21d6b34dce07c2e4ad3ee64409`. That accepts bounded F02-04 only;
@@ -29,6 +28,10 @@ eight row IDs and pass conditions. Next is **F02-06**, exact candidate proposal
 and source/license selection decisions, then F02-07 and F02-08. QGIS resource
 rights, frontend notices/web-ifc/lint/nonidentical replay and distinct Java source
 findings remain unchanged. No whole-task, license, release or deployment acceptance.
+
+Project #2 publication passed: 77 items, all 76 prior items/views/archive decisions
+preserved, only #64 in the open-PR queue; exactly membership and PR Evidence were
+written. Parent Delivery remains In progress.
 
 # Preserved status — earlier checkpoints
 

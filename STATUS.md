@@ -4,7 +4,7 @@ F02-05 bounded combination/cache engineering is demonstrated on
 `fnd-02/combination-gwc-smoke`; **FND-02 remains In progress**. See canonical
 [plan status](plan/STATUS.md), [compact matrix/handoff](plan/docs/fnd-02-combination-smoke.md)
 and [evidence index](plan/verification/combination-gwc/evidence.json).
-Owner review of this new checkpoint remains pending. Owner-merged #63 accepted
+Owner review of [PR #64](https://github.com/aloerch/ambisgis-platform/pull/64) remains pending. Owner-merged #63 accepted
 bounded F02-04 only. The next finite row is F02-06; source/license decisions,
 F02-07/F02-08 and release acceptance remain open. Historical statuses below are
 preserved records, not current review obligations.

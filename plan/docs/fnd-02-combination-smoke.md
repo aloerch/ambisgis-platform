@@ -1,7 +1,6 @@
 # FND-02 combination smoke — F02-05
 
-**F02-05 bounded engineering evidence is demonstrated; owner checkpoint review is
-pending. FND-02 remains In progress.** Owner-merged #63 accepts F02-04 only:
+**F02-05 bounded engineering evidence is demonstrated; [PR #64](https://github.com/aloerch/ambisgis-platform/pull/64) awaits owner checkpoint review. FND-02 remains In progress.** Owner-merged #63 accepts F02-04 only:
 reviewed `c68f42baa8cb6d21d6b34dce07c2e4ad3ee64409`, merge
 `56186baf19dc6ee02d4152e019d2dd96c5ec1b3e`, verified current main at this slice's
 start. Historical open-PR prose creates no new F02-04 gate or resource-rights approval.
@@ -186,3 +185,14 @@ maintenance binding and F02-08 final acceptance. QGIS resource rights, frontend
 web-ifc/notice findings, five lint errors and the distinct Java ledger remain
 unchanged blockers/decisions. Neither recorded limits nor successful caching
 confers source viability, legal clearance or redistribution permission.
+
+[Project publication/readback](../verification/combination-gwc/project.json)
+verified **76 → 77 items** with exactly two writes: add #64 by content identity
+and set its Evidence link to #64/issue #3. All 76 prior items, represented fields,
+archive decisions, repository links and saved-view configuration/order were
+preserved; no Task ID/Delivery/Review gate was copied. FND-02 Delivery stays
+In progress; only #64 matches the unchanged `is:pr is:open` queue. No importer or
+GOV-02 setup was rerun. This is complete API readback, not a new UI acceptance.
+The publication snapshot records head `c4a515bdb2475ee1fb9a363d5e9be7ad9e714ae5`;
+subsequent publication-documentation commits preserve the tested implementation.
+The final issue evidence comment pins the final pushed review head.

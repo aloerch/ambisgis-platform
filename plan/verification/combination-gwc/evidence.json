@@ -93,6 +93,10 @@
     }
   ],
   "implementation_commit": "4d58d7f17bba71bae60670fde2587f3fdbdf3307",
+  "implementation_trees": {
+    "gwc": "2f29527f8776699e97af098658819791c8c110e9",
+    "java": "61cb50d505072d3e2d310b55be5cfb39c84470e0"
+  },
   "limitations": [
     "one EPSG:4326 matrix, one PNG tile per layer; no seeding, performance or complete OGC coverage",
     "scoped protected-tile access, not cache revocation/user partitioning/multi-node acceptance",
@@ -100,6 +104,8 @@
     "historical native suites keep their own artifact/profile and omissions",
     "QGIS/frontend/source/license selection remains F02-06; no distribution approval"
   ],
+  "project_publication": "project.json",
+  "pull_request": "https://github.com/aloerch/ambisgis-platform/pull/64",
   "references": {
     "checklist-preserved.json": {
       "bytes": 262,
