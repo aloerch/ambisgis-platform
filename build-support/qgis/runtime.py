@@ -169,8 +169,11 @@ def run(config_path, output):
             except BaseException as error:
                 report['integrity_error'] = type(error).__name__; report['result_exit_code'] = 1
         if snapshot is not None:
-            report['tooling_integrity_unchanged'] = snapshot == inventory(output/'tooling')
-            if not report['tooling_integrity_unchanged']: report['result_exit_code'] = 1
+            try:
+                report['tooling_integrity_unchanged'] = snapshot == inventory(output/'tooling')
+                if not report['tooling_integrity_unchanged']: report['result_exit_code'] = 1
+            except BaseException as error:
+                report['tooling_integrity_error'] = type(error).__name__; report['result_exit_code'] = 1
         if database is not None:
             try:
                 if database.process is not None and database.process.poll() is None:

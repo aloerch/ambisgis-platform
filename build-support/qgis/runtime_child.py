@@ -60,10 +60,18 @@ def command(argv, config, name, secrets, timeout=120):
 
 
 def server(config, secrets):
+    output = Path(config['output'])
+    result = {'result_exit_code':1, 'implementation':'native qgis_mapserver HTTP process', 'sequential':True, 'runs':[],
+              'wms':{'version':'1.1.1','srs':'EPSG:4326','bbox':[0,0,4,4],'axis_order':'longitude,latitude','size':[512,512]}}
+    try:
+        return server_requests(config, secrets, result)
+    finally:
+        save(output/'server-result.json', result)
+
+
+def server_requests(config, secrets, result):
     from qgis.PyQt.QtGui import QImage
     output = Path(config['output'])
-    result = {'implementation':'native qgis_mapserver HTTP process', 'sequential':True, 'runs':[],
-              'wms':{'version':'1.1.1','srs':'EPSG:4326','bbox':[0,0,4,4],'axis_order':'longitude,latitude','size':[512,512]}}
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
     with socket.socket() as sock: sock.bind(('127.0.0.1',0)); port = sock.getsockname()[1]
     for iteration in range(2):
@@ -104,15 +112,21 @@ def server(config, secrets):
                     evidence['render'] = image_witness(QImage(str(path)), (0,0,4,4),local=name!='database',database=name!='local')
                 run['responses'].append(evidence)
             run['loaded_origins'] = loaded_origins(config,process.pid)
+        except BaseException as error:
+            run['error'] = {'type': type(error).__name__, 'message': str(error)}
+            raise
         finally:
-            stop(process,capture)
-            run['exit_code'] = process.returncode
-            run['stopped'] = process.poll() is not None
+            try:
+                stop(process,capture)
+            finally:
+                run['exit_code'] = process.returncode
+                run['stopped'] = process.poll() is not None
             require(process.returncode == 0, 'native server shutdown failed')
             with socket.socket() as probe:
                 require(probe.connect_ex(('127.0.0.1',port)) != 0, 'task server listener remains after stop')
     result['actual_http_requests'] = sum(len(run['responses']) for run in result['runs'])
     result['restart_demonstrated'] = True
+    result['result_exit_code'] = 0
     return result
 
 

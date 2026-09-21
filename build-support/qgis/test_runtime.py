@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Guard tests, explicitly not real QGIS acceptance evidence."""
-import importlib.util
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -10,6 +10,7 @@ import sys
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from runtime_common import POINTS, SAMPLES, image_witness, inventory, loaded_origins
 from runtime import private_write, redact, validate_config
+from runtime_child import server
 
 
 class Color:
@@ -68,6 +69,15 @@ class RuntimeGuards(unittest.TestCase):
         with tempfile.TemporaryDirectory() as name:
             path=Path(name)/'artifact'; path.write_text('a'); before=inventory(name)
             path.write_text('b'); self.assertNotEqual(before,inventory(name))
+
+    def test_server_failure_preserves_partial_failed_receipt(self):
+        with tempfile.TemporaryDirectory() as name:
+            with patch('runtime_child.server_requests',side_effect=RuntimeError('synthetic startup failure')):
+                with self.assertRaisesRegex(RuntimeError,'startup failure'):
+                    server({'output':name},[])
+            receipt=json.loads((Path(name)/'server-result.json').read_text())
+            self.assertEqual(1,receipt['result_exit_code'])
+            self.assertEqual([],receipt['runs'])
 
     def test_empty_profile_rejected(self):
         with self.assertRaisesRegex(AssertionError,'retained input'): validate_config({})
