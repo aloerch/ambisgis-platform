@@ -1,0 +1,87 @@
+{
+  "adapter_limit": "Inherited adapter does not expand assignee/label values; no such fields are written.",
+  "all_passed": true,
+  "checks": {
+    "all_prior_item_values_and_archive_decisions_preserved": true,
+    "all_project_fields_repositories_views_preserved": true,
+    "all_readback_pagination_complete": true,
+    "all_view_configuration_and_order_preserved": true,
+    "live_pr_still_open_at_exact_head": true,
+    "mutation_sequence_complete": true,
+    "only_expected_new_item": true,
+    "pr_has_no_parent_planning_fields": true,
+    "pr_identity_unique": true,
+    "pr_is_in_saved_open_queue": true,
+    "pr_item_unarchived": true,
+    "pr_linked_if_applied": true
+  },
+  "items_after": 77,
+  "items_before": 76,
+  "local_head": "c4a515bdb2475ee1fb9a363d5e9be7ad9e714ae5",
+  "mutations": [
+    {
+      "content_id": "PR_kwDOUhI-d88AAAABEd4jgg",
+      "operation": "add_item",
+      "result": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg8AMkk",
+        "isArchived": false
+      }
+    },
+    {
+      "field_id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg8AMkk",
+      "operation": "set_field",
+      "result": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg8AMkk"
+      },
+      "value": "https://github.com/aloerch/ambisgis-platform/pull/64 | FND-02: https://github.com/aloerch/ambisgis-platform/issues/3"
+    }
+  ],
+  "parent_delivery": "In progress",
+  "parent_issue": "https://github.com/aloerch/ambisgis-platform/issues/3",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/64",
+  "prior_items_preserved": 76,
+  "project": "https://github.com/users/aloerch/projects/2",
+  "queue_filter": "is:pr is:open",
+  "queue_membership": [
+    64
+  ],
+  "references": {
+    "project-apply-01/after.json": {
+      "bytes": 306564,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/project-apply-01/after.json",
+      "sha256": "cb740d767ea47859003a589aced33ab0f46fcfcfed811dfc83c22acaef875888"
+    },
+    "project-apply-01/before.json": {
+      "bytes": 304798,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/project-apply-01/before.json",
+      "sha256": "a5df622b8f3d053087a50aef60ae7acf51902e1101e3889aff31543c5b92feb1"
+    },
+    "project-apply-01/manifest.json": {
+      "bytes": 1708,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/project-apply-01/manifest.json",
+      "sha256": "c66c37654b58e9f9bc94892297eb147e087c95c25dfc0b1b3f111dbe1a0a1879"
+    },
+    "project-apply-01/mutation-events.jsonl": {
+      "bytes": 1055,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/project-apply-01/mutation-events.jsonl",
+      "sha256": "3472bc58e4159d50184e5d02b4faebde103b068d1d1c3ed88373b06491b7c343"
+    },
+    "project-apply-01/outcome.json": {
+      "bytes": 3447,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/project-apply-01/outcome.json",
+      "sha256": "f32a269ca1ab6df48643627063589ee2d78e6c94fd3d1d7bcb9ac3cc1599525a"
+    },
+    "project-dry-run-01/outcome.json": {
+      "bytes": 2720,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/project-dry-run-01/outcome.json",
+      "sha256": "fb55226c70bc9d38220121016f3620ac2f6c9ed40db1a914dc5bec2ebb7e6e70"
+    },
+    "publication.py": {
+      "bytes": 9887,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/combination-gwc/publication.py",
+      "sha256": "13cdc92c556dcde4ea3b4c5fe88eb6476f7c016f26a9c98ffa628158eaafe9a8"
+    }
+  },
+  "scope": "New PR membership/Evidence only; FND-02 unchanged; API readback, no UI claim"
+}
