@@ -1,0 +1,284 @@
+{
+  "scope": "Fresh compiled owned client in real anonymous GeoNode embedded map with strict #61 GeoServer; not browser SSO/full policy/publishing acceptance",
+  "result_exit_code": 0,
+  "retained_root": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/browser-smoke-06",
+  "result_sha256": "b1dcc7f40305fc54ccee50542ee0744d591d1af1142347918fe0a0e703deaded",
+  "frontend_build": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/build-01",
+  "frontend_output_manifest_sha256": "b60beafd554751946b2c6669a471a6198ba93011cc5cec42cd7a5fd51e50ce0f",
+  "frontend_file_count": 1038,
+  "served_manifest_sha256": "1bb923a7a96254f370ab07d517b6ebfd84f899b5ae1704f0e24df2b043b33c57",
+  "war_sha256": "a3cea4ad28ca7c3447b2eeae7a631e624a9e50e7973972c43f2d7d91eab25a52",
+  "browser_retention_manifest": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/browser-inputs/retention.json",
+  "browser_retention_sha256": "ffc73378c0fdf82c006432e8d233e8bbaa1d1869c4c987e2f91a34597066b667",
+  "browser_support_observations": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/browser-inputs/support-check.json",
+  "browser_phases": {
+    "initial": {
+      "result_exit_code": 0,
+      "browser_version": "153.0.8010.12",
+      "sandbox_requested": true,
+      "browser_closed": true,
+      "responses": 109,
+      "loaded_artifact_count": 43,
+      "loaded_artifacts": {
+        "configs/localConfig.json": "c67c80cebb20026549b958ba65225f2a100521aa3a25ed971134f5eec7ac72fe",
+        "configs/map.json": "cc87451573c4925c4f502edb20b0b1f84b708db00b9298b4e4cb7a5689b7181e",
+        "dist/MapStore2/web/client/components/mapcontrols/annotations/img/markers_default.png": "e8be9cf154f805775835152a3f6546136df2aad762c02d278937fac1a43f649b",
+        "dist/js/104.337024cfcd227802.chunk.js": "4fc0960a6c49f7e046653091ae9649887e47221ce14e06df4600d9e3f173e76a",
+        "dist/js/1224.337024cfcd227802.chunk.js": "26af57742f8993334c1e157986e219a23a6874ee9280ee4afb1ed65c17978bb8",
+        "dist/js/1358.337024cfcd227802.chunk.js": "7697b17d7e7081b69982339029349f8d5effd2b4ac79c35c0d4c27c7ddcc67b9",
+        "dist/js/1513.337024cfcd227802.chunk.js": "fc9ba818704d07527149533d5da0740f894bc27dc87ebdf17db2cd8a7a083063",
+        "dist/js/2145.337024cfcd227802.chunk.js": "81b4a1df13cc3411f69f29fa5897aaab0c55bb9968a5007689a1ba88bbcf0c41",
+        "dist/js/284.337024cfcd227802.chunk.js": "9c8fe216e8d77c3ffd0d3d6e2c3f8db0ba004134336507cc81d324b4fa970361",
+        "dist/js/3032.337024cfcd227802.chunk.js": "d58cb44e9597b5e2655c44b53802fd8d2ff9a4d85e14ac23b5ce305bf6a2d0ff",
+        "dist/js/3151.337024cfcd227802.chunk.js": "256835b62fb889f9e72f4001c54e1cb2a055987f683528f166a94c5cea7816e1",
+        "dist/js/3512.337024cfcd227802.chunk.js": "35852b95cae32eeacfe5933b7f457cca68d8a9cc26370527ee7384b1b5c32a6e",
+        "dist/js/3523.337024cfcd227802.chunk.js": "7ca96fec88d15b1b117b50f733d5093f65f8c83b5581704bbfec750902b0b765",
+        "dist/js/3908.337024cfcd227802.chunk.js": "04aaea273efb15b62f09ac3f6113c7168c9ff67ffd083e1e2ee488a7c7aae11d",
+        "dist/js/3998.337024cfcd227802.chunk.js": "2a6cf28af3821822d76cf5d767d4e588e95df81b5d71e20e178c6223de1e79d2",
+        "dist/js/4138.337024cfcd227802.chunk.js": "4d243a8bbf050293d38d1875ce6a71d70015dae5f0061b95c0e678b79d0e5077",
+        "dist/js/4620.337024cfcd227802.chunk.js": "87cec25fdb0ea431971525e17b60b17a8893ded635427547062c4942c5027067",
+        "dist/js/5308.337024cfcd227802.chunk.js": "08b8b7e2cfbfde45546c5b3af882feb46b92dddf8218ea386a44a4ed619accbf",
+        "dist/js/5735.337024cfcd227802.chunk.js": "b7548c792e5a330482e3516a2d2750b54d0cfdfc9c9ece58b887241b0877fbf8",
+        "dist/js/6036.337024cfcd227802.chunk.js": "9c52c5a0fd142b7632001b6add44e646ee501d3a47fe11edabb73f704961c638",
+        "dist/js/6135.337024cfcd227802.chunk.js": "351b4ca462e5171321624443508847f04dff8d2097ec2f5b97f4223179a4786d",
+        "dist/js/6859.337024cfcd227802.chunk.js": "f03ada93bc60b9736a9d9588d6d6136051b99cd143acfd69f37dd321dec6d02b",
+        "dist/js/8048.337024cfcd227802.chunk.js": "3f0dfb79fa7a4e041af082376b10165a065532e261885821fc75ee889aca1b90",
+        "dist/js/8235.337024cfcd227802.chunk.js": "a0b0028c8f1936b75279c009c9e3cf69e793d96f06cdbcc019bc025084b94dc9",
+        "dist/js/856.337024cfcd227802.chunk.js": "02232cf2898e620e0797d188d14b461f7707eb9bd414c8552a1451bf97f94e33",
+        "dist/js/9322.337024cfcd227802.chunk.js": "95b8257bee90ec1ebbeb2b5524abaa46a19106fc341322b8c70d901e364cb13a",
+        "dist/js/9501.337024cfcd227802.chunk.js": "a7f1bf7e7880825818fbb98aaa386a4a15dc58f25b64ab952bab0d7c9c698862",
+        "dist/js/gn-map.js": "e0932e972dd84059b2dd4a374a7042e97a29f1cf565462756a7ef412a46b3d60",
+        "dist/js/plugins/drawer-menu-plugin.337024cfcd227802.chunk.js": "c44c6e3dfa46c91a5ab6ee9649bc2cf3a3719d77455b49d42a267f9390295fb7",
+        "dist/js/plugins/expander-plugin.337024cfcd227802.chunk.js": "11504c1a66e4c2bd3a21cf78272150b6e805d9147462b2a7032aaa19f5122ae0",
+        "dist/js/plugins/identify-plugin.337024cfcd227802.chunk.js": "b061dd2cbf39fa90c323e9d5979f9de44a31d05d0796950d6bf54eab6553f4d0",
+        "dist/js/plugins/map-footer-plugin.337024cfcd227802.chunk.js": "978fd9f563cf00037be423dc766471613dac1b883f22b294d67c1ed1b4a0b8b0",
+        "dist/js/plugins/map-loading-plugin.337024cfcd227802.chunk.js": "b9dcaf336b956b8e8fa384a69e847b33e17a793d97f36af94e497d508e478376",
+        "dist/js/plugins/map-plugin.337024cfcd227802.chunk.js": "bb77b85d485d16da952477c691f868a849c6da8213584e8f56a98eca6610dedb",
+        "dist/js/plugins/playback-plugin.337024cfcd227802.chunk.js": "97ff0cc9c15d523fc8560af6c7df12cdde1d6d5d96d210bf1335c6454e0aa774",
+        "dist/js/plugins/timeline-plugin.337024cfcd227802.chunk.js": "ec89557b9d7ad0f632ff17a8eb4d88cee1533153e5463a5a7376909e0519aa2c",
+        "dist/js/plugins/toolbar-plugin.337024cfcd227802.chunk.js": "a3f74afab55aec096ed7e9cce4f61cb46083e7ce5fadd7be904dfcfa6e31363e",
+        "dist/js/plugins/zoom-all-plugin.337024cfcd227802.chunk.js": "4c6f293d8f40102b926a5dbb2d88a4644e180e0543b557f820ff95765a1e04cc",
+        "dist/js/plugins/zoom-in-plugin.337024cfcd227802.chunk.js": "d999a9f8e5e0a97227d50b202252c31554e288008bbc7e0109434e26ffafbe9d",
+        "dist/js/plugins/zoom-out-plugin.337024cfcd227802.chunk.js": "e3e40229177fee2a6465add88832b2361a0ab04f7fcd9a74e24cfa137ac691ad",
+        "dist/themes/geonode.css": "3572885ca7e39b866524152b808810018003460bcb6e0ea0a64bc5ef2eaf5d1d",
+        "gn-translations/data.en-US.json": "eade64b70735fe8c745fed4c3d910132d3bee7641fd5341ba631578f6b14c507",
+        "ms-translations/data.en-US.json": "f505e11b5e4464303b49268a05cfb23db955eb3af33e8a153bba74f276e835b5"
+      },
+      "wms_responses": 3,
+      "unexpected_external_requests": 0,
+      "failed_requests": 0,
+      "blocking_console_errors": 0,
+      "page_errors": 0,
+      "expected_anonymous_userinfo_401": 2,
+      "interaction": {
+        "initial_bbox_spans": [
+          1345291.697819102
+        ],
+        "kind": "wheel zoom",
+        "smaller_bbox": true,
+        "zoom_bbox_spans": [
+          672645.848909551
+        ]
+      },
+      "render": [
+        {
+          "label": "initial",
+          "pixels": [
+            {
+              "height": 698,
+              "red_pixels": 556,
+              "width": 1100
+            }
+          ],
+          "resourceId": "1"
+        },
+        {
+          "label": "zoom",
+          "pixels": [
+            {
+              "height": 698,
+              "red_pixels": 556,
+              "width": 1100
+            }
+          ],
+          "resourceId": "1"
+        },
+        {
+          "label": "reload",
+          "pixels": [
+            {
+              "height": 698,
+              "red_pixels": 556,
+              "width": 1100
+            }
+          ],
+          "resourceId": "1"
+        }
+      ],
+      "evidence_files": {
+        "initial.png": "c157e3429c7ba6d080175e60c318c07a6df760ac101af1996d05c9a7cb585439",
+        "reload.png": "c157e3429c7ba6d080175e60c318c07a6df760ac101af1996d05c9a7cb585439",
+        "wms-8e77035ae65ea35a4e77bca9887374bab1778f853da80d8cdb4d313b97d1640e.png": "8e77035ae65ea35a4e77bca9887374bab1778f853da80d8cdb4d313b97d1640e",
+        "zoom.png": "b859359ab2dd44e8c9d2bfcfc2fc997514dd237857d7a28e2fef90c449f4bf53"
+      },
+      "result_sha256": "4d2d6bb298fbc1c00e81bbbed8b0bf1a2f697d04ae089a419b41bbf6f3408dfc"
+    },
+    "restart": {
+      "result_exit_code": 0,
+      "browser_version": "153.0.8010.12",
+      "sandbox_requested": true,
+      "browser_closed": true,
+      "responses": 109,
+      "loaded_artifact_count": 43,
+      "loaded_artifacts": {
+        "configs/localConfig.json": "c67c80cebb20026549b958ba65225f2a100521aa3a25ed971134f5eec7ac72fe",
+        "configs/map.json": "cc87451573c4925c4f502edb20b0b1f84b708db00b9298b4e4cb7a5689b7181e",
+        "dist/MapStore2/web/client/components/mapcontrols/annotations/img/markers_default.png": "e8be9cf154f805775835152a3f6546136df2aad762c02d278937fac1a43f649b",
+        "dist/js/104.337024cfcd227802.chunk.js": "4fc0960a6c49f7e046653091ae9649887e47221ce14e06df4600d9e3f173e76a",
+        "dist/js/1224.337024cfcd227802.chunk.js": "26af57742f8993334c1e157986e219a23a6874ee9280ee4afb1ed65c17978bb8",
+        "dist/js/1358.337024cfcd227802.chunk.js": "7697b17d7e7081b69982339029349f8d5effd2b4ac79c35c0d4c27c7ddcc67b9",
+        "dist/js/1513.337024cfcd227802.chunk.js": "fc9ba818704d07527149533d5da0740f894bc27dc87ebdf17db2cd8a7a083063",
+        "dist/js/2145.337024cfcd227802.chunk.js": "81b4a1df13cc3411f69f29fa5897aaab0c55bb9968a5007689a1ba88bbcf0c41",
+        "dist/js/284.337024cfcd227802.chunk.js": "9c8fe216e8d77c3ffd0d3d6e2c3f8db0ba004134336507cc81d324b4fa970361",
+        "dist/js/3032.337024cfcd227802.chunk.js": "d58cb44e9597b5e2655c44b53802fd8d2ff9a4d85e14ac23b5ce305bf6a2d0ff",
+        "dist/js/3151.337024cfcd227802.chunk.js": "256835b62fb889f9e72f4001c54e1cb2a055987f683528f166a94c5cea7816e1",
+        "dist/js/3512.337024cfcd227802.chunk.js": "35852b95cae32eeacfe5933b7f457cca68d8a9cc26370527ee7384b1b5c32a6e",
+        "dist/js/3523.337024cfcd227802.chunk.js": "7ca96fec88d15b1b117b50f733d5093f65f8c83b5581704bbfec750902b0b765",
+        "dist/js/3908.337024cfcd227802.chunk.js": "04aaea273efb15b62f09ac3f6113c7168c9ff67ffd083e1e2ee488a7c7aae11d",
+        "dist/js/3998.337024cfcd227802.chunk.js": "2a6cf28af3821822d76cf5d767d4e588e95df81b5d71e20e178c6223de1e79d2",
+        "dist/js/4138.337024cfcd227802.chunk.js": "4d243a8bbf050293d38d1875ce6a71d70015dae5f0061b95c0e678b79d0e5077",
+        "dist/js/4620.337024cfcd227802.chunk.js": "87cec25fdb0ea431971525e17b60b17a8893ded635427547062c4942c5027067",
+        "dist/js/5308.337024cfcd227802.chunk.js": "08b8b7e2cfbfde45546c5b3af882feb46b92dddf8218ea386a44a4ed619accbf",
+        "dist/js/5735.337024cfcd227802.chunk.js": "b7548c792e5a330482e3516a2d2750b54d0cfdfc9c9ece58b887241b0877fbf8",
+        "dist/js/6036.337024cfcd227802.chunk.js": "9c52c5a0fd142b7632001b6add44e646ee501d3a47fe11edabb73f704961c638",
+        "dist/js/6135.337024cfcd227802.chunk.js": "351b4ca462e5171321624443508847f04dff8d2097ec2f5b97f4223179a4786d",
+        "dist/js/6859.337024cfcd227802.chunk.js": "f03ada93bc60b9736a9d9588d6d6136051b99cd143acfd69f37dd321dec6d02b",
+        "dist/js/8048.337024cfcd227802.chunk.js": "3f0dfb79fa7a4e041af082376b10165a065532e261885821fc75ee889aca1b90",
+        "dist/js/8235.337024cfcd227802.chunk.js": "a0b0028c8f1936b75279c009c9e3cf69e793d96f06cdbcc019bc025084b94dc9",
+        "dist/js/856.337024cfcd227802.chunk.js": "02232cf2898e620e0797d188d14b461f7707eb9bd414c8552a1451bf97f94e33",
+        "dist/js/9322.337024cfcd227802.chunk.js": "95b8257bee90ec1ebbeb2b5524abaa46a19106fc341322b8c70d901e364cb13a",
+        "dist/js/9501.337024cfcd227802.chunk.js": "a7f1bf7e7880825818fbb98aaa386a4a15dc58f25b64ab952bab0d7c9c698862",
+        "dist/js/gn-map.js": "e0932e972dd84059b2dd4a374a7042e97a29f1cf565462756a7ef412a46b3d60",
+        "dist/js/plugins/drawer-menu-plugin.337024cfcd227802.chunk.js": "c44c6e3dfa46c91a5ab6ee9649bc2cf3a3719d77455b49d42a267f9390295fb7",
+        "dist/js/plugins/expander-plugin.337024cfcd227802.chunk.js": "11504c1a66e4c2bd3a21cf78272150b6e805d9147462b2a7032aaa19f5122ae0",
+        "dist/js/plugins/identify-plugin.337024cfcd227802.chunk.js": "b061dd2cbf39fa90c323e9d5979f9de44a31d05d0796950d6bf54eab6553f4d0",
+        "dist/js/plugins/map-footer-plugin.337024cfcd227802.chunk.js": "978fd9f563cf00037be423dc766471613dac1b883f22b294d67c1ed1b4a0b8b0",
+        "dist/js/plugins/map-loading-plugin.337024cfcd227802.chunk.js": "b9dcaf336b956b8e8fa384a69e847b33e17a793d97f36af94e497d508e478376",
+        "dist/js/plugins/map-plugin.337024cfcd227802.chunk.js": "bb77b85d485d16da952477c691f868a849c6da8213584e8f56a98eca6610dedb",
+        "dist/js/plugins/playback-plugin.337024cfcd227802.chunk.js": "97ff0cc9c15d523fc8560af6c7df12cdde1d6d5d96d210bf1335c6454e0aa774",
+        "dist/js/plugins/timeline-plugin.337024cfcd227802.chunk.js": "ec89557b9d7ad0f632ff17a8eb4d88cee1533153e5463a5a7376909e0519aa2c",
+        "dist/js/plugins/toolbar-plugin.337024cfcd227802.chunk.js": "a3f74afab55aec096ed7e9cce4f61cb46083e7ce5fadd7be904dfcfa6e31363e",
+        "dist/js/plugins/zoom-all-plugin.337024cfcd227802.chunk.js": "4c6f293d8f40102b926a5dbb2d88a4644e180e0543b557f820ff95765a1e04cc",
+        "dist/js/plugins/zoom-in-plugin.337024cfcd227802.chunk.js": "d999a9f8e5e0a97227d50b202252c31554e288008bbc7e0109434e26ffafbe9d",
+        "dist/js/plugins/zoom-out-plugin.337024cfcd227802.chunk.js": "e3e40229177fee2a6465add88832b2361a0ab04f7fcd9a74e24cfa137ac691ad",
+        "dist/themes/geonode.css": "3572885ca7e39b866524152b808810018003460bcb6e0ea0a64bc5ef2eaf5d1d",
+        "gn-translations/data.en-US.json": "eade64b70735fe8c745fed4c3d910132d3bee7641fd5341ba631578f6b14c507",
+        "ms-translations/data.en-US.json": "f505e11b5e4464303b49268a05cfb23db955eb3af33e8a153bba74f276e835b5"
+      },
+      "wms_responses": 3,
+      "unexpected_external_requests": 0,
+      "failed_requests": 0,
+      "blocking_console_errors": 0,
+      "page_errors": 0,
+      "expected_anonymous_userinfo_401": 2,
+      "interaction": {
+        "initial_bbox_spans": [
+          1345291.697819102
+        ],
+        "kind": "wheel zoom",
+        "smaller_bbox": true,
+        "zoom_bbox_spans": [
+          672645.848909551
+        ]
+      },
+      "render": [
+        {
+          "label": "initial",
+          "pixels": [
+            {
+              "height": 698,
+              "red_pixels": 556,
+              "width": 1100
+            }
+          ],
+          "resourceId": "1"
+        },
+        {
+          "label": "zoom",
+          "pixels": [
+            {
+              "height": 698,
+              "red_pixels": 556,
+              "width": 1100
+            }
+          ],
+          "resourceId": "1"
+        },
+        {
+          "label": "reload",
+          "pixels": [
+            {
+              "height": 698,
+              "red_pixels": 556,
+              "width": 1100
+            }
+          ],
+          "resourceId": "1"
+        }
+      ],
+      "evidence_files": {
+        "initial.png": "c157e3429c7ba6d080175e60c318c07a6df760ac101af1996d05c9a7cb585439",
+        "reload.png": "c157e3429c7ba6d080175e60c318c07a6df760ac101af1996d05c9a7cb585439",
+        "wms-8e77035ae65ea35a4e77bca9887374bab1778f853da80d8cdb4d313b97d1640e.png": "8e77035ae65ea35a4e77bca9887374bab1778f853da80d8cdb4d313b97d1640e",
+        "zoom.png": "b859359ab2dd44e8c9d2bfcfc2fc997514dd237857d7a28e2fef90c449f4bf53"
+      },
+      "result_sha256": "7a37f72d613b05d1cecb9b53499dface6ef1f05173001ea96e6996b6b453e9bb"
+    }
+  },
+  "backend_restarts": 1,
+  "backend_cleanup": {
+    "geonode": true,
+    "geoserver": true,
+    "stored_credentials_invalidated": true
+  },
+  "diagnostic_secret_hits": 0,
+  "diagnostic_security_failures": 0,
+  "database_stopped": true,
+  "network": {
+    "status": "completed",
+    "network_probes": {
+      "all_passed": true,
+      "exec_child_probes": 79,
+      "parent_probes": 79,
+      "schema_version": 1
+    },
+    "datagram_packets_received": 0,
+    "task_process_group_stopped": true,
+    "broker_sockets_closed": true
+  },
+  "containment": {
+    "backend": "Existing unchanged loopback seccomp supervisor",
+    "database": "Existing #61 PostgreSQL-only SCRAM loopback exception retained because native backend setsid is denied.",
+    "browser": "Browser runs separately with Chromium sandbox intact and exact task-origin application request allowlist; not ptrace/host network proof."
+  },
+  "source_files": {
+    "browser.cjs": "ec4ff93055795d13fb436cfc171b239b6d19f237ce0540a3e49c2975b94f3cac",
+    "smoke.py": "74c7dae5c503cdc9a596938b5e3465ca28d3d67a6626953c7b83907cac592f5a",
+    "smoke_backend.py": "4de36701ea0f2edd0b14c339fd66dbf97321c7b33385040afe2296f5a413b3de",
+    "smoke_tests.py": "25ab9d0b0acbd9fdb9a1938159ba59e510a55bb3cc72ffc2b317d747f9aeafe6"
+  },
+  "checks": {
+    "harness_cases": 9,
+    "harness_failures": 0,
+    "harness_skips": 0,
+    "command": "python3 -m unittest discover -s build-support/frontend -p smoke_tests.py -v"
+  },
+  "historical_failures": {
+    "browser-smoke-01": "Wrong synthetic GeoServer layer.xml path; native fixture setup failure retained.",
+    "browser-smoke-02": "Cross-origin WMS canvas and print metadata CORS/generic proxy denial; preserved.",
+    "browser-smoke-03": "Same-origin WMS render/zoom/reload passed but print metadata still cross-origin; preserved.",
+    "browser-smoke-04": "Both browser phases passed; overall failed because12 generated CPython bytecode files changed immutable tooling tree.",
+    "browser-smoke-05": "Both browser phases passed; overall failed because supervisor nested exec omitted -B, generated one CPython bytecode file. No source digests changed in04/05."
+  },
+  "process_audit": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/browser-process-audit-final.json"
+}

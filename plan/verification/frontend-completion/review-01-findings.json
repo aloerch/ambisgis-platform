@@ -1,0 +1,14 @@
+{
+  "empty_manifest_accepted": true,
+  "symlinked_ancestor_accepted": true,
+  "existing_output_rerun": {
+    "exit_code": 1,
+    "success_preserved": true,
+    "failure_added": true,
+    "failure": {
+      "message": "Fresh output directory required",
+      "state": "failed",
+      "type": "ValueError"
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "cleanup": {
+    "database_stopped": true,
+    "diagnostic_secret_hits": 0,
+    "diagnostic_security_failures": 0,
+    "geonode_stopped": true,
+    "geoserver_stopped": true,
+    "native_cleanup_counts": {
+      "AccessToken": 2,
+      "Grant": 0,
+      "IDToken": 0,
+      "RefreshToken": 1,
+      "Session": 1,
+      "client_secrets_rotated": 2,
+      "user_passwords_invalidated": 6
+    },
+    "private_config_and_key_scrubbed": true,
+    "stored_credentials_invalidated": true
+  },
+  "containment": {
+    "backend_network_probe_exec_child": 79,
+    "backend_network_probe_parent": 79,
+    "backend_network_receipt_passed": true,
+    "browser": "Chromium sandbox enabled; exact task-origin browser request allowlist, separately executed from backend supervisor. No host-wide browser egress claim.",
+    "database": "Existing PostgreSQL-only loopback/SCRAM supervisor exception retained; no widening of backend security settings."
+  },
+  "decision": "No remaining blocking finding within this bounded review scope.",
+  "evidence": {
+    "backend_result_sha256": "8545218d5faeddd5a90453e0c06de1a4b4aa8c4f2de1553915ced28e3a963cd8",
+    "exact_executed_tooling_unchanged": true,
+    "exact_staged_frontend_unchanged": true,
+    "network_probe_receipt_sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+    "network_receipt_sha256": "748c20d8f13e41776b003a4bd4940024a8f4112e1ba0b54db110051b3849d794",
+    "result_sha256": "b1dcc7f40305fc54ccee50542ee0744d591d1af1142347918fe0a0e703deaded",
+    "run": "browser-smoke-06",
+    "same_war_and_frontend_after_restart": true,
+    "served_frontend_manifest_sha256": "1bb923a7a96254f370ab07d517b6ebfd84f899b5ae1704f0e24df2b043b33c57",
+    "tooling_manifest_sha256": "a3304e95d4e17dcc177dbf54210334ff57d7039e995127ac38c46ddde185ddd8"
+  },
+  "independence": "Reviewer did not author the browser smoke implementation. Reviewer authored native_tests.py/native-karma.cjs; this is not an independent review of those native-test files.",
+  "phases": {
+    "initial": {
+      "artifact_hashes_match_staged_compilation": true,
+      "browser_version": "153.0.8010.12",
+      "expected_anonymous_401_responses": 2,
+      "interaction": {
+        "initial_bbox_spans": [
+          1345291.697819102
+        ],
+        "kind": "wheel zoom",
+        "smaller_bbox": true,
+        "zoom_bbox_spans": [
+          672645.848909551
+        ]
+      },
+      "loaded_artifact_count": 43,
+      "native_proxy_paths": [
+        "/gs/pdf/info.json",
+        "/gs/wms"
+      ],
+      "png_hashes_verified": true,
+      "receipt_sha256": "4d2d6bb298fbc1c00e81bbbed8b0bf1a2f697d04ae089a419b41bbf6f3408dfc",
+      "render_steps": [
+        {
+          "label": "initial",
+          "red_pixels": 556
+        },
+        {
+          "label": "zoom",
+          "red_pixels": 556
+        },
+        {
+          "label": "reload",
+          "red_pixels": 556
+        }
+      ],
+      "response_count": 109
+    },
+    "restart": {
+      "artifact_hashes_match_staged_compilation": true,
+      "browser_version": "153.0.8010.12",
+      "expected_anonymous_401_responses": 2,
+      "interaction": {
+        "initial_bbox_spans": [
+          1345291.697819102
+        ],
+        "kind": "wheel zoom",
+        "smaller_bbox": true,
+        "zoom_bbox_spans": [
+          672645.848909551
+        ]
+      },
+      "loaded_artifact_count": 43,
+      "native_proxy_paths": [
+        "/gs/pdf/info.json",
+        "/gs/wms"
+      ],
+      "png_hashes_verified": true,
+      "receipt_sha256": "7a37f72d613b05d1cecb9b53499dface6ef1f05173001ea96e6996b6b453e9bb",
+      "render_steps": [
+        {
+          "label": "initial",
+          "red_pixels": 556
+        },
+        {
+          "label": "zoom",
+          "red_pixels": 556
+        },
+        {
+          "label": "reload",
+          "red_pixels": 556
+        }
+      ],
+      "response_count": 109
+    }
+  },
+  "resolved_findings": [
+    "Final success follows browser close, all pending response checks and repeated error/status validation, preventing late artifact mismatch or HTTP errors from escaping the verdict.",
+    "Zoom requires a smaller actual WMS BBOX, not merely a different response URL.",
+    "Supervisor environment propagates PYTHONDONTWRITEBYTECODE through its self-reexec; strict complete executed-tooling comparison remains enabled."
+  ],
+  "reviewed_at_utc": "2026-09-21T06:36:32.164338+00:00",
+  "reviewed_files": [
+    {
+      "executed_snapshot_matches": true,
+      "path": "build-support/frontend/smoke.py",
+      "sha256": "74c7dae5c503cdc9a596938b5e3465ca28d3d67a6626953c7b83907cac592f5a"
+    },
+    {
+      "executed_snapshot_matches": true,
+      "path": "build-support/frontend/smoke_backend.py",
+      "sha256": "4de36701ea0f2edd0b14c339fd66dbf97321c7b33385040afe2296f5a413b3de"
+    },
+    {
+      "executed_snapshot_matches": true,
+      "path": "build-support/frontend/browser.cjs",
+      "sha256": "ec4ff93055795d13fb436cfc171b239b6d19f237ce0540a3e49c2975b94f3cac"
+    },
+    {
+      "executed_snapshot_matches": true,
+      "path": "build-support/frontend/smoke_tests.py",
+      "sha256": "25ab9d0b0acbd9fdb9a1938159ba59e510a55bb3cc72ffc2b317d747f9aeafe6"
+    }
+  ],
+  "reviewer": "/root/frontend_source_audit",
+  "schema_version": 1,
+  "scope": "Frozen four-file browser smoke implementation and successful browser-smoke-06 receipts; bounded FND-02 public-map engineering witness.",
+  "scope_exclusions": [
+    "Human security approval",
+    "Browser authentication/SSO or comprehensive authorization acceptance",
+    "Publishing and managed branch editing",
+    "Portal design, responsive UX or accessibility acceptance",
+    "Complete MapStore native suite",
+    "Independent source rebuild of retained Node/Chromium/Playwright or all npm dependencies",
+    "Host-wide browser network isolation",
+    "Whole-product FND-02 acceptance, release approval, license/trademark clearance"
+  ]
+}

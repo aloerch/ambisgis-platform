@@ -1,0 +1,53 @@
+{
+  "scope": "FND-02 integrated frontend candidate only; source/build/rights acceptance remains open",
+  "client_commit": "7ca4822125b67999c97cb4aa1faa84b8a28eee9b",
+  "mapstore_gitlink": "0f3518737f29f4049b131247ce981e94519d9ab0",
+  "project_commit": "a842cf070e07ce996bb81189cd6cb92c4d2d809f",
+  "patcher_commit": "34c9e799affd0f37875b6f9968d2b5a96ce5688a",
+  "nomnom_commit": "559dfcd9436b3beeeccdc0a4f28f0e3f988379ca",
+  "node": "24.18.1",
+  "npm": "11.16.0",
+  "retained_root": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/retained-01",
+  "references": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/retained-01/manifest.json",
+      "sha256": "b873deb708b522c06790fb8eee1b185ff4eadbdbbae76ffbeb95e522b35c3547",
+      "bytes": 445615
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/retained-01/package-lock.json",
+      "sha256": "92ba9e68eeb9f8efebf8bebefe7708faeda97ae87ca710f34f43c9b6e35621cf",
+      "bytes": 1166171
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/retained-01/acquisition-lock.json",
+      "sha256": "b77292f944a0edcef539154988d41966ba9074c7d7a71f026c10236ba0a06271",
+      "bytes": 1109064
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/retained-01/registry-inventory.json",
+      "sha256": "cf07f9fa597af099379e5950fde5a337cbec3a3fc88f449be8d53f72caefc5d3",
+      "bytes": 1759537
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/retained-01/git-inputs.json",
+      "sha256": "379c36b9eec1d21255cbaad6486db8d953952b98118c11151ab0226ceee1010a",
+      "bytes": 424
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/inputs/bootstrap-inputs.json",
+      "sha256": "66c62d186c70dec0ef39c704426469f0f3e2e84c3ada6914d8a7a43881c64a60",
+      "bytes": 1055
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/input-audit-03.json",
+      "sha256": "294496b6e90bcfacb841cc96b6aebfc52eebe74d69a9af05bbb7e7eac7391123",
+      "bytes": 1847274
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/node-host-runtime.json",
+      "sha256": "d4a002ba80234de39da5b3067177b2468ee0e1aec1a5aea623ecdf81ba5d27ed",
+      "bytes": 1856
+    }
+  ]
+}

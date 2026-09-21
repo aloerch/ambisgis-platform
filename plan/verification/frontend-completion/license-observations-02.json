@@ -1,0 +1,293 @@
+{
+  "audit_file_sha256": "294496b6e90bcfacb841cc96b6aebfc52eebe74d69a9af05bbb7e7eac7391123",
+  "counts": {
+    "absent_package_license_declarations": 18,
+    "additional_readme_or_source_terms": 3,
+    "alternate_declaration_only": 2,
+    "no_terms_located_in_bounded_scan": 1,
+    "notice_filename_matches": 12
+  },
+  "limitations": [
+    "Does not establish complete corresponding source, copyright scope, distribution obligations or legal clearance.",
+    "A missing package.json declaration is not by itself absence of licensed source; a retained declaration is not clearance.",
+    "No external source acquisition was performed."
+  ],
+  "packages": [
+    {
+      "archive": "vendor/registry/59ad2f11de8e680fee427d3d558d72a6db55f566e265f0d5949d5cea110720eb.tgz",
+      "archive_sha256": "fca34f40f3baa968f8973f3f292d04930c1f9ab799c9fb1a5388083725d8c987",
+      "name": "chroma-js",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "6133dfa52decde48ab95779ec784da76ce40b154100969044f67b8e03819c550"
+        },
+        {
+          "path": "package/LICENSE-colors",
+          "sha256": "1440b90a615e5f0071597bbf438c8ca7873fe5b3a6d3d3e0fa31d46e62e778e9"
+        },
+        {
+          "path": "package/license.coffee",
+          "sha256": "45a9204625f07b535986c03bf86308d78131ba34d4981a1d3c327a899fe70f52"
+        },
+        {
+          "path": "package/docs/license.coffee",
+          "sha256": "63d0d8928cfbe128584b7bb56f289007e60f394947a65f5fe4bd4f193ae9388d"
+        }
+      ],
+      "version": "1.3.7"
+    },
+    {
+      "archive": "vendor/registry/7a40c5d041eb0784c347c8d94917bd6c93c87247b758ca845ff035377a93e134.tgz",
+      "archive_sha256": "cac74e38cc79b753e72cd2b9435ae39e907a6d447aa8c881c424d3c863c3b38d",
+      "name": "emitter-component",
+      "observation": "Alternate metadata declares MIT but gives version 1.1.1 while package is 1.1.2; no complete notice text located.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/bower.json",
+          "sha256": "a22582d213e313dca3db0e61604d9bfca889fe42b765732355adaca845c3d210"
+        },
+        {
+          "path": "package/component.json",
+          "sha256": "34d8c079a5427455ffa065405346d71d37602ab80f69a82e273cfcbccf0aee8f"
+        }
+      ],
+      "version": "1.1.2"
+    },
+    {
+      "archive": "vendor/registry/45ea6f348742ad0f71ced7087a9f8f891d5d4834c62f0bef8171ed2de5f9db87.tgz",
+      "archive_sha256": "f70add050d98249a37ee968e002c0ff8c5f41b6806668dd1da68288f4e43ea5e",
+      "name": "process",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "59a400d04c5078579acc27ddd6452c1bdf763f9506e01364700935fbb1a7c91b"
+        }
+      ],
+      "version": "0.5.2"
+    },
+    {
+      "archive": "vendor/registry/d6333a13ffe333b362c62dfe6a42c4d088c04346370d083d2ccc8babe04bcd9c.tgz",
+      "archive_sha256": "fb910474997f134ff1526946cdaf75c1560bd5d871593dac2ee3596038b58a97",
+      "name": "humanize",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "e9297c3b2ccc5022bf8e11f2c3510dbf1ae1dd8cc015f5c2d538dfb2c157615a"
+        }
+      ],
+      "version": "0.0.9"
+    },
+    {
+      "archive": "vendor/registry/5f875ab63ddbd5091b6203cc9dca18feba2449198d1c9072c0b1dcb45c2ebde1.tgz",
+      "archive_sha256": "bfd7cba49c4553724649b7804de634b0c7f31aa0aec3f323f673bd45af741956",
+      "name": "jsonlint-lines",
+      "observation": "README contains MIT-labelled full permission/conditions/disclaimer text.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/README.md",
+          "sha256": "69aeb0a9c61182f4e90861bd3b392c3b390ceec38393cefc0f63fd0ea9990b4f"
+        }
+      ],
+      "version": "1.7.1"
+    },
+    {
+      "archive": "vendor/registry/bd167cf611bee650823925e9c359e9bb0d4f4adfe79c1bb0686c985a33d666ea.tgz",
+      "archive_sha256": "d2a846d0f9f13da5ddb600b7c830edb0e3fe3a39180410a630b32c4b14f28177",
+      "name": "jsonlint-mod",
+      "observation": "README contains MIT-labelled full permission/conditions/disclaimer text.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/README.md",
+          "sha256": "962cceb5cfa4ebdd1e025a64ee2f3731fa126dd8985edafe4b08ea99724e2208"
+        }
+      ],
+      "version": "1.7.5"
+    },
+    {
+      "archive": "vendor/registry/82704746b517b9d0a0e4ed204dd4c79e447251e87e62ddf90ad86df1f22e9d88.tgz",
+      "archive_sha256": "c9ed2f0238fe967a180d515ddc9c9d1ba333236d4c952106fd20cad61b7c25f5",
+      "name": "jsonp",
+      "observation": "README/alternate metadata declare MIT; no complete notice text located.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/Readme.md",
+          "sha256": "7a897f63a81c235fab3d6a099c0a4c038c05674e7799d371690e33706300a3a0"
+        },
+        {
+          "path": "package/bower.json",
+          "sha256": "55037642156b9f13e75335a7e7d52d00ad0c629c2a3b4ad56fffe51559836f8f"
+        }
+      ],
+      "version": "0.2.1"
+    },
+    {
+      "archive": "vendor/registry/9ac308342a9bb89ef2fa249a49dd2d83b4922f735cad511c09af490c6828024e.tgz",
+      "archive_sha256": "cc1f6cec253c2155da5e955e5529f59021c8faa0451fcd4fb44f9f0b2814571d",
+      "name": "keycharm",
+      "observation": "README says user may choose Apache 2.0 or MIT; both full text files retained.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE-APACHE-2.0",
+          "sha256": "7a1da246f5e03ea6f987021848a3ff9d9e9a86a54adf96a216f2ee57a9a762d6"
+        },
+        {
+          "path": "package/LICENSE-MIT",
+          "sha256": "7909cb1efaa8bd800a6d33d73cb9538bfe56a7da61c1fd8b4afb9ddd557ec044"
+        },
+        {
+          "path": "package/README.md",
+          "sha256": "f2c8d95d64c43f87e8bce76d92e698b73cd848373e7fa8b6eee857680d7e71d9"
+        }
+      ],
+      "version": "0.2.0"
+    },
+    {
+      "archive": "vendor/registry/9b3656f47bb31d259048fa17834dcca1b7e90b474f87bdd2e35c504ad3466cce.tgz",
+      "archive_sha256": "abcc8d31b80715e780984a0315d79bd4536bc841d89b050567ca37c938e8b2b1",
+      "name": "leaflet-extra-markers",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "a137787cb95cf48ddbc79cc4d4e3102967609afb7c90cdf03b62998383b367ef"
+        }
+      ],
+      "version": "1.0.6"
+    },
+    {
+      "archive": "vendor/registry/d23e61e929d0913bcb80dbbbdca63b52dc6e07be3a14cb037232e7bfda0f0297.tgz",
+      "archive_sha256": "0e3f4bca13b376e0c76f88a3cca66b1580932894f0962ce2df89478e04044db4",
+      "name": "leaflet",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "6f1de7efe25e559e2ac324aabed7eea0df20da3828b54d75877a76e0c8715492"
+        }
+      ],
+      "version": "0.7.7"
+    },
+    {
+      "archive": "vendor/registry/a731c2f16422ef25c58585f6e153cd1256d9183fe47552d3190758f3aa39ece5.tgz",
+      "archive_sha256": "75fb106a1679153753968bfe3c1ceb390c86fb7d385a2f5a9350c255c43f055e",
+      "name": "lrucache",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "e5b5b8f3dbb50d4dbb347f4212858a570c52b086d6bb88355b756b0b89cb6eaf"
+        }
+      ],
+      "version": "1.0.3"
+    },
+    {
+      "archive": "vendor/registry/c3f199fc5e8083415a5dd2856c48f3f8e9c12e256d35c316641deda9fd5fd9ac.tgz",
+      "archive_sha256": "9603e80c5bbb8d64a9028462b9824f974ef463f62260c6f58e4853cbeef64be2",
+      "name": "nomnom",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "29dbc07c8e7e2e557c16096894fa6f7e469fa04d6f8f4f191a1efbd2ee9b1600"
+        }
+      ],
+      "version": "1.8.1"
+    },
+    {
+      "archive": "vendor/registry/2c485de1f3d472fc9df01a3d8a848438019b01ea86e673e16e1ebbb0664a356c.tgz",
+      "archive_sha256": "8fc286c879eb4ac49ab405054956e3afbdfe696e48f360f2c4d6adb2cf053faf",
+      "name": "png-js",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "bdb26a2ec815931ed6a38f3416362566204ee85ecdef96702b636402da4c75c3"
+        }
+      ],
+      "version": "1.1.0"
+    },
+    {
+      "archive": "vendor/registry/dfd7fc5915e71549702cc489151b01c420b1c2f721eb53616f6ad0fd9c7f8464.tgz",
+      "archive_sha256": "929011db54eb33989b48ae73411e1cda9f2aff3f9442e9abe168adbdf8c0bd5a",
+      "name": "react-dnd-test-backend",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "65a1f00f35ea469048896fbfec3c5faed7d3fe7c7e0be2a0478470b59d9e1439"
+        }
+      ],
+      "version": "2.6.0"
+    },
+    {
+      "archive": "vendor/registry/32244218c46b139a8d88345329106e19bb5bcb35b80b1d505ddff46b4b6e1859.tgz",
+      "archive_sha256": "c01eb814d59238f8cacd1444ae251fb7225e3b3c9bbd26548ce4a09f55e0bf7b",
+      "name": "spawn-command",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "0b0744f07404b91ad6f1690ded1f2f5da2b1a37b856ac02420353bd1dcbaad94"
+        }
+      ],
+      "version": "0.0.2"
+    },
+    {
+      "archive": "vendor/registry/b08482e9709991bc0a5a0ade115d9d31670985bad7753c1eda9f96acc07eb8ee.tgz",
+      "archive_sha256": "5f8e006008dd2b1b4b947e64e04c7fccf4ef10331a70f398d493b9feb4de4a0a",
+      "name": "taffydb",
+      "observation": "Source header contains BSD-labelled terms; copyright line has no named holder/year. Preserve scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/taffy.js",
+          "sha256": "79fc972c5a5e1d9739d27d9028e4da45b56bcfa1960e13df1574ad0101659806"
+        }
+      ],
+      "version": "2.6.2"
+    },
+    {
+      "archive": "vendor/registry/1d044fc8f58e8ee9f67f6166f39d9c7cf460ad78d9489bb39d6ddbe0c5cece3f.tgz",
+      "archive_sha256": "6280009744e6ea56d489de7a10fc47c6c5665dafe44f0174a911c5f2d0e49991",
+      "name": "mime",
+      "observation": "Named license/notice text is retained; actual terms and selected use still require scope review.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [
+        {
+          "path": "package/LICENSE",
+          "sha256": "f9bd83d927784353ab0299e9b621b0e253be79a0d15331dcb21cc765e432b3cd"
+        }
+      ],
+      "version": "1.2.11"
+    },
+    {
+      "archive": "vendor/registry/50fb39b19293526d506ea75a562e733fc21e0fd8402e267caab9cd937567b6b9.tgz",
+      "archive_sha256": "6baf141163e2390d8b4a3a1cafe83731f6ff5faa062c93e07dd71f6ddf03ccba",
+      "name": "web-ifc",
+      "observation": "No license declaration or license text located in bounded archive text scan (UTF-8 regular files <=2 MB); package includes WASM/runtime artifacts. Exact source/rights remains unresolved.",
+      "package_json_license_declaration": null,
+      "retained_text_evidence": [],
+      "version": "0.0.50"
+    }
+  ],
+  "scope": "Bounded factual inspection of the 18 retained registry packages without package.json license declarations; no source/build or legal acceptance."
+}
