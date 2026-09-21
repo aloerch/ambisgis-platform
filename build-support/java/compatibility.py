@@ -203,9 +203,70 @@ def validate_execution(report, output, target, tests):
         if sum(r['tests'] - r['skipped'] for r in selected) <= 0:
             raise ValueError('selected target reported no executed tests')
         report['target_executed_tests'] = sum(r['tests'] - r['skipped'] for r in selected)
+        for key in ('configured_auth_diagnostics', 'configured_auth_stateless'):
+            fixture = report.get(key, {})
+            expected = fixture.get('native_test_count', 0)
+            if not expected:
+                continue
+            injected_suites = []
+            for source in fixture['injected_sources']:
+                module, java_class = source['path'].split('/src/test/java/')
+                if not java_class.endswith('.java'):
+                    raise ValueError('configured native fixture is not a Java test source')
+                name = java_class[:-5].replace('/', '.')
+                matches = [row for row in native['suites'] if row['name'] == name
+                           and row['path'].startswith(module + '/target/')]
+                if len(matches) != 1 or matches[0]['skipped']:
+                    raise ValueError('configured native regression suite missing, repeated or skipped')
+                injected_suites.extend(matches)
+            count = sum(row['tests'] for row in injected_suites)
+            if count != expected:
+                raise ValueError('configured native regression case count does not match its retained manifest')
+            fixture['native_executed_tests'] = count
 
 
-def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None, runtime_http=False, oauth_redaction=False, oauth_principal=False):
+def prepare_webapp_oauth(source, principal=False):
+    """Apply only the reviewed main-source rows; packaging never injects tests."""
+    import oauth_fixture
+    source = Path(source)
+    for name, digest in oauth_fixture.SOURCES.items():
+        if sha(source / name) != digest:
+            raise ValueError('aggregate OAuth repair requires exact inspected owned sources')
+    diagnostic = oauth_fixture.repair_rows('oauth-redaction.json')
+    principal_rows = oauth_fixture.repair_rows('oauth-principal.json') if principal else []
+    inspected = set(oauth_fixture.SOURCES)
+    if (len(diagnostic) != len(inspected)
+            or {row['path'] for row in diagnostic} != inspected):
+        raise ValueError('aggregate diagnostic repair must contain exactly the inspected main sources')
+    principal_source = oauth_fixture.MODULE + '/src/main/java/org/geoserver/security/oauth2/services/GeoNodeTokenServices.java'
+    principal_test = oauth_fixture.MODULE + '/src/test/java/org/geoserver/security/oauth2/OAuth2RestTemplateTest.java'
+    if principal and (len(principal_rows) != 2
+                      or {row['path'] for row in principal_rows} != {principal_source, principal_test}):
+        raise ValueError('aggregate principal repair has unexpected source/test scope')
+    selected_principal = [row for row in principal_rows if row['path'] in inspected]
+    test_inventory = {p.relative_to(source).as_posix(): sha(p)
+                      for p in sorted(source.glob('geoserver/src/community/security/**/src/test/**/*'))
+                      if p.is_file()}
+    repairs = []
+    for manifest, rows in [('oauth-redaction.json', diagnostic),
+                           ('oauth-principal.json', selected_principal)]:
+        if rows:
+            repairs.append({'manifest': manifest, 'manifest_sha256': sha(Path(oauth_fixture.__file__).with_name(manifest)),
+                            'application_order': len(repairs) + 1,
+                            'sources': oauth_fixture.apply_repairs(source, rows)})
+    after = {p.relative_to(source).as_posix(): sha(p)
+             for p in sorted(source.glob('geoserver/src/community/security/**/src/test/**/*'))
+             if p.is_file()}
+    if after != test_inventory:
+        raise ValueError('aggregate OAuth packaging must not change test sources')
+    return {'purpose': 'guarded-main-source-only-aggregate-oauth-repair',
+            'repairs': repairs, 'source_outputs': {name: sha(source / name) for name in sorted(inspected)},
+            'test_sources_unchanged': True, 'test_source_files': len(test_inventory),
+            'injected_sources': [], 'authentication_decision_changed': principal,
+            'human_security_review_required': True, 'acceptance_build': False}
+
+
+def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None, runtime_http=False, oauth_redaction=False, oauth_principal=False, configured_auth_diagnostics=False, configured_auth_diagnostic_tests=False, configured_auth_stateless=False, configured_auth_stateless_tests=False):
     if target not in TARGETS or stage not in ('test', 'package') or tests not in ('all', 'target', 'schema-resolver', 'compile-only'):
         raise ValueError('unsupported bounded target or lifecycle')
     if repair not in ('none', 'xmlcodegen-emf') or (tests == 'schema-resolver' and target != 'xml'):
@@ -216,8 +277,21 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
         raise ValueError('GDAL fixture requires both paths and importer target')
     if oauth_principal and not oauth_redaction:
         raise ValueError('OAuth principal repair requires the diagnostic repair')
-    if oauth_redaction and (target != 'oauth' or not runtime_http):
-        raise ValueError('OAuth diagnostic repair requires its controlled HTTP probe')
+    aggregate_oauth = target == 'webapp' and stage == 'package' and tests == 'compile-only' and not runtime_http
+    if oauth_redaction and not ((target == 'oauth' and runtime_http) or aggregate_oauth):
+        raise ValueError('OAuth repair requires its controlled HTTP probe or network-denied aggregate packaging')
+    if configured_auth_diagnostics or configured_auth_diagnostic_tests:
+        if not (oauth_redaction and oauth_principal):
+            raise ValueError('configured diagnostic checks require the existing OAuth diagnostic/principal repairs')
+        native_oauth = target == 'oauth' and runtime_http and tests in ('all', 'target')
+        if not (native_oauth or (aggregate_oauth and configured_auth_diagnostics and not configured_auth_diagnostic_tests)):
+            raise ValueError('configured diagnostics require tested OAuth HTTP mode or source-only aggregate packaging')
+    if configured_auth_stateless or configured_auth_stateless_tests:
+        if not (configured_auth_diagnostics and oauth_redaction and oauth_principal):
+            raise ValueError('stateless bearer checks require configured diagnostics and the existing OAuth repairs')
+        native_oauth = target == 'oauth' and runtime_http and tests in ('all', 'target')
+        if not (native_oauth or (aggregate_oauth and configured_auth_stateless and not configured_auth_stateless_tests)):
+            raise ValueError('stateless bearer checks require tested OAuth HTTP mode or source-only aggregate packaging')
     if runtime_http and (target not in ('xml', 'mapfish', 'oauth') or tests == 'compile-only' or timeout < 30):
         raise ValueError('controlled HTTP runtime requires a tested XML/MapFish/OAuth target and timeout >=30')
     output.mkdir(parents=True, exist_ok=False)
@@ -264,6 +338,8 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
         if target == 'webapp':
             import combined_logging_patch
             report['aggregate_lifecycle_repair'] = combined_logging_patch.prepare(work / 'source')
+            if oauth_redaction:
+                report['aggregate_oauth_repair'] = prepare_webapp_oauth(work / 'source', principal=oauth_principal)
         if runtime_http:
             if target in ('xml', 'mapfish'):
                 import http_fixtures
@@ -272,6 +348,14 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
                 import oauth_fixture
                 report['oauth_fixture'] = oauth_fixture.prepare(work / 'source', redact=oauth_redaction, principal=oauth_principal)
             report['runtime_network'] = 'controlled-loopback'
+        if configured_auth_diagnostics or configured_auth_diagnostic_tests:
+            import configured_auth_repairs
+            report['configured_auth_diagnostics'] = configured_auth_repairs.prepare(
+                work / 'source', repair=configured_auth_diagnostics, tests=configured_auth_diagnostic_tests)
+        if configured_auth_stateless or configured_auth_stateless_tests:
+            import configured_auth_stateless as stateless_repairs
+            report['configured_auth_stateless'] = stateless_repairs.prepare(
+                work / 'source', repair=configured_auth_stateless, tests=configured_auth_stateless_tests)
         if postgres_prefix is not None:
             import geofence_fixture
             database, report['postgres_fixture'] = geofence_fixture.start(
@@ -409,10 +493,14 @@ def main():
     parser.add_argument('--timeout', type=int, default=1200)
     parser.add_argument('--oauth-redaction', action='store_true', help='apply the guarded OAuth diagnostic-only repair')
     parser.add_argument('--oauth-principal', action='store_true', help='apply guarded nonblank principal validation; requires diagnostic repair and security review')
+    parser.add_argument('--configured-auth-diagnostics', action='store_true', help='apply guarded cache/filter diagnostic repairs after the existing OAuth repairs')
+    parser.add_argument('--configured-auth-diagnostic-tests', action='store_true', help='inject native configured diagnostic regressions in controlled OAuth HTTP mode only')
+    parser.add_argument('--configured-auth-stateless', action='store_true', help='apply guarded opt-in stateless bearer source support after configured diagnostic repairs')
+    parser.add_argument('--configured-auth-stateless-tests', action='store_true', help='inject native stateless bearer regressions in controlled OAuth HTTP mode only')
     parser.add_argument('--runtime-http', action='store_true', help='compile with sockets denied, then run real tests under verified loopback control')
     args = parser.parse_args()
     result = probe(args.audit_custody.resolve(), args.custody.resolve(), args.toolchain_custody.resolve(),
-                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive, args.runtime_http, args.oauth_redaction, args.oauth_principal)
+                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive, args.runtime_http, args.oauth_redaction, args.oauth_principal, args.configured_auth_diagnostics, args.configured_auth_diagnostic_tests, args.configured_auth_stateless, args.configured_auth_stateless_tests)
     print(json.dumps(result, indent=2))
     return result['result_exit_code']
 

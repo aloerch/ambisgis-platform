@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "purpose": "Explicit opt-in stateless bearer authentication for configured native service chains",
+  "required_preceding_repairs": [
+    "oauth-redaction.json",
+    "oauth-principal.json",
+    "configured-auth-repairs.json"
+  ],
+  "sources": [
+    {
+      "path": "geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.java",
+      "purpose": "Explicit opt-in service bearer mode; inherited browser default remains false",
+      "before_sha256": "30a7250e60a78b042629718334b06315ca942e950910c440fce43e1643bfd05e",
+      "after_sha256": "10087ce67cb39bbce3d0fce0651c2188a053d07601703f4addf7adaf83971dc3",
+      "replacements": [
+        {
+          "before": "    boolean allowUnSecureLogging = false;\n",
+          "after": "    boolean allowUnSecureLogging = false;\n\n    /**\n     * Authenticate each service request using its own bearer token, ignoring browser sessions.\n     * Disabled by default to retain the existing interactive OAuth session contract.\n     */\n    private boolean statelessBearerAuthentication = false;\n\n    public boolean isStatelessBearerAuthentication() {\n        return statelessBearerAuthentication;\n    }\n\n    public void setStatelessBearerAuthentication(boolean statelessBearerAuthentication) {\n        this.statelessBearerAuthentication = statelessBearerAuthentication;\n    }\n",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "geoserver/src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.java",
+      "purpose": "Opt-in request-scoped bearer verification and configured-user policy without browser session reuse or creation",
+      "before_sha256": "662c887cdf078e91eeb479c10d81519c1b80e191d7e3cc2f8dbbf968645531b6",
+      "after_sha256": "24574ed63cfb229e5b5ff58d7a07883c2b520b09be7cc21abc356b12121e44ed",
+      "replacements": [
+        {
+          "before": "import org.springframework.security.core.context.SecurityContextHolder;",
+          "after": "import org.springframework.security.core.Transient;\nimport org.springframework.security.core.context.SecurityContext;\nimport org.springframework.security.core.context.SecurityContextHolder;\nimport org.springframework.security.core.context.SecurityContextImpl;",
+          "count": 1
+        },
+        {
+          "before": "import org.springframework.security.oauth2.provider.authentication.BearerTokenExtractor;",
+          "after": "import org.springframework.security.oauth2.provider.authentication.BearerTokenExtractor;\nimport org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;",
+          "count": 1
+        },
+        {
+          "before": "            throws IOException, ServletException {\n        // try authenticating from cache",
+          "after": "            throws IOException, ServletException {\n        if (isStatelessBearerAuthentication()) {\n            doStatelessBearerFilter((HttpServletRequest) request, (HttpServletResponse) response, chain);\n            return;\n        }\n        // try authenticating from cache",
+          "count": 1
+        },
+        {
+          "before": "    /**\n     * Tries to cache the authentication if the cache key is not null",
+          "after": "    // Spring may save a context while committing the response, before our finally block.\n    // Its supported transient marker prevents both early saves and anonymous removal of\n    // an existing browser session's context while this request is still executing.\n    @Transient\n    private static final class StatelessBearerSecurityContext extends SecurityContextImpl {\n        private static final long serialVersionUID = 1L;\n    }\n\n    protected boolean isStatelessBearerAuthentication() {\n        return filterConfig instanceof GeoServerOAuth2FilterConfig config && config.isStatelessBearerAuthentication();\n    }\n\n    private void doStatelessBearerFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)\n            throws IOException, ServletException {\n        // The surrounding persistence filter may have loaded an existing browser session.\n        // Keep its context intact, but never use it to authenticate this service request or\n        // replace it with the bearer identity when the persistence filter saves it again.\n        SecurityContext browserContext = SecurityContextHolder.getContext();\n        SecurityContextHolder.setContext(new StatelessBearerSecurityContext());\n        try {\n            String cacheKey = authenticateFromCache(this, request);\n            if (SecurityContextHolder.getContext().getAuthentication() == null) {\n                doAuthenticate(request, response);\n                Authentication authentication = SecurityContextHolder.getContext().getAuthentication();\n                if (authentication != null && cacheKey != null) {\n                    tryCacheAuthentication(request, cacheKey, authentication);\n                }\n            }\n            chain.doFilter(request, response);\n        } finally {\n            SecurityContextHolder.setContext(browserContext);\n        }\n    }\n\n    /**\n     * Tries to cache the authentication if the cache key is not null",
+          "count": 1
+        },
+        {
+          "before": "        final String access_token = getAccessTokenFromRequest(request);\n        return access_token != null ? access_token : getCustomSessionCookieValue(request);",
+          "after": "        final String access_token = getAccessTokenFromRequest(request);\n        if (isStatelessBearerAuthentication()) {\n            return access_token == null || access_token.trim().isEmpty() ? null : access_token;\n        }\n        return access_token != null ? access_token : getCustomSessionCookieValue(request);",
+          "count": 1
+        },
+        {
+          "before": "            if (GeoServerUser.ROOT_USERNAME.equals(principal)) {",
+          "after": "            if (GeoServerUser.ROOT_USERNAME.equals(principal) && !isStatelessBearerAuthentication()) {",
+          "count": 1
+        },
+        {
+          "before": "        // Make sure the REST Resource Template has been correctly configured\n        configureRestTemplate();",
+          "after": "        if (isStatelessBearerAuthentication()) {\n            return getStatelessBearerPrincipal(req);\n        }\n\n        // Make sure the REST Resource Template has been correctly configured\n        configureRestTemplate();",
+          "count": 1
+        },
+        {
+          "before": "        String username = (authentication != null ? SecurityUtils.getUsername(authentication.getPrincipal()) : null);",
+          "after": "        return resolvePrincipal(authentication, req);\n    }\n\n    private String getStatelessBearerPrincipal(HttpServletRequest req) throws IOException {\n        String accessToken = getAccessTokenFromRequest(req);\n        if (accessToken == null || accessToken.trim().isEmpty()) return null;\n        req.setAttribute(OAUTH2_AUTHENTICATION_TYPE_KEY, OAuth2AuthenticationType.BEARER);\n\n        OAuth2Authentication authentication;\n        try {\n            // Do not dereference the session-scoped OAuth2RestOperations proxy here.\n            GeoServerOAuthRemoteTokenServices services = (GeoServerOAuthRemoteTokenServices) tokenServices;\n            services.setClientId(filterConfig.getCliendId());\n            services.setClientSecret(filterConfig.getClientSecret());\n            services.setCheckTokenEndpointUrl(filterConfig.getCheckTokenEndpointUrl());\n            services.setIntrospectionEndpointUrl(filterConfig.getIntrospectionEndpointUrl());\n            authentication = services.loadAuthentication(accessToken);\n            if (authentication == null || !authentication.isAuthenticated()) return null;\n        } catch (RuntimeException failure) {\n            // Token-service exception messages and bodies can contain credentials.\n            LOGGER.fine(\"Stateless OAuth bearer verification failed\");\n            return null;\n        }\n\n        req.setAttribute(OAuth2AuthenticationDetails.ACCESS_TOKEN_VALUE, accessToken);\n        req.setAttribute(OAuth2AuthenticationDetails.ACCESS_TOKEN_TYPE, OAuth2AccessToken.BEARER_TYPE);\n        authentication.setDetails(getAuthenticationDetailsSource().buildDetails(req));\n        req.setAttribute(OAUTH2_AUTHENTICATION_KEY, authentication);\n        Object claims = authentication.getOAuth2Request().getExtensions().get(OAUTH2_ACCESS_TOKEN_CHECK_KEY);\n        if (claims instanceof Map) req.setAttribute(OAUTH2_ACCESS_TOKEN_CHECK_KEY, claims);\n        return resolvePrincipal(authentication, req);\n    }\n\n    private String resolvePrincipal(Authentication authentication, HttpServletRequest req) throws IOException {\n        String username = (authentication != null ? SecurityUtils.getUsername(authentication.getPrincipal()) : null);",
+          "count": 1
+        },
+        {
+          "before": "                if (u != null && u.isEnabled() == false) {",
+          "after": "                if (u == null && isStatelessBearerAuthentication()) {\n                    // Opt-in service authentication requires a provisioned principal when the\n                    // configured role authority is the local user/group service.\n                    username = null;\n                } else if (u != null && u.isEnabled() == false) {",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "file": "AmbisgisStatelessOAuthFilterTest.java",
+      "path": "geoserver/src/community/security/oauth2/oauth2-core/src/test/java/org/geoserver/security/oauth2/AmbisgisStatelessOAuthFilterTest.java",
+      "sha256": "b9e84dade423a4fc59ea823e893320dc0d86186cb38093ec3f23bcb1af8ca9d2",
+      "test_count": 14
+    }
+  ]
+}
