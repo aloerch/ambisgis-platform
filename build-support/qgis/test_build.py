@@ -3,6 +3,8 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
+import common
 
 import build
 import python_gdal
@@ -42,6 +44,8 @@ class BuildGuards(unittest.TestCase):
            'GEOS_DIR':'/private/native/cmake','PROJ_DIR':'/private/spatial/cmake',
            'PostgreSQL_LIBRARY_RELEASE':'/private/native/lib/libpq.so','Qt5_DIR':'/private/support/qt',
            'FCGI_INCLUDE_DIR':'/private/support/include/fastcgi','FCGI_LIBRARY':'/private/support/lib/libfcgi.so',
+           'LIBXML2_LIBRARY':'/private/xml/lib/libxml2.so','LIBXML2_INCLUDE_DIR':'/private/xml/include/libxml2',
+           'pkgcfg_lib_PC_SPATIALITE_xml2':'/private/xml/lib/libxml2.so',
            'ZSTD_INCLUDE_DIR':'/private/support/include','ZSTD_LIBRARY':'/private/support/lib/libzstd.so',
            'SQLite3_LIBRARY':'/private/spatial/lib/libsqlite3.so',
            'QWT_INCLUDE_DIR':'/private/support/include/qwt','QWT_LIBRARY':'/private/support/lib/libqwt.so',
@@ -51,7 +55,7 @@ class BuildGuards(unittest.TestCase):
         return rows
 
     def check(self,rows):
-        build.check_config(rows,Path('/private/native'),Path('/private/spatial'),Path('/private/support'))
+        build.check_config(rows,Path('/private/native'),Path('/private/spatial'),Path('/private/support'),Path('/private/xml'))
 
     def test_required_features(self):
         self.check(self.cache())
@@ -67,7 +71,7 @@ class BuildGuards(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'profile'):self.check(rows)
 
     def test_host_spatial_fallback_rejected(self):
-        for key in ('GDAL_DIR','GEOS_DIR','PROJ_DIR','PostgreSQL_LIBRARY_RELEASE','Qt5_DIR','FCGI_LIBRARY','QWT_INCLUDE_DIR','ZSTD_LIBRARY','SQLite3_LIBRARY','pkgcfg_lib_PC_SPATIALITE_sqlite3','pkgcfg_lib_PC_SPATIALITE_z'):
+        for key in ('GDAL_DIR','GEOS_DIR','PROJ_DIR','PostgreSQL_LIBRARY_RELEASE','Qt5_DIR','FCGI_LIBRARY','QWT_INCLUDE_DIR','ZSTD_LIBRARY','SQLite3_LIBRARY','LIBXML2_LIBRARY','pkgcfg_lib_PC_SPATIALITE_sqlite3','pkgcfg_lib_PC_SPATIALITE_z'):
             with self.subTest(key=key):
                 rows=self.cache();rows[key]=('PATH','/usr/lib/unrecorded')
                 with self.assertRaisesRegex(ValueError,'origin'):self.check(rows)
@@ -81,6 +85,28 @@ class BuildGuards(unittest.TestCase):
                       [dict(original[0],sha256='changed')]+metadata):
             with self.subTest(after=after),self.assertRaises(ValueError):
                 python_gdal.check_source(original,after)
+
+    def test_xml_producer_and_inventory_fail_closed(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);prefix=root/'prefix';prefix.mkdir();library=prefix/'libxml2.so'
+            library.write_bytes(b'owned XML ABI')
+            manifest=root/'output-manifest.json'
+            manifest.write_text(json.dumps({'prefix':str(prefix),'files':inventory(prefix)}))
+            success=root/'success.json'
+            success.write_text(json.dumps({'state':'xml-profile-built','manifest_sha256':common.sha(manifest)}))
+            profile={'references':{key:{'path':str(path),'sha256':common.sha(path)}
+                     for key,path in [('xml_manifest',manifest),('xml_success',success)]}}
+            (root/'profile-inputs.json').write_text(json.dumps(profile))
+            with mock.patch.object(common,'HERE',root):
+                common.verify_xml(prefix)
+                with self.assertRaisesRegex(ValueError,'Wrong selected XML'):
+                    common.verify_xml(root/'unselected')
+                library.write_bytes(b'host replacement')
+                with self.assertRaisesRegex(ValueError,'Retained prefix changed'):
+                    common.verify_xml(prefix)
+                library.write_bytes(b'owned XML ABI');(root/'failure.json').write_text('{}')
+                with self.assertRaisesRegex(ValueError,'did not succeed'):
+                    common.verify_xml(prefix)
 
     def test_prior_output_untouched(self):
         with tempfile.TemporaryDirectory() as d:

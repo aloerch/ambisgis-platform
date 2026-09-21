@@ -30,6 +30,18 @@
     "spatial_configure_command": {
       "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/spatial-04/configure-command.json",
       "sha256": "b6ac185dfcba9471296bea2db2c8ceabb7145f353212807a96263a8730da6995"
+    },
+    "xml_manifest": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/output-manifest.json",
+      "sha256": "ab6239d09ba6005d90dacdd3b024ee57dcbefe834f772f276066bfd29e61c436"
+    },
+    "xml_success": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/success.json",
+      "sha256": "4d9877559d3483a60862b4f62556f15bcacdb9cb5d17252d61871d9f20a91d54"
+    },
+    "xml_recipe": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/xml-profile-01/recipe.json",
+      "sha256": "2635be41cfcd1298a4ac6e77fccc9603c5bdaf68ff8ef10f6fe7542dc5f4cf26"
     }
   }
 }

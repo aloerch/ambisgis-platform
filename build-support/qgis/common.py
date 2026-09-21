@@ -52,13 +52,15 @@ def verify_inventory(root, rows):
     require(sorted(inventory(root),key=lambda row:row['path']) == sorted(normalized,key=lambda row:row['path']), 'Retained prefix changed: '+str(root))
 
 
-def environment(output, native, support=None, spatial=None):
+def environment(output, native, support=None, spatial=None, xml=None):
     output, native = Path(output), Path(native)
     paths = [native]
     if support:
         paths.insert(0, Path(support)/'usr')
     if spatial:
         paths.insert(0, Path(spatial))
+    if xml:
+        paths.insert(0, Path(xml))
     env = {'PATH':':'.join(str(p/'bin') for p in paths)+':/usr/bin:/bin',
            'HOME':str(output/'home'), 'TMPDIR':str(output/'tmp'),
            'XDG_CACHE_HOME':str(output/'cache'), 'XDG_CONFIG_HOME':str(output/'config'),
@@ -165,3 +167,17 @@ def verify_selected(native, spatial, support, support_inventory=None):
     require(Path(spatial).resolve()==Path(values['prefix']).resolve(),'Wrong selected spatial prefix')
     verify_inventory(spatial,values['files'])
     return {'profile_sha256':sha(HERE/'profile-inputs.json'),'historical_authority':verify_historical(native)}
+
+
+def verify_xml(xml):
+    refs=json.loads((HERE/'profile-inputs.json').read_text())['references']
+    for key in ('xml_manifest','xml_success'):
+        row=refs[key]
+        require(sha(Path(row['path']))==row['sha256'],'Selected XML producer reference changed')
+    manifest=Path(refs['xml_manifest']['path']);success=Path(refs['xml_success']['path'])
+    result=json.loads(success.read_text());values=json.loads(manifest.read_text())
+    require(not (success.parent/'failure.json').exists() and result['state']=='xml-profile-built'
+            and result['manifest_sha256']==sha(manifest),'Selected XML producer did not succeed')
+    require(Path(xml).resolve()==Path(values['prefix']).resolve(),'Wrong selected XML prefix')
+    verify_inventory(xml,values['files'])
+    return {'manifest':str(manifest),'sha256':sha(manifest),'prefix':str(xml)}

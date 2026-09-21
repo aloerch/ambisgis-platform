@@ -11,7 +11,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
-from common import COMMIT, HERE, PLATFORM, environment, inventory, require, run, save, sha, tools_record, verify_inventory, verify_historical, verify_selected
+from common import COMMIT, HERE, PLATFORM, environment, inventory, require, run, save, sha, tools_record, verify_inventory, verify_historical, verify_selected, verify_xml
 sys.path.insert(0,str(PLATFORM/'build-support/postgis'))
 from acquisition import extract_input
 
@@ -42,7 +42,7 @@ def cache_entries(path):
     return result
 
 
-def check_config(cache, native, spatial, support):
+def check_config(cache, native, spatial, support, xml):
     for key,value in REQUIRED.items():
         require(key in cache and cache[key][1].upper() in ({'ON','TRUE','1'} if value=='ON' else {'OFF','FALSE','0'}), 'Required profile mismatch: '+key)
     require(cache['CMAKE_INSTALL_PREFIX'][1] not in ('/usr','/usr/local'), 'Private stage required')
@@ -52,16 +52,18 @@ def check_config(cache, native, spatial, support):
     for key,root in [('GDAL_DIR',spatial),('GEOS_DIR',native),('PROJ_DIR',spatial),
                      ('PostgreSQL_LIBRARY_RELEASE',native),('Qt5_DIR',support),
                      ('FCGI_INCLUDE_DIR',support),('FCGI_LIBRARY',support),('QWT_INCLUDE_DIR',support),
-                     ('QWT_LIBRARY',support),('ZSTD_LIBRARY',support),('ZSTD_INCLUDE_DIR',support),('SQLite3_LIBRARY',spatial),
+                     ('QWT_LIBRARY',support),('LIBXML2_LIBRARY',xml),('LIBXML2_INCLUDE_DIR',xml),
+                     ('pkgcfg_lib_PC_SPATIALITE_xml2',xml),('ZSTD_LIBRARY',support),('ZSTD_INCLUDE_DIR',support),('SQLite3_LIBRARY',spatial),
                      ('pkgcfg_lib_PC_SPATIALITE_spatialite',support),
                      ('pkgcfg_lib_PC_SPATIALITE_sqlite3',spatial),('pkgcfg_lib_PC_SPATIALITE_z',native)]:
         require(key in cache and Path(cache[key][1]).resolve().is_relative_to(root.resolve()),'Unexpected dependency origin: '+key)
 
 
-def build(output,native,spatial,support,support_inventory,jobs):
+def build(output,native,spatial,support,support_inventory,jobs,xml=None):
     require(1<=jobs<=6,'Parallelism must be 1..6')
     require(not output.exists(),'Fresh output directory required')
     authority=verify_selected(native,spatial,support,support_inventory)
+    xml_authority=verify_xml(xml)
     historical=authority["historical_authority"]
     spec=json.loads((HERE/'source-inputs.json').read_text())
     require(spec['repository']=='aloerch/ambisgis-qgis' and spec['repository_id']==1376927721 and spec['commit']==COMMIT,'Wrong owned source authority')
@@ -76,14 +78,14 @@ def build(output,native,spatial,support,support_inventory,jobs):
     spatial_doc=json.loads(spatial_manifest.read_text());verify_inventory(spatial,spatial_doc['files'])
     output.mkdir(parents=True)
     try:
-        env=environment(output,native,support,spatial)
+        env=environment(output,native,support,spatial,xml)
         recipe=output/'recipe';recipe.mkdir()
         for p in (HERE/'build.py',HERE/'common.py',HERE/'source-inputs.json',HERE/'profile-inputs.json',HERE/'support-inputs.json',PLATFORM/'build-support/postgis/offline_exec.py',PLATFORM/'build-support/postgis/acquisition.py'):
             shutil.copyfile(p,recipe/p.name)
         save(output/'receipt.json',{'state':'started','commit':COMMIT,'specification_sha256':sha(HERE/'source-inputs.json'),
              'support_inventory_sha256':sha(support_inventory),'spatial_manifest_sha256':sha(spatial_manifest),
              'support_prefix':str(support),'spatial_prefix':str(spatial),'native_prefix':str(native),
-             'selected_profile':authority,'historical_authority':historical,'base_inventory':inventory(native),'recipe':inventory(recipe),'tools':tools_record(env),'jobs':jobs})
+             'selected_profile':authority,'xml_profile':xml_authority,'historical_authority':historical,'base_inventory':inventory(native),'recipe':inventory(recipe),'tools':tools_record(env),'jobs':jobs})
         item={'artifact':archive.name,'archive_root':spec['archive']['root'],'bytes':spec['archive']['bytes'],'sha256':spec['archive']['sha256']}
         source=extract_input(archive.parent,output/'sources',item)
         before=inventory(source);save(output/'source-manifest.json',before)
@@ -93,20 +95,22 @@ def build(output,native,spatial,support,support_inventory,jobs):
             f'-DCMAKE_CXX_FLAGS=-isystem {usr}/include','-DCMAKE_C_FLAGS_RELEASE=-O1 -DNDEBUG',
             '-DCMAKE_CXX_FLAGS_RELEASE=-O1 -DNDEBUG','-DCMAKE_C_COMPILER=/usr/bin/gcc-15','-DCMAKE_CXX_COMPILER=/usr/bin/g++-15',
             '-DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF','-DCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY=OFF',
-            '-DPython_EXECUTABLE=/usr/bin/python3.13',f'-DCMAKE_PREFIX_PATH={spatial};{native};{usr}',
+            '-DPython_EXECUTABLE=/usr/bin/python3.13',f'-DCMAKE_PREFIX_PATH={xml};{spatial};{native};{usr}',
             f'-DSIP_BUILD_EXECUTABLE={usr}/bin/sip-build-3.13',
             f'-DFCGI_INCLUDE_DIR={usr}/include/fastcgi',f'-DFCGI_LIBRARY={usr}/lib64/libfcgi.so',
             f'-DZSTD_INCLUDE_DIR={usr}/include',f'-DZSTD_LIBRARY={usr}/lib64/libzstd.so',
             f'-DQWT_INCLUDE_DIR={usr}/include/qt5/qwt6',f'-DQWT_LIBRARY={usr}/lib64/libqwt-qt5.so',
-            f'-Dpkgcfg_lib_PC_SPATIALITE_z={native}/lib/libz.so',f'-DQt5_DIR={usr}/lib64/cmake/Qt5',f'-DGDAL_DIR={spatial}/lib/cmake/gdal',
+            f'-Dpkgcfg_lib_PC_SPATIALITE_z={native}/lib/libz.so',
+            f'-DLIBXML2_LIBRARY={xml}/lib/libxml2.so',f'-DLIBXML2_INCLUDE_DIR={xml}/include/libxml2',
+            f'-Dpkgcfg_lib_PC_SPATIALITE_xml2={xml}/lib/libxml2.so',f'-DQt5_DIR={usr}/lib64/cmake/Qt5',f'-DGDAL_DIR={spatial}/lib/cmake/gdal',
             f'-DGEOS_DIR={native}/lib/cmake/GEOS',f'-DPROJ_DIR={spatial}/lib/cmake/proj',
             f'-DPostgreSQL_LIBRARY_RELEASE={native}/lib/libpq.so',f'-DPostgreSQL_INCLUDE_DIR={native}/include',
             f'-DPostgreSQL_TYPE_INCLUDE_DIR={native}/include/postgresql/server',f'-DSQLite3_INCLUDE_DIR={spatial}/include',
             f'-DSQLite3_LIBRARY={spatial}/lib/libsqlite3.so',f'-DQT_PLUGINS_DIR={usr}/lib64/qt5/plugins',
-            f'-DCMAKE_INSTALL_PREFIX={prefix}',f'-DCMAKE_INSTALL_RPATH={prefix}/lib;{spatial}/lib;{native}/lib;{usr}/lib64',
-            f'-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath-link,{spatial}/lib','-DCMAKE_EXPORT_COMPILE_COMMANDS=ON']
+            f'-DCMAKE_INSTALL_PREFIX={prefix}',f'-DCMAKE_INSTALL_RPATH={prefix}/lib;{xml}/lib;{spatial}/lib;{native}/lib;{usr}/lib64',
+            f'-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath-link,{xml}/lib,-rpath-link,{spatial}/lib','-DCMAKE_EXPORT_COMPILE_COMMANDS=ON']
         run(['cmake','-S',source,'-B',builddir,'-G','Ninja',*flags],output,env,output,'configure')
-        cache=cache_entries(builddir/'CMakeCache.txt');check_config(cache,native,spatial,support)
+        cache=cache_entries(builddir/'CMakeCache.txt');check_config(cache,native,spatial,support,xml)
         save(output/'configuration.json',{'flags':flags,'cache':cache,'source':str(source),'build':str(builddir),'prefix':str(prefix)})
         target_text=subprocess.check_output(['ninja','-C',str(builddir),'-t','targets','all'],text=True,env=env)
         (output/'targets.txt').write_text(target_text)
@@ -130,6 +134,7 @@ def build(output,native,spatial,support,support_inventory,jobs):
         run(['ldd',prefix/'bin/qgis_mapserver'],output,env,output,'server-linkage')
         for n in ('desktop-linkage','server-linkage'): require('not found' not in (output/(n+'.log')).read_text(),'Missing staged library')
         verify_inventory(source,before)
+        verify_xml(xml)
         verify_inventory(support,support_rows)
         verify_inventory(spatial,spatial_doc['files'])
         verify_inventory(native,json.loads((output/'receipt.json').read_text())['base_inventory'])
@@ -143,6 +148,6 @@ def build(output,native,spatial,support,support_inventory,jobs):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
-    for n in ('output','native','spatial','support','support-inventory'):p.add_argument('--'+n,type=Path,required=True)
+    for n in ('output','native','spatial','support','support-inventory','xml'):p.add_argument('--'+n,type=Path,required=True)
     p.add_argument('--jobs',type=int,default=4);a=p.parse_args()
-    build(a.output.resolve(),a.native.resolve(),a.spatial.resolve(),a.support.resolve(),a.support_inventory.resolve(),a.jobs)
+    build(a.output.resolve(),a.native.resolve(),a.spatial.resolve(),a.support.resolve(),a.support_inventory.resolve(),a.jobs,a.xml.resolve())
