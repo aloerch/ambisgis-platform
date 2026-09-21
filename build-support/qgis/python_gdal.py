@@ -33,7 +33,7 @@ def build(custody,native,spatial,support,output):
     output.mkdir(parents=True)
     try:
         recipe=output/'recipe';recipe.mkdir()
-        for source_path in (Path(__file__),HERE/'common.py',HERE/'profile-inputs.json',HERE/'source-inputs.json',HERE/'support-inputs.json',PLATFORM/'build-support/postgis/acquisition.py',PLATFORM/'build-support/postgis/offline_exec.py',spatial.parent/'configure-command.json'):
+        for source_path in (Path(__file__),HERE/'binding_probe.py',HERE/'common.py',HERE/'profile-inputs.json',HERE/'source-inputs.json',HERE/'support-inputs.json',PLATFORM/'build-support/postgis/acquisition.py',PLATFORM/'build-support/postgis/offline_exec.py',spatial.parent/'configure-command.json'):
             shutil.copyfile(source_path,recipe/source_path.name)
         env=environment(output,native,support,spatial)
         swig=support/'usr/bin/swig'
@@ -62,6 +62,7 @@ def build(custody,native,spatial,support,output):
         env['PYTHONPATH']=str(dest)+':'+env['PYTHONPATH']
         code='from osgeo import gdal,ogr,osr,gdal_array; import json,numpy; assert gdal.VersionInfo()=="3100300"; assert gdal.GetDriverByName("GTiff"); assert ogr.GetDriverByName("GPKG"); print(json.dumps({"gdal":gdal.__file__,"version":gdal.VersionInfo(),"numpy":numpy.__file__}))'
         run(['/usr/bin/python3.13','-c',code],output,env,output,'import-probe')
+        run(['/usr/bin/python3.13',HERE/'binding_probe.py','--spatial',spatial,'--native',native,'--bindings',dest],output,env,output,'origins-raster-probe')
         verify_selected(native,spatial,support)
         save(output/'generated-source-metadata.json',check_source(source_before,inventory(source)))
         save(output/'output-manifest.json',{'prefix':str(dest),'files':inventory(dest)})

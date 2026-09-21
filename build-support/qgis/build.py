@@ -85,7 +85,8 @@ def build(output,native,spatial,support,support_inventory,jobs):
         before=inventory(source);save(output/'source-manifest.json',before)
         prefix=output/'prefix';builddir=output/'build';usr=support/'usr'
         flags=[f'-D{k}={v}' for k,v in REQUIRED.items()]
-        flags += [f'-DSHA={COMMIT}','-DCMAKE_BUILD_TYPE=Release','-DCMAKE_C_FLAGS_RELEASE=-O1 -DNDEBUG',
+        flags += [f'-DSHA={COMMIT}','-DCMAKE_BUILD_TYPE=Release',f'-DCMAKE_C_FLAGS=-isystem {usr}/include',
+            f'-DCMAKE_CXX_FLAGS=-isystem {usr}/include','-DCMAKE_C_FLAGS_RELEASE=-O1 -DNDEBUG',
             '-DCMAKE_CXX_FLAGS_RELEASE=-O1 -DNDEBUG','-DCMAKE_C_COMPILER=/usr/bin/gcc-15','-DCMAKE_CXX_COMPILER=/usr/bin/g++-15',
             '-DCMAKE_FIND_USE_PACKAGE_REGISTRY=OFF','-DCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY=OFF',
             '-DPython_EXECUTABLE=/usr/bin/python3.13',f'-DCMAKE_PREFIX_PATH={spatial};{native};{usr}',
