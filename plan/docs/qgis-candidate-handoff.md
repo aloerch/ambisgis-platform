@@ -276,3 +276,26 @@ of scope. Human review gates merging and later license/security/release decision
 acceptance of the whole task is inferred. The final runtime implementation is
 `041f5c1`; the executed build snapshot and subsequent strict audit have separate
 hashes in the evidence index.
+
+## Published review checkpoint
+
+[PR #63](https://github.com/aloerch/ambisgis-platform/pull/63) is open against
+`ambisgis/main`, branch `fnd-02/qgis-candidate-build`. Tested runtime implementation:
+`041f5c1d9601ac3f4c2ea6f3dc4ab73b3d88fbcd`; initial evidence/publication head:
+`4e99852fc981d4b2e929c81cce292aedc933b526`. Later commits bind publication evidence
+only; the live PR and final issue comment identify the latest review head.
+
+[Project reconciliation](../verification/qgis-candidate/project.json) verifies
+75 prior items unchanged and one new PR item: **76 items**, saved `is:pr is:open`
+queue **#63 only**. Exactly two authorized mutations added the actual PR content
+identity and set its Evidence link to the PR and issue #3. The immediate API read
+was stale and failed; a later complete read-only reconciliation proves the result
+without replaying writes. All represented prior fields/archive decisions and
+Project/view configuration remain unchanged. No Task ID or parent Delivery was
+assigned to the PR; FND-02 stays In progress. No UI setup claim is made.
+
+Owner action is bounded review of this PR's build, runtime/native evidence,
+omissions and recorded rights blockers before any merge. Review does not block
+independent F02-05 engineering and does not accept all four FND-02 criteria or
+clear distribution rights. The original plan checkout's STATUS.md user edit and
+all prior frontend/source/build branches and artifacts remain preserved.

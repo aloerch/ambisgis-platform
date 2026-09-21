@@ -6,7 +6,7 @@ at `8e1717ddc9ea33d28f5460c858904723aec05949`, reviewed head
 `0db4c9190cee633b973a1f5ee9c87e1fa4061bf1`. **FND-02 remains In progress.**
 That owner merge accepts only the bounded frontend/checklist checkpoint.
 
-**F02-04 is demonstrated; owner checkpoint review remains pending.** The
+**F02-04 is demonstrated; [PR #63](https://github.com/aloerch/ambisgis-platform/pull/63) is open for owner review.** The
 [QGIS handoff](docs/qgis-candidate-handoff.md) and
 [compact evidence index](verification/qgis-candidate/evidence.json) bind the clean
 owned QGIS desktop/server/PyQGIS build, 9,235 staged entries, 66 passing C++ cases
