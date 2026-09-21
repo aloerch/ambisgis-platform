@@ -23,7 +23,7 @@ REQUIRED = {'WITH_DESKTOP':'ON','WITH_GUI':'ON','WITH_CORE':'ON','WITH_SERVER':'
     'BINDINGS_GLOBAL_INSTALL':'OFF','SIP_GLOBAL_INSTALL':'OFF','USE_CCACHE':'OFF',
     'WITH_3D':'OFF','WITH_GRASS7':'OFF','WITH_GRASS8':'OFF',
     'WITH_QTWEBKIT':'OFF','WITH_QTWEBENGINE':'OFF','WITH_PDAL':'OFF','WITH_DRACO':'OFF',
-    'WITH_EPT':'OFF','WITH_COPC':'OFF','WITH_ORACLE':'OFF','WITH_HANA':'OFF',
+    'WITH_EPT':'ON','WITH_COPC':'ON','WITH_INTERNAL_LAZPERF':'ON','WITH_ORACLE':'OFF','WITH_HANA':'OFF',
     'WITH_QUICK':'OFF','WITH_QTGAMEPAD':'OFF','WITH_CRASH_HANDLER':'OFF','USE_OPENCL':'OFF',
     'WITH_QTSERIALPORT':'ON','WITH_QSCIAPI':'OFF','WITH_PY_COMPILE':'OFF',
     'WITH_INTERNAL_SPATIALINDEX':'ON','WITH_INTERNAL_POLY2TRI':'ON',
@@ -52,7 +52,8 @@ def check_config(cache, native, spatial, support):
     for key,root in [('GDAL_DIR',spatial),('GEOS_DIR',native),('PROJ_DIR',spatial),
                      ('PostgreSQL_LIBRARY_RELEASE',native),('Qt5_DIR',support),
                      ('FCGI_INCLUDE_DIR',support),('FCGI_LIBRARY',support),('QWT_INCLUDE_DIR',support),
-                     ('QWT_LIBRARY',support),('pkgcfg_lib_PC_SPATIALITE_spatialite',support),
+                     ('QWT_LIBRARY',support),('ZSTD_LIBRARY',support),('ZSTD_INCLUDE_DIR',support),('SQLite3_LIBRARY',spatial),
+                     ('pkgcfg_lib_PC_SPATIALITE_spatialite',support),
                      ('pkgcfg_lib_PC_SPATIALITE_sqlite3',spatial),('pkgcfg_lib_PC_SPATIALITE_z',native)]:
         require(key in cache and Path(cache[key][1]).resolve().is_relative_to(root.resolve()),'Unexpected dependency origin: '+key)
 
@@ -77,7 +78,7 @@ def build(output,native,spatial,support,support_inventory,jobs):
     try:
         env=environment(output,native,support,spatial)
         recipe=output/'recipe';recipe.mkdir()
-        for p in (HERE/'build.py',HERE/'common.py',HERE/'source-inputs.json',HERE/'profile-inputs.json',HERE/'support-inputs.json',PLATFORM/'build-support/postgis/offline_exec.py'):
+        for p in (HERE/'build.py',HERE/'common.py',HERE/'source-inputs.json',HERE/'profile-inputs.json',HERE/'support-inputs.json',PLATFORM/'build-support/postgis/offline_exec.py',PLATFORM/'build-support/postgis/acquisition.py'):
             shutil.copyfile(p,recipe/p.name)
         save(output/'receipt.json',{'state':'started','commit':COMMIT,'specification_sha256':sha(HERE/'source-inputs.json'),
              'support_inventory_sha256':sha(support_inventory),'spatial_manifest_sha256':sha(spatial_manifest),
@@ -95,12 +96,13 @@ def build(output,native,spatial,support,support_inventory,jobs):
             '-DPython_EXECUTABLE=/usr/bin/python3.13',f'-DCMAKE_PREFIX_PATH={spatial};{native};{usr}',
             f'-DSIP_BUILD_EXECUTABLE={usr}/bin/sip-build-3.13',
             f'-DFCGI_INCLUDE_DIR={usr}/include/fastcgi',f'-DFCGI_LIBRARY={usr}/lib64/libfcgi.so',
+            f'-DZSTD_INCLUDE_DIR={usr}/include',f'-DZSTD_LIBRARY={usr}/lib64/libzstd.so',
             f'-DQWT_INCLUDE_DIR={usr}/include/qt5/qwt6',f'-DQWT_LIBRARY={usr}/lib64/libqwt-qt5.so',
             f'-Dpkgcfg_lib_PC_SPATIALITE_z={native}/lib/libz.so',f'-DQt5_DIR={usr}/lib64/cmake/Qt5',f'-DGDAL_DIR={spatial}/lib/cmake/gdal',
             f'-DGEOS_DIR={native}/lib/cmake/GEOS',f'-DPROJ_DIR={spatial}/lib/cmake/proj',
             f'-DPostgreSQL_LIBRARY_RELEASE={native}/lib/libpq.so',f'-DPostgreSQL_INCLUDE_DIR={native}/include',
-            f'-DPostgreSQL_TYPE_INCLUDE_DIR={native}/include/postgresql/server',f'-DSQLITE3_INCLUDE_DIR={spatial}/include',
-            f'-DSQLITE3_LIBRARY={spatial}/lib/libsqlite3.so',f'-DQT_PLUGINS_DIR={usr}/lib64/qt5/plugins',
+            f'-DPostgreSQL_TYPE_INCLUDE_DIR={native}/include/postgresql/server',f'-DSQLite3_INCLUDE_DIR={spatial}/include',
+            f'-DSQLite3_LIBRARY={spatial}/lib/libsqlite3.so',f'-DQT_PLUGINS_DIR={usr}/lib64/qt5/plugins',
             f'-DCMAKE_INSTALL_PREFIX={prefix}',f'-DCMAKE_INSTALL_RPATH={prefix}/lib;{spatial}/lib;{native}/lib;{usr}/lib64',
             f'-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath-link,{spatial}/lib','-DCMAKE_EXPORT_COMPILE_COMMANDS=ON']
         run(['cmake','-S',source,'-B',builddir,'-G','Ninja',*flags],output,env,output,'configure')

@@ -4,8 +4,8 @@
   "scope": "F02-04 retained Linux candidate input/output set; not release lock",
   "references": {
     "support_inventory": {
-      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-06-inventory.json",
-      "sha256": "06de03811bcd7da6df84ece3f995c84a7493397dceacbe1d75b19f26b0402eac"
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-inventory.json",
+      "sha256": "aa837efdf41201593ba6d2a48ec7f8320fd8a70c3f456075503fe1f08dd8713a"
     },
     "spatial_manifest": {
       "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/spatial-04/output-manifest.json",

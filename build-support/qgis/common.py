@@ -105,7 +105,7 @@ def run(command, cwd, env, output, name, offline=True):
 def tools_record(env):
     import shutil
     rows=[]
-    for name in ('python3','gcc-15','g++-15','cmake','ninja','ld','ar','pkg-config','bison','flex','perl'):
+    for name in ('python3','gcc-15','g++-15','cmake','ninja','ld','ld.bfd','ar','pkg-config','bison','flex','perl'):
         path=shutil.which(name,path=env['PATH'])
         require(path, 'Missing build tool '+name)
         p=Path(path).resolve()

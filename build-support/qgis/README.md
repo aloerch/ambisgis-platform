@@ -66,12 +66,15 @@ input/source integrity. Executed recipes are copied into the attempt.
 
 Desktop/core/GUI, server/services/plugins, analysis, Python/bindings, PostgreSQL,
 SpatiaLite, auth/OAuth2, GSL, printer and serial support stay enabled. The profile
-excludes 3D, PDAL/EPT/COPC/Draco, GRASS, Oracle/HANA, QtQuick application, gamepad,
+excludes 3D, PDAL/Draco, GRASS, Oracle/HANA, QtQuick application, gamepad,
 WebKit/WebEngine, OpenCL, crash-handler integration, QScintilla API generation and
 the server landing-page webapp. These features cannot be advertised as tested or
 available in this profile. Excluding the landing-page webapp also removes its
 inherited yarn network hook. Internal o2/spatialindex/poly2tri/MDAL/JSON use retained
-source; vcpkg and donor synchronization are disabled. No QGIS distribution binary
+source; vcpkg and donor synchronization are disabled. COPC/EPT stay enabled with
+embedded laz-perf and retained ZSTD because the source has unconditional
+core/GUI VPC dependencies when those options are disabled. These optional paths
+are compiled but unexercised; no point-cloud capability acceptance is claimed. No QGIS distribution binary
 or preinstalled host PyQGIS may supply acceptance artifacts.
 
 ## Verification and scope

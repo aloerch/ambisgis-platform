@@ -42,6 +42,8 @@ class BuildGuards(unittest.TestCase):
            'GEOS_DIR':'/private/native/cmake','PROJ_DIR':'/private/spatial/cmake',
            'PostgreSQL_LIBRARY_RELEASE':'/private/native/lib/libpq.so','Qt5_DIR':'/private/support/qt',
            'FCGI_INCLUDE_DIR':'/private/support/include/fastcgi','FCGI_LIBRARY':'/private/support/lib/libfcgi.so',
+           'ZSTD_INCLUDE_DIR':'/private/support/include','ZSTD_LIBRARY':'/private/support/lib/libzstd.so',
+           'SQLite3_LIBRARY':'/private/spatial/lib/libsqlite3.so',
            'QWT_INCLUDE_DIR':'/private/support/include/qwt','QWT_LIBRARY':'/private/support/lib/libqwt.so',
            'pkgcfg_lib_PC_SPATIALITE_spatialite':'/private/support/lib/libspatialite.so',
            'pkgcfg_lib_PC_SPATIALITE_sqlite3':'/private/spatial/lib/libsqlite3.so',
@@ -65,7 +67,7 @@ class BuildGuards(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'profile'):self.check(rows)
 
     def test_host_spatial_fallback_rejected(self):
-        for key in ('GDAL_DIR','GEOS_DIR','PROJ_DIR','PostgreSQL_LIBRARY_RELEASE','Qt5_DIR','FCGI_LIBRARY','QWT_INCLUDE_DIR','pkgcfg_lib_PC_SPATIALITE_sqlite3','pkgcfg_lib_PC_SPATIALITE_z'):
+        for key in ('GDAL_DIR','GEOS_DIR','PROJ_DIR','PostgreSQL_LIBRARY_RELEASE','Qt5_DIR','FCGI_LIBRARY','QWT_INCLUDE_DIR','ZSTD_LIBRARY','SQLite3_LIBRARY','pkgcfg_lib_PC_SPATIALITE_sqlite3','pkgcfg_lib_PC_SPATIALITE_z'):
             with self.subTest(key=key):
                 rows=self.cache();rows[key]=('PATH','/usr/lib/unrecorded')
                 with self.assertRaisesRegex(ValueError,'origin'):self.check(rows)
