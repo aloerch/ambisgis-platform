@@ -668,7 +668,11 @@ def exercise(invocation, config, private):
         connection = http.client.HTTPConnection('127.0.0.1', port, timeout=35)
         try:
             for n in range(32):
-                name = (None, 'reader', 'outsider', 'admin')[n % 4]
+                # Rotate each four-request round: a fixed modulo-four identity
+                # sequence can align with Jetty's worker rotation and never
+                # challenge a reused worker with a different authorization result.
+                # Actual passive thread/status evidence remains mandatory below.
+                name = (None, 'reader', 'outsider', 'admin')[(n + n // 4) % 4]
                 allowed = name in ('reader', 'admin')
                 matrix.request('sequential-' + str(n), wfs('private_points'), tokens.get(name), connection=connection,
                                expected=(200,) if allowed else (401, 403, 404), contains='PRIVATE_WITNESS' if allowed else None,
