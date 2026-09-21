@@ -151,6 +151,8 @@ def provider_origins(config):
         require(path.is_relative_to(prefix) and path.is_file(), 'QGIS resource outside stage: '+name)
         resources[name] = {'path': str(path), 'sha256': sha(path)}
     return {'native_registry_directory': str(actual), 'application_plugin_path': QgsApplication.pluginPath(),
+            'discovered_provider_keys': sorted(registry.providerList()),
+            'providers_exercised_by_fixture': ['ogr', 'gdal', 'postgres'],
             'optional_python_plugin_path': os.environ.get('QGIS_PLUGINPATH'),
             'core_linked_providers': ['ogr', 'gdal'], 'dynamic_provider': 'postgres', 'resources': resources}
 
