@@ -1,0 +1,240 @@
+{
+  "schema": 1,
+  "source_commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+  "cpp": [
+    {
+      "target": "test_core_coordinatetransform",
+      "source": "tests/src/core/testqgscoordinatetransform.cpp",
+      "methods": [
+        "copy",
+        "assignment",
+        "equality",
+        "isValid",
+        "isShortCircuited",
+        "transform2DPoint",
+        "transformErrorMultiplePoints",
+        "transformErrorOnePoint"
+      ]
+    },
+    {
+      "target": "test_core_project",
+      "source": "tests/src/core/testqgsproject.cpp",
+      "methods": [
+        "testDirtySet",
+        "testReadPath",
+        "testPathResolver",
+        "testProjectUnits",
+        "testSetGetCrs",
+        "testCrsValidAfterReadingProjectFile",
+        "testDefaultRelativePaths"
+      ]
+    },
+    {
+      "target": "test_core_ogrprovider",
+      "source": "tests/src/core/testqgsogrprovider.cpp",
+      "methods": [
+        "decodeUri",
+        "encodeUri",
+        "testThread",
+        "testCsvFeatureAddition",
+        "testExtent",
+        "testJSONFields"
+      ]
+    },
+    {
+      "target": "test_core_gdalprovider",
+      "source": "tests/src/core/testqgsgdalprovider.cpp",
+      "methods": [
+        "decodeUri",
+        "encodeUri",
+        "scaleDataType",
+        "warpedVrt",
+        "noData",
+        "noDataOutsideExtent",
+        "invalidNoDataInSourceIgnored",
+        "isRepresentableValue",
+        "mask",
+        "bandName",
+        "bandNameNoDescription",
+        "bandNameWithDescription",
+        "colorTable",
+        "scale0",
+        "transformCoordinates"
+      ]
+    },
+    {
+      "target": "test_provider_postgresprovider",
+      "source": "tests/src/providers/testqgspostgresprovider.cpp",
+      "methods": [
+        "decodeHstore",
+        "decodeHstoreNoQuote",
+        "decodeArray2StringList",
+        "decodeArray2StringListNoQuote",
+        "decodeArray2IntList",
+        "decode2DimensionArray",
+        "decode3DimensionArray",
+        "decodeJsonList",
+        "decodeJsonbList",
+        "decodeJsonMap",
+        "decodeJsonbMap",
+        "testDecodeDateTimes",
+        "testQuotedValueBigInt",
+        "testWhereClauseFids",
+        "testEwktInOut"
+      ]
+    },
+    {
+      "target": "test_server_serverquerystringparameter",
+      "source": "tests/src/server/testqgsserverquerystringparameter.cpp",
+      "methods": [
+        "testArguments",
+        "testCustomValidators",
+        "testDefaultValues",
+        "testParseInput"
+      ]
+    }
+  ],
+  "python": [
+    {
+      "name": "project",
+      "module": "test_qgsproject",
+      "class": "TestQgsProject",
+      "methods": [
+        "testCrs",
+        "test_zip_unzip",
+        "testRelativePaths"
+      ]
+    },
+    {
+      "name": "crs",
+      "module": "test_qgscoordinatetransform",
+      "class": "TestQgsCoordinateTransform",
+      "methods": [
+        "testTransformBoundingBox",
+        "testTransformBoundingBoxFullWorldToWebMercator"
+      ]
+    },
+    {
+      "name": "gdal",
+      "module": "test_provider_gdal",
+      "class": "PyQgsGdalProvider",
+      "methods": [
+        "testRasterBlock",
+        "test_fixed_size_provider",
+        "test_provider_clone"
+      ]
+    },
+    {
+      "name": "postgres",
+      "module": "test_provider_postgres",
+      "class": "TestPyQgsPostgresProvider",
+      "methods": [
+        "testDefaultValue",
+        "testDefaultValueClause",
+        "testQueryLayers",
+        "testExtent",
+        "testFeatureCount",
+        "testSubsetString"
+      ]
+    },
+    {
+      "name": "server-capabilities",
+      "module": "test_qgsserver_wms",
+      "class": "TestQgsServerWMS",
+      "methods": [
+        "test_getcapabilities"
+      ]
+    },
+    {
+      "name": "server-getmap",
+      "module": "test_qgsserver_wms_getmap",
+      "class": "TestQgsServerWMSGetMap",
+      "methods": [
+        "test_wms_getmap_basic"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "python/testing/__init__.py": "df5f65116ef5127af92f05199fa74426b41ec420f24779b69edd07a2254270cd",
+    "src/test/qgstest.h": "03dcaff3ca4bc65a75b58ef85effae009d7ff862e8d8def18d42397da268fa0b",
+    "tests/src/CMakeLists.txt": "6f10b47ed05c0f2a53ae27263cc098ae1d910682dfd36ae5ea0a6f3aa1cd02f7",
+    "tests/src/core/testqgscoordinatetransform.cpp": "0e7d0b23f754c015e5200cacdcaeffc254f0c4891af32cc81a3a1c656dc50105",
+    "tests/src/core/testqgsgdalprovider.cpp": "ee5f15be9e8e65b69dacf8c5505027df7dbb2e8fbfffb028b2a9fea955760ad7",
+    "tests/src/core/testqgsogrprovider.cpp": "de2f5b8eb6962dc3e5a96e7db7a8f3f8d695c133273cc41f5ef9d865c2923b6b",
+    "tests/src/core/testqgsproject.cpp": "5eceb29e0392be697c332344930fbb45c8a1dd4e228050f7cd98f211e7a6aca9",
+    "tests/src/providers/testqgspostgresprovider.cpp": "ad73ec0f330861f6f4109c943f3de31d0eb0b3714d4f432c25803a48acd5de3c",
+    "tests/src/python/featuresourcetestbase.py": "eb1f155f847715e7462061f2910840d5d5ce54a04a0788e61d2d8d4f8c26418d",
+    "tests/src/python/providertestbase.py": "3f55ed4e52bca41b6a00b9a13ff524fde8701b460e0bac61a84e947ee59432ea",
+    "tests/src/python/raster_provider_test_base.py": "d82a9eac85a48ac2a54c01a2cbbfafb3c084770e4e79760a21f353c0f850fa32",
+    "tests/src/python/test_provider_gdal.py": "19d001601b639a530ff234c4557db80252a4fa98d9c0147b398f90d42d3c5eec",
+    "tests/src/python/test_provider_postgres.py": "50a61b28a3b6e5525daa9cd14923f275bebbf3edcdd67d1300a68e39f90a145d",
+    "tests/src/python/test_qgscoordinatetransform.py": "14263ad442c9fcddacfbf500dedc5c2566e1a250968a7fea92d617518354273b",
+    "tests/src/python/test_qgsproject.py": "12c812fc1d200b207a2e25f710ba1702bd35cc86d83147e4164fdc719f632b4e",
+    "tests/src/python/test_qgsserver.py": "94b42cb6dc5a5d05d5ac266f752f5f43baf3e569a63af877f879bfdedfa92f19",
+    "tests/src/python/test_qgsserver_wms.py": "c7898c89acb4ae343524a50425874b1dea70d0f0b18debbedc496373b95c5162",
+    "tests/src/python/test_qgsserver_wms_getmap.py": "d7597121e9001460c29c5d17f44e14b963509ec91c6ec2393a4c9e50a33d8200",
+    "tests/src/python/utilities.py": "3b04c60459fce4ea36c990ed464f53bd45b8f88fafa27dc63cea4dc7b032e05c",
+    "tests/src/server/testqgsserverquerystringparameter.cpp": "428fdb92860eb8a61a17ce47ddba73ceb9a5872c2a5d4c220212cb5645814594",
+    "tests/testdata/provider/testdata_pg.sql": "26dbca27933031b168762879c8549d832d8bf2953cfdb6f286e65c5e4673c7e6"
+  },
+  "required_gdal_drivers": [
+    "GTiff",
+    "MEM",
+    "VRT",
+    "ESRI Shapefile",
+    "CSV",
+    "GeoJSON",
+    "GPKG"
+  ],
+  "required_providers": [
+    "gdal",
+    "ogr",
+    "postgres",
+    "spatialite",
+    "memory"
+  ],
+  "required_python_modules": [
+    "numpy",
+    "osgeo.gdal",
+    "osgeo.ogr",
+    "psycopg2",
+    "lxml.etree",
+    "owslib.wms"
+  ],
+  "database_fixture": {
+    "source": "tests/testdata/provider/testdata_pg.sql",
+    "start_marker": "--- Create qgis_test schema",
+    "end_marker": "-- Name: someBorderlineData;",
+    "scope": "Exact schema and someData/some_poly_data excerpt, unchanged. Full donor pg bootstrap is outside selection."
+  },
+  "fixture_tree": {
+    "path": "tests/testdata",
+    "file_count": 6450,
+    "bytes": 586856222,
+    "sha256": "6246eef6cf8a9360afb2267bd456849fd0ed671e2aa7eca060bf44923edbeeaf",
+    "symlinks": []
+  },
+  "selection_decisions": [
+    {
+      "stage": "source/fixture preflight, before any QGIS native execution",
+      "original_project_methods": [
+        "testDirtySet",
+        "testReadPath",
+        "testPathResolver",
+        "testProjectUnits",
+        "testSetGetCrs",
+        "testAttachmentsQgs",
+        "testAttachmentsQgz"
+      ],
+      "unavailable_proposed_methods": [
+        "testAttachmentsQgs",
+        "testAttachmentsQgz"
+      ],
+      "reason": "The attachment cases construct GPX layers through OGR. GPX is outside the frozen F02-04 driver profile; extending that profile solely for attachment tests is not required. Preserve this proposal as unavailable and unexecuted, not native skips or passes. Core CRS project save/read plus PyQGIS Shapefile/GeoTIFF save/read remain required.",
+      "replacement_methods": [
+        "testCrsValidAfterReadingProjectFile",
+        "testDefaultRelativePaths"
+      ]
+    }
+  ]
+}
