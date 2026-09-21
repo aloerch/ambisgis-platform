@@ -1,0 +1,190 @@
+# F02-04 runtime witness
+
+This is a bounded synthetic Linux desktop/server probe. It does not implement
+FND-05 publication, multi-platform packaging, full cartographic parity, hostile
+project isolation or release acceptance. A harness commit or its guard tests do
+not establish QGIS runtime acceptance; only a complete successful attempt receipt
+from newly compiled owned artifacts does.
+
+Run on the host (the IDE's `/tmp` is a different filesystem), using an explicit
+public JSON configuration and a **new** retained attempt directory:
+
+```sh
+/usr/bin/python3 build-support/qgis/runtime.py \
+  --config /absolute/path/to/runtime-inputs.json \
+  --output /home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/runtime-01
+```
+
+Required configuration keys are `python`, `qgis_prefix`, `spatial_prefix`,
+`database_prefix`, `database_evidence`, `support_prefix`, `xml_prefix`, `qt_plugins`,
+`font_file`, `gdal_library`, `library_paths` and `python_paths`. Paths are absolute;
+the last two values are ordered directory lists. `spatial_prefix` may be the
+separate QGIS GDAL extension prefix; `database_prefix` remains the verified
+PostgreSQL/PostGIS/native prefix. Put the QGIS-only GDAL directory before the
+original prefix in `library_paths`. `python_paths` must explicitly include staged
+PyQGIS and the selected retained PyQt/SIP support. The default executables are
+`qgis_prefix/bin/qgis` and `qgis_prefix/bin/qgis_mapserver`.
+
+Optional explicit path overrides are `desktop`, `server`, `provider_path`,
+`proj_data` and `gdal_data`. Both executable overrides must remain inside the
+staged QGIS prefix. `provider_path` is the expected native registry directory; it
+does not redirect Python plugin discovery. `QGIS_PLUGINPATH` names an empty
+task-owned directory because the selected source uses it for optional Python
+plugins. The fixture and desktop verify `QgsApplication.pluginPath()` and the
+provider registry separately, and actual mappings must include the staged
+PostgreSQL provider. OGR/GDAL providers are linked into the verified core library.
+The staged master and CRS resource databases are also identified and hashed. The compiled library/provider prefix and actual loaded
+mappings must match these paths; host QGIS and Qt cannot satisfy the witness.
+Support Qt5 mappings must be inside `support_prefix`. General host libraries are
+listed in actual mappings and remain the broader dependency-closure gate.
+
+The generator writes three GeoJSON point features: `(id,label,x,y)` values
+`(1,alpha,1,1)`, `(2,beta,3,1)`, `(3,gamma,2,3)`. GeoJSON is included in the measured
+original retained GDAL profile. The 16×16 one-band Byte GeoTIFF covers longitude
+0–4 and latitude 0–4, with northwest/northeast/southwest/southeast quadrants valued
+40/90/150/210. Generation uses the explicit retained GDAL C library through
+`ctypes`; it requires no unrelated Python GDAL package. Each file's hash is
+retained. The same point rows are inserted into a fresh fixture database.
+
+QGIS reads feature IDs, attributes, counts and coordinates through its real OGR
+and PostgreSQL providers, and checks raster dimensions, extent and samples through
+its GDAL provider. EPSG:4326 `(1°,1°)` must transform to EPSG:3857
+`(111319.49079327357,111325.1428663851)` meters within 1 micrometer. These fixed
+Web Mercator values are independent of the QGIS function being tested; fallback
+and ballpark transforms are disabled. The intersection of squares `[0,2]²` and
+`[1,3]²` must equal `[1,2]²` topologically and have area 1 within `1e-12`.
+`proj.db`, loaded GEOS/PROJ/GDAL/libpq and the retained font are hashed.
+
+A `.qgs` project uses the local and database points over a grayscale raster. Red
+circles show local features and smaller blue squares show equivalent PostgreSQL
+features. The project carries only a libpq service name; the SCRAM password is in
+a fresh mode-0600 pgpass file. The runtime role has SELECT only, no owner/admin
+rights, and a read-only default. A real attempted INSERT must fail even after
+disabling that default. No managed branch tables or existing services are used.
+
+Desktop acceptance launches the actual staged `qgis` binary with a fresh profile,
+`--noplugins`, `--noversioncheck` and `--code desktop_witness.py`. The profile's
+optional news feed is disabled through the selected source's documented setting.
+Qt offscreen is explicitly used; this establishes no physical-display acceptance.
+The embedded script observes the real desktop event loop and completed canvas
+renders, checks layer state, zooms, uses the actual Save Project action, clears the
+project, reopens it and checks the second canvas. `saveAsImage` without a supplied
+pixmap copies the current map canvas content in this exact source; it does not
+substitute a separate standalone render. Application-window captures supplement
+these assertions.
+
+Server acceptance launches the staged native `qgis_mapserver` directly on
+`127.0.0.1` under the unchanged loopback supervisor. Requests are sequential.
+WMS 1.1.1 uses SRS EPSG:4326 and longitude/latitude BBOX `0,0,4,4`, at 512×512.
+The first process receives GetCapabilities and combined/local/database GetMap;
+after verified shutdown a second process on the same port repeats capabilities
+and combined GetMap. These are six real HTTP requests, not CGI or manufactured
+responses. XML exception documents, absent layers and non-PNG maps fail.
+Raster values are checked at spatially fixed interior positions. Each point must
+have its expected marker colors near its independent coordinate. Tolerances allow
+8 grayscale levels and 20 color levels within a 24-pixel marker neighborhood;
+blank, absent and misplaced features fail. Desktop and server pixel identity is
+not required.
+
+Each attempt snapshots the executed scripts, verifies staged/native file hashes
+before and after, and retains supervisor probes and cleanup. QGIS subprocesses
+inherit the existing loopback-only seccomp supervisor. The existing PostgreSQL
+exception is explicit: the fresh owned server alone stays outside that supervisor
+because its backend `setsid` is rejected. It listens only on authenticated loopback
+TCP, with Unix listeners disabled. This mechanism does not isolate files or block
+other pre-existing loopback services and is not a hostile-code sandbox. No browser
+sandbox setting is changed. Fontconfig, Qt, Python, settings, caches, auth database,
+plugin and temporary paths are task-owned; external fetching cannot supply inputs.
+
+Capture errors, secret diagnostics, runtime assertions, unexpected origins,
+integrity changes, failed supervisor proof and cleanup errors fail `result.json`,
+even if desktop/server processes exit zero. All fixture roles are made NOLOGIN
+and their passwords nulled before PostgreSQL shutdown; private files are scrubbed.
+Failed attempt directories must be retained. A later success uses a new directory.
+
+Guard tests:
+
+```sh
+python3 -m unittest discover -s build-support/qgis -p 'test_runtime.py' -v
+```
+
+Fresh preflight evidence from this implementation is retained under
+`build-worktrees/qgis-candidate/runtime-data-preflight-01`,
+`runtime-data-preflight-02` and `runtime-database-preflight-01`. Two data generations
+had identical GeoJSON SHA-256
+`bf60f75d0d4d37cc1d5efd5b37794263b08c67e3077ed0d7e6c1314cefa38f7c`
+and GeoTIFF SHA-256
+`cd8b73ec7035be3c41deea9011e848d8c5099dc219356744beb6a13300cede4d`.
+Retained `gdalinfo`/`ogrinfo` read them, and real restricted PostgreSQL credential
+setup, write denial, password invalidation and shutdown passed. These preflights
+are data/database setup evidence only; they do not claim QGIS compiled or ran.
+The retained complete attempt receipts control desktop/server evidence state.
+
+`runtime-data-preflight-03` repeated the same deterministic assets after the
+GDAL close/flush return-value guard, under the unchanged loopback supervisor.
+Its retained script snapshots and verified network receipt establish egress
+containment for that data-generation preflight; QGIS runtime remains separate.
+
+The explicit `xml_prefix` selects the separately built libxml2 2.14.6 profile
+with its HTTP compatibility API required by retained SpatiaLite. Its `lib` directory
+is prepended to QGIS runtime library search even if a caller supplied a different
+order. Every actual runtime must map exactly one libxml2, resolving to that
+prefix's `lib/libxml2.so`; host and original native-library fallback both fail.
+The XML prefix participates in before/after integrity checks. PostgreSQL's
+unchanged helper environment continues using only its original verified prefix;
+this QGIS-only dependency selection does not overwrite or replace that database
+profile. HTTP API availability does not relax loopback egress enforcement.
+
+Final runtime origin checks require GDAL, PROJ and SQLite from the exact selected
+spatial prefix, and GEOS/GEOS C/libpq from the original native prefix. Every mapped
+Qt5 module must remain inside retained support. The active offscreen plugin must
+resolve exactly to `qt_plugins/platforms/libqoffscreen.so`;
+`QT_QPA_PLATFORM_PLUGIN_PATH` explicitly names that retained platform directory.
+Other loaded Qt and QCA plugins must come from the selected Qt plugin directory.
+All selected mappings are hashed, and missing or fallback origins fail the receipt.
+
+The first real staged attempt, `runtime-01`, passed fixture loading, restricted
+PostGIS access, CRS/geometry assertions and their actual loaded-origin checks.
+The desktop exited before Qt startup because exact `src/app/main.cpp:918` tests
+only whether `DISPLAY` exists, even when `QT_QPA_PLATFORM=offscreen`. The runtime
+environment therefore explicitly sets `DISPLAY` to the empty string: it names no
+X server and permits that preliminary check; Qt still must load the retained
+offscreen platform, which the runtime mapping guard verifies. The failed attempt
+and its successful database cleanup, credential scrubbing and artifact integrity
+receipt remain retained. This repair introduces no physical-display claim.
+
+`runtime-02` then completed six real desktop canvas renders, zoom, save and reopen,
+but the process crashed during shutdown. The retained system crash metadata
+identifies project layer-tree removal after its view was destroyed. The harness
+had called `QApplication.exit` directly, bypassing exact `QgisApp::fileExit`'s
+`closeProject()` step. Shutdown now triggers `iface.actionExit()`, the real File
+Exit action; success still requires both a successful witness receipt and process
+exit zero. Each subprocess retains a separate command receipt even on nonzero
+exit, timeout or capture failure. The failed attempt is not accepted.
+
+Independent review of the second attempt also found blank interface text. The
+supervised `font-preflight-01` proved that the retained font was valid but the
+offscreen application's default font family was empty; explicit use of its
+`QGIS Vera Sans` family rendered real glyphs. Fixture profile generation now sets
+the exact source's `app/fontFamily` and `app/fontPointSize` settings before desktop
+widget construction. The desktop witness checks the actual application/menu font
+and glyph availability, and requires visible dark pixels when rendering with
+that existing application font. It never substitutes a font within the witness.
+Full application captures remain required for visual review.
+
+The isolated local-only and database-only WMS requests also require zero matching
+pixels for the omitted layer's marker color in every known feature neighborhood.
+The same color tolerances apply to presence and absence checks. This rejects a
+combined cached response or ignored `LAYERS` parameter, in addition to detecting
+missing requested content.
+
+`runtime-03` passed the full functional witness and cleanup, including legible UI
+text and all six server HTTP responses. Visual review still identified the source
+font manager's optional Open Sans installation failure under loopback containment.
+Exact `qgsfontmanager.cpp` defines `fonts/downloadMissingFonts` (default true) and
+returns before attempting a download when false. The disposable fixture profile
+now disables that optional acquisition; desktop verifies the effective setting
+and records, without dismissing, all remaining message-bar text. An installation
+failure still fails the witness. No additional fonts are acquired and no browser
+or transport security control changes. Final acceptance requires a fresh attempt
+with this setting; the previous functional pass and its warning remain retained.
