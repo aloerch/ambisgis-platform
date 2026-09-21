@@ -85,6 +85,32 @@ public final class ConfiguredGeoServerRuntime {
         return "[" + String.join(",", result) + "]";
     }
 
+    /** Explicit F02-05 opt-in: only cache settings and controller method names, never bean dumps. */
+    private static void gwcSummary(ClassLoader loader, Class<?> extensions, Path runtime) throws Exception {
+        Class<?> gwcType = loader.loadClass("org.geoserver.gwc.GWC");
+        Object gwc = extensions.getMethod("bean", Class.class).invoke(null, gwcType);
+        Object config = gwcType.getMethod("getConfig").invoke(gwc);
+        Class<?> storageType = loader.loadClass("org.geowebcache.storage.DefaultStorageFinder");
+        Object storage = extensions.getMethod("bean", Class.class).invoke(null, storageType);
+        Class<?> mappingType = loader.loadClass("org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping");
+        List<String> mappings = new ArrayList<>();
+        for (Object mapping : (Iterable<?>) extensions.getMethod("extensions", Class.class).invoke(null, mappingType)) {
+            java.util.Map<?,?> methods = (java.util.Map<?,?>) mappingType.getMethod("getHandlerMethods").invoke(mapping);
+            for (java.util.Map.Entry<?,?> entry : methods.entrySet()) {
+                Object handler = entry.getValue();
+                Class<?> bean = (Class<?>) handler.getClass().getMethod("getBeanType").invoke(handler);
+                if (!bean.getName().startsWith("org.geowebcache.") && !bean.getName().startsWith("org.geoserver.gwc.")) continue;
+                mappings.add("{\"controller\":" + quote(bean.getName()) + ",\"mapping\":" + quote(entry.getKey().toString()) + "}");
+            }
+        }
+        Collections.sort(mappings);
+        String result = "{\"security_enabled\":" + config.getClass().getMethod("isSecurityEnabled").invoke(config)
+                + ",\"metatile_threads\":" + config.getClass().getMethod("getMetaTilingThreads").invoke(config)
+                + ",\"cache_directory\":" + quote(String.valueOf(storageType.getMethod("getDefaultPath").invoke(storage)))
+                + ",\"controller_mappings\":[" + String.join(",", mappings) + "]}";
+        Files.writeString(runtime.resolve("gwc-runtime.json"), result, StandardOpenOption.CREATE_NEW);
+    }
+
     private static String securitySummary(ClassLoader loader, Class<?> extensions) throws Exception {
         Class<?> managerType = loader.loadClass("org.geoserver.security.GeoServerSecurityManager");
         Object manager = extensions.getMethod("bean", Class.class).invoke(null, managerType);
@@ -308,6 +334,7 @@ public final class ConfiguredGeoServerRuntime {
                 if (!roleLogger.isLoggable(java.util.logging.Level.FINE)) throw new IllegalStateException("role capture inactive");
                 roleLogger.fine("AMBISGIS_CONFIGURED_ROLE_LOG_CAPTURE_CONTROL");
             }
+            if (Boolean.getBoolean("ambisgis.fixture.gwc")) gwcSummary(loader, extensions, runtime);
             String json = "{\"port\":" + connector.getLocalPort() + ",\"host\":\"127.0.0.1\","
                     + "\"context_path\":\"/geoserver\",\"war_sha256\":" + quote(warHash)
                     + ",\"deployed_war\":" + quote(deployedWar.toString())
