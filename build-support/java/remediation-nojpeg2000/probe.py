@@ -113,9 +113,34 @@ def main():
         renderer=libs/'marlin-0.9.4.8.jar'
         if not renderer.exists():raise ValueError('selected headless renderer missing')
         flags=['-Djava.awt.headless=true','-Dsun.java2d.opengl=false','--patch-module','java.desktop='+str(renderer),'-Dsun.java2d.renderer=sun.java2d.marlin.DMarlinRenderingEngine','--add-exports','java.desktop/sun.java2d.pipe=ALL-UNNAMED','--add-exports','java.desktop/sun.java2d.marlin=ALL-UNNAMED','-Dambisgis.witness.renderer='+str(renderer),'-Dambisgis.witness.renderer.sha256='+sha(renderer)]
-        witness=[HERE/'NoJpegImageIOWitness.java',HERE/'MapFishImagingWitness.java',HERE/'Jpeg2000RemovalWitness.java',HERE/'TiffJpeg2000Witness.java',ROOT/'build-support/java/remediation-imaging/RenderingWitness.java']
+        witness=[HERE/'NoJpegImageIOWitness.java',HERE/'MapFishImagingWitness.java',HERE/'Jpeg2000RemovalWitness.java',HERE/'TiffJpeg2000Witness.java',HERE/'ClassOriginWitness.java',ROOT/'build-support/java/remediation-imaging/RenderingWitness.java']
         run('compile-witnesses',[java/'javac','-proc:none','--add-exports','java.desktop/sun.java2d.pipe=ALL-UNNAMED','-cp',cp()+':'+str(servlet),'-d',out/'classes',*witness])
         runtime_cp=str(out/'classes')+':'+cp()+':'+str(servlet)
+        # Witnesses may not shadow any production class, even accidentally.
+        packaged_classes={}
+        for library in sorted(libs.glob('*.jar')):
+            with zipfile.ZipFile(library) as jar:
+                for member in jar.namelist():
+                    if member.endswith('.class'):
+                        packaged_classes.setdefault(member,[]).append((library,hashlib.sha256(jar.read(member)).hexdigest()))
+        for file in (out/'classes').rglob('*.class'):
+            if file.relative_to(out/'classes').as_posix() in packaged_classes:
+                raise ValueError('test witness shadows a packaged production class')
+        required=['org/mapfish/print/'+name+'.class' for name in (
+            'Jpeg2000Policy','Jpeg2000Policy$UnsupportedFormat','Jpeg2000Policy$InputLimit',
+            'PDFUtils','MapPrinter','PDFCustomBlocks','servlet/MapPrinterServlet',
+            'config/layout/ImageBlock','output/AbstractOutputFormat','map/renderers/PDFTileRenderer')]
+        required += ['com/sun/media/imageioimpl/plugins/'+name+'.class' for name in (
+            'tiff/TIFFImageReader','tiff/TIFFImageWriter','pnm/PNMImageReader','bmp/BMPImageReader')]
+        origins=[];origin_args=[]
+        for member in required:
+            found=packaged_classes.get(member,[])
+            if len(found)!=1:raise ValueError('required production class does not have one defining JAR: '+member)
+            library,digest=found[0];classname=member[:-6].replace('/','.')
+            origins.append({'class':classname,'jar':record(library),'class_sha256':digest})
+            origin_args.extend([classname,str(library),digest])
+        result['required_runtime_class_origins']=origins
+        run('production-class-origins',[java/'java',*flags,'-cp',runtime_cp,'ClassOriginWitness',*origin_args])
         run('candidate-tiff-jpeg2000',[java/'java',*flags,'-cp',runtime_cp,'TiffJpeg2000Witness',fixtures])
         if a.component_replacement:
             original_jai=out/'historical-original-jai.jar'

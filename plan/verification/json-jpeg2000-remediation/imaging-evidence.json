@@ -24,9 +24,9 @@
   "preserved_nonjpeg2000_class_bytes": 323,
   "changed_preserved_class_bytes": [],
   "component_probe": {
-    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-10/result.json",
-    "sha256": "92208e18ceed6addb9d948ed4651d7084a65f76008a825ea6388303dd42de441",
-    "bytes": 253347
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-11/result.json",
+    "sha256": "b3fdf507e700f973df39a9d3e1b51d098439a6ecc51257d6b58d7aa9cab2a33d",
+    "bytes": 260584
   },
   "failed_and_predecessor_runs": [
     {
@@ -73,9 +73,19 @@
       "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-09/result.json",
       "sha256": "ae0591cdfe8d4d83693e0132dae1ab55139ae75b4bfe1b303f7650247d6e9353",
       "bytes": 252047
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-10/result.json",
+      "sha256": "92208e18ceed6addb9d948ed4651d7084a65f76008a825ea6388303dd42de441",
+      "bytes": 253347
     }
   ],
   "new_policy_sources": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/ClassOriginWitness.java",
+      "sha256": "33b52c33302cc7fe2c8009f1ae4a8af23c58190e7dd673dcfa39249a60cfc18d",
+      "bytes": 1569
+    },
     {
       "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/Jpeg2000Policy.java",
       "sha256": "6229acb19a76f979771f53d1effea1d623b9049095a80c0a8f5ce7d65f61915b",
@@ -108,8 +118,8 @@
     },
     {
       "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/probe.py",
-      "sha256": "6258fac022ffe1100eb4ffcaad1c3bc198193dd47ef8892478f5bb90e93b7003",
-      "bytes": 11046
+      "sha256": "842d4cf7c2d85c11771738395ab22dc44aff450cb4febdae66a35671d622ece6",
+      "bytes": 12887
     },
     {
       "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/profile.py",
@@ -128,5 +138,10 @@
     "sha256": "5bc6ad72b0f1d8a770481c19ffb6cb4925a06acc35d2699a14a203c8608eaa78",
     "bytes": 339955
   },
-  "independent_rebuild_same_bytes": true
+  "independent_rebuild_same_bytes": true,
+  "native_mapfish": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-02/result.json",
+    "sha256": "85855f4152013b8b854e6c3f3f87a1de940abcc030ccdb1371fff9f96fedf99b",
+    "bytes": 84752
+  }
 }

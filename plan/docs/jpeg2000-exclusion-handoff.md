@@ -136,3 +136,14 @@ requires it. The wrapper uses the existing verified socket-denial runner. Fresh
 exact-WAR PostGIS/mosaic, service formats/imports, printing HTTP, authorization,
 GWC cold/restart and frontend/backend restart results must be linked by the
 integrator before the variant-specific closing condition is satisfied.
+
+The affected original MapFish native selection was also rerun from fresh copies
+with the existing EMF pin and candidate replacement inputs: 71 passed, six
+unchanged skipped, zero failures/errors. The [native receipt](../verification/json-jpeg2000-remediation/imaging-native-mapfish.json)
+binds its source changes, verified compile socket denial/runtime loopback control
+and stopped fixture servers. The failed pre-test run without the historical EMF
+pin remains retained. Component probe 11 adds actual defining-JAR and class-byte
+hash checks for every changed MapFish guard class and retained JAI providers;
+its compiled witnesses cannot shadow a packaged production class. Final exact-WAR
+mode applies those checks to unchanged extracted WAR libraries without any
+production source overlay.
