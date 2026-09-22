@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "task": "FND-02/F02-06",
-  "scope": "GeoServer NO-JPEG2000 source guard and selected real-HTTP retest integration; no legal/adoption/distribution acceptance",
+  "scope": "GeoServer NO-JPEG2000 source guard, six native importer JSON HTTP boundaries and selected real-HTTP retest integration; no legal/adoption/distribution acceptance",
   "review_role": "Implementation author self-review, incorporating independent root/imaging reviewer findings; not represented as independent review of own code.",
-  "integration_source_commit": "ba552361fb516a1e6c517ebbe9b288bfe3860b95",
+  "integration_source_commit": "9d8250afd3d2836d152b164ea5ce20bfd92fcfbe",
   "files": [
     {
       "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/NoJpeg2000Policy.java",
@@ -17,13 +17,13 @@
     },
     {
       "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/geoserver_profile.py",
-      "sha256": "a3336c05f75695a0b1a27a4f1790990b2fc7eaedcc0bce53c06b26e256f0687b",
-      "bytes": 2357
+      "sha256": "68c40cdafe401f99b970fa6c9e72c39b4413069594900cc9125a1d1c82ae41ca",
+      "bytes": 2553
     },
     {
       "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/geoserver-repairs.json",
-      "sha256": "8a7ddf464bc468d2f2faa8b8eedf8fdfd4480c9fdaa3039e3a6ab151385ab0da",
-      "bytes": 94266
+      "sha256": "6457254f4ed23cfd979794ba08b1e753aa28d4b2bb060befbe35ac9a171de95c",
+      "bytes": 129489
     },
     {
       "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/NoJpeg2000GuardWitness.java",
@@ -34,18 +34,28 @@
       "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/guard_probe.py",
       "sha256": "b0e56b75cfc340143cc13b659d756a020acd68d7cb341c2c1fc26375a17a00a3",
       "bytes": 4045
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/ImportContextJsonWitness.java",
+      "sha256": "dd52464c0e524315168c585c5c0d7e3a11d78d05728b144ca9aafe2532684b6e",
+      "bytes": 8393
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/import_json_probe.py",
+      "sha256": "0208b8f03740eccdfba629dcf40f1614d44717a6033b7e6bd1835ecb22746426",
+      "bytes": 3296
     }
   ],
   "native_guard": {
     "receipt": {
-      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/runtime/guard-12/result.json",
-      "sha256": "8920f9bf1ed6aebbda4e91dda71a9650c2f649036af1fd4df8f06ed6eb71b506",
-      "bytes": 123702
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/runtime/guard-13/result.json",
+      "sha256": "9d1f5ff55ef09a86ad8583f54c375cc7efcc566b3dc8e85c6ef3b8f201a046b4",
+      "bytes": 125288
     },
     "result_exit_code": 0,
     "assertions": 78,
     "compile_api": "javax.servlet-api 3.1.0 (actual GeoServer POM selection)",
-    "execution": "actual changed CoverageStoreFileValidator and ImportTaskController compiled against retained parent WAR libraries, real native multipart method and production servlet policy/filter; trusted fixtures under existing offline AF_INET/AF_INET6 denial",
+    "execution": "actual changed CoverageStoreFileValidator and ImportTaskController compiled against retained parent WAR libraries, real native multipart method and production servlet policy/filter; trusted fixtures under existing offline AF_INET/AF_INET6 denial; all six modified native importer converters compile against retained parent libraries",
     "fresh_new_war_runtime_executed": false
   },
   "review_findings_fixed": [
@@ -55,7 +65,8 @@
     "Native multipart preflight validates all parts before accepting any; ordinary-first/disputed-second request cannot partially create tasks.",
     "Direct/multipart ZIP preflight reads only names/twelve decoded bytes per member before persistent importer state, with staging removed on rejection/errors/success.",
     "Explicit 1GiB compressed ZIP and10000member candidate limits use safe413 diagnostics; tests exercise private smaller-copy-bound logic without production property bypass, declared limit, sparsefile boundary and actual native multipart member-limit handling.",
-    "Independent imaging source review found an actual metadata regression for a store named ordinary.jp2. Guard11 reproduced rejection in real production filter; guard12 passes after restricting codec checks to native file/url/external/remote upload endpoints or direct importer task uploads. Existing binary MIME-spoof controls still pass."
+    "Independent imaging source review found an actual metadata regression for a store named ordinary.jp2. Guard11 reproduced rejection in real production filter; guard12 passes after restricting codec checks to native file/url/external/remote upload endpoints or direct importer task uploads. Existing binary MIME-spoof controls still pass.",
+    "Actual new-WAR malformed importer JSON returned500; repaired the same concrete unchecked parse boundary in six selected native REST converters. Native before/after controls preserve baseline failures and demonstrate all six valid recoveries. Corrected inherited chain-to-single-transform delegation via existing chain parser."
   ],
   "limitations": [
     "New 1GiB compressed/10000member ZIP limits are a candidate acceptance choice; larger archives are413, not mislabeled JPEG2000. No claim of unlimited imports.",
@@ -77,7 +88,64 @@
         "bytes": 123805
       }
     },
-    "guard10": "Passed previous74-assertion source revision; superseded by guard12 after independently found metadata-name collateral regression."
+    "guard10": "Passed previous74-assertion source revision; superseded by guard12 after independently found metadata-name collateral regression.",
+    "guard12": "Passed78 before importer HTTP boundary repair; guard13 recompiles final expanded source rows and retains78 serviceguard checks.",
+    "import_json01_02": "Native fixture import typo then owned native JobQueue shutdown deficiency; failed attempts retained, no passing claim. Probe03 closes the queue and passes all3 native variants.",
+    "gwc-01": {
+      "classification": "Actual candidate runtime failure: malformed context JSON HTTP500 after nine inline415 controls; later cases not reached.",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-01/result.json",
+        "sha256": "04f7ecfaa43c48c114f8674e2d550f28f48af525d7dce4a5e5128b1b8dcf52a8",
+        "bytes": 50927
+      },
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-01/network-loopback.json",
+        "sha256": "bc45f4258332c5c121d8a7cc12313311a2d5f42d5c0aa785c83d5fd404f23cbf",
+        "bytes": 1837
+      },
+      "backend": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-01/backend-result.json",
+        "sha256": "328759d5a8bdde275fbd15369d6870bf03d380b0cc5c95dc3615d125132494ac",
+        "bytes": 13854
+      },
+      "result_exit_code": 1,
+      "cleanup": "GeoNode/GeoServer stopped; disposable credentials invalidated, mosaic schema dropped/config scrubbed, no codec staging remains; network probes passed and process group stopped."
+    },
+    "gwc-02": {
+      "classification": "Known malformed500 recorded, remaining importer/ZIP413/service/printlocal controls passed; remote bitmap request failed to fetch under intentional wildcard-bind refusal. HTTP200 is failed exercise, not proof of codec bypass. Native localHostForward fixture correction requires fresh rerun.",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-02/result.json",
+        "sha256": "d438441f8d7219d946ee2e66822056b298239170c19769c808fd5a1b230ead66",
+        "bytes": 50936
+      },
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-02/network-loopback.json",
+        "sha256": "23a94e3ef1c9aca8260721fca4e585542fdf2debcef74e37b712ee42e0e39649",
+        "bytes": 1838
+      },
+      "backend": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-02/backend-result.json",
+        "sha256": "a41181803e8e4379d91658582b94277e41084b42ec87cbfc56fb814aec26d89b",
+        "bytes": 13862
+      },
+      "result_exit_code": 1,
+      "cleanup": "GeoNode/GeoServer stopped; disposable credentials invalidated, mosaic schema dropped/config scrubbed, no codec staging remains; network probes passed and process group stopped."
+    }
   },
-  "review_conclusion": "No remaining material source guard finding in reviewed scope; new exact-WAR live acceptance pending and known limits must be preserved."
+  "review_conclusion": "No remaining material source finding in reviewed scoped guards/converters; final successor exact-WAR live HTTP400/codec/GWC acceptance pending and retained limits remain explicit.",
+  "importer_json": {
+    "production_source_review": "Independent JSON-scope agent review of runtime agent patches; reviewed manifest SHA6457254f4ed23cfd979794ba08b1e753aa28d4b2bb060befbe35ac9a171de95c; all source before/after hashes recomputed valid. Test witness authored by that reviewer, not represented as independent review of own tests.",
+    "receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/runtime/import-json-03/result.json",
+      "sha256": "256ceaaf54b1ff16718906f7fd9119d4d8b6e811dff19c3990f05d23ee91da3a",
+      "bytes": 371465
+    },
+    "result_exit_code": 0,
+    "parent_original_assertions": 50,
+    "candidate_original_assertions": 50,
+    "candidate_repaired_assertions": 74,
+    "provenance": "All six original parent/candidate converters leak malformed JSONException; native vector/raster chain delegation also fails in both originals. These are inherited consumer defects exposed by required actual HTTP/valid-recovery checks, not attributed to replacement JSON drift.",
+    "repair": "Each converter catches only JSONException, raises HttpMessageNotReadableException with fixed text and no cause, closes input and preserves valid conversion. Chain converter calls existing native transformChain parser.",
+    "limit": "Native exception classification is not live HTTP400 acceptance; final successor WAR must pass real malformed REST/create/recovery flow. Native Importer fixture logs its known absent ResourceLoader/default-DAO fallback; real catalog/DAO/store and owned queue teardown are used."
+  }
 }
