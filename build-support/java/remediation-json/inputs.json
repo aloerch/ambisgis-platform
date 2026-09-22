@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "jdk": "build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1",
+  "toolchain_custody": "source-archives/java-resolution/toolchain",
+  "inputs": {
+    "jackson-core-source": {
+      "path": "source-archives/java-resolution/maven/blobs/sha256/2f659e4ed64cb6f10e5871b568778b2aa5c0f9863c9321fa7a5fefb3ed122050",
+      "sha256": "2f659e4ed64cb6f10e5871b568778b2aa5c0f9863c9321fa7a5fefb3ed122050",
+      "bytes": 497145,
+      "original_url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.21.0/jackson-core-2.21.0-sources.jar",
+      "maven_path": "com/fasterxml/jackson/core/jackson-core/2.21.0/jackson-core-2.21.0-sources.jar"
+    },
+    "jackson-core-binary": {
+      "path": "source-archives/java-resolution/maven/blobs/sha256/e22604bcd9b24e462d5df102007cb06e1ed811e86f1ce6081ca62f385f2db87b",
+      "sha256": "e22604bcd9b24e462d5df102007cb06e1ed811e86f1ce6081ca62f385f2db87b",
+      "bytes": 594496,
+      "original_url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.21.0/jackson-core-2.21.0.jar",
+      "maven_path": "com/fasterxml/jackson/core/jackson-core/2.21.0/jackson-core-2.21.0.jar"
+    },
+    "jackson-core-pom": {
+      "path": "source-archives/java-resolution/maven/blobs/sha256/a0add9d219816d4da50a03d62ae21222329388822cb8aac8b5ab3d0af16aa7d6",
+      "sha256": "a0add9d219816d4da50a03d62ae21222329388822cb8aac8b5ab3d0af16aa7d6",
+      "bytes": 10034,
+      "original_url": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.21.0/jackson-core-2.21.0.pom",
+      "maven_path": "com/fasterxml/jackson/core/jackson-core/2.21.0/jackson-core-2.21.0.pom"
+    },
+    "fastdoubleparser-LICENSE.txt": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/LICENSE.txt",
+      "sha256": "81d823fe15b2f9dc51ae0fd8b19a77cea1e0ca3abf7b0252a2de410521fff05e",
+      "bytes": 1090,
+      "role": "packaged-notice",
+      "member": "META-INF/supplemental-fastdoubleparser/LICENSE.txt"
+    },
+    "fastdoubleparser-NOTICE.txt": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/NOTICE.txt",
+      "sha256": "aa057961a9ac52f1a63a8ae5ae437aa8355a69a0876aa8b5d1ecd6e35944be3c",
+      "bytes": 1999,
+      "role": "packaged-notice",
+      "member": "META-INF/supplemental-fastdoubleparser/NOTICE.txt"
+    },
+    "fastdoubleparser-thirdparty-LICENSE.txt": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/thirdparty-LICENSE.txt",
+      "sha256": "6e0e5b6e6389568c1669163fdf40cee2143be58960be0a4e2f1428805505170d",
+      "bytes": 3047,
+      "role": "packaged-notice",
+      "member": "META-INF/supplemental-fastdoubleparser/thirdparty-LICENSE.txt"
+    },
+    "fastdoubleparser-fast_double_parser-LICENSE.BSL": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/fast_double_parser-LICENSE.BSL",
+      "sha256": "c343ed99bee51b85f012a1d71dea81569540f8a457e12cbd21bfedee38dc62bc",
+      "bytes": 1367,
+      "role": "packaged-notice",
+      "member": "META-INF/supplemental-fastdoubleparser/fast_double_parser-LICENSE.BSL"
+    },
+    "fastdoubleparser-source-correspondence.json": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/source-correspondence.json",
+      "sha256": "12e9f98daecad334eabc4fb4a7fe132876db98cddd6a84595f27ce9d641e22e3",
+      "bytes": 58151
+    },
+    "fastdoubleparser-class-comparison-initial.json": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/class-comparison-initial.json",
+      "sha256": "9bb2194a7244944017e2e2ab3d955950bfb3fd597c6bd3375e83a7578e9eb631",
+      "bytes": 11412
+    },
+    "fastdoubleparser-acquisition-01.json": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/acquisition-01.json",
+      "sha256": "a6f3f07b26aefe42820a513afbcfc6f048590bb492cb308999791723ba578d36",
+      "bytes": 1599
+    },
+    "fastdoubleparser-acquisition-02.json": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/acquisition-02.json",
+      "sha256": "4ffd38ac66bd3d630f0027a2db59e3ae5aca40d20d8b25b361e9ecf4ca1134df",
+      "bytes": 2883
+    },
+    "fastdoubleparser-acquisition-03.json": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/acquisition-03.json",
+      "sha256": "f51970927b4e00768e890be24d2b3ae2f4534d8d4c21900cf5fa74e40d64db34",
+      "bytes": 1185
+    },
+    "fastdoubleparser-acquisition-04.json": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/acquisition-04.json",
+      "sha256": "7121a81ee778038b0daab5ca50c4af55b0a571459314386c93a6ae45907022ae",
+      "bytes": 593
+    },
+    "fastdoubleparser-6e8815541cf5123e1dac460946227f1bbb109e0570bbbc4c6a50067bd94b2c38": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/6e8815541cf5123e1dac460946227f1bbb109e0570bbbc4c6a50067bd94b2c38",
+      "sha256": "6e8815541cf5123e1dac460946227f1bbb109e0570bbbc4c6a50067bd94b2c38",
+      "bytes": 149654
+    },
+    "fastdoubleparser-92a25cbe5a2c64cd5713401d26743c8fe7554e738c6aff2b223e4342786ea731": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/92a25cbe5a2c64cd5713401d26743c8fe7554e738c6aff2b223e4342786ea731",
+      "sha256": "92a25cbe5a2c64cd5713401d26743c8fe7554e738c6aff2b223e4342786ea731",
+      "bytes": 3989714
+    },
+    "fastdoubleparser-4242e2335299026524d331355a6cd75abdc38c8fed4402f25b5c7ce9d7668cc1": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/4242e2335299026524d331355a6cd75abdc38c8fed4402f25b5c7ce9d7668cc1",
+      "sha256": "4242e2335299026524d331355a6cd75abdc38c8fed4402f25b5c7ce9d7668cc1",
+      "bytes": 195941
+    },
+    "fastdoubleparser-922b2ea73b7aa0368f1346e6b791bc8c901c42d0c90fb1d4efefcd3d532e6df8": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/922b2ea73b7aa0368f1346e6b791bc8c901c42d0c90fb1d4efefcd3d532e6df8",
+      "sha256": "922b2ea73b7aa0368f1346e6b791bc8c901c42d0c90fb1d4efefcd3d532e6df8",
+      "bytes": 1455
+    },
+    "fastdoubleparser-96d1419e3dd616d13279e696b6790a34b04742dcc3e0b64d450e0fdec0b1103b": {
+      "path": "source-archives/json-jpeg2000-remediation/fastdoubleparser/96d1419e3dd616d13279e696b6790a34b04742dcc3e0b64d450e0fdec0b1103b",
+      "sha256": "96d1419e3dd616d13279e696b6790a34b04742dcc3e0b64d450e0fdec0b1103b",
+      "bytes": 13441
+    }
+  },
+  "fastdoubleparser": {
+    "version": "2.0.1",
+    "source_commit": "2e1235766719b2db4f24c5c28920012850333833",
+    "jackson_release_commit": "80fb536c26e49505be73eb826c450de4f9dba6d0",
+    "source_correspondence": "All85source-JAR files exact at immutable source revision; all44 selected shaded class variants mapped to corresponding source. No binary rebuild/equivalence claim.",
+    "notice_supplement": "Original Jackson binary untouched; four verbatim applicable FDP notices added alongside adapter because the original shaded FastDoubleParser-LICENSE member incorrectly contained Apache text. MIT and BSL source notices retained; final distribution notice review remains."
+  }
+}

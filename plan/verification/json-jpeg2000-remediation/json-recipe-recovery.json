@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "recovered_at": "2026-09-22T20:31:15.244996+00:00",
+  "scope": "Post-execution retained recovery copy of executed final recipes/inputs; exact recorded execution hashes verified. Not a backdated pre-execution receipt.",
+  "files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/recipe-recovery-01/final-build.py",
+      "sha256": "a8319748bf58f87d95c628790d5500e495e55561bbfb5b47b506f802fa46e740",
+      "bytes": 5790
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/recipe-recovery-01/final-inputs.json",
+      "sha256": "6f4c09f1bda20ca417ea4c56aeea830f3efeb22ac314e9418919dfaef818c0b8",
+      "bytes": 7108
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/recipe-recovery-01/final-probe.py",
+      "sha256": "78a456458df5e819225d2976650828bb5b0cbef82416e618b36c892910e99765",
+      "bytes": 8373
+    }
+  ]
+}

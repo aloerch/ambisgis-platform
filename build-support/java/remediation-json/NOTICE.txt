@@ -1,0 +1,27 @@
+AmbisGIS selected-profile JSON compatibility adapter
+Copyright 2026 AmbisGIS contributors. Licensed under Apache License 2.0.
+
+This is a newly authored compatibility implementation, not json-lib, an upstream
+release, or a representation of complete json-lib data-binding/API parity.
+It incorporates no json-lib production source, implementation documentation,
+compiled classes, or JSON.org-derived implementation. Package/member names are
+retained for interoperability with the selected source-owned GeoServer profile.
+Jackson core 2.21.0 supplies token parsing and JSON generation as a separately
+retained, unchanged runtime dependency. Its notices and sources remain in their
+own custody and runtime artifact. This adapter does not shade Jackson.
+
+The prior json-lib and seven attributed source files, alternate JDK15 copies,
+and potentially derived uncredited JSONUtils helpers remain preserved as
+historical evidence only, outside this artifact. Their original notices are not
+removed or represented as relicensed. No formal legal clean-room claim is made.
+
+Supplemental notices for unchanged Jackson core 2.21.0:
+The retained release POM selects FastDoubleParser 2.0.1. Its exact source revision
+is 2e1235766719b2db4f24c5c28920012850333833. The original Jackson artifact's
+FastDoubleParser-LICENSE member contained Apache text despite its NOTICE naming
+MIT. Verbatim source license/notices and the referenced fast_double_parser BSL
+grant are supplied under META-INF/supplemental-fastdoubleparser/. These do not
+alter the original binary or claim a byte-equivalent rebuild. All 85 source JAR
+files match the retained complete source tree; all 44 selected shaded class
+variants have corresponding source. Source, grant, acquisition and mapping
+hashes are locked in inputs.json; final distribution notice review remains.
