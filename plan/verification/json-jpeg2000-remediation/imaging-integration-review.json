@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "scope": "Independent read-only review of integrator aggregate/runtime wiring and separately authored GeoServer capability guards; MapFish implementation authored by this reviewer is not independently reviewed here.",
+  "source_commit_context": "03325b0f1c5281a3967fbefdc8737cd6e8d93b6c",
+  "files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/aggregate_evidence.py",
+      "sha256": "335fd6014e216fd2d4a305fbfcef23fe0e7c0019d5d3b3dae5f14f6068131325",
+      "bytes": 27987
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/compatibility.py",
+      "sha256": "9de24250a680f4c974d490ab42eb397764a3f061ec680909a403f98984cae3f6",
+      "bytes": 38082
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/runtime_profile.py",
+      "sha256": "0c4a852e5c56e9455d96a3fefee93a4efe61d3aa3bbdae23d7ea366a055f2ab2",
+      "bytes": 3085
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000Policy.java",
+      "sha256": "bad0717ba28cd18aea28a4595f57a253787ed3d6eac57f4918df9083661e6356",
+      "bytes": 5809
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000Filter.java",
+      "sha256": "bed8cbf704bc6e0f968af55b46f8ca1d6a945f6372bcc65ad169ad4de72b5c7d",
+      "bytes": 7992
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/geoserver_profile.py",
+      "sha256": "a3336c05f75695a0b1a27a4f1790990b2fc7eaedcc0bce53c06b26e256f0687b",
+      "bytes": 2357
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/geoserver-repairs.json",
+      "sha256": "8a7ddf464bc468d2f2faa8b8eedf8fdfd4480c9fdaa3039e3a6ab151385ab0da",
+      "bytes": 94266
+    }
+  ],
+  "status": "no remaining material source finding in reviewed scope; exact new WAR execution pending",
+  "findings_fixed": [
+    {
+      "finding": "Aggregate explicit repaired-class list omitted several changed MapFish consumers and policy exception definitions.",
+      "resolution": "All ten MapFish definitions now bind expected defining source module, JAR and source-compiled class bytes; final repaired source inventory and packaged web.xml hash are verified."
+    },
+    {
+      "finding": "New ZIP staging used unbounded copy and no archive member cap.",
+      "resolution": "Fixed production limit is1GiB compressed bytes and10000members, with bounded copy and explicit413; temporary archive cleanup occurs on accepted and rejected paths. Multipart parser pre-staging remains inherited and explicitly scoped."
+    },
+    {
+      "finding": "Coverage-store metadata PUT with normal JSON and a store name ending .jp2 was incorrectly rejected by whole-path filename policy.",
+      "resolution": "Actual production-filter regression reproduced in retained guard11; final upload predicate selects only native file/url/external/remote endpoints and importer task uploads. Metadata paths preserve native parser and encoding; binary MIME spoofing protection remains active."
+    }
+  ],
+  "reviewed_invariants": [
+    "Explicit NO-JPEG2000 requires NO-ORACLE and recorded source-built replacement mapping; original recipe profile remains available.",
+    "Exact source guards run before compiler input inventory; final aggregate compares source outputs and modified class origins instead of accepting package names or artifact hashes alone.",
+    "Runtime profile verifies exact WAR and selected JSON/JAI/renderer bytes, then explicitly enables the noJpeg2000 fixture branch.",
+    "Service filter is mapped after existing authentication and restricts capability interpretation to selected protocol format parameters and upload surfaces.",
+    "Direct and multipart ZIP preflight reads at most twelve decompressed bytes per member, without extracting image data; native multipart validates all parts before persistent import writes.",
+    "Normalized aliases, actual content magic, misleading MIME/extension, explicit unsupported status and ordinary stream/metadata preservation are covered by guard12."
+  ],
+  "independently_read_native_receipt": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/runtime/guard-12/result.json",
+    "sha256": "8920f9bf1ed6aebbda4e91dda71a9650c2f649036af1fd4df8f06ed6eb71b506",
+    "bytes": 123702
+  },
+  "native_receipt_result_exit_code": 0,
+  "native_review_owner": "runtime agent executed78 assertions; this reviewer verified source logic and receipt identity, not a second execution",
+  "limits": [
+    "Source review and focused guard12 use retained parent libraries; final new WAR live tests remain required.",
+    "ZIP limit is a documented candidate behavior change, not JPEG2000 misclassification.",
+    "This review does not grant owner adoption, security/legal/distribution acceptance or universal remote-harvest support."
+  ]
+}
