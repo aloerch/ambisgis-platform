@@ -27,6 +27,11 @@ public class JsonContracts {
         JSONObject n=JSONObject.fromObject("{\"i\":2147483647,\"l\":2147483648,\"large\":9223372036854775808,\"d\":1.25,\"exp\":1e3,\"minus\":-1}");
         check(n.get("i") instanceof Integer,"int type");check(n.get("l") instanceof Long,"long type");check(n.get("large") instanceof BigInteger,"big integer type");
         check(n.get("d") instanceof Double&&n.getDouble("d")==1.25,"fraction type");check(n.getDouble("exp")==1000,"exponent");
+        for(String token:new String[]{"1e400","-1e400","1e-400"}) {
+            JSONObject extreme=JSONObject.fromObject("{a:"+token+"}");
+            check(extreme.get("a") instanceof BigDecimal && ((BigDecimal)extreme.get("a")).compareTo(new BigDecimal(token))==0,"finite exponent preserved "+token);
+            check(((BigDecimal)JSONObject.fromObject(extreme.toString()).get("a")).compareTo(new BigDecimal(token))==0,"finite exponent roundtrip "+token);
+        }
         BigDecimal precise=new BigDecimal("12345678901234567890.1234567890123456789");
         JSONObject preciseObject=new JSONObject().element("precise",precise);check(preciseObject.get("precise").equals(precise),"in-memory precision");check(preciseObject.toString().contains(precise.toString()),"serialized precision");
         for(String legacy:new String[]{"{'name':'reader'}","{name:'reader'}","{/*comment*/name:'reader'}","{name:'reader',}"})check(JSONObject.fromObject(legacy).getString("name").equals("reader"),"legacy "+legacy);
@@ -55,6 +60,12 @@ public class JsonContracts {
         Number custom=new Number(){public int intValue(){return 1;}public long longValue(){return 1;}public float floatValue(){return 1;}public double doubleValue(){return 1;}public String toString(){return "0,\"injected\":true";}};
         refuses(()->new JSONObject().element("number",custom),"custom number injection");
         refuses(()->JSONObject.fromObject("#comment\n{a:1}"),"YAML comments remain rejected");
+        for(String token:new String[]{"1e2147483647","1e-2147483647"}) {
+            String encoded=JSONObject.fromObject("{a:"+token+"}").toString();
+            check(encoded.length()<40 && encoded.contains("E"),"extreme scale remains compact "+token);
+        }
+        try { JSONObject.fromObject("{a:1e2147483648}");throw new AssertionError("out-of-range exponent accepted"); }
+        catch(JSONException e) { check(e.getCause()==null && !e.getMessage().contains("2147483648"),"out-of-range exponent sanitized"); }
         refuses(()->JSONArray.fromObject("[1 2]"),"ambiguous unquoted array text is rejected");
         refuses(()->JSONObject.fromObject(Bean.class),"class object unavailable");check(!JSONObject.fromObject(new SecretBean()).has("classLoaderType"),"class-returning property suppressed");
         JSONObject metadata=JSONObject.fromObject("{\"@class\":\"java.lang.ProcessBuilder\",\"command\":[\"unused\"]}");check(metadata.getString("@class").equals("java.lang.ProcessBuilder"),"type metadata stays data");

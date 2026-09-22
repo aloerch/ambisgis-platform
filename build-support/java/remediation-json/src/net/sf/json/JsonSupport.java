@@ -41,7 +41,7 @@ public final class JsonSupport {
             Object value=read(parser,token);
             if(parser.nextToken()!=null) throw new JSONException("Trailing content after JSON value");
             return value;
-        } catch(IOException e) {
+        } catch(IOException | NumberFormatException e) {
             JsonLocation location=e instanceof JsonProcessingException ? ((JsonProcessingException)e).getLocation() : null;
             throw new JSONException("Malformed JSON"+(location==null ? "" : " at line "+location.getLineNr()+", column "+location.getColumnNr()));
         }
@@ -76,7 +76,14 @@ public final class JsonSupport {
         case VALUE_FALSE:return Boolean.FALSE;
         case VALUE_STRING:return parser.getText();
         case VALUE_NUMBER_INT:return parser.getNumberValue();
-        case VALUE_NUMBER_FLOAT:return parser.getDoubleValue();
+        case VALUE_NUMBER_FLOAT:
+            double approximate=parser.getDoubleValue();
+            if(!Double.isFinite(approximate)) return parser.getDecimalValue();
+            if(approximate==0.0) {
+                BigDecimal exact=parser.getDecimalValue();
+                if(exact.signum()!=0) return exact;
+            }
+            return approximate;
         default:throw new JSONException("Unexpected JSON token at " + safeLocation(parser));
         }
     }

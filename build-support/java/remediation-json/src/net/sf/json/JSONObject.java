@@ -8,7 +8,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 /** Map compatibility required by the selected GeoServer consumers. */
-public final class JSONObject extends AbstractMap<Object,Object> implements JSON {
+// The inherited public Map contract is raw, matching selected importer source assignments.
+@SuppressWarnings("rawtypes")
+public final class JSONObject extends AbstractMap implements JSON {
     private final Map<Object,Object> properties = new LinkedHashMap<Object,Object>();
     private final boolean nullObject;
     public JSONObject() { this(false); }

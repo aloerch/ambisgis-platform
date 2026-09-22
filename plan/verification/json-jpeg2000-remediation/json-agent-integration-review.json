@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "reviewer": "json_scope, independent of root integration implementation",
+  "status": "reviewed-no-material-findings",
+  "scope": "Static engineering review of new root runtime-profile, compatibility and aggregate-evidence integration only; fresh aggregate/runtime acceptance is separate.",
+  "files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/runtime_profile.py",
+      "sha256": "0c4a852e5c56e9455d96a3fefee93a4efe61d3aa3bbdae23d7ea366a055f2ab2",
+      "bytes": 3085
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/compatibility.py",
+      "sha256": "9de24250a680f4c974d490ab42eb397764a3f061ec680909a403f98984cae3f6",
+      "bytes": 38082
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/aggregate_evidence.py",
+      "sha256": "335fd6014e216fd2d4a305fbfcef23fe0e7c0019d5d3b3dae5f14f6068131325",
+      "bytes": 27987
+    }
+  ],
+  "observations": [
+    "Runtime profile validates exact WAR and selected renderer/JSON/ImageIO hashes during load and immediately before launch.",
+    "Compatibility preserves guarded source recipes and snapshots with explicit NO-ORACLE/NO-JPEG2000 and selected variant map; no test-compile suppression added.",
+    "Aggregate inspection checks source outputs, guarded class bytes, web.xml, frozen helper identity and exact replacement map before successful evidence.",
+    "JSON inspect_artifacts correctly receives metadata mappings, derives component receipt via verified source_evidence, reopens actual WAR and rejects a false nested report."
+  ],
+  "limitations": [
+    "The review is not legal/license approval or evidence that unexecuted aggregate/runtime checks passed."
+  ]
+}

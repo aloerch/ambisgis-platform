@@ -36,7 +36,15 @@ It records zero dotted reflective class-name literals and three resource matches
 (all POM metadata). Selected reactor tests additionally need meaningful
 `optJSONObject`, `remove(String)`, `JSONArray.toCollection(..., JSONObject.class)`
 and structural `JSONAssert` operations. The adapter supplies these, preserving
-normal test compilation. Optional historical APIs are absent, not hollow stubs.
+normal test compilation. The first new aggregate exposed a source-only generic
+contract missed by binary signature scanning: `ImportJSONReader` assigns a
+`JSONObject` to `Map<String,Object>`, which the old raw `Map` API permits. The
+adapter preserves that raw public contract with typed internal storage. A fresh
+supplemental compile now checks all 25 selected production and 69 selected test
+source files against baseline and adapter; its negative control detects the
+previous broken adapter. This is compilation evidence, not execution of those
+69 tests, and the complete fresh aggregate remains required. Optional historical
+APIs are absent, not hollow stubs.
 
 The selected GeoNode token service delegates to Spring's map HTTP conversion;
 the REST role service uses Jackson/JsonPath/json-smart. Their real HTTP checks
@@ -62,7 +70,13 @@ source audit found no selected consumer needing this extension. Function-looking
 Java strings stay strings. Parser/conversion depth is bounded as well as writer
 depth (default 100, valid positive configuration capped at 1,000); radix numbers
 are bounded before conversion. Only standard exact JDK numeric types can emit
-raw numeric tokens. Diagnostics preserve a location without echoing input or
+raw numeric tokens. Finite decimal values beyond double range use a bounded
+`BigDecimal` fallback, preserving values such as `1e400` and `1e-400`. Extreme
+valid exponent scales retain compact scientific notation; exponent overflow
+raises a sanitized adapter exception. Ordinary fractions remain `Double` at
+normal double precision, so the historical parser's accidental float rounding
+(for example `1.234567890123456789` to `1.2345679`) is not reproduced; this is a
+documented bounded compatibility difference. Diagnostics preserve a location without echoing input or
 raw parser causes. Failed writers cannot resume or manufacture a completed
 object, and caller-owned writers remain open.
 
@@ -92,6 +106,8 @@ flatpak-spawn --host /usr/bin/python3 build-support/java/remediation-json/build.
 flatpak-spawn --host /usr/bin/python3 build-support/java/remediation-json/probe.py \
   --workspace-root /home/revelberry/Projects/AmbisGIS --build COMPONENT_BUILD \
   --war EXACT_NEW_WAR --war-sha256 EXACT_NEW_SHA --output NEW_PROBE
+flatpak-spawn --host /usr/bin/python3 build-support/java/remediation-json/consumer_compile.py \
+  --workspace-root /home/revelberry/Projects/AmbisGIS --build COMPONENT_BUILD --output NEW_COMPILE
 flatpak-spawn --host /usr/bin/python3 build-support/java/remediation-json/inventory.py \
   --build COMPONENT_BUILD --war EXACT_NEW_WAR --output NEW_INVENTORY_JSON
 ```
