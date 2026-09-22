@@ -1,0 +1,95 @@
+/* Authored for the AmbisGIS NO-JPEG2000 Java/server candidate, 2026.
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
+package org.geoserver.filters;
+
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.io.PushbackInputStream;
+import java.util.Enumeration;
+import java.util.Locale;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.ReadListener;
+import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
+import javax.servlet.http.HttpServletResponse;
+
+/** Runs after the existing security chain; rejects an explicit unsupported capability. */
+public final class NoJpeg2000Filter implements Filter {
+    private static void reject(HttpServletResponse response) throws IOException {
+        response.setStatus(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE);
+        response.setContentType("text/plain;charset=UTF-8");
+        response.setHeader("Cache-Control", "no-store");
+        response.getWriter().write(NoJpeg2000Policy.MESSAGE);
+    }
+
+    @Override
+    public void doFilter(ServletRequest incoming, ServletResponse outgoing, FilterChain chain)
+            throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) incoming;
+        HttpServletResponse response = (HttpServletResponse) outgoing;
+        String path = request.getRequestURI().substring(request.getContextPath().length());
+        // Only selected protocol format parameters are capability selections. Layer names,
+        // catalog titles and ordinary JSON properties are never interpreted as codecs.
+        String operation = request.getParameter("REQUEST");
+        if (operation == null) operation = request.getParameter("request");
+        boolean output = operation != null && (operation.equalsIgnoreCase("GetMap")
+                || operation.equalsIgnoreCase("GetCoverage") || operation.equalsIgnoreCase("GetTile"));
+        if (output) {
+            Enumeration<String> names = request.getParameterNames();
+            while (names.hasMoreElements()) {
+                String name = names.nextElement();
+                if (name.equalsIgnoreCase("format") || name.equalsIgnoreCase("outputformat")) {
+                    for (String value : request.getParameterValues(name)) {
+                        if (NoJpeg2000Policy.format(value)) { reject(response); return; }
+                    }
+                }
+            }
+        }
+        boolean upload = path.startsWith("/rest/") && (path.contains("/coveragestores/")
+                || path.matches("/rest/imports/[0-9]+/tasks/[^/]+"))
+                && (request.getMethod().equals("PUT") || request.getMethod().equals("POST"));
+        String type = request.getContentType();
+        String media = type == null ? "" : type.toLowerCase(Locale.ROOT);
+        if (upload && (NoJpeg2000Policy.filename(path)
+                || NoJpeg2000Policy.filename(request.getParameter("filename")) || NoJpeg2000Policy.format(type))) {
+            reject(response); return;
+        }
+        // JSON/XML/form bodies retain their native parser and encoding semantics.
+        // Multipart and ZIP members are checked by coverage file validation after extraction.
+        if (upload && !media.contains("json") && !media.contains("xml") && !media.startsWith("multipart/")
+                && !media.startsWith("application/x-www-form-urlencoded")) {
+            ServletInputStream original = request.getInputStream();
+            PushbackInputStream input = new PushbackInputStream(original, 12);
+            byte[] prefix = input.readNBytes(12);
+            if (NoJpeg2000Policy.signature(prefix)) { reject(response); return; }
+            input.unread(prefix);
+            ServletInputStream replay = new ServletInputStream() {
+                @Override public int read() throws IOException { return input.read(); }
+                @Override public int read(byte[] b, int off, int len) throws IOException { return input.read(b, off, len); }
+                @Override public void close() throws IOException { input.close(); }
+                @Override public boolean isFinished() { return original.isFinished() && availablePrefix() == 0; }
+                private int availablePrefix() { try { return input.available(); } catch (IOException e) { return 0; } }
+                @Override public boolean isReady() { return original.isReady() || availablePrefix() > 0; }
+                @Override public void setReadListener(ReadListener listener) { original.setReadListener(listener); }
+            };
+            chain.doFilter(new HttpServletRequestWrapper(request) {
+                @Override public ServletInputStream getInputStream() { return replay; }
+                @Override public BufferedReader getReader() throws IOException {
+                    String encoding = getCharacterEncoding();
+                    return new BufferedReader(new InputStreamReader(replay,
+                            encoding == null ? StandardCharsets.ISO_8859_1.name() : encoding));
+                }
+            }, response);
+            return;
+        }
+        chain.doFilter(request, response);
+    }
+}
