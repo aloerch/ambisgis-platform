@@ -35,6 +35,7 @@ def prepare(source):
     return {'profile': 'NO-JPEG2000', 'manifest_sha256': sha(manifest), 'additions': additions,
             'repairs': [{k: row[k] for k in ('path', 'before_sha256', 'after_sha256', 'reason')} for row in rows],
             'rejection': 'HTTP 415, explicit JPEG2000 unsupported message; bounded prefix inspection without decoding',
+            'importer_json': 'Six native REST converters map JSONException to HTTP 400 with fixed text and no parser cause; native transform-chain converter uses existing transformChain parser.',
             'limits': {'scope': 'Java/server profile only; XML OGC requests retain native structured format rejection.',
                        'zip_upload': 'New explicit 1 GiB compressed-body and 10000-member limits; HTTP 413 and transient cleanup. Direct non-ZIP upload bounds unchanged.',
                        'retained_native_staging': 'Multipart parser may stage its input before this guard; this bounded change is not a general multipart parser redesign.'}}
