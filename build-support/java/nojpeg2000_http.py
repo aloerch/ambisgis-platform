@@ -76,9 +76,19 @@ def catalog_state(data):
 
 
 def rejected(config, token, directory, label, route, **kwargs):
-    body=request(config,token,directory,label,route,statuses=(415,),**kwargs)
-    require(MESSAGE in body,'explicit unsupported JPEG2000 diagnostic absent: '+label)
-    require(len(body)<2048 and b'java.lang.' not in body and b'Exception' not in body,'unsupported response leaked implementation diagnostics')
+    try:
+        body=request(config,token,directory,label,route,statuses=(415,),**kwargs)
+        require(MESSAGE in body,'explicit unsupported JPEG2000 diagnostic absent: '+label)
+        require(len(body)<2048 and b'java.lang.' not in body and b'Exception' not in body,'unsupported response leaked implementation diagnostics')
+    except ValueError as error:
+        # Only continue after the bounded HTTP client retained a sanitized
+        # response. Transport, credential and containment faults still abort.
+        receipt=directory/(label+'-http.json')
+        if not receipt.is_file(): raise
+        path=directory/'negative-failures.json'
+        failures=json.loads(path.read_text()) if path.exists() else []
+        failures.append({'case':label,'expected_status':415,'actual_status':json.loads(receipt.read_text())['status'],'error':str(error)})
+        save(path,failures)
     return label
 
 
@@ -255,6 +265,8 @@ def probe(config, token, output, phase='initial'):
             image=image.convert('RGB')
             require(max(abs(a-b) for a,b in zip(image.getpixel((32,64)),(40,80,160)))<=2,'valid raster failed after unsupported requests')
         require(catalog_state(data)==before,'negative requests or print outputs mutated catalog/resource state')
+        if (directory/'negative-failures.json').exists():
+            report.setdefault('failures',[]).extend(json.loads((directory/'negative-failures.json').read_text()))
         report.update(result_exit_code=1 if report.get('failures') else 0,prints=outputs,catalog_unchanged=True,recovery=True)
     except Exception as error:
         message=str(error)
