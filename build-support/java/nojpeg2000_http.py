@@ -195,6 +195,21 @@ def probe(config, token, output, phase='initial'):
                         upload=('--'+boundary+'\r\nContent-Disposition: form-data; name="file"; filename="disguised.zip"\r\nContent-Type: application/zip\r\n\r\n').encode()+archive.getvalue()+('\r\n--'+boundary+'--\r\n').encode()
                     report['negative'].append(rejected(config,token,directory,'import-zip-'+mode,path,method=method,body=upload,content_type=mime))
                     require(json.loads(request(config,token,directory,'tasks-after-zip-'+mode,route+'/tasks'))==tasks,'ZIP rejection created partial import task')
+                # Candidate resource-limit behavior is separate from unsupported codec behavior.
+                too_many=io.BytesIO()
+                with zipfile.ZipFile(too_many,'w',compression=zipfile.ZIP_STORED) as z:
+                    for count in range(10001):z.writestr('ordinary-'+str(count)+'.txt',b'')
+                for mode in ('direct','multipart'):
+                    if mode=='direct':
+                        path=route+'/tasks/too-many.zip';upload=too_many.getvalue();mime='application/zip';method='PUT'
+                    else:
+                        path=route+'/tasks';method='POST';mime='multipart/form-data; boundary='+boundary
+                        upload=('--'+boundary+'\r\nContent-Disposition: form-data; name="file"; filename="too-many.zip"\r\nContent-Type: application/zip\r\n\r\n').encode()+too_many.getvalue()+('\r\n--'+boundary+'--\r\n').encode()
+                    answer=request(config,token,directory,'zip-limit-'+mode,path,method=method,body=upload,content_type=mime,statuses=(413,))
+                    require(b'10000 members' in answer and b'1 GiB' in answer,'ZIP limit must be explicit, not a codec unsupported error')
+                    require(json.loads(request(config,token,directory,'tasks-after-limit-'+mode,route+'/tasks'))==tasks,'limit refusal created partial task')
+                report['archive_limits']={'compressed_bytes':1073741824,'members':10000,'live_cases':['direct-10001-members','multipart-10001-members'],
+                        'expected_status':413,'compressed_byte_bound':'Separately executed source guard sparse-file/declared/private-copy-bound tests; not a live GiB transfer.'}
                 require(catalog_state(data)==before,'failed importer uploads changed catalog/resource data')
             finally:
                 request(config,token,directory,'import-cleanup',route,method='DELETE',statuses=(200,204))
