@@ -158,3 +158,14 @@ checked. Ordinary raster/PDF positives, 44 intentional JPEG2000 refusals, bounde
 repeated 71 passes and six unchanged skips after the final JSON replacement was
 frozen. These final receipts supersede earlier component/dependency runs only for
 this bounded imaging evidence; combined live/runtime acceptance remains separate.
+
+The corrected [cross-profile inventory](../verification/json-jpeg2000-remediation/imaging-cross-profile-inventory.json)
+keeps QGIS's separate `spatial-04/prefix` GDAL selection distinct from the database
+`postgis-slice/run-003/prefix`. QGIS's own cache reports OpenJPEG not found and its
+retained driver output has no JP2; the database-only discovered-but-disabled
+OpenJPEG record is not copied to QGIS. Four retained Qt image plugins (GIF, ICO,
+JPEG, SVG) have no JP2 plugin. QGIS still loads Exiv2 with JP2 metadata read/write
+APIs; that unrelated metadata path is unchanged. The source-built Java OpenJPEG
+alternative would introduce a new native codec/wrapper/loading boundary for this
+selected Java profile, regardless of existing host discovery or unrelated metadata
+parsers. This correction is a static integrity review, without native rebuilding.
