@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "scope": "Fixture diagnosis/correction only; no production MapFish change and no containment relaxation",
+  "gwc02_remote_failure": {
+    "http": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-02/nojpeg2000-http/initial/print-remote-jpeg2000-tile-http.json",
+      "sha256": "cc94e6c917a819a4199325b12a009f573589ae6f1b17732d0b266c9acc73df26",
+      "bytes": 424
+    },
+    "fixture_receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-02/nojpeg2000-http/initial/remote-print-result.json",
+      "sha256": "75b1c8a278d23a9b4b31319c698cfb6a91985aa62a2b81afa9caf8721ca3c26f",
+      "bytes": 505
+    },
+    "classification": "HTTP200 followed an Operation not permitted before any fixture fetch, from inherited CommonsHttpClient3.1 wildcard prebind under loopback confinement. It was not JPEG2000 capability acceptance. Existing native localHostForward.from configuration exercises JDKloopback loading without patched production classes or new broker exceptions."
+  },
+  "gwc03_actual_fetched_negative": {
+    "receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-03/nojpeg2000-http/initial/remote-print-result.json",
+      "sha256": "913b1b8e5f05178c1b507147902dcde5259c99e03bd58b16de0fa668a8ef5850",
+      "bytes": 1651
+    },
+    "classification": "Corrected nativeforward fixture fetched exact genuineJP2andJPXPDFpayloads and got415. Full GWC03 remained failed on the later PDF validator; this is not a whole-run pass."
+  },
+  "actual_local_pdf": {
+    "body": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-03/nojpeg2000-http/initial/print-valid-pdf.body",
+      "sha256": "51c3514087b732031401c91b58c6412ab8aab4e4fbe502157eb54fa1ac168108",
+      "bytes": 1406
+    },
+    "classification": "Valid1406byteHTTPPDF has1page595x842 and18342blue/18336red pixels; arbitrary1500byte minimum misclassified compressed content."
+  },
+  "actual_remote_pdf": {
+    "body": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-03/nojpeg2000-http/initial/print-remote-valid-pdf.body",
+      "sha256": "3e396d5fcb4d51cdeadf86d8a7e00e3ef23ea29d8421cf9dc5356c0d7ceb1e3f",
+      "bytes": 16809
+    },
+    "classification": "Actual16809byteHTTPPDF parsed but rendered zero colored pixels; not accepted as positive content."
+  },
+  "independent_actual_body_diagnostic": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/http-pdf-diagnostic-01/result.json",
+    "sha256": "f7a00185743d18abdd28643f182e0efbf7a1569cdbb0ea3116b4d24e76c334c6",
+    "bytes": 50731
+  },
+  "independent_actual_body_log": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/http-pdf-diagnostic-01/decode.log",
+    "sha256": "5662ec9a186c97dd4340e49dfb9b7acd4cf1e0bb12b79f3e7c25865d55b6a78e",
+    "bytes": 518
+  },
+  "geometry_diagnosis": {
+    "original_input": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-07/fixtures/ordinary-embedded.pdf",
+      "sha256": "8d8d54c12bc91e9261e3eb8c1e034eab85b2348ddb16418ae4dc0ea43db99c9d",
+      "bytes": 16327
+    },
+    "log": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/remote-tile-fixtures-01/original-geometry.log",
+      "sha256": "38eeb1e299224aaf20e737330a571dea2a07dfbc4db76285e81bda96dc9d0e22",
+      "bytes": 140
+    },
+    "network": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/remote-tile-fixtures-01/original-geometry-network.json",
+      "sha256": "d15c1badb0e0417b29363db1a18c75d23d89a16d0b954b66dfa1cd9b85b1aba0",
+      "bytes": 51095
+    },
+    "reason": "Original fixture page595x842 draws image atPDFcoordinatesx36,y726,width96,height80. PDFTileRenderer imports at0,0withoutresize into192x160WMSviewport; image lies outside the clip. This is unsuitable fixture geometry, not a newly broken ordinary PDF renderer."
+  },
+  "corrected_tile_generation": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/remote-tile-fixtures-01/result.json",
+    "sha256": "0be07e98cb392a422ff3b8f85ab3ed91ce767cf15b1ff7e9592bc11a71b7a6e0",
+    "bytes": 51491
+  },
+  "corrected_fixture_source": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/PdfTileFixtures.java",
+    "sha256": "38cddc363458034600ff6fe60fea76c1632cebc47ceee9a99385f28ac96ac54d",
+    "bytes": 3348
+  },
+  "corrected_expected": "Both realPDFfixtures are1page192x160 withfullpage imageat0,0. OrdinaryPDFrenders15360blue and15360red pixels; JPEG2000PDFcontains actualJPXDecode. Fresh actualHTTPresponse mustbe parsed/rendered with knowncolor assertions before marking positive.",
+  "corrected_actual_http_status": "Pending separate runtime-agent execution receipt; generation success alone is not HTTP acceptance."
+}
