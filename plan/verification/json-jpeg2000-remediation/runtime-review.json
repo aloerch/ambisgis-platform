@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "task": "FND-02/F02-06",
+  "scope": "GeoServer NO-JPEG2000 source guard and selected real-HTTP retest integration; no legal/adoption/distribution acceptance",
+  "review_role": "Implementation author self-review, incorporating independent root/imaging reviewer findings; not represented as independent review of own code.",
+  "integration_source_commit": "94c440c",
+  "files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000Policy.java",
+      "sha256": "bad0717ba28cd18aea28a4595f57a253787ed3d6eac57f4918df9083661e6356",
+      "bytes": 5809
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000Filter.java",
+      "sha256": "605fa79ca6e04dba8a0e332b80baf358327f458dcb209203d25be91791e4fd81",
+      "bytes": 7960
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/geoserver_profile.py",
+      "sha256": "a3336c05f75695a0b1a27a4f1790990b2fc7eaedcc0bce53c06b26e256f0687b",
+      "bytes": 2357
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/geoserver-repairs.json",
+      "sha256": "8a7ddf464bc468d2f2faa8b8eedf8fdfd4480c9fdaa3039e3a6ab151385ab0da",
+      "bytes": 94266
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000GuardWitness.java",
+      "sha256": "99b16b2027a0a2441f174af8998c40a2426ce7c91261fcaec3a1a59ee5dd494d",
+      "bytes": 10679
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/guard_probe.py",
+      "sha256": "b0e56b75cfc340143cc13b659d756a020acd68d7cb341c2c1fc26375a17a00a3",
+      "bytes": 4045
+    }
+  ],
+  "native_guard": {
+    "receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/runtime/guard-10/result.json",
+      "sha256": "254ec790beb741a709764c3f24ec54f12cdf516b743f73aa60a941af73462d9d",
+      "bytes": 123702
+    },
+    "result_exit_code": 0,
+    "assertions": 74,
+    "compile_api": "javax.servlet-api 3.1.0 (actual GeoServer POM selection)",
+    "execution": "actual changed CoverageStoreFileValidator and ImportTaskController compiled against retained parent WAR libraries, real native multipart method and production servlet policy/filter; trusted fixtures under existing offline AF_INET/AF_INET6 denial",
+    "fresh_new_war_runtime_executed": false
+  },
+  "review_findings_fixed": [
+    "Added Servlet3.1 init/destroy implementations; prior JettyServlet4-first focused compile would have hidden a Maven interface mismatch.",
+    "Case-insensitive OGC REQUEST names, explicit normalized JPEG2000 aliases, filename/MIME/content and recognizable truncation handling.",
+    "File endpoints inspect content despite JSON/XML MIME spoofing; ordinary JSON metadata parser input and streaming/reader bytes are preserved.",
+    "Native multipart preflight validates all parts before accepting any; ordinary-first/disputed-second request cannot partially create tasks.",
+    "Direct/multipart ZIP preflight reads only names/twelve decoded bytes per member before persistent importer state, with staging removed on rejection/errors/success.",
+    "Explicit 1GiB compressed ZIP and10000member candidate limits use safe413 diagnostics; tests exercise private smaller-copy-bound logic without production property bypass, declared limit, sparsefile boundary and actual native multipart member-limit handling."
+  ],
+  "limitations": [
+    "New 1GiB compressed/10000member ZIP limits are a candidate acceptance choice; larger archives are413, not mislabeled JPEG2000. No claim of unlimited imports.",
+    "Inherited Commons FileUpload may stage the original multipart input before this preflight. This scoped change does not establish a global multipart upload size or parser hardening policy.",
+    "Selected inline coverage, direct and multipart/ZIP importer uploads are guarded. A universal guarantee across all remote/URL/harvest APIs is not established.",
+    "Selected local mosaic has no URL SourceSPIProvider; source HarvestedResource.harvestURLCollection returns empty outcomes while existing CoverageStoreFileController ignores them and returns202. Real runtime probe records native index unchanged and capability_acceptance:false; this pre-existing remote-source limitation is not a new codec loss or passed JPEG2000 case.",
+    "Native TIFF compression34712/33003/33005 is rejected identically by parent and successor in imaging probe07; this is historical unsupported capability, not new ordinary-TIFF regression.",
+    "Guard unit results and parent classpath compilation are not acceptance of new WAR bytes; exact-WAR HTTP/GWC/PostGIS/MapFish/restart results remain separate."
+  ],
+  "retained_attempts": {
+    "guard01": "Failed evidence integration: verifier API name; compile completed, no successful receipt claimed.",
+    "guard02_to09": "Executed prior versions remain retained; guard09 selected64MiB prototype is superseded by final1GiB guard10.",
+    "host_gwc_tests": "Host python lacks PIL: failed test discovery retained under runtime/checks-01; retained backend venv passes59 current GWC regression tests."
+  },
+  "review_conclusion": "No remaining material source guard finding in reviewed scope; new exact-WAR live acceptance pending and known limits must be preserved."
+}
