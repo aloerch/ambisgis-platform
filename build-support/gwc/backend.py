@@ -176,7 +176,10 @@ def run_child(invocation):
         result['security_configuration'] = security_before
         result['cache_after'] = cache_manifest(output / 'tile-cache')
         if fixture_hashes() != cache_config_before: raise RuntimeError('fixture data/config changed during final phase')
-        result['result_exit_code'] = 0
+        codec_failures = [name for name in ('nojpeg2000_initial', 'nojpeg2000_restart')
+                          if result.get(name, {}).get('result_exit_code', 0) != 0]
+        result['result_exit_code'] = 1 if codec_failures else 0
+        if codec_failures: result['failed_phases'] = codec_failures
     except Exception as error:
         result['error'] = {'type':type(error).__name__, 'message':str(error) if not any(v and v in str(error) for v in private) else 'redacted fixture error'}
     finally:

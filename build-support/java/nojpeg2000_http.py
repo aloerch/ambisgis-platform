@@ -170,7 +170,17 @@ def probe(config, token, output, phase='initial'):
             require(catalog_state(data)==before,'rejected raster ZIP changed catalog/resource data')
             # net.sf.json importer parser is exercised by a real context round trip.
             contexts=request(config,token,directory,'imports-before','rest/imports')
-            malformed=request(config,token,directory,'imports-malformed','rest/imports',method='POST',body=b'{"import":',content_type='application/json',statuses=(400,))
+            try:
+                malformed=request(config,token,directory,'imports-malformed','rest/imports',method='POST',body=b'{"import":',content_type='application/json',statuses=(400,))
+            except ValueError:
+                # Preserve the failed assertion and actual response; independent
+                # upload/render/cache checks must still run to expose other faults.
+                receipt=directory/'imports-malformed-http.json'
+                if not receipt.is_file(): raise
+                actual=json.loads(receipt.read_text())['status']
+                if actual==400: raise
+                report.setdefault('failures',[]).append({'case':'imports-malformed','expected_status':400,'actual_status':actual})
+                malformed=(directory/'imports-malformed.body').read_bytes()
             require(len(malformed)<8192,'malformed JSON response unbounded')
             require(json.loads(request(config,token,directory,'imports-after-malformed','rest/imports'))==json.loads(contexts),'malformed JSON created an import context')
             payload=json.dumps({'import':{'targetWorkspace':{'workspace':{'name':'fixture'}}}}).encode()
@@ -245,7 +255,7 @@ def probe(config, token, output, phase='initial'):
             image=image.convert('RGB')
             require(max(abs(a-b) for a,b in zip(image.getpixel((32,64)),(40,80,160)))<=2,'valid raster failed after unsupported requests')
         require(catalog_state(data)==before,'negative requests or print outputs mutated catalog/resource state')
-        report.update(result_exit_code=0,prints=outputs,catalog_unchanged=True,recovery=True)
+        report.update(result_exit_code=1 if report.get('failures') else 0,prints=outputs,catalog_unchanged=True,recovery=True)
     except Exception as error:
         message=str(error)
         for value in secrets(config,token):
