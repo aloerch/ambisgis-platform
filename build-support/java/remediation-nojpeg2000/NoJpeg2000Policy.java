@@ -18,6 +18,13 @@ import java.util.zip.ZipEntry;
 public final class NoJpeg2000Policy {
     public static final String MESSAGE =
             "JPEG2000 is unsupported in the AmbisGIS NO-JPEG2000 Java/server profile.";
+    public static final long MAX_ARCHIVE_BYTES = 1024L * 1024 * 1024;
+    public static final int MAX_ARCHIVE_MEMBERS = 10000;
+    public static final String LIMIT_MESSAGE = "ZIP upload exceeds the NO-JPEG2000 profile limit (1 GiB compressed or 10000 members).";
+    public static final class InputLimit extends IOException {
+        private static final long serialVersionUID = 1L;
+        public InputLimit() { super(LIMIT_MESSAGE); }
+    }
     private static final Set<String> FORMATS = Set.of(
             "jp2", "j2k", "j2c", "jpc", "jpf", "jpx", "jpm", "mj2", "jpeg2000");
     private NoJpeg2000Policy() {}
@@ -52,9 +59,12 @@ public final class NoJpeg2000Policy {
      * No member is extracted; ordinary large image data is not decompressed here.
      */
     public static boolean archive(Path path) throws IOException {
+        if (Files.size(path) > MAX_ARCHIVE_BYTES) throw new InputLimit();
         try (ZipFile zip = new ZipFile(path.toFile())) {
             var entries = zip.entries();
+            int count = 0;
             while (entries.hasMoreElements()) {
+                if (++count > MAX_ARCHIVE_MEMBERS) throw new InputLimit();
                 ZipEntry entry = entries.nextElement();
                 if (entry.isDirectory()) continue;
                 if (filename(entry.getName())) return true;
@@ -66,11 +76,30 @@ public final class NoJpeg2000Policy {
         return false;
     }
 
+    /** Copies at most 1 GiB to transient storage; callers own removal in every outcome. */
+    public static void stageArchive(InputStream input, Path path) throws IOException {
+        stageArchive(input, path, MAX_ARCHIVE_BYTES);
+    }
+
+    // Private limit injection allows a small actual copy-bound regression without
+    // a runtime setting that could disable the selected production limit.
+    private static void stageArchive(InputStream input, Path path, long maximum) throws IOException {
+        try (java.io.OutputStream output = Files.newOutputStream(path)) {
+            byte[] buffer = new byte[8192];
+            long count = 0;
+            int size;
+            while ((size = input.read(buffer)) != -1) {
+                if ((count += size) > maximum) throw new InputLimit();
+                output.write(buffer, 0, size);
+            }
+        }
+    }
+
     /** Compressed upload staging is transient and always removed before return. */
     public static boolean archive(InputStream input) throws IOException {
         Path staged = Files.createTempFile("AmbisgisCodecUpload", ".zip");
         try {
-            Files.copy(input, staged, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            stageArchive(input, staged);
             return archive(staged);
         } finally { Files.deleteIfExists(staged); }
     }

@@ -106,6 +106,20 @@ def remote_prints(config,token,directory,root):
     thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
     report={'result_exit_code':1,'bind_host':'127.0.0.1','observations':observations}
     try:
+        # The selected local mosaic has no URL SourceSPIProvider. Observe the
+        # inherited route honestly; do not count its empty 202 as JPEG2000 support.
+        import remediation_mosaic
+        tiles=Path(config['output'])/'geoserver-data/data/fixture/remediation_mosaic'
+        before_index=remediation_mosaic.index_evidence(config,tiles)
+        harvest_url='http://127.0.0.1:'+str(server.server_port)+'/jpeg2000-tile'
+        request(config,token,directory,'remote-harvest-observation',
+                'rest/workspaces/fixture/coveragestores/remediation_mosaic/remote.imagemosaic',
+                method='POST',body=harvest_url.encode(),content_type='text/plain',statuses=(202,400,415))
+        response=json.loads((directory/'remote-harvest-observation-http.json').read_text())
+        require(remediation_mosaic.index_evidence(config,tiles)==before_index,'unsupported remote harvest altered native mosaic index')
+        report['remote_harvest']={'status':response['status'],'fixture_fetched':bool(observations),
+                'index_unchanged':True,'capability_acceptance':False,
+                'classification':'Pre-existing unsupported remote source: selected mosaic has no URL SourceSPIProvider; native controller historically discards empty harvest results. No universal remote-harvest guarantee.'}
         for path,mime in [('jpeg2000-tile','image/png'),('pdf-jpeg2000-tile','application/pdf')]:
             spec=json.loads(print_spec('remote_map'))
             spec['units']='degrees'

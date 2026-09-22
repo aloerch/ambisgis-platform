@@ -10,7 +10,6 @@ import java.nio.charset.StandardCharsets;
 import java.io.PushbackInputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import java.util.zip.ZipException;
 import java.util.Enumeration;
 import java.util.Locale;
@@ -88,13 +87,21 @@ public final class NoJpeg2000Filter implements Filter {
             Path archive = null;
             try {
                 if (NoJpeg2000Policy.zipSignature(prefix)) {
+                    if (request.getContentLengthLong() > NoJpeg2000Policy.MAX_ARCHIVE_BYTES)
+                        throw new NoJpeg2000Policy.InputLimit();
                     archive = Files.createTempFile("AmbisgisCodecRequest", ".zip");
-                    Files.copy(input, archive, StandardCopyOption.REPLACE_EXISTING);
+                    NoJpeg2000Policy.stageArchive(input, archive);
                     if (NoJpeg2000Policy.archive(archive)) {
                         Files.deleteIfExists(archive); reject(response); return;
                     }
                     input = new PushbackInputStream(Files.newInputStream(archive), 12);
                 }
+            } catch (NoJpeg2000Policy.InputLimit limit) {
+                if (archive != null) Files.deleteIfExists(archive);
+                response.setStatus(HttpServletResponse.SC_REQUEST_ENTITY_TOO_LARGE);
+                response.setContentType("text/plain;charset=UTF-8");
+                response.getWriter().write(NoJpeg2000Policy.LIMIT_MESSAGE);
+                return;
             } catch (ZipException malformed) {
                 if (archive != null) Files.deleteIfExists(archive);
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
