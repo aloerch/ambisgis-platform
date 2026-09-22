@@ -63,7 +63,7 @@ public final class NoJpeg2000Filter implements Filter {
                 }
             }
         }
-        boolean upload = path.startsWith("/rest/") && (path.contains("/coveragestores/")
+        boolean upload = (path.matches("/rest/workspaces/[^/]+/coveragestores/[^/]+/(file|url|external|remote)[.][^/]+")
                 || path.matches("/rest/imports/[0-9]+/tasks/[^/]+"))
                 && (request.getMethod().equals("PUT") || request.getMethod().equals("POST"));
         String type = request.getContentType();

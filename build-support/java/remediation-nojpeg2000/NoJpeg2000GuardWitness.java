@@ -75,6 +75,13 @@ public final class NoJpeg2000GuardWitness {
             new NoJpeg2000Filter().doFilter(r,response,(a,b)->require(Arrays.equals(input,a.getInputStream().readAllBytes()),"lookahead changed stream"));
             require(response.getStatus()==200,"valid input status changed");
         }
+        for(String metadataType:new String[]{"application/json","application/xml"}) {
+            MockHttpServletRequest metadata=request("/rest/workspaces/fixture/coveragestores/ordinary.jp2",metadataType,"{\"coverageStore\":{\"enabled\":true}}".getBytes(StandardCharsets.UTF_8));
+            MockHttpServletResponse metadataResponse=new MockHttpServletResponse();
+            final boolean[] invoked={false};
+            new NoJpeg2000Filter().doFilter(metadata,metadataResponse,(a,b)->{invoked[0]=true;require(a==metadata,"metadata request parser changed");});
+            require(invoked[0] && metadataResponse.getStatus()==200,"ordinary store named jp2 metadata must remain native");
+        }
         MockHttpServletRequest reader=request("/rest/workspaces/fixture/coveragestores/store/external.geotiff","text/plain","file:/tmp/plain.tif".getBytes(StandardCharsets.UTF_8));
         new NoJpeg2000Filter().doFilter(reader,new MockHttpServletResponse(),(a,b)->require(a.getReader().readLine().equals("file:/tmp/plain.tif"),"reader lookahead lost bytes"));
         MockHttpServletRequest json=request("/rest/imports/0/tasks/0","application/json","{\"format\":\"image/jp2\"}".getBytes(StandardCharsets.UTF_8));
