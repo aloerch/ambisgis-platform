@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "reviewer": "independent JSON implementation agent reviewing imaging source; not its author",
+  "reviewed_at": "2026-09-22T20:33:29.445165+00:00",
+  "scope": "Read-only engineering/source-exclusion inspection, component-stage evidence; not legal clearance or exact final-WAR runtime acceptance",
+  "source_evidence": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/plan/verification/json-jpeg2000-remediation/imaging-evidence.json",
+    "sha256": "426eb73c657cd336c76f883ae178267e92d23358f4dc814b3f5d16d3841bbcdc"
+  },
+  "reviewed_files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/Jpeg2000Policy.java",
+      "sha256": "6229acb19a76f979771f53d1effea1d623b9049095a80c0a8f5ce7d65f61915b",
+      "bytes": 7248
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/Jpeg2000RemovalWitness.java",
+      "sha256": "aa3caad5d4b0849a90c79d3f50b39e1c0d6c2329614fd2c57d74a8aa6a253694",
+      "bytes": 10845
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/MapFishImagingWitness.java",
+      "sha256": "8d73831a38a58919a4fa658c4888bf6dc90f5fdcba926b0cde11fb92fe0a4ee0",
+      "bytes": 3219
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/NoJpegImageIOWitness.java",
+      "sha256": "08ce3d5149d5d7d945d10863e65c6419817d0cbc69e108b16737a5d893c7173e",
+      "bytes": 6625
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/TiffJpeg2000Witness.java",
+      "sha256": "a31594cb088fc77ea25094818df94b72244ca488223ad8821caef7f847dc5add",
+      "bytes": 1320
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/build_imageio.py",
+      "sha256": "8b57746f5c01ddfb55f7dcc44aa34ebe66d0286cf595279ec2e504f09e1b7e88",
+      "bytes": 9340
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/probe.py",
+      "sha256": "6258fac022ffe1100eb4ffcaad1c3bc198193dd47ef8892478f5bb90e93b7003",
+      "bytes": 11046
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/profile.py",
+      "sha256": "503f0a172a867f5b6e78056bb93684c8b3046f1980dc347d6de12788e74a8206",
+      "bytes": 14562
+    }
+  ],
+  "component_probe": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-10/result.json",
+    "sha256": "92208e18ceed6addb9d948ed4651d7084a65f76008a825ea6388303dd42de441",
+    "status": "passed",
+    "all_executed_stages_exit_zero_and_network_verified": true
+  },
+  "material_findings": [
+    {
+      "finding": "Guard originally ran before doc.close; final-page header/footer image rendering could record codec-policy failure afterward and return successful output.",
+      "resolution": "Exact source patch now checks after layout and after document/writer/reader finalization; final-header/footer JPEG2000 fixtures pass refusal.",
+      "status": "resolved-in-reviewed-source-and-component-test"
+    },
+    {
+      "finding": "Early explicit refusal bypassed document/writer/reader closing paths.",
+      "resolution": "Finally attempts closing all resources and preserves original runtime failure by attaching cleanup failures.",
+      "status": "resolved-in-reviewed-source"
+    },
+    {
+      "finding": "Finalization tests exposed OpenPDF ExceptionConverter using getException instead of Throwable.getCause.",
+      "resolution": "Bounded typed cause traversal includes ExceptionConverter; real wrapper HTTP415 mapping assertion passes.",
+      "status": "resolved-in-reviewed-source-and-component-test"
+    }
+  ],
+  "checks": [
+    "Source selection excludes JJ2000 plus dependent JPEG2000 providers/SPIs; original source/terms remain custody only.",
+    "Preserved JAI non-JPEG2000 source/class mapping and component raster/printing results support bounded exclusion; they are not product-wide no-JPEG2000 proof.",
+    "Scanner reopens actual WAR, verifies parent hash, scans nested archives/classes/SPIs/native names+bytes and known parent class fingerprints, and requires preserved/guard classes.",
+    "Old-parent negative control rejects the actual JJ2000 runtime; simple filename absence is not the sole test.",
+    "Image URLs use bounded single fetch plus content signatures; PDF streams inspected through resolved filter dictionaries/arrays instead of string matching.",
+    "Confirmed mandatory component stages enforce nonzero/network-proof failures; final aggregate/live service/GWC/frontend checks remain integrator work."
+  ],
+  "remaining_material_findings": [],
+  "limitations": [
+    "Did not freshly execute imaging component tests as reviewer; inspected source and retained actual run records.",
+    "Independent source accounting cannot establish absence of arbitrary transformed code by hashes alone; no legal-clearance claim."
+  ]
+}
