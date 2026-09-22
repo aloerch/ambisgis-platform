@@ -298,7 +298,49 @@ def replay_frontend(selection, repos, output):
     for key in ['frontend-project-source','frontend-patcher-source','frontend-nomnom-source','frontend-package-lock']:
         src = selection.record(key)
         shutil.copyfile(src, frontend/src.name)
-    return {'changes': changes, 'local_inputs': inventory(frontend),
+    spec = selection.document('frontend-inputs')
+    custody = Path(spec['retained_root'])
+    require(custody.is_relative_to(selection.workspace), 'frontend custody outside workspace')
+    manifest_row = next(r for r in spec['references'] if Path(r['path']).name == 'manifest.json')
+    manifest = json.loads(checked(selection.workspace,
+        Path(manifest_row['path']).relative_to(selection.workspace).as_posix(),
+        manifest_row['sha256'],manifest_row['bytes']).read_text())
+    assembly = output/'frontend-build-source'
+    client = assembly/'client'
+    shutil.copytree(repos['mapstore-client'],client,ignore=shutil.ignore_patterns('.git'))
+    front = client/'geonode_mapstore_client/client'
+    nested = front/'MapStore2'
+    if nested.exists():
+        # A fresh Git checkout creates only an empty gitlink directory.
+        require(nested.is_dir() and not any(nested.iterdir()), 'unexpected frontend submodule checkout')
+        nested.rmdir()
+    shutil.copytree(repos['mapstore'],nested,ignore=shutil.ignore_patterns('.git'))
+    copied = []
+    for row in manifest['files']:
+        if not (row['path'].startswith('vendor/') or row['path'] == 'package-lock.json'):
+            continue
+        original = checked(custody,row['path'],row['sha256'],row['bytes'])
+        target = safe_path(front,row['path'])
+        target.parent.mkdir(parents=True,exist_ok=True)
+        # The accepted lock intentionally replaces the donor lock in this private build view.
+        shutil.copyfile(original,target)
+        copied.append({'path':row['path'],'sha256':row['sha256'],'bytes':row['bytes']})
+    build_recipe = selection.record('frontend-replay-executed-build')
+    build = load_module(build_recipe,'restore_frontend_build')
+    build.validate_lock(json.loads((front/'package-lock.json').read_text()),front/'vendor')
+    excluded = []
+    for directory in [front/'dist',client/'geonode_mapstore_client/static/mapstore/dist',
+                      client/'geonode_mapstore_client/static/mapstore/ms-translations']:
+        if directory.exists():
+            require(directory.is_dir() and directory.resolve().is_relative_to(assembly.resolve()), 'unsafe inherited frontend output')
+            excluded.append(directory.relative_to(assembly).as_posix())
+            shutil.rmtree(directory)
+    composition = {'client_source':'client','mapstore_source':'client/geonode_mapstore_client/client/MapStore2',
+        'npm_working_directory':'client/geonode_mapstore_client/client',
+        'local_inputs':copied,'removed_inherited_generated_directories':excluded,
+        'scope':'Source/build-input assembly only. No npm lifecycle, install, compilation or frontend runtime performed.'}
+    save(assembly/'assembly.json',composition)
+    return {'changes': changes, 'local_inputs': inventory(frontend), 'assembly':composition,
             'packaging': 'Inherited compiled dist/ms-translations removed by accepted frontend recipe before compilation; generated outputs are not source.'}
 
 
@@ -394,10 +436,33 @@ def replay_qgis(selection, repos, output):
         sys.modules.pop('common', None)
         if old_common is not None:
             sys.modules['common'] = old_common
+    notice_prefix = 'share/qgis/doc/ambisgis-resource-selection/'
+    notice_rows = {r['path']:r for r in final['files'] if r['path'].startswith(notice_prefix)}
+    notice_sources = {r['to']:r['from'].removeprefix('share/qgis/') for r in parent['relocated_metadata']}
+    notice_sources.update({notice_prefix+'default-icons-LICENSE.TXT':'images/themes/default/LICENSE.TXT',
+        notice_prefix+'QGIS-Vera-COPYRIGHT.TXT':'tests/testdata/font/QGIS-Vera/COPYRIGHT.TXT',
+        notice_prefix+'QGIS-Vera-README.txt':'tests/testdata/font/QGIS-Vera/QGIS-Vera-README.txt'})
+    readme = (f"Private proposed QGIS resource profile. Exactly {len(membership['exclusions']):,} optional SVG palettes are omitted.\n"
+        "The old source/stage remain custody records, not approved distribution bundles.\n"
+        "ColorBrewer: This product includes color specifications and designs developed by Cynthia Brewer (http://colorbrewer.org/).\n"
+        "Its exact acknowledgement, naming and notice terms remain in resources/cpt-city-qgis-min/cb/COPYING.xml.\n"
+        "Other inherited resource/support/icon/font obligations remain; these additions are not legal clearance.\n"
+        "Omitted collection metadata/notices are retained here outside the active palette archive.\n"
+        "Saved projects can retain serialized symbol/shader colors, but omitted named ramps cannot be selected or reloaded.\n"
+        "Reclassification from such a ramp requires an explicit user choice; full saved-project compatibility is not claimed.\n")
+    require(set(notice_rows) == set(notice_sources)|{notice_prefix+'README.txt'}, 'QGIS notice membership differs')
+    notice_output = output/'qgis-selected-notices'
+    notice_output.mkdir()
+    for name, item in notice_rows.items():
+        data = readme.encode() if name == notice_prefix+'README.txt' else safe_path(source,notice_sources[name]).read_bytes()
+        require(hashlib.sha256(data).hexdigest() == item['sha256'], 'QGIS selected notice differs: '+name)
+        target = safe_path(notice_output,name.removeprefix(notice_prefix))
+        target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_bytes(data)
     require(not set(membership['exclusions']) & set(selected_rows), 'excluded QGIS source selected')
     return {'source_changes': [], 'generated': {'path':str(generated_path.relative_to(output)),
         'sha256':row['sha256'],'records':len(order),'method':'Accepted parser and source inputs, explicit retained emission order; generated file remains derived output'},
-        'resource_comparison': {'files_verified':len(selected_rows), 'excluded_palettes':len(membership['exclusions']),
+        'resource_comparison': {'files_verified':len(selected_rows), 'packaged_notices_verified':len(notice_rows), 'excluded_palettes':len(membership['exclusions']),
             'inventory_sha256':hashlib.sha256(json.dumps(inventory(resources),sort_keys=True).encode()).hexdigest()},
         'custody': 'Original excluded source assets/notices stay in the core repository under original terms; selected source resources are separate non-distribution output.'}
 
@@ -519,6 +584,13 @@ def replay_vendors(selection, output):
         text = '\n'.join(line for line in file.read_text(encoding='iso-8859-1').splitlines()
             if not (line.startswith('com.') and ('CLib' in line or 'CodecLib' in line or '.jpeg2000.' in line)))+'\n'
         (services/file.name).write_text(text,encoding='iso-8859-1')
+    original_jar = Path(imageio['output']['path'])
+    require(original_jar.is_relative_to(selection.workspace), 'ImageIO artifact escapes custody')
+    checked(selection.workspace, original_jar.relative_to(selection.workspace).as_posix(), imageio['output']['sha256'])
+    with zipfile.ZipFile(original_jar) as archive:
+        expected_spi = {name.removeprefix('META-INF/services/'):hashlib.sha256(archive.read(name)).hexdigest()
+            for name in archive.namelist() if name.startswith('META-INF/services/') and not name.endswith('/')}
+    result['imageio']['spi_comparison'] = compare(services,expected_spi,'Exact accepted ImageIO SPI selection')
     result['imageio']['spi_selection'] = inventory(services)
     result['imageio']['profile_exclusions'] = imageio['profile_exclusions']
     for name in ['LICENSE.txt','COPYRIGHT.txt']:
@@ -569,6 +641,14 @@ def materialize_recipes(platform, workspace, repos, output):
         'Compiler/OS/bootstrap closure and full disconnected repair remain FND-08/OWN-02.',
         'Historical excluded source retains original rights and non-distribution status.']}
     try:
+        # Match unchanged baseline Git content to the exact tested archive file sets.
+        # Donor export-ignore omissions remain in Git custody and are reported below.
+        result['archive_correspondence'] = {}
+        for key in ['postgresql','postgis','qgis','jupyterhub','jupyterlab']:
+            entries = archive_entries(selection.record('source-'+key),strip=1)
+            expected = {p:hashlib.sha256(data).hexdigest() for p,data in entries.items()}
+            result['archive_correspondence'][key] = compare(repos[key],expected,
+                'exact accepted '+key+' source archive',exact=False)
         result['java'] = replay_java(selection,repos,output)
         result['geonode'] = replay_geonode(selection,repos)
         result['frontend'] = replay_frontend(selection,repos,output)
