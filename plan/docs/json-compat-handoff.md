@@ -118,7 +118,7 @@ compilation, WFS/REST/auth/role and other configured runtime acceptance remain
 integration evidence; old-WAR receipts are never fresh acceptance of new bytes.
 
 The [exact-WAR evidence](../verification/json-jpeg2000-remediation/json-war-evidence.json)
-binds fresh execution to the successful aggregate-03 WAR. It passes the JSON
+binds fresh execution to the successful final aggregate-04 WAR. It passes the JSON
 contracts and native tests above, ten XML contracts, two actual Spring/AspectJ
 proxy contracts, and genuine Java5 load-time weaving with the normal Java17
 verifier. It also freshly passes all 27 retained GeoFence DAO tests and real
@@ -127,3 +127,11 @@ cleanup stopped that cluster. JSON fixture classes are checked for production
 shadowing, loaded origins are verified, and selected WAR/JAR/test inputs are
 rechecked after execution. Full service/HTTP and imaging acceptance remains in
 the integrator's separate matrix, with existing historical limitations preserved.
+
+The prior aggregate-03 component/database receipts remain intact, but its
+separate malformed-import HTTP response was 500 and did not close runtime
+acceptance. The final aggregate adds narrow controlled-error mapping in six
+REST converters and correct native transform-chain delegation. Independent
+source review and the separate native converter probe preserve both original
+failures and repaired behavior. All JSON/XML/proxy/weaving/GeoFence checks above
+were executed again on aggregate-04; no prior-WAR pass was transferred.

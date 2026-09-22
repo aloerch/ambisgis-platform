@@ -2,7 +2,7 @@
   "schema_version": 1,
   "task": "FND-02/F02-06",
   "finding": "F02-JAVA-json-lib",
-  "status": "focused/source-compile/exact-WAR component and database checks passed; owner review and broader matrix remain separate",
+  "status": "focused/source-compile/final-WAR04 component and database checks passed; owner acceptance and broader matrix remain separately recorded",
   "scope_index": {
     "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/scope-01.json",
     "sha256": "dc7452e1d1895747f6ef32347358b3b5947880be68943e6a30422705dc7177ef",
@@ -291,7 +291,12 @@
   },
   "exact_war_checks": {
     "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-compat/plan/verification/json-jpeg2000-remediation/json-war-evidence.json",
-    "sha256": "bbe5336fde18b45556f4c09409f05bafb12d998d60de10aec110bf5b6f9d505b",
-    "bytes": 3190
+    "sha256": "f7c6ac9e528c829036698360dd816e0a5f8d5ae734df663449a7c658d57ab974",
+    "bytes": 3700
+  },
+  "final_independent_integration_review": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-compat/plan/verification/json-jpeg2000-remediation/json-agent-integration-review.json",
+    "sha256": "05fe0c45fe66fa4d0608932f458f212bd9a04be5ec349e05b53402a60871ed09",
+    "bytes": 4314
   }
 }
