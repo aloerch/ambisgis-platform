@@ -21,9 +21,9 @@ PROFILE = 'NO-ORACLE-NO-JPEG2000-headless-Temurin17'
 MESSAGE = b'JPEG2000 is unsupported in the AmbisGIS NO-JPEG2000 Java/server profile.'
 JP2 = Path('/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/fixtures/JPEG2000-selected.img')
 JP2_SHA = 'd7855b050f69cfb0077d280a4ab717da92bc348e3f4cb4a62550daf2598a6d79'
-PDF_INPUTS = Path('/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-07/fixtures')
-PDF_HASHES = {'jp2-embedded.pdf':'034b65463bc85b854ef322de9729e5c1ff805566a41a01d747893ee628cc1e6b',
-              'ordinary-embedded.pdf':'8d8d54c12bc91e9261e3eb8c1e034eab85b2348ddb16418ae4dc0ea43db99c9d'}
+PDF_INPUTS = Path('/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/remote-tile-fixtures-01')
+PDF_HASHES = {'jp2-tile.pdf':'3319a772dd8f6828a3215b203116a75e90c3826a8babccf1c47b185c1622b776',
+              'ordinary-tile.pdf':'6b4c71b4481d90b08aadd8caf058d9bc13c805ac23a38d84588049a794e0e288'}
 
 
 def enabled(runtime): return (runtime.get('java_profile') or {}).get('profile') == PROFILE
@@ -121,8 +121,8 @@ def rendered_pdf(config,directory,label,java_home):
 def remote_prints(config,token,directory,root,java_home):
     """Serve exact hostile-format data through a finite task-owned loopback fixture."""
     payloads={'/jpeg2000-tile':('image/png',(root/'inputs/known.jp2').read_bytes()),
-              '/pdf-jpeg2000-tile':('application/pdf',(root/'inputs/jp2-embedded.pdf').read_bytes()),
-              '/ordinary-pdf-tile':('application/pdf',(root/'inputs/ordinary-embedded.pdf').read_bytes())}
+              '/pdf-jpeg2000-tile':('application/pdf',(root/'inputs/jp2-tile.pdf').read_bytes()),
+              '/ordinary-pdf-tile':('application/pdf',(root/'inputs/ordinary-tile.pdf').read_bytes())}
     observations=[]
     class Handler(BaseHTTPRequestHandler):
         def log_message(self,*args): pass
