@@ -58,7 +58,7 @@ def prepare(data, output):
         for y in range(64): image.putpixel((x,y),(210,80,30))
     for name, kind in [('known.png','PNG'),('known.jpg','JPEG'),('known.tif','TIFF')]:
         image.save(inputs/name, format=kind)
-    yaml = "dpis: [72]\nformats: ['*']\nscales: [1000]\nhosts:\n  - !localMatch\n    dummy: true\nlayouts:\n"
+    yaml = "dpis: [72]\nformats: ['*']\nscales: [1000]\nlocalHostForward:\n  from: ['127.0.0.1']\nhosts:\n  - !localMatch\n    dummy: true\nlayouts:\n"
     for name in ('known.png','known.jpg','known.tif','known.jp2','known.j2k','disguised.png'):
         yaml += ("  " + name.replace('.','_') + ":\n    mainPage:\n      pageSize: A4\n      items:\n"
                  "        - !text\n          text: 'AmbisGIS actual servlet raster witness'\n          fontSize: 18\n"
