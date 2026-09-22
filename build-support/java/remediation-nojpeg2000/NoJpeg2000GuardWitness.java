@@ -48,7 +48,7 @@ public final class NoJpeg2000GuardWitness {
         catch(RestException expected) { require(expected.getStatus().value()==415,"multipart explicit rejection");require(expected.getMessage().equals(NoJpeg2000Policy.MESSAGE),"multipart diagnostic"); }
     }
     public static void main(String[] args) throws Exception {
-        for(String name: new String[]{"jp2","J2K","jpeg2000","image/jp2; charset=UTF-8"}) require(NoJpeg2000Policy.format(name),"alias missed");
+        for(String name: new String[]{"jp2","J2K","jpeg2000","JPEG 2000","JPEG_2000","jpf","image/x-jp2","image/jpm","image/mj2","image/x-jpeg2000","image/jp2; charset=UTF-8"}) require(NoJpeg2000Policy.format(name),"alias missed");
         for(String name: new String[]{"jpeg","image/jpeg","image/png","geotiff","image/tiff","myjp2"}) require(!NoJpeg2000Policy.format(name),"unrelated format blocked");
         require(NoJpeg2000Policy.signature(JP2),"JP2 signature");require(NoJpeg2000Policy.signature(J2K),"codestream signature");
         require(NoJpeg2000Policy.signature(new byte[]{(byte)255,79}),"truncated SOC rejection");

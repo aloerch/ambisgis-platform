@@ -16,6 +16,7 @@ import java.util.Enumeration;
 import java.util.Locale;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
 import javax.servlet.ReadListener;
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
@@ -27,6 +28,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /** Runs after the existing security chain; rejects an explicit unsupported capability. */
 public final class NoJpeg2000Filter implements Filter {
+    @Override public void init(FilterConfig config) { }
+    @Override public void destroy() { }
     private static void reject(HttpServletResponse response) throws IOException {
         response.setStatus(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE);
         response.setContentType("text/plain;charset=UTF-8");

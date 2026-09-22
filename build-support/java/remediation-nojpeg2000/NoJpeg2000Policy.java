@@ -19,13 +19,15 @@ public final class NoJpeg2000Policy {
     public static final String MESSAGE =
             "JPEG2000 is unsupported in the AmbisGIS NO-JPEG2000 Java/server profile.";
     private static final Set<String> FORMATS = Set.of(
-            "jp2", "j2k", "j2c", "jpc", "jpf", "jpx", "jpeg2000", "jpeg 2000", "jpeg-2000",
-            "image/jp2", "image/j2k", "image/j2c", "image/jpc", "image/jpx", "image/jpeg2000", "image/x-jp2");
+            "jp2", "j2k", "j2c", "jpc", "jpf", "jpx", "jpm", "mj2", "jpeg2000");
     private NoJpeg2000Policy() {}
 
     public static boolean format(String value) {
         if (value == null) return false;
-        return FORMATS.contains(value.split(";", 2)[0].trim().toLowerCase(Locale.ROOT));
+        String name = value.split(";", 2)[0].trim().toLowerCase(Locale.ROOT);
+        if (name.startsWith("image/")) name = name.substring(6);
+        if (name.startsWith("x-")) name = name.substring(2);
+        return FORMATS.contains(name.replace(" ", "").replace("-", "").replace("_", ""));
     }
 
     public static boolean filename(String value) {

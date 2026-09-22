@@ -16,7 +16,7 @@ def main(args):
     try:
         java=TASK/'build-worktrees/java-resolution/toolchain/jdk-17.0.20.1+1/bin'
         m2=TASK/'build-worktrees/java-gmt-remediation/aggregate-02/fresh-m2'
-        names=['org/eclipse/jetty/toolchain/jetty-servlet-api/4.0.6/jetty-servlet-api-4.0.6.jar',
+        names=['javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar',
                'org/springframework/spring-test/5.3.39/spring-test-5.3.39.jar',
                'org/springframework/spring-core/5.3.39/spring-core-5.3.39.jar',
                'org/springframework/spring-jcl/5.3.39/spring-jcl-5.3.39.jar',
