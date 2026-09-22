@@ -1,0 +1,55 @@
+{
+  "scope": "Integrity/static inventory only; no QGIS, database or notebook rebuild or native retest",
+  "selected_database_gdal": "GDAL3.10.3 retained CMake cache has GDAL_USE_EXTERNAL_LIBS=OFF and GDAL_USE_OPENJPEG=OFF. Actual retained gdalinfo--formats contains no JP2 driver. OpenJPEG2.5.4 was discovered on host by CMake but explicitly not selected.",
+  "selected_qgis": "QGIS build selects the same source-owned spatial/GDAL prefix. support-inputs and verified support-07 inventory have no OpenJPEG artifact; no JPEG2000 provider is established by these inputs.",
+  "selected_notebooks": "Retained dependency lock and native linkage inventory have no OpenJPEG/Pillow/rasterio entry. This does not promise that arbitrary user-installed notebook packages or future kernels lack JPEG2000.",
+  "java": "Parent WAR has only JAIJJ2000 codecs; no packaged OpenJPEG/GDAL/Kakadu. OpenPDF JPEG2000 embedding and PDFBox optional ImageIO lookup are retained indirect consumers guarded/rejected at selected MapFish routes.",
+  "removal_scope": "Affected Java/server candidate only; no unrelated profile purged and no universal project-wide format-removal claim.",
+  "evidence": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/postgis/build.py",
+      "sha256": "e0593a9eba755145afc1ed7b16eef651e54ef2df4169d20823bdf75041ef9d8d",
+      "bytes": 21074
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/build/gdal/CMakeCache.txt",
+      "sha256": "3bd4233d8d38695daf1777d8cad627f79556cf0df657dc44db73ed384a56f853",
+      "bytes": 120323
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/logs/command-0073.json",
+      "sha256": "f4e2c29a1ac7fd16c27418755197f4796cd1f2173faed985edf511f48a858710",
+      "bytes": 7330
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/logs/0073-gdal-gdalinfo.log",
+      "sha256": "dffd27bacc76f366f84e5954e27f8be96e6372fedbbb6842d010209d63058bed",
+      "bytes": 2231
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/qgis/build.py",
+      "sha256": "0a4dc0d027b09ff04d47b4c2f561ced3e1e7e39f43ee234404727cb774a5d70a",
+      "bytes": 15502
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/qgis/support-inputs.json",
+      "sha256": "7636a34b1823e071dc9662522d8f79be3085953eaed2d64ad6fcd34d1cb37d47",
+      "bytes": 77846
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-inventory.json",
+      "sha256": "aa837efdf41201593ba6d2a48ec7f8320fd8a70c3f456075503fe1f08dd8713a",
+      "bytes": 2848927
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/jupyter/dependency-lock.json",
+      "sha256": "f480ef6e6efabfa3ac6a42107344db5783bfe5edeb2960c7d9dbfba8aa208eee",
+      "bytes": 2704145
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/native-linkage.json",
+      "sha256": "bee67da3b4791b9d3398e4a0ccb59a865e8b518a714e716d13be65a21cdd6acf",
+      "bytes": 57022
+    }
+  ]
+}

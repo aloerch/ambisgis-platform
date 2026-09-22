@@ -1,0 +1,1983 @@
+{
+  "source_archive_sha256": "f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+  "selected_java_files": 132,
+  "headers": [
+    {
+      "path": "com/sun/media/imageio/plugins/bmp/BMPImageWriteParam.java",
+      "sha256": "d8cf03b571152e6ccbabe9288016b6e74a4ee849837aa65fe1bda65456e9da35",
+      "header_sha256": "c7b6d67547c1f7b97e79e796953e183dbc0e7569081bd3bd0e72dbf9274e235a",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/bmp/I18N.java",
+      "sha256": "fac3195aaa7f988cc0e898257a475c1306e5428fc1c38c8034d2a35b5616ccbf",
+      "header_sha256": "b1db66e706083db1bb2cdd3bd1e11b9df5a60386e3ce34c5fc7204d82644d524",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/pnm/PNMImageWriteParam.java",
+      "sha256": "f2a1a71228bbebf142d369086dbf75f1fc2f4a55dd1d4939deece89247a406a8",
+      "header_sha256": "e983500b4a797dd7c4ef17cf33eae9b60d74da5c18fcacc828ed7e921adea5cb",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/BaselineTIFFTagSet.java",
+      "sha256": "a7722b3e8c5b22619d0bb74a3c919e2ea75d38cf55ebcef283c67b7b067fd693",
+      "header_sha256": "30424c7494fefe0ce0a138519f6ff02b5a9e41cb09e8fb14a6c98f802a668cb7",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/EXIFGPSTagSet.java",
+      "sha256": "c3e3595fc3331ce2a451e72759dc4227ebf1964c5c9e4135de08df2f38a1d48a",
+      "header_sha256": "f23a61b1d8a230d4b40dd96e5fdc7dd0188eabc9f5e5adc0e4aeaa4e5c2cd2db",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/EXIFInteroperabilityTagSet.java",
+      "sha256": "7e6a9a0907afa77bda2be6f62d198aadef083af5be7d102ceda3cbbee8bfa362",
+      "header_sha256": "3cb4211cfe1fd14989a39a587b941d8fadb3605d82cc004a78f34beaa7980b4d",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/EXIFParentTIFFTagSet.java",
+      "sha256": "31c0aff3422f9172845df5718a9b6efc22f632adafd6c745e2738ad1868707cc",
+      "header_sha256": "82f1894e62250cd3990c9c37e4c7bdddde496ce47a7d9ef924f8a6773e78085e",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/EXIFTIFFTagSet.java",
+      "sha256": "6b40a0a5cec21fb37aedf2bcd9117a226549a4c3d5179b457abb2bf88cfebd44",
+      "header_sha256": "471100c9827b3feebc701c355f370c5b3bb71e10052f2f196e48847db6e2060d",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/FaxTIFFTagSet.java",
+      "sha256": "2fcef161e8443264408be1357ac1a9a51185e16dbafc6f58dc3514ddba88f040",
+      "header_sha256": "a0045c9c36f4dde6182bc5633351fd6cd63f7fe7c6c3890c390f0948bc881b43",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/GeoTIFFTagSet.java",
+      "sha256": "b33ad6a5954db8a9f17ae25bd11c701a0bcc9eed9f257da7b36753819e1a93da",
+      "header_sha256": "9cdc3ec232e6fb99eebd3ea7cec0a86f4d4070ae16098db787312f479b2c1590",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/TIFFColorConverter.java",
+      "sha256": "cf806d69b8c7e271dd5f175d2b4675310105644720d3399ec15e0785f5f285d7",
+      "header_sha256": "bf75d5d88621e9fbdf5afdfacebdb2ad3c655a949af1ccbae021b70e9ee6fe41",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/TIFFCompressor.java",
+      "sha256": "7e85a596f1bb6648bc712a230971e44db085ae4c17f1717bc0e530f51165bc89",
+      "header_sha256": "28abb870ae70ce5bc8f67f877df93b7c98567bbddbc1d794b79f478fa6f21cdd",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/TIFFDecompressor.java",
+      "sha256": "7fbeddb263637e5e85fde8186a2c7867916c4e91a9f2190d947b45aff8318a95",
+      "header_sha256": "77f85090e651f877b2ed1f3d05fdbe2cdf217cea38fa50bb421189548effb8df",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/TIFFDirectory.java",
+      "sha256": "2bfa92d01546f00b341f7d2d0003863d84c563680de8f4bfce953141a9ee7879",
+      "header_sha256": "6c9a9e841d97f205569c44c3e06a574eb3081a376ec6de598aa6a249a90f71ff",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/TIFFField.java",
+      "sha256": "5e6204a8d1a9a3ad1482ca97421209c89660e5e79f9f9330023e1621d994dd38",
+      "header_sha256": "f2428e05d7bffeb736e288528bf5e0bdecd79e9f4f2c0dfff58f9fb3e5497d41",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/TIFFImageReadParam.java",
+      "sha256": "42e3c3e5fd94ec844fd03e8889bf51e9ee2e498d73951e60b94e248bf46a6543",
+      "header_sha256": "ccc349a5ab4b600c777c72eecfee2ea86791b186fc59fa8065aa9fb4806b76d9",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/TIFFImageWriteParam.java",
+      "sha256": "66876b844d9a1a9fb1b29594bf3a6a1af3b03c581a3a4ee855fe8ff72c324fbe",
+      "header_sha256": "792082768be691243ee90c6edf041bf4183b6e20788368bd7d0841b71b889476",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/TIFFTag.java",
+      "sha256": "8ce8d08848994a8ccd096ed4ba5ecf3e1c968dd043815a8e2490a00b0037155b",
+      "header_sha256": "e616dcb10616c8b6bc88a7dc3e8ad35f5d145c307f24d4bd66a03432ecc8545b",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/tiff/TIFFTagSet.java",
+      "sha256": "96264ddfe9989c00d3554de7c39c044e3b79a6354fb25eb9c46be88a9cf85a3b",
+      "header_sha256": "132afd6ef28dc21bdd96a3d8441a022e2e2b7655eb4a353b3fd2f656b182ee76",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/stream/FileChannelImageInputStream.java",
+      "sha256": "97aaa995dbc0426049a14bf20c86a3c639291c46d807b64ff6ed98aadce5fae5",
+      "header_sha256": "8aef024bd56bbdffe853d9f4ecaa5239912521c21f743f41399fd30e0e3ecdae",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/stream/FileChannelImageOutputStream.java",
+      "sha256": "0c3081e64f89147c1813aaee97205a7995b0b1293eddda52cb1ca29602dc970c",
+      "header_sha256": "dc4b0f74a960b8ba00d7fc15340384cae19a7e25c07eeabf4404a4b57fd44894",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/stream/I18N.java",
+      "sha256": "855ca3f9b3a9188537c76e3e4ac832e1c82e2ad6d731a69de150fc4e8a4c86cc",
+      "header_sha256": "07ea056583687a9e8449ecebe263d16b4166b6027f2f180c895e0faf225162f8",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/stream/RawImageInputStream.java",
+      "sha256": "525e5db69c0967294690cc56cdd498f82b39be3563d82e10e53411346a84b3a5",
+      "header_sha256": "d97702b904ef6c77838482e97f7f835c2bccee4a6e9f357ffbe2ea357e3a5cfc",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/stream/SegmentedImageInputStream.java",
+      "sha256": "b76258577ea0d126b3832e8656881547e8fc8f4dfcdcdf042b81bf32051c2574",
+      "header_sha256": "6d60a483e6e77fcd78778529741edb66d52454eaeb71824f2ead0bd62afe3908",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/stream/StreamSegment.java",
+      "sha256": "f189a30cfee107027b08afb58bca2aa4b6dc0c36aa08e62dd2728fd7c79674fb",
+      "header_sha256": "00bdf3f9531bbdd869cc84944033d0db287aa06aa42fb221afaa223c56859954",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageio/stream/StreamSegmentMapper.java",
+      "sha256": "38de6b027d877cb293a515e923f2950da9adf07c3417899275aa7e8d53c91588",
+      "header_sha256": "89807ba91bb6eda87ded6bc7f7417e9ba87d97e91449b193474811241d12b12b",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/BitFile.java",
+      "sha256": "1df477715c710d09840c4768d0def26403caddbfcf1beff0ff5c7ddc55437f8b",
+      "header_sha256": "5a37f0904cc0394677bd50bfcf0b0f1f6c1a24554bf8ebd777c3d478b2f6b6d0",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/BogusColorSpace.java",
+      "sha256": "4250e22068f316e13f7ce0ffa2967b571ab1b70b763dd04fd253afb7ce3c2271",
+      "header_sha256": "05644338b5a08128d416015f7e8fdffac6c9b77436a7a2c00a9d4614b63ca52f",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/I18N.java",
+      "sha256": "256e4293e7fadfbb39dee73340a62caffa706970523f96ce94afd34a56f3254d",
+      "header_sha256": "ec576d90b579e63b8dd6ca8beab632655e8a617103d22f2d9a6dab97c482dad6",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/I18NImpl.java",
+      "sha256": "9cbe5afc33c053a194be226b564d22a15a75ded7997bed8519175149a682d3a9",
+      "header_sha256": "cd35d3907ffa6be4085832e7d40667bfe8a0ce8b1064ee30e492ef939516b2ad",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/ImageUtil.java",
+      "sha256": "8d57dc32f3a0516dab2b04bbcfcd62c0fe39cd56b17330ffe90eb4c1f1cde424",
+      "header_sha256": "03000c7c0e03bdc805defd1602cc52beb7a044431b732705e25c3b2d59164d7a",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/InvertedCMYKColorSpace.java",
+      "sha256": "469f8dad089ea0b5b61ff94945a7133dfdd024cdc5de4b65f19bd20210bcfaca",
+      "header_sha256": "ff7e67fe95a28f3c11f358d9dcee311f12f9f65d3fb8536b441567e60c5d024b",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/LZWCompressor.java",
+      "sha256": "6220908f92252223d687a1584d87b26be928d923bbdbca7f39f2fbd2905e17c7",
+      "header_sha256": "bf5440b06244063a615994bdf0cdd52e761f74befeb819028154abd55fe49a2d",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/LZWStringTable.java",
+      "sha256": "8741176d38a47a0091394662a03efe23bcb76c08e4a5a4c3fe9c526c3a3e15b2",
+      "header_sha256": "94fd376771f1667f34ad1f8b5108c696df9152741ee7ad04d312774ae39d3da5",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/PackageUtil.java",
+      "sha256": "2712abaac204455cb446c81e1ad0aba7bcf7b7a31aab7a679a71ab01a2d1186f",
+      "header_sha256": "57fda9aed4b987219870f3fd9b3d9c12a56cd7d3829ae37e0ac094a710140b29",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/PaletteBuilder.java",
+      "sha256": "623f664c34314a325741b74a4e90ad9561fb4d8bf2f69e6fb78f29d929509206",
+      "header_sha256": "d8a7d883fc99f2f9bb4aa9bb924fb6834096a740556c7200a6901901621f61d5",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/SimpleCMYKColorSpace.java",
+      "sha256": "93dac19ea656c6e8dc3f339da4f7cdf44a213188588314c8aab4a3418285c9dc",
+      "header_sha256": "f527c84c0aa8b85b6b9bbb97c445e13f65ef54fc2b17284228b2960772a9fd35",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/SimpleRenderedImage.java",
+      "sha256": "da2a57e280c42e68a2c8fbbecd12efb25e52b256ecf9cad4cd18bbee41878abf",
+      "header_sha256": "e2b848eb487b04448dde6f907dd9d15cb6cee2e030701156248c91dd581fa1df",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/common/SingleTileRenderedImage.java",
+      "sha256": "01c948f42eaef2541051be87f663b3bf9fef15a3d8a1f60132d7213e5940a8ef",
+      "header_sha256": "80e97c3b0143af2fe08be4dd06cce9d18580d86053b333b825822e9e010e2497",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/bmp/BMPConstants.java",
+      "sha256": "7cd008bd3788f07cf5e2e9e1db7ed90dec070200f120c7b63d9fc76dd378d670",
+      "header_sha256": "ca8d2cad5b0cc799fae5140f9a6013b1a5cb4875b5c40aabaa815e60d9520724",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/bmp/BMPImageReader.java",
+      "sha256": "488a89b5f5eba99fc2a64a1c7cefce705fc5f9255b011a5b21496d3984bb7341",
+      "header_sha256": "918a4d9c9d534e85c50a459236f54bb7cbbb6a9f29f5c9013f3ba40d69a6a25f",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/bmp/BMPImageReaderSpi.java",
+      "sha256": "cb0a5e59814c36ef9248f587ca7364ff07b941171af341123ab56d96216a642e",
+      "header_sha256": "9c7e50d294f5403f5da2fcefd1cd04336e38b7854af492de7ca36b5c0cf8b94a",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/bmp/BMPImageWriter.java",
+      "sha256": "bf8cd208e5c7351b2c76629ca9d0bc606badee1aa87cc3557ca4fb0e6d47be77",
+      "header_sha256": "4fba5149e66dee06cfea998a5de0976dffe2787e7d080de3fb444688c17eb01b",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/bmp/BMPImageWriterSpi.java",
+      "sha256": "ad335ef3c178d8c394f8c65d8b48877a02500a6407bcd0569bfde285e5db0567",
+      "header_sha256": "6a916c8853dc6c9434cd0f0cd1056ed354e018f7e104b1da6f886c4c368d6bac",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/bmp/BMPMetadata.java",
+      "sha256": "e39efd7974cfb6662217fd46cdf4cfc46b7ee331f139ca05b9208c47c19af224",
+      "header_sha256": "89a2fc43d442c60819189bf557afdc2981412f37dec1f2baff2c6a438936b29d",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/bmp/BMPMetadataFormat.java",
+      "sha256": "e2edee7621afc8fcb13a8d18cce242b36d1134c922d634f629cf917748613985",
+      "header_sha256": "4e655a11568d448e5a4220d7fa240e70bbc3d0dfbe07ee0f13ee11cbd2de9ff8",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/bmp/BMPMetadataFormatResources.java",
+      "sha256": "cd9e56adebac415f4a62fedb454ee9ada3c100e48832efd8d10bf4838c242368",
+      "header_sha256": "596b0d524a783d5731e83ef713fb07ac113326e605e5fb84f795ffa9186efa03",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/bmp/I18N.java",
+      "sha256": "bb8c19a42ff54d23378efe0203c4ccaea00a96e67fd0ab52c135515cf02f28fa",
+      "header_sha256": "c19563eb47c89a35a550c5f5af32bee497e5fef8f1eef4b1a1d9516b3aa7367e",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/clib/I18N.java",
+      "sha256": "342e2ddae0bd2199ce96a45bd39b908430c1e5e4451fd730666017045036c848",
+      "header_sha256": "6a47c3416341480463d04276d55b29a3636fecd72fb272e5c51df3f94074c311",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/clib/InputStreamAdapter.java",
+      "sha256": "ad2d380ebf6c99e0f7a5cdf11283bf7a627ac1f41dd53711d44a636be0372f81",
+      "header_sha256": "eae36be9972d2bd3a3b73b01d8820f7f0dc977b7d0379909a7a2714f0acc38e6",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/clib/OutputStreamAdapter.java",
+      "sha256": "bd9abb9eec06a4c954ee55e8388944ec579c2c76d59889b08f137168054ce9d1",
+      "header_sha256": "ccfa29a4dd79cf7f899c16e3165367607362272bbb3faf7c4ccd50652ceaa5ab",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFImageMetadata.java",
+      "sha256": "7fa4f377f0c2cc561f4e2b998bae4349e7197ff1f220ef9bbefafa6b25919485",
+      "header_sha256": "eafcac756619ee64ad9ec3e78d6799603b2051c83cbfc850882f0fce99d40491",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFImageMetadataFormat.java",
+      "sha256": "f4222c4ba723ddbe686874292e689c876e351485face4e2b72640f881c2e8b21",
+      "header_sha256": "4d81752d01956868b6ef8eed1aea88ac113fc1b56c2c624331ec24d85be41d86",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFImageMetadataFormatResources.java",
+      "sha256": "5e491cbf74125385a25cd9faeae2ee824f5a68e6b270b96e01cc45169ba6fa46",
+      "header_sha256": "ba94616710adbaac5908fa1bfa296c48cf924fa82d99bd1196f30277029149cd",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFImageWriter.java",
+      "sha256": "ce321467c03db621396254c3ae496124f1817a4d6615b4ca949752bda1a9fc4f",
+      "header_sha256": "0c8261a921f46f7ff8261a6a866e715753851ec912916223d098c187f9e7f089",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFImageWriterSpi.java",
+      "sha256": "dcb2b91b21291d8bd7fb909763376efd0fdada6fd5bf26ce8a58ad012afd5cb0",
+      "header_sha256": "250ba016cf31616b9e013c2550a890ab960684a37604b4ecaad82cf37e8a4a3f",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFMetadata.java",
+      "sha256": "346b319a05826715e26f1ce5a9218fba18347eb425c55066e95d43e20f1f14f0",
+      "header_sha256": "27fd109bc66483181a702e646843975ec640cea1acc1b130d8c47f0336f6f57b",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFStreamMetadata.java",
+      "sha256": "10317a73887a863553b59c181aed851a1b488df6a2d7d24bb67132d57b2cc591",
+      "header_sha256": "e3afc52b3c2a2fdc78f9b22b9c1037b2e656ca6b97c2ee8302791d055f7e9d2a",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFStreamMetadataFormat.java",
+      "sha256": "1fc9532df3790bbe7da78de7343c900a9091ed6617bd2ac0c739a7ff1e6dc67c",
+      "header_sha256": "8cf81e17b64cb97f23144479771b45804546bdffe5b2dbac621f87c378f0ed7b",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFStreamMetadataFormatResources.java",
+      "sha256": "7516bae6e1107c508987fb23deefec8a0c723c637452ec0ab420023c3722768f",
+      "header_sha256": "bf8c82a38d7f388111cbc84df0c3e35764bbb200640c79aed5ee67b67a80e318",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFWritableImageMetadata.java",
+      "sha256": "e2a8b8a16fa621bd6bb7e4216f78004b09bb62e7dec28e5efcfa748c9efaefac",
+      "header_sha256": "877acdec05e6f0b6734a9f4b548ec8b82e6165d7f131574ee0f23e40c3bd1f39",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/gif/GIFWritableStreamMetadata.java",
+      "sha256": "72321855d5e7af49a2028b25de195042311709da1354028da9f907f7b07c1236",
+      "header_sha256": "32802494316e0e5d87f27223acf318f129a34986ce398fdfd69979ee36d73585",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/I18N.java",
+      "sha256": "9e5ebc53ccb8080c583e84bb457d2d14f7298508f6cbc897b64f5fe953f4e086",
+      "header_sha256": "00c05fbb83b83e0442c8e1ed3aa574ba146be8cd80a9b80bbd5f00acfd3d356b",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/I18N.java",
+      "sha256": "a553971345c04e40e608246b50b47c62eb1df031f12f35645ca935c79e6c9784",
+      "header_sha256": "f5ac992bd4a62f9906194de615e566bb363dea6c854368f2506f21cd1b98e138",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/pnm/I18N.java",
+      "sha256": "16b44e4afbe937889598cf9b288bf0c299bcc37f3c7f8f88f398c4d217161b53",
+      "header_sha256": "74feedb68bc7c930e60231d25265aa07de58e4af7419dfa2e67ee631a271eab4",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/pnm/PNMImageReader.java",
+      "sha256": "7a75f44e409ada6076d6a655ceaa3ff0ca3319ff27a6363c5571ca44ab05a8f2",
+      "header_sha256": "477f27c9b1302dc980f6bed87c852e854e754e61bb1d591ca6b255d4c146124a",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/pnm/PNMImageReaderSpi.java",
+      "sha256": "be36b50493aaebf8bad12a56a70b450aede369b2c4a064edb803104cd91d7fa1",
+      "header_sha256": "dcc1c4c1f5d72323edc280643632304bdccd93adf40bc72df890a6e1d46cca78",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/pnm/PNMImageWriter.java",
+      "sha256": "93eceea745a2cea2dd39c20396d2a3cca039d3769600ba0853ef17076cfc9b8d",
+      "header_sha256": "df1d22ae826c053c2c6c14f10fed598e0de6d39ee048dc0678f72837ae5e2950",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/pnm/PNMImageWriterSpi.java",
+      "sha256": "a76092ac41feaabc708e0ad0ee958269fd7c3517eb289cec80ffa7b343e200ce",
+      "header_sha256": "3d6f48de9fd165d906b59bba3a2206d6248af3c29e6c822619cdf03b856298bb",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/pnm/PNMMetadata.java",
+      "sha256": "31345e7172c0a19112e547d95438622304db95f60a7a0d0086e7c1834fd61113",
+      "header_sha256": "b24f678db1035846eca11f338d5ab4fd45386e65926ce73bc4048b197e1d6617",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/pnm/PNMMetadataFormat.java",
+      "sha256": "244f3391de3b78515fc92f9bb074d16b7c3bff50cb2e02b7b4bf0924426885bb",
+      "header_sha256": "8530fdca96181c48862abaea0cd1b824729e332538ff66a64e1da540cc20a2bb",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/pnm/PNMMetadataFormatResources.java",
+      "sha256": "786431c5057a2856732087302b6c43cc3a18f172b61db3b2b584d99a54802143",
+      "header_sha256": "cdfc499bad5220848902621595c0d6cd05b97d107ab670a89dcf85718c8ad4f9",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/raw/I18N.java",
+      "sha256": "f25bdb7fbd10d3de06e51d50b081089804727eeafb5f5c38f35f779b99867605",
+      "header_sha256": "dfc292b5463fde2270e729aa67fdf9851dc1ee030a39f6eb643086f61d9efcec",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/raw/RawImageReader.java",
+      "sha256": "c9fc14d07af740f59e8ad4647b058c68d059dea6bc572b92c490bf0afadeb069",
+      "header_sha256": "91e6e9bc971c973ff712080547121f4bc66e609cdc35d8b754e7b427c003e7e0",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/raw/RawImageReaderSpi.java",
+      "sha256": "1898cbb91098d9b2d54b11f1da909f8d80085eea4d1a1d1bb537a9937c9bf271",
+      "header_sha256": "8971c5d318a4671b6d0313edbdd5c294f03104a5aa82fc8ca75bf5c7576bebff",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/raw/RawImageWriteParam.java",
+      "sha256": "6abb0fe718cb7d8d0fa0f692c1c9708680bf09c020e223b0ecd0e1bd066782aa",
+      "header_sha256": "813014fa584bfe43225a9fcabc65daa1208a58fcdc4cece10a1f74f4f3a5cfc0",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/raw/RawImageWriter.java",
+      "sha256": "cfed08ac03820c0b52f4eaf282ba8d79ce69a6ce4ad2e6cdd23f30da80cb2fde",
+      "header_sha256": "601e6e1cb2012c3d84d501932368b34e559bbeda2c2dc07a3ecaa14a3976e7f7",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/raw/RawImageWriterSpi.java",
+      "sha256": "2389588a12f4d7c45a15ff2180d119be3f4b4386e2b96f2ff3193a6cea8ac8f1",
+      "header_sha256": "cdd4b0fb6ac5dc27aaaa7bd56f58c5607015b4bcc55a6a1bedd0f2f739879405",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/raw/RawRenderedImage.java",
+      "sha256": "65d96744a038fda29eae0b72cdfb4ac1e920abdd8dd2fb7d74e2c75e65b5b7bd",
+      "header_sha256": "da6dd06130b9020d92b4bdb778b6183dc7868ae365cb08ee79a43407837f5972",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/I18N.java",
+      "sha256": "1686638d78a1cb64ce7e4308d8b7246691eb73b6905419dec38e71a79bb90ae2",
+      "header_sha256": "efd96a583e674aaea6edb12e43316e168892d378e8c597f66e953b4d2e23affd",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFAttrInfo.java",
+      "sha256": "5a21f70080744a66851bce250f5e562c0729f3441b68c51c45c66b7dd4604616",
+      "header_sha256": "d2190ece4430ba741e419d545b9b70b1ac661699de52071969779fb7bf4ce94c",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFBaseJPEGCompressor.java",
+      "sha256": "82deb73cacfd86a69c6c419662981a86c65a1ef5be51ec16350145b1e9c4ff4b",
+      "header_sha256": "74cf3878d24bf9d410435411ef6859318172f1ecd830b9092f8d36d278a506eb",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFCIELabColorConverter.java",
+      "sha256": "e38497266154ecdd1d2a7877eb0c68a51374fa69b7c3bddcf6c74304fe696a50",
+      "header_sha256": "9ca45b46db205cb2fdd80db4796588644f290708e811144be0dbe4bc76cff180",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFDeflateCompressor.java",
+      "sha256": "363e6d892ffe540f61b73bdd20d4adeeebb310e81021d19ddfa02e14d3f124da",
+      "header_sha256": "dcb6e8692c005c83f5f8035e2f676acffbd69fac48c45cbe22365894e0dc7ff5",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFDeflateDecompressor.java",
+      "sha256": "605508a6c00edbf22a3a0161151da2c439575ba1f35dd972cfe36e399d687cdb",
+      "header_sha256": "a17766dc01c742591dcb1975cee168d98d16b568ba7fa76f3da7223c055b4790",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFDeflater.java",
+      "sha256": "283317751b85b8a12eb46de3a4154a0f21de6e8094f4eca2587ee24a4fe653a8",
+      "header_sha256": "7252fcc9751ee206825abb94cff55ed5694c830f4256202675306e0ec9f4afd3",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFEXIFJPEGCompressor.java",
+      "sha256": "5dbd244dabaaae1273634d3de0398a80036937164ff16675b4b56fd7e30c4e7f",
+      "header_sha256": "bf4fb55cff3ecd4cb1420b4fd3b31f74cbae5dec361055b4f418264f430a621f",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFElementInfo.java",
+      "sha256": "4263c2760ca0ab21bd26aa85ff9a0114f245130bb5dec3deb92372c5f6089d3f",
+      "header_sha256": "99cc6d83ef9048a4f204439f8484474634444e2cbca8026f0ac6034463114738",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFFaxCompressor.java",
+      "sha256": "167542c6463abbbff721989f5916ea8e30b1656227f899505727407deccd72d2",
+      "header_sha256": "ee5fcf6d325cc3d7f0c119a4c40cb1609010a7bcf6db83b78770a8fcb9870b28",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFFaxDecompressor.java",
+      "sha256": "0fce112dbb611f03a6af251ed42bd4f6f4312d0e8593cb207f7a23782470bd9b",
+      "header_sha256": "cf3f6771ade1ac7c9759bb2769c1c07037cbbeab8f17822134c0fb4573c086c1",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFFieldNode.java",
+      "sha256": "2caa7999cc56afc5350d0c8472ffefcbddf3856dbc512326d486ecf9e20f3638",
+      "header_sha256": "23a2e725363403560404128ed8d0eb7f7c804b19227d5f2714a45992f6ff4ed3",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFIFD.java",
+      "sha256": "44fc27a9af4a14df143852979f8f8a7e33c7af294b09bbd994e0ba07ad4302a5",
+      "header_sha256": "85d9712e0a1a30039561760cf1f8682001b425a4bc9678ae47b89401b8de7c0d",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFImageMetadata.java",
+      "sha256": "46c3a8b3677873404de0c5156fa36e461bbfe176c7f2e8ea16a9a9864930ff0d",
+      "header_sha256": "8da4ba864080930c0ea7f2bd85d4827d2ea5f9a02c2aa402ecf91422b11978dd",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFImageMetadataFormat.java",
+      "sha256": "b9396f078069af246cd3db0c3368522b00ce78cb70e6a23aa6efc6f180b62123",
+      "header_sha256": "98ce3367610fd5fa1956e3b6f78a359d7ef71483689b9c5d7643d412e0284cd9",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFImageMetadataFormatResources.java",
+      "sha256": "87f180f7472cdef158de01910d2a8a0fa76579079fdd2f098aeb1bf8af467fc4",
+      "header_sha256": "05dc77f8939fa512fddb352cabf6dbd3452afbd062c190ea4266fd53856793e7",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFImageReader.java",
+      "sha256": "5ebb664934e1a5545f49cbac6e22382fa880cd3a30ba2691eec1859e506cac7e",
+      "header_sha256": "73fd756085e15c33cf4b1da50ab62dcc00188a2f78699c79d0eb64bced4cc299",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFImageReaderSpi.java",
+      "sha256": "924bc613a78aeeaaf376b41d1ea74be09330c1fe223e665806613b4808fb4a31",
+      "header_sha256": "2c754182a6c3725353e339120e00786b010db0dcf5b2fe690a8fe76911b57385",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFImageWriter.java",
+      "sha256": "c9b680e65153587f3eb9a6ae71d0f017f2816ffd42955b428b83e528a68c1734",
+      "header_sha256": "e14a3f4eddd5062722867a4eed75d7757f03c702ec97a8f2f57459e2a650354f",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFImageWriterSpi.java",
+      "sha256": "c5b4c5443960bd34f491389b4ba6c9344ddb6dcd66c645b014167f46c45bf211",
+      "header_sha256": "c3f5436aead20f5ec3d5eb0f6d4fb7df0489f4c1b6d787eabc3ff2f375b62ba7",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFJPEGCompressor.java",
+      "sha256": "683601badfe18b25227ab4bf2d4e1adf13ba20c062a813a94260372d7f2bea5e",
+      "header_sha256": "00e5b0bc91d94c3f81fdb11d672ccd84cd39d482ead8ce9abf6ebda1824e89c0",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFJPEGDecompressor.java",
+      "sha256": "845b27ae36a96efa42334a2c2a21b2adf317cf7f2cc2b83c375bca86c13e5b45",
+      "header_sha256": "e6d2b316f6c3204eaa5c4f6307fdae3c192decf096195c585a169d8bc7db7f0c",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFLSBCompressor.java",
+      "sha256": "10e8eba2f2d3d5f3fa64aa39d552940b63487e5ee2450e89e526571ed9b38855",
+      "header_sha256": "e2afb24a3f3e10632bd682d9847569c587f984d36648c0d62ff43b3ae6aa7e3f",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFLSBDecompressor.java",
+      "sha256": "870398dd8355f8dcf0b450f52c22dfc5d86f3733b606ccf1decf14ed175c9275",
+      "header_sha256": "3d333572c0d72162e34873bca44561686cbf6cee16186fed7ea4c46eec31ee38",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFLZWCompressor.java",
+      "sha256": "369efb60f0a3b29e62c9b999ba31471d88e54c7b59e1149b6a4cc9975314cee9",
+      "header_sha256": "8d55676955e79b716f8596e6ea2d6112fc637d5134854baf44a047b74d26ade5",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFLZWDecompressor.java",
+      "sha256": "6f71b82532af9c7aa5d603b82edd44b93cedc4c5cb608ff81162f609dc2e7e94",
+      "header_sha256": "de59bfa4de6e959427ecae4ca4b25eb5d138b2ca94b3e38070c4ce7ed793d74c",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFLZWUtil.java",
+      "sha256": "4bb565f917649d8df323bf010a07e8b3e6582da845e0ca52e7018b704688a85d",
+      "header_sha256": "cdfc71d08fdbb93de7bf0dc8edf8c249895f877e803ce62aa3e8f5582915569e",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFMetadataFormat.java",
+      "sha256": "dce7535e7f68c1b2b5efff2f2c383ef2d6f1052a4d63f9ca0e72233a28d2a8c7",
+      "header_sha256": "1b9a8315ba1635e83d30f4cdc721d619683be60d74c2fde57ea8d7c447e8e8d2",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFNullCompressor.java",
+      "sha256": "5dc4eb8398711e0e4030dcd78dfa4ec94b81744d0870a9cc0bc6a7e1584893d6",
+      "header_sha256": "7263b88d044a3db99fd7340bbd02926e82976d2e05581184b9a8ae92d04f4fbf",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFNullDecompressor.java",
+      "sha256": "a28bd56c6b5f05a45abdb05d51b4971f76f4fda518afd08a2eca4c1dde3a2363",
+      "header_sha256": "529afd2da30ba38525937651d68aadc33ac1a11e433f28a939889bf3179c27ae",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFOldJPEGDecompressor.java",
+      "sha256": "ae0bbf5562dbf5a383901ab38c54234c90e9c16fe8f68d065d9a8464a30a5518",
+      "header_sha256": "3a5788dc6e2d8b843e2a5b5cb52321fbd0b6d2c5dc0be7f53e524606c3bab470",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFPackBitsCompressor.java",
+      "sha256": "1f490cf0bae766a40492cf9acf0661ba2ac63646d27751f9e6e79b016001a921",
+      "header_sha256": "a9cfb8dd175716496a6893b7ec966e5dde0b84433fc62de648d1229ea24a75be",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFPackBitsDecompressor.java",
+      "sha256": "5d7bc6a6d012c6970f46e19500eeb2333766f331cf227bbc8407ba3ded318527",
+      "header_sha256": "db25370798282e4653bdaadeae94f98450c34fd1911bd6862f312945619399db",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFPackBitsUtil.java",
+      "sha256": "9e84ed20b9f9b7b91ebc106a974ff7f576ca60329655821b040f9604557392a0",
+      "header_sha256": "c7b5ca8d1dc0bb5a0d8ecff531379af55050c82dd5d84af969fa1fe3c7f8753f",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFRLECompressor.java",
+      "sha256": "18033431ce849914f19e48a96d4cd4525f822f5804682ed601dc1ac507b01fe4",
+      "header_sha256": "8f70c1c493529bbb13b0122618160d47c64d0502859b89aedb4211e80d4e3e3a",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFRenderedImage.java",
+      "sha256": "e1edcbfb3e6b9dc473cab8d8237b3ec9538786f742b5433c431aa95b6caecdc8",
+      "header_sha256": "61d6954f5db1f4dab499d6cc95cac036e50ba4633690ddfbbf0843190490d2b0",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFStreamMetadata.java",
+      "sha256": "93e09e57fd25957596e657f7a3fd8837acbc0b42cdac47c4dda8a3512223052d",
+      "header_sha256": "1203b63460f36e454903825d79a95cfc21b28e5c058425d0e128aeab360a5bac",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFStreamMetadataFormat.java",
+      "sha256": "446d78a0eec408e13fdccd70b903dcf9ce2eda0914cf60994c61857c447e7fa5",
+      "header_sha256": "f037232eee42429b82cefeb293e9169a26368465dba2e852906b0e0f69067cfe",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFStreamMetadataFormatResources.java",
+      "sha256": "b744656d64eba3d9aba4e2fbf34c7fad2592bc7811575e6555a14a499f160efc",
+      "header_sha256": "f4bd06b9ad6c97ca0c70f2e8c21fd82098f9743b478b2a983b44cba325702e36",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFT4Compressor.java",
+      "sha256": "a79abaf66a39533aefcd606f1d8424e9f823c1e2fed99fa3531c6658dc9a9988",
+      "header_sha256": "324f46df7b5394d2240e59363930728644441140f044245a8841d4131cf55e55",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFT6Compressor.java",
+      "sha256": "987ba06d1c55b1b3843db7427880d927d11b4a1bb0a5c5a018abfc6ac565b0c4",
+      "header_sha256": "e3da3b50d36d4e5ddb0b0bb9a5c56238f950d0811947bf42d5700ac2bcc4f63e",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFYCbCrColorConverter.java",
+      "sha256": "e1dd07c9c6130919a833b321d6d2a99fe79c6151ebd6d0f94f01135bfcd2e5f4",
+      "header_sha256": "fec46361a4c9a9b0873ad0061c2a2de7e45e149ad52ff0dc10d8b78ad4d599dd",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFYCbCrDecompressor.java",
+      "sha256": "6b0da2df6123309263c216f5f0e3de4368dd779e3e649f4c252854fb504f9c1e",
+      "header_sha256": "fa9a269f9e7321cf8da834ee32065d3bc851ba52c8e70353dbaa4cccaf51e199",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFZLibCompressor.java",
+      "sha256": "6912ebb15f493f2e0419595e268b92b63e0161745e219f16a79a5841c47e4df8",
+      "header_sha256": "1bde407f3eee9b2c0251d4ca0e5515f9962841e30506569e1168e0129f54c502",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/wbmp/I18N.java",
+      "sha256": "ed7ee395faad9b5f6d7c403b566fbfdf807cc6823ad53f1cbc72508094bd3d56",
+      "header_sha256": "7394dcfc6669be2a8572abd6d1115b4a47aa6758e35308052c4e452dcc6ec2de",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/wbmp/WBMPImageReader.java",
+      "sha256": "284b9e2facce5931b4cdfe2c8ca348badd63ee7132132b79d985f9518ca9b718",
+      "header_sha256": "c25d0d6f13cd01d1598ab82e4139dcb6bb36dc730c06f4e910bd4ad840bf4779",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/wbmp/WBMPImageReaderSpi.java",
+      "sha256": "f00a25c2a24edc6b53955734a94107a1fc8b8903972c9813cd4b47376fcb4751",
+      "header_sha256": "5b36daeb8f85ff873b1c04f952882c038cd7abd61e5fd2e3616ab7e588fe40d9",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/wbmp/WBMPImageWriter.java",
+      "sha256": "26c50b0c829b231dad2307161920ef5399e83a8704eb3093a21248654e48bd07",
+      "header_sha256": "02f118b701a9cce4ed68bdec769e2e767cf0d3a40773db1d6676e955623a849f",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/wbmp/WBMPImageWriterSpi.java",
+      "sha256": "dffc035d5dea7e5d2b2b46ae57f03a0cf2e1a86483f9997554cb19344bb471d9",
+      "header_sha256": "676aeb454c645a93d92a17e9be844d8016072237b9cace54ff28464245a08bed",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/wbmp/WBMPMetadata.java",
+      "sha256": "76db36c704b3056466c454dd833298909c36a9951febeb516b2b89d2a6b43354",
+      "header_sha256": "be8eec0aad748842f9933f1b8bcc5e089fbc5e44ffbd9c9c48f14afbf8f03003",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/wbmp/WBMPMetadataFormat.java",
+      "sha256": "a2cdec593b4c2e3ec79c0c85ff047db95a8e962a4b4a1aed4be6e2935973cba5",
+      "header_sha256": "9b1c34f74910801124e26b65e693cd3c8ba57103977d086baca4423e71d096ee",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/stream/ChannelImageInputStreamSpi.java",
+      "sha256": "b82bb3adf0090257fdc58be4622b653f2fc299c0942d756cc0e7c4b9da8003d0",
+      "header_sha256": "d279f32668d003c59a10722cf114562893d9491e0d520d13cde0bbeac25ce6d8",
+      "terms": "Sun BSD with nuclear disclaimer"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/stream/ChannelImageOutputStreamSpi.java",
+      "sha256": "2c65c144647e094c397a55196db4a1f10e3dae5fb18ed5f1da42d1b281506f2f",
+      "header_sha256": "fb686e1a9c93844a6ef2338313eeb0286d5bac8f2542260ac46ffc26d2ee3d86",
+      "terms": "Sun BSD with nuclear disclaimer"
+    }
+  ],
+  "excluded_sources": [
+    {
+      "path": "com/sun/media/imageio/plugins/jpeg2000/J2KImageReadParam.java",
+      "sha256": "f05ade40d8052638fe918d41bd89ea4ae05079484f187cafd0294f951205b84a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/jpeg2000/J2KImageWriteParam.java",
+      "sha256": "fa9eb256673b44ba8ced4f60dd9d8eb54dcde6ac669a40de97af0cc499c07983",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageio/plugins/jpeg2000/package.html",
+      "sha256": "4bafe12d4d377015485f2ad483309ac8a91949d041c3658615cdbe7a5ba5a490",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/clib/CLibImageReader.java",
+      "sha256": "7a63e7ba50d490f93f462cb0b58519a7a9014e0da4ac4fa402ad145732b947ab",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/clib/CLibImageWriter.java",
+      "sha256": "16500ee06d7c245ef4b09d41f19bcf02dc1b65d3d043dc189f337b99103f31e8",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageReader.java",
+      "sha256": "1dd1f5f3b75e2564c4dbb264fd6cee97db3b9a54bd72a436d1d9f86c2c4d0d00",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageReaderSpi.java",
+      "sha256": "defa9ad6cb9a1a8543aa7382494d2f6dcca3cfe417402e149dab36fecb107041",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageWriter.java",
+      "sha256": "a030ec00b5dc0596451de12a25f1c3997e85e36fe5533d7486d5cbc7ebd1f4e0",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageWriterSpi.java",
+      "sha256": "8ca87cb3a65d802ff23b08462bfad1de51d490ba9dae209ffce02bc21add2954",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGMetadata.java",
+      "sha256": "2b8e084ca48d7cc926e738590d1ca6a2d5dc0f9ac0d6d036c641069dc95f35da",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/BitsPerComponentBox.java",
+      "sha256": "95ecf66a8c39159bb44adbe41a004ff140e245dda2b99ccda11b95dfcffef112",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/Box.java",
+      "sha256": "1e9eb66e3149f3658c8a1e3024bf0049724476f3444a1505968abc045b83ed4b",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/ChannelDefinitionBox.java",
+      "sha256": "fcb3d1a5acf02595980527ea1ccbe55ee54aac8e1f3503a8f6e34a2f76d07cb2",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/ColorSpecificationBox.java",
+      "sha256": "c41280940d85a7118824eeb56dfef184711fffaa0b707a82a70251f404f3bc36",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/ComponentMappingBox.java",
+      "sha256": "ebeb1763702c68d17cce49c220c321ef61379ec53b75d9cf0b07948d272f2045",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/DataEntryURLBox.java",
+      "sha256": "dd6287f9c743ecadd71a2faf720aa67cccea128b15ed6b6f6967c847c7a87d3c",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/FileTypeBox.java",
+      "sha256": "864ab9aadd5f0ebabea18468d11486190332f991a6de1c3671325dfa744a24fc",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/HeaderBox.java",
+      "sha256": "be7e9ee6ef5593490dd14ecfa1c652f8ff4c187c1d67470a11107fd310807efc",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/I18N.java",
+      "sha256": "647ac8825fa27ab20eba485245de7b25f78f50edd3a9d363b6fa5f926baa87cd",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/IISRandomAccessIO.java",
+      "sha256": "bd15a892a49f872c8633bcc2d1e204dc516a43c7f31466a68d59e5ae73ab3e0f",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/ImageInputStreamWrapper.java",
+      "sha256": "6754e6dad8ba0307d057dcde976b286fc87e61ba0c04440e671daae9ca8bd27a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReadParamJava.java",
+      "sha256": "6fe93ee4ae2aa3eb4e54cef07ea4f247f0d4851506908a5b6ebe2418350715b4",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReader.java",
+      "sha256": "25bb83820d64ea5e006808f9077fbed6d9ff4f835364a9acfb037356451c2ca0",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderCodecLib.java",
+      "sha256": "dc068ddea347bbbc1b4790caa5af837f20929f4e3109e10bda4b2146a5a77725",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderCodecLibSpi.java",
+      "sha256": "f142d4713286c8dd588474a62a4a137972c775a40418cc175c7e399df361d716",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderResources.java",
+      "sha256": "a955808b12daea85343ec91962d40ecab3a13094b14fa9560c0bdd1d4a820ea0",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderSpi.java",
+      "sha256": "7b2088f586919d13e6e95d230780b853fdcb2f47e667abd84f144d4745cf1830",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriteParamJava.java",
+      "sha256": "75bd66dfe5bddc30335c67416f31356e14b0c63c27f4152d398d6548ec3feb88",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriter.java",
+      "sha256": "59571a87080b8aa9579c4465fe0dddfd476eb52e4031ba07cda2cc4bf24acaac",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterCodecLib.java",
+      "sha256": "14ba2e261a3c488b943fdeed4b79cdb39b5c273af46060d647696c2cc583aaf2",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterCodecLibSpi.java",
+      "sha256": "565d30a1f9d73b22baf48fe06b2024999aa778d6ef68cfcc8a8ac94a5d988241",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterResources.java",
+      "sha256": "25f67535f4df329fa8286cd91a9639cd25250b669cc2179f3e3d14de1da15197",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterSpi.java",
+      "sha256": "074c88db9dc38888ccaac28f7cc5e51613efe3120be23b7b92147db9abeac17a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KMetadata.java",
+      "sha256": "676bf96b76cefe78c13eb545beb6c025ea1cd2b17fda1fb9032bef6e73d7ab6a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KMetadataFormat.java",
+      "sha256": "54ae26bdc9b0164b3d7d8fa954eb3d4281a101d860a6e901d129c7eb22817e54",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KMetadataFormatResources.java",
+      "sha256": "2367919d09422f2fa29295888c4d68bf396d045068f81d8a3f56cb4edf22e572",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KReadState.java",
+      "sha256": "453ce8a31d9ae3c30bb9a3777e8cc8bfc8b3648cf2d89cc1645be2085e148631",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KRenderedImage.java",
+      "sha256": "075a03ec3e6eca85ed578c3f9b7c31842929a30924ea36844e5f9d0930db521f",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/J2KRenderedImageCodecLib.java",
+      "sha256": "6d2949d5f12766b5d413ba80f7e92dabd988856d9e989f6518ba097b26775ecf",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/MediaLibAccessor.java",
+      "sha256": "b591deb7526108869164ef78fdc89ecdc0e960e3d134c995e5c76b0ff2c23efd",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/PaletteBox.java",
+      "sha256": "769c652dc8af02676fa6d3a21b3ccb99ca8d22d5d5eaebb29788e4aa3d94bda8",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/RenderedImageSrc.java",
+      "sha256": "4fefd03c4397a21f6a4306d835af026ea7abc10a3119ea00d47ee7136d83d6de",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/ResolutionBox.java",
+      "sha256": "6bfe55b47107a27683dfae954c634a84d69f12aaba9f6fd7800d2b9e1cbd73fa",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/SignatureBox.java",
+      "sha256": "5bfafa378d8d038588cdada9f7f65fa00ceb272a56b7633762901bb93442b96b",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/UUIDBox.java",
+      "sha256": "455fb51c1551e923351911f05290d4566ca85213ebe1917e96ffce37d6259411",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/UUIDListBox.java",
+      "sha256": "e08837d8c288074dd730fccb19f81dcfdde98c4f493e5d917cb800d1eb962356",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/XMLBox.java",
+      "sha256": "0bbcd882daf943eb8a057c23798f37f8caaf0ee54a1ea3941d8c5c7b236c71b4",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/jpeg2000/properties",
+      "sha256": "bb04cef17e427ce78a4787394c63354537b9d96f9d2bf4946f269f4ffb61b931",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGImageReader.java",
+      "sha256": "ea1bd448fd5e40043b511999a79e63e447152f859373b8613905931bb2e02f06",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGImageReaderSpi.java",
+      "sha256": "8b0ec450b0a9eced5f14c06054067a96bf8422bec629a0eca644694fedcde741",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGImageWriter.java",
+      "sha256": "06c44391507abad71d54a27d1dd21885c5778ee0f56aab5846d00e85bfc0a1d5",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGImageWriterSpi.java",
+      "sha256": "046f45486be2adcfa78620b3635384410ee473a88cb8dfe713d815861beb3c27",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGMetadata.java",
+      "sha256": "0bd09492403bc6f9444f20111b4eb9ba4cf472164f0cc141a385fc659179b263",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGMetadataFormat.java",
+      "sha256": "405aa4ee26fa28725bdfecbfb891ac7c6317709d3e183d731642ef4495f53490",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/png/CLibPNGMetadataFormatResources.java",
+      "sha256": "d8cc4cc48b4cb9521f703a92bb6cca8cc4f1af1a2c021d6dc4056c05ed39730d",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibFaxDecompressor.java",
+      "sha256": "17c1b714d31d801efc172a22f640893077193c0323bbb51d83540be17b61bf66",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibRLECompressor.java",
+      "sha256": "a2d766e04cebe836cd41d99171012c47a36305980f6bc3803922ae34a08f8cde",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibT4Compressor.java",
+      "sha256": "ba086a39a00db8456bd111bafd95e1b752cf351855dc3c523b9630836bf7d1c0",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibT6Compressor.java",
+      "sha256": "38ca5b28eb78689a716073453e650e05661c1f1bc4eed06bb85da2da1ced1b01",
+      "reason": "native-only adapter or metadata"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/I18N.java",
+      "sha256": "46f7390643574872ca945ec217a5006e2fa17b04cf7c2c066e2239cfce48f427",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageIOCollectionImage.java",
+      "sha256": "232b87aaae4c6f21e7a9630ab41ea5ec6dfc08eab14ef516fb74ee018c94952c",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageReadCIF.java",
+      "sha256": "4ee26be5913d81079685c475303a99936a41f6cadb0b703dbf269cd41b503a33",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageReadCRIF.java",
+      "sha256": "cf363f377b8c95b58291b5d1458d884588aa2413ec84db9974c9e3df2521ed91",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageReadOpImage.java",
+      "sha256": "a5e2ea6918d835f98c037abfae6909fed7de782908a608cfa44289b0e1dbd909",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageReadWriteSpi.java",
+      "sha256": "1f4e6defa1b4092735dc3e424113745a9b9f70024cb76c90c167e594e9d28ffb",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageWriteCIF.java",
+      "sha256": "6d8d7e697d71ee385806b2e0fd206b113fb1d5098e0d9751867c963f79f8a5f2",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/ImageWriteCRIF.java",
+      "sha256": "72cd8ebf608ed53e7e726f76d3a9069cea6be9dfa2cfc4a118e9f1efc877b2e6",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/PixelReplacementImage.java",
+      "sha256": "a094e2bbedc99020d8a8509047dbbc4c9af627413f5b72f8d28e13e9b02b629e",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/imageioimpl/properties",
+      "sha256": "06e95e3f89d2b9b3bc132f20af606e70a35e388f931caaffe93009bfa885dd5d",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/I18N.java",
+      "sha256": "af8cf3143cc9937654b9694e7f356291e62de99faa07a7a00609b69f075e6187",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/ImageReadDescriptor.java",
+      "sha256": "01e0303a8836f2e9e80ffa0e6c40470cf080fc515d6d2508d124f5fc5d337647",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/ImageWriteDescriptor.java",
+      "sha256": "ee7bc3e8532d91092ba64621440ea8bf1f560af2798e5ed68ace826feb24d7ff",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/PrintProps.java",
+      "sha256": "eb28d00843f6fc6f700bbfbe1eaba71047bb0c7c954594b48395e998cf0d2157",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/package.html",
+      "sha256": "373787319bebaa402c81a8fa6d83ec2aa24fa1a46949aac87750d5e679326ace",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "com/sun/media/jai/operator/properties",
+      "sha256": "dc2990299b4d7dd4d7c976a4ea0474e816b3f09acc5618680163ee39e50a699d",
+      "reason": "inactive javax.media.jai bridge"
+    },
+    {
+      "path": "jj2000/j2k/IntegerSpec.java",
+      "sha256": "f11ee98d6e60bc57db2f930c743aae76ce3723bc6f62aa5afdb297cd94ba32f8",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/JJ2KExceptionHandler.java",
+      "sha256": "9841f2f6aaee9a170caa1b871e80e1c0c0a0b8b329745c8b919328bd5e19f8a6",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/JJ2KInfo.java",
+      "sha256": "f9f6dc4eab82b7fa7d231b6773d031eb209a34c004ab4bc1bb20008d30c44b89",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/ModuleSpec.java",
+      "sha256": "9717cd35c0dcfdad840a4b9b448fef63a2a43a14b4cdf0f20e564e59b70117f0",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/NoNextElementException.java",
+      "sha256": "5592a31762f49289cc1e6a196aca975d743b86d682a0667dd18fe1d34c047511",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/NotImplementedError.java",
+      "sha256": "dbf13f03934e2cdd88e8e0f2f75374e8455e39c94eb39f334f7afbaef130ee1a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/StringSpec.java",
+      "sha256": "c5a4dd5091d8117ecdf7ab3634ccddf52fa359133666df9e78f161c72361be69",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/CBlkCoordInfo.java",
+      "sha256": "11290e7939fb546cb36bc9e5b40d361b41299806c6927a6d3b3f8815b3a73b01",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/CoordInfo.java",
+      "sha256": "625a0245165a6529c06f4bb14dddaf705407419ab926d4a004d406e157db895f",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/CorruptedCodestreamException.java",
+      "sha256": "c779a52f1c6f596267a6cb98819c62eae706878cabdf5ebf86a01808da70c6bf",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/HeaderInfo.java",
+      "sha256": "f734be7d9a672126717d14ffd9a74c9f34a5a370bf35db4d7cc5eef19c44132c",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/Markers.java",
+      "sha256": "effc59d118d1fe1b2e158805346b232b8c1d8d894a74f02c0c9d2320d26ecdd6",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/PrecCoordInfo.java",
+      "sha256": "6ce2b5bbfa7c35c5a12c5a41fa2b23aeae75584f973fc1bdf6edd78d7d34d830",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/PrecInfo.java",
+      "sha256": "40c4130c9a92e2a0aeb128a50802c1eea6722dee3139a7401120f9c000086f8c",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/ProgressionType.java",
+      "sha256": "bf09dd759edc840450940c663cf959d39878981804b3b1ebacbc9386cd67c11a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/reader/BitstreamReaderAgent.java",
+      "sha256": "7f22e0fb27f80f349b540ca79613818dbdab71b46c4ec103e0fe703844cd4dab",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/reader/CBlkInfo.java",
+      "sha256": "36ab186fe69aeec9e388cd65b1601f7cdab23a141e206202ca520afa58520f2d",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/reader/FileBitstreamReaderAgent.java",
+      "sha256": "de2687cff8fd3a9888ca146e37046dd11058e3b0b9e470009a49aea2d9c14558",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/reader/HeaderDecoder.java",
+      "sha256": "2199f3514a85a3c989a9bdbcfab51f25e0f4e9fbed9a6573e07bbf06df66c625",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/reader/PktDecoder.java",
+      "sha256": "b74866f587974996715b0421074d37de9b959ddfff131927da8b5286e4abbeb1",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/reader/PktHeaderBitReader.java",
+      "sha256": "92261321262b2aead63258166fef7fbe11fc240f220563c477ffcb52bfc2dcd1",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/reader/PktInfo.java",
+      "sha256": "ebb7ed5b4d370884cafc8c49f280e24648c9a6cc3dd62e7df6c94941df359acb",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/reader/TagTreeDecoder.java",
+      "sha256": "cd9d3496566c26a54c039acd5f1d64d1d5ebbebdc43818e871477a777db49d81",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/writer/BitOutputBuffer.java",
+      "sha256": "7b06db5d1049dcf7812d1d8ef43b0027047eff5da9c6da7f138d141e4a99c00b",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/writer/CodestreamWriter.java",
+      "sha256": "8aa0d637de769147b57e633e5c581f34491572c58b066712681f6129cf8234af",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/writer/FileCodestreamWriter.java",
+      "sha256": "f70135bd95b469046dc71ab90f753a97410d936ec1f5300e87980e43c5eed8b6",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/writer/HeaderEncoder.java",
+      "sha256": "9ddf60b00a01805f45dc3518397aa46ad657ab88b623721bde9f0ea344fffd35",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/writer/PktEncoder.java",
+      "sha256": "b3108d9d26e7753215f4a5304fa0d4a775bb89c11198cd1391abc83fdb5b8be7",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/codestream/writer/TagTreeEncoder.java",
+      "sha256": "4de55c8eb4030737ecc06c3985414717ddeb818f21c4d901040254bd24e23f09",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/decoder/DecoderSpecs.java",
+      "sha256": "abb13a22642aef95cdf4f59d0145b0d5bce2574a15772f4a52c6be4146099439",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/CBlkSizeSpec.java",
+      "sha256": "8530af457a03b3035b761545c1af1ca39d30305dbd669033679b311137836238",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/CodedCBlk.java",
+      "sha256": "4235a00c6e7e4c7f7a710bc6325105002d1cb6ee2bd6e7ba33f2ed17a48a53fe",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/PrecinctSizeSpec.java",
+      "sha256": "165f77a459cfc46ce4bd50277c09511d4d0b832a4674bcb93b1f5145267bb7a2",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/Progression.java",
+      "sha256": "907fe1bdd61b21554e6f73d77e24c0ba2136dbce47aa3e5ec855de4f7d7fe7f2",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/ProgressionSpec.java",
+      "sha256": "c1d08bfa9c2ee140ea859e73957fa00de7f00a12197b2a73bed386ba852e9889",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/StdEntropyCoderOptions.java",
+      "sha256": "5d37a018ad50aa513aa5b86ccfea1b123ce6d6c563ea0612f2e496005ac559a8",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/decoder/ByteInputBuffer.java",
+      "sha256": "190a43231560ea9e1e09c797ba7879367ece6bb8e66f4d767563c039516b73ce",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/decoder/ByteToBitInput.java",
+      "sha256": "02a474663556c9f0df315b14b669302f6452b9faa42f515773f7be48967521f9",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/decoder/CodedCBlkDataSrcDec.java",
+      "sha256": "c26c9530d314ae0ed3e0acca5d3c284930d2b7bfc0945fbfaab499339195d421",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/decoder/DecLyrdCBlk.java",
+      "sha256": "25d346a0a0b1ced0618a0263e491f5e780d53ab5849762462c1f77bd2b6a25af",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/decoder/EntropyDecoder.java",
+      "sha256": "ba836265acce1b41ce835b62a9ca2d0fd0bcfa5f1bf5a173b017fd6663dfcc35",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/decoder/MQDecoder.java",
+      "sha256": "d97ebaccde3aa67e0140d98c1340f01c643eef60f5a36b914a46fd2d5822ecb2",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/decoder/StdEntropyDecoder.java",
+      "sha256": "837091bd8bcb3af4cbb3c80c771b28d6197aa39f3717eb01426a8604c5eb6478",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/BitToByteOutput.java",
+      "sha256": "cf44fe4b1486b427c427caba76c260dbab329b0f5c474c26633a5a7cbe3d8d80",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/ByteOutputBuffer.java",
+      "sha256": "ce501c490262a1553bf3d963af1b1e97a10b38290d016920c961ec6127c7e20e",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/CBlkRateDistStats.java",
+      "sha256": "b06eb39ce9894348fc6d88d9652af574de8ab17c7f62816bb29cd3f5c62bad60",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/CodedCBlkDataSrcEnc.java",
+      "sha256": "533e4843167e91c3f7285796d1a8ce2b20e954269afcca5332b44430dfb277f9",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/EBCOTLayer.java",
+      "sha256": "9b517fabbb69ffc5845ac900c5f44cb82a0e0371d93d2e9735cece27b4cbd663",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/EBCOTRateAllocator.java",
+      "sha256": "dfb0fb89b9af2d3f4aa934f9f941897a72509d3d1f2fb407ac317ff9832241ce",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/EntropyCoder.java",
+      "sha256": "17f7835ca75c1dd54f6cf9d8a3bd1c697375efc90d3cfcc4e3e4a8112f626648",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/LayersInfo.java",
+      "sha256": "56e9fc22f3487309e4bdc319bd5b4cb25aee119f71bb1e5a6e956d861cddd071",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/MQCoder.java",
+      "sha256": "ee127effad1d63d8ceb0c1ebd4315f72cb57aded996d6a7a400369233578af73",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/PostCompRateAllocator.java",
+      "sha256": "cffbdc1efffb9eb9ce1a2332b37bf7774a5f213b3616cc881a60efb49ee8de9a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/entropy/encoder/StdEntropyCoder.java",
+      "sha256": "6ee6bbe3232cca4bf919c5c12212cc1818f0dd1ad663aa653004d7452738e485",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/fileformat/FileFormatBoxes.java",
+      "sha256": "ae747abe1bd0a95cce6f0c36bf4e2bbdc718882143ff8e56f3735b6169b8ee08",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/fileformat/reader/FileFormatReader.java",
+      "sha256": "c7ff88f95c7641607b574a74de006dec45aedce086e665a53986d32c0524bdfb",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/fileformat/writer/FileFormatWriter.java",
+      "sha256": "53444fa27989d6f25ca8676f4b12a86583149f68ebcb279b04db7c1ff49e5ef3",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/BlkImgDataSrc.java",
+      "sha256": "691420d8506e23c8c3bca4f066e74814b0db812cd7967819d0d7a78a1df01c3c",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/CompTransfSpec.java",
+      "sha256": "f123a795e79b80927cc071b0dfd8955585c42c71261e07697db3ee2069bc0755",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/DataBlk.java",
+      "sha256": "891e31648c8e07dce7ddd82ce8a0cac7137e2187715bf91f7290047ded597112",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/DataBlkFloat.java",
+      "sha256": "b111e1e16e9bbf888f3ce4e102942483d46f4513c4474b0d1f6629116a3e88cf",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/DataBlkInt.java",
+      "sha256": "d544da47b321ef5eb048cca95918a98ad5226728ec0ba8cd02ccf0aaa68aa19c",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/ImgData.java",
+      "sha256": "78622b3749dc9950c4abc24616a9aad6506439857a7ea791b4d5f27912af5d76",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/ImgDataAdapter.java",
+      "sha256": "04f01dccaab7b1bb3c0be4dee48b0de232bbc070d4e6fc9d90614c38604fb338",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/ImgDataConverter.java",
+      "sha256": "bab6a56656b5c45118a4bd1c17a09db65a7ac4ad59a02e7ddeef3727230b2114",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/ImgDataJoiner.java",
+      "sha256": "d5eb423aad31728e8dade713ceddd9fd2c9b6b9d83621cb0a8ab668b7fad2d49",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/Tiler.java",
+      "sha256": "6f0e32d9f74d787c61bf1f4addcaa561e74933b6fb21193eeb7d8b97005350fd",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/forwcomptransf/ForwCompTransf.java",
+      "sha256": "4e8a66eae62aa8b55f491b1a7c09be7b2f0f1541d38c326f9c72cd0b25690fcd",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/forwcomptransf/ForwCompTransfSpec.java",
+      "sha256": "d7b737b3217d1f47e5d3d71eb873c348a2f822660718d73906805fe555cd08cb",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/input/ImgReader.java",
+      "sha256": "23f523e90cf63ab5d3e4c050a41fc6eb08c5072e6bfdb91475006c402c3a022f",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/input/ImgReaderPGM.java",
+      "sha256": "1b31cb96533181cafc51f3a630fc50daab14f1f6bf8587c90687028f160f46d9",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/image/invcomptransf/InvCompTransf.java",
+      "sha256": "2256759584d94834a13ed1764519c24b2d2dc41e143333e60b27fb20e7041615",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/io/BEBufferedRandomAccessFile.java",
+      "sha256": "8ec72c35f2554fbf9a9e365f3612cc21b6504384e282be554ca44ae5a9f0119e",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/io/BinaryDataInput.java",
+      "sha256": "55d86898dfeec1fa3c3724c5cbeca5b4670d1f501fabcbca6306a51e117f1722",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/io/BinaryDataOutput.java",
+      "sha256": "79166e9615199932eff5005d86a5da37fe63fed2d167e1c3e454402f4eb688f3",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/io/BufferedRandomAccessFile.java",
+      "sha256": "63567ab9bb064af6be7eb82309235e3efea809a674757c33904b93aa5d14ac05",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/io/EndianType.java",
+      "sha256": "e1de4605a7d12b9206de211c89b59ecba3f3fc8a57ff0d0218581659e0aaad2e",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/io/RandomAccessIO.java",
+      "sha256": "57605010c4f83d7bbc7b0a41f8bc0fa227c7e2a1390dcf785d55278f9ebfa6aa",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/GuardBitsSpec.java",
+      "sha256": "d7c009f18723546095074ee71a8daabb765b4fd318f10f3238162b59f87ce6cb",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/QuantStepSizeSpec.java",
+      "sha256": "8bea4ec436c4f6fcfe8277793f108c1e06d4705954723b1440268d686e71c8b3",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/QuantTypeSpec.java",
+      "sha256": "f8486fa986a955132f158550015d6918206cfe9300e3aed21fb4f9e6492b48ba",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/QuantizationType.java",
+      "sha256": "fade47526cf3d252c80ce4fdce1c30675a64072623f395b50657b27382d18e9c",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/dequantizer/CBlkQuantDataSrcDec.java",
+      "sha256": "96d506c98d05c34afb90b33fbb32e9abede740e766aec58489e00f74b93a945b",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/dequantizer/Dequantizer.java",
+      "sha256": "0aee418a25a3349e9cd99227a12a8b983cd4224a332df63259b7d85b2446193c",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/dequantizer/DequantizerParams.java",
+      "sha256": "827437a0358e5551c4bd0c02408e0efe341575c25619c5c2b52f4641f2444a02",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/dequantizer/StdDequantizer.java",
+      "sha256": "8246265367a53b8ce51ff2168122ddf79072c4cbe4eaed213bde807dcc8a66c5",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/dequantizer/StdDequantizerParams.java",
+      "sha256": "fa4f28f548ba955640609568f9aa54ff1593ef5b50ed79fd9833de9a5b7e1246",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/quantizer/CBlkQuantDataSrcEnc.java",
+      "sha256": "3216bec4f3055ae6a710c9a8c81138e9244c80ba8a1e5d8f4def32c7f8a28ad8",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/quantizer/Quantizer.java",
+      "sha256": "8981eb0d2bc4a05503631fc58b4cd90ef8094b1cb7439bc3f552b9c1a626e1ae",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/quantization/quantizer/StdQuantizer.java",
+      "sha256": "603382ad8e697e8126c186162c7871414050b7437e0d19d1bc8a687ecb2a605d",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/roi/MaxShiftSpec.java",
+      "sha256": "bd2497cd40f79fe547ebd826febf5a8e7611dce642e9c711dff857f0c21a02bc",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/roi/ROIDeScaler.java",
+      "sha256": "3030ca9a22308b3d8e91f437030cdee5397dc02bb2d6caa372af3dcec399f483",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/roi/encoder/ArbROIMaskGenerator.java",
+      "sha256": "25ded16708c925311abbdacdfc75122b99b65f0b3e8424d56bbe3548adc98255",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/roi/encoder/ROI.java",
+      "sha256": "1552fa86b66e9d1706170ba225064e1ea6a6780f1daf055d850d88dbdd00bcac",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/roi/encoder/ROIMaskGenerator.java",
+      "sha256": "c6ce961ce62551f8b420d352cbcb7032a6d146563649d35656b94c7b86c57535",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/roi/encoder/ROIScaler.java",
+      "sha256": "16f084f16f9c09984b4b887e95b49d1d22f372cb595e17335e0b70cdccee5a7a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/roi/encoder/RectROIMaskGenerator.java",
+      "sha256": "6a2330dfb07c410b57a9a916d4e765966ef78e17d1da9edab4a307621173dda1",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/roi/encoder/SubbandROIMask.java",
+      "sha256": "53df44e29f63a29844eeef1fcb44376cecc907dfbcf113c57972758dfb19b438",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/roi/encoder/SubbandRectROIMask.java",
+      "sha256": "6927663684acaa92881998fa1108a73af8a4ba6fcb69c9e107ee3c6dadd96a61",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/ArrayUtil.java",
+      "sha256": "4f61f654165e58cf92f640aa8531afadb3b506ea2f8132f2dfae975a996d4f16",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/CodestreamManipulator.java",
+      "sha256": "f97cacc3b890ad9b483c7aa57e4054d73a5eaad18b5e502839529a238173c7db",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/FacilityManager.java",
+      "sha256": "26a6d4b7b5bb903cc888962ee8ff9631e4c1ba691a536127a566d5443e531169",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/ISRandomAccessIO.java",
+      "sha256": "f4129479f59d885656de6eb2f9a8a57f9a268254cee64bd11d6b7ec745cd5c27",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/MathUtil.java",
+      "sha256": "3f204ac33f40021a9bfa98900efff265401e77987af566520fc08b987b65e9ae",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/MsgLogger.java",
+      "sha256": "2093dd6d8ac77450fb48b34faf387c33cca02f20340638c9c286912558197e67",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/MsgPrinter.java",
+      "sha256": "a3e211b996ccf93610707da22866b28fa60a6e6b8c16533e365f6b38bc9d3764",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/NativeServices.java",
+      "sha256": "45b4f62d2108c688a55bcc429ed47287191e9031a45d2222691e4d2f86df8c7d",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/ProgressWatch.java",
+      "sha256": "604f79b8364e5cfead5ca2eaf3121e8a25e99327e4cea4b4a1db5fac46a18273",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/StreamMsgLogger.java",
+      "sha256": "5be156fc58e3467d71b3128dfdcec9c19a01a0be83fc0f3e3ee8a982abd16dba",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/StringFormatException.java",
+      "sha256": "cd87c55afe0011005d166389b11feb3e15f4cb9a8e8185fa1f3ff82c8e3086bf",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/util/ThreadPool.java",
+      "sha256": "974d29f96ddecdca5c657ed13f18a9c86576f3b55f220eea0cbf3211fcf7a201",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/FilterTypes.java",
+      "sha256": "97d550733f491b36e9bacdbfa0a2f8d010e755a3e50a63b559f46180891b5598",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/Subband.java",
+      "sha256": "69211f0deb48e3adc38f410b298919b9f420d764011e0f6b90385a01a96ca16a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/WTDecompSpec.java",
+      "sha256": "75d0a992ec797aab76a95dd66c482c65c5a716b3a7bc73a8cef87622852722d1",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/WTFilterSpec.java",
+      "sha256": "860bf8d1f3c12024cf5bf3ca6fc3f24f179770d77a43dc2e4288032491550447",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/WaveletFilter.java",
+      "sha256": "ca77c552f92c26d01951f16f6fff94b84713e90751b44090b77c37098459015e",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/WaveletTransform.java",
+      "sha256": "a1b2f5a51d1cc01d75bbd5a75cf1a6a35e96d7f9078381e040968f2b77a306e7",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/AnWTFilter.java",
+      "sha256": "7db80c56188d0c90c8677f887c13c2cdbb4a3deb8e0bc6835f5c68892c416c87",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/AnWTFilterFloat.java",
+      "sha256": "9faee99cf33d1995373a6028b925b2f6ae28db539d9a87ff5babf06376c6b750",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/AnWTFilterFloatLift9x7.java",
+      "sha256": "60b50b0126e06ba2313e28f1f848669461396629864a76a5469836f14be98c94",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/AnWTFilterInt.java",
+      "sha256": "7fa15720fe77ad7c37e899866e9474abe908d967cddb8e9f36333456eb54ca59",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/AnWTFilterIntLift5x3.java",
+      "sha256": "b9fdcb50b910d8d6f25d98580965548351d7b34cd2e82b86ab30a2dd670c09c1",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/AnWTFilterSpec.java",
+      "sha256": "afca3855eb7a7e4a9755e47c1a24319631064e6e365401f36e3e9940f2c0b00a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/CBlkWTData.java",
+      "sha256": "fb2f3f34854e92737ff7d083869ea08c2e3ba3f905eb9dd4714bfd6c2d289569",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/CBlkWTDataFloat.java",
+      "sha256": "0b34d927ab7bc06e3d27ef9b7d97dba61389240fc5e92af35622f6c611569bd1",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/CBlkWTDataInt.java",
+      "sha256": "92fa0625e7cc8cbc33ab8b4809149752b2ee332427600a50acdc1e84bdbd9aa3",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/CBlkWTDataSrc.java",
+      "sha256": "6418d5f285f5c5234c3b2d2302ba8dfaa10fdd5cd98a33d06f37ef4a5bde60f1",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/ForwWT.java",
+      "sha256": "e0bd11f4ba8ceb4d24c9a5bb149233043fd1445865ef8571d2066929007d2cb6",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/ForwWTDataProps.java",
+      "sha256": "2d5f960f9fabddc00f9a52243da5e5ac1372631b03aed4307fbec2f7b4aefe2a",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/ForwWTFull.java",
+      "sha256": "82fa0f02346c46389fcd271e09264f19878612f381dbf83e89fcf15c078a42b2",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/ForwardWT.java",
+      "sha256": "a35c58b37b440fe4a69a3ada2048dcc864aa82b5faf34e2575e06f3399547b2c",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/analysis/SubbandAn.java",
+      "sha256": "74fd16a26804e2d8206cff308840ea4bed2d391d77586f36dd3f987314970fd3",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/CBlkWTDataSrcDec.java",
+      "sha256": "0e26caea19d84d8f2addc406003609c5742aaa402c9ea899f7dd72b4f4a92b07",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/InvWT.java",
+      "sha256": "fcc79cfc86e2034893a1c61da8905a7d781c557860cefa827f4a49028c801a1e",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/InvWTAdapter.java",
+      "sha256": "cf9900c5ab60430ee21652b952d420afb528b944e3f4a8f778a289065b5f28c6",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/InvWTData.java",
+      "sha256": "4de2fca000a659dc9de54adb79bf505b9d4253c778b0d46083a60ca535bd36dd",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/InvWTFull.java",
+      "sha256": "0ae26f769e8bac2205271134991d864ee5991ef64c9fd08ef0f7fba554f3c329",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/InverseWT.java",
+      "sha256": "6591d02f6c22df86d75742610218b45aeaf55aaa1ccf8f117a38eb4320d8feb5",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/MultiResImgData.java",
+      "sha256": "a01f662a95be359cd3bf31ab3063cb3b2f77736decb00e7307dbd9c9543ab5f2",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/MultiResImgDataAdapter.java",
+      "sha256": "6bb486faddb2003d644640788f9fecfdfd326d616adc3001b005e015496275aa",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/SubbandSyn.java",
+      "sha256": "bf2e8e0c0c09ec76484eee5ee75794d88bb5c13be2ac1937375289d0f713faa1",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/SynWTFilter.java",
+      "sha256": "42336988541c29f6dc37a16953375162cf233d415e9d390a7f63d4265b44fb10",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/SynWTFilterFloat.java",
+      "sha256": "62a9c8a4b0334302d854ebc056d750985670392f507806e8da8f1354516a4d35",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/SynWTFilterFloatLift9x7.java",
+      "sha256": "37ddb797c27164254788d78f12771f7044c6fa0a14daf298ae0e888e19330242",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/SynWTFilterInt.java",
+      "sha256": "6e147c9809cfcd76cd1695b240ffb22a6e2923d72eb04f1e9ec0272e820f9469",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/SynWTFilterIntLift5x3.java",
+      "sha256": "a1f39567bf378552ddf57487399bd3254bc7ceb31b195efbbb867b95a7f4e4c7",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    },
+    {
+      "path": "jj2000/j2k/wavelet/synthesis/SynWTFilterSpec.java",
+      "sha256": "6483c0e8a35d772514cfd7b68dd0e0c4efbfd2bfd602ff558a7c5713f279b958",
+      "reason": "owner-authorized NO-JPEG2000 source/profile exclusion"
+    }
+  ],
+  "original_archive_binaries_retained_unselected": [
+    {
+      "path": "src/share/jclib4jai/clibwrapper_jiio.jar",
+      "sha256": "c33d584ffebe04d2c3e48ef20146c5001e4a41050c66ad53dbbd381ff5bfd05a",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/linux/amd64/libclib_jiio.so",
+      "sha256": "e42e67114e88d46d9bea04be43522e2e22a30f1d72a8d6a04590714649510dd9",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/linux/i386/libclib_jiio.so",
+      "sha256": "bcff30f5a17a470b06adbe262af0ea854d2735c182f0c8d85a04d1eb1d4333b4",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/amd64/libclib_jiio.so",
+      "sha256": "2837f11d8c52b33913839e66f9f2a07e40e1a27f6ca1a6a25b16086d5b64491c",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/i386/libclib_jiio.so",
+      "sha256": "234490488b088c593433b7167fa166cd4ec801bd0806bcc9500a434ea6e4b374",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparc/libclib_jiio.so",
+      "sha256": "0055bdc51b9b4f5080dcf8aee1933082a98660387c1affd15518519990a4a7f0",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparc/libclib_jiio_vis.so",
+      "sha256": "5a72144117761effd648b47bf214ee2321bc4bbb1401e80850cb9df0ffdab604",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparc/libclib_jiio_vis2.so",
+      "sha256": "758efb955cf6e47356ad58c91f6112c4254213e61afab824a01da3e69f7ae14e",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparcv9/libclib_jiio.so",
+      "sha256": "f0d038a4dbdcb873b38d4830accd5eb6168910dd05a4f611d0ec4e0e96e98774",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparcv9/libclib_jiio_vis.so",
+      "sha256": "688eb7315e6ba97fb6c8fd1149451c7c8f65b039bb6d4d86a75b07ddcd6a3773",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/solaris/sparcv9/libclib_jiio_vis2.so",
+      "sha256": "f2b8c4cdfb64dbb60bbc2eed5e946f19c9b28ee159fb7c13af9cafd500aa74b9",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/windows/i386/clib_jiio.dll",
+      "sha256": "fdfcc35b676691cbc9cc8df51231ef1d2f89d3d8372ec799c82e6d580f4cb229",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/windows/i386/clib_jiio_sse2.dll",
+      "sha256": "40b47267a68b1514ad1fb8cdae62ec2e7eb19e9c08795e64bd326c68585539d0",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    },
+    {
+      "path": "src/share/jclib4jai/windows/i386/clib_jiio_util.dll",
+      "sha256": "2acd144832a7f53495ba2ed1f8c2c9baf87f7d49dce1f557f63f015f5a36a0f0",
+      "reason": "closed native codecLib binary; retained original archive, never executed/extracted"
+    }
+  ],
+  "boundary": "All 147 original jj2000 Java files and dependent JPEG2000 provider roots remain unchanged only in historical source custody. No grant or relicensing of those files inferred."
+}
