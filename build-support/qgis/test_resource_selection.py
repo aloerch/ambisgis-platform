@@ -35,6 +35,36 @@ class SelectionTests(unittest.TestCase):
         self.assertEqual(len(result["exclusions"]),1129);self.assertEqual(len(result["colorbrewer"]),265)
         self.assertEqual((rows,findings),before)
 
+    def test_successor_removes_only_recorded_alias_and_preserves_parent(self):
+        rows,findings=fixture();parent=selection.derive_selection(rows,findings)
+        staged=[row for row in rows if row["path"] not in parent["exclusions"]]+[dict(selection.GMT_ALIAS)]
+        before=copy.deepcopy((staged,parent))
+        result=selection.derive_gmt_successor(staged,parent)
+        self.assertEqual(set(result["exclusions"])-set(parent["exclusions"]),{selection.GMT_ALIAS["path"]})
+        self.assertEqual(result["groups"]["SRC-02"]["count"],139)
+        self.assertEqual(result["colorbrewer"],parent["colorbrewer"])
+        self.assertEqual((staged,parent),before)
+
+    def test_successor_rejects_wrong_alias_and_reintroduced_parent_palette(self):
+        rows,findings=fixture();parent=selection.derive_selection(rows,findings)
+        staged=[row for row in rows if row["path"] not in parent["exclusions"]]+[dict(selection.GMT_ALIAS)]
+        wrong=copy.deepcopy(staged);wrong[-1]["sha256"]="f"*64
+        with self.assertRaisesRegex(ValueError,"alias identity"):selection.derive_gmt_successor(wrong,parent)
+        omitted=next(row for row in rows if row["path"] in parent["exclusions"])
+        with self.assertRaisesRegex(ValueError,"parent exclusions"):selection.derive_gmt_successor(staged+[omitted],parent)
+
+    def test_exact_alias_catalogue_removal_preserves_other_gmt_assets(self):
+        data=b'<selection><gradient dir="gmt" file="GMT_dem1"/><gradient dir="gmt" file="GMT_dem2"/><collect dir="gmt">GMT</collect></selection>'
+        result,removed=selection.trim_catalogue(data,[],{"gmt/GMT_dem1"})
+        self.assertEqual(len(removed),1);self.assertNotIn(b'GMT_dem1',result)
+        self.assertIn(b'GMT_dem2',result);self.assertIn(b'<collect dir="gmt">',result)
+
+    def test_exact_alias_style_reference_rejected_outside_omitted_directory(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/"style.xml").write_text('<style><Option name="schemeName" value="gmt/GMT_dem1"/></style>')
+            with self.assertRaisesRegex(ValueError,"packaged style"):
+                selection.audit_packaged_references(root,{"exclusions":[selection.GMT_ALIAS["path"]],"omitted_collection_roots":[]})
+
     def test_duplicate_paths_rejected(self):
         rows,findings=fixture();rows.append(rows[0])
         with self.assertRaisesRegex(ValueError,"duplicate"):selection.derive_selection(rows,findings)
@@ -98,7 +128,9 @@ class SelectionTests(unittest.TestCase):
                 self.assertEqual(runtime.validate_output(old/"fresh"),old/"fresh")
                 variant=root/"frontend-qgis-remediation/qgis";variant.mkdir(parents=True)
                 self.assertEqual(runtime.validate_output(variant/"fresh"),variant/"fresh")
-                for path in (old,variant,root/"elsewhere",variant/".."/"escape"):
+                successor=root/"java-gmt-remediation/qgis";successor.mkdir(parents=True)
+                self.assertEqual(runtime.validate_output(successor/"fresh"),successor/"fresh")
+                for path in (old,variant,successor,root/"elsewhere",variant/".."/"escape"):
                     with self.subTest(path=path), self.assertRaises(AssertionError):runtime.validate_output(path)
                 outside=root/"outside";outside.mkdir();(variant/"escape").symlink_to(outside,target_is_directory=True)
                 with self.assertRaises(AssertionError):runtime.validate_output(variant/"escape/new")

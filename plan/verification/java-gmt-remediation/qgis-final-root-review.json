@@ -1,0 +1,121 @@
+{
+  "checks": [
+    "All five NO-ORACLE source changes in actual aggregate-02 match pinned after hashes; altered POM files parse as XML. Shared PostGIS/SQLServer mosaic catalog abstractions remain retained.",
+    "Aggregate-evidence-02 reports zero original Oracle class/native fingerprints or active driver inputs; checks 2843 original class/native fingerprints and preserves notices; limitations remain explicit.",
+    "Exact-WAR initial/restart candidate-runtime witnesses selected renderer origin/hash and 245 fractional alpha pixels; Oracle driver/factory/panel classes and importer enum are unavailable; PostGIS provider is available.",
+    "Final profile WAR/renderer and profile-manifest hashes are checked at staging and every runtime launch; four disposable variant/profile guard cases passed.",
+    "Both final deployed WAR receipt hashes and candidate embedded-gwc record bindings agree with aggregate-02 and runtime-profile-2; no aggregate-01 failure is presented as final evidence.",
+    "Native ImageMosaic created exactly two distinct index tables: actual remediation_mosaic and one source-defined CoverageStoreFileValidator-prefixed scratch table. Both have exact two known granules, relative filenames, SRID4326 Polygon extents/areas and GiST indexes; both unchanged after restart. Helper inserts only the separate ordinary vector table and never constructs/populates either mosaic index.",
+    "Both WFS and direct raster WMS pass initial/restart against final WAR; independent runtime code snapshot matches current helper/backend. Existing GWC MISS/HIT, protected denials, cache and security integrity checks pass.",
+    "Final cleanup checks complete: both GeoServer and GeoNode service phases stopped; secrets scrubbed/inactivated; synthetic schema dropped; database stopped with postgres exit0; supervisor exit0; 79+79 network probes passed; no new exception; diagnostics zero secret/security failures."
+  ],
+  "evidence": {
+    "bytes": 22237,
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/qgis-mosaic-final.json",
+    "sha256": "a5453361fcf951e1aa885bd42b2cad1b4ea4388ee70386bacddb64d37f246e17"
+  },
+  "guard_tests": {
+    "command": "/usr/bin/python3 -B -m unittest discover -s build-support/java -p test_variant_inputs.py -v",
+    "failed": 0,
+    "passed": 4
+  },
+  "material_findings": [],
+  "observations": [
+    "Full source/host toolchain closure remains explicitly false; this review does not reclassify inherited or independent license/source gaps.",
+    "The uploaded native validator index side effect is preserved in evidence and removed with owned synthetic schema; no arbitrary extra index is silently ignored.",
+    "JSON/JJ2000 adoption and distribution blockers remain in candidate; independent engineering tests are not license approval."
+  ],
+  "result_exit_code": 0,
+  "reviewed_candidate": {
+    "bytes": 834154,
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/candidates/fnd-02-candidate.json",
+    "sha256": "65f80f1a1f9c745231278f989748b2822b14e83ba2b7eeafe54195b079b0c059"
+  },
+  "reviewed_code": [
+    {
+      "bytes": 4955,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/no_oracle.py",
+      "sha256": "c25da7a68e4a39ea160405bc32f1b959940bf74ad22e2a46e6723b80e3e00d3d"
+    },
+    {
+      "bytes": 4139,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/no-oracle-repairs.json",
+      "sha256": "c579132c8243cc51348de3cc68f2bc02a32855ae9801b4d973db4224d0ad0272"
+    },
+    {
+      "bytes": 3543,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/variant_inputs.py",
+      "sha256": "f6147112e861f9592a390d9bab072a36b658f88540f54720fcdce365f61ebba0"
+    },
+    {
+      "bytes": 36711,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/compatibility.py",
+      "sha256": "0508265fcc3c61d0c5a8700a4ff508859635cbbb12c52d89c68fa0f8444767dc"
+    },
+    {
+      "bytes": 1932,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/runtime_profile.py",
+      "sha256": "815f73bbe8f1faeed208cde85116fc789566598ef71a7eb97c21dc3d8807d462"
+    },
+    {
+      "bytes": 28741,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/runtime-fixtures/ConfiguredGeoServerRuntime.java",
+      "sha256": "a156a57144cee189aa9eb779b87feaea3e711ed56b2be096f615d96e3110f9bf"
+    },
+    {
+      "bytes": 11215,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/gwc/smoke.py",
+      "sha256": "040a94d52bb32ca5ba995e84df1d6de0fdefb34d0827aa83859ef0c09469d9ad"
+    },
+    {
+      "bytes": 12954,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/gwc/backend.py",
+      "sha256": "80933c7882f21e70a901b4f701fd188db757edb7a7d01013e30587abda4ad3d5"
+    },
+    {
+      "bytes": 22462,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation_mosaic.py",
+      "sha256": "4146379ef5908f18c8eca4db8badd3a6575e5f9df726314a75b7997f1abbf598"
+    }
+  ],
+  "reviewer": "Independent QGIS/runtime agent read-only review of root final source/runtime/candidate integration; author review for helper itself.",
+  "schema_version": 1,
+  "verified_candidate_records": [
+    {
+      "bytes": 64447,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/result.json",
+      "record_id": "java-gmt-gwc",
+      "sha256": "525e290c9523225b2abab422e51a3d5372b8a440db50e3269fdb1d021d5217a4"
+    },
+    {
+      "bytes": 27458,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/backend-result.json",
+      "record_id": "java-gmt-gwc-backend",
+      "sha256": "7e05be9ae2cfd7c44c31f765cc9b1ba27cec3c0fdb09adda159d875290e49af8"
+    },
+    {
+      "bytes": 299,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/runtime-profile-2.json",
+      "record_id": "java-gmt-runtime-profile",
+      "sha256": "4adfcb4d0356e74f4a07310ef1bf4fd38eb16d668b98f8049dcd58f32804d2a0"
+    },
+    {
+      "bytes": 92266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-evidence-02/result.json",
+      "record_id": "java-gmt-full-inventory",
+      "sha256": "a9ead031e96f8db7c79f949aa582e3f3e804008fe284cb92ea3203c113bfa2c7"
+    },
+    {
+      "bytes": 4139,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/no-oracle-repairs.json",
+      "record_id": "java-gmt-oracle-recipe-0",
+      "sha256": "c579132c8243cc51348de3cc68f2bc02a32855ae9801b4d973db4224d0ad0272"
+    },
+    {
+      "bytes": 141720153,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/web/app/target/geoserver.war",
+      "record_id": "java-gmt-war",
+      "sha256": "e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044"
+    }
+  ]
+}

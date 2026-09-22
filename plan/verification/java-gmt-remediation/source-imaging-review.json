@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "reviewer": "java_source component agent; independent of imaging implementation",
+  "scope": "Hash-bound bounded code and selected-class/source/notice review. No release or license approval.",
+  "war": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044",
+    "bytes": 141720153
+  },
+  "mapping": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/imaging-replacements.json",
+    "sha256": "f0edd1d1ab30dfa3af4ee29ecc9b8634313534662557762b2288b1574c8c7285",
+    "bytes": 2142
+  },
+  "reviewed_code": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/ImageIOWitness.java",
+      "sha256": "0a81b3bc75916adcead80914c267167559abbc0cd5ffa5e05a017b2554445826",
+      "bytes": 7233
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/MapFishImagingWitness.java",
+      "sha256": "a1e90f2c3ae9be9aa028d6ea53ce3207a4d490fe40b2287745da74b2d5cfaaac",
+      "bytes": 3213
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/NativeRenderingWitness.java",
+      "sha256": "f983f111f9f5c64b10d61ceb5faf8f2850c2395cf677b63affe38def2527e2bf",
+      "bytes": 391
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/RenderingWitness.java",
+      "sha256": "b51daceab256e245264a5595dfcb7e3f74b972affb4d5533cc1cd3c35817e7da",
+      "bytes": 3180
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/build_imageio.py",
+      "sha256": "8fd13136fffd4b9aac7d7f2e264f7ec449d44ab38e540fb117e44a96d0dfc681",
+      "bytes": 9577
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/build_marlin.py",
+      "sha256": "a78abdcd7cc65c30cf0a86045211aae0cf1abcd27dcbe0e5615429df51a19767",
+      "bytes": 7430
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/imageio-modifications.json",
+      "sha256": "a365179cdbffa4a6b25b5aa246f52738902b244d1cddb096d80c33a07b0f6baa",
+      "bytes": 2567
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/imageio-profile-exclusions.json",
+      "sha256": "45b575b9681365d01a41b16d4f19868d9993af9fe6f6980fdbf694d80f7835c7",
+      "bytes": 12798
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/imageio-source.patch",
+      "sha256": "01a0d95727d9a44a5e45f030878dcc7648c80102475e487c906e7fcbbc479879",
+      "bytes": 9036
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/inventory.py",
+      "sha256": "ced7057cb83ef5ed1567503288611f82329bb64422575bfc913497f032064073",
+      "bytes": 4903
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/marlin-modifications.json",
+      "sha256": "e892581d08e9b28033f22263da8f939550653cf3f2ffbef29dff2bdbaa1f100b",
+      "bytes": 508
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/marlin-profile-exclusions.json",
+      "sha256": "e008d091adda58343b0b018b5295257a838836678468a93cab58abc933678f67",
+      "bytes": 695
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/marlin-source.patch",
+      "sha256": "fefe13642e4d1ed2d22cd64a32a5290ea98922818ec995e70ac0bff2b77bc534",
+      "bytes": 1329
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation-imaging/probe_imageio.py",
+      "sha256": "63d45c0669f28bb27994e3bab82bf34731bb4212886b54d8a340fd9434dc226f",
+      "bytes": 6303
+    }
+  ],
+  "components": [
+    {
+      "variant": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/ambisgis-marlin-0.9.4.8-headless-temurin17-2.jar",
+        "sha256": "14633f73fed7e30553927201309bcaf407a9f5462fce87692f196859f33d074a",
+        "bytes": 165475
+      },
+      "inventory": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/inventory-03/ambisgis-marlin-0.9.4.8-headless-temurin17-2-inventory.json",
+        "sha256": "af1aca08b8e636b36ae13c7098e5a3f6bc3ed87f1bf7c47c79c1cf3c4aa88858",
+        "bytes": 123382
+      },
+      "class_count": 83,
+      "sources_supplying_classes": 42,
+      "no_unmapped_class": true,
+      "no_native_member_or_direct_codecLib_reference": true,
+      "notices": [
+        {
+          "member": "META-INF/License.md",
+          "sha256": "56beabbd85b6527a38ac6e4d5151dfdf181dbe4ff5ac8911a45f0bd3f558f02e",
+          "bytes": 19334
+        }
+      ],
+      "source_tree": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/source",
+      "original_omitted_classes": [
+        "sun/java2d/marlin/TestArrayCacheInt$ContextWidenArray.class",
+        "sun/java2d/marlin/TestArrayCacheInt.class",
+        "sun/java2d/opengl/OGLRenderQueue$QueueFlusher.class",
+        "sun/java2d/opengl/OGLRenderQueue.class"
+      ],
+      "other_library_references_to_omissions": [],
+      "spi": {},
+      "terms_observation": "All42 source files supplying83 selected classes contain original Classpath exception text; TODO benchmark source is excluded, no inferred exception. Retained License.md remains indexed."
+    },
+    {
+      "variant": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-03/ambisgis-jai-imageio-1.1-java-temurin17-1.jar",
+        "sha256": "51dc61ca6724ba307f7d8407aa276e2c56c11d6ad6093d62820abef0ab0880f2",
+        "bytes": 887497
+      },
+      "inventory": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/inventory-03/ambisgis-jai-imageio-1.1-java-temurin17-1-inventory.json",
+        "sha256": "30c71e6b158398a1ee282365929ecd770ce4dafe6d8e27839ce8ec74a7ee40db",
+        "bytes": 749230
+      },
+      "class_count": 515,
+      "sources_supplying_classes": 312,
+      "no_unmapped_class": true,
+      "no_native_member_or_direct_codecLib_reference": true,
+      "notices": [
+        {
+          "member": "com/sun/media/imageio/plugins/tiff/BaselineTIFFTagSet$Copyright.class",
+          "sha256": "b6a6fd9f1b26c91edd75cad5b13b7539608f1cb797d608b79c73c5ef6b772cd9",
+          "bytes": 426
+        },
+        {
+          "member": "META-INF/LICENSE.txt",
+          "sha256": "524a6606d9ad531cc091f20300760ebb0234968bae5067c06614a0f33f993334",
+          "bytes": 1701
+        },
+        {
+          "member": "META-INF/COPYRIGHT.txt",
+          "sha256": "26b877540d9bdf27a1806ee696ef49184b3a19ce56ba056d262116cc5afe7076",
+          "bytes": 2462
+        },
+        {
+          "member": "META-INF/NOTICE-JJ2000.txt",
+          "sha256": "69a21c016d88c6fcaa22055af306bf2a4651b9d934ad70eab1c85f5074f9a7aa",
+          "bytes": 2161
+        }
+      ],
+      "source_tree": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-03/selected-source",
+      "original_omitted_classes": [
+        "com/sun/media/imageioimpl/plugins/clib/CLibImageReader$SoloIterator.class",
+        "com/sun/media/imageioimpl/plugins/clib/CLibImageReader.class",
+        "com/sun/media/imageioimpl/plugins/clib/CLibImageWriter.class",
+        "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageReader.class",
+        "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageReaderSpi.class",
+        "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageWriteParam.class",
+        "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageWriter.class",
+        "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGImageWriterSpi.class",
+        "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGMetadata$HuffmanTable.class",
+        "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGMetadata$QTable.class",
+        "com/sun/media/imageioimpl/plugins/jpeg/CLibJPEGMetadata.class",
+        "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderCodecLib.class",
+        "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageReaderCodecLibSpi.class",
+        "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterCodecLib.class",
+        "com/sun/media/imageioimpl/plugins/jpeg2000/J2KImageWriterCodecLibSpi.class",
+        "com/sun/media/imageioimpl/plugins/jpeg2000/J2KRenderedImageCodecLib.class",
+        "com/sun/media/imageioimpl/plugins/jpeg2000/MediaLibAccessor.class",
+        "com/sun/media/imageioimpl/plugins/png/CLibPNGImageReader.class",
+        "com/sun/media/imageioimpl/plugins/png/CLibPNGImageReaderSpi.class",
+        "com/sun/media/imageioimpl/plugins/png/CLibPNGImageWriteParam.class",
+        "com/sun/media/imageioimpl/plugins/png/CLibPNGImageWriter.class",
+        "com/sun/media/imageioimpl/plugins/png/CLibPNGImageWriterSpi.class",
+        "com/sun/media/imageioimpl/plugins/png/CLibPNGMetadata.class",
+        "com/sun/media/imageioimpl/plugins/png/CLibPNGMetadataFormat.class",
+        "com/sun/media/imageioimpl/plugins/png/CLibPNGMetadataFormatResources.class",
+        "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibFaxDecompressor.class",
+        "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibRLECompressor.class",
+        "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibT4Compressor.class",
+        "com/sun/media/imageioimpl/plugins/tiff/TIFFCodecLibT6Compressor.class",
+        "com/sun/media/jai/imageioimpl/I18N.class",
+        "com/sun/media/jai/imageioimpl/ImageIOCollectionImage.class",
+        "com/sun/media/jai/imageioimpl/ImageReadCIF.class",
+        "com/sun/media/jai/imageioimpl/ImageReadCRIF$1.class",
+        "com/sun/media/jai/imageioimpl/ImageReadCRIF.class",
+        "com/sun/media/jai/imageioimpl/ImageReadOpImage.class",
+        "com/sun/media/jai/imageioimpl/ImageReadWriteSpi.class",
+        "com/sun/media/jai/imageioimpl/ImageWriteCIF.class",
+        "com/sun/media/jai/imageioimpl/ImageWriteCRIF.class",
+        "com/sun/media/jai/imageioimpl/PixelReplacementImage.class",
+        "com/sun/media/jai/operator/I18N.class",
+        "com/sun/media/jai/operator/ImageReadDescriptor.class",
+        "com/sun/media/jai/operator/ImageReadPropertyGenerator.class",
+        "com/sun/media/jai/operator/ImageWriteDescriptor.class",
+        "com/sun/media/jai/operator/PrintProps.class"
+      ],
+      "other_library_references_to_omissions": [
+        {
+          "jar": "gs-wms-2.28.5.jar",
+          "member": "org/geoserver/wms/legendgraphic/PNGLegendGraphicResponse.class",
+          "references": [
+            "com/sun/media/imageioimpl/plugins/png/CLibPNGImageWriter"
+          ]
+        },
+        {
+          "jar": "gwc-core-1.28.5.jar",
+          "member": "org/geowebcache/mime/ImageMime.class",
+          "references": [
+            "com/sun/media/imageioimpl/plugins/png/CLibPNGImageWriter"
+          ]
+        }
+      ],
+      "spi": {
+        "META-INF/services/javax.imageio.spi.ImageInputStreamSpi": "#\n# $RCSfile: javax.imageio.spi.ImageInputStreamSpi,v $\n#\n# \n# Copyright (c) 2005 Sun Microsystems, Inc. All  Rights Reserved.\n# \n# Redistribution and use in source and binary forms, with or without\n# modification, are permitted provided that the following conditions\n# are met: \n# \n# - Redistribution of source code must retain the above copyright \n#   notice, this  list of conditions and the following disclaimer.\n# \n# - Redistribution in binary form must reproduce the above copyright\n#   notice, this list of conditions and the following disclaimer in \n#   the documentation and/or other materials provided with the\n#   distribution.\n# \n# Neither the name of Sun Microsystems, Inc. or the names of \n# contributors may be used to endorse or promote products derived \n# from this software without specific prior written permission.\n# \n# This software is provided \"AS IS,\" without a warranty of any \n# kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND \n# WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, \n# FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY\n# EXCLUDED. SUN MIDROSYSTEMS, INC. (\"SUN\") AND ITS LICENSORS SHALL \n# NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF \n# USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS\n# DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR \n# ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,\n# CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND\n# REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR\n# INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE\n# POSSIBILITY OF SUCH DAMAGES. \n# \n# You acknowledge that this software is not designed or intended for \n# use in the design, construction, operation or maintenance of any \n# nuclear facility. \n#\n# $Revision: 1.1 $\n# $Date: 2005-02-11 05:02:44 $\n# $State: Exp $\n#\n# --- JAI-Image I/O ImageInputStream plug-ins ---\n#\ncom.sun.media.imageioimpl.stream.ChannelImageInputStreamSpi\n",
+        "META-INF/services/javax.imageio.spi.ImageOutputStreamSpi": "#\n# $RCSfile: javax.imageio.spi.ImageOutputStreamSpi,v $\n#\n# \n# Copyright (c) 2005 Sun Microsystems, Inc. All  Rights Reserved.\n# \n# Redistribution and use in source and binary forms, with or without\n# modification, are permitted provided that the following conditions\n# are met: \n# \n# - Redistribution of source code must retain the above copyright \n#   notice, this  list of conditions and the following disclaimer.\n# \n# - Redistribution in binary form must reproduce the above copyright\n#   notice, this list of conditions and the following disclaimer in \n#   the documentation and/or other materials provided with the\n#   distribution.\n# \n# Neither the name of Sun Microsystems, Inc. or the names of \n# contributors may be used to endorse or promote products derived \n# from this software without specific prior written permission.\n# \n# This software is provided \"AS IS,\" without a warranty of any \n# kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND \n# WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, \n# FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY\n# EXCLUDED. SUN MIDROSYSTEMS, INC. (\"SUN\") AND ITS LICENSORS SHALL \n# NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF \n# USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS\n# DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR \n# ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,\n# CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND\n# REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR\n# INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE\n# POSSIBILITY OF SUCH DAMAGES. \n# \n# You acknowledge that this software is not designed or intended for \n# use in the design, construction, operation or maintenance of any \n# nuclear facility. \n#\n# $Revision: 1.1 $\n# $Date: 2005-02-11 05:02:44 $\n# $State: Exp $\n#\n# --- JAI-Image I/O ImageReader plug-ins ---\n#\ncom.sun.media.imageioimpl.stream.ChannelImageOutputStreamSpi\n",
+        "META-INF/services/javax.imageio.spi.ImageReaderSpi": "#\n# $RCSfile: javax.imageio.spi.ImageReaderSpi,v $\n#\n# \n# Copyright (c) 2005 Sun Microsystems, Inc. All  Rights Reserved.\n# \n# Redistribution and use in source and binary forms, with or without\n# modification, are permitted provided that the following conditions\n# are met: \n# \n# - Redistribution of source code must retain the above copyright \n#   notice, this  list of conditions and the following disclaimer.\n# \n# - Redistribution in binary form must reproduce the above copyright\n#   notice, this list of conditions and the following disclaimer in \n#   the documentation and/or other materials provided with the\n#   distribution.\n# \n# Neither the name of Sun Microsystems, Inc. or the names of \n# contributors may be used to endorse or promote products derived \n# from this software without specific prior written permission.\n# \n# This software is provided \"AS IS,\" without a warranty of any \n# kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND \n# WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, \n# FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY\n# EXCLUDED. SUN MIDROSYSTEMS, INC. (\"SUN\") AND ITS LICENSORS SHALL \n# NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF \n# USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS\n# DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR \n# ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,\n# CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND\n# REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR\n# INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE\n# POSSIBILITY OF SUCH DAMAGES. \n# \n# You acknowledge that this software is not designed or intended for \n# use in the design, construction, operation or maintenance of any \n# nuclear facility. \n#\n# $Revision: 1.1 $\n# $Date: 2005-02-11 05:02:44 $\n# $State: Exp $\n#\n# --- JAI-Image I/O ImageReader plug-ins ---\n#\ncom.sun.media.imageioimpl.plugins.jpeg2000.J2KImageReaderSpi\ncom.sun.media.imageioimpl.plugins.wbmp.WBMPImageReaderSpi\ncom.sun.media.imageioimpl.plugins.bmp.BMPImageReaderSpi\ncom.sun.media.imageioimpl.plugins.pnm.PNMImageReaderSpi\ncom.sun.media.imageioimpl.plugins.raw.RawImageReaderSpi\ncom.sun.media.imageioimpl.plugins.tiff.TIFFImageReaderSpi\n",
+        "META-INF/services/javax.imageio.spi.ImageWriterSpi": "#\n# $RCSfile: javax.imageio.spi.ImageWriterSpi,v $\n#\n# \n# Copyright (c) 2005 Sun Microsystems, Inc. All  Rights Reserved.\n# \n# Redistribution and use in source and binary forms, with or without\n# modification, are permitted provided that the following conditions\n# are met: \n# \n# - Redistribution of source code must retain the above copyright \n#   notice, this  list of conditions and the following disclaimer.\n# \n# - Redistribution in binary form must reproduce the above copyright\n#   notice, this list of conditions and the following disclaimer in \n#   the documentation and/or other materials provided with the\n#   distribution.\n# \n# Neither the name of Sun Microsystems, Inc. or the names of \n# contributors may be used to endorse or promote products derived \n# from this software without specific prior written permission.\n# \n# This software is provided \"AS IS,\" without a warranty of any \n# kind. ALL EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND \n# WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, \n# FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY\n# EXCLUDED. SUN MIDROSYSTEMS, INC. (\"SUN\") AND ITS LICENSORS SHALL \n# NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF \n# USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS\n# DERIVATIVES. IN NO EVENT WILL SUN OR ITS LICENSORS BE LIABLE FOR \n# ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT, INDIRECT, SPECIAL,\n# CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND\n# REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF OR\n# INABILITY TO USE THIS SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE\n# POSSIBILITY OF SUCH DAMAGES. \n# \n# You acknowledge that this software is not designed or intended for \n# use in the design, construction, operation or maintenance of any \n# nuclear facility. \n#\n# $Revision: 1.1 $\n# $Date: 2005-02-11 05:02:44 $\n# $State: Exp $\n#\n# --- JAI-Image I/O ImageWriter plug-ins ---\n#\ncom.sun.media.imageioimpl.plugins.jpeg2000.J2KImageWriterSpi\ncom.sun.media.imageioimpl.plugins.wbmp.WBMPImageWriterSpi\ncom.sun.media.imageioimpl.plugins.bmp.BMPImageWriterSpi\ncom.sun.media.imageioimpl.plugins.gif.GIFImageWriterSpi\ncom.sun.media.imageioimpl.plugins.pnm.PNMImageWriterSpi\ncom.sun.media.imageioimpl.plugins.raw.RawImageWriterSpi\ncom.sun.media.imageioimpl.plugins.tiff.TIFFImageWriterSpi\n"
+      },
+      "terms_observation": "Original Sun BSD/nuclear disclaimer and separate JJ2000 conforming-product restriction retained; technical completeness does not close combination/adoption rights blocker."
+    }
+  ],
+  "findings": [],
+  "final_functional_receipt": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/final-war-probe-02/result.json",
+    "sha256": "8ee8227ce36c59c9db880aad6d65c064a3755b030a2b403fea17b5732279d744",
+    "bytes": 251838
+  },
+  "functional_status": "partial-native-renderer-failure",
+  "functional_stages": [
+    {
+      "name": "compile",
+      "exit_code": 0,
+      "network_verified": true
+    },
+    {
+      "name": "providers-roundtrip",
+      "exit_code": 0,
+      "network_verified": true
+    },
+    {
+      "name": "native-renderer",
+      "exit_code": 1,
+      "network_verified": true
+    },
+    {
+      "name": "mapfish",
+      "exit_code": 0,
+      "network_verified": true
+    }
+  ],
+  "review_findings": [
+    {
+      "severity": "recorded-limitation",
+      "detail": "Final native renderer join/miter regression fails and is retained as partial-native-renderer-failure; renderer origin/concurrency, ImageIO roundtrips and MapFish decoding pass. Do not represent native renderer suite as passed."
+    },
+    {
+      "severity": "open-rights-blocker",
+      "detail": "JJ2000 conforming-product restriction remains unresolved for proposed combination. No license clearance inferred from complete source or native omission."
+    },
+    {
+      "severity": "scope",
+      "detail": "Two consumer constant-pool CLibPNGImageWriter name references remain in WMS/GWC. They are class-name preference checks, not active native providers; final actual WMS/printing receipts required for selected path. No native codecLib members, direct JNI-adapter dependencies or service registrations remain."
+    },
+    {
+      "severity": "bounded-code-observation",
+      "detail": "Marlin witness verifies patched JAR resource origin, version and exact SHA and rejects unpatched/OpenGL paths. ImageIO exercises automatic plus explicit Java TIFF/JP2 providers and exact lossless pixels/geotags; MapFish produces and decodes actual PDF/PNG/TIFF. Builds preserve narrow source exclusions and original archives."
+    }
+  ],
+  "blocking_code_defects_found": [],
+  "imageio_current_recipe_reproduction": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/imageio-04/result.json",
+    "sha256": "6fb9732e844518ed6eb9087c059f7a7e2d92da51978872b6b7e1a4c242cf062d",
+    "bytes": 193136
+  },
+  "imageio_reproduction_note": "Current reviewed recipe includes toolchain verification and recipe hash absent from original imageio-03 receipt; fresh imageio-04 output reproduces selected imageio-03 bytes exactly. Original receipt remains unchanged.",
+  "consumer_reference_sources": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/wms/src/main/java/org/geoserver/wms/legendgraphic/PNGLegendGraphicResponse.java",
+      "sha256": "afe54e86e684539a06fb5290ef6bd377498a91904b323729b211b3700dc13084",
+      "bytes": 3809
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-02/work/source/geowebcache/geowebcache/core/src/main/java/org/geowebcache/mime/ImageMime.java",
+      "sha256": "e5a05e394b55d3f2302da87b3ae79b7be3e25897c5a4efb926f4ba81b3081c1f",
+      "bytes": 12825
+    }
+  ]
+}

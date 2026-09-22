@@ -45,7 +45,7 @@ TARGET_MODULES = {'referencing': 'geotools/modules/library/referencing/',
                   'role-service': 'geoserver/src/extension/authkey/'}
 
 
-def materialize(custody, destination):
+def materialize(custody, destination, no_oracle=False):
     inventory = verify_custody(custody)
     if not inventory['verification']['valid']:
         raise ValueError('retained Maven custody failed verification')
@@ -64,6 +64,10 @@ def materialize(custody, destination):
         record = records[(selected['repository'], selected['maven_path'])]
         if path.relative_to(selection_root).as_posix() != record['maven_path'] + '.json':
             raise ValueError('selection path does not match artifact identity')
+        if no_oracle:
+            from no_oracle import excluded_input
+            if excluded_input(record['maven_path']):
+                continue
         target = destination / record['maven_path']
         target.parent.mkdir(parents=True, exist_ok=True)
         with target.open('xb') as output, (custody / record['blob_path']).open('rb') as source:
@@ -273,7 +277,7 @@ def prepare_webapp_oauth(source, principal=False):
             'human_security_review_required': True, 'acceptance_build': False}
 
 
-def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None, runtime_http=False, oauth_redaction=False, oauth_principal=False, configured_auth_diagnostics=False, configured_auth_diagnostic_tests=False, configured_auth_stateless=False, configured_auth_stateless_tests=False, role_service=False, role_service_repair=False, role_service_tests=False):
+def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None, runtime_http=False, oauth_redaction=False, oauth_principal=False, configured_auth_diagnostics=False, configured_auth_diagnostic_tests=False, configured_auth_stateless=False, configured_auth_stateless_tests=False, role_service=False, role_service_repair=False, role_service_tests=False, no_oracle=False, variant_inputs=None):
     if target not in TARGETS or stage not in ('test', 'package') or tests not in ('all', 'target', 'schema-resolver', 'compile-only'):
         raise ValueError('unsupported bounded target or lifecycle')
     if repair not in ('none', 'xmlcodegen-emf') or (tests == 'schema-resolver' and target != 'xml'):
@@ -312,6 +316,8 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
         native_role = target == 'role-service' and runtime_http and tests == 'target'
         if not role_service or not (native_role or (aggregate_oauth and role_service_repair and not role_service_tests)):
             raise ValueError('role service repairs require its selected native HTTP tests or source-only aggregate packaging')
+    if variant_inputs is not None and not no_oracle:
+        raise ValueError('coordinated Java variant requires explicit NO-ORACLE selection')
     output.mkdir(parents=True, exist_ok=False)
     report = {'schema_version': 1, 'runner_sha256': sha(Path(__file__)), 'started_at': datetime.now(timezone.utc).isoformat(),
               'target': target, 'stage': stage, 'test_selection': tests, 'role_service_profile': role_service, 'purpose': 'exploratory-compatibility-probe',
@@ -378,6 +384,9 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
             import role_service_repair as role_repairs
             report['role_service_repair'] = role_repairs.prepare(
                 work / 'source', repair=role_service_repair, tests=role_service_tests)
+        if no_oracle:
+            import no_oracle as no_oracle_profile
+            report['no_oracle_profile'] = no_oracle_profile.prepare(work / 'source')
         if postgres_prefix is not None:
             import geofence_fixture
             database, report['postgres_fixture'] = geofence_fixture.start(
@@ -388,7 +397,11 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
                      for p in sorted((work / 'source').rglob('*')) if p.is_file()}
         write_json(output / 'source-inputs.json', originals)
         report['source_manifest_sha256'] = sha(output / 'source-inputs.json')
-        rows = materialize(custody, output / 'retained-repository')
+        rows = materialize(custody, output / 'retained-repository', no_oracle=True) if no_oracle else materialize(custody, output / 'retained-repository')
+        if variant_inputs is not None:
+            import variant_inputs as local_variants
+            rows, report['local_variant_inputs'] = local_variants.apply(output / 'retained-repository', rows, variant_inputs)
+            shutil.copyfile(variant_inputs, output / 'variant-inputs.json')
         write_json(output / 'retained-inputs.json', rows)
         report['input_manifest_sha256'] = sha(output / 'retained-inputs.json')
         report['retained_files'] = len(rows)
@@ -521,13 +534,15 @@ def main():
     parser.add_argument('--configured-auth-diagnostic-tests', action='store_true', help='inject native configured diagnostic regressions in controlled OAuth HTTP mode only')
     parser.add_argument('--configured-auth-stateless', action='store_true', help='apply guarded opt-in stateless bearer source support after configured diagnostic repairs')
     parser.add_argument('--configured-auth-stateless-tests', action='store_true', help='inject native stateless bearer regressions in controlled OAuth HTTP mode only')
+    parser.add_argument('--no-oracle', action='store_true', help='explicit source/dependency profile; Oracle remains unsupported')
+    parser.add_argument('--variant-inputs', type=Path, help='hash-locked locally source-built replacements; requires --no-oracle')
     parser.add_argument('--role-service', action='store_true', help='add the owned authkey module while preserving existing aggregate profiles')
     parser.add_argument('--role-service-repair', action='store_true', help='apply guarded GeoNode REST role-service repairs')
     parser.add_argument('--role-service-tests', action='store_true', help='inject selected role-service regressions in controlled HTTP mode only')
     parser.add_argument('--runtime-http', action='store_true', help='compile with sockets denied, then run real tests under verified loopback control')
     args = parser.parse_args()
     result = probe(args.audit_custody.resolve(), args.custody.resolve(), args.toolchain_custody.resolve(),
-                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive, args.runtime_http, args.oauth_redaction, args.oauth_principal, args.configured_auth_diagnostics, args.configured_auth_diagnostic_tests, args.configured_auth_stateless, args.configured_auth_stateless_tests, args.role_service, args.role_service_repair, args.role_service_tests)
+                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive, args.runtime_http, args.oauth_redaction, args.oauth_principal, args.configured_auth_diagnostics, args.configured_auth_diagnostic_tests, args.configured_auth_stateless, args.configured_auth_stateless_tests, args.role_service, args.role_service_repair, args.role_service_tests, args.no_oracle, args.variant_inputs)
     print(json.dumps(result, indent=2))
     return result['result_exit_code']
 

@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "repository": "aloerch/ambisgis-platform",
+  "project": "https://github.com/users/aloerch/projects/2",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/67",
+  "implementation_head": "e1b960588c51beb35f83c5f1c5d137e85a0d414c",
+  "branch": "fnd-02/java-gmt-selection-remediation",
+  "parent_issue": "https://github.com/aloerch/ambisgis-platform/issues/3",
+  "parent_delivery": "In progress",
+  "items_before": 79,
+  "items_after": 80,
+  "mutations": [
+    {
+      "content_id": "PR_kwDOUhI-d88AAAABEgP2pw",
+      "operation": "add_item",
+      "result": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg8C2OU",
+        "isArchived": false
+      }
+    },
+    {
+      "field_id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+      "item_id": "PVTI_lAHOAOk9es4Bj_k-zg8C2OU",
+      "operation": "set_field",
+      "result": {
+        "id": "PVTI_lAHOAOk9es4Bj_k-zg8C2OU"
+      },
+      "value": "https://github.com/aloerch/ambisgis-platform/pull/67 | FND-02: https://github.com/aloerch/ambisgis-platform/issues/3"
+    }
+  ],
+  "reconciliation_mutations": [],
+  "all_prior_items_preserved": true,
+  "fields_views_archive_decisions_preserved": true,
+  "queue_filter": "is:pr is:open",
+  "open_queue": [
+    67
+  ],
+  "pr_item": {
+    "content": {
+      "__typename": "PullRequest",
+      "id": "PR_kwDOUhI-d88AAAABEgP2pw",
+      "number": 67,
+      "repository": {
+        "nameWithOwner": "aloerch/ambisgis-platform"
+      },
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/67"
+    },
+    "field_values": [
+      {
+        "__typename": "ProjectV2ItemFieldRepositoryValue"
+      },
+      {
+        "__typename": "ProjectV2ItemFieldTextValue",
+        "field": {
+          "id": "PVTF_lAHOAOk9es4Bj_k-zhix4CM",
+          "name": "Title"
+        },
+        "text": "FND-02: source-built Java/no-Oracle variant and GMT palette exclusion"
+      },
+      {
+        "__typename": "ProjectV2ItemFieldTextValue",
+        "field": {
+          "id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+          "name": "Evidence"
+        },
+        "text": "https://github.com/aloerch/ambisgis-platform/pull/67 | FND-02: https://github.com/aloerch/ambisgis-platform/issues/3"
+      },
+      {
+        "__typename": "ProjectV2ItemFieldSingleSelectValue",
+        "field": {
+          "id": "PVTSSF_lAHOAOk9es4Bj_k-zhix4CU",
+          "name": "Status"
+        },
+        "name": "Todo",
+        "optionId": "f75ad846"
+      }
+    ],
+    "id": "PVTI_lAHOAOk9es4Bj_k-zg8C2OU",
+    "isArchived": false,
+    "type": "PULL_REQUEST",
+    "values": {
+      "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/67 | FND-02: https://github.com/aloerch/ambisgis-platform/issues/3",
+      "Status": "Todo",
+      "Title": "FND-02: source-built Java/no-Oracle variant and GMT palette exclusion"
+    }
+  },
+  "default_fields": "GitHub-created Title and Status=Todo retained; neither Task ID nor Delivery nor Review gate was copied or written.",
+  "failures_preserved": [
+    "Both mutation responses succeeded; immediate paginated item list still showed79items, so immediate preservation outcome failed. Later complete read-only reconciliation showed80items without repeating writes.",
+    "Local summary initially expected only Evidence but item also contains GitHub-created Title/Status. Assertion failed before file creation; no repository or remote change. Corrected summary verifies Evidence and absence of prohibited copied planning while preserving generated defaults."
+  ],
+  "receipts": {
+    "project-dry-run-01": {
+      "plan.json": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/project-dry-run-01/plan.json",
+        "sha256": "4c407b4a21e2f83e83620a52c630c7080497f98f07b7095818bdbbff10fe73c2",
+        "bytes": 730
+      },
+      "outcome.json": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/project-dry-run-01/outcome.json",
+        "sha256": "e49d3b7b5e8fe688fe116f4ee023f216e1a1ecdc777eedfe695e1a4cf73b018a",
+        "bytes": 3242
+      },
+      "manifest.json": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/project-dry-run-01/manifest.json",
+        "sha256": "0137f0714c05ab2d2314e8f9d8cfdcfe1344b3d643fa12c99634e50f9b10f0f6",
+        "bytes": 1126
+      }
+    },
+    "project-apply-01": {
+      "plan.json": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/project-apply-01/plan.json",
+        "sha256": "88d9f3fcc2d01ba2b4abc1ba47e4b969db5c0ee1b531d34d8c1da917e490f0fd",
+        "bytes": 729
+      },
+      "outcome.json": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/project-apply-01/outcome.json",
+        "sha256": "f9a5ffc3095dfb7bc7b34aa918b6a9331b4ade4f5be383ea108026533228eed2",
+        "bytes": 3792
+      },
+      "manifest.json": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/project-apply-01/manifest.json",
+        "sha256": "c1761135565c890e3b70ad25da6566560477eb590fca45b11dc09e192a696b0e",
+        "bytes": 1708
+      }
+    },
+    "project-reconcile-01": {
+      "plan.json": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/project-reconcile-01/plan.json",
+        "sha256": "fdcce18a7cfc4d80e6aa6993ef92f7623e57ea9685edcde2e4814ce048233ba1",
+        "bytes": 641
+      },
+      "outcome.json": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/project-reconcile-01/outcome.json",
+        "sha256": "094a6d53e325b2823aabbba2faa45b6f81649f04b2e05ff35e23c58935953511",
+        "bytes": 3424
+      },
+      "manifest.json": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/project-reconcile-01/manifest.json",
+        "sha256": "c41e5082d501cd9fa6ab10bab7972797ccbc683359c93d9679113ef6683377b8",
+        "bytes": 1126
+      }
+    }
+  },
+  "scope": "API readback; no UI setup claim. No importer rerun, duplicate item, parent promotion, merge, release or distribution. Final review head is recorded in PR and issue3; later publication documentation changes no tested code/artifact/candidate."
+}

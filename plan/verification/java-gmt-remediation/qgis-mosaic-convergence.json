@@ -1,0 +1,115 @@
+{
+  "attempts": [
+    {
+      "attempt": "gwc-01",
+      "backend_error": {
+        "message": "mosaic HTTP request failed: publish status=400",
+        "type": "ValueError"
+      },
+      "cleanup": {
+        "geonode": true,
+        "geoserver": true,
+        "mosaic": {
+          "files_scrubbed": [
+            "geoserver-data/data/mosaic_tiles/datastore.properties",
+            "geoserver-data/workspaces/fixture/remediation_vector/datastore.xml"
+          ],
+          "result_exit_code": 0,
+          "schema_dropped": true
+        },
+        "stored_credentials_invalidated": true
+      },
+      "receipt": {
+        "bytes": 43137,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-01/result.json",
+        "sha256": "10ab70293db15b66cdd105805aa3bf4ee74331316868896f4c4c8b7abbcd4368"
+      },
+      "result_exit_code": 1
+    },
+    {
+      "attempt": "gwc-02",
+      "backend_error": {
+        "message": "native mosaic PostGIS index absent or ambiguous",
+        "type": "ValueError"
+      },
+      "cleanup": {
+        "geonode": true,
+        "geoserver": true,
+        "mosaic": {
+          "files_scrubbed": [
+            "geoserver-data/data/fixture/remediation_mosaic/datastore.properties",
+            "geoserver-data/workspaces/fixture/remediation_vector/datastore.xml"
+          ],
+          "result_exit_code": 0,
+          "schema_dropped": true
+        },
+        "stored_credentials_invalidated": true
+      },
+      "receipt": {
+        "bytes": 43152,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-02/result.json",
+        "sha256": "2cb001b230659a14dc1726cf0c7b5e8104681c2f807c395ba5c0958a9199d08e"
+      },
+      "result_exit_code": 1
+    },
+    {
+      "attempt": "gwc-03",
+      "backend_error": {
+        "message": "native mosaic PostGIS index absent or ambiguous: [('CoverageStoreFileValidator127225112511182998', 'the_geom', 4326, 'POLYGON'), ('remediation_mosaic', 'the_geom', 4326, 'POLYGON')]",
+        "type": "ValueError"
+      },
+      "cleanup": {
+        "geonode": true,
+        "geoserver": true,
+        "mosaic": {
+          "files_scrubbed": [
+            "geoserver-data/data/fixture/remediation_mosaic/datastore.properties",
+            "geoserver-data/workspaces/fixture/remediation_vector/datastore.xml"
+          ],
+          "result_exit_code": 0,
+          "schema_dropped": true
+        },
+        "stored_credentials_invalidated": true
+      },
+      "receipt": {
+        "bytes": 43286,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-03/result.json",
+        "sha256": "0d54a6f27d1a7109e6a3ce3eea28242ad1e654c82879d7dafa38954fd649cecb"
+      },
+      "result_exit_code": 1
+    },
+    {
+      "attempt": "gwc-04",
+      "backend_error": {
+        "message": "mosaic HTTP request failed: publish status=500",
+        "type": "ValueError"
+      },
+      "cleanup": {
+        "geonode": true,
+        "geoserver": true,
+        "mosaic": {
+          "files_scrubbed": [
+            "geoserver-data/data/fixture/remediation_mosaic/datastore.properties",
+            "geoserver-data/workspaces/fixture/remediation_vector/datastore.xml"
+          ],
+          "result_exit_code": 0,
+          "schema_dropped": true
+        },
+        "stored_credentials_invalidated": true
+      },
+      "receipt": {
+        "bytes": 43151,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-04/result.json",
+        "sha256": "13ec35d18e340997f812e4ff1864b52d3e83b7fdc9bb53c4e04acaca330aa60f"
+      },
+      "result_exit_code": 1
+    }
+  ],
+  "responses": "Native file URL denied; switched to supported inline ZIP API without policy change. Native upload validator creates its own temporary PostGIS index as a source-defined side effect. Explicit Name collided with that existing table (attempt 04). Final helper retains default native names and requires exactly the published index plus one anchored CoverageStoreFileValidator[0-9]+ index; both must contain exactly the known two granules, SRID 4326 Polygon geometry, exact extents/areas, relative filenames and GiST spatial index. Both are removed with the separately owned synthetic schema during final cleanup.",
+  "scope": "Preserved intermediate runtime attempts on aggregate-01; none is final aggregate-02 acceptance.",
+  "source_evidence": {
+    "method": "createTempDirectory() uses CoverageStoreFileValidator prefix; acceptFile constructs and disposes real reader; finally removes temporary files but not external database tables",
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/restconfig/src/main/java/org/geoserver/rest/catalog/CoverageStoreFileValidator.java",
+    "sha256": "1ce287340e27562b7822393b5d9309c4534624051e14091fad568f056aef6830"
+  }
+}

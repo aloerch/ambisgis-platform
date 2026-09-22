@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "scope": "Final package/inventory and affected guard checks; not GIS product acceptance",
+  "candidate": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/candidates/fnd-02-candidate.json",
+    "sha256": "8083a10deee529363e15925941c28e5a1e1f3030716f0cac7154c39466efbb90",
+    "bytes": 836241
+  },
+  "code_and_contracts": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/validation-final-01/validated-code-and-contracts.json",
+    "sha256": "4ec12139ca040f0e948e1e2bbe65f6dded377e733d2390f7c0dc4417c7fecabd",
+    "bytes": 41215
+  },
+  "validated_files": 248,
+  "actual_steps": [
+    {
+      "name": "inventory",
+      "command": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 11.495,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/validation-final-01/inventory.log",
+        "sha256": "a06cbed2f0a0a2c6c4729dd83e843f5d6a7fb394e6ee356705251f56621d93a4"
+      }
+    },
+    {
+      "name": "eligibility",
+      "command": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--eligibility"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "seconds": 10.987,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/validation-final-01/eligibility.log",
+        "sha256": "a06cbed2f0a0a2c6c4729dd83e843f5d6a7fb394e6ee356705251f56621d93a4"
+      }
+    },
+    {
+      "name": "report",
+      "command": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--report"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 10.904,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/validation-final-01/report.log",
+        "sha256": "f192087e65d45fa3873135f24a9555e766ba2e95ea0c0c31c2cfad7f95a44915"
+      }
+    },
+    {
+      "name": "package-tests",
+      "command": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 9.35,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/validation-final-01/package-tests.log",
+        "sha256": "446f8925fbea104e94a9eedc751511197eda501b1216f3db6928ea0dd3c84050"
+      }
+    },
+    {
+      "name": "package-schema",
+      "command": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-B",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.128,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/validation-final-01/package-schema.log",
+        "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+      }
+    }
+  ],
+  "inventory": {
+    "archive_members_checked": 484,
+    "bindings_checked": 393,
+    "combinations": 7,
+    "coverage": "Only listed records, bindings, archive members and complete inventory trees; linked transitive locks are not recursively certified.",
+    "inventory_entries_checked": 50817,
+    "profiles": 10,
+    "record_bytes_hashed": 6421407087,
+    "records_hashed": 723,
+    "roots": 11,
+    "source_repositories_checked": 11,
+    "status": "valid"
+  },
+  "package_tests": {
+    "ran": 251,
+    "failures": 0,
+    "errors": 0
+  },
+  "schemas": 4,
+  "guard_tests": {
+    "java": {
+      "ran": 383,
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/java-guards-final.log",
+        "sha256": "f686ddd77253780a9119fee3d2ad7467ba7e752fba3dacffeba6efd0ff5d89bd",
+        "bytes": 58456
+      }
+    },
+    "frontend": {
+      "ran": 39,
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/frontend-guards-final.log",
+        "sha256": "2fc546aa23ed314cf60481ca8556817eeec4c6a9c066a23a96af4bf52a70edb0",
+        "bytes": 4515
+      }
+    },
+    "qgis": {
+      "ran": 75,
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/qgis-guards-final.log",
+        "sha256": "698e08df2c48f4ab7c3fd7aaed3d0b1e196362cb8c1627f31f2c04587fd45df2",
+        "bytes": 10089
+      }
+    },
+    "loopback": {
+      "ran": 15,
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/loopback-guards-final.log",
+        "sha256": "9a0c6974cf91ea09fe9cf890049dfcf7a36e050e0eccc2971b186a0d200b3e2c",
+        "bytes": 2401
+      }
+    },
+    "gwc": {
+      "ran": 59,
+      "evidence": {
+        "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/qgis-mosaic-final.json",
+        "sha256": "a5453361fcf951e1aa885bd42b2cad1b4ea4388ee70386bacddb64d37f246e17",
+        "bytes": 22237
+      }
+    }
+  },
+  "eligibility_exit_code": 2,
+  "eligibility_meaning": "Inventory valid; two targeted adoption blockers, distribution and owner acceptance gates remain. No waiver.",
+  "historical_validation": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/validation-parent-01/result.json",
+    "sha256": "a4c1a4d74809b4cda42129bae0a0a4799834a8b5f43f27bfd779304dbe67c434",
+    "bytes": 3889
+  },
+  "prior_failed_package_check": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/package-tests-01.log",
+    "sha256": "de17996ea0eea7102222e9067876404480843828fd66963162c33f27950ee713",
+    "bytes": 36191
+  },
+  "prior_failure_reason": "Decision register still revision2; regenerated via actual supported --report, then251tests pass.",
+  "independent_reviews": {
+    "candidate-doc-review.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/candidate-doc-review.json",
+      "sha256": "9756be187601553019a5adbe56d5d1cda9f53c12890e9022dd6e190b1dbb9283",
+      "bytes": 10451
+    },
+    "source-aggregate-review.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/source-aggregate-review.json",
+      "sha256": "c3f5d25ef711aa05fbedc0b43216cc949f1461cfa5dcd4d1371751edb2f0e51e",
+      "bytes": 4551
+    },
+    "source-imaging-review.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/source-imaging-review.json",
+      "sha256": "f914d1941db3a6f81b637851ad3ba6684452504c3d29c8b6381dd56e55cbf476",
+      "bytes": 24270
+    },
+    "qgis-final-root-review.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/qgis-final-root-review.json",
+      "sha256": "43462d85c84ed5910600066294fa3c56a03c4e723a30649e4b9a4ba3682e28c3",
+      "bytes": 7212
+    },
+    "root-component-review.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/root-component-review.json",
+      "sha256": "7ee18d325388a17fdba8ebe4c2879e7e0588c4f9576bcb579b0378e251e346e6",
+      "bytes": 3426
+    },
+    "final-diff-review.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/final-diff-review.json",
+      "sha256": "725f8ca56d9f6f35f3f38be2fa20f9391135b14d582c95e4a79d8b5214fae458",
+      "bytes": 21266
+    }
+  },
+  "final_process_check": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/final-process-check.json",
+    "sha256": "2d04f1ba881e8098ed318def2425dab37ed22a37dd00a283757b29d009fd931a",
+    "bytes": 171
+  },
+  "all_task_owned_services_stopped": true,
+  "permissions": "No new containment exception, no merge/release/distribution, no workflow/secret installation or upstream contact",
+  "staged_diff_check": {
+    "production_code_docs_clean": true,
+    "patch_context": "Only required single-space blank context lines in retained imageio-source.patch and marlin-source.patch triggered staged whitespace diagnostics. All inspected; context bytes preserved. Excluding these two evidence patches, full base-to-head diff --check passes.",
+    "implementation_commit": "e1b960588c51beb35f83c5f1c5d137e85a0d414c"
+  }
+}

@@ -1,0 +1,511 @@
+{
+  "authorization": "Current owner Java/GMT remediation prompt section 2.A/5 explicitly authorizes only gmt/GMT_dem1.svg exclusion; PR #66 merge alone does not.",
+  "compiled_or_library_entries_unchanged": 56,
+  "fresh_tests": {
+    "desktop_server_postgis_restart": true,
+    "loopback_harness": 15,
+    "native_resource_witness": true,
+    "qgis_harness": 75
+  },
+  "native_resources": {
+    "compiled_palette_resources": [],
+    "excluded_named_ramp_files_unopenable": 1130,
+    "generic_gradient": true,
+    "manifest_sha256": "a2152edc50a7fdb34401e148c1eec238dfdf5dad6600faf73e92a063a4c47baa",
+    "native_model_paths": 1130,
+    "omitted_saved_project": {
+      "inherited_loadFile_limitation": "Returns true despite missing file; the witness uses native QFile failure and archive-model exclusion, never that boolean as availability.",
+      "inherited_loadFile_return": true,
+      "limitation": "Serialized renderer colors survive; unavailable ramp cannot support reclassification. No complete saved-project compatibility claimed.",
+      "project_sha256": "f0e5962336983016c4c7848a6008a890716baee7015b6de0a237b1048171e970",
+      "reference": "td/DEM_print",
+      "rendered_colors_preserved": true,
+      "serialized_colors_preserved": [
+        "#f7fbff",
+        "#9ecae1",
+        "#4292c6"
+      ],
+      "source_ramp_file_exists": false
+    },
+    "omitted_saved_projects": [
+      {
+        "inherited_loadFile_limitation": "Returns true despite missing file; the witness uses native QFile failure and archive-model exclusion, never that boolean as availability.",
+        "inherited_loadFile_return": true,
+        "limitation": "Serialized renderer colors survive; unavailable ramp cannot support reclassification. No complete saved-project compatibility claimed.",
+        "project_sha256": "f0e5962336983016c4c7848a6008a890716baee7015b6de0a237b1048171e970",
+        "reference": "td/DEM_print",
+        "rendered_colors_preserved": true,
+        "serialized_colors_preserved": [
+          "#f7fbff",
+          "#9ecae1",
+          "#4292c6"
+        ],
+        "source_ramp_file_exists": false
+      },
+      {
+        "inherited_loadFile_limitation": "Returns true despite missing file; the witness uses native QFile failure and archive-model exclusion, never that boolean as availability.",
+        "inherited_loadFile_return": true,
+        "limitation": "Serialized renderer colors survive; unavailable ramp cannot support reclassification. No complete saved-project compatibility claimed.",
+        "project_sha256": "80edbd68ae5167bc68d6a33f9d8253c0e776fc1113e6b95fb73f4ff76d1fdddf",
+        "reference": "gmt/GMT_dem1",
+        "rendered_colors_preserved": true,
+        "serialized_colors_preserved": [
+          "#f7fbff",
+          "#9ecae1",
+          "#4292c6"
+        ],
+        "source_ramp_file_exists": false
+      }
+    ],
+    "paths": {
+      "package": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01/prefix/share/qgis",
+      "palette_archive": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01/prefix/share/qgis/resources/cpt-city-qgis-min",
+      "prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01/prefix"
+    },
+    "ramp_dialog": {
+      "capture_sha256": "d39fac375106c051e4b92765d8ee080d3160884002d926c26add2d0e34477057",
+      "scheme": "cb/seq/Blues",
+      "variant": "_09"
+    },
+    "ramp_dialog_observed": {
+      "scheme": "cb/seq/Blues",
+      "selected_name": "Blues_09",
+      "variant": "_09"
+    },
+    "raster_colors": [
+      "#f7fbff",
+      "#9ecae1",
+      "#4292c6",
+      "#08306b"
+    ],
+    "result_exit_code": 0,
+    "retained_colorbrewer_loadable": 265,
+    "retained_native_endpoint_assertions": 530,
+    "save_reopen": {
+      "project_sha256": "1d7df2b15f34126cad7e6ec671d32080a273c15e00c38b0cc4f703ca0c5cc613",
+      "raster": true,
+      "vector": true
+    },
+    "scope": "Fresh native desktop palette selection and local vector/raster serialized styling",
+    "seconds": 4.639,
+    "vector_colors": [
+      "#f7fbff",
+      "#9ecae1",
+      "#4292c6"
+    ]
+  },
+  "original": {
+    "entries": 9235,
+    "integrity_passed": true,
+    "manifest": {
+      "bytes": 1765200,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build06-audit-01/output-manifest.json",
+      "sha256": "931e5f0523e1d9bdba6b2fbd27e6c208297456db696265beb961a57e77ed82c9"
+    },
+    "prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/prefix"
+  },
+  "original_provenance_limitation": "Identical bytes do not establish identical licensing; exclusion avoids unresolved provenance without invalidating the recorded GMT grant.",
+  "parent": {
+    "entries": 8110,
+    "integrity_passed": true,
+    "manifest": {
+      "bytes": 1536431,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/after-manifest.json",
+      "sha256": "4e65c76d2af1bc811dca913d0450d4ab614f5cf14c3c9022d544796e5130a8a3"
+    },
+    "prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix"
+  },
+  "preserved_failures": [
+    {
+      "failure": "IDE image viewer bwrap namespace creation denied; read the unchanged image through approved exec file access and viewed emitted image. No control was disabled.",
+      "kind": "environment-tool"
+    },
+    {
+      "failure": "Host rg unavailable during read-only process check; subsequent grep fallback verified process state.",
+      "kind": "environment-tool"
+    }
+  ],
+  "prior_failures_index": {
+    "bytes": 22421,
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/frontend-qgis-remediation/qgis-evidence.json",
+    "sha256": "9a432b1c821d35a5d979d8eaa3551d4a3425d584dfc54f62363251c99d44d67e"
+  },
+  "receipts": {
+    "final-integrity.json": {
+      "bytes": 7279,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/final-integrity.json",
+      "sha256": "66d890643fe12026676c3316d4c3cf99060753b70db8a77a284ac43edb95e58a"
+    },
+    "loopback-guards-final.log": {
+      "bytes": 2401,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/loopback-guards-final.log",
+      "sha256": "9a0c6974cf91ea09fe9cf890049dfcf7a36e050e0eccc2971b186a0d200b3e2c"
+    },
+    "qgis-guards-final.log": {
+      "bytes": 10089,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/qgis-guards-final.log",
+      "sha256": "698e08df2c48f4ab7c3fd7aaed3d0b1e196362cb8c1627f31f2c04587fd45df2"
+    },
+    "runtime-01-command.log": {
+      "bytes": 140,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01-command.log",
+      "sha256": "070eb24d189c468268c034a44b141482de1a191ff9ebdd4b70e5ee1a2a9407ca"
+    },
+    "runtime-01-execution.json": {
+      "bytes": 591,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01-execution.json",
+      "sha256": "b6fa8583e857ad263a4c0eead49f2b2867d3ac910374fe39225681581ba13ae2"
+    },
+    "runtime-01-start.json": {
+      "bytes": 545,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01-start.json",
+      "sha256": "f5ec426d20fb75e360aecafac6ea0854636d2511e2ef341cebd43c3612325cb1"
+    },
+    "runtime-01/artifact-integrity-after.json": {
+      "bytes": 1512997,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/artifact-integrity-after.json",
+      "sha256": "15c1bca5eb609d451348d29dad2db18d2ac026cd3abbde90a94f01693664d8a6"
+    },
+    "runtime-01/artifact-integrity-before.json": {
+      "bytes": 1512997,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/artifact-integrity-before.json",
+      "sha256": "15c1bca5eb609d451348d29dad2db18d2ac026cd3abbde90a94f01693664d8a6"
+    },
+    "runtime-01/desktop-result.json": {
+      "bytes": 68272,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/desktop-result.json",
+      "sha256": "2a3a22f9cb9415caa74290f13ff3cf49bbddee068a6ba9fc694545cd1d45f5fe"
+    },
+    "runtime-01/network-loopback.json": {
+      "bytes": 1767,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/network-loopback.json",
+      "sha256": "226df95365a982e5e8e449fdf25bdda3ed6bdc5a02d931948916dd9c460ff96c"
+    },
+    "runtime-01/network-loopback.probes.json": {
+      "bytes": 12029,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/network-loopback.probes.json",
+      "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825"
+    },
+    "runtime-01/resource-result.json": {
+      "bytes": 3610,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/resource-result.json",
+      "sha256": "8b0e8e2536024d95042f41021a54d5a3a6286e5f09173d4ecc799ead6ffe2791"
+    },
+    "runtime-01/result.json": {
+      "bytes": 182346,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/result.json",
+      "sha256": "2a61bfa0d2ab96851fc2df393589a9b260cda6c915b65f2d5f35a081aecf2e0d"
+    },
+    "runtime-01/runtime-config.json": {
+      "bytes": 3556,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/runtime-config.json",
+      "sha256": "1e77687990bef930eb68b2722fd7fe99a8a3f0ff9b85b2b58e3a032d08e49f85"
+    },
+    "runtime-01/server-result.json": {
+      "bytes": 75051,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/server-result.json",
+      "sha256": "3e1e0ea3302d03b68cb715eba5ee421e73fdc09f22ec0a5e4ca7b5871e3fe61a"
+    },
+    "runtime-01/tooling.json": {
+      "bytes": 2380,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/tooling.json",
+      "sha256": "d6c7589011cbe20da45a6f15c429e6941097c7d03ebf49514dcc4adc0839ccdc"
+    },
+    "runtime-config-01.json": {
+      "bytes": 3215,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-config-01.json",
+      "sha256": "91d1fc1256ff6e39d7c832a7adee285a3a2caf0ad9c669356c58c3f940aee9e0"
+    },
+    "selection-01-command.log": {
+      "bytes": 142,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01-command.log",
+      "sha256": "0e7a5dba982c37961a40fbb4057d9bc0b53b0922141a85661b806b0ebbd93de2"
+    },
+    "selection-01-execution.json": {
+      "bytes": 1010,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01-execution.json",
+      "sha256": "7ca5878101e700e7b459ffd5ba83e3b303a5eddf572b3b1150ae840388afa9d4"
+    },
+    "selection-01-start.json": {
+      "bytes": 965,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01-start.json",
+      "sha256": "fe4fc299c0e5d9f2c72f6732d739233ddb619847ae951468b5805b333dc11e58"
+    },
+    "selection-01/after-manifest.json": {
+      "bytes": 1536237,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01/after-manifest.json",
+      "sha256": "a2152edc50a7fdb34401e148c1eec238dfdf5dad6600faf73e92a063a4c47baa"
+    },
+    "selection-01/before-manifest.json": {
+      "bytes": 1536368,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01/before-manifest.json",
+      "sha256": "62875a60f90764a3c3b564b695519b5df2816655601f0f2640693027532a22c8"
+    },
+    "selection-01/result.json": {
+      "bytes": 13712,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01/result.json",
+      "sha256": "38c3e841d65144d61688ec9a86738054ef186a73ef66e0d477ee4974f1fbb6b7"
+    },
+    "selection-01/selection.json": {
+      "bytes": 408961,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01/selection.json",
+      "sha256": "a1b259c8e422d52f63aba093d49af915301c6b4b7c11bb134d0a600d31f6e43c"
+    },
+    "selection-01/tooling.json": {
+      "bytes": 284,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01/tooling.json",
+      "sha256": "1c94ec002d0d09a424c5210c9fbc7dc2c3475675b240e4a5432d3531282cc00b"
+    }
+  },
+  "remaining_limits": [
+    "No final candidate adoption or distribution/licensing approval. Original source/archive rights remain unchanged; identical bytes never establish identical licensing.",
+    "265 ColorBrewer palettes retain exact source acknowledgement/naming/notice obligations; other icon/font/support obligations remain.",
+    "Inherited loadFile returns true even when file absent; assertions use QFile and native model absence. Serialized colors survive; omitted ramps cannot support reclassification.",
+    "Qt offscreen Linux only; no physical display, full cartographic/OGC/provider, multi-platform, publishing or release acceptance."
+  ],
+  "reused_evidence": "Original compiled QGIS binaries and full66 C++/16 Python native-suite receipts reused with exact stage integrity; those whole native suites were not rerun. No QGIS rebuild.",
+  "runtime": {
+    "cleanup": {
+      "database_credentials_invalidated": true,
+      "diagnostic_secret_hits": [],
+      "private_files_scrubbed": true
+    },
+    "database_supervisor_exception": "Existing #59 limitation: owned disposable PostgreSQL alone runs outside unchanged supervisor because backend setsid is denied.",
+    "desktop_exit_code": 0,
+    "desktop_render_events": 7,
+    "integrity_unchanged": true,
+    "network_probes": {
+      "all_passed": true,
+      "exec_child_probes": 79,
+      "parent_probes": 79,
+      "schema_version": 1
+    },
+    "result_exit_code": 0,
+    "seconds": 24.102,
+    "server_http_requests": 6,
+    "server_process_exits": [
+      0,
+      0
+    ],
+    "server_restart": true,
+    "task_process_group_stopped": true
+  },
+  "screenshots": {
+    "qgis-desktop-reopened-window.png": {
+      "bytes": 133971,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/qgis-desktop-reopened-window.png",
+      "sha256": "06eb57b0cd3002b661bb25b57f1c5674d212917ca9c2e872dfd0da13fd6aa5ce"
+    },
+    "qgis-palette-dialog.png": {
+      "bytes": 68980,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/qgis-palette-dialog.png",
+      "sha256": "d39fac375106c051e4b92765d8ee080d3160884002d926c26add2d0e34477057"
+    },
+    "qgis-server-restarted.png": {
+      "bytes": 3237,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/qgis-server-restarted.png",
+      "sha256": "31fbfb14ae87f3e09a976632daa93acab68c12e7aca9ccf65fe83a69c2e5cfd8"
+    }
+  },
+  "selection": {
+    "after_entries": 8109,
+    "alternate_copy_blockers": [],
+    "alternate_exact_palette_copies": [],
+    "baseline_unchanged": true,
+    "before_entries": 8110,
+    "catalogue_changes": [
+      {
+        "after_sha256": "c9981b70119d812e405dab19a2f2a236262dc8a30efb57144b84ef9a4dad3e67",
+        "before_sha256": "b905aa3746a65b7e292764e095f58840af19b02f5b838da7d277bb28f85c5da4",
+        "path": "share/qgis/resources/cpt-city-qgis-min/selections/totp-cpt.xml",
+        "removed_references": [
+          {
+            "attributes": {
+              "dir": "gmt",
+              "direction": "up",
+              "downloads": "96",
+              "file": "GMT_dem1",
+              "rank": "57"
+            },
+            "tag": "gradient"
+          }
+        ]
+      },
+      {
+        "after_sha256": "a69a6440a4f303947e36a6bd42fda6d5b40d0fadfa01eb52ab5c020e728e3199",
+        "before_sha256": "05b8571509973045f12ebc360ff5bbd4ec920676bb5917f9d68ad781fc1fcbc4",
+        "path": "share/qgis/resources/cpt-city-qgis-min/selections/totp-gpf.xml",
+        "removed_references": [
+          {
+            "attributes": {
+              "dir": "gmt",
+              "direction": "up",
+              "downloads": "7",
+              "file": "GMT_dem1",
+              "rank": "58"
+            },
+            "tag": "gradient"
+          }
+        ]
+      },
+      {
+        "after_sha256": "d5bf8c9a73b99e16b771eea3a5f8c2bb221f8a3623471a5732e656a9aa1b1c50",
+        "before_sha256": "23318c7a3f55c632e3dca573b24ad69c1fb9e56063d326427e546d0837f6a051",
+        "path": "share/qgis/resources/cpt-city-qgis-min/selections/totp-pg.xml",
+        "removed_references": [
+          {
+            "attributes": {
+              "dir": "gmt",
+              "direction": "up",
+              "downloads": "5",
+              "file": "GMT_dem1",
+              "rank": "75"
+            },
+            "tag": "gradient"
+          }
+        ]
+      },
+      {
+        "after_sha256": "8d7c2c5889d38cc1105c1ccd10e8481168aeae9263d357bb956c38e7733b1f6a",
+        "before_sha256": "f843ee0e69d943ce6ea58289141ed1634d8cd9e36fa39d03353ba28c76945dff",
+        "path": "share/qgis/resources/cpt-city-qgis-min/selections/totp-psp.xml",
+        "removed_references": [
+          {
+            "attributes": {
+              "dir": "gmt",
+              "direction": "up",
+              "downloads": "4",
+              "file": "GMT_dem1",
+              "rank": "53"
+            },
+            "tag": "gradient"
+          }
+        ]
+      },
+      {
+        "after_sha256": "ff30c641e741bca372c6bcf814b03ae50127d1195aa85aa18936707a2643e282",
+        "before_sha256": "f40ba643257f757379f41115d00d62b56d099bcf7aeea20368b499d8b0dad5f9",
+        "path": "share/qgis/resources/cpt-city-qgis-min/selections/totp-qgs.xml",
+        "removed_references": [
+          {
+            "attributes": {
+              "dir": "gmt",
+              "direction": "down",
+              "downloads": "14",
+              "file": "GMT_dem1",
+              "rank": "22"
+            },
+            "tag": "gradient"
+          }
+        ]
+      },
+      {
+        "after_sha256": "8323a0d87ba6e6eac7e3d480da40019803133536aa1245a6e49a7011a0ed8231",
+        "before_sha256": "528fc175212e8a36d535a935ab87e1f1dbe5ec0b34fe9296688727e4115040a0",
+        "path": "share/qgis/resources/cpt-city-qgis-min/selections/totp-sao.xml",
+        "removed_references": [
+          {
+            "attributes": {
+              "dir": "gmt",
+              "direction": "up",
+              "downloads": "5",
+              "file": "GMT_dem1",
+              "rank": "53"
+            },
+            "tag": "gradient"
+          }
+        ]
+      },
+      {
+        "after_sha256": "adf91e8decfff489ae1dde912c5b411c7043253c43421e0c7a6daf84b8f7e57e",
+        "before_sha256": "18b18cb139e70b1644f6bb874232a8d2d4cb8703a8808ece71a25c6b66bacb2e",
+        "path": "share/qgis/resources/cpt-city-qgis-min/selections/totp-svg.xml",
+        "removed_references": [
+          {
+            "attributes": {
+              "dir": "gmt",
+              "direction": "unchanged",
+              "downloads": "29",
+              "file": "GMT_dem1",
+              "rank": "33"
+            },
+            "tag": "gradient"
+          }
+        ]
+      }
+    ],
+    "compile_steps": 0,
+    "excluded_alias": {
+      "bytes": 591,
+      "path": "share/qgis/resources/cpt-city-qgis-min/gmt/GMT_dem1.svg",
+      "sha256": "0ba1cad3e42202036ab6a86663a09d377eb84eb22584df0e4dbc9fdee54cf602"
+    },
+    "newly_removed_palette_files": 1,
+    "notice_readme_change": {
+      "after_sha256": "fb2d6f11774faf86fc498cc0463d67739ea276ecbd5ce0624830ce4a17b4de3c",
+      "before_sha256": "393dc97315921834cb3321e8a4163ffbaae53def79c8d7dec306d2daf9db2220",
+      "path": "share/qgis/doc/ambisgis-resource-selection/README.txt"
+    },
+    "packaged_reference_audit": {
+      "active_xml_documents_scanned": 244,
+      "omitted_scheme_references": [],
+      "packaged_containers": [],
+      "regular_files_magic_scanned": 8102,
+      "scope": "Qt embedding independently checked against every source qrc and native runtime resource enumeration.",
+      "sqlite_databases": [
+        {
+          "path": "share/qgis/resources/data/world_map.gpkg",
+          "sha256": "01d293159d1b77bd9212b5252587853f61aa9e25b2387135f34afaba8d057190",
+          "text_values_scanned": 50001
+        },
+        {
+          "path": "share/qgis/resources/qgis.db",
+          "sha256": "580c202cbe47927f91ec9f880f5019db6745e45e406a1ec5938e4631315f7d1b",
+          "text_values_scanned": 652
+        },
+        {
+          "path": "share/qgis/resources/spatialite.db",
+          "sha256": "024cbdb6550bb482df2f0943a6e5877caecba8e1e72c377cbb2ab1c43e07c3c3",
+          "text_values_scanned": 10557
+        },
+        {
+          "path": "share/qgis/resources/srs.db",
+          "sha256": "8066250e17cd4eea0598d07f49a237bc0f474ed39af465544297791dcb66cca4",
+          "text_values_scanned": 98530
+        }
+      ]
+    },
+    "palette_counts": {
+      "SRC-01": 256,
+      "SRC-02": 139,
+      "SRC-03": 690,
+      "SRC-04": 45
+    },
+    "preserved_alias_scope_notice": {
+      "bytes": 816,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix/share/qgis/resources/cpt-city-qgis-min/gmt/COPYING.xml",
+      "sha256": "c1b562d4059cb5e2a4409f8f8c545970087379e64a58cb8ae053f306220f3837"
+    },
+    "removed_palette_files": 1130,
+    "retained_colorbrewer": 265,
+    "retained_modes_unchanged": true,
+    "unchanged_files": 8101
+  },
+  "source_archive": {
+    "bytes": 1230551040,
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/qgis-candidate/owned/qgis-3.44.14.tar",
+    "sha256": "229ce420ccf5f993eff29e58dc500f2fe7337395595989f947481c34c8cfb875"
+  },
+  "status": "Proposed one-file QGIS successor; bounded technical closure demonstrated; owner adoption and distribution remain separate.",
+  "targeted_findings": {
+    "F06-QGIS-SRC-02": "Original/selection-03 provenance blocker preserved; successor excludes all139 SRC-02 named paths including exact GMT alias and all alternate copies. Fresh chooser/project/desktop/server evidence demonstrates variant selection closure."
+  },
+  "task": "FND-02/F02-06",
+  "variant_manifest": {
+    "bytes": 1536237,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01/after-manifest.json",
+    "sha256": "a2152edc50a7fdb34401e148c1eec238dfdf5dad6600faf73e92a063a4c47baa"
+  },
+  "variant_prefix": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/selection-01/prefix",
+  "visual_review": "Actual chooser Blues_09, legible reopened desktop and restarted WMS images viewed; no physical-display or broad accessibility acceptance."
+}

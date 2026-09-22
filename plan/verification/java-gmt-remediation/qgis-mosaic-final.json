@@ -1,0 +1,567 @@
+{
+  "author_review": {
+    "material_open_findings": [],
+    "scope": "Owned helper source/credential handling/real PostGIS index and WMS assertions, native upload validator side effect, actual initial/restart runtime receipts, unchanged existing GWC/security assertions and final cleanup. Independent root review remains integrator responsibility."
+  },
+  "backend_receipt": {
+    "bytes": 27458,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/backend-result.json",
+    "sha256": "7e05be9ae2cfd7c44c31f765cc9b1ba27cec3c0fdb09adda159d875290e49af8"
+  },
+  "checks": {
+    "guard_tests": {
+      "failed": 0,
+      "log": {
+        "bytes": 7132,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-guards-final-02.log",
+        "sha256": "676811759ef9776c3fa09b04e0fce6dd0aa0fae732e3abffffd9be73869f95ab"
+      },
+      "passed": 59
+    },
+    "gwc": {
+      "initial": {
+        "invalid_layer": {
+          "code": "InvalidParameterValue",
+          "exception": "LAYER fixture:no_such_tile_layer is not known.",
+          "locator": "LAYER",
+          "status": 400
+        },
+        "outcomes": [
+          {
+            "cache_result": "MISS",
+            "denial_status": null,
+            "label": "public_points-first"
+          },
+          {
+            "cache_result": "HIT",
+            "denial_status": null,
+            "label": "public_points-repeat"
+          },
+          {
+            "cache_result": null,
+            "denial_status": 400,
+            "label": "private-before-anonymous"
+          },
+          {
+            "cache_result": null,
+            "denial_status": 400,
+            "label": "private-before-outsider"
+          },
+          {
+            "cache_result": "MISS",
+            "denial_status": null,
+            "label": "private_points-first"
+          },
+          {
+            "cache_result": "HIT",
+            "denial_status": null,
+            "label": "private_points-repeat"
+          },
+          {
+            "cache_result": null,
+            "denial_status": 400,
+            "label": "private-cached-anonymous"
+          },
+          {
+            "cache_result": null,
+            "denial_status": 400,
+            "label": "private-cached-outsider"
+          }
+        ],
+        "requests": 8
+      },
+      "restart": {
+        "invalid_layer": {
+          "code": "InvalidParameterValue",
+          "exception": "LAYER fixture:no_such_tile_layer is not known.",
+          "locator": "LAYER",
+          "status": 400
+        },
+        "outcomes": [
+          {
+            "cache_result": "HIT",
+            "denial_status": null,
+            "label": "public_points-first"
+          },
+          {
+            "cache_result": "HIT",
+            "denial_status": null,
+            "label": "public_points-repeat"
+          },
+          {
+            "cache_result": null,
+            "denial_status": 400,
+            "label": "private-before-anonymous"
+          },
+          {
+            "cache_result": null,
+            "denial_status": 400,
+            "label": "private-before-outsider"
+          },
+          {
+            "cache_result": "HIT",
+            "denial_status": null,
+            "label": "private_points-first"
+          },
+          {
+            "cache_result": "HIT",
+            "denial_status": null,
+            "label": "private_points-repeat"
+          },
+          {
+            "cache_result": null,
+            "denial_status": 400,
+            "label": "private-cached-anonymous"
+          },
+          {
+            "cache_result": null,
+            "denial_status": 400,
+            "label": "private-cached-outsider"
+          }
+        ],
+        "requests": 8
+      }
+    },
+    "integrity": {
+      "container_launcher_unchanged": true,
+      "executed_tooling_matches_snapshot": true,
+      "installed_origin_before_after_equal": true,
+      "same_war_both_deployments": true
+    },
+    "mosaic_index": {
+      "database": "fixture_geonode",
+      "index_writer": "actual selected GeoTools ImageMosaic/PostGIS provider; helper creates schema only",
+      "native_upload_validator_index": {
+        "geometry_column": "the_geom",
+        "granules": {
+          "east.tif": {
+            "area": 8.0,
+            "extent": [
+              2.0,
+              0.0,
+              4.0,
+              4.0
+            ],
+            "sha256": "f2eb92db261f9393fb81c0c2a80bda30d10d1b239af11a14971fbdabdffb36fe",
+            "srid": 4326
+          },
+          "west.tif": {
+            "area": 8.0,
+            "extent": [
+              0.0,
+              0.0,
+              2.0,
+              4.0
+            ],
+            "sha256": "6a9ff720eec76cdc4eaaa5957b2e238f0ab88a4fb326ba7a4c3fe8422cffc69f",
+            "srid": 4326
+          }
+        },
+        "spatial_index": true,
+        "table": "CoverageStoreFileValidator3643237329220803656"
+      },
+      "postgis_version": "3.5.7",
+      "published_index": {
+        "geometry_column": "the_geom",
+        "granules": {
+          "east.tif": {
+            "area": 8.0,
+            "extent": [
+              2.0,
+              0.0,
+              4.0,
+              4.0
+            ],
+            "sha256": "f2eb92db261f9393fb81c0c2a80bda30d10d1b239af11a14971fbdabdffb36fe",
+            "srid": 4326
+          },
+          "west.tif": {
+            "area": 8.0,
+            "extent": [
+              0.0,
+              0.0,
+              2.0,
+              4.0
+            ],
+            "sha256": "6a9ff720eec76cdc4eaaa5957b2e238f0ab88a4fb326ba7a4c3fe8422cffc69f",
+            "srid": 4326
+          }
+        },
+        "spatial_index": true,
+        "table": "remediation_mosaic"
+      },
+      "schema": "remediation_mosaic",
+      "user": "fixture_gn_owner",
+      "validator_index_disposition": "temporary files removed by native validator; owned schema dropped at final cleanup"
+    },
+    "mosaic_samples": [
+      {
+        "granule": "west.tif",
+        "pixel": [
+          128,
+          192
+        ],
+        "rgb_tolerance": 2,
+        "rgba": [
+          40,
+          80,
+          160,
+          255
+        ]
+      },
+      {
+        "granule": "east.tif",
+        "pixel": [
+          256,
+          192
+        ],
+        "rgb_tolerance": 2,
+        "rgba": [
+          180,
+          60,
+          20,
+          255
+        ]
+      }
+    ],
+    "raster_png_sha256_initial_and_restart": "5da7f751ce2bb2d3b2c07adb335a65815bc6e5ee373eeb7fae9339f2cbbec431",
+    "runtime": {
+      "initial": {
+        "fractional_alpha_pixels": 245,
+        "oracle_classes_absent": true,
+        "postgis_available": true,
+        "providers": [
+          "org.geotools.data.csv.CSVDataStoreFactory",
+          "org.geotools.data.h2.H2DataStoreFactory",
+          "org.geotools.data.h2.H2JNDIDataStoreFactory",
+          "org.geotools.data.postgis.PostgisNGDataStoreFactory",
+          "org.geotools.data.postgis.PostgisNGJNDIDataStoreFactory",
+          "org.geotools.data.property.PropertyDataStoreFactory",
+          "org.geotools.data.shapefile.ShapefileDataStoreFactory",
+          "org.geotools.data.shapefile.ShapefileDirectoryFactory",
+          "org.geotools.data.sqlserver.SQLServerDataStoreFactory",
+          "org.geotools.data.sqlserver.SQLServerJNDIDataStoreFactory",
+          "org.geotools.data.sqlserver.jtds.JDTSSQLServerJNDIDataStoreFactory",
+          "org.geotools.data.sqlserver.jtds.JTDSSqlServerDataStoreFactory",
+          "org.geotools.data.wfs.WFSDataStoreFactory",
+          "org.geotools.geopkg.GeoPkgDataStoreFactory"
+        ],
+        "renderer_class": "sun.java2d.marlin.DMarlinRenderingEngine",
+        "renderer_jar_sha256": "14633f73fed7e30553927201309bcaf407a9f5462fce87692f196859f33d074a",
+        "renderer_resource": "jar:file:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/lib/marlin-0.9.4.8.jar!/sun/java2d/marlin/DMarlinRenderingEngine.class"
+      },
+      "restart": {
+        "fractional_alpha_pixels": 245,
+        "oracle_classes_absent": true,
+        "postgis_available": true,
+        "providers": [
+          "org.geotools.data.csv.CSVDataStoreFactory",
+          "org.geotools.data.h2.H2DataStoreFactory",
+          "org.geotools.data.h2.H2JNDIDataStoreFactory",
+          "org.geotools.data.postgis.PostgisNGDataStoreFactory",
+          "org.geotools.data.postgis.PostgisNGJNDIDataStoreFactory",
+          "org.geotools.data.property.PropertyDataStoreFactory",
+          "org.geotools.data.shapefile.ShapefileDataStoreFactory",
+          "org.geotools.data.shapefile.ShapefileDirectoryFactory",
+          "org.geotools.data.sqlserver.SQLServerDataStoreFactory",
+          "org.geotools.data.sqlserver.SQLServerJNDIDataStoreFactory",
+          "org.geotools.data.sqlserver.jtds.JDTSSQLServerJNDIDataStoreFactory",
+          "org.geotools.data.sqlserver.jtds.JTDSSqlServerDataStoreFactory",
+          "org.geotools.data.wfs.WFSDataStoreFactory",
+          "org.geotools.geopkg.GeoPkgDataStoreFactory"
+        ],
+        "renderer_class": "sun.java2d.marlin.DMarlinRenderingEngine",
+        "renderer_jar_sha256": "14633f73fed7e30553927201309bcaf407a9f5462fce87692f196859f33d074a",
+        "renderer_resource": "jar:file:/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/lib/marlin-0.9.4.8.jar!/sun/java2d/marlin/DMarlinRenderingEngine.class"
+      }
+    },
+    "security": {
+      "configuration_unchanged": true,
+      "diagnostic_secret_hits": 0,
+      "diagnostic_security_failures": 0,
+      "stateless_bearer": true,
+      "strict_roles": true
+    },
+    "transparent_outside_known_extent": true,
+    "vector_wfs": {
+      "initial": {
+        "feature_count": 2,
+        "features": [
+          {
+            "coordinates": [
+              3,
+              2
+            ],
+            "label": "east"
+          },
+          {
+            "coordinates": [
+              1,
+              2
+            ],
+            "label": "west"
+          }
+        ],
+        "native_table": "remediation_mosaic.vector_points",
+        "response_sha256": "bc78b3e3c4710b5c70d4a553f0152156d58cb0fe29b2cce7e24d45d7c47a60be",
+        "store": "remediation_vector"
+      },
+      "restart": {
+        "feature_count": 2,
+        "features": [
+          {
+            "coordinates": [
+              3,
+              2
+            ],
+            "label": "east"
+          },
+          {
+            "coordinates": [
+              1,
+              2
+            ],
+            "label": "west"
+          }
+        ],
+        "native_table": "remediation_mosaic.vector_points",
+        "response_sha256": "d8f14f07ba526d8f886c8c973edc417ac7fdebb16b58ffb7c917a28d3941fe14",
+        "store": "remediation_vector"
+      }
+    }
+  },
+  "cleanup": {
+    "backend": {
+      "geonode": true,
+      "geoserver": true,
+      "mosaic": {
+        "files_scrubbed": [
+          "geoserver-data/data/fixture/remediation_mosaic/datastore.properties",
+          "geoserver-data/workspaces/fixture/remediation_vector/datastore.xml"
+        ],
+        "result_exit_code": 0,
+        "schema_dropped": true
+      },
+      "stored_credentials_invalidated": true
+    },
+    "database_stopped": true,
+    "postgres_exit_code": 0,
+    "supervisor_exit_code": 0
+  },
+  "containment": {
+    "description": "GeoNode, GeoServer, WMTS HTTP client and decoder use unchanged trusted-fixture loopback supervision; not hostile-code or host/filesystem isolation.",
+    "existing_exception": "Existing #61 PostgreSQL-only SCRAM loopback exception retained because native backend setsid is denied.",
+    "network": {
+      "broker_counts": {
+        "bind": 27,
+        "connect": 153,
+        "denied": 50,
+        "ioctl_only_datagram": 8,
+        "pidfd_copies": 582,
+        "released": 230,
+        "setsockopt": 356,
+        "socket": 230
+      },
+      "broker_sockets_closed": true,
+      "closed_inherited_fds": [],
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/run-003/venv/bin/python",
+        "-B",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/tooling/gwc/backend.py",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/invocation.json"
+      ],
+      "command_exit_code": 0,
+      "datagram_packets_received": 0,
+      "datagram_sentinels_closed": true,
+      "duration_seconds": 63.138,
+      "limitations": [
+        "trusted test runner, not hostile-code/filesystem/process isolation",
+        "all existing loopback services remain reachable; use disposable fixture credentials only",
+        "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+        "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+      ],
+      "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+      "network_probes": {
+        "all_passed": true,
+        "exec_child_probes": 79,
+        "parent_probes": 79,
+        "schema_version": 1
+      },
+      "probe_receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/network-loopback.probes.json",
+        "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825"
+      },
+      "reaped_descendants": [],
+      "result_exit_code": 0,
+      "runner_sha256": "6f0757b16be7188f564ad070a4e17382d96a7b9ef1dac3ab34fbf897d18108fc",
+      "schema_version": 1,
+      "status": "completed",
+      "task_process_group_stopped": true
+    }
+  },
+  "controller_receipt": {
+    "bytes": 64447,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/result.json",
+    "sha256": "525e290c9523225b2abab422e51a3d5372b8a440db50e3269fdb1d021d5217a4"
+  },
+  "evidence": [
+    {
+      "bytes": 64447,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/result.json",
+      "sha256": "525e290c9523225b2abab422e51a3d5372b8a440db50e3269fdb1d021d5217a4"
+    },
+    {
+      "bytes": 27458,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/backend-result.json",
+      "sha256": "7e05be9ae2cfd7c44c31f765cc9b1ba27cec3c0fdb09adda159d875290e49af8"
+    },
+    {
+      "bytes": 59140,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/application-inventory.json",
+      "sha256": "4be81ef1dac82d64ebb0323290cd92904fe0a0c7df10e31ba5e8b9fd20e59637"
+    },
+    {
+      "bytes": 3118,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/invocation.json",
+      "sha256": "055d12154f0343af37d39c2d80a7ecbfc91bd55340b1c40f41ad50ed09028bdd"
+    },
+    {
+      "bytes": 17945,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/tooling.json",
+      "sha256": "18eeb32956d90d5151f7be2e23c24d959294bc4e86d174949af193eda55c3fa9"
+    },
+    {
+      "bytes": 1822,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/network-loopback.json",
+      "sha256": "3d052544bf30667787eb7d4f16f5eb9909bd99331ff175c5758c2a28fb6b7312"
+    },
+    {
+      "bytes": 12029,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/network-loopback.probes.json",
+      "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825"
+    },
+    {
+      "bytes": 385591,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/installed-origin-before.json",
+      "sha256": "3d6cc812d46d95c3c85e560555b6a9219908baabbee040dffb60f22e959ad6ce"
+    },
+    {
+      "bytes": 385591,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/installed-origin-after.json",
+      "sha256": "3d6cc812d46d95c3c85e560555b6a9219908baabbee040dffb60f22e959ad6ce"
+    },
+    {
+      "bytes": 1740,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/staged-runtime-manifest.json",
+      "sha256": "4771e77669c8e820526f90f107c373b41b6e926ee5ce737e5eac49905da5eb69"
+    },
+    {
+      "bytes": 7639,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/geoserver-initial/ready.json",
+      "sha256": "50ad920429d240ead195b66f89cfe78d93134d56ed24fbfb9b17ed2c344fb95b"
+    },
+    {
+      "bytes": 7639,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/geoserver-restart/ready.json",
+      "sha256": "eda7a210eb7a745c55123f6fe539c50cd68ddd27a7d490205b40b12e04ac312c"
+    },
+    {
+      "bytes": 1178,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/geoserver-initial/candidate-runtime.json",
+      "sha256": "88ec0b0c73eaedfb16dfab520fc157c70b21e583cc83cf892d99cd22fcbbb7c6"
+    },
+    {
+      "bytes": 1178,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/geoserver-restart/candidate-runtime.json",
+      "sha256": "88ec0b0c73eaedfb16dfab520fc157c70b21e583cc83cf892d99cd22fcbbb7c6"
+    },
+    {
+      "bytes": 4234,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/remediation-mosaic/exercise-result.json",
+      "sha256": "1dea8bee2bd97641cd974bbea673906b22f239544bed84467d49573388cb4d54"
+    },
+    {
+      "bytes": 2983,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/remediation-mosaic/initial-result.json",
+      "sha256": "22db5878c9adf48206925feb31296da673da64f64298becef9e363be8acc6f0a"
+    },
+    {
+      "bytes": 2983,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/remediation-mosaic/restart-result.json",
+      "sha256": "3397f8889a664129b5aab9a285a80d512bd296ae956a4a5e01d8bede441bdfcb"
+    },
+    {
+      "bytes": 229,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/remediation-mosaic/cleanup-result.json",
+      "sha256": "12b8ea94282aac4518650991656ad344e000369e27fabb2dc06a4dd9d5ed170d"
+    },
+    {
+      "bytes": 4017,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/remediation-mosaic/initial-wms.png",
+      "sha256": "5da7f751ce2bb2d3b2c07adb335a65815bc6e5ee373eeb7fae9339f2cbbec431"
+    },
+    {
+      "bytes": 4017,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/remediation-mosaic/restart-wms.png",
+      "sha256": "5da7f751ce2bb2d3b2c07adb335a65815bc6e5ee373eeb7fae9339f2cbbec431"
+    },
+    {
+      "bytes": 22462,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation_mosaic.py",
+      "sha256": "4146379ef5908f18c8eca4db8badd3a6575e5f9df726314a75b7997f1abbf598"
+    },
+    {
+      "bytes": 12954,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/gwc/backend.py",
+      "sha256": "80933c7882f21e70a901b4f701fd188db757edb7a7d01013e30587abda4ad3d5"
+    },
+    {
+      "bytes": 7132,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-guards-final-02.log",
+      "sha256": "676811759ef9776c3fa09b04e0fce6dd0aa0fae732e3abffffd9be73869f95ab"
+    },
+    {
+      "bytes": 4904,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/qgis-mosaic-convergence.json",
+      "sha256": "9a5e4df746ae91151b35b4aa67086beeb502a8872844ccd14c910b5083a8f606"
+    }
+  ],
+  "exercised_code": {
+    "gwc/backend.py": {
+      "bytes": 12954,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/gwc/backend.py",
+      "sha256": "80933c7882f21e70a901b4f701fd188db757edb7a7d01013e30587abda4ad3d5"
+    },
+    "java/remediation_mosaic.py": {
+      "bytes": 22462,
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/build-support/java/remediation_mosaic.py",
+      "sha256": "4146379ef5908f18c8eca4db8badd3a6575e5f9df726314a75b7997f1abbf598"
+    }
+  },
+  "limits": [
+    "Trusted fixture loopback containment retains documented limitations; no new exception.",
+    "Synthetic disposable source-owned PostgreSQL/PostGIS fixture only; no production deployment, full raster-format matrix or broad service acceptance.",
+    "Native upload validator leaves one source-defined scratch index table. It is explicitly identified and geometrically verified alongside the published index, then removed by owned-schema cleanup.",
+    "Four retained aggregate-01 convergence failures are not accepted final evidence; final success uses aggregate-02."
+  ],
+  "output": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05",
+  "result_exit_code": 0,
+  "retained_failures": {
+    "bytes": 4904,
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/qgis-mosaic-convergence.json",
+    "sha256": "9a5e4df746ae91151b35b4aa67086beeb502a8872844ccd14c910b5083a8f606"
+  },
+  "runtime_profile": {
+    "profile": "NO-ORACLE-headless-Temurin17",
+    "profile_manifest_sha256": "4adfcb4d0356e74f4a07310ef1bf4fd38eb16d668b98f8049dcd58f32804d2a0",
+    "profile_source": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-java-gmt/plan/verification/java-gmt-remediation/runtime-profile-2.json",
+    "renderer_member": "WEB-INF/lib/marlin-0.9.4.8.jar",
+    "renderer_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/gwc-05/lib/marlin-0.9.4.8.jar",
+    "renderer_sha256": "14633f73fed7e30553927201309bcaf407a9f5462fce87692f196859f33d074a",
+    "schema_version": 1,
+    "war_sha256": "e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044"
+  },
+  "schema_version": 1,
+  "scope": "Final aggregate-02 exact-WAR GWC/real PostGIS vector WFS/native PostGIS ImageMosaic raster WMS initial and restart proof; independently delegated runtime scope, not QGIS execution.",
+  "war_sha256": "e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044"
+}

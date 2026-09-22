@@ -410,7 +410,7 @@ def exercise(invocation, config, private):
         target = output / ('geoserver-' + label)
         port = urllib.parse.urlsplit(config['geoserver_url']).port
         command = runtime_inputs.launcher_command(Path(runtime['java_home']), Path(runtime['servlet']),
-                    Path(runtime['launcher']), Path(runtime['war']), data_dir, target, port=port)
+                    Path(runtime['launcher']), Path(runtime['war']), data_dir, target, port=port, java_profile=runtime.get('java_profile'))
         command[1:1] = ['-Dsun.net.client.defaultReadTimeout=1500', '-Dsun.net.client.defaultConnectTimeout=1500']
         report['geoserver_client_timeouts_ms'] = {'default_read': 1500, 'default_connect': 1500}
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,

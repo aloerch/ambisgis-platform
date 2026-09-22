@@ -1,0 +1,19 @@
+{
+  "scope": "Independent integrator review of exact QGIS one-file stage/native/runtime work",
+  "reviewed_files": {
+    "build-support/qgis/resource_selection.py": "03a0562feeca2201c1882c9f4b45b72885a814c1ff89fb2d6019f21278079954",
+    "build-support/qgis/resource_witness.py": "19944fe5b113e32aa70d2ab8172c043e7a675017290a042ac93646ebdee4746a",
+    "build-support/qgis/runtime.py": "ba8ecd72b4f69b0dca22bfb4be32e7ee916a7656754556a009c0797c254878e1",
+    "build-support/qgis/test_resource_selection.py": "27660992778f3f19fc0edd46105f29ea7523c97bf62e26b125e6853785281224"
+  },
+  "material_findings": [],
+  "checks": [
+    "Pinned selection-03 identity and exact 591-byte GMT alias",
+    "Only one additional asset deletion and seven catalogue references",
+    "Historical notices/resources/stages retained; 265 ColorBrewer hashes checked",
+    "Explicit absent-file and native model checks; inherited loadFile boolean not used as availability",
+    "Both saved-project named references and actual desktop/server restart receipts",
+    "No QGIS compilation or whole native-suite rerun claimed"
+  ],
+  "runtime_execution_by_reviewer": false
+}

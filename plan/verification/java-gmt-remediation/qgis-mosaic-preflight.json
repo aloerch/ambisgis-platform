@@ -1,0 +1,35 @@
+{
+  "checks": [
+    "Generated known TIFF input successfully read independently by retained GDAL, including spatial georeference, EPSG and RGB values.",
+    "Existing network-denial mechanism applied; no new listener, source acquisition or containment exception."
+  ],
+  "files": {
+    "network-denial.json": {
+      "bytes": 1990,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/mosaic-preflight-01/network-denial.json",
+      "sha256": "20ef8351a6d3419ff7586e65aff06de83f5ffa4292b31034c5c872c2166e0c5a"
+    },
+    "probe.py": {
+      "bytes": 2296,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/mosaic-preflight-01/probe.py",
+      "sha256": "9b8a10614cd756b25f13156a6cd537f69a703dd2d080b4d74ff460c0648469bf"
+    },
+    "result.json": {
+      "bytes": 2045,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/mosaic-preflight-01/result.json",
+      "sha256": "fdb1d9a2c35809c1f85395a59ee92806400138ba30156b5be7928f036f405cc0"
+    }
+  },
+  "helper": {
+    "path": "build-support/java/remediation_mosaic.py",
+    "sha256": "186b5a97deee6ee7813c545fad0be25b3f1d2109a4e7f8b075bf4edc79fb500f"
+  },
+  "network_denial_verified": true,
+  "result_exit_code": 0,
+  "runtime_required": [
+    "Native provider must create two PostGIS mosaic granule rows; helper SQL creates only a synthetic schema and separate vector table.",
+    "Fresh PostGIS vector WFS and ImageMosaic WMS spatial/color/transparency assertions must pass before and after restart.",
+    "Both plain mosaic properties and vector datastore encrypted/plain password XML must be scrubbed after servers stop, followed by own-schema cleanup."
+  ],
+  "scope": "Input-only preflight for independently implemented real PostGIS mosaic/vector backend witness; final exact-WAR initial/restart acceptance remains required."
+}

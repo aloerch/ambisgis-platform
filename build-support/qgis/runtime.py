@@ -119,7 +119,7 @@ def configure_database(database, output):
 
 def validate_output(output):
     output = Path(output).resolve()
-    roots = (TASK, TASK.parent/'frontend-qgis-remediation'/'qgis')
+    roots = (TASK, TASK.parent/'frontend-qgis-remediation'/'qgis', TASK.parent/'java-gmt-remediation'/'qgis')
     require(any(output.is_relative_to(root) and output != root for root in roots),
             'runtime output must be a fresh child of a retained QGIS task root')
     require(not output.exists(), 'runtime output already exists')

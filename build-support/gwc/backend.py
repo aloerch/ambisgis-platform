@@ -68,7 +68,7 @@ def run_child(invocation):
             env = invocation['environment']
         else:
             cmd = runtime_inputs.launcher_command(Path(runtime['java_home']), Path(runtime['servlet']), Path(runtime['launcher']),
-                Path(runtime['war']), output / 'geoserver-data', output / ('geoserver-' + label), port=urlsplit(config['geoserver_url']).port)
+                Path(runtime['war']), output / 'geoserver-data', output / ('geoserver-' + label), port=urlsplit(config['geoserver_url']).port, java_profile=runtime.get('java_profile'))
             cmd[1:1] = ['-Dambisgis.fixture.gwc=true','-Dgwc.context.suffix=gwc','-Dsun.net.client.defaultReadTimeout=1500', '-Dsun.net.client.defaultConnectTimeout=1500', '-DGEOWEBCACHE_CACHE_DIR=' + str(output / 'tile-cache')]
             if digest(runtime['war']) != runtime['war_sha256']: raise RuntimeError('WAR changed before launch')
             env = {'PATH': str(Path(runtime['java_home']) / 'bin') + ':/usr/bin:/bin', 'LANG': 'C.UTF-8'}
@@ -143,6 +143,9 @@ def run_child(invocation):
         save(output/'security-active.json',security_before)
         save(output/'security-startup-delta.json',{'added':sorted(set(security_before)-set(security_configured)),
             'changed':sorted(n for n in security_configured if security_before.get(n)!=security_configured[n])})
+        if runtime.get('java_profile'):
+            import remediation_mosaic
+            result['mosaic'] = remediation_mosaic.exercise(invocation, config, tokens.access_token, output)
         result['initial'] = exercise(config['geoserver_url'], output, credentials, private, phase='initial')
         before_restart = cache_manifest(output / 'tile-cache')
         cache_config_before = fixture_hashes()
@@ -153,6 +156,8 @@ def run_child(invocation):
         result['restarts'] += 1
         if cache_manifest(output / 'tile-cache') != before_restart: raise RuntimeError('cache bytes changed on restart')
         if fixture_hashes() != cache_config_before: raise RuntimeError('cache configuration changed on restart')
+        if runtime.get('java_profile'):
+            result['mosaic_restart'] = remediation_mosaic.probe(config, tokens.access_token, output, phase='restart')
         result['restart'] = exercise(config['geoserver_url'], output, credentials, private, phase='restart')
         if security_hashes(data) != security_before: raise RuntimeError('security configuration changed on restart')
         result['security_configuration'] = security_before
@@ -165,6 +170,12 @@ def run_child(invocation):
         for name, pair in list(processes.items()):
             try: stop_service(name,'restart' if result['restarts'] else 'initial'); result['cleanup'][name] = True
             except Exception as error: result['cleanup'][name] = type(error).__name__; result['result_exit_code'] = 1
+        if runtime.get('java_profile') and (output / 'remediation-mosaic').exists():
+            try:
+                import remediation_mosaic
+                result['cleanup']['mosaic'] = remediation_mosaic.cleanup(config, output)
+            except Exception as error:
+                result['cleanup']['mosaic_error'] = type(error).__name__; result['result_exit_code'] = 1
         if provisioned:
             try: command('cleanup'); result['cleanup']['stored_credentials_invalidated'] = True
             except Exception as error: result['cleanup']['credentials_error'] = type(error).__name__; result['result_exit_code'] = 1

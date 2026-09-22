@@ -113,7 +113,7 @@ def inspect(build, output):
         tool_names = ('aggregate_evidence.py', 'combined_logging_probe.py', 'compatibility.py',
                       'resolution.py', 'resolution_inventory.py', 'native_reports.py', 'toolchain.py',
                       'oauth-redaction.json', 'oauth-principal.json', 'configured-auth-repairs.json',
-                      'configured-auth-stateless.json')
+                      'configured-auth-stateless.json', 'no_oracle.py', 'no-oracle-repairs.json', 'variant_inputs.py')
         report['tooling_manifest'] = {}
         for name in tool_names:
             shutil.copyfile(Path(__file__).with_name(name), tooling / name)
@@ -242,7 +242,7 @@ def inspect(build, output):
             digest = library['sha256']
             built = [{'kind': 'source-built', 'path': row['path']} for row in result['built_jars']
                      if Path(row['path']).name == library['name'] and row['sha256'] == digest]
-            inputs = [{'kind': 'retained-input', 'repository': row['repository'], 'maven_path': row['maven_path']}
+            inputs = [{'kind': 'source-built-local-variant' if row.get('variant_id') else 'retained-input', 'repository': row['repository'], 'maven_path': row['maven_path'], 'variant_id': row.get('variant_id'), 'source_evidence': row.get('variant_source_evidence', [])}
                       for row in retained if Path(row['maven_path']).name == library['name'] and row['sha256'] == digest]
             if not built and not inputs:
                 raise ValueError('aggregate library has no retained or source-built origin')
@@ -283,6 +283,23 @@ def inspect(build, output):
         duplicates = {name: rows for name, rows in class_origins.items() if len(rows) > 1}
         if any(name.startswith('org/geoserver/security/') for name in duplicates):
             raise ValueError('duplicate GeoServer security class')
+        if result.get('no_oracle_profile'):
+            import no_oracle
+            report['no_oracle_artifacts'] = no_oracle.inspect_artifacts(build, jar_entries, class_origins, inventory['libraries'])
+        if result.get('local_variant_inputs'):
+            selected = result['local_variant_inputs']
+            if sha(build / 'variant-inputs.json') != selected['manifest_sha256']:
+                raise ValueError('local variant selection changed')
+            for replacement in selected['replacements']:
+                matches = [lib for lib in inventory['libraries'] if lib['name'] == Path(replacement['maven_path']).name]
+                if len(matches) != 1 or matches[0]['sha256'] != replacement['sha256']:
+                    raise ValueError('source-built replacement absent or stale in WAR')
+            for name, origins in duplicates.items():
+                if name.startswith(('org/xmlpull/', 'net/sf/json/', 'sun/java2d/marlin/')):
+                    raise ValueError('duplicate stale source replacement definition')
+                if name.startswith('org/aspectj/') and len({r['sha256'] for r in origins}) != 1:
+                    raise ValueError('incoherent AspectJ shared classes')
+            report['local_variant_inputs'] = selected
         logging = inventory['logging_resources']
         providers = logging['META-INF/services/org.slf4j.spi.SLF4JServiceProvider']
         if providers != ['log4j-slf4j2-impl-2.25.3.jar'] or logging['org/slf4j/impl/StaticLoggerBinder.class']:

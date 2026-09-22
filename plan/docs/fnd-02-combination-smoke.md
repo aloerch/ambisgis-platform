@@ -1,3 +1,25 @@
+# Current matrix — Java/GMT proposed revision 3
+
+All seven combinations remain separately scoped. Exact artifacts and receipt
+bindings are in the [manifest](../candidates/fnd-02-candidate.json) and
+[Java/GMT handoff](java-gmt-remediation-handoff.md). Final selected WAR is
+`e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044`.
+
+| Combination | Revision3 evidence | Reuse/limits |
+|---|---|---|
+| Database | Exact original archive/tools checked | Historical native/upgrade; no new whole database suite |
+| Java native | Fresh exact WAR parser/JSON/Spring/LTW, codecs/MapFish/renderer/logging; actualWAR PostgreSQL DAO/proxy commit/rollback | Source-native 62 GeoFence tests; importer 112 passes/6 skips no-Oracle check. Full priorXML/MapFish/OAuth suites historical; two JSON/two Marlin inherited failures explicit |
+| Identity | Fresh strict GeoNode issuance/roles/removal/admin denial/controls/cache/restart | Exact unchanged owned Python wheels and source-owned database |
+| Frontend/browser | Fresh sandboxed known GIS layer/zoom/reload/restart with new WAR | Unchanged replay02assets; compiler/native/IFC integrity-only reuse; five lint failures |
+| QGIS | Fresh1130resource/model exclusions,265retainedpalettes, chooser/savedrefs/desktop/PostGISGetMap/restart | Same compiled binaries;66 C++/16 Python historical, no rebuild |
+| Jupyter | Exact historical wheels and original boundedHub/Lab/kernel results checked | No new native/isolation suite |
+| EmbeddedGWC | Fresh public/authorizedMISS→HIT→persistent-restartHIT, protected denials/controls; PostGISvector and realnative-mosaicindex/WMS | Fresh cache and selected renderer; no old rendered tiles reused |
+
+Package tests, inventory integrity and a merged checkpoint never grant product
+acceptance. Later policy/publication/isolation/recovery/concurrency gates remain.
+
+# Preserved historical matrix
+
 # FND-02 combination smoke — F02-05
 
 **F02-05 bounded engineering evidence is owner-accepted through merged [PR #64](https://github.com/aloerch/ambisgis-platform/pull/64), reviewed `ee5be14d9d0d14f361dbd235dedc64b3fdb84db0`, merge `725d519820293f466b287d7f4cd779c36b9b7977` (verified during F02-06). FND-02 remains In progress.** Owner-merged #63 accepts F02-04 only:

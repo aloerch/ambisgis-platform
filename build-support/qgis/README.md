@@ -136,3 +136,13 @@ palette/desktop/server evidence, and the separately unresolved GMT/td byte alias
 availability/model checks deliberately do not trust the inherited `loadFile()`
 boolean for a missing palette. All pre-existing distribution and acceptance gates
 remain separate from this proposed resource profile.
+
+
+The authorized Java/GMT follow-up uses `--parent-selection` with the exact
+selection-03 manifest and selection receipt. It removes only the additional
+`gmt/GMT_dem1.svg` alias and its seven catalogue references, making 1,130 cumulative
+omissions while retaining all 265 ColorBrewer palettes and other GMT resources.
+The [successor handoff](../../plan/docs/java-gmt-qgis-handoff.md) binds the new
+stage, fresh two-reference project witness, desktop/server restart and limitations.
+The original mode and prior stages remain preserved; neither selection grants
+final adoption or distribution permission.

@@ -1,0 +1,562 @@
+{
+  "schema_version": 1,
+  "reviewer": "java_source agent independent final diff review",
+  "task": "FND-02/F02-06",
+  "repository": "https://github.com/aloerch/ambisgis-platform.git",
+  "branch": "fnd-02/java-gmt-selection-remediation",
+  "base_head": "6b2e2fd7edc91746748d916d34af01f0a681e342",
+  "status": "passed-bounded-review",
+  "scope": "Changed tracked and new publishable platform files at this snapshot; excludes retained external runtime private databases/credentials, remote state and this self-referential report. Review is not candidate adoption/security/license approval.",
+  "reviewed_files": [
+    {
+      "path": "build-support/frontend/smoke.py",
+      "sha256": "143a6d353448f89389dc96035a234c0c2a6bab83a1709b4e3e5c0aaaf34c1e94",
+      "bytes": 15038
+    },
+    {
+      "path": "build-support/frontend/smoke_backend.py",
+      "sha256": "dd13364efa27c154528a5cdf1aea3fc6f036bbcceb4ed8ae1edde17f930dd8e7",
+      "bytes": 15555
+    },
+    {
+      "path": "build-support/geonode/journey.py",
+      "sha256": "f05555ca63bda31c47b0dabdf43db57a2c798f9d57304805cb3a71c04a745cc9",
+      "bytes": 56628
+    },
+    {
+      "path": "build-support/geonode/run.py",
+      "sha256": "bb1a5932e0b096fa915ac711881aa4e2a7a3f6effd871d04cd0f038895c48f88",
+      "bytes": 19297
+    },
+    {
+      "path": "build-support/gwc/backend.py",
+      "sha256": "80933c7882f21e70a901b4f701fd188db757edb7a7d01013e30587abda4ad3d5",
+      "bytes": 12954
+    },
+    {
+      "path": "build-support/gwc/smoke.py",
+      "sha256": "040a94d52bb32ca5ba995e84df1d6de0fdefb34d0827aa83859ef0c09469d9ad",
+      "bytes": 11215
+    },
+    {
+      "path": "build-support/java/aggregate_evidence.py",
+      "sha256": "9c8c095b57cc49f1018c62566f19511bdb1586eb15c97e8ac8e5897bdceb50e9",
+      "bytes": 23106
+    },
+    {
+      "path": "build-support/java/compatibility.py",
+      "sha256": "0508265fcc3c61d0c5a8700a4ff508859635cbbb12c52d89c68fa0f8444767dc",
+      "bytes": 36711
+    },
+    {
+      "path": "build-support/java/java-gmt-variant-inputs.json",
+      "sha256": "e0d41008d6bb057d507ecbd8d5e0d900a4a3beecd55c81fe1f25f4d18e546cb6",
+      "bytes": 6283
+    },
+    {
+      "path": "build-support/java/no-oracle-repairs.json",
+      "sha256": "c579132c8243cc51348de3cc68f2bc02a32855ae9801b4d973db4224d0ad0272",
+      "bytes": 4139
+    },
+    {
+      "path": "build-support/java/no_oracle.py",
+      "sha256": "c25da7a68e4a39ea160405bc32f1b959940bf74ad22e2a46e6723b80e3e00d3d",
+      "bytes": 4955
+    },
+    {
+      "path": "build-support/java/remediation-imaging/ImageIOWitness.java",
+      "sha256": "0a81b3bc75916adcead80914c267167559abbc0cd5ffa5e05a017b2554445826",
+      "bytes": 7233
+    },
+    {
+      "path": "build-support/java/remediation-imaging/MapFishImagingWitness.java",
+      "sha256": "a1e90f2c3ae9be9aa028d6ea53ce3207a4d490fe40b2287745da74b2d5cfaaac",
+      "bytes": 3213
+    },
+    {
+      "path": "build-support/java/remediation-imaging/NativeRenderingWitness.java",
+      "sha256": "f983f111f9f5c64b10d61ceb5faf8f2850c2395cf677b63affe38def2527e2bf",
+      "bytes": 391
+    },
+    {
+      "path": "build-support/java/remediation-imaging/RenderingWitness.java",
+      "sha256": "b51daceab256e245264a5595dfcb7e3f74b972affb4d5533cc1cd3c35817e7da",
+      "bytes": 3180
+    },
+    {
+      "path": "build-support/java/remediation-imaging/build_imageio.py",
+      "sha256": "8fd13136fffd4b9aac7d7f2e264f7ec449d44ab38e540fb117e44a96d0dfc681",
+      "bytes": 9577
+    },
+    {
+      "path": "build-support/java/remediation-imaging/build_marlin.py",
+      "sha256": "a78abdcd7cc65c30cf0a86045211aae0cf1abcd27dcbe0e5615429df51a19767",
+      "bytes": 7430
+    },
+    {
+      "path": "build-support/java/remediation-imaging/imageio-modifications.json",
+      "sha256": "a365179cdbffa4a6b25b5aa246f52738902b244d1cddb096d80c33a07b0f6baa",
+      "bytes": 2567
+    },
+    {
+      "path": "build-support/java/remediation-imaging/imageio-profile-exclusions.json",
+      "sha256": "45b575b9681365d01a41b16d4f19868d9993af9fe6f6980fdbf694d80f7835c7",
+      "bytes": 12798
+    },
+    {
+      "path": "build-support/java/remediation-imaging/imageio-source.patch",
+      "sha256": "01a0d95727d9a44a5e45f030878dcc7648c80102475e487c906e7fcbbc479879",
+      "bytes": 9036
+    },
+    {
+      "path": "build-support/java/remediation-imaging/inventory.py",
+      "sha256": "ced7057cb83ef5ed1567503288611f82329bb64422575bfc913497f032064073",
+      "bytes": 4903
+    },
+    {
+      "path": "build-support/java/remediation-imaging/marlin-modifications.json",
+      "sha256": "e892581d08e9b28033f22263da8f939550653cf3f2ffbef29dff2bdbaa1f100b",
+      "bytes": 508
+    },
+    {
+      "path": "build-support/java/remediation-imaging/marlin-profile-exclusions.json",
+      "sha256": "e008d091adda58343b0b018b5295257a838836678468a93cab58abc933678f67",
+      "bytes": 695
+    },
+    {
+      "path": "build-support/java/remediation-imaging/marlin-source.patch",
+      "sha256": "fefe13642e4d1ed2d22cd64a32a5290ea98922818ec995e70ac0bff2b77bc534",
+      "bytes": 1329
+    },
+    {
+      "path": "build-support/java/remediation-imaging/probe_imageio.py",
+      "sha256": "63d45c0669f28bb27994e3bab82bf34731bb4212886b54d8a340fd9434dc226f",
+      "bytes": 6303
+    },
+    {
+      "path": "build-support/java/remediation-source/AspectJApi.java",
+      "sha256": "1139f2f32146a49f864394c8c64c0ded510ec3b1afa4712e31ab9b97fbb71792",
+      "bytes": 2169
+    },
+    {
+      "path": "build-support/java/remediation-source/GeofenceWarTests.java",
+      "sha256": "50fddeaa222d56191172ceb7150b6e02ad8fbe899db25bc8528cbd1272635340",
+      "bytes": 3993
+    },
+    {
+      "path": "build-support/java/remediation-source/SourceContracts.java",
+      "sha256": "ba1e912e32d2f5c27604f15cd19a88695865d592a67f8827c3773da74635765b",
+      "bytes": 6338
+    },
+    {
+      "path": "build-support/java/remediation-source/build.py",
+      "sha256": "17ecf61fd440a449dc57aa51264cd1fc7e45558d8aa4b1e9efe8506169e5d72d",
+      "bytes": 10720
+    },
+    {
+      "path": "build-support/java/remediation-source/inputs.json",
+      "sha256": "83b5a25e8326aca96451f7dc491bfd4de98940bea1b2200605a1910f866bb6e4",
+      "bytes": 5881
+    },
+    {
+      "path": "build-support/java/remediation-source/json-notice.txt",
+      "sha256": "3e5ce1660de2af73196b5e2c1938385931f216fb72a0a58304f300f1e79bafba",
+      "bytes": 983
+    },
+    {
+      "path": "build-support/java/remediation-source/probe.py",
+      "sha256": "8ff89277ec6dfa46b1a334f0c94de64e92a24a5652f92bd11ca0e893a024d034",
+      "bytes": 9385
+    },
+    {
+      "path": "build-support/java/remediation-source/war_geofence_probe.py",
+      "sha256": "25c513b71084f3ebb9c4d926c01f0d2917f608d5082342def0209218be2b5440",
+      "bytes": 6252
+    },
+    {
+      "path": "build-support/java/remediation-source/war_probe.py",
+      "sha256": "ef5f20aff6757d2466c98b96ba185db3de84671bd0a846e185e0db357117c73d",
+      "bytes": 6199
+    },
+    {
+      "path": "build-support/java/remediation-source/weaving/Main.java",
+      "sha256": "59490ce98979de415eafb91a1c6b07ef605627236fd1b6ac74ff0f9f735f3682",
+      "bytes": 304
+    },
+    {
+      "path": "build-support/java/remediation-source/weaving/Target.java",
+      "sha256": "99191c53c40a9135bab7860c927fbd7460a1132d96e2f697af81b0480874163c",
+      "bytes": 93
+    },
+    {
+      "path": "build-support/java/remediation-source/weaving/WitnessAspect.java",
+      "sha256": "ad29ebab0812a646503dd493a637b6230dd9a02ea1b759de4efb685462b4fb12",
+      "bytes": 275
+    },
+    {
+      "path": "build-support/java/remediation_mosaic.py",
+      "sha256": "4146379ef5908f18c8eca4db8badd3a6575e5f9df726314a75b7997f1abbf598",
+      "bytes": 22462
+    },
+    {
+      "path": "build-support/java/runtime-fixtures/ConfiguredGeoServerRuntime.java",
+      "sha256": "a156a57144cee189aa9eb779b87feaea3e711ed56b2be096f615d96e3110f9bf",
+      "bytes": 28741
+    },
+    {
+      "path": "build-support/java/runtime_inputs.py",
+      "sha256": "ac7ea0b7bdee2b1def01552703065969a6fda765a9493172ae23e6fee8e633b3",
+      "bytes": 7905
+    },
+    {
+      "path": "build-support/java/runtime_profile.py",
+      "sha256": "815f73bbe8f1faeed208cde85116fc789566598ef71a7eb97c21dc3d8807d462",
+      "bytes": 1932
+    },
+    {
+      "path": "build-support/java/test_variant_inputs.py",
+      "sha256": "af613bb929e70468db1c2e3750e26130c56b2d089320668d3d6c7689fa76294d",
+      "bytes": 4295
+    },
+    {
+      "path": "build-support/java/variant_inputs.py",
+      "sha256": "f6147112e861f9592a390d9bab072a36b658f88540f54720fcdce365f61ebba0",
+      "bytes": 3543
+    },
+    {
+      "path": "build-support/qgis/README.md",
+      "sha256": "e4e48a349f3ba8596bf2d438a6026a59f9bc558193a8751a8dac761e28a0b1e1",
+      "bytes": 9072
+    },
+    {
+      "path": "build-support/qgis/resource_selection.py",
+      "sha256": "03a0562feeca2201c1882c9f4b45b72885a814c1ff89fb2d6019f21278079954",
+      "bytes": 22768
+    },
+    {
+      "path": "build-support/qgis/resource_witness.py",
+      "sha256": "19944fe5b113e32aa70d2ab8172c043e7a675017290a042ac93646ebdee4746a",
+      "bytes": 15376
+    },
+    {
+      "path": "build-support/qgis/runtime.py",
+      "sha256": "ba8ecd72b4f69b0dca22bfb4be32e7ee916a7656754556a009c0797c254878e1",
+      "bytes": 17427
+    },
+    {
+      "path": "build-support/qgis/test_resource_selection.py",
+      "sha256": "27660992778f3f19fc0edd46105f29ea7523c97bf62e26b125e6853785281224",
+      "bytes": 8702
+    },
+    {
+      "path": "plan/STATUS.md",
+      "sha256": "6fa9a7c59bae4b9779d8fd809e5a4cdfea8731c4a820a2710c60a0486d94910f",
+      "bytes": 36253
+    },
+    {
+      "path": "plan/candidates/fnd-02-candidate-parent-2.json",
+      "sha256": "3c59d99834b53f8778143db70f754272bce9920ca05071586d4f3629cdd625a0",
+      "bytes": 538061
+    },
+    {
+      "path": "plan/candidates/fnd-02-candidate.json",
+      "sha256": "8083a10deee529363e15925941c28e5a1e1f3030716f0cac7154c39466efbb90",
+      "bytes": 836241
+    },
+    {
+      "path": "plan/docs/fnd-02-candidate-proposal.md",
+      "sha256": "62d236c69e076d3eda0999ef1cd7ad1a5e8e2bfb5c1b1d62d6b3059b6fc9e39f",
+      "bytes": 4988
+    },
+    {
+      "path": "plan/docs/fnd-02-combination-smoke.md",
+      "sha256": "8d9eef7badf7b332fa887c266975d25221fe8bec5167da4ee2da68f6a7754932",
+      "bytes": 25550
+    },
+    {
+      "path": "plan/docs/fnd-02-completion.md",
+      "sha256": "339ec98b56c224aba0857759ac99d7efc715fd36476d4d021ca20845ebd22ed4",
+      "bytes": 19350
+    },
+    {
+      "path": "plan/docs/fnd-02-owner-decisions.md",
+      "sha256": "f192087e65d45fa3873135f24a9555e766ba2e95ea0c0c31c2cfad7f95a44915",
+      "bytes": 167344
+    },
+    {
+      "path": "plan/docs/java-gmt-imaging-handoff.md",
+      "sha256": "d875a499306d84103e131ac8a6a0921f011c451a7d6ff47a57f43036fde7c242",
+      "bytes": 10890
+    },
+    {
+      "path": "plan/docs/java-gmt-qgis-handoff.md",
+      "sha256": "8123aeda34812b6c9cccf4995c81741dece3931cc3204e67ece6a3320f0e9dd5",
+      "bytes": 11444
+    },
+    {
+      "path": "plan/docs/java-gmt-remediation-handoff.md",
+      "sha256": "430cd278e9b18da8241600e686501bc349ca52cffdadd07b88de2e7059f4b5b2",
+      "bytes": 8436
+    },
+    {
+      "path": "plan/docs/java-gmt-source-handoff.md",
+      "sha256": "63740a67d4eaa14ce184bc79f658e207f5597b2a6443ea33b17498696638bb37",
+      "bytes": 12255
+    },
+    {
+      "path": "plan/tests/test_candidate_java_gmt_variant.py",
+      "sha256": "a37775b4cd04c46538f9fec78a30f2d61643ad23e52b7747b37d071e075809e5",
+      "bytes": 3385
+    },
+    {
+      "path": "plan/tests/test_candidate_variant.py",
+      "sha256": "5a66933c83c4a4d2694f1912073a2eea01f4eca65269bc2bc84d62fc979be59f",
+      "bytes": 3280
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/authorization.json",
+      "sha256": "1581a3fd804572dc90ca476ad76d9355234a1af9038c11f39ed1000e57578961",
+      "bytes": 1854
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/candidate-doc-review.json",
+      "sha256": "9756be187601553019a5adbe56d5d1cda9f53c12890e9022dd6e190b1dbb9283",
+      "bytes": 10451
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/evidence.json",
+      "sha256": "0fcff0e0de5d65e036917b3f6c7d123e9ff72eb2168955b1e2fee88714fb2a55",
+      "bytes": 18251
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/imaging-evidence.json",
+      "sha256": "d04af89c9dd51a11fa11b20c34fcc697583046dbd0b9f993419e9585cd88ec26",
+      "bytes": 60139
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/imaging-replacements-predecessor-1.json",
+      "sha256": "582ced041990ce9d94589cce4c74930fb5458c8764a86a2c94e3f95a459ade01",
+      "bytes": 2142
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/imaging-replacements.json",
+      "sha256": "f0edd1d1ab30dfa3af4ee29ecc9b8634313534662557762b2288b1574c8c7285",
+      "bytes": 2142
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/publication.py",
+      "sha256": "fb0581f4670d56e68cb90432363d9781204873c1640691c1eb88ee5b81290438",
+      "bytes": 9906
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-desktop-reopened-window.png",
+      "sha256": "06eb57b0cd3002b661bb25b57f1c5674d212917ca9c2e872dfd0da13fd6aa5ce",
+      "bytes": 133971
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-evidence.json",
+      "sha256": "c61cb95c8b7b09873f632859ff9f81f891cc153d77ce9ec4349e1498a0bf1b83",
+      "bytes": 23046
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-final-root-review.json",
+      "sha256": "43462d85c84ed5910600066294fa3c56a03c4e723a30649e4b9a4ba3682e28c3",
+      "bytes": 7212
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-mosaic-convergence.json",
+      "sha256": "9a5e4df746ae91151b35b4aa67086beeb502a8872844ccd14c910b5083a8f606",
+      "bytes": 4904
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-mosaic-final.json",
+      "sha256": "a5453361fcf951e1aa885bd42b2cad1b4ea4388ee70386bacddb64d37f246e17",
+      "bytes": 22237
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-mosaic-preflight.json",
+      "sha256": "fde4c54288045fd214494760eb7bbe0d30970f62b7fd6fb4de7238caf5751c99",
+      "bytes": 1889
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-mosaic-restarted.png",
+      "sha256": "5da7f751ce2bb2d3b2c07adb335a65815bc6e5ee373eeb7fae9339f2cbbec431",
+      "bytes": 4017
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-palette-dialog.png",
+      "sha256": "d39fac375106c051e4b92765d8ee080d3160884002d926c26add2d0e34477057",
+      "bytes": 68980
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-root-java-review.json",
+      "sha256": "87287593d774a133c164ef74b084610755ab24979e5e63bdbfbbf64fc4c6ee3c",
+      "bytes": 2701
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-root-review.json",
+      "sha256": "fa14ce237941355c8635102ac4d7a3bc034f784fa4e31ca16d441d3aed7ff849",
+      "bytes": 1141
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-self-review.json",
+      "sha256": "ed58192ebc25c06ce161a7d3e0a2004807674d505a642189af24614e568ee4f4",
+      "bytes": 1699
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-server-restarted.png",
+      "sha256": "31fbfb14ae87f3e09a976632daa93acab68c12e7aca9ccf65fe83a69c2e5cfd8",
+      "bytes": 3237
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/root-component-review.json",
+      "sha256": "7ee18d325388a17fdba8ebe4c2879e7e0588c4f9576bcb579b0378e251e346e6",
+      "bytes": 3426
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/runtime-profile-2.json",
+      "sha256": "4adfcb4d0356e74f4a07310ef1bf4fd38eb16d668b98f8049dcd58f32804d2a0",
+      "bytes": 299
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/runtime-profile.json",
+      "sha256": "af175f7c792629e069a2a2cf3c734c91dd2621322ba5018b9bb95f7c1e15ebf2",
+      "bytes": 299
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/source-aggregate-review.json",
+      "sha256": "c3f5d25ef711aa05fbedc0b43216cc949f1461cfa5dcd4d1371751edb2f0e51e",
+      "bytes": 4551
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/source-evidence.json",
+      "sha256": "a46444609bd3c19202ccd29ffd3c60ff37fe3728540f7dd13c4001e7a40e9cc1",
+      "bytes": 44077
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/source-imaging-review.json",
+      "sha256": "f914d1941db3a6f81b637851ad3ba6684452504c3d29c8b6381dd56e55cbf476",
+      "bytes": 24270
+    }
+  ],
+  "file_count": 86,
+  "allowed_path_roots": [
+    "build-support/frontend/",
+    "build-support/geonode/",
+    "build-support/gwc/",
+    "build-support/java/",
+    "build-support/qgis/",
+    "plan/STATUS.md",
+    "plan/candidates/",
+    "plan/docs/",
+    "plan/tests/",
+    "plan/verification/java-gmt-remediation/"
+  ],
+  "scope_checks": {
+    "only_intended_platform_recipes_evidence_docs_tests": true,
+    "workflow_files_added_or_modified": false,
+    "credential_privatekey_env_files_added": false,
+    "symlinks_or_runtime_databases_added": false,
+    "binary_files_only_reviewed_pngs": true,
+    "diff_check_passed": true,
+    "python_syntax_files": 29
+  },
+  "credential_review": {
+    "rules": [
+      "private_key",
+      "github_token",
+      "aws_access_key",
+      "google_api_key",
+      "bearer_literal",
+      "jwt_literal",
+      "credential_url",
+      "secret_assignment_including_quoted_json_keys"
+    ],
+    "matches": [],
+    "literal_values_logged": false,
+    "limitations": "Heuristic literal scans plus reviewed credential-handling code and image inspection; does not assert absence of every possible encoding or replace security review. Runtime values remain outside Git and existing redaction/invalidation controls remain."
+  },
+  "images": [
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-desktop-reopened-window.png",
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "pHYs"
+      ],
+      "visually_inspected": true,
+      "observation": "Synthetic QGIS desktop/palette or rendered fixture image; no credential/account settings or tokens visible."
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-mosaic-restarted.png",
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR"
+      ],
+      "visually_inspected": true,
+      "observation": "Synthetic QGIS desktop/palette or rendered fixture image; no credential/account settings or tokens visible."
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-palette-dialog.png",
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "pHYs"
+      ],
+      "visually_inspected": true,
+      "observation": "Synthetic QGIS desktop/palette or rendered fixture image; no credential/account settings or tokens visible."
+    },
+    {
+      "path": "plan/verification/java-gmt-remediation/qgis-server-restarted.png",
+      "chunks": [
+        "IDAT",
+        "IEND",
+        "IHDR",
+        "pHYs"
+      ],
+      "visually_inspected": true,
+      "observation": "Synthetic QGIS desktop/palette or rendered fixture image; no credential/account settings or tokens visible."
+    }
+  ],
+  "publication_review": {
+    "predecessor": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-qgis-remediation/project-apply-01/publication.py",
+      "sha256": "358a6f1f832163d7bfef2aa989f734080a0d43d0c49befb28436b50c810aeb91",
+      "bytes": 9919
+    },
+    "current": {
+      "path": "plan/verification/java-gmt-remediation/publication.py",
+      "sha256": "fb0581f4670d56e68cb90432363d9781204873c1640691c1eb88ee5b81290438",
+      "bytes": 9906
+    },
+    "normalized_ast_identical_except_constants": true,
+    "changed_constants": [
+      "REPO",
+      "BRANCH",
+      "BASE",
+      "ROOT"
+    ],
+    "only_allowed_mutations": [
+      "addProjectV2ItemById",
+      "updateProjectV2ItemFieldValue"
+    ],
+    "mutation_scope": "Add exact open PR contentID to verified Project2 only if absent; set only its Evidence field to exact PR+FND-02 URLs; no parent planning, archive, view, repository, assignment, label, workflow or secret mutation. --apply required; all other mutation requests refused.",
+    "identity_checks": "Authenticated aloerch numeric/node IDs, platform repository numeric/node IDs, Project owner/number/visibility, clean local branch/head/base, exact open PR repo/head and FND-02 task identity/In progress state.",
+    "preservation_checks": "Full pagination and before/after preservation checks; existing manual Evidence/planning/archived decisions refuse modification; API errors preserve mutation receipts and attempt readback. Inherited assignee/label expansion limitation explicitly recorded.",
+    "adapter": {
+      "path": "plan/tools/github_project_api.py",
+      "sha256": "2285d2ba5eb367df7f8e641399011bed237d60febb8dc1393f96d653f197cfd9",
+      "bytes": 31050
+    },
+    "snapshot": {
+      "path": "plan/verification/java-http/project/snapshot.py",
+      "sha256": "112e2bbd74d0a8528d58531b5828a06c5331be544716270fabc85e72370094f5",
+      "bytes": 15604
+    },
+    "remote_actions_performed_during_review": 0
+  },
+  "blocking_findings": []
+}

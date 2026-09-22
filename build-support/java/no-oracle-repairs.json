@@ -1,0 +1,42 @@
+[
+  {
+    "path": "geoserver/src/extension/importer/core/pom.xml",
+    "before_sha256": "7ebb2f3358248ac5ffbdd8588272ca860dce3468ab15cb6766db550f9bc07e76",
+    "after_sha256": "53d817d4511c42585a8c12755cb49564f0725db2bdc58d805a54bb4d715f8d9b",
+    "reason": "NO-ORACLE profile: remove importer production edge that selected Oracle datastore and ojdbc17; PostGIS/importer remain.",
+    "before": "oracle</artifactId>\n    </dependency>\n    <dependency>\n      <groupId>org.geotools.jdbc</groupId>\n      <artifactId>gt-jdbc-",
+    "after": ""
+  },
+  {
+    "path": "geotools/modules/plugin/imagemosaic/pom.xml",
+    "before_sha256": "a8cc1848fbbc481743700a8079ce5b5e0acd23de08170fe8403eacaa9cd7964b",
+    "after_sha256": "55ddcec1c65d32aaca83da069c854346f045fe55ca8fa024ae47ba25a6ee9bd9",
+    "reason": "NO-ORACLE profile: remove Oracle-only test edge and unused provided legacy driver; shared PostGIS mosaic abstractions remain unchanged.",
+    "before": "oracle</artifactId>\n      <scope>test</scope>\n    </dependency>\n    <dependency>\n      <groupId>org.geotools.jdbc</groupId>\n      <artifactId>gt-jdbc-postgis</artifactId>\n      <scope>test</scope>\n    </dependency>\n    <dependency>\n      <groupId>org.geotools.jdbc</groupId>\n      <artifactId>gt-jdbc-sqlserver</artifactId>\n      <scope>test</scope>\n    </dependency>\n    <dependency>\n      <groupId>com.oracle</groupId>\n      <artifactId>ojdbc14</artifactId>\n      <scope>provided</scope>\n      <!-- version specified in root pom --",
+    "after": "postgis</artifactId>\n      <scope>test</scope>\n    </dependency>\n    <dependency>\n      <groupId>org.geotools.jdbc</groupId>\n      <artifactId>gt-jdbc-sqlserver</artifactId>\n      <scope>test</scope"
+  },
+  {
+    "path": "geowebcache/geowebcache/diskquota/jdbc/pom.xml",
+    "before_sha256": "b75c7163a3a9cef4687af4ebe32d4b90d03e556353f4d1e6a8ac7baf737f3bf9",
+    "after_sha256": "738946546e951f94b4954b5180896f200831fdac4766e7632599d7955b463e40",
+    "reason": "NO-ORACLE profile: omit Oracle-only test driver; JDBC/GWC production source and PostgreSQL path unchanged; dormant optional oracle profile retained.",
+    "before": "  <dependency>\n      <groupId>com.oracle.database.jdbc</groupId>\n      <artifactId>ojdbc11</artifactId>\n      <version>23.4.0.24.05</version>\n      <scope>test</scope>\n    </dependency>\n  ",
+    "after": ""
+  },
+  {
+    "path": "geoserver/src/extension/importer/web/src/main/java/org/geoserver/importer/web/ImportDataPage.java",
+    "before_sha256": "39fc05ee529fe6530a29cb22877cf47b3d4d2d2c7d43a8c16fd01c4d3a284b92",
+    "after_sha256": "35fccd01fa7a7f1691309707729434eb95c58c3b0c27a79c260cb52e03f3f61d",
+    "reason": "NO-ORACLE profile: do not advertise an unavailable Oracle import option; files/mosaics/PostGIS/SQLServer options unchanged.",
+    "before": "ORACLE(DataIcon.DATABASE) {\n            @Override\n            ImportSourcePanel createPanel(String panelId) {\n                return new OraclePanel(panelId);\n            }\n\n            @Override\n            boolean isAvailable() {\n                return isDataStoreFactoryAvaiable(\"org.geotools.data.oracle.OracleNGDataStoreFactory\");\n            }\n        },\n        ",
+    "after": ""
+  },
+  {
+    "path": "geoserver/src/extension/importer/web/pom.xml",
+    "before_sha256": "5d383426bf8a2584e44e5381b1c1f2b7fb50b71f7b83ffe2f3f82a0862840959",
+    "after_sha256": "c9d802788196746d8e02cf46602d21ee730d753f7e5a2fe83a33f0f83932628e",
+    "reason": "Exclude only the Oracle importer UI class at the reproducible source/compiler boundary; original Java source/notices retained.",
+    "before": "</project>\n",
+    "after": "  <!-- AmbisGIS NO-ORACLE candidate: source retained; optional UI is not compiled. -->\n  <build>\n    <plugins>\n      <plugin>\n        <groupId>org.apache.maven.plugins</groupId>\n        <artifactId>maven-compiler-plugin</artifactId>\n        <configuration>\n          <excludes>\n            <exclude>org/geoserver/importer/web/OraclePanel.java</exclude>\n          </excludes>\n        </configuration>\n      </plugin>\n    </plugins>\n  </build>\n\n</project>\n"
+  }
+]

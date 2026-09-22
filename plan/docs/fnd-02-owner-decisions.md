@@ -1,7 +1,7 @@
 # FND-02 owner-decision register
 
 Generated from [the authoritative internal manifest](../candidates/fnd-02-candidate.json). Edit that manifest and regenerate.
-Candidate: `fnd-02-frontend-qgis-proposal-2`. Manifest schema version: 1.
+Candidate: `fnd-02-java-gmt-proposal-3`. Manifest schema version: 1.
 Full hashes, individual member paths and retained locations are in its `affected`, `records` and linked evidence fields. The summaries below do not replace those identities.
 Inventory validity, candidate selection and owner/distribution acceptance are separate. Findings apply to this candidate; historical tests do not establish acceptance of changed artifacts.
 
@@ -12,19 +12,19 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 | F02-JAVA-codec12 | later-gate | false | true | FND-07 custody / FND-08 required build-and-repair closure; promote to F02-06 immediately if a required input is unusable or rights invalidate the selection |
 | F02-JAVA-dom4j11 | later-gate | false | true | FND-07 custody / FND-08 required build-and-repair closure; promote to F02-06 immediately if a required input is unusable or rights invalidate the selection |
 | F02-JAVA-geronimo-jta | later-gate | false | true | FND-07 custody / FND-08 required build-and-repair closure; promote to F02-06 immediately if a required input is unusable or rights invalidate the selection |
-| F02-JAVA-aspectj154 | selection-blocker | true | true | F02-06 candidate adoption/source and License-Brand review |
+| F02-JAVA-aspectj154 | obligation | false | true | F02-06 candidate adoption/source and License-Brand review |
 | F02-JAVA-cvsclient | later-gate | false | true | FND-07 custody / FND-08 required build-and-repair closure; promote to F02-06 immediately if a required input is unusable or rights invalidate the selection |
 | F02-JAVA-sisu211 | later-gate | false | true | FND-07 custody / FND-08 required build-and-repair closure; promote to F02-06 immediately if a required input is unusable or rights invalidate the selection |
 | F02-JAVA-plexus103 | later-gate | false | true | FND-07 custody / FND-08 required build-and-repair closure; promote to F02-06 immediately if a required input is unusable or rights invalidate the selection |
-| F02-JAVA-xmlpull1131 | selection-blocker | true | true | F02-06 candidate adoption/source and License-Brand review |
+| F02-JAVA-xmlpull1131 | obligation | false | true | F02-06 candidate adoption/source and License-Brand review |
 | F02-JAVA-ojdbc14 | later-gate | false | true | FND-07 custody / FND-08 required build-and-repair closure; promote to F02-06 immediately if a required input is unusable or rights invalidate the selection |
 | F02-JAVA-jai-imageio11 | selection-blocker | true | true | F02-06 candidate adoption/source and License-Brand review |
 | F02-JAVA-json-lib | selection-blocker | true | true | F02-06 candidate adoption/source and License-Brand review |
 | F02-JAVA-groboutils5 | later-gate | false | true | FND-07 custody / FND-08 required build-and-repair closure; promote to F02-06 immediately if a required input is unusable or rights invalidate the selection |
 | F02-JAVA-opendap21 | investigation | false | false | F02-06 profile disposition; FND-07/FND-08 if NetCDF/OPeNDAP is selected |
-| F02-JAVA-marlin0948 | selection-blocker | true | true | F02-06 candidate adoption/source and License-Brand review |
+| F02-JAVA-marlin0948 | obligation | false | true | F02-06 candidate adoption/source and License-Brand review |
 | F02-JAVA-structural48 | resolved | false | false | FND-07/FND-08 provenance and independent repair gates |
-| F02-JAVA-ojdbc17-source-placeholder | selection-blocker | true | true | F02-06 C1/C2 candidate selection; chapter11 source independence, distinct from mere redistribution permission |
+| F02-JAVA-ojdbc17-source-placeholder | resolved | false | false | F02-06 C1/C2 candidate selection; chapter11 source independence, distinct from mere redistribution permission |
 | F02-GEONODE-license-scope | obligation | false | true | C2/F02-06 recorded license-scope decision; final distribution notice/source gate |
 | F02-GEOTOOLS-file-scope | obligation | false | true | C2/F02-06 and License-Brand distribution gate |
 | F02-GEOTOOLS-resources | obligation | false | true | C2/F02-06 compliance plan; distribution gate, FND-07 generated-data provenance |
@@ -49,7 +49,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 | F06-FE-WEBIFC | obligation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-FE-GENERATED | investigation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-QGIS-SRC-01 | resolved | false | false | F02-06 / License-Brand; distribution compliance before delivery |
-| F06-QGIS-SRC-02 | selection-blocker | true | true | F02-06 / License-Brand; distribution compliance before delivery |
+| F06-QGIS-SRC-02 | resolved | false | false | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-QGIS-SRC-03 | resolved | false | false | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-QGIS-SRC-04 | resolved | false | false | F02-06 / License-Brand; distribution compliance before delivery |
 | F06-QGIS-ICONS | obligation | false | true | F02-06 / License-Brand; distribution compliance before delivery |
@@ -70,11 +70,13 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 
 **B1:** No permission to distribute changed or uncleared material, waive third-party terms, alter inherited notices, merge a remediation, or attach old runtime results to different artifacts.
 
-**B2:** No permission to waive third-party restrictions, alter selected bytes, redistribute, deploy, change fork defaults, or reuse historical tests for a changed artifact. Owner acceptance of accurate investigation is distinct from adoption.
+**B2:** No merge, adoption, license waiver, distribution, release, production deployment or FND-02/later-task acceptance.
 
-**B3:** Current owner prompt authorizes only the exact 1129 named exclusions and new private stage. Review is separate from adoption, third-party permission, distribution, final FND-02 acceptance or later gates; historical artifacts retain original restrictions.
+**B3:** No permission to waive third-party restrictions, alter selected bytes, redistribute, deploy, change fork defaults, or reuse historical tests for a changed artifact. Owner acceptance of accurate investigation is distinct from adoption.
 
-**B4:** Original baseline artifacts/receipts remain unchanged. This PR proposes only separately identified and freshly tested replay bytes; no assumed reproducibility, old-test transfer, candidate adoption, distribution or final task acceptance.
+**B4:** Current owner prompt authorizes only the exact 1129 named exclusions and new private stage. Review is separate from adoption, third-party permission, distribution, final FND-02 acceptance or later gates; historical artifacts retain original restrictions.
+
+**B5:** Original baseline artifacts/receipts remain unchanged. This PR proposes only separately identified and freshly tested replay bytes; no assumed reproducibility, old-test transfer, candidate adoption, distribution or final task acceptance.
 
 ## F02-JAVA-classworlds — Java
 
@@ -193,26 +195,26 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 
 ## F02-JAVA-aspectj154 — Java
 
-**Disposition:** selection-blocker · **Gate:** F02-06 candidate adoption/source and License-Brand review · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B1** applies.
+**Disposition:** obligation · **Gate:** F02-06 candidate adoption/source and License-Brand review · **Criteria:** C1, C2
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
 
-**Exact scope:** `org.aspectj:aspectjweaver:1.5.4`
+**Exact scope:** `org.aspectj:aspectjweaver:1.5.4`; candidate id: fnd-02-java-gmt-proposal-3; selected variant record: java-gmt-war; applicability: Revision3 only; original and parent blocked bytes/limitations preserved above.
 
-**Membership / consumers:** WAR ships all 1,093 classes, including five com/bea/jvm classes lacking source. 127 unchanged runtime classes also occur in aspectjrt 1.5.4.
+**Membership / consumers:** Selected revision3 source-built/no-Oracle or resource-stage variant only; original affected coordinates/hashes below remain historical.
 
-**Evidence establishes:** Five embedded com.bea.jvm classes absent from retained AspectJ source release; runtime interfaces originate in bundled BEA inputs. Must locate exact source/rights or justify and test capability-preserving change; no waiver. Ledger disposition retained unchanged: partial-source-coverage.
+**Evidence establishes:** Complete 738-file AspectJ/BCEL source build, coherent runtime/weaver, omitted only unused BEA/JRockit adapter; zero deployed BEA classes. Spring advice, legacy-bytecode LTW and real GeoFence persistence/configured authorization freshly exercised.
 
-**Still unknown:** Exact corresponding source/build provenance remains as recorded; original-name/hash scan does not exclude rewritten relocation or establish globally unused status.
+**Still unknown:** Java7-target LTW VerifyError reproduced on original and replacement; unsupported mode retained. EPL/BCEL notices and combination review remain.
 
-**Recommended course:** Propose a source-built AspectJ 1.5.4 variant that removes the unneeded BEA/JRockit adapter only after proving the Temurin-17 profile does not require it and preserving the required GeoFence proxy/weaving behavior.
+**Recommended course:** Review this exact tested variant-only remediation; preserve notices/profile limits and all later acceptance gates.
 
 **Alternatives and required tests:** option: Capability-preserving alternative; implementation: Recover exact BEA source and applicable rights; preserve its original notice and show complete source-to-binary correspondence before retaining the old bytes.; retest: Rebuild AspectJ and the GeoFence/GeoServer aggregate; run GeoFence transaction/native tests and real configured authorization/role/WFS tests plus restart.
 
-**Owner action / effect:** Approve the preferred remediation design as a separate candidate variant; do not adopt or distribute the current blocker-bearing aggregate.
+**Owner action / effect:** Implementation already authorized by current prompt. Review exact scoped checkpoint; adoption of blocked JSON/JJ2000 combination and distribution remain unavailable until closing evidence exists.
 
-**Closing evidence:** implementation: Rebuild AspectJ and the GeoFence/GeoServer aggregate; run GeoFence transaction/native tests and real configured authorization/role/WFS tests plus restart.; evidence: Exact source/notice/revision and mapping, selected recipe/lock/output changes if any, affected tests and owner disposition; no old tests relabeled.
+**Closing evidence:** condition: Exact selected source/output/profile, file notices and freshly affected tests; owner checkpoint review remains separate from adoption/distribution.; result: Complete 738-file AspectJ/BCEL source build, coherent runtime/weaver, omitted only unused BEA/JRockit adapter; zero deployed BEA classes. Spring advice, legacy-bytecode LTW and real GeoFence persistence/configured authorization freshly exercised.; remaining: Java7-target LTW VerifyError reproduced on original and replacement; unsupported mode retained. EPL/BCEL notices and combination review remain.
 
-**Original evidence:** [java-provenance-ledger](../verification/java-source-provenance.json) at `/artifacts/37`; [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/java_entries/5`; `finding-input-202` (workspace:source-archives/java-resolution/maven/blobs/sha256/a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed)
+**Original evidence:** [java-provenance-ledger](../verification/java-source-provenance.json) at `/artifacts/37`; [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/java_entries/5`; `finding-input-202` (workspace:source-archives/java-resolution/maven/blobs/sha256/a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed); [java-gmt-authorization](../verification/java-gmt-remediation/authorization.json); [java-gmt-source-index](../verification/java-gmt-remediation/source-evidence.json); `java-gmt-war` (workspace:build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/web/app/target/geoserver.war)
 
 ## F02-JAVA-cvsclient — Java
 
@@ -285,26 +287,26 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 
 ## F02-JAVA-xmlpull1131 — Java
 
-**Disposition:** selection-blocker · **Gate:** F02-06 candidate adoption/source and License-Brand review · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B1** applies.
+**Disposition:** obligation · **Gate:** F02-06 candidate adoption/source and License-Brand review · **Criteria:** C1, C2
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
 
-**Exact scope:** `xmlpull:xmlpull:1.1.3.1`
+**Exact scope:** `xmlpull:xmlpull:1.1.3.1`; candidate id: fnd-02-java-gmt-proposal-3; selected variant record: java-gmt-war; applicability: Revision3 only; original and parent blocked bytes/limitations preserved above.
 
-**Membership / consumers:** All four org/xmlpull/v1 API classes ship in selected WAR. POM declares Public Domain but contains no original author notice or source.
+**Membership / consumers:** Selected revision3 source-built/no-Oracle or resource-stage variant only; original affected coordinates/hashes below remain historical.
 
-**Evidence establishes:** Exact corresponding source/revision not yet retained; investigate retained POM SCM/release metadata. No functionality removed and artifact not considered unused. Ledger disposition retained unchanged: unresolved-source.
+**Evidence establishes:** Four exact API sources recovered from retained publisher xpp3 source, new distinct source-built API variant, public-domain dedication retained; final WAR native MXParser/XStream API/security paths pass.
 
-**Still unknown:** Exact corresponding source/build provenance remains as recorded; original-name/hash scan does not exclude rewritten relocation or establish globally unused status.
+**Still unknown:** Original1.1.3.1 publisher source correspondence is not retroactively established; variant source and bytes are distinct.
 
-**Recommended course:** Recover the original four API source files plus author dedication tied to 1.1.3.1; verify source/API correspondence and retain that material before selecting these bytes.
+**Recommended course:** Review this exact tested variant-only remediation; preserve notices/profile limits and all later acceptance gates.
 
 **Alternatives and required tests:** option: Capability-preserving alternative; implementation: Select a maintained source-owned XMLPull-compatible implementation with verified terms, compare all four interfaces/exceptions/factory behaviors and perform the same affected retests; do not equate absent notices with public domain.; retest: Compile explicit source and run XStream/XML parsing and MapFish/WFS service regression fixtures; if outputs change, rebuild and smoke the affected aggregate.
 
-**Owner action / effect:** Approve the preferred remediation design as a separate candidate variant; do not adopt or distribute the current blocker-bearing aggregate.
+**Owner action / effect:** Implementation already authorized by current prompt. Review exact scoped checkpoint; adoption of blocked JSON/JJ2000 combination and distribution remain unavailable until closing evidence exists.
 
-**Closing evidence:** implementation: Compile explicit source and run XStream/XML parsing and MapFish/WFS service regression fixtures; if outputs change, rebuild and smoke the affected aggregate.; evidence: Exact source/notice/revision and mapping, selected recipe/lock/output changes if any, affected tests and owner disposition; no old tests relabeled.
+**Closing evidence:** condition: Exact selected source/output/profile, file notices and freshly affected tests; owner checkpoint review remains separate from adoption/distribution.; result: Four exact API sources recovered from retained publisher xpp3 source, new distinct source-built API variant, public-domain dedication retained; final WAR native MXParser/XStream API/security paths pass.; remaining: Original1.1.3.1 publisher source correspondence is not retroactively established; variant source and bytes are distinct.
 
-**Original evidence:** [java-provenance-ledger](../verification/java-source-provenance.json) at `/artifacts/53`; [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/java_entries/9`; `finding-input-206` (workspace:source-archives/java-resolution/maven/blobs/sha256/34e08ee62116071cbb69c0ed70d15a7a5b208d62798c59f2120bb8929324cb63)
+**Original evidence:** [java-provenance-ledger](../verification/java-source-provenance.json) at `/artifacts/53`; [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/java_entries/9`; `finding-input-206` (workspace:source-archives/java-resolution/maven/blobs/sha256/34e08ee62116071cbb69c0ed70d15a7a5b208d62798c59f2120bb8929324cb63); [java-gmt-authorization](../verification/java-gmt-remediation/authorization.json); [java-gmt-source-index](../verification/java-gmt-remediation/source-evidence.json); `java-gmt-war` (workspace:build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/web/app/target/geoserver.war)
 
 ## F02-JAVA-ojdbc14 — Java
 
@@ -332,48 +334,48 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F02-JAVA-jai-imageio11 — Java
 
 **Disposition:** selection-blocker · **Gate:** F02-06 candidate adoption/source and License-Brand review · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B1** applies.
+**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
 
-**Exact scope:** `javax.media:jai_imageio:1.1`
+**Exact scope:** `javax.media:jai_imageio:1.1`; candidate id: fnd-02-java-gmt-proposal-3; selected variant record: java-gmt-war; applicability: Revision3 only; original and parent blocked bytes/limitations preserved above.
 
-**Membership / consumers:** All 559 classes ship in WAR via MapFish print-lib 2.4.1. Prior recovered Windows installer is binary-only and was never executed; successor >=1.2 tags are not exact 1.1 evidence.
+**Membership / consumers:** Selected revision3 source-built/no-Oracle or resource-stage variant only; original affected coordinates/hashes below remain historical.
 
-**Evidence establishes:** Successor jai-imageio source tags begin1.2; exact original1.1 source not identified. java.net download attempt retained original Windows binary installer, NOT source and never executed. Required MapFish codec capability remains; source/native and redistribution evidence unresolved. Ledger disposition retained unchanged: unresolved-source.
+**Evidence establishes:** Recovered complete 1.1 FCS source; new Java-only codec build preserves packages/SPI and TIFF/GeoTIFF/JPEG/PNG/JPEG2000; native codecLib and inactive javax.media.jai bridge omitted. Corrected unsigned packedRGB JP2 clipping; exact WAR realcodec/MapFishPDF/image tests pass.
 
-**Still unknown:** Exact corresponding source/build provenance remains as recorded; original-name/hash scan does not exclude rewritten relocation or establish globally unused status.
+**Still unknown:** Separate JJ2000 conforming-product condition remains incompatible/unresolved for intended GPL combination; SunBSD core notice does not clear it. Need applicable permission or source-built JPEG2000 alternative with compatible terms and required format tests; no format deletion.
 
-**Recommended course:** Propose a source-owned ImageIO codec replacement/profile retaining actual required MapFish image/print formats; inventory registered ImageIO providers and JPEG2000/TIFF/native requirements before selecting replacement bytes.
+**Recommended course:** Resolve the exact remaining source/terms condition while preserving supported behavior; do not adopt/distribute blocked selection.
 
 **Alternatives and required tests:** option: Capability-preserving alternative; implementation: Recover exact original 1.1 Java/native source and applicable original distribution terms; verify all 559 classes and any required native provider before retaining the old binary.; retest: Build codec plus aggregate; run MapFish rendering/PDF/image tests and raster WMS/GeoTIFF/JPEG/PNG witnesses, including explicitly supported JPEG2000 behavior.
 
-**Owner action / effect:** Approve the preferred remediation design as a separate candidate variant; do not adopt or distribute the current blocker-bearing aggregate.
+**Owner action / effect:** Implementation already authorized by current prompt. Review exact scoped checkpoint; adoption of blocked JSON/JJ2000 combination and distribution remain unavailable until closing evidence exists.
 
-**Closing evidence:** implementation: Build codec plus aggregate; run MapFish rendering/PDF/image tests and raster WMS/GeoTIFF/JPEG/PNG witnesses, including explicitly supported JPEG2000 behavior.; evidence: Exact source/notice/revision and mapping, selected recipe/lock/output changes if any, affected tests and owner disposition; no old tests relabeled.
+**Closing evidence:** condition: Separate JJ2000 conforming-product condition remains incompatible/unresolved for intended GPL combination; SunBSD core notice does not clear it. Need applicable permission or source-built JPEG2000 alternative with compatible terms and required format tests; no format deletion.; result: Recovered complete 1.1 FCS source; new Java-only codec build preserves packages/SPI and TIFF/GeoTIFF/JPEG/PNG/JPEG2000; native codecLib and inactive javax.media.jai bridge omitted. Corrected unsigned packedRGB JP2 clipping; exact WAR realcodec/MapFishPDF/image tests pass.; remaining: Separate JJ2000 conforming-product condition remains incompatible/unresolved for intended GPL combination; SunBSD core notice does not clear it. Need applicable permission or source-built JPEG2000 alternative with compatible terms and required format tests; no format deletion.
 
-**Original evidence:** [java-provenance-ledger](../verification/java-source-provenance.json) at `/artifacts/56`; [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/java_entries/11`; `finding-input-208` (workspace:source-archives/java-resolution/maven/blobs/sha256/2b40befa9340e15759c68867df08905c6c6400df379ec7802120386325a565d3)
+**Original evidence:** [java-provenance-ledger](../verification/java-source-provenance.json) at `/artifacts/56`; [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/java_entries/11`; `finding-input-208` (workspace:source-archives/java-resolution/maven/blobs/sha256/2b40befa9340e15759c68867df08905c6c6400df379ec7802120386325a565d3); [java-gmt-authorization](../verification/java-gmt-remediation/authorization.json); [java-gmt-imaging-index](../verification/java-gmt-remediation/imaging-evidence.json); `java-gmt-war` (workspace:build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/web/app/target/geoserver.war)
 
 ## F02-JAVA-json-lib — Java
 
 **Disposition:** selection-blocker · **Gate:** F02-06 candidate adoption/source and License-Brand review · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B1** applies.
+**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
 
-**Exact scope:** `net.sf.json-lib:json-lib:2.4.2-geoserver`
+**Exact scope:** `net.sf.json-lib:json-lib:2.4.2-geoserver`; candidate id: fnd-02-java-gmt-proposal-3; selected variant record: java-gmt-war; applicability: Revision3 only; original and parent blocked bytes/limitations preserved above.
 
-**Membership / consumers:** All 83 classes ship; GeoServer main/WFS/GeoNode OAuth declare it. Recovered candidate 1ff8dc03730cb00afb4628350f3106f35c122d34 declares 2.4.1-geoserver, not exact 2.4.2 publisher provenance. POM Apache declaration also mentions Crockford-derived content.
+**Membership / consumers:** Selected revision3 source-built/no-Oracle or resource-stage variant only; original affected coordinates/hashes below remain historical.
 
-**Evidence establishes:** Exact corresponding source/revision not yet retained; investigate retained POM SCM/release metadata. No functionality removed and artifact not considered unused. Ledger disposition retained unchanged: unresolved-source.
+**Evidence establishes:** Distinct source-owned compatibility variant from 1ff8dc03730cb00afb4628350f3106f35c122d34, not relabeled 2.4.2;213 contract comparisons and final WAR parser/WFS/OAuth/roles/browser/cache paths pass.
 
-**Still unknown:** Exact corresponding source/build provenance remains as recorded; original-name/hash scan does not exclude rewritten relocation or establish globally unused status.
+**Still unknown:** Missing exact grant chain for seven JSON.org-derived files: Apache declarations/headers do not prove historical derived terms. Requires authoritative applicable permission/compatible relicensing evidence, or independently implemented compatible source with verified terms.357/359 native tests pass;2 BeanUtils expectations also fail unchanged baseline.
 
-**Recommended course:** Recover the precise 2.4.2-geoserver source/release chain and inspect original JSON-derived file headers. If unavailable, propose a source-owned compatibility build from the retained candidate with explicit patches and third-party terms.
+**Recommended course:** Resolve the exact remaining source/terms condition while preserving supported behavior; do not adopt/distribute blocked selection.
 
 **Alternatives and required tests:** option: Capability-preserving alternative; implementation: Implement a capability-preserving source-owned JSON compatibility layer under verified terms; retain parsing/serialization semantics and reexecute the same native/API/security fixtures.; retest: Compare API/serialization/parser-depth behavior; run GeoServer WFS/REST and GeoNode OAuth/role JSON contracts plus public viewer/cache smoke on the newly built aggregate.
 
-**Owner action / effect:** Approve the preferred remediation design as a separate candidate variant; do not adopt or distribute the current blocker-bearing aggregate.
+**Owner action / effect:** Implementation already authorized by current prompt. Review exact scoped checkpoint; adoption of blocked JSON/JJ2000 combination and distribution remain unavailable until closing evidence exists.
 
-**Closing evidence:** implementation: Compare API/serialization/parser-depth behavior; run GeoServer WFS/REST and GeoNode OAuth/role JSON contracts plus public viewer/cache smoke on the newly built aggregate.; evidence: Exact source/notice/revision and mapping, selected recipe/lock/output changes if any, affected tests and owner disposition; no old tests relabeled.
+**Closing evidence:** condition: Missing exact grant chain for seven JSON.org-derived files: Apache declarations/headers do not prove historical derived terms. Requires authoritative applicable permission/compatible relicensing evidence, or independently implemented compatible source with verified terms.357/359 native tests pass;2 BeanUtils expectations also fail unchanged baseline.; result: Distinct source-owned compatibility variant from 1ff8dc03730cb00afb4628350f3106f35c122d34, not relabeled 2.4.2;213 contract comparisons and final WAR parser/WFS/OAuth/roles/browser/cache paths pass.; remaining: Missing exact grant chain for seven JSON.org-derived files: Apache declarations/headers do not prove historical derived terms. Requires authoritative applicable permission/compatible relicensing evidence, or independently implemented compatible source with verified terms.357/359 native tests pass;2 BeanUtils expectations also fail unchanged baseline.
 
-**Original evidence:** [java-provenance-ledger](../verification/java-source-provenance.json) at `/artifacts/57`; [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/java_entries/12`; `finding-input-209` (workspace:source-archives/java-resolution/maven/blobs/sha256/c1de06da06183458cd8e4975e3b07e1d1d82a9f6e0a4438ed3d5dd8040983d2d)
+**Original evidence:** [java-provenance-ledger](../verification/java-source-provenance.json) at `/artifacts/57`; [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/java_entries/12`; `finding-input-209` (workspace:source-archives/java-resolution/maven/blobs/sha256/c1de06da06183458cd8e4975e3b07e1d1d82a9f6e0a4438ed3d5dd8040983d2d); [java-gmt-authorization](../verification/java-gmt-remediation/authorization.json); [java-gmt-source-index](../verification/java-gmt-remediation/source-evidence.json); `java-gmt-war` (workspace:build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/web/app/target/geoserver.war)
 
 ## F02-JAVA-groboutils5 — Java
 
@@ -423,26 +425,26 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 
 ## F02-JAVA-marlin0948 — Java
 
-**Disposition:** selection-blocker · **Gate:** F02-06 candidate adoption/source and License-Brand review · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B1** applies.
+**Disposition:** obligation · **Gate:** F02-06 candidate adoption/source and License-Brand review · **Criteria:** C1, C2
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
 
-**Exact scope:** `org.marlin:marlin:0.9.4.8`
+**Exact scope:** `org.marlin:marlin:0.9.4.8`; candidate id: fnd-02-java-gmt-proposal-3; selected variant record: java-gmt-war; applicability: Revision3 only; original and parent blocked bytes/limitations preserved above.
 
-**Membership / consumers:** All 87 classes ship. 85 map structurally to release source; OGLRenderQueue and QueueFlusher do not. Recovered predecessor differs in volatile/Thread constructor behavior.
+**Membership / consumers:** Selected revision3 source-built/no-Oracle or resource-stage variant only; original affected coordinates/hashes below remain historical.
 
-**Evidence establishes:** Exact release source covers85/87 classes. Publisher archive (byte-identical selected binary) includes OGLRenderQueue and QueueFlusher absent from release source. The preceding deleted OGLRenderQueue.java differs in volatile/thread-constructor API, proven by parent compilation/javap; do not attach it as exact source. Clean owned source build/profile decision still required. Ledger disposition retained unchanged: partial-source-coverage.
+**Evidence establishes:** New headless Temurin 17 source-built variant 2 uses exact original 0.9.4.8 source; excludes unused OpenGL path and two unused benchmark helper classes lacking designated exception notice. Exact renderer origin/hash and 128 draws/8 threads, alpha/geometry/AA and no-fallback negative controls pass.
 
-**Still unknown:** Exact corresponding source/build provenance remains as recorded; original-name/hash scan does not exclude rewritten relocation or establish globally unused status.
+**Still unknown:** Original predecessor-source mismatch and variant1 benchmark notice uncertainty remain historical. OpenGL unsupported; selected 42 Java source files carry GPL2+Classpath headers and exact notices preserved. Native Marlin line-join suite: 46 of 48 pass; two degenerate line-after-close failures reproduce the exact publisher renderer with identical diagnostic images. This runtime limitation remains unresolved.
 
-**Recommended course:** Propose a clean source-owned Marlin build from an explicit complete revision/profile; choose a Temurin-17-compatible module-patch/rendering configuration while retaining rendering capability.
+**Recommended course:** Review this exact tested variant-only remediation; preserve notices/profile limits and all later acceptance gates.
 
 **Alternatives and required tests:** option: Capability-preserving alternative; implementation: Obtain exact missing publisher source variant and verify both OpenGL classes; no substitution of the known differing predecessor and no assertion GPL/ClassPath exceptions erase the source discrepancy.; retest: Rebuild renderer and aggregate; compare Java2D antialiasing/line-join/transparency/raster witnesses, MapFish print and WMS/cache output, plus restart. Rehash all outputs.
 
-**Owner action / effect:** Approve the preferred remediation design as a separate candidate variant; do not adopt or distribute the current blocker-bearing aggregate.
+**Owner action / effect:** Implementation already authorized by current prompt. Review exact scoped checkpoint; adoption of blocked JSON/JJ2000 combination and distribution remain unavailable until closing evidence exists.
 
-**Closing evidence:** implementation: Rebuild renderer and aggregate; compare Java2D antialiasing/line-join/transparency/raster witnesses, MapFish print and WMS/cache output, plus restart. Rehash all outputs.; evidence: Exact source/notice/revision and mapping, selected recipe/lock/output changes if any, affected tests and owner disposition; no old tests relabeled.
+**Closing evidence:** condition: Exact selected source/output/profile, file notices and freshly affected tests; owner checkpoint review remains separate from adoption/distribution.; result: New headless Temurin 17 source-built variant 2 uses exact original 0.9.4.8 source; excludes unused OpenGL path and two unused benchmark helper classes lacking designated exception notice. Exact renderer origin/hash and 128 draws/8 threads, alpha/geometry/AA and no-fallback negative controls pass.; remaining: Original predecessor-source mismatch and variant1 benchmark notice uncertainty remain historical. OpenGL unsupported; selected 42 Java source files carry GPL2+Classpath headers and exact notices preserved. Native Marlin line-join suite: 46 of 48 pass; two degenerate line-after-close failures reproduce the exact publisher renderer with identical diagnostic images. This runtime limitation remains unresolved.
 
-**Original evidence:** [java-provenance-ledger](../verification/java-source-provenance.json) at `/artifacts/62`; [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/java_entries/15`; `finding-input-212` (workspace:source-archives/java-resolution/maven/blobs/sha256/44c3c3620102749844e58f668523f073db127efbd0b233ec9b13b3205db1362f)
+**Original evidence:** [java-provenance-ledger](../verification/java-source-provenance.json) at `/artifacts/62`; [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/java_entries/15`; `finding-input-212` (workspace:source-archives/java-resolution/maven/blobs/sha256/44c3c3620102749844e58f668523f073db127efbd0b233ec9b13b3205db1362f); [java-gmt-authorization](../verification/java-gmt-remediation/authorization.json); [java-gmt-imaging-index](../verification/java-gmt-remediation/imaging-evidence.json); `java-gmt-war` (workspace:build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/web/app/target/geoserver.war)
 
 ## F02-JAVA-structural48 — Java
 
@@ -469,26 +471,26 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 
 ## F02-JAVA-ojdbc17-source-placeholder — Java / Oracle JDBC
 
-**Disposition:** selection-blocker · **Gate:** F02-06 C1/C2 candidate selection; chapter11 source independence, distinct from mere redistribution permission · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B1** applies.
+**Disposition:** resolved · **Gate:** F02-06 C1/C2 candidate selection; chapter11 source independence, distinct from mere redistribution permission · **Criteria:** C1, C2
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B2** applies.
 
-**Exact scope:** `com.oracle.database.jdbc:ojdbc17:23.26.2.0.0`; path: source-archives/java-resolution/maven/blobs/sha256/25a9cb395eee4096d117e8146a48dfa2c748eea7884b0fa01d8a1b99f399d01d; member: META-INF/license.txt; declaration: Oracle Free Distribution, Hosting, and Use Terms and Conditions; version 1.0, 28 June 2022; member: nativelib/tcpfastopen/linux/aarch64/libtfojdbc1.so; member: nativelib/tcpfastopen/linux/x86_64/libtfojdbc1.so
+**Exact scope:** `com.oracle.database.jdbc:ojdbc17:23.26.2.0.0`; path: source-archives/java-resolution/maven/blobs/sha256/25a9cb395eee4096d117e8146a48dfa2c748eea7884b0fa01d8a1b99f399d01d; member: META-INF/license.txt; declaration: Oracle Free Distribution, Hosting, and Use Terms and Conditions; version 1.0, 28 June 2022; member: nativelib/tcpfastopen/linux/aarch64/libtfojdbc1.so; member: nativelib/tcpfastopen/linux/x86_64/libtfojdbc1.so; candidate id: fnd-02-java-gmt-proposal-3; selected variant record: java-gmt-war; applicability: Revision3 only; original and parent blocked bytes/limitations preserved above.
 
-**Membership / consumers:** Shipped gt-jdbc-oracle 34.5 and ojdbc17 are present even though the successful database smoke uses PostGIS. Recipients would receive driver and native bytes if the current aggregate were distributed.
+**Membership / consumers:** Selected revision3 source-built/no-Oracle or resource-stage variant only; original affected coordinates/hashes below remain historical.
 
-**Evidence establishes:** Selected WAR contains Oracle JDBC17 (2,812 classes plus aarch64/x86_64 native TCP Fast Open libraries). The retained sources classifier is 285 bytes with only source.txt explicitly saying the JDBC source is not provided. Embedded version-1.0 Oracle terms allow certain unmodified distribution/use but restrict modification/reverse engineering; this is not open maintainable source.
+**Evidence establishes:** Explicit NO-ORACLE source/dependency/compiler selection removes proprietary drivers, gt-jdbc-oracle and exposed importer option; no placeholder or substitute driver. FullWAR/native/class/provider/fingerprint checks and real PostGIS vector/mosaic/WMS initialization/restart pass.
 
-**Still unknown:** No usable Java/native source or modification rights for independent repair are established. Whether any selected required behavior actually uses Oracle-specific support remains to be verified.
+**Still unknown:** Oracle-backed datastore/import/mosaic unsupported. Dormant historical old driver source gaps retained; future Oracle adoption requires separate usable source/terms/profile/tests.
 
-**Recommended course:** Approve a separate variant excluding the optional gt-jdbc-oracle 34.5 integration and ojdbc17 23.26.2.0.0 driver (including its two native libtfojdbc1.so members) from the baseline while preserving PostGIS, image mosaic and all required storage/raster capabilities. Trace transitive consumers first; make no binary change in this consolidation.
+**Recommended course:** Review this exact tested variant-only remediation; preserve notices/profile limits and all later acceptance gates.
 
 **Alternatives and required tests:** option: Exclude optional Oracle-specific support in a separate variant; implementation: Trace gt-jdbc-oracle/ojdbc17 transitive consumers; explicitly omit those selected modules and native members, without removing required PostGIS or image-mosaic capability.; retest: Rebuild the selected aggregate and verify member absence, PostGIS image-mosaic/raster/WMS behavior, native GeoTools/importer checks and affected identity/browser/cache restart tests against the new WAR.; option: Source-owned compatible implementation; implementation: Implement or select a verified source-owned Oracle-compatible path if Oracle support becomes an explicit required capability; account for Java/native sources and licenses.; retest: Run real Oracle fixture tests plus PostGIS/image-mosaic/native/WMS/authorization regression tests.; option: Authoritative source and maintenance rights; implementation: Seek exact corresponding source and modification/redistribution rights only through a separately authorized rights process; no contact, purchase or terms acceptance now.; retest: Establish complete source-to-build chain, perform independent repair and required Oracle/native tests.
 
-**Owner action / effect:** Choose the preferred baseline profile/remediation scope. Adoption of current bytes remains blocked; engineering can proceed on an explicitly proposed variant.
+**Owner action / effect:** Implementation already authorized by current prompt. Review exact scoped checkpoint; adoption of blocked JSON/JJ2000 combination and distribution remain unavailable until closing evidence exists.
 
-**Closing evidence:** A new source/profile/lock/WAR manifest proving Oracle member absence or complete maintainable replacement, affected native/aggregate/runtime tests, and License-Brand review. Prior selected WAR tests remain bound to prior bytes.
+**Closing evidence:** condition: Exact selected source/output/profile, file notices and freshly affected tests; owner checkpoint review remains separate from adoption/distribution.; result: Explicit NO-ORACLE source/dependency/compiler selection removes proprietary drivers, gt-jdbc-oracle and exposed importer option; no placeholder or substitute driver. FullWAR/native/class/provider/fingerprint checks and real PostGIS vector/mosaic/WMS initialization/restart pass.; remaining: Oracle-backed datastore/import/mosaic unsupported. Dormant historical old driver source gaps retained; future Oracle adoption requires separate usable source/terms/profile/tests.
 
-**Original evidence:** [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/oracle_driver_actual`; `finding-input-241` (workspace:source-archives/java-resolution/maven/blobs/sha256/25a9cb395eee4096d117e8146a48dfa2c748eea7884b0fa01d8a1b99f399d01d); `finding-input-242` (workspace:source-archives/java-resolution/maven/blobs/sha256/96010f27fce64c285f9d1aab8f96357b8e00c49c9ad041ecf140c9d7d27eb3fb)
+**Original evidence:** [java-python-rights](../verification/candidate-selection/java-python-rights.json) at `/oracle_driver_actual`; `finding-input-241` (workspace:source-archives/java-resolution/maven/blobs/sha256/25a9cb395eee4096d117e8146a48dfa2c748eea7884b0fa01d8a1b99f399d01d); `finding-input-242` (workspace:source-archives/java-resolution/maven/blobs/sha256/96010f27fce64c285f9d1aab8f96357b8e00c49c9ad041ecf140c9d7d27eb3fb); [java-gmt-authorization](../verification/java-gmt-remediation/authorization.json); `java-gmt-full-inventory` (workspace:build-worktrees/java-gmt-remediation/aggregate-evidence-02/result.json); `java-gmt-war` (workspace:build-worktrees/java-gmt-remediation/aggregate-02/work/source/geoserver/src/web/app/target/geoserver.war)
 
 ## F02-GEONODE-license-scope — GeoNode
 
@@ -815,7 +817,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-FE-DECL-MIT — frontend
 
 **Disposition:** obligation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** `process` 0.5.2; `humanize` 0.0.9; `jsonlint-lines` 1.7.1; `jsonlint-mod` 1.7.5; `leaflet-extra-markers` 1.0.6; `lrucache` 1.0.3; `nomnom` 1.8.1; `png-js` 1.1.0; `react-dnd-test-backend` 2.6.0; `spawn-command` 0.0.2; `mime` 1.2.11
 
@@ -838,7 +840,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-FE-CHROMA — frontend
 
 **Disposition:** obligation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** `chroma-js` 1.3.7
 
@@ -861,7 +863,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-FE-KEYCHARM — frontend
 
 **Disposition:** obligation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** `keycharm` 0.2.0
 
@@ -884,7 +886,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-FE-LEAFLET — frontend
 
 **Disposition:** obligation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** `leaflet` 0.7.7
 
@@ -907,7 +909,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-FE-TAFFY — frontend
 
 **Disposition:** investigation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** `taffydb` 2.6.2
 
@@ -930,7 +932,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-FE-EMITTER — frontend
 
 **Disposition:** investigation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** `emitter-component` 1.1.2
 
@@ -953,7 +955,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-FE-JSONP — frontend
 
 **Disposition:** investigation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** `jsonp` 0.2.1
 
@@ -976,7 +978,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-FE-WEBIFC — frontend
 
 **Disposition:** obligation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** `web-ifc` 0.0.50
 
@@ -999,7 +1001,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-FE-GENERATED — frontend
 
 **Disposition:** investigation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** `@cesium/engine` 21.0.1; `@cesium/wasm-splats` 0.1.0-alpha.2; `@zip.js/zip.js` 2.16.0; `cesium` 1.134.1; `draco3d` 1.5.7; `fsevents` 2.3.3; `three` 0.134.0; `three` 0.179.1; `web-ifc` 0.0.50
 
@@ -1022,7 +1024,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-QGIS-SRC-01 — qgis-resources
 
 **Disposition:** resolved · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B4** applies.
 
 **Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 256; evidence pointer: qgis_resources/0; notice paths: resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/alpen/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/drumma/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/electroluv/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/hana/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/phill/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/rotten/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/rphnick/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/sugar/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/tvr/COPYING.xml; resources/cpt-city-qgis-min/jjg/ccolo/vredeling/COPYING.xml; path: workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix; excluded named svg count: 256; applicability: New proposed resource-selection variant only; original source/stage remains historically restricted.
 
@@ -1044,31 +1046,31 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 
 ## F06-QGIS-SRC-02 — qgis-resources
 
-**Disposition:** selection-blocker · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption blocked; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
+**Disposition:** resolved · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B2** applies.
 
-**Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 138; evidence pointer: qgis_resources/1; notice paths: resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml; resources/cpt-city-qgis-min/td/COPYING.xml; path: workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix; excluded named svg count: 138; applicability: New proposed resource-selection variant only; original source/stage remains historically restricted.
+**Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 138; evidence pointer: qgis_resources/1; notice paths: resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml; resources/cpt-city-qgis-min/td/COPYING.xml; path: workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix; excluded named svg count: 138; applicability: New proposed resource-selection variant only; original source/stage remains historically restricted.; candidate id: fnd-02-java-gmt-proposal-3; selected variant record: java-gmt-qgis-output; applicability: Revision3 only; original and parent blocked bytes/limitations preserved above.
 
-**Membership / consumers:** baseline: Optional palettes distributed to desktop users, not merely tests; required rendering/CRS/PostGIS capability is independent of these named palettes.; proposed variant: Exactly 138 named SVG paths for this finding are excluded from selection-03. Original source/stage and notices remain preserved; general styling/rendering remains available.
+**Membership / consumers:** Selected revision3 source-built/no-Oracle or resource-stage variant only; original affected coordinates/hashes below remain historical.
 
-**Evidence establishes:** original baseline: neo10 and td say Free to use but explicitly distribute=no; td also says None specified. All 138 SVGs and relevant COPYING.xml files are actually staged in build-06/prefix/share/qgis/resources/cpt-city-qgis-min, with source/stage/manifest equality verified.; proposed variant: All 138 specified paths and active catalogue references omitted; original notice/metadata bytes preserved outside the active archive. Deterministic complete before/after inventory, source qrc/magic/SQLite/XML audit and fresh native file/model checks bind selection-03. Runtime-07 passes actual palette chooser, retained colors, styling/save-reopen, tested omitted-ramp serialized/rendered colors, desktop/PostGIS/server GetMap/restart and final integrity/cleanup.
+**Evidence establishes:** Exactly one additional recorded GMT_dem1.svg alias excluded;139 total SRC-02 / 1,130 overall omissions. Whole stage/catalogue/alias/native model checks,265 unchanged ColorBrewer palettes and actual desktop/server restart pass.
 
-**Still unknown:** Retained gmt/GMT_dem1.svg has exactly the excluded td/DEM_print.svg bytes (SHA256 0ba1cad3e42202036ab6a86663a09d377eb84eb22584df0e4dbc9fdee54cf602) under a different GMT GPLv2/distribute=yes notice. Exact origin/applicability is unproved; notice alone does not clear bytes.
+**Still unknown:** Exclusion avoids unresolved provenance; it does not invalidate GMT grant or equate identical bytes with identical licensing. Original stages/notices remain; retained ColorBrewer/distribution obligations separate.
 
-**Recommended course:** Recover authoritative exact GMT/td provenance and applicable terms, or authorize a separate one-file exclusion with catalogue/stage/native/desktop/server revalidation. Do not remove beyond the current 1129 authorization.
+**Recommended course:** Review this exact tested variant-only remediation; preserve notices/profile limits and all later acceptance gates.
 
 **Alternatives and required tests:** Retain unchanged assets only after exact authoritative permission/applicability is supported for intended use and distribution; preserve notices/credit and any enforceable conditions. Do not contact authors without separate permission.
 
-**Owner action / effect:** Review the implemented exact exclusions and retained blocker. Decide provenance recovery or a separately authorized one-file GMT exclusion. This gates candidate adoption/distribution, not independent engineering.
+**Owner action / effect:** Implementation already authorized by current prompt. Review exact scoped checkpoint; adoption of blocked JSON/JJ2000 combination and distribution remain unavailable until closing evidence exists.
 
-**Closing evidence:** condition: For replacement/exclusion: new resource-selection manifest, stage/hash audit proves all specified paths removed/replaced and notices preserved; test palette chooser, saved-project fallback, styling and affected desktop/server rendering. Prior selected artifact stays unchanged and its smoke is not assigned to new variant. For retention: exact permission evidence and qualified scope review.; result: Demonstrated for the specified named paths and fresh stage/runtime evidence. Not fully met: a byte-identical excluded td palette survives under retained GMT provenance/notice scope.
+**Closing evidence:** condition: Exact selected source/output/profile, file notices and freshly affected tests; owner checkpoint review remains separate from adoption/distribution.; result: Exactly one additional recorded GMT_dem1.svg alias excluded;139 total SRC-02 / 1,130 overall omissions. Whole stage/catalogue/alias/native model checks,265 unchanged ColorBrewer palettes and actual desktop/server restart pass.; remaining: Exclusion avoids unresolved provenance; it does not invalidate GMT grant or equate identical bytes with identical licensing. Original stages/notices remain; retained ColorBrewer/distribution obligations separate.
 
-**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json); [remediation-authorization](../verification/frontend-qgis-remediation/authorization.json); [qgis-remediation-index](../verification/frontend-qgis-remediation/qgis-evidence.json); `qgis-selection-result` (workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/result.json); `qgis-selection-native-resources` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/resource-result.json); `qgis-selection-smoke` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/result.json)
+**Original evidence:** [frontend-qgis-rights](../verification/candidate-selection/frontend-qgis-rights.json); [remediation-authorization](../verification/frontend-qgis-remediation/authorization.json); [qgis-remediation-index](../verification/frontend-qgis-remediation/qgis-evidence.json); `qgis-selection-result` (workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/result.json); `qgis-selection-native-resources` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/resource-result.json); `qgis-selection-smoke` (workspace:build-worktrees/frontend-qgis-remediation/qgis/runtime-07/result.json); [java-gmt-authorization](../verification/java-gmt-remediation/authorization.json); [java-gmt-qgis-index](../verification/java-gmt-remediation/qgis-evidence.json); `java-gmt-qgis-output` (workspace:build-worktrees/java-gmt-remediation/qgis/selection-01/after-manifest.json)
 
 ## F06-QGIS-SRC-03 — qgis-resources
 
 **Disposition:** resolved · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B4** applies.
 
 **Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 690; evidence pointer: qgis_resources/2; notice paths: resources/cpt-city-qgis-min/es/COPYING.xml; path: workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix; excluded named svg count: 690; applicability: New proposed resource-selection variant only; original source/stage remains historically restricted.
 
@@ -1091,7 +1093,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-QGIS-SRC-04 — qgis-resources
 
 **Disposition:** resolved · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B4** applies.
 
 **Exact scope:** version: QGIS 3.44.14; source commit: 1a4cda5f2620e7374e5926fc955a7d2d06493e15; selected svg count: 45; evidence pointer: qgis_resources/3; notice paths: resources/cpt-city-qgis-min/jm/COPYING.xml; path: workspace:build-worktrees/frontend-qgis-remediation/qgis/selection-03/prefix; excluded named svg count: 45; applicability: New proposed resource-selection variant only; original source/stage remains historically restricted.
 
@@ -1114,7 +1116,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-QGIS-ICONS — qgis-resources
 
 **Disposition:** obligation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** source path: images/themes/default/LICENSE.TXT; source path: images/themes/default/mActionPan.svg
 
@@ -1137,7 +1139,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-QGIS-COLORBREWER — qgis-resources
 
 **Disposition:** obligation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** source path: resources/cpt-city-qgis-min/cb/COPYING.xml; selected svg count: 265; version: QGIS 3.44.14
 
@@ -1160,7 +1162,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-QGIS-FONT — qgis-test-font
 
 **Disposition:** investigation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** path: workspace:build-worktrees/qgis-candidate/config-preflight-04/fonts/QGIS-Vera.ttf; path: workspace:build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/tests/testdata/font/QGIS-Vera/COPYRIGHT.TXT; path: workspace:build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14/tests/testdata/font/QGIS-Vera/QGIS-Vera-README.txt
 
@@ -1183,7 +1185,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-QGIS-QT — qgis-support
 
 **Disposition:** obligation · **Gate:** F02-06 / License-Brand; distribution compliance before delivery · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** input manifest: path: platform:build-support/qgis/support-inputs.json; sha256: 7636a34b1823e071dc9662522d8f79be3085953eaed2d64ad6fcd34d1cb37d47; bytes: 77846; profile: support-07; Qt: 5.15.19 with locked KDE patches; PyQt5: 5.15.10; QScintilla: 2.14.1; SIP generator: 6.16.1; PyQt SIP runtime: 12.16.1; PyQt builder: 1.19.1
 
@@ -1206,7 +1208,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-QGIS-SUPPORT-SOURCE — qgis-support
 
 **Disposition:** later-gate · **Gate:** FND-07/FND-08 source/build/repair and release; rights checks apply before distribution · **Criteria:** C1, C2
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** input manifest: path: platform:build-support/qgis/support-inputs.json; sha256: 7636a34b1823e071dc9662522d8f79be3085953eaed2d64ad6fcd34d1cb37d47; bytes: 77846; selected prefix: workspace:build-worktrees/qgis-candidate/support-07; inventory: path: workspace:build-worktrees/qgis-candidate/support-07-inventory.json; sha256: aa837efdf41201593ba6d2a48ec7f8320fd8a70c3f456075503fe1f08dd8713a; bytes: 2848927
 
@@ -1229,7 +1231,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-QGIS-GENERATED — qgis-generated-metadata
 
 **Disposition:** resolved · **Gate:** F02-06 integrity reconciliation · **Criteria:** C1, C3
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
 
 **Exact scope:** manifest: path: workspace:build-worktrees/qgis-candidate/build06-audit-01/generated-source-manifest.json; sha256: 1443e5a74fc7b728c45cdf9b66e85c2056e0d3e2ab6ddf000062936144cdf831; bytes: 973
 
@@ -1252,7 +1254,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-TECH-LINT — frontend/qgis-technical
 
 **Disposition:** investigation · **Gate:** F02-06 C3 accurate record; affected feature/FND-08 gate for later remediation · **Criteria:** C3
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
 
 **Exact scope:** path: workspace:build-worktrees/frontend-completion/native-lint-001/results.json
 
@@ -1275,7 +1277,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-TECH-WARN — frontend/qgis-technical
 
 **Disposition:** investigation · **Gate:** F02-06 C3 accurate record; affected feature/FND-08 gate for later remediation · **Criteria:** C3
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
 
 **Exact scope:** path: workspace:build-worktrees/frontend-completion/build-01/compile.log
 
@@ -1298,7 +1300,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-TECH-REPLAY — frontend/qgis-technical
 
 **Disposition:** investigation · **Gate:** F02-06 C3 accurate record; affected feature/FND-08 gate for later remediation · **Criteria:** C3
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
 
 **Exact scope:** path: workspace:build-worktrees/frontend-completion/replay-comparison-final.json; path: workspace:build-worktrees/frontend-completion/replay-diagnostic-02.json
 
@@ -1321,7 +1323,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-TECH-TEST-SCOPE — frontend/qgis-technical
 
 **Disposition:** investigation · **Gate:** F02-06 C3 accurate record; affected feature/FND-08 gate for later remediation · **Criteria:** C3
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
 
 **Exact scope:** path: platform:build-support/frontend/native-tests.md; path: platform:build-support/qgis/native-selection.json
 
@@ -1344,7 +1346,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-TECH-QGIS-PROFILE — qgis-technical
 
 **Disposition:** later-gate · **Gate:** FND-03/FND-05 and relevant product feature acceptance; FND-08 input closure · **Criteria:** C1, C3
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B3** applies.
 
 **Exact scope:** path: platform:plan/verification/qgis-candidate/evidence.json
 
@@ -1367,7 +1369,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-TECH-CONTAINMENT — frontend/qgis-technical
 
 **Disposition:** later-gate · **Gate:** Security/operations/deployment gate; F02-06 records limits · **Criteria:** C3
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B2** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution gated. Approval boundary **B3** applies.
 
 **Exact scope:** path: platform:plan/verification/frontend-completion/evidence.json; path: platform:plan/verification/qgis-candidate/evidence.json
 
@@ -1390,7 +1392,7 @@ Inventory validity, candidate selection and owner/distribution acceptance are se
 ## F06-FE-RECIPE — frontend selected build-01 provenance
 
 **Disposition:** resolved · **Gate:** F02-06 source-to-artifact proposal selection · **Criteria:** C1, C3
-**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B4** applies.
+**Effect:** adoption not blocked by this finding; independent engineering can continue; distribution not independently gated by this finding. Approval boundary **B5** applies.
 
 **Exact scope:** path: build-worktrees/frontend-completion/build-01/receipt.json; selected output record: frontend-output; path: workspace:build-worktrees/frontend-qgis-remediation/frontend/replay-02/build/output-manifest.json; applicability: New proposed replay variant; distinct from baseline build-01.
 
