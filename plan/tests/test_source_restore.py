@@ -334,6 +334,42 @@ class SourceReceiptVerificationTests(CustodyTestCase):
         cli_spec.loader.exec_module(cli)
         return cli
 
+    def test_cli_import_does_not_reuse_another_components_common_module(self):
+        import sys
+        import types
+        with patch.dict(sys.modules, {"common": types.ModuleType("unrelated_common")}):
+            cli = self.load_cli()
+            self.assertEqual(cli.sha(Path(__file__)), common.sha(Path(__file__)))
+
+    def generated_fixture(self):
+        cli = self.load_cli()
+        run = self.root / "generated-run"
+        (run / "derived/evidence").mkdir(parents=True)
+        artifact = run / "derived/generated/qgis/algorithms.json"
+        artifact.parent.mkdir(parents=True)
+        artifact.write_text('[{"name":"synthetic"}]')
+        expected = {"path":"algorithms.json", "sha256":common.sha(artifact), "bytes":artifact.stat().st_size}
+        evidence = run / "derived/evidence/qgis-generated-source.json"
+        common.save(evidence, {"added":[expected]})
+        candidate = {"records":[{"id":"qgis-generated-source", "sha256":common.sha(evidence), "bytes":evidence.stat().st_size}]}
+        recipes = {"qgis":{"generated":{"path":"generated/qgis/algorithms.json", "sha256":expected["sha256"], "records":1}}}
+        common.save(run / "recipes.json", recipes)
+        return cli, run, artifact, candidate, recipes
+
+    def test_generated_output_is_checked_against_bound_producer_evidence(self):
+        cli, run, artifact, candidate, recipes = self.generated_fixture()
+        self.assertEqual(cli.verify_generated_metadata(run, {}, candidate), [])
+        artifact.write_text('[{"name":"tampered!"}]')
+        with self.assertRaisesRegex(ValueError, "Changed input"):
+            cli.verify_generated_metadata(run, {}, candidate)
+
+    def test_unrecorded_generated_summary_mismatch_is_rejected(self):
+        cli, run, artifact, candidate, recipes = self.generated_fixture()
+        recipes["qgis"]["generated"]["sha256"] = "0" * 64
+        (run / "recipes.json").write_text(json.dumps(recipes))
+        with self.assertRaises((ValueError, FileNotFoundError)):
+            cli.verify_generated_metadata(run, {"recipes_sha256":"f" * 64}, candidate)
+
     def test_receipt_cannot_drop_duplicate_or_substitute_accepted_roots(self):
         cli = self.load_cli()
         candidate_path = Path(__file__).resolve().parents[1] / "candidates/fnd-02-candidate.json"
