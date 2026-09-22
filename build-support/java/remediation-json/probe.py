@@ -27,6 +27,7 @@ def main():
   (out/'selected-runtime.json').write_text(json.dumps(inspection,indent=2)+'\n')
   if not inspection['passed']:raise ValueError('Runtime definitions differ')
   result['selected_runtime_sha256']=sha(out/'selected-runtime.json')
+  result['runtime_inputs']=[{'path':str(x),'sha256':sha(x)} for x in selected]
   old_control=inventory.inspect_jars(build,originals)
   result['old_runtime_negative_control']={'passed':not old_control['passed'] and bool(old_control['old_class_matches']),'errors':old_control['errors'],'old_matches':len(old_control['old_class_matches'])}
   if not result['old_runtime_negative_control']['passed']:raise ValueError('Old runtime negative control was not detected')
@@ -51,6 +52,12 @@ def main():
   fixture=HERE.parent/'remediation-source/SourceContracts.java';sources=[fixture,HERE/'JsonContracts.java',HERE/'NativeSelection.java',HERE/'LoadedOrigins.java',HERE/'LegacyObservations.java',wfs_native,*native]
   result['test_sources']=[{'path':str(x),'sha256':sha(x)} for x in sources]
   invoke('fixture-compile',[jdk/'bin/javac','--release','17','-proc:none','-encoding','UTF-8','-cp',cp([*originals,junit]),'-d',out/'classes',*sources])
+  production_classes=set()
+  for jar in selected:
+   with zipfile.ZipFile(jar) as archive:production_classes.update(name for name in archive.namelist() if name.endswith('.class'))
+  fixture_classes=sorted(str(x.relative_to(out/'classes')) for x in (out/'classes').rglob('*.class'))
+  if any(name in production_classes for name in fixture_classes):raise ValueError('Fixture class shadows selected production definition')
+  result['fixture_class_non_shadowing']={'passed':True,'compiled_fixture_classes':fixture_classes,'selected_production_classes':len(production_classes)}
   for label,jars in [('baseline',originals),('variant',selected)]:
    invoke('retained213-'+label,[jdk/'bin/java','-Djava.awt.headless=true','-cp',cp([out/'classes',*jars]),'SourceContracts','json'])
    invoke('changed-common-'+label,[jdk/'bin/java','-Djava.awt.headless=true','-cp',cp([out/'classes',*jars]),'JsonContracts'])
@@ -74,6 +81,11 @@ def main():
   result['native_failure_negative_control']={'passed':detected and exit_code==1,'artifact_sha256':bad_record['replacement_sha256'],'exit_code':exit_code,'expected_failure':'The two preserved UUID native regressions must make require_success fail; this command is a deliberate negative control.'}
   if not result['native_failure_negative_control']['passed']:raise ValueError('Native failure negative control failed')
   result['known_historical_native_failures']={'fresh_reexecution':False,'cases':['testElement_Collection2_exclusions_ignoreDefault','testElement_Bean_exclusions_ignoreDefault'],'reason':'BeanUtils class introspection suppression; safe behavior independently asserted in changed-common'}
+  for entry in result['runtime_inputs']+result['test_sources']:
+   if sha(Path(entry['path']))!=entry['sha256']:raise ValueError('Runtime/test input changed during probe')
+  if a.war and sha(a.war)!=a.war_sha256:raise ValueError('WAR changed during probe')
+  if sha(Path(__file__))!=result['recipe_sha256']:raise ValueError('Probe recipe changed during execution')
+  result['retained_runtime_and_test_inputs_unchanged']=True
   result['status']='passed-selected-profile-contracts'
  except Exception as e:result['error']=str(e)
  (out/'result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'status':result['status'],'output':str(out),'error':result.get('error')}));return 0 if result['status']=='passed-selected-profile-contracts' else 1
