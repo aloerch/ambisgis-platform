@@ -147,3 +147,14 @@ hash checks for every changed MapFish guard class and retained JAI providers;
 its compiled witnesses cannot shadow a packaged production class. Final exact-WAR
 mode applies those checks to unchanged extracted WAR libraries without any
 production source overlay.
+
+The final exact-WAR invocation has now passed: aggregate-03 WAR
+`c766574bd81e41c22a32fd9b25096d2e4da77e57193fd700aaa19c63dfc7be54`,
+[focused final evidence](../verification/json-jpeg2000-remediation/imaging-final-war.json).
+All six stages succeeded under verified socket denial, using the packaged classes
+without a source overlay. Fourteen runtime class origins and byte hashes were
+checked. Ordinary raster/PDF positives, 44 intentional JPEG2000 refusals, bounded
+413/415 mapping, malformed input and recovery passed. Native MapFish run 03 also
+repeated 71 passes and six unchanged skips after the final JSON replacement was
+frozen. These final receipts supersede earlier component/dependency runs only for
+this bounded imaging evidence; combined live/runtime acceptance remains separate.

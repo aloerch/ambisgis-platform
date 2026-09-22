@@ -1,6 +1,6 @@
 {
   "profile": "NO-ORACLE/headless-Temurin17/NO-JPEG2000",
-  "status": "component-verified; final aggregate/runtime pending integrator",
+  "status": "source/native/final exact-WAR imaging verified; combined live runtime closing condition remains with integrator",
   "build": {
     "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/build-01/result.json",
     "sha256": "d04dae52cc943082b256e4c3b34cd4b46d956db3fca5345c65348908db649391",
@@ -140,8 +140,18 @@
   },
   "independent_rebuild_same_bytes": true,
   "native_mapfish": {
-    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-02/result.json",
-    "sha256": "85855f4152013b8b854e6c3f3f87a1de940abcc030ccdb1371fff9f96fedf99b",
-    "bytes": 84752
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-03/result.json",
+    "sha256": "5a0117209863176710c063c7e006849bb3fd7c3dd166923fd3bd2f59480f8133",
+    "bytes": 84996
+  },
+  "final_war_probe": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-01/result.json",
+    "sha256": "cadb29ff17e73544ebb10a38692067a11b64c103a9e1c0e663093008dfb1d2b3",
+    "bytes": 264488
+  },
+  "final_war": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-03/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "c766574bd81e41c22a32fd9b25096d2e4da77e57193fd700aaa19c63dfc7be54",
+    "bytes": 141263856
   }
 }
