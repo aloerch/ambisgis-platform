@@ -1,0 +1,19 @@
+{
+  "reviewer": "json_scope independent integration/manifest reviewer",
+  "recorded_by": "root integrator from final agent review message",
+  "candidate": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/candidates/fnd-02-candidate.json",
+    "sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+    "bytes": 1082577
+  },
+  "result": "No material finding in bounded final manifest review.",
+  "checks": [
+    "58 finding IDs preserved;56 unaffected findings byte-for-byte unchanged.",
+    "JSON closing condition unchanged; only JAI uses owner-authorized removal alternative.",
+    "All four current Java combinations select WAR04 without stale parent-WAR combination bindings.",
+    "35 new explicit JSON bindings resolve against13 hash-verified receipts.",
+    "Eleven donor roots, maintenance rule and unrelated database/Jupyter/QGIS combinations unchanged.",
+    "Owner candidate/capability/maintenance acceptance pending; no distribution/release approval."
+  ],
+  "limits": "Engineering/source-accounting review, not legal clearance or whole-product acceptance; no candidate-bound files changed."
+}

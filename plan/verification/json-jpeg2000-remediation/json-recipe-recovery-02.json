@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "recovered_at": "2026-09-22T20:55:33.891022+00:00",
+  "scope": "Post-execution retained recovery of final build09/probe14/consumer-compile04 recipes, inputs and changed fixtures; not a backdated snapshot.",
+  "files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/recipe-recovery-02/build.py",
+      "sha256": "a8319748bf58f87d95c628790d5500e495e55561bbfb5b47b506f802fa46e740",
+      "bytes": 5790
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/recipe-recovery-02/probe.py",
+      "sha256": "78a456458df5e819225d2976650828bb5b0cbef82416e618b36c892910e99765",
+      "bytes": 8373
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/recipe-recovery-02/consumer_compile.py",
+      "sha256": "dbf1c897d143429687da832a04d2d89eb12556a1661820b6ef5b7e19cb5f5c12",
+      "bytes": 7435
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/recipe-recovery-02/inputs.json",
+      "sha256": "6f4c09f1bda20ca417ea4c56aeea830f3efeb22ac314e9418919dfaef818c0b8",
+      "bytes": 7108
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/recipe-recovery-02/JsonContracts.java",
+      "sha256": "b925b3b24c437eb55793bc12a132dc8dc0f29299dc4a7d401267b364b1a420e2",
+      "bytes": 10078
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/recipe-recovery-02/LegacyObservations.java",
+      "sha256": "b9188ba6f8d4f38502b27f66130b9e26557abd991cf50af5fb790b4f2f4fbac0",
+      "bytes": 1448
+    }
+  ],
+  "previous_recovery": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-compat/plan/verification/json-jpeg2000-remediation/json-recipe-recovery.json",
+    "sha256": "71bd160ec4ab43b801b0c134c0296dca63eaba5df240f0d29e7a7ba6d41824fe",
+    "bytes": 1017
+  }
+}

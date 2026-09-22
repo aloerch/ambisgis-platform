@@ -67,4 +67,36 @@ class VariantInputTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'renderer changed'):runtime_profile.flags(profile,war)
             with self.assertRaises(ValueError):runtime_profile.load(manifest,{'war_sha256':'0'*64},root)
 
+class NoJpeg2000RuntimeTests(unittest.TestCase):
+    def test_replacements_are_bound_and_rechecked_before_every_launch(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'lib').mkdir()
+            war = root / 'app.war'; war.write_bytes(b'new-war')
+            renderer = root / 'lib' / Path(runtime_profile.MEMBER).name
+            renderer.write_bytes(b'renderer')
+            profile = {'schema_version': 1, 'profile': runtime_profile.NO_JPEG2000,
+                       'war_sha256': digest(war), 'renderer_member': runtime_profile.MEMBER,
+                       'renderer_sha256': digest(renderer)}
+            for key, member in runtime_profile.REPLACED_MEMBERS.items():
+                jar = root / 'lib' / Path(member).name
+                jar.write_bytes(('new-' + key).encode())
+                profile[key + '_member'] = member
+                profile[key + '_sha256'] = digest(jar)
+            manifest = root / 'profile.json'; manifest.write_text(json.dumps(profile))
+            loaded = runtime_profile.load(manifest, {'war_sha256': digest(war)}, root)
+            self.assertIn('-Dambisgis.fixture.noJpeg2000=true', runtime_profile.flags(loaded, war))
+            for key, member in runtime_profile.REPLACED_MEMBERS.items():
+                jar = root / 'lib' / Path(member).name; original = jar.read_bytes()
+                jar.write_bytes(b'stale-publisher')
+                with self.assertRaisesRegex(ValueError, 'runtime ' + key + ' changed'):
+                    runtime_profile.flags(loaded, war)
+                with self.assertRaisesRegex(ValueError, 'packaged ' + key):
+                    runtime_profile.load(manifest, {'war_sha256': digest(war)}, root)
+                jar.write_bytes(original)
+            del profile['json_sha256']; manifest.write_text(json.dumps(profile))
+            with self.assertRaises(ValueError):
+                runtime_profile.load(manifest, {'war_sha256': digest(war)}, root)
+
+
 if __name__ == '__main__': unittest.main()

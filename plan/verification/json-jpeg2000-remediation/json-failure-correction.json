@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "original_receipt": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-05/result.json",
+    "sha256": "e6ffb04c3c9f225b313d980d9f5e92dc55da72ea937565109dc8f25d4f7f1622",
+    "bytes": 532091
+  },
+  "original_recorded_status": "passed-selected-profile-contracts",
+  "corrected_classification": "failed-new-native-regressions",
+  "reason": "Initial runner did not make added native WFS tests required. Variant failed testWriteUUIDList and testWriteListOfMaps while baseline41/41 passed. Raw original receipt and logs are unchanged.",
+  "raw_failure_log": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-05/native-geoserver-wfs-variant.log",
+    "sha256": "c39497a9a4bfd2a4230d3839a276885e7eae6fe1a279da8f6dfb81e4569782dc",
+    "bytes": 1203
+  },
+  "repair": "UUID values serialize as strings; native WFS runner now required and fails overall receipt on any unexpected nonzero exit.",
+  "superseding_receipt": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-10/result.json",
+    "sha256": "bcf897a9260bd8c92c572026ec8667b80e41b6b3342d4fb7e132cb39d94adbca",
+    "bytes": 629297
+  },
+  "negative_control": "probe07 freshly runs retained broken build03, observes its two native UUID failures, and proves require_success rejects that exit. Expected negative control is separate from passing variant tests."
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "variant_id": "fnd-02-json-nojpeg2000-proposal-4",
+  "scope": "Local source-built mappings for independently authored JSON and NO-JPEG2000 Java/server profile. Historical Maven paths are resolver keys, never publisher release identities. Final owner acceptance and distribution gates remain.",
+  "replacements": [
+    {
+      "maven_path": "org/aspectj/aspectjrt/1.5.4/aspectjrt-1.5.4.jar",
+      "original_sha256": "ea6dbd45089605b17840d35dd2474ec9a687929334903801e42e1f2e07fc40fb",
+      "variant_id": "aspectjrt-1.5.4-ambisgis-temurin17-1",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/artifacts/aspectjrt-1.5.4-ambisgis-temurin17-1.jar",
+      "sha256": "5bf41bf5474d618423d2a6d8042468cf4e7e57db8895604f205d75fe61d5090b",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source-manifest.json",
+          "sha256": "62197a848249ea498699ae4e59854d2ec8d4f0304bd03bbdacb87c863e4d00aa"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/result.json",
+          "sha256": "77a941141930eb97c6027e7b1ce9691b23ae503306f0f3704b64acd9d6d6d58f"
+        }
+      ]
+    },
+    {
+      "maven_path": "org/aspectj/aspectjweaver/1.5.4/aspectjweaver-1.5.4.jar",
+      "original_sha256": "a2f2b2f9bd274ad8174c9d4f2e3934ff1235a287dde737ea45dd8d707497f0ed",
+      "variant_id": "aspectjweaver-1.5.4-ambisgis-temurin17-1",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/artifacts/aspectjweaver-1.5.4-ambisgis-temurin17-1.jar",
+      "sha256": "e35095ad483cc38a2cf17777f74f9a59abafed1fcabc7cf951b1fbf8153370d6",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source-manifest.json",
+          "sha256": "62197a848249ea498699ae4e59854d2ec8d4f0304bd03bbdacb87c863e4d00aa"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/result.json",
+          "sha256": "77a941141930eb97c6027e7b1ce9691b23ae503306f0f3704b64acd9d6d6d58f"
+        }
+      ]
+    },
+    {
+      "maven_path": "xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar",
+      "original_sha256": "34e08ee62116071cbb69c0ed70d15a7a5b208d62798c59f2120bb8929324cb63",
+      "variant_id": "xmlpull-1.1.3-api-ambisgis-xpp3-source-1",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/artifacts/xmlpull-1.1.3-api-ambisgis-xpp3-source-1.jar",
+      "sha256": "fb4f2393e1cdf1c078a7800312eac6d1392ebd27c3015d06c25401d3bd705573",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/source-manifest.json",
+          "sha256": "62197a848249ea498699ae4e59854d2ec8d4f0304bd03bbdacb87c863e4d00aa"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/source/build-01/result.json",
+          "sha256": "77a941141930eb97c6027e7b1ce9691b23ae503306f0f3704b64acd9d6d6d58f"
+        }
+      ]
+    },
+    {
+      "maven_path": "net/sf/json-lib/json-lib/2.4.2-geoserver/json-lib-2.4.2-geoserver.jar",
+      "original_sha256": "c1de06da06183458cd8e4975e3b07e1d1d82a9f6e0a4438ed3d5dd8040983d2d",
+      "variant_id": "json-compat-1-ambisgis-jackson-2.21.0",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-09/artifacts/json-compat-1-ambisgis-jackson-2.21.0.jar",
+      "sha256": "de50a9896c9576c905c0dddfac562f431edebbb12ba0d30f2a8819a88e1f0744",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-09/result.json",
+          "sha256": "a7ca3dea39c796fd81bede912ae693e754d0e5db0353bf1b681d6db43f2e7aa0"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-09/source-manifest.json",
+          "sha256": "21dc3fc1e23c050f36a8f0a92bd5d438e8e0dd4cbe93251c0bc1cbca5127559c"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-json/inputs.json",
+          "sha256": "6f4c09f1bda20ca417ea4c56aeea830f3efeb22ac314e9418919dfaef818c0b8"
+        }
+      ]
+    },
+    {
+      "maven_path": "org/marlin/marlin/0.9.4.8/marlin-0.9.4.8.jar",
+      "original_sha256": "44c3c3620102749844e58f668523f073db127efbd0b233ec9b13b3205db1362f",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/ambisgis-marlin-0.9.4.8-headless-temurin17-2.jar",
+      "sha256": "14633f73fed7e30553927201309bcaf407a9f5462fce87692f196859f33d074a",
+      "variant_id": "ambisgis-marlin-0.9.4.8-headless-temurin17-2",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/imaging/marlin-04/result.json",
+          "sha256": "50a5e990bc52125712a66afcc0106cad299388593a2bde808d430bc55920c410"
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-source-closure/blobs/sha256/60fc2008c33f01281ce75dbbfe04c1771ddb9544746ed32c3dbef551ee60270a",
+          "sha256": "60fc2008c33f01281ce75dbbfe04c1771ddb9544746ed32c3dbef551ee60270a"
+        }
+      ]
+    },
+    {
+      "maven_path": "javax/media/jai_imageio/1.1/jai_imageio-1.1.jar",
+      "original_sha256": "2b40befa9340e15759c68867df08905c6c6400df379ec7802120386325a565d3",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/build-01/ambisgis-jai-imageio-1.1-nojpeg2000-temurin17-1.jar",
+      "sha256": "a7084cfbb419bd158464638454939d25e1fef1a990ee00bf6145b28956218007",
+      "variant_id": "ambisgis-jai-imageio-1.1-nojpeg2000-temurin17-1",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/build-01/result.json",
+          "sha256": "d04dae52cc943082b256e4c3b34cd4b46d956db3fca5345c65348908db649391",
+          "bytes": 339955
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-gmt-remediation/imaging/f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+          "sha256": "f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+          "bytes": 10035769
+        }
+      ]
+    }
+  ]
+}

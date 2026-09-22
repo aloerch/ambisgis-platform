@@ -1,3 +1,41 @@
+# Implementation status — independent JSON / NO-JPEG2000 revision 4
+
+**FND-02 remains In progress; final owner decision is pending.** Both remaining
+variant adoption findings are remediated in proposed
+`fnd-02-json-nojpeg2000-proposal-4` (revision 4/schema 1). Independent JSON source
+and tested optional JPEG2000 exclusion replace the affected production code.
+Original criteria/eight pass conditions, 58 IDs/56 unaffected findings and eleven
+owned roots are preserved. Rights to excluded originals are not inferred.
+
+Exact final WAR: `90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1`.
+Manifest: `0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99`. Source-built replacement hashes and actual fresh checks are
+in the [handoff](docs/json-jpeg2000-remediation-handoff.md) and
+[final evidence](verification/json-jpeg2000-remediation/evidence.json).
+NO-ORACLE/headless limits remain. QGIS/frontend/database/notebook selections are
+unchanged and integrity-verified; changed-WAR native/HTTP/identity/mosaic/cache/
+browser restart checks are fresh. Historical failures and all failed attempts
+remain explicit. [Validation](verification/json-jpeg2000-remediation/validation.json)
+records actual package/guard counts; inventory/report pass, eligibility exits 2.
+
+F02-06 has a decision-ready summary, F02-07 its existing maintenance binding,
+and F02-08 the [four-criterion report](docs/fnd-02-json-nojpeg2000-acceptance.md)
+in this same remediation PR. Next ready action: explicit owner review of the
+exact candidate, NO-ORACLE/headless/NO-JPEG2000 limits and C1–C4/maintenance rule.
+Merging a checkpoint alone does not grant these acceptances or distribution.
+Task fixtures are stopped and synthetic credentials invalidated/scrubbed.
+[Publication](verification/json-jpeg2000-remediation/publication.json) records
+final PR/head and the separate Project item without promoting parent Delivery.
+
+Review [PR #68](https://github.com/aloerch/ambisgis-platform/pull/68), tested
+implementation head `fc56b119b56d68e9b4cc650d6c0665659f3e706c`.
+Publication-only documentation follows; final pushed review head is pinned in
+issue #3. Project #2 now has 81 items (80 preserved plus the separate PR item),
+with exactly two authorized writes: membership and Evidence. Existing fields,
+views/order/archive choices and `is:pr is:open` are preserved; parent Delivery
+remains In progress. No merge/adoption/distribution or release occurred.
+
+# Preserved status — prior checkpoints
+
 # Implementation status — Java/GMT remediation variant
 
 **FND-02 remains In progress.** Proposed `fnd-02-java-gmt-proposal-3` (schema 1,

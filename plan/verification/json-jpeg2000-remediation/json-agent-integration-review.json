@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "reviewer": "json_scope, independent of root integration and runtime production converter patches",
+  "status": "reviewed-no-material-findings-after-repairs",
+  "scope": "Static engineering review of final frozen integration and converter source patches; exact final-WAR/runtime acceptance remains separately recorded.",
+  "files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/runtime_profile.py",
+      "sha256": "0c4a852e5c56e9455d96a3fefee93a4efe61d3aa3bbdae23d7ea366a055f2ab2",
+      "bytes": 3085
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/compatibility.py",
+      "sha256": "9de24250a680f4c974d490ab42eb397764a3f061ec680909a403f98984cae3f6",
+      "bytes": 38082
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/aggregate_evidence.py",
+      "sha256": "46412b038f7bdbfd658100a257fb6f2fc4ce642aa787d8b8f8bdcc4bc9320291",
+      "bytes": 28930
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-source/war_probe.py",
+      "sha256": "153858ef819bd1674b7270aaed3a32802bff8091e4398ce06fa06107a3f46145",
+      "bytes": 7773
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/geoserver_profile.py",
+      "sha256": "68c40cdafe401f99b970fa6c9e72c39b4413069594900cc9125a1d1c82ae41ca",
+      "bytes": 2553
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/geoserver-repairs.json",
+      "sha256": "6457254f4ed23cfd979794ba08b1e753aa28d4b2bb060befbe35ac9a171de95c",
+      "bytes": 129489
+    }
+  ],
+  "prior_review_history": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/war-evidence-history-01/index.json",
+    "sha256": "4bdaa767ef8887b1701d58516e275cb71bcbafe196a0fa54f35fbf2bb838df43",
+    "bytes": 842
+  },
+  "observations": [
+    "Explicit NO-JPEG2000 requires NO-ORACLE, a selected variant map and an affected target before output mutation; guarded source is prepared before compiler-input snapshot. Maven package still compiles test sources.",
+    "Runtime profile validates exact WAR, profile manifest and selected Marlin/JSON/ImageIO hashes during load and immediately before launch.",
+    "Source WAR probe validates every selected component/source-evidence digest, rejects duplicate target definitions, extracts actual WAR libraries and rechecks WAR/JAR/map identities after execution.",
+    "Aggregate inspection verifies exact guarded source outputs, compiled-to-packaged class bytes, web.xml, frozen scanner identity and exact replacement map. Failed nested scans raise instead of reporting successful aggregate evidence.",
+    "PDFTileRenderer outer class and anonymous $1 both bind compiler output hashes; checkPdf/readBounded are checked in the anonymous class where the calls actually occur. Prior failed marker checks remain historical receipts.",
+    "All six importer converter classes require the fixed request diagnostic and HttpMessageNotReadableException markers; TransformChain also requires its native transformChain call. Source before/after hashes independently checked.",
+    "Converter source patches catch only JSONException with a fixed diagnostic and no original cause while retaining stream cleanup. The chain delegation repair uses the existing native vector/raster parser; its baseline failures are preserved."
+  ],
+  "native_converter_probe": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/runtime/import-json-03/result.json",
+    "sha256": "256ceaaf54b1ff16718906f7fd9119d4d8b6e811dff19c3990f05d23ee91da3a",
+    "bytes": 371465
+  },
+  "review_limits": [
+    "The six-converter production patches were independently reviewed; json_scope authored their native witness, so no independent review of that witness is claimed. Actual final-WAR HTTP400 remains required separately.",
+    "This is not legal/license approval, owner candidate acceptance or evidence that unexecuted final runtime checks passed."
+  ]
+}

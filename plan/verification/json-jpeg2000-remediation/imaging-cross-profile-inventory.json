@@ -1,0 +1,118 @@
+{
+  "scope": "Integrity/static inventory only; no QGIS, database or notebook rebuild or native retest",
+  "selected_database_gdal": "GDAL3.10.3 retained CMake cache has GDAL_USE_EXTERNAL_LIBS=OFF and GDAL_USE_OPENJPEG=OFF. Actual retained gdalinfo--formats contains no JP2 driver. OpenJPEG2.5.4 was discovered on host by CMake but explicitly not selected.",
+  "selected_qgis": "QGIS selects its own source-built GDAL3.10.3 in qgis-candidate/spatial-04/prefix, distinct from database postgis-slice/run-003/prefix. The selected configuration and historical desktop/server mappings agree. Its own cache has GDAL_USE_EXTERNAL_LIBS=OFF; OpenJPEG include/library are NOTFOUND and GDAL_USE_OPENJPEG has no cache entry. Its own retained gdalinfo--formats has no JP2 driver. The database prefix remains a separate dependency source for selected GEOS/libpq and supporting libraries; it is not QGIS selected GDAL.",
+  "selected_notebooks": "Retained dependency lock and native linkage inventory have no OpenJPEG/Pillow/rasterio entry. This does not promise that arbitrary user-installed notebook packages or future kernels lack JPEG2000.",
+  "java": "Parent WAR has only JAIJJ2000 codecs; no packaged OpenJPEG/GDAL/Kakadu. OpenPDF JPEG2000 embedding and PDFBox optional ImageIO lookup are retained indirect consumers guarded/rejected at selected MapFish routes.",
+  "removal_scope": "Affected Java/server candidate only; no unrelated profile purged and no universal project-wide format-removal claim.",
+  "evidence": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/postgis/build.py",
+      "sha256": "e0593a9eba755145afc1ed7b16eef651e54ef2df4169d20823bdf75041ef9d8d",
+      "bytes": 21074
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/build/gdal/CMakeCache.txt",
+      "sha256": "3bd4233d8d38695daf1777d8cad627f79556cf0df657dc44db73ed384a56f853",
+      "bytes": 120323
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/logs/command-0073.json",
+      "sha256": "f4e2c29a1ac7fd16c27418755197f4796cd1f2173faed985edf511f48a858710",
+      "bytes": 7330
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/logs/0073-gdal-gdalinfo.log",
+      "sha256": "dffd27bacc76f366f84e5954e27f8be96e6372fedbbb6842d010209d63058bed",
+      "bytes": 2231
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/qgis/build.py",
+      "sha256": "0a4dc0d027b09ff04d47b4c2f561ced3e1e7e39f43ee234404727cb774a5d70a",
+      "bytes": 15502
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/qgis/support-inputs.json",
+      "sha256": "7636a34b1823e071dc9662522d8f79be3085953eaed2d64ad6fcd34d1cb37d47",
+      "bytes": 77846
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07-inventory.json",
+      "sha256": "aa837efdf41201593ba6d2a48ec7f8320fd8a70c3f456075503fe1f08dd8713a",
+      "bytes": 2848927
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/jupyter/dependency-lock.json",
+      "sha256": "f480ef6e6efabfa3ac6a42107344db5783bfe5edeb2960c7d9dbfba8aa208eee",
+      "bytes": 2704145
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/native-linkage.json",
+      "sha256": "bee67da3b4791b9d3398e4a0ccb59a865e8b518a714e716d13be65a21cdd6acf",
+      "bytes": 57022
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/qgis/profile-inputs.json",
+      "sha256": "91bfcfca3a7d8f8639713c2b14c47ca7dd9948f706cb45582e3105b66970e25c",
+      "bytes": 2476
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/build-06/configuration.json",
+      "sha256": "998449deef6796eaf0c73c09735b2ee8680c468e9baa0d78a32aed5c714a8fd3",
+      "bytes": 77882
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/spatial-04/build/CMakeCache.txt",
+      "sha256": "0b9b752d38b9811de6fa89552567502a5a01dfda4270212ced967bc1eb8273ce",
+      "bytes": 116883
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/spatial-04/configure.log",
+      "sha256": "659e969f041a8b0835fabe6f66af26135000ca182de4efeb241f483a4a90be2c",
+      "bytes": 31682
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/spatial-04/configure-command.json",
+      "sha256": "b6ac185dfcba9471296bea2db2c8ceabb7145f353212807a96263a8730da6995",
+      "bytes": 4950
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/spatial-04/gdal-formats-command.json",
+      "sha256": "a4627c29e5dea3d2772d2a899ebb391f75a09e1c4adf0801ce989e7b0ed60d9d",
+      "bytes": 2864
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/spatial-04/gdal-formats.log",
+      "sha256": "91934dcbe096b000501d1cfdc7ff7731115c817e84034b8e31a1431b1214d5ff",
+      "bytes": 2295
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/spatial-04/output-manifest.json",
+      "sha256": "43dbfced4321c3cf760d4dc4e80c769726820eb65e1b76a0d0bc8dcbb70e4166",
+      "bytes": 42690
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/support-07/usr/include/exiv2/jp2image.hpp",
+      "sha256": "81873a04efa9e1e8b021ff1bc37d632155ce84e63d2b86a53dcad5424eb4937d",
+      "bytes": 3496
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/desktop-result.json",
+      "sha256": "2a3a22f9cb9415caa74290f13ff3cf49bbddee068a6ba9fc694545cd1d45f5fe",
+      "bytes": 68272
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-gmt-remediation/qgis/runtime-01/server-result.json",
+      "sha256": "3e1e0ea3302d03b68cb715eba5ee421e73fdc09f22ec0a5e4ca7b5871e3fe61a",
+      "bytes": 75051
+    }
+  ],
+  "selected_qt_plugins": "support-07 contains and historical QGIS maps load exactly libqgif.so, libqico.so, libqjpeg.so and libqsvg.so in its imageformats directory; no QtImageFormats module package or libqjp2 plugin is selected. The qtimageformats-named qdoc example file is documentation, not a codec plugin.",
+  "retained_qgis_jpeg2000_metadata": "Exiv2 0.28.9 remains selected and historically loaded with JP2 metadata read/write APIs. Static symbols/header confirm this unchanged metadata path; selected ELF has no direct OpenJPEG dependency. No QGIS-wide JPEG2000 removal or denial is claimed.",
+  "correction": "Earlier same spatial/GDAL prefix wording conflated two distinct selected profiles and is corrected here using QGIS own cache, configuration, formats output and runtime mappings. Database OpenJPEG2.5.4 discovery/OFF statements apply only to database run003.",
+  "qgis_provenance_check": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/cross-profile-check-02/result.json",
+    "sha256": "a91be83cc15173f8251948173faa8dd7467b6d37b2ad95e07d9f180cd6d42797",
+    "bytes": 10724
+  }
+}

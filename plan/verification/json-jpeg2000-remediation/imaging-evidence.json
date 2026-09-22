@@ -1,0 +1,181 @@
+{
+  "profile": "NO-ORACLE/headless-Temurin17/NO-JPEG2000",
+  "status": "Source/native/final aggregate04 exact-WAR imaging and selected GWC05 live codec/PDF/recovery phases verified; owner candidate acceptance remains separate.",
+  "build": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/build-01/result.json",
+    "sha256": "d04dae52cc943082b256e4c3b34cd4b46d956db3fca5345c65348908db649391",
+    "bytes": 339955
+  },
+  "output": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/build-01/ambisgis-jai-imageio-1.1-nojpeg2000-temurin17-1.jar",
+    "sha256": "a7084cfbb419bd158464638454939d25e1fef1a990ee00bf6145b28956218007",
+    "bytes": 475970
+  },
+  "source_archive": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-gmt-remediation/imaging/f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+    "sha256": "f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+    "bytes": 10035769
+  },
+  "selected_source_terms": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/plan/verification/json-jpeg2000-remediation/imaging-selected-source-terms.json",
+    "sha256": "39e2473b18928a3a8fa9e5f2566552da5c703369d7514edd5e16cf497d62ba19",
+    "bytes": 97047
+  },
+  "preserved_nonjpeg2000_class_bytes": 323,
+  "changed_preserved_class_bytes": [],
+  "component_probe": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-11/result.json",
+    "sha256": "b3fdf507e700f973df39a9d3e1b51d098439a6ecc51257d6b58d7aa9cab2a33d",
+    "bytes": 260584
+  },
+  "failed_and_predecessor_runs": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-01/result.json",
+      "sha256": "c287d55424dcb2ba7b92f39599a5e68fdd5f0f0a056a9e786158e8c0e5fe5981",
+      "bytes": 3521
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-02/result.json",
+      "sha256": "f556b0a063104c622c3b1f929553706126c59647f1e5d5100d8a8f74d776aa72",
+      "bytes": 3841
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-03/result.json",
+      "sha256": "e7e018fa7794288ffcae24daa8baf5697b3b31a49891b4ca1c5795482097a339",
+      "bytes": 144254
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-04/result.json",
+      "sha256": "e5b11b8137735fa33c3d6607f175c743b1580ea591fb00c09f26f3c520d4aa41",
+      "bytes": 1506
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-05/result.json",
+      "sha256": "5f6702e52ee853efe494f9987f0fa15826f0c20904cdbe2fb002951bb51227eb",
+      "bytes": 245951
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-06/result.json",
+      "sha256": "24e8a9b0a68f2a9dd17ab2e7830ae6148118af80a96bf19c5a260b782842e79a",
+      "bytes": 249642
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-07/result.json",
+      "sha256": "9bad868b753bc337aca8d713dbc79ef0a66d0639981c6188078f80ad7aa4068f",
+      "bytes": 252046
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-08/result.json",
+      "sha256": "d2a8c7c04a88a4163142d2f1e7e07510794ce727ebbc1bb018771de50c5e8512",
+      "bytes": 149701
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-09/result.json",
+      "sha256": "ae0591cdfe8d4d83693e0132dae1ab55139ae75b4bfe1b303f7650247d6e9353",
+      "bytes": 252047
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/probe-10/result.json",
+      "sha256": "92208e18ceed6addb9d948ed4651d7084a65f76008a825ea6388303dd42de441",
+      "bytes": 253347
+    }
+  ],
+  "new_policy_sources": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/ClassOriginWitness.java",
+      "sha256": "33b52c33302cc7fe2c8009f1ae4a8af23c58190e7dd673dcfa39249a60cfc18d",
+      "bytes": 1569
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/Jpeg2000Policy.java",
+      "sha256": "6229acb19a76f979771f53d1effea1d623b9049095a80c0a8f5ce7d65f61915b",
+      "bytes": 7248
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/Jpeg2000RemovalWitness.java",
+      "sha256": "aa3caad5d4b0849a90c79d3f50b39e1c0d6c2329614fd2c57d74a8aa6a253694",
+      "bytes": 10845
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/MapFishImagingWitness.java",
+      "sha256": "8d73831a38a58919a4fa658c4888bf6dc90f5fdcba926b0cde11fb92fe0a4ee0",
+      "bytes": 3219
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/NoJpegImageIOWitness.java",
+      "sha256": "08ce3d5149d5d7d945d10863e65c6419817d0cbc69e108b16737a5d893c7173e",
+      "bytes": 6625
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/TiffJpeg2000Witness.java",
+      "sha256": "a31594cb088fc77ea25094818df94b72244ca488223ad8821caef7f847dc5add",
+      "bytes": 1320
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/build_imageio.py",
+      "sha256": "8b57746f5c01ddfb55f7dcc44aa34ebe66d0286cf595279ec2e504f09e1b7e88",
+      "bytes": 9340
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/probe.py",
+      "sha256": "842d4cf7c2d85c11771738395ab22dc44aff450cb4febdae66a35671d622ece6",
+      "bytes": 12887
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/build-support/java/remediation-nojpeg2000/profile.py",
+      "sha256": "503f0a172a867f5b6e78056bb93684c8b3046f1980dc347d6de12788e74a8206",
+      "bytes": 14562
+    }
+  ],
+  "scope_limits": [
+    "Final backend and browser combination evidence is separately indexed by the integrator; this imaging index links its actual GWC05 codec/print phases without extending product scope.",
+    "Historical JPEG2000-positive cases remain intact and are intentionally deselected, not passes.",
+    "Marlin46/48 and Java7-target LTW remain historical scoped limitations.",
+    "Source/engineering evidence does not grant distribution or legal approval."
+  ],
+  "deterministic_rebuild": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/build-02/result.json",
+    "sha256": "5bc6ad72b0f1d8a770481c19ffb6cb4925a06acc35d2699a14a203c8608eaa78",
+    "bytes": 339955
+  },
+  "independent_rebuild_same_bytes": true,
+  "native_mapfish": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-03/result.json",
+    "sha256": "5a0117209863176710c063c7e006849bb3fd7c3dd166923fd3bd2f59480f8133",
+    "bytes": 84996
+  },
+  "final_war_probe": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/result.json",
+    "sha256": "76ca1812e9645657ba5aaa4f5152b1683c284e99f82eabf7301564f8e46a7a94",
+    "bytes": 264488
+  },
+  "final_war": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-04/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
+    "bytes": 141264649
+  },
+  "previous_exact_war_probes": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-01/result.json",
+      "sha256": "cadb29ff17e73544ebb10a38692067a11b64c103a9e1c0e663093008dfb1d2b3",
+      "bytes": 264488
+    }
+  ],
+  "previous_exact_war_indexes": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/plan/verification/json-jpeg2000-remediation/imaging-final-war-aggregate03.json",
+      "sha256": "d1fddd74aae2506b01e6f21b0ecbc6b9c7bbf14f497a8bcfcc10410fc50087aa",
+      "bytes": 12814
+    }
+  ],
+  "combined_live_runtime": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/result.json",
+    "sha256": "c1828b8261dbad53cd9084f21122e4a8195c0888f7a46f3b7cec5aaed50c33c7",
+    "bytes": 75953
+  },
+  "live_http_fixture_index": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/plan/verification/json-jpeg2000-remediation/imaging-http-pdf-fixtures.json",
+    "sha256": "b01169bfbb433a290b0f1a566fa1b23120456c9d421751dfa81ac1987ca4e61d",
+    "bytes": 9728
+  }
+}

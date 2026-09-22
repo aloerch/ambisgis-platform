@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "exact-new-WAR",
+  "result": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/result.json",
+    "sha256": "76ca1812e9645657ba5aaa4f5152b1683c284e99f82eabf7301564f8e46a7a94",
+    "bytes": 264488
+  },
+  "war": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-04/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
+    "bytes": 141264649
+  },
+  "aggregate_build": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-04/result.json",
+    "sha256": "b70ef57ba19058b078f62b3c652c0e8d31b10b2bc2934a3b3ad3e2154808b137",
+    "bytes": 126179
+  },
+  "source_overlay": false,
+  "compiled_production_classes": false,
+  "compiled_classes": "test witnesses only; production-name collision guard passed",
+  "runtime_class_origins": [
+    {
+      "class": "org.mapfish.print.Jpeg2000Policy",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/print-lib-2.4.1.jar",
+        "sha256": "d84476036a603eb283b745acb6b3c80f57ca13f3fdc0eb844a68759fc1e28fed",
+        "bytes": 432203
+      },
+      "class_sha256": "b023045e33bba1a9279f2c0e5735c5ce3c8e9c67f772e4a95a503157a36e2b1e"
+    },
+    {
+      "class": "org.mapfish.print.Jpeg2000Policy$UnsupportedFormat",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/print-lib-2.4.1.jar",
+        "sha256": "d84476036a603eb283b745acb6b3c80f57ca13f3fdc0eb844a68759fc1e28fed",
+        "bytes": 432203
+      },
+      "class_sha256": "889e6978ac02ca7856f2ad09a8e471871842c34de943ad09cdbc915ea4c03f40"
+    },
+    {
+      "class": "org.mapfish.print.Jpeg2000Policy$InputLimit",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/print-lib-2.4.1.jar",
+        "sha256": "d84476036a603eb283b745acb6b3c80f57ca13f3fdc0eb844a68759fc1e28fed",
+        "bytes": 432203
+      },
+      "class_sha256": "855581864ba143345f722c645af658fa37a107377232eb6516daa41f17f0a1d2"
+    },
+    {
+      "class": "org.mapfish.print.PDFUtils",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/print-lib-2.4.1.jar",
+        "sha256": "d84476036a603eb283b745acb6b3c80f57ca13f3fdc0eb844a68759fc1e28fed",
+        "bytes": 432203
+      },
+      "class_sha256": "5a7cf1e100aa59eba98979b48c3d5d2d0ceafe5b7daa23b458deecd90249aedd"
+    },
+    {
+      "class": "org.mapfish.print.MapPrinter",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/print-lib-2.4.1.jar",
+        "sha256": "d84476036a603eb283b745acb6b3c80f57ca13f3fdc0eb844a68759fc1e28fed",
+        "bytes": 432203
+      },
+      "class_sha256": "bfa13e429cee698c1f49351e60422896302b318bff447d1770ba39260b8a1fc6"
+    },
+    {
+      "class": "org.mapfish.print.PDFCustomBlocks",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/print-lib-2.4.1.jar",
+        "sha256": "d84476036a603eb283b745acb6b3c80f57ca13f3fdc0eb844a68759fc1e28fed",
+        "bytes": 432203
+      },
+      "class_sha256": "2df4a3c4deed7cc64baacc2c84843bac4dd29f58942690e096ed1ba88741d470"
+    },
+    {
+      "class": "org.mapfish.print.servlet.MapPrinterServlet",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/print-lib-2.4.1.jar",
+        "sha256": "d84476036a603eb283b745acb6b3c80f57ca13f3fdc0eb844a68759fc1e28fed",
+        "bytes": 432203
+      },
+      "class_sha256": "acbdc7a46b8ddca9b25071c5c38e1d4afff44a886f3b319004219b46b241fa87"
+    },
+    {
+      "class": "org.mapfish.print.config.layout.ImageBlock",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/print-lib-2.4.1.jar",
+        "sha256": "d84476036a603eb283b745acb6b3c80f57ca13f3fdc0eb844a68759fc1e28fed",
+        "bytes": 432203
+      },
+      "class_sha256": "eabfd80b278d5b0a578955ec11722797fa936d1a9a473d31cc539ef2f59f8b48"
+    },
+    {
+      "class": "org.mapfish.print.output.AbstractOutputFormat",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/print-lib-2.4.1.jar",
+        "sha256": "d84476036a603eb283b745acb6b3c80f57ca13f3fdc0eb844a68759fc1e28fed",
+        "bytes": 432203
+      },
+      "class_sha256": "f0aa19e22b865aa3be8eb260ddfd704d53fd0b1ecf1ae456aa70e2f5ea09089f"
+    },
+    {
+      "class": "org.mapfish.print.map.renderers.PDFTileRenderer",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/print-lib-2.4.1.jar",
+        "sha256": "d84476036a603eb283b745acb6b3c80f57ca13f3fdc0eb844a68759fc1e28fed",
+        "bytes": 432203
+      },
+      "class_sha256": "4aa9b35195e327d94a6846a63a5628ca128bc4a8f6002fb1e0ffbdade74d2282"
+    },
+    {
+      "class": "com.sun.media.imageioimpl.plugins.tiff.TIFFImageReader",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/jai_imageio-1.1.jar",
+        "sha256": "a7084cfbb419bd158464638454939d25e1fef1a990ee00bf6145b28956218007",
+        "bytes": 475970
+      },
+      "class_sha256": "bc827fedcd232287ed99bc34e49cb3f1dd412d99f2cf59af045800b31e03b5a3"
+    },
+    {
+      "class": "com.sun.media.imageioimpl.plugins.tiff.TIFFImageWriter",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/jai_imageio-1.1.jar",
+        "sha256": "a7084cfbb419bd158464638454939d25e1fef1a990ee00bf6145b28956218007",
+        "bytes": 475970
+      },
+      "class_sha256": "72b92d0411a56b150e6311b4e1b16b1f1cc8d5f9e33e2bb06e29b9b53f70be4f"
+    },
+    {
+      "class": "com.sun.media.imageioimpl.plugins.pnm.PNMImageReader",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/jai_imageio-1.1.jar",
+        "sha256": "a7084cfbb419bd158464638454939d25e1fef1a990ee00bf6145b28956218007",
+        "bytes": 475970
+      },
+      "class_sha256": "5db4a317fe5c36d89cea70273c9a7821e8728a7ac348d4f50b1568f3d02dc42c"
+    },
+    {
+      "class": "com.sun.media.imageioimpl.plugins.bmp.BMPImageReader",
+      "jar": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/libs/jai_imageio-1.1.jar",
+        "sha256": "a7084cfbb419bd158464638454939d25e1fef1a990ee00bf6145b28956218007",
+        "bytes": 475970
+      },
+      "class_sha256": "ab7002c6c7088fda602b29e7a219e3a3b807c81080e5cbf616e5fc4e9e8d273d"
+    }
+  ],
+  "stages": [
+    {
+      "name": "compile-witnesses",
+      "exit_code": 0,
+      "network_verified": true,
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/compile-witnesses-network.json",
+        "sha256": "9f257ce95637d45521246d4131aa0d03f6f73bfec52b3c0cd219396cf6d2102a",
+        "bytes": 51860
+      },
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/compile-witnesses.log",
+        "sha256": "e3aba4ed1814b5c092372042fc026922e2227217cdc638a74b8ad661228e29e3",
+        "bytes": 999
+      }
+    },
+    {
+      "name": "production-class-origins",
+      "exit_code": 0,
+      "network_verified": true,
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/production-class-origins-network.json",
+        "sha256": "182210936f5def956b2e319396e53c095d108778c871da699ccf494d2a661497",
+        "bytes": 55245
+      },
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/production-class-origins.log",
+        "sha256": "bba5c067664ec4798139c59b13b37691c423ab5d0d2512c3c2eb391fb230e446",
+        "bytes": 3667
+      }
+    },
+    {
+      "name": "candidate-tiff-jpeg2000",
+      "exit_code": 0,
+      "network_verified": true,
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/candidate-tiff-jpeg2000-network.json",
+        "sha256": "3a027ca97a77171e626da8d96145c25925e23b9a737c35db3fae8615724d4888",
+        "bytes": 51741
+      },
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/candidate-tiff-jpeg2000.log",
+        "sha256": "befdede978279d7ee3881b6cc034074262a75220a51f37b23b01d5a7508254f9",
+        "bytes": 936
+      }
+    },
+    {
+      "name": "positive-codecs",
+      "exit_code": 0,
+      "network_verified": true,
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/positive-codecs-network.json",
+        "sha256": "064e50aab53aa6255acf09987bf4bbfffbd3d7fbf3b4289ec1057d737e111a1c",
+        "bytes": 51742
+      },
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/positive-codecs.log",
+        "sha256": "9597d2161ed162e94d76340adb71537e4205e79fcc9049bdb383eea2b1a801bc",
+        "bytes": 11070
+      }
+    },
+    {
+      "name": "positive-print",
+      "exit_code": 0,
+      "network_verified": true,
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/positive-print-network.json",
+        "sha256": "bae2a462ffb0d28ae9dc221c936e4cce78740176ec560c06bf287647c502043c",
+        "bytes": 51749
+      },
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/positive-print.log",
+        "sha256": "0026f7c1be3d637befa33181e4d4f40cbbf3ab25261dfbb3c5cc2802e7dc70fa",
+        "bytes": 630
+      }
+    },
+    {
+      "name": "negative-jpeg2000",
+      "exit_code": 0,
+      "network_verified": true,
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/negative-jpeg2000-network.json",
+        "sha256": "0a9ce54facfdd00607e8d72f0e85e1ff5699fa0dfb965ccf6c780c63cfda4c06",
+        "bytes": 51882
+      },
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/negative-jpeg2000.log",
+        "sha256": "65809ed66eb53e1652fce4bb0ab58c81ebad78aac906cd7313a3cda96fc0fe3b",
+        "bytes": 6060
+      }
+    }
+  ],
+  "old_provider_negative_control": "rejected known parent JJ2000 classes/providers",
+  "actual_results": [
+    "ordinaryPNG alpha and exactTIFF/GeoTIFF pixels+georeferencing retained; ordinaryJPEG within declared error tolerance",
+    "both legacy JAI and imageio-ext TIFF paths retained; CCITT RLE/T.4/T.6 exact97x81pixels",
+    "actual MapFishPDF/PNG/TIFF each595x842 with18620known colored pixels; selected headlessMarlin witnessed",
+    "44intentional JP2/rawJ2K/PDF-JPX/output alias refusals plus absent codec/provider checks",
+    "short/truncated/malformed and misleading-extension content refused; ordinary operations recover",
+    "real servlet error method maps unsupported415 and bounded-image limit413 with fixed bodies",
+    "all six subprocess stages exited0 under verified AF_INET+AF_INET6denial; no task-owned service started"
+  ],
+  "scope_limits": [
+    "Marlin inherited 46/48 and Java7 LTW limitations are preserved historical findings; not rerun here.",
+    "JPEG2000-positive cases intentionally deselected for this profile, not counted as passing.",
+    "PostGIS mosaic/live service/frontend restart are separate exact-WAR runtime acceptance.",
+    "Real servlet transport, PostGIS mosaic, service import, authorization, cache/restart and browser checks are separate integrator runtime evidence.",
+    "TIFF JPEG2000compression34712/33003/33005remain pre-existing unsupported in parent/successor; their rejection is not a lost ordinary TIFF pass.",
+    "New URL/file/PDF loaders bound buffering; inherited PDFUtils remote acquisition buffers before byte-array validation. Per-read timeouts plus elapsed checks are not a strict total wall-clock deadline."
+  ],
+  "previous_successful_war_index": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/plan/verification/json-jpeg2000-remediation/imaging-final-war-aggregate03.json",
+    "sha256": "d1fddd74aae2506b01e6f21b0ecbc6b9c7bbf14f497a8bcfcc10410fc50087aa",
+    "bytes": 12814
+  },
+  "combined_http_evidence": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/plan/verification/json-jpeg2000-remediation/imaging-http-pdf-fixtures.json",
+    "sha256": "b01169bfbb433a290b0f1a566fa1b23120456c9d421751dfa81ac1987ca4e61d",
+    "bytes": 9728
+  }
+}

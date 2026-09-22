@@ -1,0 +1,23 @@
+{
+  "replacements": [
+    {
+      "maven_path": "javax/media/jai_imageio/1.1/jai_imageio-1.1.jar",
+      "original_sha256": "2b40befa9340e15759c68867df08905c6c6400df379ec7802120386325a565d3",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/build-01/ambisgis-jai-imageio-1.1-nojpeg2000-temurin17-1.jar",
+      "sha256": "a7084cfbb419bd158464638454939d25e1fef1a990ee00bf6145b28956218007",
+      "variant_id": "ambisgis-jai-imageio-1.1-nojpeg2000-temurin17-1",
+      "source_evidence": [
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/build-01/result.json",
+          "sha256": "d04dae52cc943082b256e4c3b34cd4b46d956db3fca5345c65348908db649391",
+          "bytes": 339955
+        },
+        {
+          "path": "/home/revelberry/Projects/AmbisGIS/source-archives/java-gmt-remediation/imaging/f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+          "sha256": "f7dac9b2350337503a7fb56636b927700247c6111f3a254ac223f510e1bffb68",
+          "bytes": 10035769
+        }
+      ]
+    }
+  ]
+}

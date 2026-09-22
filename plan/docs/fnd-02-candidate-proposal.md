@@ -1,80 +1,83 @@
-# FND-02 candidate proposal — Java/GMT revision 3
+# FND-02 candidate proposal — independent JSON / NO-JPEG2000 revision 4
 
-**Inventory validity, component adoption and distribution are separate gates.**
+**The two remaining variant adoption blockers are remediated; FND-02 remains In progress pending explicit owner acceptance.**
 The [active manifest](../candidates/fnd-02-candidate.json) selects
-`fnd-02-java-gmt-proposal-3`, candidate revision 3/schema 1. FND-02 remains
-**In progress** with the same [four criteria and eight pass conditions](fnd-02-completion.md).
-All 58 finding IDs and all eleven source-owned core revisions remain preserved.
+`fnd-02-json-nojpeg2000-proposal-4`, candidate revision 4/schema 1.
+All eleven owned roots, 58 finding IDs, 56 unaffected findings and the original
+[four criteria/eight general pass conditions](fnd-02-completion.md) are preserved.
+Inventory validity, owner adoption and distribution remain separate gates.
 
-The exact [parent revision 2](../candidates/fnd-02-candidate-parent-2.json) retains
-SHA256 `3c59d99834b53f8778143db70f754272bce9920ca05071586d4f3629cdd625a0`;
-[baseline revision 1](../candidates/fnd-02-candidate-baseline-1.json) retains
-`18d80d6e7520e3a16db023bbff87cd2dc20a33ba921bd4f26e49a67d71a0aace`.
-Owner-merged #66/main `6b2e2fd7edc91746748d916d34af01f0a681e342` supplies the
-parent selection. The [current authorization](../verification/java-gmt-remediation/authorization.json)
-explicitly selects these new implementation courses; the merge does not.
+The [unchanged parent revision 3](../candidates/fnd-02-candidate-parent-3.json),
+SHA256 `8083a10deee529363e15925941c28e5a1e1f3030716f0cac7154c39466efbb90`,
+comes from reviewed/merged #67, main `8f66b1e2a421d93e0c8d9714df76ad2dd62269a3`.
+Its source, WAR and failed receipts remain preserved. The
+[owner instruction](../verification/json-jpeg2000-remediation/owner-instruction.txt)
+separately authorizes this implementation and supersedes only mandatory JPEG2000
+preservation. It does not adopt or authorize distribution of the successor.
 
-## Selected delta
+## Exact selected change
 
-One final aggregate-02 WAR, SHA256
-`e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044`, packages
-five source-built components (six JARs) and an explicit NO-ORACLE/headless Temurin17
-profile. Original archives, mismatched predecessor sources, rejected builds and
-old WARs remain custody evidence. Content-pinned local mappings and embedded
-variant names distinguish modified outputs from upstream releases. Importer,
-printing, PostGIS/mosaics, GeoFence/PostgreSQL, strict GeoNode verification, authkey,
-stateless bearer/redaction and finite cache controls remain selected.
+Final WAR SHA256: `90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1`.
+An independently authored, bounded net.sf.json API replaces the entire old
+json-lib production layer. It uses unchanged retained Jackson core 2.21.0;
+exact shaded FastDoubleParser 2.0.1 correspondence and supplemental MIT/BSL/BSD
+notices are retained. This is engineering provenance, not a formal legal
+clean-room claim or a grant for excluded originals.
 
-QGIS selection-01 derives from verified parent selection-03 and omits only the
-additional `gmt/GMT_dem1.svg` alias with necessary catalogue corrections.
-Cumulative 1,130omissions,265 unchanged ColorBrewer palettes, unchanged compiled
-binaries and new actual desktop/server checks are [recorded](java-gmt-qgis-handoff.md).
-Oracle datastores/imports/mosaic indexes and Marlin OpenGL are explicitly unsupported.
-No Oracle account/database is needed or authorized.
+The Java/server profile is **NO-ORACLE / NO-JPEG2000 / headless Temurin17**.
+Source/SPI exclusion removes the disputed JJ2000 implementation and dependent
+JPEG2000 providers while preserving 132 ordinary ImageIO source files and 323
+classes byte-for-byte against the preceding source-built core. Native OpenJPEG
+and a Java wrapper are not introduced. [The dated choice and scope](jpeg2000-exclusion-handoff.md)
+compare optional capability loss with native codec security, wrapper, ABI and
+maintenance costs, including the official maintenance warning.
 
-## Findings and acceptance
+Affected routes explicitly reject JP2/raw J2K, JPEG2000 output and JPX-compressed
+PDF input. Ordinary JPEG/PNG/TIFF/GeoTIFF, actual PDF/image printing, PostGIS
+vector/mosaic, WMS/WFS, identity, cache and browser restart checks pass.
+Seven service profiles remain selected: importer, oauth2-geonode,
+geofence-server, geofence-server-postgres, printing, postgis and authkey.
+Malformed importer JSON returns a controlled 400; six actual converters preserve
+valid recovery, including their existing transform-chain reader contract.
 
-Five targeted adoption findings have demonstrated variant-only remediation:
-AspectJ, XMLPull, Marlin, selectedOracleplaceholder source, and QGIS SRC-02.
-Two remain blocked: **json-lib's missing JSON.org-derived grant chain** and
-**JAI ImageIO's separate JJ2000 GPL combination terms**. Complete source and successful
-runtime do not resolve invalid or unverified rights. Exact closing conditions,
-attempts and capability-preserving alternatives appear in the [generated register](fnd-02-owner-decisions.md)
-and [handoff](java-gmt-remediation-handoff.md). The remaining 51 findings are unchanged.
+QGIS/GDAL/notebook inputs are unchanged. QGIS uses its separate spatial-04 GDAL
+prefix and retains Exiv2 JP2 metadata support; this is not project-wide JPEG2000
+removal. Frontend replay-02 and the QGIS palette selection are unchanged.
 
-All retained copyright/notices, IFC/ColorBrewer obligations, build-only/later-gate
-source gaps and host/bootstrap limits remain. The five inherited frontend lint
-errors remain. NativeJSON two BeanUtils expectations and Marlin two of 48 degenerate
-path cases fail identically on old/new implementations; Java7-target LTW is likewise
-unsupported while legacy Java5-target weaving and real Spring proxy behavior pass.
-No full cartographic/provider/API parity is advertised.
+## Findings, evidence and review
 
-## Evidence and verification
+The [generated register](fnd-02-owner-decisions.md) records zero variant adoption
+blockers and retains distribution/source/notice obligations. JSON's closing
+condition is unchanged. JAI's condition records the owner-authorized tested
+removal alternative and preserves the earlier mandatory-JPEG2000 condition in
+history. No rights to original JSON-derived/JJ2000 code are inferred.
 
-Ten profiles and seven combinations remain. Changed Java consumers and selected QGIS
-stage receive fresh attributable tests. Database/Jupyter native results and
-frontend replay-02/IFC compilation/native results carry forward with integrity
-checks. Whole historical Java/QGIS suites are not rerun or assigned to changed bytes.
-Full WAR/library/class/native/notice inventories and exact replacement origins
-are checked; packaging with skipped tests stays packaging evidence only.
+[The compact evidence index](../verification/json-jpeg2000-remediation/evidence.json)
+and [seven-combination matrix](fnd-02-combination-smoke.md) distinguish fresh
+exact-WAR execution from integrity-only reuse. Packaging skips test execution;
+fresh native/contracts, real database/authorization/printing/cache/browser checks
+supply affected acceptance. Unchanged database, notebook, QGIS and frontend
+compilation/native/IFC results remain historical execution.
 
-Use the supported commands in the [engineering handoff](java-gmt-remediation-handoff.md).
-The unchanged validator verifies source/root identities, schema, paths, hashes,
-JSONbindings, archive members and complete selected trees. Integrity/report exit0
-means inventoryvalidity; eligibility exit2 records ungranted adoption/distribution.
-No separate validator or weakened gate is introduced.
+Historical JSON 357/359 BeanUtils expectations, Marlin 46/48, Java7-target LTW,
+six native MapFish skips and five frontend lint failures remain visible. No
+unsafe class introspection, -noverify or rendering-tolerance change is used.
+Transient ZIP preflight limits are 1 GiB compressed/10,000 entries; inherited
+multipart buffering is not comprehensively hardened. New MapFish loaders and
+byte-array validation apply 64 MiB limits; this is not a blanket bound on
+inherited HTTP buffering. Native remote mosaic harvesting and TIFF-JPEG2000
+variants retain their documented pre-existing limitations.
 
-## Maintenance binding and finite next step
+## Final decision
 
-F02-07 remains bound to chapter11§§6–7/chapter08: owned revisions and retained
-inputs are authoritative; later imports/backports/independent repairs need AmbisGIS
-review, affected tests and a manifest change. Donor releases/disclosures are
-advisory. No automatic synchronization or unsupported indefinite freeze.
-This is documentary preparation, not an approving owner decision.
+The [criterion report and maintenance binding](fnd-02-json-nojpeg2000-acceptance.md)
+complete F02-06's decision-ready summary, bind F02-07 to the existing chapter 11/08
+rule, and present F02-08's four original criteria in this same PR. Owner review
+must expressly cover the exact candidate, capability limits and maintenance rule.
+Merging a checkpoint alone does not accept the whole task. FND-03/05/07/08,
+OWN-02, License/Brand, security, signing and deployment retain their later scope;
+full product implementation is not a new FND-02 acceptance condition.
 
-Review the bounded checkpoint and remaining blockers. The smallest next coherent
-action is source/terms repair for JSON-derived code and JPEG2000, preserving current
-contracts/formats and repeating affected aggregatechecks. F02-08 criterionreview
-and full FND-02 acceptance stay pending. FND-03/05/07/08, OWN-02, License/Brand,
-security, signing and deployment retain their own gates. No PR merge, adoption,
-distribution, release, deployment or upstream contact is authorized here.
+[The engineering handoff](json-jpeg2000-remediation-handoff.md) gives exact inputs,
+commands, failures, cleanup and review limits. No merge, adoption, distribution,
+release or production change is performed.

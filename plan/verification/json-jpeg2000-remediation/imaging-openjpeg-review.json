@@ -1,0 +1,121 @@
+{
+  "review_date": "2026-09-22",
+  "decision": "NO-JPEG2000 Java/server profile; OpenJPEG not selected",
+  "reviewed_release": "v2.5.4",
+  "release_published_at": "2025-09-20T17:51:37Z",
+  "release_commit": "6c4a29b00211eb0430fa0e5e890f1ce5c80f409f",
+  "maintenance_notice": "Official README marks repository unmaintained; maintainer opened issue1655 July7 2026. Occasional commits do not establish a regular response commitment.",
+  "security": "GitHub reports no SECURITY.md or published advisories; this does not establish safety. Open issues1652(decoder),1648(encoder),1643(tile geometry) contain relevant reported defects needing independent triage; no exploit/fix reproduction is claimed here.",
+  "terms": "Reviewed v2.5.4 BSD-2-Clause license is positive source terms evidence. A Java wrapper and any native build dependencies require their own source/terms checks; no wrapper was adopted.",
+  "evidence": [
+    {
+      "name": "readme",
+      "url": "https://raw.githubusercontent.com/uclouvain/openjpeg/master/README.md",
+      "final_url": "https://raw.githubusercontent.com/uclouvain/openjpeg/master/README.md",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:16:23.163751+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/readme.txt",
+      "sha256": "91d10246da400d30e063381fc889104051a856fae2fecb1ab6930f0eab2d05fc",
+      "bytes": 5650
+    },
+    {
+      "name": "news",
+      "url": "https://raw.githubusercontent.com/uclouvain/openjpeg/master/NEWS.md",
+      "final_url": "https://raw.githubusercontent.com/uclouvain/openjpeg/master/NEWS.md",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:16:23.380646+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/news.txt",
+      "sha256": "35210e5e14fce588df17ccc2f67f79e7262d918843e657f0f8af892be1f278e7",
+      "bytes": 9686
+    },
+    {
+      "name": "license",
+      "url": "https://raw.githubusercontent.com/uclouvain/openjpeg/v2.5.4/LICENSE",
+      "final_url": "https://raw.githubusercontent.com/uclouvain/openjpeg/v2.5.4/LICENSE",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:16:23.593778+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/license.txt",
+      "sha256": "a6af136f3e15038a666b61f376612a07d9a4e48cb7c01adbf3e33b3f14ab49b6",
+      "bytes": 2112
+    },
+    {
+      "name": "maintenance-issue",
+      "url": "https://api.github.com/repos/uclouvain/openjpeg/issues/1655",
+      "final_url": "https://api.github.com/repos/uclouvain/openjpeg/issues/1655",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:16:23.815982+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/maintenance-issue.txt",
+      "sha256": "bd79eb45e9cb87411d21a3bc7003e04877a4b2d3c0cb6efd8d8c3eaaf202ae08",
+      "bytes": 2380
+    },
+    {
+      "name": "release",
+      "url": "https://api.github.com/repos/uclouvain/openjpeg/releases/latest",
+      "final_url": "https://api.github.com/repos/uclouvain/openjpeg/releases/latest",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:16:24.055252+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/release.txt",
+      "sha256": "12c13c15f1c2723e17ed9890060fe4cd4891a00e7bc40af1ed2c1b66d54f9b3d",
+      "bytes": 10613
+    },
+    {
+      "name": "release-tag",
+      "url": "https://api.github.com/repos/uclouvain/openjpeg/git/ref/tags/v2.5.4",
+      "final_url": "https://api.github.com/repos/uclouvain/openjpeg/git/ref/tags/v2.5.4",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:16:24.262000+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/release-tag.txt",
+      "sha256": "adcb5d17e9d6d3bdbfef30d5d59f93f82a5bdfa97996ef1ff632bad0de3cb684",
+      "bytes": 339
+    },
+    {
+      "name": "core-decoder-issue",
+      "url": "https://api.github.com/repos/uclouvain/openjpeg/issues/1652",
+      "final_url": "https://api.github.com/repos/uclouvain/openjpeg/issues/1652",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:16:24.490999+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/core-decoder-issue.txt",
+      "sha256": "522486c3cc9d427dfb1f1573bf9cde6d677ab20267675634d44ebc3aa50130ef",
+      "bytes": 3700
+    },
+    {
+      "name": "core-encoder-issue",
+      "url": "https://api.github.com/repos/uclouvain/openjpeg/issues/1648",
+      "final_url": "https://api.github.com/repos/uclouvain/openjpeg/issues/1648",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:16:24.732785+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/core-encoder-issue.txt",
+      "sha256": "9f6eacee6a38a21c3385230d6820802bf6cb2095aa0cad307c18fd4c68a67919",
+      "bytes": 8566
+    },
+    {
+      "name": "core-geometry-issue",
+      "url": "https://api.github.com/repos/uclouvain/openjpeg/issues/1643",
+      "final_url": "https://api.github.com/repos/uclouvain/openjpeg/issues/1643",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:16:24.974091+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/core-geometry-issue.txt",
+      "sha256": "e0463d07f379c2d89e596b371efa396bc616578f6faf27f753b8aa77f478fdf0",
+      "bytes": 7460
+    },
+    {
+      "name": "security",
+      "url": "https://github.com/uclouvain/openjpeg/security",
+      "final_url": "https://github.com/uclouvain/openjpeg/security",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:16:25.497786+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/security.txt",
+      "sha256": "5f80523a24b7d7af48e307455c8aa23e963ec6bc1640538d0736f74fa6771049",
+      "bytes": 187913
+    },
+    {
+      "name": "release-tag-object",
+      "url": "https://api.github.com/repos/uclouvain/openjpeg/git/tags/bbbe3a092256511ec9056a7ad204f9db42a87264",
+      "http_status": 200,
+      "observed_at_utc": "2026-09-22T20:24:12.407071+00:00",
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/openjpeg-review-01/release-tag-object.txt",
+      "sha256": "c024ee1361cff8d5620230477cfdca40986b20f7b02f15117a7088e04d3b7bfa",
+      "bytes": 1858
+    }
+  ]
+}

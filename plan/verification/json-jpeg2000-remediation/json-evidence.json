@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "task": "FND-02/F02-06",
+  "finding": "F02-JAVA-json-lib",
+  "status": "focused/source-compile/final-WAR04 component and database checks passed; owner acceptance and broader matrix remain separately recorded",
+  "scope_index": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/scope-01.json",
+    "sha256": "dc7452e1d1895747f6ef32347358b3b5947880be68943e6a30422705dc7177ef",
+    "bytes": 95236
+  },
+  "build": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-09/result.json",
+    "sha256": "a7ca3dea39c796fd81bede912ae693e754d0e5db0353bf1b681d6db43f2e7aa0",
+    "bytes": 2835
+  },
+  "focused_tests": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-14/result.json",
+    "sha256": "79c9d77930cbe1467792bae1e443a2d3ea604482cb3bf5b0e3d29d4567d1cf28",
+    "bytes": 629297
+  },
+  "replacements": [
+    {
+      "variant_id": "json-compat-1-ambisgis-jackson-2.21.0",
+      "new_source_output": true,
+      "not_upstream_release": true,
+      "original_maven_path": "net/sf/json-lib/json-lib/2.4.2-geoserver/json-lib-2.4.2-geoserver.jar",
+      "original_sha256": "c1de06da06183458cd8e4975e3b07e1d1d82a9f6e0a4438ed3d5dd8040983d2d",
+      "source_manifest_sha256": "21dc3fc1e23c050f36a8f0a92bd5d438e8e0dd4cbe93251c0bc1cbca5127559c",
+      "scope": "Selected GeoServer profile compatibility, not full json-lib API/data-binding compatibility",
+      "replacement_source_files": 11,
+      "replacement_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-09/artifacts/json-compat-1-ambisgis-jackson-2.21.0.jar",
+      "replacement_sha256": "de50a9896c9576c905c0dddfac562f431edebbb12ba0d30f2a8819a88e1f0744",
+      "source_manifest_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-09/source-manifest.json",
+      "artifact_members_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-09/json-compat-members.json"
+    }
+  ],
+  "historical_permission_evidence": {
+    "index": {
+      "path": "plan/verification/java-gmt-remediation/source-evidence.json",
+      "sha256": "a46444609bd3c19202ccd29ffd3c60ff37fe3728540f7dd13c4001e7a40e9cc1",
+      "bytes": 44077
+    },
+    "observation": "Retained original JSON source/POM Apache declarations and seven JSON.org attributions do not establish the historical derived grant. No new specific applicable historical relicensing evidence was found in retained handoff/recovery index. Modern JSON-java grants are not retroactively applied. Complete old layer is excluded, originals remain untouched.",
+    "prior_source_archive_sha256": "221c662bbafa7f722746c00f625ae7f30c06354be0d8eccfa0ca363c747bf14b"
+  },
+  "seven_selected_attributed_files": [
+    {
+      "path": "src/main/java/net/sf/json/JSONArray.java",
+      "sha256": "f7577828ef27a19be9c2a762b6d64481b17512469a46a062de57867af5cbef5e",
+      "json_org_attributed": true,
+      "selected_prior": true,
+      "disposition": "historical only; none incorporated into independent adapter"
+    },
+    {
+      "path": "src/main/java/net/sf/json/JSONException.java",
+      "sha256": "3127718dbc8a620f6caeebab4462de2a8bed5b5d9bf96f1a330506c51431b42f",
+      "json_org_attributed": true,
+      "selected_prior": true,
+      "disposition": "historical only; none incorporated into independent adapter"
+    },
+    {
+      "path": "src/main/java/net/sf/json/JSONNull.java",
+      "sha256": "24b5137136d3308d42196a3cb1c3458f9ef170efe16130595008afed7682b12d",
+      "json_org_attributed": true,
+      "selected_prior": true,
+      "disposition": "historical only; none incorporated into independent adapter"
+    },
+    {
+      "path": "src/main/java/net/sf/json/JSONObject.java",
+      "sha256": "9d8269427dd35f30c5668cad08a51f2cc6551447ce4ce13beda036850fe18df4",
+      "json_org_attributed": true,
+      "selected_prior": true,
+      "disposition": "historical only; none incorporated into independent adapter"
+    },
+    {
+      "path": "src/main/java/net/sf/json/util/JSONBuilder.java",
+      "sha256": "b3b61130b12c962f413ad3b293daa970d94e46a6acb7fd57935be9736940d190",
+      "json_org_attributed": true,
+      "selected_prior": true,
+      "disposition": "historical only; none incorporated into independent adapter"
+    },
+    {
+      "path": "src/main/java/net/sf/json/util/JSONStringer.java",
+      "sha256": "b11562afae57bac500fb89ae89ed23a7fc68a728f380d2b250fb94db60ed377e",
+      "json_org_attributed": true,
+      "selected_prior": true,
+      "disposition": "historical only; none incorporated into independent adapter"
+    },
+    {
+      "path": "src/main/java/net/sf/json/util/JSONTokener.java",
+      "sha256": "0d70816c9b3d6683c7b8dbf4882bd77f1c6f99a4eeac2fa4eb3304f2feda2638",
+      "json_org_attributed": true,
+      "selected_prior": true,
+      "disposition": "historical only; none incorporated into independent adapter"
+    }
+  ],
+  "additional_scope": "Two alternative JDK15 attributed implementations and uncredited JSONUtils helpers (quote, doubleToString, numberToString, testValidity, both valueToString) cannot be cleared by attribution absence. Every historical production file is excluded; no original production code is retained.",
+  "new_implementation": "11 independently authored sources, Jackson tokenization/generation, JDK maps/lists/introspection with class/ClassLoader/member controls, no polymorphic typing/class loading/evaluation. No formal clean-room or legal-clearance claim.",
+  "compatibility_scope": {
+    "production_consumers": 20,
+    "production_classes": 8,
+    "production_members": 48,
+    "selected_reactor_tests_scanned": true,
+    "whole_jsonlib_api_compatibility": false,
+    "retained_213": 213,
+    "fresh_common_assertions": 64,
+    "fresh_safety_assertions": 110,
+    "unchanged_native_jsonlib_selected_methods": 8,
+    "unchanged_native_geoserver_geojson_builder_tests": 41,
+    "full_historical_359_native_suite_reexecuted": false,
+    "live_loaded_origin_assertions": 11,
+    "fresh_production_sources_compiled": 25,
+    "fresh_test_sources_compiled": 69
+  },
+  "security_differences": [
+    "Ambiguous bare array text such as [1 2] is rejected instead of silently converted into a string; quoted equivalents remain supported. No selected production/test consumer uses this extension.",
+    "Parser/object conversion nesting is bounded by json.maxDepth (default100, positive cap1000), extending the prior writer-only bound.",
+    "Function-looking Java strings remain strings; old unquoted executable-function serialization API is not part of the selected profile.",
+    "Diagnostics retain position without reflecting supplied token/source or raw parser cause. Class metadata remains data; JavaBean class properties stay suppressed.",
+    "Only standard exact JDK numeric classes are emitted as numeric tokens; custom Number injection is rejected.",
+    "Normal floating tokens retain double precision rather than reproducing historical float-rounding; finite overflow/underflow use bounded BigDecimal fallback. Extreme exponent forms remain compact; out-of-range exponents are refused without raw token/cause."
+  ],
+  "historical_failures_preserved": [
+    "357/359 old json-lib native tests passed; two unsafe class introspection expectations failed equally baseline and prior variant, not re-enabled.",
+    "Marlin46/48 and Java7LTW unchanged; no fresh execution claimed here."
+  ],
+  "other_json_stacks": "Unchanged org.json/openjson/jettison/json-smart entries remain separate candidate findings/terms. This replaces old net.sf.json selected layer, not every JSON implementation in WAR.",
+  "input_lock": {
+    "path": "build-support/java/remediation-json/inputs.json",
+    "sha256": "6f4c09f1bda20ca417ea4c56aeea830f3efeb22ac314e9418919dfaef818c0b8",
+    "bytes": 7108
+  },
+  "jackson_numeric_parser_source_terms": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/json-jpeg2000-remediation/fastdoubleparser/source-correspondence.json",
+    "sha256": "12e9f98daecad334eabc4fb4a7fe132876db98cddd6a84595f27ce9d641e22e3",
+    "bytes": 58151
+  },
+  "selected_sources_terms": "Jackson core2.21.0 Apache source/POM/grant and separately retained exact FastDoubleParser2.0.1 MIT source with third-party MIT/BSL notices verified and pinned. Four supplemental verbatim grants/notices packaged; original Jackson binary unchanged. Binary rebuild/equivalence not claimed.",
+  "attempts": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-01/result.json",
+      "sha256": "31c5fad9b07f903b9e67057d872220349b63a487c2c49956de0478b788ca7e56",
+      "bytes": 2834
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-02/result.json",
+      "sha256": "2119eef7a588eb289ec2705e9a28caab8c643c30314bbe1642c5e4895e5bdb8d",
+      "bytes": 2835
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-03/result.json",
+      "sha256": "2127f2cc1895a5bc5284eb1543b39a7ec08dcb0098cec8b49810d3299b753a70",
+      "bytes": 2835
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-04/result.json",
+      "sha256": "055e43ef2e763636a7fdc9cad5fc31a90d6bcbfa4b2846134d94f9dc23e98aca",
+      "bytes": 2835
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-05/result.json",
+      "sha256": "85e1238e5dce20d3c0b5431447f691dcc947aee013f37665896ec847e299bd5e",
+      "bytes": 2835
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-06/result.json",
+      "sha256": "02d3fcca000291d8de540ff717ec002fb76e0c31dbf2a1f273954f46a70bb62f",
+      "bytes": 2835
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-07/result.json",
+      "sha256": "3ab6d753203d9d97bef5fe89c31eca9e0476bf8bdf80f1d505d43c1796296a45",
+      "bytes": 2835
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-08/result.json",
+      "sha256": "65d7d8b2df902aff48ffdb2054312ebcc6d26c95e007364707ce52b093243157",
+      "bytes": 2835
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/build-09/result.json",
+      "sha256": "a7ca3dea39c796fd81bede912ae693e754d0e5db0353bf1b681d6db43f2e7aa0",
+      "bytes": 2835
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-01/result.json",
+      "sha256": "f4a466d1ea272c9725055a989e00caf947412c02390930dfa4de83e2603b99e2",
+      "bytes": 134994
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-02/result.json",
+      "sha256": "aa2124b2c9253635842e76ad094e45fff7e508a4fda7554ee6dbb99af5d1054c",
+      "bytes": 222890
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-03/result.json",
+      "sha256": "66a5ec9ae65adf2e687b71da8be236dd2d7a01077a30f630b84a6139b7a5d2a0",
+      "bytes": 354745
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-04/result.json",
+      "sha256": "6d7b04a92d5bc19f79474f55305924d1920d4b4f5c77803b814ba1bf360b9645",
+      "bytes": 355039
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-05/result.json",
+      "sha256": "e6ffb04c3c9f225b313d980d9f5e92dc55da72ea937565109dc8f25d4f7f1622",
+      "bytes": 532091
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-06/result.json",
+      "sha256": "ab897db552ef83a639f08b8748645578c54afc78bb25cc9c6ad7a4288dd9f212",
+      "bytes": 532091
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-07/result.json",
+      "sha256": "7ea5818c7cd26f20a4d3f2ae183326ad3903ba99e9a7093bead5d954423a16fb",
+      "bytes": 584937
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-08/result.json",
+      "sha256": "402be8567fab4312ceb95a7782c8d699e8b374f3cb37e076cfb0ee5d87c8f669",
+      "bytes": 584937
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-09/result.json",
+      "sha256": "e4ce35b270b322bd86e2042292213e7b7cd709a847bdb7faf4d2f9e0d4d84be8",
+      "bytes": 584937
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-10/result.json",
+      "sha256": "bcf897a9260bd8c92c572026ec8667b80e41b6b3342d4fb7e132cb39d94adbca",
+      "bytes": 629297
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-11/result.json",
+      "sha256": "0a477faf6acae497c3b493980ccb63efbf8badf9c03991016d881911a0427255",
+      "bytes": 629297
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-12/result.json",
+      "sha256": "f8859b956d2439af412181498e0d02ead47afc3a08bfe01d07d90e61601305d1",
+      "bytes": 629297
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-13/result.json",
+      "sha256": "1eaf4bf9bf766a4777f403fbc7d00fc309bd9ada9563a937450333b93dce7586",
+      "bytes": 584377
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-14/result.json",
+      "sha256": "79c9d77930cbe1467792bae1e443a2d3ea604482cb3bf5b0e3d29d4567d1cf28",
+      "bytes": 629297
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/consumer-compile-01/result.json",
+      "sha256": "0f781dd488463af022e44ac2e411161383abd72f0968b7b490a9a120991f6af0",
+      "bytes": 354423
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/consumer-compile-02/result.json",
+      "sha256": "93144d8f8e108a23589f09b5fe2002da51bb3611c3dc1c1bdf43cd02d6965331",
+      "bytes": 357298
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/consumer-compile-03/result.json",
+      "sha256": "25fad9aa1151c18011e4e2f1380af9875558f801ee55957717d7c6e8f0dff827",
+      "bytes": 357298
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/consumer-compile-04/result.json",
+      "sha256": "b64e8d6168126a4fdb28e144855ee574e07c3304c7ac4e16e7deb20d62b291cc",
+      "bytes": 357298
+    }
+  ],
+  "selected_consumer_compile": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/consumer-compile-04/result.json",
+    "sha256": "b64e8d6168126a4fdb28e144855ee574e07c3304c7ac4e16e7deb20d62b291cc",
+    "bytes": 357298
+  },
+  "post_aggregate_corrections": {
+    "trigger": "Fresh aggregate-02 compile failed at ImportJSONReader.java:479 because adapter Map<Object,Object> prevented inherited raw Map assignment; receipt is preserved by integrator.",
+    "repair": "Raw public Map contract; typed internal storage unchanged; all94 actual selected production/test source consumers compile, former build06 detects specific regression.",
+    "additional_failure": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/probe-13/result.json",
+      "sha256": "1eaf4bf9bf766a4777f403fbc7d00fc309bd9ada9563a937450333b93dce7586",
+      "bytes": 584377
+    },
+    "additional_failure_classification": "Required newly added extreme exponent test found Jackson unchecked NumberFormatException with raw value; probe13 failed, build09 sanitizes it, final probe14 passed.",
+    "supplemental_compile_attempts": "consumer-compile01 baseline setup failed due old plugin Hamcrest shadow;02passed with1.3;03/04passed using exact selected GeoTools-parent Hamcrest3.0. No product tests are claimed executed by compile harness."
+  },
+  "exact_war_checks": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-compat/plan/verification/json-jpeg2000-remediation/json-war-evidence.json",
+    "sha256": "f7c6ac9e528c829036698360dd816e0a5f8d5ae734df663449a7c658d57ab974",
+    "bytes": 3700
+  },
+  "final_independent_integration_review": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-compat/plan/verification/json-jpeg2000-remediation/json-agent-integration-review.json",
+    "sha256": "05fe0c45fe66fa4d0608932f458f212bd9a04be5ec349e05b53402a60871ed09",
+    "bytes": 4314
+  }
+}

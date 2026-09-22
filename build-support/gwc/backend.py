@@ -69,6 +69,12 @@ def run_child(invocation):
         else:
             cmd = runtime_inputs.launcher_command(Path(runtime['java_home']), Path(runtime['servlet']), Path(runtime['launcher']),
                 Path(runtime['war']), output / 'geoserver-data', output / ('geoserver-' + label), port=urlsplit(config['geoserver_url']).port, java_profile=runtime.get('java_profile'))
+            import nojpeg2000_http
+            if nojpeg2000_http.enabled(runtime):
+                temporary = output / ('codec-java-tmp-' + label)
+                temporary.mkdir(mode=0o700)
+                cmd.insert(1, '-Djava.io.tmpdir=' + str(temporary))
+                result.setdefault('java_temporary_directories', []).append(str(temporary))
             cmd[1:1] = ['-Dambisgis.fixture.gwc=true','-Dgwc.context.suffix=gwc','-Dsun.net.client.defaultReadTimeout=1500', '-Dsun.net.client.defaultConnectTimeout=1500', '-DGEOWEBCACHE_CACHE_DIR=' + str(output / 'tile-cache')]
             if digest(runtime['war']) != runtime['war_sha256']: raise RuntimeError('WAR changed before launch')
             env = {'PATH': str(Path(runtime['java_home']) / 'bin') + ':/usr/bin:/bin', 'LANG': 'C.UTF-8'}
@@ -116,6 +122,9 @@ def run_child(invocation):
         configure(data, fixture, config)
         add_wms_style(data)
         configure_cache(data, output / 'tile-cache')
+        import nojpeg2000_http
+        if nojpeg2000_http.enabled(runtime):
+            result['nojpeg2000_fixture'] = nojpeg2000_http.prepare(data, output)
         security_configured = security_hashes(data)
         save(output/'security-configured.json',security_configured)
         save(output/'fixture-origins.json',fixture)
@@ -146,6 +155,8 @@ def run_child(invocation):
         if runtime.get('java_profile'):
             import remediation_mosaic
             result['mosaic'] = remediation_mosaic.exercise(invocation, config, tokens.access_token, output)
+        if nojpeg2000_http.enabled(runtime):
+            result['nojpeg2000_initial'] = nojpeg2000_http.probe(config, tokens.access_token, output, phase='initial', java_home=runtime['java_home'])
         result['initial'] = exercise(config['geoserver_url'], output, credentials, private, phase='initial')
         before_restart = cache_manifest(output / 'tile-cache')
         cache_config_before = fixture_hashes()
@@ -158,12 +169,17 @@ def run_child(invocation):
         if fixture_hashes() != cache_config_before: raise RuntimeError('cache configuration changed on restart')
         if runtime.get('java_profile'):
             result['mosaic_restart'] = remediation_mosaic.probe(config, tokens.access_token, output, phase='restart')
+        if nojpeg2000_http.enabled(runtime):
+            result['nojpeg2000_restart'] = nojpeg2000_http.probe(config, tokens.access_token, output, phase='restart', java_home=runtime['java_home'])
         result['restart'] = exercise(config['geoserver_url'], output, credentials, private, phase='restart')
         if security_hashes(data) != security_before: raise RuntimeError('security configuration changed on restart')
         result['security_configuration'] = security_before
         result['cache_after'] = cache_manifest(output / 'tile-cache')
         if fixture_hashes() != cache_config_before: raise RuntimeError('fixture data/config changed during final phase')
-        result['result_exit_code'] = 0
+        codec_failures = [name for name in ('nojpeg2000_initial', 'nojpeg2000_restart')
+                          if result.get(name, {}).get('result_exit_code', 0) != 0]
+        result['result_exit_code'] = 1 if codec_failures else 0
+        if codec_failures: result['failed_phases'] = codec_failures
     except Exception as error:
         result['error'] = {'type':type(error).__name__, 'message':str(error) if not any(v and v in str(error) for v in private) else 'redacted fixture error'}
     finally:
@@ -182,6 +198,24 @@ def run_child(invocation):
         try:
             if (output / 'geoserver-data').exists(): scrub_secrets(output / 'geoserver-data')
         except Exception as error: result['cleanup']['geoserver_secret_error'] = type(error).__name__; result['result_exit_code'] = 1
+        codec_temporary = []
+        for name in result.get('java_temporary_directories', []):
+            directory = Path(name)
+            if directory.parent != output or directory.is_symlink():
+                result['result_exit_code'] = 1
+                continue
+            remaining = sorted(p for p in directory.glob('AmbisgisCodec*') if p.is_file())
+            codec_temporary.append({'directory': str(directory), 'remaining_files': [p.name for p in remaining]})
+            if remaining:
+                result['result_exit_code'] = 1
+                # This fresh task-owned directory cannot contain unrelated prior inputs.
+                # Failed transient copies may contain fixture database credentials.
+                for path in remaining:
+                    try:
+                        if not path.is_symlink():path.write_bytes(b'SCRUBBED FAILED DISPOSABLE UPLOAD STAGING\n')
+                    except Exception as error:
+                        codec_temporary[-1].setdefault('scrub_errors', []).append(type(error).__name__)
+        result['cleanup']['codec_staging'] = codec_temporary
         result['diagnostic_secret_hits'] = sum(c.leaks for c in captures)
         result['diagnostic_security_failures'] = sum(c.security_failures for c in captures)
         if result['diagnostic_security_failures']: result['result_exit_code'] = 1

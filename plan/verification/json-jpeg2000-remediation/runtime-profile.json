@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "profile": "NO-ORACLE-NO-JPEG2000-headless-Temurin17",
+  "war_sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
+  "renderer_member": "WEB-INF/lib/marlin-0.9.4.8.jar",
+  "renderer_sha256": "14633f73fed7e30553927201309bcaf407a9f5462fce87692f196859f33d074a",
+  "json_member": "WEB-INF/lib/json-lib-2.4.2-geoserver.jar",
+  "json_sha256": "de50a9896c9576c905c0dddfac562f431edebbb12ba0d30f2a8819a88e1f0744",
+  "imageio_member": "WEB-INF/lib/jai_imageio-1.1.jar",
+  "imageio_sha256": "a7084cfbb419bd158464638454939d25e1fef1a990ee00bf6145b28956218007"
+}

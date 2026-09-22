@@ -1,0 +1,465 @@
+{
+  "status": "passed with six unchanged native skips",
+  "scope": "fresh affected source-native MapFish suite; not an exact aggregate WAR test",
+  "result": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-03/result.json",
+    "sha256": "5a0117209863176710c063c7e006849bb3fd7c3dd166923fd3bd2f59480f8133",
+    "bytes": 84996
+  },
+  "native_tests": {
+    "errors": 0,
+    "failures": 0,
+    "passed": 71,
+    "skipped": 6,
+    "skipped_cases": [
+      {
+        "detail": "",
+        "message": "",
+        "name": "testCreateTransformerBBoxDef_Geodetic",
+        "suite": "org.mapfish.print.config.layout.MapBlockTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testCreateTransformerCenterDef_Geodetic",
+        "suite": "org.mapfish.print.config.layout.MapBlockTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testRequireMatrixIdsOrTileOrigin",
+        "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testRequireMatrixIdsOrZoomOffset",
+        "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testRequireMatrixIdsOrFormatSuffix",
+        "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+      },
+      {
+        "detail": "",
+        "message": "",
+        "name": "testValidConfig",
+        "suite": "org.mapfish.print.map.readers.WMTSMapReaderTest"
+      }
+    ],
+    "suites": [
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.CustomXPathTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.CustomXPathTest.xml",
+        "sha256": "d77bac6b813124ba273edf04325cd116cf113d78a730b7ea0b07061d8cb3196a",
+        "skipped": 0,
+        "tests": 2
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.PDFUtilsTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.PDFUtilsTest.xml",
+        "sha256": "0b748c557081a744116063616d9902fc03c7500f3eb2c83ed93b5e7829fdfbbc",
+        "skipped": 0,
+        "tests": 6
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.ScalebarTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.ScalebarTest.xml",
+        "sha256": "a2669e801f38173f0fbce42417f4b8a6cc3aa36fdf13903b456a51be71ff023f",
+        "skipped": 0,
+        "tests": 1
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.TransformerTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.TransformerTest.xml",
+        "sha256": "c62d2f99dfb29062ec4879d1d0e6b3a68cc8772eddaf67fe3e4f7b371acc1f4e",
+        "skipped": 0,
+        "tests": 3
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.config.AddressHostMatcherTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.AddressHostMatcherTest.xml",
+        "sha256": "21702490234854c08f261a735dea8f0eda0f6b9e6c634255622ea4c17b7166dc",
+        "skipped": 0,
+        "tests": 5
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.config.ColorWrapperTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.ColorWrapperTest.xml",
+        "sha256": "f6155e2390acb97b0fc0ed2acd58a1bd6984031b21551989bf32624ab4c72c6d",
+        "skipped": 0,
+        "tests": 3
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.config.ConfigTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.ConfigTest.xml",
+        "sha256": "1f1eb8db17daa1c97d7328d13b83e8f94353ee9ceb9d3aba3121634cd10ba0cd",
+        "skipped": 0,
+        "tests": 4
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.config.DnsHostMatcherTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.DnsHostMatcherTest.xml",
+        "sha256": "7421e8bf652525aa527e5586d08fc245c616153826cd5286e2c9e220c3cfb930",
+        "skipped": 0,
+        "tests": 1
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.config.LocalHostMatcherTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.LocalHostMatcherTest.xml",
+        "sha256": "ab2c33d10b0d686be03b75f2718c465154ad60726401e7c9cf790d57b92de5aa",
+        "skipped": 0,
+        "tests": 1
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.config.layout.LegendsBlockTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.layout.LegendsBlockTest.xml",
+        "sha256": "53a7832b9cf5a9fb8114a6493ab39270eb75fd3ae3e875fb61a52bbf8abddba9",
+        "skipped": 0,
+        "tests": 1
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.config.layout.MapBlockTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.layout.MapBlockTest.xml",
+        "sha256": "e4fa05f9c76fd5f41ebcf900d98cc01b9a491eca8a877386974a62bc53b1bc1d",
+        "skipped": 2,
+        "tests": 5
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.config.layout.ValidationTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.config.layout.ValidationTest.xml",
+        "sha256": "a70f19e576c7335a51a780519a4cab33b97a36da0497811546e890fe275d93ab",
+        "skipped": 0,
+        "tests": 3
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.map.readers.HttpMapReaderTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.HttpMapReaderTest.xml",
+        "sha256": "3cf645a98fa1c41a5b967f3a63bdd61fa77b8750974f2fc1d9edbf6dddaf5ad0",
+        "skipped": 0,
+        "tests": 6
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.map.readers.MapReaderFactoryFinderTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.MapReaderFactoryFinderTest.xml",
+        "sha256": "096c5ddc9227f722ee88f7541d5098b2f8cf4760491841cf4ae948c995e36982",
+        "skipped": 0,
+        "tests": 1
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.map.readers.TMSMapReaderTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.TMSMapReaderTest.xml",
+        "sha256": "85ddd3da8b18c2170f2eb289f42ef29437463915c0860f11a6a0ccd2dbe6d39d",
+        "skipped": 0,
+        "tests": 6
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.map.readers.TileCacheLayerInfoTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.TileCacheLayerInfoTest.xml",
+        "sha256": "05f01d5639d532605d769898d7e5b1a8fd8f395391a967a7405ce110101206c9",
+        "skipped": 0,
+        "tests": 1
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.map.readers.WMSMapReaderTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.WMSMapReaderTest.xml",
+        "sha256": "27778df82237e4392d8196c08a2868145ae87dc61cf418fd1aa0f8257669aed6",
+        "skipped": 0,
+        "tests": 6
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.map.readers.WMSServiceInfoTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.WMSServiceInfoTest.xml",
+        "sha256": "d39c9a0e159e015e47528969839ff3d2dbe99babd033ae31860b80b506a19589",
+        "skipped": 0,
+        "tests": 4
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.map.readers.WMTSMapReaderTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.WMTSMapReaderTest.xml",
+        "sha256": "7d076dbf32761b7c91d5c8f28cb21ca5163a674f4a05008fa95b2d04153515e6",
+        "skipped": 4,
+        "tests": 6
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.map.readers.WMTSServiceInfoTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.WMTSServiceInfoTest.xml",
+        "sha256": "8a99f7f35876939a1ca3b1d171e3d61b20e13b3b665554969d0bdf8250d66950",
+        "skipped": 0,
+        "tests": 1
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.map.readers.XYZLayerTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.readers.XYZLayerTest.xml",
+        "sha256": "e6a4f759213d8bc231379148c234fc1cf9f058a9ab9a092866670214d074bf16",
+        "skipped": 0,
+        "tests": 3
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.map.renderers.vector.LabelRendererTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.map.renderers.vector.LabelRendererTest.xml",
+        "sha256": "1c7c91f9122895688c94297611b7dae28929e751faf364c0437d390a19c26325",
+        "skipped": 0,
+        "tests": 2
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.servlet.MapPrinterServletTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.servlet.MapPrinterServletTest.xml",
+        "sha256": "2445259df200e4a3c48870d1b228db650777934303c815cf0ad2eb2a0b1bf08a",
+        "skipped": 0,
+        "tests": 2
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "name": "org.mapfish.print.utils.DistanceUnitTest",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/target/surefire-reports/TEST-org.mapfish.print.utils.DistanceUnitTest.xml",
+        "sha256": "c8509612cc62913d9c04262141a563572c03f6891f958a5cf60bac1be6936800",
+        "skipped": 0,
+        "tests": 4
+      }
+    ],
+    "tests": 77
+  },
+  "source_profile": {
+    "changes": [
+      {
+        "after_sha256": "ea44a359ce08d11fc3ed3a1264e2ef5b16bfb81a7167a770442bb8ff02e113d2",
+        "before_sha256": "0f88cbe4981b5adec6256dcbbce5253846db5d72eeeff12fdd419a447d539a76",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/main/java/org/mapfish/print/PDFUtils.java"
+      },
+      {
+        "after_sha256": "3fad74b3daadfb7699b2d8f62545f7e934d11480a802503479f8933278fde448",
+        "before_sha256": "19027678b29bcba0f294f41dbe70d63606ba365e9c8391e388774b36f38d6a29",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/main/java/org/mapfish/print/config/layout/ImageBlock.java"
+      },
+      {
+        "after_sha256": "3e815e65ce4d58cfb317c7e51db0176e3f6b4ec729c3a8b7896cccd200eb97cd",
+        "before_sha256": "c826fc6c9d58bf021e67c7f51e7cc076276cf8a7ed4e2934f6913fb414743547",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/main/java/org/mapfish/print/MapPrinter.java"
+      },
+      {
+        "after_sha256": "35ea7d4892a2a97a463048a7137179551945768e6fa62f542917cf9cc1a53c8a",
+        "before_sha256": "06527fdc1fd1c51efd899804755458177d7e9eb012543690a1a98d3dd7853b2a",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/main/java/org/mapfish/print/servlet/MapPrinterServlet.java"
+      },
+      {
+        "after_sha256": "b91ab0153ec16129e66ed805b1cad0c4274f30ee81f0e94dbe2d887f7337af55",
+        "before_sha256": "b67fe50f996530a7c7de1c03a2f2a5efac1ae6d292e468e9a0099b1ad27ab015",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/main/java/org/mapfish/print/PDFCustomBlocks.java"
+      },
+      {
+        "after_sha256": "383ab91439cba09c65c1e690d1904228be2eaa20101e24d863dc90cf51980fa2",
+        "before_sha256": "48efcb7327a7b9f03ecf065e719213b6105ceb0c72e4cb8f5184b165634b8229",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/main/java/org/mapfish/print/output/AbstractOutputFormat.java"
+      },
+      {
+        "after_sha256": "f1ee739222175532cece0a74baa6791f718c9098d2f1dfc7fc425d39430f5470",
+        "before_sha256": "90a10e61590ec6aca8597043f37b2ab20d0d3672292fa80fd3ac641a24fdfab0",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/main/java/org/mapfish/print/map/renderers/PDFTileRenderer.java"
+      },
+      {
+        "after_sha256": "6229acb19a76f979771f53d1effea1d623b9049095a80c0a8f5ce7d65f61915b",
+        "before_sha256": null,
+        "origin": "new AmbisGIS Apache-2.0 source",
+        "path": "mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b/src/main/java/org/mapfish/print/Jpeg2000Policy.java"
+      }
+    ],
+    "policy_source": {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/Jpeg2000Policy.java",
+      "sha256": "6229acb19a76f979771f53d1effea1d623b9049095a80c0a8f5ce7d65f61915b"
+    },
+    "profile": "NO-JPEG2000",
+    "recipe": {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/profile.py",
+      "sha256": "503f0a172a867f5b6e78056bb93684c8b3046f1980dc347d6de12788e74a8206"
+    }
+  },
+  "toolchain": {
+    "destination": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain",
+    "directories": 103,
+    "distribution_roots": [
+      "apache-maven-3.9.16",
+      "jdk-17.0.20.1+1"
+    ],
+    "files": 342,
+    "symlinks": 208,
+    "verified": true
+  },
+  "network_compile_denial_verified": true,
+  "network_runtime_loopback_verified": {
+    "broker_counts": {
+      "bind": 44,
+      "connect": 33,
+      "denied": 88116,
+      "ioctl_only_datagram": 117,
+      "pidfd_copies": 215,
+      "released": 225,
+      "setsockopt": 92,
+      "socket": 225
+    },
+    "broker_sockets_closed": true,
+    "closed_inherited_fds": [],
+    "command": [
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain/apache-maven-3.9.16/bin/mvn",
+      "--batch-mode",
+      "--no-transfer-progress",
+      "-gs",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-03/work/empty-global-settings.xml",
+      "-s",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-03/settings.xml",
+      "-Dmaven.repo.local=/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-03/fresh-m2",
+      "-Dstyle.color=never",
+      "-Dgt.version=34.5",
+      "-Dgt-version=34.5",
+      "-Dmf.version=2.4.1",
+      "-Dspotless.apply.skip=true",
+      "-Dpom.fmt.skip=true",
+      "-Pimporter,oauth2-geonode,geofence-server,geofence-server-postgres,printing,postgis",
+      "-pl",
+      "org.mapfish.print:print-lib",
+      "-am",
+      "package",
+      "-Dspotless.check.skip=true",
+      "-Dmaven.test.failure.ignore=false",
+      "-Dallow.test.failure.ignore=false",
+      "-Dtest=%regex[org/mapfish/.*Test.class],!%regex[.*OnlineTest.class],!%regex[.*StressTest.class]",
+      "-Dsurefire.failIfNoSpecifiedTests=false",
+      "--offline"
+    ],
+    "command_exit_code": 0,
+    "datagram_packets_received": 0,
+    "datagram_sentinels_closed": true,
+    "duration_seconds": 17.093,
+    "limitations": [
+      "trusted test runner, not hostile-code/filesystem/process isolation",
+      "all existing loopback services remain reachable; use disposable fixture credentials only",
+      "TCP transport only; UDP descriptors support interface ioctls with all transmission/options disabled",
+      "requires Linux PIDFD_THREAD and parent pidfd_getfd; every duplicated descriptor is closed immediately"
+    ],
+    "mechanism": "seccomp notification + copied loopback bind/connect + SO_BINDTODEVICE lo",
+    "network_probes": {
+      "all_passed": true,
+      "exec_child_probes": 79,
+      "parent_probes": 79,
+      "schema_version": 1
+    },
+    "probe_receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-03/network-loopback.probes.json",
+      "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825"
+    },
+    "reaped_descendants": [],
+    "result_exit_code": 0,
+    "runner_sha256": "6f0757b16be7188f564ad070a4e17382d96a7b9ef1dac3ab34fbf897d18108fc",
+    "schema_version": 1,
+    "status": "completed",
+    "task_process_group_stopped": true
+  },
+  "http_fixture_finalization": {
+    "all_owned_servers_stopped": true,
+    "completed_responses": [
+      {
+        "count": 2,
+        "path": "/500",
+        "status": 500
+      },
+      {
+        "count": 1,
+        "path": "/capabilities",
+        "status": 200
+      },
+      {
+        "count": 1,
+        "path": "/e2egeoserver/gwc/service/wmts",
+        "status": 200
+      },
+      {
+        "count": 4,
+        "path": "/notImage",
+        "status": 200
+      },
+      {
+        "count": 5,
+        "path": "/testServer",
+        "status": 200
+      }
+    ],
+    "events_sha256": "4edf69d27ffc6d9d6d201b6232abf0503cf28a45068fbb6c83fc7b617d033c6f",
+    "hosts_unchanged": true,
+    "response_evidence": "headers/body written and response stream closed; client assertions remain authoritative",
+    "servers_ready": 15,
+    "servers_stopped": 16,
+    "target": "mapfish"
+  },
+  "failed_previous_attempt": {
+    "result": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-01/result.json",
+      "sha256": "bbdc7c355e24674a87799d7e521a1e2b5584e9bac61894bacb6a40046d913862",
+      "bytes": 55982
+    },
+    "reason": "Historical explicit xmlcodegen-emf pin was omitted; retained EMF range metadata resolution failed before tests or HTTP fixture startup. Fresh run02 selects that existing reviewed pin; no new source repair.",
+    "error": {
+      "message": "network-denied compilation failed; HTTP runtime was not started",
+      "type": "ValueError"
+    }
+  },
+  "launch_environment_note": "Initial launch referenced an unavailable historical temporary Python virtualenv and never started the runner; subsequent runs use /usr/bin/python3. No download or package installation.",
+  "previous_successful_dependency_run": {
+    "result": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/mapfish-native-02/result.json",
+      "sha256": "85855f4152013b8b854e6c3f3f87a1de940abcc030ccdb1371fff9f96fedf99b",
+      "bytes": 84752
+    },
+    "reason": "Native run02 passed71/6 with preceding JSON replacement. Run03 repeats the same native selection after the final JSONbuild09 replacement, without new MapFish production edits."
+  },
+  "final_json_sha256": "de50a9896c9576c905c0dddfac562f431edebbb12ba0d30f2a8819a88e1f0744",
+  "final_mapping_sha256": "194139a86bb3640d991b4c23bc55b02d66526127bdea6c3d6f025216d41f87f5"
+}

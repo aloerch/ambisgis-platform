@@ -1,0 +1,103 @@
+{
+  "reviewer": "root integrator",
+  "reviewed": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/compatibility.py",
+      "sha256": "9de24250a680f4c974d490ab42eb397764a3f061ec680909a403f98984cae3f6",
+      "bytes": 38082
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/aggregate_evidence.py",
+      "sha256": "46412b038f7bdbfd658100a257fb6f2fc4ce642aa787d8b8f8bdcc4bc9320291",
+      "bytes": 28930
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/runtime_profile.py",
+      "sha256": "0c4a852e5c56e9455d96a3fefee93a4efe61d3aa3bbdae23d7ea366a055f2ab2",
+      "bytes": 3085
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-source/war_probe.py",
+      "sha256": "153858ef819bd1674b7270aaed3a32802bff8091e4398ce06fa06107a3f46145",
+      "bytes": 7773
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-json/inventory.py",
+      "sha256": "f623defa725694acb671eca4af5475d29c3eff844eb74682adab49a9b619fa84",
+      "bytes": 6543
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-json/src/net/sf/json/JsonSupport.java",
+      "sha256": "caaf0b9c35b4e0d5152a7c1bfd266170861191aec0b81a35d0d74ca2dfd17138",
+      "bytes": 11503
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-json/src/net/sf/json/JSONObject.java",
+      "sha256": "b59ea1dc10fd5415ebbac95721336f9bd65d473c6a9f3833bed493332faeedb4",
+      "bytes": 5378
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/profile.py",
+      "sha256": "503f0a172a867f5b6e78056bb93684c8b3046f1980dc347d6de12788e74a8206",
+      "bytes": 14562
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000Policy.java",
+      "sha256": "bad0717ba28cd18aea28a4595f57a253787ed3d6eac57f4918df9083661e6356",
+      "bytes": 5809
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000Filter.java",
+      "sha256": "bed8cbf704bc6e0f968af55b46f8ca1d6a945f6372bcc65ad169ad4de72b5c7d",
+      "bytes": 7992
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/geoserver-repairs.json",
+      "sha256": "6457254f4ed23cfd979794ba08b1e753aa28d4b2bb060befbe35ac9a171de95c",
+      "bytes": 129489
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/ImportContextJsonWitness.java",
+      "sha256": "dd52464c0e524315168c585c5c0d7e3a11d78d05728b144ca9aafe2532684b6e",
+      "bytes": 8393
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/nojpeg2000_http.py",
+      "sha256": "f2f9479fd9fd10a843293a6a7e1506a20db80948f626353c66e195f40670a152",
+      "bytes": 24065
+    }
+  ],
+  "war": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-04/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
+    "bytes": 141264649
+  },
+  "independent_reviews": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/verification/json-jpeg2000-remediation/json-agent-integration-review.json",
+      "sha256": "05fe0c45fe66fa4d0608932f458f212bd9a04be5ec349e05b53402a60871ed09",
+      "bytes": 4314
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/verification/json-jpeg2000-remediation/imaging-integration-review.json",
+      "sha256": "26e857534d967f86108fb1ecfb776dba04c6502eb27eac9c413ac6d419f167fa",
+      "bytes": 11642
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/verification/json-jpeg2000-remediation/json-agent-imaging-review.json",
+      "sha256": "9f741a92d31131ee2bc6cb27d33e2429197822c094e16854b01f1360e4bcd1ed",
+      "bytes": 5996
+    }
+  ],
+  "material_findings_and_repairs": [
+    "RawMap importer compile and finite overflow/underflow numeric behavior repaired; original failed artifacts/receipts retained. Extreme numeric malformed diagnostics sanitized with no class introspection relaxation.",
+    "MapFish late PDF finalization/async exception/JPX input paths, Servlet3.1 API, transient archive resource limits and metadata-name false rejection repaired before final WAR. Six actual importer converters now map malformed parser exceptions to controlled400 without cause leakage; the inherited chain converter delegates to its existing transformChain reader. Real native before/after and HTTP recovery evidence retained.",
+    "Inventory attempts03/04 incorrectly asserted anonymous callback method markers on its outerclass; final05 checks both actual compiled outer and anonymous class hashes/markers. Verification-only correction; no production bytes changed."
+  ],
+  "result": "No further material implementation/source-accounting issue found in the bounded changed scope after affected final-WAR passes. Independent engineering review is not legal clearance; owner security/candidate/license review remains.",
+  "scope_limits": [
+    "Bounded JSON selected consumer surface, not the complete359-test legacydata-binding API.",
+    "1GiB compressed/10000member ZIP preflight; native Commons FileUpload may stage multipart bodies before new preflight. New MapFish loaders and byte-array validation apply64MiB; URL loaders use30s per-read and elapsed checks, not a strict wall-clockdeadline. Inherited HTTP branches may buffer before validation; no blanketbuffering hardening claim.",
+    "Native remote mosaic-harvest empty202 and TIFF JPEG2000 compression34712/33003/33005 are pre-existing unsupported paths, not newly accepted behavior."
+  ]
+}

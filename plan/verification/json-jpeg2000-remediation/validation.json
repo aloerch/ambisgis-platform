@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "scope": "Exact inventory/report and package checks; package tests are not GIS product tests",
+  "candidate": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/candidates/fnd-02-candidate.json",
+    "sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+    "bytes": 1082577
+  },
+  "code_and_contracts": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/validation-final-01/validated-code-and-contracts.json",
+    "sha256": "52d38889fa7cd37300f16e9f1a9672e573265f6cc14055cfae330c7145924cae",
+    "bytes": 67810
+  },
+  "validated_files": 287,
+  "actual_steps": [
+    {
+      "name": "inventory",
+      "command": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 16.525,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/validation-final-01/inventory.log",
+        "sha256": "66c26d424fa4ba3d4b450d2ae2cc8f583bc4200ac77165960c4107cd9944342c",
+        "bytes": 3632
+      }
+    },
+    {
+      "name": "eligibility",
+      "command": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--eligibility"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "seconds": 16.524,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/validation-final-01/eligibility.log",
+        "sha256": "66c26d424fa4ba3d4b450d2ae2cc8f583bc4200ac77165960c4107cd9944342c",
+        "bytes": 3632
+      }
+    },
+    {
+      "name": "report",
+      "command": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--report"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 16.526,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/validation-final-01/report.log",
+        "sha256": "28b3bbbe10cb6386b745c1a0c8533b3884c072c14a97745041a8c3619d39e8b7",
+        "bytes": 170748
+      }
+    },
+    {
+      "name": "package-tests",
+      "command": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 9.731,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/validation-final-01/package-tests.log",
+        "sha256": "55418518d22fc68b58bc8620eed4927ebb09e1b4c5a97fbc744ff55a02c18505",
+        "bytes": 35924
+      }
+    },
+    {
+      "name": "package-schemas",
+      "command": [
+        "/tmp/ambisgis-validation-venv/bin/python",
+        "-B",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.163,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/validation-final-01/package-schemas.log",
+        "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+        "bytes": 189
+      }
+    }
+  ],
+  "guard_checks": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/guards-02/result.json",
+    "sha256": "fc362daf80e23d41518aab69cb712c676a29a69ac70c69e91db815ceb0621d00",
+    "bytes": 2852
+  },
+  "all_expected_results": true,
+  "owner_acceptance": false,
+  "distribution_permission": false,
+  "preservation_and_cleanup": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/final-worktree-process-state.json",
+    "sha256": "a0d6b18f799b1a54da571d24788535e5473bcc141ad7c773d7021baab1813699",
+    "bytes": 20189
+  },
+  "actual_counts": {
+    "package_tests": 254,
+    "schemas": 4,
+    "java_guards": 385,
+    "gwc_guards": 59,
+    "frontend_guards": 39,
+    "geonode_guards": 112
+  },
+  "final_independent_manifest_reviews": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/verification/json-jpeg2000-remediation/json-final-manifest-review.json",
+      "sha256": "ab4eb182c0fef6aa103749da51adf8813adf7e2bcb5d771c6d1cd0bd87f038de",
+      "bytes": 1167
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/verification/json-jpeg2000-remediation/imaging-final-manifest-review.json",
+      "sha256": "9821dd7bbf06c907159ef1d5c434a89290e7bd29c72d0d479661e9670b5a9a3b",
+      "bytes": 2923
+    }
+  ]
+}

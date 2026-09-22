@@ -114,9 +114,14 @@ def inspect(build, output):
                       'resolution.py', 'resolution_inventory.py', 'native_reports.py', 'toolchain.py',
                       'oauth-redaction.json', 'oauth-principal.json', 'configured-auth-repairs.json',
                       'configured-auth-stateless.json', 'no_oracle.py', 'no-oracle-repairs.json', 'variant_inputs.py')
+        result = json.loads((build / 'result.json').read_text())
+        if result.get('no_jpeg2000_profile'):
+            tool_names += ('remediation-nojpeg2000/profile.py', 'remediation-nojpeg2000/geoserver_profile.py',
+                           'remediation-nojpeg2000/geoserver-repairs.json', 'remediation-json/inventory.py')
         report['tooling_manifest'] = {}
         for name in tool_names:
-            shutil.copyfile(Path(__file__).with_name(name), tooling / name)
+            (tooling / name).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(Path(__file__).resolve().parent / name, tooling / name)
             report['tooling_manifest'][name] = sha(tooling / name)
         if report['tooling_manifest']['aggregate_evidence.py'] != report['runner_sha256']:
             raise ValueError('aggregate evidence runner changed during snapshot')
@@ -221,6 +226,54 @@ def inspect(build, output):
             report['role_service_repair'] = role_repair
         elif role_repair is not None:
             raise ValueError('role-service repair receipt requires its packaged profile')
+        if result.get('no_jpeg2000_profile'):
+            imaging = result['no_jpeg2000_profile']
+            service = result.get('no_jpeg2000_geoserver')
+            if imaging.get('profile') != 'NO-JPEG2000' or not service or service.get('profile') != 'NO-JPEG2000':
+                raise ValueError('NO-JPEG2000 aggregate requires both imaging and service source guards')
+            for row in imaging['changes']:
+                final_source_outputs[row['path']] = row['after_sha256']
+            for row in service['repairs']:
+                final_source_outputs[row['path']] = row['after_sha256']
+            for row in service['additions']:
+                final_source_outputs[row['path']] = row['sha256']
+            guard_manifest = build / 'tooling/java/remediation-nojpeg2000/geoserver-repairs.json'
+            if sha(guard_manifest) != service['manifest_sha256']:
+                raise ValueError('NO-JPEG2000 source guard manifest changed')
+            mapfish = 'mapfish-print-v2-da1f37cfc0d7a235cb2c0ec5677010495d9f664b'
+            guards = [
+                ('org/mapfish/print/Jpeg2000Policy.class', 'print-lib-2.4.1.jar', mapfish, ['NO-JPEG2000', 'checkContent']),
+                ('org/mapfish/print/PDFUtils.class', 'print-lib-2.4.1.jar', mapfish, ['org/mapfish/print/Jpeg2000Policy']),
+                ('org/mapfish/print/Jpeg2000Policy$InputLimit.class', 'print-lib-2.4.1.jar', mapfish, []),
+                ('org/mapfish/print/Jpeg2000Policy$UnsupportedFormat.class', 'print-lib-2.4.1.jar', mapfish, []),
+                ('org/mapfish/print/PDFCustomBlocks.class', 'print-lib-2.4.1.jar', mapfish, ['requireSupportedImages']),
+                ('org/mapfish/print/output/AbstractOutputFormat.class', 'print-lib-2.4.1.jar', mapfish, ['requireSupportedImages']),
+                ('org/mapfish/print/map/renderers/PDFTileRenderer.class', 'print-lib-2.4.1.jar', mapfish, []),
+                ('org/mapfish/print/map/renderers/PDFTileRenderer$1.class', 'print-lib-2.4.1.jar', mapfish, ['checkPdf', 'readBounded']),
+                ('org/mapfish/print/config/layout/ImageBlock.class', 'print-lib-2.4.1.jar', mapfish, ['getPath']),
+                ('org/mapfish/print/MapPrinter.class', 'print-lib-2.4.1.jar', mapfish, ['checkOutput']),
+                ('org/mapfish/print/servlet/MapPrinterServlet.class', 'print-lib-2.4.1.jar', mapfish, ['isUnsupported']),
+                ('org/geoserver/filters/NoJpeg2000Policy.class', 'gs-main-2.28.5.jar', 'geoserver/src/main', ['NO-JPEG2000']),
+                ('org/geoserver/filters/NoJpeg2000Filter.class', 'gs-main-2.28.5.jar', 'geoserver/src/main', ['org/geoserver/filters/NoJpeg2000Policy']),
+                ('org/geoserver/rest/catalog/CoverageStoreFileValidator.class', 'gs-restconfig-2.28.5.jar', 'geoserver/src/restconfig', ['org/geoserver/filters/NoJpeg2000Policy']),
+                ('org/geoserver/importer/rest/ImportTaskController.class', 'gs-importer-rest-2.28.5.jar', 'geoserver/src/extension/importer/rest', ['org/geoserver/filters/NoJpeg2000Policy'])]
+            for converter in ('ImportContextJSONMessageConverter', 'ImportDataJSONMessageConverter',
+                              'ImportLayerJSONMessageConverter', 'ImportTaskJSONMessageConverter',
+                              'ImportTransformJSONMessageConverter', 'TransformChainJSONMessageConverter'):
+                markers = ['Malformed JSON import request.',
+                           'org/springframework/http/converter/HttpMessageNotReadableException']
+                if converter == 'TransformChainJSONMessageConverter':
+                    markers.append('transformChain')
+                guards.append(('org/geoserver/importer/rest/converters/' + converter + '.class',
+                               'gs-importer-rest-2.28.5.jar',
+                               'geoserver/src/extension/importer/rest', markers))
+            for name, jar, module, present in guards:
+                expected_classes[name] = {'jar': jar, 'module': module, 'present': present, 'absent': []}
+            with zipfile.ZipFile(inventory['war_path']) as war:
+                web = 'geoserver/src/web/app/src/main/webapp/WEB-INF/web.xml'
+                if hashlib.sha256(war.read('WEB-INF/web.xml')).hexdigest() != final_source_outputs[web]:
+                    raise ValueError('packaged servlet filter configuration differs from compiled profile')
+            report['no_jpeg2000_source_guards'] = {'imaging': imaging, 'service': service}
         for name, digest in final_source_outputs.items():
             if source_inputs.get(name) != digest or sha(source / name) != digest:
                 raise ValueError('final repaired source differs from recorded compiler input')
@@ -286,6 +339,18 @@ def inspect(build, output):
         if result.get('no_oracle_profile'):
             import no_oracle
             report['no_oracle_artifacts'] = no_oracle.inspect_artifacts(build, jar_entries, class_origins, inventory['libraries'])
+        if result.get('no_jpeg2000_profile'):
+            import importlib.util
+            for name, key in [('remediation-nojpeg2000/profile.py', 'no_jpeg2000_artifacts'),
+                              ('remediation-json/inventory.py', 'json_replacement_artifacts')]:
+                frozen = build / 'tooling/java' / name
+                if (sha(frozen) != result['tooling_manifest'].get('java/' + name)
+                        or sha(frozen) != report['tooling_manifest'][name]):
+                    raise ValueError('New profile inventory recipe differs from frozen aggregate tooling')
+                spec = importlib.util.spec_from_file_location('ambisgis_' + key, Path(__file__).resolve().parent / name)
+                module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(module)
+                report[key] = module.inspect_artifacts(build, jar_entries, class_origins, inventory['libraries'])
         if result.get('local_variant_inputs'):
             selected = result['local_variant_inputs']
             if sha(build / 'variant-inputs.json') != selected['manifest_sha256']:
@@ -323,7 +388,7 @@ def inspect(build, output):
         if sha(Path(inventory['war_path'])) != inventory['war_sha256']:
             raise ValueError('aggregate WAR changed during evidence inspection')
         for name, digest in report['tooling_manifest'].items():
-            if sha(tooling / name) != digest or sha(Path(__file__).with_name(name)) != digest:
+            if sha(tooling / name) != digest or sha(Path(__file__).resolve().parent / name) != digest:
                 raise ValueError('aggregate evidence tooling changed during inspection')
         report['retained_tooling_unchanged'] = True
         report['result_exit_code'] = 0

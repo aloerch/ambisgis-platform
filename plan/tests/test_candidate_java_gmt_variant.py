@@ -6,7 +6,7 @@ TARGETS={'F02-JAVA-aspectj154','F02-JAVA-xmlpull1131','F02-JAVA-jai-imageio11','
 class JavaGmtVariantTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.path=PLAN/'candidates/fnd-02-candidate-parent-2.json';cls.parent=json.loads(cls.path.read_text());cls.new=json.loads((PLAN/'candidates/fnd-02-candidate.json').read_text())
+  cls.path=PLAN/'candidates/fnd-02-candidate-parent-2.json';cls.parent=json.loads(cls.path.read_text());cls.new=json.loads((PLAN/'candidates/fnd-02-candidate-parent-3.json').read_text())
  def test_parent_and_source_authority_preserved(self):
   self.assertEqual(hashlib.sha256(self.path.read_bytes()).hexdigest(),'3c59d99834b53f8778143db70f754272bce9920ca05071586d4f3629cdd625a0')
   self.assertEqual(self.new['roots'],self.parent['roots']);self.assertEqual(self.new['schema_version'],1);self.assertEqual(self.new['candidate_revision'],3)

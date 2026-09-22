@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "status": "published-for-owner-review",
+  "repository": {
+    "name": "aloerch/ambisgis-platform",
+    "id": 1376927351,
+    "node_id": "R_kgDOUhI-dw"
+  },
+  "authenticated_owner": {
+    "login": "aloerch",
+    "id": 15285626
+  },
+  "task": "FND-02/F02-06",
+  "branch": "fnd-02/json-jpeg2000-remediation",
+  "base": "ambisgis/main",
+  "verified_main": "8f66b1e2a421d93e0c8d9714df76ad2dd62269a3",
+  "pr": {
+    "number": 68,
+    "url": "https://github.com/aloerch/ambisgis-platform/pull/68",
+    "state": "OPEN",
+    "id": "PR_kwDOUhI-d88AAAABEpzbUQ",
+    "tested_implementation_head": "fc56b119b56d68e9b4cc650d6c0665659f3e706c"
+  },
+  "candidate": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/candidates/fnd-02-candidate.json",
+    "sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+    "bytes": 1082577
+  },
+  "project": {
+    "number": 2,
+    "url": "https://github.com/users/aloerch/projects/2",
+    "items_before": 80,
+    "items_after": 81,
+    "authorized_mutations": [
+      {
+        "content_id": "PR_kwDOUhI-d88AAAABEpzbUQ",
+        "operation": "add_item",
+        "result": {
+          "id": "PVTI_lAHOAOk9es4Bj_k-zg8Nxac",
+          "isArchived": false
+        }
+      },
+      {
+        "field_id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+        "item_id": "PVTI_lAHOAOk9es4Bj_k-zg8Nxac",
+        "operation": "set_field",
+        "result": {
+          "id": "PVTI_lAHOAOk9es4Bj_k-zg8Nxac"
+        },
+        "value": "https://github.com/aloerch/ambisgis-platform/pull/68 | FND-02: https://github.com/aloerch/ambisgis-platform/issues/3"
+      }
+    ],
+    "saved_queue_filter": "is:pr is:open",
+    "open_queue": [
+      68
+    ],
+    "parent_delivery": "In progress",
+    "checks": {
+      "all_prior_item_values_and_archive_decisions_preserved": true,
+      "all_project_fields_repositories_views_preserved": true,
+      "all_readback_pagination_complete": true,
+      "all_view_configuration_and_order_preserved": true,
+      "live_pr_still_open_at_exact_head": true,
+      "mutation_sequence_complete": true,
+      "only_expected_new_item": true,
+      "pr_has_no_parent_planning_fields": true,
+      "pr_identity_unique": true,
+      "pr_is_in_saved_open_queue": true,
+      "pr_item_unarchived": true,
+      "pr_linked_if_applied": true
+    },
+    "dry_run": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/project-dry-run-01/outcome.json",
+      "sha256": "b2d25402fddbbf4256b2b13b6518061b1b4e52c877a3b9b5dfd14f40fc3c60ca",
+      "bytes": 3416
+    },
+    "apply": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/project-apply-01/outcome.json",
+      "sha256": "65120c8c0d77f550a0285dbfc653cad32352a22b2cdc3e9a813c8a8f984b1fee",
+      "bytes": 4143
+    },
+    "complete_receipt_manifest": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/project-apply-01/manifest.json",
+      "sha256": "9b44c1919dc1e67fca572f348fcac2e0ef3eb63654f54f97779937f04609a4b0",
+      "bytes": 1708
+    }
+  },
+  "publication_recipe": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/publication.py",
+    "sha256": "66daae3b0be178759e45e9bc2280eb54497655c491e1b275143a1cf1e91e9ead",
+    "bytes": 9911
+  },
+  "publication_boundary": "The subsequent commit records publication evidence and documentation only. It changes no tested implementation, selected input, manifest or artifact. Final pushed review head is pinned in issue3 and the final user handoff; it cannot be self-embedded in its own commit.",
+  "remote_actions": "Push this new branch; create PR68; add exactly one separate Project2 PR item and its Evidence link; update issue3 evidence without changing criteria, assignment or parent Delivery. No merge, auto-merge, adoption, distribution, release, production, workflow/secret/default-branch or source-fork change.",
+  "owner_acceptance": false,
+  "distribution_permission": false
+}
