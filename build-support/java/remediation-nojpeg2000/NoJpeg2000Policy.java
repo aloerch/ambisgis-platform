@@ -11,6 +11,8 @@ import java.nio.file.LinkOption;
 import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Stream;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipEntry;
 
 /** Candidate capability policy; this class never decodes or converts an image. */
 public final class NoJpeg2000Policy {
@@ -37,6 +39,38 @@ public final class NoJpeg2000Policy {
         return value.length >= 2 && (value[0] & 255) == 255 && (value[1] & 255) == 79
                 || value.length >= 8 && value[0] == 0 && value[1] == 0 && value[2] == 0 && value[3] == 12
                 && value[4] == 106 && value[5] == 80 && value[6] == 32 && value[7] == 32;
+    }
+
+    public static boolean zipSignature(byte[] value) {
+        return value.length >= 4 && value[0] == 80 && value[1] == 75
+                && ((value[2] == 3 && value[3] == 4) || (value[2] == 5 && value[3] == 6));
+    }
+
+    /** Random-access ZIP preflight: at most twelve decompressed bytes per member.
+     * No member is extracted; ordinary large image data is not decompressed here.
+     */
+    public static boolean archive(Path path) throws IOException {
+        try (ZipFile zip = new ZipFile(path.toFile())) {
+            var entries = zip.entries();
+            while (entries.hasMoreElements()) {
+                ZipEntry entry = entries.nextElement();
+                if (entry.isDirectory()) continue;
+                if (filename(entry.getName())) return true;
+                try (InputStream input = zip.getInputStream(entry)) {
+                    if (signature(input.readNBytes(12))) return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /** Compressed upload staging is transient and always removed before return. */
+    public static boolean archive(InputStream input) throws IOException {
+        Path staged = Files.createTempFile("AmbisgisCodecUpload", ".zip");
+        try {
+            Files.copy(input, staged, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            return archive(staged);
+        } finally { Files.deleteIfExists(staged); }
     }
 
     public static boolean file(Path path) throws IOException {

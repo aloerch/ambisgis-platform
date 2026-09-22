@@ -8,6 +8,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.io.PushbackInputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.util.zip.ZipException;
 import java.util.Enumeration;
 import java.util.Locale;
 import javax.servlet.Filter;
@@ -78,23 +82,49 @@ public final class NoJpeg2000Filter implements Filter {
             byte[] prefix = input.readNBytes(12);
             if (NoJpeg2000Policy.signature(prefix)) { reject(response); return; }
             input.unread(prefix);
+            Path archive = null;
+            try {
+                if (NoJpeg2000Policy.zipSignature(prefix)) {
+                    archive = Files.createTempFile("AmbisgisCodecRequest", ".zip");
+                    Files.copy(input, archive, StandardCopyOption.REPLACE_EXISTING);
+                    if (NoJpeg2000Policy.archive(archive)) {
+                        Files.deleteIfExists(archive); reject(response); return;
+                    }
+                    input = new PushbackInputStream(Files.newInputStream(archive), 12);
+                }
+            } catch (ZipException malformed) {
+                if (archive != null) Files.deleteIfExists(archive);
+                response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                response.setContentType("text/plain;charset=UTF-8");
+                response.getWriter().write("Invalid ZIP upload.");
+                return;
+            } catch (IOException | RuntimeException error) {
+                if (archive != null) Files.deleteIfExists(archive);
+                throw error;
+            }
+            final PushbackInputStream replayInput = input;
+            final Path stagedArchive = archive;
             ServletInputStream replay = new ServletInputStream() {
-                @Override public int read() throws IOException { return input.read(); }
-                @Override public int read(byte[] b, int off, int len) throws IOException { return input.read(b, off, len); }
-                @Override public void close() throws IOException { input.close(); }
+                @Override public int read() throws IOException { return replayInput.read(); }
+                @Override public int read(byte[] b, int off, int len) throws IOException { return replayInput.read(b, off, len); }
+                @Override public void close() throws IOException { replayInput.close(); }
                 @Override public boolean isFinished() { return original.isFinished() && availablePrefix() == 0; }
-                private int availablePrefix() { try { return input.available(); } catch (IOException e) { return 0; } }
+                private int availablePrefix() { try { return replayInput.available(); } catch (IOException e) { return 0; } }
                 @Override public boolean isReady() { return original.isReady() || availablePrefix() > 0; }
                 @Override public void setReadListener(ReadListener listener) { original.setReadListener(listener); }
             };
-            chain.doFilter(new HttpServletRequestWrapper(request) {
+            try {
+                chain.doFilter(new HttpServletRequestWrapper(request) {
                 @Override public ServletInputStream getInputStream() { return replay; }
                 @Override public BufferedReader getReader() throws IOException {
                     String encoding = getCharacterEncoding();
                     return new BufferedReader(new InputStreamReader(replay,
                             encoding == null ? StandardCharsets.ISO_8859_1.name() : encoding));
                 }
-            }, response);
+                }, response);
+            } finally {
+                if (stagedArchive != null) { replayInput.close(); Files.deleteIfExists(stagedArchive); }
+            }
             return;
         }
         chain.doFilter(request, response);

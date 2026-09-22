@@ -23,7 +23,7 @@ def main(args):
                'org/springframework/spring-web/5.3.39/spring-web-5.3.39.jar',
                'org/springframework/spring-beans/5.3.39/spring-beans-5.3.39.jar']
         result['inputs']={name:sha(m2/name) for name in names}
-        source=out/'sources';source.mkdir();classes=out/'classes';classes.mkdir()
+        source=out/'sources';source.mkdir();classes=out/'classes';classes.mkdir();(out/'tmp').mkdir()
         files=[]
         for name in ['NoJpeg2000Policy.java','NoJpeg2000Filter.java','NoJpeg2000GuardWitness.java']:
             shutil.copyfile(HERE/name,source/name);files.append(source/name)
@@ -39,7 +39,7 @@ def main(args):
         result['parent_libraries']={p.name:sha(p) for p in libraries}
         cp=os.pathsep.join([*(str(m2/name) for name in names),*(str(p) for p in libraries)])
         commands=[[str(java/'javac'),'-cp',cp,'-d',str(classes),*[str(p) for p in files]],
-                  [str(java/'java'),'-cp',str(classes)+os.pathsep+cp,'NoJpeg2000GuardWitness',str(out/'tree-input')]]
+                  [str(java/'java'),'-Djava.io.tmpdir='+str(out/'tmp'),'-cp',str(classes)+os.pathsep+cp,'NoJpeg2000GuardWitness',str(out/'tree-input')]]
         result['commands']=[]
         sys.path.insert(0,str(HERE.parent));from compatibility import verify_network_receipt
         for index,command in enumerate(commands):

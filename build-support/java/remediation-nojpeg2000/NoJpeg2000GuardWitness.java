@@ -1,8 +1,13 @@
 /* AmbisGIS authored regression witness; SPDX-License-Identifier: GPL-2.0-or-later */
 import java.nio.charset.StandardCharsets;
+import java.io.ByteArrayOutputStream;
+import org.geoserver.importer.rest.ImportTaskController;
+import org.geoserver.rest.RestException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 import org.geoserver.filters.NoJpeg2000Filter;
 import org.geoserver.filters.NoJpeg2000Policy;
 import org.springframework.mock.web.MockHttpServletRequest;
@@ -25,6 +30,22 @@ public final class NoJpeg2000GuardWitness {
         new NoJpeg2000Filter().doFilter(request,response,(a,b)->{throw new AssertionError("rejection reached downstream");});
         require(response.getStatus()==415,"explicit 415 required");
         require(response.getContentAsString().equals(NoJpeg2000Policy.MESSAGE),"safe bounded diagnostic required");
+    }
+    static byte[] zip(String name, byte[] bytes) throws Exception {
+        ByteArrayOutputStream output=new ByteArrayOutputStream();
+        try(ZipOutputStream zip=new ZipOutputStream(output)) { zip.putNextEntry(new ZipEntry(name));zip.write(bytes);zip.closeEntry(); }
+        return output.toByteArray();
+    }
+    static class Controller extends ImportTaskController { Controller() { super(null); } }
+    static void multipart(byte[] image, String filename, String mime) throws Exception {
+        ByteArrayOutputStream body = new ByteArrayOutputStream();
+        // The first part is valid, proving the preflight examines all parts before accepting one.
+        body.write("--AmbisGISBoundary\r\nContent-Disposition: form-data; name=\"file\"; filename=\"ordinary.txt\"\r\nContent-Type: text/plain\r\n\r\nordinary\r\n".getBytes(StandardCharsets.UTF_8));
+        body.write(("--AmbisGISBoundary\r\nContent-Disposition: form-data; name=\"file\"; filename=\""+filename+"\"\r\nContent-Type: "+mime+"\r\n\r\n").getBytes(StandardCharsets.UTF_8));
+        body.write(image);body.write("\r\n--AmbisGISBoundary--\r\n".getBytes(StandardCharsets.UTF_8));
+        MockHttpServletRequest r=request("/rest/imports/0/tasks","multipart/form-data; boundary=AmbisGISBoundary",body.toByteArray());r.setMethod("POST");
+        try { new Controller().handleMultiPartFormUpload(r,null); throw new AssertionError("multipart accepted unsupported image"); }
+        catch(RestException expected) { require(expected.getStatus().value()==415,"multipart explicit rejection");require(expected.getMessage().equals(NoJpeg2000Policy.MESSAGE),"multipart diagnostic"); }
     }
     public static void main(String[] args) throws Exception {
         for(String name: new String[]{"jp2","J2K","jpeg2000","image/jp2; charset=UTF-8"}) require(NoJpeg2000Policy.format(name),"alias missed");
@@ -55,10 +76,23 @@ public final class NoJpeg2000GuardWitness {
         new NoJpeg2000Filter().doFilter(reader,new MockHttpServletResponse(),(a,b)->require(a.getReader().readLine().equals("file:/tmp/plain.tif"),"reader lookahead lost bytes"));
         MockHttpServletRequest json=request("/rest/imports/0/tasks/0","application/json","{\"format\":\"image/jp2\"}".getBytes(StandardCharsets.UTF_8));
         new NoJpeg2000Filter().doFilter(json,new MockHttpServletResponse(),(a,b)->require(a==json,"native JSON parser input must remain unchanged"));
+        reject(request("/rest/imports/0/tasks/ordinary.zip","application/zip",zip("disguised.png",JP2)));
+        multipart(zip("disguised.tif",J2K),"ordinary.zip","application/zip");
+        byte[] ordinaryZip=zip("ordinary.txt","ordinary streamed data".getBytes(StandardCharsets.UTF_8));
+        new NoJpeg2000Filter().doFilter(request("/rest/imports/0/tasks/ordinary.zip","application/zip",ordinaryZip),new MockHttpServletResponse(),
+                (a,b)->require(Arrays.equals(ordinaryZip,a.getInputStream().readAllBytes()),"valid ZIP changed in staging"));
+        MockHttpServletResponse badZip=new MockHttpServletResponse();
+        new NoJpeg2000Filter().doFilter(request("/rest/imports/0/tasks/invalid.zip","application/zip",new byte[]{80,75,3,4}),badZip,
+                (a,b)->{throw new AssertionError("invalid archive reached persistent importer");});
+        require(badZip.getStatus()==400,"malformed ZIP controlled 400");
+        multipart(JP2,"disguised.png","image/png");
+        multipart(J2K,"disguised.tif","application/octet-stream");
+        multipart(new byte[0],"named.jp2","image/png");
         Path dir=Path.of(args[0]);Files.createDirectory(dir);Files.write(dir.resolve("disguised.png"),JP2);
         require(NoJpeg2000Policy.tree(dir),"ZIP/mosaic extracted content detection");
         Files.delete(dir.resolve("disguised.png"));Files.write(dir.resolve("ordinary.jpeg"),new byte[]{(byte)255,(byte)216});
         require(!NoJpeg2000Policy.tree(dir),"ordinary JPEG directory must remain eligible");
+        try(var files=Files.list(Path.of(System.getProperty("java.io.tmpdir")))) { require(files.findAny().isEmpty(),"transient archive staging not cleaned"); }
         System.out.println("NO_JPEG2000_GUARD_ASSERTIONS="+assertions);
     }
 }
