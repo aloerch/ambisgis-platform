@@ -7,6 +7,8 @@ an integrity-checked historical data file, not a prior acceptance result.
 import hashlib
 import io
 import json
+import os
+import subprocess
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -97,7 +99,26 @@ def print_spec(layout, output='pdf'):
                        'pages':[{'center':[0,0],'scale':1000,'rotation':0}]}).encode()
 
 
-def remote_prints(config,token,directory,root):
+def rendered_pdf(config,directory,label,java_home):
+    from PIL import Image
+    source=Path(__file__).parent/'remediation-nojpeg2000/PrintPdfWitness.java'
+    libraries=sorted((Path(config['output'])/'lib').glob('*.jar'))
+    require(len(libraries)==367,'selected WAR library inventory changed')
+    rendered=directory/(label+'-rendered.png')
+    command=[str(Path(java_home)/'bin/java'),'-Djava.awt.headless=true','-cp',os.pathsep.join(map(str,libraries)),str(source),str(directory/(label+'.body')),str(rendered)]
+    process=subprocess.run(command,capture_output=True,text=True,timeout=60)
+    require(len(process.stdout)+len(process.stderr)<65536,'PDF witness log unbounded')
+    (directory/(label+'-render.log')).write_text(process.stdout+process.stderr)
+    save(directory/(label+'-render-command.json'),{'command':command,'source_sha256':sha(source.read_bytes()),'exit_code':process.returncode})
+    require(process.returncode==0,'actual returned PDF cannot be parsed/rendered')
+    with Image.open(rendered) as page:
+        rgb=page.convert('RGB')
+        counts=[sum(1 for pixel in rgb.getdata() if max(abs(a-b) for a,b in zip(pixel,color))<=2) for color in [(30,90,180),(210,80,30)]]
+        require(rgb.width>300 and rgb.height>300 and min(counts)>1000,'actual PDF page lacks both known image colors')
+        return {'render_sha256':sha(rendered.read_bytes()),'width':rgb.width,'height':rgb.height,'known_color_pixels':counts}
+
+
+def remote_prints(config,token,directory,root,java_home):
     """Serve exact hostile-format data through a finite task-owned loopback fixture."""
     payloads={'/jpeg2000-tile':('image/png',(root/'inputs/known.jp2').read_bytes()),
               '/pdf-jpeg2000-tile':('application/pdf',(root/'inputs/jp2-embedded.pdf').read_bytes()),
@@ -139,7 +160,8 @@ def remote_prints(config,token,directory,root):
             require(any(row['path']=='/'+path for row in observations),'actual remote tile was not requested')
         spec['layers'][0]['baseURL']='http://127.0.0.1:'+str(server.server_port)+'/ordinary-pdf-tile'
         response=request(config,token,directory,'print-remote-valid-pdf','pdf/print.pdf',method='POST',body=json.dumps(spec).encode(),content_type='application/json')
-        require(response.startswith(b'%PDF-') and len(response)>1500,'ordinary PDF tile print failed after rejection')
+        require(response.startswith(b'%PDF-'),'ordinary PDF tile print magic missing after rejection')
+        report['pdf_render']=rendered_pdf(config,directory,'print-remote-valid-pdf',java_home)
         require(any(row['path']=='/ordinary-pdf-tile' for row in observations),'ordinary PDF tile was not fetched')
         report['result_exit_code']=0
     finally:
@@ -151,7 +173,7 @@ def remote_prints(config,token,directory,root):
     return report
 
 
-def probe(config, token, output, phase='initial'):
+def probe(config, token, output, phase='initial', java_home=None):
     from PIL import Image
     root=Path(output)/'nojpeg2000-http';directory=root/phase;directory.mkdir()
     report={'result_exit_code':1,'phase':phase,'profile':PROFILE,'negative':[]}
@@ -246,14 +268,16 @@ def probe(config, token, output, phase='initial'):
             report['negative'].append(rejected(config,token,directory,'print-output-'+fmt.replace('/','_'),'pdf/create.json',method='POST',body=print_spec('known_png',fmt),content_type='application/json'))
         for layout in ('known_jp2','known_j2k','disguised_png'):
             report['negative'].append(rejected(config,token,directory,'print-input-'+layout,'pdf/print.pdf',method='POST',body=print_spec(layout),content_type='application/json'))
-        report['remote_prints']=remote_prints(config,token,directory,root)
+        report['remote_prints']=remote_prints(config,token,directory,root,java_home)
         outputs=[]
         for fmt in ('pdf','png','tiff'):
             response=request(config,token,directory,'print-valid-'+fmt,'pdf/print.pdf',method='POST',body=print_spec('known_png',fmt),content_type='application/json')
             metadata=json.loads((directory/('print-valid-'+fmt+'-http.json')).read_text())
             expected_type={'pdf':'application/pdf','png':'image/png','tiff':'image/tiff'}[fmt]
             require(metadata['content_type'].split(';',1)[0].strip()==expected_type,'print content type differs from actual requested format')
-            if fmt=='pdf':require(response.startswith(b'%PDF-') and len(response)>1500,'actual PDF missing or truncated')
+            if fmt=='pdf':
+                require(response.startswith(b'%PDF-'),'actual PDF magic missing')
+                report['pdf_render']=rendered_pdf(config,directory,'print-valid-pdf',java_home)
             else:
                 with Image.open(io.BytesIO(response)) as image:
                     rgb=image.convert('RGB'); colors=sum(1 for r,g,b in rgb.getdata() if max(r,g,b)-min(r,g,b)>60)
