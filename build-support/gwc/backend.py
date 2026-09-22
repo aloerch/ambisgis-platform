@@ -116,6 +116,9 @@ def run_child(invocation):
         configure(data, fixture, config)
         add_wms_style(data)
         configure_cache(data, output / 'tile-cache')
+        import nojpeg2000_http
+        if nojpeg2000_http.enabled(runtime):
+            result['nojpeg2000_fixture'] = nojpeg2000_http.prepare(data, output)
         security_configured = security_hashes(data)
         save(output/'security-configured.json',security_configured)
         save(output/'fixture-origins.json',fixture)
@@ -146,6 +149,8 @@ def run_child(invocation):
         if runtime.get('java_profile'):
             import remediation_mosaic
             result['mosaic'] = remediation_mosaic.exercise(invocation, config, tokens.access_token, output)
+        if nojpeg2000_http.enabled(runtime):
+            result['nojpeg2000_initial'] = nojpeg2000_http.probe(config, tokens.access_token, output, phase='initial')
         result['initial'] = exercise(config['geoserver_url'], output, credentials, private, phase='initial')
         before_restart = cache_manifest(output / 'tile-cache')
         cache_config_before = fixture_hashes()
@@ -158,6 +163,8 @@ def run_child(invocation):
         if fixture_hashes() != cache_config_before: raise RuntimeError('cache configuration changed on restart')
         if runtime.get('java_profile'):
             result['mosaic_restart'] = remediation_mosaic.probe(config, tokens.access_token, output, phase='restart')
+        if nojpeg2000_http.enabled(runtime):
+            result['nojpeg2000_restart'] = nojpeg2000_http.probe(config, tokens.access_token, output, phase='restart')
         result['restart'] = exercise(config['geoserver_url'], output, credentials, private, phase='restart')
         if security_hashes(data) != security_before: raise RuntimeError('security configuration changed on restart')
         result['security_configuration'] = security_before
