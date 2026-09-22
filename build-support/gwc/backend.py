@@ -69,6 +69,12 @@ def run_child(invocation):
         else:
             cmd = runtime_inputs.launcher_command(Path(runtime['java_home']), Path(runtime['servlet']), Path(runtime['launcher']),
                 Path(runtime['war']), output / 'geoserver-data', output / ('geoserver-' + label), port=urlsplit(config['geoserver_url']).port, java_profile=runtime.get('java_profile'))
+            import nojpeg2000_http
+            if nojpeg2000_http.enabled(runtime):
+                temporary = output / ('codec-java-tmp-' + label)
+                temporary.mkdir(mode=0o700)
+                cmd.insert(1, '-Djava.io.tmpdir=' + str(temporary))
+                result.setdefault('java_temporary_directories', []).append(str(temporary))
             cmd[1:1] = ['-Dambisgis.fixture.gwc=true','-Dgwc.context.suffix=gwc','-Dsun.net.client.defaultReadTimeout=1500', '-Dsun.net.client.defaultConnectTimeout=1500', '-DGEOWEBCACHE_CACHE_DIR=' + str(output / 'tile-cache')]
             if digest(runtime['war']) != runtime['war_sha256']: raise RuntimeError('WAR changed before launch')
             env = {'PATH': str(Path(runtime['java_home']) / 'bin') + ':/usr/bin:/bin', 'LANG': 'C.UTF-8'}
@@ -189,6 +195,24 @@ def run_child(invocation):
         try:
             if (output / 'geoserver-data').exists(): scrub_secrets(output / 'geoserver-data')
         except Exception as error: result['cleanup']['geoserver_secret_error'] = type(error).__name__; result['result_exit_code'] = 1
+        codec_temporary = []
+        for name in result.get('java_temporary_directories', []):
+            directory = Path(name)
+            if directory.parent != output or directory.is_symlink():
+                result['result_exit_code'] = 1
+                continue
+            remaining = sorted(p for p in directory.glob('AmbisgisCodec*') if p.is_file())
+            codec_temporary.append({'directory': str(directory), 'remaining_files': [p.name for p in remaining]})
+            if remaining:
+                result['result_exit_code'] = 1
+                # This fresh task-owned directory cannot contain unrelated prior inputs.
+                # Failed transient copies may contain fixture database credentials.
+                for path in remaining:
+                    try:
+                        if not path.is_symlink():path.write_bytes(b'SCRUBBED FAILED DISPOSABLE UPLOAD STAGING\n')
+                    except Exception as error:
+                        codec_temporary[-1].setdefault('scrub_errors', []).append(type(error).__name__)
+        result['cleanup']['codec_staging'] = codec_temporary
         result['diagnostic_secret_hits'] = sum(c.leaks for c in captures)
         result['diagnostic_security_failures'] = sum(c.security_failures for c in captures)
         if result['diagnostic_security_failures']: result['result_exit_code'] = 1
