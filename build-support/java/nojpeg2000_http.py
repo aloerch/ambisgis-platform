@@ -215,6 +215,9 @@ def probe(config, token, output, phase='initial'):
         outputs=[]
         for fmt in ('pdf','png','tiff'):
             response=request(config,token,directory,'print-valid-'+fmt,'pdf/print.pdf',method='POST',body=print_spec('known_png',fmt),content_type='application/json')
+            metadata=json.loads((directory/('print-valid-'+fmt+'-http.json')).read_text())
+            expected_type={'pdf':'application/pdf','png':'image/png','tiff':'image/tiff'}[fmt]
+            require(metadata['content_type'].split(';',1)[0].strip()==expected_type,'print content type differs from actual requested format')
             if fmt=='pdf':require(response.startswith(b'%PDF-') and len(response)>1500,'actual PDF missing or truncated')
             else:
                 with Image.open(io.BytesIO(response)) as image:
