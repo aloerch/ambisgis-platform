@@ -262,5 +262,10 @@
     "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/plan/verification/json-jpeg2000-remediation/imaging-final-war-aggregate03.json",
     "sha256": "d1fddd74aae2506b01e6f21b0ecbc6b9c7bbf14f497a8bcfcc10410fc50087aa",
     "bytes": 12814
+  },
+  "combined_http_evidence": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/plan/verification/json-jpeg2000-remediation/imaging-http-pdf-fixtures.json",
+    "sha256": "b01169bfbb433a290b0f1a566fa1b23120456c9d421751dfa81ac1987ca4e61d",
+    "bytes": 9728
   }
 }

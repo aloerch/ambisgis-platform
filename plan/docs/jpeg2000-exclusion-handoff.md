@@ -184,3 +184,13 @@ full-page tile fixtures address these without production source or containment
 changes. Actual HTTP PDFs are now parsed/rendered and checked for both known
 colors, rather than accepted or refused by compressed file size. Diagnostic
 passes on the prior WAR remain distinct from final combined-WAR acceptance.
+
+Final `gwc-05` completed successfully on the same aggregate-04 WAR. Both initial
+and restart phases fetched the genuine JP2/JPX inputs and returned 415; ordinary
+remote PDF output rendered 15,520 blue and 15,200 red pixels, and the local print
+PDF rendered 18,342 blue and 18,336 red pixels. The
+[final HTTP fixture index](../verification/json-jpeg2000-remediation/imaging-http-pdf-fixtures.json)
+binds those actual responses, parsed/raster output, successful combined receipt
+and stopped fixtures/database. Ordinary PNG/TIFF, WCS GeoTIFF, WMS recovery and
+PostGIS/mosaic/cache/restart checks are recorded in that combined run. Prior
+failed runs remain historical and are not relabeled as overall passes.

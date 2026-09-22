@@ -77,7 +77,7 @@
     "bytes": 3348
   },
   "corrected_expected": "Both realPDFfixtures are1page192x160 withfullpage imageat0,0. OrdinaryPDFrenders15360blue and15360red pixels; JPEG2000PDFcontains actualJPXDecode. Fresh actualHTTPresponse mustbe parsed/rendered with knowncolor assertions before marking positive.",
-  "corrected_actual_http_status": "Corrected content passed both diagnostic phases on priorWAR03. Final newWAR04 combinedGWC05 execution remains pending.",
+  "corrected_actual_http_status": "Passed on final aggregate04WAR in both phases of overall successfulGWC05; earlierfailedGWC04diagnostic remains preserved.",
   "corrected_actual_http_diagnostic": {
     "receipts": [
       {
@@ -101,5 +101,87 @@
     ],
     "geometry_result": "Both phases of actual returned remote PDF render595x842 with15520blue/15200red pixels; remote genuineJP2 andJPXPDF are fetched and explicitly415.",
     "overall_scope": "GWC04 remains failed solely for pre-fix malformedJSON500 on earlierWAR03. These diagnostic subresults do not establish finalWAR04 full-run acceptance."
+  },
+  "final_actual_http": {
+    "war_sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
+    "combined_result": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/result.json",
+      "sha256": "c1828b8261dbad53cd9084f21122e4a8195c0888f7a46f3b7cec5aaed50c33c7",
+      "bytes": 75953
+    },
+    "backend_result": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/backend-result.json",
+      "sha256": "709fe8c1b88f8e594ae6e77537c09cfe589138af0a17155b9a2e31dd998c205f",
+      "bytes": 37492
+    },
+    "result_exit_code": 0,
+    "database_stopped": true,
+    "phases": [
+      {
+        "phase": "initial",
+        "result": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/nojpeg2000-http/initial/result.json",
+          "sha256": "8d7191448f68bb3326c6bf5b5e2bf7a6bf052575bc6ed8ae47b1757898d47eac",
+          "bytes": 4007
+        },
+        "remote_result": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/nojpeg2000-http/initial/remote-print-result.json",
+          "sha256": "684c218151239abdf0ce0f99bc1ada8a18535fa28d89acc730d6a70e9f580374",
+          "bytes": 1855
+        },
+        "local_pdf_render": {
+          "height": 842,
+          "known_color_pixels": [
+            18342,
+            18336
+          ],
+          "render_sha256": "4ad0562a104ae72449174fa45335e3f12434be5483c07812849d109e084bcf49",
+          "width": 595
+        },
+        "remote_pdf_render": {
+          "height": 842,
+          "known_color_pixels": [
+            15520,
+            15200
+          ],
+          "render_sha256": "3b3c018737649431ce0378b7377aaa63a3767c665a232cc499505e4cc848ea24",
+          "width": 595
+        },
+        "remote_fixture_stopped": true
+      },
+      {
+        "phase": "restart",
+        "result": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/nojpeg2000-http/restart/result.json",
+          "sha256": "383e8f1cdad26a5fd3e52708ec55de8b5d5c2341af78eddb8f9add397632edcd",
+          "bytes": 3301
+        },
+        "remote_result": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/nojpeg2000-http/restart/remote-print-result.json",
+          "sha256": "684c218151239abdf0ce0f99bc1ada8a18535fa28d89acc730d6a70e9f580374",
+          "bytes": 1855
+        },
+        "local_pdf_render": {
+          "height": 842,
+          "known_color_pixels": [
+            18342,
+            18336
+          ],
+          "render_sha256": "4ad0562a104ae72449174fa45335e3f12434be5483c07812849d109e084bcf49",
+          "width": 595
+        },
+        "remote_pdf_render": {
+          "height": 842,
+          "known_color_pixels": [
+            15520,
+            15200
+          ],
+          "render_sha256": "3b3c018737649431ce0378b7377aaa63a3767c665a232cc499505e4cc848ea24",
+          "width": 595
+        },
+        "remote_fixture_stopped": true
+      }
+    ],
+    "scope": "Actual selected servlet transport with fetched hostileformat bytes, meaningful decoded ordinary PDF/PNG/TIFF, malformedJSON400, WCSGeoTIFF and WMS recovery, PostGIS/mosaic and GWC cache/restart; no universal format/profile or owner acceptance."
   }
 }

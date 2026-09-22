@@ -39,7 +39,7 @@
       "bytes": 129489
     }
   ],
-  "status": "No remaining material source finding in reviewed scope; final aggregate04 exact-WAR imaging passed, final combined live evidence/candidate assembly pending.",
+  "status": "No remaining material source finding in reviewed scope; final aggregate04 exact-WAR imaging and GWC05 live imaging phases passed. Final assembled candidate review remains a separate step.",
   "findings_fixed": [
     {
       "finding": "Aggregate explicit repaired-class list omitted several changed MapFish consumers and policy exception definitions.",
@@ -121,5 +121,10 @@
     "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-04/work/source/geoserver/src/web/app/target/geoserver.war",
     "sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
     "bytes": 141264649
+  },
+  "final_combined_live_runtime": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/result.json",
+    "sha256": "c1828b8261dbad53cd9084f21122e4a8195c0888f7a46f3b7cec5aaed50c33c7",
+    "bytes": 75953
   }
 }

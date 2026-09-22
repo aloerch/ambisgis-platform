@@ -1,6 +1,6 @@
 {
   "profile": "NO-ORACLE/headless-Temurin17/NO-JPEG2000",
-  "status": "source/native/final aggregate04 exact-WAR imaging verified; final combined live runtime closing condition remains with integrator",
+  "status": "Source/native/final aggregate04 exact-WAR imaging and selected GWC05 live codec/PDF/recovery phases verified; owner candidate acceptance remains separate.",
   "build": {
     "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/build-01/result.json",
     "sha256": "d04dae52cc943082b256e4c3b34cd4b46d956db3fca5345c65348908db649391",
@@ -128,7 +128,7 @@
     }
   ],
   "scope_limits": [
-    "Final exact WAR, live PostGIS/mosaic/WMS/WFS/GWC/frontend restart proofs belong to integrator.",
+    "Final backend and browser combination evidence is separately indexed by the integrator; this imaging index links its actual GWC05 codec/print phases without extending product scope.",
     "Historical JPEG2000-positive cases remain intact and are intentionally deselected, not passes.",
     "Marlin46/48 and Java7-target LTW remain historical scoped limitations.",
     "Source/engineering evidence does not grant distribution or legal approval."
@@ -167,5 +167,15 @@
       "sha256": "d1fddd74aae2506b01e6f21b0ecbc6b9c7bbf14f497a8bcfcc10410fc50087aa",
       "bytes": 12814
     }
-  ]
+  ],
+  "combined_live_runtime": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/result.json",
+    "sha256": "c1828b8261dbad53cd9084f21122e4a8195c0888f7a46f3b7cec5aaed50c33c7",
+    "bytes": 75953
+  },
+  "live_http_fixture_index": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/plan/verification/json-jpeg2000-remediation/imaging-http-pdf-fixtures.json",
+    "sha256": "b01169bfbb433a290b0f1a566fa1b23120456c9d421751dfa81ac1987ca4e61d",
+    "bytes": 9728
+  }
 }
