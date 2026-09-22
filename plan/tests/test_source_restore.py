@@ -1,6 +1,7 @@
 """Real Git recovery and confinement checks; no mocked successful restorations."""
 import hashlib
 import importlib.util
+import json
 import os
 from pathlib import Path
 import tempfile
@@ -127,6 +128,72 @@ class SourceBundleRecoveryTests(CustodyTestCase):
         common.git(recovered, "fsck", "--full")
         self.assertEqual(common.git(recovered, "show", base + ":source.txt"),
                          b"first selected implementation\n")
+
+    def test_product_delta_restores_with_its_retained_predecessor(self):
+        repo = self.repository()
+        base = common.git(repo, "rev-parse", "HEAD").decode().strip()
+        retained_base = self.archive(repo, "base.bundle")
+        (repo / "source.txt").write_text("approved recovered product implementation\n")
+        selected = self.commit(repo, "Reviewed local product delta")
+        delta = self.archive(repo, "product.bundle", "main", "^" + base)
+        output = self.root / "restored-chain"
+        common.restore_bundle(retained_base, output, base)
+        self.assertEqual(common.bundle_header(delta)["prerequisites"], [base])
+        common.git(output, "bundle", "verify", str(delta))
+        common.git(output, "bundle", "unbundle", str(delta))
+        common.git(output, "checkout", "--detach", selected)
+        common.git(output, "merge-base", "--is-ancestor", base, selected)
+        self.assertEqual(common.git(output, "rev-parse", "HEAD^{tree}"),
+                         common.git(repo, "rev-parse", "HEAD^{tree}"))
+        repo.rename(self.root / "producer-unavailable")
+        retained_base.rename(self.root / "base-unavailable")
+        delta.rename(self.root / "delta-unavailable")
+        common.independent(output)
+        common.git(output, "fsck", "--full")
+        self.assertEqual((output / "source.txt").read_text(),
+                         "approved recovered product implementation\n")
+
+    def test_product_delta_fails_when_required_base_commit_is_absent(self):
+        repo = self.repository()
+        base = common.git(repo, "rev-parse", "HEAD").decode().strip()
+        (repo / "source.txt").write_text("product change\n")
+        self.commit(repo, "Product delta")
+        delta = self.archive(repo, "product.bundle", "main", "^" + base)
+        empty = self.root / "without-predecessor"
+        empty.mkdir()
+        common.git(empty, "init", "--template=", "--initial-branch=empty")
+        with self.assertRaisesRegex(ValueError, "prerequisite"):
+            common.git(empty, "bundle", "verify", str(delta))
+        self.assertFalse((empty / "success.json").exists())
+
+    def test_corrupt_product_delta_fails_after_correct_predecessor_restore(self):
+        repo = self.repository()
+        base = common.git(repo, "rev-parse", "HEAD").decode().strip()
+        retained_base = self.archive(repo, "base.bundle")
+        (repo / "source.txt").write_text("product change\n")
+        self.commit(repo, "Product delta")
+        delta = self.archive(repo, "product.bundle", "main", "^" + base)
+        data = bytearray(delta.read_bytes())
+        data[-15] ^= 0xFF
+        delta.write_bytes(data)
+        output = self.root / "restored-base"
+        common.restore_bundle(retained_base, output, base)
+        with self.assertRaises(ValueError):
+            common.git(output, "bundle", "unbundle", str(delta))
+        self.assertEqual(common.git(output, "rev-parse", "HEAD").decode().strip(), base)
+        self.assertFalse((output / "success.json").exists())
+
+    def test_repository_parent_symlink_is_rejected_before_output_write(self):
+        repo = self.repository()
+        selected = common.git(repo, "rev-parse", "HEAD").decode().strip()
+        bundle = self.archive(repo)
+        outside = self.root / "outside"
+        outside.mkdir()
+        link = self.root / "alias"
+        link.symlink_to(outside, target_is_directory=True)
+        with self.assertRaisesRegex(ValueError, "symlink"):
+            common.restore_bundle(bundle, link / "recovered", selected)
+        self.assertFalse((outside / "recovered").exists())
 
     def test_corrupt_bundle_fails_without_success_receipt(self):
         repo = self.repository()
@@ -260,6 +327,31 @@ class SourceAssetCoverageTests(CustodyTestCase):
 
 
 class SourceReceiptVerificationTests(CustodyTestCase):
+    def load_cli(self):
+        cli_path = Path(__file__).resolve().parents[1] / "tools/restore_sources.py"
+        cli_spec = importlib.util.spec_from_file_location("source_restore_cli_tests", cli_path)
+        cli = importlib.util.module_from_spec(cli_spec)
+        cli_spec.loader.exec_module(cli)
+        return cli
+
+    def test_receipt_cannot_drop_duplicate_or_substitute_accepted_roots(self):
+        cli = self.load_cli()
+        candidate_path = Path(__file__).resolve().parents[1] / "candidates/fnd-02-candidate.json"
+        candidate = json.loads(candidate_path.read_text())
+        roots = [{"id": r["id"], "repository": r["repository"],
+                  "repository_id": r["repository_id"], "base_commit": r["commit"],
+                  "relative_path": "repos/" + r["id"]} for r in candidate["roots"]]
+        cli.receipt_identity(candidate, {"roots": roots})
+        for altered in (roots[:-1], roots + [dict(roots[0])]):
+            with self.subTest(shape=len(altered)), self.assertRaisesRegex(ValueError, "exactly once"):
+                cli.receipt_identity(candidate, {"roots": altered})
+        for field, replacement in (("repository_id", -1), ("repository", "aloerch/unrelated"),
+                                   ("base_commit", "f" * 40), ("relative_path", "../outside")):
+            altered = [dict(r) for r in roots]
+            altered[0][field] = replacement
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, "identity differs"):
+                cli.receipt_identity(candidate, {"roots": altered})
+
     def test_empty_root_receipt_cannot_report_success(self):
         cli_path = Path(__file__).resolve().parents[1] / "tools/restore_sources.py"
         cli_spec = importlib.util.spec_from_file_location("source_restore_cli_tests", cli_path)
