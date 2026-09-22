@@ -22,3 +22,20 @@
 | F02-06 exact candidate inventory and grouped selection decisions | #65 consolidation checkpoint accepted; new variant adoption pending | [Candidate proposal](docs/fnd-02-candidate-proposal.md) and generated [decision register](docs/fnd-02-owner-decisions.md); baseline bytes remain preserved, chapter 11 maintenance binding prepared, selection/rights decisions separate from structural validity. |
 | F02-06 frontend/IFC and QGIS optional-resource remediation | Implementation authorized by current owner prompt; new variant review pending | [Authorization](verification/frontend-qgis-remediation/authorization.json), [handoff](docs/frontend-qgis-remediation-handoff.md): exact retained IFC source and frozen frontend replay; 1,129 named QGIS palette exclusions. SRC-02 GMT alias and six Java blockers remain. No adoption/distribution or F02-07/F02-08 acceptance. |
 | F02-06 independent JSON and optional JPEG2000 exclusion | Implementation authorized; tested successor proposed, owner adoption ungranted | [Exact handoff](docs/json-jpeg2000-remediation-handoff.md), [source/terms and removal comparison](docs/jpeg2000-exclusion-handoff.md), [four-criterion/maintenance decision](docs/fnd-02-json-nojpeg2000-acceptance.md). Both variant-only findings remediated; original rights and later obligations unchanged. NO-ORACLE/headless/NO-JPEG2000 selection requires explicit owner acceptance. |
+
+## Final FND-02 decision — supersedes proposal status above
+
+On `2026-09-22T23:20:02Z`, owner `aloerch` (user ID `15285626`) separately
+[accepted FND-02 and the exact revision 4 candidate](https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488),
+all four original criteria, internal F02-06/F02-07/F02-08, the
+NO-ORACLE/headless-Temurin17/NO-JPEG2000 limits and chapter 11 maintenance rule.
+Reviewed PR #68 head `7c4c6a6ddbc364e520911e06b9a97a7c10bdcfcf` was merged as
+`973a5ef383687cd00143c679f832cfb006a57cf0`. The
+[separate governance record](verification/fnd-02-owner-acceptance/acceptance.json)
+binds the comment to manifest `0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99`
+and WAR `90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1`.
+The immutable manifest, generated review-time finding register and historical
+receipts retain their original fields. Acceptance grants subsequent engineering;
+FND-03/FND-05/FND-07/FND-08, P0, distribution/notices/security/source/operational
+gates, release/deployment and future merges remain unaccepted. New source custody
+work belongs to FND-07 under its own criteria.

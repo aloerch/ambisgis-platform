@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "scope": "Read-only accepted-selection integrity, separate governance linkage and candidate regression tests; no runtime/native tests repeated",
+  "recorded_at": "2026-09-22T23:33:23.535278+00:00",
+  "steps": [
+    {
+      "name": "candidate-tests",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_candidate*.py",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-acceptance-record/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 2.249,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd-07-owner-acceptance/validation-01/candidate-tests.log",
+        "sha256": "1c5e1d2a74cf3a1cb1d7d76e3b0771da4065495cdd75b20e5481e56ab727dc3f"
+      }
+    },
+    {
+      "name": "inventory",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-acceptance-record/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 20.285,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd-07-owner-acceptance/validation-01/inventory.log",
+        "sha256": "c6696b32ed3a13ea8a73c9f64c5d3354ee1fc0e8c305db158f8dd0ac457bc589"
+      }
+    },
+    {
+      "name": "eligibility",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--eligibility"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-acceptance-record/plan",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "seconds": 18.883,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd-07-owner-acceptance/validation-01/eligibility.log",
+        "sha256": "c6696b32ed3a13ea8a73c9f64c5d3354ee1fc0e8c305db158f8dd0ac457bc589"
+      }
+    },
+    {
+      "name": "report",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--report"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-acceptance-record/plan",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 14.411,
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd-07-owner-acceptance/validation-01/report.log",
+        "sha256": "681c77baab79b96645b5f5549f07b1de3bd4473fa7e366d0bcb06fbeb3a9acce"
+      }
+    }
+  ],
+  "all_expected_results": true,
+  "prior_environment_failures": [
+    {
+      "command": "/tmp/ambisgis-validation-venv/bin/python -B -m unittest discover -s tests -p test_candidate*.py -v",
+      "exit_code": 127,
+      "error": "Historical /tmp interpreter no longer exists; no tests started."
+    },
+    {
+      "command": "python3 -c \"import sys,jsonschema; print(sys.executable); print(jsonschema.__file__)\"",
+      "exit_code": 1,
+      "error": "Host Python lacks jsonschema; no tests started. Existing retained Jupyter validation interpreter reused, no installation."
+    }
+  ],
+  "unchanged_checks": [
+    "Candidate bytes match 973a5ef and SHA-256 0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+    "Four original criterion lines and all eight pass conditions match 973a5ef exactly",
+    "Generated finding register and historical validation/approval fields untouched"
+  ],
+  "candidate_tests": 63
+}
