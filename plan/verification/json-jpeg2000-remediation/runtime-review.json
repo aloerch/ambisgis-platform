@@ -3,47 +3,47 @@
   "task": "FND-02/F02-06",
   "scope": "GeoServer NO-JPEG2000 source guard and selected real-HTTP retest integration; no legal/adoption/distribution acceptance",
   "review_role": "Implementation author self-review, incorporating independent root/imaging reviewer findings; not represented as independent review of own code.",
-  "integration_source_commit": "94c440c",
+  "integration_source_commit": "ba552361fb516a1e6c517ebbe9b288bfe3860b95",
   "files": [
     {
-      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000Policy.java",
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/NoJpeg2000Policy.java",
       "sha256": "bad0717ba28cd18aea28a4595f57a253787ed3d6eac57f4918df9083661e6356",
       "bytes": 5809
     },
     {
-      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000Filter.java",
-      "sha256": "605fa79ca6e04dba8a0e332b80baf358327f458dcb209203d25be91791e4fd81",
-      "bytes": 7960
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/NoJpeg2000Filter.java",
+      "sha256": "bed8cbf704bc6e0f968af55b46f8ca1d6a945f6372bcc65ad169ad4de72b5c7d",
+      "bytes": 7992
     },
     {
-      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/geoserver_profile.py",
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/geoserver_profile.py",
       "sha256": "a3336c05f75695a0b1a27a4f1790990b2fc7eaedcc0bce53c06b26e256f0687b",
       "bytes": 2357
     },
     {
-      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/geoserver-repairs.json",
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/geoserver-repairs.json",
       "sha256": "8a7ddf464bc468d2f2faa8b8eedf8fdfd4480c9fdaa3039e3a6ab151385ab0da",
       "bytes": 94266
     },
     {
-      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000GuardWitness.java",
-      "sha256": "99b16b2027a0a2441f174af8998c40a2426ce7c91261fcaec3a1a59ee5dd494d",
-      "bytes": 10679
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/NoJpeg2000GuardWitness.java",
+      "sha256": "c11d005f5e36db590d54ca7e20097f6422a5c73b366561db1e122002f2cd599d",
+      "bytes": 11378
     },
     {
-      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/guard_probe.py",
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/build-support/java/remediation-nojpeg2000/guard_probe.py",
       "sha256": "b0e56b75cfc340143cc13b659d756a020acd68d7cb341c2c1fc26375a17a00a3",
       "bytes": 4045
     }
   ],
   "native_guard": {
     "receipt": {
-      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/runtime/guard-10/result.json",
-      "sha256": "254ec790beb741a709764c3f24ec54f12cdf516b743f73aa60a941af73462d9d",
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/runtime/guard-12/result.json",
+      "sha256": "8920f9bf1ed6aebbda4e91dda71a9650c2f649036af1fd4df8f06ed6eb71b506",
       "bytes": 123702
     },
     "result_exit_code": 0,
-    "assertions": 74,
+    "assertions": 78,
     "compile_api": "javax.servlet-api 3.1.0 (actual GeoServer POM selection)",
     "execution": "actual changed CoverageStoreFileValidator and ImportTaskController compiled against retained parent WAR libraries, real native multipart method and production servlet policy/filter; trusted fixtures under existing offline AF_INET/AF_INET6 denial",
     "fresh_new_war_runtime_executed": false
@@ -54,7 +54,8 @@
     "File endpoints inspect content despite JSON/XML MIME spoofing; ordinary JSON metadata parser input and streaming/reader bytes are preserved.",
     "Native multipart preflight validates all parts before accepting any; ordinary-first/disputed-second request cannot partially create tasks.",
     "Direct/multipart ZIP preflight reads only names/twelve decoded bytes per member before persistent importer state, with staging removed on rejection/errors/success.",
-    "Explicit 1GiB compressed ZIP and10000member candidate limits use safe413 diagnostics; tests exercise private smaller-copy-bound logic without production property bypass, declared limit, sparsefile boundary and actual native multipart member-limit handling."
+    "Explicit 1GiB compressed ZIP and10000member candidate limits use safe413 diagnostics; tests exercise private smaller-copy-bound logic without production property bypass, declared limit, sparsefile boundary and actual native multipart member-limit handling.",
+    "Independent imaging source review found an actual metadata regression for a store named ordinary.jp2. Guard11 reproduced rejection in real production filter; guard12 passes after restricting codec checks to native file/url/external/remote upload endpoints or direct importer task uploads. Existing binary MIME-spoof controls still pass."
   ],
   "limitations": [
     "New 1GiB compressed/10000member ZIP limits are a candidate acceptance choice; larger archives are413, not mislabeled JPEG2000. No claim of unlimited imports.",
@@ -67,7 +68,16 @@
   "retained_attempts": {
     "guard01": "Failed evidence integration: verifier API name; compile completed, no successful receipt claimed.",
     "guard02_to09": "Executed prior versions remain retained; guard09 selected64MiB prototype is superseded by final1GiB guard10.",
-    "host_gwc_tests": "Host python lacks PIL: failed test discovery retained under runtime/checks-01; retained backend venv passes59 current GWC regression tests."
+    "host_gwc_tests": "Host python lacks PIL: failed test discovery retained under runtime/checks-01; retained backend venv passes59 current GWC regression tests.",
+    "guard11": {
+      "classification": "Actual production filter regression reproduced before source repair; unsuccessful receipt retained",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/runtime/guard-11/result.json",
+        "sha256": "2969aa24dc18e79564d688a2b5b0b199ec95a1a9575a890867ffd508ffc80de4",
+        "bytes": 123805
+      }
+    },
+    "guard10": "Passed previous74-assertion source revision; superseded by guard12 after independently found metadata-name collateral regression."
   },
   "review_conclusion": "No remaining material source guard finding in reviewed scope; new exact-WAR live acceptance pending and known limits must be preserved."
 }
