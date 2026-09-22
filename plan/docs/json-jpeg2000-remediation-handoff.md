@@ -10,9 +10,12 @@ Repository: `aloerch/ambisgis-platform` (verified ID `1376927351`), owner `aloer
 (ID `15285626`). Branch: `fnd-02/json-jpeg2000-remediation` in
 `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000`.
 Base: owner-merged #67/main `8f66b1e2a421d93e0c8d9714df76ad2dd62269a3`.
-The final PR/head and Project write/readback evidence are recorded in
-[publication](../verification/json-jpeg2000-remediation/publication.json) once
-publication completes. No merge, source-fork/default/workflow/secret changes,
+Review [PR #68](https://github.com/aloerch/ambisgis-platform/pull/68), tested
+implementation head `fc56b119b56d68e9b4cc650d6c0665659f3e706c`.
+[Publication](../verification/json-jpeg2000-remediation/publication.json) records
+the separate Project item and successful preservation readback (80 → 81 items).
+The following publication documentation changes no tested code, manifest or
+artifact; final pushed review head is pinned in issue #3. No merge, source-fork/default/workflow/secret changes,
 upstream contact, binary distribution, deployment or release are authorized.
 
 ## Exact selection

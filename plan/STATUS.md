@@ -26,6 +26,14 @@ Task fixtures are stopped and synthetic credentials invalidated/scrubbed.
 [Publication](verification/json-jpeg2000-remediation/publication.json) records
 final PR/head and the separate Project item without promoting parent Delivery.
 
+Review [PR #68](https://github.com/aloerch/ambisgis-platform/pull/68), tested
+implementation head `fc56b119b56d68e9b4cc650d6c0665659f3e706c`.
+Publication-only documentation follows; final pushed review head is pinned in
+issue #3. Project #2 now has 81 items (80 preserved plus the separate PR item),
+with exactly two authorized writes: membership and Evidence. Existing fields,
+views/order/archive choices and `is:pr is:open` are preserved; parent Delivery
+remains In progress. No merge/adoption/distribution or release occurred.
+
 # Preserved status — prior checkpoints
 
 # Implementation status — Java/GMT remediation variant
