@@ -1,0 +1,682 @@
+{
+  "schema_version": 1,
+  "task": "FND-02/F02-06",
+  "scope": "Exact successor WAR selected JSON/NO-JPEG2000 real HTTP, PostGIS vector/mosaic and GWC cold/warm/restart; engineering evidence, not legal/adoption/distribution acceptance",
+  "result_exit_code": 0,
+  "war_sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
+  "profile": {
+    "imageio_member": "WEB-INF/lib/jai_imageio-1.1.jar",
+    "imageio_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/lib/jai_imageio-1.1.jar",
+    "imageio_sha256": "a7084cfbb419bd158464638454939d25e1fef1a990ee00bf6145b28956218007",
+    "json_member": "WEB-INF/lib/json-lib-2.4.2-geoserver.jar",
+    "json_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/lib/json-lib-2.4.2-geoserver.jar",
+    "json_sha256": "de50a9896c9576c905c0dddfac562f431edebbb12ba0d30f2a8819a88e1f0744",
+    "profile": "NO-ORACLE-NO-JPEG2000-headless-Temurin17",
+    "profile_manifest_sha256": "770d0cca263a9974c5a3cb07dda689d0ce0e5f062dff9263f156b413126c1de9",
+    "profile_source": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/verification/json-jpeg2000-remediation/runtime-profile.json",
+    "renderer_member": "WEB-INF/lib/marlin-0.9.4.8.jar",
+    "renderer_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/lib/marlin-0.9.4.8.jar",
+    "renderer_sha256": "14633f73fed7e30553927201309bcaf407a9f5462fce87692f196859f33d074a",
+    "schema_version": 1,
+    "war_sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1"
+  },
+  "source_repair_commit": "9d8250afd3d2836d152b164ea5ce20bfd92fcfbe",
+  "runtime_harness_commit": "198da1a1ed7925204d6da1804638175edec40952",
+  "aggregate": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-04/result.json",
+    "sha256": "b70ef57ba19058b078f62b3c652c0e8d31b10b2bc2934a3b3ad3e2154808b137",
+    "bytes": 126179
+  },
+  "receipts": {
+    "result.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/result.json",
+      "sha256": "c1828b8261dbad53cd9084f21122e4a8195c0888f7a46f3b7cec5aaed50c33c7",
+      "bytes": 75953
+    },
+    "backend-result.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/backend-result.json",
+      "sha256": "709fe8c1b88f8e594ae6e77537c09cfe589138af0a17155b9a2e31dd998c205f",
+      "bytes": 37492
+    },
+    "network-loopback.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/network-loopback.json",
+      "sha256": "57da2c742a79ebfcdac41f9f1d18eb494287f46c293e4e1f7085b4fec83a34c8",
+      "bytes": 1838
+    },
+    "network-loopback.probes.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/network-loopback.probes.json",
+      "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+      "bytes": 12029
+    },
+    "tooling.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/tooling.json",
+      "sha256": "3714036397634550a8aced329dade673be3e6961a349076572751f49d8bc6b42",
+      "bytes": 23007
+    },
+    "application-inventory.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/application-inventory.json",
+      "sha256": "61aea3010a6a40dcc5175c4f49e2ea8179e3bf627c32f1b29c773948ac00a5c3",
+      "bytes": 59149
+    },
+    "staged-runtime-manifest.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/staged-runtime-manifest.json",
+      "sha256": "959d1dcb6060b917d61b26e288f4b1c6f16c2ac211a27159fbfd8f24359f0e3d",
+      "bytes": 1740
+    }
+  },
+  "phases": {
+    "initial": {
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/nojpeg2000-http/initial/result.json",
+        "sha256": "8d7191448f68bb3326c6bf5b5e2bf7a6bf052575bc6ed8ae47b1757898d47eac",
+        "bytes": 4007
+      },
+      "remote": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/nojpeg2000-http/initial/remote-print-result.json",
+        "sha256": "684c218151239abdf0ce0f99bc1ada8a18535fa28d89acc730d6a70e9f580374",
+        "bytes": 1855
+      },
+      "http_statuses": {
+        "coverage-jp2": 415,
+        "coverage-raw": 415,
+        "coverage-renamed-jp2": 415,
+        "coverage-renamed-j2k": 415,
+        "coverage-mime-json": 415,
+        "coverage-mime-xml": 415,
+        "coverage-truncated-jp2": 415,
+        "coverage-truncated-j2k": 415,
+        "coverage-zip": 415,
+        "imports-before": 200,
+        "imports-malformed": 400,
+        "imports-after-malformed": 200,
+        "import-create": 201,
+        "tasks-before": 200,
+        "import-jp2": 415,
+        "tasks-after-jp2": 200,
+        "import-disguised": 415,
+        "tasks-after-disguised": 200,
+        "import-spoofed": 415,
+        "tasks-after-spoofed": 200,
+        "import-multipart": 415,
+        "tasks-after-multipart": 200,
+        "import-zip-direct": 415,
+        "tasks-after-zip-direct": 200,
+        "import-zip-multipart": 415,
+        "tasks-after-zip-multipart": 200,
+        "zip-limit-direct": 413,
+        "tasks-after-limit-direct": 200,
+        "zip-limit-multipart": 413,
+        "tasks-after-limit-multipart": 200,
+        "import-cleanup": 204,
+        "wms-output": 415,
+        "wcs-output": 415,
+        "wmts-output": 415,
+        "wms-capabilities": 200,
+        "wcs-capabilities": 200,
+        "wcs-valid-geotiff": 200,
+        "print-output-jp2": 415,
+        "print-output-j2k": 415,
+        "print-output-image_jp2": 415,
+        "print-output-JPEG2000": 415,
+        "print-input-known_jp2": 415,
+        "print-input-known_j2k": 415,
+        "print-input-disguised_png": 415,
+        "remote-harvest-observation": 202,
+        "print-remote-jpeg2000-tile": 415,
+        "print-remote-pdf-jpeg2000-tile": 415,
+        "print-remote-valid-pdf": 200,
+        "print-valid-pdf": 200,
+        "print-valid-png": 200,
+        "print-valid-tiff": 200,
+        "wms-recovery": 200
+      },
+      "local_pdf_render": {
+        "height": 842,
+        "known_color_pixels": [
+          18342,
+          18336
+        ],
+        "render_sha256": "4ad0562a104ae72449174fa45335e3f12434be5483c07812849d109e084bcf49",
+        "width": 595
+      },
+      "remote_pdf_render": {
+        "height": 842,
+        "known_color_pixels": [
+          15520,
+          15200
+        ],
+        "render_sha256": "3b3c018737649431ce0378b7377aaa63a3767c665a232cc499505e4cc848ea24",
+        "width": 595
+      },
+      "wcs_geotiff": {
+        "bytes": 3464,
+        "dimensions": [
+          32,
+          32
+        ],
+        "georeferencing": true,
+        "known_colors": true,
+        "sha256": "8269f0f03c3f8af701022b396d5635008dfedadfc3b4fd5c464ca980e1f14601"
+      },
+      "print_outputs": [
+        {
+          "bytes": 1406,
+          "format": "pdf",
+          "sha256": "fad92b908744e7f7f2f127c8bf866b2edc9b2171cb16adc827f2c4fc2c24b5da"
+        },
+        {
+          "bytes": 10195,
+          "format": "png",
+          "sha256": "4ad0562a104ae72449174fa45335e3f12434be5483c07812849d109e084bcf49"
+        },
+        {
+          "bytes": 1504002,
+          "format": "tiff",
+          "sha256": "44722d7df2a6ed9331453c98ca566ed98a019076f56b3bbf5de19fbcb7cbfa31"
+        }
+      ],
+      "catalog_unchanged": true,
+      "valid_recovery": true,
+      "cache_and_authorization": [
+        {
+          "case": "public_points-first",
+          "cache": "MISS",
+          "denial": null,
+          "image": {
+            "expected_center": [
+              45.51111111111111,
+              164.9777777777778
+            ],
+            "opaque_pixels": 640,
+            "red_centroid": [
+              45.0,
+              164.5
+            ],
+            "red_pixels": 562,
+            "rgba_sha256": "16f0622efa09a8d90ad9c6b30fdaacf8ac04fd83c24ac048d0bda9d347fa8a7d",
+            "size": [
+              256,
+              256
+            ]
+          }
+        },
+        {
+          "case": "public_points-repeat",
+          "cache": "HIT",
+          "denial": null,
+          "image": {
+            "expected_center": [
+              45.51111111111111,
+              164.9777777777778
+            ],
+            "opaque_pixels": 640,
+            "red_centroid": [
+              45.0,
+              164.5
+            ],
+            "red_pixels": 562,
+            "rgba_sha256": "16f0622efa09a8d90ad9c6b30fdaacf8ac04fd83c24ac048d0bda9d347fa8a7d",
+            "size": [
+              256,
+              256
+            ]
+          }
+        },
+        {
+          "case": "private-before-anonymous",
+          "cache": null,
+          "denial": {
+            "exception": "400: Cannot access private_points with the current privileges",
+            "format": "native GWC HTML error",
+            "status": 400
+          },
+          "image": null
+        },
+        {
+          "case": "private-before-outsider",
+          "cache": null,
+          "denial": {
+            "exception": "400: Cannot access private_points with the current privileges",
+            "format": "native GWC HTML error",
+            "status": 400
+          },
+          "image": null
+        },
+        {
+          "case": "private_points-first",
+          "cache": "MISS",
+          "denial": null,
+          "image": {
+            "expected_center": [
+              45.51111111111111,
+              164.9777777777778
+            ],
+            "opaque_pixels": 640,
+            "red_centroid": [
+              45.0,
+              164.5
+            ],
+            "red_pixels": 562,
+            "rgba_sha256": "16f0622efa09a8d90ad9c6b30fdaacf8ac04fd83c24ac048d0bda9d347fa8a7d",
+            "size": [
+              256,
+              256
+            ]
+          }
+        },
+        {
+          "case": "private_points-repeat",
+          "cache": "HIT",
+          "denial": null,
+          "image": {
+            "expected_center": [
+              45.51111111111111,
+              164.9777777777778
+            ],
+            "opaque_pixels": 640,
+            "red_centroid": [
+              45.0,
+              164.5
+            ],
+            "red_pixels": 562,
+            "rgba_sha256": "16f0622efa09a8d90ad9c6b30fdaacf8ac04fd83c24ac048d0bda9d347fa8a7d",
+            "size": [
+              256,
+              256
+            ]
+          }
+        },
+        {
+          "case": "private-cached-anonymous",
+          "cache": null,
+          "denial": {
+            "exception": "400: Cannot access private_points with the current privileges",
+            "format": "native GWC HTML error",
+            "status": 400
+          },
+          "image": null
+        },
+        {
+          "case": "private-cached-outsider",
+          "cache": null,
+          "denial": {
+            "exception": "400: Cannot access private_points with the current privileges",
+            "format": "native GWC HTML error",
+            "status": 400
+          },
+          "image": null
+        }
+      ],
+      "invalid_layer": {
+        "code": "InvalidParameterValue",
+        "exception": "LAYER fixture:no_such_tile_layer is not known.",
+        "locator": "LAYER",
+        "status": 400
+      },
+      "remote_harvest": {
+        "capability_acceptance": false,
+        "classification": "Pre-existing unsupported remote source: selected mosaic has no URL SourceSPIProvider; native controller historically discards empty harvest results. No universal remote-harvest guarantee.",
+        "fixture_fetched": false,
+        "index_unchanged": true,
+        "status": 202
+      }
+    },
+    "restart": {
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/nojpeg2000-http/restart/result.json",
+        "sha256": "383e8f1cdad26a5fd3e52708ec55de8b5d5c2341af78eddb8f9add397632edcd",
+        "bytes": 3301
+      },
+      "remote": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/nojpeg2000-http/restart/remote-print-result.json",
+        "sha256": "684c218151239abdf0ce0f99bc1ada8a18535fa28d89acc730d6a70e9f580374",
+        "bytes": 1855
+      },
+      "http_statuses": {
+        "wms-output": 415,
+        "wcs-output": 415,
+        "wmts-output": 415,
+        "wms-capabilities": 200,
+        "wcs-capabilities": 200,
+        "wcs-valid-geotiff": 200,
+        "print-output-jp2": 415,
+        "print-output-j2k": 415,
+        "print-output-image_jp2": 415,
+        "print-output-JPEG2000": 415,
+        "print-input-known_jp2": 415,
+        "print-input-known_j2k": 415,
+        "print-input-disguised_png": 415,
+        "remote-harvest-observation": 202,
+        "print-remote-jpeg2000-tile": 415,
+        "print-remote-pdf-jpeg2000-tile": 415,
+        "print-remote-valid-pdf": 200,
+        "print-valid-pdf": 200,
+        "print-valid-png": 200,
+        "print-valid-tiff": 200,
+        "wms-recovery": 200
+      },
+      "local_pdf_render": {
+        "height": 842,
+        "known_color_pixels": [
+          18342,
+          18336
+        ],
+        "render_sha256": "4ad0562a104ae72449174fa45335e3f12434be5483c07812849d109e084bcf49",
+        "width": 595
+      },
+      "remote_pdf_render": {
+        "height": 842,
+        "known_color_pixels": [
+          15520,
+          15200
+        ],
+        "render_sha256": "3b3c018737649431ce0378b7377aaa63a3767c665a232cc499505e4cc848ea24",
+        "width": 595
+      },
+      "wcs_geotiff": {
+        "bytes": 3464,
+        "dimensions": [
+          32,
+          32
+        ],
+        "georeferencing": true,
+        "known_colors": true,
+        "sha256": "8269f0f03c3f8af701022b396d5635008dfedadfc3b4fd5c464ca980e1f14601"
+      },
+      "print_outputs": [
+        {
+          "bytes": 1406,
+          "format": "pdf",
+          "sha256": "f2d16d8e85541c10e81130b792afddd7db036f2b6030879825c7d3745b0cfb9f"
+        },
+        {
+          "bytes": 10195,
+          "format": "png",
+          "sha256": "4ad0562a104ae72449174fa45335e3f12434be5483c07812849d109e084bcf49"
+        },
+        {
+          "bytes": 1504002,
+          "format": "tiff",
+          "sha256": "44722d7df2a6ed9331453c98ca566ed98a019076f56b3bbf5de19fbcb7cbfa31"
+        }
+      ],
+      "catalog_unchanged": true,
+      "valid_recovery": true,
+      "cache_and_authorization": [
+        {
+          "case": "public_points-first",
+          "cache": "HIT",
+          "denial": null,
+          "image": {
+            "expected_center": [
+              45.51111111111111,
+              164.9777777777778
+            ],
+            "opaque_pixels": 640,
+            "red_centroid": [
+              45.0,
+              164.5
+            ],
+            "red_pixels": 562,
+            "rgba_sha256": "16f0622efa09a8d90ad9c6b30fdaacf8ac04fd83c24ac048d0bda9d347fa8a7d",
+            "size": [
+              256,
+              256
+            ]
+          }
+        },
+        {
+          "case": "public_points-repeat",
+          "cache": "HIT",
+          "denial": null,
+          "image": {
+            "expected_center": [
+              45.51111111111111,
+              164.9777777777778
+            ],
+            "opaque_pixels": 640,
+            "red_centroid": [
+              45.0,
+              164.5
+            ],
+            "red_pixels": 562,
+            "rgba_sha256": "16f0622efa09a8d90ad9c6b30fdaacf8ac04fd83c24ac048d0bda9d347fa8a7d",
+            "size": [
+              256,
+              256
+            ]
+          }
+        },
+        {
+          "case": "private-before-anonymous",
+          "cache": null,
+          "denial": {
+            "exception": "400: Cannot access private_points with the current privileges",
+            "format": "native GWC HTML error",
+            "status": 400
+          },
+          "image": null
+        },
+        {
+          "case": "private-before-outsider",
+          "cache": null,
+          "denial": {
+            "exception": "400: Cannot access private_points with the current privileges",
+            "format": "native GWC HTML error",
+            "status": 400
+          },
+          "image": null
+        },
+        {
+          "case": "private_points-first",
+          "cache": "HIT",
+          "denial": null,
+          "image": {
+            "expected_center": [
+              45.51111111111111,
+              164.9777777777778
+            ],
+            "opaque_pixels": 640,
+            "red_centroid": [
+              45.0,
+              164.5
+            ],
+            "red_pixels": 562,
+            "rgba_sha256": "16f0622efa09a8d90ad9c6b30fdaacf8ac04fd83c24ac048d0bda9d347fa8a7d",
+            "size": [
+              256,
+              256
+            ]
+          }
+        },
+        {
+          "case": "private_points-repeat",
+          "cache": "HIT",
+          "denial": null,
+          "image": {
+            "expected_center": [
+              45.51111111111111,
+              164.9777777777778
+            ],
+            "opaque_pixels": 640,
+            "red_centroid": [
+              45.0,
+              164.5
+            ],
+            "red_pixels": 562,
+            "rgba_sha256": "16f0622efa09a8d90ad9c6b30fdaacf8ac04fd83c24ac048d0bda9d347fa8a7d",
+            "size": [
+              256,
+              256
+            ]
+          }
+        },
+        {
+          "case": "private-cached-anonymous",
+          "cache": null,
+          "denial": {
+            "exception": "400: Cannot access private_points with the current privileges",
+            "format": "native GWC HTML error",
+            "status": 400
+          },
+          "image": null
+        },
+        {
+          "case": "private-cached-outsider",
+          "cache": null,
+          "denial": {
+            "exception": "400: Cannot access private_points with the current privileges",
+            "format": "native GWC HTML error",
+            "status": 400
+          },
+          "image": null
+        }
+      ],
+      "invalid_layer": {
+        "code": "InvalidParameterValue",
+        "exception": "LAYER fixture:no_such_tile_layer is not known.",
+        "locator": "LAYER",
+        "status": 400
+      },
+      "remote_harvest": {
+        "capability_acceptance": false,
+        "classification": "Pre-existing unsupported remote source: selected mosaic has no URL SourceSPIProvider; native controller historically discards empty harvest results. No universal remote-harvest guarantee.",
+        "fixture_fetched": false,
+        "index_unchanged": true,
+        "status": 202
+      }
+    }
+  },
+  "mosaic": {
+    "cleanup-result.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/remediation-mosaic/cleanup-result.json",
+      "sha256": "12b8ea94282aac4518650991656ad344e000369e27fabb2dc06a4dd9d5ed170d",
+      "bytes": 229
+    },
+    "exercise-result.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/remediation-mosaic/exercise-result.json",
+      "sha256": "18aaefaf3071923bb2dadf20f0875bde1da0efe5175dee9159bee22cedac9a1e",
+      "bytes": 4235
+    },
+    "initial-result.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/remediation-mosaic/initial-result.json",
+      "sha256": "83177d6aa86f217635dd33fd977db61e1e6c225835695e866de5c86e8aae05aa",
+      "bytes": 2984
+    },
+    "restart-result.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/remediation-mosaic/restart-result.json",
+      "sha256": "7f8a706e7db3b07b577c28c5fd63354d6800e22f2cee46a34e2eb11fd81d461b",
+      "bytes": 2984
+    }
+  },
+  "cleanup": {
+    "codec_staging": [
+      {
+        "directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/codec-java-tmp-initial",
+        "remaining_files": []
+      },
+      {
+        "directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-05/codec-java-tmp-restart",
+        "remaining_files": []
+      }
+    ],
+    "geonode": true,
+    "geoserver": true,
+    "mosaic": {
+      "files_scrubbed": [
+        "geoserver-data/data/fixture/remediation_mosaic/datastore.properties",
+        "geoserver-data/workspaces/fixture/remediation_vector/datastore.xml"
+      ],
+      "result_exit_code": 0,
+      "schema_dropped": true
+    },
+    "stored_credentials_invalidated": true
+  },
+  "diagnostic_security_failures": 0,
+  "diagnostic_secret_hits": 0,
+  "retained_attempts": [
+    {
+      "attempt": "gwc-01",
+      "classification": "Actual malformed REST importer JSON returned500 after nine direct codec415 controls; remaining routes not reached. Native parent control later proved this unchecked boundary inherited.",
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-01/result.json",
+        "sha256": "04f7ecfaa43c48c114f8674e2d550f28f48af525d7dce4a5e5128b1b8dcf52a8",
+        "bytes": 50927
+      },
+      "backend": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-01/backend-result.json",
+        "sha256": "328759d5a8bdde275fbd15369d6870bf03d380b0cc5c95dc3615d125132494ac",
+        "bytes": 13854
+      },
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-01/network-loopback.json",
+        "sha256": "bc45f4258332c5c121d8a7cc12313311a2d5f42d5c0aa785c83d5fd404f23cbf",
+        "bytes": 1837
+      }
+    },
+    {
+      "attempt": "gwc-02",
+      "classification": "Continued known malformed500; direct/multipart ZIP, limits, service and local print controls passed. Remote bitmap client wildcard bind was refused by unchanged containment, so no codec bytes reached printer; failed exercise, not proven codec bypass.",
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-02/result.json",
+        "sha256": "d438441f8d7219d946ee2e66822056b298239170c19769c808fd5a1b230ead66",
+        "bytes": 50936
+      },
+      "backend": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-02/backend-result.json",
+        "sha256": "a41181803e8e4379d91658582b94277e41084b42ec87cbfc56fb814aec26d89b",
+        "bytes": 13862
+      },
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-02/network-loopback.json",
+        "sha256": "23a94e3ef1c9aca8260721fca4e585542fdf2debcef74e37b712ee42e0e39649",
+        "bytes": 1838
+      }
+    },
+    {
+      "attempt": "gwc-03",
+      "classification": "Native localHostForward fetched actual remote bitmap and JPX PDF, both415. Local returned PDF was valid1406bytes but failed arbitrary1500byte test. Independent decoded remote ordinary PDF was blank because the original A4 image was outside native192x160tile clipping; fixed test geometry and replaced size threshold with actual parsing/rendered known colors.",
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-03/result.json",
+        "sha256": "40fe3cec80b65541655b9c355a7abe1f616c8217a25ef658bfb8a7d2fd591e7a",
+        "bytes": 50903
+      },
+      "backend": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-03/backend-result.json",
+        "sha256": "e1ce417824afb824c499d82e8b8f912cc89fa6392e3474bdfa0e0942aaf908fb",
+        "bytes": 13829
+      },
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-03/network-loopback.json",
+        "sha256": "4509943e20c0a277ed0ec741b5abc7d5317343128ee1ca44755610f95fd85d02",
+        "bytes": 1838
+      }
+    },
+    {
+      "attempt": "gwc-04",
+      "classification": "Complete diagnostic initial/restart matrix: exactly one initial failure, malformed importer JSON500; all independent controls including actual rendered local/remote PDFs, PNG/TIFF, WCS GeoTIFF, fresh cache and restart passed. Overall result1 deliberately retained pending rebuilt converter repair.",
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-04/result.json",
+        "sha256": "6bf8d3b8ffc6be7a0755be04b0896ac3366f7854619c45707fbc9eaa1022bfc0",
+        "bytes": 76248
+      },
+      "backend": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-04/backend-result.json",
+        "sha256": "cb9b4f83b7250514f32d96b1be84b57b3c6dca1e1f435c72d32257c8620be98c",
+        "bytes": 37672
+      },
+      "network": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-04/network-loopback.json",
+        "sha256": "4649fbec05275bf2f0fc665b9ef7bd4b9d08fa553e80a0b7f59a58ca1126d084",
+        "bytes": 1838
+      }
+    }
+  ],
+  "limitations": [
+    "Coverage inline uploads plus importer direct/multipart ZIP and MapFish local/remote selected inputs are exercised; no universal guarantee for every URL/import API.",
+    "Selected native remote mosaic harvest has no URL SourceSPIProvider and returns empty202 without fetching. Both phases prove native index unchanged and explicitly classify capability_acceptance:false. This inherited limitation is not passed JPEG2000 support or a new loss.",
+    "New candidate ZIP limits are1GiB compressed and10000members; live direct/multipart10001member413 controls passed. Compressed-byte limits are separately exercised with native declared/sparse/private bounded-copy controls, not a live GiB transfer. Existing multipart parser may stage original input before preflight.",
+    "No new containment exception. The inherited disposable database-supervisor arrangement and trusted loopback broker limitations remain as recorded in the exact runtime receipt.",
+    "All generated services and stores are disposable task fixtures. Human security/license/owner adoption and distribution decisions remain separate."
+  ]
+}

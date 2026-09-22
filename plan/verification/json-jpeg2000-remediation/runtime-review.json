@@ -56,7 +56,7 @@
     "assertions": 78,
     "compile_api": "javax.servlet-api 3.1.0 (actual GeoServer POM selection)",
     "execution": "actual changed CoverageStoreFileValidator and ImportTaskController compiled against retained parent WAR libraries, real native multipart method and production servlet policy/filter; trusted fixtures under existing offline AF_INET/AF_INET6 denial; all six modified native importer converters compile against retained parent libraries",
-    "fresh_new_war_runtime_executed": false
+    "fresh_new_war_runtime_executed": true
   },
   "review_findings_fixed": [
     "Added Servlet3.1 init/destroy implementations; prior JettyServlet4-first focused compile would have hidden a Maven interface mismatch.",
@@ -130,9 +130,17 @@
       },
       "result_exit_code": 1,
       "cleanup": "GeoNode/GeoServer stopped; disposable credentials invalidated, mosaic schema dropped/config scrubbed, no codec staging remains; network probes passed and process group stopped."
+    },
+    "gwc03_04": {
+      "index": {
+        "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/plan/verification/json-jpeg2000-remediation/runtime-retest.json",
+        "sha256": "99cf78af49a732359ed9bb661df4e414e9b41c016f601e081cfc816d18a3b714",
+        "bytes": 26356
+      },
+      "classification": "GWC03 exposed an arbitrary PDF byte threshold and incorrect remote tile geometry; both test defects were corrected with actual PDF parsing/rendered known colors. GWC04 completed all independent initial/restart checks with exactly the known pre-fix malformed500 failure; final GWC05 passes on rebuilt bytes."
     }
   },
-  "review_conclusion": "No remaining material source finding in reviewed scoped guards/converters; final successor exact-WAR live HTTP400/codec/GWC acceptance pending and retained limits remain explicit.",
+  "review_conclusion": "Reviewed scoped guards/converters and final exact-WAR GWC05 initial/restart acceptance passed. All retained failures and known upload/remote-harvest limits remain explicit. This is engineering evidence only; owner capability, security, license, adoption and distribution decisions remain separate.",
   "importer_json": {
     "production_source_review": "Independent JSON-scope agent review of runtime agent patches; reviewed manifest SHA6457254f4ed23cfd979794ba08b1e753aa28d4b2bb060befbe35ac9a171de95c; all source before/after hashes recomputed valid. Test witness authored by that reviewer, not represented as independent review of own tests.",
     "receipt": {
@@ -146,6 +154,12 @@
     "candidate_repaired_assertions": 74,
     "provenance": "All six original parent/candidate converters leak malformed JSONException; native vector/raster chain delegation also fails in both originals. These are inherited consumer defects exposed by required actual HTTP/valid-recovery checks, not attributed to replacement JSON drift.",
     "repair": "Each converter catches only JSONException, raises HttpMessageNotReadableException with fixed text and no cause, closes input and preserves valid conversion. Chain converter calls existing native transformChain parser.",
-    "limit": "Native exception classification is not live HTTP400 acceptance; final successor WAR must pass real malformed REST/create/recovery flow. Native Importer fixture logs its known absent ResourceLoader/default-DAO fallback; real catalog/DAO/store and owned queue teardown are used."
-  }
+    "limit": "Native classification controls are separate from deployed HTTP evidence; final exact-WAR GWC05 now proves malformed context POST400, unchanged context state, and successful valid create/delete recovery. Other selected converters have native malformed/valid controls and exact compiled class bindings."
+  },
+  "final_runtime": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000-runtime/plan/verification/json-jpeg2000-remediation/runtime-retest.json",
+    "sha256": "99cf78af49a732359ed9bb661df4e414e9b41c016f601e081cfc816d18a3b714",
+    "bytes": 26356
+  },
+  "final_runtime_war_sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1"
 }
