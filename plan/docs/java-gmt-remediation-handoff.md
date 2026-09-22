@@ -140,3 +140,14 @@ Independent source/imaging, Oracle/mosaic and candidate/acceptance reviews are
 linked in validation. Initial stale generated-register package failure is retained;
 regeneration via the unchanged validator resolved it. All task-owned services are
 stopped; final process audit and fixture credential cleanup are retained.
+
+## Publication
+
+[PR #67](https://github.com/aloerch/ambisgis-platform/pull/67) targets `ambisgis/main`
+from `fnd-02/java-gmt-selection-remediation`. Frozen implementation head:
+`e1b960588c51beb35f83c5f1c5d137e85a0d414c`. [Project receipt](../verification/java-gmt-remediation/project.json)
+records two writes and read-only reconciliation: 79→80 items, all existing
+planning/views/archive decisions retained, only #67 in unchanged `is:pr is:open`,
+FND-02 Delivery In progress. Immediate list-readback failure is preserved. Later
+publication documentation changes no tested artifact, manifest or code contract;
+final pushed head is recorded in issue #3. No merge or release was performed.

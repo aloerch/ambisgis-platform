@@ -32,6 +32,15 @@ exit 0; eligibility exit 2. Native partial failures and two adoption blockers re
 explicit. [Validation](verification/java-gmt-remediation/validation.json) binds the
 exact code/contracts and independent reviews. Task-owned services are stopped.
 
+Review [PR #67](https://github.com/aloerch/ambisgis-platform/pull/67), implementation
+head `e1b960588c51beb35f83c5f1c5d137e85a0d414c`. [Project evidence](verification/java-gmt-remediation/project.json)
+records exactly two authorized writes: the deduplicated PR item and Evidence link.
+Live count 79→80; all 79 prior items, fields/views/archive choices and unchanged
+`is:pr is:open` are preserved. Immediate list-readback failed after successful
+writes; later read-only reconciliation passed without repeating mutations. Only
+#67 is in the open queue; parent Delivery stays In progress. Final pushed head is
+pinned in issue #3; publication documentation changes no tested selection.
+
 # Preserved status — prior checkpoints
 
 # Implementation status — frontend/QGIS remediation variant

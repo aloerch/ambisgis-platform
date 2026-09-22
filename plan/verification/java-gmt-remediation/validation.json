@@ -220,5 +220,10 @@
     "bytes": 171
   },
   "all_task_owned_services_stopped": true,
-  "permissions": "No new containment exception, no merge/release/distribution, no workflow/secret installation or upstream contact"
+  "permissions": "No new containment exception, no merge/release/distribution, no workflow/secret installation or upstream contact",
+  "staged_diff_check": {
+    "production_code_docs_clean": true,
+    "patch_context": "Only required single-space blank context lines in retained imageio-source.patch and marlin-source.patch triggered staged whitespace diagnostics. All inspected; context bytes preserved. Excluding these two evidence patches, full base-to-head diff --check passes.",
+    "implementation_commit": "e1b960588c51beb35f83c5f1c5d137e85a0d414c"
+  }
 }
