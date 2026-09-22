@@ -263,6 +263,15 @@ def probe(config, token, output, phase='initial', java_home=None):
         for endpoint in ('wms','wcs'):
             capabilities=request(config,token,directory,endpoint+'-capabilities',endpoint+'?SERVICE='+endpoint.upper()+'&REQUEST=GetCapabilities')
             require(not re.search(rb'>\s*(?:image/)?(?:jp2|j2k|jpeg2000)\s*<',capabilities,re.I),'unsupported codec remains advertised')
+        # Pair service format refusal with a real supported WCS GeoTIFF export.
+        coverage=request(config,token,directory,'wcs-valid-geotiff','wcs?'+urlencode({'SERVICE':'WCS','VERSION':'2.0.1','REQUEST':'GetCoverage','COVERAGEID':'fixture__remediation_mosaic','FORMAT':'image/tiff'}))
+        from remediation_mosaic import COLORS
+        with Image.open(io.BytesIO(coverage)) as image:
+            require(image.format=='TIFF' and image.size==(32,32),'supported WCS GeoTIFF export dimensions/format changed')
+            rgb=image.convert('RGB')
+            require(rgb.getpixel((8,16))==COLORS['west.tif'] and rgb.getpixel((24,16))==COLORS['east.tif'],'supported WCS GeoTIFF export lost known mosaic colors')
+            require(34735 in image.tag_v2,'WCS export lacks GeoTIFF coordinate reference tags')
+        report['wcs_geotiff']={'sha256':sha(coverage),'bytes':len(coverage),'dimensions':[32,32],'known_colors':True,'georeferencing':True}
         # Native print servlet must reject explicit output requests and real image bytes.
         for fmt in ('jp2','j2k','image/jp2','JPEG2000'):
             report['negative'].append(rejected(config,token,directory,'print-output-'+fmt.replace('/','_'),'pdf/create.json',method='POST',body=print_spec('known_png',fmt),content_type='application/json'))
