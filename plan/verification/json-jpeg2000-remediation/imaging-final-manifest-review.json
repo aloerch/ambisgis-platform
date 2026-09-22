@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "reviewer": "imaging subagent",
+  "scope": "Independent read-only review of actual assembled candidate selection and provenance. Not an independent review of MapFish code authored by this reviewer, a product-wide audit, or owner acceptance.",
+  "candidate": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/candidates/fnd-02-candidate.json",
+    "sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+    "bytes": 1082577
+  },
+  "parent": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/plan/candidates/fnd-02-candidate-parent-3.json",
+    "sha256": "8083a10deee529363e15925941c28e5a1e1f3030716f0cac7154c39466efbb90",
+    "bytes": 836241
+  },
+  "status": "passed bounded assembled-manifest review",
+  "findings": [],
+  "checks": [
+    {
+      "check": "Every new revision4 record matches its actual file digest",
+      "records": 263
+    },
+    {
+      "check": "All parent records retain their fields and hashes; six relocated paths match original bytes; eleven roots and prior archive members unchanged",
+      "parent_records": 723,
+      "relocations": 6
+    },
+    {
+      "check": "All explicit new top-level receipt/status/artifact JSON-pointer bindings resolve",
+      "bindings": 35
+    },
+    {
+      "check": "Exact WAR04 complete listed file membership and member digests verified; selected JAI member matches exclusion artifact",
+      "members": 404
+    },
+    {
+      "check": "Current imaging indexes, exact packaged-code probe, native71/6 and successful GWC05 select finalWAR;132 selected Java sources and323 unchanged core classes recorded",
+      "war_sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
+      "source_overlay": false
+    },
+    {
+      "check": "Existing absolute workspace path/hash aliases in imaging and final indexes match files and have manifest records",
+      "aliases": 177
+    },
+    {
+      "check": "Only two authorized findings changed; exact parent findings and JSON condition retained; historical native receipts and database/notebook/QGIS combinations scoped correctly",
+      "changed_findings": [
+        "F02-JAVA-jai-imageio11",
+        "F02-JAVA-json-lib"
+      ]
+    }
+  ],
+  "limits": [
+    "No candidate-index-bound files modified. This report is outside the candidate to avoid a circular manifest hash.",
+    "Executable evidence was produced earlier; this review checks actual manifest/content bindings without rerunning runtime tests.",
+    "Explicit NO-JPEG2000 capability, inherited TIFF/remote-harvest restrictions, inherited HTTP buffering, native skips and owner/distribution gates remain."
+  ],
+  "review_check_correction": "Initial ad hoc assertion compared changed_preserved_class_bytes to numeric zero; actual schema is an empty list. Corrected schema assertion passes; no candidate or receipt change."
+}
