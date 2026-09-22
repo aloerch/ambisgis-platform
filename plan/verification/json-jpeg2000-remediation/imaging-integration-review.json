@@ -72,7 +72,7 @@
   "native_receipt_result_exit_code": 0,
   "native_review_owner": "runtime agent executed78 assertions; this reviewer verified source logic and receipt identity, not a second execution",
   "limits": [
-    "Source review and focused guard12 use retained parent libraries; final new WAR live tests remain required.",
+    "Source review and focused guard12 used retained parent libraries; final new WAR imaging probe02 and GWC05 live phases subsequently passed and are linked below.",
     "ZIP limit is a documented candidate behavior change, not JPEG2000 misclassification.",
     "This review does not grant owner adoption, security/legal/distribution acceptance or universal remote-harvest support."
   ],
@@ -82,16 +82,16 @@
     "scripts": [
       {
         "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/assemble_candidate.py",
-        "sha256": "4ea4cf859dcfba2d7dde6d1e7b103adf849d16a67c3ee5bd91a6e3c3258098b3",
-        "bytes": 16028
+        "sha256": "421bd0c957c1e1221c8cf7076c70523a89223f0e81f804ddc98a30b8adabca55",
+        "bytes": 16743
       },
       {
         "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/prepare_final_index.py",
-        "sha256": "bdab03f0205beb42833c636652c4c989b5019552191160e315d089ecc8ae0920",
-        "bytes": 13509
+        "sha256": "ace4c360fc90ed75a665676845630a3d3821c8d8ff77a7e4b1c2e96ec1ac783d",
+        "bytes": 13677
       }
     ],
-    "status": "Draft reviewed; final WAR04 and live receipt rebinding still pending at review time. No shared root files edited.",
+    "status": "Final assembly recipes reviewed after all final WAR04 and live GWC05 receipts passed. Current script references refreshed after the retained failed assembly; final assembled manifest still requires separate inspection. No shared root files edited.",
     "sound_points": [
       "Active Java aggregate/class inventories/runtime profile and coherent replacement mapping are switched together; original records and prior manifests remain immutable history.",
       "Only JSON/JAI finding rows change, with explicit assertions preserving finding IDs and all other rows; JSON original closing condition remains verbatim and JPEG2000 owner-authorized alternative preserves the former condition in parent history.",
@@ -107,10 +107,26 @@
       {
         "issue": "Draft paths still select aggregate03, imageprobe01 and earlier runtime attempts, while final04 is being prepared. Component indexes can independently retain an old successfulWAR even if cfg receipts are updated.",
         "required_correction": "Update every changed-WAR receipt and active component index; assert imaging-index/final_war/sha256 and imaging-war-index/war/sha256 equal selectedWAR and native-index result equals finalnative receipt before finalassembly. Keep prior03 and failure receipts historical.",
-        "status": "Draft assembler paths now select aggregate04 and fresh final receipts. Current imaging component indexes were updated only after probe02passed; verify final assembled bindings after cherry-pick."
+        "status": "Final recipe selects aggregate04 and all successful fresh receipts; explicit preflight assertions bind current imaging WAR/probe/native indexes. Final assembled manifest inspection remains separate."
       }
     ],
-    "production_findings": "No new material production imaging-selection defect found in reviewed uncommitted build/evidence integration."
+    "production_findings": "No new material production imaging-selection defect found in reviewed uncommitted build/evidence integration.",
+    "prior_reviewed_assembler_snapshot": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/assembly-before-historical-relocation.py",
+      "sha256": "4ea4cf859dcfba2d7dde6d1e7b103adf849d16a67c3ee5bd91a6e3c3258098b3",
+      "bytes": 16028
+    },
+    "retained_assembly_failure": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/assembly-failure-01.json",
+      "sha256": "530096bdeb485130d5b20f6e74771071564be6d1d99ef470b47e012105b58a56",
+      "bytes": 829
+    },
+    "final_recipe_changes_reviewed": [
+      "Revision3 GeoFence/importer native receipt IDs move from the selected Java profile into java-native-historical; their records remain unchanged and an explicit limitation distinguishes original source-native suites from current-WAR affected probes.",
+      "Every existing absolute workspace file reference is hash-checked before duplicate record suppression, so an already-recorded path cannot hide a stale alias digest.",
+      "Final-index preflight binds aggregate04, imaging probe02, MapFish native03 and GWC05; current imaging indexes must match the selected WAR and exact probe/native receipts. The retained failed assembly and original reviewed recipe snapshot are indexed separately.",
+      "New MapFish URL/file/PDF loader and byte-array limits remain distinguished from inherited HTTP acquisition buffering; read timeouts and elapsed checks are not described as a strict wall-clock deadline."
+    ]
   },
   "final_imaging_probe": {
     "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/result.json",
