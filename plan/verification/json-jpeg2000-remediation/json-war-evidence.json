@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "passed-exact-war-component-and-database-contracts",
+  "war": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-03/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "c766574bd81e41c22a32fd9b25096d2e4da77e57193fd700aaa19c63dfc7be54",
+    "bytes": 141263856
+  },
+  "aggregate_build": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-03/result.json",
+    "sha256": "74eb548b1780d3b5215935bcf7563b1ba1de3234e25764cb380adc5ca2e6e3fb",
+    "bytes": 122320
+  },
+  "replacement_map": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/json-nojpeg2000-variant-inputs.json",
+    "sha256": "194139a86bb3640d991b4c23bc55b02d66526127bdea6c3d6f025216d41f87f5",
+    "bytes": 6674
+  },
+  "checks": {
+    "json": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/war-probe-01/result.json",
+      "sha256": "fb6804a725aee53bf704bfe3c699c20b4b0da31e89ca2efb2bfc6ef6af365bfe",
+      "bytes": 745203
+    },
+    "source_components": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/source-war-probe-01/result.json",
+      "sha256": "524e0dc901d4e74344a2378ec55d83172b7f5b448bc695a6f4510912d9f4c691",
+      "bytes": 427116
+    },
+    "geofence_database": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/source-war-geofence-probe-01/result.json",
+      "sha256": "68149db913f7b4e331d1ed56d04623f0e4048bd29ddc2be60dce73d3fedf4d7b",
+      "bytes": 213287
+    }
+  },
+  "counts": {
+    "retained_json_contracts": 213,
+    "additional_common_json_assertions": 64,
+    "additional_safety_json_assertions": 110,
+    "unchanged_native_geoserver_geojson_tests": 41,
+    "unchanged_native_json_writer_test_methods": 8,
+    "xml_contracts": 10,
+    "spring_aspectj_proxy_contracts": 2,
+    "real_java5_load_time_weaving_advice_calls": 1,
+    "geofence_dao_native_tests": 27,
+    "geofence_dao_failures": 0,
+    "geofence_dao_skips": 0
+  },
+  "runtime_integrity": {
+    "production_inputs": "Every variant production JAR is extracted directly from exact new WAR; JSON selected artifact hash is independently checked against build09; no production overlay.",
+    "json_fixture_non_shadowing": true,
+    "selected_loaded_origins_verified": true,
+    "war_and_runtime_inputs_rechecked_after_execution": true,
+    "verified_af_inet_af_inet6_socket_denial": true,
+    "fresh_database": "Owned PostgreSQL AF_UNIX fixture, real transactional Spring proxy commit and rollback verified, cluster stopped."
+  },
+  "limits": [
+    "These exact-WAR component tests and database transactions complement the separately owned HTTP/rendering/authorization/service matrix; they are not a release or owner review.",
+    "Full historical json-lib359 tests, Marlin46/48 and Java7-target weaving failures remain historical and are not reclassified as fresh passes.",
+    "Fresh real legacy LTW uses genuine Java5 target bytecode and normal Temurin17 verifier; no Java7 equivalence claim."
+  ]
+}

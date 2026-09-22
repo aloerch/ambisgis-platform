@@ -2,7 +2,7 @@
   "schema_version": 1,
   "task": "FND-02/F02-06",
   "finding": "F02-JAVA-json-lib",
-  "status": "focused implementation passed; exact new aggregate and review pending",
+  "status": "focused/source-compile/exact-WAR component and database checks passed; owner review and broader matrix remain separate",
   "scope_index": {
     "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/json/scope-01.json",
     "sha256": "dc7452e1d1895747f6ef32347358b3b5947880be68943e6a30422705dc7177ef",
@@ -288,5 +288,10 @@
     },
     "additional_failure_classification": "Required newly added extreme exponent test found Jackson unchecked NumberFormatException with raw value; probe13 failed, build09 sanitizes it, final probe14 passed.",
     "supplemental_compile_attempts": "consumer-compile01 baseline setup failed due old plugin Hamcrest shadow;02passed with1.3;03/04passed using exact selected GeoTools-parent Hamcrest3.0. No product tests are claimed executed by compile harness."
+  },
+  "exact_war_checks": {
+    "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-compat/plan/verification/json-jpeg2000-remediation/json-war-evidence.json",
+    "sha256": "bbe5336fde18b45556f4c09409f05bafb12d998d60de10aec110bf5b6f9d505b",
+    "bytes": 3190
   }
 }

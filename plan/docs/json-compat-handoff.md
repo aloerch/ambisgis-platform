@@ -116,3 +116,14 @@ Compiler and executable probes use the established process-local AF_INET/AF_INET
 socket denial wrapper and retained JDK verification. Exact new aggregate
 compilation, WFS/REST/auth/role and other configured runtime acceptance remain
 integration evidence; old-WAR receipts are never fresh acceptance of new bytes.
+
+The [exact-WAR evidence](../verification/json-jpeg2000-remediation/json-war-evidence.json)
+binds fresh execution to the successful aggregate-03 WAR. It passes the JSON
+contracts and native tests above, ten XML contracts, two actual Spring/AspectJ
+proxy contracts, and genuine Java5 load-time weaving with the normal Java17
+verifier. It also freshly passes all 27 retained GeoFence DAO tests and real
+transaction proxy commit/rollback against a fresh PostgreSQL AF_UNIX fixture;
+cleanup stopped that cluster. JSON fixture classes are checked for production
+shadowing, loaded origins are verified, and selected WAR/JAR/test inputs are
+rechecked after execution. Full service/HTTP and imaging acceptance remains in
+the integrator's separate matrix, with existing historical limitations preserved.
