@@ -1,7 +1,7 @@
 # FND-02 revision 4 criterion review and maintenance binding
 
-**Prepared for the same remediation PR; final exact-WAR execution and owner
-acceptance remain pending.** This report concerns
+**Final affected engineering evidence is demonstrated in this remediation PR;
+explicit owner acceptance remains pending.** This report concerns
 `fnd-02-json-nojpeg2000-proposal-4`, candidate revision 4/schema 1. It does not
 record approval, close issue #3, or create a new engineering milestone. The
 [authoritative eight-row checklist](fnd-02-completion.md) retains its original
@@ -11,13 +11,13 @@ four criteria and every general pass condition.
 
 | Criterion, unchanged | Evidence and precise remaining condition |
 |---|---|
-| C1 — Inspect actual GeoNode, MapStore/client, GeoServer/extensions, QGIS and Jupyter versions. | All eleven owned core roots and the selected seven service profiles remain the inspected proposal roots. The delta consists of the bounded JSON implementation and Java/server NO-JPEG2000 source/profile changes. The active manifest must bind their exact source, recipe, artifact and class-origin records. Earlier source inspections remain applicable to unchanged inputs; they are not new builds. |
-| C2 — Resolve or record blocking GeoNode/license scope issues; preserve originals. | The existing selected-file findings, GeoNode/GeoTools scope analysis and original archives remain the record. The two changed findings require exact variant-specific disposition: JSON compatible-source replacement with the unchanged closing condition; JAI either compatible JPEG2000 support or the current owner's explicit removal alternative. The [imaging source/terms inventory](../verification/json-jpeg2000-remediation/imaging-selected-source-terms.json) supports complete source separation without reclassifying historical JJ2000 rights. Final record validity and finding closure require the new aggregate/evidence bindings; legal/distribution permission is not inferred from compilation. |
-| C3 — Build and smoke-test selected tuple; no floating latest tags. | Focused source builds and contracts must converge before one frozen aggregate. Every WAR-consuming combination needs new attributable evidence: native/JSON/format printing; real WFS/REST/token/role operations; GeoFence transactions; PostGIS vector/mosaic and provider discovery; configured authorization/propagation/restart; fresh GWC MISS→HIT→restart HIT; unchanged frontend replay-02 displaying the new backend through zoom/reload/restart. Exact unchanged QGIS/GMT stage, database, notebook, frontend compilation/native/IFC evidence may be reused after integrity verification. Pending final changed-WAR execution is an original C3 condition, not a new smoke milestone. |
+| C1 — Inspect actual GeoNode, MapStore/client, GeoServer/extensions, QGIS and Jupyter versions. | All eleven owned core roots and the selected seven service profiles remain the inspected proposal roots. The delta consists of the bounded JSON implementation and Java/server NO-JPEG2000 source/profile changes. The active manifest binds their exact source, recipe, artifact and class-origin records. Earlier source inspections remain applicable to unchanged inputs; they are not new builds. |
+| C2 — Resolve or record blocking GeoNode/license scope issues; preserve originals. | The existing selected-file findings, GeoNode/GeoTools scope analysis and original archives remain the record. The two changed findings require exact variant-specific disposition: JSON compatible-source replacement with the unchanged closing condition; JAI either compatible JPEG2000 support or the current owner's explicit removal alternative. The [imaging source/terms inventory](../verification/json-jpeg2000-remediation/imaging-selected-source-terms.json) supports complete source separation without reclassifying historical JJ2000 rights. Both variant-only dispositions are supported by the new aggregate/evidence bindings; legal/distribution permission is not inferred from compilation. |
+| C3 — Build and smoke-test selected tuple; no floating latest tags. | Focused source builds and contracts converged into one frozen aggregate. Fresh attributable evidence covers every changed-WAR combination: native/JSON/format printing; real WFS/REST/token/role operations; GeoFence transactions; PostGIS vector/mosaic and provider discovery; configured authorization/propagation/restart; fresh GWC MISS→HIT→restart HIT; unchanged frontend replay-02 displaying the new backend through zoom/reload/restart. Exact unchanged QGIS/GMT stage, database, notebook, frontend compilation/native/IFC evidence may be reused after integrity verification. The final changed-WAR execution is retained in the current matrix; no additional smoke milestone is proposed. |
 | C4 — Upstream releases are initial acquisition candidates only; later component changes follow AmbisGIS release authority. | The binding below applies to this exact successor. Source custody, retained inputs and AmbisGIS review/testing/manifest updates govern changes. Owner approval of the proposal and this maintenance rule remains explicit. |
 
-F02-06 is decision-ready only after the active manifest, generated decision
-register and final affected execution indexes agree. A technically valid inventory,
+F02-06 is decision-ready: the active manifest, generated decision register and
+final affected execution indexes agree. A technically valid inventory,
 zero variant adoption blockers, owner selection and distribution readiness are
 different outcomes. Eligibility may retain exit 2 for ungranted owner or later
 gates. Neither its exit code nor a merged checkpoint substitutes for the decision.
@@ -83,15 +83,17 @@ accepts them nor expands the four original FND-02 criteria.
 
 ## Evidence finalization ledger
 
-The integrator must replace the pending status here with links to the frozen,
-executed successor records before presenting this as a final acceptance report:
+[The final index](../verification/json-jpeg2000-remediation/evidence.json),
+[handoff](json-jpeg2000-remediation-handoff.md) and generated decision register
+bind the executed successor. Candidate manifest SHA256: `0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99`.
+Final WAR SHA256: `90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1`.
 
-| Item | Current report state |
+| Item | Final evidence state |
 |---|---|
-| Parent #67 and original criteria preservation | Known parent merge `8f66b1e2a421d93e0c8d9714df76ad2dd62269a3`; original manifest/WAR and source artifacts preserved. |
-| JSON exact source/terms implementation and contracts | Component work supplied separately; final source/terms selection and exact-WAR consumer binding pending integrator. |
-| NO-JPEG2000 source build and focused guards | [Component evidence](../verification/json-jpeg2000-remediation/imaging-evidence.json) and [decision/scope](jpeg2000-exclusion-handoff.md) prepared. [Fresh native MapFish](../verification/json-jpeg2000-remediation/imaging-native-mapfish.json) passed 71, skipped six unchanged, failed zero; focused probe 11 verifies production class origins and codec/print rejection/recovery. Component experiments and native tests are not an aggregate. |
-| Frozen manifest/WAR and all changed-WAR combinations | Pending new aggregate and fresh runtime indexes. Historical revision 3 receipts do not satisfy changed bytes. |
-| Unchanged cross-profile reuse | Integrity confirmation pending final candidate validation; prior results remain historical execution. |
-| Candidate/report/package checks and independent review | Pending final frozen integrated code and evidence. |
-| Explicit owner C1–C4/candidate/maintenance acceptance | Ungranted; keep FND-02 In progress. |
+| Parent #67, four criteria/eight pass conditions | Preserved unchanged; original parent manifest/WAR retained. |
+| JSON implementation/terms/contracts | Distinct 11-file independent adapter; exact retained Jackson/FastDoubleParser terms/source; 94 actual source consumers compile and fresh exact-WAR/native/HTTP contracts pass. Historical originals remain excluded and uncleared. |
+| NO-JPEG2000 source/format/printing | Disputed source/providers excluded; retained ordinary ImageIO classes unchanged; native MapFish 71 passes/six inherited skips; exact-WAR ordinary raster/printing, explicit rejection/recovery and loaded origins pass. |
+| Frozen aggregate and changed combinations | Full membership/origin checks and real GeoFence/identity/PostGIS/mosaic/GWC/browser restart pass on the exact final WAR. Packaging itself skips tests. |
+| Unchanged cross-profile reuse | Database/Jupyter/QGIS/frontend compilation/native/IFC are integrity-verified historical execution; no new full-suite claim. |
+| Inventory/report/package checks and independent review | Linked final validation records actual counts/results and engineering review; eligibility retains ungranted owner/distribution gates. |
+| Explicit owner C1–C4/candidate/maintenance acceptance | Ungranted; FND-02 remains In progress. |

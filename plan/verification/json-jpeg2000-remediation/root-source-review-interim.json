@@ -1,0 +1,59 @@
+{
+  "reviewer": "root integrator",
+  "scope": "Source/provenance separation, bounded selected JSON API, runtime artifact pinning, source/packaged origins, optional codec source exclusion and rejection/cleanup",
+  "reviewed": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/root-review-interim-source/build-support/java/compatibility.py",
+      "sha256": "9de24250a680f4c974d490ab42eb397764a3f061ec680909a403f98984cae3f6",
+      "original_worktree_path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/compatibility.py"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/root-review-interim-source/build-support/java/aggregate_evidence.py",
+      "sha256": "335fd6014e216fd2d4a305fbfcef23fe0e7c0019d5d3b3dae5f14f6068131325",
+      "original_worktree_path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/aggregate_evidence.py"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/root-review-interim-source/build-support/java/runtime_profile.py",
+      "sha256": "0c4a852e5c56e9455d96a3fefee93a4efe61d3aa3bbdae23d7ea366a055f2ab2",
+      "original_worktree_path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/runtime_profile.py"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/root-review-interim-source/build-support/java/remediation-json/src/net/sf/json/JsonSupport.java",
+      "sha256": "9f134532b92669c70bb08e8eb11f1557db20ef228a9707a9574f7d54df09a577",
+      "original_worktree_path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-json/src/net/sf/json/JsonSupport.java"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/root-review-interim-source/build-support/java/remediation-json/src/net/sf/json/LegacySyntax.java",
+      "sha256": "9b9ef6b03cf7eec66dfab5acae66d4cb4e6584be34e1797889e9a5743ab14efe",
+      "original_worktree_path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-json/src/net/sf/json/LegacySyntax.java"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/root-review-interim-source/build-support/java/remediation-json/src/net/sf/json/util/JSONBuilder.java",
+      "sha256": "18579959c9341b26d932103b7e9a4a3ff22f07dbf4fc881a2b02bdf759925ebb",
+      "original_worktree_path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-json/src/net/sf/json/util/JSONBuilder.java"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/root-review-interim-source/build-support/java/remediation-nojpeg2000/profile.py",
+      "sha256": "503f0a172a867f5b6e78056bb93684c8b3046f1980dc347d6de12788e74a8206",
+      "original_worktree_path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/profile.py"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/root-review-interim-source/build-support/java/remediation-nojpeg2000/NoJpeg2000Policy.java",
+      "sha256": "bad0717ba28cd18aea28a4595f57a253787ed3d6eac57f4918df9083661e6356",
+      "original_worktree_path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000Policy.java"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/root-review-interim-source/build-support/java/remediation-nojpeg2000/NoJpeg2000Filter.java",
+      "sha256": "605fa79ca6e04dba8a0e332b80baf358327f458dcb209203d25be91791e4fd81",
+      "original_worktree_path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/remediation-nojpeg2000/NoJpeg2000Filter.java"
+    }
+  ],
+  "observations": [
+    "No old JSON production implementation is retained in the newly authored11-file adapter. Separate Jackson/FDP source/grants are locked; shaded binary unchanged, no byte-identical rebuild assertion.",
+    "No class property/arbitrary class loading/default typing enabled. Parser/generator depth/cycle and malformed diagnostic controls reviewed; prior BeanUtils failures remain historical.",
+    "Aggregate02 source compilation exposed rawMap contract mismatch; independent JSON owner is fixing and rerunning exactconsumer compile before final freeze. This review is not evidence that the failedaggregate succeeded.",
+    "Imaging/retest independent cross-review fixed final-pagePDF rejection, async exceptions, Servlet3.1 contract and bounded ZIP staging. New1GiB/10000entry ZIP and64MiB image profilelimits require explicit owner review.",
+    "Only affected selected inline/import/printing service paths are covered. Baseline TIFF JPEG2000 compression and remote mosaic-harvest limits remain scoped, not new capabilities."
+  ],
+  "result": "Interim review recorded; final hashes and executable matrix required before variant finding closure. Engineering review is not legal clearance."
+}

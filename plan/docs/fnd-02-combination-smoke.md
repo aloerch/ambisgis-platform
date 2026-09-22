@@ -1,4 +1,26 @@
-# Current matrix — Java/GMT proposed revision 3
+# Current matrix — independent JSON / NO-JPEG2000 revision 4
+
+Exact current WAR: `90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1`. All seven combinations remain scoped in the
+[manifest](../candidates/fnd-02-candidate.json) and
+[immutable receipt index](../verification/json-jpeg2000-remediation/evidence.json).
+
+| Combination | Current evidence | Reuse and limits |
+|---|---|---|
+| Database | Original selected archive/tools/tree hashes verified | Historical native/upgrade tests; no new complete database suite |
+| Java native | Fresh exact-WAR JSON/XML/Spring/Java5 LTW, GeoFence DAO/transactions, ordinary codecs and actual PDF/PNG/TIFF printing; explicit JPEG2000 rejection and origin/fallback checks | Selected native MapFish 71 passes/six skips; broad historical Java suites and their failures remain tied to original artifacts |
+| Identity | Fresh issued-token/role parsing, configured WFS/REST/admin positive and negative controls, stateless isolation, finite cache, revocation/restart | Unchanged owned Python wheels/database selection |
+| Frontend/browser | Unchanged replay-02 displays known layer from current WAR; actual content, zoom/reload and backend restart under Chromium sandbox | Frontend compilation/native/IFC reused by integrity; five inherited lint failures |
+| QGIS | Same selected manifest `a2152edc50a7fdb34401e148c1eec238dfdf5dad6600faf73e92a063a4c47baa` verified | Prior desktop/server/resource/restart and 66 C++/16 Python checks remain historical; no rebuild |
+| Jupyter | Exact original wheels/locks/Hub/Lab/kernel evidence verified | No new isolation or native suite |
+| Embedded GWC | Fresh private-cache public/authorized MISS→HIT→persistent restart HIT, protected denials; real PostGIS vector/two mosaic indexes, decoded WMS/WFS; live importer/format/print rejection and valid recovery | Same selected renderer/profile; native unsupported remote harvest and TIFF-JPEG2000 variants remain explicit |
+
+This is bounded FND-02 evidence, not full policy/publication/concurrency/restore
+or distribution acceptance. [Final criterion review](fnd-02-json-nojpeg2000-acceptance.md)
+identifies the remaining owner decisions.
+
+# Preserved revision 3 matrix — historical
+
+# Java/GMT proposed revision 3
 
 All seven combinations remain separately scoped. Exact artifacts and receipt
 bindings are in the [manifest](../candidates/fnd-02-candidate.json) and

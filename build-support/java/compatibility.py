@@ -277,7 +277,7 @@ def prepare_webapp_oauth(source, principal=False):
             'human_security_review_required': True, 'acceptance_build': False}
 
 
-def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None, runtime_http=False, oauth_redaction=False, oauth_principal=False, configured_auth_diagnostics=False, configured_auth_diagnostic_tests=False, configured_auth_stateless=False, configured_auth_stateless_tests=False, role_service=False, role_service_repair=False, role_service_tests=False, no_oracle=False, variant_inputs=None):
+def probe(audit_custody, custody, tool_custody, tools, output, target, stage, timeout=1200, tests='all', repair='none', postgres_prefix=None, postgres_evidence=None, gdal_prefix=None, gdal_archive=None, runtime_http=False, oauth_redaction=False, oauth_principal=False, configured_auth_diagnostics=False, configured_auth_diagnostic_tests=False, configured_auth_stateless=False, configured_auth_stateless_tests=False, role_service=False, role_service_repair=False, role_service_tests=False, no_oracle=False, variant_inputs=None, no_jpeg2000=False):
     if target not in TARGETS or stage not in ('test', 'package') or tests not in ('all', 'target', 'schema-resolver', 'compile-only'):
         raise ValueError('unsupported bounded target or lifecycle')
     if repair not in ('none', 'xmlcodegen-emf') or (tests == 'schema-resolver' and target != 'xml'):
@@ -318,6 +318,8 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
             raise ValueError('role service repairs require its selected native HTTP tests or source-only aggregate packaging')
     if variant_inputs is not None and not no_oracle:
         raise ValueError('coordinated Java variant requires explicit NO-ORACLE selection')
+    if no_jpeg2000 and not (no_oracle and variant_inputs is not None and target in ('webapp', 'mapfish', 'importer')):
+        raise ValueError('NO-JPEG2000 requires the explicit NO-ORACLE source-built variant on an affected target')
     output.mkdir(parents=True, exist_ok=False)
     report = {'schema_version': 1, 'runner_sha256': sha(Path(__file__)), 'started_at': datetime.now(timezone.utc).isoformat(),
               'target': target, 'stage': stage, 'test_selection': tests, 'role_service_profile': role_service, 'purpose': 'exploratory-compatibility-probe',
@@ -387,6 +389,19 @@ def probe(audit_custody, custody, tool_custody, tools, output, target, stage, ti
         if no_oracle:
             import no_oracle as no_oracle_profile
             report['no_oracle_profile'] = no_oracle_profile.prepare(work / 'source')
+        if no_jpeg2000:
+            import importlib.util
+            profile_path = Path(__file__).resolve().parent / 'remediation-nojpeg2000/profile.py'
+            spec = importlib.util.spec_from_file_location('ambisgis_nojpeg2000_profile', profile_path)
+            profile_module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(profile_module)
+            report['no_jpeg2000_profile'] = profile_module.prepare(work / 'source')
+            if target in ('webapp', 'importer'):
+                guard_path = profile_path.with_name('geoserver_profile.py')
+                guard_spec = importlib.util.spec_from_file_location('ambisgis_nojpeg2000_geoserver', guard_path)
+                guard_module = importlib.util.module_from_spec(guard_spec)
+                guard_spec.loader.exec_module(guard_module)
+                report['no_jpeg2000_geoserver'] = guard_module.prepare(work / 'source')
         if postgres_prefix is not None:
             import geofence_fixture
             database, report['postgres_fixture'] = geofence_fixture.start(
@@ -535,6 +550,7 @@ def main():
     parser.add_argument('--configured-auth-stateless', action='store_true', help='apply guarded opt-in stateless bearer source support after configured diagnostic repairs')
     parser.add_argument('--configured-auth-stateless-tests', action='store_true', help='inject native stateless bearer regressions in controlled OAuth HTTP mode only')
     parser.add_argument('--no-oracle', action='store_true', help='explicit source/dependency profile; Oracle remains unsupported')
+    parser.add_argument('--no-jpeg2000', action='store_true', help='explicit JPEG2000 exclusion with guarded source rejection; requires NO-ORACLE and source-built replacements')
     parser.add_argument('--variant-inputs', type=Path, help='hash-locked locally source-built replacements; requires --no-oracle')
     parser.add_argument('--role-service', action='store_true', help='add the owned authkey module while preserving existing aggregate profiles')
     parser.add_argument('--role-service-repair', action='store_true', help='apply guarded GeoNode REST role-service repairs')
@@ -542,7 +558,7 @@ def main():
     parser.add_argument('--runtime-http', action='store_true', help='compile with sockets denied, then run real tests under verified loopback control')
     args = parser.parse_args()
     result = probe(args.audit_custody.resolve(), args.custody.resolve(), args.toolchain_custody.resolve(),
-                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive, args.runtime_http, args.oauth_redaction, args.oauth_principal, args.configured_auth_diagnostics, args.configured_auth_diagnostic_tests, args.configured_auth_stateless, args.configured_auth_stateless_tests, args.role_service, args.role_service_repair, args.role_service_tests, args.no_oracle, args.variant_inputs)
+                   args.tools.resolve(), args.output.absolute(), args.target, args.stage, args.timeout, args.tests, args.repair, args.postgres_prefix, args.postgres_evidence, args.gdal_prefix, args.gdal_archive, args.runtime_http, args.oauth_redaction, args.oauth_principal, args.configured_auth_diagnostics, args.configured_auth_diagnostic_tests, args.configured_auth_stateless, args.configured_auth_stateless_tests, args.role_service, args.role_service_repair, args.role_service_tests, args.no_oracle, args.variant_inputs, args.no_jpeg2000)
     print(json.dumps(result, indent=2))
     return result['result_exit_code']
 

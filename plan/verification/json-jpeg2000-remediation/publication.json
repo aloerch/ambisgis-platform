@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "status": "prepared-for-authorized-publication",
+  "repository": "aloerch/ambisgis-platform",
+  "branch": "fnd-02/json-jpeg2000-remediation",
+  "base": "ambisgis/main",
+  "task": "FND-02/F02-06",
+  "scope": "One platform PR and separate Project2 PR item; issue3 evidence update; no merge, parent Delivery change, adoption, distribution, release or production action.",
+  "pr": null,
+  "project_changes": [],
+  "note": "Final PR identity, initial reviewed implementation head and API write/readback evidence are filled after publication. Final pushed review head is also pinned in issue3 and the final handoff message."
+}

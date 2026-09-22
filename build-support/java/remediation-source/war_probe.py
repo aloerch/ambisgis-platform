@@ -17,16 +17,34 @@ sha=lambda b:hashlib.sha256(b).hexdigest()
 
 def main():
  p=argparse.ArgumentParser(description=__doc__)
- for name in ['workspace-root','war','component-build','output']:p.add_argument('--'+name,type=Path,required=True)
+ for name in ['workspace-root','war','output']:p.add_argument('--'+name,type=Path,required=True)
+ selected=p.add_mutually_exclusive_group(required=True)
+ selected.add_argument('--component-build',type=Path)
+ selected.add_argument('--replacement-manifest',type=Path,help='Exact coherent selected variant map; original component receipts remain historical')
  p.add_argument('--war-sha256',required=True);a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=False)
  result={'schema_version':1,'status':'failed','scope':'Exact-WAR extracted-library focused component probe; actual deployed HTTP and database acceptance separate','commands':[],'assertions':[],'fixture_sources':[{'path':str(x),'sha256':sha(x.read_bytes())} for x in [HERE/'SourceContracts.java',*sorted((HERE/'weaving').glob('*.java'))]]}
  try:
   data=a.war.read_bytes()
   if sha(data)!=a.war_sha256:raise ValueError('WAR hash differs')
   result['war']={'path':str(a.war.resolve()),'sha256':sha(data)}
-  build=json.loads((a.component_build/'result.json').read_text())
-  if build['status']!='built-focused-probes-pending':raise ValueError('Component build failed')
-  expected={Path(r['original_maven_path']).name:r for r in build['replacements']}
+  if a.component_build is not None:
+   build=json.loads((a.component_build/'result.json').read_text())
+   if build['status']!='built-focused-probes-pending':raise ValueError('Component build failed')
+   expected={Path(r['original_maven_path']).name:r for r in build['replacements']}
+  else:
+   selection=json.loads(a.replacement_manifest.read_text())
+   if selection.get('schema_version')!=1 or not selection.get('replacements'):raise ValueError('Invalid replacement manifest')
+   expected={}
+   for r in selection['replacements']:
+    name=Path(r['maven_path']).name
+    if name in expected or not r.get('source_evidence'):raise ValueError('Duplicate or unsupported replacement')
+    if sha(Path(r['path']).read_bytes())!=r['sha256']:raise ValueError('Selected component changed')
+    for evidence in r['source_evidence']:
+     if sha(Path(evidence['path']).read_bytes())!=evidence['sha256']:raise ValueError('Replacement source evidence changed')
+    expected[name]={'replacement_sha256':r['sha256']}
+   required={'json-lib-2.4.2-geoserver.jar','xmlpull-1.1.3.1.jar','aspectjrt-1.5.4.jar','aspectjweaver-1.5.4.jar'}
+   if not required.issubset(expected):raise ValueError('Selected parser/proxy/weaver replacement missing')
+   result['replacement_manifest']={'path':str(a.replacement_manifest.resolve()),'sha256':sha(a.replacement_manifest.read_bytes())}
   for d in ['lib','classes','home','tmp']:(out/d).mkdir()
   with zipfile.ZipFile(a.war) as z:
    names=z.namelist()
@@ -40,7 +58,7 @@ def main():
   for name,r in expected.items():
    artifact=out/'lib'/name
    if sha(artifact.read_bytes())!=r['replacement_sha256']:raise ValueError('WAR replacement differs: '+name)
-   if sha(Path(r['source_manifest_path']).read_bytes())!=r['source_manifest_sha256']:raise ValueError('Component source manifest changed')
+   if 'source_manifest_path' in r and sha(Path(r['source_manifest_path']).read_bytes())!=r['source_manifest_sha256']:raise ValueError('Component source manifest changed')
   # All selected target class definitions must have exactly one origin.
   owned={}
   for path in libs:
@@ -76,6 +94,7 @@ def main():
   if sha(a.war.read_bytes())!=a.war_sha256:raise ValueError('WAR changed during probe')
   for lib in result['libraries']:
    if sha((out/'lib'/lib['path']).read_bytes())!=lib['sha256']:raise ValueError('Extracted library changed')
+  if a.replacement_manifest is not None and sha(a.replacement_manifest.read_bytes())!=result['replacement_manifest']['sha256']:raise ValueError('Replacement manifest changed during probe')
   result['status']='passed'
  except Exception as exc:result['error']=str(exc)
  (out/'result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'status':result['status'],'output':str(out),'error':result.get('error')}));return 0 if result['status']=='passed' else 1

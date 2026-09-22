@@ -39,6 +39,18 @@ class CompatibilityTests(unittest.TestCase):
                                        postgres_prefix=root / 'pg' if database else None,
                                        postgres_evidence=root / 'historical.json' if database else None)
 
+    def test_no_jpeg2000_requires_explicit_selected_source_variant_before_writes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for target, no_oracle, selection in [('webapp', False, None), ('webapp', True, None),
+                                                  ('xml', True, root / 'selection.json')]:
+                with self.subTest(target=target, no_oracle=no_oracle, selection=selection):
+                    with self.assertRaises(ValueError):
+                        compatibility.probe(root / 'audit', root / 'custody', root / 'tc', root / 'tools',
+                                            root / 'output', target, 'package', tests='compile-only',
+                                            no_oracle=no_oracle, variant_inputs=selection, no_jpeg2000=True)
+                    self.assertFalse((root / 'output').exists())
+
     def test_target_tests_and_network_receipt_required_for_success(self):
         with tempfile.TemporaryDirectory() as tmp:
             result = self.fixture(Path(tmp))

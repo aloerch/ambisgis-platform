@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-22T20:00:36.074287+00:00",
+  "task": "FND-02/F02-06",
+  "instruction_sha256": "9aaf01978801d6ba6ecfa19fa5cd01f8f800c5971bb4325dddc56edd0b569b00",
+  "instruction": "owner-instruction.txt",
+  "base": "8f66b1e2a421d93e0c8d9714df76ad2dd62269a3",
+  "reviewed_parent_head": "7bf92b20d92a4b4f12eb74df8a085ecbf3400192",
+  "owner": {
+    "login": "aloerch",
+    "id": 15285626
+  },
+  "repository": {
+    "name": "aloerch/ambisgis-platform",
+    "id": 1376927351,
+    "node_id": "R_kgDOUhI-dw"
+  },
+  "branch": "fnd-02/json-jpeg2000-remediation",
+  "parent_manifest_sha256": "8083a10deee529363e15925941c28e5a1e1f3030716f0cac7154c39466efbb90",
+  "scope": "Proposed JSON compatible-source replacement and evidence-selected JPEG2000 exclusion or OpenJPEG integration; one aggregate/PR; no merge/adoption/distribution/release. Targeted earlier mandatory-JPEG2000 condition superseded; other criteria and boundaries unchanged."
+}

@@ -1,0 +1,164 @@
+Continue AmbisGIS FND-02/F02-06 with one bounded remediation batch for F02-JAVA-json-lib and F02-JAVA-jai-imageio11. Resolve the JSON source/terms issue and evaluate removing the affected JPEG2000 support versus replacing it with source-owned OpenJPEG support. Implement the justified option, preserve required non-JPEG2000 functionality, and test a new exact aggregate. This revised prompt explicitly supersedes the earlier instruction that JPEG2000 must remain supported and that its exclusion is prohibited; all other ownership, security and review boundaries remain.
+
+1. RECOVER THE MERGED BASE AND PRESERVE THE FINITE SCOPE
+
+Repository: aloerch/ambisgis-platform.
+Integration branch: ambisgis/main.
+Workspace: /home/revelberry/Projects/AmbisGIS.
+Previous worktree: ambisgis-platform-java-gmt.
+
+The owner reviewed and merged PR #67:
+- Reviewed head: 7bf92b20d92a4b4f12eb74df8a085ecbf3400192.
+- Merge commit: 8f66b1e2a421d93e0c8d9714df76ad2dd62269a3.
+- Previous branch: fnd-02/java-gmt-selection-remediation; preserve it.
+- Parent candidate: fnd-02-java-gmt-proposal-3, revision 3/schema 1.
+- Parent manifest SHA-256: 8083a10deee529363e15925941c28e5a1e1f3030716f0cac7154c39466efbb90.
+- Parent WAR SHA-256: e291629c38cab29eed207d1f88b2cbb747c8ca418c4737f10e5324ebc0aae044.
+- Selected QGIS manifest SHA-256: a2152edc50a7fdb34401e148c1eec238dfdf5dad6600faf73e92a063a4c47baa.
+
+Verify actual live PR/main ancestry, owner/repository identities, remotes, worktrees, user changes, running processes and retained tools. Do not reset if main has advanced. Preserve original sources, prior candidate manifests/artifacts, branches and failed receipts. Verify host/IDE namespace paths rather than assuming old /tmp paths remain valid.
+
+Read applicable AGENTS.md, current STATUS, live issue #3/dependencies and the authoritative checklist, candidate manifest, owner-decision register and java-gmt-remediation-handoff.md. Follow its source/imaging indexes to the exact remaining grant-chain findings, production sources, replacement recipes, compatibility probes and final aggregate/runtime evidence. Read selectively rather than loading all historical logs.
+
+Create a fresh branch/worktree from verified main, such as fnd-02/json-jpeg2000-remediation. Preserve the four original criteria, eight row IDs/pass conditions and all unaffected findings. The NO-ORACLE/headless-Temurin17 profile, completed XMLPull/AspectJ/Marlin selections, frontend replay-02/IFC evidence and QGIS palette selection are not reopened by default.
+
+2. IMPLEMENTATION AUTHORIZATION AND DECISION RULE
+
+This prompt explicitly authorizes a new proposed variant with:
+A. A compatible source-owned replacement for unresolved JSON-derived implementation, if authoritative permission applicable to the actual selected files cannot be established.
+B. Either a separately identified candidate excluding the affected JPEG2000 capability, or a compatible-term source-built OpenJPEG-based implementation, selected through the bounded evaluation below.
+
+Owner assessment and priority: I consider JPEG2000 an uncommon GIS file format for the needs I am prioritizing. Its support in AmbisGIS may be removed, provided doing so does not fundamentally break support or functionality elsewhere. Treat that as my scope/prioritization decision, not as a verified industry-wide usage statistic or proof that no important dataset uses it.
+
+Compare safe removal with the integration, security and ongoing maintenance burden of OpenJPEG. Prefer removal when the only material loss is explicitly optional JPEG2000 handling and required workflows remain intact. Do not assume removal is harmless, or that adding OpenJPEG is automatically preferable because it preserves a feature. You are authorized to implement the evidence-supported option without requesting the same conditional authorization again. This is permission to prepare a variant, not permission to claim either option is safe before testing.
+
+These are implementation choices for review, not permission to waive rights, adopt the final candidate, merge, distribute or release. PR #67 accepted its bounded checkpoint, not the two remaining blockers.
+
+First inspect existing evidence and any specific credible missing grant/relicensing lead. Exact applicable permission may resolve a finding without changing bytes; retain its scope and provenance. Do not spend the entire session repeating failed historical searches or assume a current repository license retroactively covers earlier derived files. For JSON, proceed with the authorized replacement when permission cannot be substantiated. For JPEG2000, make the removal-versus-OpenJPEG decision below instead of treating preservation as mandatory.
+
+No maintainer contact, license purchase, acceptance of new external legal agreements or bypass of access controls is authorized. Terms analysis must distinguish observations, supported applicability conclusions and questions requiring qualified review. A new top-level LICENSE, additional attribution or a successful compile cannot cure unresolved third-party permission.
+
+3. REPLACE THE AFFECTED JSON IMPLEMENTATION WITHOUT WEAKENING SECURITY
+
+Identify the exact seven JSON.org-derived files and any copied/derived portions elsewhere in the selected source, their consumers and the required contract surface. Preserve the original material as historical evidence. Do not resolve the issue by renaming packages, removing attribution or mechanically rewriting disputed code.
+
+Prefer the smallest defensible source-owned compatibility implementation: preserve independently licensed surrounding code where its provenance supports doing so, and independently implement the affected behavior using specifications and verified compatible libraries. Jackson is an evaluation candidate, preferably an already compatible retained version, not an automatic dependency upgrade or a drop-in json-lib replacement. Verify the exact selected library/dependency terms and source. If the separation of affected code cannot be supported, replace the necessary compatibility layer rather than falsely declaring the remainder cleared.
+
+Use independent implementation and traceable provenance, not copied disputed implementation or unlicensed tests/documentation. Existing behavior/API tests may inform interoperability where their own use is supported. Do not label the process formally legally "clean room" merely because an agent rewrote code. Preserve third-party notices for retained material and identify newly authored code separately.
+
+Trace actual static and reflective consumers before freezing the scope. Preserve required net.sf.json-style public behavior or make explicit, narrow source-owned consumer adaptations. No hollow stubs, silent UnsupportedOperationException paths for required operations, or a test proxy manufacturing expected JSON. Do not implement a new general-purpose data-binding ecosystem when a bounded adapter suffices.
+
+Reuse the 213 retained contract comparisons and add focused cases for changed code: objects/arrays, null and missing properties, strings/escaping/Unicode, numeric precision/types, serialization, permitted legacy syntax, bean/config behavior actually used, bounded nesting and malformed-input diagnostics. Test real WFS/REST/GeoNode token/role consumers. Do not silently tighten or loosen input acceptance in a way that breaks the selected protocols; any necessary security-driven difference must be explicit and regression-tested.
+
+The two inherited JSON failures concern BeanUtils suppression of the JavaBean class property. Do NOT re-enable unsafe class introspection or relax its controls to make 359/359 appear. Preserve the historical failures and demonstrate the intended safe behavior separately. Classify genuinely new regressions distinctly. Do not enable polymorphic/default typing, arbitrary class loading or code evaluation for compatibility.
+
+Build from retained exact inputs into a distinct local artifact identity. Verify that required runtime definitions originate in that build and that old disputed implementations are not shadowing it through another JAR, embedded copy or adjacent application. File-name/hash absence alone does not establish absence of transformed derived code; retain the source-level accounting as well.
+
+4. EVALUATE REMOVAL VERSUS OPENJPEG, THEN EXECUTE ONE OPTION
+
+4A. Establish dependency impact and maintenance cost before choosing
+
+Produce a short evidence-linked decision matrix within the existing candidate/decision records, not a new feasibility project. Compare:
+- Removing JPEG2000 from the affected candidate profile.
+- Retaining JPEG2000 through a source-owned OpenJPEG integration.
+
+For each option identify lost/preserved workflows, concrete dependency changes, source/terms status, security exposure, native packaging/portability implications, regression-test burden and ongoing AmbisGIS maintenance responsibility. Use source inspection and small targeted probes where needed. Do not build two complete replacement stacks merely to populate the comparison.
+
+Inspect actual JAI/ImageIO, imageio-ext/ImageN, GeoTools/GeoServer, MapFish/PDF, mosaic, import/export and service-format consumers. Distinguish JPEG from JPEG2000. Trace direct imports, reflection, SPI registrations, transitive/shaded/native content and initialization paths. A dependency declaration alone does not prove a fundamental dependency, and absence of direct imports does not prove safety.
+
+Check indirect JPEG2000 use: PDF images/compression, selected raster containers or format variants, source datasets, remote image inputs and tests that may use JP2/J2K internally. Distinguish an intentionally unsupported JPEG2000-backed input from damage to ordinary PDF printing, JPEG/PNG/TIFF/GeoTIFF, PostGIS vector/mosaic, WMS/WFS, tiles or general application startup. Do not convert broader collateral breakage into an accepted exclusion by renaming it.
+
+Check the actual OpenJPEG repository's maintenance notice, selected revision/release, security advisories and unresolved issues relevant to the proposed use. Start with the official repository, https://github.com/uclouvain/openjpeg, and retain dated primary-source evidence. Its current maintenance warning must be evaluated, not omitted because occasional commits exist. A stale release is not automatically vulnerable, and a recent commit is not proof of sustained maintenance.
+
+AmbisGIS owns its adopted source and fixes; it cannot rely on an upstream team resuming maintenance. Evaluate the incremental burden of native codec security triage, fuzz/regression coverage, backports, compiler/ABI support and the Java wrapper itself. A permissive license or a fork alone does not eliminate that work. If OpenJPEG is already present in a selected dependency profile, identify that fact and its actual incremental exposure instead of assuming an entirely new dependency.
+
+Record a concrete choice. Prefer exclusion when impact is confined to optional JPEG2000 handling and it avoids disproportionate maintenance. Choose OpenJPEG only when evidence shows materially needed functionality or a compelling, manageable preservation benefit. Limited upstream maintenance is a risk to assess, not a categorical ban. Do not require a full product-wide raster survey or a fresh usage-market study to make this bounded decision. If neither option can preserve required behavior within the permitted scope, keep the finding blocked, explain the exact tradeoff and continue independent JSON work.
+
+4B. If selecting removal, prove a safe and honest exclusion
+
+Implement a reproducible source/build/profile/SPI exclusion of the disputed JJ2000 implementation and dependent JPEG2000 providers. Remove obsolete runtime registrations, capability advertisements and UI options in the affected paths; do not simply hide the provider while still shipping the blocked code. Keep historical originals/notices unchanged in custody. Do not strip attribution or imply the original material acquired different rights.
+
+Retain non-JPEG2000 JAI ImageIO functionality, ImageN/imageio-ext, ordinary JPEG/PNG/TIFF/GeoTIFF and required raster/printing/mosaic behavior. Do not remove an entire imaging library when only its JPEG2000 components need separation. Detect residual packaged, shaded, native or reflected fallback providers in the new aggregate and prove startup does not fail with missing classes.
+
+Make the scope explicit: removal from this Java/server profile does not establish that every QGIS/GDAL/notebook profile has lost JPEG2000 support. Inventory relevant remaining paths and report them. Do not purge functioning unrelated profiles simply for cosmetic consistency; equally, do not claim the blocked implementation is absent if it remains in the selected shipment elsewhere. Any necessary wider change needs an evidenced dependency reason and affected tests, not a platform-wide rebuild by default.
+
+Run positive tests for ordinary raster samples/georeferencing, actual MapFish PDF/image generation, PostGIS-backed mosaic indexing/rendering, WMS/WFS, import/export discovery and tile caching. Include required PDF/image paths that could inadvertently select JPEG2000 internally. Confirm that the application, provider enumeration and selected non-JPEG2000 operations initialize without the codec. Non-JPEG2000 data must not become corrupt, blank, truncated or silently dropped.
+
+Run explicit negative tests for JP2/raw J2K inputs and JPEG2000 output requests on affected routes. Use content as well as filename/type identification where the pipeline supports it; changing an extension must not produce misleading success. Expect a documented unsupported-format result, not an arbitrary 500, application crash, blank tile or successful write of another format under a JPEG2000 label. Confirm failed imports/exports leave no partial catalog/resource state and the next valid request still succeeds. Malformed/unsupported inputs must not trigger secret leakage or uncontrolled processing.
+
+Any automatic alternative output must be a deliberately selected, documented supported format with correct metadata/content type, not silent conversion of an explicitly requested JPEG2000 result. No new universal conversion service or codec download fallback is required or authorized.
+
+Preserve original JPEG2000-positive tests and results as historical evidence. Update the candidate-specific feature matrix and test selection explicitly: the NO-JPEG2000 profile now requires safe rejection instead of successful decoding/encoding. That targeted change is authorized by this instruction, not a passing implementation of the old format contract. Do not count deselected JPEG2000 tests as passes, weaken non-JPEG2000 assertions or delete unrelated failures.
+
+4C. If selecting OpenJPEG, prove the benefit and real integration
+
+Select exact usable sources/terms and a source-owned or retained Java ImageIO wrapper. Verify actual reader AND writer capabilities needed by the preserved profile; do not assume a decoder-only wrapper replaces prior encoding. Check wrapper/dependency provenance independently of OpenJPEG's root license. Do not move JJ2000 to another package/process and call its condition resolved.
+
+A scoped private OpenJPEG build and JNI/JNA/JNR adapter are authorized for this Linux/Temurin17 candidate. Record native loading, ABI and portability implications and the maintenance rationale. No system installation, new network service, uncontrolled host executable or silently acquired prebuilt native codec. Build from retained exact inputs and verify actual loaded origins. No assumption of Windows/macOS support or upstream assistance.
+
+Preserve required JP2/raw codestream, lossless/lossy, sample precision, packed-RGB signedness, metadata/region/subsampling and other behavior demonstrated or consumed by the selected profile. Run independent expected-value fixtures, reference cross-decoding where appropriate, the retained packed-RGB regression, real ImageIO consumers and actual MapFish/GeoServer raster/printing paths. A paired encoder/decoder round trip, command-line codec or 200 HTTP response alone is insufficient.
+
+Test native resource disposal, bounds/allocation limits, repeated/concurrent independent requests, malformed/truncated inputs, missing-library refusal and error propagation. Do not accept a native crash as correct rejection. Remove disputed old production code/providers from the new artifact rather than retaining a fallback. Preserve genuinely unimplemented features as explicit blockers/limits; do not claim every JPEG2000 capability from a few fixtures.
+
+5. PRODUCE ONE REPAIRED AGGREGATE AND RETEST ITS ACTUAL CONSUMERS
+
+Converge focused component builds/tests first, then freeze the final source/patch/input choices and build one coherent new aggregate. Intermediate failures remain evidence; avoid an entire WAR rebuild for every exploratory source lookup. Distinct variant artifacts must not masquerade as upstream releases or be published into donor namespaces.
+
+Preserve the seven selected service profiles and all #67 required non-JPEG2000 behavior, including NO-ORACLE exclusions, PostGIS vector/non-Oracle mosaic, printing, GeoFence transactions, role service, strict GeoNode verification, stateless bearer/session isolation, diagnostic redaction and finite-cache controls. JPEG2000 behavior follows only the explicitly selected option above. New local adapters must not introduce a second catalog or policy authority.
+
+Verify complete WAR library/class/native/source/notice membership, replacement identities, actual loaded origins and the absence of stale disputed runtime implementations. Keep a targeted negative control that would detect fallback to old JSON/JJ2000 code. Packaging with tests skipped is packaging evidence only.
+
+Exercise the exact new WAR, using existing source-owned backends and retained fixtures:
+- JSON/native contract and real WFS/REST/token/role parsing/serialization paths, including malformed input and protected-resource denials.
+- Required TIFF/GeoTIFF/JPEG/PNG behavior, decoded raster content and real MapFish PDF/image output. For a NO-JPEG2000 variant, prove explicit unsupported-format handling and no collateral regression; for an OpenJPEG variant, prove actual JPEG2000 read/write with the selected replacement and no old-provider fallback.
+- PostGIS vector/mosaic, required provider discovery and no accidental Oracle reintroduction.
+- Configured identity/role/administration positive and negative controls and bounded propagation, including restart; preserve the existing semantics rather than designing new policy.
+- Embedded GWC cold MISS -> HIT -> persistent restart HIT and protected denials, using a fresh private cache so old tiles cannot mask new renderer/codec behavior.
+- The unchanged selected frontend replay-02 displaying the known local layer from this NEW WAR, with actual content, zoom/reload and backend restart.
+
+Use the current combined runtime recipes and share fixture startup/restart where possible. Do not replace production decisions with mock successful responses. Reuse unchanged QGIS, frontend compilation/IFC, database and notebook build evidence with integrity checks; no QGIS rebuild, palette work or full unrelated native rerun is needed unless actual cross-profile changes require narrowly identified affected tests.
+
+Preserve the Marlin 46/48 and Java7-target LTW limitations as scoped historical findings. No -noverify, weakened rendering tolerance, classfile-header surgery or renewed AspectJ/Marlin modernization is authorized to make unrelated reports green. A newly exposed material defect in a required changed path must still be repaired or honestly block that path.
+
+6. UPDATE THE EXISTING VARIANT AND FINDING RECORDS TRUTHFULLY
+
+Create a distinct successor to fnd-02-java-gmt-proposal-3 using existing candidate tooling; preserve the parent manifest, source/patch chains and all prior artifact identities. Candidate revision and schema version are separate. Do not introduce another inventory/reporting system.
+
+Update changed profiles, capability declarations, replacement/excluded inputs, any new native-library requirements, producing receipts and every WAR-consuming combination. Preserve unchanged QGIS and frontend selections. For removal, label the affected candidate NO-JPEG2000 and state the unsupported data/output scope; do not advertise project-wide removal unless proved. Distinguish new tests, historical reuse, proposed but unexecuted changes and untested limitations. Old runtime receipts must not be attached as fresh acceptance of new WAR bytes.
+
+Edit the authoritative manifest and regenerate the decision register. Keep F02-JAVA-json-lib's closing condition unchanged. For F02-JAVA-jai-imageio11, record this owner-authorized alternative closing condition: either a verified compatible-source replacement preserving the selected JPEG2000 behavior, OR verified removal of the disputed implementation from the selected artifact, explicit unsupported-format handling, and demonstrated preservation of required non-JPEG2000 functions. Link the revised condition to this instruction; preserve the earlier mandatory-JPEG2000 condition as history. Close only the variant-specific finding actually supported by evidence. Preserve residual notices/source obligations and unaffected finding IDs. Removal does not grant rights to original code, and an informative license file does not prove a working replacement.
+
+Do not erase the original Java ledger or claim all 48 structural entries are source-built. Do not open broad new historical-source investigations unless a required new input or concrete selection contradiction demands one.
+
+Run the existing inventory/report/eligibility tools through their actual supported options. Inventory validity, zero technical/adoption blockers, owner acceptance and distribution permission remain distinct. Eligibility may still correctly exit 2 for ungranted gates after these findings are remediated; do not weaken it or add fictional approvals to force zero.
+
+7. VALIDATION, CONTAINMENT AND ONE REVIEWABLE PR
+
+Run affected native JSON/codec/security/service tests, removal/provider-absence/unsupported-input guards OR replacement adapter/loader guards as applicable, current candidate/report regressions and required plan checks. From plan/ in the verified environment:
+python3 tools/validate_candidate.py --workspace-root /home/revelberry/Projects/AmbisGIS
+python3 tools/validate_candidate.py --workspace-root /home/revelberry/Projects/AmbisGIS --eligibility
+python3 tools/validate_candidate.py --workspace-root /home/revelberry/Projects/AmbisGIS --report
+python3 -m unittest discover -s tests -v
+python3 tools/validate_package.py --require-schemas
+
+Inspect --help for variant selection; do not invent flags. Discover current counts rather than requiring the historical 251 package tests. Retain all failure/skip classifications, executed recipe identities and raw unsuccessful runs. Integrity verification is not native reexecution. Source, network-proof, test, evidence-capture or cleanup failure must not produce a successful receipt merely because Maven returned zero.
+
+Reuse the existing retained-input build isolation, trusted-loopback runtime controls, Chromium sandbox and explicit PostgreSQL-only exception. No sudo, host firewall/security changes, public listeners, new containment exceptions, production/employer services, external accounts or system-wide native libraries. Invalidate/scrub synthetic credentials and stop only task-owned services.
+
+Obtain scoped independent engineering/source-provenance review where available, fix material findings and bind final checks to frozen code/configuration/artifact hashes. Engineering review is not legal clearance. Reference compact immutable indexes instead of recopying old evidence. Treat documentation-only publication updates distinctly from tested code.
+
+Commit/push one coherent platform PR against verified main. Narrow linked source changes are permitted when necessary; do not create a separate audit-only PR per dependency. No merges, auto-merge, old-branch deletion, source-fork default changes, automatic donor synchronization, new public repositories, workflow/secret installation, binary distribution, deployment or release.
+
+Add the new PR as one separate Project #2 item through existing supported tools. Deduplicate by identity, preserve human fields/view order/archive choices and is:pr is:open, and link issue #3 without copying its Task ID or promoting Delivery. Discover current membership; no importer/GOV-02 replay.
+
+8. FINISH F02-06'S REMEDIATION OR IDENTIFY THE EXACT REMAINING CONDITION
+
+Continue through executable implementation and affected tests while feasible. Do not stop at another statement that the same terms are unresolved when an authorized replacement is practicable. If blocked, finish independent safe work and name the exact missing right/input or failed capability, attempts made and smallest viable next action. Do not promise that both blockers will necessarily close in one run.
+
+Update canonical STATUS, handoff and the existing eight-row checklist without changing the four original criteria, row IDs or general pass conditions. The only authorized capability/closing-condition change is the targeted optional-JPEG2000 decision above; do not let stale earlier wording silently prohibit it or use it to waive unrelated requirements. Record scope and review implications explicitly. Keep FND-02 In progress pending final owner acceptance.
+
+If both findings are genuinely remediated, prepare the final decision-ready F02-06 summary, F02-07 maintenance-policy binding and F02-08 criterion-by-criterion acceptance report in this same PR. This avoids another documentation-only engineering milestone. State which original criteria are evidenced, which exact owner decisions remain and which distribution/production obligations belong to later existing gates. Do not conflate zero adoption blockers with distribution readiness, but do not invent a requirement to implement the full product before accepting FND-02 either.
+
+The final owner decision must explicitly cover candidate selection, NO-ORACLE/headless limitations, the chosen JPEG2000 exclusion or OpenJPEG/native-maintenance implications, and the existing maintenance rule. Merging a checkpoint is not automatically that full-task decision. No task closure or release permission is implied here.
+
+End with OWNER ACTIONS (PR/head, the removal-versus-OpenJPEG decision and evidence, exact lost/preserved capabilities or native-maintenance commitment, rights evidence and remaining choices), FND-02 CHECKLIST (before/after states of the two findings and F02-06/07/08), and ENGINEERING HANDOFF (manifest/WAR/input hashes, fresh-versus-reused tests, known failures, containment and exact commands). Explain why the selected option is preferable for the owner's stated priorities. Do not suggest another smoke milestone without identifying an actual unsatisfied original criterion.
