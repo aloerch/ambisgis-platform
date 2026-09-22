@@ -88,10 +88,14 @@ The inherited data-URI null-path error in SVG dispatch is repaired narrowly.
 
 MapFish maps these intentional failures to HTTP 415 with a fixed message and
 removes failed private print files. JPEG2000 aliases disappear from the dynamic
-ImageIO-derived output list. New URL buffering is bounded to 64 MiB, with
-30-second URL connection/read limits and an elapsed read deadline; oversized
-input returns HTTP 413 without a placeholder. This explicit security-related
-limit is a candidate behavior difference, not an unchanged historical guarantee.
+ImageIO-derived output list. The new URL/file/PDF loaders buffer at most 64 MiB and use 30-second
+connection/read timeouts with elapsed-time checks after chunk reads. These checks
+are not a strict 30-second total wall-clock guarantee. Existing byte-array callers
+reject oversized input before image parsing; inherited `PDFUtils` HTTP acquisition
+still buffers its response before that byte-array check. This change does not
+establish a global bound on that inherited remote acquisition path. Intentional
+size refusal returns HTTP 413 without a placeholder. The new loader limit is an
+explicit candidate behavior difference, not an unchanged historical guarantee.
 The ordinary format and print fixtures remain within these bounds.
 
 ## Evidence and integration
@@ -148,9 +152,11 @@ its compiled witnesses cannot shadow a packaged production class. Final exact-WA
 mode applies those checks to unchanged extracted WAR libraries without any
 production source overlay.
 
-The final exact-WAR invocation has now passed: aggregate-03 WAR
-`c766574bd81e41c22a32fd9b25096d2e4da77e57193fd700aaa19c63dfc7be54`,
+The final exact-WAR invocation has passed on aggregate-04 WAR
+`90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1`,
 [focused final evidence](../verification/json-jpeg2000-remediation/imaging-final-war.json).
+The earlier aggregate-03 pass remains in its
+[immutable historical summary](../verification/json-jpeg2000-remediation/imaging-final-war-aggregate03.json).
 All six stages succeeded under verified socket denial, using the packaged classes
 without a source overlay. Fourteen runtime class origins and byte hashes were
 checked. Ordinary raster/PDF positives, 44 intentional JPEG2000 refusals, bounded
@@ -169,3 +175,12 @@ APIs; that unrelated metadata path is unchanged. The source-built Java OpenJPEG
 alternative would introduce a new native codec/wrapper/loading boundary for this
 selected Java profile, regardless of existing host discovery or unrelated metadata
 parsers. This correction is a static integrity review, without native rebuilding.
+
+The [real HTTP PDF fixture diagnosis](../verification/json-jpeg2000-remediation/imaging-http-pdf-fixtures.json)
+retains two corrected test problems: inherited HTTP-client wildcard binding was
+refused before any remote bytes arrived, and an A4 PDF was unsuitable for a
+192×160 WMS PDF tile viewport. Native loopback-forward configuration and proper
+full-page tile fixtures address these without production source or containment
+changes. Actual HTTP PDFs are now parsed/rendered and checked for both known
+colors, rather than accepted or refused by compressed file size. Diagnostic
+passes on the prior WAR remain distinct from final combined-WAR acceptance.

@@ -1,6 +1,6 @@
 {
   "profile": "NO-ORACLE/headless-Temurin17/NO-JPEG2000",
-  "status": "source/native/final exact-WAR imaging verified; combined live runtime closing condition remains with integrator",
+  "status": "source/native/final aggregate04 exact-WAR imaging verified; final combined live runtime closing condition remains with integrator",
   "build": {
     "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/build-01/result.json",
     "sha256": "d04dae52cc943082b256e4c3b34cd4b46d956db3fca5345c65348908db649391",
@@ -145,13 +145,27 @@
     "bytes": 84996
   },
   "final_war_probe": {
-    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-01/result.json",
-    "sha256": "cadb29ff17e73544ebb10a38692067a11b64c103a9e1c0e663093008dfb1d2b3",
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/result.json",
+    "sha256": "76ca1812e9645657ba5aaa4f5152b1683c284e99f82eabf7301564f8e46a7a94",
     "bytes": 264488
   },
   "final_war": {
-    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-03/work/source/geoserver/src/web/app/target/geoserver.war",
-    "sha256": "c766574bd81e41c22a32fd9b25096d2e4da77e57193fd700aaa19c63dfc7be54",
-    "bytes": 141263856
-  }
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-04/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
+    "bytes": 141264649
+  },
+  "previous_exact_war_probes": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-01/result.json",
+      "sha256": "cadb29ff17e73544ebb10a38692067a11b64c103a9e1c0e663093008dfb1d2b3",
+      "bytes": 264488
+    }
+  ],
+  "previous_exact_war_indexes": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-jpeg2000-exclusion/plan/verification/json-jpeg2000-remediation/imaging-final-war-aggregate03.json",
+      "sha256": "d1fddd74aae2506b01e6f21b0ecbc6b9c7bbf14f497a8bcfcc10410fc50087aa",
+      "bytes": 12814
+    }
+  ]
 }

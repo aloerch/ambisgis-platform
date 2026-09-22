@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Independent read-only review of integrator aggregate/runtime wiring and separately authored GeoServer capability guards; MapFish implementation authored by this reviewer is not independently reviewed here.",
-  "source_commit_context": "e2bf0092f3ad474274f8ee7530c32da2de7dced8",
+  "source_commit_context": "dbf9e482fe85701fa40aa4c298697c2b5d739578",
   "files": [
     {
       "path": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-json-jpeg2000/build-support/java/aggregate_evidence.py",
@@ -39,7 +39,7 @@
       "bytes": 129489
     }
   ],
-  "status": "no remaining material source finding in reviewed scope; exact new WAR execution pending",
+  "status": "No remaining material source finding in reviewed scope; final aggregate04 exact-WAR imaging passed, final combined live evidence/candidate assembly pending.",
   "findings_fixed": [
     {
       "finding": "Aggregate explicit repaired-class list omitted several changed MapFish consumers and policy exception definitions.",
@@ -61,7 +61,8 @@
     "Service filter is mapped after existing authentication and restricts capability interpretation to selected protocol format parameters and upload surfaces.",
     "Direct and multipart ZIP preflight reads at most twelve decompressed bytes per member, without extracting image data; native multipart validates all parts before persistent import writes.",
     "Normalized aliases, actual content magic, misleading MIME/extension, explicit unsupported status and ordinary stream/metadata preservation are covered by guard12.",
-    "Final repaired-class checks include the actual PDFTileRenderer$1 callback holding checkPdf/readBounded markers, and all six malformed-JSON importer converters with real HttpMessageNotReadableException markers; marker/class assumptions are checked against packaged output."
+    "Final repaired-class checks include the actual PDFTileRenderer$1 callback holding checkPdf/readBounded markers, and all six malformed-JSON importer converters with real HttpMessageNotReadableException markers; marker/class assumptions are checked against packaged output.",
+    "Reviewed all six final importer converter deltas: JSONException maps to a fixed HttpMessageNotReadableException without chaining untrusted messages; TransformChain delegates to existing transformChain reader instead of the inherited invalid cast."
   ],
   "independently_read_native_receipt": {
     "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/runtime/guard-12/result.json",
@@ -86,8 +87,8 @@
       },
       {
         "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/prepare_final_index.py",
-        "sha256": "c15bdaf28f2fac7bf33700cdb873628b4b78b5cf7dae2aaef44a0fe2b4512637",
-        "bytes": 11298
+        "sha256": "bdab03f0205beb42833c636652c4c989b5019552191160e315d089ecc8ae0920",
+        "bytes": 13509
       }
     ],
     "status": "Draft reviewed; final WAR04 and live receipt rebinding still pending at review time. No shared root files edited.",
@@ -101,14 +102,24 @@
       {
         "issue": "Broad MapFish64MiB/strict total30second wording overstates inherited remote fetch behavior.",
         "required_correction": "New URL/file/PDF loaders are bounded; byte-array callers are validated after inherited acquisition. PDFUtils existing remote acquisition buffering is not globally hardened by this patch. readBounded checks elapsed time after chunk reads with separate connection/read timeouts; no strict30second wall-clock claim.",
-        "status": "Integrator notified and agreed to narrow wording."
+        "status": "Corrected in integrator final-index source and imaging handoff; reviewed exact wording."
       },
       {
         "issue": "Draft paths still select aggregate03, imageprobe01 and earlier runtime attempts, while final04 is being prepared. Component indexes can independently retain an old successfulWAR even if cfg receipts are updated.",
         "required_correction": "Update every changed-WAR receipt and active component index; assert imaging-index/final_war/sha256 and imaging-war-index/war/sha256 equal selectedWAR and native-index result equals finalnative receipt before finalassembly. Keep prior03 and failure receipts historical.",
-        "status": "Integrator notified; pending final freeze."
+        "status": "Draft assembler paths now select aggregate04 and fresh final receipts. Current imaging component indexes were updated only after probe02passed; verify final assembled bindings after cherry-pick."
       }
     ],
     "production_findings": "No new material production imaging-selection defect found in reviewed uncommitted build/evidence integration."
+  },
+  "final_imaging_probe": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/imaging/final-war-probe-02/result.json",
+    "sha256": "76ca1812e9645657ba5aaa4f5152b1683c284e99f82eabf7301564f8e46a7a94",
+    "bytes": 264488
+  },
+  "final_imaging_war": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/aggregate-04/work/source/geoserver/src/web/app/target/geoserver.war",
+    "sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
+    "bytes": 141264649
   }
 }

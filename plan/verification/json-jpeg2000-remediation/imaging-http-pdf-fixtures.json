@@ -77,5 +77,29 @@
     "bytes": 3348
   },
   "corrected_expected": "Both realPDFfixtures are1page192x160 withfullpage imageat0,0. OrdinaryPDFrenders15360blue and15360red pixels; JPEG2000PDFcontains actualJPXDecode. Fresh actualHTTPresponse mustbe parsed/rendered with knowncolor assertions before marking positive.",
-  "corrected_actual_http_status": "Pending separate runtime-agent execution receipt; generation success alone is not HTTP acceptance."
+  "corrected_actual_http_status": "Corrected content passed both diagnostic phases on priorWAR03. Final newWAR04 combinedGWC05 execution remains pending.",
+  "corrected_actual_http_diagnostic": {
+    "receipts": [
+      {
+        "phase": "initial",
+        "receipt": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-04/nojpeg2000-http/initial/remote-print-result.json",
+          "sha256": "684c218151239abdf0ce0f99bc1ada8a18535fa28d89acc730d6a70e9f580374",
+          "bytes": 1855
+        },
+        "result_exit_code": 0
+      },
+      {
+        "phase": "restart",
+        "receipt": {
+          "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/json-jpeg2000-remediation/gwc-04/nojpeg2000-http/restart/remote-print-result.json",
+          "sha256": "684c218151239abdf0ce0f99bc1ada8a18535fa28d89acc730d6a70e9f580374",
+          "bytes": 1855
+        },
+        "result_exit_code": 0
+      }
+    ],
+    "geometry_result": "Both phases of actual returned remote PDF render595x842 with15520blue/15200red pixels; remote genuineJP2 andJPXPDF are fetched and explicitly415.",
+    "overall_scope": "GWC04 remains failed solely for pre-fix malformedJSON500 on earlierWAR03. These diagnostic subresults do not establish finalWAR04 full-run acceptance."
+  }
 }
