@@ -369,9 +369,9 @@ def replay_qgis(selection, repos, output):
         checked(source, relative, digest)
     # Original generator emits filesystem enumeration order. Recover its recorded
     # order, then regenerate every row from recovered editable description/ext inputs.
-    row = expected['added'][0]
-    retained = selection.workspace/'build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14'/row['path']
-    checked(retained.parent, retained.name, row['sha256'], row['bytes'])
+    generated_row = expected['added'][0]
+    retained = selection.workspace/'build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14'/generated_row['path']
+    checked(retained.parent, retained.name, generated_row['sha256'], generated_row['bytes'])
     original = json.loads(retained.read_text())
     parsed = load_module(source/'python/plugins/grassprovider/parsed_description.py', 'restore_grass_description')
     descriptions = source/'python/plugins/grassprovider/description'
@@ -385,12 +385,12 @@ def replay_qgis(selection, repos, output):
     order = [r['name'] for r in original]
     require(set(order) == set(generated) and len(order) == len(generated), 'GRASS input membership differs')
     payload = json.dumps([generated[name] for name in order], indent=2).encode()
-    require(hashlib.sha256(payload).hexdigest() == row['sha256'], 'GRASS generated source differs')
-    generated_path = output/'generated/qgis'/row['path']
+    require(hashlib.sha256(payload).hexdigest() == generated_row['sha256'], 'GRASS generated source differs')
+    generated_path = output/'generated/qgis'/generated_row['path']
     generated_path.parent.mkdir(parents=True, exist_ok=True)
     generated_path.write_bytes(payload)
     save(output/'generated/qgis/generation-order.json', {'input':'accepted generator output row order',
-        'accepted_generated_sha256':row['sha256'], 'order':order})
+        'accepted_generated_sha256':generated_row['sha256'], 'order':order})
     # Selected palette source view is generated from source, not the staged binaries.
     membership = selection.document('java-gmt-qgis-membership')
     final = selection.document('java-gmt-qgis-output')
@@ -461,7 +461,7 @@ def replay_qgis(selection, repos, output):
         target.write_bytes(data)
     require(not set(membership['exclusions']) & set(selected_rows), 'excluded QGIS source selected')
     return {'source_changes': [], 'generated': {'path':str(generated_path.relative_to(output)),
-        'sha256':row['sha256'],'records':len(order),'method':'Accepted parser and source inputs, explicit retained emission order; generated file remains derived output'},
+        'sha256':sha(generated_path),'records':len(order),'method':'Accepted parser and source inputs, explicit retained emission order; generated file remains derived output'},
         'resource_comparison': {'files_verified':len(selected_rows), 'packaged_notices_verified':len(notice_rows), 'excluded_palettes':len(membership['exclusions']),
             'inventory_sha256':hashlib.sha256(json.dumps(inventory(resources),sort_keys=True).encode()).hexdigest()},
         'custody': 'Original excluded source assets/notices stay in the core repository under original terms; selected source resources are separate non-distribution output.'}

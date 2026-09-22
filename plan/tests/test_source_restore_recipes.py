@@ -109,6 +109,62 @@ class SourceRecipeSafetyTests(unittest.TestCase):
             recipes.materialize_recipes(self.root/'platform',self.root,{},output)
         self.assertFalse((output/'recipes-receipt.json').exists())
 
+    def test_qgis_replay_receipt_identifies_generated_bytes_not_tooling(self):
+        source=self.root/'qgis';platform=self.root/'platform';workspace=self.root/'workspace'
+        output=self.root/'output';output.mkdir()
+        def put(root,name,data):
+            path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+            return {'path':name,'sha256':recipes.sha(path),'bytes':len(data)}
+        generated_name='python/plugins/grassprovider/description/algorithms.json'
+        generated=json.dumps([{'name':'one'}],indent=2).encode()
+        generated_row=put(workspace/'build-worktrees/qgis-candidate/build-06/sources/qgis-3.44.14',generated_name,generated)
+        parser=b'''class ParsedDescription:
+    name = 'one'
+    @staticmethod
+    def parse_description_file(path, translate=False):
+        return ParsedDescription()
+    def as_dict(self):
+        return {'name': self.name}
+'''
+        parser_row=put(source,'python/plugins/grassprovider/parsed_description.py',parser)
+        put(source,'python/plugins/grassprovider/description/one.txt',b'one')
+        helper_dir=platform/'build-support/qgis'
+        tooling=[put(helper_dir,'common.py',b'# source fixture\n'),
+            put(helper_dir,'resource_selection.py',b'def trim_catalogue(data, roots, schemes=()):\n    return data, []\n')]
+        resource='resources/cpt-city-qgis-min/selected.svg'
+        row=put(source,resource,b'selected palette');row['path']='share/qgis/'+resource
+        final=[row]
+        notice_prefix='share/qgis/doc/ambisgis-resource-selection/'
+        for target,name in [('default-icons-LICENSE.TXT','images/themes/default/LICENSE.TXT'),
+                ('QGIS-Vera-COPYRIGHT.TXT','tests/testdata/font/QGIS-Vera/COPYRIGHT.TXT'),
+                ('QGIS-Vera-README.txt','tests/testdata/font/QGIS-Vera/QGIS-Vera-README.txt')]:
+            row=put(source,name,target.encode());row['path']=notice_prefix+target;final.append(row)
+        readme=("Private proposed QGIS resource profile. Exactly 0 optional SVG palettes are omitted.\n"
+            "The old source/stage remain custody records, not approved distribution bundles.\n"
+            "ColorBrewer: This product includes color specifications and designs developed by Cynthia Brewer (http://colorbrewer.org/).\n"
+            "Its exact acknowledgement, naming and notice terms remain in resources/cpt-city-qgis-min/cb/COPYING.xml.\n"
+            "Other inherited resource/support/icon/font obligations remain; these additions are not legal clearance.\n"
+            "Omitted collection metadata/notices are retained here outside the active palette archive.\n"
+            "Saved projects can retain serialized symbol/shader colors, but omitted named ramps cannot be selected or reloaded.\n"
+            "Reclassification from such a ramp requires an explicit user choice; full saved-project compatibility is not claimed.\n")
+        final.append({'path':notice_prefix+'README.txt','sha256':hashlib.sha256(readme.encode()).hexdigest()})
+        documents={'qgis-generated-source':{'added':[generated_row],'generator_identities':{parser_row['path']:parser_row['sha256']}},
+            'java-gmt-qgis-membership':{'exclusions':{},'omitted_collection_roots':[]},
+            'java-gmt-qgis-output':{'files':final},
+            'java-gmt-qgis-selection':{'catalogue_changes':[],
+                'executed_recipe':{'files_before':{'resource_selection.py':tooling[-1]}}},
+            'qgis-selection-result':{'catalogue_changes':[],'relocated_metadata':[]},
+            'java-gmt-qgis-stage-tooling':{'files':tooling}}
+        class Selected:
+            def document(self,name):
+                return documents[name]
+        selected=Selected();selected.platform=platform;selected.workspace=workspace
+        result=recipes.replay_qgis(selected,{'qgis':source},output)
+        self.assertNotEqual(generated_row['sha256'],tooling[-1]['sha256'])
+        self.assertEqual(result['generated']['sha256'],recipes.sha(output/result['generated']['path']))
+        self.assertEqual(result['generated']['sha256'],generated_row['sha256'])
+
+
 
 if __name__ == '__main__':
     unittest.main()

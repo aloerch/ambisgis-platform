@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "kind": "source-restoration-receipt-metadata-correction",
+  "recorded_utc": "2026-09-22T23:49:39.399538+00:00",
+  "original_recipe_receipt_sha256": "eb0a50b8d6cafb2380ae66e1d09e708df84c808d61fd7965afcbc7a1f3de4789",
+  "original_recipe_receipt": {
+    "root": "workspace",
+    "path": "build-worktrees/source-baseline-restore/run-001/recipes.json",
+    "sha256": "eb0a50b8d6cafb2380ae66e1d09e708df84c808d61fd7965afcbc7a1f3de4789",
+    "bytes": 562982
+  },
+  "json_pointer": "/qgis/generated/sha256",
+  "recorded_sha256": "03a0562feeca2201c1882c9f4b45b72885a814c1ff89fb2d6019f21278079954",
+  "correct_sha256": "14e2602dd8df5fbed76bf3c3cb8212c3ea52c2343f8c82a4282120246b0c7a3e",
+  "generated_relative_path": "derived/generated/qgis/python/plugins/grassprovider/description/algorithms.json",
+  "explanation": "The QGIS summary reused a loop variable holding the resource_selection.py tooling entry. Generated algorithms.json bytes, generation-order evidence and whole-recovery file inventory already contain the correct SHA-256. The old receipt is preserved byte-for-byte; this record corrects only its summary digest.",
+  "verification": {
+    "result": {
+      "corrected_summary_sha256": "14e2602dd8df5fbed76bf3c3cb8212c3ea52c2343f8c82a4282120246b0c7a3e",
+      "excluded_palettes": 1130,
+      "generated_records": 307,
+      "native_rebuild": false,
+      "original_generated_sha256": "14e2602dd8df5fbed76bf3c3cb8212c3ea52c2343f8c82a4282120246b0c7a3e",
+      "original_receipt_unchanged": true,
+      "original_recipe_receipt_sha256": "eb0a50b8d6cafb2380ae66e1d09e708df84c808d61fd7965afcbc7a1f3de4789",
+      "packaged_notices_verified": 88,
+      "recipe_sha256": "16ba8edfa18da151f2f2f5150705e266e826f6813506b1824283281f82cd6a23",
+      "regenerated_generated_sha256": "14e2602dd8df5fbed76bf3c3cb8212c3ea52c2343f8c82a4282120246b0c7a3e",
+      "resource_files_verified": 4282,
+      "result": "passed",
+      "source_only": true
+    },
+    "result_record": {
+      "root": "workspace",
+      "path": "build-worktrees/source-baseline-restore/qgis-receipt-correction-01/verification.json",
+      "sha256": "8931d478d58d31687196547adc4c3e953fa47f833286f263c18b8f7cf6ad4fd7",
+      "bytes": 730
+    },
+    "network_record": {
+      "root": "workspace",
+      "path": "build-worktrees/source-baseline-restore/qgis-receipt-correction-01/network.json",
+      "sha256": "884edab054bde9f28632348a6fcf7a600211e2415bdecdad18316f24aa1b6843",
+      "bytes": 1833
+    },
+    "command_source": {
+      "root": "workspace",
+      "path": "build-worktrees/source-baseline-restore/qgis-receipt-correction-01/verify.py",
+      "sha256": "4b796c272bed0675ae2f2b4ec1d9793c7820436912e3dfbcb9ac1ba447a2cc11",
+      "bytes": 1999
+    },
+    "corrected_replay_record": {
+      "root": "workspace",
+      "path": "build-worktrees/source-baseline-restore/qgis-receipt-correction-01/corrected-qgis-replay.json",
+      "sha256": "933a57f7e9c848edced630312fe2ea82c8c266308a0e851c36cef246fefc2eb8",
+      "bytes": 750
+    },
+    "internet_socket_denial_probes": [
+      {
+        "family": "AF_INET",
+        "operation": "socket(SOCK_STREAM)",
+        "errno": 1,
+        "errno_name": "EPERM",
+        "expected_errno": 1,
+        "passed": true
+      },
+      {
+        "family": "AF_INET6",
+        "operation": "socket(SOCK_STREAM)",
+        "errno": 1,
+        "errno_name": "EPERM",
+        "expected_errno": 1,
+        "passed": true
+      }
+    ]
+  },
+  "regression": {
+    "test": "tests.test_source_restore_recipes.SourceRecipeSafetyTests.test_qgis_replay_receipt_identifies_generated_bytes_not_tooling",
+    "original_code": "5a9ed41",
+    "original_result": "Fails summary-vs-generated-byte assertion; reproduced exactly one expected failure",
+    "corrected_result": "13 focused source restoration recipe tests passed, zero skips"
+  },
+  "unchanged_scope": [
+    "accepted FND-02 manifest and production artifacts",
+    "run-001/run-002 original receipts and source inventories",
+    "source branches and product baseline trees",
+    "no native/runtime compilation or service restart"
+  ]
+}
