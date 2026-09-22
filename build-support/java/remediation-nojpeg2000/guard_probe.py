@@ -27,8 +27,17 @@ def main(args):
         files=[]
         for name in ['NoJpeg2000Policy.java','NoJpeg2000Filter.java','NoJpeg2000GuardWitness.java']:
             shutil.copyfile(HERE/name,source/name);files.append(source/name)
+        # Compile the two real changed controllers against the exact retained parent WAR libraries.
+        repairs=json.loads((HERE/'geoserver-repairs.json').read_text())
+        for row in repairs:
+            if row['path'].endswith('.java'):
+                path=source/Path(row['path']).name;path.write_text(row['after']);files.append(path)
         result['sources']={p.name:sha(p) for p in files}
-        cp=os.pathsep.join(str(m2/name) for name in names)
+        production=TASK/'build-worktrees/java-gmt-remediation/geonode-02/lib'
+        libraries=sorted(production.glob('*.jar'))
+        if len(libraries)!=367:raise ValueError('parent WAR library inventory changed')
+        result['parent_libraries']={p.name:sha(p) for p in libraries}
+        cp=os.pathsep.join([*(str(m2/name) for name in names),*(str(p) for p in libraries)])
         commands=[[str(java/'javac'),'-cp',cp,'-d',str(classes),*[str(p) for p in files]],
                   [str(java/'java'),'-cp',str(classes)+os.pathsep+cp,'NoJpeg2000GuardWitness',str(out/'tree-input')]]
         result['commands']=[]

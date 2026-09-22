@@ -38,8 +38,12 @@ public final class NoJpeg2000Filter implements Filter {
         String path = request.getRequestURI().substring(request.getContextPath().length());
         // Only selected protocol format parameters are capability selections. Layer names,
         // catalog titles and ordinary JSON properties are never interpreted as codecs.
-        String operation = request.getParameter("REQUEST");
-        if (operation == null) operation = request.getParameter("request");
+        String operation = null;
+        Enumeration<String> parameterNames = request.getParameterNames();
+        while (parameterNames.hasMoreElements()) {
+            String name = parameterNames.nextElement();
+            if (name.equalsIgnoreCase("request")) operation = request.getParameter(name);
+        }
         boolean output = operation != null && (operation.equalsIgnoreCase("GetMap")
                 || operation.equalsIgnoreCase("GetCoverage") || operation.equalsIgnoreCase("GetTile"));
         if (output) {
@@ -62,10 +66,13 @@ public final class NoJpeg2000Filter implements Filter {
                 || NoJpeg2000Policy.filename(request.getParameter("filename")) || NoJpeg2000Policy.format(type))) {
             reject(response); return;
         }
-        // JSON/XML/form bodies retain their native parser and encoding semantics.
-        // Multipart and ZIP members are checked by coverage file validation after extraction.
-        if (upload && !media.contains("json") && !media.contains("xml") && !media.startsWith("multipart/")
-                && !media.startsWith("application/x-www-form-urlencoded")) {
+        boolean binaryRoute = path.matches("/rest/workspaces/[^/]+/coveragestores/[^/]+/file[.][^/]+")
+                || path.matches("/rest/imports/[0-9]+/tasks/[^/]+[.][^/]+");
+        // File upload routes are binary even if a client supplies a misleading MIME type.
+        // Native JSON/XML metadata bodies preserve their parser and encoding semantics.
+        // Multipart parts and extracted coverage ZIP members have separate pre-write checks.
+        if (upload && (binaryRoute || !media.contains("json") && !media.contains("xml")
+                && !media.startsWith("multipart/") && !media.startsWith("application/x-www-form-urlencoded"))) {
             ServletInputStream original = request.getInputStream();
             PushbackInputStream input = new PushbackInputStream(original, 12);
             byte[] prefix = input.readNBytes(12);

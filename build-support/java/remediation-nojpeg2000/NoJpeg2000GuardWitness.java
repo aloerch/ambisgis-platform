@@ -30,16 +30,20 @@ public final class NoJpeg2000GuardWitness {
         for(String name: new String[]{"jp2","J2K","jpeg2000","image/jp2; charset=UTF-8"}) require(NoJpeg2000Policy.format(name),"alias missed");
         for(String name: new String[]{"jpeg","image/jpeg","image/png","geotiff","image/tiff","myjp2"}) require(!NoJpeg2000Policy.format(name),"unrelated format blocked");
         require(NoJpeg2000Policy.signature(JP2),"JP2 signature");require(NoJpeg2000Policy.signature(J2K),"codestream signature");
+        require(NoJpeg2000Policy.signature(new byte[]{(byte)255,79}),"truncated SOC rejection");
+        require(NoJpeg2000Policy.signature(Arrays.copyOf(JP2,8)),"truncated JP2 rejection");
         require(!NoJpeg2000Policy.signature(new byte[]{(byte)255,(byte)216,(byte)255,(byte)224}),"JPEG must remain supported");
         for(byte[] bytes: new byte[][]{JP2,J2K}) {
             reject(request("/rest/workspaces/fixture/coveragestores/rejected/file.geotiff?unused", "image/tiff",bytes));
             reject(request("/rest/imports/0/tasks/disguised.png", "application/octet-stream",bytes));
         }
+        reject(request("/rest/workspaces/fixture/coveragestores/rejected/file.geotiff","application/json",JP2));
+        reject(request("/rest/imports/0/tasks/disguised.png","application/xml",J2K));
         reject(request("/rest/workspaces/fixture/coveragestores/rejected/file.jp2","image/png",new byte[0]));
         reject(request("/rest/imports/0/tasks/disguised.png","image/jp2",new byte[0]));
         for(String operation:new String[]{"GetMap","getCoverage","GETTILE"}) {
             MockHttpServletRequest r=request("/ows","text/plain",new byte[0]);r.setMethod("GET");
-            r.setParameter("request",operation);r.setParameter("FORMAT","image/jp2");reject(r);
+            r.setParameter("ReQuEsT",operation);r.setParameter("FORMAT","image/jp2");reject(r);
         }
         for(byte[] input:new byte[][]{new byte[0],new byte[]{1,2},"not JPEG2000 streamed input".getBytes(StandardCharsets.UTF_8)}) {
             MockHttpServletRequest r=request("/rest/imports/0/tasks/ordinary.tif","image/tiff",input);

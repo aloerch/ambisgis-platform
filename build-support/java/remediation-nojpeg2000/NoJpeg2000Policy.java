@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.LinkOption;
 import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -31,13 +32,11 @@ public final class NoJpeg2000Policy {
         return dot >= 0 && format(value.substring(dot + 1));
     }
 
-    /** ISO/IEC 15444 signature box or JPEG2000 SOC followed by SIZ; ordinary JPEG differs. */
+    /** Recognizable JPEG2000 magic, including truncated JP2/SOC input. Ordinary JPEG differs. */
     public static boolean signature(byte[] value) {
-        return value.length >= 4 && ((value[0] & 255) == 255 && (value[1] & 255) == 79
-                && (value[2] & 255) == 255 && (value[3] & 255) == 81)
-                || value.length >= 12 && value[0] == 0 && value[1] == 0 && value[2] == 0 && value[3] == 12
-                && value[4] == 106 && value[5] == 80 && value[6] == 32 && value[7] == 32
-                && value[8] == 13 && value[9] == 10 && (value[10] & 255) == 135 && value[11] == 10;
+        return value.length >= 2 && (value[0] & 255) == 255 && (value[1] & 255) == 79
+                || value.length >= 8 && value[0] == 0 && value[1] == 0 && value[2] == 0 && value[3] == 12
+                && value[4] == 106 && value[5] == 80 && value[6] == 32 && value[7] == 32;
     }
 
     public static boolean file(Path path) throws IOException {
@@ -47,10 +46,15 @@ public final class NoJpeg2000Policy {
 
     /** Inspects only names and twelve signature bytes, without following directory symlinks. */
     public static boolean tree(Path path) throws IOException {
-        if (!Files.isDirectory(path)) return file(path);
+        if (Files.isSymbolicLink(path)) throw new IOException("Symbolic link is not a supported raster upload");
+        if (!Files.isDirectory(path, LinkOption.NOFOLLOW_LINKS)) return file(path);
         try (Stream<Path> files = Files.walk(path)) {
-            var iterator = files.filter(Files::isRegularFile).iterator();
-            while (iterator.hasNext()) if (file(iterator.next())) return true;
+            var iterator = files.iterator();
+            while (iterator.hasNext()) {
+                Path item = iterator.next();
+                if (Files.isSymbolicLink(item)) throw new IOException("Symbolic link is not a supported raster upload");
+                if (Files.isRegularFile(item, LinkOption.NOFOLLOW_LINKS) && file(item)) return true;
+            }
         }
         return false;
     }
