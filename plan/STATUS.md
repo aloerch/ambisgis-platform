@@ -1,6 +1,6 @@
 # Implementation status — FND-02 accepted; FND-07 source recovery
 
-**FND-02 is owner-accepted and Merged. FND-07 is In progress; source promotion
+**FND-02 is owner-accepted and Merged. FND-07 is In review; source promotion
 and human review remain pending.** The separate [owner decision](https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488)
 by `aloerch`, `2026-09-22T23:20:02Z`, binds candidate revision 4/schema 1,
 C1–C4, internal F02-06/07/08 and the NO-ORACLE/headless-Temurin17/NO-JPEG2000
@@ -9,7 +9,7 @@ maintenance/profile limits. Issue #3 stays closed; the immutable manifest SHA256
 and all historical receipts remain unchanged. The [separate governance record](verification/fnd-02-owner-acceptance/acceptance.json)
 reconciles current completion without inventing historical approval or distribution.
 
-FND-07 is claimed on `fnd-07/source-baseline-restore` from verified PR #68 merge
+FND-07 has open [PR #69](https://github.com/aloerch/ambisgis-platform/pull/69) on `fnd-07/source-baseline-restore` from verified PR #68 merge
 `973a5ef383687cd00143c679f832cfb006a57cf0`. The first real network-denied source
 recovery materializes all eleven core roots and accepted platform recipes, seven
 local modified product commits, four unchanged revisions, the independent
@@ -31,8 +31,13 @@ are unaccepted. See the evidence index for the second bundle-chain recovery and
 final read-only verification result.
 
 Project reconciliation changed only FND-02 Delivery/Evidence and FND-07
-Delivery/Evidence: 81 items before/after, all unrelated values/views/archive
-choices preserved. Source-fork Actions are enabled and require a separate exact
+Delivery/Evidence; PR #69 was added as a separate Evidence-only item without a
+Task ID. Membership changed from 81 to 82; all unrelated values/views/archive
+choices were preserved. FND-02 is Merged, FND-07 is In review; FND-08 is unchanged.
+Both fresh source recoveries and final corrected verification passed for eleven
+roots. The complete platform checkpoint also passed independent offline recovery
+and executed read-only inspection from restored tools. See the
+[publication evidence](verification/source-baseline-restore/publication.json). Source-fork Actions are enabled and require a separate exact
 containment decision before later public source-ref pushes. Next owner action:
 review this platform checkpoint and the exact eleven-ref promotion plan; FND-08
 cannot become ready until FND-07 is accepted.

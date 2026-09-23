@@ -2,6 +2,48 @@
   "acceptance_predecessor": "https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488",
   "broader_obligations": "FND-08 compiler/OS/base-image/full transitive build closure and moving-upstream test; OWN-02 full disconnected repair/install/restore; distribution/notices/security/signing/deployment remain unaccepted.",
   "candidate_manifest_sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+  "complete_checkpoint_custody": {
+    "bundle": {
+      "bytes": 5454377,
+      "location": {
+        "path": "build-worktrees/source-baseline-restore/checkpoint.bundle",
+        "root": "workspace"
+      },
+      "sha256": "d3d48c8c03ee36f8ffc36bf91c2884b67772ef5cdfbe880fc7fb66d80a93d978"
+    },
+    "bundle_prerequisites": [],
+    "commit": "d006148e91b68dc04576eba9c468be7ecbb2aca1",
+    "default_restored_cli_exit_code": 0,
+    "fresh_recovered_repository": "build-worktrees/source-baseline-restore/checkpoint-recovered",
+    "network": {
+      "bytes": 1857,
+      "location": {
+        "path": "build-worktrees/source-baseline-restore/checkpoint-recovery-verification/network.json",
+        "root": "workspace"
+      },
+      "sha256": "f9dabd2a8f1e1583cfb448385ecebce67a757479b479d9ac1cb9fb561e585896"
+    },
+    "purpose": "Complete recovery tooling plus required committed custody/acceptance/correction metadata; later documentation-only publication records are not runtime inputs.",
+    "result": {
+      "bytes": 6669,
+      "location": {
+        "path": "build-worktrees/source-baseline-restore/checkpoint-recovery-verification/result.json",
+        "root": "workspace"
+      },
+      "sha256": "f3c518dca9ddec3abe59da74eedce9745a72642d9e897cf778fedcd581dc79f1"
+    },
+    "summary": {
+      "bytes": 2531,
+      "location": {
+        "path": "build-worktrees/source-baseline-restore/checkpoint-recovery-verification/summary.json",
+        "root": "workspace"
+      },
+      "sha256": "757e69a42eca1c00b72992779a193e5018c05278d2bb1cdeb45d205e5b4f7ace"
+    },
+    "tree": "3ac5c304875d9c99fb081671782e1a8454bd237a",
+    "verified_core_bundle_inputs": 11,
+    "verified_files": 20
+  },
   "final_current_verifier": {
     "command": [
       "python3",
@@ -53,6 +95,7 @@
       "sha256": "240eb379dee4629ba7357f349d6006f51920cf8c0ea699f04aa7e3cf52331b5e"
     }
   },
+  "final_source_fork_readback": "final-source-fork-readback.json",
   "independent_review": [
     "independent-review.json",
     "independent-review-addendum.json"
@@ -102,6 +145,7 @@
   "preferred_receipt_sha256": "11bd0ba5f1662606b2d8ac604d469c2d3d02c1d73b0a1540d648856cdc2343f0",
   "preferred_recovered_run": "run-002",
   "promotion_plan": "promotion-plan.json",
+  "publication": "publication.json",
   "receipt_provenance_limit": "The initial controller predates subsequent pending-receipt and verification hardening. Executed tool snapshots identify each run honestly. All historical receipts are preserved; later code is not attributed retroactively.",
   "recorded_utc": "2026-09-23T00:02:37.334482+00:00",
   "remaining_acceptance": [

@@ -4,7 +4,7 @@ Repository `aloerch/ambisgis-platform` (ID `1376927351`), branch
 `fnd-07/source-baseline-restore`, integration base
 `973a5ef383687cd00143c679f832cfb006a57cf0`. Worktree:
 `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source-restore`.
-Review PR: pending publication. This checkpoint does not complete FND-07 or FND-08.
+Review [PR #69](https://github.com/aloerch/ambisgis-platform/pull/69) is open and unmerged. This checkpoint does not complete FND-07 or FND-08.
 
 ## Owner actions
 
@@ -44,7 +44,7 @@ The criterion report/checklist are reconciled without changing their original
 four criteria/eight pass conditions or the importer-owned issue body.
 
 FND-07 depends on that decision and was [claimed separately](https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5786023078).
-Its three criteria remain exactly:
+Project Delivery is **In review**; issue #6 remains open. Its three criteria remain exactly:
 
 | Original criterion | Actual evidence and pending work |
 |---|---|
@@ -204,3 +204,20 @@ python3 ../build-support/postgis/offline_exec.py --evidence /home/revelberry/Pro
 The new orchestration is retained at platform implementation commit
 `e27769520a9b17a501aebfa2ac867cc150debf84`; its private bundle and verification
 are separate from the original accepted-recipe platform commit `973a5ef...`.
+
+The complete executable checkpoint is also retained at
+`d006148e91b68dc04576eba9c468be7ecbb2aca1`, including the runtime custody and
+acceptance metadata committed with this report. Private `checkpoint.bundle`
+SHA256 `d3d48c8c03ee36f8ffc36bf91c2884b67772ef5cdfbe880fc7fb66d80a93d978`
+was independently restored with full history; 20 files matched and its restored
+read-only CLI inspected all eleven bundles successfully under network denial.
+The earlier implementation-only orchestration bundle is preserved separately.
+
+[Publication evidence](../verification/source-baseline-restore/publication.json)
+records the separate PR Project item and narrow task reconciliation. Membership
+changed from 81 to 82; FND-02 remains Merged, FND-07 is In review, and FND-08 is
+unchanged. API readback preserved all existing fields/views/archive choices and
+verified PR #69 in the existing `is:pr is:open` queue; no UI setup is claimed.
+[Final source-fork readback](../verification/source-baseline-restore/final-source-fork-readback.json)
+confirms the recorded source identities/defaults/workflow permissions are
+unchanged and both planned AmbisGIS refs remain absent on all eleven forks.
