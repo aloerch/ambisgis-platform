@@ -1,3 +1,44 @@
+# Implementation status — FND-02 accepted; FND-07 source recovery
+
+**FND-02 is owner-accepted and Merged. FND-07 is In progress; source promotion
+and human review remain pending.** The separate [owner decision](https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488)
+by `aloerch`, `2026-09-22T23:20:02Z`, binds candidate revision 4/schema 1,
+C1–C4, internal F02-06/07/08 and the NO-ORACLE/headless-Temurin17/NO-JPEG2000
+maintenance/profile limits. Issue #3 stays closed; the immutable manifest SHA256
+`0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99`
+and all historical receipts remain unchanged. The [separate governance record](verification/fnd-02-owner-acceptance/acceptance.json)
+reconciles current completion without inventing historical approval or distribution.
+
+FND-07 is claimed on `fnd-07/source-baseline-restore` from verified PR #68 merge
+`973a5ef383687cd00143c679f832cfb006a57cf0`. The first real network-denied source
+recovery materializes all eleven core roots and accepted platform recipes, seven
+local modified product commits, four unchanged revisions, the independent
+MapStore submodule, modified Class B source and exact selected assets. No source
+fork/default/workflow is changed. The [handoff](docs/source-baseline-restore-handoff.md),
+[donor-change ledger](../build-support/source_restore/CHANGES_FROM_DONOR.md),
+[exact promotion plan](verification/source-baseline-restore/promotion-plan.json)
+and [ADR 009](adrs/009-accepted-source-custody.md) define the bounded checkpoint.
+
+Final package checks pass **308 tests, zero failures/errors/skips**, strict plan
+validation and **four schemas/examples**. Accepted-candidate integrity/report pass;
+eligibility remains exit 2. A module import collision and generated-file summary
+hash defect were reproduced, fixed and tested; failed runs and original receipts
+remain retained. The QGIS summary has a [separate correction](verification/source-baseline-restore/qgis-receipt-correction.json)
+backed by fresh network-denied source-only regeneration. No GIS/native/runtime
+suite was rerun merely to refresh evidence. Public product branches and human
+FND-07 review remain outstanding; FND-08, P0, distribution, security and release
+are unaccepted. See the evidence index for the second bundle-chain recovery and
+final read-only verification result.
+
+Project reconciliation changed only FND-02 Delivery/Evidence and FND-07
+Delivery/Evidence: 81 items before/after, all unrelated values/views/archive
+choices preserved. Source-fork Actions are enabled and require a separate exact
+containment decision before later public source-ref pushes. Next owner action:
+review this platform checkpoint and the exact eleven-ref promotion plan; FND-08
+cannot become ready until FND-07 is accepted.
+
+# Preserved status — prior checkpoints
+
 # Implementation status — independent JSON / NO-JPEG2000 revision 4
 
 **FND-02 remains In progress; final owner decision is pending.** Both remaining

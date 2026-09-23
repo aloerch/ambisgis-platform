@@ -1,0 +1,10 @@
+{
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "commit": "973a5ef383687cd00143c679f832cfb006a57cf0",
+  "reviewed_recipe_head": "7c4c6a6ddbc364e520911e06b9a97a7c10bdcfcf",
+  "path": "build-worktrees/source-baseline-restore/platform-main.bundle",
+  "sha256": "7a28dc2d98e6476ed85b4767e86ed5935e9ade6d3626cc0cfd25892134d99834",
+  "bytes": 5299472,
+  "purpose": "Local full-history custody of accepted first-party recipes and provenance; no publication permission."
+}

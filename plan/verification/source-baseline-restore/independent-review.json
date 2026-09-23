@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "review_started_at": "2026-09-22T23:47:39.603392+00:00",
+  "mode": "Independent read-only review; scratch report only; no source/remote mutations",
+  "run_001_receipt_sha256": "7852514aed5df0f935aeb146cd2d0bb3d106e22e92fb9b73416439b39b0c4469",
+  "run_001_recipes_sha256": "eb0a50b8d6cafb2380ae66e1d09e708df84c808d61fd7965afcbc7a1f3de4789",
+  "candidate_sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+  "reviewed_tooling": [
+    {
+      "path": "plan/tools/restore_sources.py",
+      "sha256": "e5f6a95b65d7b96795d0922277ea1d965a82a1e5f0679dc509808f155716abef",
+      "bytes": 23247
+    },
+    {
+      "path": "build-support/source_restore/common.py",
+      "sha256": "5a2c66d3d79526985bfcdcf61d00f95336932901e2d7805dac859f6067cea2da",
+      "bytes": 9194
+    },
+    {
+      "path": "build-support/source_restore/recipes.py",
+      "sha256": "0001f0f8ff34ab7fd417ca0cd347e878be7007240a6a47c653f4666a1d992c36",
+      "bytes": 42407
+    }
+  ],
+  "initial_run_frozen_tooling": [
+    {
+      "path": "run-001-tooling/common.py",
+      "sha256": "0d81601a04aa07d110bbb981d23a1c80e595eb5af8f7775fb2dc285769d6efc8",
+      "bytes": 9075
+    },
+    {
+      "path": "run-001-tooling/recipes.py",
+      "sha256": "0001f0f8ff34ab7fd417ca0cd347e878be7007240a6a47c653f4666a1d992c36",
+      "bytes": 42407
+    },
+    {
+      "path": "run-001-tooling/restore_sources.py",
+      "sha256": "2bba090697ccbe9a205edfe47d4f3c585f02fb6f636dc067b678370562c3847c",
+      "bytes": 13304
+    }
+  ],
+  "roots": [
+    {
+      "id": "postgresql",
+      "repository_id": 1376927644,
+      "base_commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "tree": "598df31816bda464f5b904c0badbcb25bafcc4f1",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 3,
+      "tracked_entries": 6265,
+      "changes": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    },
+    {
+      "id": "postgis",
+      "repository_id": 1376927690,
+      "base_commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+      "commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+      "tree": "ee927efacdc5a00d698cab2da047ad2232d1f579",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 13,
+      "tracked_entries": 2315,
+      "changes": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    },
+    {
+      "id": "qgis",
+      "repository_id": 1376927721,
+      "base_commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+      "commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+      "tree": "c8542e82e3c3810950f32ce8d58a16bfed12e6c8",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 131,
+      "tracked_entries": 33579,
+      "changes": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    },
+    {
+      "id": "jupyterhub",
+      "repository_id": 1376927753,
+      "base_commit": "3e516c6f382b481e815ec455befb2f14d80d337b",
+      "commit": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+      "tree": "a9ab20c5ff0641870194d666fcd1516ee2f2d65e",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 2,
+      "tracked_entries": 425,
+      "changes": [
+        {
+          "status": "M",
+          "path": "MANIFEST.in",
+          "mode": "100644",
+          "sha256": "47040928ae727285cec3b2d132c0234e312008dd7c88d07e04acc39dd16594e0",
+          "bytes": 1145
+        }
+      ],
+      "patch_sha256": "2b3562eb9f39da225831f82439eeea8400322341282b58dabd2d8cb2c6d41d73",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    },
+    {
+      "id": "jupyterlab",
+      "repository_id": 1376927783,
+      "base_commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+      "commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+      "tree": "0edadc56fb04f944097c0658a9a51686ba68bd16",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 4,
+      "tracked_entries": 3022,
+      "changes": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    },
+    {
+      "id": "geotools",
+      "repository_id": 1376927869,
+      "base_commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+      "commit": "f51fa68803c465f28a85c155e3e951df0d8788f7",
+      "tree": "60750f787dabf1a08e646e7d5f3f1497e560e94e",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 45,
+      "tracked_entries": 17920,
+      "changes": [
+        {
+          "status": "M",
+          "path": "build/maven/xmlcodegen/pom.xml",
+          "mode": "100644",
+          "sha256": "bf9d93ada08207b72f98754a19d9f9cec4b17264c43deb08ecea2eab4e5702d1",
+          "bytes": 3961
+        },
+        {
+          "status": "M",
+          "path": "modules/plugin/imagemosaic/pom.xml",
+          "mode": "100644",
+          "sha256": "55ddcec1c65d32aaca83da069c854346f045fe55ca8fa024ae47ba25a6ee9bd9",
+          "bytes": 6647
+        }
+      ],
+      "patch_sha256": "304ee43f17f84444c8698c79d128c3d8b84a74b09eec4a592b85aa7c033e2a76",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    },
+    {
+      "id": "geowebcache",
+      "repository_id": 1376927892,
+      "base_commit": "59640420454b73f1e04e8409cc6ed43f4b24fed2",
+      "commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+      "tree": "8df655d13b9955776fe1532dfb27fac64612a772",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 4,
+      "tracked_entries": 1063,
+      "changes": [
+        {
+          "status": "M",
+          "path": "geowebcache/diskquota/jdbc/pom.xml",
+          "mode": "100644",
+          "sha256": "738946546e951f94b4954b5180896f200831fdac4766e7632599d7955b463e40",
+          "bytes": 4627
+        }
+      ],
+      "patch_sha256": "5a81b05a37240871bc3e3b8f26efb3d8e475cc0a41099980bf9334e4a8e318af",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    },
+    {
+      "id": "geoserver",
+      "repository_id": 1376927947,
+      "base_commit": "e0673323400321c0f3409fbae68b4871dc328d8a",
+      "commit": "fd2fe1dfcc78fa974bdb81673872879336312077",
+      "tree": "c12018e88493a351c60c370f2a43894701acf995",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 23,
+      "tracked_entries": 19996,
+      "changes": [
+        {
+          "status": "M",
+          "path": "src/community/security/oauth2-geonode/src/main/java/org/geoserver/security/oauth2/services/GeoNodeTokenServices.java",
+          "mode": "100644",
+          "sha256": "358ff9aeb7b7ad6e2a7b0ab0faccd89930583fe36a2119c925e4e07a7d0bf61e",
+          "bytes": 2288
+        },
+        {
+          "status": "M",
+          "path": "src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.java",
+          "mode": "100644",
+          "sha256": "10087ce67cb39bbce3d0fce0651c2188a053d07601703f4addf7adaf83971dc3",
+          "bytes": 10483
+        },
+        {
+          "status": "M",
+          "path": "src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.java",
+          "mode": "100644",
+          "sha256": "24574ed63cfb229e5b5ff58d7a07883c2b520b09be7cc21abc356b12121e44ed",
+          "bytes": 31186
+        },
+        {
+          "status": "M",
+          "path": "src/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthRemoteTokenServices.java",
+          "mode": "100644",
+          "sha256": "5778bc882ec5275957454de9606af4b5f879cda5b684d6fd5dc21f5fde1de74b",
+          "bytes": 5797
+        },
+        {
+          "status": "M",
+          "path": "src/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleService.java",
+          "mode": "100644",
+          "sha256": "b75b69ed130403d81ec68c83eb124dd76f25800b2ff14cebf75237e502e164ef",
+          "bytes": 27553
+        },
+        {
+          "status": "M",
+          "path": "src/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleServiceConfig.java",
+          "mode": "100644",
+          "sha256": "262d91ec77953d61a3b4065f348fbb47938dc310c94138e264adef84d5aa84aa",
+          "bytes": 6566
+        },
+        {
+          "status": "M",
+          "path": "src/extension/importer/core/pom.xml",
+          "mode": "100644",
+          "sha256": "53d817d4511c42585a8c12755cb49564f0725db2bdc58d805a54bb4d715f8d9b",
+          "bytes": 2653
+        },
+        {
+          "status": "M",
+          "path": "src/extension/importer/rest/src/main/java/org/geoserver/importer/rest/ImportTaskController.java",
+          "mode": "100644",
+          "sha256": "a9ebeb68c0beb38809632e2be5422c2007a24a69a87fc8bca26a24e147cbfb42",
+          "bytes": 26508
+        },
+        {
+          "status": "M",
+          "path": "src/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportContextJSONMessageConverter.java",
+          "mode": "100644",
+          "sha256": "7f2d684ba4feed9eb4887d9d86167e549cf3a5fe66a84015d490691fbcb2dfc0",
+          "bytes": 3013
+        },
+        {
+          "status": "M",
+          "path": "src/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportDataJSONMessageConverter.java",
+          "mode": "100644",
+          "sha256": "4336b5a263e11798439ec8b71e9cd60944a945d23937786f60b67a6f813dac21",
+          "bytes": 3014
+        },
+        {
+          "status": "M",
+          "path": "src/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportLayerJSONMessageConverter.java",
+          "mode": "100644",
+          "sha256": "bd88467d7edfea2a1ea84b959604de27a961568cb8e9ed6b50a2cfb4b0062845",
+          "bytes": 2612
+        },
+        {
+          "status": "M",
+          "path": "src/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportTaskJSONMessageConverter.java",
+          "mode": "100644",
+          "sha256": "c4eead12452a23b29e34872ec3b340e2d9d53108330ee973208c87061af59557",
+          "bytes": 2981
+        },
+        {
+          "status": "M",
+          "path": "src/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportTransformJSONMessageConverter.java",
+          "mode": "100644",
+          "sha256": "550718ff05587b744133e37ac838918ce641010662e2e6723206144f528c4200",
+          "bytes": 2337
+        },
+        {
+          "status": "M",
+          "path": "src/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/TransformChainJSONMessageConverter.java",
+          "mode": "100644",
+          "sha256": "93bd699d8be3ff685806b953164123cd6d2bcd1b6374fea43b0f06e292adc9f0",
+          "bytes": 2346
+        },
+        {
+          "status": "M",
+          "path": "src/extension/importer/web/pom.xml",
+          "mode": "100644",
+          "sha256": "c9d802788196746d8e02cf46602d21ee730d753f7e5a2fe83a33f0f83932628e",
+          "bytes": 1952
+        },
+        {
+          "status": "M",
+          "path": "src/extension/importer/web/src/main/java/org/geoserver/importer/web/ImportDataPage.java",
+          "mode": "100644",
+          "sha256": "35fccd01fa7a7f1691309707729434eb95c58c3b0c27a79c260cb52e03f3f61d",
+          "bytes": 20861
+        },
+        {
+          "status": "A",
+          "path": "src/main/src/main/java/org/geoserver/filters/NoJpeg2000Filter.java",
+          "mode": "100644",
+          "sha256": "bed8cbf704bc6e0f968af55b46f8ca1d6a945f6372bcc65ad169ad4de72b5c7d",
+          "bytes": 7992
+        },
+        {
+          "status": "A",
+          "path": "src/main/src/main/java/org/geoserver/filters/NoJpeg2000Policy.java",
+          "mode": "100644",
+          "sha256": "bad0717ba28cd18aea28a4595f57a253787ed3d6eac57f4918df9083661e6356",
+          "bytes": 5809
+        },
+        {
+          "status": "M",
+          "path": "src/main/src/main/java/org/geoserver/security/auth/GuavaAuthenticationCacheImpl.java",
+          "mode": "100644",
+          "sha256": "338459e2baa9ecf894ae225b4827907739fb20869f5b531e51b91c50411c947c",
+          "bytes": 9158
+        },
+        {
+          "status": "M",
+          "path": "src/restconfig/src/main/java/org/geoserver/rest/catalog/CoverageStoreFileValidator.java",
+          "mode": "100644",
+          "sha256": "c187ddd104fac2de91c2ac48911454808300f30b5924c0b9a6272b77d52549b9",
+          "bytes": 8496
+        },
+        {
+          "status": "M",
+          "path": "src/web/app/src/main/webapp/WEB-INF/web.xml",
+          "mode": "100644",
+          "sha256": "099aaefb706c65dc703aa768880eadcf0497e983d4e58d9d89723d686fb1e2a7",
+          "bytes": 11487
+        }
+      ],
+      "patch_sha256": "2fd6c45673967ff2494f148be59d830ecaf861bfd142f3f2feb6467b5d99060c",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    },
+    {
+      "id": "geonode",
+      "repository_id": 1376927978,
+      "base_commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+      "commit": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+      "tree": "f8fda01733dae258e319df14f42677cf3bd83e20",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 5,
+      "tracked_entries": 2396,
+      "changes": [
+        {
+          "status": "A",
+          "path": "geonode/api/backend_roles.py",
+          "mode": "100644",
+          "sha256": "c0f5aba4f68758073184ac83cb7c6c9059b278f27985bbeb474de54376a001ab",
+          "bytes": 4791
+        },
+        {
+          "status": "A",
+          "path": "geonode/api/backend_tokeninfo.py",
+          "mode": "100644",
+          "sha256": "a035daedd0b1794867af23b81f50bc6b2fa0c0e4de3d467f5b95d186f674c500",
+          "bytes": 4394
+        },
+        {
+          "status": "A",
+          "path": "geonode/api/test_backend_roles.py",
+          "mode": "100644",
+          "sha256": "fa6b91a080448e9ef50ee0761ea7f35f0b47a8ef9e213c737040d400869a8e9e",
+          "bytes": 13700
+        },
+        {
+          "status": "A",
+          "path": "geonode/api/test_backend_tokeninfo.py",
+          "mode": "100644",
+          "sha256": "3dbc733de3c7ed1bb183a3b4c418eda828d07060e5a60e86b7db84e42896e28a",
+          "bytes": 16051
+        },
+        {
+          "status": "M",
+          "path": "geonode/api/views.py",
+          "mode": "100644",
+          "sha256": "e8b6a906c85f25cb6e4377aa1796a46398e4c8669c460f77cccd88cec2131c3c",
+          "bytes": 6078
+        },
+        {
+          "status": "M",
+          "path": "geonode/security/middleware.py",
+          "mode": "100644",
+          "sha256": "8ef5c0ef7f913fde289b13f7ac1d4549bbaddd9c43dc3dd4b196866ef21b1b5e",
+          "bytes": 8144
+        },
+        {
+          "status": "M",
+          "path": "geonode/settings.py",
+          "mode": "100644",
+          "sha256": "143847a418454e97a1f6af72fba43624431815a5285af31971f0e8f5928a5537",
+          "bytes": 89481
+        },
+        {
+          "status": "M",
+          "path": "pyproject.toml",
+          "mode": "100644",
+          "sha256": "9a742f25f300c8a3ebd480699dad38105de94e784c345a2d412998f234f3086c",
+          "bytes": 5206
+        }
+      ],
+      "patch_sha256": "b1b3351331ebb99b37832ec25ba698d59b131f4b1839acadc97dca37ce1a1453",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    },
+    {
+      "id": "mapstore-client",
+      "repository_id": 1376928013,
+      "base_commit": "7ca4822125b67999c97cb4aa1faa84b8a28eee9b",
+      "commit": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+      "tree": "8055ca37333ee3037f63624f2e1d6ee548d416f1",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 3,
+      "tracked_entries": 1460,
+      "changes": [
+        {
+          "status": "M",
+          "path": "geonode_mapstore_client/client/MapStore2",
+          "mode": "160000",
+          "approved_binding": "Recovered owned MapStore product commit",
+          "commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8"
+        },
+        {
+          "status": "M",
+          "path": "geonode_mapstore_client/client/package.json",
+          "mode": "100644",
+          "sha256": "f4bc1ce2f42214a05320b960bd5df123bf10105609fb0ac583c522ccf63dd706",
+          "bytes": 1638
+        }
+      ],
+      "patch_sha256": "aae043eff8c704cc0093a550788ef7ceea08efaa3a8731abbab7a535142e36ed",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    },
+    {
+      "id": "mapstore",
+      "repository_id": 1376928043,
+      "base_commit": "0f3518737f29f4049b131247ce981e94519d9ab0",
+      "commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+      "tree": "11b6eb8616b90c72570c4f3aad82212b52f1cdbe",
+      "independent_object_store": true,
+      "clean_source": true,
+      "base_ancestry_verified": true,
+      "preserved_notice_files": 2,
+      "tracked_entries": 5870,
+      "changes": [
+        {
+          "status": "M",
+          "path": "package.json",
+          "mode": "100644",
+          "sha256": "ddb62f85245e6903af93c218075ebf72c2090260a26dcf78f0561fb175fd88e2",
+          "bytes": 10528
+        }
+      ],
+      "patch_sha256": "4748f5247e42fb79ef702e82f92f035c80b1ac123dd01ca3d8eb8ff2fa5595dd",
+      "local_review_ref": "ambisgis/review/fnd-07-baseline-v4"
+    }
+  ],
+  "generated_qgis_finding": {
+    "severity": "Metadata correction required; actual source bytes match accepted selection",
+    "path": "derived/generated/qgis/python/plugins/grassprovider/description/algorithms.json",
+    "actual_sha256": "14e2602dd8df5fbed76bf3c3cb8212c3ea52c2343f8c82a4282120246b0c7a3e",
+    "recovery_file_record_sha256": "14e2602dd8df5fbed76bf3c3cb8212c3ea52c2343f8c82a4282120246b0c7a3e",
+    "incorrect_recipe_summary_sha256": "03a0562feeca2201c1882c9f4b45b72885a814c1ff89fb2d6019f21278079954",
+    "cause": "Generated source row variable overwritten by tooling inventory loop before summary return",
+    "scope": "Historical receipt remains immutable. Separate correction evidence and repaired recipe summary required; no native rebuild or FND-02 reopening."
+  },
+  "summary": {
+    "core_roots": 11,
+    "changed_roots": 7,
+    "unchanged_roots": 4,
+    "changed_paths": 36,
+    "added_core_files": [
+      "geoserver/src/main/src/main/java/org/geoserver/filters/NoJpeg2000Filter.java",
+      "geoserver/src/main/src/main/java/org/geoserver/filters/NoJpeg2000Policy.java",
+      "geonode/geonode/api/backend_roles.py",
+      "geonode/geonode/api/backend_tokeninfo.py",
+      "geonode/geonode/api/test_backend_roles.py",
+      "geonode/geonode/api/test_backend_tokeninfo.py"
+    ],
+    "unexpected_generated_or_archive_files_in_product_diffs": [],
+    "core_regular_files_from_recipe_inventories": 94310,
+    "preserved_base_notice_files": 235,
+    "derived_and_bundle_files_rehashed": 65555,
+    "derived_and_bundle_bytes_rehashed": 2492048193,
+    "qgis_selected_resources": 4282,
+    "qgis_packaged_notices": 88,
+    "excluded_qgis_palettes": 1130,
+    "frontend_local_inputs": 2026,
+    "ifc_source_roots": 9,
+    "platform_commit": "973a5ef383687cd00143c679f832cfb006a57cf0",
+    "platform_tree": "85156b2bab968a80223e711930d226972feb0ff9"
+  },
+  "guard_review": {
+    "current_code": "Pending receipt is verified before rename to recovery.json. CLI verify and bundle-chain input require externally supplied trusted receipt SHA. Git config/hooks/filters are confined; wrong revisions, alternate/shared objects and symlink ancestors are rejected. Incremental product bundles are checked against original archive hash and prerequisites before importing.",
+    "run_001_execution_limit": "Initial run used earlier frozen controller; do not attribute current pending-receipt/receipt-SHA guards to run-001. New chain run and verification are separately reported by integrator.",
+    "source_publication": "No source-fork branches or defaults changed by this review. Workflow activation/publication still requires separate owner approval.",
+    "binary_scope": "Verified derived files include retained registry binaries/archives and generated assets. Counts are not all editable source; no compile/runtime/release acceptance claimed."
+  },
+  "remaining_limits": [
+    "Human FND-07 source/provenance acceptance and remote product branch promotion remain pending.",
+    "Full compiler/OS/bootstrap and disconnected build/repair remain FND-08/OWN-02.",
+    "Live source-fork Actions remain enabled from prior audit; no public source push authorized."
+  ],
+  "review_finished_at": "2026-09-22T23:47:57.868663+00:00",
+  "status": "Actual source custody and product diff scope verified; isolated QGIS summary metadata correction required"
+}

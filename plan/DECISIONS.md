@@ -39,3 +39,5 @@ receipts retain their original fields. Acceptance grants subsequent engineering;
 FND-03/FND-05/FND-07/FND-08, P0, distribution/notices/security/source/operational
 gates, release/deployment and future merges remain unaccepted. New source custody
 work belongs to FND-07 under its own criteria.
+
+FND-07 materialized source custody is proposed for owner review in [ADR 009](adrs/009-accepted-source-custody.md): independently restored core histories, guarded product-source replay and Class B vendor recovery. Remote promotion and human review remain pending; no public source ref/default/workflow or distribution approval is granted.
