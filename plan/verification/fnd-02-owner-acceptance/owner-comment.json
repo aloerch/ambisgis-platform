@@ -1,0 +1,16 @@
+{
+  "id": 5785944488,
+  "node_id": "IC_kwDOUhI-d88AAAABWN6BqA",
+  "html_url": "https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488",
+  "issue_url": "https://api.github.com/repos/aloerch/ambisgis-platform/issues/3",
+  "created_at": "2026-09-22T23:20:02Z",
+  "updated_at": "2026-09-22T23:20:02Z",
+  "author_association": "OWNER",
+  "body": "Owner acceptance — FND-02 candidate selection and completion\n\nI have reviewed the final criterion/maintenance report and accept\n`fnd-02-json-nojpeg2000-proposal-4` (candidate revision 4, schema 1)\nas the selected development candidate for the next AmbisGIS tasks.\n\nReviewed PR #68 head:\n7c4c6a6ddbc364e520911e06b9a97a7c10bdcfcf\n\nMerged checkpoint:\n973a5ef383687cd00143c679f832cfb006a57cf0\n\nCandidate manifest SHA-256:\n0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99\n\nWAR SHA-256:\n90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1\n\nMy acceptance covers all four original FND-02 criteria:\n\nC1: the recorded inspection and exact selection of the component sources,\nversions, profiles and retained inputs.\n\nC2: the accurate source/license finding record and evidenced variant-specific\nremediations, with originals and remaining obligations preserved. This does\nnot waive third-party terms or clear excluded historical code for distribution.\n\nC3: the bounded build and combination-test evidence, including its recorded\nfailures, exclusions and runtime limitations. I accept the Java/server\nNO-ORACLE, headless-Temurin17 and NO-JPEG2000 profile: no Oracle-backed stores\nor mosaic indexes, no renderer OpenGL path, and no JP2/raw J2K inputs,\nJPEG2000 outputs or JPX-backed PDF inputs on the affected Java/server routes.\nThis is not a claim that the QGIS desktop or all other profiles are headless\nor lack JPEG2000 capability. The other recorded profile limits remain explicit.\n\nC4: AmbisGIS controls future source and release decisions. Upstream releases,\nsecurity disclosures and patches are inputs for deliberate review, not\nautomatic updates. Imports, backports and independent fixes require recorded\nprovenance, affected tests and a new manifest revision; known insecure versions\nmust not be frozen indefinitely without an appropriate response.\n\nI accept completion of FND-02, including its internal F02-06, F02-07 and\nF02-08 acceptance steps, within those original criteria. Codex may reconcile\nissue #3, its Project Delivery state and completion records with this decision,\nretaining the exact immutable candidate and linking this owner comment.\n\nThis does NOT accept the separate FND-03, FND-05, FND-07 or FND-08 tasks,\ncomplete P0, authorize a release or production deployment, approve external\nbinary/source redistribution, or grant future PR merges. Residual source,\nnotice, security, licensing and operational obligations remain at their\nexplicitly recorded gates.",
+  "performed_via_github_app": null,
+  "user": {
+    "login": "aloerch",
+    "id": 15285626,
+    "type": "User"
+  }
+}

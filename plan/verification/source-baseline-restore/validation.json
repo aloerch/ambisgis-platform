@@ -1,0 +1,262 @@
+{
+  "candidate_check_reuse": "Candidate validator, manifest and selected bytes unchanged since these actual integrity/eligibility/report commands; later changes were recovery-specific fixes and documentation.",
+  "candidate_checks": [
+    {
+      "acceptance": {
+        "accepted_criteria": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "decision_date": "2026-09-22T23:20:02Z",
+        "distribution_permission": false,
+        "not_accepted": [
+          "FND-03",
+          "FND-05",
+          "FND-07",
+          "FND-08",
+          "P0",
+          "distribution",
+          "release",
+          "production-deployment",
+          "future-PR-merges",
+          "source-notice-security-licensing-operational-gates"
+        ],
+        "owner": "aloerch",
+        "owner_acceptance": true,
+        "owner_comment": "https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488",
+        "owner_comment_id": 5785944488,
+        "owner_id": 15285626,
+        "record_sha256": "4aa340cfe3a05635ba8e672deb213396925be5c3b45d5a9d463b2e3de935f64c",
+        "status": "accepted-for-development",
+        "verification": "Offline hash/linkage check of the separately reviewed decision; no live API or new approval."
+      },
+      "command": [
+        "python3",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "inventory": {
+        "archive_members_checked": 888,
+        "bindings_checked": 436,
+        "combinations": 7,
+        "coverage": "Only listed records, bindings, archive members and complete inventory trees; linked transitive locks are not recursively certified.",
+        "inventory_entries_checked": 61753,
+        "profiles": 10,
+        "record_bytes_hashed": 6655664845,
+        "records_hashed": 986,
+        "roots": 11,
+        "source_repositories_checked": 11,
+        "status": "valid"
+      },
+      "log": {
+        "bytes": 4432,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-baseline-restore/validation-01/inventory.log",
+        "sha256": "c6696b32ed3a13ea8a73c9f64c5d3354ee1fc0e8c305db158f8dd0ac457bc589"
+      },
+      "name": "inventory",
+      "seconds": 18.4,
+      "selection_status": "selected-for-development"
+    },
+    {
+      "acceptance": {
+        "accepted_criteria": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "decision_date": "2026-09-22T23:20:02Z",
+        "distribution_permission": false,
+        "not_accepted": [
+          "FND-03",
+          "FND-05",
+          "FND-07",
+          "FND-08",
+          "P0",
+          "distribution",
+          "release",
+          "production-deployment",
+          "future-PR-merges",
+          "source-notice-security-licensing-operational-gates"
+        ],
+        "owner": "aloerch",
+        "owner_acceptance": true,
+        "owner_comment": "https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488",
+        "owner_comment_id": 5785944488,
+        "owner_id": 15285626,
+        "record_sha256": "4aa340cfe3a05635ba8e672deb213396925be5c3b45d5a9d463b2e3de935f64c",
+        "status": "accepted-for-development",
+        "verification": "Offline hash/linkage check of the separately reviewed decision; no live API or new approval."
+      },
+      "command": [
+        "python3",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--eligibility"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "inventory": {
+        "archive_members_checked": 888,
+        "bindings_checked": 436,
+        "combinations": 7,
+        "coverage": "Only listed records, bindings, archive members and complete inventory trees; linked transitive locks are not recursively certified.",
+        "inventory_entries_checked": 61753,
+        "profiles": 10,
+        "record_bytes_hashed": 6655664845,
+        "records_hashed": 986,
+        "roots": 11,
+        "source_repositories_checked": 11,
+        "status": "valid"
+      },
+      "log": {
+        "bytes": 4432,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-baseline-restore/validation-01/eligibility.log",
+        "sha256": "c6696b32ed3a13ea8a73c9f64c5d3354ee1fc0e8c305db158f8dd0ac457bc589"
+      },
+      "name": "eligibility",
+      "seconds": 17.221,
+      "selection_status": "selected-for-development"
+    },
+    {
+      "command": [
+        "python3",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--report"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "log": {
+        "bytes": 171549,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-baseline-restore/validation-01/report.log",
+        "sha256": "681c77baab79b96645b5f5549f07b1de3bd4473fa7e366d0bcb06fbeb3a9acce"
+      },
+      "name": "report",
+      "seconds": 15.306
+    }
+  ],
+  "candidate_manifest_sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+  "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source-restore/plan",
+  "final_package_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "log": {
+      "bytes": 44320,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-baseline-restore/package-tests-03.log",
+      "sha256": "fa7bce9c2a0d4cc0734e48abd0f5450c2427b05fb16de6b0eaf0aad8dcf3816a"
+    },
+    "skips": 0,
+    "tests": 308
+  },
+  "final_schemas": {
+    "command": [
+      "python3",
+      "tools/validate_package.py",
+      "--require-schemas"
+    ],
+    "exit_code": 0,
+    "log": {
+      "bytes": 189,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-baseline-restore/schemas-02.log",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    },
+    "schemas_and_examples": 4
+  },
+  "intermediate_pass": {
+    "log": {
+      "bytes": 43583,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-baseline-restore/package-tests-02.log",
+      "sha256": "5de79d0232a8ac3f776934266510c60c4067c01b545f42ce88a76c6eb9925608"
+    },
+    "tests": 304
+  },
+  "interpreter": {
+    "invoked_as": "python3",
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+    "realpath": "/usr/bin/python3.13",
+    "resolved": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python3",
+    "sha256": "ecea842736911152a2dcbf57de43d29860b6df00f1349e84fe270c3eea51c466",
+    "version": "Python 3.13.14"
+  },
+  "original_validation_summary": {
+    "bytes": 7992,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-baseline-restore/validation-01/summary.json",
+    "sha256": "069084f35dc786b5a5586ef0188d1e914241621081f5d39c871ac08fa935001f"
+  },
+  "preserved_failures": [
+    {
+      "cause": "Cached QGIS common module collided with generic source restore import; fixed using an explicit unique module spec.",
+      "errors": 2,
+      "kind": "First full package run",
+      "log": {
+        "bytes": 46172,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-baseline-restore/validation-01/package-tests.log",
+        "sha256": "cd176bcf51f9cbe8bd3dcba7fe2073cf89c5601bb7677c8549a217da6a2e8ec2"
+      },
+      "tests": 304
+    },
+    {
+      "correction_record": "qgis-receipt-correction.json",
+      "kind": "Historical generated summary digest",
+      "source_bytes": "Matched accepted digest before and after correction."
+    }
+  ],
+  "recovery_test_count": 42,
+  "schema_version": 1,
+  "scope": "Package/governance and recovery-tool tests; no new GIS native/runtime compilation or services.",
+  "validated_current_code": [
+    {
+      "bytes": 9194,
+      "path": "build-support/source_restore/common.py",
+      "sha256": "5a2c66d3d79526985bfcdcf61d00f95336932901e2d7805dac859f6067cea2da"
+    },
+    {
+      "bytes": 42483,
+      "path": "build-support/source_restore/recipes.py",
+      "sha256": "16ba8edfa18da151f2f2f5150705e266e826f6813506b1824283281f82cd6a23"
+    },
+    {
+      "bytes": 6135,
+      "path": "plan/tests/test_candidate_acceptance.py",
+      "sha256": "d4827ba67f48671fb7737c94d120c8afe7a2862cbd9cdf6386f197fd4a308fcc"
+    },
+    {
+      "bytes": 20965,
+      "path": "plan/tests/test_source_restore.py",
+      "sha256": "7acbe131c9883ae9924bf564ccecb0c06c2832469b50474375bcba8a4672f0e4"
+    },
+    {
+      "bytes": 9394,
+      "path": "plan/tests/test_source_restore_recipes.py",
+      "sha256": "fb09d58143e2ff4651654837c37636aea5d6600997fb2f358da3fa9f6172459f"
+    },
+    {
+      "bytes": 24890,
+      "path": "plan/tools/restore_sources.py",
+      "sha256": "77ef1a58c7494e02d5432fb1d38561af2afbbf1d6aaa18afb0975615ce091176"
+    },
+    {
+      "bytes": 27536,
+      "path": "plan/tools/validate_candidate.py",
+      "sha256": "d3959c21a0b2bd3e7fbf9a01c5358515791633de7896217f0cd294a8b55f00bd"
+    }
+  ]
+}

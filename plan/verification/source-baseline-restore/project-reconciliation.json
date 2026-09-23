@@ -1,0 +1,12 @@
+{
+  "item_count_after": 81,
+  "item_count_before": 81,
+  "mutations": 4,
+  "other_item_values_archive_decisions_fields_views_preserved": true,
+  "passed": true,
+  "subsequent_review_and_pr_publication": "publication.json",
+  "task_states": {
+    "FND-02": "Merged",
+    "FND-07": "In progress"
+  }
+}

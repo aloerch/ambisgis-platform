@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Read-only FND-02 inventory integrity; never grants rights or owner acceptance.
+"""Read-only FND-02 integrity and separately recorded owner-decision linkage.
+
+Reports existing acceptance only; never grants rights or changes historical inputs.
 
 Exit 0: requested inventory/report operation succeeded (blockers may remain).
 Exit 1: syntax/schema/reference/integrity/unavailable-input failure.
@@ -22,6 +24,9 @@ sys.dont_write_bytecode = True
 PLATFORM = Path(__file__).resolve().parents[2]
 SCHEMA = PLATFORM / 'plan/contracts/fnd-02-candidate.schema.json'
 MANIFEST = PLATFORM / 'plan/candidates/fnd-02-candidate.json'
+ACCEPTANCE = 'plan/verification/fnd-02-owner-acceptance/acceptance.json'
+ACCEPTED_MANIFEST_SHA256 = '0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99'
+ACCEPTED_COMMENT_BODY_SHA256 = '4c8286ad42e8bb7a234c50337507aea690e8d92316fef34b0ebdf7c438b051af'
 
 
 def require(ok, message):
@@ -305,19 +310,119 @@ def render_report(document, manifest_name='fnd-02-candidate.json'):
     return '\n'.join(lines).rstrip()
 
 
+def validate_acceptance(record_path, manifest_path, document, platform_root):
+    """Check only the recorded September 22 decision; no live approval inference.
+
+    The body digest pins the exact separately reviewed human decision. An owner
+    login, merged PR, closed issue, or editable boolean alone cannot pass this
+    narrow linkage check. A later decision needs a new reviewed record/change.
+    """
+    record = read_json(record_path)
+    require(record['schema_version'] == 1 and
+            record['record_kind'] == 'separate-final-owner-acceptance' and
+            record['task'] == 'FND-02', 'Wrong owner acceptance record')
+    candidate = record['candidate']
+    require(document == read_json(manifest_path), 'Owner acceptance document differs from manifest bytes')
+    require(candidate['sha256'] == sha(manifest_path) == ACCEPTED_MANIFEST_SHA256,
+            'Owner acceptance manifest hash mismatch')
+    require(candidate['candidate_id'] == document['candidate_id'] == 'fnd-02-json-nojpeg2000-proposal-4'
+            and candidate['candidate_revision'] == document['candidate_revision'] == 4
+            and candidate['schema_version'] == document['schema_version'] == 1,
+            'Owner acceptance candidate identity mismatch')
+
+    def retained(ref):
+        path = resolve({'root': 'platform', 'path': ref['path']}, {'platform': platform_root})
+        require(not path.is_symlink() and path.is_file() and sha(path) == ref['sha256'],
+                'Changed owner acceptance evidence: ' + ref['path'])
+        return path
+
+    require(retained(candidate).resolve() == Path(manifest_path).resolve(),
+            'Owner acceptance points to another manifest')
+    ref = record['comment']
+    comment = read_json(retained(ref))
+    expected_url = 'https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488'
+    require(ref['url'] == comment['html_url'] == expected_url and
+            ref['id'] == comment['id'] == 5785944488 and
+            comment['issue_url'] == 'https://api.github.com/repos/aloerch/ambisgis-platform/issues/3',
+            'Wrong owner acceptance comment')
+    require(ref['author'] == comment['user']['login'] == 'aloerch' and
+            ref['author_id'] == comment['user']['id'] == 15285626 and
+            comment['user']['type'] == 'User' and comment['author_association'] == 'OWNER' and
+            comment['performed_via_github_app'] is None, 'Wrong owner acceptance author')
+    require(ref['created_at'] == comment['created_at'] == ref['updated_at'] ==
+            comment['updated_at'] == '2026-09-22T23:20:02Z', 'Owner acceptance date mismatch')
+    require(hashlib.sha256(comment['body'].encode()).hexdigest() ==
+            ref['body_sha256'] == ACCEPTED_COMMENT_BODY_SHA256,
+            'Owner acceptance decision text changed')
+    pr = read_json(retained(record['merged_pr']))
+    require(pr['repository'] == {'full_name': 'aloerch/ambisgis-platform', 'id': 1376927351}
+            and pr['number'] == 68 and pr['state'] == 'closed' and pr['merged'] is True
+            and pr['base_ref'] == 'ambisgis/main', 'Wrong accepted merge identity')
+    require(record['reviewed_head'] == pr['head_sha'] == '7c4c6a6ddbc364e520911e06b9a97a7c10bdcfcf'
+            and record['merge_commit'] == pr['merge_commit_sha'] == '973a5ef383687cd00143c679f832cfb006a57cf0',
+            'Owner acceptance head or merge mismatch')
+    war = index(document['records'], 'record')[record['war']['record_id']]
+    require(war['kind'] == 'artifact' and war['sha256'] == record['war']['sha256'] ==
+            '90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1',
+            'Owner acceptance WAR mismatch')
+    require(record['replacement_inputs']['sha256'] ==
+            '194139a86bb3640d991b4c23bc55b02d66526127bdea6c3d6f025216d41f87f5',
+            'Owner acceptance replacement input mismatch')
+    retained(record['replacement_inputs'])
+    retained(record['existing_combination_evidence'])
+    require(record['accepted_criteria'] == ['C1', 'C2', 'C3', 'C4'] and
+            record['accepted_internal_steps'] == ['F02-06', 'F02-07', 'F02-08'] and
+            record['accepted_profile_limits'] == ['NO-ORACLE', 'headless-Temurin17', 'NO-JPEG2000'],
+            'Owner acceptance scope mismatch')
+    excluded = ['FND-03', 'FND-05', 'FND-07', 'FND-08', 'P0', 'distribution', 'release',
+                'production-deployment', 'future-PR-merges', 'source-notice-security-licensing-operational-gates']
+    require(record['not_accepted'] == excluded, 'Owner acceptance later gates changed')
+    return {'status': 'accepted-for-development', 'owner_acceptance': True,
+            'distribution_permission': False, 'owner_comment': expected_url,
+            'owner_comment_id': comment['id'], 'owner': ref['author'], 'owner_id': ref['author_id'],
+            'decision_date': ref['created_at'], 'record_sha256': sha(record_path),
+            'accepted_criteria': record['accepted_criteria'], 'not_accepted': excluded,
+            'verification': 'Offline hash/linkage check of the separately reviewed decision; no live API or new approval.'}
+
+
+def render_acceptance(acceptance):
+    return ('\n\n## Separately recorded current owner decision\n\n'
+            'The [explicit owner decision](' + acceptance['owner_comment'] + ') of '
+            + acceptance['decision_date'] + ' accepts this exact candidate for subsequent engineering, '
+            'all four FND-02 criteria, F02-06/F02-07/F02-08 and the stated profile/maintenance limits. '
+            'The manifest and generated finding register above remain the immutable review-time record. '
+            'This later governance linkage changes no historical approval field or tested input.\n\n'
+            'Distribution permission remains false. FND-03/FND-05/FND-07/FND-08, P0, source/notices, '
+            'security/licensing/operations, release/deployment and future merges remain unaccepted; '
+            'eligibility remains exit 2. Full decision: '
+            '[governance sidecar](../verification/fnd-02-owner-acceptance/acceptance.json).')
+
+
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('manifest',nargs='?',type=Path,default=MANIFEST)
     parser.add_argument('--workspace-root',type=Path,required=True,help='Retained AmbisGIS directory; never inferred from old absolute paths')
     parser.add_argument('--platform-root',type=Path,default=PLATFORM)
     parser.add_argument('--eligibility',action='store_true')
+    parser.add_argument('--acceptance-record',type=Path,help='Verify a separately reviewed decision; defaults to the bound sidecar only for the exact accepted manifest')
     parser.add_argument('--report',action='store_true',help='Print deterministic Markdown after successful integrity validation')
     args=parser.parse_args(argv)
     try:
         document=read_json(args.manifest)
         result=validate(document,{'platform':args.platform_root,'workspace':args.workspace_root})
         result['manifest_sha256']=sha(args.manifest)
-        if args.report: print(render_report(document, args.manifest.name))
+        acceptance_path = args.acceptance_record
+        if acceptance_path is None and result['manifest_sha256'] == ACCEPTED_MANIFEST_SHA256:
+            acceptance_path = args.platform_root / ACCEPTANCE
+        if acceptance_path is not None:
+            result['acceptance'] = validate_acceptance(acceptance_path, args.manifest, document, args.platform_root)
+            require(not result['selection']['blockers'], 'Accepted selection has new adoption blockers')
+            result['selection']['status'] = 'selected-for-development'
+        if args.report:
+            report = render_report(document, args.manifest.name)
+            if result['acceptance']['owner_acceptance']:
+                report += render_acceptance(result['acceptance'])
+            print(report)
         else: print(json.dumps(result,indent=2,sort_keys=True))
         return 2 if args.eligibility else 0
     except Exception as exc:

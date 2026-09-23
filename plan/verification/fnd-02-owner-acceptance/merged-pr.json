@@ -1,0 +1,14 @@
+{
+  "number": 68,
+  "html_url": "https://github.com/aloerch/ambisgis-platform/pull/68",
+  "state": "closed",
+  "merged": true,
+  "merged_at": "2026-09-22T21:58:46Z",
+  "merge_commit_sha": "973a5ef383687cd00143c679f832cfb006a57cf0",
+  "head_sha": "7c4c6a6ddbc364e520911e06b9a97a7c10bdcfcf",
+  "base_ref": "ambisgis/main",
+  "repository": {
+    "full_name": "aloerch/ambisgis-platform",
+    "id": 1376927351
+  }
+}
