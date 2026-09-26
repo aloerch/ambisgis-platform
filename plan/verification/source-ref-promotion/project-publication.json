@@ -1,0 +1,533 @@
+{
+  "scope": "FND07 Delivery/Evidence claim and review transitions; new PR70 membership/Evidence only; no importer/setup or task-ID copy.",
+  "project_url": "https://github.com/users/aloerch/projects/2",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/70",
+  "operations": [
+    {
+      "directory": "project-claim-01",
+      "outcome": {
+        "passed": true,
+        "item_count_before": 82,
+        "item_count_after": 82,
+        "mutations": 2,
+        "task_states": {
+          "FND-07": "In progress"
+        },
+        "other_item_values_archive_decisions_fields_views_preserved": true
+      },
+      "retained_files": [
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-claim-01/after.json",
+          "sha256": "c35f1ccbc5579735fc5c9338a2aae6a96d305cb87c17a7571947d29737e2ed28",
+          "bytes": 316272
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-claim-01/before.json",
+          "sha256": "cbf281eb90931bc54843fa2fef910b57320c765278c9aaa13f9c07b7d12b1bcc",
+          "bytes": 316218
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-claim-01/mutations.jsonl",
+          "sha256": "088b87e7f4580a6ff1dddb0fc8004d96306387faf0e0ab24cb280536fa300fa8",
+          "bytes": 1023
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-claim-01/outcome.json",
+          "sha256": "3942598b0c3c862addcc675c4bb94cb0a70eee17979fc9a949dfb85c356b9d2d",
+          "bytes": 214
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-claim-01/plan.json",
+          "sha256": "653e3cd83d3096b208b1294276852b133a67e6dca50de276eb2dbafe2e4355fc",
+          "bytes": 574
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-claim-01/readback-requests.jsonl",
+          "sha256": "c45014791a06b145de29617574ee847f5902d3e38418edd83fd48d6f8942990a",
+          "bytes": 401889
+        }
+      ]
+    },
+    {
+      "directory": "project-pr-dry-run-01",
+      "outcome": {
+        "adapter_limit": "Inherited adapter does not expand assignee/label values; no such fields are written.",
+        "all_passed": true,
+        "checks": {
+          "all_prior_item_values_and_archive_decisions_preserved": true,
+          "all_project_fields_repositories_views_preserved": true,
+          "all_readback_pagination_complete": true,
+          "all_view_configuration_and_order_preserved": true,
+          "live_pr_still_open_at_exact_head": true,
+          "mutation_sequence_complete": true,
+          "only_expected_new_item": true,
+          "pr_has_no_parent_planning_fields": true,
+          "pr_identity_unique": true,
+          "pr_is_in_saved_open_queue": true,
+          "pr_item_unarchived": true,
+          "pr_linked_if_applied": true
+        },
+        "items_after": 82,
+        "items_before": 82,
+        "local_head": "936e37d6be25decc89ceb3d4b8c1be60c61de9ed",
+        "mutations": [],
+        "pr_states": {
+          "p54": {
+            "id": "PR_kwDOUhI-d88AAAABEQiDOg",
+            "number": 54,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/54"
+          },
+          "p55": {
+            "id": "PR_kwDOUhI-d88AAAABEQ97wg",
+            "number": 55,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/55"
+          },
+          "p56": {
+            "id": "PR_kwDOUhI-d88AAAABEVLddg",
+            "number": 56,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/56"
+          },
+          "p57": {
+            "id": "PR_kwDOUhI-d88AAAABEVWAzA",
+            "number": 57,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/57"
+          },
+          "p58": {
+            "id": "PR_kwDOUhI-d88AAAABEWBeXA",
+            "number": 58,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/58"
+          },
+          "p59": {
+            "id": "PR_kwDOUhI-d88AAAABEWVegA",
+            "number": 59,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/59"
+          },
+          "p60": {
+            "id": "PR_kwDOUhI-d88AAAABEXbEsw",
+            "number": 60,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/60"
+          },
+          "p61": {
+            "id": "PR_kwDOUhI-d88AAAABEXx1fA",
+            "number": 61,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/61"
+          },
+          "p62": {
+            "id": "PR_kwDOUhI-d88AAAABEYHZmA",
+            "number": 62,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/62"
+          },
+          "p63": {
+            "id": "PR_kwDOUhI-d88AAAABEZAeaA",
+            "number": 63,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/63"
+          },
+          "p64": {
+            "id": "PR_kwDOUhI-d88AAAABEd4jgg",
+            "number": 64,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/64"
+          },
+          "p65": {
+            "id": "PR_kwDOUhI-d88AAAABEecUKA",
+            "number": 65,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/65"
+          },
+          "p66": {
+            "id": "PR_kwDOUhI-d88AAAABEfALRg",
+            "number": 66,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/66"
+          },
+          "p67": {
+            "id": "PR_kwDOUhI-d88AAAABEgP2pw",
+            "number": 67,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/67"
+          },
+          "p68": {
+            "id": "PR_kwDOUhI-d88AAAABEpzbUQ",
+            "number": 68,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/68"
+          },
+          "p69": {
+            "id": "PR_kwDOUhI-d88AAAABEqvOBg",
+            "number": 69,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/69"
+          }
+        },
+        "queue_filter": "is:pr is:open",
+        "queue_membership": [],
+        "scope": "New PR membership/Evidence only; FND-02 unchanged; API readback, no UI claim"
+      },
+      "retained_files": [
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-dry-run-01/after.json",
+          "sha256": "53978c00191569afd65a7410fcc5f3e8e69d9537c7a0089fceb565beec51ccbb",
+          "bytes": 316153
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-dry-run-01/before-pagination.json",
+          "sha256": "4fc8b7b2939a3caff1d60b7ba4e1131e3ceea825b5eff5925377ca4d9b1e0a7d",
+          "bytes": 40768
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-dry-run-01/before.json",
+          "sha256": "3891fd883ab015e03cdfac8d61738f2b691c0b0ee8371884a02ee0d5298b885a",
+          "bytes": 316153
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-dry-run-01/manifest.json",
+          "sha256": "367499281c426f25afcbc4f6a73aa055f75e5744d4669591714af913fa91b76f",
+          "bytes": 1127
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-dry-run-01/outcome.json",
+          "sha256": "e268a440a798ead8a77c4386ab4cf8caf621d2c8f80ba361509e5f5f01884907",
+          "bytes": 3764
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-dry-run-01/pagination.json",
+          "sha256": "4fc8b7b2939a3caff1d60b7ba4e1131e3ceea825b5eff5925377ca4d9b1e0a7d",
+          "bytes": 40768
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-dry-run-01/plan.json",
+          "sha256": "73fca4f03666f1724721e5b76aee00ce230cbac5ade157eae030abde31cd5b61",
+          "bytes": 719
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-dry-run-01/publication.py",
+          "sha256": "6c4bd35f56398de1f338a7669e52937bdfcafbda3a706bb0e8eef7b663c9c0c0",
+          "bytes": 10004
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-dry-run-01/readback-requests.jsonl",
+          "sha256": "70c28f3b1817e065a941622c6f2d4c492c589353dd3e5fac84266d0583d81bd0",
+          "bytes": 405014
+        }
+      ]
+    },
+    {
+      "directory": "project-pr-apply-01",
+      "outcome": {
+        "adapter_limit": "Inherited adapter does not expand assignee/label values; no such fields are written.",
+        "all_passed": true,
+        "checks": {
+          "all_prior_item_values_and_archive_decisions_preserved": true,
+          "all_project_fields_repositories_views_preserved": true,
+          "all_readback_pagination_complete": true,
+          "all_view_configuration_and_order_preserved": true,
+          "live_pr_still_open_at_exact_head": true,
+          "mutation_sequence_complete": true,
+          "only_expected_new_item": true,
+          "pr_has_no_parent_planning_fields": true,
+          "pr_identity_unique": true,
+          "pr_is_in_saved_open_queue": true,
+          "pr_item_unarchived": true,
+          "pr_linked_if_applied": true
+        },
+        "items_after": 83,
+        "items_before": 82,
+        "local_head": "936e37d6be25decc89ceb3d4b8c1be60c61de9ed",
+        "mutations": [
+          {
+            "content_id": "PR_kwDOUhI-d88AAAABFSsX5A",
+            "operation": "add_item",
+            "result": {
+              "id": "PVTI_lAHOAOk9es4Bj_k-zg89zeU",
+              "isArchived": false
+            }
+          },
+          {
+            "field_id": "PVTF_lAHOAOk9es4Bj_k-zhix4HE",
+            "item_id": "PVTI_lAHOAOk9es4Bj_k-zg89zeU",
+            "operation": "set_field",
+            "result": {
+              "id": "PVTI_lAHOAOk9es4Bj_k-zg89zeU"
+            },
+            "value": "https://github.com/aloerch/ambisgis-platform/pull/70 | FND-07: https://github.com/aloerch/ambisgis-platform/issues/6 | Accepted FND-02: https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488"
+          }
+        ],
+        "pr_states": {
+          "p54": {
+            "id": "PR_kwDOUhI-d88AAAABEQiDOg",
+            "number": 54,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/54"
+          },
+          "p55": {
+            "id": "PR_kwDOUhI-d88AAAABEQ97wg",
+            "number": 55,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/55"
+          },
+          "p56": {
+            "id": "PR_kwDOUhI-d88AAAABEVLddg",
+            "number": 56,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/56"
+          },
+          "p57": {
+            "id": "PR_kwDOUhI-d88AAAABEVWAzA",
+            "number": 57,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/57"
+          },
+          "p58": {
+            "id": "PR_kwDOUhI-d88AAAABEWBeXA",
+            "number": 58,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/58"
+          },
+          "p59": {
+            "id": "PR_kwDOUhI-d88AAAABEWVegA",
+            "number": 59,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/59"
+          },
+          "p60": {
+            "id": "PR_kwDOUhI-d88AAAABEXbEsw",
+            "number": 60,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/60"
+          },
+          "p61": {
+            "id": "PR_kwDOUhI-d88AAAABEXx1fA",
+            "number": 61,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/61"
+          },
+          "p62": {
+            "id": "PR_kwDOUhI-d88AAAABEYHZmA",
+            "number": 62,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/62"
+          },
+          "p63": {
+            "id": "PR_kwDOUhI-d88AAAABEZAeaA",
+            "number": 63,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/63"
+          },
+          "p64": {
+            "id": "PR_kwDOUhI-d88AAAABEd4jgg",
+            "number": 64,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/64"
+          },
+          "p65": {
+            "id": "PR_kwDOUhI-d88AAAABEecUKA",
+            "number": 65,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/65"
+          },
+          "p66": {
+            "id": "PR_kwDOUhI-d88AAAABEfALRg",
+            "number": 66,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/66"
+          },
+          "p67": {
+            "id": "PR_kwDOUhI-d88AAAABEgP2pw",
+            "number": 67,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/67"
+          },
+          "p68": {
+            "id": "PR_kwDOUhI-d88AAAABEpzbUQ",
+            "number": 68,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/68"
+          },
+          "p69": {
+            "id": "PR_kwDOUhI-d88AAAABEqvOBg",
+            "number": 69,
+            "state": "MERGED",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/69"
+          },
+          "p70": {
+            "id": "PR_kwDOUhI-d88AAAABFSsX5A",
+            "number": 70,
+            "state": "OPEN",
+            "url": "https://github.com/aloerch/ambisgis-platform/pull/70"
+          }
+        },
+        "queue_filter": "is:pr is:open",
+        "queue_membership": [
+          70
+        ],
+        "scope": "New PR membership/Evidence only; FND-02 unchanged; API readback, no UI claim"
+      },
+      "retained_files": [
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/after.json",
+          "sha256": "da2e8df85cc2eafea3f9b5a226b0d7667bc76a83f85dff356109e5155d69b257",
+          "bytes": 318115
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/before-pagination.json",
+          "sha256": "4fc8b7b2939a3caff1d60b7ba4e1131e3ceea825b5eff5925377ca4d9b1e0a7d",
+          "bytes": 40768
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/before.json",
+          "sha256": "deb72aba48bacfcc1e657e67225f1f3d4c9aca0c97e629d4780fabca6a2808a8",
+          "bytes": 316153
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/manifest.json",
+          "sha256": "ea57c7b95c43d17004f298e90aa27d0d273654829e9125840b1c8c581f07055d",
+          "bytes": 1709
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/mutation-1-completed.json",
+          "sha256": "c3a4f14a2b4b188e6a4a84d3cb93a7f7efda76710042bd4a42f39ff8b433ea27",
+          "bytes": 160
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/mutation-2-completed.json",
+          "sha256": "3058ce9726c9222478bbf5fcf0f2ed7f1619ee9d579670d70823593f5187e5aa",
+          "bytes": 410
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/mutation-events.jsonl",
+          "sha256": "ee73ef90dea3b86cca74f8d5953898f88e70fc885875c7a92ad11686d496b56e",
+          "bytes": 1152
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/mutations.json",
+          "sha256": "452b97a6e250c59177f7f1dbe72b37fba026045e3e17fe53b9452cba0a01bdbd",
+          "bytes": 609
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/outcome.json",
+          "sha256": "5960cf98541ba34d7dfb200e8270fa3ec8248a2594041499d446af4932206aff",
+          "bytes": 4588
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/pagination.json",
+          "sha256": "2af3f63343dfaedcf55c333a83d23cb268ffe4eb2e35e334b17d2b6b0d1b4a28",
+          "bytes": 41099
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/plan.json",
+          "sha256": "792d1646c76a4e79febc7fdb6c95435eb17f849c1202925968bbbadee4b96ced",
+          "bytes": 718
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/publication.py",
+          "sha256": "6c4bd35f56398de1f338a7669e52937bdfcafbda3a706bb0e8eef7b663c9c0c0",
+          "bytes": 10004
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-pr-apply-01/readback-requests.jsonl",
+          "sha256": "ad4ac65dbe65505a341296b2f9dc98655181212b85d3a501e736450738053848",
+          "bytes": 406343
+        }
+      ]
+    },
+    {
+      "directory": "project-review-01",
+      "outcome": {
+        "passed": true,
+        "item_count_before": 83,
+        "item_count_after": 83,
+        "mutations": 2,
+        "task_states": {
+          "FND-07": "In review"
+        },
+        "other_item_values_archive_decisions_fields_views_preserved": true
+      },
+      "retained_files": [
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-review-01/after.json",
+          "sha256": "cd047c695f4c5ac5d03024ecbe85e2160cc8da38267a51feb3334949d12bce6f",
+          "bytes": 318061
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-review-01/before.json",
+          "sha256": "80b16955c7b5c05df5a534fb8e54149273bc6d8c68191c48446d44b7bf64330c",
+          "bytes": 318115
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-review-01/mutations.jsonl",
+          "sha256": "0cf76b16b45eefb89920b3339bab26943a69d18ff23de376cf81007468236204",
+          "bytes": 998
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-review-01/outcome.json",
+          "sha256": "e0f1d62fea89c65ec2ce595d2cc0dfc208e0c197b798642a1669b59c731f1b5a",
+          "bytes": 212
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-review-01/plan.json",
+          "sha256": "0219b84b75e1097edc8859716da99018fa4938afc56ada4a81e85c338985f725",
+          "bytes": 549
+        },
+        {
+          "path": "build-worktrees/source-ref-promotion/run-001/project-review-01/readback-requests.jsonl",
+          "sha256": "6c1b324e7d2722492f0af2c5b05360469cf11f3118698da51e592c991644f15f",
+          "bytes": 403995
+        }
+      ]
+    }
+  ],
+  "task_values": {
+    "FND-02": {
+      "Title": "[FND-02] Resolve source, license and compatible dependency tuple",
+      "Status": "Done",
+      "Task ID": "FND-02",
+      "Delivery": "Merged",
+      "Phase": "P0",
+      "Component": "Platform",
+      "Priority": "High",
+      "Risk": "High",
+      "Review gate": "License/Brand",
+      "Evidence": "https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488"
+    },
+    "FND-07": {
+      "Title": "[FND-07] Acquire source custody and record independently maintained product baselines",
+      "Task ID": "FND-07",
+      "Status": "Todo",
+      "Delivery": "In review",
+      "Phase": "P0",
+      "Component": "Platform",
+      "Priority": "High",
+      "Risk": "High",
+      "Review gate": "Human approval",
+      "Evidence": "https://github.com/aloerch/ambisgis-platform/pull/70"
+    },
+    "FND-08": {
+      "Title": "[FND-08] Build the initial product spine from owned sources and cached dependencies",
+      "Task ID": "FND-08",
+      "Status": "Todo",
+      "Delivery": "Backlog",
+      "Phase": "P0",
+      "Component": "Platform",
+      "Priority": "High",
+      "Risk": "High",
+      "Review gate": "Human approval"
+    }
+  },
+  "total_remote_project_mutations": 6,
+  "items_before": 82,
+  "items_after": 83,
+  "saved_queue": "is:pr is:open",
+  "queue_membership": [
+    70
+  ]
+}

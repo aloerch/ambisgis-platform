@@ -1,5 +1,12 @@
 # FND-07 exact review-ref publication evidence
 
+Execution is complete for nine supported roots; QGIS and GeoTools remain held.
+All eleven forks have Actions disabled. Nine fresh owned-remote recoveries passed,
+and unchanged replay made zero source/settings mutations. See the [handoff](../../docs/source-ref-promotion-handoff.md),
+[executed evidence index](evidence.json), [final independent review](final-evidence-review.json)
+and [unexecuted canonical proposal](canonical-proposal.json). PR #70 remains a
+review checkpoint; final FND-07 acceptance is pending the recorded conditions.
+
 Immutable input: PR #69 head `1e5712e0ba3f931205d9b9be1d4a34e076ce1b87`,
 owner merge `4d0602542d3120024ec5974501624c96e5de48d4`.
 The original promotion plan, accepted candidate and successful recovery receipts

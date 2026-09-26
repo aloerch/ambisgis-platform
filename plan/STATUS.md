@@ -1,20 +1,42 @@
-# Current continuation — FND-07 exact source-ref promotion
+# Current status — FND-07 exact review-ref delivery, two publication holds
 
-PR #69 was owner-merged at `4d0602542d3120024ec5974501624c96e5de48d4`.
-The separate [owner authorization](https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5850316210)
-approves only the exact eleven non-default review refs where publication rights
-are established, plus repository Actions disablement on those eleven forks.
-Current branch: `fnd-07/source-ref-promotion`; FND-02 remains accepted/Merged,
-FND-07 remains open, and FND-08 remains unaccepted.
+**Nine exact owned review refs are delivered and independently recovered. All
+eleven source forks have Actions disabled.** The unchanged reapplication made
+zero source-ref/settings mutations. [PR #70](https://github.com/aloerch/ambisgis-platform/pull/70)
+is the platform review checkpoint on `fnd-07/source-ref-promotion`, executed
+implementation `936e37d6be25decc89ceb3d4b8c1be60c61de9ed`, from owner-merged #69.
+The [handoff](docs/source-ref-promotion-handoff.md) records all eleven exact
+commit/tree identities, per-row results, current rights conditions and resume commands.
 
-Fresh read-only run-002 verification passed for eleven source roots and retained
-assets. All 346 package/tooling tests and four schema/example checks passed.
-Candidate integrity/report passed; eligibility remains exit 2 for later gates.
-[Current evidence](verification/source-ref-promotion/README.md) binds the original
-immutable plan, separate owner decision, publication scope and exact live preflight.
-Source mutations and final remote recovery will be recorded there only after
-actual execution. Canonical source `ambisgis/main` and defaults remain outside
-this execution authorization.
+QGIS remains unpublished for its exact retained palette rights/provenance scopes;
+GeoTools remains unpublished for modification/date notices on two changed POMs
+under LGPL-2.1-only. Both approved commits/bundles are preserved. The public
+[companion notices/source links](verification/source-ref-promotion/publication-rights.md)
+were verified before the nine permitted uploads. No default/canonical ref,
+workflow file, release/archive, secret/protection or platform Actions setting changed.
+
+**FND-02 stays owner-accepted/Merged; FND-07 stays open/In review; FND-08 stays
+Backlog/unaccepted.** Original FND-07 criteria are unchanged: all eleven local
+sources/assets verified; nine public exact revisions recovered; rights/notice
+preservation and accepted asset enumeration recorded; two publication conditions
+and final canonical/acceptance decisions remain. The [canonical proposal](verification/source-ref-promotion/canonical-proposal.json)
+is explicit future owner review only, with observed-null expected-old refs and
+unchanged defaults. It is not executed. No FND-08 rebuild/drift or OWN-02 full
+repair is imposed as a new FND-07 prerequisite.
+
+Validation: **346 plan/tooling tests, zero failures/errors/skips; four strict
+schemas/examples; candidate integrity/report; all eleven retained-source roots/assets;
+nine fresh owned-remote histories/diffs/59 notice paths.** Eligibility remains
+exit 2 for later gates. No GIS build/native/database/browser fixture was repeated.
+[Actual receipts](verification/source-ref-promotion/evidence.json) preserve original
+accepted manifests, failed history and new public readbacks separately.
+
+Project #2 has 83 items after adding only PR #70 with its own Evidence and no
+copied Task ID. All 82 prior identities/fields/archive choices and saved views,
+including `is:pr is:open`, were preserved. Next finite work: resolve the two exact
+publication conditions and remaining source delivery, then separately authorize
+canonical promotion and final FND-07 acceptance. FND-02 decisions and already
+completed nine-ref delivery/Actions disablement need not be repeated.
 
 # Preserved status — PR #69 review checkpoint (before owner merge)
 

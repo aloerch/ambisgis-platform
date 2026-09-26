@@ -1,6 +1,8 @@
 # ADR 009 — Materialize the accepted source composition under platform custody
 
-Status: proposed implementation for owner review; source-fork promotion pending.
+Status: source-restoration/notice/asset evidence accepted within its documented limits by the separate owner decision; nine review refs delivered, two publication holds and final FND-07 acceptance remain.
+
+Current execution and exact held/canonical boundaries: [source-ref promotion handoff](../docs/source-ref-promotion-handoff.md). The implementation narrative below preserves the original custody decision; current remote state is in that handoff.
 Task: [FND-07](https://github.com/aloerch/ambisgis-platform/issues/6).
 
 The owner's [separate FND-02 decision](https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488)

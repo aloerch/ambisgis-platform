@@ -33,5 +33,22 @@
     "Reject HTTP alternates, promisor packs and symlinked object-store roots."
   ],
   "remaining_material_findings": [],
-  "limits": "Code review and local fixture tests do not prove live GitHub permissions, public rights clearance or remote delivery."
+  "limits": "Code review and local fixture tests do not prove live GitHub permissions, public rights clearance or remote delivery.",
+  "publication_review": {
+    "reviewer": "independent remote_preflight agent",
+    "platform_commit": "936e37d6be25decc89ceb3d4b8c1be60c61de9ed",
+    "publication_evidence_sha256": "0133d14729dac54a7680418b4f54977f0a6d607992cbe3bd5cfdcbb794aecf84",
+    "publication_rights_sha256": "132fe182f475ee5f19b508272d4dbdef4d9424f95406b5e214cb902e6e60ce7c",
+    "authoritative_evidence_sha256": "6b280a0cea9674a312efdbcc8615882bc2cd70970a11600b0ca0723d0e3989ec",
+    "all_fifteen_original_notices_verified": true,
+    "dispositions": {
+      "publishable": 9,
+      "held": [
+        "qgis",
+        "geotools"
+      ]
+    },
+    "remaining_material_findings": [],
+    "public_companion_precondition": "Satisfied separately by actual unauthenticated readback and issue6 companion announcement5850475921 before apply01."
+  }
 }

@@ -2,7 +2,7 @@
 > `4d0602542d3120024ec5974501624c96e5de48d4`. The separate
 > [owner authorization](https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5850316210)
 > permits the bounded review-ref continuation recorded in
-> [new evidence](../verification/source-ref-promotion/README.md).
+> [current source-ref delivery handoff](source-ref-promotion-handoff.md).
 > The checkpoint narrative below is preserved historical evidence, not current authorization or remote state.
 
 # FND-02 acceptance and FND-07 source recovery checkpoint
