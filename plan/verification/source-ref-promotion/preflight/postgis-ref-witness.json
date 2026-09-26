@@ -1,0 +1,31 @@
+{
+  "accepted_base_commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+  "accepted_base_public_ancestry": null,
+  "accepted_base_public_exact_refs": [
+    {
+      "ref": "refs/tags/3.5.7^{}",
+      "sha": "9816f82458db774e62906cfb2c4f01f8b262c862"
+    }
+  ],
+  "advertised_inventory": {
+    "exit_code": 0,
+    "heads": 38,
+    "line_count": 465,
+    "sha256": "693c1c8ba149569fd060cbc65d1387707b18f838324774ee48627b9040a54b43",
+    "stderr": "",
+    "tags_including_peeled": 427,
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/postgis-advertised-refs.txt"
+  },
+  "newly_reachable_upper_bound": {
+    "excluded_proved_public_commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+    "exit_code": 0,
+    "object_count": 0,
+    "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr": "",
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/postgis-newly-reachable-upper-bound.txt"
+  },
+  "observed_at": "2026-09-26T22:14:35.943657+00:00",
+  "repository": "aloerch/ambisgis-postgis",
+  "root_id": "postgis"
+}

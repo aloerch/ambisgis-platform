@@ -1,3 +1,23 @@
+# Current continuation — FND-07 exact source-ref promotion
+
+PR #69 was owner-merged at `4d0602542d3120024ec5974501624c96e5de48d4`.
+The separate [owner authorization](https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5850316210)
+approves only the exact eleven non-default review refs where publication rights
+are established, plus repository Actions disablement on those eleven forks.
+Current branch: `fnd-07/source-ref-promotion`; FND-02 remains accepted/Merged,
+FND-07 remains open, and FND-08 remains unaccepted.
+
+Fresh read-only run-002 verification passed for eleven source roots and retained
+assets. All 346 package/tooling tests and four schema/example checks passed.
+Candidate integrity/report passed; eligibility remains exit 2 for later gates.
+[Current evidence](verification/source-ref-promotion/README.md) binds the original
+immutable plan, separate owner decision, publication scope and exact live preflight.
+Source mutations and final remote recovery will be recorded there only after
+actual execution. Canonical source `ambisgis/main` and defaults remain outside
+this execution authorization.
+
+# Preserved status — PR #69 review checkpoint (before owner merge)
+
 # Implementation status — FND-02 accepted; FND-07 source recovery
 
 **FND-02 is owner-accepted and Merged. FND-07 is In review; source promotion

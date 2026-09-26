@@ -1,0 +1,31 @@
+{
+  "accepted_base_commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+  "accepted_base_public_ancestry": null,
+  "accepted_base_public_exact_refs": [
+    {
+      "ref": "refs/tags/34.5",
+      "sha": "aac73e9b89821331e77f67f1dd0921e541a78cfc"
+    }
+  ],
+  "advertised_inventory": {
+    "exit_code": 0,
+    "heads": 64,
+    "line_count": 305,
+    "sha256": "7dd24d2fa37c05a1be561c24c4c9977413fd527ee04a6ca23772238fa3fef580",
+    "stderr": "",
+    "tags_including_peeled": 241,
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/geotools-advertised-refs.txt"
+  },
+  "newly_reachable_upper_bound": {
+    "excluded_proved_public_commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+    "exit_code": 0,
+    "object_count": 10,
+    "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+    "sha256": "8058c14b623a8ca905b050b6fea16926de4a415ff0992a723f88499f1cac5ec0",
+    "stderr": "",
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/geotools-newly-reachable-upper-bound.txt"
+  },
+  "observed_at": "2026-09-26T22:14:39.284074+00:00",
+  "repository": "aloerch/ambisgis-geotools",
+  "root_id": "geotools"
+}

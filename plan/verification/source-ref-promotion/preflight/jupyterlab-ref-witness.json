@@ -1,0 +1,459 @@
+{
+  "accepted_base_commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+  "accepted_base_public_ancestry": null,
+  "accepted_base_public_exact_refs": [
+    {
+      "ref": "refs/tags/@jupyterlab/application-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/application@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/apputils-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/apputils@4.7.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/attachments@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/audio-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/buildutils@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/cell-toolbar-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/cell-toolbar@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/cells@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/celltags-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/codeeditor@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/codemirror-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/codemirror@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/completer-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/completer@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/console-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/console@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/core-meta@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/coreutils@6.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/csvviewer-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/csvviewer@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/debugger-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/debugger@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/docmanager-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/docmanager@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/docregistry@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/documentsearch-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/documentsearch@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/extensionmanager-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/extensionmanager@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/filebrowser-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/filebrowser@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/fileeditor-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/fileeditor@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/galata@5.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/help-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/htmlviewer-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/htmlviewer@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/hub-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/imageviewer-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/imageviewer@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/inspector-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/inspector@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/javascript-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/json-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/launcher-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/launcher@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/logconsole-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/logconsole@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/lsp-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/lsp@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/mainmenu-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/mainmenu@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/markdownviewer-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/markdownviewer@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/markedparser-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/mathjax-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/mermaid-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/mermaid@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/metadataform-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/metadataform@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/metapackage@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/nbconvert-css@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/nbformat@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/notebook-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/notebook@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/observables@5.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/outputarea@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/pdf-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/pluginmanager-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/pluginmanager@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/property-inspector@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/rendermime-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/rendermime-interfaces@3.14.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/rendermime@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/running-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/running@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/services-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/services@7.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/settingeditor-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/settingeditor@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/settingregistry@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/shortcuts-extension@5.4.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/statedb@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/statusbar-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/statusbar@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/template@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/terminal-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/terminal@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/testing@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/testutils@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/theme-dark-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/theme-dark-high-contrast-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/theme-light-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/toc-extension@6.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/toc@6.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/tooltip-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/tooltip@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/translation-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/translation@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/ui-components-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/ui-components@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/vega5-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/video-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/workspaces-extension@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/@jupyterlab/workspaces@4.6.3",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    },
+    {
+      "ref": "refs/tags/v4.6.3^{}",
+      "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+    }
+  ],
+  "advertised_inventory": {
+    "exit_code": 0,
+    "heads": 40,
+    "line_count": 84471,
+    "sha256": "706f4097b0932c33f32cd9ed8488bb7c3351d7bde2a97f6e85fc614040ec3a20",
+    "stderr": "",
+    "tags_including_peeled": 84431,
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/jupyterlab-advertised-refs.txt"
+  },
+  "newly_reachable_upper_bound": {
+    "excluded_proved_public_commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+    "exit_code": 0,
+    "object_count": 0,
+    "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr": "",
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/jupyterlab-newly-reachable-upper-bound.txt"
+  },
+  "observed_at": "2026-09-26T22:14:39.228328+00:00",
+  "repository": "aloerch/ambisgis-jupyterlab",
+  "root_id": "jupyterlab"
+}
