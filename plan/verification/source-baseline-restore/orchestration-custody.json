@@ -1,0 +1,9 @@
+{
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "commit": "e27769520a9b17a501aebfa2ac867cc150debf84",
+  "path": "build-worktrees/source-baseline-restore/orchestration.bundle",
+  "sha256": "02a1f175e06d860b343da383194ee5850bada9348427dd90cfe53c737f71bd46",
+  "bytes": 5411031,
+  "purpose": "Private full-history custody of reviewed new recovery orchestration and accepted-candidate linkage; subsequent commits contain checkpoint documentation/evidence only."
+}

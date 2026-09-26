@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "record_kind": "separate-final-owner-acceptance",
+  "task": "FND-02",
+  "recorded_at": "2026-09-22T23:26:40.781779+00:00",
+  "candidate": {
+    "path": "plan/candidates/fnd-02-candidate.json",
+    "sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+    "candidate_id": "fnd-02-json-nojpeg2000-proposal-4",
+    "candidate_revision": 4,
+    "schema_version": 1
+  },
+  "comment": {
+    "path": "plan/verification/fnd-02-owner-acceptance/owner-comment.json",
+    "sha256": "13683a36a77c6706493a840dc16847f300299f736734cfc922c269bf5369f6ab",
+    "url": "https://github.com/aloerch/ambisgis-platform/issues/3#issuecomment-5785944488",
+    "id": 5785944488,
+    "author": "aloerch",
+    "author_id": 15285626,
+    "created_at": "2026-09-22T23:20:02Z",
+    "updated_at": "2026-09-22T23:20:02Z",
+    "body_sha256": "4c8286ad42e8bb7a234c50337507aea690e8d92316fef34b0ebdf7c438b051af"
+  },
+  "merged_pr": {
+    "path": "plan/verification/fnd-02-owner-acceptance/merged-pr.json",
+    "sha256": "1171bde45f7a29624aacc56e330be7fdbfaca1f40575b01f3dbda952121213b2"
+  },
+  "reviewed_head": "7c4c6a6ddbc364e520911e06b9a97a7c10bdcfcf",
+  "merge_commit": "973a5ef383687cd00143c679f832cfb006a57cf0",
+  "war": {
+    "record_id": "json-nojpeg-war",
+    "sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1"
+  },
+  "replacement_inputs": {
+    "path": "build-support/java/json-nojpeg2000-variant-inputs.json",
+    "sha256": "194139a86bb3640d991b4c23bc55b02d66526127bdea6c3d6f025216d41f87f5"
+  },
+  "accepted_criteria": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "accepted_internal_steps": [
+    "F02-06",
+    "F02-07",
+    "F02-08"
+  ],
+  "accepted_profile_limits": [
+    "NO-ORACLE",
+    "headless-Temurin17",
+    "NO-JPEG2000"
+  ],
+  "not_accepted": [
+    "FND-03",
+    "FND-05",
+    "FND-07",
+    "FND-08",
+    "P0",
+    "distribution",
+    "release",
+    "production-deployment",
+    "future-PR-merges",
+    "source-notice-security-licensing-operational-gates"
+  ],
+  "existing_combination_evidence": {
+    "path": "plan/verification/json-jpeg2000-remediation/evidence.json",
+    "sha256": "5015c7ed8741939cd3c8741609c78d6d4e3277da5a6cf3b4cca77d928bef9dc6"
+  },
+  "verification_scope": "Retained live GitHub owner comment and merged PR were read and semantically reviewed. This record links a later governance decision to immutable previously tested bytes; it is not a new tested artifact, legal clearance, source promotion or release. Offline validation proves this linkage, not current remote state or authorship."
+}

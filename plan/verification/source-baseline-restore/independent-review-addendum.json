@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-09-22T23:56:00.016369+00:00",
+  "review_mode": "Independent read-only followup; helper and focused tests executed, prior full source/data verification not repeated",
+  "prior_review_sha256": "3d08389b679c514a5e9d2158757ad6995b686bf31bd970e18a6d922fd289565b",
+  "reviewed_tooling": [
+    {
+      "path": "plan/tools/restore_sources.py",
+      "sha256": "77ef1a58c7494e02d5432fb1d38561af2afbbf1d6aaa18afb0975615ce091176",
+      "bytes": 24890
+    },
+    {
+      "path": "build-support/source_restore/common.py",
+      "sha256": "5a2c66d3d79526985bfcdcf61d00f95336932901e2d7805dac859f6067cea2da",
+      "bytes": 9194
+    },
+    {
+      "path": "build-support/source_restore/recipes.py",
+      "sha256": "16ba8edfa18da151f2f2f5150705e266e826f6813506b1824283281f82cd6a23",
+      "bytes": 42483
+    },
+    {
+      "path": "plan/tests/test_source_restore_recipes.py",
+      "sha256": "fb09d58143e2ff4651654837c37636aea5d6600997fb2f358da3fa9f6172459f",
+      "bytes": 9394
+    }
+  ],
+  "original_run_001_receipt_sha256": "7852514aed5df0f935aeb146cd2d0bb3d106e22e92fb9b73416439b39b0c4469",
+  "original_run_001_recipe_receipt_sha256": "eb0a50b8d6cafb2380ae66e1d09e708df84c808d61fd7965afcbc7a1f3de4789",
+  "accepted_manifest_sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+  "generated_metadata_helper": {
+    "function": "restore_sources.verify_generated_metadata(run001, receipt, current_accepted_candidate)",
+    "result": "passed",
+    "returned_corrections": [
+      {
+        "record": "plan/verification/source-baseline-restore/qgis-receipt-correction.json",
+        "sha256": "70d292a596f2ef3da679c6b0e68b1f7166a70b8c807c2b355f1cf23931cf894b",
+        "source_bytes_match_accepted_input": true,
+        "historical_receipts_unchanged": true
+      }
+    ],
+    "actual_generated_sha256": "14e2602dd8df5fbed76bf3c3cb8212c3ea52c2343f8c82a4282120246b0c7a3e"
+  },
+  "correction_record": {
+    "path": "plan/verification/source-baseline-restore/qgis-receipt-correction.json",
+    "sha256": "70d292a596f2ef3da679c6b0e68b1f7166a70b8c807c2b355f1cf23931cf894b",
+    "bytes": 4103
+  },
+  "correction_evidence_verified": [
+    {
+      "kind": "result_record",
+      "path": "build-worktrees/source-baseline-restore/qgis-receipt-correction-01/verification.json",
+      "sha256": "8931d478d58d31687196547adc4c3e953fa47f833286f263c18b8f7cf6ad4fd7",
+      "bytes": 730
+    },
+    {
+      "kind": "network_record",
+      "path": "build-worktrees/source-baseline-restore/qgis-receipt-correction-01/network.json",
+      "sha256": "884edab054bde9f28632348a6fcf7a600211e2415bdecdad18316f24aa1b6843",
+      "bytes": 1833
+    },
+    {
+      "kind": "command_source",
+      "path": "build-worktrees/source-baseline-restore/qgis-receipt-correction-01/verify.py",
+      "sha256": "4b796c272bed0675ae2f2b4ec1d9793c7820436912e3dfbcb9ac1ba447a2cc11",
+      "bytes": 1999
+    },
+    {
+      "kind": "corrected_replay_record",
+      "path": "build-worktrees/source-baseline-restore/qgis-receipt-correction-01/corrected-qgis-replay.json",
+      "sha256": "933a57f7e9c848edced630312fe2ea82c8c266308a0e851c36cef246fefc2eb8",
+      "bytes": 750
+    }
+  ],
+  "focused_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_source_restore_recipes.py",
+      "-v"
+    ],
+    "cwd": "plan",
+    "exit_code": 0,
+    "tests": 13,
+    "skips": 0,
+    "log_sha256": "15345881a33fed885eaff9062c4b9cd1871da15c5f50dc13a95125e87725c4e0"
+  },
+  "findings_resolved": [
+    "QGIS generated metadata now uses an unshadowed generated_row and actual generated file SHA; regression test verifies it differs from unrelated tooling SHA.",
+    "Historical erroneous recipe summary is handled by a separately hash-bound correction record. Actual source bytes and original run001 receipts remain unchanged.",
+    "Controller loads custody primitives through an explicit unique module specification, preventing an unrelated cached common module from supplying the wrong functions.",
+    "Final verifier includes restored platform full Git fsck as well as core and nested history checks."
+  ],
+  "remaining_engineering_findings": [],
+  "execution_limits": [
+    "This review directly executed the final generated-metadata helper against run001 and ran 13 focused tests.",
+    "Run001 used the earlier frozen controller. The ongoing run002 tooling snapshot also predates final import/correction verifier changes; those guards are not attributed to either historical execution.",
+    "Final full verification of run002 using current controller remains the integrator responsibility after the chain run finishes.",
+    "Separate source publication/workflow/rights decisions and human FND-07 acceptance remain pending; these are governance gates, not newly identified engineering defects."
+  ],
+  "result": "No unresolved engineering finding within reviewed fixes and source custody scope"
+}
