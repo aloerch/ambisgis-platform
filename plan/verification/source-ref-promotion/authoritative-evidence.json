@@ -1,0 +1,1540 @@
+{
+  "accompanying_notices": [
+    {
+      "bytes": 16770,
+      "path": "plan/verification/source-ref-promotion/notices/webifc/LICENSE.md",
+      "sha256": "40fb05c51ff5e96285f32fba1783a22dccc26871791c378b1e7986e9046c8d5d",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/webifc/LICENSE.md",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 10767,
+      "path": "plan/verification/source-ref-promotion/notices/fastfloat/LICENSE-APACHE",
+      "sha256": "097a889aa954d04e088b790b10a4014d6189561d0a6013935a73ce3d4ddaaf06",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/fastfloat/LICENSE-APACHE",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 1337,
+      "path": "plan/verification/source-ref-promotion/notices/fastfloat/LICENSE-BOOST",
+      "sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/fastfloat/LICENSE-BOOST",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 1079,
+      "path": "plan/verification/source-ref-promotion/notices/fastfloat/LICENSE-MIT",
+      "sha256": "e562f3f974ced7e69dd1db77b820b36bcf8f30377f1aa105723fba449c53c4e6",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/fastfloat/LICENSE-MIT",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 1523,
+      "path": "plan/verification/source-ref-promotion/notices/tinynurbs/LICENSE",
+      "sha256": "1347f9b571f2b03cbfc494d9dbc205e0c04250f6d982e79b186c0b886314a40a",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/tinynurbs/LICENSE",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 1070,
+      "path": "plan/verification/source-ref-promotion/notices/tinycpptest/LICENSE.md",
+      "sha256": "e8fbb8711bd456d1be53e4a2dfc4c70ddd29f67c5c04d050273a12287a2429dd",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/tinycpptest/LICENSE.md",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 2865,
+      "path": "plan/verification/source-ref-promotion/notices/glm/copying.txt",
+      "sha256": "62d2d642c7d054d4fb4c9b42faad617d6c88fcd91e317f8035aa9f277cc159c3",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/glm/copying.txt",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 738,
+      "path": "plan/verification/source-ref-promotion/notices/earcut/LICENSE",
+      "sha256": "828f2aed51b6526881a236758ec9b08cd69928fbfc70346d9d44a0b3a3444fe1",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/earcut/LICENSE",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 16726,
+      "path": "plan/verification/source-ref-promotion/notices/cdt/CDT/LICENSE",
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/cdt/CDT/LICENSE",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 1348,
+      "path": "plan/verification/source-ref-promotion/notices/spdlog/LICENSE",
+      "sha256": "a7241a379cb98d37788f82c2fc2e484c3ae85dae881fd3406f0637644850926f",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/spdlog/LICENSE",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 1408,
+      "path": "plan/verification/source-ref-promotion/notices/spdlog/include/spdlog/fmt/bundled/fmt.license.rst",
+      "sha256": "825c9324e70f8c839c8ba910543dd4a7daee243b86ef960594c11381a19980b8",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/spdlog/include/spdlog/fmt/bundled/fmt.license.rst",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 16769,
+      "path": "plan/verification/source-ref-promotion/notices/fuzzy/LICENSE.md",
+      "sha256": "b56d003d45853518d0a992e37839a5bd5dcb3e721f90d95848e298c2bed347c2",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/fuzzy/LICENSE.md",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 2865,
+      "path": "plan/verification/source-ref-promotion/notices/fuzzy/deps/glm/copying.txt",
+      "sha256": "62d2d642c7d054d4fb4c9b42faad617d6c88fcd91e317f8035aa9f277cc159c3",
+      "source": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/notices/fuzzy/deps/glm/copying.txt",
+      "status": "Original accepted notice bytes preserved; inclusion does not assert every supporting/test component is compiled into every WASM."
+    },
+    {
+      "bytes": 35147,
+      "path": "plan/verification/source-ref-promotion/notices/gnu/GPL-3.0.txt",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "source": {
+        "blob": "6c1d884a15799e997ab66b822b70c0f92cc2ce54",
+        "byte_offset": 854,
+        "commit": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+        "path": "LICENSE",
+        "repository": "aloerch/ambisgis-geonode"
+      },
+      "status": "Verbatim original license text; no source-tree change or original-grant replacement."
+    },
+    {
+      "bytes": 7639,
+      "path": "plan/verification/source-ref-promotion/notices/gnu/LGPL-3.0.txt",
+      "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+      "source": {
+        "commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+        "path": "geowebcache/LICENSE.txt",
+        "repository": "aloerch/ambisgis-geowebcache"
+      },
+      "status": "Verbatim original license text; no source-tree change or original-grant replacement."
+    }
+  ],
+  "authoritative_public_sources": [
+    {
+      "commit_readback": {
+        "endpoint": "https://api.github.com/repos/ThatOpen/engine_web-ifc/git/commits/b55d8bde10067415d4536b23c27edcc13acf217c",
+        "observed_at": "2026-09-26T22:25:19.019844+00:00",
+        "response_body_retained": false,
+        "response_sha256": "0039a34e850b442ad39e699b1a34ba1851a2e85daa8fd0acdb6b814802dc9b87"
+      },
+      "identity_readback": {
+        "endpoint": "https://api.github.com/repos/ThatOpen/engine_web-ifc",
+        "observed_at": "2026-09-26T22:25:18.621243+00:00",
+        "response_body_retained": false,
+        "response_sha256": "43e5da140706eb1b198559fe7f23f77190cf444b3b62f97d8978ac160bf94820"
+      },
+      "name": "webifc",
+      "repository": "ThatOpen/engine_web-ifc",
+      "revision": "b55d8bde10067415d4536b23c27edcc13acf217c",
+      "source_url": "https://github.com/ThatOpen/engine_web-ifc/tree/b55d8bde10067415d4536b23c27edcc13acf217c",
+      "tree": "bdda258d5fbfe4abebdbc057d58e17436dc9c585",
+      "visibility": "public"
+    },
+    {
+      "commit_readback": {
+        "endpoint": "https://api.github.com/repos/fastfloat/fast_float/git/commits/2b2395f9ac836ffca6404424bcc252bff7aa80e4",
+        "observed_at": "2026-09-26T22:25:19.733052+00:00",
+        "response_body_retained": false,
+        "response_sha256": "614712e3faf2b3c9fb25afef8c6de828d335d2170c573a19dfb2bfcfb89e1059"
+      },
+      "identity_readback": {
+        "endpoint": "https://api.github.com/repos/fastfloat/fast_float",
+        "observed_at": "2026-09-26T22:25:19.329253+00:00",
+        "response_body_retained": false,
+        "response_sha256": "305fa7ad2adf877c137420c9fe4bd820e97138ff3383cef9de20c08fe514b649"
+      },
+      "name": "fastfloat",
+      "repository": "fastfloat/fast_float",
+      "revision": "2b2395f9ac836ffca6404424bcc252bff7aa80e4",
+      "source_url": "https://github.com/fastfloat/fast_float/tree/2b2395f9ac836ffca6404424bcc252bff7aa80e4",
+      "tree": "0194445ce3ad31a1e1f6df8dd6ae70a0d25c7c08",
+      "visibility": "public"
+    },
+    {
+      "commit_readback": {
+        "endpoint": "https://api.github.com/repos/pradeep-pyro/tinynurbs/git/commits/2fc6562d71665312c6298f7c340bace1bcf1b7a1",
+        "observed_at": "2026-09-26T22:25:20.364262+00:00",
+        "response_body_retained": false,
+        "response_sha256": "0244ccb4cc078b4a7c55d354763611082a9c6ee39b848d21368c997cd2ecd330"
+      },
+      "identity_readback": {
+        "endpoint": "https://api.github.com/repos/pradeep-pyro/tinynurbs",
+        "observed_at": "2026-09-26T22:25:20.023058+00:00",
+        "response_body_retained": false,
+        "response_sha256": "c06ba4a2a179d9856bf6478ffb64f959fd8bb5e1d0716c9d1bb9ad2b556e396f"
+      },
+      "name": "tinynurbs",
+      "repository": "pradeep-pyro/tinynurbs",
+      "revision": "2fc6562d71665312c6298f7c340bace1bcf1b7a1",
+      "source_url": "https://github.com/pradeep-pyro/tinynurbs/tree/2fc6562d71665312c6298f7c340bace1bcf1b7a1",
+      "tree": "6ae9b4d6c4c5d88b6cb119e0aa6c47800c6e1d08",
+      "visibility": "public"
+    },
+    {
+      "commit_readback": {
+        "endpoint": "https://api.github.com/repos/kovacsv/TinyCppTest/git/commits/12e42c8ac6e032ce450fb3f772ebdfd1ddc6008c",
+        "observed_at": "2026-09-26T22:25:20.982826+00:00",
+        "response_body_retained": false,
+        "response_sha256": "8c236f807225cbc8e4a2122773b16be8378f73d7fbeeeb104c4f50e77bbe8624"
+      },
+      "identity_readback": {
+        "endpoint": "https://api.github.com/repos/kovacsv/TinyCppTest",
+        "observed_at": "2026-09-26T22:25:20.675536+00:00",
+        "response_body_retained": false,
+        "response_sha256": "9f2ab8ed699ae57705a82ed58c15fe24f95aa6d58d5193946b970c4956e1445c"
+      },
+      "name": "tinycpptest",
+      "repository": "kovacsv/TinyCppTest",
+      "revision": "12e42c8ac6e032ce450fb3f772ebdfd1ddc6008c",
+      "source_url": "https://github.com/kovacsv/TinyCppTest/tree/12e42c8ac6e032ce450fb3f772ebdfd1ddc6008c",
+      "tree": "937c4003450364206412b7523dde2f8ec70f3dc6",
+      "visibility": "public"
+    },
+    {
+      "commit_readback": {
+        "endpoint": "https://api.github.com/repos/g-truc/glm/git/commits/bf71a834948186f4097caa076cd2663c69a10e1e",
+        "observed_at": "2026-09-26T22:25:21.632606+00:00",
+        "response_body_retained": false,
+        "response_sha256": "616b05c23d2714683c883c9ce016061d854648b6da500d29ed7fea1d848551c1"
+      },
+      "identity_readback": {
+        "endpoint": "https://api.github.com/repos/g-truc/glm",
+        "observed_at": "2026-09-26T22:25:21.250558+00:00",
+        "response_body_retained": false,
+        "response_sha256": "ab43be689b12657c6be541486d24b53fec1b0c8a32785fcd770652f5a084c597"
+      },
+      "name": "glm",
+      "repository": "g-truc/glm",
+      "revision": "bf71a834948186f4097caa076cd2663c69a10e1e",
+      "source_url": "https://github.com/g-truc/glm/tree/bf71a834948186f4097caa076cd2663c69a10e1e",
+      "tree": "39a0615e6228721b81f686492ed5cbb738dd01b4",
+      "visibility": "public"
+    },
+    {
+      "commit_readback": {
+        "endpoint": "https://api.github.com/repos/mapbox/earcut.hpp/git/commits/4811a2b69b91f6127a75e780de6e2113609ddabb",
+        "observed_at": "2026-09-26T22:25:22.272869+00:00",
+        "response_body_retained": false,
+        "response_sha256": "fadb22feea6792a2485c6aeb0f063056ea8ec7824bdbe4d3ea42b8f819dd571c"
+      },
+      "identity_readback": {
+        "endpoint": "https://api.github.com/repos/mapbox/earcut.hpp",
+        "observed_at": "2026-09-26T22:25:21.892559+00:00",
+        "response_body_retained": false,
+        "response_sha256": "835e8632ead4c468ccdcd2569310aedf66476c705b5e54fbea12056705178e7f"
+      },
+      "name": "earcut",
+      "repository": "mapbox/earcut.hpp",
+      "revision": "4811a2b69b91f6127a75e780de6e2113609ddabb",
+      "source_url": "https://github.com/mapbox/earcut.hpp/tree/4811a2b69b91f6127a75e780de6e2113609ddabb",
+      "tree": "038388da065d5aaeeac209d812ec1c8538d94b9c",
+      "visibility": "public"
+    },
+    {
+      "commit_readback": {
+        "endpoint": "https://api.github.com/repos/artem-ogre/CDT/git/commits/4d0c9026b8ec846fe544897e7111f8f9080d5f8a",
+        "observed_at": "2026-09-26T22:25:22.890752+00:00",
+        "response_body_retained": false,
+        "response_sha256": "2f00a20af8bda914383ae66f3e4b49a8f6387765ef84fc4534079df679f1bd52"
+      },
+      "identity_readback": {
+        "endpoint": "https://api.github.com/repos/artem-ogre/CDT",
+        "observed_at": "2026-09-26T22:25:22.573021+00:00",
+        "response_body_retained": false,
+        "response_sha256": "dcfb34fa572b7196347fb0512d22849939c2f1d5b2b0f17c0307e77e8d06ce8b"
+      },
+      "name": "cdt",
+      "repository": "artem-ogre/CDT",
+      "revision": "4d0c9026b8ec846fe544897e7111f8f9080d5f8a",
+      "source_url": "https://github.com/artem-ogre/CDT/tree/4d0c9026b8ec846fe544897e7111f8f9080d5f8a",
+      "tree": "ee4506c594130a3a7b3f7d8ad15061f6a1959e16",
+      "visibility": "public"
+    },
+    {
+      "commit_readback": {
+        "endpoint": "https://api.github.com/repos/gabime/spdlog/git/commits/7e635fca68d014934b4af8a1cf874f63989352b7",
+        "observed_at": "2026-09-26T22:25:23.460869+00:00",
+        "response_body_retained": false,
+        "response_sha256": "fa68517e6dedb53a022da675f96bc7059b6d00dcba9c7ad48f94b7c337ab7b81"
+      },
+      "identity_readback": {
+        "endpoint": "https://api.github.com/repos/gabime/spdlog",
+        "observed_at": "2026-09-26T22:25:23.143977+00:00",
+        "response_body_retained": false,
+        "response_sha256": "1f3ce9761f76e1b8b0328b7779f105443dc2ec71b7e2dec4b21819ea3def7941"
+      },
+      "name": "spdlog",
+      "repository": "gabime/spdlog",
+      "revision": "7e635fca68d014934b4af8a1cf874f63989352b7",
+      "source_url": "https://github.com/gabime/spdlog/tree/7e635fca68d014934b4af8a1cf874f63989352b7",
+      "tree": "2decc0688abae523ab51022824aca5bd429102b1",
+      "visibility": "public"
+    },
+    {
+      "commit_readback": {
+        "endpoint": "https://api.github.com/repos/tomvandig/fuzzy-bools/git/commits/28251ebc68144e9b4613e0c289304c040e01ccf8",
+        "observed_at": "2026-09-26T22:25:24.133093+00:00",
+        "response_body_retained": false,
+        "response_sha256": "3eac060e37e30b36758035d2d2f1b50b463ce8d84e5d1649c94190f17fb05eb5"
+      },
+      "identity_readback": {
+        "endpoint": "https://api.github.com/repos/tomvandig/fuzzy-bools",
+        "observed_at": "2026-09-26T22:25:23.718318+00:00",
+        "response_body_retained": false,
+        "response_sha256": "ccedd44a2046911f8ea5866e3059df2602220bf2de249e146da8a5d7b6fbe0e9"
+      },
+      "name": "fuzzy",
+      "repository": "tomvandig/fuzzy-bools",
+      "revision": "28251ebc68144e9b4613e0c289304c040e01ccf8",
+      "source_url": "https://github.com/tomvandig/fuzzy-bools/tree/28251ebc68144e9b4613e0c289304c040e01ccf8",
+      "tree": "fc37fd3d61b3ca14523c4c87687961ef4a4511ef",
+      "visibility": "public"
+    }
+  ],
+  "client_generated_assets": {
+    "commit": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+    "dist_tracked_paths": 956,
+    "existing_evidence": "plan/verification/frontend-qgis-remediation/webifc-evidence.json",
+    "private_source_availability_record": {
+      "path": "build-worktrees/frontend-qgis-remediation/webifc/source-stage-03/SOURCE-AVAILABILITY.txt",
+      "sha256": "c82253c616e3d3b21b094bf73fe3d8e9c28be6b04a95f072e28876cdc34c9d15"
+    },
+    "public_source_tree_matches_accepted": true,
+    "scope": "Inherited generated artifacts remain in exact source tree. Public base reachability does not waive executable notice duties. The new companion supplies exact existing MPL source availability and original supporting terms; no new artifact build or general binary release is claimed.",
+    "translations_tracked_paths": 34,
+    "wasm": [
+      {
+        "accepted_evidence_sha256_match": true,
+        "blob": "7c4a7ebe9393f67418be1665452d5bf4c4abe283",
+        "bytes": 1160534,
+        "path": "geonode_mapstore_client/static/mapstore/dist/js/web-ifc/web-ifc-mt.wasm",
+        "sha256": "797f6e0be82d95c22292894e8c9c8e8e70eb46d20b519b3f081a8df1e91208ca"
+      },
+      {
+        "accepted_evidence_sha256_match": true,
+        "blob": "2c0ca1ec530e4e04be74618a3e66d38f4a55672b",
+        "bytes": 1140374,
+        "path": "geonode_mapstore_client/static/mapstore/dist/js/web-ifc/web-ifc-node.wasm",
+        "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6"
+      },
+      {
+        "accepted_evidence_sha256_match": true,
+        "blob": "2c0ca1ec530e4e04be74618a3e66d38f4a55672b",
+        "bytes": 1140374,
+        "path": "geonode_mapstore_client/static/mapstore/dist/js/web-ifc/web-ifc.wasm",
+        "sha256": "94e1927131654a4288f8b868f33766c33979a8290d019ad3b9def7f40a0afbd6"
+      }
+    ]
+  },
+  "delivery_precondition": "The platform companion and original notice files must be public and byte-verified before promoting the nine publishable refs. This record does not claim that publication or source promotion has happened.",
+  "immutable_plan": {
+    "path": "plan/verification/source-baseline-restore/promotion-plan.json",
+    "revision": "1e5712e0ba3f931205d9b9be1d4a34e076ce1b87",
+    "sha256": "a9477bbdcab4f85fad69cbf77ed04ed76de92efd63d3d663054bda34e4b573a6"
+  },
+  "limits": [
+    "Public reachability proves existing object availability, not unrestricted publication rights.",
+    "Object delta counts are upper bounds after excluding a proven public commit, not comparison against every possible public object.",
+    "No source reselection, source-tree edit, history rewrite, binary rebuild or private source archive publication.",
+    "Exact source provenance/byte correspondence does not establish an independently byte-identical WASM rebuild.",
+    "Full build/toolchain closure and all release/distribution approvals remain separate."
+  ],
+  "local_validation": {
+    "exact_plan_identity_rows": 11,
+    "fresh_content_hash_matches": 8,
+    "fresh_public_source_commit_checks": 9,
+    "git_diff_check": {
+      "exit_code": 2,
+      "new_authored_files_check": "Executed separately excluding notices; result recorded by command output.",
+      "reason": "Verbatim upstream notices contain existing whitespace: CDT LICENSE trailing space, LGPL3 trailing spaces, and spdlog LICENSE CRLF/trailing whitespace/blank EOF. Originals intentionally retained byte-for-byte."
+    },
+    "held_rows": [
+      "qgis",
+      "geotools"
+    ],
+    "original_notice_hash_checks": 15,
+    "publishable_rows": 9,
+    "relative_links": "All checked links resolve except preflight-initial.json, supplied by the integrator in the target worktree."
+  },
+  "observed_at": "2026-09-26T22:25:18.420365+00:00",
+  "observed_completed_at": "2026-09-26T22:25:26.654453+00:00",
+  "official_license_references": [
+    {
+      "applicability": "Existing exact Web-IFC, CDT and fuzzy covered source/executable notices; original MPL source and dependency grants remain.",
+      "sections": [
+        "3.1",
+        "3.2",
+        "3.4"
+      ],
+      "url": "https://www.mozilla.org/en-US/MPL/2.0/"
+    },
+    {
+      "applicability": "Unchanged executable/library redistribution still requires adequate recipient source access/notice.",
+      "sections": [
+        "Q7",
+        "Q8",
+        "Q10"
+      ],
+      "url": "https://www.mozilla.org/en-US/MPL/2.0/FAQ/"
+    },
+    {
+      "applicability": "Official GNU-hosted GPL3 text: preserved notices/full license, dated work-level modification notices and already-granted later-version option.",
+      "sections": [
+        "4",
+        "5",
+        "14"
+      ],
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/Copying.html"
+    },
+    {
+      "applicability": "Original terms for the concrete held QGIS ccolo collections; not a grant to other held palettes.",
+      "sections": [
+        "3",
+        "4"
+      ],
+      "url": "https://creativecommons.org/licenses/by-nc-sa/3.0/legalcode"
+    }
+  ],
+  "public_content_checks": [
+    {
+      "accepted_sha256_match": true,
+      "blob": "7a3ec06b51c20204691066c2d518c996c4e3216d",
+      "kind": "existing_accepted_build_input",
+      "path": "src/wasm/CMakeLists.txt",
+      "readback": {
+        "endpoint": "https://api.github.com/repos/ThatOpen/engine_web-ifc/contents/src/wasm/CMakeLists.txt?ref=b55d8bde10067415d4536b23c27edcc13acf217c",
+        "observed_at": "2026-09-26T22:25:24.453982+00:00",
+        "response_body_retained": false,
+        "response_sha256": "d918355304d6c28bb2996ce46cf8cf7ae8e0f4958a296af4ec37119f820e402c"
+      },
+      "sha256": "46af07d4d53328a2314fa01b4deb68a85129a7d4e0707205e5d27181bc21e261",
+      "url": "https://github.com/ThatOpen/engine_web-ifc/blob/b55d8bde10067415d4536b23c27edcc13acf217c/src/wasm/CMakeLists.txt"
+    },
+    {
+      "accepted_sha256_match": true,
+      "blob": "4b0d57bb24cdb9fc840009f03a10af61094cfe8f",
+      "kind": "existing_accepted_build_input",
+      "path": "package.json",
+      "readback": {
+        "endpoint": "https://api.github.com/repos/ThatOpen/engine_web-ifc/contents/package.json?ref=b55d8bde10067415d4536b23c27edcc13acf217c",
+        "observed_at": "2026-09-26T22:25:24.730742+00:00",
+        "response_body_retained": false,
+        "response_sha256": "87a14d517d3c4ce9c5c1b4d006b9e34dc3d0c9706bd79e7dca6525e57f82b984"
+      },
+      "sha256": "cd1f86d92658bdd190abc10a5d02a25a55a6918cc3682df7b7f925b9a2004415",
+      "url": "https://github.com/ThatOpen/engine_web-ifc/blob/b55d8bde10067415d4536b23c27edcc13acf217c/package.json"
+    },
+    {
+      "accepted_sha256_match": true,
+      "blob": "d9f5421a32c70598e15b19329eb420304e26fae8",
+      "kind": "existing_accepted_build_input",
+      "path": "package-lock.json",
+      "readback": {
+        "endpoint": "https://api.github.com/repos/ThatOpen/engine_web-ifc/contents/package-lock.json?ref=b55d8bde10067415d4536b23c27edcc13acf217c",
+        "observed_at": "2026-09-26T22:25:24.971037+00:00",
+        "response_body_retained": false,
+        "response_sha256": "d8b04a55e090edd5870a7e4feb74bdeb158c1d9ec09887cc4cfe363ef0438867"
+      },
+      "sha256": "c77027a327c8afc46dd9115b80a7ce457d36041a36f7d776570a59a9fc21654a",
+      "url": "https://github.com/ThatOpen/engine_web-ifc/blob/b55d8bde10067415d4536b23c27edcc13acf217c/package-lock.json"
+    },
+    {
+      "accepted_sha256_match": true,
+      "blob": "ada25d082432be967735c2208a2e0a5c1bd15c75",
+      "kind": "existing_accepted_build_input",
+      "path": "Dockerfile",
+      "readback": {
+        "endpoint": "https://api.github.com/repos/ThatOpen/engine_web-ifc/contents/Dockerfile?ref=b55d8bde10067415d4536b23c27edcc13acf217c",
+        "observed_at": "2026-09-26T22:25:25.373300+00:00",
+        "response_body_retained": false,
+        "response_sha256": "3576d3b2d6efa6e79e70fa74453ffa26d60c250749732d3e1d36ab6a4b0e73ee"
+      },
+      "sha256": "15434148394579cd437dc3bf14c8915bd9d328bfb9288a5e8d71f035134f0e1b",
+      "url": "https://github.com/ThatOpen/engine_web-ifc/blob/b55d8bde10067415d4536b23c27edcc13acf217c/Dockerfile"
+    },
+    {
+      "accepted_sha256_match": true,
+      "blob": "97f55df5e1a8d3ecf4261387ca1100b8896c2921",
+      "kind": "existing_accepted_build_input",
+      "path": ".github/workflows/publish.yml",
+      "readback": {
+        "endpoint": "https://api.github.com/repos/ThatOpen/engine_web-ifc/contents/.github/workflows/publish.yml?ref=b55d8bde10067415d4536b23c27edcc13acf217c",
+        "observed_at": "2026-09-26T22:25:25.600826+00:00",
+        "response_body_retained": false,
+        "response_sha256": "f7ccd757b63ed7a140e9156421e6954ce60a6f8da057d016dba0d8dc815d2c0c"
+      },
+      "sha256": "cee85918128fc1f5860592978600a19bd8b6eac9617f30fa644849ee7d1eb1cf",
+      "url": "https://github.com/ThatOpen/engine_web-ifc/blob/b55d8bde10067415d4536b23c27edcc13acf217c/.github/workflows/publish.yml"
+    },
+    {
+      "accepted_sha256_match": true,
+      "blob": "6bd699b7637d38f50bd048e2870282b68148f68e",
+      "kind": "original_MPL_notice",
+      "path": "LICENSE.md",
+      "readback": {
+        "endpoint": "https://api.github.com/repos/ThatOpen/engine_web-ifc/contents/LICENSE.md?ref=b55d8bde10067415d4536b23c27edcc13acf217c",
+        "observed_at": "2026-09-26T22:25:25.834873+00:00",
+        "response_body_retained": false,
+        "response_sha256": "0798b6e96eca1a3797b02d797b7c652878b63ec8d4ac1f8540a6c961f88091fd"
+      },
+      "sha256": "40fb05c51ff5e96285f32fba1783a22dccc26871791c378b1e7986e9046c8d5d",
+      "source": "webifc",
+      "url": "https://github.com/ThatOpen/engine_web-ifc/blob/b55d8bde10067415d4536b23c27edcc13acf217c/LICENSE.md"
+    },
+    {
+      "accepted_sha256_match": true,
+      "blob": "14e2f777f6c395e7e04ab4aa306bbcc4b0c1120e",
+      "kind": "original_MPL_notice",
+      "path": "CDT/LICENSE",
+      "readback": {
+        "endpoint": "https://api.github.com/repos/artem-ogre/CDT/contents/CDT/LICENSE?ref=4d0c9026b8ec846fe544897e7111f8f9080d5f8a",
+        "observed_at": "2026-09-26T22:25:26.091261+00:00",
+        "response_body_retained": false,
+        "response_sha256": "7058d548e0cb556b9893202854bdbbcb38179e327748d54f349a25f68933016d"
+      },
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "source": "cdt",
+      "url": "https://github.com/artem-ogre/CDT/blob/4d0c9026b8ec846fe544897e7111f8f9080d5f8a/CDT/LICENSE"
+    },
+    {
+      "accepted_sha256_match": true,
+      "blob": "8b29b372d029cff3aa5f7bc11c64b73ad71ae2da",
+      "kind": "original_MPL_notice",
+      "path": "LICENSE.md",
+      "readback": {
+        "endpoint": "https://api.github.com/repos/tomvandig/fuzzy-bools/contents/LICENSE.md?ref=28251ebc68144e9b4613e0c289304c040e01ccf8",
+        "observed_at": "2026-09-26T22:25:26.358552+00:00",
+        "response_body_retained": false,
+        "response_sha256": "812083a42dc3a8e466b76e492d38feb2c2b4a90c28c9746bffd7ed9166cb6da4"
+      },
+      "sha256": "b56d003d45853518d0a992e37839a5bd5dcb3e721f90d95848e298c2bed347c2",
+      "source": "fuzzy",
+      "url": "https://github.com/tomvandig/fuzzy-bools/blob/28251ebc68144e9b4613e0c289304c040e01ccf8/LICENSE.md"
+    }
+  ],
+  "public_owned_source_preflight": {
+    "completed_at": "2026-09-26T22:14:47.664347+00:00",
+    "path": "plan/verification/source-ref-promotion/preflight-initial.json",
+    "sha256": "b8ef478ee854230c280d7ad3c2b6e7cd3df6b6075f8e3a655b2e9a5f22e216d4"
+  },
+  "publication_holds": {
+    "geotools": {
+      "clause": "LGPL-2.1 section 2(b) requires modified files to carry prominent notices stating changes and date.",
+      "commit": "f51fa68803c465f28a85c155e3e951df0d8788f7",
+      "observed": "Exact recovery Git commit is dated and external donor-change ledger identifies both files, but those POMs lack added in-file modification/date notices. No authoritative evidence established that separate-repository companion is equivalent for this file-specific clause.",
+      "paths": [
+        "build/maven/xmlcodegen/pom.xml",
+        "modules/plugin/imagemosaic/pom.xml"
+      ],
+      "smallest_remedy": "Authoritative confirmation that the precise existing Git/file-history notice arrangement satisfies the applicable clause, or separate approval of a narrowly changed source commit adding required notices. Current exact commit remains retained.",
+      "source_grant": "pom.xml declares LGPL-2.1-only; docs/user/welcome/license.rst specifies version 2.1."
+    },
+    "qgis": {
+      "commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+      "objects": [
+        {
+          "affected_palette_count": 256,
+          "blob": "131ebb7c3e70fb8bf1822c84c2ec6e1a94bf03f1",
+          "path": "resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml",
+          "reason": "Nineteen collection notices apply CC BY-NC-SA 3.0; intended public source context needs an applicable noncommercial/permission basis.",
+          "sha256": "9e365c9e8bebeff36d6efb416adda1d191788f6c4ed39ce0cdeb9ab24281e17b"
+        },
+        {
+          "affected_palette_count": 135,
+          "blob": "71e2bf3e4d5e62268eb07d01ced3ce0a4b5561c1",
+          "path": "resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml",
+          "reason": "Free-to-use notice marks distribute=no; adequate public redistribution grant not established.",
+          "sha256": "e83e66ea532c2c24fb2e379badf2b6e848fac0f6c56e553bdd9dadc5c1912d09"
+        },
+        {
+          "affected_palette_count": 3,
+          "blob": "b2f257a4d4419bc115e4635e7fa9b568fbc78cb4",
+          "path": "resources/cpt-city-qgis-min/td/COPYING.xml",
+          "reason": "Free-to-use/none-specified notice marks distribute=no; adequate public redistribution grant not established.",
+          "sha256": "da208d9658cfa8531e35f86d164f4d6619bab61c1bfa5298ca10fdcbfbb9ffc6"
+        },
+        {
+          "affected_palette_count": 1,
+          "blob": "92b800f48b2d6c4c42ffa3298c92182f8e581d17",
+          "path": "resources/cpt-city-qgis-min/gmt/GMT_dem1.svg",
+          "reason": "Exact duplicate/provenance uncertainty recorded by accepted one-file exclusion; no new permission inferred from matching bytes.",
+          "sha256": "0ba1cad3e42202036ab6a86663a09d377eb84eb22584df0e4dbc9fdee54cf602"
+        },
+        {
+          "affected_palette_count": 690,
+          "blob": "f417f430eed60109ab324ad3977099e523b1332e",
+          "path": "resources/cpt-city-qgis-min/es/COPYING.xml",
+          "reason": "Custom redistribution requires credit, original preview/name and collection conditions; historical approval link not established.",
+          "sha256": "f1a66b869fb2bd4bb3901f4a390006854d3851c78890000dcab0d2cc4106e323"
+        },
+        {
+          "affected_palette_count": 45,
+          "blob": "54d6260e01e94b19aaa9fd9667b0889de0b1c685",
+          "path": "resources/cpt-city-qgis-min/jm/COPYING.xml",
+          "reason": "Full agreement includes personal/nontransferable and client-internal-use language; source-transfer applicability remains unresolved.",
+          "sha256": "500ee139bab61eaab06fbc62bf477a2d7ae72c113e1a4f4866a69891f351f7b4"
+        }
+      ],
+      "scope": "Exact unchanged Git tree still contains all 1,130 named package-excluded palettes, despite zero new reachable objects relative public tag.",
+      "smallest_remedy": "Authoritative applicability/permission evidence for this exact public-source context and notice conditions; otherwise a separately reviewed source-tree/history plan. No sanitization or rewritten approved commit is authorized."
+    }
+  },
+  "repositories": [
+    {
+      "accepted_base_commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "changed_objects": [],
+      "changed_paths": [],
+      "commit_date": "2026-08-10T16:57:41-04:00",
+      "license_observations": [
+        {
+          "blob": "0a397648dcd3c2177acc58bd7daecd11ad64be62",
+          "path": "COPYRIGHT",
+          "sha256": "3d6af92ff8a4c2cdf69afb1cf44edea727922f5cd0cf8b5f72b11cdecac8fdfd"
+        },
+        {
+          "blob": "e50cfb1ff1968bf12a2c0abfd707f807cbccf6e2",
+          "path": "src/backend/regex/COPYRIGHT",
+          "sha256": "5027cfe4f54842896b01ca6be28becc9a018623aaadc0f5b51350da71118cb0e"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+        "exit_code": 0,
+        "object_count": 0,
+        "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/postgresql-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "proposed_tree": "598df31816bda464f5b904c0badbcb25bafcc4f1",
+      "public_base_ancestry": null,
+      "public_exact_base_refs": [
+        {
+          "ref": "refs/tags/REL_15_19",
+          "sha": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca"
+        }
+      ],
+      "repository": "aloerch/ambisgis-postgresql",
+      "repository_id": 1376927644,
+      "root_id": "postgresql"
+    },
+    {
+      "accepted_base_commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+      "changed_objects": [],
+      "changed_paths": [],
+      "commit_date": "2026-06-10T11:38:16-07:00",
+      "license_observations": [
+        {
+          "blob": "d159169d1050894d3ea3b98e1c965c4058208fe1",
+          "path": "COPYING",
+          "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+        },
+        {
+          "blob": "6d48b332c0853963e1803749e92f429b00b42fc3",
+          "path": "LICENSE.TXT",
+          "sha256": "81749eea887e78402c9b85896cd629b155bc29256927f818f01001f038146391"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+        "exit_code": 0,
+        "object_count": 0,
+        "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/postgis-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+      "proposed_tree": "ee927efacdc5a00d698cab2da047ad2232d1f579",
+      "public_base_ancestry": null,
+      "public_exact_base_refs": [
+        {
+          "ref": "refs/tags/3.5.7^{}",
+          "sha": "9816f82458db774e62906cfb2c4f01f8b262c862"
+        }
+      ],
+      "repository": "aloerch/ambisgis-postgis",
+      "repository_id": 1376927690,
+      "root_id": "postgis"
+    },
+    {
+      "accepted_base_commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+      "changed_objects": [],
+      "changed_paths": [],
+      "commit_date": "2026-08-28T14:08:10+02:00",
+      "license_observations": [
+        {
+          "blob": "8e2daf6bc046673223b197d859fa9609255ef13c",
+          "path": "COPYING",
+          "sha256": "dba313854f65a8d41b1777cf9d6cb5ddf692792be04d808b82c86c63909fbdf0"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+        "exit_code": 0,
+        "object_count": 0,
+        "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/qgis-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+      "proposed_tree": "c8542e82e3c3810950f32ce8d58a16bfed12e6c8",
+      "public_base_ancestry": null,
+      "public_exact_base_refs": [
+        {
+          "ref": "refs/tags/final-3_44_14^{}",
+          "sha": "1a4cda5f2620e7374e5926fc955a7d2d06493e15"
+        }
+      ],
+      "repository": "aloerch/ambisgis-qgis",
+      "repository_id": 1376927721,
+      "root_id": "qgis"
+    },
+    {
+      "accepted_base_commit": "3e516c6f382b481e815ec455befb2f14d80d337b",
+      "changed_objects": [
+        ":100644 100644 657484c68ec21c7c71dc074dd4c16faa53f64e20 adbb4b148a2887b7a3c9b912440e7b42e37f97de M\tMANIFEST.in"
+      ],
+      "changed_paths": [
+        "M\tMANIFEST.in"
+      ],
+      "commit_date": "2026-09-22T16:42:17-07:00",
+      "license_observations": [
+        {
+          "blob": "1cd53dfc5126cc8879ed7f2879fc71860c47553d",
+          "path": "LICENSE",
+          "sha256": "7069c7e8d60ec35d526ba72e1683c4509c0c961a1df0dd71d04b94d668dd03a3"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "3e516c6f382b481e815ec455befb2f14d80d337b",
+        "exit_code": 0,
+        "object_count": 3,
+        "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+        "sha256": "9e05a8ebc3e4b6ad956a43487536c3458cb9800155bbc18aec872f943e620c60",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/jupyterhub-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+      "proposed_tree": "a9ab20c5ff0641870194d666fcd1516ee2f2d65e",
+      "public_base_ancestry": null,
+      "public_exact_base_refs": [
+        {
+          "ref": "refs/tags/6.0.1^{}",
+          "sha": "3e516c6f382b481e815ec455befb2f14d80d337b"
+        }
+      ],
+      "repository": "aloerch/ambisgis-jupyterhub",
+      "repository_id": 1376927753,
+      "root_id": "jupyterhub"
+    },
+    {
+      "accepted_base_commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+      "changed_objects": [],
+      "changed_paths": [],
+      "commit_date": "2026-08-10T18:47:37Z",
+      "license_observations": [
+        {
+          "blob": "c73604f78a1f673454bed59ed40c69cd34f6e3e0",
+          "path": "LICENSE",
+          "sha256": "9bbb1df45211dd858c7218430cd7b4642e2aa86ce86920198cf64fb91555d36f"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+        "exit_code": 0,
+        "object_count": 0,
+        "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/jupyterlab-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+      "proposed_tree": "0edadc56fb04f944097c0658a9a51686ba68bd16",
+      "public_base_ancestry": null,
+      "public_exact_base_refs": [
+        {
+          "ref": "refs/tags/@jupyterlab/application-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/application@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/apputils-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/apputils@4.7.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/attachments@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/audio-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/buildutils@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/cell-toolbar-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/cell-toolbar@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/cells@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/celltags-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/codeeditor@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/codemirror-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/codemirror@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/completer-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/completer@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/console-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/console@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/core-meta@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/coreutils@6.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/csvviewer-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/csvviewer@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/debugger-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/debugger@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/docmanager-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/docmanager@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/docregistry@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/documentsearch-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/documentsearch@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/extensionmanager-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/extensionmanager@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/filebrowser-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/filebrowser@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/fileeditor-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/fileeditor@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/galata@5.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/help-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/htmlviewer-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/htmlviewer@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/hub-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/imageviewer-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/imageviewer@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/inspector-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/inspector@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/javascript-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/json-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/launcher-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/launcher@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/logconsole-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/logconsole@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/lsp-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/lsp@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/mainmenu-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/mainmenu@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/markdownviewer-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/markdownviewer@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/markedparser-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/mathjax-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/mermaid-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/mermaid@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/metadataform-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/metadataform@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/metapackage@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/nbconvert-css@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/nbformat@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/notebook-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/notebook@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/observables@5.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/outputarea@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/pdf-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/pluginmanager-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/pluginmanager@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/property-inspector@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/rendermime-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/rendermime-interfaces@3.14.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/rendermime@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/running-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/running@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/services-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/services@7.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/settingeditor-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/settingeditor@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/settingregistry@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/shortcuts-extension@5.4.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/statedb@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/statusbar-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/statusbar@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/template@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/terminal-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/terminal@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/testing@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/testutils@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/theme-dark-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/theme-dark-high-contrast-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/theme-light-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/toc-extension@6.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/toc@6.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/tooltip-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/tooltip@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/translation-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/translation@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/ui-components-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/ui-components@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/vega5-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/video-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/workspaces-extension@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/@jupyterlab/workspaces@4.6.3",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        },
+        {
+          "ref": "refs/tags/v4.6.3^{}",
+          "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2"
+        }
+      ],
+      "repository": "aloerch/ambisgis-jupyterlab",
+      "repository_id": 1376927783,
+      "root_id": "jupyterlab"
+    },
+    {
+      "accepted_base_commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+      "changed_objects": [
+        ":100644 100644 539716e0bcf8f1f6d0fc49e969decf439b429851 f6e454a420d20ca201cbd27d23200c342beee655 M\tbuild/maven/xmlcodegen/pom.xml",
+        ":100644 100644 1943c1721d9c756abc7db0b204d325218478f737 ea80b3e4578df9f2db8348ece5d851b10c24d9b0 M\tmodules/plugin/imagemosaic/pom.xml"
+      ],
+      "changed_paths": [
+        "M\tbuild/maven/xmlcodegen/pom.xml",
+        "M\tmodules/plugin/imagemosaic/pom.xml"
+      ],
+      "commit_date": "2026-09-22T16:42:17-07:00",
+      "license_observations": [
+        {
+          "blob": "d55f6088e5e96fe5933ad3ac1025f32c9055d01f",
+          "path": "LICENSE.md",
+          "sha256": "994ce1902a23c74519b5d118c6bbb657edabce91dd6b7cc825d86bb8f5c9780f"
+        },
+        {
+          "blob": "7956aa1a21fd3df6fc693aa5471b844200b08a58",
+          "path": "pom.xml",
+          "sha256": "ddf143651bfc688a5ac825a5a18b37ccd70f9c517305c0754e4e15c42f9b0950"
+        },
+        {
+          "blob": "5c7f910ef1705f364b72d9f407ce4dd374082c01",
+          "path": "docs/user/welcome/license.rst",
+          "sha256": "cf7333de1ea0745abb89dff356c54bfcebbd1bed11d5ec3ff0e8cc6ac3b7d92c"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+        "exit_code": 0,
+        "object_count": 10,
+        "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+        "sha256": "8058c14b623a8ca905b050b6fea16926de4a415ff0992a723f88499f1cac5ec0",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/geotools-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "f51fa68803c465f28a85c155e3e951df0d8788f7",
+      "proposed_tree": "60750f787dabf1a08e646e7d5f3f1497e560e94e",
+      "public_base_ancestry": null,
+      "public_exact_base_refs": [
+        {
+          "ref": "refs/tags/34.5",
+          "sha": "aac73e9b89821331e77f67f1dd0921e541a78cfc"
+        }
+      ],
+      "repository": "aloerch/ambisgis-geotools",
+      "repository_id": 1376927869,
+      "root_id": "geotools"
+    },
+    {
+      "accepted_base_commit": "59640420454b73f1e04e8409cc6ed43f4b24fed2",
+      "changed_objects": [
+        ":100644 100644 0146f515bf20924ba1c434d7376828709b5efe0f df9c333e8c4a2c7c62e9ae8c5f08ed0d20aec39e M\tgeowebcache/diskquota/jdbc/pom.xml"
+      ],
+      "changed_paths": [
+        "M\tgeowebcache/diskquota/jdbc/pom.xml"
+      ],
+      "commit_date": "2026-09-22T16:42:17-07:00",
+      "license_observations": [
+        {
+          "blob": "fc8a5de7edf437cdc98a216370faf7c757279bcb",
+          "path": "geowebcache/LICENSE.txt",
+          "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "59640420454b73f1e04e8409cc6ed43f4b24fed2",
+        "exit_code": 0,
+        "object_count": 6,
+        "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+        "sha256": "eca689a4cc4363c9975deb93363e9051b06ab71d3e02352942b6e4a720284224",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/geowebcache-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+      "proposed_tree": "8df655d13b9955776fe1532dfb27fac64612a772",
+      "public_base_ancestry": null,
+      "public_exact_base_refs": [
+        {
+          "ref": "refs/tags/1.28.5",
+          "sha": "59640420454b73f1e04e8409cc6ed43f4b24fed2"
+        }
+      ],
+      "repository": "aloerch/ambisgis-geowebcache",
+      "repository_id": 1376927892,
+      "root_id": "geowebcache"
+    },
+    {
+      "accepted_base_commit": "e0673323400321c0f3409fbae68b4871dc328d8a",
+      "changed_objects": [
+        ":100644 100644 43e61cbc2dc98c46971efc2eaa7b07f5077b5b45 71d2dfa39a1152508add256e2ae26b0e19e8322c M\tsrc/community/security/oauth2-geonode/src/main/java/org/geoserver/security/oauth2/services/GeoNodeTokenServices.java",
+        ":100644 100644 d27e7e544aaab757bdddda1bc84b889830cfadf1 54f6c62687aed151f97d356112591f9c3ba7c987 M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.java",
+        ":100644 100644 297d9652015958262533229cde1c83c8ca31574b ccbfab07f32658bcdc049d6d6d5fc872aa217111 M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.java",
+        ":100644 100644 5ae117825ea940b3f211c4f85dbd570f8be93360 96cca344bfcba24f6fa258673ba5380aee2bd9cc M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthRemoteTokenServices.java",
+        ":100644 100644 434e3e0a50f1339258272fe022dd381249e05fb5 068f5ddcae4b53de87fcedeb608823aac8cd21a6 M\tsrc/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleService.java",
+        ":100644 100644 f17baef4537f7cf26d234d1ce19fcf30a4865d89 15bc2fb7c5c35902f34b6ea4d46220dbd6c01ee7 M\tsrc/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleServiceConfig.java",
+        ":100644 100644 b388b9926694934cd1be58a3d15c7478e9333b1c d3eaf534e289415ed77d0e63aa2f9f6daec73a88 M\tsrc/extension/importer/core/pom.xml",
+        ":100644 100644 b4baf9969406e346bc7c0cf1b4cd9bc581ee8eea 35ee0951c841c1c6d4d8a09ab9852fe1c894adc8 M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/ImportTaskController.java",
+        ":100644 100644 2b3f5c172c57427131f1667c760d5ce32ba83abb f75e529963fcbbabaf9810bb6f4125ab6b79e437 M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportContextJSONMessageConverter.java",
+        ":100644 100644 3da7f912aad3710c49f8ea1c0386fa41da336224 66cae04c83646c57c9f72faec91172e5e2102364 M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportDataJSONMessageConverter.java",
+        ":100644 100644 8484514f009c86bdf37bc7e43943d208d64fde6f d53d0153df8dda2a5dfe929c3bda7de2f58ef649 M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportLayerJSONMessageConverter.java",
+        ":100644 100644 34e2c62a9b307fe5dc86f7d701687e227654f21a e9f730b3746240974be2d29a144599caa99705a4 M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportTaskJSONMessageConverter.java",
+        ":100644 100644 24553325778fbb8b6c23d49819e9cf4a8d114fbc 2e901fd4c317d5b322e0cc6990f36808680879b5 M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportTransformJSONMessageConverter.java",
+        ":100644 100644 dea212448ebb2d67a9e6cc80b739e8d098806720 2b1e85c19218e0cf40654b18b77fba2e96bb08f2 M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/TransformChainJSONMessageConverter.java",
+        ":100644 100644 9ff6a0f5cde48f295d9d5d3a3ef54739c09ed6b6 4adf6162d5048f5837a9bcae500137f4a81157ea M\tsrc/extension/importer/web/pom.xml",
+        ":100644 100644 d42f94897f6040b7a8cd29546ea5d893b49f143e 69a533f576efd506cb8a6ecd43130e336e68bcc4 M\tsrc/extension/importer/web/src/main/java/org/geoserver/importer/web/ImportDataPage.java",
+        ":000000 100644 0000000000000000000000000000000000000000 a7f002e18e8459e247c8c9069d509a05970ced8c A\tsrc/main/src/main/java/org/geoserver/filters/NoJpeg2000Filter.java",
+        ":000000 100644 0000000000000000000000000000000000000000 c3e606d09a16f76ff40fba8bd460c6adb0d6f704 A\tsrc/main/src/main/java/org/geoserver/filters/NoJpeg2000Policy.java",
+        ":100644 100644 cd94f019997aefcb0d605c56a6bc171bdb017712 4815347aa410e0dc994cd00d148c6f735c182a30 M\tsrc/main/src/main/java/org/geoserver/security/auth/GuavaAuthenticationCacheImpl.java",
+        ":100644 100644 b0160fec3f5ac5e7c350dd3ed8f0e35866c6b4df 8707fa3702a1d4ea780553b0f401b50a5e400021 M\tsrc/restconfig/src/main/java/org/geoserver/rest/catalog/CoverageStoreFileValidator.java",
+        ":100644 100644 642a781d1acf93bea4b1bf6c1412bac9a61ddf25 cbbe6b1573e4cdba5fb2a66d7a8c4655296f7010 M\tsrc/web/app/src/main/webapp/WEB-INF/web.xml"
+      ],
+      "changed_paths": [
+        "M\tsrc/community/security/oauth2-geonode/src/main/java/org/geoserver/security/oauth2/services/GeoNodeTokenServices.java",
+        "M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.java",
+        "M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.java",
+        "M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthRemoteTokenServices.java",
+        "M\tsrc/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleService.java",
+        "M\tsrc/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleServiceConfig.java",
+        "M\tsrc/extension/importer/core/pom.xml",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/ImportTaskController.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportContextJSONMessageConverter.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportDataJSONMessageConverter.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportLayerJSONMessageConverter.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportTaskJSONMessageConverter.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportTransformJSONMessageConverter.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/TransformChainJSONMessageConverter.java",
+        "M\tsrc/extension/importer/web/pom.xml",
+        "M\tsrc/extension/importer/web/src/main/java/org/geoserver/importer/web/ImportDataPage.java",
+        "A\tsrc/main/src/main/java/org/geoserver/filters/NoJpeg2000Filter.java",
+        "A\tsrc/main/src/main/java/org/geoserver/filters/NoJpeg2000Policy.java",
+        "M\tsrc/main/src/main/java/org/geoserver/security/auth/GuavaAuthenticationCacheImpl.java",
+        "M\tsrc/restconfig/src/main/java/org/geoserver/rest/catalog/CoverageStoreFileValidator.java",
+        "M\tsrc/web/app/src/main/webapp/WEB-INF/web.xml"
+      ],
+      "commit_date": "2026-09-22T16:42:17-07:00",
+      "license_observations": [
+        {
+          "blob": "d24ab175a0543da078ef56ca7a4283ec61743225",
+          "path": "LICENSE.md",
+          "sha256": "6681935183785ff6e95f184ff4f490fa5167c22ab0b4a64f8352a959842b24b8"
+        },
+        {
+          "blob": "90ae12017c9656645386f404e89506593dd31d32",
+          "path": "licenses/GPL.md",
+          "sha256": "e7ea3adeab955103a837b692ca0017cb3abbed0d3dccbfa499d6b2b825d698c3"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "e0673323400321c0f3409fbae68b4871dc328d8a",
+        "exit_code": 0,
+        "object_count": 94,
+        "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+        "sha256": "c827e87a3f0e1cf876f623cfdb78282aedfe9aa7224f18775190018752048ec3",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/geoserver-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "fd2fe1dfcc78fa974bdb81673872879336312077",
+      "proposed_tree": "c12018e88493a351c60c370f2a43894701acf995",
+      "public_base_ancestry": null,
+      "public_exact_base_refs": [
+        {
+          "ref": "refs/heads/2.28.5.x",
+          "sha": "e0673323400321c0f3409fbae68b4871dc328d8a"
+        },
+        {
+          "ref": "refs/tags/2.28.5",
+          "sha": "e0673323400321c0f3409fbae68b4871dc328d8a"
+        }
+      ],
+      "repository": "aloerch/ambisgis-geoserver",
+      "repository_id": 1376927947,
+      "root_id": "geoserver"
+    },
+    {
+      "accepted_base_commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+      "changed_objects": [
+        ":000000 100644 0000000000000000000000000000000000000000 6155973a2eeef349ab8c83a05326ca249ec6cfbb A\tgeonode/api/backend_roles.py",
+        ":000000 100644 0000000000000000000000000000000000000000 b8e554a218981eceec089b0e03326ac714545410 A\tgeonode/api/backend_tokeninfo.py",
+        ":000000 100644 0000000000000000000000000000000000000000 4d83c73b2cc7f75e3f03a84d855d26b6c578549f A\tgeonode/api/test_backend_roles.py",
+        ":000000 100644 0000000000000000000000000000000000000000 fbeaddd3a97f58181966acff8f4c2a626e653c1b A\tgeonode/api/test_backend_tokeninfo.py",
+        ":100644 100644 e29d3605010d74e68386bca4c78ddf034de3676a 5dcd4dcc0d6e8a9532695cc11fea112ec6f956e9 M\tgeonode/api/views.py",
+        ":100644 100644 38a1296dfc9596a4644cd392ca84fedb77d02a6e 88c0408d0a4f7eb22efdcae1efaf23d577192da5 M\tgeonode/security/middleware.py",
+        ":100644 100644 ead2bc9cf6ce0dfc11d2803cbb4cfd8c3c22af93 8cf847c03e9130eba3337d084027848bf8581caa M\tgeonode/settings.py",
+        ":100644 100644 d87df1a9f333006c2625fb2025224ed4b73f7719 2f006c737822d526afae6cb6645dc5e61b4525af M\tpyproject.toml"
+      ],
+      "changed_paths": [
+        "A\tgeonode/api/backend_roles.py",
+        "A\tgeonode/api/backend_tokeninfo.py",
+        "A\tgeonode/api/test_backend_roles.py",
+        "A\tgeonode/api/test_backend_tokeninfo.py",
+        "M\tgeonode/api/views.py",
+        "M\tgeonode/security/middleware.py",
+        "M\tgeonode/settings.py",
+        "M\tpyproject.toml"
+      ],
+      "commit_date": "2026-09-22T16:42:17-07:00",
+      "license_observations": [
+        {
+          "blob": "6c1d884a15799e997ab66b822b70c0f92cc2ce54",
+          "path": "LICENSE",
+          "sha256": "90ef058cd188d1fbf4a2337f4e2bf4671236aa5eaf435432d7c40b498f032edf"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9",
+        "exit_code": 0,
+        "object_count": 13,
+        "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+        "sha256": "9849361282a40d977e70d4ad36633d52006f0d8bec08f38d64c312ca621f5075",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/geonode-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+      "proposed_tree": "f8fda01733dae258e319df14f42677cf3bd83e20",
+      "public_base_ancestry": null,
+      "public_exact_base_refs": [
+        {
+          "ref": "refs/tags/5.1.0",
+          "sha": "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9"
+        }
+      ],
+      "repository": "aloerch/ambisgis-geonode",
+      "repository_id": 1376927978,
+      "root_id": "geonode"
+    },
+    {
+      "accepted_base_commit": "7ca4822125b67999c97cb4aa1faa84b8a28eee9b",
+      "changed_objects": [
+        ":160000 160000 0f3518737f29f4049b131247ce981e94519d9ab0 88064efbf20ef0aaffebe357f7a99a1ab4fb23b8 M\tgeonode_mapstore_client/client/MapStore2",
+        ":100644 100644 64b7e62b5ed4812c384631bff988c7ce9d0cd845 ab1441969810e9004e9710cb060a1b67d726bbea M\tgeonode_mapstore_client/client/package.json"
+      ],
+      "changed_paths": [
+        "M\tgeonode_mapstore_client/client/MapStore2",
+        "M\tgeonode_mapstore_client/client/package.json"
+      ],
+      "commit_date": "2026-09-22T16:42:30-07:00",
+      "license_observations": [
+        {
+          "blob": "d383fa83cba58726dd59ce3145df56b3e4b5deaa",
+          "path": "LICENSE",
+          "sha256": "92cd28cdfe6f432e4a43bb9855feb2e020771f2f7d6de72e68d1f41a0c9d48d6"
+        },
+        {
+          "blob": "9dbc979044907dd346953b5bee8fbce951d71673",
+          "path": ".gitmodules",
+          "sha256": "1b74c6a24302200072e14208812711509fe7db43e947a88f85cf27f8466b0052"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "7ca4822125b67999c97cb4aa1faa84b8a28eee9b",
+        "exit_code": 0,
+        "object_count": 5,
+        "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+        "sha256": "9d2455c4eedaa5932493106b72bd7753141148e763e9f080251bd5f721ad035f",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/mapstore-client-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+      "proposed_tree": "8055ca37333ee3037f63624f2e1d6ee548d416f1",
+      "public_base_ancestry": null,
+      "public_exact_base_refs": [
+        {
+          "ref": "refs/tags/5.1.0^{}",
+          "sha": "7ca4822125b67999c97cb4aa1faa84b8a28eee9b"
+        }
+      ],
+      "repository": "aloerch/ambisgis-mapstore-client",
+      "repository_id": 1376928013,
+      "root_id": "mapstore-client"
+    },
+    {
+      "accepted_base_commit": "0f3518737f29f4049b131247ce981e94519d9ab0",
+      "changed_objects": [
+        ":100644 100644 4493e5494bcb0707419788fae96018500a7b38c1 5ea2889c19c11220c722b353281d0ee265ff9424 M\tpackage.json"
+      ],
+      "changed_paths": [
+        "M\tpackage.json"
+      ],
+      "commit_date": "2026-09-22T16:42:17-07:00",
+      "license_observations": [
+        {
+          "blob": "31b15b949d3e91fae5bb8ab8d8718a2241e0e934",
+          "path": "LICENSE.txt",
+          "sha256": "11fa1f48ecca52099e110ac43793a3a8ac3a9970dea4cb3bcdcbef0c127a672b"
+        }
+      ],
+      "newly_reachable_upper_bound": {
+        "excluded_proved_public_commit": "fd27bdd4fa6c33b4555bc740fcff61917fe2bef6",
+        "exit_code": 0,
+        "object_count": 3,
+        "scope": "Upper bound relative to proved public branch, not claim that other advertised refs lack these objects.",
+        "sha256": "06ee27ba3d6483efdc012e22a38c3a5ab841f49460e0e19159c0eb3cc2dc2829",
+        "stderr": "",
+        "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/mapstore-newly-reachable-upper-bound.txt"
+      },
+      "proposed_commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+      "proposed_tree": "11b6eb8616b90c72570c4f3aad82212b52f1cdbe",
+      "public_base_ancestry": {
+        "meaning": "Approved base is already reachable from this currently advertised public owned-fork branch, although not from the default.",
+        "observation_source": "build-worktrees/source-ref-promotion/run-001/preflight/mapstore-advertised-refs.txt",
+        "public_commit": "fd27bdd4fa6c33b4555bc740fcff61917fe2bef6",
+        "public_ref": "refs/heads/geonode-5.1.x",
+        "verification": {
+          "exit_code": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      },
+      "public_exact_base_refs": [],
+      "repository": "aloerch/ambisgis-mapstore",
+      "repository_id": 1376928043,
+      "root_id": "mapstore"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Bounded exact-source publication facts and original notices; no full-platform license clearance.",
+  "source_delivery_dependencies": {
+    "geoserver": {
+      "changed_POM_XML_diff_sha256": "8ded24cf355a65be349418e8e9dfd583d4f34d01a87268cbd71f728e0a207aee",
+      "disposition": "Independent source-root Git publication is supportable; the complete platform composition still depends on retained GeoTools source and its unresolved public-ref delivery. This does not claim a buildable standalone GeoServer branch or complete eleven-root FND-07 delivery.",
+      "exact_held_geotools_commit_reference_search": {
+        "exit_code": 1,
+        "matches": [],
+        "value": "f51fa68803c465f28a85c155e3e951df0d8788f7"
+      },
+      "gitlink_count": 0,
+      "observed_changes": "Importer core POM removes gt-jdbc-oracle; importer web POM excludes OraclePanel compilation; web.xml installs NO-JPEG2000 filter. No new Git child or owned GeoTools commit/ref is introduced.",
+      "proposed_commit": "fd2fe1dfcc78fa974bdb81673872879336312077"
+    },
+    "mapstore-client": {
+      "gate": "Publish and verify child before parent.",
+      "gitlink_path": "geonode_mapstore_client/client/MapStore2",
+      "required_child_commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+      "required_published_child_repository": "aloerch/ambisgis-mapstore"
+    }
+  }
+}
