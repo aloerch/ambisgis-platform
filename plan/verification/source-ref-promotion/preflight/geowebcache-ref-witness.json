@@ -1,0 +1,31 @@
+{
+  "accepted_base_commit": "59640420454b73f1e04e8409cc6ed43f4b24fed2",
+  "accepted_base_public_ancestry": null,
+  "accepted_base_public_exact_refs": [
+    {
+      "ref": "refs/tags/1.28.5",
+      "sha": "59640420454b73f1e04e8409cc6ed43f4b24fed2"
+    }
+  ],
+  "advertised_inventory": {
+    "exit_code": 0,
+    "heads": 80,
+    "line_count": 362,
+    "sha256": "ab76ce4090b3270f81ec2c8156ec7f87a1dcd7c36d22e005d63c304f620f768d",
+    "stderr": "",
+    "tags_including_peeled": 282,
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/geowebcache-advertised-refs.txt"
+  },
+  "newly_reachable_upper_bound": {
+    "excluded_proved_public_commit": "59640420454b73f1e04e8409cc6ed43f4b24fed2",
+    "exit_code": 0,
+    "object_count": 6,
+    "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+    "sha256": "eca689a4cc4363c9975deb93363e9051b06ab71d3e02352942b6e4a720284224",
+    "stderr": "",
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/geowebcache-newly-reachable-upper-bound.txt"
+  },
+  "observed_at": "2026-09-26T22:14:39.291797+00:00",
+  "repository": "aloerch/ambisgis-geowebcache",
+  "root_id": "geowebcache"
+}

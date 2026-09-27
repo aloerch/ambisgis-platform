@@ -1,0 +1,39 @@
+{
+  "verified_observed_at": "2026-09-26T22:23:13.055947+00:00",
+  "argv": [
+    "python3",
+    "tools/restore_sources.py",
+    "--workspace-root",
+    "/home/revelberry/Projects/AmbisGIS",
+    "--verify",
+    "--run",
+    "run-002",
+    "--receipt-sha256",
+    "11bd0ba5f1662606b2d8ac604d469c2d3d02c1d73b0a1540d648856cdc2343f0"
+  ],
+  "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source-promotion/plan",
+  "python": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+  "exit_code": 0,
+  "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-ref-promotion/run-001/recovery-verify.txt",
+  "log_sha256": "240eb379dee4629ba7357f349d6006f51920cf8c0ea699f04aa7e3cf52331b5e",
+  "tool_sha256": "77ef1a58c7494e02d5432fb1d38561af2afbbf1d6aaa18afb0975615ce091176",
+  "result": {
+    "verified": true,
+    "roots": 11,
+    "candidate_sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+    "scope": "Bounded T-OWN-01 source recovery; no compilation, full FND-07 acceptance, FND-08, distribution or release.",
+    "remaining_blockers": [
+      "Remote product-source branch delivery and workflow review need separate owner approval.",
+      "Human FND-07 source/provenance review remains pending."
+    ],
+    "historical_metadata_corrections": [
+      {
+        "record": "plan/verification/source-baseline-restore/qgis-receipt-correction.json",
+        "sha256": "70d292a596f2ef3da679c6b0e68b1f7166a70b8c807c2b355f1cf23931cf894b",
+        "source_bytes_match_accepted_input": true,
+        "historical_receipts_unchanged": true
+      }
+    ]
+  },
+  "scope": "Fresh read-only verification of trusted run002; no repeated complete recovery or GIS compilation. Remaining-blocker strings in historical receipt are preserved, current authorization and publication tracked separately."
+}

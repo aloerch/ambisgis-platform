@@ -1,0 +1,1682 @@
+{
+  "authenticated_owner": {
+    "data": {
+      "id": 15285626,
+      "login": "aloerch",
+      "node_id": "MDQ6VXNlcjE1Mjg1NjI2",
+      "type": "User"
+    },
+    "endpoint": "user",
+    "exit_code": 0,
+    "observed_at": "2026-09-26T22:36:47.776591+00:00",
+    "stderr": ""
+  },
+  "completed_at": "2026-09-26T22:36:59.556480+00:00",
+  "kind": "independent-read-only-post-promotion-verification",
+  "limitations": [
+    "Observed Actions runs, repository hooks and current default/review check apps/statuses do not enumerate unexposed GitHub App subscriptions.",
+    "Canonical refs are observed only; their promotion remains a separate unexecuted decision."
+  ],
+  "plan_sha256": "a9477bbdcab4f85fad69cbf77ed04ed76de92efd63d3d663054bda34e4b573a6",
+  "remote_mutation_count": 0,
+  "repositories": [
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgresql/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.628975+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgresql/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.874519+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgresql/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:48.719276+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "commit_tree_readback": {
+        "commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+        "endpoint": "repos/aloerch/ambisgis-postgresql/git/commits/2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.324072+00:00",
+        "stderr": "",
+        "tree": "598df31816bda464f5b904c0badbcb25bafcc4f1"
+      },
+      "commit_tree_verified": true,
+      "completed_at": "2026-09-26T22:36:51.755370+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhI_nLFyZWZzL2hlYWRzL21hc3Rlcg",
+          "object": {
+            "sha": "c62b330912e2095dc8dee2f749adf7e5d94ca611",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-postgresql/git/commits/c62b330912e2095dc8dee2f749adf7e5d94ca611"
+          },
+          "ref": "refs/heads/master",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-postgresql/git/refs/heads/master"
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgresql/git/ref/heads/master",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.070319+00:00",
+        "ref": "refs/heads/master",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376927644,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "master",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-postgresql",
+          "id": 1376927644,
+          "node_id": "R_kgDOUhI_nA",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgresql",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:48.147034+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-postgresql/commits/2ff1375b5dd8bf09d8cb0e795974528180fd75ca/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:50.771043+00:00",
+            "stderr": ""
+          },
+          "commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-postgresql/commits/2ff1375b5dd8bf09d8cb0e795974528180fd75ca/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:51.045675+00:00",
+            "stderr": ""
+          }
+        },
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-postgresql/commits/c62b330912e2095dc8dee2f749adf7e5d94ca611/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:51.382643+00:00",
+            "stderr": ""
+          },
+          "commit": "c62b330912e2095dc8dee2f749adf7e5d94ca611",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-postgresql/commits/c62b330912e2095dc8dee2f749adf7e5d94ca611/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:51.755333+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "proposed_tree": "598df31816bda464f5b904c0badbcb25bafcc4f1",
+      "repository": "aloerch/ambisgis-postgresql",
+      "root_id": "postgresql",
+      "started_at": "2026-09-26T22:36:47.777963+00:00",
+      "target": {
+        "classification": "exact",
+        "data": {
+          "node_id": "REF_kwDOUhI_nNoALXJlZnMvaGVhZHMvYW1iaXNnaXMvcmV2aWV3L2ZuZC0wNy1iYXNlbGluZS12NA",
+          "object": {
+            "sha": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-postgresql/git/commits/2ff1375b5dd8bf09d8cb0e795974528180fd75ca"
+          },
+          "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-postgresql/git/refs/heads/ambisgis/review/fnd-07-baseline-v4"
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgresql/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:48.442484+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": ""
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-postgresql/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:50.440339+00:00",
+        "stderr": ""
+      }
+    },
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgis/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.514981+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgis/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.778580+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgis/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:48.665398+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "commit_tree_readback": {
+        "commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+        "endpoint": "repos/aloerch/ambisgis-postgis/git/commits/9816f82458db774e62906cfb2c4f01f8b262c862",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.248068+00:00",
+        "stderr": "",
+        "tree": "ee927efacdc5a00d698cab2da047ad2232d1f579"
+      },
+      "commit_tree_verified": true,
+      "completed_at": "2026-09-26T22:36:51.226587+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhI_yrFyZWZzL2hlYWRzL21hc3Rlcg",
+          "object": {
+            "sha": "84890ccbe53549130de8a2b75a72ab3a54b570d1",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-postgis/git/commits/84890ccbe53549130de8a2b75a72ab3a54b570d1"
+          },
+          "ref": "refs/heads/master",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-postgis/git/refs/heads/master"
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgis/git/ref/heads/master",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:48.987836+00:00",
+        "ref": "refs/heads/master",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376927690,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "master",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-postgis",
+          "id": 1376927690,
+          "node_id": "R_kgDOUhI_yg",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgis",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:48.130827+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-postgis/commits/84890ccbe53549130de8a2b75a72ab3a54b570d1/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:50.354566+00:00",
+            "stderr": ""
+          },
+          "commit": "84890ccbe53549130de8a2b75a72ab3a54b570d1",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-postgis/commits/84890ccbe53549130de8a2b75a72ab3a54b570d1/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:50.640215+00:00",
+            "stderr": ""
+          }
+        },
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-postgis/commits/9816f82458db774e62906cfb2c4f01f8b262c862/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:50.939279+00:00",
+            "stderr": ""
+          },
+          "commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-postgis/commits/9816f82458db774e62906cfb2c4f01f8b262c862/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:51.226552+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+      "proposed_tree": "ee927efacdc5a00d698cab2da047ad2232d1f579",
+      "repository": "aloerch/ambisgis-postgis",
+      "root_id": "postgis",
+      "started_at": "2026-09-26T22:36:47.778137+00:00",
+      "target": {
+        "classification": "exact",
+        "data": {
+          "node_id": "REF_kwDOUhI_ytoALXJlZnMvaGVhZHMvYW1iaXNnaXMvcmV2aWV3L2ZuZC0wNy1iYXNlbGluZS12NA",
+          "object": {
+            "sha": "9816f82458db774e62906cfb2c4f01f8b262c862",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-postgis/git/commits/9816f82458db774e62906cfb2c4f01f8b262c862"
+          },
+          "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-postgis/git/refs/heads/ambisgis/review/fnd-07-baseline-v4"
+        },
+        "endpoint": "repos/aloerch/ambisgis-postgis/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:48.404369+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": ""
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-postgis/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:50.072231+00:00",
+        "stderr": ""
+      }
+    },
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-qgis/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.203390+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-qgis/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.445306+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-qgis/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:48.661732+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "completed_at": "2026-09-26T22:36:50.403521+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhI_6bFyZWZzL2hlYWRzL21hc3Rlcg",
+          "object": {
+            "sha": "09d73a2b827841320e798d1f18c84a4776dbd265",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-qgis/git/commits/09d73a2b827841320e798d1f18c84a4776dbd265"
+          },
+          "ref": "refs/heads/master",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-qgis/git/refs/heads/master"
+        },
+        "endpoint": "repos/aloerch/ambisgis-qgis/git/ref/heads/master",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:48.922874+00:00",
+        "ref": "refs/heads/master",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376927721,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "master",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-qgis",
+          "id": 1376927721,
+          "node_id": "R_kgDOUhI_6Q",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-qgis",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:48.136264+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-qgis/commits/09d73a2b827841320e798d1f18c84a4776dbd265/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:50.099434+00:00",
+            "stderr": ""
+          },
+          "commit": "09d73a2b827841320e798d1f18c84a4776dbd265",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-qgis/commits/09d73a2b827841320e798d1f18c84a4776dbd265/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:50.403492+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+      "proposed_tree": "c8542e82e3c3810950f32ce8d58a16bfed12e6c8",
+      "repository": "aloerch/ambisgis-qgis",
+      "root_id": "qgis",
+      "started_at": "2026-09-26T22:36:47.778510+00:00",
+      "target": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-qgis/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:48.390582+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-qgis/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.794001+00:00",
+        "stderr": ""
+      }
+    },
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterhub/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.467903+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterhub/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.721221+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterhub/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:48.667067+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "commit_tree_readback": {
+        "commit": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+        "endpoint": "repos/aloerch/ambisgis-jupyterhub/git/commits/129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.191252+00:00",
+        "stderr": "",
+        "tree": "a9ab20c5ff0641870194d666fcd1516ee2f2d65e"
+      },
+      "commit_tree_verified": true,
+      "completed_at": "2026-09-26T22:36:51.168299+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhJACa9yZWZzL2hlYWRzL21haW4",
+          "object": {
+            "sha": "929ef417d1e337a17a5e3ebfdd0e0143b021f91d",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-jupyterhub/git/commits/929ef417d1e337a17a5e3ebfdd0e0143b021f91d"
+          },
+          "ref": "refs/heads/main",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-jupyterhub/git/refs/heads/main"
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterhub/git/ref/heads/main",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:48.929317+00:00",
+        "ref": "refs/heads/main",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376927753,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "main",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-jupyterhub",
+          "id": 1376927753,
+          "node_id": "R_kgDOUhJACQ",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterhub",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:48.131148+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-jupyterhub/commits/129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:50.311956+00:00",
+            "stderr": ""
+          },
+          "commit": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-jupyterhub/commits/129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:50.585573+00:00",
+            "stderr": ""
+          }
+        },
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-jupyterhub/commits/929ef417d1e337a17a5e3ebfdd0e0143b021f91d/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:50.882925+00:00",
+            "stderr": ""
+          },
+          "commit": "929ef417d1e337a17a5e3ebfdd0e0143b021f91d",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-jupyterhub/commits/929ef417d1e337a17a5e3ebfdd0e0143b021f91d/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:51.168271+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+      "proposed_tree": "a9ab20c5ff0641870194d666fcd1516ee2f2d65e",
+      "repository": "aloerch/ambisgis-jupyterhub",
+      "root_id": "jupyterhub",
+      "started_at": "2026-09-26T22:36:47.778640+00:00",
+      "target": {
+        "classification": "exact",
+        "data": {
+          "node_id": "REF_kwDOUhJACdoALXJlZnMvaGVhZHMvYW1iaXNnaXMvcmV2aWV3L2ZuZC0wNy1iYXNlbGluZS12NA",
+          "object": {
+            "sha": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-jupyterhub/git/commits/129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a"
+          },
+          "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-jupyterhub/git/refs/heads/ambisgis/review/fnd-07-baseline-v4"
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterhub/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:48.388964+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": ""
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-jupyterhub/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:49.987730+00:00",
+        "stderr": ""
+      }
+    },
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterlab/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:52.298836+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterlab/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:52.749488+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterlab/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:51.267104+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "commit_tree_readback": {
+        "commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+        "endpoint": "repos/aloerch/ambisgis-jupyterlab/git/commits/e7255a9334c12ad8f9cb15db27584215fab5ece2",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:51.848071+00:00",
+        "stderr": "",
+        "tree": "0edadc56fb04f944097c0658a9a51686ba68bd16"
+      },
+      "commit_tree_verified": true,
+      "completed_at": "2026-09-26T22:36:54.823715+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhJAJ69yZWZzL2hlYWRzL21haW4",
+          "object": {
+            "sha": "5ad633d6747371452c2f5fe465d18a70b8f3195d",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-jupyterlab/git/commits/5ad633d6747371452c2f5fe465d18a70b8f3195d"
+          },
+          "ref": "refs/heads/main",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-jupyterlab/git/refs/heads/main"
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterlab/git/ref/heads/main",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:51.588793+00:00",
+        "ref": "refs/heads/main",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376927783,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "main",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-jupyterlab",
+          "id": 1376927783,
+          "node_id": "R_kgDOUhJAJw",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterlab",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:50.724758+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-jupyterlab/commits/5ad633d6747371452c2f5fe465d18a70b8f3195d/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:53.634316+00:00",
+            "stderr": ""
+          },
+          "commit": "5ad633d6747371452c2f5fe465d18a70b8f3195d",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-jupyterlab/commits/5ad633d6747371452c2f5fe465d18a70b8f3195d/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:54.085038+00:00",
+            "stderr": ""
+          }
+        },
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-jupyterlab/commits/e7255a9334c12ad8f9cb15db27584215fab5ece2/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:54.510762+00:00",
+            "stderr": ""
+          },
+          "commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-jupyterlab/commits/e7255a9334c12ad8f9cb15db27584215fab5ece2/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:54.823701+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+      "proposed_tree": "0edadc56fb04f944097c0658a9a51686ba68bd16",
+      "repository": "aloerch/ambisgis-jupyterlab",
+      "root_id": "jupyterlab",
+      "started_at": "2026-09-26T22:36:50.403585+00:00",
+      "target": {
+        "classification": "exact",
+        "data": {
+          "node_id": "REF_kwDOUhJAJ9oALXJlZnMvaGVhZHMvYW1iaXNnaXMvcmV2aWV3L2ZuZC0wNy1iYXNlbGluZS12NA",
+          "object": {
+            "sha": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-jupyterlab/git/commits/e7255a9334c12ad8f9cb15db27584215fab5ece2"
+          },
+          "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-jupyterlab/git/refs/heads/ambisgis/review/fnd-07-baseline-v4"
+        },
+        "endpoint": "repos/aloerch/ambisgis-jupyterlab/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:51.011460+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": ""
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-jupyterlab/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:53.262146+00:00",
+        "stderr": ""
+      }
+    },
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-geotools/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:52.991425+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-geotools/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:53.441641+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geotools/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:52.199497+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "completed_at": "2026-09-26T22:36:54.616769+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhJAfa9yZWZzL2hlYWRzL21haW4",
+          "object": {
+            "sha": "9a4f847e8b83875169e279999659052a0cc2bf14",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-geotools/git/commits/9a4f847e8b83875169e279999659052a0cc2bf14"
+          },
+          "ref": "refs/heads/main",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-geotools/git/refs/heads/main"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geotools/git/ref/heads/main",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:52.633162+00:00",
+        "ref": "refs/heads/main",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376927869,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "main",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-geotools",
+          "id": 1376927869,
+          "node_id": "R_kgDOUhJAfQ",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geotools",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:51.560913+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geotools/commits/9a4f847e8b83875169e279999659052a0cc2bf14/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:54.236964+00:00",
+            "stderr": ""
+          },
+          "commit": "9a4f847e8b83875169e279999659052a0cc2bf14",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geotools/commits/9a4f847e8b83875169e279999659052a0cc2bf14/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:54.616743+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "f51fa68803c465f28a85c155e3e951df0d8788f7",
+      "proposed_tree": "60750f787dabf1a08e646e7d5f3f1497e560e94e",
+      "repository": "aloerch/ambisgis-geotools",
+      "root_id": "geotools",
+      "started_at": "2026-09-26T22:36:51.168372+00:00",
+      "target": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geotools/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:51.820808+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-geotools/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:53.809504+00:00",
+        "stderr": ""
+      }
+    },
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-geowebcache/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:53.647986+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-geowebcache/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:54.041308+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geowebcache/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:52.393851+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "commit_tree_readback": {
+        "commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+        "endpoint": "repos/aloerch/ambisgis-geowebcache/git/commits/b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:53.261942+00:00",
+        "stderr": "",
+        "tree": "8df655d13b9955776fe1532dfb27fac64612a772"
+      },
+      "commit_tree_verified": true,
+      "completed_at": "2026-09-26T22:36:55.729289+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhJAlK9yZWZzL2hlYWRzL21haW4",
+          "object": {
+            "sha": "821bae4793863555321cd7a935137c80b8eded73",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-geowebcache/git/commits/821bae4793863555321cd7a935137c80b8eded73"
+          },
+          "ref": "refs/heads/main",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-geowebcache/git/refs/heads/main"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geowebcache/git/ref/heads/main",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:52.806173+00:00",
+        "ref": "refs/heads/main",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376927892,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "main",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-geowebcache",
+          "id": 1376927892,
+          "node_id": "R_kgDOUhJAlA",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geowebcache",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:51.614610+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geowebcache/commits/821bae4793863555321cd7a935137c80b8eded73/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:54.723425+00:00",
+            "stderr": ""
+          },
+          "commit": "821bae4793863555321cd7a935137c80b8eded73",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geowebcache/commits/821bae4793863555321cd7a935137c80b8eded73/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:55.024393+00:00",
+            "stderr": ""
+          }
+        },
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geowebcache/commits/b4e9a30c8e2be00b9aa87fb17324efa8e489ac22/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:55.383299+00:00",
+            "stderr": ""
+          },
+          "commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geowebcache/commits/b4e9a30c8e2be00b9aa87fb17324efa8e489ac22/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:55.729264+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+      "proposed_tree": "8df655d13b9955776fe1532dfb27fac64612a772",
+      "repository": "aloerch/ambisgis-geowebcache",
+      "root_id": "geowebcache",
+      "started_at": "2026-09-26T22:36:51.226652+00:00",
+      "target": {
+        "classification": "exact",
+        "data": {
+          "node_id": "REF_kwDOUhJAlNoALXJlZnMvaGVhZHMvYW1iaXNnaXMvcmV2aWV3L2ZuZC0wNy1iYXNlbGluZS12NA",
+          "object": {
+            "sha": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-geowebcache/git/commits/b4e9a30c8e2be00b9aa87fb17324efa8e489ac22"
+          },
+          "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-geowebcache/git/refs/heads/ambisgis/review/fnd-07-baseline-v4"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geowebcache/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:51.874444+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": ""
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-geowebcache/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:54.317115+00:00",
+        "stderr": ""
+      }
+    },
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-geoserver/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:54.094452+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-geoserver/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:54.386941+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geoserver/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:52.844355+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "commit_tree_readback": {
+        "commit": "fd2fe1dfcc78fa974bdb81673872879336312077",
+        "endpoint": "repos/aloerch/ambisgis-geoserver/git/commits/fd2fe1dfcc78fa974bdb81673872879336312077",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:53.631700+00:00",
+        "stderr": "",
+        "tree": "c12018e88493a351c60c370f2a43894701acf995"
+      },
+      "commit_tree_verified": true,
+      "completed_at": "2026-09-26T22:36:56.084700+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhJAy69yZWZzL2hlYWRzL21haW4",
+          "object": {
+            "sha": "98c7c567a9fa3b691915fa2fc613d90d90d78b62",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-geoserver/git/commits/98c7c567a9fa3b691915fa2fc613d90d90d78b62"
+          },
+          "ref": "refs/heads/main",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-geoserver/git/refs/heads/main"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geoserver/git/ref/heads/main",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:53.266319+00:00",
+        "ref": "refs/heads/main",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376927947,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "main",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-geoserver",
+          "id": 1376927947,
+          "node_id": "R_kgDOUhJAyw",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geoserver",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:52.101852+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geoserver/commits/98c7c567a9fa3b691915fa2fc613d90d90d78b62/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:55.141445+00:00",
+            "stderr": ""
+          },
+          "commit": "98c7c567a9fa3b691915fa2fc613d90d90d78b62",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geoserver/commits/98c7c567a9fa3b691915fa2fc613d90d90d78b62/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:55.490883+00:00",
+            "stderr": ""
+          }
+        },
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geoserver/commits/fd2fe1dfcc78fa974bdb81673872879336312077/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:55.800845+00:00",
+            "stderr": ""
+          },
+          "commit": "fd2fe1dfcc78fa974bdb81673872879336312077",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geoserver/commits/fd2fe1dfcc78fa974bdb81673872879336312077/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:56.084683+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "fd2fe1dfcc78fa974bdb81673872879336312077",
+      "proposed_tree": "c12018e88493a351c60c370f2a43894701acf995",
+      "repository": "aloerch/ambisgis-geoserver",
+      "root_id": "geoserver",
+      "started_at": "2026-09-26T22:36:51.755468+00:00",
+      "target": {
+        "classification": "exact",
+        "data": {
+          "node_id": "REF_kwDOUhJAy9oALXJlZnMvaGVhZHMvYW1iaXNnaXMvcmV2aWV3L2ZuZC0wNy1iYXNlbGluZS12NA",
+          "object": {
+            "sha": "fd2fe1dfcc78fa974bdb81673872879336312077",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-geoserver/git/commits/fd2fe1dfcc78fa974bdb81673872879336312077"
+          },
+          "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-geoserver/git/refs/heads/ambisgis/review/fnd-07-baseline-v4"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geoserver/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:52.575162+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": ""
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-geoserver/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:54.807249+00:00",
+        "stderr": ""
+      }
+    },
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-geonode/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:56.500016+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-geonode/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:56.812136+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geonode/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:55.595290+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "commit_tree_readback": {
+        "commit": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+        "endpoint": "repos/aloerch/ambisgis-geonode/git/commits/2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:56.183673+00:00",
+        "stderr": "",
+        "tree": "f8fda01733dae258e319df14f42677cf3bd83e20"
+      },
+      "commit_tree_verified": true,
+      "completed_at": "2026-09-26T22:36:58.587464+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhJA6rFyZWZzL2hlYWRzL21hc3Rlcg",
+          "object": {
+            "sha": "ddfdc44cabf13931fb1d53d35809699d6e4766ae",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-geonode/git/commits/ddfdc44cabf13931fb1d53d35809699d6e4766ae"
+          },
+          "ref": "refs/heads/master",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-geonode/git/refs/heads/master"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geonode/git/ref/heads/master",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:55.890965+00:00",
+        "ref": "refs/heads/master",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376927978,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "master",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-geonode",
+          "id": 1376927978,
+          "node_id": "R_kgDOUhJA6g",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geonode",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:54.946244+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geonode/commits/2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:57.435973+00:00",
+            "stderr": ""
+          },
+          "commit": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geonode/commits/2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:57.861920+00:00",
+            "stderr": ""
+          }
+        },
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geonode/commits/ddfdc44cabf13931fb1d53d35809699d6e4766ae/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:58.319280+00:00",
+            "stderr": ""
+          },
+          "commit": "ddfdc44cabf13931fb1d53d35809699d6e4766ae",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-geonode/commits/ddfdc44cabf13931fb1d53d35809699d6e4766ae/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:58.587436+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+      "proposed_tree": "f8fda01733dae258e319df14f42677cf3bd83e20",
+      "repository": "aloerch/ambisgis-geonode",
+      "root_id": "geonode",
+      "started_at": "2026-09-26T22:36:54.616840+00:00",
+      "target": {
+        "classification": "exact",
+        "data": {
+          "node_id": "REF_kwDOUhJA6toALXJlZnMvaGVhZHMvYW1iaXNnaXMvcmV2aWV3L2ZuZC0wNy1iYXNlbGluZS12NA",
+          "object": {
+            "sha": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-geonode/git/commits/2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4"
+          },
+          "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-geonode/git/refs/heads/ambisgis/review/fnd-07-baseline-v4"
+        },
+        "endpoint": "repos/aloerch/ambisgis-geonode/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:55.226953+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": ""
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-geonode/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:57.127402+00:00",
+        "stderr": ""
+      }
+    },
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore-client/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:56.739043+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore-client/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:57.010212+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore-client/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:55.917818+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "commit_tree_readback": {
+        "commit": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+        "endpoint": "repos/aloerch/ambisgis-mapstore-client/git/commits/a0d3f434cea69dadc93d35e13bc969b844aceea1",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:56.465409+00:00",
+        "stderr": "",
+        "tree": "8055ca37333ee3037f63624f2e1d6ee548d416f1"
+      },
+      "commit_tree_verified": true,
+      "completed_at": "2026-09-26T22:36:58.771604+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhJBDbFyZWZzL2hlYWRzL21hc3Rlcg",
+          "object": {
+            "sha": "673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-mapstore-client/git/commits/673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7"
+          },
+          "ref": "refs/heads/master",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-mapstore-client/git/refs/heads/master"
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore-client/git/ref/heads/master",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:56.191182+00:00",
+        "ref": "refs/heads/master",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376928013,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "master",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-mapstore-client",
+          "id": 1376928013,
+          "node_id": "R_kgDOUhJBDQ",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore-client",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:55.218886+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-mapstore-client/commits/673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:57.678785+00:00",
+            "stderr": ""
+          },
+          "commit": "673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-mapstore-client/commits/673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:58.125813+00:00",
+            "stderr": ""
+          }
+        },
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-mapstore-client/commits/a0d3f434cea69dadc93d35e13bc969b844aceea1/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:58.494177+00:00",
+            "stderr": ""
+          },
+          "commit": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-mapstore-client/commits/a0d3f434cea69dadc93d35e13bc969b844aceea1/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:58.771570+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+      "proposed_tree": "8055ca37333ee3037f63624f2e1d6ee548d416f1",
+      "repository": "aloerch/ambisgis-mapstore-client",
+      "root_id": "mapstore-client",
+      "started_at": "2026-09-26T22:36:54.823782+00:00",
+      "target": {
+        "classification": "exact",
+        "data": {
+          "node_id": "REF_kwDOUhJBDdoALXJlZnMvaGVhZHMvYW1iaXNnaXMvcmV2aWV3L2ZuZC0wNy1iYXNlbGluZS12NA",
+          "object": {
+            "sha": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-mapstore-client/git/commits/a0d3f434cea69dadc93d35e13bc969b844aceea1"
+          },
+          "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-mapstore-client/git/refs/heads/ambisgis/review/fnd-07-baseline-v4"
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore-client/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:55.599682+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": ""
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-mapstore-client/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:57.359110+00:00",
+        "stderr": ""
+      }
+    },
+    {
+      "actions_permissions": {
+        "data": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore/actions/permissions",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:57.514182+00:00",
+        "stderr": ""
+      },
+      "actions_runs": {
+        "data": {
+          "observed_total": 0,
+          "page_count": 1,
+          "runs": []
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore/actions/runs?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:57.926432+00:00",
+        "stderr": ""
+      },
+      "canonical": {
+        "absence_basis": "Authenticated exact readable public numeric repository identity plus exact ref HTTP404.",
+        "classification": "absent",
+        "data": {
+          "documentation_url": "https://docs.github.com/rest/git/refs#get-a-reference",
+          "message": "Not Found",
+          "status": "404"
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore/git/ref/heads/ambisgis/main",
+        "exit_code": 1,
+        "observed_at": "2026-09-26T22:36:56.634910+00:00",
+        "ref": "refs/heads/ambisgis/main",
+        "stderr": "gh: Not Found (HTTP 404)\n"
+      },
+      "commit_tree_readback": {
+        "commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+        "endpoint": "repos/aloerch/ambisgis-mapstore/git/commits/88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:57.208684+00:00",
+        "stderr": "",
+        "tree": "11b6eb8616b90c72570c4f3aad82212b52f1cdbe"
+      },
+      "commit_tree_verified": true,
+      "completed_at": "2026-09-26T22:36:59.555996+00:00",
+      "default": {
+        "classification": "present",
+        "data": {
+          "node_id": "REF_kwDOUhJBK7FyZWZzL2hlYWRzL21hc3Rlcg",
+          "object": {
+            "sha": "0eedc8b7184d3b753d0581963814726f1e5ec8eb",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-mapstore/git/commits/0eedc8b7184d3b753d0581963814726f1e5ec8eb"
+          },
+          "ref": "refs/heads/master",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-mapstore/git/refs/heads/master"
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore/git/ref/heads/master",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:56.932673+00:00",
+        "ref": "refs/heads/master",
+        "stderr": ""
+      },
+      "default_unchanged": true,
+      "expected_repository_id": 1376928043,
+      "identity": {
+        "data": {
+          "archived": false,
+          "default_branch": "master",
+          "disabled": false,
+          "full_name": "aloerch/ambisgis-mapstore",
+          "id": 1376928043,
+          "node_id": "R_kgDOUhJBKw",
+          "owner": {
+            "id": 15285626,
+            "login": "aloerch"
+          },
+          "private": false,
+          "visibility": "public"
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:56.074473+00:00",
+        "stderr": ""
+      },
+      "identity_verified": true,
+      "observed_commit_automation": [
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-mapstore/commits/0eedc8b7184d3b753d0581963814726f1e5ec8eb/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:58.697021+00:00",
+            "stderr": ""
+          },
+          "commit": "0eedc8b7184d3b753d0581963814726f1e5ec8eb",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-mapstore/commits/0eedc8b7184d3b753d0581963814726f1e5ec8eb/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:58.957584+00:00",
+            "stderr": ""
+          }
+        },
+        {
+          "checks": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-mapstore/commits/88064efbf20ef0aaffebe357f7a99a1ab4fb23b8/check-runs?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:59.258416+00:00",
+            "stderr": ""
+          },
+          "commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+          "statuses": {
+            "data": [],
+            "endpoint": "repos/aloerch/ambisgis-mapstore/commits/88064efbf20ef0aaffebe357f7a99a1ab4fb23b8/status?per_page=100",
+            "exit_code": 0,
+            "observed_at": "2026-09-26T22:36:59.555963+00:00",
+            "stderr": ""
+          }
+        }
+      ],
+      "proposed_commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+      "proposed_tree": "11b6eb8616b90c72570c4f3aad82212b52f1cdbe",
+      "repository": "aloerch/ambisgis-mapstore",
+      "root_id": "mapstore",
+      "started_at": "2026-09-26T22:36:55.729380+00:00",
+      "target": {
+        "classification": "exact",
+        "data": {
+          "node_id": "REF_kwDOUhJBK9oALXJlZnMvaGVhZHMvYW1iaXNnaXMvcmV2aWV3L2ZuZC0wNy1iYXNlbGluZS12NA",
+          "object": {
+            "sha": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+            "type": "commit",
+            "url": "https://api.github.com/repos/aloerch/ambisgis-mapstore/git/commits/88064efbf20ef0aaffebe357f7a99a1ab4fb23b8"
+          },
+          "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+          "url": "https://api.github.com/repos/aloerch/ambisgis-mapstore/git/refs/heads/ambisgis/review/fnd-07-baseline-v4"
+        },
+        "endpoint": "repos/aloerch/ambisgis-mapstore/git/ref/heads/ambisgis/review/fnd-07-baseline-v4",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:56.360016+00:00",
+        "ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "stderr": ""
+      },
+      "webhooks": {
+        "data": [],
+        "endpoint": "repos/aloerch/ambisgis-mapstore/hooks?per_page=100",
+        "exit_code": 0,
+        "observed_at": "2026-09-26T22:36:58.389436+00:00",
+        "stderr": ""
+      }
+    }
+  ],
+  "schema_version": 1,
+  "started_at": "2026-09-26T22:36:47.776627+00:00",
+  "summary": {
+    "absent_review_refs": [
+      "qgis",
+      "geotools"
+    ],
+    "actions_disabled_count": 11,
+    "canonical_absent_count": 11,
+    "exact_review_refs": [
+      "postgresql",
+      "postgis",
+      "jupyterhub",
+      "jupyterlab",
+      "geowebcache",
+      "geoserver",
+      "geonode",
+      "mapstore-client",
+      "mapstore"
+    ],
+    "unchanged_default_count": 11,
+    "verified_exact_commit_tree_count": 9
+  },
+  "task": "FND-07"
+}

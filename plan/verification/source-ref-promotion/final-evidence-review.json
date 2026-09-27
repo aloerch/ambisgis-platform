@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "task": "FND-07",
+  "reviewed_at": "2026-09-26T22:51:13.537351+00:00",
+  "reviewer": "independent agent /root/remote_preflight",
+  "review_type": "Scoped final executed-evidence and handoff review",
+  "concrete_findings": [],
+  "result": "No concrete discrepancies identified.",
+  "reviewed_sha256": {
+    "plan/docs/source-ref-promotion-handoff.md": "544e4259f6cefcdcf1cee8ea01aec1e2c1aae6e884e9e000f1248f08fc04304f",
+    "plan/STATUS.md": "b499c892ed6bf5a3d7c0133dd6bcd26d5dc245b5678e1f484d303718dfb5bee5",
+    "plan/adrs/009-accepted-source-custody.md": "67e13c54b5a90ed99dd18839b6a3bbb574f3ec1ab3ae68ab9ac3d4354e55ef00",
+    "plan/verification/source-ref-promotion/evidence.json": "2a6d2908879a3911926c72232eee1b6c1b14e508780319f10b519b3f58c75b91",
+    "plan/verification/source-ref-promotion/canonical-proposal.json": "519dd189533c6d077648f0b9bbf1f98e052e28d4d614414b6c04f141deb0d28d",
+    "plan/verification/source-ref-promotion/project-publication.json": "c6a25307315bc05faedfc3cb1996b93fe10d63500401bae6bed0c2955b3d8186"
+  },
+  "verified_claims": [
+    "Nine exact non-default source refs created; two publication holds remain.",
+    "Eleven repository Actions disablements; zero uncertain writes.",
+    "Nine fresh owned-remote recoveries and 59 preserved notice paths.",
+    "Unchanged replay: zero source mutations, zero settings mutations, zero mutation-attempt events.",
+    "Eleven canonical proposal identities, commits, trees and unchanged defaults match the immutable plan.",
+    "Three original FND-07 criteria are unchanged; final acceptance remains pending.",
+    "Project records six scoped mutations, 82 to 83 items, preserved prior items/views/archive decisions, and FND-02 Merged / FND-07 In review / FND-08 Backlog.",
+    "Public companion 20-file anonymous byte-readback precedes source apply.",
+    "Retained indexed path, size and SHA256 bindings match the evidence."
+  ],
+  "limitations": [
+    "Scoped review does not grant publication rights or owner acceptance.",
+    "No full-build, ordinary recursive-clone, canonical-execution or release acceptance is claimed."
+  ]
+}

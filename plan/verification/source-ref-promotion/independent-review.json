@@ -1,0 +1,54 @@
+{
+  "observed_at": "2026-09-26T22:24:09.248449+00:00",
+  "reviewer": "independent remote_preflight agent",
+  "files": [
+    {
+      "path": "plan/tools/promote_source_refs.py",
+      "sha256": "725f170fc79fa5f54ce83ef90378a63431e8d0700f843c01df5d5851352157d1"
+    },
+    {
+      "path": "plan/tests/test_source_promotion.py",
+      "sha256": "a069404870a67c3c604d3d97f8716a1f223582945eaedc106abd0e094d7e6f8a"
+    },
+    {
+      "path": "plan/tools/verify_source_delivery.py",
+      "sha256": "9c9c96272c8ba74dc08f3c33b71482ad6426c9e05314b0e3be98e3a049266669"
+    },
+    {
+      "path": "plan/tests/test_source_delivery.py",
+      "sha256": "63ec987463c49d1d72138fb861248d17c65c3cf3e3cda0eb35e54b94df52ba3d"
+    }
+  ],
+  "tests": {
+    "promotion": 31,
+    "delivery": 7,
+    "result": "passed",
+    "fixtures": "Controlled mocks and actual independent local Git repositories; no GitHub mutations"
+  },
+  "findings_resolved": [
+    "Reject local Git URL rewrites/helper/proxy/recursive-push configuration before every transport call.",
+    "Check active create hooks as well as push hooks.",
+    "Observe checks/apps/statuses on default and existing target commits; hold unresolved execution risk.",
+    "Parse actual .gitmodules and exercise the process-only exact donor-to-owned URL mapping during delivery verification.",
+    "Reject HTTP alternates, promisor packs and symlinked object-store roots."
+  ],
+  "remaining_material_findings": [],
+  "limits": "Code review and local fixture tests do not prove live GitHub permissions, public rights clearance or remote delivery.",
+  "publication_review": {
+    "reviewer": "independent remote_preflight agent",
+    "platform_commit": "936e37d6be25decc89ceb3d4b8c1be60c61de9ed",
+    "publication_evidence_sha256": "0133d14729dac54a7680418b4f54977f0a6d607992cbe3bd5cfdcbb794aecf84",
+    "publication_rights_sha256": "132fe182f475ee5f19b508272d4dbdef4d9424f95406b5e214cb902e6e60ce7c",
+    "authoritative_evidence_sha256": "6b280a0cea9674a312efdbcc8615882bc2cd70970a11600b0ca0723d0e3989ec",
+    "all_fifteen_original_notices_verified": true,
+    "dispositions": {
+      "publishable": 9,
+      "held": [
+        "qgis",
+        "geotools"
+      ]
+    },
+    "remaining_material_findings": [],
+    "public_companion_precondition": "Satisfied separately by actual unauthenticated readback and issue6 companion announcement5850475921 before apply01."
+  }
+}

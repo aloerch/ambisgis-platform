@@ -1,3 +1,10 @@
+> Current continuation: PR #69 was owner-merged on 2026-09-26 at
+> `4d0602542d3120024ec5974501624c96e5de48d4`. The separate
+> [owner authorization](https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5850316210)
+> permits the bounded review-ref continuation recorded in
+> [current source-ref delivery handoff](source-ref-promotion-handoff.md).
+> The checkpoint narrative below is preserved historical evidence, not current authorization or remote state.
+
 # FND-02 acceptance and FND-07 source recovery checkpoint
 
 Repository `aloerch/ambisgis-platform` (ID `1376927351`), branch

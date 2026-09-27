@@ -1,0 +1,31 @@
+{
+  "accepted_base_commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+  "accepted_base_public_ancestry": null,
+  "accepted_base_public_exact_refs": [
+    {
+      "ref": "refs/tags/REL_15_19",
+      "sha": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca"
+    }
+  ],
+  "advertised_inventory": {
+    "exit_code": 0,
+    "heads": 39,
+    "line_count": 731,
+    "sha256": "d6ac311322fcf75c0445c6f937ad013e5af311cc57951b189b56758c8c7a22cb",
+    "stderr": "",
+    "tags_including_peeled": 692,
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/postgresql-advertised-refs.txt"
+  },
+  "newly_reachable_upper_bound": {
+    "excluded_proved_public_commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+    "exit_code": 0,
+    "object_count": 0,
+    "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr": "",
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/postgresql-newly-reachable-upper-bound.txt"
+  },
+  "observed_at": "2026-09-26T22:14:35.943232+00:00",
+  "repository": "aloerch/ambisgis-postgresql",
+  "root_id": "postgresql"
+}

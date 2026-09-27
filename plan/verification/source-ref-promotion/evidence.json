@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "task": "FND-07",
+  "recorded_at": "2026-09-26T22:44:25.165427+00:00",
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "branch": "fnd-07/source-ref-promotion",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/70",
+  "implementation_commit": "936e37d6be25decc89ceb3d4b8c1be60c61de9ed",
+  "owner_authorization": "https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5850316210",
+  "candidate_sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+  "immutable_plan_sha256": "a9477bbdcab4f85fad69cbf77ed04ed76de92efd63d3d663054bda34e4b573a6",
+  "original_recovery_receipt_sha256": "11bd0ba5f1662606b2d8ac604d469c2d3d02c1d73b0a1540d648856cdc2343f0",
+  "public_companion_platform_commit": "936e37d6be25decc89ceb3d4b8c1be60c61de9ed",
+  "application": {
+    "exit_code": 2,
+    "reason": "Two explicit publication holds; nine exact source creations succeeded.",
+    "source_refs_created": 9,
+    "already_exact_before_first_apply": 0,
+    "settings_mutations": 11,
+    "held": [
+      "qgis",
+      "geotools"
+    ],
+    "uncertain_operations": 0,
+    "receipt": {
+      "path": "apply-01.jsonl",
+      "sha256": "8590d988966f801f2712578ab3383b710a0d83dd566ea7ee9539687cf40c73c2"
+    }
+  },
+  "remote_recovery": {
+    "exit_code": 0,
+    "verified_roots": 9,
+    "held_not_fetched": [
+      "qgis",
+      "geotools"
+    ],
+    "notice_paths_verified": 59,
+    "all_source_diffs_exact": true,
+    "all_full_history_fsck_passed": true,
+    "fresh_independent_objects": true,
+    "donor_source_fallback_used": false,
+    "ordinary_recursive_clone_claimed": false,
+    "receipt": {
+      "path": "remote-delivery.json",
+      "sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90"
+    },
+    "completed_at": "2026-09-26T22:39:35.531787+00:00"
+  },
+  "unchanged_replay": {
+    "exit_code": 2,
+    "reason": "Same two publication holds, nine already-exact refs.",
+    "source_ref_mutations": 0,
+    "settings_mutations": 0,
+    "mutation_attempt_events": 0,
+    "results": {
+      "geonode": "already-exact",
+      "geoserver": "already-exact",
+      "geotools": "held",
+      "geowebcache": "already-exact",
+      "jupyterhub": "already-exact",
+      "jupyterlab": "already-exact",
+      "mapstore": "already-exact",
+      "mapstore-client": "already-exact",
+      "postgis": "already-exact",
+      "postgresql": "already-exact",
+      "qgis": "held"
+    },
+    "receipt": {
+      "path": "apply-02-zero-replay.jsonl",
+      "sha256": "940b0060e234b26b3ce444d817fb817c61cd3a11c2f2ff98b581628d4b2c9afa"
+    },
+    "after_delivery_ref_default_actions_readback": true
+  },
+  "independent_remote_summary": {
+    "absent_review_refs": [
+      "qgis",
+      "geotools"
+    ],
+    "actions_disabled_count": 11,
+    "canonical_absent_count": 11,
+    "exact_review_refs": [
+      "postgresql",
+      "postgis",
+      "jupyterhub",
+      "jupyterlab",
+      "geowebcache",
+      "geoserver",
+      "geonode",
+      "mapstore-client",
+      "mapstore"
+    ],
+    "unchanged_default_count": 11,
+    "verified_exact_commit_tree_count": 9
+  },
+  "canonical_promotion": {
+    "executed": false,
+    "proposal": "canonical-proposal.json",
+    "current_authorization": false
+  },
+  "validation": "validation.json",
+  "project": {
+    "record": "project-publication.json",
+    "sha256": "c6a25307315bc05faedfc3cb1996b93fe10d63500401bae6bed0c2955b3d8186",
+    "mutations": 6,
+    "items_before": 82,
+    "items_after": 83,
+    "states": {
+      "FND-02": "Merged",
+      "FND-07": "In review",
+      "FND-08": "Backlog"
+    },
+    "prior_items_views_and_archive_decisions_preserved": true,
+    "queue_membership": [
+      70
+    ]
+  },
+  "retained_paths": [
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/apply-01-command-result.json",
+      "sha256": "3d220187a2085c1e66557ea9e1954c4ed5ee94367329f267806d124543c39dea",
+      "bytes": 1103
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/apply-01-command.json",
+      "sha256": "bf3f3f0c4f88a4dafb8083901e5c01a25453ce02c55f4efeec1ddc26c186d680",
+      "bytes": 1032
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/apply-01.jsonl",
+      "sha256": "8590d988966f801f2712578ab3383b710a0d83dd566ea7ee9539687cf40c73c2",
+      "bytes": 65668
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/apply-01.txt",
+      "sha256": "0de8904b71d9d42df0c9bab35714df7b77017322f8e7ed4637b5ae09fb3f481a",
+      "bytes": 634
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/apply-02-command-result.json",
+      "sha256": "80407bcc66ea5165a2ced929c356bce539704982332a32e4c3c3ddc5f7125b95",
+      "bytes": 856
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/apply-02-command.json",
+      "sha256": "a4048fb1eb055392dbb7cc6180e4975db82afc1c116f8d0129d2a49b67ef505c",
+      "bytes": 785
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/apply-02-zero-replay.jsonl",
+      "sha256": "940b0060e234b26b3ce444d817fb817c61cd3a11c2f2ff98b581628d4b2c9afa",
+      "bytes": 30133
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/apply-02-zero-replay.txt",
+      "sha256": "d35a415c52fbd30f51f3a4c05615e565cc75083111af4f70eea0d07082bf74d3",
+      "bytes": 573
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/apply-summary.json",
+      "sha256": "a2573b8c6a3bf5a8378a8f07a48bc29933fe8c9957fda36c5ce80d14ebe37d71",
+      "bytes": 1165
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/candidate-checks.json",
+      "sha256": "d33fc80be20355d1a62b9033303e3ae50c64aa419acdaf20f2fa3bca730023f5",
+      "bytes": 2727
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/candidate-eligibility.txt",
+      "sha256": "c6696b32ed3a13ea8a73c9f64c5d3354ee1fc0e8c305db158f8dd0ac457bc589",
+      "bytes": 4432
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/candidate-integrity.txt",
+      "sha256": "c6696b32ed3a13ea8a73c9f64c5d3354ee1fc0e8c305db158f8dd0ac457bc589",
+      "bytes": 4432
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/candidate-report.txt",
+      "sha256": "681c77baab79b96645b5f5549f07b1de3bd4473fa7e366d0bcb06fbeb3a9acce",
+      "bytes": 171549
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/canonical-proposal.json",
+      "sha256": "519dd189533c6d077648f0b9bbf1f98e052e28d4d614414b6c04f141deb0d28d",
+      "bytes": 9803
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/claim.md",
+      "sha256": "618f60b5861a6b472c53d7c8a071bdfe117d31809718bb28f7a209672d5497e8",
+      "bytes": 969
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/independent-final-state.json",
+      "sha256": "bb34b2af6d81f29d550379f9254ff612a7590eb26ed2c5e91e6fd35f30ec0755",
+      "bytes": 65257
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/independent-review-final.json",
+      "sha256": "73d86ad727d2b3ce687f50db116ef45fa0cf8574f6d897efd9afb7ae1db8bf49",
+      "bytes": 2397
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/package-checks.json",
+      "sha256": "3693ab704589684525041205cdf507ca26e219e4810186a5865badb5e483251e",
+      "bytes": 1296
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/package-schemas.txt",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+      "bytes": 189
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/package-tests.txt",
+      "sha256": "9be5c1204188272079959ab569fdf37da2d0251d4c284a242d34eff322eac157",
+      "bytes": 50519
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/pr-body-initial.md",
+      "sha256": "93e5240f320553bc5c6251a32c36ad3900612e18eebbd022174860d14582718a",
+      "bytes": 1664
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/preflight-01-command.json",
+      "sha256": "427e9dcf021593923d2fe5cb3344e817b2ae4e82f58f9bacf4f3811febe2e986",
+      "bytes": 583
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/preflight-01.jsonl",
+      "sha256": "762806efcd1773fb948ed30a4f39ba979b91934b13526a94365d4af24f98e427",
+      "bytes": 29545
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/preflight-01.txt",
+      "sha256": "8ff8220eb7a2bf36136eb2479a43b499460303eabb50e7ff2708b03ca9179ef9",
+      "bytes": 492
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/public-companion-readback.json",
+      "sha256": "3641e9223746b5ebda6451cce5153b74c7d2990b88aa7842aa9438a6e4d5616e",
+      "bytes": 10875
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/publish-project-pr.py",
+      "sha256": "6c4bd35f56398de1f338a7669e52937bdfcafbda3a706bb0e8eef7b663c9c0c0",
+      "bytes": 10004
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/reconcile-project-claim.py",
+      "sha256": "52540c16ff5c12bb6fbbd8db78bc62b263df249f3bc05fa8ec5a8a7604ef3dce",
+      "bytes": 3517
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/recovery-verify.txt",
+      "sha256": "240eb379dee4629ba7357f349d6006f51920cf8c0ea699f04aa7e3cf52331b5e",
+      "bytes": 695
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/remote-001-command-result.json",
+      "sha256": "4a87c83d03d382f655386bccabaa9ca81e253fef3b645b8856a23e8a919779de",
+      "bytes": 744
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/remote-001-command.json",
+      "sha256": "89376684560dd29558153f3b77b19d1f221ad074a609355b97d49f0496efeeda",
+      "bytes": 673
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/remote-001.txt",
+      "sha256": "12632e8a146be2795dfdba3c8b6149f0eed559efdd141873159e88fe4db79412",
+      "bytes": 225
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/restore-help.txt",
+      "sha256": "b3c2c1ad4348b3c7ebd3e121d51927db99db665f213f3cdb7cb331dfeebed4bc",
+      "bytes": 1208
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/source-companion-announcement-readback.json",
+      "sha256": "eabfe8a0ac0af02c02df2c21dfa7b08875143007bf8f20a9869f6717fa97eb85",
+      "bytes": 2975
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/source-companion-announcement.md",
+      "sha256": "3721155fe2127ae9921f172de1f4ffb3973797f448ceaa6299d09519b551ed5a",
+      "bytes": 2748
+    },
+    {
+      "path": "build-worktrees/source-ref-promotion/run-001/remote-001/delivery.json",
+      "sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+      "bytes": 21829
+    }
+  ],
+  "scope": "Exact non-default source Git delivery and existing custody composition; no GIS build, native/runtime refresh, FND-08, complete repair, release or private archive publication."
+}

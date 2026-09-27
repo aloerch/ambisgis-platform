@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "plan_sha256": "a9477bbdcab4f85fad69cbf77ed04ed76de92efd63d3d663054bda34e4b573a6",
+  "body_sha256": "14cbf5562a767905ca4a48174be5d64416c6a1f1046ad62d058e78f1338dd818",
+  "comment": {
+    "id": 5850316210,
+    "html_url": "https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5850316210",
+    "user": {
+      "login": "aloerch",
+      "id": 15285626,
+      "type": "User"
+    },
+    "created_at": "2026-09-26T22:07:35Z",
+    "updated_at": "2026-09-26T22:07:35Z",
+    "body": "Owner authorization \u2014 FND-07 non-default source-ref promotion\n\nI reviewed and merged PR #69 at head\n1e5712e0ba3f931205d9b9be1d4a34e076ce1b87\n(merge 4d0602542d3120024ec5974501624c96e5de48d4).\n\nI authorize execution of the exact eleven-repository promotion plan at:\nhttps://github.com/aloerch/ambisgis-platform/blob/1e5712e0ba3f931205d9b9be1d4a34e076ce1b87/plan/verification/source-baseline-restore/promotion-plan.json\n\nThe only source-fork destination authorized here is:\nrefs/heads/ambisgis/review/fnd-07-baseline-v4\n\nUse only the repository IDs and proposed commit/tree identities in that\nimmutable plan. Before publishing each ref, verify its source-publication\nevidence and workflow containment. This authorizes the specified public\nsource-ref publication where applicable rights are established; it is not\na representation that unresolved third-party rights have been cleared.\nHold any affected ref if its publication basis is unresolved, and report\nthe exact material and missing evidence. Continue independently safe\nrows where possible.\n\nI authorize disabling GitHub Actions at repository level on exactly those\neleven source forks before any promotion, and verifying the disabled\nstate. Leave Actions disabled afterward. Do not change Actions on\nambisgis-platform, any other repository, or at account/organization level.\nDo not delete workflow files, weaken rulesets or install credentials.\nIf existing credentials cannot perform or verify this setting, identify\nthe exact repositories and UI actions I must complete.\n\nCreate only absent review refs. An already correct ref may be verified\nand reused without writing. A ref at any other commit is a collision:\ndo not overwrite, advance or force it. Preserve existing branches, tags,\ndefaults and history. Do not change the approved commits to solve a\npublication or workflow problem without another review.\n\nI accept the source-restoration, notice-preservation and enumerated asset\nevidence in PR #69 within its documented limits. That is not semantic\nlicense clearance of every retained file, complete transitive toolchain\nrecovery, or final FND-07 acceptance before source delivery is verified.\n\nThis does NOT authorize creating/updating source-fork ambisgis/main,\nchanging default branches, merging source PRs, broad Git mirror pushes,\npublishing custody archives/binaries/releases, enabling inherited\nworkflows, or production deployment. FND-02 remains accepted. FND-08,\nfinal FND-07 acceptance and later distribution/security gates remain\nseparate."
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "platform_commit": "936e37d6be25decc89ceb3d4b8c1be60c61de9ed",
+  "method": "Unauthenticated public HTTPS byte readback, no GitHub credentials or donor source fallback",
+  "files": [
+    {
+      "path": "plan/verification/source-ref-promotion/authoritative-evidence.json",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/authoritative-evidence.json",
+      "status": 200,
+      "bytes": 75338,
+      "sha256": "6b280a0cea9674a312efdbcc8615882bc2cd70970a11600b0ca0723d0e3989ec",
+      "verified_at": "2026-09-26T22:30:40.434283+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/cdt/CDT/LICENSE",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/cdt/CDT/LICENSE",
+      "status": 200,
+      "bytes": 16726,
+      "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+      "verified_at": "2026-09-26T22:30:40.412605+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/earcut/LICENSE",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/earcut/LICENSE",
+      "status": 200,
+      "bytes": 738,
+      "sha256": "828f2aed51b6526881a236758ec9b08cd69928fbfc70346d9d44a0b3a3444fe1",
+      "verified_at": "2026-09-26T22:30:40.418376+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/fastfloat/LICENSE-APACHE",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/fastfloat/LICENSE-APACHE",
+      "status": 200,
+      "bytes": 10767,
+      "sha256": "097a889aa954d04e088b790b10a4014d6189561d0a6013935a73ce3d4ddaaf06",
+      "verified_at": "2026-09-26T22:30:40.395063+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/fastfloat/LICENSE-BOOST",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/fastfloat/LICENSE-BOOST",
+      "status": 200,
+      "bytes": 1337,
+      "sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b",
+      "verified_at": "2026-09-26T22:30:40.575353+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/fastfloat/LICENSE-MIT",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/fastfloat/LICENSE-MIT",
+      "status": 200,
+      "bytes": 1079,
+      "sha256": "e562f3f974ced7e69dd1db77b820b36bcf8f30377f1aa105723fba449c53c4e6",
+      "verified_at": "2026-09-26T22:30:40.625165+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/fuzzy/LICENSE.md",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/fuzzy/LICENSE.md",
+      "status": 200,
+      "bytes": 16769,
+      "sha256": "b56d003d45853518d0a992e37839a5bd5dcb3e721f90d95848e298c2bed347c2",
+      "verified_at": "2026-09-26T22:30:40.637512+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/fuzzy/deps/glm/copying.txt",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/fuzzy/deps/glm/copying.txt",
+      "status": 200,
+      "bytes": 2865,
+      "sha256": "62d2d642c7d054d4fb4c9b42faad617d6c88fcd91e317f8035aa9f277cc159c3",
+      "verified_at": "2026-09-26T22:30:40.628731+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/glm/copying.txt",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/glm/copying.txt",
+      "status": 200,
+      "bytes": 2865,
+      "sha256": "62d2d642c7d054d4fb4c9b42faad617d6c88fcd91e317f8035aa9f277cc159c3",
+      "verified_at": "2026-09-26T22:30:40.767377+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/gnu/GPL-3.0.txt",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/gnu/GPL-3.0.txt",
+      "status": 200,
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "verified_at": "2026-09-26T22:30:40.835447+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/gnu/LGPL-3.0.txt",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/gnu/LGPL-3.0.txt",
+      "status": 200,
+      "bytes": 7639,
+      "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+      "verified_at": "2026-09-26T22:30:40.828896+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/spdlog/LICENSE",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/spdlog/LICENSE",
+      "status": 200,
+      "bytes": 1348,
+      "sha256": "a7241a379cb98d37788f82c2fc2e484c3ae85dae881fd3406f0637644850926f",
+      "verified_at": "2026-09-26T22:30:40.822454+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/spdlog/include/spdlog/fmt/bundled/fmt.license.rst",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/spdlog/include/spdlog/fmt/bundled/fmt.license.rst",
+      "status": 200,
+      "bytes": 1408,
+      "sha256": "825c9324e70f8c839c8ba910543dd4a7daee243b86ef960594c11381a19980b8",
+      "verified_at": "2026-09-26T22:30:40.948332+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/tinycpptest/LICENSE.md",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/tinycpptest/LICENSE.md",
+      "status": 200,
+      "bytes": 1070,
+      "sha256": "e8fbb8711bd456d1be53e4a2dfc4c70ddd29f67c5c04d050273a12287a2429dd",
+      "verified_at": "2026-09-26T22:30:41.012128+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/tinynurbs/LICENSE",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/tinynurbs/LICENSE",
+      "status": 200,
+      "bytes": 1523,
+      "sha256": "1347f9b571f2b03cbfc494d9dbc205e0c04250f6d982e79b186c0b886314a40a",
+      "verified_at": "2026-09-26T22:30:41.012432+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/notices/webifc/LICENSE.md",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/notices/webifc/LICENSE.md",
+      "status": 200,
+      "bytes": 16770,
+      "sha256": "40fb05c51ff5e96285f32fba1783a22dccc26871791c378b1e7986e9046c8d5d",
+      "verified_at": "2026-09-26T22:30:41.022938+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/publication-evidence.json",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/publication-evidence.json",
+      "status": 200,
+      "bytes": 10147,
+      "sha256": "0133d14729dac54a7680418b4f54977f0a6d607992cbe3bd5cfdcbb794aecf84",
+      "verified_at": "2026-09-26T22:30:41.136392+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/publication-rights.md",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/publication-rights.md",
+      "status": 200,
+      "bytes": 18232,
+      "sha256": "132fe182f475ee5f19b508272d4dbdef4d9424f95406b5e214cb902e6e60ce7c",
+      "verified_at": "2026-09-26T22:30:41.211975+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/preflight-initial.json",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/preflight-initial.json",
+      "status": 200,
+      "bytes": 90151,
+      "sha256": "b8ef478ee854230c280d7ad3c2b6e7cd3df6b6075f8e3a655b2e9a5f22e216d4",
+      "verified_at": "2026-09-26T22:30:41.289349+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    },
+    {
+      "path": "build-support/source_restore/CHANGES_FROM_DONOR.md",
+      "public_url": "https://raw.githubusercontent.com/aloerch/ambisgis-platform/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/build-support/source_restore/CHANGES_FROM_DONOR.md",
+      "status": 200,
+      "bytes": 7524,
+      "sha256": "667cf4d690125f857817364131ce9e10a5bbccabef0e2814d7c8a735aec11450",
+      "verified_at": "2026-09-26T22:30:41.225964+00:00",
+      "matches_exact_local_and_committed_bytes": true
+    }
+  ],
+  "all_passed": true,
+  "companion_url": "https://github.com/aloerch/ambisgis-platform/blob/936e37d6be25decc89ceb3d4b8c1be60c61de9ed/plan/verification/source-ref-promotion/publication-rights.md"
+}

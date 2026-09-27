@@ -1,0 +1,550 @@
+{
+  "started_at": "2026-09-26T22:35:14.176743+00:00",
+  "plan_sha256": "a9477bbdcab4f85fad69cbf77ed04ed76de92efd63d3d663054bda34e4b573a6",
+  "publication_sha256": "0133d14729dac54a7680418b4f54977f0a6d607992cbe3bd5cfdcbb794aecf84",
+  "tool_sha256": "9c9c96272c8ba74dc08f3c33b71482ad6426c9e05314b0e3be98e3a049266669",
+  "repositories": [
+    {
+      "root_id": "postgresql",
+      "repository": "aloerch/ambisgis-postgresql",
+      "repository_id": 1376927644,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-postgresql.git",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4:refs/heads/ambisgis/review/fnd-07-baseline-v4"
+      ],
+      "commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "tree": "598df31816bda464f5b904c0badbcb25bafcc4f1",
+      "changed_paths": [],
+      "notices": [
+        {
+          "path": "COPYRIGHT",
+          "entry": "100644 blob 0a397648dcd3c2177acc58bd7daecd11ad64be62"
+        },
+        {
+          "path": "src/backend/regex/COPYRIGHT",
+          "entry": "100644 blob e50cfb1ff1968bf12a2c0abfd707f807cbccf6e2"
+        },
+        {
+          "path": "src/tools/copyright.pl",
+          "entry": "100755 blob 182177e9b6b44410caf504b7cbba2c513bbcb466"
+        }
+      ],
+      "gitlinks": [],
+      "history_commits": 55932,
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "status": "verified",
+      "observed_at": "2026-09-26T22:36:03.589072+00:00"
+    },
+    {
+      "root_id": "postgis",
+      "repository": "aloerch/ambisgis-postgis",
+      "repository_id": 1376927690,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-postgis.git",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4:refs/heads/ambisgis/review/fnd-07-baseline-v4"
+      ],
+      "commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+      "tree": "ee927efacdc5a00d698cab2da047ad2232d1f579",
+      "changed_paths": [],
+      "notices": [
+        {
+          "path": "COPYING",
+          "entry": "100644 blob d159169d1050894d3ea3b98e1c965c4058208fe1"
+        },
+        {
+          "path": "LICENSE.TXT",
+          "entry": "100644 blob 6d48b332c0853963e1803749e92f429b00b42fc3"
+        },
+        {
+          "path": "deps/flatgeobuf/include/flatbuffers/LICENSE",
+          "entry": "100644 blob 78d9b1a428d8cdc4f3b6fd2559c6ae5d62278582"
+        },
+        {
+          "path": "deps/ryu/LICENSE",
+          "entry": "100644 blob d64a467351150a5e44ea7cd0cd0816528ebc380b"
+        },
+        {
+          "path": "deps/ryu/LICENSE-Apache2",
+          "entry": "100644 blob 261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+        },
+        {
+          "path": "deps/ryu/LICENSE-Boost",
+          "entry": "100644 blob 36b7cd93cdfbac762f5be4c6ce276df2ea6305c2"
+        },
+        {
+          "path": "deps/uthash/LICENSE",
+          "entry": "100644 blob ce11db4698204be396368b0cd55e269bfa5ba7b9"
+        },
+        {
+          "path": "deps/wagyu/LICENSE.README",
+          "entry": "100644 blob 23ce942b6434635b97101a873432d114c441e82c"
+        },
+        {
+          "path": "deps/wagyu/LICENSE.geometry",
+          "entry": "100644 blob 8f6a86bd07e58175ddf5a36be9ff28e3abe7d8f2"
+        },
+        {
+          "path": "deps/wagyu/LICENSE.wagyu",
+          "entry": "100644 blob f3eb477c35799122ff3bc86783a8eb735bfb3f55"
+        },
+        {
+          "path": "doc/xsl/LICENSE",
+          "entry": "100644 blob 7fb7a3cc0acfe2f0edf69d58516e182f98094c6a"
+        },
+        {
+          "path": "extensions/address_standardizer/COPYING",
+          "entry": "100644 blob 64129a1057a5ca9c84eebbda7639fd34b0dbb16e"
+        },
+        {
+          "path": "extras/tiger_geocoder/COPYING",
+          "entry": "100644 blob 89e08fb002e48e22363b7b3789a5470ffe71fea1"
+        }
+      ],
+      "gitlinks": [],
+      "history_commits": 18349,
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "status": "verified",
+      "observed_at": "2026-09-26T22:36:20.487135+00:00"
+    },
+    {
+      "root_id": "qgis",
+      "repository": "aloerch/ambisgis-qgis",
+      "repository_id": 1376927721,
+      "status": "held-not-fetched",
+      "basis": "HELD: exact unchanged tree retains 1,130 package-excluded palettes with concrete noncommercial, absent-grant, conditional-preview/collection and provenance questions. Existing public tag and zero new objects do not waive original terms. Exact held paths/blobs and smallest evidence remedy are in the companion.",
+      "observed_at": "2026-09-26T22:36:20.487689+00:00"
+    },
+    {
+      "root_id": "jupyterhub",
+      "repository": "aloerch/ambisgis-jupyterhub",
+      "repository_id": 1376927753,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-jupyterhub.git",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4:refs/heads/ambisgis/review/fnd-07-baseline-v4"
+      ],
+      "commit": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+      "tree": "a9ab20c5ff0641870194d666fcd1516ee2f2d65e",
+      "changed_paths": [
+        "M\tMANIFEST.in"
+      ],
+      "notices": [
+        {
+          "path": "LICENSE",
+          "entry": "100644 blob 1cd53dfc5126cc8879ed7f2879fc71860c47553d"
+        },
+        {
+          "path": "jsx/src/components/ReactObjectTableViewer/LICENSE",
+          "entry": "100644 blob 1c51f3bd0cb7d7ab0ae819370d8e4b0d966213c4"
+        }
+      ],
+      "gitlinks": [],
+      "history_commits": 8821,
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "status": "verified",
+      "observed_at": "2026-09-26T22:36:26.396295+00:00"
+    },
+    {
+      "root_id": "jupyterlab",
+      "repository": "aloerch/ambisgis-jupyterlab",
+      "repository_id": 1376927783,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-jupyterlab.git",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4:refs/heads/ambisgis/review/fnd-07-baseline-v4"
+      ],
+      "commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+      "tree": "0edadc56fb04f944097c0658a9a51686ba68bd16",
+      "changed_paths": [],
+      "notices": [
+        {
+          "path": ".github/workflows/license-header.yml",
+          "entry": "100644 blob ccdbfc3081066edd2ce7797f722bed1ef987f7be"
+        },
+        {
+          "path": "LICENSE",
+          "entry": "100644 blob c73604f78a1f673454bed59ed40c69cd34f6e3e0"
+        },
+        {
+          "path": "docs/source/_templates/copyright.html",
+          "entry": "100644 blob 5f2bd71d5bf2ace92da1ab14fbc1d70d1a29c9f6"
+        },
+        {
+          "path": "packages/ui-components/style/icons/licenses/copyright.svg",
+          "entry": "100644 blob f2ca8e3964c101ed9f3ec08d03af5c5c60ae57c8"
+        }
+      ],
+      "gitlinks": [],
+      "history_commits": 27053,
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "status": "verified",
+      "observed_at": "2026-09-26T22:36:46.270496+00:00"
+    },
+    {
+      "root_id": "geotools",
+      "repository": "aloerch/ambisgis-geotools",
+      "repository_id": 1376927869,
+      "status": "held-not-fetched",
+      "basis": "HELD: LGPL-2.1-only grant and section 2(b) file-level change/date notice requirement apply to two modified POMs. Exact Git commit date and external ledger are preserved, but sufficiency without in-file notices is not established. No authorized SHA is rewritten.",
+      "observed_at": "2026-09-26T22:36:46.271106+00:00"
+    },
+    {
+      "root_id": "geowebcache",
+      "repository": "aloerch/ambisgis-geowebcache",
+      "repository_id": 1376927892,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-geowebcache.git",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4:refs/heads/ambisgis/review/fnd-07-baseline-v4"
+      ],
+      "commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+      "tree": "8df655d13b9955776fe1532dfb27fac64612a772",
+      "changed_paths": [
+        "M\tgeowebcache/diskquota/jdbc/pom.xml"
+      ],
+      "notices": [
+        {
+          "path": "documentation/en/theme/_static/blueprint/AUTHORS",
+          "entry": "100644 blob b77d9c2badf645d0178eb38484081351940715cc"
+        },
+        {
+          "path": "documentation/en/theme/_static/blueprint/LICENSE",
+          "entry": "100644 blob d7474100a91bb723f7b32fa66093a7bdd5161905"
+        },
+        {
+          "path": "geowebcache/LICENSE.txt",
+          "entry": "100644 blob fc8a5de7edf437cdc98a216370faf7c757279bcb"
+        },
+        {
+          "path": "geowebcache/core/src/main/resources/org/geowebcache/rest/webresources/openlayers/license.txt",
+          "entry": "100644 blob 285ccc469d18ca34b53f9b90737f8a89ed82bc4e"
+        }
+      ],
+      "gitlinks": [],
+      "history_commits": 2908,
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "status": "verified",
+      "observed_at": "2026-09-26T22:36:49.038391+00:00"
+    },
+    {
+      "root_id": "geoserver",
+      "repository": "aloerch/ambisgis-geoserver",
+      "repository_id": 1376927947,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-geoserver.git",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4:refs/heads/ambisgis/review/fnd-07-baseline-v4"
+      ],
+      "commit": "fd2fe1dfcc78fa974bdb81673872879336312077",
+      "tree": "c12018e88493a351c60c370f2a43894701acf995",
+      "changed_paths": [
+        "M\tsrc/community/security/oauth2-geonode/src/main/java/org/geoserver/security/oauth2/services/GeoNodeTokenServices.java",
+        "M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.java",
+        "M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.java",
+        "M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthRemoteTokenServices.java",
+        "M\tsrc/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleService.java",
+        "M\tsrc/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleServiceConfig.java",
+        "M\tsrc/extension/importer/core/pom.xml",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/ImportTaskController.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportContextJSONMessageConverter.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportDataJSONMessageConverter.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportLayerJSONMessageConverter.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportTaskJSONMessageConverter.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportTransformJSONMessageConverter.java",
+        "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/TransformChainJSONMessageConverter.java",
+        "M\tsrc/extension/importer/web/pom.xml",
+        "M\tsrc/extension/importer/web/src/main/java/org/geoserver/importer/web/ImportDataPage.java",
+        "A\tsrc/main/src/main/java/org/geoserver/filters/NoJpeg2000Filter.java",
+        "A\tsrc/main/src/main/java/org/geoserver/filters/NoJpeg2000Policy.java",
+        "M\tsrc/main/src/main/java/org/geoserver/security/auth/GuavaAuthenticationCacheImpl.java",
+        "M\tsrc/restconfig/src/main/java/org/geoserver/rest/catalog/CoverageStoreFileValidator.java",
+        "M\tsrc/web/app/src/main/webapp/WEB-INF/web.xml"
+      ],
+      "notices": [
+        {
+          "path": "LICENSE.md",
+          "entry": "100644 blob d24ab175a0543da078ef56ca7a4283ec61743225"
+        },
+        {
+          "path": "doc/en/LICENSE.md",
+          "entry": "100644 blob 0692ca105d143ada9429b4c586ab9c3a4c988602"
+        },
+        {
+          "path": "doc/en/themes/geoserver/static/blueprint/AUTHORS",
+          "entry": "100644 blob b77d9c2badf645d0178eb38484081351940715cc"
+        },
+        {
+          "path": "doc/en/themes/geoserver/static/blueprint/LICENSE",
+          "entry": "100644 blob d7474100a91bb723f7b32fa66093a7bdd5161905"
+        },
+        {
+          "path": "doc/en/user/source/introduction/license.rst",
+          "entry": "100644 blob 9542192dacc4bcfcf5802f3753fa22f7ac726d17"
+        },
+        {
+          "path": "doc/zhCN/user/source/introduction/license.rst",
+          "entry": "100644 blob 2b3de42751ce8dab9a6f36ea23b4baf76564978c"
+        },
+        {
+          "path": "licenses/NOTICE.md",
+          "entry": "100644 blob af5b7f0dd8c55b17c2587451f5efc4c5a49a0cd9"
+        },
+        {
+          "path": "src/community/gsr/LICENSE.md",
+          "entry": "100644 blob 0692ca105d143ada9429b4c586ab9c3a4c988602"
+        },
+        {
+          "path": "src/community/gsr/NOTICE.md",
+          "entry": "100644 blob fcc7b427bd332b2aa03e1d199bb418b2ecb44bc1"
+        },
+        {
+          "path": "src/community/jms-cluster/activemqBroker/src/main/webapp/META-INF/LICENSE",
+          "entry": "100644 blob 87317419811d00948787f3889e1b4dfacaf255d8"
+        },
+        {
+          "path": "src/community/jms-cluster/activemqBroker/src/main/webapp/META-INF/NOTICE",
+          "entry": "100644 blob b91150c8b348290f6104686a4589cbdc1aa1ec7b"
+        },
+        {
+          "path": "src/community/jms-cluster/activemqBroker/src/main/webapp/WEB-INF/classes/META-INF/LICENSE",
+          "entry": "100644 blob d645695673349e3947e8e5ae42332d0ac3164cd7"
+        },
+        {
+          "path": "src/community/jms-cluster/activemqBroker/src/main/webapp/WEB-INF/classes/META-INF/NOTICE",
+          "entry": "100644 blob bb850d06f84e49f3b6de8ff8ca0c2719ef57c254"
+        },
+        {
+          "path": "src/extension/dxf/LICENSE.txt",
+          "entry": "100644 blob 790a0dc761a36be36456c98925622ae3c237ec3a"
+        },
+        {
+          "path": "src/release/extensions/LICENSE.md",
+          "entry": "100644 blob 15d075ec12ab6353d1a164a4857743af7d680cdb"
+        },
+        {
+          "path": "src/release/extensions/LICENSE_GS.md",
+          "entry": "100644 blob 532dce064b17fdd574627105a369c9c1a41ef22d"
+        },
+        {
+          "path": "src/release/extensions/LICENSE_GT.md",
+          "entry": "100644 blob 4b74281714d629598cdae02a886fc015c85633b5"
+        },
+        {
+          "path": "src/release/installer/win/build/wrapper/LICENSE.txt",
+          "entry": "100644 blob 4081bac97aa7fb8acac185f5224bc46c69d2f469"
+        },
+        {
+          "path": "src/release/src/markdown/LICENSE.md",
+          "entry": "100644 blob d24ab175a0543da078ef56ca7a4283ec61743225"
+        },
+        {
+          "path": "src/web/core/src/main/java/org/geoserver/web/css/blueprint/AUTHORS",
+          "entry": "100644 blob b77d9c2badf645d0178eb38484081351940715cc"
+        },
+        {
+          "path": "src/web/core/src/main/java/org/geoserver/web/css/blueprint/LICENSE",
+          "entry": "100644 blob d7474100a91bb723f7b32fa66093a7bdd5161905"
+        },
+        {
+          "path": "src/web/core/src/main/java/org/geoserver/web/wicket/js/codemirror/LICENSE",
+          "entry": "100644 blob aab5d221f99246c89eab27888b77262dcad83b5b"
+        },
+        {
+          "path": "src/wms/src/test/resources/org/geoserver/wms/legendgraphic/LICENSE-Anarchist_Mustache.ttf",
+          "entry": "100644 blob ab8eb9f1b88bf824e3f2944a034178aabeb66e75"
+        }
+      ],
+      "gitlinks": [],
+      "history_commits": 14753,
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "status": "verified",
+      "observed_at": "2026-09-26T22:37:05.258995+00:00"
+    },
+    {
+      "root_id": "geonode",
+      "repository": "aloerch/ambisgis-geonode",
+      "repository_id": 1376927978,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-geonode.git",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4:refs/heads/ambisgis/review/fnd-07-baseline-v4"
+      ],
+      "commit": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+      "tree": "f8fda01733dae258e319df14f42677cf3bd83e20",
+      "changed_paths": [
+        "A\tgeonode/api/backend_roles.py",
+        "A\tgeonode/api/backend_tokeninfo.py",
+        "A\tgeonode/api/test_backend_roles.py",
+        "A\tgeonode/api/test_backend_tokeninfo.py",
+        "M\tgeonode/api/views.py",
+        "M\tgeonode/security/middleware.py",
+        "M\tgeonode/settings.py",
+        "M\tpyproject.toml"
+      ],
+      "notices": [
+        {
+          "path": "AUTHORS",
+          "entry": "100644 blob cf28806d1bb79ec6346e980743ae1dd2b7599a68"
+        },
+        {
+          "path": "LICENSE",
+          "entry": "100644 blob 6c1d884a15799e997ab66b822b70c0f92cc2ce54"
+        },
+        {
+          "path": "docs/LICENSE",
+          "entry": "100644 blob 6b9078071d947fc24fcd435cd0d79e9907c6c592"
+        },
+        {
+          "path": "geonode/templates/pinax/notifications/notice_settings.html",
+          "entry": "100644 blob 57ebc76b895ac85f645146d646e2271bcdf35f3a"
+        },
+        {
+          "path": "geonode/tests/suite/LICENSE",
+          "entry": "100644 blob 29ff0388fd8da0f27b49cbced485297b2cbe46f6"
+        }
+      ],
+      "gitlinks": [],
+      "history_commits": 19486,
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "status": "verified",
+      "observed_at": "2026-09-26T22:37:25.816436+00:00"
+    },
+    {
+      "root_id": "mapstore",
+      "repository": "aloerch/ambisgis-mapstore",
+      "repository_id": 1376928043,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-mapstore.git",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4:refs/heads/ambisgis/review/fnd-07-baseline-v4"
+      ],
+      "commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+      "tree": "11b6eb8616b90c72570c4f3aad82212b52f1cdbe",
+      "changed_paths": [
+        "M\tpackage.json"
+      ],
+      "notices": [
+        {
+          "path": "LICENSE.txt",
+          "entry": "100644 blob 31b15b949d3e91fae5bb8ab8d8718a2241e0e934"
+        },
+        {
+          "path": "docma-template/LICENSE",
+          "entry": "100644 blob dab60c902d9f22bcd925f92b8b503565db9e4c4f"
+        }
+      ],
+      "gitlinks": [],
+      "history_commits": 5605,
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "status": "verified",
+      "observed_at": "2026-09-26T22:38:04.710142+00:00"
+    },
+    {
+      "root_id": "mapstore-client",
+      "repository": "aloerch/ambisgis-mapstore-client",
+      "repository_id": 1376928013,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-mapstore-client.git",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4:refs/heads/ambisgis/review/fnd-07-baseline-v4"
+      ],
+      "commit": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+      "tree": "8055ca37333ee3037f63624f2e1d6ee548d416f1",
+      "changed_paths": [
+        "M\tgeonode_mapstore_client/client/MapStore2",
+        "M\tgeonode_mapstore_client/client/package.json"
+      ],
+      "notices": [
+        {
+          "path": "AUTHORS",
+          "entry": "100644 blob c3e8e96e21e2e5c52217e49abe6abcf32862fc7d"
+        },
+        {
+          "path": "LICENSE",
+          "entry": "100644 blob d383fa83cba58726dd59ce3145df56b3e4b5deaa"
+        },
+        {
+          "path": "geonode_mapstore_client/client/js/plugins/Print/Copyright.jsx",
+          "entry": "100644 blob ad5f317b555dea3ec94f8e16015c2a4f78ab0595"
+        }
+      ],
+      "gitlinks": [
+        {
+          "path": "geonode_mapstore_client/client/MapStore2",
+          "commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8"
+        }
+      ],
+      "history_commits": 1803,
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "gitmodules": "[submodule \"geonode_mapstore_client/client/MapStore2\"]\n\tpath = geonode_mapstore_client/client/MapStore2\n\turl = https://github.com/geosolutions-it/MapStore2.git\n\tbranch = geonode-5.1.x",
+      "required_local_url_mapping": {
+        "from": "https://github.com/geosolutions-it/MapStore2.git",
+        "to": "https://github.com/aloerch/ambisgis-mapstore.git",
+        "gitmodules_key": "submodule.geonode_mapstore_client/client/MapStore2.url",
+        "path": "geonode_mapstore_client/client/MapStore2",
+        "argv": [
+          "git",
+          "-c",
+          "url.https://github.com/aloerch/ambisgis-mapstore.git.insteadOf=https://github.com/geosolutions-it/MapStore2.git",
+          "ls-remote",
+          "--exit-code",
+          "--refs",
+          "https://github.com/geosolutions-it/MapStore2.git",
+          "refs/heads/ambisgis/review/fnd-07-baseline-v4"
+        ],
+        "readback": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8\trefs/heads/ambisgis/review/fnd-07-baseline-v4",
+        "scope": "process-only exact donor URL rewrite to owned remote; child fetched separately into independent store; no ordinary recursive clone claimed"
+      },
+      "status": "verified",
+      "observed_at": "2026-09-26T22:39:35.530817+00:00"
+    }
+  ],
+  "finished_at": "2026-09-26T22:39:35.531787+00:00"
+}

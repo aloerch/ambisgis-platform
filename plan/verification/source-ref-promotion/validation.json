@@ -1,0 +1,121 @@
+{
+  "commands": [
+    {
+      "name": "restore-help",
+      "argv": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "tools/restore_sources.py",
+        "--help"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source-promotion/plan",
+      "started_at": "2026-09-26T22:14:26.472792+00:00",
+      "finished_at": "2026-09-26T22:14:26.503528+00:00",
+      "exit_code": 0,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-ref-promotion/run-001/restore-help.txt",
+      "sha256": "b3c2c1ad4348b3c7ebd3e121d51927db99db665f213f3cdb7cb331dfeebed4bc",
+      "log_workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/restore-help.txt",
+      "bytes": 1208
+    },
+    {
+      "name": "candidate-integrity",
+      "argv": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source-promotion/plan",
+      "started_at": "2026-09-26T22:14:26.503798+00:00",
+      "finished_at": "2026-09-26T22:14:44.417388+00:00",
+      "exit_code": 0,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-ref-promotion/run-001/candidate-integrity.txt",
+      "sha256": "c6696b32ed3a13ea8a73c9f64c5d3354ee1fc0e8c305db158f8dd0ac457bc589",
+      "log_workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/candidate-integrity.txt",
+      "bytes": 4432
+    },
+    {
+      "name": "candidate-eligibility",
+      "argv": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--eligibility"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source-promotion/plan",
+      "started_at": "2026-09-26T22:14:44.417756+00:00",
+      "finished_at": "2026-09-26T22:15:01.817506+00:00",
+      "exit_code": 2,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-ref-promotion/run-001/candidate-eligibility.txt",
+      "sha256": "c6696b32ed3a13ea8a73c9f64c5d3354ee1fc0e8c305db158f8dd0ac457bc589",
+      "log_workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/candidate-eligibility.txt",
+      "bytes": 4432
+    },
+    {
+      "name": "candidate-report",
+      "argv": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--report"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source-promotion/plan",
+      "started_at": "2026-09-26T22:15:01.817950+00:00",
+      "finished_at": "2026-09-26T22:15:17.742036+00:00",
+      "exit_code": 0,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-ref-promotion/run-001/candidate-report.txt",
+      "sha256": "681c77baab79b96645b5f5549f07b1de3bd4473fa7e366d0bcb06fbeb3a9acce",
+      "log_workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/candidate-report.txt",
+      "bytes": 171549
+    },
+    {
+      "name": "package-tests",
+      "argv": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source-promotion/plan",
+      "started_at": "2026-09-26T22:23:16.557508+00:00",
+      "finished_at": "2026-09-26T22:23:26.514573+00:00",
+      "exit_code": 0,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-ref-promotion/run-001/package-tests.txt",
+      "sha256": "9be5c1204188272079959ab569fdf37da2d0251d4c284a242d34eff322eac157",
+      "log_workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/package-tests.txt",
+      "bytes": 50519
+    },
+    {
+      "name": "package-schemas",
+      "argv": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source-promotion/plan",
+      "started_at": "2026-09-26T22:23:26.514967+00:00",
+      "finished_at": "2026-09-26T22:23:27.218497+00:00",
+      "exit_code": 0,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-ref-promotion/run-001/package-schemas.txt",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+      "log_workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/package-schemas.txt",
+      "bytes": 189
+    }
+  ],
+  "package_tests": {
+    "run": 346,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "schemas_examples_passed": 4,
+  "candidate_integrity": 0,
+  "candidate_report": 0,
+  "candidate_eligibility": 2,
+  "scope": "Plan/tooling/refusal checks and actual retained source/assets integrity; no GIS builds or native/runtime fixture repeated.",
+  "failed_attempts": "Initial sandbox namespace launch failures retained in session; helper/local test defects resolved before execution. Existing historical failures unchanged."
+}

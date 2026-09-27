@@ -1,0 +1,31 @@
+{
+  "accepted_base_commit": "3e516c6f382b481e815ec455befb2f14d80d337b",
+  "accepted_base_public_ancestry": null,
+  "accepted_base_public_exact_refs": [
+    {
+      "ref": "refs/tags/6.0.1^{}",
+      "sha": "3e516c6f382b481e815ec455befb2f14d80d337b"
+    }
+  ],
+  "advertised_inventory": {
+    "exit_code": 0,
+    "heads": 9,
+    "line_count": 215,
+    "sha256": "8f2614c950b0eef87894e9d8521fb3db7c6bbabdec7c164da9af19a5ce33a1dd",
+    "stderr": "",
+    "tags_including_peeled": 206,
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/jupyterhub-advertised-refs.txt"
+  },
+  "newly_reachable_upper_bound": {
+    "excluded_proved_public_commit": "3e516c6f382b481e815ec455befb2f14d80d337b",
+    "exit_code": 0,
+    "object_count": 3,
+    "scope": "Upper bound relative to proved public baseline, not claim that other advertised refs lack these objects.",
+    "sha256": "9e05a8ebc3e4b6ad956a43487536c3458cb9800155bbc18aec872f943e620c60",
+    "stderr": "",
+    "workspace_relative_path": "build-worktrees/source-ref-promotion/run-001/preflight/jupyterhub-newly-reachable-upper-bound.txt"
+  },
+  "observed_at": "2026-09-26T22:14:35.944557+00:00",
+  "repository": "aloerch/ambisgis-jupyterhub",
+  "root_id": "jupyterhub"
+}

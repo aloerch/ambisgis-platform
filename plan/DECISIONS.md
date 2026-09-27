@@ -41,3 +41,14 @@ gates, release/deployment and future merges remain unaccepted. New source custod
 work belongs to FND-07 under its own criteria.
 
 FND-07 materialized source custody is proposed for owner review in [ADR 009](adrs/009-accepted-source-custody.md): independently restored core histories, guarded product-source replay and Class B vendor recovery. Remote promotion and human review remain pending; no public source ref/default/workflow or distribution approval is granted.
+
+## FND-07 exact non-default publication decision — 2026-09-26
+
+The [separate owner comment](https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5850316210)
+binds PR #69 head and its immutable eleven-row promotion plan. It authorizes
+creation of absent `ambisgis/review/fnd-07-baseline-v4` refs only where applicable
+source-publication rights are established, and repository Actions disablement
+on exactly those source forks. It accepts the prior restoration/notice/asset
+evidence within its limits. It is not final FND-07 acceptance, authority to
+promote canonical source refs/defaults, or permission to publish custody archives.
+See [execution and rights evidence](verification/source-ref-promotion/README.md).

@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "task": "FND-07",
+  "status": "proposal-only-separate-owner-decision-required",
+  "authorized_by_current_comment": false,
+  "executed": false,
+  "plan_sha256": "a9477bbdcab4f85fad69cbf77ed04ed76de92efd63d3d663054bda34e4b573a6",
+  "observed_at": "2026-09-26T22:36:59.556480+00:00",
+  "state_receipt_sha256": "bb34b2af6d81f29d550379f9254ff612a7590eb26ed2c5e91e6fd35f30ec0755",
+  "requested_decision": "After reviewing PR70, separately authorize creation-only canonical ambisgis/main for the nine delivered publication-supported rows at these same commits/trees. Keep all defaults unchanged and Actions disabled. The two held roots are excluded unless exact publication evidence resolves them; a changed tree requires a separately reviewed replacement plan. Final FND-07 acceptance stays pending required held-root delivery and an explicit decision against the unchanged three criteria.",
+  "future_preconditions": [
+    "Re-read exact owner/repository identities and every canonical expected-old ref immediately before future execution; null here is a dated observation, not continuing evidence of absence.",
+    "Reuse only exact currently approved objects; same SHA/tree, no regeneration.",
+    "Already exact is a verified no-op; any different existing canonical ref is a collision, never overwrite/fast-forward/force.",
+    "Preserve source-publication companion and its original notices; reverify rights/containment.",
+    "Publish/verify owned MapStore child before client; preserve explicit donor-to-owned submodule URL mapping requirement.",
+    "No default changes, source merge, source PR proliferation, release or archive upload authorized by this proposal."
+  ],
+  "repositories": [
+    {
+      "root_id": "postgresql",
+      "repository": "aloerch/ambisgis-postgresql",
+      "repository_id": 1376927644,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "proposed_tree": "598df31816bda464f5b904c0badbcb25bafcc4f1",
+      "default_to_preserve": {
+        "name": "master",
+        "commit": "c62b330912e2095dc8dee2f749adf7e5d94ca611"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "exact",
+      "eligible_for_requested_separate_authorization": true,
+      "hold": null
+    },
+    {
+      "root_id": "postgis",
+      "repository": "aloerch/ambisgis-postgis",
+      "repository_id": 1376927690,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+      "proposed_tree": "ee927efacdc5a00d698cab2da047ad2232d1f579",
+      "default_to_preserve": {
+        "name": "master",
+        "commit": "84890ccbe53549130de8a2b75a72ab3a54b570d1"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "exact",
+      "eligible_for_requested_separate_authorization": true,
+      "hold": null
+    },
+    {
+      "root_id": "qgis",
+      "repository": "aloerch/ambisgis-qgis",
+      "repository_id": 1376927721,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+      "proposed_tree": "c8542e82e3c3810950f32ce8d58a16bfed12e6c8",
+      "default_to_preserve": {
+        "name": "master",
+        "commit": "09d73a2b827841320e798d1f18c84a4776dbd265"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "absent",
+      "eligible_for_requested_separate_authorization": false,
+      "hold": "Exact palette source-publication rights/provenance evidence unresolved."
+    },
+    {
+      "root_id": "jupyterhub",
+      "repository": "aloerch/ambisgis-jupyterhub",
+      "repository_id": 1376927753,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+      "proposed_tree": "a9ab20c5ff0641870194d666fcd1516ee2f2d65e",
+      "default_to_preserve": {
+        "name": "main",
+        "commit": "929ef417d1e337a17a5e3ebfdd0e0143b021f91d"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "exact",
+      "eligible_for_requested_separate_authorization": true,
+      "hold": null
+    },
+    {
+      "root_id": "jupyterlab",
+      "repository": "aloerch/ambisgis-jupyterlab",
+      "repository_id": 1376927783,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+      "proposed_tree": "0edadc56fb04f944097c0658a9a51686ba68bd16",
+      "default_to_preserve": {
+        "name": "main",
+        "commit": "5ad633d6747371452c2f5fe465d18a70b8f3195d"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "exact",
+      "eligible_for_requested_separate_authorization": true,
+      "hold": null
+    },
+    {
+      "root_id": "geotools",
+      "repository": "aloerch/ambisgis-geotools",
+      "repository_id": 1376927869,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "f51fa68803c465f28a85c155e3e951df0d8788f7",
+      "proposed_tree": "60750f787dabf1a08e646e7d5f3f1497e560e94e",
+      "default_to_preserve": {
+        "name": "main",
+        "commit": "9a4f847e8b83875169e279999659052a0cc2bf14"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "absent",
+      "eligible_for_requested_separate_authorization": false,
+      "hold": "LGPL2.1-only modification notice placement for two changed POMs unresolved."
+    },
+    {
+      "root_id": "geowebcache",
+      "repository": "aloerch/ambisgis-geowebcache",
+      "repository_id": 1376927892,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+      "proposed_tree": "8df655d13b9955776fe1532dfb27fac64612a772",
+      "default_to_preserve": {
+        "name": "main",
+        "commit": "821bae4793863555321cd7a935137c80b8eded73"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "exact",
+      "eligible_for_requested_separate_authorization": true,
+      "hold": null
+    },
+    {
+      "root_id": "geoserver",
+      "repository": "aloerch/ambisgis-geoserver",
+      "repository_id": 1376927947,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "fd2fe1dfcc78fa974bdb81673872879336312077",
+      "proposed_tree": "c12018e88493a351c60c370f2a43894701acf995",
+      "default_to_preserve": {
+        "name": "main",
+        "commit": "98c7c567a9fa3b691915fa2fc613d90d90d78b62"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "exact",
+      "eligible_for_requested_separate_authorization": true,
+      "hold": null
+    },
+    {
+      "root_id": "geonode",
+      "repository": "aloerch/ambisgis-geonode",
+      "repository_id": 1376927978,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+      "proposed_tree": "f8fda01733dae258e319df14f42677cf3bd83e20",
+      "default_to_preserve": {
+        "name": "master",
+        "commit": "ddfdc44cabf13931fb1d53d35809699d6e4766ae"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "exact",
+      "eligible_for_requested_separate_authorization": true,
+      "hold": null
+    },
+    {
+      "root_id": "mapstore-client",
+      "repository": "aloerch/ambisgis-mapstore-client",
+      "repository_id": 1376928013,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+      "proposed_tree": "8055ca37333ee3037f63624f2e1d6ee548d416f1",
+      "default_to_preserve": {
+        "name": "master",
+        "commit": "673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "exact",
+      "eligible_for_requested_separate_authorization": true,
+      "hold": null
+    },
+    {
+      "root_id": "mapstore",
+      "repository": "aloerch/ambisgis-mapstore",
+      "repository_id": 1376928043,
+      "target_ref": "refs/heads/ambisgis/main",
+      "expected_old_commit": null,
+      "proposed_commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+      "proposed_tree": "11b6eb8616b90c72570c4f3aad82212b52f1cdbe",
+      "default_to_preserve": {
+        "name": "master",
+        "commit": "0eedc8b7184d3b753d0581963814726f1e5ec8eb"
+      },
+      "actions_to_preserve": {
+        "enabled": false
+      },
+      "review_ref": "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+      "review_delivery": "exact",
+      "eligible_for_requested_separate_authorization": true,
+      "hold": null
+    }
+  ]
+}

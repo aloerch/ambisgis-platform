@@ -1,0 +1,52 @@
+{
+  "observed_at": "2026-09-26T22:12:22.750702+00:00",
+  "owner": "aloerch",
+  "platform": {
+    "id": 1376927351,
+    "node_id": "R_kgDOUhI-dw",
+    "full_name": "aloerch/ambisgis-platform",
+    "default_branch": "ambisgis/main"
+  },
+  "main": {
+    "ref": "refs/heads/ambisgis/main",
+    "node_id": "REF_kwDOUhI-d7hyZWZzL2hlYWRzL2FtYmlzZ2lzL21haW4",
+    "url": "https://api.github.com/repos/aloerch/ambisgis-platform/git/refs/heads/ambisgis/main",
+    "object": {
+      "sha": "4d0602542d3120024ec5974501624c96e5de48d4",
+      "type": "commit",
+      "url": "https://api.github.com/repos/aloerch/ambisgis-platform/git/commits/4d0602542d3120024ec5974501624c96e5de48d4"
+    }
+  },
+  "pr69": {
+    "id": 4608216582,
+    "html_url": "https://github.com/aloerch/ambisgis-platform/pull/69",
+    "number": 69,
+    "state": "closed",
+    "merged_at": "2026-09-26T21:58:22Z",
+    "merge_commit_sha": "4d0602542d3120024ec5974501624c96e5de48d4",
+    "merged": true
+  },
+  "plan_sha256": "a9477bbdcab4f85fad69cbf77ed04ed76de92efd63d3d663054bda34e4b573a6",
+  "owner_decision": "https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5850316210",
+  "owner_decision_body_sha256": "14cbf5562a767905ca4a48174be5d64416c6a1f1046ad62d058e78f1338dd818",
+  "worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-source-promotion",
+  "branch": "fnd-07/source-ref-promotion",
+  "original_plan_checkout_modified": [
+    "STATUS.md"
+  ],
+  "retained_python": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+  "issue_6": {
+    "number": 6,
+    "state": "open",
+    "title": "[FND-07] Acquire source custody and record independently maintained product baselines",
+    "body": "<!-- ambisgis:task:FND-07 -->\n<!-- ambisgis:managed:start -->\n## FND-07 \u2014 Acquire source custody and record independently maintained product baselines\n\nPhase: P0 \u00b7 Repository: ambisgis-platform\nRequirements: R21, R22\nDepends on: [FND-02](https://github.com/aloerch/ambisgis-platform/issues/3)\n\n### Deliverables\n- Owned product branches in every fork; provenance inventory; git bundles; retained submodule/LFS/build assets\n\n### Acceptance criteria\n- [ ] Every selected core component resolves to an owned source revision and retained baseline.\n- [ ] No source transfer implies a copyright reassignment or blanket relicensing.\n- [ ] All required additional assets are enumerated; nulls are explicit blockers, not fabricated hashes.\n\n### Planned verification\nT-OWN-01\n\nRisk: high \u00b7 Review gate: Human approval\n\nSpecification: [backlog.json](https://github.com/aloerch/ambisgis-platform/blob/ambisgis/main/plan/backlog.json), [requirements.json](https://github.com/aloerch/ambisgis-platform/blob/ambisgis/main/plan/requirements.json), [component specifications](https://github.com/aloerch/ambisgis-platform/blob/ambisgis/main/plan/docs), [source ownership](https://github.com/aloerch/ambisgis-platform/blob/ambisgis/main/plan/docs/11-independent-product-and-source-ownership.md).\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+    "html_url": "https://github.com/aloerch/ambisgis-platform/issues/6"
+  },
+  "issue_7": {
+    "number": 7,
+    "state": "open",
+    "title": "[FND-08] Build the initial product spine from owned sources and cached dependencies",
+    "body": "<!-- ambisgis:task:FND-08 -->\n<!-- ambisgis:managed:start -->\n## FND-08 \u2014 Build the initial product spine from owned sources and cached dependencies\n\nPhase: P0 \u00b7 Repository: ambisgis-platform\nRequirements: R21, R22\nDepends on: [FND-07](https://github.com/aloerch/ambisgis-platform/issues/6)\n\n### Deliverables\n- Owned PostgreSQL/PostGIS, catalog, rendering/cache and UI builds; controlled artifact store; source/build recipes\n\n### Acceptance criteria\n- [ ] Initial vertical-slice components build without resolving upstream branch tips or fetching unrecorded packages.\n- [ ] A simulated upstream API/branch change does not change selected inputs or outputs.\n- [ ] The source inventory includes libraries, plugins, styles, fonts, CRS resources, toolchains and base image dependencies.\n\n### Planned verification\nT-OWN-02\n\nRisk: high \u00b7 Review gate: Human approval\n\nSpecification: [backlog.json](https://github.com/aloerch/ambisgis-platform/blob/ambisgis/main/plan/backlog.json), [requirements.json](https://github.com/aloerch/ambisgis-platform/blob/ambisgis/main/plan/requirements.json), [component specifications](https://github.com/aloerch/ambisgis-platform/blob/ambisgis/main/plan/docs), [source ownership](https://github.com/aloerch/ambisgis-platform/blob/ambisgis/main/plan/docs/11-independent-product-and-source-ownership.md).\nThese are planned tests, not test results. Attach actual commit/PR/test evidence.\n<!-- ambisgis:managed:end -->\n\n### Implementation discussion and evidence\nPreserve manually added content below this section during plan updates.\n",
+    "html_url": "https://github.com/aloerch/ambisgis-platform/issues/7"
+  }
+}
