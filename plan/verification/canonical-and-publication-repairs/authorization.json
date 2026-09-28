@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "canonical_proposal_sha256": "519dd189533c6d077648f0b9bbf1f98e052e28d4d614414b6c04f141deb0d28d",
+  "body_sha256": "87d79df2d4458d9570c269ff9d20310c4117f7d82c2dc23d4588ca505900da1f",
+  "comment": {
+    "id": 5863464446,
+    "html_url": "https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5863464446",
+    "issue_url": "https://api.github.com/repos/aloerch/ambisgis-platform/issues/6",
+    "user": {
+      "login": "aloerch",
+      "id": 15285626,
+      "node_id": "MDQ6VXNlcjE1Mjg1NjI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15285626?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aloerch",
+      "html_url": "https://github.com/aloerch",
+      "followers_url": "https://api.github.com/users/aloerch/followers",
+      "following_url": "https://api.github.com/users/aloerch/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aloerch/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aloerch/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aloerch/subscriptions",
+      "organizations_url": "https://api.github.com/users/aloerch/orgs",
+      "repos_url": "https://api.github.com/users/aloerch/repos",
+      "events_url": "https://api.github.com/users/aloerch/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aloerch/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "created_at": "2026-09-28T04:35:51Z",
+    "updated_at": "2026-09-28T04:35:51Z",
+    "body": "Owner authorization \u2014 nine canonical source refs and two local publication repairs\n\nI reviewed and merged PR #70 at head\n7d5ceb06f7a1814d4a95b7e4b05a2b46d8728720\n(merge 0df95126d9fecd9df3cf1fd0cd88ab565a680989).\n\n1. Nine unchanged canonical refs\n\nI authorize creation of refs/heads/ambisgis/main at the exact proposed\ncommit/tree identities for the nine eligible rows in this immutable proposal:\nhttps://github.com/aloerch/ambisgis-platform/blob/7d5ceb06f7a1814d4a95b7e4b05a2b46d8728720/plan/verification/source-ref-promotion/canonical-proposal.json\n\nThe nine repositories are ambisgis-postgresql, ambisgis-postgis,\nambisgis-jupyterhub, ambisgis-jupyterlab, ambisgis-geowebcache,\nambisgis-geoserver, ambisgis-geonode, ambisgis-mapstore and\nambisgis-mapstore-client, all under aloerch. Verify numeric repository IDs,\ncurrent review refs, publication evidence and Actions disablement first.\n\nCreate only absent refs. An already identical ref is a no-op; any other\nexisting ref is a collision, not permission to advance or overwrite it.\nPreserve defaults, review refs, all other branches/tags and history. Keep\nActions disabled; do not enable or change unrelated automation/settings.\nThis does not change any repository's default branch.\n\n2. GeoTools notice correction \u2014 local preparation, not publication\n\nI authorize a minimal local source change adding prominent, accurate\nAmbisGIS modification/date notices to:\n- build/maven/xmlcodegen/pom.xml\n- modules/plugin/imagemosaic/pom.xml\n\nPreserve the original licenses and all effective POM behavior. Retain the\nprevious commit/history and produce a new exact commit/tree, tested patch\nand publication plan for review. Do not publish the held old or changed\nGeoTools refs in this run.\n\n3. QGIS source-publication variant \u2014 local preparation, not publication\n\nPrefer removing the exact 1,130 already package-excluded palettes from a\nseparately identified, publication-ready SOURCE snapshot over an open-ended\npermission search. Preserve general styling functionality, the 265\nColorBrewer palettes and applicable attribution/license obligations.\n\nI authorize preparing this snapshot in a new isolated local repository,\nwith no disputed ancestor content reachable from its proposed public ref.\nPreserve the complete original history and notices in existing controlled\ncustody; record exact upstream-to-product provenance and this deliberate\npublic-history boundary. Do not rewrite or delete existing local/public\nhistory, change repository visibility, or create a new public repository.\n\nThis is not a claim that existing public fork history has been purged or\nthat third-party rights are waived. If a specific authoritative grant\nalready resolves a scope, record it, but do not contact authors or adopt\nnew terms. Retain any additional concrete restriction as a hold.\n\nPrepare the exact QGIS source/tree/packaging comparison and affected tests\nfor my review. Do not publish the held original or changed QGIS ref in\nthis run.\n\nThese instructions authorize the nine named canonical-ref creations and\nlocal preparation of the two repairs. They do not authorize changed-source\npublication for QGIS/GeoTools, PR merges, broad history rewrites, new\nrepositories, archive/binary releases, production deployment, final FND-07\nacceptance or FND-08 execution. FND-02 remains accepted.",
+    "author_association": "OWNER"
+  }
+}
