@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "case": "whole_stage_missing",
+      "expected_refusal": "read-only verification requires both existing resource stages",
+      "passed": true
+    },
+    {
+      "case": "retained_palette_missing",
+      "expected_refusal": "Retained prefix changed: /home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/qgis/attempt-003/resource-negative-checks/retained_palette_missing",
+      "passed": true
+    },
+    {
+      "case": "retained_palette_changed",
+      "expected_refusal": "Retained prefix changed: /home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/qgis/attempt-003/resource-negative-checks/retained_palette_changed",
+      "passed": true
+    },
+    {
+      "case": "unexpected_extra_path",
+      "expected_refusal": "Retained prefix changed: /home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/qgis/attempt-003/resource-negative-checks/unexpected_extra_path",
+      "passed": true
+    }
+  ],
+  "production_source_or_resource_mutations": 0,
+  "implementation": {
+    "publication_selection.py": "b3501e77efdbba46db361854430078463453e3f4b8f27a4b16376ca18d13f278"
+  }
+}

@@ -1,0 +1,1131 @@
+{
+  "count": 19,
+  "files": [
+    {
+      "after_oid": "9f743e2eaab0559ce2760e9ea1e9634465f508d9",
+      "after_sha256": "a0865ceec28c01be56dc5af078ea9e05dbcb6507cb9ca71a23f1d3108e4feeea",
+      "before_oid": "d0cfa9a63233179cc77a77af1cea3ab44fe81eda",
+      "before_sha256": "0956170279fdf8f04d7a6843383820faa5394ac01ab8af9ade8fbb7d998a90c2",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/bath.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "jm/ad",
+            "file": "ad-a"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "d102ef1710b1d7fedaa01de1ca0b00ba64d23812",
+      "after_sha256": "2bc314c2fc0b0705da340b81f7ce9e9ef3260d47d664fe661447cd6b198eb969",
+      "before_oid": "ece9689be4b683c71cea7e1632d4c103fd5759e2",
+      "before_sha256": "13b44b8696f3fe02b899712409d7c73878ec1d3d7121dc40a34261fb1b378077",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/blues.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "es/skywalker"
+          },
+          "tag": "collect"
+        },
+        {
+          "attributes": {
+            "dir": "es/sea_dreams"
+          },
+          "tag": "collect"
+        }
+      ]
+    },
+    {
+      "after_oid": "9a97f5924a45cb087744794359f68fb109c571b2",
+      "after_sha256": "900a35beb232fac451d297c404351664251d03de3f39f09c6ad3c28f1a346ef3",
+      "before_oid": "3f2ed12522b156396e54ffc7f2150189ce9d44b9",
+      "before_sha256": "e1484e3cddb660570a41cf78d4a4b8efe8e96e4a1b48817edca30e55095c7ae2",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/div.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "es/landscape",
+            "file": "es_landscape_90"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/landscape",
+            "file": "es_landscape_76"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/evad",
+            "file": "Andy_GIlmore_2"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/sugar",
+            "file": "Need_I_Say_More"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/vredeling",
+            "file": "Grand_Boucle"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/vredeling",
+            "file": "Optimus_Prime"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/vredeling",
+            "file": "British_Cheer"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/vredeling",
+            "file": "Tubular_Bells"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "7bf424e062afd860e437eb1ea68231bdf186979f",
+      "after_sha256": "4f6258afd9d0a4d32659cce6a51425fe5802bfb2158d1cd4459f31ddfe717065",
+      "before_oid": "39fab22ddde6feb96828a5518226ce01c687b0c1",
+      "before_sha256": "f4f1c709a815943db6fae9368970172bdae6053de84f709f10aec80f0666a976",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/greens.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "es/emerald_dragon"
+          },
+          "tag": "collect"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/evad",
+            "file": "fava_bean"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/katiekat013",
+            "file": "Lovely_Liz"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/laleh1979",
+            "file": "contagious_delusion"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/phill",
+            "file": "moldy_bread"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/ccolo/smorin2002",
+            "file": "All_kinds_of_green"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/emerald_dragon",
+            "file": "es_emerald_dragon_12"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/emerald_dragon",
+            "file": "es_emerald_dragon_10"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/neo10/liht",
+            "file": "frozen-in-time"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/neo10/flor",
+            "file": "tropical-green"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/neo10/flor",
+            "file": "apple-green"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/neo10/faun",
+            "file": "radioactive-slime"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/neo10/env",
+            "file": "green-crystal"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "6e531a53f217414af142017589088623b4676678",
+      "after_sha256": "a38a129154e4e9b0c1b143e70f5cc82413a8996a5bd7a971838f72738445f3a6",
+      "before_oid": "ec2b7db469c7eba205880e78ed1c9ccebcb9864a",
+      "before_sha256": "2bfd78a52ebb15128ba869f71727f9f96cace8631a33ea501ef05eac2948327c",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/greys.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "es/platinum"
+          },
+          "tag": "collect"
+        },
+        {
+          "attributes": {
+            "dir": "es/platinum",
+            "file": "es_platinum_16"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "20622b1b76234f7e3e2b8fd7aff34b56f8322718",
+      "after_sha256": "4346650454af60b0e30b15f57707827fdf15c440350d765b9966a5e63c9fc446",
+      "before_oid": "3e22d3f37e1090d2a7a0a0cdf1b6ac9c3f32e067",
+      "before_sha256": "568e6f4076f1488ac75481a8870308bbe6c8d9501b75c71dad274c28ae9ff845",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/reds.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "es/rosa"
+          },
+          "tag": "collect"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/neo10/base",
+            "file": "red-pink"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/neo10/clth",
+            "file": "pink-red"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/neo10/clth",
+            "file": "violent-pink-red"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jjg/neo10/food",
+            "file": "red-candy"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "a97de73469cf0146801489d3bd5116d53a17d574",
+      "after_sha256": "a355383d7ec19e8da641f4fdd429dbaf50657938a9ced782e21cf499bcd5adc4",
+      "before_oid": "562e08d4afd29facabf574517e827688eca133d2",
+      "before_sha256": "0361eeb458726c0dafb362851bd48b9f8bb516ca62973f77cf7736be9c967371",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/topo.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "file": "DEM_poster"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "file": "DEM_print"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "file": "DEM_screen"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/tv",
+            "file": "tv-a"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/o2",
+            "file": "o2-a"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/db",
+            "file": "db-a"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/ao",
+            "file": "ao-a"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/wt",
+            "file": "wt-a"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/ws",
+            "file": "ws-a"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/cd",
+            "file": "cd-a"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "file": "sd-a"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "ccf63d271715d2f993d6b2ba82db843033b6746f",
+      "after_sha256": "0ae67d718bf5105d8afcd48daac85f9e35326135be8ada0e79ddc9db09a9da0c",
+      "before_oid": "c4939895f7ef00441448ef0f54f6c79f429295bc",
+      "before_sha256": "6832abfdf3fb17c0dcb75eff2423bf4dcc051289e146c01c0d9e6e1135c7e0c3",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-c3g.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "up",
+            "downloads": "63",
+            "file": "DEM_print",
+            "rank": "18"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "down",
+            "downloads": "45",
+            "file": "DEM_screen",
+            "rank": "41"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "05643439103ee606a7f12d20c870b440333ce32d",
+      "after_sha256": "59c894b2838320cab85f86474f1fa54d2101076ede4e216bf96a3f12bff53241",
+      "before_oid": "d198ed7557bb4fc96b4f82682bfe33e64e908580",
+      "before_sha256": "bdf291825a417b61cdc73cbda3d575d9768d0b574bdf37c340b3504e8ce1f1a9",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-cpt.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "283",
+            "file": "DEM_print",
+            "rank": "4"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "268",
+            "file": "DEM_screen",
+            "rank": "5"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "up",
+            "downloads": "238",
+            "file": "DEM_poster",
+            "rank": "7"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "gmt",
+            "direction": "up",
+            "downloads": "96",
+            "file": "GMT_dem1",
+            "rank": "57"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "up",
+            "downloads": "90",
+            "file": "sd-a",
+            "rank": "61"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "55960ef6c3c2d066b7ad189b08acec9f7595761d",
+      "after_sha256": "99783b60a21077418150a8b82fac814b3069b61ab33ed1f3684ba710544f325b",
+      "before_oid": "e957f6523c733872098a955f0f88da58cfce68f4",
+      "before_sha256": "c40e8c06acd8692f281071a22ad32e0219a6c5220f766f491f8f4bf71fd9ce6d",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-ggr.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "34",
+            "file": "DEM_print",
+            "rank": "2"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "27",
+            "file": "DEM_screen",
+            "rank": "4"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "down",
+            "downloads": "15",
+            "file": "DEM_poster",
+            "rank": "11"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "down",
+            "downloads": "10",
+            "file": "sd-a",
+            "rank": "22"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/rivendell",
+            "direction": "down",
+            "downloads": "6",
+            "file": "es_rivendell_15",
+            "rank": "51"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "9d331fc7749c0ff7ee899e1c2d6d4de17ea32bf0",
+      "after_sha256": "0cdf0769bdb4d7ceed9e548891f561e122f9fdcca7125a857ce5a3b489ad8d77",
+      "before_oid": "19633bd99063d34f28ffb0c8eaddbfab401827dd",
+      "before_sha256": "f3da7e1b89bc268ff8037079d146046ab2c5b0ec70a7c65a4ac3cf1df96322ac",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-gpf.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "34",
+            "file": "DEM_print",
+            "rank": "3"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "20",
+            "file": "DEM_screen",
+            "rank": "7"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "down",
+            "downloads": "14",
+            "file": "DEM_poster",
+            "rank": "15"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "up",
+            "downloads": "12",
+            "file": "sd-a",
+            "rank": "19"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/vintage",
+            "direction": "down",
+            "downloads": "7",
+            "file": "es_vintage_57",
+            "rank": "58"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "gmt",
+            "direction": "up",
+            "downloads": "7",
+            "file": "GMT_dem1",
+            "rank": "58"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "0c1dff466e0c9c28750920c07ba630607e92132a",
+      "after_sha256": "53acbc1e756148aab521899a32b1e81bc5d5ace8ff702e6945cd084eafb58eea",
+      "before_oid": "1649473403f79a914a5f93588444781f59a7f7fe",
+      "before_sha256": "53f5826fc2522c4e2a0b2d7da035d8c576809495255f68c8e1a44769b3cdb85f",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-inc.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "28",
+            "file": "DEM_print",
+            "rank": "3"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "down",
+            "downloads": "21",
+            "file": "DEM_screen",
+            "rank": "5"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "17",
+            "file": "DEM_poster",
+            "rank": "7"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "up",
+            "downloads": "9",
+            "file": "sd-a",
+            "rank": "21"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/rivendell",
+            "direction": "unchanged",
+            "downloads": "7",
+            "file": "es_rivendell_15",
+            "rank": "32"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/vintage",
+            "direction": "up",
+            "downloads": "4",
+            "file": "es_vintage_57",
+            "rank": "62"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/vintage",
+            "direction": "up",
+            "downloads": "4",
+            "file": "es_vintage_01",
+            "rank": "62"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "7477e27535e7c70fb95566b291074251c4898e60",
+      "after_sha256": "56826eabeaab99e808b8d5825fb4a0a753d36b4163ceca396b2ec39a62efc52c",
+      "before_oid": "6aacc5e90ebc3a3221353aab4ab276e94d7d248f",
+      "before_sha256": "4258208f4b9ddb44bd5e860e7b3a5c3674293afeb44ebad3750921a698406842",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-map.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "50",
+            "file": "DEM_print",
+            "rank": "3"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "down",
+            "downloads": "32",
+            "file": "DEM_screen",
+            "rank": "6"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "31",
+            "file": "DEM_poster",
+            "rank": "7"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "up",
+            "downloads": "21",
+            "file": "sd-a",
+            "rank": "11"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/rivendell",
+            "direction": "up",
+            "downloads": "6",
+            "file": "es_rivendell_15",
+            "rank": "54"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/vintage",
+            "direction": "down",
+            "downloads": "5",
+            "file": "es_vintage_57",
+            "rank": "74"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/vintage",
+            "direction": "up",
+            "downloads": "5",
+            "file": "es_vintage_01",
+            "rank": "74"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "2a2ee73a2880234a403435ccce5d713732a94fd2",
+      "after_sha256": "9728e9a90f54b1897de5a2b73ffb4627980275dd19cf2ed845c21564a0ac17f9",
+      "before_oid": "fc2c35c3c7693fe745d509f22f1a819039c9fd03",
+      "before_sha256": "7a57e0e93ba7d93576563426f00185740bdb20a871d6c08f9bc79cc60644488d",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-pg.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "32",
+            "file": "DEM_print",
+            "rank": "3"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "down",
+            "downloads": "25",
+            "file": "DEM_screen",
+            "rank": "5"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "down",
+            "downloads": "21",
+            "file": "DEM_poster",
+            "rank": "8"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "down",
+            "downloads": "10",
+            "file": "sd-a",
+            "rank": "26"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/rivendell",
+            "direction": "up",
+            "downloads": "8",
+            "file": "es_rivendell_15",
+            "rank": "38"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "gmt",
+            "direction": "up",
+            "downloads": "5",
+            "file": "GMT_dem1",
+            "rank": "75"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "3437991e10079cac31ccfac7e884903d4fcac252",
+      "after_sha256": "c329597e7401fd77f2bf4167543c9bbe4f7b8597f52f55627cc704175a8d3b52",
+      "before_oid": "69221b86404d328af8529a9f8a6e8a9c7fd6283c",
+      "before_sha256": "60ce2a308ad1c4edc0db76e5c8e65741e4f9d1bd2c825d7f440341c756283d71",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-psp.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "24",
+            "file": "DEM_print",
+            "rank": "3"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "16",
+            "file": "DEM_screen",
+            "rank": "6"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "up",
+            "downloads": "14",
+            "file": "DEM_poster",
+            "rank": "8"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "up",
+            "downloads": "10",
+            "file": "sd-a",
+            "rank": "13"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/rivendell",
+            "direction": "unchanged",
+            "downloads": "6",
+            "file": "es_rivendell_15",
+            "rank": "31"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/vintage",
+            "direction": "down",
+            "downloads": "5",
+            "file": "es_vintage_57",
+            "rank": "43"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "gmt",
+            "direction": "up",
+            "downloads": "4",
+            "file": "GMT_dem1",
+            "rank": "53"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/ocean_breeze",
+            "direction": "up",
+            "downloads": "3",
+            "file": "es_ocean_breeze_046",
+            "rank": "69"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "up",
+            "downloads": "3",
+            "file": "sd-e",
+            "rank": "69"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "d0ffdce071289209bacaee989471623ba812758e",
+      "after_sha256": "b7fd555286c49898f5454ce5f25e784094acb78ba421fda1a002455de771cdbc",
+      "before_oid": "ead54b0c739786a71d755c88495c5e6dbc29fcd6",
+      "before_sha256": "c8cd0f1ae85c89b817cf4e4cedde9d81a61b614e65b1e4129bf681ee153f1e37",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-qgs.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "78",
+            "file": "DEM_print",
+            "rank": "1"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "down",
+            "downloads": "54",
+            "file": "DEM_screen",
+            "rank": "3"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "39",
+            "file": "DEM_poster",
+            "rank": "4"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "unchanged",
+            "downloads": "24",
+            "file": "sd-a",
+            "rank": "11"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "gmt",
+            "direction": "down",
+            "downloads": "14",
+            "file": "GMT_dem1",
+            "rank": "22"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "588a64ac8191a4d3daebfc8bb5ad8a6730682962",
+      "after_sha256": "f00b2db7df1f4b915b464be4a9ab7657a922f2a46d9bb5ca73c88586723fe86f",
+      "before_oid": "56756cc0032936cc7a20cbfce3ba1ccc7c61b9e9",
+      "before_sha256": "0982dc0e90a1effbd507c1e036134b340ade936f83146d5a5f5faf458f4b6360",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-sao.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "21",
+            "file": "DEM_print",
+            "rank": "3"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "18",
+            "file": "DEM_screen",
+            "rank": "4"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "down",
+            "downloads": "10",
+            "file": "DEM_poster",
+            "rank": "16"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "up",
+            "downloads": "7",
+            "file": "sd-a",
+            "rank": "30"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/vintage",
+            "direction": "down",
+            "downloads": "5",
+            "file": "es_vintage_57",
+            "rank": "53"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "gmt",
+            "direction": "up",
+            "downloads": "5",
+            "file": "GMT_dem1",
+            "rank": "53"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "34d58a1123bdbedbed55811bdd7224c3d2e7e673",
+      "after_sha256": "e9ce4418ef7c109f3e5a6e58d6ba6826330ca691c9af0edebf7b9de2450c9950",
+      "before_oid": "90ce4dbecb69c472ba08a50a08be58eeb8b873eb",
+      "before_sha256": "62cbfd039819efcc98e63055d1d06158ac23c86283d51e382554bb85884e7ff8",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/totp-svg.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "218",
+            "file": "DEM_print",
+            "rank": "1"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "192",
+            "file": "DEM_poster",
+            "rank": "2"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "td",
+            "direction": "unchanged",
+            "downloads": "180",
+            "file": "DEM_screen",
+            "rank": "3"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "jm/sd",
+            "direction": "down",
+            "downloads": "45",
+            "file": "sd-a",
+            "rank": "18"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "gmt",
+            "direction": "unchanged",
+            "downloads": "29",
+            "file": "GMT_dem1",
+            "rank": "33"
+          },
+          "tag": "gradient"
+        }
+      ]
+    },
+    {
+      "after_oid": "35472a008d43f5a63776ab904c5f7e42048b4d15",
+      "after_sha256": "c0bd07501bf71fff08d06b9c71937f7480847784a4e70631fd978622d5dfb826",
+      "before_oid": "f99f736fe0f0c26c38ec3028240b666aaa04d603",
+      "before_sha256": "217a595106fa4e8854c2061b8bbbbf6e09fa8a7d9b796d1eecb4d642a2df227c",
+      "notice": "<!-- AmbisGIS modification 2026-09-28: removed references to the exact 1130 optional palettes excluded from this source-publication snapshot; see /AMBISGIS-SOURCE-PROVENANCE.json. Original attribution is retained. -->\n",
+      "path": "resources/cpt-city-qgis-min/selections/transparency.xml",
+      "removed_references": [
+        {
+          "attributes": {
+            "dir": "es/platinum",
+            "file": "es_platinum_01"
+          },
+          "tag": "gradient"
+        },
+        {
+          "attributes": {
+            "dir": "es/sea_dreams",
+            "file": "es_seadreams_14"
+          },
+          "tag": "gradient"
+        }
+      ]
+    }
+  ],
+  "new_commit": "86af40542b219b0da6df1a43914413443330c0c0",
+  "original_commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+  "references_removed": 107
+}

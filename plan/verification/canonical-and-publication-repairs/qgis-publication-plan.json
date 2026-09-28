@@ -1,0 +1,63 @@
+{
+  "accepted_candidate_manifest_sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+  "accepted_original_commit": "1a4cda5f2620e7374e5926fc955a7d2d06493e15",
+  "accepted_original_tree": "c8542e82e3c3810950f32ce8d58a16bfed12e6c8",
+  "bundle": {
+    "bytes": 209753585,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/qgis/attempt-003/qgis-publication-snapshot.bundle",
+    "sha256": "3f822df157c4c15dd8ebe5b877b2555102f586d8be8e6be307b8899fd8cf8f2f"
+  },
+  "canonical_expected_old_sha": null,
+  "canonical_target_ref": "refs/heads/ambisgis/main",
+  "changed_source_publication_authorized": false,
+  "expected_old_evidence": {
+    "meaning": "Dated complete-ref readback only; recheck absence or exact target before any future creation. Different existing refs are collisions.",
+    "path": "qgis-remote-preflight.json",
+    "sha256": "0fa89457ba36b1a8600c27cbeea0adb09421fe21debc8d50031a0af7ddbfbc78"
+  },
+  "hosting_boundary": "This root does not purge or certify existing public fork branches/tags or GitHub fork-network objects. Owner must accept this explicit boundary or retain local candidate pending separate hosting decision. No new public repository, visibility change or history rewrite authorized.",
+  "keep_actions_enabled": false,
+  "local_preparation_authority": {
+    "author": "aloerch",
+    "author_id": 15285626,
+    "body_sha256": "87d79df2d4458d9570c269ff9d20310c4117f7d82c2dc23d4588ca505900da1f",
+    "created_at": "2026-09-28T04:35:51Z",
+    "url": "https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5863464446"
+  },
+  "parent_count": 0,
+  "preconditions": [
+    "Separate owner approval naming exact changed commit/tree and destinations.",
+    "Reverify authenticated owner and exact repository numeric ID.",
+    "Recheck new review/canonical refs, exact objects, unchanged master/default and Actions=false.",
+    "Use creation-only server semantics; exact is a no-op and any collision holds.",
+    "Source companion and original notices must accompany permitted delivery; no archive/binary publication inferred."
+  ],
+  "preparation_receipt": {
+    "bytes": 39669,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/qgis/attempt-003/result.json",
+    "sha256": "f9828bf21e349a596c3ed16c58287c4f26dce1a271aab5f4cf15ab336f20d4eb"
+  },
+  "preserve_all_existing_refs_and_history": true,
+  "preserve_default": "master",
+  "proposed_commit": "86af40542b219b0da6df1a43914413443330c0c0",
+  "proposed_tree": "84ea1b18fdf5721819fee34fe06cdef7ea82afdc",
+  "provenance": {
+    "bytes": 14318068,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/qgis/attempt-003/source-provenance.json",
+    "sha256": "c715fa2e528a753f236ba4acedab0da16757358d588df03c7a4469d9c1b3d2a2"
+  },
+  "publication_basis": "Exact 1130 disputed optional palettes absent from full proposed stored/reachable object set and archive members; remaining source/attribution unchanged except named catalogue/provenance additions. Original licenses and other obligations remain.",
+  "repository": "aloerch/ambisgis-qgis",
+  "repository_id": 1376927721,
+  "review_expected_old_sha": null,
+  "review_target_ref": "refs/heads/ambisgis/review/fnd-07-publication-snapshot-v1",
+  "root_id": "qgis",
+  "schema_version": 1,
+  "scope": "Separate future creation-only publication of the exact local source successor; no current QGIS remote writes.",
+  "source_only_successor": "Original candidate/receipts immutable; same selected functionality. New binaries require new identities under FND-08.",
+  "verification_receipt": {
+    "bytes": 38106,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/qgis/attempt-003/verify-001.json",
+    "sha256": "a62158a56eef6be20fc6d9cd74ad4c26a19579e80e6756749da428f11e2fa4a1"
+  }
+}

@@ -1,0 +1,1216 @@
+{
+  "acknowledgment": "This product includes color specifications and designs developed by Cynthia Brewer (http://colorbrewer.org/).",
+  "original_authorship": "Source headers, doc/AUTHORS and full original-file mapping retained; new root metadata identifies preparation only.",
+  "original_notices_unchanged": [
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "8e2daf6bc046673223b197d859fa9609255ef13c",
+      "path": "COPYING",
+      "sha256": "dba313854f65a8d41b1777cf9d6cb5ddf692792be04d808b82c86c63909fbdf0"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "4b417765f3a834ce6b0a216f6b6c0fe2d3f0bed5",
+      "path": "cmake/COPYING-CMAKE-SCRIPTS",
+      "sha256": "46cde7dc11e64c78d650b4851b88f6704b4665ff60f22a1caf68ceb15e217e5b"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "36b7cd93cdfbac762f5be4c6ce276df2ea6305c2",
+      "path": "cmake/modules/coverage/LICENSE_1_0.txt",
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "c1b61bbf12f0407ce307f95b478435a3603b9974",
+      "path": "debian/copyright",
+      "sha256": "0ac26446a021c52a0b826761b8f56a2dfaa5864feeb4cbf4c0a8967864b1c260"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "76d7c0d0490576922e0017e6b9e6b1e393190a52",
+      "path": "doc/AUTHORS",
+      "sha256": "ec73b33b86a6e42633e28b9612812c8ef871d04a7052aa99d17d332208896384"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "8e2daf6bc046673223b197d859fa9609255ef13c",
+      "path": "doc/LICENSE",
+      "sha256": "dba313854f65a8d41b1777cf9d6cb5ddf692792be04d808b82c86c63909fbdf0"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "0a041280bd00a9d068f503b8ee7ce35214bd24a1",
+      "path": "external/PDF4QT/LICENSE.md",
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "adeab22f9b694884dd3c3c49f83dcdd1d5a89906",
+      "path": "external/PDF4QT/Pdf4QtLibCore/cmaps/LICENSE.txt",
+      "sha256": "feb8b068a417681821823ef2e8995072aa111121fa11f8664038f78717f4497c"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "cb356f6404ddafeae5d2b87faf0c0ca837b4a9bc",
+      "path": "external/astyle/LICENSE.md",
+      "sha256": "2e8480e753b7a1d100c80920f4250b1bc9f93a18c6a5953c42b11445218cd0fb"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "a843871ba3a3148cb3da7e2d15cf373900248cc0",
+      "path": "external/delaunator-cpp/LICENSE",
+      "sha256": "af36016db273642282db69831cf591d1e1c3a6fa29935773236b5fd7ae17835f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "3c8f67eab2abedd6c737ae4dbb03edf3686c7487",
+      "path": "external/kdbush/LICENSE",
+      "sha256": "eeb9c9d04d930512cec46a5d7c08f418af9fbc50ebf481f09fcebcdf3fbb941c"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "eb04eb2a6926a6dc5c720927499902640b71712f",
+      "path": "external/meshOptimizer/LICENSE.md",
+      "sha256": "edbe0afc70ea26a220ef88e9612d9ab88807b771b3a6bdc345bbbe266c61499c"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "2984e7afa4ec119173e81632a7f4a3e6aaf10da8",
+      "path": "external/o2/LICENSE",
+      "sha256": "85425784abf082b15caca1143c564817a8533c20a40eba9a77bd4fe67607342b"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "d78d5695a03e7d2f631e1d53a9882ae8cbfb278d",
+      "path": "external/odbccpp/LICENSE",
+      "sha256": "58edf8ca278fc703f3124a5712a6a8b01fcbc43989195faba091284613981ba3"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "21661b4ced60701b414c23fb51e648c73d285373",
+      "path": "external/odbccpp/NOTICE",
+      "sha256": "ae6e5227783036f2e24bc0ccdb9b35fc683fef772be3774c2354514b5b40a3a0"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "e022241b4aa3b061f6cb704a7112f761842b3fbe",
+      "path": "external/opencl-clhpp/LICENSE.txt",
+      "sha256": "a7f96abd6c4fecba48c3bc15901251d99f7c69c6e28dbe1827d181c93101a5d4"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "6ab981a955eff063ff336cf6611967777fa8ef6f",
+      "path": "external/qt-unix-signals/LICENCE",
+      "sha256": "f5124c8a78c6c51182ea6684fab061e6f81d8d9e3680bd6cfb7777ed09a53266"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "a76c2021d75cf3171d27f4e71e2740c1f02b9334",
+      "path": "external/spatialindex/AUTHORS",
+      "sha256": "a6a5e3601c822dde20e80654ec7c67ef8d91b6beb37ac5387ae3cc03a9869e0f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "9fae45915124a5fb8e338b924e9a59da238443d4",
+      "path": "external/spatialindex/COPYING",
+      "sha256": "b63ebfaca9d7ce582580f3e11acabc9d2e37c46ce234533f7fa8a6c7278898a0"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "path": "external/untwine/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "c3a4fb8868cb834fca684c04ea71b9a6c9b81297",
+      "path": "external/wintoast/LICENSE.txt",
+      "sha256": "56104c59947d259e4cfa5f30d502aa5659eacfeedf281f981690cf196c57982a"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "a40ec521736471e71f7a63c2a713e1a48ad84655",
+      "path": "images/themes/default/LICENSE.TXT",
+      "sha256": "60c2d717f7b6b1416c340fae995e79f5ccece8db135f3f967b028b47c9159e49"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "10d18ac0fd1db58bd5d3a2c316ecb4ed28cceaac",
+      "path": "images/themes/default/copyright_label.svg",
+      "sha256": "66d755590d3e129731f4b96e213750f8b4a0a82f66a1c9daba3ffe1f4d47437b"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "a84f1533029898b363c484ca11f07577caa40297",
+      "path": "python/plugins/MetaSearch/AUTHORS.txt",
+      "sha256": "e24f60934cc1e92adbd3676b737f70732c5a8250ace11cf76af874e6f4a1633e"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "dfc83e7fce780542538d10a01273910f94a4a0a4",
+      "path": "python/plugins/MetaSearch/LICENSE.txt",
+      "sha256": "ce55deef2cd8df001e124e6c5579082a1c91e9b621adada5fe11d2fda35de631"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "43b0e725037605830ebd27283e71fd303d62fca2",
+      "path": "python/plugins/db_manager/LICENSE",
+      "sha256": "70ac1324780e8fd70c60dab05f12352b8dab85f2a0d8b440632932cc2cdd86cd"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "37d11ae208234d648a0c867c7dffdc813f81c469",
+      "path": "python/plugins/processing/algs/qgis/COPYING.fTools",
+      "sha256": "881082a1f0de5371171bbe9eeaa1b86b7892e746531b57a2e8b70b8fa58637b9"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "c8b61d96d5246411f4370d40ea6cb2703a6331db",
+      "path": "python/plugins/processing/algs/qgis/COPYING.mmqgis",
+      "sha256": "f0b84ffab3240aaf66c7933b950ee08e6e3859423cf7b4fdbd7a2498132e6d8d"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "8062f06d5950d4430d8061d7777756d52d92542a",
+      "path": "resources/cpt-city-qgis-min/arendal/COPYING.xml",
+      "sha256": "a3535921edcfd6ea9c2adc6c86495d20bd0b3ae5bf80159701069e067e8f2ecc"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "cb730f7951854a0d4048e97a5c416e2ceb39588d",
+      "path": "resources/cpt-city-qgis-min/bhw/COPYING.xml",
+      "sha256": "eb0a2fefc9b40b8826ca51837414b8c601a9ae84c3d6da899ea1acfe7a9619c3"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "0bc748489281ef84f01eedb55ee18d1093cf87f6",
+      "path": "resources/cpt-city-qgis-min/cb/COPYING.xml",
+      "sha256": "1373892ac6de3f5fd7d3ddf51534a52fb78a99109ccb5e906375fa706b435ad8"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "d07a6c2b160d7ac271fb7db66c5676c6a2ba325d",
+      "path": "resources/cpt-city-qgis-min/cividis/COPYING.xml",
+      "sha256": "786d53daf20460f2ad8a485459d2810a382ef392a2adb0677241c1ad7b4bd2e5"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "a47615fc684982bcd0997b9acf3961c7bc57552c",
+      "path": "resources/cpt-city-qgis-min/cmocean/COPYING.xml",
+      "sha256": "2fbb6b5249208cdf19e80bdb6f109692168ad9027e3e990ee7ff9f17e39b1cb7"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "a2d9ba729527a56b3c29fd210f3f5e385601237f",
+      "path": "resources/cpt-city-qgis-min/dca/COPYING.xml",
+      "sha256": "abf2199c04d952b913ca128fbb0fceb0ff71fbf71b67f6bf2506d67617ca933c"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "0e975488b43d2841108a8c929ec4958bbe258f4d",
+      "path": "resources/cpt-city-qgis-min/dg/COPYING.xml",
+      "sha256": "27a1ded91388e1ed98e274ad0ca41616ee0b4ed92430eb4fa306178700a8d330"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "688164ccdabdf37fd8107623332164579d353644",
+      "path": "resources/cpt-city-qgis-min/ds/COPYING.xml",
+      "sha256": "83379e057a34f420791b369624bde0805154af9ed18c47cccbef9cee1b4799bf"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "d28d92c31e6d2b3449f1d1ab97e4c2047ede7aff",
+      "path": "resources/cpt-city-qgis-min/ds9/COPYING.xml",
+      "sha256": "163c74b75bd9f50a64e43ea53c21daee6f6c88d60f1289b6c9c02619a68c3d1b"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "f417f430eed60109ab324ad3977099e523b1332e",
+      "path": "resources/cpt-city-qgis-min/es/COPYING.xml",
+      "sha256": "f1a66b869fb2bd4bb3901f4a390006854d3851c78890000dcab0d2cc4106e323"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "542734c28d88bc69ec3aa37c20cf51df37aba6aa",
+      "path": "resources/cpt-city-qgis-min/esdb/COPYING.xml",
+      "sha256": "b7921ba6ecf2061599f953dd0bce12ce41bac319a98999692704c07b6232738f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "6dfc435bfaf2d2c56c897560ecf28cb9ed06d3fa",
+      "path": "resources/cpt-city-qgis-min/fg/COPYING.xml",
+      "sha256": "08992a1a2c43f5e37654c636240e1a57bdd3dcf29e6fc03f0260c9465b5c7f76"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "1888d108126289b92373264937dcd4e651066733",
+      "path": "resources/cpt-city-qgis-min/fme/COPYING.xml",
+      "sha256": "45315edb7fb1ae283128ac08d117ce7fef22be9d436cd68bc86a277073c77324"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "dffd59a29bd42c84031d10e66470570ae012d3cc",
+      "path": "resources/cpt-city-qgis-min/fvl/COPYING.xml",
+      "sha256": "c0e4a73b8d04866f29478e96e80d01ef26a53757b644f862f37f6659be5e42ed"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "31e578fe725f74e1b16eecec2a8ad0d89474cb9a",
+      "path": "resources/cpt-city-qgis-min/gacruxa/COPYING.xml",
+      "sha256": "d905c6c430aaeec26c4b795b46f5232b66fd4ffe3ac4eec7f214ff42a534cfc4"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "f6de2c311042e809b443d18cb624b16e11d7fea9",
+      "path": "resources/cpt-city-qgis-min/gery/COPYING.xml",
+      "sha256": "88cda9ea3f222b9d4466822524de98569f3b8639cc8fcd55ddccdcd66372dbdd"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "e18488b53d3a774e6198f72fc0f852b47bd00ff7",
+      "path": "resources/cpt-city-qgis-min/ggr/COPYING.xml",
+      "sha256": "520ef5977be03d8798e062bc607ef5e212093a044100dc288763ecb562e29fec"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "57e7f44855123726727c720cb62dd7e534b77acb",
+      "path": "resources/cpt-city-qgis-min/gist/COPYING.xml",
+      "sha256": "76a231625c152f1298f62e7b8001b0bba30f24c732544484956ea8425db18017"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "3c0eaeca10457eacdcd14b11d9998b8b13c28ecf",
+      "path": "resources/cpt-city-qgis-min/gmt/COPYING.xml",
+      "sha256": "c1b562d4059cb5e2a4409f8f8c545970087379e64a58cb8ae053f306220f3837"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "d223da9375db460a63a11f97528f5c307d2adbb5",
+      "path": "resources/cpt-city-qgis-min/go2/button/COPYING.xml",
+      "sha256": "a70242dab044c00dd262b3b9866c553169d90e7b116904a0eb0dd974ce1213f7"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "31ae1e8901f70456d39e501b1d2740c6a00683cc",
+      "path": "resources/cpt-city-qgis-min/go2/ipod/COPYING.xml",
+      "sha256": "d7cc2ca6d8764b2e548d7c424f189840219edf1da310dafe8b6aa00203a7ec5f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "de07b62f164f78d6d2bf32fcc6e422e2ed284ad1",
+      "path": "resources/cpt-city-qgis-min/go2/webtwo/COPYING.xml",
+      "sha256": "687e72a2d732e202a789fdab56cc00433baaf6724de5093e0a659adfb754686d"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "0925aab7ddcdc84e048e47e73b33a1335ff9f7f2",
+      "path": "resources/cpt-city-qgis-min/gps/COPYING.xml",
+      "sha256": "379ffd7251d4f4ee1931537217266263f51199c4bc4bc0e46b399bd42b294b68"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "7436c67af8716b68d9e397edd1c3fcdd1669478a",
+      "path": "resources/cpt-city-qgis-min/grass/COPYING.xml",
+      "sha256": "43986b581896e85ae9b846bb9f1cbacc027b018ed10947b0effc7d846d819f08"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "4f3ff641fa0c30d5a4d060e922c3bd2e40ae2fae",
+      "path": "resources/cpt-city-qgis-min/h5/COPYING.xml",
+      "sha256": "7de5a7a59a2a8abac1d6bc797870aa5d1a256bfef1c6199af44db39ea98f0aba"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "215f7d9bbe1b901d3731075fe19e18082d433a3c",
+      "path": "resources/cpt-city-qgis-min/heine/COPYING.xml",
+      "sha256": "7e68ebef8157a4d104ef16de63d2aae4a1a33e2b90d310e042723ca5a3dd300f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "fc5daea833d9faa10c6f5cf35653826b38ba145d",
+      "path": "resources/cpt-city-qgis-min/idv/COPYING.xml",
+      "sha256": "0d232409f7a17b8390d598583e4413d99eb99f9e564020c99ed3baa9a251b823"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "8b794377bee256187fad567d6cabb151bfa30fd1",
+      "path": "resources/cpt-city-qgis-min/imagej/COPYING.xml",
+      "sha256": "c7b5100356f4b233ec2f8b5d8de78d17653df586838931c53737ca9e0e89701d"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "0205bea9b0d6e25a0c5b0daa5bb9080df2bc89d7",
+      "path": "resources/cpt-city-qgis-min/jjg/cbac/COPYING.xml",
+      "sha256": "ce9133b9005289f9c7fb8dc92f37c9cd621531a6ff022df2beac74735d83949b"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "0205bea9b0d6e25a0c5b0daa5bb9080df2bc89d7",
+      "path": "resources/cpt-city-qgis-min/jjg/cbcont/COPYING.xml",
+      "sha256": "ce9133b9005289f9c7fb8dc92f37c9cd621531a6ff022df2beac74735d83949b"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "fd1c8d98af0bbf3abdf4d60d5a20849500a577a6",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/COPYING.xml",
+      "sha256": "ff506da10cdff292831d8077c7a5c7c81cf2b40198c4eb9134b0a657da315779"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "76bff14a7a4196c5cbbbbc4efb922e31d6c7776a",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/COPYING.xml",
+      "sha256": "f624180ffe75ff26178a8c614cf1cb37a92b25a41477eb6b7ae764bb9d1c0a4f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "176ac61c26c802fe73d5a98f6bd33552a6167e85",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/COPYING.xml",
+      "sha256": "40d8fef301646f7a17e943576e13b517a4724026698f4831e9b7076ce21b0593"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "a188ced9ad988c6afece385f50047c666da84a90",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/alpen/COPYING.xml",
+      "sha256": "62bca4ad2ea59131ae9116c66b3b3d2cb23c2685b798dfe56d1c915c47bfb9a5"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "c1274e51f07659956c8bbf1017a45975b3fade43",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/COPYING.xml",
+      "sha256": "bdd528489358be373f7d23d2c2c2856deaaded68ee96bed9092f2ef2ce7e2512"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "43ff8f8199341f749d1467168d252812991ded26",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/drumma/COPYING.xml",
+      "sha256": "315060fb0634f80e76cdbd98acf993cf4d367beca1fc106e6420d4df7471b5c4"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "0a13218f95889e4eb46a3b3bd238b5a37ebd7daf",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/electroluv/COPYING.xml",
+      "sha256": "2a2efb0c3be5cdad1166059b46df9ae63ab7777481532ccdd8a6986d0ffd6090"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "131ebb7c3e70fb8bf1822c84c2ec6e1a94bf03f1",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml",
+      "sha256": "9e365c9e8bebeff36d6efb416adda1d191788f6c4ed39ce0cdeb9ab24281e17b"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "074d38e9f448f38d0302506757e2cd48cd2d1cfe",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/hana/COPYING.xml",
+      "sha256": "1bfa63bacae4b40829237f6b78846d401bb0b3552fdbf44db39b48f829bcd2a1"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "645bc9944c455fae05c624b9aa5c17960c30aac4",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/COPYING.xml",
+      "sha256": "dc85098083daecb5959df533b57680c9d3bb3daa3d72dfe5843bbb05be903454"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "2d4ea7a1ba53c8e4fa5179fb85c48e8622545d87",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/COPYING.xml",
+      "sha256": "e874b9a2e801a70ffb56f9c83625e15740e37548508a96cecd7fa4d4c17d41f7"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "85893217e4745807b69f34bd208150122373b9ce",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/COPYING.xml",
+      "sha256": "298f5b26757232fdde1d524b4274ab8bc9ab598a449757a53fb17e008785fe76"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "37b600fc5a90e54cc0288d630b05568a29b48967",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/phill/COPYING.xml",
+      "sha256": "d305778392a335c3555386ab31c4817f386ba0df99d4c3e3eee52792611bd39e"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "e5a6cc9ba10b1d351a65ef292307813dd97efbca",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/rotten/COPYING.xml",
+      "sha256": "902fbc6c367ad767be645b834e5fdb5b6e715f8d9481ae04351199682cc8da22"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "49e6e386f6828b7360293fd60c9a0f566a715ba0",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/rphnick/COPYING.xml",
+      "sha256": "5a8debecd3b361955b2164a4239a4da3513890222a39da7415dbfa9cd737283f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "343fd1d1e53ddddc866f03a2e53eb4308d2923da",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/COPYING.xml",
+      "sha256": "b2b338c4a41e0f7ad82e312205f5141c86c36e2903db243547b584c7b78be87e"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "4d5878de97fbd456bf58c6af091b66a10a84d767",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/sugar/COPYING.xml",
+      "sha256": "bca8acbc572babddc80c0e11fc3388c6cd8ddd576e55b4caff6ed6e6bf51e497"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "5f039422a5342eaae89afb855fcb8c70fc92d310",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/tvr/COPYING.xml",
+      "sha256": "a001965b198e3c17fdc2917bea0c555492726e8b355634148756c1530957dbc8"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "467224917f6fe685583657c416ab65b671b0d0ea",
+      "path": "resources/cpt-city-qgis-min/jjg/ccolo/vredeling/COPYING.xml",
+      "sha256": "873d3974824a20820e7cae65c93f0d2f368b3d62457dd666b491ec896d9fba17"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "89d320f4539084962545ff79ceb37b61438141ef",
+      "path": "resources/cpt-city-qgis-min/jjg/dem/COPYING.xml",
+      "sha256": "8fbef4815622a51e96603b6d32e08495884a1435d69491587ca9f6f632dd537f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "89d320f4539084962545ff79ceb37b61438141ef",
+      "path": "resources/cpt-city-qgis-min/jjg/hatch/COPYING.xml",
+      "sha256": "8fbef4815622a51e96603b6d32e08495884a1435d69491587ca9f6f632dd537f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "f9c654feb4aec932cacb5ebf68d2b8690697e2b9",
+      "path": "resources/cpt-city-qgis-min/jjg/haxbyish/COPYING.xml",
+      "sha256": "346545c234f029c2db52c434c5758830b47f9615ec91538f1453c8846abfafaa"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "89d320f4539084962545ff79ceb37b61438141ef",
+      "path": "resources/cpt-city-qgis-min/jjg/misc/COPYING.xml",
+      "sha256": "8fbef4815622a51e96603b6d32e08495884a1435d69491587ca9f6f632dd537f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "71e2bf3e4d5e62268eb07d01ced3ce0a4b5561c1",
+      "path": "resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml",
+      "sha256": "e83e66ea532c2c24fb2e379badf2b6e848fac0f6c56e553bdd9dadc5c1912d09"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "6076c482ad39cc5d157ddc198271cafb386848ad",
+      "path": "resources/cpt-city-qgis-min/jjg/physics/COPYING.xml",
+      "sha256": "ad8e6f42c5b6a836d61069b2653dce4a71aa1ec2e3e76b08ed293b6f278f787e"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "83571da86b2f83a3f4c717ff7c37e980922381d0",
+      "path": "resources/cpt-city-qgis-min/jjg/polarity/COPYING.xml",
+      "sha256": "ce75ec2e9582be264f46c864f6e299fc4b81d3300b92b852f139f125130d05b8"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "0205bea9b0d6e25a0c5b0daa5bb9080df2bc89d7",
+      "path": "resources/cpt-city-qgis-min/jjg/serrate/COPYING.xml",
+      "sha256": "ce9133b9005289f9c7fb8dc92f37c9cd621531a6ff022df2beac74735d83949b"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "54d6260e01e94b19aaa9fd9667b0889de0b1c685",
+      "path": "resources/cpt-city-qgis-min/jm/COPYING.xml",
+      "sha256": "500ee139bab61eaab06fbc62bf477a2d7ae72c113e1a4f4866a69891f351f7b4"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "892c9064ab80bf0ad1182cb271a272737e92915e",
+      "path": "resources/cpt-city-qgis-min/km/COPYING.xml",
+      "sha256": "137c77fb195ff0ba300eb618af6aaa61b4ddd1d99197e7c574d7da57dd750aef"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "38a6dab8b388a71b79de86bbdaf638116d074ea5",
+      "path": "resources/cpt-city-qgis-min/kst/COPYING.xml",
+      "sha256": "3f16ea55cf284ba547c7ca429b88b78f74bfebe3768aae11d990d0f1ad469031"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "fd2ecd0e810011bb34c110d8fe67c05ee6afaf6e",
+      "path": "resources/cpt-city-qgis-min/mby/COPYING.xml",
+      "sha256": "c3e2b35f7b36c3fc70c8c51268f1db26a02eb5174e618536de4125c1ea546668"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "21752af85f9ef1a9cce56a4c821c7dc8811afd34",
+      "path": "resources/cpt-city-qgis-min/mpl/COPYING.xml",
+      "sha256": "35eb3451afc03ad975eedf8f5025702c53a170a218899c43532ab7abdd6f1a65"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "b14fa655ee1eb87213d0d3d579a37327bbed49d8",
+      "path": "resources/cpt-city-qgis-min/ncl/COPYING.xml",
+      "sha256": "55c6c8669ad1d641d161982060725c1ecbe6eaff4581aea55138ac1379ad24ff"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "646767e10e1e7e661b306f5613d23fe30c369f54",
+      "path": "resources/cpt-city-qgis-min/nd/COPYING.xml",
+      "sha256": "6155848aa836db97da1983d6ab855b399b2110aae76d560c1c6d983404ecef73"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "b098d451c5fc6b97a289b4d870a54f87d2051ad8",
+      "path": "resources/cpt-city-qgis-min/ngdc/COPYING.xml",
+      "sha256": "23090ef1774ffdb322900c2c6115b248c5a1cc39e8ebaf3c8f4fab060c42c851"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "7e91580f98ad3464c15eef30e525a4ac31591863",
+      "path": "resources/cpt-city-qgis-min/nord/COPYING.xml",
+      "sha256": "92ee76460d4c7da3d202a6bdcc14db8af2566a17ee959d8bd93dde30699fff15"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "8d8e3dc357e6f19d4f5d6b5b399f37444d2d170f",
+      "path": "resources/cpt-city-qgis-min/ocal/COPYING.xml",
+      "sha256": "98053a82259f364363997f5661e6defa32d9518d0c3df02df4185283127800f1"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "47e4a38d929881c2d4b89584587cc9b479646df1",
+      "path": "resources/cpt-city-qgis-min/os/COPYING.xml",
+      "sha256": "b3a498db7db8cdb35b8f68665ebd220d3db32a1819a44312e4d53076c176be02"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "74c8fe861180361a30a1b2bbcbd34b3a9f941ebc",
+      "path": "resources/cpt-city-qgis-min/pd/COPYING.xml",
+      "sha256": "2b66f0737208f84d92fbf0e37f8f723d5c786b3b10951a519fb9dbe17b6a5357"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "572cfc960cee2f5bfab3a1b8ea3274e58ff9023a",
+      "path": "resources/cpt-city-qgis-min/pm/COPYING.xml",
+      "sha256": "4353409229def51b6291d5122d3ab34e2009e65c2122a5dc8494953e24915145"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "7d373605413bbf184dc861c5f40c451c34b47066",
+      "path": "resources/cpt-city-qgis-min/pn/COPYING.xml",
+      "sha256": "f065f00eb6c70842594c42adf46f0ffffa27dc21eb20065b0c6f44cb893734bd"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "1e50d1a60ff6faa1229a08b8d8134a49932b576c",
+      "path": "resources/cpt-city-qgis-min/rafi/COPYING.xml",
+      "sha256": "9208b758ca3d2dfe10a826d5a8ca82a05656a3e2280d9060eb20350b68c8ce09"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "3209b3b2a822d6ffddbc088c11684a448a0a7dd9",
+      "path": "resources/cpt-city-qgis-min/rf/COPYING.xml",
+      "sha256": "612ffba7d9dd59e6ef56dd79a34fb2067d7c9874881c6d9acf0a145dcab14ad4"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "4acce05724e9ce0ab195b20540170a8b64c7a7d1",
+      "path": "resources/cpt-city-qgis-min/saga/COPYING.xml",
+      "sha256": "c33b567b2bfcb5a9acee0dfc82f664388bacae8bf1765b149d92be2b051ed184"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "405451c99c581d2fa0d867a54c3e6aa6be9f30ce",
+      "path": "resources/cpt-city-qgis-min/ssz/COPYING.xml",
+      "sha256": "c80755a2e152f267a73f29626ddda68d38c71ea36bd6bf1b793b0c40ada8fedd"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "b2f257a4d4419bc115e4635e7fa9b568fbc78cb4",
+      "path": "resources/cpt-city-qgis-min/td/COPYING.xml",
+      "sha256": "da208d9658cfa8531e35f86d164f4d6619bab61c1bfa5298ca10fdcbfbb9ffc6"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "e9c055b5d65e845d0a55965ea9b48208d5f7e814",
+      "path": "resources/cpt-city-qgis-min/tp/COPYING.xml",
+      "sha256": "edb4c9d754ca2a90d5b8faee9f0739d21ea01833d8d850a198a5af44baaf984d"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "ae9753189376f776448f24b4442b3c4f7e80b49b",
+      "path": "resources/cpt-city-qgis-min/ukmo/COPYING.xml",
+      "sha256": "c616b99b6018cc30860da96679e454aa6964356fffdb1193a3ecc0573926d41f"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "ee432994c3baf859451dbca29579df3eee55685b",
+      "path": "resources/cpt-city-qgis-min/wesson/COPYING.xml",
+      "sha256": "96a90d4d93743f58d6c8e528d8f2f1f8afce04260746f093ee2b1323cd2894fb"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "c3264959174867bba48f07caacf6f181a3d03ef4",
+      "path": "resources/cpt-city-qgis-min/wkp/country/COPYING.xml",
+      "sha256": "18a7d02255766847c710dd4ffa7084e633ea4a8e6d79b3db9f51a0b729727728"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "ba37bca5ecabb9ad70089cc62e949043ede77486",
+      "path": "resources/cpt-city-qgis-min/wkp/encyclopedia/COPYING.xml",
+      "sha256": "a7014c6e0e2a206331b7ea5d86caf77d094bd65ace5a6c1440a6b01c3e7f90a3"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "123622526a403dba289129dfafb391a92cfb7869",
+      "path": "resources/cpt-city-qgis-min/wkp/gay-flag/COPYING.xml",
+      "sha256": "b36ad4895406e60ecdc08ee3f985cfd06bd42ffd58b1e172ac7bf8409f19f227"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "38a9ebf56ccfdfe046ea8ed68c52208a9c2e13f9",
+      "path": "resources/cpt-city-qgis-min/wkp/ice/COPYING.xml",
+      "sha256": "5a9fde515aaed0a3a70c72ba5a0e1b79a36d4fab999845afb57108995f42b1e4"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "3e4a654735a76ec7f56cba294c58ec94d1659485",
+      "path": "resources/cpt-city-qgis-min/wkp/jarke/COPYING.xml",
+      "sha256": "ff70523af7182572e9ea2bbfdd6bf6b022da2bd3883097101a91152e68b3c766"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "54f2d5b5bf8b7dd6234576eeaec8e42fda00f746",
+      "path": "resources/cpt-city-qgis-min/wkp/knutux/COPYING.xml",
+      "sha256": "760bed491eabc2f601569a43f5980067e6f5478fb9d774c3f754172ee7e71868"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "b21636a00b5eaf9139fea0c5ddf3c9c180e2eb18",
+      "path": "resources/cpt-city-qgis-min/wkp/life/COPYING.xml",
+      "sha256": "2f02dfff70048da046f5a58b6756255758604ce86e73c9da586b3956f09d541e"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "8e4e3d0337ad22494be58f8ae72b09edd4910850",
+      "path": "resources/cpt-city-qgis-min/wkp/lilleskut/COPYING.xml",
+      "sha256": "d11fe651cf3ae5a3232c9b5c6acdcddfcddfcac23a8df2ab19bae3bee7095413"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "78e39da56d0dcd8a0f6198107a873a4dcff8df7b",
+      "path": "resources/cpt-city-qgis-min/wkp/mars/COPYING.xml",
+      "sha256": "e38a820d65dae57601650343c45dc2d65bddb84089d5d745dbc2ee11bac5380a"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "2f361471de19ba0264bbd0049e7629717235cd3d",
+      "path": "resources/cpt-city-qgis-min/wkp/plumbago/COPYING.xml",
+      "sha256": "6cb3a23055ef1dce9f9de318bbf6bd1a4c731121b22731cdb859ff7f9b063f41"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "78e39da56d0dcd8a0f6198107a873a4dcff8df7b",
+      "path": "resources/cpt-city-qgis-min/wkp/precip/COPYING.xml",
+      "sha256": "e38a820d65dae57601650343c45dc2d65bddb84089d5d745dbc2ee11bac5380a"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "51d1c3fc92d92f078af4622b23fbb663b4ee262c",
+      "path": "resources/cpt-city-qgis-min/wkp/schwarzwald/COPYING.xml",
+      "sha256": "eb0535893bf60059cc3ddb3a9f1a6e64c57e6e5b57e773e44825202b61e10cf7"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "40d4e843b441984ca7c6e22ab5d1c6415070df91",
+      "path": "resources/cpt-city-qgis-min/wkp/shadowxfox/COPYING.xml",
+      "sha256": "67829a645d2793f65f274d55dbc8e5aa3d5cdd918faeae43ad2d5eba2f4079ee"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "10b6cbdc0c549af39141dd378a2c30c6bcbf499f",
+      "path": "resources/cpt-city-qgis-min/wkp/stat/COPYING.xml",
+      "sha256": "b3df88a09058941d9cda93c7508ebc6f04cfcbc98e8be1b4cfdcdf1fe0e8f8f9"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "1ad21301cc8fc79626c8325f98fb65d2df550426",
+      "path": "resources/cpt-city-qgis-min/wkp/strat/COPYING.xml",
+      "sha256": "158dd37a569708cd5d21e7b3b6a7506a526997866ca3c7e61118a9897c0be6d9"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "44d198c9261e3adb1fa1f4136ad37e2c481c3e31",
+      "path": "resources/cpt-city-qgis-min/wkp/template/COPYING.xml",
+      "sha256": "0c06323a4be2ff4320d12050f79046b7999ba140d59ca20db9182ad56cb296e4"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "71b013ed1ed8a7c855199b175243c46980c5efe9",
+      "path": "resources/cpt-city-qgis-min/wkp/tubs/COPYING.xml",
+      "sha256": "c766dbb9ad068f6841f351f728b49130a75ed8558427bb3fd09e4a00f1a28fab"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "96dcef9d28b3bb367e3fcd43d5b213e1754bb72c",
+      "path": "resources/server/api/ogc/static/jsonFormatter/LICENSE",
+      "sha256": "bb242832ac5db6828a06c4e3e7da8e44c78da246d0c1c06a184526a0c5b79092"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "c155ee315670adb348cd7f1bcebac7e557aca7cc",
+      "path": "tests/testdata/cpt-city/cb/COPYING.xml",
+      "sha256": "cbe9a20af7d7ceeaad3a515105448dd4f10ea87e85b9c8ae267c35823a2f4ab5"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "ae52ceacdf4245120a71b4bad248860cab6c7ea0",
+      "path": "tests/testdata/cpt-city/gmt/COPYING.xml",
+      "sha256": "da77befde454bb27cdbaece9e6b1f44ad80490125a97b580fa27435ad154e2d6"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "a2d2d1602301602823e4f626b709a2ded19d18c6",
+      "path": "tests/testdata/cpt-city/jjg/misc/COPYING.xml",
+      "sha256": "e62473a6e9e711fac3be49281f8600486245b43c2c568c49be6ed4e48e90f3ed"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "55c2bc9906fbebe6ba9cca137dce1df485e16b34",
+      "path": "tests/testdata/font/QGIS-DejaVu/AUTHORS",
+      "sha256": "915a742f0b242ea43fcbef934b6d24353b51351470f71d8a8d00c751892fad50"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "df52c1709bea171104d41bf084313ea434858423",
+      "path": "tests/testdata/font/QGIS-DejaVu/LICENSE",
+      "sha256": "7a083b136e64d064794c3419751e5c7dd10d2f64c108fe5ba161eae5e5958a93"
+    },
+    {
+      "mode": "100644",
+      "original_and_snapshot_oid": "851694817bc46db7bea8ef5a50cfc82130620431",
+      "path": "tests/testdata/font/QGIS-Vera/COPYRIGHT.TXT",
+      "sha256": "1a05d79616fa484e2970fa5358db63f4aea304a8f16bebd0993607ab35b9c33d"
+    }
+  ],
+  "relocated_metadata": [
+    {
+      "sha256": "f1a66b869fb2bd4bb3901f4a390006854d3851c78890000dcab0d2cc4106e323",
+      "source": "resources/cpt-city-qgis-min/es/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/COPYING.xml"
+    },
+    {
+      "sha256": "4dfa05eb80e7b603c1941955c8683b9e94ca0622968cc8720f86f4fd81484ccb",
+      "source": "resources/cpt-city-qgis-min/es/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/DESC.xml"
+    },
+    {
+      "sha256": "7a92fe76e676be35050fe1b875f1e80671d8c84e9ad31648437e218283064bca",
+      "source": "resources/cpt-city-qgis-min/es/autumn/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/autumn/DESC.xml"
+    },
+    {
+      "sha256": "6ca6d9b5aba0212bf9fb5cd9c5bba5fe98afbc0671a46afa85b370755d3b79f6",
+      "source": "resources/cpt-city-qgis-min/es/candide/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/candide/DESC.xml"
+    },
+    {
+      "sha256": "f4b6422bdee3494d4b9b3a149114fcb0a24901feefac70c087cde030b7c416ea",
+      "source": "resources/cpt-city-qgis-min/es/chic/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/chic/DESC.xml"
+    },
+    {
+      "sha256": "2801ff4a7cc91e4fffd263f56bc075b4d617be0731fa2cd5a97f26c8c1615b56",
+      "source": "resources/cpt-city-qgis-min/es/coffee/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/coffee/DESC.xml"
+    },
+    {
+      "sha256": "2508421a0c8fe7c0ca3bef2a3ce7d80ed33d8dcc2d0f0d7e89161d28f2006267",
+      "source": "resources/cpt-city-qgis-min/es/emerald_dragon/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/emerald_dragon/DESC.xml"
+    },
+    {
+      "sha256": "67310f8d0ced9601072aaae3576bbc39188ccb007aa44e791983e3e2f0b772ca",
+      "source": "resources/cpt-city-qgis-min/es/landscape/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/landscape/DESC.xml"
+    },
+    {
+      "sha256": "43b707ba89793c52611dfc10a4a39d5b56d7a87abd414a229057d42a2409851c",
+      "source": "resources/cpt-city-qgis-min/es/ocean_breeze/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/ocean_breeze/DESC.xml"
+    },
+    {
+      "sha256": "c1440a0e11862cd40450120654c2274645c8303d90449f3823b57ac4ea93c66b",
+      "source": "resources/cpt-city-qgis-min/es/pink_splash/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/pink_splash/DESC.xml"
+    },
+    {
+      "sha256": "116d031a468a8c96c0e938e4e5e9fc7ae707ce255b28d194e38fcee5883dd5e7",
+      "source": "resources/cpt-city-qgis-min/es/platinum/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/platinum/DESC.xml"
+    },
+    {
+      "sha256": "0c2e01187f43784eed14bd5492be6b8edec358a17eed9a8b451c0f822b3d701b",
+      "source": "resources/cpt-city-qgis-min/es/rivendell/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/rivendell/DESC.xml"
+    },
+    {
+      "sha256": "02d3f00fe0bb7803e9be8978003b7bce4c2d51215fcdbe280361a302d7bf6794",
+      "source": "resources/cpt-city-qgis-min/es/rosa/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/rosa/DESC.xml"
+    },
+    {
+      "sha256": "15658654b386d5b36a3977a78718a453c251b0831e16894019f693fdd45e0649",
+      "source": "resources/cpt-city-qgis-min/es/sea_dreams/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/sea_dreams/DESC.xml"
+    },
+    {
+      "sha256": "6d0429c85fe2989736d0551503a6b1fd88b4d17e392c69d8ca6a19aa0986394f",
+      "source": "resources/cpt-city-qgis-min/es/skywalker/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/skywalker/DESC.xml"
+    },
+    {
+      "sha256": "d1db3d6a002a4164d5310c475d8c0f4ddaafec2eeffb998d18b757f2de9d6b10",
+      "source": "resources/cpt-city-qgis-min/es/vintage/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/es/vintage/DESC.xml"
+    },
+    {
+      "sha256": "ff506da10cdff292831d8077c7a5c7c81cf2b40198c4eb9134b0a657da315779",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/Bionic_Blender/COPYING.xml"
+    },
+    {
+      "sha256": "37fa0a9794e30a8a50c365170a4a1b77f894357bd0e5b6f36050767bdd319474",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/Bionic_Blender/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/Bionic_Blender/DESC.xml"
+    },
+    {
+      "sha256": "71ebb1f2fe3a62e0ab22534cce4bf010188d31a18ca20347406486a047d7b92a",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/DESC.xml"
+    },
+    {
+      "sha256": "f624180ffe75ff26178a8c614cf1cb37a92b25a41477eb6b7ae764bb9d1c0a4f",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/Skyblue2u/COPYING.xml"
+    },
+    {
+      "sha256": "d4a7caeb6c751b21375e418d3873d28e0430b8f11d02de8cf59f262aa61cce95",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/Skyblue2u/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/Skyblue2u/DESC.xml"
+    },
+    {
+      "sha256": "40d8fef301646f7a17e943576e13b517a4724026698f4831e9b7076ce21b0593",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/adgrapho/COPYING.xml"
+    },
+    {
+      "sha256": "3e1d08bde37674bfda934cc60dedab5af9e91ccd5541249770832c44b53c2332",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/adgrapho/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/adgrapho/DESC.xml"
+    },
+    {
+      "sha256": "62bca4ad2ea59131ae9116c66b3b3d2cb23c2685b798dfe56d1c915c47bfb9a5",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/alpen/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/alpen/COPYING.xml"
+    },
+    {
+      "sha256": "ee60f68dcc4b893f1f90e6281d0393e6c1d0da56f538bbdce9a8d6fe9cb012ac",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/alpen/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/alpen/DESC.xml"
+    },
+    {
+      "sha256": "bdd528489358be373f7d23d2c2c2856deaaded68ee96bed9092f2ef2ce7e2512",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/angelafaye/COPYING.xml"
+    },
+    {
+      "sha256": "71d435e386b4205609df48e6ecc24afa21f9e92beaa3ce397b92e472d707307a",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/angelafaye/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/angelafaye/DESC.xml"
+    },
+    {
+      "sha256": "315060fb0634f80e76cdbd98acf993cf4d367beca1fc106e6420d4df7471b5c4",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/drumma/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/drumma/COPYING.xml"
+    },
+    {
+      "sha256": "0e3c170a50646eedf39609d8105ea0e1aaadaf119aba88b6e3953c055984af71",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/drumma/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/drumma/DESC.xml"
+    },
+    {
+      "sha256": "2a2efb0c3be5cdad1166059b46df9ae63ab7777481532ccdd8a6986d0ffd6090",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/electroluv/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/electroluv/COPYING.xml"
+    },
+    {
+      "sha256": "5b0943a204f3119e0b90a696cd7c2cacc74d4ab43bf14f0dfd0c1bba89a16199",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/electroluv/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/electroluv/DESC.xml"
+    },
+    {
+      "sha256": "9e365c9e8bebeff36d6efb416adda1d191788f6c4ed39ce0cdeb9ab24281e17b",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/evad/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/evad/COPYING.xml"
+    },
+    {
+      "sha256": "a27f4a0c335c9ebc4f644aa08248bbdd7c116331b0274b2be2f1b5b1a057ec39",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/evad/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/evad/DESC.xml"
+    },
+    {
+      "sha256": "1bfa63bacae4b40829237f6b78846d401bb0b3552fdbf44db39b48f829bcd2a1",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/hana/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/hana/COPYING.xml"
+    },
+    {
+      "sha256": "b6ab29dd648c5124b8d89dc63802ac671d268ac7c8ed0413e5884511b9c58fc3",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/hana/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/hana/DESC.xml"
+    },
+    {
+      "sha256": "dc85098083daecb5959df533b57680c9d3bb3daa3d72dfe5843bbb05be903454",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/katiekat013/COPYING.xml"
+    },
+    {
+      "sha256": "742311b093acc5bb5f4b89acd82c3bbd578a0ac3b80e095cf1bec6b8de0ce89d",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/katiekat013/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/katiekat013/DESC.xml"
+    },
+    {
+      "sha256": "e874b9a2e801a70ffb56f9c83625e15740e37548508a96cecd7fa4d4c17d41f7",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/laleh1979/COPYING.xml"
+    },
+    {
+      "sha256": "54f55d73a6796bf7bdee080659aecb97acd852fcef451916b361bc1b2d4beacd",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/laleh1979/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/laleh1979/DESC.xml"
+    },
+    {
+      "sha256": "298f5b26757232fdde1d524b4274ab8bc9ab598a449757a53fb17e008785fe76",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/lightningmccarl/COPYING.xml"
+    },
+    {
+      "sha256": "56624275e247b7f3c5c8e6e72e8a17a825436810b2a416267bd9b4037824218a",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/lightningmccarl/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/lightningmccarl/DESC.xml"
+    },
+    {
+      "sha256": "d305778392a335c3555386ab31c4817f386ba0df99d4c3e3eee52792611bd39e",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/phill/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/phill/COPYING.xml"
+    },
+    {
+      "sha256": "2a8a9ac342550364694d09df22e0186c31195179240a29c57f2ae32d75f1ca18",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/phill/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/phill/DESC.xml"
+    },
+    {
+      "sha256": "902fbc6c367ad767be645b834e5fdb5b6e715f8d9481ae04351199682cc8da22",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/rotten/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/rotten/COPYING.xml"
+    },
+    {
+      "sha256": "b8d5b4a3e660a935e1281fa45ebdd8a9a2c9480e9f764624243e30568555015a",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/rotten/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/rotten/DESC.xml"
+    },
+    {
+      "sha256": "5a8debecd3b361955b2164a4239a4da3513890222a39da7415dbfa9cd737283f",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/rphnick/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/rphnick/COPYING.xml"
+    },
+    {
+      "sha256": "f9b4b0282fb57e2b846f7f72b4f34db3221ee9a27c8255c6b5e5e24dce0642cc",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/rphnick/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/rphnick/DESC.xml"
+    },
+    {
+      "sha256": "b2b338c4a41e0f7ad82e312205f5141c86c36e2903db243547b584c7b78be87e",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/smorin2002/COPYING.xml"
+    },
+    {
+      "sha256": "d167990c24899f242ae9e5670762c099a6bf778d170a5abb8333c02609c0f837",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/smorin2002/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/smorin2002/DESC.xml"
+    },
+    {
+      "sha256": "bca8acbc572babddc80c0e11fc3388c6cd8ddd576e55b4caff6ed6e6bf51e497",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/sugar/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/sugar/COPYING.xml"
+    },
+    {
+      "sha256": "dc461e91ba5173e7f632b4641e23c79df26d100ecae709cfff7e6adc0b740b32",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/sugar/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/sugar/DESC.xml"
+    },
+    {
+      "sha256": "a001965b198e3c17fdc2917bea0c555492726e8b355634148756c1530957dbc8",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/tvr/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/tvr/COPYING.xml"
+    },
+    {
+      "sha256": "b2eb6fd7db701f403cf3b48b75df0edd1262a8155de767247a3af94493439adb",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/tvr/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/tvr/DESC.xml"
+    },
+    {
+      "sha256": "873d3974824a20820e7cae65c93f0d2f368b3d62457dd666b491ec896d9fba17",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/vredeling/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/vredeling/COPYING.xml"
+    },
+    {
+      "sha256": "cbfbd9acc23f8551354e39db9bb8e33e561e6771f5d8880ae88714cf41275240",
+      "source": "resources/cpt-city-qgis-min/jjg/ccolo/vredeling/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/ccolo/vredeling/DESC.xml"
+    },
+    {
+      "sha256": "e83e66ea532c2c24fb2e379badf2b6e848fac0f6c56e553bdd9dadc5c1912d09",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/COPYING.xml"
+    },
+    {
+      "sha256": "0a5b91e6381b4acbb39fc632d37e788a3799ec5aa1499e0fbbfe41728c59f898",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/DESC.xml"
+    },
+    {
+      "sha256": "12c73c734c289b037aa01f534eb494c9663884a143743e6d9b12341c18e01f08",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/base/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/base/DESC.xml"
+    },
+    {
+      "sha256": "d84a25297ba03dfdb85d3d4c572afd7f11dbb120299d683d07aa5929695c38cf",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/bld/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/bld/DESC.xml"
+    },
+    {
+      "sha256": "456a2d6088cfe6173c847e98f1fb8d4e74e1ec387879b2936038230d9194b363",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/clth/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/clth/DESC.xml"
+    },
+    {
+      "sha256": "2d8f00376c8c5b378ff9152c13d210bc0ba14f2a7ea21ed012543a8dcbeec53e",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/elem/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/elem/DESC.xml"
+    },
+    {
+      "sha256": "b25d9ae0b73741c3190ae98a060bb371e01b7a434677eca568c12b94ee0e1ec5",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/env/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/env/DESC.xml"
+    },
+    {
+      "sha256": "67b4fbff4446e746fc88ee0fcb40ddaec752b696537491524a55634a9a010237",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/face/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/face/DESC.xml"
+    },
+    {
+      "sha256": "b1dfa54e5425684e332081f03a6637df1a297cfc62d000a9b8bdf4aba679addf",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/face/eyes/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/face/eyes/DESC.xml"
+    },
+    {
+      "sha256": "1b06fb75b6bfe71f9ae8d37706bce7b27c62445dc61a350af1bb5755234970e6",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/face/hair/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/face/hair/DESC.xml"
+    },
+    {
+      "sha256": "20e46cf72f952ae7b53632bd69a4f2e55196dff75e040ef7862d52c3e536b0de",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/face/skin/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/face/skin/DESC.xml"
+    },
+    {
+      "sha256": "9f8eca195fe3f49d56151a81b431c372288ea246e1eef260c6f39a9e1e2f0468",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/faun/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/faun/DESC.xml"
+    },
+    {
+      "sha256": "8236115a77bf9b51fd7e0d10639f6cdd6621a54006c5d3bcdb4d5ae2f7417f67",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/flor/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/flor/DESC.xml"
+    },
+    {
+      "sha256": "c9168f4f2bae12048ab5de37246b7f657ca49c9876ae99af39261ee9ebf30456",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/food/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/food/DESC.xml"
+    },
+    {
+      "sha256": "4489a3412c6f59ddee72bd787da3b2aff9fb890ce713b80402d28dddb9849837",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/liht/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/liht/DESC.xml"
+    },
+    {
+      "sha256": "3af89c6083182e6d91fc2151b621ab883157be58130c1b56a026928c24eba15a",
+      "source": "resources/cpt-city-qgis-min/jjg/neo10/othr/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jjg/neo10/othr/DESC.xml"
+    },
+    {
+      "sha256": "500ee139bab61eaab06fbc62bf477a2d7ae72c113e1a4f4866a69891f351f7b4",
+      "source": "resources/cpt-city-qgis-min/jm/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/COPYING.xml"
+    },
+    {
+      "sha256": "c66bb3fd61d7506474057639fd7668a165511396eab3c9f26c27c80d5c43ccc8",
+      "source": "resources/cpt-city-qgis-min/jm/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/DESC.xml"
+    },
+    {
+      "sha256": "a5c04445fe6a1d91b06cb4924f78e8d248c56e260877366a040bf01b91c41ec9",
+      "source": "resources/cpt-city-qgis-min/jm/ad/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/ad/DESC.xml"
+    },
+    {
+      "sha256": "3f54f757b6f9b59f3ce3df2bdc9ec882aaf7691f874307894ae9e4d7d3912bd9",
+      "source": "resources/cpt-city-qgis-min/jm/ao/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/ao/DESC.xml"
+    },
+    {
+      "sha256": "449a2e585a8c69e7a4b911c4434e5868ebbd6e61500a30334fe16d1cf559166e",
+      "source": "resources/cpt-city-qgis-min/jm/cd/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/cd/DESC.xml"
+    },
+    {
+      "sha256": "12513863ef290ece536d844caec0438f868d98490155a03a2707806559385700",
+      "source": "resources/cpt-city-qgis-min/jm/db/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/db/DESC.xml"
+    },
+    {
+      "sha256": "7df3c14ccdb7a7b7c08c73f90219c68c86834bbf7df1b77831ac6b6839d514a2",
+      "source": "resources/cpt-city-qgis-min/jm/o2/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/o2/DESC.xml"
+    },
+    {
+      "sha256": "c6bf7260f38b37787f13d499c38c1ec28f18cde99e19b986cc1645f4ce494567",
+      "source": "resources/cpt-city-qgis-min/jm/sd/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/sd/DESC.xml"
+    },
+    {
+      "sha256": "9fa499ad5e83ec9e939ed5c665c988617abc6f3e1fae4722d386cb80d31c8984",
+      "source": "resources/cpt-city-qgis-min/jm/tv/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/tv/DESC.xml"
+    },
+    {
+      "sha256": "fd7fb53c24a9bc6f558d25dc37e37b889c5c6c72064d3c5e50794fb75b47db07",
+      "source": "resources/cpt-city-qgis-min/jm/ws/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/ws/DESC.xml"
+    },
+    {
+      "sha256": "46378a551641182b357fbc02ab7d09b33f29d494877c8d1d770b3ba68f57b39c",
+      "source": "resources/cpt-city-qgis-min/jm/wt/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/jm/wt/DESC.xml"
+    },
+    {
+      "sha256": "da208d9658cfa8531e35f86d164f4d6619bab61c1bfa5298ca10fdcbfbb9ffc6",
+      "source": "resources/cpt-city-qgis-min/td/COPYING.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/td/COPYING.xml"
+    },
+    {
+      "sha256": "38bff00a9453b35b2e16b55272e85683c25ff69f7ef751dfade3f65648398f3e",
+      "source": "resources/cpt-city-qgis-min/td/DESC.xml",
+      "target": "share/qgis/doc/ambisgis-resource-selection/omitted-metadata/td/DESC.xml"
+    }
+  ],
+  "retained_colorbrewer": 265,
+  "scope": "Exact original notice bytes remain in local source. Naming, license, source/build obligations and brand review remain."
+}

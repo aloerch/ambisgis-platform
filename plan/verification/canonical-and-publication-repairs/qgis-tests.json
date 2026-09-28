@@ -1,0 +1,36 @@
+[
+  {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "plan/tests",
+      "-p",
+      "test_qgis_publication.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/qgis/attempt-003/publication-tests.log",
+    "sha256": "e1a43481fc648e02b1ef29741ba8efb2a842fe4f67c881347cbd1660bf0149a0"
+  },
+  {
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "build-support/qgis",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/qgis/attempt-003/qgis-tests.log",
+    "sha256": "9136b0ba2a2ffb88dd4fb824c4d8aaae0e5c26536998ffb5dcadbd914f04a3a5"
+  }
+]
