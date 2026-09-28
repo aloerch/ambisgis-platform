@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "item_count_before": 83,
+  "item_count_after": 83,
+  "mutations": 2,
+  "task_states": {
+    "FND-07": "In progress"
+  },
+  "other_item_values_archive_decisions_fields_views_preserved": true
+}

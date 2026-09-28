@@ -1,0 +1,12 @@
+{
+  "pr": 71,
+  "evidence": "https://github.com/aloerch/ambisgis-platform/pull/71 | Canonical delivery and local-only GeoTools/QGIS proposals | Owner scope: https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5863464446",
+  "passed": true,
+  "item_count_before": 84,
+  "item_count_after": 84,
+  "mutations": 2,
+  "task_states": {
+    "FND-07": "In review"
+  },
+  "other_item_values_archive_decisions_fields_views_preserved": true
+}

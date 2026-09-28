@@ -21,8 +21,9 @@ and four schemas. Current candidate and trusted local integrity results are in
 Historical 346-test baseline and unchanged native/compiler/runtime receipts remain
 separate. No Java or QGIS binary rebuild was repeated for these bounded source changes.
 
-**FND-02 remains owner-accepted/Merged; FND-07 remains open; FND-08 remains
-Backlog/unstarted.** One platform review checkpoint records this execution. The
+**FND-02 remains owner-accepted/Merged; FND-07 remains open/In review; FND-08 remains
+Backlog/unstarted.** [PR #71](https://github.com/aloerch/ambisgis-platform/pull/71) records this execution
+on `fnd-07/canonical-and-publication-repairs` against `ambisgis/main`. The
 next owner decision is the [exact two-source publication proposal](plan/verification/canonical-and-publication-repairs/next-source-publication.json),
 including explicit acceptance or withholding of QGIS clean-snapshot publication
 on the existing fork under the documented hosting limitation. Final FND-07
@@ -32,6 +33,13 @@ acceptance, default changes, merge and FND-08 are not granted.
 [per-root delivery](plan/verification/canonical-and-publication-repairs/canonical-delivery.json),
 [GeoTools repair](plan/docs/geotools-publication-repair.md),
 [QGIS repair / ADR010](plan/docs/qgis-publication-snapshot.md).
+
+[Project reconciliation](plan/verification/canonical-and-publication-repairs/project.json)
+added one PR #71 item with Evidence only: 83 → 84 items. All prior item values,
+fields/views and archive choices remain preserved. An immediate stale list
+readback failed; a fresh read-only reconciliation passed without repeating writes.
+Only FND-07 Delivery/Evidence transitioned for claim and review. No importer or
+GOV-02/FND-02 acceptance was repeated.
 
 # Preserved status — earlier checkpoints
 

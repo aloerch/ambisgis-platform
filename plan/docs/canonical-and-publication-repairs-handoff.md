@@ -5,7 +5,8 @@ Repository `aloerch/ambisgis-platform` (ID `1376927351`), branch
 `0df95126d9fecd9df3cf1fd0cd88ab565a680989`. This is PR #70's owner merge,
 with reviewed head `7d5ceb06f7a1814d4a95b7e4b05a2b46d8728720` as a direct parent.
 Worktree: `/home/revelberry/Projects/AmbisGIS/ambisgis-platform-canonical-and-publication-repairs`.
-The checkpoint PR and final head are recorded in the live issue #6 delivery comment.
+Review [PR #71](https://github.com/aloerch/ambisgis-platform/pull/71); the exact final
+pushed head is recorded in the live issue #6 delivery comment.
 
 ## Owner actions
 
@@ -166,7 +167,8 @@ source/resource integrity checks are separate evidence categories. Candidate
 eligibility can remain exit 2 for later ungranted gates; no permission was invented.
 Fresh integrated package validation passes **415 tests with zero failures/errors/skips**
 and four schemas. Candidate integrity/report and both trusted repaired-source
-verifiers pass; eligibility retains exit 2. Package/schema checks are not GIS
+verifiers pass; the original eleven-root retained-source integrity recheck also
+passed. Eligibility retains exit 2. Package/schema checks are not GIS
 product acceptance.
 
 [Independent engineering review](../verification/canonical-and-publication-repairs/independent-review.json)
@@ -204,6 +206,21 @@ decision against these unchanged criteria. FND-02 remains accepted/Merged, FND-0
 remains open for review, and FND-08 remains unstarted. Full build/drift checks and
 OWN-02 repair qualification remain outside this batch. Next task is this same
 FND-07 exact changed-source publication decision, not a new milestone.
+
+## Platform PR and Project evidence
+
+[PR #71](https://github.com/aloerch/ambisgis-platform/pull/71) targets verified
+`ambisgis/main` and remains open without auto-merge. Its task branch was created
+with a process-scoped pre-push check requiring an absent remote ref; no force push
+or global Git setting was used. Final pushed head is recorded in issue #6.
+
+[Project receipts](../verification/canonical-and-publication-repairs/project.json)
+record one deduplicated Evidence-only PR item and 83 → 84 items. All existing
+items/views/archive decisions remain preserved. The confirmed add/Evidence writes
+initially had a stale list readback; that receipt stays failed. Fresh complete
+read-only reconciliation passed with zero mutation retries. Only FND-07 claim and
+review Delivery/Evidence changed; it is In review, FND-02 Merged, FND-08 Backlog.
+No importer or prior governance acceptance was repeated.
 
 ## Retained commands
 
