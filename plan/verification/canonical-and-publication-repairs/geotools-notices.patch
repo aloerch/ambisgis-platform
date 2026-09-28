@@ -1,0 +1,30 @@
+--- a/build/maven/xmlcodegen/pom.xml
++++ b/build/maven/xmlcodegen/pom.xml
+@@ -7,6 +7,12 @@
+                                                                                 
+         Version: $Id$              
+      ======================================================================= -->
++<!--
++  AmbisGIS modification notice (original licenses and copyrights retained).
++  Functional change recorded 2026-09-20: Pinned EMF common/ecore dependency management to 2.15.0.
++  Accepted source changes materialized 2026-09-22 (UTC-07:00).
++  This notice added 2026-09-28 (UTC); no effective POM behavior changed.
++-->
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                                 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+ 
+--- a/modules/plugin/imagemosaic/pom.xml
++++ b/modules/plugin/imagemosaic/pom.xml
+@@ -7,6 +7,12 @@
+ 
+         Version: $Id$
+      ======================================================================= -->
++<!--
++  AmbisGIS modification notice (original licenses and copyrights retained).
++  Functional change recorded 2026-09-21: Removed Oracle-only test dependency and unused provided ojdbc14.
++  Accepted source changes materialized 2026-09-22 (UTC-07:00).
++  This notice added 2026-09-28 (UTC); no effective POM behavior changed.
++-->
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                                https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+ 
