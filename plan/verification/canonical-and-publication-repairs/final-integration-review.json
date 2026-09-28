@@ -1,0 +1,240 @@
+{
+  "base_commit": "0df95126d9fecd9df3cf1fd0cd88ab565a680989",
+  "checks": [
+    "All changed checkpoint files are UTF-8 recipes, tests, metadata, documentation or the explicitly allowed two-file notice patch. No source bundles, full source trees, omitted palette payloads, archives or executable binaries are present. Sole SVG literal is a synthetic restricted-fixture unittest string.",
+    "Accepted manifest, immutable canonical proposal, original promotion plan/source summary/remote-delivery receipt/publication companion, source_restore recipe and original QGIS resource selector match merged-base bytes exactly.",
+    "Canonical creation path pins actual owner decision ID/body/date/account, immutable proposal file hash, exact nine repository-ID/commit/tree rows and publication evidence. It excludes QGIS/GeoTools, defaults to read-only and only POSTs create-reference requests. Legacy authorized review-ref/settings behavior is unchanged and not invoked by canonical mode.",
+    "All nine canonical journal attempts are POST /git/refs for refs/heads/ambisgis/main from absent state; all have server responses, no uncertain events, and MapStore precedes its client. Exact replay has zero mutation-attempt events and nine already-exact results.",
+    "Independently recomputed complete retained before/after ref inventories for all eleven forks: exactly nine canonical additions, every prior ref unchanged, no deleted refs, all original defaults/Actions preserved, zero GeoTools/QGIS additions.",
+    "Canonical delivery summary identities match immutable eligible rows and nine independent remote-recovery entries. Every referenced summary evidence SHA256 matches current file bytes. Depth-one tree recovery is distinguished from reused exact PR70 full-history evidence.",
+    "Both next-source proposals match frozen component plans/receipts and actual private Git commit/tree/parent readback: GeoTools 3363c3d4ae8adfe3ed2024c27f92ec63855093be directly parents accepted aac73e9b89821331e77f67f1dd0921e541a78cfc; QGIS 86af40542b219b0da6df1a43914413443330c0c0 has no parent.",
+    "Integrated GeoTools recipe hash equals frozen producer/receipt; integrated QGIS snapshot, new resource adapter and original selector hashes equal successful attempt-003 producer evidence. Private receipt/provenance hashes match public bindings.",
+    "QGIS variant adapter retains strict complete membership and exact omission guards, compares unchanged stage bytes and comment-only XML differences, preserves ColorBrewer/notices, and refuses absent stages during read-only verification. Original accepted selector and its source-recovery pins remain unchanged.",
+    "Combined handoff, STATUS, DECISIONS and ADR010 distinguish nine delivered refs, two local-only source successors, explicit existing-QGIS-host/network limitation, unchanged FND-02 acceptance, pending final FND-07 acceptance and unstarted FND-08."
+  ],
+  "findings": [],
+  "integration_head": "fe91012d0e4ef56ae1f68fafa9b6aa6106559a6c",
+  "limits": [
+    "This report binds reviewed file hashes, not later edits, platform PR/head or merge/publication authorization.",
+    "Final integrated package/candidate/local-verification results are maintained by the integrator in validation.json; they were not rerun or independently relabeled by this review.",
+    "GeoTools source-specific independent review is the separate canonical_helper report; this reviewer authored that repair and does not claim independence for its own implementation.",
+    "No blanket licensing/security/hosting clearance, binary build equivalence, native/runtime reexecution, final FND-07 acceptance or FND-08 completion is asserted."
+  ],
+  "reviewed_at": "2026-09-28T05:11:35.875220+00:00",
+  "reviewed_files": [
+    {
+      "bytes": 24331,
+      "path": "STATUS.md",
+      "sha256": "c2f79dcc435beb75983f1f365d773b6b8ec645f5c5e3985431434b3022697fb9"
+    },
+    {
+      "bytes": 9412,
+      "path": "build-support/qgis/publication_selection.py",
+      "sha256": "b3501e77efdbba46db361854430078463453e3f4b8f27a4b16376ca18d13f278"
+    },
+    {
+      "bytes": 24340,
+      "path": "build-support/source_publication/geotools_notice.py",
+      "sha256": "6faae17668a28ae5cb6eb2585d6b3019f8f63095db3be96052f3d26007d28009"
+    },
+    {
+      "bytes": 33808,
+      "path": "build-support/source_publication/qgis_snapshot.py",
+      "sha256": "7338e8934cabac83dee570ce85f1a61c62a788b98b0167824a45e53902e4815c"
+    },
+    {
+      "bytes": 7718,
+      "path": "plan/DECISIONS.md",
+      "sha256": "806a3c7ed6910c55614dd26d62106d35dac3bf302c6b5320910b35bbfa24a951"
+    },
+    {
+      "bytes": 48475,
+      "path": "plan/STATUS.md",
+      "sha256": "a9b168ee0b2c9a39cc1723f48e24dda7e48d2168a5d3f3f05b7729c1057a0534"
+    },
+    {
+      "bytes": 3106,
+      "path": "plan/adrs/010-qgis-publication-source-boundary.md",
+      "sha256": "bf51e05ccbe994a0d4a2f7cdeadd79d19009b2b50f265c7f4052d6ad898cdee6"
+    },
+    {
+      "bytes": 14927,
+      "path": "plan/docs/canonical-and-publication-repairs-handoff.md",
+      "sha256": "9cd4a1478b0c8b03f9e2e4937f9963fe8c3accf9e1afe2fa064ce0d7a4fd3579"
+    },
+    {
+      "bytes": 8690,
+      "path": "plan/docs/geotools-publication-repair.md",
+      "sha256": "f91c2a597d4063a2040e7424879c68feb5b6b969fd51fb88da4f40fc22abdafd"
+    },
+    {
+      "bytes": 8698,
+      "path": "plan/docs/qgis-publication-snapshot.md",
+      "sha256": "e98c5ddbd61a27e1daa9408bfb58034cda564722bdd9fe4f5e16ec242e40100c"
+    },
+    {
+      "bytes": 4960,
+      "path": "plan/tests/test_canonical_delivery.py",
+      "sha256": "a401ba1e7f4c01a4af81ed405933213b108fc5ae794da4e1b02b4ea870e39881"
+    },
+    {
+      "bytes": 14080,
+      "path": "plan/tests/test_geotools_publication.py",
+      "sha256": "08b08dd2f717d68034e5602f72a89298e86a261d9c71decc1dab4de670dc6d6b"
+    },
+    {
+      "bytes": 14372,
+      "path": "plan/tests/test_qgis_publication.py",
+      "sha256": "cc3b42ae2a2e89a97b0622d69000777fa3516bfcc0f8317fb3898c8b0c6cf8e4"
+    },
+    {
+      "bytes": 20308,
+      "path": "plan/tests/test_source_canonical.py",
+      "sha256": "822b2980bfbeb30f228397e004c1c0475c9cb41653d23f75b3499609346a926d"
+    },
+    {
+      "bytes": 44368,
+      "path": "plan/tools/promote_source_refs.py",
+      "sha256": "d9325555fd739d6d4a3c8c1027c1d6b6390cb633216939a892cf78e4501d15cb"
+    },
+    {
+      "bytes": 8724,
+      "path": "plan/tools/verify_canonical_delivery.py",
+      "sha256": "497b84275ca8550c9f6b204921c272ca4e7366bee1aa0bc2e0d9f4d970e44e44"
+    },
+    {
+      "bytes": 762,
+      "path": "plan/verification/canonical-and-publication-repairs/README.md",
+      "sha256": "e44ee40176f1a2d9b8fd494c639d696afe4ff3fa57bc2d70c0a3dfb819d7d747"
+    },
+    {
+      "bytes": 5054,
+      "path": "plan/verification/canonical-and-publication-repairs/authorization.json",
+      "sha256": "3a43868d91b8facfb041a7d2f03363509167a91c1a44b63f3a1957f78a54ef9b"
+    },
+    {
+      "bytes": 86259,
+      "path": "plan/verification/canonical-and-publication-repairs/canonical-apply.jsonl",
+      "sha256": "f086eb7c4f5c1bd92737a4cbff7f9d93bd37db356f804463d186297ac4342011"
+    },
+    {
+      "bytes": 8403,
+      "path": "plan/verification/canonical-and-publication-repairs/canonical-delivery.json",
+      "sha256": "139a88e6c4ccbc16b9be74a13b1dec2106ae00834e9138bca94da02777c23d16"
+    },
+    {
+      "bytes": 13889,
+      "path": "plan/verification/canonical-and-publication-repairs/canonical-remote-delivery.json",
+      "sha256": "d9f428c97edca874c288a6fb8753746c770d6c5944d9b05d1c114d3d916e1812"
+    },
+    {
+      "bytes": 64285,
+      "path": "plan/verification/canonical-and-publication-repairs/canonical-replay.jsonl",
+      "sha256": "7ae09ad65406c90c3138545bfe60489f15ba20565e4430c9206a52ef0e532c9d"
+    },
+    {
+      "bytes": 5739,
+      "path": "plan/verification/canonical-and-publication-repairs/geotools-evidence.json",
+      "sha256": "26f86fe06d304024ee43eff5963f91f398c47a0d79d54ec8d01b6aa224e8cf6b"
+    },
+    {
+      "bytes": 805,
+      "path": "plan/verification/canonical-and-publication-repairs/geotools-final-preflight.json",
+      "sha256": "e9a04a77a234a506c3edc82264a095e265243e508fae65590b2ae2d5cddcf3b7"
+    },
+    {
+      "bytes": 2138,
+      "path": "plan/verification/canonical-and-publication-repairs/geotools-network.json",
+      "sha256": "108b9662440f777250ae20409019b9d2ff503a9dc6bc429e9cbf3fa2a4a3f015"
+    },
+    {
+      "bytes": 1713,
+      "path": "plan/verification/canonical-and-publication-repairs/geotools-notices.patch",
+      "sha256": "1a3b312f425eff3853caa67cf9ced52db2918c6d24cfe7817894712e116a7e2e"
+    },
+    {
+      "bytes": 6935,
+      "path": "plan/verification/canonical-and-publication-repairs/geotools-receipt.json",
+      "sha256": "5fe6003847a95da95a280a958b1e27fdbf0ecd43a219251e257827c46534a2f8"
+    },
+    {
+      "bytes": 2061,
+      "path": "plan/verification/canonical-and-publication-repairs/geotools-remote-preflight.json",
+      "sha256": "c3fe6b5a759ae9cbfb12d77ee0cbb615d4228f7ff18d833f7376e150a4680379"
+    },
+    {
+      "bytes": 2233,
+      "path": "plan/verification/canonical-and-publication-repairs/geotools-verification-network.json",
+      "sha256": "72f12f03739171e8a05880a9c8cbcc54cbe414ce3564a0b5d7a2ff14cde934a8"
+    },
+    {
+      "bytes": 8343,
+      "path": "plan/verification/canonical-and-publication-repairs/independent-review.json",
+      "sha256": "e7e25dd46292cad2b4b993c4064b9db8f93b45367f4fd810115379df6ec71e17"
+    },
+    {
+      "bytes": 3735,
+      "path": "plan/verification/canonical-and-publication-repairs/next-source-publication.json",
+      "sha256": "1510cba3c5d96fa4be7f464352541277b41fc53629445fcb10ffcd4904cb7bdb"
+    },
+    {
+      "bytes": 57428,
+      "path": "plan/verification/canonical-and-publication-repairs/qgis-attribution.json",
+      "sha256": "9e65144d01a84e893c61442e5c6b6ba9b509c521a9a34bb4ef1b437a8da49b01"
+    },
+    {
+      "bytes": 34578,
+      "path": "plan/verification/canonical-and-publication-repairs/qgis-catalogue-changes.json",
+      "sha256": "f03233288423f8c4f591aba2eccb95c298df19c840c4f8d01fbb685aa0e393db"
+    },
+    {
+      "bytes": 42543,
+      "path": "plan/verification/canonical-and-publication-repairs/qgis-evidence.json",
+      "sha256": "79a3861abe459fd39b45b2240a98be66051af23ef7223336d4c35bd36a49c4e2"
+    },
+    {
+      "bytes": 310652,
+      "path": "plan/verification/canonical-and-publication-repairs/qgis-exclusions.json",
+      "sha256": "dd3215fb9621880273bffab23091a34cad584fd67e8828d5bfe816a8dfb85272"
+    },
+    {
+      "bytes": 3951,
+      "path": "plan/verification/canonical-and-publication-repairs/qgis-publication-plan.json",
+      "sha256": "d60c5569722ae5a8552ab35afd863b04d09ef70fd9d0a9c743277bfe41e48dba"
+    },
+    {
+      "bytes": 812,
+      "path": "plan/verification/canonical-and-publication-repairs/qgis-remote-preflight.json",
+      "sha256": "0fa89457ba36b1a8600c27cbeea0adb09421fe21debc8d50031a0af7ddbfbc78"
+    },
+    {
+      "bytes": 1242,
+      "path": "plan/verification/canonical-and-publication-repairs/qgis-resource-negative-checks.json",
+      "sha256": "08e94a749ed30d79e59affdbd310477b6897144f320f2707157b2134dbe780b1"
+    },
+    {
+      "bytes": 899,
+      "path": "plan/verification/canonical-and-publication-repairs/qgis-tests.json",
+      "sha256": "66aa5f4fef7bfa6fc0d931091572c5157fe6c14948593c9bdb51cd0cfd853325"
+    },
+    {
+      "bytes": 38106,
+      "path": "plan/verification/canonical-and-publication-repairs/qgis-verification.json",
+      "sha256": "a62158a56eef6be20fc6d9cd74ad4c26a19579e80e6756749da428f11e2fa4a1"
+    },
+    {
+      "bytes": 6482,
+      "path": "plan/verification/canonical-and-publication-repairs/source-state-comparison.json",
+      "sha256": "2b5a4cd894023087cee4b35a2985b9f1d7816ca90897be085fe1a864b7637bb9"
+    }
+  ],
+  "reviewer": "geotools_investigation agent; author of GeoTools repair, separate final integration reviewer of canonical/QGIS/combined changes",
+  "reviewer_mutations": {
+    "private_review_receipt": 1,
+    "remote": 0,
+    "source_or_root_files": 0
+  },
+  "schema_version": 1,
+  "scope": "Bounded read-only integration/publication review versus merged PR70 base, including current tracked and untracked checkpoint files. No baseline test reruns, remote queries/writes, source edits or broad rights audit.",
+  "status": "pass-no-unresolved-material-integration-findings"
+}

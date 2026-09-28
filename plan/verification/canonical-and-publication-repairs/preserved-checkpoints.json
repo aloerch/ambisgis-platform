@@ -1,0 +1,12 @@
+{
+  "retained_run_001_hashes_verified": 32,
+  "retained_run_001_index_sha256": "d1b5242cb1a93063933aebac64d292b0fba07201859a214c624739f5960c55c5",
+  "original_plan_user_edit": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/STATUS.md",
+    "sha256": "6c377ce833aec7b6fecbf09ffdc20ab29f3e2dad8453c5b523d3dc7c6f4e83fd",
+    "diff_sha256": "6af83e670585088143241eb088d7e626238bcac9d41d394ad95b3be1f715ef0d",
+    "status": " M STATUS.md\n",
+    "touched_by_this_batch": false
+  },
+  "task_worktree": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-canonical-and-publication-repairs"
+}

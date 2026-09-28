@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "source_ref_creations": 9,
+  "other_ref_changes": 0,
+  "settings_changes": 0,
+  "before_sha256": "fa29f052742d8902a973ea0fe2c1041ec9b6369bb888b2ef082c916684a69f6d",
+  "after_sha256": "7a38e02167fd65b9fb77b3427f660a8d46f3408ab97d0e69fbb41dab8766415d",
+  "rows": [
+    {
+      "root_id": "postgresql",
+      "repository": "aloerch/ambisgis-postgresql",
+      "repository_id": 1376927644,
+      "observed_at": "2026-09-28T04:58:23.547917+00:00",
+      "before_ref_count": 732,
+      "after_ref_count": 733,
+      "added": [
+        "refs/heads/ambisgis/main"
+      ],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "master",
+        "commit": "c62b330912e2095dc8dee2f749adf7e5d94ca611"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "root_id": "postgis",
+      "repository": "aloerch/ambisgis-postgis",
+      "repository_id": 1376927690,
+      "observed_at": "2026-09-28T04:58:23.066734+00:00",
+      "before_ref_count": 355,
+      "after_ref_count": 356,
+      "added": [
+        "refs/heads/ambisgis/main"
+      ],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "master",
+        "commit": "84890ccbe53549130de8a2b75a72ab3a54b570d1"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "root_id": "qgis",
+      "repository": "aloerch/ambisgis-qgis",
+      "repository_id": 1376927721,
+      "observed_at": "2026-09-28T04:58:23.135072+00:00",
+      "before_ref_count": 444,
+      "after_ref_count": 444,
+      "added": [],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "master",
+        "commit": "09d73a2b827841320e798d1f18c84a4776dbd265"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "root_id": "jupyterhub",
+      "repository": "aloerch/ambisgis-jupyterhub",
+      "repository_id": 1376927753,
+      "observed_at": "2026-09-28T04:58:23.099999+00:00",
+      "before_ref_count": 113,
+      "after_ref_count": 114,
+      "added": [
+        "refs/heads/ambisgis/main"
+      ],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "main",
+        "commit": "929ef417d1e337a17a5e3ebfdd0e0143b021f91d"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "root_id": "jupyterlab",
+      "repository": "aloerch/ambisgis-jupyterlab",
+      "repository_id": 1376927783,
+      "observed_at": "2026-09-28T04:58:24.631969+00:00",
+      "before_ref_count": 48793,
+      "after_ref_count": 48794,
+      "added": [
+        "refs/heads/ambisgis/main"
+      ],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "main",
+        "commit": "5ad633d6747371452c2f5fe465d18a70b8f3195d"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "root_id": "geotools",
+      "repository": "aloerch/ambisgis-geotools",
+      "repository_id": 1376927869,
+      "observed_at": "2026-09-28T04:58:24.475945+00:00",
+      "before_ref_count": 304,
+      "after_ref_count": 304,
+      "added": [],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "main",
+        "commit": "9a4f847e8b83875169e279999659052a0cc2bf14"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "root_id": "geowebcache",
+      "repository": "aloerch/ambisgis-geowebcache",
+      "repository_id": 1376927892,
+      "observed_at": "2026-09-28T04:58:24.558366+00:00",
+      "before_ref_count": 293,
+      "after_ref_count": 294,
+      "added": [
+        "refs/heads/ambisgis/main"
+      ],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "main",
+        "commit": "821bae4793863555321cd7a935137c80b8eded73"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "root_id": "geoserver",
+      "repository": "aloerch/ambisgis-geoserver",
+      "repository_id": 1376927947,
+      "observed_at": "2026-09-28T04:58:24.790009+00:00",
+      "before_ref_count": 348,
+      "after_ref_count": 349,
+      "added": [
+        "refs/heads/ambisgis/main"
+      ],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "main",
+        "commit": "98c7c567a9fa3b691915fa2fc613d90d90d78b62"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "root_id": "geonode",
+      "repository": "aloerch/ambisgis-geonode",
+      "repository_id": 1376927978,
+      "observed_at": "2026-09-28T04:58:25.651583+00:00",
+      "before_ref_count": 522,
+      "after_ref_count": 523,
+      "added": [
+        "refs/heads/ambisgis/main"
+      ],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "master",
+        "commit": "ddfdc44cabf13931fb1d53d35809699d6e4766ae"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "root_id": "mapstore-client",
+      "repository": "aloerch/ambisgis-mapstore-client",
+      "repository_id": 1376928013,
+      "observed_at": "2026-09-28T04:58:25.699578+00:00",
+      "before_ref_count": 156,
+      "after_ref_count": 157,
+      "added": [
+        "refs/heads/ambisgis/main"
+      ],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "master",
+        "commit": "673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    },
+    {
+      "root_id": "mapstore",
+      "repository": "aloerch/ambisgis-mapstore",
+      "repository_id": 1376928043,
+      "observed_at": "2026-09-28T04:58:26.060925+00:00",
+      "before_ref_count": 220,
+      "after_ref_count": 221,
+      "added": [
+        "refs/heads/ambisgis/main"
+      ],
+      "removed": [],
+      "changed_existing_refs": [],
+      "default": {
+        "name": "master",
+        "commit": "0eedc8b7184d3b753d0581963814726f1e5ec8eb"
+      },
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      }
+    }
+  ]
+}

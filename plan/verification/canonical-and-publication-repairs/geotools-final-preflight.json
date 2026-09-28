@@ -1,0 +1,22 @@
+{
+  "root_id": "geotools",
+  "repository": "aloerch/ambisgis-geotools",
+  "repository_id": 1376927869,
+  "observed_at": "2026-09-28T04:58:24.475945+00:00",
+  "default": {
+    "name": "main",
+    "commit": "9a4f847e8b83875169e279999659052a0cc2bf14"
+  },
+  "actions": {
+    "enabled": false,
+    "sha_pinning_required": false
+  },
+  "expected_old": {
+    "refs/heads/ambisgis/review/fnd-07-notices-v1": null,
+    "refs/heads/ambisgis/main": null
+  },
+  "basis": "complete fresh ls-remote --refs owned-fork inventory; dated observation only",
+  "source_inventory_sha256": "7a38e02167fd65b9fb77b3427f660a8d46f3408ab97d0e69fbb41dab8766415d",
+  "source_inventory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/source-state-after.json",
+  "remote_mutations": 0
+}

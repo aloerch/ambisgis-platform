@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-09-28T04:58:06.614202+00:00",
+  "canonical_proposal_sha256": "519dd189533c6d077648f0b9bbf1f98e052e28d4d614414b6c04f141deb0d28d",
+  "prior_full_history_receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+  "tool_sha256": "497b84275ca8550c9f6b204921c272ca4e7366bee1aa0bc2e0d9f4d970e44e44",
+  "mode": "independent-complete-tip-trees-depth-one; prior-full-history-evidence-reused",
+  "repositories": [
+    {
+      "root_id": "postgresql",
+      "repository": "aloerch/ambisgis-postgresql",
+      "repository_id": 1376927644,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-postgresql.git",
+        "refs/heads/ambisgis/main:refs/heads/ambisgis/main"
+      ],
+      "commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "tree": "598df31816bda464f5b904c0badbcb25bafcc4f1",
+      "source_entries": 6265,
+      "tree_inventory_sha256": "d98f3e0930c845578420301bd180998d31e6a1bb6a2810082d608f5bd761ab4d",
+      "notice_paths_verified": 3,
+      "gitlinks": [],
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "history_evidence_reused": {
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "history_commits": 55932,
+        "changed_paths": []
+      },
+      "status": "verified",
+      "observed_at": "2026-09-28T04:58:14.009139+00:00"
+    },
+    {
+      "root_id": "postgis",
+      "repository": "aloerch/ambisgis-postgis",
+      "repository_id": 1376927690,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-postgis.git",
+        "refs/heads/ambisgis/main:refs/heads/ambisgis/main"
+      ],
+      "commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+      "tree": "ee927efacdc5a00d698cab2da047ad2232d1f579",
+      "source_entries": 2315,
+      "tree_inventory_sha256": "c59c069a1c25c4c564c940008cb1396c46f9f598e599e5ced0a6ea18d2ce5dff",
+      "notice_paths_verified": 13,
+      "gitlinks": [],
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "history_evidence_reused": {
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "history_commits": 18349,
+        "changed_paths": []
+      },
+      "status": "verified",
+      "observed_at": "2026-09-28T04:58:17.127723+00:00"
+    },
+    {
+      "root_id": "jupyterhub",
+      "repository": "aloerch/ambisgis-jupyterhub",
+      "repository_id": 1376927753,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-jupyterhub.git",
+        "refs/heads/ambisgis/main:refs/heads/ambisgis/main"
+      ],
+      "commit": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+      "tree": "a9ab20c5ff0641870194d666fcd1516ee2f2d65e",
+      "source_entries": 425,
+      "tree_inventory_sha256": "040afebe5c329585245a3f6c3134e96cadfe5ae53a73d0d1bd9ebf448a970d23",
+      "notice_paths_verified": 2,
+      "gitlinks": [],
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "history_evidence_reused": {
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "history_commits": 8821,
+        "changed_paths": [
+          "M\tMANIFEST.in"
+        ]
+      },
+      "status": "verified",
+      "observed_at": "2026-09-28T04:58:19.468840+00:00"
+    },
+    {
+      "root_id": "jupyterlab",
+      "repository": "aloerch/ambisgis-jupyterlab",
+      "repository_id": 1376927783,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-jupyterlab.git",
+        "refs/heads/ambisgis/main:refs/heads/ambisgis/main"
+      ],
+      "commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+      "tree": "0edadc56fb04f944097c0658a9a51686ba68bd16",
+      "source_entries": 3022,
+      "tree_inventory_sha256": "4f1b0965432749aacfbdb5a2c9b7854c231167fdbe9ed202ce96f7d9c31291ce",
+      "notice_paths_verified": 4,
+      "gitlinks": [],
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "history_evidence_reused": {
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "history_commits": 27053,
+        "changed_paths": []
+      },
+      "status": "verified",
+      "observed_at": "2026-09-28T04:58:22.944828+00:00"
+    },
+    {
+      "root_id": "geowebcache",
+      "repository": "aloerch/ambisgis-geowebcache",
+      "repository_id": 1376927892,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-geowebcache.git",
+        "refs/heads/ambisgis/main:refs/heads/ambisgis/main"
+      ],
+      "commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+      "tree": "8df655d13b9955776fe1532dfb27fac64612a772",
+      "source_entries": 1063,
+      "tree_inventory_sha256": "ce7cae7cf8a53e01fa5e3a5580149ab170b88917f67d81bef64dc7adad697127",
+      "notice_paths_verified": 4,
+      "gitlinks": [],
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "history_evidence_reused": {
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "history_commits": 2908,
+        "changed_paths": [
+          "M\tgeowebcache/diskquota/jdbc/pom.xml"
+        ]
+      },
+      "status": "verified",
+      "observed_at": "2026-09-28T04:58:25.844260+00:00"
+    },
+    {
+      "root_id": "geoserver",
+      "repository": "aloerch/ambisgis-geoserver",
+      "repository_id": 1376927947,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-geoserver.git",
+        "refs/heads/ambisgis/main:refs/heads/ambisgis/main"
+      ],
+      "commit": "fd2fe1dfcc78fa974bdb81673872879336312077",
+      "tree": "c12018e88493a351c60c370f2a43894701acf995",
+      "source_entries": 19996,
+      "tree_inventory_sha256": "fe7fa6dd98e98be1a87cdf59c7366df1bdc3570ba12fb16eabda98835f859de5",
+      "notice_paths_verified": 23,
+      "gitlinks": [],
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "history_evidence_reused": {
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "history_commits": 14753,
+        "changed_paths": [
+          "M\tsrc/community/security/oauth2-geonode/src/main/java/org/geoserver/security/oauth2/services/GeoNodeTokenServices.java",
+          "M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuth2FilterConfig.java",
+          "M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthAuthenticationFilter.java",
+          "M\tsrc/community/security/oauth2/oauth2-core/src/main/java/org/geoserver/security/oauth2/GeoServerOAuthRemoteTokenServices.java",
+          "M\tsrc/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleService.java",
+          "M\tsrc/extension/authkey/src/main/java/org/geoserver/security/GeoServerRestRoleServiceConfig.java",
+          "M\tsrc/extension/importer/core/pom.xml",
+          "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/ImportTaskController.java",
+          "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportContextJSONMessageConverter.java",
+          "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportDataJSONMessageConverter.java",
+          "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportLayerJSONMessageConverter.java",
+          "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportTaskJSONMessageConverter.java",
+          "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/ImportTransformJSONMessageConverter.java",
+          "M\tsrc/extension/importer/rest/src/main/java/org/geoserver/importer/rest/converters/TransformChainJSONMessageConverter.java",
+          "M\tsrc/extension/importer/web/pom.xml",
+          "M\tsrc/extension/importer/web/src/main/java/org/geoserver/importer/web/ImportDataPage.java",
+          "A\tsrc/main/src/main/java/org/geoserver/filters/NoJpeg2000Filter.java",
+          "A\tsrc/main/src/main/java/org/geoserver/filters/NoJpeg2000Policy.java",
+          "M\tsrc/main/src/main/java/org/geoserver/security/auth/GuavaAuthenticationCacheImpl.java",
+          "M\tsrc/restconfig/src/main/java/org/geoserver/rest/catalog/CoverageStoreFileValidator.java",
+          "M\tsrc/web/app/src/main/webapp/WEB-INF/web.xml"
+        ]
+      },
+      "status": "verified",
+      "observed_at": "2026-09-28T04:58:36.275799+00:00"
+    },
+    {
+      "root_id": "geonode",
+      "repository": "aloerch/ambisgis-geonode",
+      "repository_id": 1376927978,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-geonode.git",
+        "refs/heads/ambisgis/main:refs/heads/ambisgis/main"
+      ],
+      "commit": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+      "tree": "f8fda01733dae258e319df14f42677cf3bd83e20",
+      "source_entries": 2396,
+      "tree_inventory_sha256": "81e7e123f1880c8a8f6e9eb4e4dd69aed7e273655edca87e5fe3818d98943c04",
+      "notice_paths_verified": 5,
+      "gitlinks": [],
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "history_evidence_reused": {
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "history_commits": 19486,
+        "changed_paths": [
+          "A\tgeonode/api/backend_roles.py",
+          "A\tgeonode/api/backend_tokeninfo.py",
+          "A\tgeonode/api/test_backend_roles.py",
+          "A\tgeonode/api/test_backend_tokeninfo.py",
+          "M\tgeonode/api/views.py",
+          "M\tgeonode/security/middleware.py",
+          "M\tgeonode/settings.py",
+          "M\tpyproject.toml"
+        ]
+      },
+      "status": "verified",
+      "observed_at": "2026-09-28T04:58:39.945484+00:00"
+    },
+    {
+      "root_id": "mapstore",
+      "repository": "aloerch/ambisgis-mapstore",
+      "repository_id": 1376928043,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-mapstore.git",
+        "refs/heads/ambisgis/main:refs/heads/ambisgis/main"
+      ],
+      "commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+      "tree": "11b6eb8616b90c72570c4f3aad82212b52f1cdbe",
+      "source_entries": 5870,
+      "tree_inventory_sha256": "600649e85685bbf84beab27ae8831ab4a7bc7e8d6d45a73d546ada283fe9a739",
+      "notice_paths_verified": 2,
+      "gitlinks": [],
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "history_evidence_reused": {
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "history_commits": 5605,
+        "changed_paths": [
+          "M\tpackage.json"
+        ]
+      },
+      "status": "verified",
+      "observed_at": "2026-09-28T04:58:48.583151+00:00"
+    },
+    {
+      "root_id": "mapstore-client",
+      "repository": "aloerch/ambisgis-mapstore-client",
+      "repository_id": 1376928013,
+      "fetch_argv": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "--no-tags",
+        "--no-recurse-submodules",
+        "https://github.com/aloerch/ambisgis-mapstore-client.git",
+        "refs/heads/ambisgis/main:refs/heads/ambisgis/main"
+      ],
+      "commit": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+      "tree": "8055ca37333ee3037f63624f2e1d6ee548d416f1",
+      "source_entries": 1460,
+      "tree_inventory_sha256": "006d1b4914623355b7626d96afbfe0021b6ac4822eae697ce29fe84b6d436a9c",
+      "notice_paths_verified": 3,
+      "gitlinks": [
+        {
+          "path": "geonode_mapstore_client/client/MapStore2",
+          "commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8"
+        }
+      ],
+      "fsck_exit_code": 0,
+      "fsck_stdout": "",
+      "fsck_stderr": "",
+      "history_evidence_reused": {
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "history_commits": 1803,
+        "changed_paths": [
+          "M\tgeonode_mapstore_client/client/MapStore2",
+          "M\tgeonode_mapstore_client/client/package.json"
+        ]
+      },
+      "required_owned_url_mapping": {
+        "from": "https://github.com/geosolutions-it/MapStore2.git",
+        "to": "https://github.com/aloerch/ambisgis-mapstore.git",
+        "scope": "process-only; .gitmodules unchanged",
+        "path": "geonode_mapstore_client/client/MapStore2",
+        "argv": [
+          "git",
+          "-c",
+          "url.https://github.com/aloerch/ambisgis-mapstore.git.insteadOf=https://github.com/geosolutions-it/MapStore2.git",
+          "ls-remote",
+          "--exit-code",
+          "--refs",
+          "https://github.com/geosolutions-it/MapStore2.git",
+          "refs/heads/ambisgis/main"
+        ],
+        "readback": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8\trefs/heads/ambisgis/main"
+      },
+      "status": "verified",
+      "observed_at": "2026-09-28T04:58:52.837528+00:00"
+    }
+  ],
+  "finished_at": "2026-09-28T04:58:52.838162+00:00",
+  "passed": true
+}
