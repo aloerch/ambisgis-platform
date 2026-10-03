@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "source_commit": "333518a19d43adf2fd12faed1a3be52d9c90dd3f",
+  "source_tree": "3357f74aa588b18703f26cdb5b5a5f7809d7d150",
+  "retained_path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002",
+  "manifest_sha256": "ae3c5d548e95f23467cc63d571e54d44fec494f906291da7362263590d97b642",
+  "production_lock_sha256": "c9c37a80426a490c8cd2bf9ac7a341b53de1f41ee3da121ed52eb5cc7deb0378",
+  "node_archive_sha256": "d6c664df3f3f61458e8c277585571328522d705166723a7c7823a9253a4d15a0",
+  "install_policy": "Fresh offline npm ci; ignore every lifecycle script; omit dev and optional dependencies; no acquired package imports before independent review.",
+  "runtime_policy": "OBJECTID_FEATURE_HASH=javascript; explicit stable object_id field. Native optional farmhash is retained but not installed or executed."
+}
