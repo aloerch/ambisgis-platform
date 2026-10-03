@@ -1,12 +1,32 @@
-# Active delivery — standing delegation
+# Active delivery — 3 October 2026
 
-FND-03 and FND-04 are accepted/Merged after separate-context review, real runtime/database tests, normal protected merges and post-merge checks. Platform [PR #74](https://github.com/aloerch/ambisgis-platform/pull/74) merged as `0876999d7535d792d0024586981c762b2f9bf513`; geodatabase [PR #10](https://github.com/aloerch/ambisgis-geodb/pull/10) merged as `b7e5888b11a4b3d2246daeffe0173113f1628f2d`. [Acceptance and checks](verification/foundation-prototypes/acceptance-and-merge.json) retain each prototype's bounded scope. Full product authorization and production geodatabase acceptance remain open.
+FND-03, FND-04, FND-05 and FND-07 are accepted/Merged within their original
+foundation criteria. FND-05 platform [PR #75](https://github.com/aloerch/ambisgis-platform/pull/75)
+merged at `337cc4f7438848575e075e8d90f59d9d37e4309e`; desktop
+[PR #6](https://github.com/aloerch/ambisgis-qgis-plugin/pull/6) merged at
+`f2a7dcbea2dac5ad5c41bb825093014c7341d46c`. Fresh post-merge checks against
+final owned QGIS stage-002 pass 152 HTTP assertions, 49 checked maps, 70 native
+identity tests, 13 authoring negatives and six package roundtrips. Services and
+fixture credentials were cleaned up. [Renderer acceptance](verification/fnd-05/acceptance-and-merge.json)
+records exact heads and Project reconciliation: 91 items, 24 fields, seven views,
+15 repositories, all unrelated values preserved.
 
-FND-07 is accepted/Merged via [PR #73](https://github.com/aloerch/ambisgis-platform/pull/73), merge `7812efa3502ec1d7004b485d35b433eea56ce13e`, with all eleven canonical source refs, exact successor publication, independent recovery and zero-write replay. [Source acceptance](verification/authorized-successors/acceptance-and-merge.json) preserves the unchanged criteria; FND-02 stays accepted.
+FND-08 is In progress on `fnd-08/owned-spine`, based on merged platform
+`337cc4f7438848575e075e8d90f59d9d37e4309e`. Native, Java, QGIS and selected-host
+build evidence has independent review. The two-file client lint repair merged in
+[PR #1](https://github.com/aloerch/ambisgis-mapstore-client/pull/1) at
+`c1f6ad9df52f08ac3bfd7211db9e3ee744b21407`, with whole-client lint and 510 native
+browser assertions passing. Fresh catalog/UI pairs select that exact commit;
+final aggregate review and acceptance remain pending. [Build evidence and limits](docs/fnd-08-owned-spine.md)
+include all retained failures, named skips and raw reproducibility differences.
 
-FND-08 owned builds and FND-05 desktop publishing/rendering are In progress. The native goal runtime has actually continued across a turn boundary; the [ledger](docs/delivery-ledger.json) records the observed continuation and stop mechanism. No installable MVP, packaged release or completed product acceptance is claimed. The [standing policy](docs/standing-delivery-policy.md) and [all 24 requirements](docs/delivery-requirements-matrix.md) govern continuation.
+The [ledger](docs/delivery-ledger.json) and [all 24 requirements](docs/delivery-requirements-matrix.md)
+govern continuation under the [standing delegation](docs/standing-delivery-policy.md).
+FND-06 waits for FND-08 acceptance. Full publishing, managed geodatabase,
+portal/apps, isolated notebooks, installer, independent repair and release gates
+remain open. No installable scoped MVP or release artifact is claimed.
 
-## Historical checkpoint follows unchanged
+## Historical checkpoints follow unchanged
 
 # Current checkpoint — FND-07 canonical delivery and local source repairs
 

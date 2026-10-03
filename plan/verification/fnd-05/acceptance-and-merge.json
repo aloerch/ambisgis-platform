@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "task": "FND-05",
+  "delivery": "Merged",
+  "acceptance": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1#issuecomment-5967122058",
+  "prs": [
+    {
+      "url": "https://github.com/aloerch/ambisgis-platform/pull/75",
+      "merge": "337cc4f7438848575e075e8d90f59d9d37e4309e",
+      "head": "1cff6dce2249966ba1a2ad5e7e235b2e20a857ab"
+    },
+    {
+      "url": "https://github.com/aloerch/ambisgis-qgis-plugin/pull/6",
+      "merge": "f2a7dcbea2dac5ad5c41bb825093014c7341d46c",
+      "head": "3d0d789dbb2f91bf81ee2c47891c394323b9d04d"
+    }
+  ],
+  "postmerge_receipt": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd05-postmerge-stage002/run-001/postmerge-smoke.json",
+    "sha256": "7d2db43cf8a4f02d8c79d33f1f1e1f704a35004fbe06d0f4e52a6b8a8fe4c630"
+  },
+  "client_successor": {
+    "url": "https://github.com/aloerch/ambisgis-mapstore-client/pull/1",
+    "merge": "c1f6ad9df52f08ac3bfd7211db9e3ee744b21407",
+    "progress": "https://github.com/aloerch/ambisgis-platform/issues/7#issuecomment-5967123885"
+  },
+  "items_before": 88,
+  "items": 91,
+  "fields": 24,
+  "views": 7,
+  "repositories": 15,
+  "all_other_project_values_preserved": true
+}

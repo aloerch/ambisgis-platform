@@ -38,9 +38,9 @@
   "repository": "aloerch/ambisgis-platform",
   "repository_id": 1376927351,
   "branch": "fnd-08/owned-spine",
-  "base": "0876999d7535d792d0024586981c762b2f9bf513",
+  "base": "337cc4f7438848575e075e8d90f59d9d37e4309e",
   "task": "FND-08 owned initial spine builds and T-OWN-02",
-  "state": "In progress; Java and selected-host increments independently reviewed, native/catalog/UI review and final QGIS pair pending",
+  "state": "In progress; native, Java, QGIS and selected-host evidence reviewed; fresh merged-client catalog/UI pairs and final aggregate review pending",
   "pr": null,
   "tests": [
     {
@@ -65,14 +65,15 @@
     "FND-02",
     "FND-03",
     "FND-04",
+    "FND-05",
     "FND-07",
     "GOV-01",
     "GOV-02"
   ],
   "next": [
-    "Complete FND-08 paired owned-spine builds, selected-input inventory and donor-drift evidence",
-    "Complete FND-05 desktop packaging/rendering and authorization prototype with separate-context review",
-    "FND-06 becomes ready after FND-05 and FND-08 acceptance; preserve contract/threat-model/Koop spike criteria"
+    "Finish fresh FND-08 catalog/UI pairs at merged client pin and supplemental test-tool custody review",
+    "Complete final FND-08 aggregate review, normal protected PR merge and post-merge checks",
+    "FND-06 becomes ready after FND-08 acceptance; retain its contracts, threat model and Koop comparison criteria"
   ],
   "product_acceptance": false,
   "release_artifact": null,
@@ -85,23 +86,17 @@
   "active_workers": [
     {
       "agent": "/root/fnd03_identity",
-      "task": "FND-08 QGIS final paired build and independent remaining-slices review",
-      "branch": "fnd-08/qgis-successor",
-      "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-worktree"
+      "task": "Independent supplemental test-tool custody and final client-pair review"
     },
     {
       "agent": "/root/fnd04_prototype",
-      "task": "Prepare isolated owned client formatting successor with real lint/browser checks",
-      "branch": "pending new isolated source branch"
+      "task": "Fresh catalog/UI pairs at merged client source pin",
+      "branch": "fnd-08/final-client-pairs",
+      "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/final-client-pairs-worktree"
     },
     {
       "agent": "/root/publication_review",
-      "task": "FND-05 desktop/renderer prototype",
-      "branches": [
-        "fnd-05/desktop-renderer-spike",
-        "fnd-05/renderer-policy-spike"
-      ],
-      "claim": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1#issuecomment-5966378608"
+      "task": "Independent aggregate FND-08 review and separate FND-05 delegation classification"
     }
   ],
   "evidence": "plan/verification/authorized-successors/publication.json",
@@ -175,9 +170,10 @@
       "cluster_stopped": true,
       "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/geodb-post-merge-smoke.log",
       "log_sha256": "5c40bde11290607e0505f32bc19c84ae32a5e2dc49e1c96282348f61c2f640e2"
-    }
+    },
+    "observation_note": "Historical 88-item observation before FND-05 acceptance; current renderer_progress and project_checkpoint supersede its FND-05 In progress row."
   },
-  "checkpoint_parent_commit": "457c08c01fc5188195d783b8a31ca289286aed80",
+  "checkpoint_parent_commit": "6b055752f74343b9cc93978f65f96291dd309784",
   "owned_spine_progress": {
     "java": {
       "local_head": "8e32797aed66be2c5fea430bba3df23a6e67465b",
@@ -188,23 +184,36 @@
       "native_skips_per_build": 6
     },
     "host": {
-      "local_head": "457c08c01fc5188195d783b8a31ca289286aed80",
+      "local_head": "a327eccb20cd36a3a956c60302c9a8f1f5a9b5de",
       "evidence": "plan/verification/fnd08-host-inputs/evidence.json",
       "review_sha256": "5f5add3ecd0d1bd3b513b5e5391acd7b385bd90fc5e96576df5b2455f2b50f38",
-      "guard_tests": 19,
+      "guard_tests": 20,
       "selected_binaries": 276,
       "source_groups": 175,
       "observed_system_paths": 244,
       "matching_payload_files": 24889,
-      "network_replay_calls": 0
+      "network_replay_calls": 0,
+      "final_replay": "host-retained-replay-008.json",
+      "retainer_sha256": "5f00cabea1d63e1d12b6d6de459d32d488024280c11e586b14e89119503da0c3"
     },
     "remaining_slices": {
-      "local_head": "a8e1eb0cda2bc1a6f6918f5bcf8d94c8a0e96fb0",
+      "local_head": "20aeefcdc65c0b589f14d3c287cf0a72e92d87e3",
       "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/remaining-slices-worktree",
-      "independent_review": "running",
+      "independent_review": "passed original pairs; new client pairs pending",
       "native_browser_assertions": 510,
       "inherited_lint_errors": 5,
-      "lint_successor": "isolated source repair being prepared"
+      "lint_successor": {
+        "pr": "https://github.com/aloerch/ambisgis-mapstore-client/pull/1",
+        "merge": "c1f6ad9df52f08ac3bfd7211db9e3ee744b21407",
+        "reviewed_head": "3b2e1044f2a5600ce4c594417ef78e3e9d8c3f23",
+        "review_sha256": "c723a1691058c8e2efdc14b71114a9a7196f1d73ad2436abee474ddc17f3f4c8",
+        "lint_exit_code": 0,
+        "browser_assertions": 510,
+        "browser_skips": 0,
+        "historical_failed_lint_receipts_preserved": true,
+        "fresh_catalog_ui_pairs": "running"
+      },
+      "review_sha256": "193d7bac50ee7bba95add29b127bfd3efc1f61e36cb1686103e05c9c686cbcb2"
     },
     "qgis": {
       "local_guard_head": "e0b41082e5a1906febbfbed583396d5dd75e6128",
@@ -212,9 +221,53 @@
         "build-003",
         "build-004"
       ],
-      "final_build": "running; no paired acceptance yet",
-      "prior_real_native_passed": 82,
-      "native_skips": 0
+      "final_build": "build-004 complete; stage-002 runtime/native checks pass",
+      "native_skips": 0,
+      "local_head": "91032ab565e73e63491147dbfc98cca0cf11f39c",
+      "installed_entries": 8105,
+      "raw_identical": 8056,
+      "attributed_path_build_id_variants": 49,
+      "unexplained_differences": 0,
+      "final_real_native_passed": 82,
+      "review_sha256": "22210961b3aa450103613bcf5bb03b64fa52e2f0d7ecc6d372da8576209058eb"
     }
+  },
+  "renderer_progress": {
+    "prs": [
+      {
+        "repository": "aloerch/ambisgis-platform",
+        "pr": 75,
+        "merge": "337cc4f7438848575e075e8d90f59d9d37e4309e"
+      },
+      {
+        "repository": "aloerch/ambisgis-qgis-plugin",
+        "pr": 6,
+        "merge": "f2a7dcbea2dac5ad5c41bb825093014c7341d46c"
+      }
+    ],
+    "postmerge_receipt": "plan/verification/fnd-05/postmerge-smoke.json",
+    "postmerge_sha256": "7d2db43cf8a4f02d8c79d33f1f1e1f704a35004fbe06d0f4e52a6b8a8fe4c630",
+    "state": "Original FND-05 prototype accepted/Merged; issue closed and Project reconciled after actual post-merge verification",
+    "renderer_http_assertions": 152,
+    "checked_png_images": 49,
+    "native_identity_role_tests": 70,
+    "independent_rehashed_postmerge_refs": 73,
+    "cleanup_passed": true,
+    "acceptance": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1#issuecomment-5967122058",
+    "evidence": "plan/verification/fnd-05/acceptance-and-merge.json",
+    "tracking_gate_resolution": {
+      "initial_automatic_rejection": "Interpreted process Human approval label as human-only criterion; no action executed",
+      "evidence": "Original owner sections2/5/6 and independent authority-only classification found no human-subject criterion in FND-05 prototype",
+      "independent_authority_review_sha256": "448859b5ddb79107f341e3b9d55a4fa597722349279d08c12b5815d2ca4a5981",
+      "result": "Same action reconsidered by automatic review and authorized; no alternate route or gate bypass",
+      "human_only_product_evaluations": "remain open"
+    }
+  },
+  "project_checkpoint": {
+    "items": 91,
+    "fields": 24,
+    "views": 7,
+    "repositories": 15,
+    "all_other_project_values_preserved": true
   }
 }
