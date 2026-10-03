@@ -81,6 +81,8 @@ class RuntimeTests(unittest.TestCase):
         containers = tomllib.loads(rows['containers.conf'].decode())
         storage = tomllib.loads(rows['storage.conf'].decode())
         self.assertEqual(storage['storage']['driver'], 'vfs')
+        self.assertEqual(set(storage['storage']), {'driver', 'graphroot', 'runroot'})
+        self.assertEqual(storage['storage']['graphroot'], str(self.root / 'runtime/storage'))
         self.assertEqual(containers['engine']['runtime'], 'runc')
         self.assertEqual(containers['containers']['seccomp_profile'], str(self.bundle / 'runtime/configuration/seccomp.json'))
         self.assertEqual(containers['containers']['log_driver'], 'k8s-file')

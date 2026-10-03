@@ -78,6 +78,17 @@ different: retained engine `configureConmonEnv` forwards its strict environment
 it. Its raw engine cleanup has absolute store arguments and private config
 paths, so it does not require the ordinary wrapper's cwd.
 
+The first ordinary lifecycle attempt passed relocation/init and loaded the
+database image, then exposed a stream-handling defect: a native stderr warning
+preceded valid image-inspect JSON in the merged capture. The startup repair
+keeps stdout and stderr in separate private temporary files, checks their
+combined 4 MiB result limit, and returns only stdout to JSON consumers. Neither
+stream is included in failure exceptions. This limit is checked after process
+completion; it is not a live disk-output quota. Private storage configuration
+uses graphroot/runroot without the redundant deprecated rootless_storage_path.
+The original failed installation and receipts remain unchanged; bundle-005
+contains the repair for a separately reviewed fresh lifecycle attempt.
+
 In-process tests run with the retained CI Python:
 
 ```sh

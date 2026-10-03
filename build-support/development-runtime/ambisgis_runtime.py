@@ -175,7 +175,7 @@ def configuration_bytes(root, selected_root):
         'default_host_ips = ["127.0.0.1"]', '',
     ]).encode()
     storage = ('[storage]\ndriver = "vfs"\ngraphroot = ' + quote(paths['storage']) +
-               '\nrunroot = ' + quote(paths['run']) + '\nrootless_storage_path = ' + quote(paths['storage']) + '\n').encode()
+               '\nrunroot = ' + quote(paths['run']) + '\n').encode()
     # No registry search or remote transport policy is allowed. The guarded
     # exact local OCI archives and immutable containers-storage are explicit.
     policy = {'default': [{'type': 'reject'}], 'transports': {

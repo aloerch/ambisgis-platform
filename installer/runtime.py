@@ -48,17 +48,23 @@ class Runtime:
     def run(self, arguments, *, timeout=60, allow_failure=False):
         # Output remains private and is never included in exceptions. Native
         # diagnostics may contain connection details; status emits selected fields.
-        with tempfile.TemporaryFile(dir=self.paths['tmp']) as capture:
+        limit = 4 * 1024 * 1024
+        with (tempfile.TemporaryFile(dir=self.paths['tmp']) as stdout,
+              tempfile.TemporaryFile(dir=self.paths['tmp']) as stderr):
             try:
                 result = subprocess.run(arguments, env=self.environment, cwd=self.root,
-                                        stdin=subprocess.DEVNULL, stdout=capture, stderr=subprocess.STDOUT,
+                                        stdin=subprocess.DEVNULL, stdout=stdout, stderr=stderr,
                                         timeout=timeout, check=False)
             except subprocess.TimeoutExpired as error:
                 raise InstallError('Runtime operation timed out. Use status and doctor; persistent data was preserved.') from error
-            capture.seek(0)
-            output = capture.read(4 * 1024 * 1024 + 1)
-        if len(output) > 4 * 1024 * 1024:
-            raise InstallError('Runtime diagnostic output exceeded its bound.')
+            stdout.seek(0)
+            output = stdout.read(limit + 1)
+            stderr.seek(0)
+            diagnostic = stderr.read(max(0, limit + 1 - len(output)))
+            if len(output) + len(diagnostic) > limit:
+                raise InstallError('Runtime diagnostic output exceeded its bound.')
+        # Native warnings belong to the private diagnostic stream. They must
+        # never precede machine-readable image/container/network JSON stdout.
         if result.returncode and not allow_failure:
             raise InstallError('Local runtime operation failed (exit ' + str(result.returncode) + '); use doctor.')
         return result.returncode, output

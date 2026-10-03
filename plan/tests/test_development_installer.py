@@ -800,5 +800,58 @@ class InstallerStateTests(unittest.TestCase):
             with self.assertRaisesRegex(InstallError, 'Checkpoint/restore'): selected.image('database')
 
 
+class RuntimeOutputTests(unittest.TestCase):
+    """Exercise real subprocess streams with a tiny local Python producer.
+
+    This tests Runtime.run only; no bundle, engine, container or GIS is run.
+    """
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        self.directory = Path(self.temporary.name)
+        self.selected = runtime.Runtime.__new__(runtime.Runtime)
+        self.selected.root = self.directory
+        self.selected.paths = {'tmp': self.directory}
+        self.selected.environment = {'LANG': 'C.UTF-8', 'LC_ALL': 'C.UTF-8', 'PYTHONDONTWRITEBYTECODE': '1'}
+
+    def produce(self, program, **kwargs):
+        return self.selected.run([sys.executable, '-B', '-c', program], **kwargs)
+
+    def test_json_stdout_survives_ordinary_stderr_warning(self):
+        code, output = self.produce('import sys; print("[{\\\"Id\\\":\\\"synthetic-image\\\"}]"); '
+                                    'print("ordinary native warning", file=sys.stderr)')
+        self.assertEqual(code, 0)
+        self.assertEqual(json.loads(output), [{'Id': 'synthetic-image'}])
+        self.assertNotIn(b'warning', output)
+        self.assertEqual(list(self.directory.iterdir()), [])
+
+    def test_exact_combined_four_mib_limit_is_accepted(self):
+        code, output = self.produce('import sys; sys.stdout.buffer.write(b"o"*(3*1024*1024)); '
+                                    'sys.stderr.buffer.write(b"e"*(1024*1024))')
+        self.assertEqual(code, 0)
+        self.assertEqual(output, b'o' * (3 * 1024 * 1024))
+
+    def test_combined_and_individual_stream_overflow_are_rejected(self):
+        for stdout_bytes, stderr_bytes in ((3*1024*1024, 1024*1024+1), (4*1024*1024+1, 0), (0, 4*1024*1024+1)):
+            with self.subTest(stdout=stdout_bytes, stderr=stderr_bytes):
+                with self.assertRaisesRegex(InstallError, 'output exceeded its bound'):
+                    self.produce(f'import sys; sys.stdout.buffer.write(b"o"*{stdout_bytes}); '
+                                 f'sys.stderr.buffer.write(b"e"*{stderr_bytes})')
+                self.assertEqual(list(self.directory.iterdir()), [])
+
+    def test_failure_exception_contains_no_raw_stdout_or_stderr(self):
+        with self.assertRaises(InstallError) as failure:
+            self.produce('import sys; print("synthetic-stdout-secret"); '
+                         'print("synthetic-stderr-secret", file=sys.stderr); sys.exit(9)')
+        self.assertEqual(str(failure.exception), 'Local runtime operation failed (exit 9); use doctor.')
+        self.assertNotIn('secret', str(failure.exception))
+        self.assertEqual(list(self.directory.iterdir()), [])
+
+    def test_allowed_failure_returns_only_stdout(self):
+        code, output = self.produce('import sys; print("selected result"); '
+                                   'print("private diagnostic", file=sys.stderr); sys.exit(1)', allow_failure=True)
+        self.assertEqual((code, output), (1, b'selected result\n'))
+
+
 if __name__ == '__main__':
     unittest.main()
