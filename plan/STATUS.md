@@ -10,10 +10,16 @@ retain raw reproducibility differences, six named inherited Java skips per build
 and the later source-bootstrap, disconnected repair and release obligations.
 
 FND-06 is claimed/In progress on `fnd-06/contracts-and-koop`, based on that merge.
-Its dependencies FND-03/FND-04/FND-05/FND-08 are accepted. Work now covers shared
-contracts, a synthetic corpus, a threat model and the mandatory measured Koop
-reuse decision. No FND-06 acceptance or product API implementation is claimed.
-Project reconciliation recorded 92 items, 24 fields, seven views and 15 repositories;
+Its dependencies FND-03/FND-04/FND-05/FND-08 are accepted. Initial shared
+contracts, the synthetic corpus and Koop custody helpers have independent review
+in [draft PR #77](https://github.com/aloerch/ambisgis-platform/pull/77).
+Combined checks pass 502 package tests, ten schema/example checks and 21 custody
+guards. Actual owned-QGIS checks pass for small, 100,000-address and 1,000,000-address
+fixtures; malformed inputs are rejected. [Exact checkpoint evidence](verification/fnd06-integration-001/evidence.json)
+records the tested heads and limits. The real Koop/catalog/PostGIS experiment
+and measured reuse decision remain in progress. FND-06 acceptance and product
+APIs remain open. Project reconciliation recorded 93 items, 24 fields, seven
+views and 15 repositories;
 unrelated planning and history were preserved.
 
 The [ledger](docs/delivery-ledger.json) and [all 24 requirements](docs/delivery-requirements-matrix.md)

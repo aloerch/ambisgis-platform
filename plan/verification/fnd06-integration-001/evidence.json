@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-03T10:09:43.651523+00:00",
+  "repository": "aloerch/ambisgis-platform",
+  "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "tested_head": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
+  "branch": "fnd-06/contracts-and-koop",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/77",
+  "delivery": "In progress",
+  "product_acceptance": false,
+  "files": [
+    {
+      "path": "contracts-independent-review.json",
+      "sha256": "69b71d6be837dea08f8d6eff360f10b71ff2c994164b7f318b1002653fff7453",
+      "bytes": 12930
+    },
+    {
+      "path": "corpus-independent-review.json",
+      "sha256": "ced9f206d3a36000114a84ef5cec3cfe4bd5b2753e05d385569ec8ecc7bcaeb7",
+      "bytes": 23403
+    },
+    {
+      "path": "koop-install-repair-review.json",
+      "sha256": "05e3f587c144f34944255823a8ae8b24d56fa11c56cf818efb29289003d65405",
+      "bytes": 4449
+    },
+    {
+      "path": "koop-preexecution-review.json",
+      "sha256": "9a4eb7aeb362892e7abb9f26580de8383585e26c338904d9dc6bdb16cda26fb1",
+      "bytes": 9761
+    },
+    {
+      "path": "draft-project-tracking.json",
+      "sha256": "eea8d5a3eb5e917b7d0db0ed230739f718fe37c3a8af5717c6d3b4a3b744ab0a",
+      "bytes": 457
+    },
+    {
+      "path": "koop-install-002.json",
+      "sha256": "98ada85f969877784254af8139fe6f7bd80f0c1730f7886ee2afc7b19776cc57",
+      "bytes": 789
+    },
+    {
+      "path": "checks.json",
+      "sha256": "6c7db57f97dbecd3990091598eff1c6dd324f0c0a789972062dbad0dea816bd4",
+      "bytes": 1932
+    },
+    {
+      "path": "package.log",
+      "sha256": "1a8ac3383006c8ea9e05f17573714f3bf7d4b520a5ffa27fa27384c0056e86ac",
+      "bytes": 74471
+    },
+    {
+      "path": "schemas.log",
+      "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23",
+      "bytes": 190
+    },
+    {
+      "path": "koop-guards.log",
+      "sha256": "60a1e8a37244f21d500d86e411701821e82e8cebec63fb0103ac6c2773f2aedf",
+      "bytes": 2717
+    },
+    {
+      "path": "diff.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "package_tests": 502,
+  "schema_example_pairs": 10,
+  "koop_custody_tests": 21,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "scope": "Reviewed contract, corpus and custody integration only. Real Koop experiment, adoption/rejection ADR and aggregate FND-06 acceptance remain pending.",
+  "remote_observation": {
+    "head": "6736b7df728f5ffedb125fd9b2e26c2a7b7a6956",
+    "draft": true,
+    "hosted_ci_run": 37113724540,
+    "hosted_ci_conclusion": "success",
+    "note": "Recorded before publishing this integration checkpoint; no final-head CI claim."
+  },
+  "remaining": [
+    "Measured real Koop output/pushdown/pagination/policy/limit tests and independent runtime review",
+    "Exact tr46 notice/generated-data provenance disposition; no distribution clearance",
+    "Koop reuse decision ADR, aggregate review, protected integration and post-merge verification"
+  ]
+}

@@ -40,8 +40,8 @@
   "branch": "fnd-06/contracts-and-koop",
   "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
   "task": "FND-06 shared contracts, synthetic corpus, threat model and Koop reuse spike",
-  "state": "In progress; dependency evidence verified and issue claimed; implementation and independent review pending",
-  "pr": null,
+  "state": "In progress; contracts, corpus and Koop custody helpers independently reviewed; fresh offline installation passed; real runtime experiment and reuse ADR pending",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/77",
   "tests": [
     {
       "scope": "source publication implementation integrated with PR72",
@@ -94,6 +94,17 @@
           "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
         }
       ]
+    },
+    {
+      "scope": "FND-06 contract/corpus/custody integrated checkpoint; package checks separate from native GIS evidence",
+      "head": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
+      "package_tests": 502,
+      "schemas": 10,
+      "koop_custody_tests": 21,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "evidence": "plan/verification/fnd06-integration-001/evidence.json"
     }
   ],
   "source_publication": {
@@ -112,14 +123,13 @@
     "FND-08"
   ],
   "next": [
-    "Implement initial shared contracts and machine-checked requirement/test traceability",
-    "Generate and inspect deterministic synthetic corpus",
-    "Retain and independently review Koop closure before package execution; run real authorized PostGIS/catalog experiment",
-    "Obtain independent final FND-06 review, relevant tests, protected PR merge and post-merge verification"
+    "Complete actual authorized Koop/PostGIS/catalog experiment and independent runtime review",
+    "Record measured Koop reuse decision with exact rights and security limits",
+    "Obtain aggregate FND-06 review, protected PR integration and post-merge verification"
   ],
   "product_acceptance": false,
   "release_artifact": null,
-  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5967420494",
+  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5967865641",
   "workflow": {
     "pr": 72,
     "merge": "8c3612dd3e4ee992d930f1417798b66f467784e9",
@@ -128,15 +138,15 @@
   "active_workers": [
     {
       "agent": "/root/fnd03_identity",
-      "task": "Synthetic corpus generator and actual fixture inspection"
+      "task": "Completed corpus; read-only tr46 notice/data provenance research"
     },
     {
       "agent": "/root/fnd04_prototype",
-      "task": "Koop exact source/dependency custody then bounded real reuse experiment"
+      "task": "Actual bounded Koop HTTP, PostGIS and native catalog experiment"
     },
     {
       "agent": "/root/publication_review",
-      "task": "Independent pre-execution Koop closure and shared-boundary review"
+      "task": "Independent provider/runtime implementation and evidence review"
     }
   ],
   "evidence": "plan/verification/authorized-successors/publication.json",
@@ -213,7 +223,7 @@
     },
     "observation_note": "Historical 88-item observation before FND-05 acceptance; current renderer_progress and project_checkpoint supersede its FND-05 In progress row."
   },
-  "checkpoint_parent_commit": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "checkpoint_parent_commit": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
   "owned_spine_progress": {
     "java": {
       "local_head": "8e32797aed66be2c5fea430bba3df23a6e67465b",
@@ -323,11 +333,12 @@
     }
   },
   "project_checkpoint": {
-    "items": 92,
+    "items": 93,
     "fields": 24,
     "views": 7,
     "repositories": 15,
-    "all_unrelated_values_preserved": true
+    "all_unrelated_values_preserved": true,
+    "evidence": "plan/verification/fnd06-integration-001/draft-project-tracking.json"
   },
   "prior_checkpoints": [
     {
@@ -337,6 +348,21 @@
       "state": "In progress; all initial component builds and custody increments independently reviewed, final aggregate review and protected PR integration pending",
       "pr": null,
       "checkpoint_parent_commit": "7de422c19c265532008618884d4b710402cf388e"
+    },
+    {
+      "task": "FND-06 shared contracts, synthetic corpus, threat model and Koop reuse spike",
+      "branch": "fnd-06/contracts-and-koop",
+      "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+      "state": "In progress; dependency evidence verified and issue claimed; implementation and independent review pending",
+      "pr": null,
+      "checkpoint_parent_commit": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+      "project_checkpoint": {
+        "items": 92,
+        "fields": 24,
+        "views": 7,
+        "repositories": 15,
+        "all_unrelated_values_preserved": true
+      }
     }
   ],
   "owned_spine_acceptance": {
@@ -364,5 +390,16 @@
     "views": 7,
     "repositories": 15,
     "all_unrelated_values_preserved": true
+  },
+  "fnd06_progress": {
+    "contract_commit": "10146441b08b90d26188e6c88c7c04de4b68b423",
+    "corpus_commit": "c0983e6898b991a16c62dab066a9f40ded88c155",
+    "custody_commit": "65c210e0ee72a5d5c55fd6c20e18c5a8e831c3f6",
+    "install_repair_commit": "9dc4680b2d273252d17c78545d94d14e676fb111",
+    "integrated_head": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
+    "evidence": "plan/verification/fnd06-integration-001/evidence.json",
+    "runtime": "Real experiment in progress; first logger-interface failure retained with verified cleanup, no runtime acceptance yet",
+    "corpus": "Reviewed native small/100k/1m success and malformed-input rejections; all1.1m rows independently scanned",
+    "distribution_blocker": "Exact tr46 notice/generated-data provenance under investigation; private evaluation only"
   }
 }

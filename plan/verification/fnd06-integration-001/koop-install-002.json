@@ -1,0 +1,17 @@
+{
+  "input_manifest_sha256": "ae3c5d548e95f23467cc63d571e54d44fec494f906291da7362263590d97b642",
+  "installed_files": 4187,
+  "installed_links": 12,
+  "installed_registry_packages": 213,
+  "lifecycle_execution": false,
+  "network_receipt_sha256": "daefba094e678110e63d0c7f26cf18efe71d5faa514ddf09523fa64ea5ca9651",
+  "omitted_optional_packages": 39,
+  "package_code_execution": false,
+  "result_exit_code": 0,
+  "scope": "Fresh exact offline install only; runtime and compatibility tests remain separate.",
+  "source_commit": "333518a19d43adf2fd12faed1a3be52d9c90dd3f",
+  "source_files_verified": 447,
+  "source_projection_sha256": "49031e48b78599847d5de165be4ec3f826782e0793b9e632368f17d16eaa8ad1",
+  "source_tree": "3357f74aa588b18703f26cdb5b5a5f7809d7d150",
+  "workspace_packages": 6
+}

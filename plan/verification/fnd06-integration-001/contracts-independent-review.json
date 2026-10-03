@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/publication_review",
+  "recorded_at": "2026-10-03T09:39:30.936399+00:00",
+  "scope": "Independent initial shared-contract and FND08 bookkeeping review; full FND06 acceptance remains pending actual Koop/corpus work",
+  "repository": "aloerch/ambisgis-platform",
+  "branch": "fnd-06/contracts-and-koop",
+  "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree",
+  "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "head": "10146441b08b90d26188e6c88c7c04de4b68b423",
+  "tree": "5e8ff74fbe2baebebfc7f689d02efc5a9b73906d",
+  "clean_at_start_and_independent_test_execution": true,
+  "binding_note": {
+    "working_head_advanced_during_report": "6736b7df728f5ffedb125fd9b2e26c2a7b7a6956",
+    "review_is_bound_to_git_objects": "10146441b08b90d26188e6c88c7c04de4b68b423",
+    "all35_reviewed_files_and69_test_source_bindings_still_equal_working_files": true,
+    "no_review_of_new_merge_implied": true
+  },
+  "decision": "PASS for this exact initial-contract checkpoint; no unresolved material findings. Not aggregate FND06, production API, GIS distribution or release acceptance.",
+  "changed_files": [
+    {
+      "path": "STATUS.md",
+      "sha256": "afbcb0d980f8d7238e8fa7f1ad68a86d49a4e3b33304e76247e0c2a4b7bfe25e"
+    },
+    {
+      "path": "plan/DECISIONS.md",
+      "sha256": "8c6b2a7cee5b91000ce2c9b8db74405bb9be88f913fcd87ea3de5f5933bb30b7"
+    },
+    {
+      "path": "plan/STATUS.md",
+      "sha256": "e781cf960d24bdf9b897f5d1850b377f4e8e8f4ecc280a1bbe29eeb2d38eab37"
+    },
+    {
+      "path": "plan/adrs/012-initial-shared-contracts.md",
+      "sha256": "f5f75c9f01ff08f0dfb8889d47c58378dc5b42ae7a96869f99e65635f4b51f76"
+    },
+    {
+      "path": "plan/contracts/app-event.schema.json",
+      "sha256": "c2e103775c0ae3279beb9598a3720829e6ac8bbf5d5c0e196bfa88647b0f3b0e"
+    },
+    {
+      "path": "plan/contracts/common.schema.json",
+      "sha256": "866fa205781af958d5d1a1f1cd1708d6333c2fac5649293ee21e6d7aa750c23b"
+    },
+    {
+      "path": "plan/contracts/contract-package.json",
+      "sha256": "f72d3fc5574920d9e2ffcc5c31367fa878afb0512f5ef47704ecf94ea8faec82"
+    },
+    {
+      "path": "plan/contracts/job.schema.json",
+      "sha256": "dd152c162580ea49b0d71dd4d3d93fa25567b669cdb31d0f6157292316e3ed01"
+    },
+    {
+      "path": "plan/contracts/layer.schema.json",
+      "sha256": "64872ea92201eeea841c80d5572acb5dfb8e0e724a47fd0aaeb1c982782a8e99"
+    },
+    {
+      "path": "plan/contracts/native-error.schema.json",
+      "sha256": "8599f43dccd007716209a9c267d65f06ba72035b9f87a5827008a91402b80da5"
+    },
+    {
+      "path": "plan/contracts/native-query.schema.json",
+      "sha256": "62f521c081896a8fa3bfccc1f2d090f54c3596ca24d9347a581d84a37c6d23e0"
+    },
+    {
+      "path": "plan/contracts/notebook-run.schema.json",
+      "sha256": "4eb2964d8452f6af92c90d992ec60240a5bcef57822cf8a7a0b0f2128a744414"
+    },
+    {
+      "path": "plan/docs/delivery-ledger.json",
+      "sha256": "d4a9a8d7b6d20f4d1275fc1f2d4fbdea08b82bd4b460c042746a72eed3ba8891"
+    },
+    {
+      "path": "plan/docs/delivery-requirements-matrix.md",
+      "sha256": "b70e2bc3afee4f108ce3252e4d2044e1ea780a0ea70b762f2e9eedad1cc5efef"
+    },
+    {
+      "path": "plan/docs/fnd-06-contracts.md",
+      "sha256": "471af0a792391f011352bd7f45ecc969bef0c5539b044ce86659634c4eaa5b32"
+    },
+    {
+      "path": "plan/docs/fnd-06-threat-model.md",
+      "sha256": "99b05cd0a2f7c18aa39e05a3600c7b05f1ebca62356aa0d3336020376620baa3"
+    },
+    {
+      "path": "plan/examples/app-event.json",
+      "sha256": "dac1097ec299093addcb6f6d8edfb85fcfe185c5c496a53c8dec8383eb6121f4"
+    },
+    {
+      "path": "plan/examples/job.json",
+      "sha256": "d542f54369dfeb003310e4a3e36eab531a86ec288ae5ff744b86620dba1048ed"
+    },
+    {
+      "path": "plan/examples/layer.json",
+      "sha256": "b8eae02aabed55ec04d48120ad54c308f8cd026135d8aecb008b1554b82bbbfb"
+    },
+    {
+      "path": "plan/examples/native-error.json",
+      "sha256": "985ae0d62150b56ec0d85fb789ecf3a651c171666cfcaaff367579a56e4b4265"
+    },
+    {
+      "path": "plan/examples/native-query.json",
+      "sha256": "d9dc5f33241c982bcbeaa1d87d762e7b93e5aa1f5213d5cfa07324711fac702a"
+    },
+    {
+      "path": "plan/examples/notebook-run.json",
+      "sha256": "08f94678bdc4a2035184c5a4053d57f111d317c9e97a3d5f26d94713d04e1605"
+    },
+    {
+      "path": "plan/tests/test_contract_traceability.py",
+      "sha256": "4ff787622ec68ad0831cbb05fa847e53bd462867d178d531af9e04233640d45b"
+    },
+    {
+      "path": "plan/tests/test_contracts_and_plan.py",
+      "sha256": "86f4cee9f1b1fd023bab696c0939395d57e215c58172cd50d6114ca437726eb8"
+    },
+    {
+      "path": "plan/tests/test_native_contracts.py",
+      "sha256": "36f47063c15c1fa1ac53f166f1b77a9c9e6e15c40aaa25c1471b476d8fc5d69c"
+    },
+    {
+      "path": "plan/tools/native_contracts.py",
+      "sha256": "f58b130bc5b65723bbb5c55a06a02bd069c89c03a7e0d54330f80949c3d6f1db"
+    },
+    {
+      "path": "plan/tools/validate_package.py",
+      "sha256": "99b1cd65d18ac60bc19794bbe3a1cec61d8736a76d682aaed332b6652e91a88e"
+    },
+    {
+      "path": "plan/verification/fnd06-contracts/README.md",
+      "sha256": "9da8f0c788a536a8d412fd4e5306fb97f83bae934bbc6f3ef68ab1314d876056"
+    },
+    {
+      "path": "plan/verification/fnd06-contracts/fnd06-contract-package-002.log",
+      "sha256": "967e94b8afb2f3dd17d3707db6d9b230f919cea7e3489c091fb43c7be5e644a7"
+    },
+    {
+      "path": "plan/verification/fnd06-contracts/fnd06-contract-schemas-002.log",
+      "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23"
+    },
+    {
+      "path": "plan/verification/fnd06-contracts/red-baseline.log",
+      "sha256": "2cde31406acc15cea5982d29d614cbe894255caf1dbd0bf459351afe69e8abab"
+    },
+    {
+      "path": "plan/verification/fnd06-contracts/validation.json",
+      "sha256": "d3fc88fff6ca1b627db71fc5834721aeeead603e94ce522e0725f7438d244983"
+    },
+    {
+      "path": "plan/verification/fnd08-acceptance/acceptance-and-merge.json",
+      "sha256": "d537302e1d223799bf4f006ba7ed74401d5b711a75b5fac7a300044a301a528d"
+    },
+    {
+      "path": "plan/verification/fnd08-acceptance/postmerge-independent-review.json",
+      "sha256": "53268e2848d333d9cace3363f845095e3247f6271049960419b2eee420172acb"
+    },
+    {
+      "path": "plan/verification/fnd08-acceptance/postmerge-smoke.json",
+      "sha256": "44bd37777aac7489aaf59314ea01b227cdc176fc5eecddd60d7eceb6b12363a7"
+    }
+  ],
+  "reviewed": [
+    "Read actual schemas/examples, typed query validator and cursor, requirement/phase mappings, new tests, validation delta, contract/threat docs and ADR012. Compared full35-file diff with base.",
+    "Typed AST separates trusted fields from typed values; finite request/depth/node bounds; explicit null semantics; exact layer/revision/query/principal-context/expiry cursor binding; no embedded SQL or policy authority.",
+    "Only object policy and Point XY EPSG4326 prototype execute; unsupported modes/transforms fail closed. Keys are runtime material; cursor integrity grants no permission. Every page still requires catalog authorization.",
+    "Docs distinguish credential-scope HMAC from absent catalog subject/policy revision, API01 future OpenAPI/handlers, envelope-only job/notebook/app behavior and remaining real product/human-only acceptance."
+  ],
+  "resolved_findings": [
+    {
+      "id": "FND06-CONTRACT-001",
+      "finding": "Lowercase RFC3339 z passed schema but raised raw ValueError with request value.",
+      "resolution": "Normalize z/Z and t; map parser errors to ContractError(INVALID_REQUEST) without raw payload. Final regressions pass."
+    },
+    {
+      "id": "FND06-CONTRACT-002",
+      "finding": "Representable decimal zero rejected when precision equals scale.",
+      "resolution": "Decimal.is_zero gives zero integral digits; final boundary regressions pass."
+    }
+  ],
+  "tests": {
+    "independent": [
+      {
+        "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree/plan",
+        "command": [
+          "flatpak-spawn",
+          "--host",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+          "-m",
+          "unittest",
+          "tests.test_native_contracts",
+          "tests.test_contract_traceability",
+          "tests.test_contracts_and_plan",
+          "-v"
+        ],
+        "tests": 36,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "exit_code": 0
+      },
+      {
+        "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree/plan",
+        "command": [
+          "flatpak-spawn",
+          "--host",
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+          "tools/validate_package.py",
+          "--require-schemas"
+        ],
+        "schemas_examples": 10,
+        "repositories": 15,
+        "tasks": 66,
+        "requirements": 24,
+        "sources": 65,
+        "exit_code": 0
+      }
+    ],
+    "producer_evidence": {
+      "path": "plan/verification/fnd06-contracts/validation.json",
+      "sha256": "d3fc88fff6ca1b627db71fc5834721aeeead603e94ce522e0725f7438d244983",
+      "source_bindings_rehashed": 69,
+      "logs_rehashed_and_public_private_bytes_equal": 3,
+      "package_tests": 485,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "schemas_examples": 10,
+      "execution_note": "Producer before-commit uncommitted=true is preserved truthfully; all69 executed source bindings equal finalhead. Reviewer independently ran36+10, not all485. Missing-module red baseline and expected negative-fixture JSON failure remain disclosed."
+    }
+  },
+  "control_review": {
+    "legacy_schema_and_example_bytes_unchanged": [
+      "application",
+      "edit-request",
+      "post-request",
+      "publication"
+    ],
+    "old_validation_flow_retained": true,
+    "new_examples_added": 6,
+    "original_test_change": "Only successful example count4\u219210; all original negative assertions retained.",
+    "new_scope_guards": "R01\u2013R24 exact original tasks/test families and P0\u2013P7 chapter09 exit evidence preserved. Contract checks cannot mark product, phase or test families accepted.",
+    "unchanged_controls": [
+      "AGENTS.md",
+      "plan/AGENTS.md",
+      "plan/tools/delivery_gate.py",
+      "plan/tools/delivery_runtime.py",
+      "plan/requirements.json",
+      "plan/backlog.json",
+      "plan/docs/09-roadmap-and-acceptance.md",
+      "plan/docs/standing-delivery-policy.md"
+    ],
+    "workflow_changes": false,
+    "gate_runtime_changes": false,
+    "authority_changes": false,
+    "requirements_or_acceptance_changes": false
+  },
+  "fnd08_bookkeeping": {
+    "public_smoke_sha256": "44bd37777aac7489aaf59314ea01b227cdc176fc5eecddd60d7eceb6b12363a7",
+    "public_independent_review_sha256": "53268e2848d333d9cace3363f845095e3247f6271049960419b2eee420172acb",
+    "public_copies_byte_equal_original_immutable_receipts": true,
+    "reuse_note": "Prior final WAR/QGIS runtime/image/source verification reused unchanged; no new runtime/build run or self-technical-review of FND05 claimed.",
+    "tracking_summary_sha256": "d537302e1d223799bf4f006ba7ed74401d5b711a75b5fac7a300044a301a528d",
+    "tracking_public_equals_original": true,
+    "before_project_sha256": "6bc640e508955807c0bb7fb8ea171d9f93cf0fdeb1afc797674073c45c657cdc",
+    "after_project_sha256": "ed33e772d3cccd305da41931b30e2a6830ff193d0ae0be116853a34d3f01fb51",
+    "project_diff_independent": "91\u219292 items; only addedPR76, changedFND06 issue5 Delivery/Evidence and FND08 issue7 Delivery/Status/Evidence. No removed items or unrelated value/metadata/archive/field/view/repository changes.",
+    "status_prior_history_byte_preserved": true,
+    "claims": "FND08 accepted/Merged6d18637; FND06 claimed/In progress. Raw reproducibility differences, six inherited Java skips, bootstrap/repair/release limits retained."
+  },
+  "boundaries": {
+    "new_donor_source_or_lock_changes": false,
+    "implementation_runtime_changes": false,
+    "added_scope": "Owned contract source, schemas, tests, synthetic examples, docs and safe retained provenance.",
+    "secret_pattern_hits": [],
+    "review_note": "No credentials/private keys or private profile logs observed. Synthetic IDs/digests explicit. No source-rights waiver, donor publication, second policy authority, production changes, deletion or history rewrite.",
+    "reviewer_remote_reads": false,
+    "reviewer_remote_writes": false,
+    "reviewer_source_edits": false
+  },
+  "remaining": [
+    "Actual Koop/PostGIS/catalog implementation/runtime evidence, corpus and finalaggregate FND06 independent review.",
+    "Complete OpenAPI/native/compatibility and product journeys remain later API/domain acceptance; no GIS release accepted.",
+    "Separate Koop tr46 notice provenance distribution blocker remains unresolved; this contract review does not waive it."
+  ]
+}
