@@ -38,9 +38,9 @@
   "repository": "aloerch/ambisgis-platform",
   "repository_id": 1376927351,
   "branch": "fnd-08/owned-spine",
-  "base": "7812efa3502ec1d7004b485d35b433eea56ce13e",
+  "base": "0876999d7535d792d0024586981c762b2f9bf513",
   "task": "FND-08 owned initial spine builds and T-OWN-02",
-  "state": "In progress; exact successor paired builds, host input custody and desktop publication prototype",
+  "state": "In progress; Java and selected-host increments independently reviewed, native/catalog/UI review and final QGIS pair pending",
   "pr": null,
   "tests": [
     {
@@ -85,15 +85,14 @@
   "active_workers": [
     {
       "agent": "/root/fnd03_identity",
-      "task": "FND-08 QGIS successor paired builds",
+      "task": "FND-08 QGIS final paired build and independent remaining-slices review",
       "branch": "fnd-08/qgis-successor",
       "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-worktree"
     },
     {
       "agent": "/root/fnd04_prototype",
-      "task": "FND-08 Java successor and remaining initial-spine paired builds",
-      "branch": "fnd-08/java-successor",
-      "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/java-successor-worktree"
+      "task": "Prepare isolated owned client formatting successor with real lint/browser checks",
+      "branch": "pending new isolated source branch"
     },
     {
       "agent": "/root/publication_review",
@@ -176,6 +175,46 @@
       "cluster_stopped": true,
       "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/geodb-post-merge-smoke.log",
       "log_sha256": "5c40bde11290607e0505f32bc19c84ae32a5e2dc49e1c96282348f61c2f640e2"
+    }
+  },
+  "checkpoint_parent_commit": "457c08c01fc5188195d783b8a31ca289286aed80",
+  "owned_spine_progress": {
+    "java": {
+      "local_head": "8e32797aed66be2c5fea430bba3df23a6e67465b",
+      "integrated": true,
+      "evidence": "plan/verification/fnd08-java-successor/evidence.json",
+      "review_sha256": "de0918c4be88b5331e1d29f99c3ac0eea96678cc07c0f43b3bfb5616f56df1f9",
+      "native_pass_per_build": 359,
+      "native_skips_per_build": 6
+    },
+    "host": {
+      "local_head": "457c08c01fc5188195d783b8a31ca289286aed80",
+      "evidence": "plan/verification/fnd08-host-inputs/evidence.json",
+      "review_sha256": "5f5add3ecd0d1bd3b513b5e5391acd7b385bd90fc5e96576df5b2455f2b50f38",
+      "guard_tests": 19,
+      "selected_binaries": 276,
+      "source_groups": 175,
+      "observed_system_paths": 244,
+      "matching_payload_files": 24889,
+      "network_replay_calls": 0
+    },
+    "remaining_slices": {
+      "local_head": "a8e1eb0cda2bc1a6f6918f5bcf8d94c8a0e96fb0",
+      "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/remaining-slices-worktree",
+      "independent_review": "running",
+      "native_browser_assertions": 510,
+      "inherited_lint_errors": 5,
+      "lint_successor": "isolated source repair being prepared"
+    },
+    "qgis": {
+      "local_guard_head": "e0b41082e5a1906febbfbed583396d5dd75e6128",
+      "qualifying_pair": [
+        "build-003",
+        "build-004"
+      ],
+      "final_build": "running; no paired acceptance yet",
+      "prior_real_native_passed": 82,
+      "native_skips": 0
     }
   }
 }
