@@ -1,0 +1,30 @@
+{
+  "task": "DB-01",
+  "scope": "Original managed identity and typed-schema acceptance only; retained private raw evidence remains separately referenced.",
+  "references": {
+    "acceptance-and-merge.json": {
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db01-acceptance-summary.json",
+      "sha256": "310e8440d2a27c4b0ce61bed40586e4b4a16c8d439b6480d01dd8afa3db8e068"
+    },
+    "postmerge-review.json": {
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-postmerge-review-ef9ef73.json",
+      "sha256": "3272f745bb943ad86f43ae6ee25ac3699c6852f53c5254d4faf32477eb13d35d"
+    },
+    "postmerge-runtime.json": {
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/acceptance.json",
+      "sha256": "527a46b4edd9d9130dde71eef5b8b37b14aa300ad1acdb46576633577babcca4"
+    },
+    "postmerge-control.json": {
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-control-001/result.json",
+      "sha256": "fbad0622c013573ebeced777a0e26eafed9705cfe2fdca5a3a84c9f5b5b876e1"
+    },
+    "aggregate-review.json": {
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-review-8d8bc5b.json",
+      "sha256": "220889d16b26944c55fe8f74a416308fe6997d6892d7e9e96451da5d7a3f0e37"
+    },
+    "ci-review.json": {
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-ci-review-8dfb38c.json",
+      "sha256": "1337e8a1d78d5a4cf0fd6a946fe7ef8f4dd58c0fadebcee21be15f5d91e2e4f4"
+    }
+  }
+}

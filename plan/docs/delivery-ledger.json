@@ -40,7 +40,7 @@
   "branch": "plt-01/development-install",
   "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
   "task": "PLT-01 persistent developer installation and DB-01 managed schema/identity foundation",
-  "state": "FND-06 accepted/Merged after actual postmerge checks; PLT-01 and DB-01 claimed/In progress",
+  "state": "FND-06 and DB-01 accepted/Merged after actual postmerge checks; PLT-01 In progress",
   "pr": null,
   "tests": [
     {
@@ -136,10 +136,8 @@
     "FND-06"
   ],
   "next": [
-    "Retain and independently review exact rootless runtime inputs and assemble owned product images",
-    "Implement and actually test persistent loopback init/up/status/doctor and two-user useful readiness",
-    "Implement and actually test typed managed dataset migrations and persistent UUID/ObjectID registry",
-    "Independently review eligible PLT-01 and DB-01 increments before protected merge"
+    "Complete PLT-01 reviewed patched runtime and owned image assembly, actual installation/security journey and independent review",
+    "Claim dependency-ready DB-02 after live issue review; API-01 remains dependent on PLT-01"
   ],
   "product_acceptance": false,
   "release_artifact": null,
@@ -492,7 +490,51 @@
     "real_database_tests": 22,
     "pure_schema_tests": 3,
     "independent_security_probes": 12,
-    "accepted": false,
-    "remaining": "Protected PR integration, fresh postmerge database verification and tracking"
+    "accepted": true,
+    "remaining": "Named branches, edit history, policy/read API integration, production migration/restore and full MVP remain open.",
+    "merge": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
+    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/11",
+    "delivery": "Merged",
+    "postmerge_real_database_tests": 22,
+    "postmerge_schema_guards": 3
+  },
+  "db01_acceptance": {
+    "task": "DB-01",
+    "repository": "aloerch/ambisgis-geodb",
+    "issue": 2,
+    "delivery": "Merged",
+    "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/2#issuecomment-5969459479",
+    "merge": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
+    "head": "8dfb38c6211b2235db14bc5fb9ec34e3b80513aa",
+    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/11",
+    "postmerge": {
+      "merge": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
+      "reviewed_head": "8dfb38c6211b2235db14bc5fb9ec34e3b80513aa",
+      "runtime": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/acceptance.json",
+        "sha256": "527a46b4edd9d9130dde71eef5b8b37b14aa300ad1acdb46576633577babcca4"
+      },
+      "postmerge_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-postmerge-review-ef9ef73.json",
+        "sha256": "3272f745bb943ad86f43ae6ee25ac3699c6852f53c5254d4faf32477eb13d35d",
+        "reviewer": "/root/publication_review"
+      },
+      "control": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-control-001/result.json",
+        "sha256": "fbad0622c013573ebeced777a0e26eafed9705cfe2fdca5a3a84c9f5b5b876e1"
+      },
+      "body": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db01-acceptance-body.md",
+        "sha256": "7353fa9496ae362a5298bcd97e6284438ec0f48aee3cc66b6ff8b45b9e55702e"
+      }
+    },
+    "items": 93,
+    "fields": 24,
+    "views": 7,
+    "repositories": 15,
+    "all_unrelated_values_preserved": true,
+    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db01-acceptance-attempts/03632c12-c6d6-4c3d-9c99-0084840c90b6",
+    "next_ready_task": "DB-02 (dependency DB-01 accepted; claim requires fresh live issue review)",
+    "remaining": "Named branches, edit history, policy/read API integration, production migration/restore and full MVP remain open."
   }
 }

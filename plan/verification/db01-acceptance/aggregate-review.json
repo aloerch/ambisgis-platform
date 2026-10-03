@@ -1,0 +1,216 @@
+{
+  "actual_tests": {
+    "final_baseline": {
+      "classification": "Expected rejection suite, not a passed exit-zero command.",
+      "database_stopped": true,
+      "expected_failure": true,
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/baseline-004/acceptance.json",
+        "sha256": "d67175d8bc1efc0ff49b822ff8e0d5f9cd39b756af2d96c9425e8064ff85e782"
+      },
+      "schema_absence_errors": 15,
+      "skips": 0,
+      "source_unchanged": true
+    },
+    "final_managed": {
+      "database_stopped": true,
+      "errors": 0,
+      "failures": 0,
+      "inputs": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/acceptance-006/inputs.json",
+        "sha256": "0556472d4f5e877c61e15d5deca3a558620a1b0774fb47821d725b82e4c932bb"
+      },
+      "pure_guards": 3,
+      "real_database_methods": 22,
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/acceptance-006/acceptance.json",
+        "sha256": "d65a374ce7d9f68bae9655b1454fbb0f13384d4d315430815d5048283a80dd6c"
+      },
+      "skips": 0,
+      "source_unchanged": true,
+      "test_log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/acceptance-006/tests.log",
+        "sha256": "d11c38996c14a0eb7e854d8db78bd7827d363f7f189f68450da99a129495d9d1"
+      },
+      "tests": 25
+    },
+    "independent_final": {
+      "all_passed": true,
+      "cases": 12,
+      "database_stopped": true,
+      "frozen_git_sources": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-independent-005/source.json",
+        "sha256": "856e7e562ace9cf98319a23c0d75f0b1533be14b22f6fb3ce9f6df57c1617509"
+      },
+      "invocation": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-independent-005/invocation.json",
+        "sha256": "e417f974edae82aacdcf61f36941213714d8d42f15cb99c32957985936a7ec72"
+      },
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-independent-005/result.json",
+        "sha256": "a43a7b716914d5c03eaf36b5d909e8a98e0d7d5246a6bede47a726b6e43671df"
+      },
+      "script": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-independent-005/probe.py",
+        "sha256": "80844c8fbfd22143bcbc612cf79865e0c0f3a5c18fc4cf18ff803ef78594dad6"
+      },
+      "source_unchanged": true
+    },
+    "independent_original": {
+      "basis": "13 input/geometry/literal checks passed; two concrete original bypass counterexamples were demonstrated.",
+      "cases": 15,
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-independent-002/result.json",
+        "sha256": "0048257286575ba625e30a0756a8520c713ca5b61dc620640724a9de8eee3c3a"
+      }
+    },
+    "unchanged_oracle": {
+      "command_receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/reference-001.json",
+        "sha256": "4e907cc3d3cdd9f8fdf7d7a4896dc6d7a2d9a8ec35f65b156f458bdfd6356fb4"
+      },
+      "log": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/reference-001.log",
+        "sha256": "b4388293928a2a591deec2672882d03ba04aaedf7cfbfeea516a7eac224a44d8"
+      },
+      "passed": true,
+      "tests": 12
+    },
+    "unchanged_regression": {
+      "observation_limit": "Exact command/session2133 and observed completion transcribed after completion by implementer. Legacy harness did not retain outer stdout or a pre-execution outer receipt; none is invented. Existing SQL/acceptance/runtime journals retained.",
+      "outer_observation": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/fnd04-regression-001/outer-invocation-observed.json",
+        "sha256": "c72bc436eea63a7b42c7ed6443aacbd2a85f99798f18c5429f88a04f60070fe6"
+      },
+      "passed": true,
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/fnd04-regression-001/acceptance.json",
+        "sha256": "6d893eba2a8b216a1263d75ae80341d494bf71bc4e7f52120c51576eb18fbdb6"
+      },
+      "sql_command_journal": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/fnd04-regression-001/commands.json",
+        "sha256": "243daf08152fc07c78d75085936401841035148d5ceb732cab29f1739fad2dc1"
+      },
+      "tests": 25
+    }
+  },
+  "base": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+  "boundaries": {
+    "authority": "One managed schema authority; catalog/policy fields are opaque references and confer no authorization. No parallel grant model or public edit API. Trusted owner/provisioning remains controlled; new grants by an administrator are outside a one-time role check.",
+    "destructive": "Only newly created job-owned synthetic clusters; no adoption of prototype/unmarked managed schemas, existing-database reset, down migration or source-table deletion. Failed initial/forward migrations roll back; production backup/restore qualification remains open.",
+    "process_gate": "Standing delegation sections2/5/6 explicitly authorize routine security work/test-database migrations after independent review and applicable real tests. The Data migration label is a delegated process gate here, not a substituted human-subject evaluation. Original acceptance requirements and real security/integrity blockers are retained.",
+    "remaining": [
+      "Protected exact-head PR/CI/trusted gate and actual postmerge checks",
+      "Complete managed editing/history/named branches and idempotency journals",
+      "Live catalog API authorization and field/row restrictions",
+      "Publication saga, migration backup/restore and production operational qualification",
+      "Complete product or release acceptance"
+    ],
+    "secrets": "Inspected source/public evidence and ran targeted changed-blob private-key/PAT/AWS-key scans: zero matches. Fixtures are synthetic; private stopped database data remains outside Git. This is a bounded scan, not a claim of universal secret detection.",
+    "source_and_rights": "First-party GPL-3.0-or-later additions; retained owned PostgreSQL/PostGIS and existing psycopg2 only. No new dependency acquisition, notice removal, donor namespace publication or redistribution decision."
+  },
+  "branch": "db-01/managed-schema",
+  "changed_files": [
+    "README.md",
+    "STATUS.md",
+    "docs/db01-evidence.md",
+    "docs/managed-schema.md",
+    "evidence/db01/evidence.json",
+    "evidence/db01/managed-export.json",
+    "managed/__init__.py",
+    "managed/database.py",
+    "managed/migrate.py",
+    "managed/schema.py",
+    "migrations/001_managed.sql",
+    "tests/test_managed_database.py",
+    "tests/test_schema.py",
+    "tools/run_managed_acceptance.py",
+    "tools/summarize_managed.py"
+  ],
+  "concerns": [],
+  "corrected_findings": [
+    {
+      "finding": "grant_service accepted existing direct nonspatial UPDATE rights and owner membership, permitting bypass of the finite primitive.",
+      "id": "DB01-R1",
+      "original_head": "0a979fb5d75092559854f0bd042b2ced8f006166",
+      "resolution": "Fail-closed effective table/column/sequence/schema/function privilege and every MEMBER-reachable actor checks before any grant; preserves existing rights. Independently re-probed on final producer."
+    },
+    {
+      "finding": "First repair could evaluate sequence privilege functions on non-sequences before WHERE filtering.",
+      "id": "DB01-R2",
+      "resolution": "Subtype-specific CASE guards; acceptance-004 actual six errors and independent-003 reproduction preserved; final complete suite and clean-role write pass."
+    },
+    {
+      "finding": "Ownership cannot be inferred solely from revocable ordinary ACLs; predefined server capability roles lack rolsuper-style flags.",
+      "id": "DB01-R3",
+      "resolution": "Explicit managed schema/relation/function/type and PostGIS extension ownership checks, and rejection of all reachable pg_* roles. Actual revoked-ACL owners, NOINHERIT members and dangerous predefined memberships rejected. No server-file or program capability was exercised."
+    }
+  ],
+  "criteria": [
+    {
+      "basis": "Persistent per-dataset (dataset UUID, feature UUID) mapping and bigint noncycling sequence; actual shuffled replacement, deletion/reintroduction, namespace, concurrent allocation/stale-head and large-ID tests. Imports must retain supplied UUIDs; future external-key mapping is not claimed.",
+      "original": "No row-number identity; stable IDs survive reorder/republication.",
+      "status": "pass"
+    },
+    {
+      "basis": "Actual owned PostgreSQL/PostGIS tests for all scalar types, decimal precision/scale, Unicode length/nullability, geometry SRID4326/2230 and XY/XYZ/XYM/XYZM, invalid/empty/nonfinite inputs; independent positives for all six declared geometry types and atomic malformed-input negatives.",
+      "original": "Typed geometry/SRID/null/length constraints pass real DB tests.",
+      "status": "pass"
+    }
+  ],
+  "evidence_validation": {
+    "all_public_references_rehashed": 77,
+    "exact_export_copied": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db01-worktree/evidence/db01/managed-export.json",
+      "sha256": "b392d52026215f7d9f007bfb3ad3043d5adbc0285422439c60e37d1f81df0437"
+    },
+    "public_evidence": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db01-worktree/evidence/db01/evidence.json",
+      "sha256": "b46e7e200bb6ec2d4659e3a42d5376416bc9fc3b16dea39ece02c03fd661eb97"
+    },
+    "recipe_rehashed": true,
+    "report_recomputed_identically": true,
+    "retained_runtime_artifacts_rehashed_after_execution": 72,
+    "source_reuse": "Final six-file handoff delta contains documentation, evidence and report-only summarizer. All runtime/tests/harness bytes equal f3fb30b. Schema, migration SQL/runner and seven non-grant database functions also equal original independently probed 0a979fb; earlier geometry/input/SQL-escaping probes reused on that explicit byte equivalence, not claimed rerun.",
+    "tested_source_snapshots_verified": 15
+  },
+  "findings": [],
+  "head": "8d8bc5b3bb6aab0845a267d3b1780d18addfc4a3",
+  "references": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-initial-review-0a979fb.json",
+      "sha256": "78e11347eb595cda3abe03cc4a3be77c63b60343833fc191608ad8e9e5cc44c5"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-original-issue-review.json",
+      "sha256": "8ac00ecb00fd0593a159a4f84150dc0a9069f31bd28f88b110096a018b5e6ec1"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/plan/authorizations/2026-10-02-standing-delegation.md",
+      "sha256": "40d4bac51de35df99aa81f7c16db45f54644145272ce0a5f424aca208f38c402"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/plan/docs/03-geodatabase-and-versioning.md",
+      "sha256": "fe86cbed3ee38102c9ac876dbf5f389575b225ce57099cf662776c12a2458e15"
+    }
+  ],
+  "repository": "aloerch/ambisgis-geodb",
+  "repository_id": 1376927417,
+  "review_scope": [
+    "Read actual complete 15-file diff: typed schema/canonical hash, physical tables and constraints, ordered migration runner/SQL, immutable UUID/ObjectID registry, DEFAULT/group identity, finite optimistic write primitive, privilege provisioning, native tests/harness, report generator, documentation and public evidence.",
+    "Checked source-owned retained PostgreSQL/PostGIS execution, transaction rollback/concurrent advisory lock and stale-head behavior, sequence persistence and non-recycling, type/SRID/ZM/validity/null/length checks, immutable schema/registry keys, SQL quoting and fixed security-definer search path.",
+    "Checked control scope against base: old prototype SQL/code/tests and historical evidence remain unchanged; no workflow/gate/authority/repository setting or dependency/source-root changes."
+  ],
+  "reviewed_head": "8d8bc5b3bb6aab0845a267d3b1780d18addfc4a3",
+  "reviewer": "Separate-context publication_review agent; no implementation edits or remote writes",
+  "reviewer_attempt_history": [
+    "independent-001: spatial UPDATE stopped on geometry_finite EXECUTE denial; corrected original bypass test uses nonspatial table.",
+    "independent-003: reproduced intermediate WrongObjectType implementation defect; no passing receipt.",
+    "independent-004: reviewer assertion incorrectly required inherited owner EXECUTE=false; corrected to verify unchanged prior state. This was a reviewer test defect, not an implementation defect. All stopped-job receipts preserved."
+  ],
+  "runtime_producer": "f3fb30ba844c4098c4544e097c582495b516bb22",
+  "schema_version": 1,
+  "task": "DB-01",
+  "tree": "47f49eef1a4b39642db1f62a86d202601acb0085",
+  "verdict": "PASS: bounded original DB-01 technical criteria; final protected integration and postmerge checks remain integrator work"
+}

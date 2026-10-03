@@ -12,10 +12,11 @@ record the normal protected merge and original requirement boundaries.
 PLT-01 is claimed/In progress on `plt-01/development-install`; the runtime-input
 component uses `plt-01/runtime-inputs`. Work implements a persistent loopback
 Compose installation, one configuration/secrets authority and useful readiness.
-DB-01 is claimed/In progress in `aloerch/ambisgis-geodb` on
-`db-01/managed-schema`, based on `b7e5888b11a4b3d2246daeffe0173113f1628f2d`.
-It implements typed managed schemas, stable UUID/ObjectID mappings and the
-DEFAULT version foundation. Neither task is accepted yet.
+DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
+`ef9ef7364a7babc2ebcb4841c2c670633af59d59`
+([PR #11](https://github.com/aloerch/ambisgis-geodb/pull/11)). It implements typed
+managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
+foundation. PLT-01 installation acceptance remains open.
 
 PLT-01 runtime preparation has retained 219 exact signed RPM inputs and 148
 matching source groups. Static checks and inert extraction pass; no new runtime
@@ -23,9 +24,13 @@ has been executed. Independent security review found selected Podman 6.0.2
 affected by CVE-2026-94603. Engine execution is held while an owned source
 backport/build and rejection guards are prepared. This is a technical blocker
 for the selected runtime, not an owner-approval request or installer acceptance.
-DB-01 has 22 real database tests, three schema guards and 12 independent
-privilege probes passing at reviewed head `8dfb38c6211b2235db14bc5fb9ec34e3b80513aa`;
-protected PR integration and a fresh postmerge database run remain.
+DB-01 passed 22 real database tests and three schema guards again from the
+exact merged source; all 41 tracked files and 72 runtime artifacts were verified.
+Independent review confirmed shutdown, unchanged sources and zero test skips.
+The 12 earlier privilege probes retain their separate actual evidence.
+[Acceptance and postmerge evidence](verification/db01-acceptance/acceptance-and-merge.json)
+record issue closure and Delivery Verified → Merged, preserving unrelated
+Project planning. DB-02 is dependency-ready; API-01 still awaits PLT-01.
 
 Combined FND-06 checks passed 503 package tests, ten schema/example pairs,
 35 Koop guards and 14 notice guards; these remain distinct from product tests.
