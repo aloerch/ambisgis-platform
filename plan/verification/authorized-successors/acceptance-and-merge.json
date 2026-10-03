@@ -1,0 +1,36 @@
+{
+  "number": 73,
+  "merged": true,
+  "merge_commit_sha": "7812efa3502ec1d7004b485d35b433eea56ce13e",
+  "head": "89467a57a2bd25deb13249ead0912840f4028a0a",
+  "base": "8c3612dd3e4ee992d930f1417798b66f467784e9",
+  "merged_at": "2026-10-03T05:55:52Z",
+  "acceptance": {
+    "status": "passed",
+    "fnd07": "Merged",
+    "fnd07_acceptance": "https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5966156208",
+    "fnd08": "In progress",
+    "fnd08_claim": "https://github.com/aloerch/ambisgis-platform/issues/7#issuecomment-5966157278",
+    "fields": 24,
+    "views": 7,
+    "items": 86
+  },
+  "post_merge_smoke": {
+    "tests": 13,
+    "schemas": 4,
+    "exit_code": 0,
+    "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/source-post-merge-smoke.log",
+    "sha256": "882d287cde4d4961c520e46f3bfbc0848966c407ffadfcc0d8fbf93932ff57d8"
+  },
+  "reviewed_tree_equals_merged_tree": true,
+  "gate": {
+    "base_sha": "8c3612dd3e4ee992d930f1417798b66f467784e9",
+    "eligible": true,
+    "files_sha256": "ab8e0c7a73b8ae5b8e20e6b4da2bdb58d283e64a96c5250b65fc860a7d54c251",
+    "head_sha": "89467a57a2bd25deb13249ead0912840f4028a0a",
+    "limitations": "Read-only snapshot; recheck base/head immediately before normal protected merge.",
+    "pr": 73,
+    "repository": "aloerch/ambisgis-platform",
+    "repository_id": 1376927351
+  }
+}

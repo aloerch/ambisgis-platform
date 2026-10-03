@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "tasks": [
+    {
+      "task": "FND-03",
+      "delivery": "Merged",
+      "pr": "https://github.com/aloerch/ambisgis-platform/pull/74",
+      "merge": "0876999d7535d792d0024586981c762b2f9bf513",
+      "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/4#issuecomment-5966376406"
+    },
+    {
+      "task": "FND-04",
+      "delivery": "Merged",
+      "pr": "https://github.com/aloerch/ambisgis-geodb/pull/10",
+      "merge": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+      "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/1#issuecomment-5966377536"
+    },
+    {
+      "task": "FND-05",
+      "delivery": "In progress",
+      "claim": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1#issuecomment-5966378608"
+    }
+  ],
+  "items": 88,
+  "fields": 24,
+  "views": 7,
+  "fnd03_post_merge": {
+    "merge": "0876999d7535d792d0024586981c762b2f9bf513",
+    "reviewed_head": "63c6e4f2351192d07b3f2ca14c3238a9e5333564",
+    "merged_tree_equals_reviewed_tree": true,
+    "command": [
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "build-support/geonode",
+      "-p",
+      "test_catalog_policy.py",
+      "-v"
+    ],
+    "tests": 6,
+    "schemas": 4,
+    "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd03-post-merge-smoke.log",
+    "log_sha256": "0750d008acd71a2b68f8d1f9dc6ad10327c0911984a5575d3cff72b0e94600b2",
+    "native_runtime_reuse": "Unchanged executed-source digests verified before merge; no new real runtime invocation claimed."
+  },
+  "geodb_post_merge": {
+    "merge": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+    "reviewed_head": "75ef3f7f34067dec53435df8967751b960176fd1",
+    "same_tree": true,
+    "real_db_tests": [
+      "test_07_atomic_group_post_and_idempotent_retry",
+      "test_15_no_public_direct_write_or_function_bypass",
+      "test_25_null_or_invalid_resolution_never_clears_conflict"
+    ],
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "cluster_stopped": true,
+    "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/geodb-post-merge-smoke.log",
+    "log_sha256": "5c40bde11290607e0505f32bc19c84ae32a5e2dc49e1c96282348f61c2f640e2"
+  }
+}

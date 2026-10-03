@@ -1,3 +1,34 @@
+# Active delivery — 3 October 2026
+
+FND-03, FND-04, FND-05 and FND-07 are accepted/Merged within their original
+foundation criteria. FND-05 platform [PR #75](https://github.com/aloerch/ambisgis-platform/pull/75)
+merged at `337cc4f7438848575e075e8d90f59d9d37e4309e`; desktop
+[PR #6](https://github.com/aloerch/ambisgis-qgis-plugin/pull/6) merged at
+`f2a7dcbea2dac5ad5c41bb825093014c7341d46c`. Fresh post-merge checks against
+final owned QGIS stage-002 pass 152 HTTP assertions, 49 checked maps, 70 native
+identity tests, 13 authoring negatives and six package roundtrips. Services and
+fixture credentials were cleaned up. [Renderer acceptance](plan/verification/fnd-05/acceptance-and-merge.json)
+records exact heads and Project reconciliation: 91 items, 24 fields, seven views,
+15 repositories, all unrelated values preserved.
+
+FND-08 is In progress on `fnd-08/owned-spine`, based on merged platform
+`337cc4f7438848575e075e8d90f59d9d37e4309e`. Native, Java, QGIS and selected-host
+build evidence has independent review. The two-file client lint repair merged in
+[PR #1](https://github.com/aloerch/ambisgis-mapstore-client/pull/1) at
+`c1f6ad9df52f08ac3bfd7211db9e3ee744b21407`, with whole-client lint and 510 native
+browser assertions passing. Fresh catalog/UI pairs at that exact commit pass, with three byte-identical catalog
+outputs and zero unexplained UI differences. Final aggregate review and acceptance
+remain pending. [Build evidence and limits](plan/docs/fnd-08-owned-spine.md)
+include all retained failures, named skips and raw reproducibility differences.
+
+The [ledger](plan/docs/delivery-ledger.json) and [all 24 requirements](plan/docs/delivery-requirements-matrix.md)
+govern continuation under the [standing delegation](plan/docs/standing-delivery-policy.md).
+FND-06 waits for FND-08 acceptance. Full publishing, managed geodatabase,
+portal/apps, isolated notebooks, installer, independent repair and release gates
+remain open. No installable scoped MVP or release artifact is claimed.
+
+## Historical checkpoints follow unchanged
+
 # Current checkpoint — FND-07 canonical delivery and local source repairs
 
 The owner-authorized batch created and independently recovered all nine exact

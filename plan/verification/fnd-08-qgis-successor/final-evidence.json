@@ -1,0 +1,438 @@
+{
+  "full_fnd08_acceptance": false,
+  "implementation_commit": "e0b41082e5a1906febbfbed583396d5dd75e6128",
+  "installable_distribution_claimed": false,
+  "latest_runtime": {
+    "actual_http_requests": 6,
+    "artifact_integrity_unchanged": true,
+    "build": "build-004",
+    "cleanup": {
+      "database_credentials_invalidated": true,
+      "diagnostic_secret_hits": [],
+      "private_files_scrubbed": true
+    },
+    "font": {
+      "Qt": {
+        "dark_pixels": 1098,
+        "family": "QGIS Vera Sans",
+        "glyphs_available": true,
+        "point_size": 12.0,
+        "render_sha256": "f25b86e34a5a26625c7a93dc4ac6f5cabc925920a5cb312b2daf7b53190365ac"
+      },
+      "actual_copy": {
+        "bytes": 66168,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-002/fonts/QGIS-Vera.ttf",
+        "sha256": "08a82cf71e13669f725bccdfeff7ed8dc0e43ffdeac22633074399098112d3e3"
+      },
+      "downloads_enabled": false,
+      "mapped_by_desktop": true,
+      "source_path": "tests/testdata/font/QGIS-Vera/QGIS-Vera.ttf"
+    },
+    "native": {
+      "cpp_passed_cases": 66,
+      "failed_cases": 0,
+      "fixture_binding": {
+        "changed_fixture_files": 1,
+        "declared_attribute": "text eol=crlf",
+        "fixture_path": "tests/testdata/auth_system/certs_keys/donald_key_DSA_crlf.pem",
+        "historical_checkout_sha256": "4f86dc58b808e8c1a02be05842c77c69b491626396cefffd367f5dacacdc9a0e",
+        "historical_fixture_tree_reconstructed": true,
+        "historical_selection_sha256": "82031c56c96fa920e24eabffe17ff0a086bb6cfa26306c77c8765899b450a52f",
+        "raw_git_sha256": "36f50d5940edd3e574f25c9a35590b0f3a230d71353c5312eed457e2f55e43df",
+        "removed_cr_bytes": 20,
+        "scope": "Exact successor materialization metadata only; selected tests/source/golden assertions unchanged. Synthetic key is not exercised by selected methods.",
+        "source_commit": "86af40542b219b0da6df1a43914413443330c0c0",
+        "successor_fixture_tree": {
+          "bytes": 586856202,
+          "file_count": 6450,
+          "path": "tests/testdata",
+          "sha256": "f4cbc240fa1c31cc75b3a6de0d79c5324301d0289d4bf41e29e517fedd30e11d",
+          "symlinks": []
+        },
+        "unchanged_fields": [
+          "schema",
+          "cpp",
+          "python",
+          "source_sha256",
+          "required_gdal_drivers",
+          "required_providers",
+          "required_python_modules",
+          "database_fixture",
+          "selection_decisions"
+        ]
+      },
+      "fixtures_after": {
+        "bytes": 586856202,
+        "file_count": 6450,
+        "sha256": "f4cbc240fa1c31cc75b3a6de0d79c5324301d0289d4bf41e29e517fedd30e11d"
+      },
+      "fixtures_before": {
+        "bytes": 586856202,
+        "file_count": 6450,
+        "sha256": "f4cbc240fa1c31cc75b3a6de0d79c5324301d0289d4bf41e29e517fedd30e11d"
+      },
+      "python_passed_cases": 16,
+      "skips": 0
+    },
+    "resources": {
+      "compiled_palette_resources": [],
+      "excluded_named_ramp_files_unopenable": 1130,
+      "native_model_paths": 1130,
+      "ramp_dialog_observed": {
+        "scheme": "cb/seq/Blues",
+        "selected_name": "Blues_09",
+        "variant": "_09"
+      },
+      "retained_colorbrewer_loadable": 265,
+      "retained_native_endpoint_assertions": 530,
+      "save_reopen": {
+        "project_sha256": "3b2a27566f4e204e3f38bcd1a8a98a7c7ca58ef73d9fa89d78662df2523a3c1c",
+        "raster": true,
+        "vector": true
+      }
+    },
+    "restart_demonstrated": true,
+    "stage": "stage-002",
+    "tooling_integrity_unchanged": true
+  },
+  "limits": [
+    "Linux x86_64 synthetic fixtures with Qt offscreen; no physical display or full GIS product acceptance.",
+    "Native66 C++ and16Python cases are the frozen selected subset, not entire QGIS suite.",
+    "Raw installed output differs in49ELFs solely at exact recorded attempt paths (including two Qt UTF16 path strings) and GNU build IDs. No output bytes are rewritten.",
+    "Seccomp denies INET sockets in actual build descendants, permits AF_UNIX; command-bound receipt checks are not an every-syscall trace or hostile-code sandbox.",
+    "Owned PostgreSQL runtime supervisor exception remains explicit; services stopped and disposable credentials scrubbed.",
+    "Retained dependencies and host compiler/source custody are separately audited; compiler source bootstrap, generated cache reproduction and clean supported installation remain open."
+  ],
+  "owned_source": {
+    "commit": "86af40542b219b0da6df1a43914413443330c0c0",
+    "repository": "aloerch/ambisgis-qgis",
+    "repository_id": 1376927721,
+    "tree": "84ea1b18fdf5721819fee34fe06cdef7ea82afdc"
+  },
+  "pair": {
+    "UTF16_path_entries": [
+      "lib/libqgis_app.so.3.44.14",
+      "lib/libqgis_core.so.3.44.14"
+    ],
+    "artifact_rewriting": false,
+    "chronology": {
+      "basis": "original local receipt mtimes; observations, not signed timestamps",
+      "events": [
+        {
+          "mtime_ns": 1791009716072179067,
+          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/donor-drift-001/after.json",
+          "sha256": "6ee1cc897588825781774bd312b6f8bec3e24b7adea92e7effa2880539e2dabc"
+        },
+        {
+          "mtime_ns": 1791009725397345995,
+          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/started.json",
+          "sha256": "612cd03af2586475d332666b64eaebe8a2f4b44026919873020cdeac2e031dde"
+        },
+        {
+          "mtime_ns": 1791011415542480532,
+          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/result.json",
+          "sha256": "341edcdce6c7bd69624b6ddad4e2306fa618e229faeab810727916146ed38873"
+        },
+        {
+          "mtime_ns": 1791011770812400704,
+          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/donor-drift-001/final-drift.json",
+          "sha256": "61800d72035cbebf3b2024dd76570bd66e290ffcd7245ec245b568b3b38e4610"
+        },
+        {
+          "mtime_ns": 1791011793320720872,
+          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/started.json",
+          "sha256": "612cd03af2586475d332666b64eaebe8a2f4b44026919873020cdeac2e031dde"
+        },
+        {
+          "mtime_ns": 1791013483008375105,
+          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/result.json",
+          "sha256": "e754d7b1fc58ac3b68a3400a0483e40407e4ebecf70004bcf592fcf0871192f6"
+        }
+      ],
+      "ordered": true
+    },
+    "command_bound_socket_receipts": [
+      {
+        "command_sha256": "a5a2f024dce16507bef7891b2095e2cf1ed2168adc17e97c852c40ff4586629c",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/configure-network.json",
+        "sha256": "94169df47138d1845c286ef26af4208127744ee9792956c231e4120df1d434ea"
+      },
+      {
+        "command_sha256": "71404f47b20a45f88dc53f5ec28f5a696023818ef7d8e041eb446f1e6f0e9423",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/compile-network.json",
+        "sha256": "cd9cec01be0d6cfb8f2b1a839b36ca76b08a175e0372c6677ef30f4c2b02538b"
+      },
+      {
+        "command_sha256": "a5b40a7f691dfbf2058c525b41fa74ae28b17121d3b81aa74d33f2ebff61510d",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/stage-network.json",
+        "sha256": "78494fb8ab3563a6286834bd261bf97386b1a9dcf16c4c8df89e288ae6c34262"
+      },
+      {
+        "command_sha256": "923e403083acc6ba45c079f95400d574e4e986e35d0c322e9630adaf60ec7b9d",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/staged-crs-sync-network.json",
+        "sha256": "bdbe3ac7efd8ba747c895c19bba4278984aa750952669602b36d7752b969b926"
+      },
+      {
+        "command_sha256": "4d2f1cd748209095cdaf78c84d74df00d736936ecd049df928684a56710cf3c0",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/native-test-compile-network.json",
+        "sha256": "190b0e93ec0740c3b415add6ec5e5116e3aaa892616bce50711628b7fa44dbdd"
+      },
+      {
+        "command_sha256": "ada0418a9653f0268f914a94e85baed5e8659cb591185b883938c59cf7d09b62",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/desktop-linkage-network.json",
+        "sha256": "772c00517f614558c167a36190cfa0accbdc4474b47582c6197dac60eb035ef9"
+      },
+      {
+        "command_sha256": "0a95dd7d25a0c29a4745cd27d12cba1baec0de81fc384fa48a28f2ce02d30596",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/server-linkage-network.json",
+        "sha256": "7dd2e851e64e402543b0efba0558164054879465984b83e390c106e292334258"
+      },
+      {
+        "command_sha256": "ab69f39050583edacb86771aa1e7a1d7b41dee995ea6b79ec3ac4336d01c0976",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/generated-source-reproduce-network.json",
+        "sha256": "ef592342c86511cf1e72b40ee3d59d4be40287e4393e9533380aa2911bc50aeb"
+      },
+      {
+        "command_sha256": "2dd5de6ca8c14dca19d275222edc28ad60208f21cfc4e00987fe1d43d998d649",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/configure-network.json",
+        "sha256": "013b2569e61f57984598e6f5e81c91f67129a55077d9ced8fbce35aceff6a137"
+      },
+      {
+        "command_sha256": "c6367749b445c86c29e74b2db8406d81b2c915deba1d5bdd2c7c95c60dd99c46",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/compile-network.json",
+        "sha256": "76fb023fe2e7fb8c3ba2b159623bb8e7e444ced790e903231bad12ede2b58dac"
+      },
+      {
+        "command_sha256": "88ee76c471d5d8e477cbb6b50ffa7e67fcd3c88e0481161b709cf5f31423c500",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/stage-network.json",
+        "sha256": "0d452d9a50ce9af09504eaa4f90bdd3d3119a4c80a83764504ad4222ab600942"
+      },
+      {
+        "command_sha256": "334c79cadfc91487d472673987a696d8c44bbc360740f36b0eedb1efbca47009",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/staged-crs-sync-network.json",
+        "sha256": "3d3531dca3fc9f7e225b4b5b208f81da07d7ed0279835275a3fb81905d34570b"
+      },
+      {
+        "command_sha256": "b322a73fa98725074c4b9459e90324c395519755aab980a13bb67c5a6f854fdc",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/native-test-compile-network.json",
+        "sha256": "da97bb99e82d554eaf3424e01426a339cbedeb6ad79adaecbd281e0b9e68c069"
+      },
+      {
+        "command_sha256": "29ae88249bdcb28020aed592a0c8960e25c2cadf9320a09310429550dc8cf973",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/desktop-linkage-network.json",
+        "sha256": "ab70bb44f301448fbdd32a8b87ab64a8258f4cb6de671ea71e4465f721c9e1b7"
+      },
+      {
+        "command_sha256": "18f01bf9f1d852fd915a55ff41833f12d85dbb5bf2f8f56522f40feb55e9d6e6",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/server-linkage-network.json",
+        "sha256": "cecb87b1fbb901febab73b9ee063f89b493c6926743b1b153ebaa4ce5a5b3395"
+      },
+      {
+        "command_sha256": "3d2dfcd0a95ca478f79c9b4e7bb8a00deaee7964815db8a9288042166abece29",
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/generated-source-reproduce-network.json",
+        "sha256": "bdec6e5ad41c43c03c027f6c6b0d48c777841b122e4b1e631a6333f81fd6e360"
+      }
+    ],
+    "diagnostic_classes": {
+      "attempt absolute path and GNU build ID": 49
+    },
+    "first_build": "build-003",
+    "fixture_after": {
+      "api_sha256": "b7fbc8203d686700607865e6e7bcd526c0a34c128da7d03714947dafc67db3a5",
+      "commit": "faccacf4cc42d09e910025369c3958511ee3f202",
+      "floating": {
+        "api_schema": 3,
+        "commit": "faccacf4cc42d09e910025369c3958511ee3f202",
+        "default_branch": "donor-final",
+        "source_sha256": "8e5b45bd36f4d61687a7a18175417c02c9bc352d586167585de55f3b5da87365"
+      },
+      "ref": "refs/heads/donor-final",
+      "tree": "ac4d0bf3c61d038bdf0a774050cc7ac50bbdc741"
+    },
+    "fixture_before": {
+      "api_sha256": "80a1bb654e47f80ffdb8f902922fc959efe83efe09eb0a450321f3227220e288",
+      "commit": "569a7cfe03fc2b6e4f98289c2fdbed180b73a43e",
+      "floating": {
+        "api_schema": 2,
+        "commit": "569a7cfe03fc2b6e4f98289c2fdbed180b73a43e",
+        "default_branch": "donor-after",
+        "source_sha256": "cc330a9176696fde7970033b7067e48bb79f524eb90572286c608f52f2478b6c"
+      },
+      "ref": "refs/heads/donor-after",
+      "tree": "2ecda5bc09752fd6b8eef84be4245a371ebc6bb4"
+    },
+    "floating_positive_control": {
+      "after": {
+        "api_schema": 3,
+        "commit": "faccacf4cc42d09e910025369c3958511ee3f202",
+        "default_branch": "donor-final",
+        "source_sha256": "8e5b45bd36f4d61687a7a18175417c02c9bc352d586167585de55f3b5da87365"
+      },
+      "before": {
+        "api_schema": 2,
+        "commit": "569a7cfe03fc2b6e4f98289c2fdbed180b73a43e",
+        "default_branch": "donor-after",
+        "source_sha256": "cc330a9176696fde7970033b7067e48bb79f524eb90572286c608f52f2478b6c"
+      },
+      "changed": true
+    },
+    "initial_pair_limitation": "Fixture baseline was created after build-002 began; build002/runtime001 remain engineering evidence, not qualifying T-OWN02 pair. Original v2 after.json precedes build003; explicit final-drift.json occurs after build003 completion and before build004 start.",
+    "input_manifest_sha256": "871853e363e0c7f39f9982e4a109b150b65179a7f5006d5fdddac8a2a31666f4",
+    "output_comparison": {
+      "added_paths": [],
+      "changed_entries": 49,
+      "entries": 8105,
+      "first_entries": 8105,
+      "raw_bytes_identical": false,
+      "removed_paths": [],
+      "second_entries": 8105,
+      "unchanged_entries": 8056,
+      "unexplained_entries": 0
+    },
+    "second_build": "build-004",
+    "selected_inputs_unchanged": true
+  },
+  "raw_byte_identity_claimed": false,
+  "remote_mutations": [],
+  "reports": {
+    "build003": {
+      "bytes": 1492,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/result.json",
+      "sha256": "341edcdce6c7bd69624b6ddad4e2306fa618e229faeab810727916146ed38873"
+    },
+    "build004": {
+      "bytes": 1492,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/result.json",
+      "sha256": "e754d7b1fc58ac3b68a3400a0483e40407e4ebecf70004bcf592fcf0871192f6"
+    },
+    "desktop002": {
+      "bytes": 67159,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-002/desktop-result.json",
+      "sha256": "774a6c79400bf5fa318a9f8004e82ecbf9e8cb71d38bccd99dcfe1cffff22eea"
+    },
+    "helper_tests": {
+      "bytes": 13028,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/qgis-harness-005.log",
+      "sha256": "b555f35214f28ce03ae3135fea08bdb41386be374d340cbfbed4b41ce48d1547"
+    },
+    "native004": {
+      "bytes": 860,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/native-004/result.json",
+      "sha256": "0d2a42e19878be76324bd14e212026c68dc8806ab96c96f15c3887059d98e58e"
+    },
+    "native_assertions004": {
+      "bytes": 47972,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/native-004/run/native/native-result.json",
+      "sha256": "433fc6e716b713846c20f479bfb5c83b765ae749111021e2829f26b69f6d7c3b"
+    },
+    "native_binding004": {
+      "bytes": 1187,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/native-004/fixture-binding.json",
+      "sha256": "5b3f78bb3c0bb1241c82c76d796ca025eec4b25b7d413cc2df809a4b58fc727a"
+    },
+    "native_database004": {
+      "bytes": 80741,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/native-004/run/result.json",
+      "sha256": "15721eeff3f2fbe7af9c1c7dd22ee713a47c1537dd4bbb2b15b29d92dce9d1db"
+    },
+    "pair_comparison": {
+      "bytes": 67438,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/paired-comparison.json",
+      "sha256": "b3b38252696268f465d4b6af576615591a0b8d51a102f009855ec598f615efdd"
+    },
+    "resources002": {
+      "bytes": 3565,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-002/resource-result.json",
+      "sha256": "331114cd308722ff9add181062b013399db55ec276c1b9b5110d62a6b9f2e171"
+    },
+    "runtime002": {
+      "bytes": 180328,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-002/result.json",
+      "sha256": "e72c36504de25f4e81eed52e68a5e7a9721d12c6424f364bc27dd34bd74199a0"
+    },
+    "runtime_config": {
+      "bytes": 3931,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/runtime-002-config.json",
+      "sha256": "5990ce8512cc548d9900241ee06e8e6df4f9a8865d3b65a6ffef7cdb5a10f3e7"
+    },
+    "server002": {
+      "bytes": 74059,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-002/server-result.json",
+      "sha256": "96eb5fe4b8dbe2331c2c670c775b02aab8ea88b8fa9510963d2ffc424b6ee0db"
+    },
+    "stage002": {
+      "bytes": 655,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/stage-002/result.json",
+      "sha256": "c5f9c9dd7fe997f4206415db10fed31f35c24e7fc9d604439b8824bc6a09d112"
+    },
+    "stage_manifest": {
+      "bytes": 1536577,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/stage-002/manifest.json",
+      "sha256": "2527ac72341fa52fa7f446800b8cecd5cb5e02e8192334f0a9649c9e81214248"
+    },
+    "version_origins002": {
+      "bytes": 26222,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/version-probe-002/result.json",
+      "sha256": "ce4a997f9052d2d9d4e62949059ed59800f31fc72a954e30ec5fbf4c76b6068d"
+    }
+  },
+  "scope": "QGIS owned successor qualifying repeated build and latest new-binary runtime/native checks",
+  "source_and_build_inventory": {
+    "build-003": {
+      "output-manifest.json": {
+        "bytes": 1533871,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/output-manifest.json",
+        "sha256": "f0e3d25237ccfb05ce5be464f5d66b38c5978bf6dd8af05ce5c5f229d65594f9"
+      },
+      "receipt.json": {
+        "bytes": 593879,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/receipt.json",
+        "sha256": "dfc818f7f804c14fc9670cf06eaf759104e91a837f510c70867b5ac00a61ec42"
+      },
+      "source-manifest.json": {
+        "bytes": 5955203,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/source-manifest.json",
+        "sha256": "b0d5863b5d64eaf5c155db7433e8fc926840075dee3c0f083c0f0cf6d1eabea3"
+      },
+      "success.json": {
+        "bytes": 224,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-003/compile/success.json",
+        "sha256": "9e099f88385ba5cecd154950f1bd50945a6b59b4272ccaf2c403edde35bdf886"
+      }
+    },
+    "build-004": {
+      "output-manifest.json": {
+        "bytes": 1533871,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/output-manifest.json",
+        "sha256": "2c00e0cddd5e5e1b173aa01096866911ed7ec18233fb25fa83aaa1d8094b84e8"
+      },
+      "receipt.json": {
+        "bytes": 593879,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/receipt.json",
+        "sha256": "a2167350d6b669b6a614a6e03a34146782bef592d20ea44284bfa20375478c9d"
+      },
+      "source-manifest.json": {
+        "bytes": 5955203,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/source-manifest.json",
+        "sha256": "b0d5863b5d64eaf5c155db7433e8fc926840075dee3c0f083c0f0cf6d1eabea3"
+      },
+      "success.json": {
+        "bytes": 224,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-004/compile/success.json",
+        "sha256": "729429fb75c67a65a7d5a18503a7c89ac489c746051ef2c83e7b7dae914a5465"
+      }
+    },
+    "support_custody": {
+      "bytes": 110529,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/support-custody.json",
+      "sha256": "4404358b77b67fffdcf0d68779fdda9eff2022026e1d2f49ae82168c5d4bac79"
+    }
+  },
+  "task": "FND-08",
+  "validation": {
+    "QGIS_helper_tests": 98,
+    "notes": "Helpers/package checks supplement actual GIS checks. Plan suite used retained CI Python; the earlier missing-jsonschema host attempt remains retained.",
+    "plan_tests": 457,
+    "schema_examples": 4
+  }
+}
