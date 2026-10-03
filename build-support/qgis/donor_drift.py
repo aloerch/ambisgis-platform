@@ -89,16 +89,38 @@ def mutate(root):
         raise ValueError('synthetic drift positive control did not change')
     write(root/'after.json',after)
     report = {'fixture_before':before,'fixture_after':after,
+              'baseline_receipt':str(root/'before.json'),
               'floating_positive_control':{'before':before['floating'],'after':after['floating'],'changed':True},
               'scope':'synthetic local fixture only; actual two-build product comparison recorded separately'}
     write(root/'drift.json',report)
     return report
 
 
+def advance(root):
+    """Second, explicitly named transition preserves the first failed pairing."""
+    before = json.loads((root/'after.json').read_text())
+    if snapshot(root) != before or (root/'final-drift.json').exists():
+        raise ValueError('v2 fixture changed or final drift already applied')
+    git(root,'checkout','-b','donor-final')
+    (root/'donor/sentinel-source.txt').write_text('synthetic donor third incompatible source after drift\n')
+    git(root,'add','sentinel-source.txt')
+    git(root,'commit','--no-gpg-sign','-m','Synthetic donor final incompatible default/API')
+    (root/'api.json').rename(root/'api-v2.json')
+    write(root/'api.json',{'schema':3,'default_branch':'donor-final','revision_field':'replacement_oid'})
+    after = snapshot(root)
+    if not all(before[k] != after[k] for k in ('ref','commit','tree','api_sha256','floating')):
+        raise ValueError('final synthetic drift positive control did not change')
+    report = {'fixture_before':before,'fixture_after':after,'baseline_receipt':str(root/'after.json'),
+              'floating_positive_control':{'before':before['floating'],'after':after['floating'],'changed':True},
+              'scope':'v2 baseline existed before qualifying build; v3 transition preserved separately'}
+    write(root/'final-drift.json',report)
+    return report
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action',choices=('prepare','mutate','inspect'))
+    parser.add_argument('action',choices=('prepare','mutate','advance','inspect'))
     parser.add_argument('--root',type=Path,required=True)
     args = parser.parse_args()
-    action = {'prepare':prepare,'mutate':mutate,'inspect':snapshot}[args.action]
+    action = {'prepare':prepare,'mutate':mutate,'advance':advance,'inspect':snapshot}[args.action]
     print(json.dumps(action(args.root.absolute()),sort_keys=True))

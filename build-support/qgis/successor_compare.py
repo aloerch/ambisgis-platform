@@ -52,6 +52,15 @@ def path_diagnostic(first, second, first_root, second_root):
     count = left.count(old)
     adjusted = left.replace(old,new)
     result['first_attempt_path_occurrences'] = count
+    # Qt QStringLiteral stores the same absolute path in UTF-16. Attribute only
+    # complete exact attempt roots, never arbitrary numeric or text changes.
+    encoded_counts = {}
+    for encoding in ('utf-16-le','utf-16-be'):
+        old, new = str(first_root).encode(encoding), str(second_root).encode(encoding)
+        encoded_counts[encoding] = adjusted.count(old)
+        adjusted = adjusted.replace(old,new)
+    result['utf16_attempt_path_occurrences'] = encoded_counts
+    count += sum(encoded_counts.values())
     if adjusted == right:
         result['diagnostic_only_equivalence'] = 'attempt absolute path' if count else 'identical'
         return result
@@ -74,6 +83,17 @@ def path_diagnostic(first, second, first_root, second_root):
     return result
 
 
+def chronology(first, second, drift, fixture):
+    baseline = Path(fixture.get('baseline_receipt',str(drift.parent/'before.json')))
+    require(read(baseline) == fixture['fixture_before'], 'fixture baseline receipt changed')
+    sequence = [baseline,first/'started.json',first/'result.json',drift,
+                second/'started.json',second/'result.json']
+    rows = [{'path':str(path),'sha256':sha(path),'mtime_ns':path.stat().st_mtime_ns} for path in sequence]
+    require([row['mtime_ns'] for row in rows] == sorted(row['mtime_ns'] for row in rows),
+            'fixture must precede first build and drift must occur between completed builds')
+    return {'ordered':True,'basis':'original local receipt mtimes; observations, not signed timestamps','events':rows}
+
+
 def compare(first, second, drift, output):
     require(first != second and not output.exists(), 'two distinct attempts and fresh comparison required')
     prefix1, manifest1 = verify_build(first)
@@ -81,15 +101,20 @@ def compare(first, second, drift, output):
     inputs1, inputs2 = selected_inputs(first), selected_inputs(second)
     require(inputs1 == inputs2, 'selected build inputs changed')
     fixture = read(drift)
+    timeline = chronology(first,second,drift,fixture)
     require(fixture['floating_positive_control']['changed'] is True and
             fixture['fixture_before']['commit'] != fixture['fixture_after']['commit'] and
             fixture['fixture_before']['api_sha256'] != fixture['fixture_after']['api_sha256'],
             'actual synthetic drift and positive control required')
     by1 = {row['path']:row for row in manifest1['files']}
     by2 = {row['path']:row for row in manifest2['files']}
-    require(set(by1) == set(by2), 'output file set changed')
     changed = []
-    for path in sorted(by1):
+    for path in sorted(set(by1) | set(by2)):
+        if path not in by1 or path not in by2:
+            changed.append({'path':path,'first':by1.get(path),'second':by2.get(path),
+                'diagnostic':{'raw_bytes_equal':False,'unexplained_difference':True,
+                              'scope':'output membership changed'}})
+            continue
         if by1[path] == by2[path]: continue
         row = {'path':path,'first':by1[path],'second':by2[path]}
         if 'sha256' in by1[path] and 'sha256' in by2[path]:
@@ -111,16 +136,21 @@ def compare(first, second, drift, output):
                     'build command/log evidence changed')
             verify_network(proof, argv[argv.index('--')+1:])
             network.append({'path':str(path),'sha256':sha(path),'command_sha256':sha(command_path)})
-    report = {**fixture,'product':{'selected_roots':{'qgis':inputs1['commit']},
+    report = {**fixture,'chronology':timeline,'product':{'selected_roots':{'qgis':inputs1['commit']},
               'input_manifest_sha256_before':input_digest(inputs1),'input_manifest_sha256_after':input_digest(inputs2),
               'selected_inputs_unchanged':True,'first_attempt':str(first),'second_attempt':str(second),
-              'source_archive_bytes_equal':True,'output_comparison':{'entries':len(by1),'unchanged_entries':len(by1)-len(changed),
+              'source_archive_bytes_equal':True,'output_comparison':{'entries':len(set(by1)|set(by2)),
+                 'first_entries':len(by1),'second_entries':len(by2),
+                 'unchanged_entries':len(set(by1)|set(by2))-len(changed),
                  'raw_bytes_identical':not changed,'changed_entries':len(changed),'differences':changed,
+                 'added_paths':sorted(set(by2)-set(by1)),'removed_paths':sorted(set(by1)-set(by2)),
                  'unexplained_entries':sum(bool(row['diagnostic'].get('unexplained_difference')) for row in changed)}},
               'network_receipts':network,'scope':'Actual fresh builds of exact source; raw equality and diagnostic equivalence are distinct. No canonical diagnostic is advertised as byte identity.',
               'network_scope':'Actual seccomp kernel probes and command-bound receipts, not an every-syscall trace. AF_UNIX remains available; trusted builds only. Producer resolves complete exact Git objects locally and uses retained inputs; no donor API/default ref is a product input.',
               'recipe_sha256':sha(Path(__file__))}
     save(output,report)
+    require(not report['product']['output_comparison']['unexplained_entries'],
+            'unexplained output differences; diagnostic report retained')
     return report
 
 
