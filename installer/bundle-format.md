@@ -71,6 +71,17 @@ catalog and renderer also receive `/var/lib/ambisgis-blobs` (renderer read-only)
 Services run with the mapped host UID/GID, a read-only root and dropped
 capabilities. Actual selected Compose support and writable-directory semantics
 must pass native tests before this profile is accepted.
+Persistent bind mounts preserve enforcing SELinux. Common product JSON,
+catalog/engine initialization-and-serving data and shared blobs use shared `z`
+labels. Per-role secret files and database-only data use private `Z` labels.
+Only installation-owned paths are relabeled; no host-policy or label-disable
+operation is performed. Actual confined access to these binds is a runtime gate.
+Before any repeat-up mutation, native inspection must match the installation's
+read-only root, empty effective/bounding capabilities, no-new-privileges,
+private namespaces, exact bind membership/access, bounded temporary mount,
+command and image-bound environment. Podman may add only its informational
+container/hostname variables. Native inspection and OCI/mapping/network tests
+must confirm the selected runtime's representations before acceptance.
 The initial network is explicitly IPv4-only (`enable_ipv6: false` plus container
 IPv6-disable sysctls). The selected backend's actual configuration and IPv6
 negative/egress tests are required; `internal: true` alone is not an isolation
@@ -100,6 +111,25 @@ Database bootstrap refuses dangerous role attributes, any role membership
 ownership of database objects. It rejects these existing states before schema
 changes instead of silently revoking privileges. Real role/ownership, DML/DDL
 and membership adversarial checks remain native installation acceptance gates.
+The effective-object audit also checks PUBLIC and column grants, grant options,
+schema/database creation, sequence writes, application/security-definer routine
+execution, sensitive core file routines and unsafe future default grants. The
+finite allow-list permits catalog-owner table DML/sequence usage to the catalog
+application, transport-owner table SELECT to the transport reader, and normal
+owned PostGIS read/execute defaults. The diagnostic render-reader receives no
+application-object grants. This is not the DB-01 managed-geodatabase authority.
+Database health repeats the effective privilege audit. Repeat-up requires a
+fresh native health execution before acting on an existing running database and
+again immediately before the initialization jobs; cached engine health cannot
+bypass this preflight.
+
+`deploy/development/database_probe.py` separately verifies this SQL policy using
+the exact retained owned PostgreSQL/PostGIS prefix and its full file inventory,
+a fresh marked synthetic cluster and private Unix socket under Internet-socket
+denial. It binds source snapshots, retains native failure evidence, compares
+logical state before/after rejected privilege changes and stops its own cluster.
+These supplementary checks do not replace the persistent container installation
+journey or qualify image relocation, namespace isolation or SELinux enforcement.
 
 Package `deploy/development/{service,health}` as the fixed image entrypoints,
 with the retained interpreter at `/opt/ambisgis/python/bin/python3`. Install the

@@ -149,6 +149,10 @@ def _verify(path, record, revision):
         if image['architecture'] != 'amd64' or image['os'] != 'linux' or image.get('variant'):
             raise InstallError('OCI image platform differs.')
         if not isinstance(image['config'], dict): raise InstallError('OCI image runtime config must be an object.')
+        environment = image['config'].get('Env', [])
+        if (not isinstance(environment, list) or any(not isinstance(item, str) or '=' not in item or '\x00' in item for item in environment)
+                or len({item.split('=', 1)[0] for item in environment}) != len(environment)):
+            raise InstallError('OCI image environment must contain unique explicit assignments.')
         labels = image['config'].get('Labels', {})
         annotations(labels)
         if (labels.get('org.ambisgis.source-manifest-sha256') != record['source_manifest_sha256']
@@ -183,4 +187,5 @@ def _verify(path, record, revision):
         if {name for name, item in members.items() if item.isfile()} != consumed:
             raise InstallError('OCI archive contains unreferenced hidden members.')
         return {'image_id': image_id, 'manifest_digest': selected['digest'], 'layers': len(layers),
-                'expanded_bytes': expanded_total, 'checkpoint_restore_metadata_absent': True}
+                'expanded_bytes': expanded_total, 'checkpoint_restore_metadata_absent': True,
+                'environment': environment}

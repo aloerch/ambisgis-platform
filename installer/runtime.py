@@ -105,10 +105,11 @@ class Runtime:
             raise InstallError('Local image identity/source labels or manifest differ from the reviewed bundle; no container was started.') from error
         return identity
 
-    def processes(self):
+    def processes(self, *, include_initializers=False):
         results = {}
         name = config.project_name(self.config)
-        for role in bundle.SERVICES:
+        roles = (*bundle.SERVICES, 'catalog-init', 'geoserver-init') if include_initializers else bundle.SERVICES
+        for role in roles:
             code, _ = self.engine('container', 'exists', name + '-' + role, allow_failure=True)
             if code not in (0, 1):
                 raise InstallError('Container state is unavailable; no mutation was attempted.')
@@ -127,18 +128,83 @@ class Runtime:
                 image = row['Image']
                 if not image.startswith('sha256:'):
                     image = 'sha256:' + image
-                if image != self.selection['images'][role]['image_id']:
+                if image != self.selection['images'][role.removesuffix('-init')]['image_id']:
                     raise ValueError()
                 ports = row.get('HostConfig', {}).get('PortBindings') or {}
                 expected = {'8000/tcp': [{'HostIp': '127.0.0.1', 'HostPort': str(self.config['listen']['port'])}]} if role == 'gateway' else {}
                 if ports != expected:
                     raise ValueError()
+                self.container_security(row, role)
                 state = row['State']
                 results[role] = {'process': 'running' if state.get('Running') else 'stopped',
                                  'engine_health': (state.get('Health') or {}).get('Status', 'unavailable')}
             except (KeyError, ValueError, TypeError, AttributeError) as error:
-                raise InstallError('Container ownership, image or port configuration differs from this installation.') from error
+                raise InstallError('Container ownership, image, ports, security, mounts or namespaces differ from this installation.') from error
         return results
+
+    def container_security(self, row, role):
+        """Reject drift before any Compose mutation, including stopped containers.
+
+        Podman 6 computes CapDrop relative to configured defaults. Its effective
+        and bounding lists are the meaningful empty-capability check. Actual
+        rootless/SELinux/OCI namespace behavior still has native acceptance tests.
+        """
+        expected = config.compose(self.config, self.selection, self.root)['services'][role]
+        host, process = row['HostConfig'], row['Config']
+        def environment(items):
+            if not isinstance(items, list) or any(not isinstance(value, str) or '=' not in value for value in items):
+                raise ValueError('invalid container environment')
+            values = dict(value.split('=', 1) for value in items)
+            if len(values) != len(items): raise ValueError('duplicate container environment')
+            return values
+        wanted_environment = environment(self.image_receipts[role.removesuffix('-init')]['environment'])
+        actual_environment = environment(process.get('Env'))
+        # Podman's two informational additions cannot override pinned image
+        # variables or introduce startup/loader/provider configuration.
+        for key, value in (('container', 'podman'), ('HOSTNAME', process.get('Hostname'))):
+            if key not in wanted_environment and actual_environment.get(key) == value:
+                actual_environment.pop(key, None)
+        if actual_environment != wanted_environment:
+            raise ValueError('container environment drift')
+        if (host.get('ReadonlyRootfs') is not True or host.get('Privileged') is not False
+                or host.get('PublishAllPorts') is not False or host.get('CapAdd') not in ([], None)
+                or 'EffectiveCaps' not in row or row['EffectiveCaps'] not in ([], None)
+                or 'BoundingCaps' not in row or row['BoundingCaps'] not in ([], None)
+                or host.get('SecurityOpt') != ['no-new-privileges']
+                or process.get('User') != expected['user'] or process.get('Entrypoint') != expected['entrypoint']
+                or process.get('Cmd') != expected['command']):
+            raise ValueError('container security or command drift')
+        if (host.get('UsernsMode') != 'private' or host.get('PidMode') != 'private'
+                or host.get('UTSMode') != 'private' or host.get('IpcMode') not in ('private', 'shareable')
+                or host.get('CgroupMode') != 'private' or host.get('Devices') not in ([], None)
+                or host.get('GroupAdd') not in ([], None)):
+            raise ValueError('container namespace or device drift')
+        networks = row['NetworkSettings']['Networks']
+        if set(networks) != {config.project_name(self.config) + '_internal'}:
+            raise ValueError('container network membership drift')
+        tmpfs = host.get('Tmpfs')
+        if not isinstance(tmpfs, dict) or set(tmpfs) != {'/tmp'} or not isinstance(tmpfs['/tmp'], str):
+            raise ValueError('container tmpfs membership drift')
+        options = set(tmpfs['/tmp'].split(','))
+        if (not {'rw', 'nosuid', 'nodev'} <= options or len(options & {'size=256m', 'size=268435456'}) != 1
+                or options - {'rw', 'nosuid', 'nodev', 'noexec', 'size=256m', 'size=268435456', 'mode=1777', 'tmpcopyup'}):
+            raise ValueError('container tmpfs permissions or limits drift')
+        wanted = {mount['target']: mount for mount in expected['volumes']}
+        mounts = row['Mounts']
+        if not isinstance(mounts, list) or len(mounts) != len(wanted):
+            raise ValueError('container mount membership drift')
+        seen = set()
+        for mount in mounts:
+            target = mount['Destination']
+            if target in seen or target not in wanted:
+                raise ValueError('container mount target drift')
+            seen.add(target); selected = wanted[target]
+            if (mount.get('Type') != 'bind' or mount.get('Source') != selected['source']
+                    or mount.get('RW') is not (not selected.get('read_only', False))
+                    or mount.get('Propagation') not in ('private', 'rprivate')
+                    or mount.get('Mode') not in ('', selected['bind']['selinux'])
+                    or mount.get('SubPath') or set(mount.get('Options', [])) - {'rbind', 'bind', 'nosuid', 'nodev', 'noexec'}):
+                raise ValueError('container mount access or source drift')
 
     def readiness(self):
         connection = http.client.HTTPConnection('127.0.0.1', self.config['listen']['port'], timeout=14)
@@ -174,9 +240,12 @@ def up(root, *, timeout=180):
     with locked(root):
         runtime = Runtime(root)
         # Validate existing names/ownership before a Compose invocation can act.
-        runtime.processes()
+        existing = runtime.processes(include_initializers=True)
         for role in bundle.SERVICES:
             runtime.image(role, load=True)
+        database_name = config.project_name(runtime.config) + '-database'
+        if existing['database']['process'] == 'running':
+            runtime.engine('exec', database_name, '/opt/ambisgis/bin/health', 'database')
         config.render(runtime.root, runtime.config, runtime.selection)
         runtime.compose('up', '-d', '--no-build', '--pull', 'never', 'database', timeout=180)
         deadline = time.monotonic() + timeout
@@ -187,6 +256,9 @@ def up(root, *, timeout=180):
             if time.monotonic() >= deadline:
                 raise InstallError('Database readiness timed out; migration and serving startup were not attempted. Persistent state was preserved.')
             time.sleep(1)
+        # Engine health may be from the preceding interval. Recheck the actual
+        # effective SQL privilege boundary immediately before migrations.
+        runtime.engine('exec', database_name, '/opt/ambisgis/bin/health', 'database')
         # A fresh one-shot container performs native migrations and first-run
         # enrollment under the DB advisory lock. Its secret view never reaches
         # the serving catalog. Repeated runs preserve existing credentials/data.
@@ -207,7 +279,7 @@ def up(root, *, timeout=180):
 
 def status(root):
     with locked(root):
-        return Runtime(root, verify_images=False).status()
+        return Runtime(root).status()
 
 
 def doctor(root):

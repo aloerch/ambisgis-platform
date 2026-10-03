@@ -1,5 +1,6 @@
 """Installer state/negative guards; these are not container or GIS acceptance."""
 import hashlib
+import copy
 import io
 import json
 import os
@@ -175,6 +176,19 @@ class InstallerStateTests(unittest.TestCase):
             commands = [tuple(call.args) for call in selected.compose.call_args_list]
             self.assertEqual(commands[-1], ('--profile', 'bootstrap', 'run', '--rm', '--no-deps', 'catalog-init'))
             self.assertEqual(len(commands), 2)
+
+    def test_fresh_sql_health_failure_prevents_repeat_up_mutations(self):
+        self.init()
+        with patch.object(runtime, 'Runtime') as factory:
+            selected = factory.return_value
+            selected.root, selected.config, selected.selection = self.root, config.load(self.root), self.document
+            selected.processes.return_value = {'database': {'process': 'running', 'engine_health': 'healthy'}}
+            selected.engine.side_effect = InstallError('effective privilege drift')
+            before = self.state()
+            with self.assertRaisesRegex(InstallError, 'privilege drift'): runtime.up(self.root, timeout=0)
+            selected.compose.assert_not_called()
+            self.assertEqual(selected.engine.call_args.args, ('exec', config.project_name(selected.config) + '-database', '/opt/ambisgis/bin/health', 'database'))
+            self.assertEqual(before, self.state())
 
     def test_image_inspection_error_does_not_trigger_load(self):
         self.init()
@@ -628,6 +642,87 @@ class InstallerStateTests(unittest.TestCase):
         for role, service in value['services'].items():
             self.assertEqual(service['image'], self.document['images'][role.removesuffix('-init')]['image_id'])
             self.assertEqual(service['sysctls'], {'net.ipv6.conf.all.disable_ipv6': '1', 'net.ipv6.conf.default.disable_ipv6': '1'})
+
+    def test_shared_and_private_selinux_bind_labels_are_explicit(self):
+        self.init()
+        value = json.loads((self.root / 'compose.json').read_text())
+        for role, service in value['services'].items():
+            for mount in service['volumes']:
+                label = 'Z' if mount['target'].endswith('/secrets.json') or (role == 'database' and mount['target'] == '/var/lib/ambisgis') else 'z'
+                self.assertEqual(mount['bind'], {'selinux': label})
+            self.assertNotIn('label=disable', service['security_opt'])
+
+    def inspection(self, selected, role='catalog'):
+        # Synthetic Podman 6 field representation, checked against retained
+        # libpod inspect source. Native inspection remains a separate gate.
+        service = config.compose(selected.config, selected.selection, self.root)['services'][role]
+        return {'Image': selected.selection['images'][role.removesuffix('-init')]['image_id'], 'Config': {
+            'Labels': service['labels'], 'User': service['user'], 'Cmd': [role],
+            'Entrypoint': ['/opt/ambisgis/bin/service'], 'Hostname': 'synthetic-container',
+            'Env': ['container=podman', 'HOSTNAME=synthetic-container']},
+            'HostConfig': {'PortBindings': {}, 'ReadonlyRootfs': True, 'Privileged': False,
+                'PublishAllPorts': False, 'CapAdd': [], 'CapDrop': ['CAP_CHOWN'],
+                'SecurityOpt': ['no-new-privileges'], 'UsernsMode': 'private', 'PidMode': 'private',
+                'UTSMode': 'private', 'IpcMode': 'shareable', 'CgroupMode': 'private',
+                'Devices': [], 'GroupAdd': [], 'Tmpfs': {'/tmp': 'rw,nosuid,nodev,size=256m'}},
+            'EffectiveCaps': [], 'BoundingCaps': [], 'State': {'Running': True, 'Health': {'Status': 'healthy'}},
+            'NetworkSettings': {'Networks': {config.project_name(selected.config) + '_internal': {}}},
+            'Mounts': [{'Type': 'bind', 'Source': m['source'], 'Destination': m['target'],
+                        'RW': not m.get('read_only', False), 'Propagation': 'rprivate',
+                        'Mode': m['bind']['selinux'], 'Options': ['rbind']}
+                       for m in service['volumes']]}
+
+    def test_inspected_security_drift_blocks_up_before_mutation(self):
+        self.init(); selected = runtime.Runtime(self.root)
+        original = self.inspection(selected)
+        selected.container_security(original, 'catalog')
+        for role in ('catalog-init', 'geoserver-init'):
+            selected.container_security(self.inspection(selected, role), role)
+        changes = [
+            lambda x: x['HostConfig'].update(ReadonlyRootfs=False),
+            lambda x: x['HostConfig'].update(Privileged=True),
+            lambda x: x['HostConfig'].update(CapAdd=['CAP_SYS_ADMIN']),
+            lambda x: x.update(EffectiveCaps=['CAP_NET_RAW']),
+            lambda x: x.update(BoundingCaps=['CAP_SYS_ADMIN']),
+            lambda x: x['HostConfig'].update(SecurityOpt=['no-new-privileges', 'label=disable']),
+            lambda x: x['HostConfig'].update(SecurityOpt=[]),
+            lambda x: x['HostConfig'].update(UsernsMode=''),
+            lambda x: x['HostConfig'].update(PidMode='host'),
+            lambda x: x['HostConfig'].update(UTSMode='host'),
+            lambda x: x['HostConfig'].update(IpcMode='container:other'),
+            lambda x: x['HostConfig'].update(CgroupMode='host'),
+            lambda x: x['HostConfig'].update(Devices=[{'PathOnHost': '/dev/sda'}]),
+            lambda x: x['HostConfig'].update(GroupAdd=['root']),
+            lambda x: x['HostConfig'].update(Tmpfs={'/tmp': 'rw,nosuid,nodev,size=256m', '/escape': 'rw'}),
+            lambda x: x['HostConfig'].update(Tmpfs={'/tmp': 'rw,size=256m'}),
+            lambda x: x['Config'].update(User='0:0'),
+            lambda x: x['Config'].update(Entrypoint=['/bin/sh']),
+            lambda x: x['Config'].update(Cmd=['catalog-init']),
+            lambda x: x['Config']['Env'].append('PYTHONPATH=/tmp'),
+            lambda x: x['Config']['Env'].append('LD_PRELOAD=/tmp/evil.so'),
+            lambda x: x['Config']['Env'].append('container=untrusted'),
+            lambda x: x['NetworkSettings']['Networks'].update(other={}),
+            lambda x: x['Mounts'][0].update(Source='/etc/passwd'),
+            lambda x: x['Mounts'][0].update(RW=True),
+            lambda x: x['Mounts'][0].update(Propagation='shared'),
+            lambda x: x['Mounts'].append(dict(x['Mounts'][0])),
+        ]
+        for index, change in enumerate(changes):
+            with self.subTest(index=index):
+                row = copy.deepcopy(original); change(row)
+                calls = []
+                def engine(*args, **kwargs):
+                    calls.append(args)
+                    if args[:2] == ('container', 'exists'):
+                        return (0 if args[-1].endswith('-catalog') else 1), b''
+                    if args[:2] == ('container', 'inspect'): return 0, json.dumps([row]).encode()
+                    raise AssertionError('unexpected engine mutation')
+                before = self.state()
+                with patch.object(runtime, 'Runtime', return_value=selected), patch.object(selected, 'engine', side_effect=engine), patch.object(selected, 'compose') as compose:
+                    with self.assertRaises(InstallError): runtime.up(self.root, timeout=0)
+                    compose.assert_not_called()
+                self.assertEqual(before, self.state())
+                self.assertTrue(all(args[:2] in [('container', 'exists'), ('container', 'inspect')] for args in calls))
 
     def test_loaded_checkpoint_annotation_rejected(self):
         self.init(); selected = runtime.Runtime(self.root)

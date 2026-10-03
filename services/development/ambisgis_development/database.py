@@ -13,6 +13,7 @@ ROLES = {'ambisgis_catalog_owner': 'catalog_migrator', 'ambisgis_catalog_app': '
          'ambisgis_render_reader': 'render_reader', 'ambisgis_transport_owner': 'transport_migrator',
          'ambisgis_transport_reader': 'transport_reader'}
 SERVING_ROLES = ('ambisgis_catalog_app', 'ambisgis_render_reader', 'ambisgis_transport_reader')
+DATABASE_OWNERS = {'ambisgis_catalog': 'ambisgis_catalog_owner', 'ambisgis_transport': 'ambisgis_transport_owner'}
 
 
 def call(arguments, *, env=None, timeout=60, data=None):
@@ -44,11 +45,86 @@ def validate_roles(password):
                 raise ValueError('serving database role owns objects')
 
 
+def privilege_audit(database):
+    """Finite serving policy, including PUBLIC/column grants and grant options.
+
+    The catalog application gets ordinary table DML and sequence usage; the
+    transport reader gets SELECT. Neither may create objects, delegate grants,
+    execute application routines, or acquire privileges on the other's data.
+    Owned PostGIS extension SELECT/EXECUTE defaults remain usable.
+    """
+    owner = DATABASE_OWNERS[database]
+    reader = 'ambisgis_catalog_app' if database == 'ambisgis_catalog' else 'ambisgis_transport_reader'
+    table_privileges = "('SELECT','INSERT','UPDATE','DELETE')" if database == 'ambisgis_catalog' else "('SELECT')"
+    names = ','.join("'" + name + "'" for name in SERVING_ROLES)
+    return f"""WITH serving AS (SELECT oid,rolname FROM pg_roles WHERE rolname IN ({names})),
+      objects AS (SELECT c.*,n.nspname,EXISTS(SELECT 1 FROM pg_depend d JOIN pg_extension e ON e.oid=d.refobjid
+        WHERE d.classid='pg_class'::regclass AND d.objid=c.oid AND d.refclassid='pg_extension'::regclass
+        AND d.deptype='e' AND e.extname='postgis') AS extension_member
+        FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace
+        WHERE n.nspname !~ '^pg_' AND n.nspname<>'information_schema'),
+      problems AS (
+        SELECT 'database:'||r.rolname AS problem FROM serving r WHERE has_database_privilege(r.oid,current_database(),'CREATE,TEMPORARY,CONNECT WITH GRANT OPTION')
+        UNION ALL SELECT 'schema:'||r.rolname||':'||n.nspname FROM serving r CROSS JOIN pg_namespace n
+          WHERE n.nspname !~ '^pg_' AND n.nspname<>'information_schema'
+          AND has_schema_privilege(r.oid,n.oid,'CREATE,USAGE WITH GRANT OPTION')
+        UNION ALL SELECT 'table:'||r.rolname||':'||c.relname||':'||p.priv FROM serving r CROSS JOIN objects c
+          CROSS JOIN unnest(ARRAY['SELECT','INSERT','UPDATE','DELETE','TRUNCATE','REFERENCES','TRIGGER']) p(priv)
+          WHERE c.relkind IN ('r','p','v','m','f') AND (
+            has_table_privilege(r.oid,c.oid,p.priv||' WITH GRANT OPTION')
+            OR (p.priv IN ('SELECT','INSERT','UPDATE','REFERENCES')
+                AND has_any_column_privilege(r.oid,c.oid,p.priv||' WITH GRANT OPTION'))
+            OR ((has_table_privilege(r.oid,c.oid,p.priv)
+                 OR (p.priv IN ('SELECT','INSERT','UPDATE','REFERENCES') AND has_any_column_privilege(r.oid,c.oid,p.priv)))
+              AND NOT ((r.rolname='{reader}' AND c.relowner=(SELECT oid FROM pg_roles WHERE rolname='{owner}')
+                         AND c.nspname='public' AND p.priv IN {table_privileges})
+                       OR (c.extension_member AND p.priv='SELECT'))))
+        UNION ALL SELECT 'sequence:'||r.rolname||':'||c.relname||':'||p.priv FROM serving r CROSS JOIN objects c
+          CROSS JOIN unnest(ARRAY['USAGE','SELECT','UPDATE']) p(priv)
+          WHERE c.relkind='S' AND (has_sequence_privilege(r.oid,c.oid,p.priv||' WITH GRANT OPTION')
+            OR (has_sequence_privilege(r.oid,c.oid,p.priv) AND NOT (
+                '{database}'='ambisgis_catalog' AND r.rolname='ambisgis_catalog_app'
+                AND c.relowner=(SELECT oid FROM pg_roles WHERE rolname='{owner}')
+                AND c.nspname='public' AND p.priv IN ('USAGE','SELECT'))))
+        UNION ALL SELECT 'function:'||r.rolname||':'||n.nspname||'.'||p.proname FROM serving r CROSS JOIN pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace
+          WHERE has_function_privilege(r.oid,p.oid,'EXECUTE') AND (
+            p.prosecdef OR has_function_privilege(r.oid,p.oid,'EXECUTE WITH GRANT OPTION')
+            OR EXISTS(SELECT 1 FROM aclexplode(p.proacl) a WHERE a.grantee=r.oid)
+            OR (n.nspname !~ '^pg_' AND n.nspname<>'information_schema' AND NOT EXISTS(
+              SELECT 1 FROM pg_depend d JOIN pg_extension e ON e.oid=d.refobjid
+              WHERE d.classid='pg_proc'::regclass AND d.objid=p.oid AND d.refclassid='pg_extension'::regclass
+              AND d.deptype='e' AND e.extname='postgis'))
+            OR (n.nspname='pg_catalog' AND p.proname IN ('lo_import','lo_export',
+                'pg_read_file','pg_read_binary_file','pg_ls_dir','pg_ls_logdir','pg_ls_waldir',
+                'pg_ls_archive_statusdir','pg_ls_tmpdir')))
+        UNION ALL SELECT 'default_acl:'||r.rolname||':'||a.privilege_type FROM serving r CROSS JOIN pg_default_acl d
+          CROSS JOIN LATERAL aclexplode(d.defaclacl) a
+          WHERE a.grantee IN (0,r.oid) AND (a.is_grantable OR NOT (
+            a.grantee=r.oid AND r.rolname='{reader}'
+            AND d.defaclrole=(SELECT oid FROM pg_roles WHERE rolname='{owner}')
+            AND d.defaclnamespace=(SELECT oid FROM pg_namespace WHERE nspname='public')
+            AND ((d.defaclobjtype='r' AND a.privilege_type IN {table_privileges})
+              OR (d.defaclobjtype='S' AND '{database}'='ambisgis_catalog' AND a.privilege_type IN ('USAGE','SELECT')))))
+      ) SELECT count(*) FROM problems;"""
+
+
+def validate_existing_privileges(password):
+    validate_roles(password)
+    for name, expected_owner in DATABASE_OWNERS.items():
+        owner = sql("SELECT pg_get_userbyid(datdba) FROM pg_database WHERE datname='" + name + "';", password)
+        if not owner:
+            continue
+        if owner != expected_owner:
+            raise ValueError('installation database has a conflicting owner')
+        if sql(privilege_audit(name), password, database=name) != '0':
+            raise ValueError('serving database role has unexpected effective object privileges')
+
+
 def bootstrap(config, secrets):
     password = secrets['database_admin']
     # Installation/catalog roles only. DB-01 owns all managed branch schemas.
     # Check already existing roles before any role/database/schema mutation.
-    validate_roles(password)
+    validate_existing_privileges(password)
     for role, key in ROLES.items():
         exists = sql("SELECT count(*) FROM pg_roles WHERE rolname='" + role + "';", password)
         if exists == '0':
@@ -88,6 +164,7 @@ def bootstrap(config, secrets):
         ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public
           GRANT SELECT ON TABLES TO ambisgis_transport_reader;
         """, password, database='ambisgis_transport')
+    validate_existing_privileges(password)
 
 
 def main():
@@ -156,5 +233,6 @@ def main():
 
 def health():
     _, secrets = inputs()
+    validate_existing_privileges(secrets['database_admin'])
     return sql("SELECT ST_SRID(ST_SetSRID(ST_MakePoint(1,2),4326)) = 4326 AND ST_DWithin(ST_MakePoint(1,2),ST_MakePoint(1,2),0);",
                secrets['database_admin'], database='ambisgis_catalog') == 't'

@@ -90,14 +90,16 @@ def compose(config, selection, root):
     for role in (*bundle.SERVICES, 'catalog-init', 'geoserver-init'):
         image_role = role.removesuffix('-init')
         mounts = [
-            {'type': 'bind', 'source': str(root / 'generated' / 'service.json'), 'target': '/run/ambisgis/product.json', 'read_only': True},
-            {'type': 'bind', 'source': str(root / 'generated' / (role + '-secrets.json')), 'target': '/run/ambisgis/secrets.json', 'read_only': True},
+            {'type': 'bind', 'source': str(root / 'generated' / 'service.json'), 'target': '/run/ambisgis/product.json', 'read_only': True, 'bind': {'selinux': 'z'}},
+            {'type': 'bind', 'source': str(root / 'generated' / (role + '-secrets.json')), 'target': '/run/ambisgis/secrets.json', 'read_only': True, 'bind': {'selinux': 'Z'}},
         ]
         if image_role in ('database', 'catalog', 'geoserver'):
             data = 'postgres' if role == 'database' else image_role
-            mounts.append({'type': 'bind', 'source': str(root / 'data' / data), 'target': '/var/lib/ambisgis'})
+            mounts.append({'type': 'bind', 'source': str(root / 'data' / data), 'target': '/var/lib/ambisgis',
+                           'bind': {'selinux': 'Z' if role == 'database' else 'z'}})
         if image_role in ('catalog', 'geoserver'):
-            mounts.append({'type': 'bind', 'source': str(root / 'data' / 'blobs'), 'target': '/var/lib/ambisgis-blobs', 'read_only': image_role == 'geoserver'})
+            mounts.append({'type': 'bind', 'source': str(root / 'data' / 'blobs'), 'target': '/var/lib/ambisgis-blobs',
+                           'read_only': image_role == 'geoserver', 'bind': {'selinux': 'z'}})
         service = {
             'image': selection['images'][image_role]['image_id'], 'pull_policy': 'never',
             'container_name': name + '-' + role,
