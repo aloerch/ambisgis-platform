@@ -1,0 +1,2452 @@
+{
+  "blank_image_rejected": true,
+  "images": [
+    {
+      "case": "public-None",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.1004803975423177,
+        "probes": [
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-None-gateway.png",
+      "route": "gateway",
+      "sha256": "4a24ead1ee0a63c2c5accf7b494cc4f810d2fad61ae59aaf89cab354def3f769"
+    },
+    {
+      "case": "public-None",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.1004803975423177,
+        "probes": [
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-None-geoserver.png",
+      "route": "geoserver",
+      "sha256": "4a24ead1ee0a63c2c5accf7b494cc4f810d2fad61ae59aaf89cab354def3f769"
+    },
+    {
+      "case": "public-None",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.061070760091145836,
+        "probes": [
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-None-qgis.png",
+      "route": "qgis",
+      "sha256": "30e9c41286e927d17b0de596517403a8052c35a41df660387b9cedb4acbc0382"
+    },
+    {
+      "case": "public-reader",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.1004803975423177,
+        "probes": [
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-reader-gateway.png",
+      "route": "gateway",
+      "sha256": "4a24ead1ee0a63c2c5accf7b494cc4f810d2fad61ae59aaf89cab354def3f769"
+    },
+    {
+      "case": "public-reader",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.1004803975423177,
+        "probes": [
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-reader-geoserver.png",
+      "route": "geoserver",
+      "sha256": "4a24ead1ee0a63c2c5accf7b494cc4f810d2fad61ae59aaf89cab354def3f769"
+    },
+    {
+      "case": "public-reader",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.061070760091145836,
+        "probes": [
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-reader-qgis.png",
+      "route": "qgis",
+      "sha256": "30e9c41286e927d17b0de596517403a8052c35a41df660387b9cedb4acbc0382"
+    },
+    {
+      "case": "public-outsider",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.1004803975423177,
+        "probes": [
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-outsider-gateway.png",
+      "route": "gateway",
+      "sha256": "4a24ead1ee0a63c2c5accf7b494cc4f810d2fad61ae59aaf89cab354def3f769"
+    },
+    {
+      "case": "public-outsider",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.1004803975423177,
+        "probes": [
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-outsider-geoserver.png",
+      "route": "geoserver",
+      "sha256": "4a24ead1ee0a63c2c5accf7b494cc4f810d2fad61ae59aaf89cab354def3f769"
+    },
+    {
+      "case": "public-outsider",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.061070760091145836,
+        "probes": [
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-outsider-qgis.png",
+      "route": "qgis",
+      "sha256": "30e9c41286e927d17b0de596517403a8052c35a41df660387b9cedb4acbc0382"
+    },
+    {
+      "case": "private-owner",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0401153564453125,
+        "probes": [
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "private_points",
+      "passed": true,
+      "path": "map-private-owner-gateway.png",
+      "route": "gateway",
+      "sha256": "9403e3d58c089fd580f32da7487c5532261a96dacfdf44f67a2c42ee65dab83c"
+    },
+    {
+      "case": "private-owner",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0401153564453125,
+        "probes": [
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "private_points",
+      "passed": true,
+      "path": "map-private-owner-geoserver.png",
+      "route": "geoserver",
+      "sha256": "9403e3d58c089fd580f32da7487c5532261a96dacfdf44f67a2c42ee65dab83c"
+    },
+    {
+      "case": "private-owner",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.06343460083007812,
+        "probes": [
+          {
+            "matching_pixels": 169,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 169,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 169,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "private_points",
+      "passed": true,
+      "path": "map-private-owner-qgis.png",
+      "route": "qgis",
+      "sha256": "360bb27a1ad823accf3fd25f000a09e50e545c50d0848654800ae9539396c797"
+    },
+    {
+      "case": "group-member",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-group-member-gateway.png",
+      "route": "gateway",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "group-member",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-group-member-geoserver.png",
+      "route": "geoserver",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "group-member",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.051946004231770836,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-group-member-qgis.png",
+      "route": "qgis",
+      "sha256": "65a1e6640ff97f590e1d85709d55cb09db960d78c275b5198e2682577d181d9d"
+    },
+    {
+      "case": "group-owner",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-group-owner-gateway.png",
+      "route": "gateway",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "group-owner",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-group-owner-geoserver.png",
+      "route": "geoserver",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "group-owner",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.051946004231770836,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-group-owner-qgis.png",
+      "route": "qgis",
+      "sha256": "65a1e6640ff97f590e1d85709d55cb09db960d78c275b5198e2682577d181d9d"
+    },
+    {
+      "case": "parcels-public",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0,
+        "probes": [
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              128,
+              96,
+              192
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "layer": "parcels",
+      "passed": true,
+      "path": "map-parcels-public-gateway.png",
+      "route": "gateway",
+      "sha256": "02ade61f975efa87b3160fa02afae5a7d0af6e20c41d00d1302e227d130d6873"
+    },
+    {
+      "case": "parcels-public",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0,
+        "probes": [
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              128,
+              96,
+              192
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "layer": "parcels",
+      "passed": true,
+      "path": "map-parcels-public-geoserver.png",
+      "route": "geoserver",
+      "sha256": "02ade61f975efa87b3160fa02afae5a7d0af6e20c41d00d1302e227d130d6873"
+    },
+    {
+      "case": "parcels-public",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0,
+        "probes": [
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              128,
+              96,
+              192
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          }
+        ]
+      },
+      "layer": "parcels",
+      "passed": true,
+      "path": "map-parcels-public-qgis.png",
+      "route": "qgis",
+      "sha256": "7a2ad9b922e9f2a8f18933078acd2ddacff1a664fc18f4d97767b62654db4959"
+    },
+    {
+      "case": "rich-owner",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.6778424580891927,
+        "probes": [
+          {
+            "matching_pixels": 163,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 155,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 159,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          },
+          {
+            "dark_label_pixels": 150,
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "dark_label_pixels": 108,
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "dark_label_pixels": 150,
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "rich_points",
+      "passed": true,
+      "path": "map-rich-owner-gateway.png",
+      "route": "gateway",
+      "sha256": "ef91e24d26ad1ec1fe761429dd082baba1272875d4d312a7030784914f0af341"
+    },
+    {
+      "case": "raster-owner",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0,
+        "probes": [
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              40,
+              40,
+              40
+            ],
+            "xy": [
+              0.5,
+              3.5
+            ]
+          },
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              90,
+              90,
+              90
+            ],
+            "xy": [
+              3.5,
+              3.5
+            ]
+          },
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              150,
+              150,
+              150
+            ],
+            "xy": [
+              0.5,
+              0.5
+            ]
+          },
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              210,
+              210,
+              210
+            ],
+            "xy": [
+              3.5,
+              0.5
+            ]
+          }
+        ]
+      },
+      "layer": "elevation",
+      "passed": true,
+      "path": "map-raster-owner-gateway.png",
+      "route": "gateway",
+      "sha256": "1d4667b98d23e9abdadfc3113205f4615e8d7f03445477f9515f5bce7ac377ff"
+    },
+    {
+      "case": "rich-owner",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.6778424580891927,
+        "probes": [
+          {
+            "matching_pixels": 163,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 155,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 159,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          },
+          {
+            "dark_label_pixels": 150,
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "dark_label_pixels": 108,
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "dark_label_pixels": 150,
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "rich_points",
+      "passed": true,
+      "path": "map-rich-owner-qgis.png",
+      "route": "qgis",
+      "sha256": "ef91e24d26ad1ec1fe761429dd082baba1272875d4d312a7030784914f0af341"
+    },
+    {
+      "case": "raster-owner",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0,
+        "probes": [
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              40,
+              40,
+              40
+            ],
+            "xy": [
+              0.5,
+              3.5
+            ]
+          },
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              90,
+              90,
+              90
+            ],
+            "xy": [
+              3.5,
+              3.5
+            ]
+          },
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              150,
+              150,
+              150
+            ],
+            "xy": [
+              0.5,
+              0.5
+            ]
+          },
+          {
+            "matching_pixels": 625,
+            "rgb": [
+              210,
+              210,
+              210
+            ],
+            "xy": [
+              3.5,
+              0.5
+            ]
+          }
+        ]
+      },
+      "layer": "elevation",
+      "passed": true,
+      "path": "map-raster-owner-qgis.png",
+      "route": "qgis",
+      "sha256": "1d4667b98d23e9abdadfc3113205f4615e8d7f03445477f9515f5bce7ac377ff"
+    },
+    {
+      "case": "group-restored",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-group-restored-gateway.png",
+      "route": "gateway",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "group-restored",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-group-restored-geoserver.png",
+      "route": "geoserver",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "group-restored",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.051946004231770836,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-group-restored-qgis.png",
+      "route": "qgis",
+      "sha256": "65a1e6640ff97f590e1d85709d55cb09db960d78c275b5198e2682577d181d9d"
+    },
+    {
+      "case": "private-shared",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0401153564453125,
+        "probes": [
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "private_points",
+      "passed": true,
+      "path": "map-private-shared-gateway.png",
+      "route": "gateway",
+      "sha256": "9403e3d58c089fd580f32da7487c5532261a96dacfdf44f67a2c42ee65dab83c"
+    },
+    {
+      "case": "private-shared",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0401153564453125,
+        "probes": [
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 144,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "private_points",
+      "passed": true,
+      "path": "map-private-shared-geoserver.png",
+      "route": "geoserver",
+      "sha256": "9403e3d58c089fd580f32da7487c5532261a96dacfdf44f67a2c42ee65dab83c"
+    },
+    {
+      "case": "private-shared",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.06343460083007812,
+        "probes": [
+          {
+            "matching_pixels": 169,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 169,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 169,
+            "rgb": [
+              0,
+              128,
+              64
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "private_points",
+      "passed": true,
+      "path": "map-private-shared-qgis.png",
+      "route": "qgis",
+      "sha256": "360bb27a1ad823accf3fd25f000a09e50e545c50d0848654800ae9539396c797"
+    },
+    {
+      "case": "public-restored",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.1004803975423177,
+        "probes": [
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-restored-gateway.png",
+      "route": "gateway",
+      "sha256": "4a24ead1ee0a63c2c5accf7b494cc4f810d2fad61ae59aaf89cab354def3f769"
+    },
+    {
+      "case": "public-restored",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.1004803975423177,
+        "probes": [
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-restored-geoserver.png",
+      "route": "geoserver",
+      "sha256": "4a24ead1ee0a63c2c5accf7b494cc4f810d2fad61ae59aaf89cab354def3f769"
+    },
+    {
+      "case": "public-restored",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.061070760091145836,
+        "probes": [
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-public-restored-qgis.png",
+      "route": "qgis",
+      "sha256": "30e9c41286e927d17b0de596517403a8052c35a41df660387b9cedb4acbc0382"
+    },
+    {
+      "case": "concurrent-2",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.051946004231770836,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-2-qgis.png",
+      "route": "qgis",
+      "sha256": "65a1e6640ff97f590e1d85709d55cb09db960d78c275b5198e2682577d181d9d"
+    },
+    {
+      "case": "concurrent-0",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-0-gateway.png",
+      "route": "gateway",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "concurrent-4",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-4-geoserver.png",
+      "route": "geoserver",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "concurrent-8",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.051946004231770836,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-8-qgis.png",
+      "route": "qgis",
+      "sha256": "65a1e6640ff97f590e1d85709d55cb09db960d78c275b5198e2682577d181d9d"
+    },
+    {
+      "case": "concurrent-6",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-6-gateway.png",
+      "route": "gateway",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "concurrent-10",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-10-geoserver.png",
+      "route": "geoserver",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "concurrent-12",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-12-gateway.png",
+      "route": "gateway",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "concurrent-14",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.051946004231770836,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-14-qgis.png",
+      "route": "qgis",
+      "sha256": "65a1e6640ff97f590e1d85709d55cb09db960d78c275b5198e2682577d181d9d"
+    },
+    {
+      "case": "concurrent-16",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-16-geoserver.png",
+      "route": "geoserver",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "concurrent-22",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-22-geoserver.png",
+      "route": "geoserver",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "concurrent-18",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.0059967041015625,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-18-gateway.png",
+      "route": "gateway",
+      "sha256": "faec91dd2916f98bb6b50419ae3f867aac0c1c9fd73ce8a16ab2ac18f37123d2"
+    },
+    {
+      "case": "concurrent-20",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.051946004231770836,
+        "probes": [
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              1,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              2,
+              2
+            ]
+          },
+          {
+            "matching_pixels": 100,
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "xy": [
+              3,
+              2
+            ]
+          }
+        ]
+      },
+      "layer": "group_points",
+      "passed": true,
+      "path": "map-concurrent-20-qgis.png",
+      "route": "qgis",
+      "sha256": "65a1e6640ff97f590e1d85709d55cb09db960d78c275b5198e2682577d181d9d"
+    },
+    {
+      "case": "engine-restart-public",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.1004803975423177,
+        "probes": [
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-engine-restart-public-gateway.png",
+      "route": "gateway",
+      "sha256": "4a24ead1ee0a63c2c5accf7b494cc4f810d2fad61ae59aaf89cab354def3f769"
+    },
+    {
+      "case": "engine-restart-public",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.1004803975423177,
+        "probes": [
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 208,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-engine-restart-public-geoserver.png",
+      "route": "geoserver",
+      "sha256": "4a24ead1ee0a63c2c5accf7b494cc4f810d2fad61ae59aaf89cab354def3f769"
+    },
+    {
+      "case": "engine-restart-public",
+      "checks": {
+        "limit": 3.0,
+        "mean_absolute_error": 0.061070760091145836,
+        "probes": [
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              1,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              20,
+              60,
+              230
+            ],
+            "xy": [
+              3,
+              1
+            ]
+          },
+          {
+            "matching_pixels": 216,
+            "rgb": [
+              220,
+              20,
+              30
+            ],
+            "xy": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "layer": "public_points",
+      "passed": true,
+      "path": "map-engine-restart-public-qgis.png",
+      "route": "qgis",
+      "sha256": "30e9c41286e927d17b0de596517403a8052c35a41df660387b9cedb4acbc0382"
+    }
+  ],
+  "schema_version": 1,
+  "source_receipt_sha256": "e997a06553a5f5cca83278dc6a91c2ed14a7630fa1dab5def98ddfb937b808f9",
+  "unique_decoded_maps": 10
+}
