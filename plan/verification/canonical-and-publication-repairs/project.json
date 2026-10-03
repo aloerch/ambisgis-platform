@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "passed-after-read-only-reconciliation",
+  "project": "https://github.com/users/aloerch/projects/2",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/71",
+  "pr_item_id": "PVTI_lAHOAOk9es4Bj_k-zg9ISjA",
+  "items_before": 83,
+  "items_after": 84,
+  "new_pr_items": 1,
+  "project_mutations": {
+    "task_claim_fields": 2,
+    "pr_membership_and_evidence": 2,
+    "task_review_fields": 2
+  },
+  "mutation_retries": 0,
+  "read_only_reconciliation_mutations": 0,
+  "initial_pr_readback_remains_failed": true,
+  "prior_items_and_fields_views_archive_decisions_preserved": true,
+  "task_states": {
+    "FND-02": "Merged",
+    "FND-07": "In review",
+    "FND-08": "Backlog"
+  },
+  "pr_item_has_copied_task_id": false,
+  "queue_filter": "is:pr is:open",
+  "queue_membership": [
+    71
+  ],
+  "ui_step_claimed": false,
+  "adapter_limit": "Existing adapter does not expand assignee/label values; no such fields are written.",
+  "evidence": [
+    {
+      "path": "project/claim.json",
+      "sha256": "a11e041369ea9524ef4282d88d4bed1a5c2a4574aca3e2806b4722db17225b03"
+    },
+    {
+      "path": "project/pr-initial-failed-readback.json",
+      "sha256": "cc5a1810f8ec553870b2401be898dd1d9ae8b44a224395a4b4f8cfb462f0a3a1"
+    },
+    {
+      "path": "project/pr-readonly-reconciliation.json",
+      "sha256": "2d2cbbd83220a1e290132d883e33cf8a6133a8ca9ee56482e095a95034a344ea"
+    },
+    {
+      "path": "project/review-transition.json",
+      "sha256": "a27d5c9c5e836c4c0c9818041d56306167e14795d3d8fbb2227c4a0b57f17523"
+    }
+  ],
+  "complete_private_snapshot": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/project-review-01/after.json",
+  "complete_private_snapshot_sha256": "1d71310031680c8962d2fc8cc92add6c2c23930968a2f8b4e3a2421bd6eb306e"
+}

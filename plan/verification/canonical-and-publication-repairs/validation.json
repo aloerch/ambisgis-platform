@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "implementation_head": "fe91012d0e4ef56ae1f68fafa9b6aa6106559a6c",
+  "checks": [
+    {
+      "name": "package-tests",
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-canonical-and-publication-repairs/plan",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "started_at": "2026-09-28T05:08:04.307618+00:00",
+      "finished_at": "2026-09-28T05:08:16.470471+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_satisfied": true,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/integrated-validation-01/package-tests.log",
+      "log_sha256": "09ef3964817bc6cbcc176744b73093d875a78046d18c89768b8e7f97b7ab8faa"
+    },
+    {
+      "name": "schemas",
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-canonical-and-publication-repairs/plan",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "started_at": "2026-09-28T05:08:04.307788+00:00",
+      "finished_at": "2026-09-28T05:08:05.224461+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_satisfied": true,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/integrated-validation-01/schemas.log",
+      "log_sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    },
+    {
+      "name": "candidate-integrity",
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-canonical-and-publication-repairs/plan",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS"
+      ],
+      "started_at": "2026-09-28T05:08:04.308241+00:00",
+      "finished_at": "2026-09-28T05:08:35.327464+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_satisfied": true,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/integrated-validation-01/candidate-integrity.log",
+      "log_sha256": "c6696b32ed3a13ea8a73c9f64c5d3354ee1fc0e8c305db158f8dd0ac457bc589"
+    },
+    {
+      "name": "candidate-report",
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-canonical-and-publication-repairs/plan",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--report"
+      ],
+      "started_at": "2026-09-28T05:08:04.308696+00:00",
+      "finished_at": "2026-09-28T05:08:35.338672+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_satisfied": true,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/integrated-validation-01/candidate-report.log",
+      "log_sha256": "681c77baab79b96645b5f5549f07b1de3bd4473fa7e366d0bcb06fbeb3a9acce"
+    },
+    {
+      "name": "candidate-eligibility",
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-canonical-and-publication-repairs/plan",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "tools/validate_candidate.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--eligibility"
+      ],
+      "started_at": "2026-09-28T05:08:05.224786+00:00",
+      "finished_at": "2026-09-28T05:08:35.318392+00:00",
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "expectation_satisfied": true,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/integrated-validation-01/candidate-eligibility.log",
+      "log_sha256": "c6696b32ed3a13ea8a73c9f64c5d3354ee1fc0e8c305db158f8dd0ac457bc589"
+    },
+    {
+      "name": "original-source-integrity",
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-canonical-and-publication-repairs/plan",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "tools/restore_sources.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--verify",
+        "--receipt-sha256",
+        "11bd0ba5f1662606b2d8ac604d469c2d3d02c1d73b0a1540d648856cdc2343f0",
+        "--run",
+        "run-002"
+      ],
+      "started_at": "2026-09-28T05:08:16.471344+00:00",
+      "finished_at": "2026-09-28T05:14:52.066263+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_satisfied": true,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/integrated-validation-01/original-source-integrity.log",
+      "log_sha256": "240eb379dee4629ba7357f349d6006f51920cf8c0ea699f04aa7e3cf52331b5e"
+    },
+    {
+      "name": "geotools-repair-integrity",
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-canonical-and-publication-repairs",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "build-support/source_publication/geotools_notice.py",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--authorization",
+        "plan/verification/canonical-and-publication-repairs/authorization.json",
+        "--output",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-v2",
+        "--receipt-sha256",
+        "5fe6003847a95da95a280a958b1e27fdbf0ecd43a219251e257827c46534a2f8",
+        "--verify"
+      ],
+      "started_at": "2026-09-28T05:08:35.318797+00:00",
+      "finished_at": "2026-09-28T05:08:36.486432+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_satisfied": true,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/integrated-validation-01/geotools-repair-integrity.log",
+      "log_sha256": "502ac7012fc1da184b0c07a94e09584e0cf7ada6e9ab0fcaf33f0b37057799c1"
+    },
+    {
+      "name": "qgis-snapshot-integrity",
+      "cwd": "/home/revelberry/Projects/AmbisGIS/ambisgis-platform-canonical-and-publication-repairs",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python",
+        "-B",
+        "build-support/source_publication/qgis_snapshot.py",
+        "verify",
+        "--workspace-root",
+        "/home/revelberry/Projects/AmbisGIS",
+        "--receipt",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/qgis/attempt-003/result.json",
+        "--receipt-sha256",
+        "f9828bf21e349a596c3ed16c58287c4f26dce1a271aab5f4cf15ab336f20d4eb",
+        "--output",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/integrated-validation-01/qgis-verification.json"
+      ],
+      "started_at": "2026-09-28T05:08:35.327756+00:00",
+      "finished_at": "2026-09-28T05:08:46.041147+00:00",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expectation_satisfied": true,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/integrated-validation-01/qgis-snapshot-integrity.log",
+      "log_sha256": "3e2f719dd6989cda6dfaf76e00af0a6d031441d14019e3f81a88dffe225d363a"
+    }
+  ],
+  "package_tests": {
+    "run": 415,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "schemas": 4,
+  "fresh_repairs": {
+    "geotools": {
+      "guards": 16,
+      "model_equivalence": true,
+      "independent_bundle_chain_recovery": true
+    },
+    "qgis": {
+      "guards": 21,
+      "existing_harness": 75,
+      "real_resource_corruption_refusals": 4,
+      "independent_parentless_bundle_recovery": true
+    }
+  },
+  "canonical": {
+    "created_and_recovered": 9,
+    "notices": 59,
+    "settings_mutations": 0,
+    "replay_mutation_attempts": 0
+  },
+  "original_source_integrity_recheck": {
+    "status": "passed",
+    "verified_roots": 11,
+    "original_receipt_sha256": "11bd0ba5f1662606b2d8ac604d469c2d3d02c1d73b0a1540d648856cdc2343f0",
+    "reason": "Verify accepted original recipe/custody compatibility after introducing separate variant adapter; no downloads or GIS builds."
+  },
+  "reused_evidence": {
+    "run_001_baseline_tests": 346,
+    "unchanged_native_compiler_runtime": true,
+    "nine_same_object_full_history_recovery": "PR70 ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90"
+  },
+  "eligibility_exit_2_preserved": true,
+  "product_acceptance": false,
+  "all_expected_outcomes": true,
+  "package_test_log_note": "The intentionally failed receipt printed after unittest OK is from the negative receipt-identity guard; all415 tests passed. It is not a production repair/recovery receipt.",
+  "integrated_result_sha256": "872e7d677dc602fb628b13fc85e9a1f5167a285523e9adb66f8db952bf2400ac"
+}

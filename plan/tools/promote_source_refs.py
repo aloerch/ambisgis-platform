@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
-"""Promote only PR #69's exact FND-07 review refs; default is read-only.
+"""Promote exact authorized FND-07 review or canonical refs; default is read-only.
 
 Application requires the unchanged separate owner decision and hashed publication
 findings. Each invocation writes a NEW fsynced JSONL receipt. Resume by a new
 invocation: actual remote state, never the prior receipt, determines operations.
 Repository Actions may be disabled for a publication-held row; its source is not
-uploaded. No canonical refs, defaults, workflow files or releases are changed.
+uploaded. Explicit --canonical selects the separately authorized nine-row operation,
+which only creates absent refs and never changes settings. Defaults, workflow
+files and releases are never changed.
 """
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
 import importlib.util
@@ -18,6 +21,7 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+from urllib.request import urlopen
 
 sys.dont_write_bytecode = True
 PLATFORM = Path(__file__).resolve().parents[2]
@@ -401,6 +405,268 @@ def runtime_context():
             'implementation_sha256': custody.sha(Path(__file__))}
 
 
+
+CANONICAL_PLAN = PLATFORM / 'plan/verification/source-ref-promotion/canonical-proposal.json'
+CANONICAL_SHA256 = '519dd189533c6d077648f0b9bbf1f98e052e28d4d614414b6c04f141deb0d28d'
+CANONICAL_HEAD = '7d5ceb06f7a1814d4a95b7e4b05a2b46d8728720'
+CANONICAL_BASE = '0df95126d9fecd9df3cf1fd0cd88ab565a680989'
+CANONICAL_REF = 'refs/heads/ambisgis/main'
+CANONICAL_COMMENT_ID = 5863464446
+CANONICAL_COMMENT_URL = 'https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5863464446'
+CANONICAL_COMMENT_DATE = '2026-09-28T04:35:51Z'
+CANONICAL_COMMENT_SHA256 = '87d79df2d4458d9570c269ff9d20310c4117f7d82c2dc23d4588ca505900da1f'
+CANONICAL_ROOTS = frozenset(('postgresql', 'postgis', 'jupyterhub', 'jupyterlab',
+                            'geowebcache', 'geoserver', 'geonode', 'mapstore', 'mapstore-client'))
+PUBLICATION_SHA256 = '0133d14729dac54a7680418b4f54977f0a6d607992cbe3bd5cfdcbb794aecf84'
+COMPANION = PLATFORM / 'plan/verification/source-ref-promotion/public-companion-readback.json'
+COMPANION_SHA256 = '3641e9223746b5ebda6451cce5153b74c7d2990b88aa7842aa9438a6e4d5616e'
+DELIVERY = PLATFORM / 'plan/verification/source-ref-promotion/remote-delivery.json'
+DELIVERY_SHA256 = 'ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90'
+
+
+def canonical_authorization_identity(record):
+    require(record.get('schema_version') == 1 and
+            record.get('canonical_proposal_sha256') == CANONICAL_SHA256,
+            'Authorization is not bound to immutable canonical proposal')
+    comment = record['comment']
+    require(comment['id'] == CANONICAL_COMMENT_ID and comment['html_url'] == CANONICAL_COMMENT_URL and
+            comment['issue_url'] == 'https://api.github.com/repos/aloerch/ambisgis-platform/issues/6' and
+            comment['user']['login'] == OWNER and comment['user']['id'] == OWNER_ID and
+            comment['created_at'] == CANONICAL_COMMENT_DATE and comment['updated_at'] == CANONICAL_COMMENT_DATE,
+            'Wrong canonical owner decision identity/date')
+    require(record['body_sha256'] == CANONICAL_COMMENT_SHA256 and
+            digest_bytes(comment['body'].encode()) == CANONICAL_COMMENT_SHA256,
+            'Canonical owner decision body changed')
+    return comment
+
+
+def canonical_rows(plan_path=CANONICAL_PLAN):
+    proposal = bound_json(plan_path, CANONICAL_SHA256)
+    require(proposal['plan_sha256'] == PLAN_SHA256, 'Canonical original plan mismatch')
+    original = {r['root_id']: r for r in bound_json(PLAN, PLAN_SHA256)['repositories']}
+    eligible = [r for r in proposal['repositories'] if r['eligible_for_requested_separate_authorization']]
+    require(len(eligible) == 9 and {r['root_id'] for r in eligible} == CANONICAL_ROOTS,
+            'Wrong canonical repository set; held roots are excluded')
+    result = []
+    for row in eligible:
+        require(row['target_ref'] == CANONICAL_REF and row['expected_old_commit'] is None and
+                row['review_ref'] == TARGET_REF and row['hold'] is None and
+                row['actions_to_preserve'] == {'enabled': False}, 'Invalid canonical boundary')
+        source = original[row['root_id']]
+        require(all(row[key] == source[key] for key in
+                    ('repository', 'repository_id', 'proposed_commit', 'proposed_tree')),
+                'Canonical identity differs from original approved source')
+        result.append({**source, **row})
+    return result
+
+
+def validate_canonical_inputs(authorization_path, publication_path, publication_sha, workspace):
+    require(publication_sha == PUBLICATION_SHA256, 'Canonical publication findings changed')
+    rows = canonical_rows()
+    auth = json.loads(Path(authorization_path).read_text())
+    canonical_authorization_identity(auth)
+    publication = bound_json(publication_path, PUBLICATION_SHA256)
+    require(publication['plan_sha256'] == PLAN_SHA256, 'Canonical publication plan mismatch')
+    findings = {r['root_id']: r for r in publication['repositories']}
+    run = custody.confined(workspace, RECOVERY_PATH)
+    recovery = bound_json(custody.confined(run, 'recovery.json'), RECOVERY_SHA256)
+    roots = {r['id']: r for r in recovery['roots']}
+    delivery = bound_json(DELIVERY, DELIVERY_SHA256)
+    delivered = {r['root_id']: r for r in delivery['repositories']}
+    bound_json(COMPANION, COMPANION_SHA256)
+    for row in rows:
+        key = row['root_id']
+        finding, root, prior = findings[key], roots[key], delivered[key]
+        require(all(finding[k] == row[k] for k in
+                    ('repository', 'repository_id', 'proposed_commit', 'proposed_tree')) and
+                finding['disposition'] == 'publishable', 'Canonical publication identity/hold mismatch')
+        require(root['repository'] == row['repository'] and root['repository_id'] == row['repository_id'] and
+                root['commit'] == row['proposed_commit'] and root['tree'] == row['proposed_tree'] and
+                root['relative_path'] == 'repos/' + key, 'Canonical recovery identity mismatch')
+        require(prior['status'] == 'verified' and prior['commit'] == row['proposed_commit'] and
+                prior['tree'] == row['proposed_tree'], 'Prior full-history delivery evidence mismatch')
+    return rows, auth, findings, run, roots
+
+
+class CanonicalGitHub(GitHub):
+    @staticmethod
+    def public_bytes(url):
+        # Anonymous HTTPS only: public availability cannot be inferred from an
+        # authenticated contents API. Do not use mutable branch URLs.
+        require(url.startswith('https://raw.githubusercontent.com/aloerch/ambisgis-platform/'),
+                'Unexpected public companion host/repository')
+        with urlopen(url, timeout=60) as response:
+            require(response.status == 200 and response.url == url, 'Public readback redirected or failed')
+            return response.read()
+
+    def authorize(self, auth):
+        expected = canonical_authorization_identity(auth)
+        viewer = self.api('user')
+        require(viewer['login'] == OWNER and viewer['id'] == OWNER_ID, 'Authenticated owner mismatch')
+        platform = self.api('repos/aloerch/ambisgis-platform')
+        require(platform['id'] == 1376927351 and platform['full_name'] == 'aloerch/ambisgis-platform' and
+                platform['owner']['id'] == OWNER_ID and platform['private'] is False,
+                'Platform repository identity mismatch')
+        live = self.api('repos/aloerch/ambisgis-platform/issues/comments/' + str(CANONICAL_COMMENT_ID))
+        canonical_authorization_identity({'schema_version': 1, 'canonical_proposal_sha256': CANONICAL_SHA256,
+                                          'comment': live, 'body_sha256': CANONICAL_COMMENT_SHA256})
+        require(live['body'] == expected['body'], 'Live canonical owner authorization changed')
+        url = ('https://raw.githubusercontent.com/aloerch/ambisgis-platform/' + CANONICAL_HEAD +
+               '/plan/verification/source-ref-promotion/canonical-proposal.json')
+        require(digest_bytes(self.public_bytes(url)) == CANONICAL_SHA256, 'Live immutable canonical proposal changed')
+        return {'login': OWNER, 'id': OWNER_ID, 'comment_id': live['id'],
+                'comment_url': live['html_url'], 'body_sha256': CANONICAL_COMMENT_SHA256,
+                'created_at': live['created_at'], 'updated_at': live['updated_at'],
+                'canonical_proposal_sha256': CANONICAL_SHA256, 'proposal_url': url}
+
+    def companion(self):
+        manifest = bound_json(COMPANION, COMPANION_SHA256)
+        def verify(record):
+            data = self.public_bytes(record['public_url'])
+            require(len(data) == record['bytes'] and digest_bytes(data) == record['sha256'],
+                    'Public companion missing or changed: ' + record['path'])
+            return {'path': record['path'], 'sha256': record['sha256'], 'bytes': len(data)}
+        with ThreadPoolExecutor(max_workers=5) as pool:
+            files = list(pool.map(verify, manifest['files']))
+        return {'manifest_sha256': COMPANION_SHA256, 'files': files, 'anonymous_byte_readback': True}
+
+    def snapshot(self, row, repo):
+        state = super().snapshot(row, repo)
+        require(state['ref_state'] == 'exact', 'Approved review ref is not exact')
+        state['review'] = {'ref': TARGET_REF, 'commit': state['commit'], 'tree': state['tree']}
+        default = row['default_to_preserve']
+        require(state['default'] == {'name': default['name'], 'sha': default['commit']},
+                'Default ref/name differs from canonical proposal')
+        raw = self.transport(repo, 'ls-remote', '--refs', 'https://github.com/' + row['repository'] + '.git',
+                             CANONICAL_REF, TARGET_REF, 'refs/heads/' + default['name'])
+        refs = {}
+        for line in raw.splitlines():
+            oid, ref = line.split('\t')
+            require(ref in (CANONICAL_REF, TARGET_REF, 'refs/heads/' + default['name']) and ref not in refs,
+                    'Unexpected canonical remote ref response')
+            refs[ref] = oid
+        require(refs.get(TARGET_REF) == row['proposed_commit'] and
+                refs.get('refs/heads/' + default['name']) == default['commit'],
+                'Concurrent review/default ref change')
+        actual = refs.get(CANONICAL_REF)
+        state.update(ref_state='absent' if actual is None else
+                     ('exact' if actual == row['proposed_commit'] else 'conflicting'), commit=actual, tree=None)
+        if state['ref_state'] == 'exact':
+            commit = self.api('repos/' + row['repository'] + '/git/commits/' + actual)
+            require(commit['sha'] == actual and commit['tree']['sha'] == row['proposed_tree'],
+                    'Canonical remote commit/tree mismatch')
+            state['tree'] = commit['tree']['sha']
+        return state
+
+    def create_canonical(self, row):
+        # GitHub's create-reference endpoint refuses an existing ref; there is
+        # deliberately no update-ref API, force option, Git push or settings call.
+        expected = {r['root_id']: r for r in canonical_rows()}
+        require(row == expected.get(row['root_id']), 'Unapproved canonical mutation row')
+        return self.api('repos/' + row['repository'] + '/git/refs', method='POST',
+                        payload={'ref': CANONICAL_REF, 'sha': row['proposed_commit']})
+
+    def submodule(self, repo, row, child):
+        path = 'geonode_mapstore_client/client/MapStore2'
+        entry = custody.git(repo, 'ls-tree', row['proposed_commit'], '--', path).decode().strip()
+        require(entry == '160000 commit ' + child['proposed_commit'] + '\t' + path,
+                'Client approved MapStore gitlink mismatch')
+        donor = 'https://github.com/geosolutions-it/MapStore2.git'
+        owned = 'https://github.com/aloerch/ambisgis-mapstore.git'
+        declarations = custody.git(repo, 'config', '--blob', row['proposed_commit'] + ':.gitmodules',
+                                   '--get-regexp', r'^submodule\..*\.url$').decode().splitlines()
+        require(len(declarations) == 1, 'Unexpected submodule declarations')
+        key, declared_url = declarations[0].split(' ', 1)
+        require(declared_url == donor and custody.git(repo, 'config', '--blob', row['proposed_commit'] +
+                ':.gitmodules', '--get', key[:-3] + 'path').decode().strip() == path,
+                'Unreviewed submodule declaration')
+        args = ['-c', 'url.' + owned + '.insteadOf=' + donor,
+                'ls-remote', '--exit-code', '--refs', donor, CANONICAL_REF]
+        readback = self.transport(repo, *args).strip()
+        require(readback == child['proposed_commit'] + '\t' + CANONICAL_REF,
+                'Owned submodule process-only URL override readback mismatch')
+        return {'from': donor, 'to': owned, 'path': path, 'gitlink': child['proposed_commit'],
+                'arguments': args, 'readback': readback, 'scope': 'process-only; .gitmodules unchanged'}
+
+
+def canonical_clear(row, state):
+    require(state['repository_id'] == row['repository_id'] and state['repository'] == row['repository'],
+            'Canonical repository identity changed')
+    require(state['default'] == {'name': row['default_to_preserve']['name'],
+                                'sha': row['default_to_preserve']['commit']}, 'Canonical default changed')
+    require(state['review'] == {'ref': TARGET_REF, 'commit': row['proposed_commit'],
+                               'tree': row['proposed_tree']}, 'Canonical review ref/tree changed')
+    require(state['actions']['enabled'] is False, 'Actions must already be disabled; no settings change authorized')
+    require(state['ref_state'] != 'conflicting', 'Canonical collision; no overwrite or fast-forward authorized')
+    automation_clear(state)
+
+
+def promote_canonical(rows, auth, findings, run, roots, github, receipt, *, apply=False, only=None,
+                      local_check=verify_local):
+    approved = {r['root_id']: r for r in canonical_rows()}
+    require(len(rows) == 9 and {r['root_id'] for r in rows} == CANONICAL_ROOTS and
+            all(row == approved[row['root_id']] for row in rows), 'Unapproved canonical row identity/set')
+    selected = set(only) if only else CANONICAL_ROOTS
+    require(selected <= CANONICAL_ROOTS, 'Unknown or held --only canonical root')
+    receipt.emit('authorization', verified=github.authorize(auth))
+    results, writes = {}, {'settings': 0, 'source_refs': 0}
+    for row in sorted(rows, key=lambda value: value['root_id'] == 'mapstore-client'):
+        key = row['root_id']
+        if key not in selected:
+            continue
+        try:
+            repo = custody.confined(run, roots[key]['relative_path'])
+            local = local_check(repo, row, roots[key], run)
+            require(findings[key]['disposition'] == 'publishable', 'Canonical publication hold')
+            before = github.snapshot(row, repo)
+            receipt.emit('before', root_id=key, local=local, remote=before,
+                         reused_full_history_delivery_sha256=DELIVERY_SHA256)
+            canonical_clear(row, before)
+            # Recheck all public notices immediately before every possible create.
+            receipt.emit('public_companion', root_id=key, verified=github.companion())
+            receipt.emit('authorization', root_id=key, verified=github.authorize(auth))
+            if key == 'mapstore-client':
+                child = approved['mapstore']
+                child_state = github.snapshot(child, custody.confined(run, roots['mapstore']['relative_path']))
+                canonical_clear(child, child_state)
+                require(child_state['ref_state'] == 'exact', 'Owned MapStore canonical ref not delivered')
+                receipt.emit('submodule', root_id=key, verified=github.submodule(repo, row, child), remote=child_state)
+            state = github.snapshot(row, repo)
+            canonical_clear(row, state)
+            require(state['actions'] == before['actions'], 'Actions policy changed during canonical operation')
+            status = 'already-exact' if state['ref_state'] == 'exact' else 'ready'
+            if apply and state['ref_state'] == 'absent':
+                receipt.emit('attempt', root_id=key, operation='create_canonical_ref',
+                             method='POST', endpoint='repos/' + row['repository'] + '/git/refs',
+                             payload={'ref': CANONICAL_REF, 'sha': row['proposed_commit']}, before=state)
+                writes['source_refs'] += 1
+                try:
+                    response = github.create_canonical(row)
+                    receipt.emit('response', root_id=key, operation='create_canonical_ref', response=response)
+                except (ValueError, OSError) as exc:
+                    receipt.emit('uncertain', root_id=key, operation='create_canonical_ref', error=str(exc))
+                # Never retry here. A failed readback remains held; a new invocation
+                # must observe actual remote state before another explicit attempt.
+                state = github.snapshot(row, repo)
+                receipt.emit('reconciled', root_id=key, operation='create_canonical_ref', remote=state)
+                canonical_clear(row, state)
+                require(state['ref_state'] == 'exact', 'Canonical delivery unverified; reconcile before any retry')
+                require(state['actions'] == before['actions'], 'Actions policy changed after canonical creation')
+                original_runs = {item['id'] for item in before['runs']}
+                require(not [item for item in state['runs'] if item['id'] not in original_runs and
+                             item['head_sha'] == row['proposed_commit'] and
+                             item['head_branch'] == CANONICAL_REF.removeprefix('refs/heads/')],
+                        'Unexpected canonical-triggered workflow run')
+                status = 'created-or-reconciled'
+            receipt.emit('result', root_id=key, status=status, remote=state,
+                         proposed_settings_writes=0, proposed_source_writes=int(state['ref_state'] == 'absent'))
+            results[key] = status
+        except (ValueError, OSError, KeyError, TypeError) as exc:
+            results[key] = 'held'
+            receipt.emit('result', root_id=key, status='held', error=str(exc))
+    receipt.emit('summary', results=results, attempted_mutations=writes, apply=apply, mode='canonical')
+    return results, writes
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--workspace-root', type=Path, required=True)
@@ -409,6 +675,7 @@ def main(argv=None):
     parser.add_argument('--publication-sha256', required=True)
     parser.add_argument('--receipt', type=Path, required=True, help='New JSONL receipt; existing evidence is never replaced')
     parser.add_argument('--only', nargs='+', help='Bounded subset of approved root IDs')
+    parser.add_argument('--canonical', action='store_true', help='Separate nine-row owner authorization; creates only absent canonical refs, never settings')
     parser.add_argument('--apply', action='store_true')
     args = parser.parse_args(argv)
     receipt = None
@@ -417,9 +684,18 @@ def main(argv=None):
         receipt.emit('started', schema_version=1, apply=args.apply, plan_sha256=PLAN_SHA256,
                      recovery_sha256=RECOVERY_SHA256, publication_sha256=args.publication_sha256,
                      context=runtime_context())
-        rows, auth, findings, run, roots = validate_inputs(PLAN, args.authorization, args.publication_evidence,
-                                                          args.publication_sha256, args.workspace_root)
-        results, writes = promote(rows, auth, findings, run, roots, GitHub(), receipt, apply=args.apply, only=args.only)
+        if args.canonical:
+            custody.git(PLATFORM, 'merge-base', '--is-ancestor', CANONICAL_BASE, 'HEAD')
+            receipt.emit('canonical_scope', canonical_proposal_sha256=CANONICAL_SHA256,
+                         excluded_roots=['geotools', 'qgis'], target_ref=CANONICAL_REF)
+            rows, auth, findings, run, roots = validate_canonical_inputs(
+                args.authorization, args.publication_evidence, args.publication_sha256, args.workspace_root)
+            results, writes = promote_canonical(rows, auth, findings, run, roots, CanonicalGitHub(), receipt,
+                                                apply=args.apply, only=args.only)
+        else:
+            rows, auth, findings, run, roots = validate_inputs(PLAN, args.authorization, args.publication_evidence,
+                                                              args.publication_sha256, args.workspace_root)
+            results, writes = promote(rows, auth, findings, run, roots, GitHub(), receipt, apply=args.apply, only=args.only)
         print(json.dumps({'results': results, 'attempted_mutations': writes, 'receipt': str(args.receipt)}, indent=2))
         return 2 if 'held' in results.values() else 0
     except (ValueError, OSError, KeyError, TypeError, subprocess.SubprocessError) as exc:

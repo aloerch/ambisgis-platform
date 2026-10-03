@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": {
+    "all_prior_items_unchanged": true,
+    "only_expected_item_added": true,
+    "unique_actual_pr_identity": true,
+    "correct_evidence": true,
+    "no_copied_task_planning_fields": true,
+    "not_archived": true,
+    "all_fields_views_repositories_preserved": true,
+    "live_pr_open_at_recorded_head": true,
+    "complete_pagination": true,
+    "in_saved_open_queue": true
+  },
+  "items_before": 83,
+  "items_after": 84,
+  "queue_filter": "is:pr is:open",
+  "queue_membership": [
+    71
+  ],
+  "mutations": 0,
+  "prior_completed_mutations": 2,
+  "prior_failed_readback_retained": true,
+  "task_states": {
+    "FND-02": "Merged",
+    "FND-07": "In progress",
+    "FND-08": "Backlog"
+  }
+}

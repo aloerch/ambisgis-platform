@@ -1,0 +1,141 @@
+{
+  "accepted_candidate": {
+    "path": "plan/candidates/fnd-02-candidate.json",
+    "sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+    "unchanged": true
+  },
+  "authorization": {
+    "author": "aloerch",
+    "author_id": 15285626,
+    "body_sha256": "87d79df2d4458d9570c269ff9d20310c4117f7d82c2dc23d4588ca505900da1f",
+    "created_at": "2026-09-28T04:35:51Z",
+    "scope": "local GeoTools repair only; changed-source publication remains unapproved",
+    "url": "https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5863464446"
+  },
+  "base_commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+  "base_tree": "acfbe55e74aa9cc9d1134fadeefc4218390ad9ad",
+  "bundle_chain": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/ambisgis-geotools-9a4f847e8b83.bundle",
+      "prerequisites": [],
+      "sha256": "c738143f1179d2a8964e11f84bfa84a24c463c95cef4e9c459b31d8b37454212"
+    },
+    {
+      "bytes": 1855,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-v2/geotools-notices.bundle",
+      "prerequisites": [
+        "aac73e9b89821331e77f67f1dd0921e541a78cfc"
+      ],
+      "ref": "refs/heads/ambisgis/review/fnd-07-notices-v1",
+      "sha256": "58563222303ed0122b1843cd0101b73282b89e944651eaed022d6534f45e9db5"
+    }
+  ],
+  "commit": "3363c3d4ae8adfe3ed2024c27f92ec63855093be",
+  "comparison": {
+    "changed_paths": [
+      "build/maven/xmlcodegen/pom.xml",
+      "modules/plugin/imagemosaic/pom.xml"
+    ],
+    "files": [
+      {
+        "after_sha256": "a3ce39aeb35aa59e245f12b8ce252899caebe6cad127bcf501ef8bc2245a9fe1",
+        "all_other_bytes_equal": true,
+        "description": "Pinned EMF common/ecore dependency management to 2.15.0.",
+        "functional_date": "2026-09-20",
+        "functional_platform_commit": "d229468e1cef44f81d9be837068e0a80166b7eb7",
+        "notice": "<!--\n  AmbisGIS modification notice (original licenses and copyrights retained).\n  Functional change recorded 2026-09-20: Pinned EMF common/ecore dependency management to 2.15.0.\n  Accepted source changes materialized 2026-09-22 (UTC-07:00).\n  This notice added 2026-09-28 (UTC); no effective POM behavior changed.\n-->\n",
+        "path": "build/maven/xmlcodegen/pom.xml",
+        "sha256": "bf9d93ada08207b72f98754a19d9f9cec4b17264c43deb08ecea2eab4e5702d1",
+        "xml_configuration_equal": true
+      },
+      {
+        "after_sha256": "31c91435319d906092bdda1fbfaa0a79ebe65cd5abdb5366bd6791a1e0575f49",
+        "all_other_bytes_equal": true,
+        "description": "Removed Oracle-only test dependency and unused provided ojdbc14.",
+        "functional_date": "2026-09-21",
+        "functional_platform_commit": "e1b960588c51beb35f83c5f1c5d137e85a0d414c",
+        "notice": "<!--\n  AmbisGIS modification notice (original licenses and copyrights retained).\n  Functional change recorded 2026-09-21: Removed Oracle-only test dependency and unused provided ojdbc14.\n  Accepted source changes materialized 2026-09-22 (UTC-07:00).\n  This notice added 2026-09-28 (UTC); no effective POM behavior changed.\n-->\n",
+        "path": "modules/plugin/imagemosaic/pom.xml",
+        "sha256": "55ddcec1c65d32aaca83da069c854346f045fe55ca8fa024ae47ba25a6ee9bd9",
+        "xml_configuration_equal": true
+      }
+    ],
+    "old_product_is_ancestor": false,
+    "parent": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+    "tracked_entries": 17920,
+    "tree": "ebb65f687763ce40445eb02f6ce710dc1eaa1e00",
+    "unchanged_entries": 17918
+  },
+  "completed_at": "2026-09-28T04:51:36.809347+00:00",
+  "implementation_sha256": "6faae17668a28ae5cb6eb2585d6b3019f8f63095db3be96052f3d26007d28009",
+  "kind": "accepted-functional-composition-publication-sidecar",
+  "limits": [
+    "Source-only successor: old artifacts/receipts remain bound to old source.",
+    "No new package identity or Java service/native/runtime test claimed.",
+    "Original licenses/copyrights and all other source bytes retained; no blanket rights clearance.",
+    "Changed-source publication and final FND-07 acceptance require subsequent owner decision; FND-08 unstarted."
+  ],
+  "maven_configuration": {
+    "command_count": 5,
+    "models": [
+      {
+        "after_model_sha256": "449feabe85c7addddf37e6e4314fefe6b0ae57df70ab6796b28bdb42afd15cda",
+        "before_model_sha256": "449feabe85c7addddf37e6e4314fefe6b0ae57df70ab6796b28bdb42afd15cda",
+        "equal": true,
+        "path": "build/maven/xmlcodegen/pom.xml"
+      },
+      {
+        "after_model_sha256": "0c44b7022c8433ba484314371a077dd71d6464e52513fa5a3f3422829b77ccf4",
+        "before_model_sha256": "0c44b7022c8433ba484314371a077dd71d6464e52513fa5a3f3422829b77ccf4",
+        "equal": true,
+        "path": "modules/plugin/imagemosaic/pom.xml"
+      }
+    ],
+    "scope": "Maven 3.9.16 strict model parser/writer configuration equality; parent/profile/build inputs unchanged by complete source comparison. No effective-POM resolver, lifecycle, package or native/runtime build executed.",
+    "toolchain": {
+      "destination": "/home/revelberry/Projects/AmbisGIS/build-worktrees/java-resolution/toolchain",
+      "directories": 103,
+      "distribution_roots": [
+        "apache-maven-3.9.16",
+        "jdk-17.0.20.1+1"
+      ],
+      "files": 342,
+      "symlinks": 208,
+      "verified": true
+    }
+  },
+  "notice_added_utc_date": "2026-09-28",
+  "old_product_commit": "f51fa68803c465f28a85c155e3e951df0d8788f7",
+  "old_product_tree": "60750f787dabf1a08e646e7d5f3f1497e560e94e",
+  "original_source_preserved": true,
+  "patch": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-v2/geotools-notices.patch",
+    "sha256": "1a3b312f425eff3853caa67cf9ced52db2918c6d24cfe7817894712e116a7e2e"
+  },
+  "proposal": {
+    "canonical_ref": "refs/heads/ambisgis/main",
+    "creation_only": true,
+    "expected_old_commit": null,
+    "expected_old_scope": "proposal only; fresh live absence and repository settings must be recorded separately and rechecked before future writes",
+    "preserve_actions_enabled": false,
+    "preserve_default": "main",
+    "review_ref": "refs/heads/ambisgis/review/fnd-07-notices-v1"
+  },
+  "publication_authorized": false,
+  "recovered": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-v2/recovered",
+  "recovery": {
+    "alternates_shared_objects_donor_fallback": false,
+    "comparison_equal": true,
+    "fsck": "passed",
+    "independent_object_store": true,
+    "verified": true
+  },
+  "remote_writes": 0,
+  "repository": "aloerch/ambisgis-geotools",
+  "repository_id": 1376927869,
+  "schema_version": 1,
+  "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-v2/source",
+  "status": "verified",
+  "task": "FND-07",
+  "tree": "ebb65f687763ce40445eb02f6ce710dc1eaa1e00"
+}

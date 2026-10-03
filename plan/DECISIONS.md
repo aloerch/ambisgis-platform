@@ -52,3 +52,21 @@ on exactly those source forks. It accepts the prior restoration/notice/asset
 evidence within its limits. It is not final FND-07 acceptance, authority to
 promote canonical source refs/defaults, or permission to publish custody archives.
 See [execution and rights evidence](verification/source-ref-promotion/README.md).
+
+## FND-07 nine canonical refs and local repair preparation — 2026-09-28 UTC
+
+The [separate live owner authorization](https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5863464446)
+authorizes only the nine immutable canonical rows and local GeoTools/QGIS source
+repair preparation. All nine refs were created and verified; exact replay made
+zero ref/settings mutation attempts. Original refs/defaults and disabled Actions
+remain preserved. This supersedes the previous canonical-authorization blocker,
+not the original source-promotion plan or FND-02 acceptance.
+
+The two changed-source successors remain local and require the [exact subsequent
+publication decision](verification/canonical-and-publication-repairs/next-source-publication.json).
+[ADR010](adrs/010-qgis-publication-source-boundary.md) records QGIS's parentless
+source boundary, preserved custody history and unresolved existing-host/network
+condition. [The handoff](docs/canonical-and-publication-repairs-handoff.md) binds
+actual source identities, recovery/equivalence evidence and unchanged FND-07
+criteria. No held-root publication, default switch, merge, final task acceptance
+or FND-08 execution is implied.

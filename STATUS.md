@@ -1,3 +1,48 @@
+# Current checkpoint — FND-07 canonical delivery and local source repairs
+
+The owner-authorized batch created and independently recovered all nine exact
+`ambisgis/main` source refs. Unchanged replay passed with **zero ref/settings
+mutation attempts**; all previous refs, defaults and disabled Actions remain
+unchanged. MapStore was delivered before its client, using the documented
+process-only owned-submodule URL mapping. The real [owner decision](https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5863464446)
+and immutable proposal bind this execution.
+
+GeoTools and QGIS have separately identified, tested **local-only** publication
+successors. GeoTools adds accurate dated notices in exactly two POMs without
+changing the Maven model. QGIS has one parentless source commit excluding exactly
+1,130 disputed palettes, preserving 265 ColorBrewer palettes and required notices.
+Independent recovery and source/resource equivalence checks passed. Existing
+public QGIS history/network is not purged or certified clean. Neither held source
+fork received a source ref or archive upload.
+
+Fresh integrated package validation passes **415 tests with no failures/errors/skips**
+and four schemas. Current candidate and trusted local integrity results are in
+[validation evidence](plan/verification/canonical-and-publication-repairs/validation.json).
+Historical 346-test baseline and unchanged native/compiler/runtime receipts remain
+separate. No Java or QGIS binary rebuild was repeated for these bounded source changes.
+
+**FND-02 remains owner-accepted/Merged; FND-07 remains open/In review; FND-08 remains
+Backlog/unstarted.** [PR #71](https://github.com/aloerch/ambisgis-platform/pull/71) records this execution
+on `fnd-07/canonical-and-publication-repairs` against `ambisgis/main`. The
+next owner decision is the [exact two-source publication proposal](plan/verification/canonical-and-publication-repairs/next-source-publication.json),
+including explicit acceptance or withholding of QGIS clean-snapshot publication
+on the existing fork under the documented hosting limitation. Final FND-07
+acceptance, default changes, merge and FND-08 are not granted.
+
+[Resumable handoff](plan/docs/canonical-and-publication-repairs-handoff.md),
+[per-root delivery](plan/verification/canonical-and-publication-repairs/canonical-delivery.json),
+[GeoTools repair](plan/docs/geotools-publication-repair.md),
+[QGIS repair / ADR010](plan/docs/qgis-publication-snapshot.md).
+
+[Project reconciliation](plan/verification/canonical-and-publication-repairs/project.json)
+added one PR #71 item with Evidence only: 83 → 84 items. All prior item values,
+fields/views and archive choices remain preserved. An immediate stale list
+readback failed; a fresh read-only reconciliation passed without repeating writes.
+Only FND-07 Delivery/Evidence transitioned for claim and review. No importer or
+GOV-02/FND-02 acceptance was repeated.
+
+# Preserved status — earlier checkpoints
+
 # Implementation status — frontend/QGIS remediation variant
 
 **FND-02 remains In progress.** The new `fnd-02-frontend-qgis-proposal-2`

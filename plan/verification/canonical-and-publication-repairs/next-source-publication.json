@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "task": "FND-07",
+  "kind": "source-publication-successors-to-accepted-functional-composition",
+  "status": "proposal-only-separate-owner-decision-required",
+  "publication_authorized_by_current_comment": false,
+  "accepted_manifest_sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+  "preserve_original_manifest_and_receipts": true,
+  "repositories": [
+    {
+      "root_id": "geotools",
+      "repository": "aloerch/ambisgis-geotools",
+      "repository_id": 1376927869,
+      "proposed_commit": "3363c3d4ae8adfe3ed2024c27f92ec63855093be",
+      "proposed_tree": "ebb65f687763ce40445eb02f6ce710dc1eaa1e00",
+      "destinations": [
+        {
+          "ref": "refs/heads/ambisgis/review/fnd-07-notices-v1",
+          "expected_old_commit": null,
+          "behavior": "create-if-absent; exact no-op; any different value collision"
+        },
+        {
+          "ref": "refs/heads/ambisgis/main",
+          "expected_old_commit": null,
+          "behavior": "create-if-absent; exact no-op; any different value collision"
+        }
+      ],
+      "observed_at": "2026-09-28T04:58:24.475945+00:00",
+      "default_to_preserve": {
+        "name": "main",
+        "commit": "9a4f847e8b83875169e279999659052a0cc2bf14"
+      },
+      "actions_to_preserve": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "publication_basis": "Original LGPL terms preserved; both modified files carry accurate change/date notices; corrected child directly from accepted base excludes old unnotified product ancestor.",
+      "source_approval": "pending",
+      "history_limitation": "All original history preserved; old held product remains in custody but is not a proposed ancestor."
+    },
+    {
+      "root_id": "qgis",
+      "repository": "aloerch/ambisgis-qgis",
+      "repository_id": 1376927721,
+      "proposed_commit": "86af40542b219b0da6df1a43914413443330c0c0",
+      "proposed_tree": "84ea1b18fdf5721819fee34fe06cdef7ea82afdc",
+      "destinations": [
+        {
+          "ref": "refs/heads/ambisgis/review/fnd-07-publication-snapshot-v1",
+          "expected_old_commit": null,
+          "behavior": "create-if-absent; exact no-op; any different value collision"
+        },
+        {
+          "ref": "refs/heads/ambisgis/main",
+          "expected_old_commit": null,
+          "behavior": "create-if-absent; exact no-op; any different value collision"
+        }
+      ],
+      "observed_at": "2026-09-28T04:58:23.135072+00:00",
+      "default_to_preserve": {
+        "name": "master",
+        "commit": "09d73a2b827841320e798d1f18c84a4776dbd265"
+      },
+      "actions_to_preserve": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "publication_basis": "Exact disputed palette payloads excluded from complete parentless reachable source; retained code/ColorBrewer/original notices/provenance preserved; precise selected-resource/behavior comparison passed.",
+      "source_approval": "pending",
+      "history_limitation": "Does not purge or certify other public fork branches/tags or GitHub fork-network objects; existing hosting condition remains explicit owner review, with withhold-publication alternative."
+    }
+  ],
+  "requested_decision": "Approve only creation-only review and canonical refs for these exact two source successors, under the documented source-publication bases. Preserve defaults/Actions/all existing refs. QGIS clean snapshot publication on the existing fork must be explicitly accepted within its history/network limitation, or withheld pending a separate hosting disposition. No archive/binary publication, rewrite/new public repository, PR merge, final FND-07 acceptance or FND-08 execution."
+}

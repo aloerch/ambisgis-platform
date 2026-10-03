@@ -1,0 +1,92 @@
+{
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "plan/tests",
+        "-p",
+        "test_geotools_publication.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-v2/validation-0.log",
+      "log_sha256": "679a12804debc05431bba4f0c48294d25f151b7a8b053002a70a53dc3956fa61"
+    },
+    {
+      "command": [
+        "git",
+        "-c",
+        "core.hooksPath=/dev/null",
+        "-C",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/source-baseline-restore/run-001/repos/geotools",
+        "apply",
+        "--check",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-v2/geotools-notices.patch"
+      ],
+      "exit_code": 0,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-v2/validation-1.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "commit_metadata": "commit 3363c3d4ae8adfe3ed2024c27f92ec63855093be\nAuthor:     AmbisGIS source publication repair <source-publication@ambisgis.invalid>\nAuthorDate: Sun Sep 27 21:51:08 2026 -0700\nCommit:     AmbisGIS source publication repair <source-publication@ambisgis.invalid>\nCommitDate: Sun Sep 27 21:51:08 2026 -0700\n\n    Preserve accepted GeoTools changes with in-file modification notices\n    \n    Replayed from the accepted base; old product remains separately retained.\n    Local source-only publication candidate; no source publication or release approved.\n",
+  "diff_review": {
+    "all_files_exit_code": 2,
+    "authored_files_excluding_exact_patch_context_exit_code": 0,
+    "diagnostics": "plan/verification/canonical-and-publication-repairs/geotools-notices.patch:4: trailing whitespace.\n+                                                                                 \nplan/verification/canonical-and-publication-repairs/geotools-notices.patch:5: trailing whitespace.\n+         Version: $Id$              \nplan/verification/canonical-and-publication-repairs/geotools-notices.patch:15: trailing whitespace.\n+ \nplan/verification/canonical-and-publication-repairs/geotools-notices.patch:19: trailing whitespace.\n+ \nplan/verification/canonical-and-publication-repairs/geotools-notices.patch:30: trailing whitespace.\n+ \nplan/verification/canonical-and-publication-repairs/geotools-notices.patch:30: new blank line at EOF.\n",
+    "explanation": "Only the allowed patch retains original POM whitespace/context lines and unified-diff empty context markers. Original bytes and exact patch identity were preserved; all other authored files pass whitespace checks."
+  },
+  "errors": 0,
+  "execution_scope": "Actual isolated source correction, retained-tool Maven model parsing and fresh bundle-chain restoration; no source publication, effective-POM resolver, service build/native/runtime rerun, FND-08 or product acceptance.",
+  "failures": 0,
+  "implementation_sha256": "6faae17668a28ae5cb6eb2585d6b3019f8f63095db3be96052f3d26007d28009",
+  "observed_at": "2026-09-28T04:53:31.363306+00:00",
+  "preserved_initial_run": {
+    "commit": "98cebc71d0ed8f32f9f9e2c6b2eeb4957eb29a30",
+    "directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools",
+    "disposition": "Initial source/restore/model checks passed. Review found weaker mutable receipt/patch checks. Preserved unchanged, superseded for publication review by fresh geotools-v2 run with trusted receipt digest, reconstructed patch, explicit recovery/scope checks and success-only-after-integrity receipt.",
+    "receipt_sha256": "c8bf3916f224d4fffb576e22bcdf3d813bb619006ef82b159d54d7e82f3eafa9",
+    "recipe": "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-producer-v1.py",
+    "recipe_sha256": "47c712e641c4c45f6f1fad1564c3fd1ca0cc1754e2a192e7f06689623a99d1b7",
+    "tree": "ebb65f687763ce40445eb02f6ce710dc1eaa1e00"
+  },
+  "receipt": {
+    "path": "plan/verification/canonical-and-publication-repairs/geotools-receipt.json",
+    "sha256": "5fe6003847a95da95a280a958b1e27fdbf0ecd43a219251e257827c46534a2f8"
+  },
+  "remote_preflight": {
+    "path": "plan/verification/canonical-and-publication-repairs/geotools-remote-preflight.json",
+    "sha256": "c3fe6b5a759ae9cbfb12d77ee0cbb615d4228f7ff18d833f7376e150a4680379"
+  },
+  "schema_version": 1,
+  "skips": 0,
+  "targeted_tests": 16,
+  "test_file_sha256": "08b08dd2f717d68034e5602f72a89298e86a261d9c71decc1dab4de670dc6d6b",
+  "verification": {
+    "commit": "3363c3d4ae8adfe3ed2024c27f92ec63855093be",
+    "receipt_sha256": "5fe6003847a95da95a280a958b1e27fdbf0ecd43a219251e257827c46534a2f8",
+    "tree": "ebb65f687763ce40445eb02f6ce710dc1eaa1e00",
+    "verified": true
+  },
+  "verification_command": [
+    "python3",
+    "build-support/postgis/offline_exec.py",
+    "--evidence",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-v2-verification-network.json",
+    "--",
+    "python3",
+    "build-support/source_publication/geotools_notice.py",
+    "--workspace-root",
+    "/home/revelberry/Projects/AmbisGIS",
+    "--authorization",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/authorization.json",
+    "--output",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/canonical-and-publication-repairs/run-002/geotools-v2",
+    "--receipt-sha256",
+    "5fe6003847a95da95a280a958b1e27fdbf0ecd43a219251e257827c46534a2f8",
+    "--verify"
+  ]
+}
