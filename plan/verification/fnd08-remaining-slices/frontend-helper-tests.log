@@ -1,0 +1,44 @@
+test_archive_traversal_rejected (test_build.InputIntegrityTests.test_archive_traversal_rejected) ... ok
+test_audit_rejects_unsafe_tar_metadata (test_build.InputIntegrityTests.test_audit_rejects_unsafe_tar_metadata) ... ok
+test_changed_lock_rejected_even_with_reviewed_manifest (test_build.InputIntegrityTests.test_changed_lock_rejected_even_with_reviewed_manifest) ... ok
+test_changed_root_manifest_rejected (test_build.InputIntegrityTests.test_changed_root_manifest_rejected) ... ok
+test_command_failure_does_not_get_success (test_build.InputIntegrityTests.test_command_failure_does_not_get_success) ... ok
+test_complete_manifest_checks_same_size_corruption (test_build.InputIntegrityTests.test_complete_manifest_checks_same_size_corruption) ... ok
+test_complete_manifest_checks_size (test_build.InputIntegrityTests.test_complete_manifest_checks_size) ... ok
+test_corrupted_archive_rejected (test_build.InputIntegrityTests.test_corrupted_archive_rejected) ... ok
+test_duplicate_input_records_rejected (test_build.InputIntegrityTests.test_duplicate_input_records_rejected) ... ok
+test_empty_manifest_rejected (test_build.InputIntegrityTests.test_empty_manifest_rejected) ... ok
+test_existing_output_is_not_owned (test_build.InputIntegrityTests.test_existing_output_is_not_owned) ... ok
+test_git_prepare_download_rejected (test_build.InputIntegrityTests.test_git_prepare_download_rejected) ... ok
+test_incomplete_manifest_rejected (test_build.InputIntegrityTests.test_incomplete_manifest_rejected) ... ok
+test_local_lock_accepts_verified_bytes (test_build.InputIntegrityTests.test_local_lock_accepts_verified_bytes) ... ok
+test_manifest_tuple_rejected (test_build.InputIntegrityTests.test_manifest_tuple_rejected) ... ok
+test_missing_integrity_rejected (test_build.InputIntegrityTests.test_missing_integrity_rejected) ... ok
+test_output_inventory_detects_changed_bytes (test_build.InputIntegrityTests.test_output_inventory_detects_changed_bytes) ... ok
+test_parent_symlink_rejected (test_build.InputIntegrityTests.test_parent_symlink_rejected) ... ok
+test_remote_registry_rejected (test_build.InputIntegrityTests.test_remote_registry_rejected) ... ok
+test_source_manifest_guards_fail_on_changed_candidate (test_build.InputIntegrityTests.test_source_manifest_guards_fail_on_changed_candidate) ... ok
+test_successful_exit_without_network_proof_fails (test_build.InputIntegrityTests.test_successful_exit_without_network_proof_fails) ... ok
+test_unexpected_link_rejected (test_build.InputIntegrityTests.test_unexpected_link_rejected) ... ok
+test_frozen_copy_retains_actual_identity (test_replay.FrozenReplayTests.test_frozen_copy_retains_actual_identity) ... ok
+test_mutation_addition_and_removal_rejected (test_replay.FrozenReplayTests.test_mutation_addition_and_removal_rejected) ... ok
+test_reuse_preserves_prior_attempt (test_replay.FrozenReplayTests.test_reuse_preserves_prior_attempt) ... ok
+test_source_and_snapshot_symlinks_rejected (test_replay.FrozenReplayTests.test_source_and_snapshot_symlinks_rejected) ... ok
+test_archive_links_rejected (test_webifc_sources.SourceGuards.test_archive_links_rejected) ... ok
+test_archive_traversal_rejected (test_webifc_sources.SourceGuards.test_archive_traversal_rejected) ... ok
+test_changed_retained_file_rejected (test_webifc_sources.SourceGuards.test_changed_retained_file_rejected) ... ok
+test_cmake_comments_not_selected (test_webifc_sources.SourceGuards.test_cmake_comments_not_selected) ... ok
+test_dependency_revision_tamper (test_webifc_sources.SourceGuards.test_dependency_revision_tamper) ... ok
+test_duplicate_members_rejected (test_webifc_sources.SourceGuards.test_duplicate_members_rejected) ... ok
+test_existing_stage_is_untouched_on_rejection (test_webifc_sources.SourceGuards.test_existing_stage_is_untouched_on_rejection) ... ok
+test_frontend_tamper_and_extra_asset (test_webifc_sources.SourceGuards.test_frontend_tamper_and_extra_asset) ... ok
+test_publisher_blob_and_membership (test_webifc_sources.SourceGuards.test_publisher_blob_and_membership) ... ok
+test_regular_archive (test_webifc_sources.SourceGuards.test_regular_archive) ... ok
+test_symlink_input_rejected (test_webifc_sources.SourceGuards.test_symlink_input_rejected) ... ok
+test_truncated_tree_and_gitlink_rejected (test_webifc_sources.SourceGuards.test_truncated_tree_and_gitlink_rejected) ... ok
+test_wasm_binding_tamper (test_webifc_sources.SourceGuards.test_wasm_binding_tamper) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 0.014s
+
+OK
