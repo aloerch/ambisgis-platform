@@ -36,6 +36,7 @@ class IndependentOracles(unittest.TestCase):
                      lambda v: v['features'][0]['properties'].update(object_id=True),
                      lambda v: v['features'][0]['properties'].update(object_id=2),
                      lambda v: v['features'][0]['properties'].update(label='PRIVATE_B'),
+                     lambda v: v['features'][0]['geometry'].update(coordinates=[True,True]),
                      lambda v: v['features'][0]['geometry'].update(coordinates=[2,1]),
                      lambda v: v['features'].pop()]
         for modify in mutations:
@@ -51,6 +52,12 @@ class IndependentOracles(unittest.TestCase):
         for body in (image()[:33], image(centers=()), image(centers=((200,200),(400,400))),
                      image(color=(255,0,0)), image()[:-1] + b'\x00'):
             with self.assertRaises((ValueError,zlib.error)): probe.pixels(body)
+
+    def test_transparent_color_key_cannot_pass_opaque_pixel_oracle(self):
+        kind, value = b'tRNS', struct.pack('>HHH',32,120,180)
+        chunk = struct.pack('>I',len(value)) + kind + value + struct.pack('>I',zlib.crc32(kind+value))
+        encoded = image(); encoded = encoded[:33] + chunk + encoded[33:]
+        with self.assertRaisesRegex(ValueError,'opaque'): probe.pixels(encoded)
 
 
 if __name__ == '__main__': unittest.main()

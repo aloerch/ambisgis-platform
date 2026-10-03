@@ -58,6 +58,9 @@ def features(body):
     for row in value['features']:
         props = row['properties']; number = props['object_id']
         if type(number) is not int or number in actual: raise ValueError('feature ObjectID differs')
+        coordinates = row['geometry'].get('coordinates')
+        if not isinstance(coordinates, list) or len(coordinates) != 2 or any(type(item) not in (int, float) for item in coordinates):
+            raise ValueError('feature coordinates are not two numeric values')
         actual[number] = {'id': row['id'], 'label': props['label'], 'geometry': row['geometry']}
     expected = {1: {'id': 'private_points.1', 'label': 'PRIVATE_A', 'geometry': {'type': 'Point', 'coordinates': [1, 1]}},
                 2: {'id': 'private_points.2', 'label': 'PRIVATE_B', 'geometry': {'type': 'Point', 'coordinates': [2, 2]}}}
@@ -81,6 +84,7 @@ def pixels(body):
             header = struct.unpack('>IIBBBBB', data)
         elif kind == b'IDAT': compressed.extend(data)
         elif kind == b'PLTE': palette = [tuple(data[i:i+3]) for i in range(0, len(data), 3)]
+        elif kind == b'tRNS': raise ValueError('opaque map profile excludes transparency-key chunks')
         elif kind == b'IEND':
             if size: raise ValueError('PNG end chunk differs')
             ended = True; break

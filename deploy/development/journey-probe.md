@@ -26,7 +26,7 @@ private engine host and port; the host publishes no engine port. Evidence keeps
 selected response facts/hashes, never response bodies, cookies or tokens.
 
 This helper has **not yet run against the new persistent container profile**.
-Its four oracle tests pass using explicitly synthetic feature/PNG inputs; they
+Its five oracle tests pass using explicitly synthetic feature/PNG inputs; they
 are not GIS integration evidence. The helper always records
 `full_installation_acceptance: false`. Clean CLI installation, retained-bundle
 relocation, restart/reinitialization preservation, dependency failures, real
