@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Job-owned donor fixture and exact artifact comparison for real T-OWN-02 builds."""
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import io
 import json
@@ -13,7 +14,7 @@ from resolution import sha, write_json
 from owned_successor import git, inventory_digest
 
 PRODUCER_INPUTS = ('owned_successor.py', 'resolution.py', 'compatibility.py',
-                  'resolution_inventory.py', 'native_reports.py', 'no_oracle.py',
+                  'resolution_inventory.py', 'native_reports.py', 'no_oracle.py', 'schema_resources.py',
                   'toolchain.py', 'variant_inputs.py', 'toolchain-inputs.json',
                   'json-nojpeg2000-variant-inputs.json')
 
@@ -127,16 +128,33 @@ def unexplained(changes):
                (row['kind']=='nested-archive' and unexplained(row['changes'])) for row in changes)
 
 
+def chronology(first,second,fixture):
+    """Require the fixture to exist before build one and drift between builds.
+
+    Local original receipt mtimes are preserved as observations, not signatures.
+    Copying receipts must preserve them if this comparison is rerun elsewhere.
+    """
+    sequence=[fixture/'before.json',first/'started.json',first/'result.json',
+              fixture/'drift.json',second/'started.json',second/'result.json']
+    rows=[{'path':str(p),'sha256':sha(p),'mtime_ns':p.stat().st_mtime_ns,
+           'mtime_utc':datetime.fromtimestamp(p.stat().st_mtime,timezone.utc).isoformat()}
+          for p in sequence]
+    if [r['mtime_ns'] for r in rows]!=sorted(r['mtime_ns'] for r in rows):
+        raise ValueError('Fixture must precede first build and drift between completed builds')
+    return {'ordered':True,'basis':'original local receipt filesystem mtimes','events':rows}
+
+
 def compare(first,second,fixture,output):
+    timeline=chronology(first,second,fixture)
     before=json.loads((first/'result.json').read_text());after=json.loads((second/'result.json').read_text())
     if before['result_exit_code'] or after['result_exit_code']:
         raise ValueError('Two actually successful new-source builds required')
-    selected=['source_successor','source_inputs_sha256','retained_inputs_sha256','runner_sha256','toolchain']
+    selected=['source_successor','source_inputs_sha256','retained_inputs_sha256','runner_sha256','toolchain','tooling_manifest_sha256']
     inputs={key:{'before':before[key],'after':after[key],'equal':before[key]==after[key]} for key in selected}
     if not all(row['equal'] for row in inputs.values()):
         raise ValueError('Simulated drift changed selected build inputs')
-    # The donor fixture analyzer was added between the two builds. It is not
-    # imported by the producer. Bind all actually executed producer inputs.
+    # Detail the actually executed producer inputs as well as the complete
+    # retained tooling snapshot identity above.
     ma=json.loads((first/'tooling-manifest.json').read_text());mb=json.loads((second/'tooling-manifest.json').read_text())
     selected_tools=['build-support/java/'+name for name in PRODUCER_INPUTS]+['build-support/postgis/offline_exec.py']
     producer_tools={name:{'before':ma[name],'after':mb[name],'equal':ma[name]==mb[name]} for name in selected_tools}
@@ -158,7 +176,7 @@ def compare(first,second,fixture,output):
                                if ea.get(n,{}).get('sha256')!=eb.get(n,{}).get('sha256')],
             'metadata_changed_entries':sum(ea.get(n)!=eb.get(n) and ea.get(n,{}).get('sha256')==eb.get(n,{}).get('sha256') for n in set(ea)|set(eb)),
             'recursive_content_attribution':attribution,'unexplained_content_changes':unexplained(attribution)})
-    write_json(output,{'task':'T-OWN-02','fixture':json.loads((fixture/'drift.json').read_text()),
+    write_json(output,{'task':'T-OWN-02','fixture':json.loads((fixture/'drift.json').read_text()),'chronology':timeline,
         'product':{'inputs':inputs,'producer_tools':producer_tools,'outputs':outputs,'byte_identical_artifacts':sum(r['byte_identical'] for r in outputs),
                    'artifact_count':len(outputs),'changed_content_entries':sum(len(r['content_changes']) for r in outputs)},
         'unexplained_content_changes':sum(r['unexplained_content_changes'] for r in outputs),

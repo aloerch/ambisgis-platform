@@ -1,9 +1,10 @@
 from pathlib import Path
+import os
 import tempfile
 import unittest
 import zipfile
 
-from donor_drift import (attribute_archive, describe, drift, floating_resolver,
+from donor_drift import (attribute_archive, chronology, describe, drift, floating_resolver,
                          prepare, timestamp_changes, unexplained, zip_entries)
 
 
@@ -52,3 +53,14 @@ class DonorDriftFixtures(unittest.TestCase):
         changes=attribute_archive(*paths)
         self.assertEqual(unexplained(changes),1)
         self.assertEqual(changes[0]['changes'][0]['kind'],'unexplained-content')
+
+    def test_fixture_created_after_first_build_is_rejected(self):
+        first,second,fixture=[Path(self.tmp.name)/n for n in ('first','second','donor')]
+        for p in (first,second,fixture):p.mkdir()
+        paths=[fixture/'before.json',first/'started.json',first/'result.json',
+               fixture/'drift.json',second/'started.json',second/'result.json']
+        for n,p in enumerate(paths):
+            p.write_text('{}');os.utime(p,ns=(100+n,100+n))
+        self.assertTrue(chronology(first,second,fixture)['ordered'])
+        os.utime(paths[0],ns=(103,103))
+        with self.assertRaisesRegex(ValueError,'precede first build'):chronology(first,second,fixture)

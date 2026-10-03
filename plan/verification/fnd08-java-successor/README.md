@@ -32,8 +32,12 @@ response. Between successful builds its default branch, commit, tree and API
 contract changed. A deliberately floating positive-control resolver observed
 the incompatible sentinel. No real owned/donor ref changed. Both actual builds
 selected identical source and Maven manifests and executed identical producer,
-helper and toolchain bytes. The second tooling snapshot additionally contains
-the donor-fixture analyzer, which the producer does not import.
+helper and toolchain bytes, including identical complete tooling snapshots.
+The final pair is run-004/run-005, with the fixture present before the first build
+started. Earlier run-002/run-003 builds remain useful build and comparison
+evidence, but their fixture was prepared after the first completed build, so
+they are explicitly insufficient for the final drift experiment. The comparator
+now rejects that chronology and records the original receipt timestamps.
 
 Raw output comparison is **160 of 361 artifacts byte-identical**. The remaining
 201 differ through ZIP metadata and generated time values in manifests,
