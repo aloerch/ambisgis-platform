@@ -1,5 +1,9 @@
 # F02-04 owned QGIS candidate
 
+The explicit [FND-08 successor adapter and fresh evidence](../../plan/docs/fnd-08-qgis-successor.md)
+build authorized commit `86af40542b219b0da6df1a43914413443330c0c0` without changing
+the historical producer/input records below. Its repeat-build comparison remains pending.
+
 This directory builds owned QGIS desktop, native HTTP/FCGI server and Python
 bindings at `1a4cda5f2620e7374e5926fc955a7d2d06493e15` (`final-3_44_14`).
 The [finite checklist](../../plan/docs/fnd-02-completion.md) controls acceptance.

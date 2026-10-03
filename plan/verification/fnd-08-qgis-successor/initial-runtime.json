@@ -1,0 +1,233 @@
+{
+  "limits": [
+    "Linux x86_64 synthetic fixtures, Qt offscreen; no physical display or broad product acceptance.",
+    "Frozen selected native subset; not full QGIS suite.",
+    "Controlled support packages retained with corresponding source RPMs, not independently rebuilt here.",
+    "Host compiler/OS/bootstrap custody correspondence is being completed separately. Full installed host inventory remains private; only its hash and scope are published.",
+    "Loopback runtime supervisor exception for independently supervised owned PostgreSQL remains unchanged. Build wrapper denies INET sockets but permits AF_UNIX and is not hostile-code isolation.",
+    "Second actual build and synthetic donor drift comparison still executing; no output reproducibility claim in this checkpoint."
+  ],
+  "native": {
+    "cpp_passed_cases": 66,
+    "failed_cases": 0,
+    "fixture_binding": {
+      "changed_fixture_files": 1,
+      "declared_attribute": "text eol=crlf",
+      "fixture_path": "tests/testdata/auth_system/certs_keys/donald_key_DSA_crlf.pem",
+      "historical_checkout_sha256": "4f86dc58b808e8c1a02be05842c77c69b491626396cefffd367f5dacacdc9a0e",
+      "historical_fixture_tree_reconstructed": true,
+      "historical_selection_sha256": "82031c56c96fa920e24eabffe17ff0a086bb6cfa26306c77c8765899b450a52f",
+      "raw_git_sha256": "36f50d5940edd3e574f25c9a35590b0f3a230d71353c5312eed457e2f55e43df",
+      "removed_cr_bytes": 20,
+      "scope": "Exact successor materialization metadata only; selected tests/source/golden assertions unchanged. Synthetic key is not exercised by selected methods.",
+      "source_commit": "86af40542b219b0da6df1a43914413443330c0c0",
+      "successor_fixture_tree": {
+        "bytes": 586856202,
+        "file_count": 6450,
+        "path": "tests/testdata",
+        "sha256": "f4cbc240fa1c31cc75b3a6de0d79c5324301d0289d4bf41e29e517fedd30e11d",
+        "symlinks": []
+      },
+      "unchanged_fields": [
+        "schema",
+        "cpp",
+        "python",
+        "source_sha256",
+        "required_gdal_drivers",
+        "required_providers",
+        "required_python_modules",
+        "database_fixture",
+        "selection_decisions"
+      ]
+    },
+    "fixtures_after": {
+      "bytes": 586856202,
+      "file_count": 6450,
+      "sha256": "f4cbc240fa1c31cc75b3a6de0d79c5324301d0289d4bf41e29e517fedd30e11d"
+    },
+    "fixtures_before": {
+      "bytes": 586856202,
+      "file_count": 6450,
+      "sha256": "f4cbc240fa1c31cc75b3a6de0d79c5324301d0289d4bf41e29e517fedd30e11d"
+    },
+    "python_passed_cases": 16,
+    "skips": 0
+  },
+  "platform_base": "7812efa3502ec1d7004b485d35b433eea56ce13e",
+  "reports": {
+    "build": {
+      "bytes": 1492,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-002/result.json",
+      "sha256": "3b63f467530f68ae2608f3fb6f8585785c8c8997be3ee909737525d36a3d42b7"
+    },
+    "build_manifest": {
+      "bytes": 1533871,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-002/compile/output-manifest.json",
+      "sha256": "e2018213c521538ae8212d8b1af889ce97e3b8539645b600becb8deb92887a31"
+    },
+    "desktop": {
+      "bytes": 67159,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-001/desktop-result.json",
+      "sha256": "5dd8b6827aa9f71e8399e3193cd7dc1ca189d2bc7e7245128a0afc49690867e1"
+    },
+    "native": {
+      "bytes": 860,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/native-003/result.json",
+      "sha256": "3a55408ca266e21b0d8cc854fec68dbf4e82acad0468857e3d3932b35a99d9db"
+    },
+    "native_assertions": {
+      "bytes": 47971,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/native-003/run/native/native-result.json",
+      "sha256": "fb8ca6b24b2fabf1f0005a52b96481138519b469fa5dd86954f5a85f5c1e8f16"
+    },
+    "native_fixture_binding": {
+      "bytes": 1187,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/native-003/fixture-binding.json",
+      "sha256": "5b3f78bb3c0bb1241c82c76d796ca025eec4b25b7d413cc2df809a4b58fc727a"
+    },
+    "private_host_inventory": {
+      "bytes": 282829,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/host-inventory-before.json",
+      "sha256": "d40136b6a03b3ca33d906e2644c3342048aeaf9b2ac88d0571e92e6ad4395d6e"
+    },
+    "resource_stage": {
+      "bytes": 655,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/stage-001/result.json",
+      "sha256": "6e81912ed06a33cb67294e75d04a0fd5d1555819a132490dea094d48064cf03c"
+    },
+    "resources": {
+      "bytes": 3565,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-001/resource-result.json",
+      "sha256": "89ad62a4bd0d7b1b155160cf6600e7508e67820e4c9bbe600f7d96d34bd4b1b2"
+    },
+    "runtime": {
+      "bytes": 180321,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-001/result.json",
+      "sha256": "a9ff130cad8885381763a63f0a3b9b9a834a23799f38d825fb935112455e5646"
+    },
+    "runtime_host_files": {
+      "bytes": 51688,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/runtime-host-files.json",
+      "sha256": "0c2f37df15bc2707bea2ffeee552a6c71bc1ab3c719cd91349b13cda71ccf341"
+    },
+    "runtime_version_probe": {
+      "bytes": 26222,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/version-probe-001/result.json",
+      "sha256": "0c196b270a958665a35d810cbb5adf9af6e941e7996930a2291c57013e8e1da1"
+    },
+    "runtime_version_probe_script": {
+      "bytes": 778,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/version-probe-001/probe.py",
+      "sha256": "1379cd40e9909359b6b444396e2d4a9a24717d704919203205a5e30a464945e9"
+    },
+    "server": {
+      "bytes": 74055,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-001/server-result.json",
+      "sha256": "ed5d17033b8c6bd478f00546d0d96066d6f24a876ce62a61d6835a056895e542"
+    },
+    "stage_manifest": {
+      "bytes": 1536577,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/stage-001/manifest.json",
+      "sha256": "8711c8dafa12fceb3ace2c8d9c148e43c1dcd845f49c5c85bb7c72f9f80703f7"
+    },
+    "support_custody": {
+      "bytes": 110529,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/support-custody.json",
+      "sha256": "4404358b77b67fffdcf0d68779fdda9eff2022026e1d2f49ae82168c5d4bac79"
+    }
+  },
+  "repository": {
+    "commit": "86af40542b219b0da6df1a43914413443330c0c0",
+    "id": 1376927721,
+    "name": "aloerch/ambisgis-qgis",
+    "tree": "84ea1b18fdf5721819fee34fe06cdef7ea82afdc"
+  },
+  "resources": {
+    "compiled_palette_resources": [],
+    "excluded_named_files_unopenable": 1130,
+    "excluded_native_model_paths": 1130,
+    "native_endpoint_assertions": 530,
+    "omitted_saved_project_limitation": "Serialized renderer colors survive; unavailable ramp cannot support reclassification. No complete saved-project compatibility claimed.",
+    "retained_colorbrewer": 265,
+    "save_reopen": {
+      "project_sha256": "c697fe1dfa56148ad584b063f4a78f6a81b00ffc02a11866f0c7abf123bd9b68",
+      "raster": true,
+      "vector": true
+    }
+  },
+  "retained_failures": [
+    {
+      "attempt": "build-001",
+      "phase": "configuration origin guard",
+      "reason": "host SQLite pkg-config cache selection; explicit pinned spatial SQLite resolves it without weakening guard"
+    },
+    {
+      "attempt": "native-001",
+      "phase": "before native assertions",
+      "reason": "historical checkout CRLF fixture digest differs from complete raw Git archive at one declared eol=crlf fixture"
+    },
+    {
+      "attempt": "native-002",
+      "phase": "before native assertions",
+      "reason": "missing copied geofence helper and generated Python cache; complete snapshot and no-bytecode mode fix adapter"
+    }
+  ],
+  "runtime": {
+    "actual_http_requests": 6,
+    "artifact_integrity_unchanged": true,
+    "cleanup": {
+      "database_credentials_invalidated": true,
+      "diagnostic_secret_hits": [],
+      "private_files_scrubbed": true
+    },
+    "restart_demonstrated": true,
+    "result_exit_code": 0,
+    "tooling_integrity_unchanged": true
+  },
+  "schema_version": 1,
+  "source_archive": {
+    "bytes": 1244928000,
+    "sha256": "6f477aff1e912d4f9b91ee744c9e24fe952bda2768015f064ab78ef773a76c7b",
+    "source_entries": 32451
+  },
+  "status": "first actual successor build and bounded runtime/native checks passed; second build/drift comparison and combined spine acceptance pending",
+  "task": "FND-08",
+  "validation": {
+    "plan_checks": {
+      "interpreter": "retained delivery-control/ci-env/bin/python",
+      "passed": true,
+      "report": {
+        "bytes": 67584,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/plan-tests-002.log",
+        "sha256": "a9a13e8e548f75389e5c73e46d05cc492738b29c5c9a9c74155ea9a1696a486d"
+      },
+      "tests": 457
+    },
+    "qgis_harness": {
+      "passed": true,
+      "report": {
+        "bytes": 12477,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/qgis-harness-003.log",
+        "sha256": "3df6eff9367632e05064d7ffcaf29462dd87a489cb1b692ed609940b5e7be10d"
+      },
+      "tests": 95
+    },
+    "retained_failed_plan_environment": {
+      "reason": "host Python lacks jsonschema; rerun in existing retained CI environment passed with zero skips",
+      "report": {
+        "bytes": 73433,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/plan-tests-001.log",
+        "sha256": "ca87b754ee11774e95f3924a53b9fe9b10c0975328d51cf297897524a3f90059"
+      }
+    },
+    "schemas": {
+      "count": 4,
+      "passed": true,
+      "report": {
+        "bytes": 189,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/plan-schema-001.log",
+        "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "associated_owned_source_directory": [
+    {
+      "bytes": 5955,
+      "path": "tests/testdata/font/QGIS-Vera/COPYRIGHT.TXT",
+      "sha256": "1a05d79616fa484e2970fa5358db63f4aea304a8f16bebd0993607ab35b9c33d"
+    },
+    {
+      "bytes": 365,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-Vera-README.txt",
+      "sha256": "cbe9210e9d3d63d912b8b81592134b8cd97bb6ac7dd0b6dd024246be6f57e266"
+    },
+    {
+      "bytes": 66168,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-Vera.ttf",
+      "sha256": "08a82cf71e13669f725bccdfeff7ed8dc0e43ffdeac22633074399098112d3e3"
+    },
+    {
+      "bytes": 108261,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-Vera.vfb",
+      "sha256": "bd101e465e908dd13eeff1369f1fa22492073ffa1324f4f1524996efe1201145"
+    },
+    {
+      "bytes": 66208,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-VeraBI.ttf",
+      "sha256": "ae85f21ecb1da729b9bc800b4fe23db2694a72ffec3d89eb160b4a997bcc8444"
+    },
+    {
+      "bytes": 109892,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-VeraBI.vfb",
+      "sha256": "21a855733b616b87ef84d144decfa2f2d41126f96a0af336ee09470eee9caf55"
+    },
+    {
+      "bytes": 99195,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-VeraBI_font-table.pdf",
+      "sha256": "53a1a48543a0b6f84db948b7d99a65018d246f8559b1f33ec5d9c970499a24d9"
+    },
+    {
+      "bytes": 61676,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-VeraBd.ttf",
+      "sha256": "cd00ef821de34ad156100ed39309a9e828e93ac22ce8452974ee468b1ef26b02"
+    },
+    {
+      "bytes": 105072,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-VeraBd.vfb",
+      "sha256": "99ae5affc4624810c8018ef647143412aaa69106d1c1691c8a602ab0a74c97d1"
+    },
+    {
+      "bytes": 93935,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-VeraBd_font-table.pdf",
+      "sha256": "36e764b162fc707d0c4af99b9e6ccc91960b96b172350bc5bf764e33bc5da1e2"
+    },
+    {
+      "bytes": 66640,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-VeraIt.ttf",
+      "sha256": "a21453a30ebd0ad10c6877095272a63f0d2e976b2f8c9bb4edec3e266fdcd729"
+    },
+    {
+      "bytes": 111882,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-VeraIt.vfb",
+      "sha256": "82c57f9a2f891a412d94f591d5229525f2cfc69bc03533f403024201b0146a98"
+    },
+    {
+      "bytes": 99616,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-VeraIt_font-table.pdf",
+      "sha256": "81d3734736254a2bc7cdce9914763be8a36c74354bcd7dccadc21024346a4cfd"
+    },
+    {
+      "bytes": 93168,
+      "path": "tests/testdata/font/QGIS-Vera/QGIS-Vera_font-table.pdf",
+      "sha256": "9d0d2dafa52ace8a342acad95acd90f5c0803f6c6167f23dca853f66c58d6cde"
+    },
+    {
+      "bytes": 321,
+      "path": "tests/testdata/font/QGIS-Vera/README.TXT",
+      "sha256": "277607062d23929523a81e2f32b7e8434f0c01486bfa06e7807f2ad525585dcf"
+    },
+    {
+      "bytes": 8113,
+      "path": "tests/testdata/font/QGIS-Vera/RELEASENOTES.TXT",
+      "sha256": "420ec703082c0c5d76c9beeeaed50cc25c39e10990083f720a3c1fb8ca6c92c7"
+    }
+  ],
+  "complete_source_inventory": {
+    "bytes": 5955203,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/build-002/compile/source-manifest.json",
+    "sha256": "b0d5863b5d64eaf5c155db7433e8fc926840075dee3c0f083c0f0cf6d1eabea3"
+  },
+  "notice_scope": "COPYRIGHT.TXT and QGIS-Vera-README.txt remain the unchanged inherited notice and test-use instructions. This evidence does not broaden rights acceptance or install the fixture as a system font.",
+  "receipt": {
+    "bytes": 67159,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-001/desktop-result.json",
+    "sha256": "5dd8b6827aa9f71e8399e3193cd7dc1ca189d2bc7e7245128a0afc49690867e1"
+  },
+  "runtime_config": {
+    "bytes": 3931,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-runtime/runtime-001-config.json",
+    "sha256": "6fd7e4f35825e4a4839f7f5c15a4b9555fa6fffda6001570841b051d14e2c724"
+  },
+  "scope": "Actual bounded QGIS successor desktop fixture font; no host font package assumption or historical-run rebinding.",
+  "selected_runtime_font": {
+    "Qt_observations": {
+      "dark_pixels": 1098,
+      "family": "QGIS Vera Sans",
+      "glyphs_available": true,
+      "point_size": 12.0,
+      "render_sha256": "f25b86e34a5a26625c7a93dc4ac6f5cabc925920a5cb312b2daf7b53190365ac"
+    },
+    "bytes": 66168,
+    "font_downloads_enabled": false,
+    "mapped_in_actual_desktop": true,
+    "mapped_runtime_copy": {
+      "bytes": 66168,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/qgis-candidate/fnd08-successor-runtime-001/fonts/QGIS-Vera.ttf",
+      "sha256": "08a82cf71e13669f725bccdfeff7ed8dc0e43ffdeac22633074399098112d3e3"
+    },
+    "sha256": "08a82cf71e13669f725bccdfeff7ed8dc0e43ffdeac22633074399098112d3e3",
+    "source_path": "tests/testdata/font/QGIS-Vera/QGIS-Vera.ttf"
+  },
+  "source_commit": "86af40542b219b0da6df1a43914413443330c0c0",
+  "source_tree": "84ea1b18fdf5721819fee34fe06cdef7ea82afdc",
+  "task": "FND-08"
+}
