@@ -1,0 +1,137 @@
+{
+  "actual_test_receipts_verified": {
+    "allowed_map_responses": 49,
+    "blank_negative_rejected": true,
+    "declared_MAE_limit": 3.0,
+    "empty_denials": 103,
+    "image_check_method": "Re-evaluated unchanged spatial/color/label/raster check function and independently recomputed PIL pixel differences against actual native desktop PNGs, matching every recorded error; no image bytes or receipts rewritten.",
+    "images_independently_redecoded": 49,
+    "maximum_MAE": 0.6778424580891927,
+    "native_authoring_negatives": 13,
+    "native_errors": 0,
+    "native_failures": 0,
+    "native_identity_role_cases": 70,
+    "native_skips": 0,
+    "plugin_guards": 12,
+    "policy_asset_mutations": 9,
+    "renderer_requests": 152,
+    "semantic_render_identical_roundtrips": 6,
+    "unique_layer_images": 10
+  },
+  "both_detached_clean_merge_trees_equal_reviewed_trees": true,
+  "decision": "Final qualifying Java run005 and QGISstage002 smoke evidence passes this independent postmerge verification; merge/review tree, actual bytes, runtime counts and cleanup are consistent. No observed postmerge regression or integrity finding.",
+  "execution_evidence": [
+    {
+      "bytes": 1228,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/repositories.json",
+      "sha256": "3bd39e51446748e6e37783be0cf42c3d4fcfb4667b39f755771845a3eb835d56"
+    },
+    {
+      "bytes": 531,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/driver-invocation.json",
+      "sha256": "13f0eb5df66b89c9bbf814cae907fdd660b4b1ff8f0b1d73718ffb1809d0b59c"
+    },
+    {
+      "bytes": 150,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/driver-completion.json",
+      "sha256": "35dbb9461a8b124bab81dc6e9f67928bfa47aea4bc7c906fbd23bb5f812a0903"
+    },
+    {
+      "bytes": 4786,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/postmerge-final-smoke-helper.py",
+      "sha256": "6901508031be06142cc1ec10c35c9cb88bc82e1d8c51cdfa8f8fd2f2966cfaec"
+    },
+    {
+      "bytes": 331,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/plugin-guards-command.json",
+      "sha256": "1d23eac854d810dcceda18fabcb99f09584fc17004bb15ded7e8ec66c310e50b"
+    },
+    {
+      "bytes": 766,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/authoring-command.json",
+      "sha256": "153fe279e8b23a714f565228f459ced0aceb27a16137ba48d3002deadfc98d38"
+    },
+    {
+      "bytes": 1223,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/maps-command.json",
+      "sha256": "6e4e98a03d6d6aeff9fedbbba3f9ff682d86763103d9c01c97419ddc97c4c005"
+    },
+    {
+      "bytes": 128870,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/source-files.json",
+      "sha256": "34f77cfd581be26a030534045dde23a922a9b6e35c599ba5a7fd5d46e1226b04"
+    }
+  ],
+  "findings": [],
+  "integrity_and_cleanup": {
+    "PostgreSQL_pidfile_actually_absent": true,
+    "PostgreSQL_stopped_receipt": true,
+    "actual_merged_source_files_freshly_rehashed": 372,
+    "all_hash_and_size_matches": true,
+    "broker_sockets_closed_receipt": true,
+    "catalog_installed_before_after_byte_equal": true,
+    "datagrams_received": 0,
+    "diagnostic_secret_hits": 0,
+    "private_config_scrubbed_receipt": true,
+    "qgis_stage_before_after_equal": true,
+    "services_stopped": 8,
+    "source_worktrees_clean_after": true,
+    "stored_fixture_credentials_invalidated_receipt": true,
+    "summary_references_freshly_rehashed": 80,
+    "task_process_group_stopped_receipt": true
+  },
+  "limits": "Synthetic trusted Linux offscreen scope and retained PostgreSQL supervisor exception. No physical-display/Windows, all-output publishing saga, installer, source-bootstrap, full release/product or human-subject acceptance. No fresh services/DB run performed by reviewer; runtime executed by separate worker and actual receipts/artifacts independently checked.",
+  "platform": {
+    "merge": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+    "repository": "aloerch/ambisgis-platform",
+    "repository_id": 1376927351,
+    "reviewed_head": "f9e16a91e818be13e281501edd9b71c175ec5044",
+    "tree": "14c274f4111d0c46a8aa158f58b5276e09cdcf3f"
+  },
+  "plugin": {
+    "merge": "f2a7dcbea2dac5ad5c41bb825093014c7341d46c",
+    "repository": "aloerch/ambisgis-qgis-plugin",
+    "repository_id": 1376927494,
+    "reviewed_head": "3d0d789dbb2f91bf81ee2c47891c394323b9d04d",
+    "tree": "473ceaf3af8d0531bbf726dcdc9436b53b9f4f40"
+  },
+  "profile_projection": {
+    "actual_WAR_members_origin_matched": 367,
+    "actual_final_WAR_sha256": "115a6a74e32847ded96c127531039e348f8be823badbf5643afbc72b00c5180b",
+    "actual_new_built_artifacts_rehashed": 361,
+    "actual_original_sources_rehashed": 39622,
+    "build": "fnd08-java/run-005",
+    "independent_check": "Parsed actual old/new profiles and verified identical field sets with only war_sha256 changed. Read actual new WAR and rehashed all three Marlin/JSON/ImageIO members against original profile hashes. Original profile remains unchanged.",
+    "new_profile_sha256": "960d30000604a44483fd9638d4b205b0b6e09019d104ce5c504a396a272838a7",
+    "old_profile_sha256": "0748a443611b85709d90d693a7ac22afebdf32cf5bd5adaabfb4d02ca705eae0",
+    "origin_check": "Complete actual WAR jar membership, duplicate absence, size/hash and retained-or-new-built origin set matched strict application inventory. Complete source manifest and all built artifact bytes independently rehashed; successful source/network-bound producer receipt retained.",
+    "receipt": {
+      "bytes": 2168,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/runtime-profile-projection.json",
+      "sha256": "9d47c1bc25d0915392bd5b2edd5f07d30929f3b010a780d4db7c70447905c8f2"
+    }
+  },
+  "qgis_stage": {
+    "actual_entries_independently_verified": 8110,
+    "actual_server_sha256": "ab4c52d3b73d3366fd6582a8db8608e76b2991a2bd8791ae3c850d49bb8e4226",
+    "manifest_sha256": "2527ac72341fa52fa7f446800b8cecd5cb5e02e8192334f0a9649c9e81214248",
+    "method": "Ran unchanged merged renderer_artifacts.verify_stage against exact runtime002 config with Python -B: complete file bytes/link targets/membership/source identity checked. Actual before/after stage rows match summary.",
+    "source": "86af40542b219b0da6df1a43914413443330c0c0",
+    "stage": "stage-002",
+    "tree": "84ea1b18fdf5721819fee34fe06cdef7ea82afdc"
+  },
+  "recorded_at": "2026-10-03T08:57:19.184935+00:00",
+  "remote_reads": false,
+  "remote_writes": false,
+  "reviewer": "/root/publication_review",
+  "reviewer_environment_note": "Initial /usr/bin/python3 image-audit invocation failed import PIL before assertions. Used the actual retained geonode-role-propagation/run-003/venv/bin/python (Pillow12.2.0) for completed read-only49-image recheck. No packages installed and no runtime failure hidden.",
+  "runtime_executor": "/root/fnd04_prototype",
+  "runtime_receipt": {
+    "bytes": 25291,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/postmerge-smoke.json",
+    "sha256": "44bd37777aac7489aaf59314ea01b227cdc176fc5eecddd60d7eceb6b12363a7"
+  },
+  "scope": "Read-only verification of new integrated runtime execution on the final FND08 qualifying Java/QGIS artifacts, merged source binding, original byte integrity and cleanup. This is not a new independent technical review of reviewer-authored FND05 implementation; its separate-context review by /root remains authoritative.",
+  "source_edits": false,
+  "task": "FND08 independent postmerge final-binary smoke evidence verification"
+}

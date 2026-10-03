@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ambisgis:contracts:job:v1",
+  "title": "AmbisGIS initial job contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "job_id",
+    "item_id",
+    "kind",
+    "state",
+    "revision",
+    "correlation_id",
+    "active_service_revision",
+    "error"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "job_id": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "item_id": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "kind": {
+      "enum": [
+        "publication",
+        "notebook_run",
+        "export"
+      ]
+    },
+    "state": {
+      "enum": [
+        "queued",
+        "running",
+        "succeeded",
+        "cancelling",
+        "compensating",
+        "cancelled",
+        "failed"
+      ]
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "correlation_id": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "active_service_revision": {
+      "anyOf": [
+        {
+          "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "error": {
+      "anyOf": [
+        {
+          "enum": [
+            "INVALID_REQUEST",
+            "UNSUPPORTED_CAPABILITY",
+            "UNAUTHENTICATED",
+            "NOT_FOUND_OR_FORBIDDEN",
+            "POLICY_UNAVAILABLE",
+            "SCHEMA_MISMATCH",
+            "REVISION_UNAVAILABLE",
+            "INVALID_CURSOR",
+            "LIMIT_EXCEEDED",
+            "STALE_BRANCH_HEAD",
+            "STALE_RECONCILE",
+            "CONFLICTS_UNRESOLVED",
+            "PUBLICATION_FAILED",
+            "TRANSFORM_UNAVAILABLE",
+            "IDEMPOTENCY_CONFLICT"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "publication_stage": {
+      "enum": [
+        "CREATED",
+        "UPLOADING",
+        "SCANNING",
+        "ANALYZING",
+        "AWAITING_CONFIRMATION",
+        "STAGING_DATA",
+        "BUILDING_SCHEMA",
+        "BUILDING_STYLES",
+        "CONFIGURING_SERVICES",
+        "BUILDING_TILES",
+        "VERIFYING",
+        "READY_TO_ACTIVATE",
+        "ACTIVE",
+        "COMPENSATING",
+        "FAILED",
+        "CANCELLED"
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "publication"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "publication_stage"
+        ],
+        "oneOf": [
+          {
+            "properties": {
+              "state": {
+                "const": "queued"
+              },
+              "publication_stage": {
+                "enum": [
+                  "CREATED"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "state": {
+                "const": "running"
+              },
+              "publication_stage": {
+                "enum": [
+                  "UPLOADING",
+                  "SCANNING",
+                  "ANALYZING",
+                  "AWAITING_CONFIRMATION",
+                  "STAGING_DATA",
+                  "BUILDING_SCHEMA",
+                  "BUILDING_STYLES",
+                  "CONFIGURING_SERVICES",
+                  "BUILDING_TILES",
+                  "VERIFYING",
+                  "READY_TO_ACTIVATE"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "state": {
+                "const": "succeeded"
+              },
+              "publication_stage": {
+                "enum": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "state": {
+                "const": "compensating"
+              },
+              "publication_stage": {
+                "enum": [
+                  "COMPENSATING"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "state": {
+                "const": "failed"
+              },
+              "publication_stage": {
+                "enum": [
+                  "FAILED"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "state": {
+                "const": "cancelled"
+              },
+              "publication_stage": {
+                "enum": [
+                  "CANCELLED"
+                ]
+              }
+            }
+          },
+          {
+            "properties": {
+              "state": {
+                "const": "cancelling"
+              },
+              "publication_stage": {
+                "enum": [
+                  "CREATED",
+                  "UPLOADING",
+                  "SCANNING",
+                  "ANALYZING",
+                  "AWAITING_CONFIRMATION",
+                  "STAGING_DATA",
+                  "BUILDING_SCHEMA",
+                  "BUILDING_STYLES",
+                  "CONFIGURING_SERVICES",
+                  "BUILDING_TILES",
+                  "VERIFYING",
+                  "READY_TO_ACTIVATE"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "publication_stage"
+          ]
+        }
+      }
+    }
+  ]
+}

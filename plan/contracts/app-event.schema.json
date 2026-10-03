@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ambisgis:contracts:app-event:v1",
+  "title": "AmbisGIS initial app-event contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "app_revision",
+    "source_widget",
+    "target_widget",
+    "data_source",
+    "event"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "app_revision": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "source_widget": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+    },
+    "target_widget": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+    },
+    "data_source": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+    },
+    "event": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "feature_ids"
+          ],
+          "properties": {
+            "type": {
+              "const": "selection"
+            },
+            "feature_ids": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+              },
+              "minItems": 0,
+              "maxItems": 1000
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "filter"
+          ],
+          "properties": {
+            "type": {
+              "const": "filter"
+            },
+            "filter": {
+              "$ref": "urn:ambisgis:contracts:common:v1#/$defs/filter"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "bbox"
+          ],
+          "properties": {
+            "type": {
+              "const": "extent"
+            },
+            "bbox": {
+              "$ref": "urn:ambisgis:contracts:common:v1#/$defs/bbox"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "start",
+            "end"
+          ],
+          "properties": {
+            "type": {
+              "const": "time"
+            },
+            "start": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "end": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

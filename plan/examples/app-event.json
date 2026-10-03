@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "app_revision": "10000000-0000-4000-8000-000000000009",
+  "source_widget": "map",
+  "target_widget": "table",
+  "data_source": "addresses",
+  "event": {
+    "type": "filter",
+    "filter": {
+      "op": "ge",
+      "field": "population",
+      "value": {
+        "type": "int32",
+        "value": 100
+      }
+    }
+  }
+}

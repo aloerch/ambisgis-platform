@@ -37,10 +37,10 @@
   },
   "repository": "aloerch/ambisgis-platform",
   "repository_id": 1376927351,
-  "branch": "fnd-08/owned-spine",
-  "base": "337cc4f7438848575e075e8d90f59d9d37e4309e",
-  "task": "FND-08 owned initial spine builds and T-OWN-02",
-  "state": "In progress; all initial component builds and custody increments independently reviewed, final aggregate review and protected PR integration pending",
+  "branch": "fnd-06/contracts-and-koop",
+  "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "task": "FND-06 shared contracts, synthetic corpus, threat model and Koop reuse spike",
+  "state": "In progress; dependency evidence verified and issue claimed; implementation and independent review pending",
   "pr": null,
   "tests": [
     {
@@ -108,16 +108,18 @@
     "FND-05",
     "FND-07",
     "GOV-01",
-    "GOV-02"
+    "GOV-02",
+    "FND-08"
   ],
   "next": [
-    "Complete final FND-08 aggregate review, required checks and normal protected merge",
-    "Verify exact merged artifact/recipe identities and applicable post-merge checks; reconcile original FND-08 criteria",
-    "Claim dependency-ready FND-06 with contracts, threat model, synthetic corpus and mandatory Koop comparison criteria"
+    "Implement initial shared contracts and machine-checked requirement/test traceability",
+    "Generate and inspect deterministic synthetic corpus",
+    "Retain and independently review Koop closure before package execution; run real authorized PostGIS/catalog experiment",
+    "Obtain independent final FND-06 review, relevant tests, protected PR merge and post-merge verification"
   ],
   "product_acceptance": false,
   "release_artifact": null,
-  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/7#issuecomment-5966157278",
+  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5967420494",
   "workflow": {
     "pr": 72,
     "merge": "8c3612dd3e4ee992d930f1417798b66f467784e9",
@@ -126,17 +128,15 @@
   "active_workers": [
     {
       "agent": "/root/fnd03_identity",
-      "task": "Final client pair and supplemental tool custody review completed"
+      "task": "Synthetic corpus generator and actual fixture inspection"
     },
     {
       "agent": "/root/fnd04_prototype",
-      "task": "Fresh pair increment completed; read-only FND-06 preparation while acceptance pending",
-      "branch": "fnd-08/final-client-pairs",
-      "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/final-client-pairs-worktree"
+      "task": "Koop exact source/dependency custody then bounded real reuse experiment"
     },
     {
       "agent": "/root/publication_review",
-      "task": "Independent final aggregate FND-08 review"
+      "task": "Independent pre-execution Koop closure and shared-boundary review"
     }
   ],
   "evidence": "plan/verification/authorized-successors/publication.json",
@@ -213,7 +213,7 @@
     },
     "observation_note": "Historical 88-item observation before FND-05 acceptance; current renderer_progress and project_checkpoint supersede its FND-05 In progress row."
   },
-  "checkpoint_parent_commit": "7de422c19c265532008618884d4b710402cf388e",
+  "checkpoint_parent_commit": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
   "owned_spine_progress": {
     "java": {
       "local_head": "8e32797aed66be2c5fea430bba3df23a6e67465b",
@@ -323,10 +323,46 @@
     }
   },
   "project_checkpoint": {
-    "items": 91,
+    "items": 92,
     "fields": 24,
     "views": 7,
     "repositories": 15,
-    "all_other_project_values_preserved": true
+    "all_unrelated_values_preserved": true
+  },
+  "prior_checkpoints": [
+    {
+      "task": "FND-08 owned initial spine builds and T-OWN-02",
+      "branch": "fnd-08/owned-spine",
+      "base": "337cc4f7438848575e075e8d90f59d9d37e4309e",
+      "state": "In progress; all initial component builds and custody increments independently reviewed, final aggregate review and protected PR integration pending",
+      "pr": null,
+      "checkpoint_parent_commit": "7de422c19c265532008618884d4b710402cf388e"
+    }
+  ],
+  "owned_spine_acceptance": {
+    "status": "passed",
+    "task": "FND-08",
+    "delivery": "Merged",
+    "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/7#issuecomment-5967417969",
+    "pr": "https://github.com/aloerch/ambisgis-platform/pull/76",
+    "merge": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+    "reviewed_head": "f9e16a91e818be13e281501edd9b71c175ec5044",
+    "postmerge_receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/postmerge-smoke.json",
+      "sha256": "44bd37777aac7489aaf59314ea01b227cdc176fc5eecddd60d7eceb6b12363a7"
+    },
+    "next_task": {
+      "id": "FND-06",
+      "delivery": "In progress",
+      "claim": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5967420494",
+      "branch": "fnd-06/contracts-and-koop",
+      "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0"
+    },
+    "items_before": 91,
+    "items": 92,
+    "fields": 24,
+    "views": 7,
+    "repositories": 15,
+    "all_unrelated_values_preserved": true
   }
 }

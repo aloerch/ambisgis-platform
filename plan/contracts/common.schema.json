@@ -1,0 +1,369 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ambisgis:contracts:common:v1",
+  "title": "AmbisGIS initial common contract v1",
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{0,62}$"
+    },
+    "literal": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "string"
+            },
+            "value": {
+              "type": "string",
+              "maxLength": 4096
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "int32"
+            },
+            "value": {
+              "type": "integer",
+              "minimum": -2147483648,
+              "maximum": 2147483647
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "int64"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]{0,18})$"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "decimal"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^-?(0|[1-9][0-9]*)(\\.[0-9]+)?$",
+              "maxLength": 80
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "boolean"
+            },
+            "value": {
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "uuid"
+            },
+            "value": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "date"
+            },
+            "value": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "timestamp"
+            },
+            "value": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      ]
+    },
+    "nullable_literal": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "urn:ambisgis:contracts:common:v1#/$defs/literal"
+        }
+      ]
+    },
+    "crs": {
+      "enum": [
+        "EPSG:4326",
+        "EPSG:2230"
+      ]
+    },
+    "direction": {
+      "enum": [
+        "asc",
+        "desc"
+      ]
+    },
+    "field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "nullable",
+        "read_only"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+        },
+        "type": {
+          "enum": [
+            "string",
+            "int32",
+            "int64",
+            "decimal",
+            "boolean",
+            "uuid",
+            "date",
+            "timestamp"
+          ]
+        },
+        "nullable": {
+          "type": "boolean"
+        },
+        "read_only": {
+          "type": "boolean"
+        },
+        "max_length": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4096
+        },
+        "precision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 38
+        },
+        "scale": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 38
+        },
+        "domain": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:ambisgis:contracts:common:v1#/$defs/literal"
+          },
+          "minItems": 1,
+          "maxItems": 100
+        }
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "crs",
+        "dimensions",
+        "nullable"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "Point",
+            "LineString",
+            "Polygon",
+            "MultiPoint",
+            "MultiLineString",
+            "MultiPolygon"
+          ]
+        },
+        "crs": {
+          "$ref": "urn:ambisgis:contracts:common:v1#/$defs/crs"
+        },
+        "dimensions": {
+          "enum": [
+            "XY",
+            "XYZ",
+            "XYM",
+            "XYZM"
+          ]
+        },
+        "nullable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "filter": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "field",
+            "value"
+          ],
+          "properties": {
+            "op": {
+              "enum": [
+                "eq",
+                "ne",
+                "lt",
+                "le",
+                "gt",
+                "ge"
+              ]
+            },
+            "field": {
+              "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+            },
+            "value": {
+              "$ref": "urn:ambisgis:contracts:common:v1#/$defs/literal"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "field"
+          ],
+          "properties": {
+            "op": {
+              "enum": [
+                "is_null",
+                "is_not_null"
+              ]
+            },
+            "field": {
+              "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "args"
+          ],
+          "properties": {
+            "op": {
+              "enum": [
+                "and",
+                "or"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:ambisgis:contracts:common:v1#/$defs/filter"
+              },
+              "minItems": 2,
+              "maxItems": 16
+            }
+          }
+        }
+      ]
+    },
+    "bbox": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "crs",
+        "bounds"
+      ],
+      "properties": {
+        "crs": {
+          "$ref": "urn:ambisgis:contracts:common:v1#/$defs/crs"
+        },
+        "bounds": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        }
+      }
+    }
+  }
+}

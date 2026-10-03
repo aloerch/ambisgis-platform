@@ -1,0 +1,21 @@
+test_native_contracts (unittest.loader._FailedTest.test_native_contracts) ... ERROR
+
+======================================================================
+ERROR: test_native_contracts (unittest.loader._FailedTest.test_native_contracts)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_native_contracts
+Traceback (most recent call last):
+  File "/usr/lib64/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree/plan/tests/test_native_contracts.py", line 5, in <module>
+    from tools.native_contracts import ContractError, CursorCodec, validate_query, validate_schema
+ModuleNotFoundError: No module named 'tools.native_contracts'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "error": {
+    "code": "UNSUPPORTED_CAPABILITY",
+    "message": "This service profile does not support that operation.",
+    "correlation_id": "10000000-0000-4000-8000-000000000007",
+    "retryable": false,
+    "remediation": "correct_request"
+  }
+}

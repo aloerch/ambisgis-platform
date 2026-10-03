@@ -1,3 +1,28 @@
+# Active delivery — 3 October 2026, FND-06
+
+FND-08 is accepted/Merged at `6d18637e39818e60bcc947d3a7c252e84ab48fe0`
+([PR #76](https://github.com/aloerch/ambisgis-platform/pull/76)). All original
+foundation criteria passed within the recorded scope. Fresh post-merge execution
+used the final retained Java build and owned QGIS stage: 152 HTTP assertions,
+70 native identity tests and 49 image checks passed; source integrity and cleanup
+were independently verified. [Acceptance and exact evidence](verification/fnd08-acceptance/acceptance-and-merge.json)
+retain raw reproducibility differences, six named inherited Java skips per build,
+and the later source-bootstrap, disconnected repair and release obligations.
+
+FND-06 is claimed/In progress on `fnd-06/contracts-and-koop`, based on that merge.
+Its dependencies FND-03/FND-04/FND-05/FND-08 are accepted. Work now covers shared
+contracts, a synthetic corpus, a threat model and the mandatory measured Koop
+reuse decision. No FND-06 acceptance or product API implementation is claimed.
+Project reconciliation recorded 92 items, 24 fields, seven views and 15 repositories;
+unrelated planning and history were preserved.
+
+The [ledger](docs/delivery-ledger.json) and [all 24 requirements](docs/delivery-requirements-matrix.md)
+govern continuation under the [standing delegation](docs/standing-delivery-policy.md).
+The complete scoped MVP, installer, publication/branch/portal/notebook journeys,
+independent repair, human-only evaluations and release gates remain open.
+
+## Prior checkpoints retained below
+
 # Active delivery — 3 October 2026
 
 FND-03, FND-04, FND-05 and FND-07 are accepted/Merged within their original

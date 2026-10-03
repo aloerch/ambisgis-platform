@@ -1,0 +1,663 @@
+{
+  "schema_version": 1,
+  "status": "Initial contracts under review; API-01 owns complete OpenAPI and production handlers",
+  "product_accepted": false,
+  "contract_version": 1,
+  "contracts": {
+    "resource_schema": "layer.schema.json",
+    "query": "native-query.schema.json",
+    "errors": "native-error.schema.json",
+    "edits": "edit-request.schema.json",
+    "post": "post-request.schema.json",
+    "publication": "publication.schema.json",
+    "jobs": "job.schema.json",
+    "application": "application.schema.json",
+    "application_events": "app-event.schema.json",
+    "notebook_execution": "notebook-run.schema.json"
+  },
+  "authorities": {
+    "identity": "configured OIDC provider",
+    "items_metadata_policy": "owned GeoNode catalog",
+    "schema_features_branches_audit": "ambisgis-geodb",
+    "service_identity_active_revision": "catalog service registry",
+    "publication_jobs": "catalog durable job tables",
+    "product_configuration": "ambisgis-platform product configuration",
+    "immutable_assets": "content-addressed storage with database manifests",
+    "rendering_tiles_search": "derived, revocable projections only"
+  },
+  "requirements": [
+    {
+      "id": "R01",
+      "user_goal": 1,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-INSTALL-01",
+        "T-SRV-01"
+      ],
+      "tasks": [
+        "PLT-01",
+        "SRV-01",
+        "PUB-01",
+        "SRV-02",
+        "OPS-01",
+        "REL-02"
+      ],
+      "contracts": [
+        "resource_schema",
+        "query",
+        "errors",
+        "publication",
+        "jobs"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R02",
+      "user_goal": 1,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-API-01",
+        "T-QUERY-01",
+        "T-COMPAT-C1"
+      ],
+      "tasks": [
+        "FND-06",
+        "API-01",
+        "API-02",
+        "API-03",
+        "QA-01",
+        "REL-02"
+      ],
+      "contracts": [
+        "resource_schema",
+        "query",
+        "errors",
+        "publication",
+        "jobs"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R03",
+      "user_goal": 1,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-META-01"
+      ],
+      "tasks": [
+        "SRV-03",
+        "REL-02"
+      ],
+      "contracts": [
+        "resource_schema",
+        "query",
+        "errors",
+        "publication",
+        "jobs"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R04",
+      "user_goal": 2,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-DB-SCHEMA",
+        "T-DB-IDENTITY"
+      ],
+      "tasks": [
+        "DB-01",
+        "DB-02",
+        "REL-02"
+      ],
+      "contracts": [
+        "resource_schema",
+        "edits",
+        "post",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R05",
+      "user_goal": 2,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-EDIT-01",
+        "T-EDIT-RETRY"
+      ],
+      "tasks": [
+        "API-04",
+        "DB-04",
+        "DB-08",
+        "QGIS-05",
+        "REL-02"
+      ],
+      "contracts": [
+        "resource_schema",
+        "edits",
+        "post",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R06",
+      "user_goal": 2,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-VERSION-SNAPSHOT",
+        "T-VERSION-ORACLE"
+      ],
+      "tasks": [
+        "FND-04",
+        "DB-03",
+        "DB-04",
+        "DB-07",
+        "DB-08",
+        "UX-02",
+        "QGIS-05",
+        "REL-02"
+      ],
+      "contracts": [
+        "resource_schema",
+        "edits",
+        "post",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R07",
+      "user_goal": 2,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-VERSION-RACE",
+        "T-VERSION-POST",
+        "T-VERSION-RECOVERY"
+      ],
+      "tasks": [
+        "FND-04",
+        "DB-05",
+        "DB-06",
+        "DB-07",
+        "DB-08",
+        "UX-02",
+        "QGIS-05",
+        "OPS-02",
+        "REL-02"
+      ],
+      "contracts": [
+        "resource_schema",
+        "edits",
+        "post",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R08",
+      "user_goal": 3,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-PORTAL-01",
+        "T-A11Y-01"
+      ],
+      "tasks": [
+        "FND-03",
+        "PLT-02",
+        "UX-01",
+        "WEB-04",
+        "QA-02",
+        "REL-02"
+      ],
+      "contracts": [
+        "application",
+        "application_events",
+        "resource_schema",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R09",
+      "user_goal": 3,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-WEBMAP-01",
+        "T-DASHBOARD-01"
+      ],
+      "tasks": [
+        "WEB-01",
+        "WEB-02",
+        "REL-02"
+      ],
+      "contracts": [
+        "application",
+        "application_events",
+        "resource_schema",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R10",
+      "user_goal": 3,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-APP-01",
+        "T-APP-SHARING"
+      ],
+      "tasks": [
+        "WEB-03",
+        "WEB-04",
+        "WEB-05",
+        "REL-02"
+      ],
+      "contracts": [
+        "application",
+        "application_events",
+        "resource_schema",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R11",
+      "user_goal": 4,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-NB-ISOLATION"
+      ],
+      "tasks": [
+        "NB-01",
+        "NB-05",
+        "REL-02"
+      ],
+      "contracts": [
+        "notebook_execution",
+        "jobs",
+        "publication",
+        "query",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R12",
+      "user_goal": 4,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-NB-ENV",
+        "T-SDK-01"
+      ],
+      "tasks": [
+        "NB-02",
+        "NB-03",
+        "REL-02"
+      ],
+      "contracts": [
+        "notebook_execution",
+        "jobs",
+        "publication",
+        "query",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R13",
+      "user_goal": 4,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-NB-PUBLISH",
+        "T-NB-SCHEDULE"
+      ],
+      "tasks": [
+        "NB-03",
+        "NB-04",
+        "REL-02"
+      ],
+      "contracts": [
+        "notebook_execution",
+        "jobs",
+        "publication",
+        "query",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R14",
+      "user_goal": 5,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-QGIS-PUBLISH",
+        "T-PUBLISH-CRASH"
+      ],
+      "tasks": [
+        "FND-05",
+        "PUB-01",
+        "PUB-02",
+        "QGIS-01",
+        "QGIS-02",
+        "PUB-04",
+        "QA-01",
+        "REL-02"
+      ],
+      "contracts": [
+        "publication",
+        "jobs",
+        "resource_schema",
+        "edits",
+        "post",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R15",
+      "user_goal": 5,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-TILES-01",
+        "T-RASTER-01"
+      ],
+      "tasks": [
+        "SRV-01",
+        "SRV-04",
+        "QGIS-03",
+        "SRV-05",
+        "SRV-06",
+        "PUB-04",
+        "QA-01",
+        "REL-02"
+      ],
+      "contracts": [
+        "publication",
+        "jobs",
+        "resource_schema",
+        "edits",
+        "post",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R16",
+      "user_goal": 5,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-CARTO-01",
+        "T-INGEST-01"
+      ],
+      "tasks": [
+        "FND-05",
+        "SRV-04",
+        "QGIS-03",
+        "QGIS-04",
+        "PUB-04",
+        "REL-02"
+      ],
+      "contracts": [
+        "publication",
+        "jobs",
+        "resource_schema",
+        "edits",
+        "post",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R17",
+      "user_goal": 5,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-OVERWRITE-01",
+        "T-PUBLISH-CRASH"
+      ],
+      "tasks": [
+        "PUB-02",
+        "PUB-03",
+        "REL-02"
+      ],
+      "contracts": [
+        "publication",
+        "jobs",
+        "resource_schema",
+        "edits",
+        "post",
+        "errors"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R18",
+      "user_goal": 0,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-AUTH-ALL",
+        "T-SEC-ABUSE"
+      ],
+      "tasks": [
+        "FND-03",
+        "FND-06",
+        "PLT-02",
+        "PLT-03",
+        "PUB-01",
+        "SEC-01",
+        "SEC-02",
+        "WEB-05",
+        "NB-01",
+        "NB-05",
+        "SEC-03",
+        "REL-02"
+      ],
+      "contracts": [
+        "errors",
+        "resource_schema"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R19",
+      "user_goal": 0,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-RESTORE-01",
+        "T-UPGRADE-01",
+        "T-OFFLINE-01",
+        "T-PERF-01"
+      ],
+      "tasks": [
+        "OPS-02",
+        "OPS-03",
+        "QA-02",
+        "OPS-04",
+        "REL-02"
+      ],
+      "contracts": [
+        "errors",
+        "resource_schema"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R20",
+      "user_goal": 0,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-BOOTSTRAP-01",
+        "T-LOCK-01",
+        "T-RELEASE-01"
+      ],
+      "tasks": [
+        "FND-01",
+        "FND-02",
+        "FND-06",
+        "OPS-03",
+        "REL-01",
+        "REL-02"
+      ],
+      "contracts": [
+        "errors",
+        "resource_schema"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R21",
+      "user_goal": 6,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-OWN-01",
+        "T-OWN-02",
+        "T-OWN-03",
+        "T-OWN-04",
+        "T-OWN-05"
+      ],
+      "tasks": [
+        "FND-07",
+        "FND-08",
+        "OWN-01",
+        "OWN-02",
+        "SEC-04"
+      ],
+      "contracts": [
+        "resource_schema",
+        "jobs"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R22",
+      "user_goal": 6,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-OWN-01",
+        "T-OWN-02",
+        "T-OWN-04",
+        "T-OWN-05"
+      ],
+      "tasks": [
+        "FND-07",
+        "FND-08",
+        "OWN-02",
+        "SEC-04"
+      ],
+      "contracts": [
+        "resource_schema",
+        "jobs"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R23",
+      "user_goal": 7,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-PROJECT-01",
+        "T-PROJECT-02"
+      ],
+      "tasks": [
+        "GOV-01",
+        "GOV-02"
+      ],
+      "contracts": [
+        "jobs"
+      ],
+      "product_test_status": "open"
+    },
+    {
+      "id": "R24",
+      "user_goal": 6,
+      "required_for_scoped_release": true,
+      "tests": [
+        "T-OWN-03"
+      ],
+      "tasks": [
+        "OWN-01"
+      ],
+      "contracts": [
+        "resource_schema",
+        "jobs"
+      ],
+      "product_test_status": "open"
+    }
+  ],
+  "phase_gates": [
+    {
+      "id": "P0",
+      "name": "validate foundations",
+      "outcome": "Repos, source/license/dependency evidence, critical spikes, threat/contract decisions",
+      "exit_evidence": "Account-safe bootstrap; verified donor baselines and owned initial component builds; source/dependency custody; catalog/map/identity spike; branch reference/DB prototype; QGIS publishing comparison; Project setup/evidence or precisely tracked authorization blockers; ADRs.",
+      "accepted": false
+    },
+    {
+      "id": "P1",
+      "name": "one cohesive vertical slice",
+      "outcome": "Install, identity, catalog, simple service and modern shell",
+      "exit_evidence": "From a clean supported host: sign in, publish one synthetic layer, view map/query/metadata, deny a second user, restart successfully. Not yet the full product.",
+      "accepted": false
+    },
+    {
+      "id": "P2",
+      "name": "service/data lifecycle",
+      "outcome": "Native queries/edits, metadata, state-machine publishing, raster baseline, C1 subset",
+      "exit_evidence": "No manual upstream configuration; bounded query/edit contracts; failed job recovery; metadata consistency; all advertised C1 operations pass tests.",
+      "accepted": false
+    },
+    {
+      "id": "P3",
+      "name": "desktop and all requested publication outputs",
+      "outcome": "QGIS wizard, fidelity option, stable overwrite, map/feature/raster/vector tiles",
+      "exit_evidence": "Publish representative desktop fixtures, compare renderers, interrupt/retry, preserve service/layer IDs, verify permissions and tile assets.",
+      "accepted": false
+    },
+    {
+      "id": "P4",
+      "name": "branch-style geodatabase",
+      "outcome": "Schema semantics, snapshots, edits, reconcile/accept/post, native UI/plugin",
+      "exit_evidence": "Full conflict/concurrency/crash/property suite and restored branch post. No Esri branch-protocol claim.",
+      "accepted": false
+    },
+    {
+      "id": "P5",
+      "name": "modern portal applications",
+      "outcome": "Web maps, dashboards, responsive app composer",
+      "exit_evidence": "End-user creates a linked map/table/KPI dashboard and responsive app, publishes/rolls back it, passes permission/accessibility tests.",
+      "accepted": false
+    },
+    {
+      "id": "P6",
+      "name": "notebooks",
+      "outcome": "Isolated environments, SDK/catalog/publish, scheduled runs",
+      "exit_evidence": "Two-user isolation, pinned spatial image tests, notebook-to-service publishing, revocation, restart and schedule provenance.",
+      "accepted": false
+    },
+    {
+      "id": "P7",
+      "name": "release hardening",
+      "outcome": "Supported installation/upgrade/recovery, measured scale, licenses/security/release",
+      "exit_evidence": "Complete capability/ownership acceptance run; upstream-disconnected rebuild and independent patch; security/license approval; actual Project evidence; exact product manifest and recovery record.",
+      "accepted": false
+    }
+  ],
+  "compatibility": {
+    "native": "authoritative v1 contracts; only explicitly tested bounded spikes implemented",
+    "C0": "selected OGC operations only; complete conformance pending",
+    "C1": "Koop reuse spike pending; named clients and map export/legend/identify remain required",
+    "C2": "later bounded edit facade through native geodatabase; unsupported now",
+    "C3": "optional, deferred; native branch semantics remain mandatory"
+  },
+  "human_only_gates": [
+    "WEB-04 manual assistive-technology review",
+    "QA-02 representative-user pilot"
+  ],
+  "supported_product_platforms_required": [
+    "single-node Linux server",
+    "owned Linux QGIS desktop with bundled plugin",
+    "owned Windows QGIS desktop with bundled plugin"
+  ]
+}

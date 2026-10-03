@@ -25,7 +25,7 @@ class ContractTests(unittest.TestCase):
     def example(self,name):
         return json.loads((ROOT/'examples'/f'{name}.json').read_text())
     def test_all_examples(self):
-        self.assertEqual(validate_examples(),4)
+        self.assertEqual(validate_examples(),10)
     def test_unknown_publication_output_fails(self):
         obj=self.example('publication');obj['outputs']=['knowledge_server']
         with self.assertRaises(ValidationError):self.validator('publication').validate(obj)

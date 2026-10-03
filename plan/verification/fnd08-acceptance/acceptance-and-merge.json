@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "task": "FND-08",
+  "delivery": "Merged",
+  "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/7#issuecomment-5967417969",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/76",
+  "merge": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "reviewed_head": "f9e16a91e818be13e281501edd9b71c175ec5044",
+  "postmerge_receipt": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/postmerge-smoke.json",
+    "sha256": "44bd37777aac7489aaf59314ea01b227cdc176fc5eecddd60d7eceb6b12363a7"
+  },
+  "next_task": {
+    "id": "FND-06",
+    "delivery": "In progress",
+    "claim": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5967420494",
+    "branch": "fnd-06/contracts-and-koop",
+    "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0"
+  },
+  "items_before": 91,
+  "items": 92,
+  "fields": 24,
+  "views": 7,
+  "repositories": 15,
+  "all_unrelated_values_preserved": true
+}

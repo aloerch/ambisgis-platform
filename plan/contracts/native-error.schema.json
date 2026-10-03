@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ambisgis:contracts:native-error:v1",
+  "title": "AmbisGIS initial native-error contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "error"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message",
+        "correlation_id",
+        "retryable",
+        "remediation"
+      ],
+      "properties": {
+        "code": {
+          "enum": [
+            "INVALID_REQUEST",
+            "UNSUPPORTED_CAPABILITY",
+            "UNAUTHENTICATED",
+            "NOT_FOUND_OR_FORBIDDEN",
+            "POLICY_UNAVAILABLE",
+            "SCHEMA_MISMATCH",
+            "REVISION_UNAVAILABLE",
+            "INVALID_CURSOR",
+            "LIMIT_EXCEEDED",
+            "STALE_BRANCH_HEAD",
+            "STALE_RECONCILE",
+            "CONFLICTS_UNRESOLVED",
+            "PUBLICATION_FAILED",
+            "TRANSFORM_UNAVAILABLE",
+            "IDEMPOTENCY_CONFLICT"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 512
+        },
+        "correlation_id": {
+          "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+        },
+        "retryable": {
+          "type": "boolean"
+        },
+        "remediation": {
+          "enum": [
+            "correct_request",
+            "authenticate",
+            "refresh",
+            "retry_later",
+            "contact_operator"
+          ]
+        }
+      }
+    }
+  }
+}
