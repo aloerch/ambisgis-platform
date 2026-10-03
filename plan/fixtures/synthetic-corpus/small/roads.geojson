@@ -1,0 +1,5 @@
+{"type":"FeatureCollection","features":[
+{"geometry":{"coordinates":[[-117.001,32.001],[-116.995,32.001]],"type":"LineString"},"id":"b359e9f5-21ec-5873-975a-bd3f69c3b656","properties":{"fid":"b359e9f5-21ec-5873-975a-bd3f69c3b656","name":"Synthetic road 1","speed_limit":25},"type":"Feature"},
+{"geometry":{"coordinates":[[-117.001,32.001999999999995],[-116.995,32.001999999999995]],"type":"LineString"},"id":"cb24992a-7814-5197-96c5-d44c0f57331e","properties":{"fid":"cb24992a-7814-5197-96c5-d44c0f57331e","name":"Synthetic road 2","speed_limit":40},"type":"Feature"},
+{"geometry":{"coordinates":[[-117.001,32.003],[-116.995,32.003]],"type":"LineString"},"id":"85a370a9-7241-56fc-8230-d276d5ee10fe","properties":{"fid":"85a370a9-7241-56fc-8230-d276d5ee10fe","name":"Synthetic road 3","speed_limit":60},"type":"Feature"}
+]}

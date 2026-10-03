@@ -1,0 +1,31 @@
+{
+  "producer_sha256": "3b5dbef208989b54e8640348083dcc9d51c696f0dd8cef1f1c58b8f2d92b0f52",
+  "seed": 2409,
+  "scope": "Actual fixture generation and full-file verification; not product query capacity or database benchmark.",
+  "runs": [
+    {
+      "addresses": 100000,
+      "unique_fids": 100000,
+      "population_sum": 5499840,
+      "null_names": 16667,
+      "empty_names": 16667,
+      "generation_seconds": 0.9010118370024429,
+      "bytes": 63115396,
+      "manifest_sha256": "5aeb5aad8a0f47780fdcba69bc6b568689bb14dc6b30927fa1e14b6796e06a88",
+      "all_file_hashes_verified": true,
+      "network_receipt_sha256": "0ae50247fd6cecf7a2c2637dd35c7510e087c0435cf1fd390521cca7d76f8703"
+    },
+    {
+      "addresses": 1000000,
+      "unique_fids": 1000000,
+      "population_sum": 54999840,
+      "null_names": 166667,
+      "empty_names": 166667,
+      "generation_seconds": 8.237017742001626,
+      "bytes": 632065398,
+      "manifest_sha256": "b480f7687b33e7c5d89bdd24eb5fb04996feb51c1f34ba891d57f976ba1fc4b8",
+      "all_file_hashes_verified": true,
+      "network_receipt_sha256": "a136b990ea761ab569ab0d17ddff53c878f8c27bb11a271dfcc5b05fd946d2e9"
+    }
+  ]
+}

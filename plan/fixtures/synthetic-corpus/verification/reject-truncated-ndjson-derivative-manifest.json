@@ -1,0 +1,146 @@
+{
+  "addresses": 12,
+  "files": {
+    "README.txt": {
+      "bytes": 531,
+      "sha256": "9c748578fe7bd38bb9749652cbb96a73648e4bedc21754885374ed2794fe68c2"
+    },
+    "addresses.geojson": {
+      "bytes": 3785,
+      "sha256": "cef35342997a939a5af5a8710931bdc0d62f4c4502df16af1c75db7bc254d939"
+    },
+    "addresses.ndjson": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "attachment-references.json": {
+      "bytes": 333,
+      "sha256": "5b06070b427f5830252b0230a9314b105706e5b992a1cc20cddf1df5d7f43c16"
+    },
+    "attachments/inspection.txt": {
+      "bytes": 57,
+      "sha256": "d3ad3fb21430ce7e11ddb3c3d7c273e870c2f61e40041173509f49f113481021"
+    },
+    "expected-small.json": {
+      "bytes": 1230,
+      "sha256": "94d2aa70aeba40c995bb242d1437ae9a24a5bada03cb2cf4801db479172b3d7c"
+    },
+    "inspections.csv": {
+      "bytes": 303,
+      "sha256": "b8094408dd19183d7b290628d75611a5e78d43ce73c603784b9acaf97c6acd9e"
+    },
+    "inspections.csvt": {
+      "bytes": 35,
+      "sha256": "78a78f5ad4185377af1e5c5865207be0af5f5d8f917a8c5d0f016dbbbc294f8f"
+    },
+    "invalid/abuse-inputs.json": {
+      "bytes": 339,
+      "sha256": "6610344b186af596e1b2d5fdadf67d801081093fb456633730784fa9866f91ac"
+    },
+    "invalid/duplicate-object-id.geojson": {
+      "bytes": 661,
+      "sha256": "c5a0bf39619350a96bf30ec7920d3a1acca37966cb7f8a1044c6c93dd90168a6"
+    },
+    "invalid/duplicate-uuid.geojson": {
+      "bytes": 661,
+      "sha256": "a4c0f4dc751ffbcf6fe2f9f672be71e5f86742ed4585725019effb7e7b319e17"
+    },
+    "invalid/orphan-inspection.csv": {
+      "bytes": 90,
+      "sha256": "e2d496ef4984b7f8e4a8929b619eeb17657f682387e57f1a879f65ef28088f25"
+    },
+    "invalid/self-intersection.geojson": {
+      "bytes": 282,
+      "sha256": "9fb7d9ca3703e19b8021d2b6e850a4d6e3426cc61998f3cbc073d431f7a591e2"
+    },
+    "invalid/typed-errors.json": {
+      "bytes": 358,
+      "sha256": "7a0effe9b433d000390a377b265bf3ef8126ce4c19887281c410361548d0c612"
+    },
+    "native/dimensions.csv": {
+      "bytes": 168,
+      "sha256": "380ab81df1135eac0376c4f3f68ff1ecb6470b52524806bd57e47f5e34d04d24"
+    },
+    "native/epsg2230.csv": {
+      "bytes": 79,
+      "sha256": "37d0fc4c9e28fa3f842741e3dd5eeecefc54a2dbc7a5ca4acd2b19a53c8637c7"
+    },
+    "native/null-empty-geometry.geojson": {
+      "bytes": 390,
+      "sha256": "b3d3f3bfda0bd3e5ea72af4388b390325ca72126ab9a39f2778362665799699f"
+    },
+    "native/typed-values.csv": {
+      "bytes": 293,
+      "sha256": "cc3026299c913ee77f53e022d186a7bee7d53873617dab19ce003a9aa056c2f8"
+    },
+    "parcels.geojson": {
+      "bytes": 1512,
+      "sha256": "50221324d6158c813b26e22f36db17ec1f88eb2d97c9e2022a7a0d8caa92e594"
+    },
+    "policy-scenarios.json": {
+      "bytes": 982,
+      "sha256": "09244a2562b46a4049ea88993e5a9a9fd83bcc4d93a5e526080977798c4caeec"
+    },
+    "raster/multiband-band-1.raw": {
+      "bytes": 24,
+      "sha256": "48284c7e09c546a12aeaa191e82f6868149c872dd25f6c2db14f40e1494a3868"
+    },
+    "raster/multiband-band-2.raw": {
+      "bytes": 24,
+      "sha256": "2a4a677da3f9f7e28a8f2cb1c0dd3d8853b53a010d86d32fc786801b7e05c638"
+    },
+    "raster/multiband-band-3.raw": {
+      "bytes": 24,
+      "sha256": "56dc03f267f1a5fea5431893dd528aac61a10be8567e44d8a15eecfa2f67472d"
+    },
+    "raster/multiband.vrt": {
+      "bytes": 1178,
+      "sha256": "83df48faf454d7cca33b7543d864ba76cba57c3dd02882acfbd3ae9db2a84fe9"
+    },
+    "raster/time-20260101-band-1.raw": {
+      "bytes": 24,
+      "sha256": "1c6ab6d5790d8ea5ef7e7200d5cd5289f92db1b69bda3313dbc573a45cfc6756"
+    },
+    "raster/time-20260101.vrt": {
+      "bytes": 516,
+      "sha256": "ed67d5e5b4a0bfae073df617571c513c96472e49a946be9f8cff24837a869164"
+    },
+    "raster/time-20260102-band-1.raw": {
+      "bytes": 24,
+      "sha256": "8ad457392f6884d69a6604fa627a269637b1f41c00771c34e1fe1656e6b393d5"
+    },
+    "raster/time-20260102.vrt": {
+      "bytes": 517,
+      "sha256": "1c58fb5096f2af371d53dfa7ba67231513d43a0cf9725d7519f4e2e91b26d463"
+    },
+    "raster/time-mosaic.csv": {
+      "bytes": 145,
+      "sha256": "c1801be7393d3abb1bb130c676dfd5a4b479fe20586932ce7f96e4f4b39a0ece"
+    },
+    "rich-style.qgs": {
+      "bytes": 108758,
+      "sha256": "7a66ac84a6ac37f775e482f51ff6d60a518b9b268ad01d88616267deb794ce58"
+    },
+    "roads.geojson": {
+      "bytes": 823,
+      "sha256": "59fbbb0a8856c7b8697c9404a6ac9f404b3efd1ddb6e14a88127158ff291137e"
+    },
+    "schema.json": {
+      "bytes": 552,
+      "sha256": "3b9120e45aede5c4a4863dd27405d5db3fa0a535e4ce163fb7f67ade2bbca5f7"
+    }
+  },
+  "generator_sha256": "3b5dbef208989b54e8640348083dcc9d51c696f0dd8cef1f1c58b8f2d92b0f52",
+  "generator_version": 1,
+  "license": "GPL-3.0-or-later",
+  "rules": {
+    "addresses": "12-row scalar cycle; 1000-column geographic grid with seed offset",
+    "expectations": "Hand-authored first12-row oracle, not generated by a query implementation",
+    "identity": "UUIDv5 URL namespace; version/seed/dataset/index",
+    "object_id": "index+1, never derived from result ordering",
+    "raster": "4x3 UInt16 little-endian, bands 1..11+base, last cell nodata65535"
+  },
+  "runtime_support": "Fixtures are test inputs, not advertised product capabilities.",
+  "seed": 2409,
+  "synthetic": true
+}

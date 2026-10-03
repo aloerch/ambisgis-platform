@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<VRTDataset rasterXSize="4" rasterYSize="3">
+  <SRS>EPSG:4326</SRS>
+  <GeoTransform>-117.0,0.01,0,32.03,0,-0.01</GeoTransform>
+  <VRTRasterBand dataType="UInt16" band="1" subClass="VRTRawRasterBand">
+    <NoDataValue>65535</NoDataValue>
+    <SourceFilename relativeToVRT="1">multiband-band-1.raw</SourceFilename>
+    <ImageOffset>0</ImageOffset>
+    <PixelOffset>2</PixelOffset>
+    <LineOffset>8</LineOffset>
+    <ByteOrder>LSB</ByteOrder>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="2" subClass="VRTRawRasterBand">
+    <NoDataValue>65535</NoDataValue>
+    <SourceFilename relativeToVRT="1">multiband-band-2.raw</SourceFilename>
+    <ImageOffset>0</ImageOffset>
+    <PixelOffset>2</PixelOffset>
+    <LineOffset>8</LineOffset>
+    <ByteOrder>LSB</ByteOrder>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="UInt16" band="3" subClass="VRTRawRasterBand">
+    <NoDataValue>65535</NoDataValue>
+    <SourceFilename relativeToVRT="1">multiband-band-3.raw</SourceFilename>
+    <ImageOffset>0</ImageOffset>
+    <PixelOffset>2</PixelOffset>
+    <LineOffset>8</LineOffset>
+    <ByteOrder>LSB</ByteOrder>
+  </VRTRasterBand>
+</VRTDataset>
