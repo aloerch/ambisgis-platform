@@ -147,7 +147,9 @@ def child(invocation):
             report['commands'].append({'action': action, 'exit_code': code, 'log_sha256': digest(capture.path), 'diagnostic_secret_hits': capture.leaks, 'source_redactions': capture.source_redactions})
             if code or capture.security_failures: raise RuntimeError('GeoNode command unsuccessful: ' + action)
         if invocation.get('integration'):
-            if config.get('catalog_policy'):
+            if config.get('renderer_fixture'):
+                from renderer_journey import exercise
+            elif config.get('catalog_policy'):
                 from catalog_journey import exercise
             else:
                 from journey import exercise
@@ -210,6 +212,16 @@ def run(args):
             config['catalog_policy'] = True
             config['policy_key'] = secrets.token_urlsafe(36)
             config['gateway_port'] = fresh_port()
+        if getattr(args, 'renderer_fixture', None):
+            if not config.get('catalog_policy') or not getattr(args, 'qgis_config', None):
+                raise ValueError('renderer fixture requires existing catalog policy and explicit QGIS config')
+            source = args.renderer_fixture.resolve()
+            if any(p.is_symlink() for p in source.rglob('*')):
+                raise ValueError('renderer fixture cannot contain symlinks')
+            shutil.copytree(source, output / 'renderer-assets')
+            config['renderer_fixture'] = str(output / 'renderer-assets')
+            config['qgis_config'] = json.loads(args.qgis_config.read_text())
+            config['qgis_port'] = fresh_port()
         if args.strict_roles and (not args.strict_verifier or (args.integration and (not args.build or not args.war_sha256))):
             raise ValueError('strict roles require strict verifier, integration and explicit build/WAR digest')
         values = private_values(config)
@@ -240,12 +252,18 @@ def run(args):
             java_home = tools / 'jdk-17.0.20.1+1'
             manifest = json.loads((HERE.parent / 'java/toolchain-inputs.json').read_text())
             result['toolchain'] = toolchain.verify_extracted(TASK / 'source-archives/java-resolution/toolchain', manifest, tools)
-            inventory = combined_logging_probe.packaged_classpath(build, output)
+            if getattr(args, 'source_successor_build', False):
+                import successor_runtime_inputs
+                inventory = successor_runtime_inputs.packaged_classpath(build, output)
+            else:
+                inventory = combined_logging_probe.packaged_classpath(build, output)
             if inventory['war_sha256'] != expected_war:
                 raise ValueError('retained #59 WAR digest mismatch')
             save(output / 'application-inventory.json', inventory)
             result['runtime_inputs'] = runtime_inputs.stage(TASK / 'source-archives/java-http-auth/maven', output / 'servlet')
             policy_source = HERE.parents[1] / 'services/gateway/CatalogPolicyFilter.java' if config.get('catalog_policy') else None
+            if config.get('renderer_fixture'):
+                policy_source = HERE.parents[1] / 'services/gateway/CatalogMapPolicyFilter.java'
             result['launcher'] = runtime_inputs.compile_launcher(java_home, output / 'servlet', output / 'launcher', policy_source)
             invocation['runtime'] = {'source': str(build / 'work/source'), 'java_home': str(java_home),
                 'servlet': str(output / 'servlet'), 'launcher': str(output / 'launcher'),
@@ -257,7 +275,8 @@ def run(args):
         save(output / 'invocation.json', invocation)
         # Snapshot the exact executed harness so later edits cannot alter retained attempts.
         destination = output / 'tooling'
-        for component in ('geonode', 'java', 'postgis'):
+        components = ('geonode', 'java', 'postgis', 'qgis') if config.get('renderer_fixture') else ('geonode', 'java', 'postgis')
+        for component in components:
             for source in (HERE.parent / component).rglob('*'):
                 if source.is_file() and source.suffix in ('.py', '.json', '.java') and '__pycache__' not in source.parts:
                     target = destination / component / source.relative_to(HERE.parent / component)
@@ -265,6 +284,8 @@ def run(args):
                     shutil.copyfile(source, target)
         if config.get('catalog_policy'):
             shutil.copytree(HERE.parents[1] / 'services/control-plane/ambisgis_policy', destination / 'geonode/ambisgis_policy', ignore=shutil.ignore_patterns('__pycache__'))
+        if config.get('renderer_fixture'):
+            shutil.copytree(HERE.parents[1] / 'services/control-plane/ambisgis_render', destination / 'geonode/ambisgis_render', ignore=shutil.ignore_patterns('__pycache__'))
         snapshot = {str(p.relative_to(destination)): digest(p) for p in destination.rglob('*') if p.is_file()}
         save(output / 'tooling.json', snapshot)
         invocation['environment']['PYTHONPATH'] = str(destination / 'geonode')
@@ -325,6 +346,9 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--integration', action='store_true')
     parser.add_argument('--catalog-policy', action='store_true')
+    parser.add_argument('--renderer-fixture', type=Path)
+    parser.add_argument('--qgis-config', type=Path)
+    parser.add_argument('--source-successor-build', action='store_true')
     parser.add_argument('--strict-verifier', action='store_true')
     parser.add_argument('--strict-roles', action='store_true')
     parser.add_argument('--build', type=Path)

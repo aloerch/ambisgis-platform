@@ -99,8 +99,10 @@ def compile_launcher(java_home, staged, output, policy_source=None):
     sources = [str(output / LAUNCHER.name)]
     if policy_source is not None:
         policy_source = Path(policy_source)
-        shutil.copyfile(policy_source, output / 'CatalogPolicyFilter.java')
-        sources.append(str(output / 'CatalogPolicyFilter.java'))
+        if policy_source.name not in ('CatalogPolicyFilter.java', 'CatalogMapPolicyFilter.java'):
+            raise ValueError('unknown owned catalog filter source')
+        shutil.copyfile(policy_source, output / policy_source.name)
+        sources.append(str(output / policy_source.name))
     (output / 'classes').mkdir()
     offline = Path(__file__).resolve().parents[1] / 'postgis/offline_exec.py'
     report = {'result_exit_code': 1, 'launcher_source_sha256': sha(LAUNCHER),
