@@ -1,0 +1,1405 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-03T10:55:04.075895+00:00",
+  "mechanism": "separate-agent",
+  "reviewer": "/root/publication_review",
+  "implementer": "/root with /root/fnd03_identity and /root/fnd04_prototype",
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "pr": 77,
+  "branch": "fnd-06/contracts-and-koop",
+  "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree",
+  "base_sha": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "head_sha": "a5c9e8141fce4dd5ad2433dabb5bd687de683c14",
+  "tree": "3fc49bdf5023efe8964ca12b76ed6faedbc8b32f",
+  "clean": true,
+  "decision": "No unresolved material findings. All three original FND-06 engineering criteria have adequate bounded evidence at this exact candidate. Eligible for the independent-review part of the unchanged trusted gate; live hosted checks, normal protected merge and actual postmerge checks remain integrator responsibilities. This is not remote task acceptance or product/release/distribution approval.",
+  "findings": [],
+  "concerns": [],
+  "checked_boundaries": [
+    "scope",
+    "source",
+    "rights",
+    "secrets",
+    "destructive-actions"
+  ],
+  "prior_acceptance_sha": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "scrutinized_controls": [
+    "plan/contracts/app-event.schema.json",
+    "plan/contracts/common.schema.json",
+    "plan/contracts/contract-package.json",
+    "plan/contracts/job.schema.json",
+    "plan/contracts/layer.schema.json",
+    "plan/contracts/native-error.schema.json",
+    "plan/contracts/native-query.schema.json",
+    "plan/contracts/notebook-run.schema.json",
+    "plan/docs/delivery-ledger.json",
+    "plan/docs/delivery-requirements-matrix.md",
+    "plan/tests/test_contract_traceability.py",
+    "plan/tests/test_contracts_and_plan.py",
+    "plan/tests/test_native_contracts.py",
+    "plan/tests/test_synthetic_corpus.py",
+    "plan/tools/validate_package.py",
+    "plan/verification/fnd08-acceptance/acceptance-and-merge.json",
+    "plan/verification/fnd08-acceptance/postmerge-independent-review.json",
+    "plan/verification/fnd08-acceptance/postmerge-smoke.json"
+  ],
+  "scope": {
+    "changed_files_count": 214,
+    "changed_files": [
+      {
+        "path": "STATUS.md",
+        "sha256": "e0f9b76f864d7dd3b435a0ee23754d939d36dc4f10eafa071e5627384aa92577",
+        "bytes": 29122
+      },
+      {
+        "path": "build-support/koop/backend.py",
+        "sha256": "1b38b0a3492579b23ea6dc9bfd51f77c7f574e985028431eb19e3ba5c654fa39",
+        "bytes": 6562
+      },
+      {
+        "path": "build-support/koop/codec_diagnostics.js",
+        "sha256": "2bd88a5dad75d32607e8b5a95c1d5fbec6508030c32facac95abcb2177dd0b12",
+        "bytes": 1581
+      },
+      {
+        "path": "build-support/koop/custody.py",
+        "sha256": "0431a935ba45a3961288bf500362cbf2f529d3b39f20cef1616da7a0c51870ad",
+        "bytes": 14043
+      },
+      {
+        "path": "build-support/koop/inputs.json",
+        "sha256": "f9fb44113047a08cdcc1905b401a87615f3525b5c9f6e67344a23e076d0ffbde",
+        "bytes": 851
+      },
+      {
+        "path": "build-support/koop/install.py",
+        "sha256": "bd29ba2090a69e7ca1c281203d16c5e51685aaf6375fe5bfae1670bedacd136e",
+        "bytes": 12785
+      },
+      {
+        "path": "build-support/koop/koop_runtime_inputs.py",
+        "sha256": "2c92a3513d1fb7218d59feb1ae16bfa617f0661d18e9d4aa10cb1ad12b201e8b",
+        "bytes": 4333
+      },
+      {
+        "path": "build-support/koop/native.py",
+        "sha256": "204b065d6d167d24d013fcdcd22cab985fffb90183362ec3a294f7d2e1cdcb34",
+        "bytes": 17218
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/.gitattributes",
+        "sha256": "ba46803726b132d087f7b2c4d2f1538560a4e155d8275c77f4476397983ee3fb",
+        "bytes": 247
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/MIT-LICENSE.txt",
+        "sha256": "eeed1ca176eebad5c73870e233cfff03981fecd319c969475dfa3633036c336b",
+        "bytes": 1081
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/NOTICE.txt",
+        "sha256": "4cb80c4a22e20eab6428866530e76f9ff5e0df58f06980b4f13b5b2183112e10",
+        "bytes": 2245
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/README.md",
+        "sha256": "592b9d2cdc109654692f4deb82c149b235e816eb0b16b6bc8dbb2294f6215eab",
+        "bytes": 2291
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/UNICODE-LICENSE.txt",
+        "sha256": "5413a36c98c49fc422e4966bc4a068dc443826f91dfd37d59cf0576dc2121709",
+        "bytes": 1970
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/input-manifest.json",
+        "sha256": "760dba33ab7b05ecf622c5a5be93b20d7e31734e2ade76fb601530229fd82e1a",
+        "bytes": 5065
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/provenance/icu56-license-blob.json",
+        "sha256": "2b2cd99ec66237ae86db82819183db26476454f95ddaa6709aa68fe9708bb744",
+        "bytes": 28869
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/provenance/icu56-license.html",
+        "sha256": "a4fd81c0bb0aee44d90376562f53c62d17ce252b93190251d172ec837ee5c6c8",
+        "bytes": 20237
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/provenance/icu56-tag.json",
+        "sha256": "a8d95a15251757afda37defb2f7ca50e980522f988261d958449fa4351e5500f",
+        "bytes": 359
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/provenance/license-commit.json",
+        "sha256": "c2225b970272514830b9e470c300765cec77509100e09b4f2a3f968636be543b",
+        "bytes": 4881
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/provenance/license-tree.json",
+        "sha256": "6f8dcd2b682209bd2a03e558100efb102b680a3bc90b69f7879029b4fba8ac98",
+        "bytes": 3132
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/provenance/selected-commit.json",
+        "sha256": "715218e9b963ff079a015307d20cb56e7d4796450b5df7520b6af0c86dd9b4e8",
+        "bytes": 3948
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/provenance/selected-tree.json",
+        "sha256": "14eadf03ef7356228ce6a6556c390a6368853f49c7d22632330275ff287a43ba",
+        "bytes": 2920
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/sources/IdnaMappingTable-8.0.0.txt",
+        "sha256": "5e9f5929130b713e698162ac5b60a99ccfb831606686b1c50777cd920b55dee2",
+        "bytes": 793222
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/sources/generateMappingTable.js",
+        "sha256": "7e236cd8f70870ed149068f9b6aa4d382289c2c2f72c71f0bc42c2e0f1beed9f",
+        "bytes": 1231
+      },
+      {
+        "path": "build-support/koop/notices/tr46-0.0.3/sources/index.js",
+        "sha256": "8194f9425ce9ab06ea9aebcd64a85ec064d95d61bb349f8f1c98762ad256638e",
+        "bytes": 7567
+      },
+      {
+        "path": "build-support/koop/provider.js",
+        "sha256": "a360f3da1c91e34389daf284e4cd129092d8534cd7f226462ba61a25bf0e2dc4",
+        "bytes": 10078
+      },
+      {
+        "path": "build-support/koop/retain.py",
+        "sha256": "4de599a4b2fc3ecc05f717e5d4bafa90cc316ce38659aa17b448389c95588806",
+        "bytes": 9963
+      },
+      {
+        "path": "build-support/koop/runtime.py",
+        "sha256": "5d3537722f95647f4ff352f3cc884de4e7e27269db364769997d4d4628eaf325",
+        "bytes": 16537
+      },
+      {
+        "path": "build-support/koop/runtime_cases.py",
+        "sha256": "1829bc8bac4f488633159c5efc67efc71995d43a873dd5948e9105a1f92d2dea",
+        "bytes": 23567
+      },
+      {
+        "path": "build-support/koop/runtime_fixture.py",
+        "sha256": "199307cea53e1bad3cddaec6af9098a7ecf1d29761042b565339ca4e7f468136",
+        "bytes": 5097
+      },
+      {
+        "path": "build-support/koop/summarize.py",
+        "sha256": "7b56c5d2817ec733cd39fbb641bf80b70dcddced1d2f5c84d6f7a9d0d907ad45",
+        "bytes": 6535
+      },
+      {
+        "path": "build-support/koop/test_custody.py",
+        "sha256": "34a1351ace6aba6cf99b24d662a0187dc0f6c6acce910acef9d1ab1b1d4cd4b3",
+        "bytes": 12995
+      },
+      {
+        "path": "build-support/koop/test_native.py",
+        "sha256": "c7fec041a3daa97e268b9559b07c6e94f4400dec88be43686fc6af1f08e81ab5",
+        "bytes": 4019
+      },
+      {
+        "path": "build-support/koop/test_runtime_inputs.py",
+        "sha256": "2db77e40e5561604e629fb671ee4cf76663e778dae3fe40c8ca8ce2d36cb4b2d",
+        "bytes": 2688
+      },
+      {
+        "path": "build-support/koop/tr46_notices.py",
+        "sha256": "51dc583d55b712838f990530afe9bdf6ccdfb48e5b71d87b97b1d70070500442",
+        "bytes": 14194
+      },
+      {
+        "path": "plan/DECISIONS.md",
+        "sha256": "8c6b2a7cee5b91000ce2c9b8db74405bb9be88f913fcd87ea3de5f5933bb30b7",
+        "bytes": 8772
+      },
+      {
+        "path": "plan/STATUS.md",
+        "sha256": "24390a43812d249b4062d783a9acbd6ae024fbf2fe5854eb22d1b54dd61bda5f",
+        "bytes": 53206
+      },
+      {
+        "path": "plan/adrs/012-initial-shared-contracts.md",
+        "sha256": "6194ed4db678e6da3a55fa5c7a771b9fb45c3b78c3dd4905e7a1f4acb886e629",
+        "bytes": 6246
+      },
+      {
+        "path": "plan/adrs/013-koop-query-codec-reuse.md",
+        "sha256": "d2746a2c0d808435888daf461c1c91e0a3f2d4d33dd657264693d06f0c093887",
+        "bytes": 11220
+      },
+      {
+        "path": "plan/contracts/app-event.schema.json",
+        "sha256": "c2e103775c0ae3279beb9598a3720829e6ac8bbf5d5c0e196bfa88647b0f3b0e",
+        "bytes": 2641
+      },
+      {
+        "path": "plan/contracts/common.schema.json",
+        "sha256": "866fa205781af958d5d1a1f1cd1708d6333c2fac5649293ee21e6d7aa750c23b",
+        "bytes": 7996
+      },
+      {
+        "path": "plan/contracts/contract-package.json",
+        "sha256": "f72d3fc5574920d9e2ffcc5c31367fa878afb0512f5ef47704ecf94ea8faec82",
+        "bytes": 15433
+      },
+      {
+        "path": "plan/contracts/job.schema.json",
+        "sha256": "dd152c162580ea49b0d71dd4d3d93fa25567b669cdb31d0f6157292316e3ed01",
+        "bytes": 5434
+      },
+      {
+        "path": "plan/contracts/layer.schema.json",
+        "sha256": "64872ea92201eeea841c80d5572acb5dfb8e0e724a47fd0aaeb1c982782a8e99",
+        "bytes": 1820
+      },
+      {
+        "path": "plan/contracts/native-error.schema.json",
+        "sha256": "20ec94e6a03ceeabf389853c507f66aea0885d45b120b56ff2a7337cb02c2994",
+        "bytes": 1682
+      },
+      {
+        "path": "plan/contracts/native-query.schema.json",
+        "sha256": "62f521c081896a8fa3bfccc1f2d090f54c3596ca24d9347a581d84a37c6d23e0",
+        "bytes": 1945
+      },
+      {
+        "path": "plan/contracts/notebook-run.schema.json",
+        "sha256": "4eb2964d8452f6af92c90d992ec60240a5bcef57822cf8a7a0b0f2128a744414",
+        "bytes": 2410
+      },
+      {
+        "path": "plan/docs/delivery-ledger.json",
+        "sha256": "9ed549c09710297e7886eab9572d7e80f4d3c67f47a0076a0d8143cb9f358d2a",
+        "bytes": 18238
+      },
+      {
+        "path": "plan/docs/delivery-requirements-matrix.md",
+        "sha256": "b70e2bc3afee4f108ce3252e4d2044e1ea780a0ea70b762f2e9eedad1cc5efef",
+        "bytes": 19903
+      },
+      {
+        "path": "plan/docs/fnd-06-contracts.md",
+        "sha256": "62c387f1113dfdf82ca581262d78936865816309e4d3ad4356db1bb308f04e46",
+        "bytes": 14701
+      },
+      {
+        "path": "plan/docs/fnd-06-synthetic-corpus.md",
+        "sha256": "056d7cfcc7254069a84a217ad30ae665338e08ff827f09e9d1246feae0fe7362",
+        "bytes": 12913
+      },
+      {
+        "path": "plan/docs/fnd-06-threat-model.md",
+        "sha256": "0f8facbb4c27815bb08c27b431bb8f5a37c18b86126e8b6078e440df44892c36",
+        "bytes": 9917
+      },
+      {
+        "path": "plan/docs/fnd-06-tr46-notice-supplement.md",
+        "sha256": "6fecbe6186ce7c1b4a165a17a6622cffdf93e201daf061fc20ed4f8b15cd9567",
+        "bytes": 7339
+      },
+      {
+        "path": "plan/examples/app-event.json",
+        "sha256": "dac1097ec299093addcb6f6d8edfb85fcfe185c5c496a53c8dec8383eb6121f4",
+        "bytes": 348
+      },
+      {
+        "path": "plan/examples/job.json",
+        "sha256": "d542f54369dfeb003310e4a3e36eab531a86ec288ae5ff744b86620dba1048ed",
+        "bytes": 346
+      },
+      {
+        "path": "plan/examples/layer.json",
+        "sha256": "b8eae02aabed55ec04d48120ad54c308f8cd026135d8aecb008b1554b82bbbfb",
+        "bytes": 1514
+      },
+      {
+        "path": "plan/examples/native-error.json",
+        "sha256": "985ae0d62150b56ec0d85fb789ecf3a651c171666cfcaaff367579a56e4b4265",
+        "bytes": 277
+      },
+      {
+        "path": "plan/examples/native-query.json",
+        "sha256": "d9dc5f33241c982bcbeaa1d87d762e7b93e5aa1f5213d5cfa07324711fac702a",
+        "bytes": 560
+      },
+      {
+        "path": "plan/examples/notebook-run.json",
+        "sha256": "08f94678bdc4a2035184c5a4053d57f111d317c9e97a3d5f26d94713d04e1605",
+        "bytes": 791
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/README.md",
+        "sha256": "200f9a9ca3a00770ebaf0682adef893b13db88146a9094606b603285fa08be09",
+        "bytes": 1126
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/author_project.py",
+        "sha256": "6f9f4d422f9876f796a1e6dd0078e7b84868783ee2e521f46c995865f9ed7aa3",
+        "bytes": 4439
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/expected-small.json",
+        "sha256": "64a64430a58619c3ddb132531ccb9ee7631e60fbbdcbc80f0fcb9b2d2214ea50",
+        "bytes": 1383
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/README.txt",
+        "sha256": "9c748578fe7bd38bb9749652cbb96a73648e4bedc21754885374ed2794fe68c2",
+        "bytes": 531
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/addresses.geojson",
+        "sha256": "cef35342997a939a5af5a8710931bdc0d62f4c4502df16af1c75db7bc254d939",
+        "bytes": 3785
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/addresses.ndjson",
+        "sha256": "7f6bbd0ee06d614bbcb776edfe9e8ee60d47f6b514bf1f77ddac8609c8b5a34f",
+        "bytes": 3730
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/attachment-references.json",
+        "sha256": "5b06070b427f5830252b0230a9314b105706e5b992a1cc20cddf1df5d7f43c16",
+        "bytes": 333
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/attachments/inspection.txt",
+        "sha256": "d3ad3fb21430ce7e11ddb3c3d7c273e870c2f61e40041173509f49f113481021",
+        "bytes": 57
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/expected-small.json",
+        "sha256": "94d2aa70aeba40c995bb242d1437ae9a24a5bada03cb2cf4801db479172b3d7c",
+        "bytes": 1230
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/inspections.csv",
+        "sha256": "b8094408dd19183d7b290628d75611a5e78d43ce73c603784b9acaf97c6acd9e",
+        "bytes": 303
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/inspections.csvt",
+        "sha256": "78a78f5ad4185377af1e5c5865207be0af5f5d8f917a8c5d0f016dbbbc294f8f",
+        "bytes": 35
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/invalid/abuse-inputs.json",
+        "sha256": "6610344b186af596e1b2d5fdadf67d801081093fb456633730784fa9866f91ac",
+        "bytes": 339
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/invalid/duplicate-object-id.geojson",
+        "sha256": "c5a0bf39619350a96bf30ec7920d3a1acca37966cb7f8a1044c6c93dd90168a6",
+        "bytes": 661
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/invalid/duplicate-uuid.geojson",
+        "sha256": "a4c0f4dc751ffbcf6fe2f9f672be71e5f86742ed4585725019effb7e7b319e17",
+        "bytes": 661
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/invalid/orphan-inspection.csv",
+        "sha256": "e2d496ef4984b7f8e4a8929b619eeb17657f682387e57f1a879f65ef28088f25",
+        "bytes": 90
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/invalid/self-intersection.geojson",
+        "sha256": "9fb7d9ca3703e19b8021d2b6e850a4d6e3426cc61998f3cbc073d431f7a591e2",
+        "bytes": 282
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/invalid/typed-errors.json",
+        "sha256": "7a0effe9b433d000390a377b265bf3ef8126ce4c19887281c410361548d0c612",
+        "bytes": 358
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/manifest.json",
+        "sha256": "9d55e9bdffeee83e4d9bd09166469c1360987b8572cb27ad42087c9eca878efb",
+        "bytes": 4355
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/native/dimensions.csv",
+        "sha256": "380ab81df1135eac0376c4f3f68ff1ecb6470b52524806bd57e47f5e34d04d24",
+        "bytes": 168
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/native/epsg2230.csv",
+        "sha256": "37d0fc4c9e28fa3f842741e3dd5eeecefc54a2dbc7a5ca4acd2b19a53c8637c7",
+        "bytes": 79
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/native/null-empty-geometry.geojson",
+        "sha256": "b3d3f3bfda0bd3e5ea72af4388b390325ca72126ab9a39f2778362665799699f",
+        "bytes": 390
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/native/typed-values.csv",
+        "sha256": "cc3026299c913ee77f53e022d186a7bee7d53873617dab19ce003a9aa056c2f8",
+        "bytes": 293
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/parcels.geojson",
+        "sha256": "50221324d6158c813b26e22f36db17ec1f88eb2d97c9e2022a7a0d8caa92e594",
+        "bytes": 1512
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/policy-scenarios.json",
+        "sha256": "09244a2562b46a4049ea88993e5a9a9fd83bcc4d93a5e526080977798c4caeec",
+        "bytes": 982
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/raster/multiband-band-1.raw",
+        "sha256": "48284c7e09c546a12aeaa191e82f6868149c872dd25f6c2db14f40e1494a3868",
+        "bytes": 24
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/raster/multiband-band-2.raw",
+        "sha256": "2a4a677da3f9f7e28a8f2cb1c0dd3d8853b53a010d86d32fc786801b7e05c638",
+        "bytes": 24
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/raster/multiband-band-3.raw",
+        "sha256": "56dc03f267f1a5fea5431893dd528aac61a10be8567e44d8a15eecfa2f67472d",
+        "bytes": 24
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/raster/multiband.vrt",
+        "sha256": "83df48faf454d7cca33b7543d864ba76cba57c3dd02882acfbd3ae9db2a84fe9",
+        "bytes": 1178
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/raster/time-20260101-band-1.raw",
+        "sha256": "1c6ab6d5790d8ea5ef7e7200d5cd5289f92db1b69bda3313dbc573a45cfc6756",
+        "bytes": 24
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/raster/time-20260101.vrt",
+        "sha256": "ed67d5e5b4a0bfae073df617571c513c96472e49a946be9f8cff24837a869164",
+        "bytes": 516
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/raster/time-20260102-band-1.raw",
+        "sha256": "8ad457392f6884d69a6604fa627a269637b1f41c00771c34e1fe1656e6b393d5",
+        "bytes": 24
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/raster/time-20260102.vrt",
+        "sha256": "1c58fb5096f2af371d53dfa7ba67231513d43a0cf9725d7519f4e2e91b26d463",
+        "bytes": 517
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/raster/time-mosaic.csv",
+        "sha256": "c1801be7393d3abb1bb130c676dfd5a4b479fe20586932ce7f96e4f4b39a0ece",
+        "bytes": 145
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/rich-style.qgs",
+        "sha256": "7a66ac84a6ac37f775e482f51ff6d60a518b9b268ad01d88616267deb794ce58",
+        "bytes": 108758
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/roads.geojson",
+        "sha256": "59fbbb0a8856c7b8697c9404a6ac9f404b3efd1ddb6e14a88127158ff291137e",
+        "bytes": 823
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/small/schema.json",
+        "sha256": "3b9120e45aede5c4a4863dd27405d5db3fa0a535e4ce163fb7f67ade2bbca5f7",
+        "bytes": 552
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/templates/rich-style.qgs",
+        "sha256": "7a66ac84a6ac37f775e482f51ff6d60a518b9b268ad01d88616267deb794ce58",
+        "bytes": 108758
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/author-project-002.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/author-project-command-002.json",
+        "sha256": "732c4162c87d1dad2654c848e7296061ca305ed2d323dc543342acbd1b1c98ed",
+        "bytes": 4787
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/author-project-network-002.json",
+        "sha256": "6526f1354985b54bbc17af7d53b5e7f2a6d54b2670794cacdd1010f0249d27e4",
+        "bytes": 2227
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/evidence.json",
+        "sha256": "52615f55aa6247fbe8765598951ea8f4b845eb1c3afd2b9ccc26dfdd8c552bf6",
+        "bytes": 13768
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/exercise-scales.py",
+        "sha256": "babf6eb03496f6cc007a0490d4592a1102d3920f74724846663f23fdd942be69",
+        "bytes": 2364
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/failed-attempts/initial-authoring.json",
+        "sha256": "239b9998fa112bc54b4c011467c24b0efe554355cbd2884c1423ccb7c58b48fb",
+        "bytes": 2229
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/failed-attempts/initial-native.json",
+        "sha256": "c1ada44fc452bc05ff38c4adc8643c2df55b34017d74f93a407ca640ec453d4f",
+        "bytes": 2025
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/failed-attempts/round004-truncated-negative.json",
+        "sha256": "2ceaeb7eaa7ad8f737ecbf0244684cbf3d283fe77004f0134b2d7b09fb338db4",
+        "bytes": 2207
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/final-checks.py",
+        "sha256": "7c3934b41a098f13d6dda577a0610c9903a5aa783deddef24d3dd5e12bfbd3b6",
+        "bytes": 2840
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/large-manifests/100000.json",
+        "sha256": "5aeb5aad8a0f47780fdcba69bc6b568689bb14dc6b30927fa1e14b6796e06a88",
+        "bytes": 4367
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/large-manifests/1000000.json",
+        "sha256": "b480f7687b33e7c5d89bdd24eb5fb04996feb51c1f34ba891d57f976ba1fc4b8",
+        "bytes": 4370
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-scale-100000-command.json",
+        "sha256": "2910da60093f28e927c3f0f62430f6caafc959f5ff1e83b5f3aa1bcfc78b1af8",
+        "bytes": 4954
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-scale-100000-network.json",
+        "sha256": "562287bbc35d1160cf19ed42ec26b65e7d69c6ff8380515be3936bcdbbf16963",
+        "bytes": 2197
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-scale-100000.json",
+        "sha256": "e9fa65dc60a92e5a8aee4679aae0bef5fe9b7bf527cfe80f8ce8b721b8f4eec5",
+        "bytes": 3923
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-scale-100000.log",
+        "sha256": "fdd7dfec338630b334b3edb985308a3156b44b75084c01969db5e76d475466ee",
+        "bytes": 3245
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-scale-1000000-command.json",
+        "sha256": "b7e7d141eef2de0c78a2d0f8bb45977c6801db65460d519691633d3b91495089",
+        "bytes": 4957
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-scale-1000000-network.json",
+        "sha256": "5e3a50ff230ba0959a9e0482e972a2dd4e4bceb1e3090b99e87c92f432bb6800",
+        "bytes": 2199
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-scale-1000000.json",
+        "sha256": "7f6657cf105b41618ded9047972b5cd7efe677fd510841ecb9112dfebe978192",
+        "bytes": 3925
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-scale-1000000.log",
+        "sha256": "e4bda0af8712483a5ce198892e2f62296ef7cf44af3a3dc7d46cc6607402889b",
+        "bytes": 3247
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-small-command.json",
+        "sha256": "0d4097d6c01c8fe54f509a7ab666018f0fbcc8dc48bf58899fdb804e77d168b8",
+        "bytes": 4933
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-small-network.json",
+        "sha256": "7ee39a4ebb067b5830a6f65c6ef7e05400dbd1e5a741dd5b8972e6b44954f942",
+        "bytes": 2183
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-small.json",
+        "sha256": "2bfc9767e35b4aa463785a78f3ba56ea4a64ee3ec90469c531d9bcd0dc921d13",
+        "bytes": 3919
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/native-small.log",
+        "sha256": "2c30492d377f4ea0c56580ff7e8929f3f39ce7fcfd7d32d0dcce986922237cdf",
+        "bytes": 3241
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/package-schemas.log",
+        "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+        "bytes": 189
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/package-tests.log",
+        "sha256": "7b45e99e128056285f9ab03e4c2bc32ce4011a133c0575f1b80c80302db432ac",
+        "bytes": 70396
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/project-evidence.py",
+        "sha256": "0e0fd426d088b828d8df98cca66291a6ce7257d1fe21cce1b87a417a6179bd89",
+        "bytes": 8139
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/reject-changed-feet-command.json",
+        "sha256": "7d85ed064612c93307519fd2888b99bd10e56a63ba48039002db858fee17eec0",
+        "bytes": 4954
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/reject-changed-feet-derivative-manifest.json",
+        "sha256": "ed9eb91c7b358018f8cf98b528b753f2c6d751ed6b9da32c6d16156032abe817",
+        "bytes": 5292
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/reject-changed-feet-log.json",
+        "sha256": "8321b7839dc32e9f563887676d3445a7a93a99428c8486f6469b889c0ec82ca0",
+        "bytes": 158
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/reject-changed-feet-network.json",
+        "sha256": "46e5c5e32f7b134dc9f90a667867987c9f370375a8a8544591a3f964248fea24",
+        "bytes": 2197
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/reject-truncated-ndjson-command.json",
+        "sha256": "6caa9a7192cf031eaa4f32387fcdcc7b3b824c06a09093bebc2ce9c4963939c1",
+        "bytes": 4966
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/reject-truncated-ndjson-derivative-manifest.json",
+        "sha256": "441ac09ee26c7c8f2f024b4dfe2f433b5c647eb02e07fcea3b660f5972d76809",
+        "bytes": 5289
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/reject-truncated-ndjson-network.json",
+        "sha256": "bae667ca901d51612ed09114296475236e480cbeaea960a70000299a8ef32f3d",
+        "bytes": 2205
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/reject-truncated-ndjson.log",
+        "sha256": "dfe3b94c622dba8f62b25600f36e281e1f28f6f8e444bc1677043a1d23dfaf5b",
+        "bytes": 75
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/scale-100000-command.json",
+        "sha256": "0a958290068584286d144d175930d8ef308e324953287ff92f5a91a2d79d2eb0",
+        "bytes": 794
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/scale-100000-network.json",
+        "sha256": "0ae50247fd6cecf7a2c2637dd35c7510e087c0435cf1fd390521cca7d76f8703",
+        "bytes": 1968
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/scale-1000000-command.json",
+        "sha256": "f402f592ad1bcd7c31b0177a8a32885301affdba96354033453c7fe88d652209",
+        "bytes": 798
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/scale-1000000-network.json",
+        "sha256": "a136b990ea761ab569ab0d17ddff53c878f8c27bb11a271dfcc5b05fd946d2e9",
+        "bytes": 1970
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/scale-results.json",
+        "sha256": "1c21527a8a3fe312f48f174366d80df0e910b7985bd0ef97a3e2e5819a70396d",
+        "bytes": 1171
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/wrong-owned-source-001-command.json",
+        "sha256": "56273f98ebeb161b4b93b99b33189c72430308022a2899bd79fe5093386a2497",
+        "bytes": 4972
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/wrong-owned-source-001-derivative-manifest.json",
+        "sha256": "9d55e9bdffeee83e4d9bd09166469c1360987b8572cb27ad42087c9eca878efb",
+        "bytes": 4355
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/wrong-owned-source-001-network.json",
+        "sha256": "235d39ec733c0d305bd836d277564f420ec8f0e667c629015a62c5cf40183e3e",
+        "bytes": 2212
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/wrong-owned-source-001.log",
+        "sha256": "59440e7a83ec9eab4ab830188210e8cc7f7f4a9cc465900e30b990d67fe867ab",
+        "bytes": 45
+      },
+      {
+        "path": "plan/fixtures/synthetic-corpus/verification/wrong-owned-source-config.json",
+        "sha256": "b1172aa79247620921629119f2283efd4ec1c223e889895c5e050397cee3c4fc",
+        "bytes": 3931
+      },
+      {
+        "path": "plan/tests/test_contract_traceability.py",
+        "sha256": "4ff787622ec68ad0831cbb05fa847e53bd462867d178d531af9e04233640d45b",
+        "bytes": 2531
+      },
+      {
+        "path": "plan/tests/test_contracts_and_plan.py",
+        "sha256": "86f4cee9f1b1fd023bab696c0939395d57e215c58172cd50d6114ca437726eb8",
+        "bytes": 2526
+      },
+      {
+        "path": "plan/tests/test_native_contracts.py",
+        "sha256": "a4c46494ce5fd91827fa2404a7a8be2efc885028fadafcc3e077abec8db3ccfa",
+        "bytes": 10285
+      },
+      {
+        "path": "plan/tests/test_synthetic_corpus.py",
+        "sha256": "79048bfa20735968f818b8ef1ee4c0753603efec5791932776bfaf6179ebdbd0",
+        "bytes": 11420
+      },
+      {
+        "path": "plan/tools/native_contracts.py",
+        "sha256": "f58b130bc5b65723bbb5c55a06a02bd069c89c03a7e0d54330f80949c3d6f1db",
+        "bytes": 13887
+      },
+      {
+        "path": "plan/tools/synthetic_corpus.py",
+        "sha256": "3b5dbef208989b54e8640348083dcc9d51c696f0dd8cef1f1c58b8f2d92b0f52",
+        "bytes": 31843
+      },
+      {
+        "path": "plan/tools/validate_package.py",
+        "sha256": "99b1cd65d18ac60bc19794bbe3a1cec61d8736a76d682aaed332b6652e91a88e",
+        "bytes": 8835
+      },
+      {
+        "path": "plan/verification/fnd06-contracts/README.md",
+        "sha256": "9da8f0c788a536a8d412fd4e5306fb97f83bae934bbc6f3ef68ab1314d876056",
+        "bytes": 740
+      },
+      {
+        "path": "plan/verification/fnd06-contracts/fnd06-contract-package-002.log",
+        "sha256": "967e94b8afb2f3dd17d3707db6d9b230f919cea7e3489c091fb43c7be5e644a7",
+        "bytes": 71659
+      },
+      {
+        "path": "plan/verification/fnd06-contracts/fnd06-contract-schemas-002.log",
+        "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23",
+        "bytes": 190
+      },
+      {
+        "path": "plan/verification/fnd06-contracts/red-baseline.log",
+        "sha256": "2cde31406acc15cea5982d29d614cbe894255caf1dbd0bf459351afe69e8abab",
+        "bytes": 1088
+      },
+      {
+        "path": "plan/verification/fnd06-contracts/validation.json",
+        "sha256": "d3fc88fff6ca1b627db71fc5834721aeeead603e94ce522e0725f7438d244983",
+        "bytes": 9930
+      },
+      {
+        "path": "plan/verification/fnd06-final/README.md",
+        "sha256": "8ddb8cde2b3c9268613e373e97bfc870f509111ac4af2971aad51c61f20d0360",
+        "bytes": 1619
+      },
+      {
+        "path": "plan/verification/fnd06-final/backend-contract-validation.json",
+        "sha256": "583353e330914d4dd23c66d8760b12019354bf3aa7f9b750a90205b35cc250a5",
+        "bytes": 1143
+      },
+      {
+        "path": "plan/verification/fnd06-final/combined-validation.json",
+        "sha256": "9bb1521b0a75c366a5891c2d9931bc3e030e738f7196a8def1caa121a6b6c3bd",
+        "bytes": 2605
+      },
+      {
+        "path": "plan/verification/fnd06-final/diff.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "plan/verification/fnd06-final/evidence.json",
+        "sha256": "a460b929541e3b50ff0c05ef0a2ac7ff3b52dae04508e6226789beac11b78728",
+        "bytes": 4670
+      },
+      {
+        "path": "plan/verification/fnd06-final/koop-guards.log",
+        "sha256": "59dc7c1c31cd9d7477198042c4b0b327ffa0088c8eb3781b372ce1a3bca9712b",
+        "bytes": 4499
+      },
+      {
+        "path": "plan/verification/fnd06-final/koop-independent-review.json",
+        "sha256": "7aaebc9fd15403940df7b55fb832ea7602da3f8394e31469192c4c2befc783e7",
+        "bytes": 16038
+      },
+      {
+        "path": "plan/verification/fnd06-final/notice-guards.log",
+        "sha256": "033fffc990c3c4e8305519a7443798fe204184ebfe35cd821a0cc53b7b3d6c5c",
+        "bytes": 2225
+      },
+      {
+        "path": "plan/verification/fnd06-final/package.log",
+        "sha256": "c7c9f841d3c5f3d105c6f99827fd802cdf1492fab33a4092e029eba61529b10a",
+        "bytes": 74660
+      },
+      {
+        "path": "plan/verification/fnd06-final/schemas.log",
+        "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23",
+        "bytes": 190
+      },
+      {
+        "path": "plan/verification/fnd06-final/tr46-independent-review.json",
+        "sha256": "7a601f36c4eb2c84f1e9cbe324ebf6b0e659e0b2ec66eaa126b13b2f307dbb8a",
+        "bytes": 9494
+      },
+      {
+        "path": "plan/verification/fnd06-final/tr46-provenance-review.json",
+        "sha256": "21a404d88ce105f0260d444edf508cae84e42003573e860a4301d671d307f9ff",
+        "bytes": 1939
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/README.md",
+        "sha256": "e8ff018597e4af0ac40413e7fc5d7e119a63b6f6b59b954177080f9dcaa36898",
+        "bytes": 1618
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/checks.json",
+        "sha256": "6c7db57f97dbecd3990091598eff1c6dd324f0c0a789972062dbad0dea816bd4",
+        "bytes": 1932
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/contracts-independent-review.json",
+        "sha256": "69b71d6be837dea08f8d6eff360f10b71ff2c994164b7f318b1002653fff7453",
+        "bytes": 12930
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/corpus-independent-review.json",
+        "sha256": "ced9f206d3a36000114a84ef5cec3cfe4bd5b2753e05d385569ec8ecc7bcaeb7",
+        "bytes": 23403
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/diff.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/draft-project-tracking.json",
+        "sha256": "eea8d5a3eb5e917b7d0db0ed230739f718fe37c3a8af5717c6d3b4a3b744ab0a",
+        "bytes": 457
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/evidence.json",
+        "sha256": "93c9860612cd69915fdcf6cca961e28a2fdf2e81700bfcfac20c916dd62699ef",
+        "bytes": 3007
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/koop-guards.log",
+        "sha256": "60a1e8a37244f21d500d86e411701821e82e8cebec63fb0103ac6c2773f2aedf",
+        "bytes": 2717
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/koop-install-002.json",
+        "sha256": "98ada85f969877784254af8139fe6f7bd80f0c1730f7886ee2afc7b19776cc57",
+        "bytes": 789
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/koop-install-repair-review.json",
+        "sha256": "05e3f587c144f34944255823a8ae8b24d56fa11c56cf818efb29289003d65405",
+        "bytes": 4449
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/koop-preexecution-review.json",
+        "sha256": "9a4eb7aeb362892e7abb9f26580de8383585e26c338904d9dc6bdb16cda26fb1",
+        "bytes": 9761
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/package.log",
+        "sha256": "1a8ac3383006c8ea9e05f17573714f3bf7d4b520a5ffa27fa27384c0056e86ac",
+        "bytes": 74471
+      },
+      {
+        "path": "plan/verification/fnd06-integration-001/schemas.log",
+        "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23",
+        "bytes": 190
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/README.md",
+        "sha256": "d50932ff36bba17b5d59939e11cd976269d6973e5acd9ea5a5ec5b2bc143a085",
+        "bytes": 8026
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/candidate001-checkpoint.json",
+        "sha256": "fbfbeb30f8b72861a05b79a1c9e952bdfc8e5f3bf758d279f7cb8eae2bdc5515",
+        "bytes": 3218
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/embedded-notices-final.json",
+        "sha256": "b3476cb0d9888e5dd77108d8babcdcbdfe7ab157414190f79901ed9f210062ec",
+        "bytes": 6550
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/embedded-notices.json",
+        "sha256": "23854a39668d80d6d9f17a65f1795a84114413d01a170850fcf221ee285f6c95",
+        "bytes": 1015
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/evidence.json",
+        "sha256": "6002294787389422cdfc2a1c5a3585b863295495b865e8d6692f2e6d6306dc84",
+        "bytes": 7223
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/guards-final.log",
+        "sha256": "3cacb9072b59f2e08c983155f015654c1e637cfe4ee6fd145f2491ef31afe256",
+        "bytes": 2121
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/guards.log",
+        "sha256": "435f76834eb8a8c1eb21d52588cb66f735fbcdb543daa7d02232ed3c05a7a52a",
+        "bytes": 1615
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/host-python-plan-tests.log",
+        "sha256": "8d86d3f00260b57fe0dd0959b0a7a3f9348231bcfb436856c5265f4569b492d9",
+        "bytes": 73432
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/host-python-schemas.log",
+        "sha256": "bff470db25e15db2d8c649b6006a9eccb6e49b0bb17c25cbc95e6099a007f933",
+        "bytes": 219
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/plan-tests.log",
+        "sha256": "d38cad85ee224146566061f2051e5dcc3fca7ab3881eb210ed61a7f88be8dd60",
+        "bytes": 67584
+      },
+      {
+        "path": "plan/verification/fnd06-koop-custody/schemas.log",
+        "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+        "bytes": 189
+      },
+      {
+        "path": "plan/verification/fnd06-koop-runtime/README.md",
+        "sha256": "456ff54b543c2e7e21dc1a7941d8d8757c5e61fc736abdeb8b75dbd1a545cd90",
+        "bytes": 9474
+      },
+      {
+        "path": "plan/verification/fnd06-koop-runtime/evidence.json",
+        "sha256": "5e83d564dfb8d5db36e7134bec1d7f328a6dc80b85a42d19739830f707f6702a",
+        "bytes": 59708
+      },
+      {
+        "path": "plan/verification/fnd06-koop-runtime/guards.log",
+        "sha256": "3f0f3ae05330f3a4a09ff6dc8eab87a3fc243fb6b7fdf5fcd5ff0e6729e94c99",
+        "bytes": 4499
+      },
+      {
+        "path": "plan/verification/fnd06-koop-runtime/package-schemas.log",
+        "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+        "bytes": 189
+      },
+      {
+        "path": "plan/verification/fnd06-koop-runtime/package-tests.log",
+        "sha256": "f158fcfbd719337b4e3b528857a327bc643c60f6e104acec29e8f35a81e05d69",
+        "bytes": 67584
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/commands.json",
+        "sha256": "606186832f3953305c597913bf1a37136cf2de04864115f797a79780c18dea89",
+        "bytes": 9313
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/evidence.json",
+        "sha256": "19f0f8fc5c364b179bd40d8eaa13f41e83c8db9994f9a98798c51cde08015645",
+        "bytes": 5156
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/executed-run-checks.py",
+        "sha256": "a42a06906f4c704191996f0408264af371198bcd49865145aeb5e7c026f064e5",
+        "bytes": 3567
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/guards-network.json",
+        "sha256": "aa1f663b37585bf8bfb8dbcf0a4984ac49e70822e0b855148231bb2782e00d6e",
+        "bytes": 1877
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/guards.stderr",
+        "sha256": "6f04d7a1d51660a67fa65926574a096d7fe057a91806c0cb956624c681749128",
+        "bytes": 2225
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/guards.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/package-schemas.log",
+        "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23",
+        "bytes": 190
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/package-tests.log",
+        "sha256": "eaf4b59dc344fba9ec23ab1f6eaecb2263393333c1b9a0782e3272dd6121d263",
+        "bytes": 74471
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/stage-manifest.json",
+        "sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+        "bytes": 5976
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/stage-network.json",
+        "sha256": "a6c37a1682383390833cc36282cf3d09fadb224eb740ca5f41d97b689fa6c98d",
+        "bytes": 2145
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/stage.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/stage.stdout",
+        "sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+        "bytes": 5976
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/staged-verifier-network.json",
+        "sha256": "9ee2b6a3f67ccb458cd3bfd51cae0275aa3a6d3c4c09842ce1c665e114d8b841",
+        "bytes": 2279
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/staged-verifier.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/staged-verifier.stdout",
+        "sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+        "bytes": 5976
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/test_tr46_notices.py",
+        "sha256": "7ebb06b01924798c8b7846157abc1e5a5fe62d7a71817622b73191f53abe9b52",
+        "bytes": 9506
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/verify-network.json",
+        "sha256": "6ba0105fa4a3ece9df22fe1d56ac53a576c004619888f8845209efa0178ed118",
+        "bytes": 2036
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/verify.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "plan/verification/fnd06-tr46-notices/verify.stdout",
+        "sha256": "bf8b4ae21162f10a0ebcccc67c908166a0df85dc779aa9d2f5957a310a5bb359",
+        "bytes": 1592
+      },
+      {
+        "path": "plan/verification/fnd08-acceptance/acceptance-and-merge.json",
+        "sha256": "d537302e1d223799bf4f006ba7ed74401d5b711a75b5fac7a300044a301a528d",
+        "bytes": 972
+      },
+      {
+        "path": "plan/verification/fnd08-acceptance/postmerge-independent-review.json",
+        "sha256": "53268e2848d333d9cace3363f845095e3247f6271049960419b2eee420172acb",
+        "bytes": 7834
+      },
+      {
+        "path": "plan/verification/fnd08-acceptance/postmerge-smoke.json",
+        "sha256": "44bd37777aac7489aaf59314ea01b227cdc176fc5eecddd60d7eceb6b12363a7",
+        "bytes": 25291
+      }
+    ],
+    "delta_from_tested_implementation": "17 files: STATUS pair, ledger, ADR012 and contract-semantics concurrency clarification; 12 new selected evidence/report/log files. No runtime, fixture, contract schema, validation or test-source byte changed after ce22b20.",
+    "component_equivalence": [
+      {
+        "reviewed_head": "f942670525253b9f3008563386a237a69b68549d",
+        "paths": [
+          "build-support/koop/backend.py",
+          "build-support/koop/codec_diagnostics.js",
+          "build-support/koop/custody.py",
+          "build-support/koop/inputs.json",
+          "build-support/koop/install.py",
+          "build-support/koop/koop_runtime_inputs.py",
+          "build-support/koop/native.py",
+          "build-support/koop/provider.js",
+          "build-support/koop/retain.py",
+          "build-support/koop/runtime.py",
+          "build-support/koop/runtime_cases.py",
+          "build-support/koop/runtime_fixture.py",
+          "build-support/koop/summarize.py",
+          "build-support/koop/test_custody.py",
+          "build-support/koop/test_native.py",
+          "build-support/koop/test_runtime_inputs.py",
+          "plan/verification/fnd06-koop-runtime"
+        ],
+        "all_bytes_identical": true,
+        "ancestor_of_final_head": true
+      },
+      {
+        "reviewed_head": "c0983e6898b991a16c62dab066a9f40ded88c155",
+        "paths": [
+          "plan/tools/synthetic_corpus.py",
+          "plan/tests/test_synthetic_corpus.py",
+          "plan/fixtures/synthetic-corpus",
+          "plan/docs/fnd-06-synthetic-corpus.md"
+        ],
+        "all_bytes_identical": true,
+        "ancestor_of_final_head": true
+      },
+      {
+        "reviewed_head": "a31a285b5e659a08bc6c18c393cfe5a8581bf293",
+        "paths": [
+          "plan/contracts",
+          "plan/examples",
+          "plan/tools/native_contracts.py",
+          "plan/tools/validate_package.py",
+          "plan/tests/test_native_contracts.py",
+          "plan/tests/test_contracts_and_plan.py",
+          "plan/tests/test_contract_traceability.py"
+        ],
+        "all_bytes_identical": true,
+        "ancestor_of_final_head": true
+      },
+      {
+        "reviewed_head": "cb5a1a945bd94b80f2d52cc0faa6e0bf93303485",
+        "paths": [
+          "build-support/koop/tr46_notices.py",
+          "build-support/koop/notices",
+          "plan/verification/fnd06-tr46-notices",
+          "plan/docs/fnd-06-tr46-notice-supplement.md"
+        ],
+        "all_bytes_identical": true,
+        "ancestor_of_final_head": true
+      }
+    ],
+    "inherited_controls_and_authorities_unchanged": [
+      "AGENTS.md",
+      "plan/AGENTS.md",
+      ".github",
+      "plan/authorizations",
+      "plan/docs/standing-delivery-policy.md",
+      "plan/tools/delivery_gate.py",
+      "plan/tools/delivery_runtime.py",
+      "plan/repositories.json",
+      "plan/project.json",
+      "plan/backlog.json",
+      "plan/requirements.json",
+      "plan/docs/02-server-and-rest.md",
+      "plan/docs/07-security-and-operations.md",
+      "plan/docs/08-repositories-and-licensing.md",
+      "plan/docs/09-roadmap-and-acceptance.md",
+      "plan/docs/11-independent-product-and-source-ownership.md",
+      "plan/docs/12-github-projects-and-delivery.md",
+      "services",
+      "tests"
+    ],
+    "no_remote_mutations_by_reviewer": true
+  },
+  "criteria_review": [
+    {
+      "criterion": "Native/OGC/ArcGIS tiers and authoritative ownership agreed.",
+      "result": "Satisfied for initial engineering contracts, not implementation of all tiers. ADR012/013 preserve native authority, individually tested C0, finite read C1, later C2 through native edits and optional C3. One catalog/policy/service registry, one geodb schema/edit authority and one configuration remain; provider reads snapshots and owns no duplicate policy/catalog. No federation, sync, arbitrary SQL, Z/M, row/field policy or untested codec capability claim."
+    },
+    {
+      "criterion": "All five user goals retain traceable acceptance tests.",
+      "result": "All R01-R24 retain exact original goal IDs, required-for-release flags, task mappings and named tests; all P0-P7 exits match chapter09. Five user goal mappings cover administration, branches, portal/apps, notebooks and desktop publishing. Additional ownership/consolidation/tracking requirements remain. Product acceptance and each original test family remain open; manual assistive-technology review and representative-user pilots remain human-only."
+    },
+    {
+      "criterion": "Koop adoption/rejection records tested output, query pushdown, pagination, permission and licensing evidence before bespoke C1 encoding.",
+      "result": "Actual unchanged retained Koop code produces FeatureServer JSON behind the owned typed-query/catalog/revision boundary. Runtime005 has 227 assertions on 100000 actual PostgreSQL/PostGIS rows with native GeoNode token/policy behavior; SQL, cursor/offset, conversion, denial/revocation/outage and limits are evidenced before the ADR adopts reuse. Licensing evidence includes complete selected archive custody, separately verified exact tr46 supplement, retained LGPL dependency obligations and an explicit security/distribution limitation. No bespoke feature encoder introduced. Separate metadata and empty-extent projections are disclosed."
+    }
+  ],
+  "live_issue_observation": {
+    "url": "https://github.com/aloerch/ambisgis-platform/issues/5",
+    "id": 5508924368,
+    "state": "open",
+    "body_sha256": "a3c7ee0b3b2585441bc0c9fe17bc51ef960036cfffec85ee2e952165943ec625",
+    "criteria_verbatim_match_backlog": true,
+    "remote_read_argv": [
+      "gh",
+      "api",
+      "repos/aloerch/ambisgis-platform/issues/5"
+    ],
+    "no_checkboxes_or_status_changed": true
+  },
+  "authority_classification": {
+    "owner_task_path": "plan/authorizations/2026-10-02-standing-delegation.md",
+    "owner_attachment_path": "/home/revelberry/.codex/attachments/37e5ce81-94cc-471f-913b-e6dc5bfd4afb/Pasted text.txt",
+    "identical_sha256": "40d4bac51de35df99aa81f7c16db45f54644145272ce0a5f424aca208f38c402",
+    "sections": [
+      "2",
+      "5",
+      "6",
+      "9"
+    ],
+    "finding": "The live FND-06 Human approval label is a process-only engineering review gate. Original criteria contain no human-subject/manual evaluation. Original owner sections2/5 delegate routine security engineering, separate-context automated review and eligible normal merges; section6 requires this independent review and exact evidence; section9 preserves actual human-only tests. Active policy and original attachment are byte-identical to retained authorization. No rights waiver, unresolved vulnerability acceptance, protected-branch bypass, production action or human-subject result is inferred."
+  },
+  "control_review": {
+    "package_validation": "Read actual delta against base. All four original schema/example checks remain; six shared examples and seven schema-definition checks are additive, local-resource-only. Count4\u219210 reflects these additions. New traceability validation rejects missing R01-R24/task/test mapping, nonlocal schema, altered P0-P7 exit and invented product acceptance. No skips or mock-GIS substitution introduced.",
+    "schemas_and_tests": "Schemas and native semantic/cursor helpers already independently reviewed at1014644 plus additive safe BACKEND_UNAVAILABLE correction a31a285. Final byte-equivalence proven. Actual complete native errors validated; unit mutation tests reject every missing required field and backend trace. Corpus/Koop/notice controls remain their reviewed bytes. Root notice reviewer is separate from notice implementer; I independently reviewed provider/contracts/corpus and aggregate integration.",
+    "gate_and_workflows": "delivery_gate.py, delivery_runtime.py, all .github files, AGENTS/policy/authorizations, repository/Project allowlists and original criteria/specification chapters are unchanged from base. Control scrutiny covers all18 paths selected by actual gate predicate plus build-support tests and notice verifier. PR cannot weaken its own merge gate.",
+    "status_history": "Prior evidence remains immutable and retains original failure/status meaning. Current STATUS and ledger state In progress, with aggregate gate/merge/postmerge acceptance pending. Frozen contract-package status strings are explicitly an initial input snapshot rather than live-state instructions. FND08 bookkeeping is exact previously reviewed acceptance/postmerge evidence, not new product acceptance."
+  },
+  "reviewed_component_reports": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-contract-review-1014644.json",
+      "sha256": "69b71d6be837dea08f8d6eff360f10b71ff2c994164b7f318b1002653fff7453",
+      "reviewer": "/root/publication_review"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-review-c0983e6.json",
+      "sha256": "ced9f206d3a36000114a84ef5cec3cfe4bd5b2753e05d385569ec8ecc7bcaeb7",
+      "reviewer": "/root/publication_review"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-koop-review-f942670.json",
+      "sha256": "7aaebc9fd15403940df7b55fb832ea7602da3f8394e31469192c4c2befc783e7",
+      "reviewer": "/root/publication_review"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-tr46-notice-review-cb5a1a9.json",
+      "sha256": "7a601f36c4eb2c84f1e9cbe324ebf6b0e659e0b2ec66eaa126b13b2f307dbb8a",
+      "reviewer": "/root"
+    }
+  ],
+  "evidence": {
+    "final_evidence_path": "plan/verification/fnd06-final/evidence.json",
+    "final_evidence_sha256": "a460b929541e3b50ff0c05ef0a2ac7ff3b52dae04508e6226789beac11b78728",
+    "final_selected_refs_rehashed": [
+      {
+        "path": "plan/verification/fnd06-final/koop-independent-review.json",
+        "sha256": "7aaebc9fd15403940df7b55fb832ea7602da3f8394e31469192c4c2befc783e7",
+        "bytes": 16038
+      },
+      {
+        "path": "plan/verification/fnd06-final/tr46-independent-review.json",
+        "sha256": "7a601f36c4eb2c84f1e9cbe324ebf6b0e659e0b2ec66eaa126b13b2f307dbb8a",
+        "bytes": 9494
+      },
+      {
+        "path": "plan/verification/fnd06-final/tr46-provenance-review.json",
+        "sha256": "21a404d88ce105f0260d444edf508cae84e42003573e860a4301d671d307f9ff",
+        "bytes": 1939
+      },
+      {
+        "path": "plan/verification/fnd06-final/backend-contract-validation.json",
+        "sha256": "583353e330914d4dd23c66d8760b12019354bf3aa7f9b750a90205b35cc250a5",
+        "bytes": 1143
+      },
+      {
+        "path": "plan/verification/fnd06-final/combined-validation.json",
+        "sha256": "9bb1521b0a75c366a5891c2d9931bc3e030e738f7196a8def1caa121a6b6c3bd",
+        "bytes": 2605
+      },
+      {
+        "path": "plan/verification/fnd06-final/package.log",
+        "sha256": "c7c9f841d3c5f3d105c6f99827fd802cdf1492fab33a4092e029eba61529b10a",
+        "bytes": 74660
+      },
+      {
+        "path": "plan/verification/fnd06-final/schemas.log",
+        "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23",
+        "bytes": 190
+      },
+      {
+        "path": "plan/verification/fnd06-final/koop-guards.log",
+        "sha256": "59dc7c1c31cd9d7477198042c4b0b327ffa0088c8eb3781b372ce1a3bca9712b",
+        "bytes": 4499
+      },
+      {
+        "path": "plan/verification/fnd06-final/notice-guards.log",
+        "sha256": "033fffc990c3c4e8305519a7443798fe204184ebfe35cd821a0cc53b7b3d6c5c",
+        "bytes": 2225
+      },
+      {
+        "path": "plan/verification/fnd06-final/diff.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    ],
+    "combined_validation_sha256": "9bb1521b0a75c366a5891c2d9931bc3e030e738f7196a8def1caa121a6b6c3bd",
+    "combined_tested_head": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
+    "producer_checks": {
+      "package": 503,
+      "schema_example_pairs": 10,
+      "koop_guards": 35,
+      "tr46_notice_guards": 14,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    "runtime_005": {
+      "actual_source_producer": "00036aaa099d2952856d083dc673d39815f8ed04",
+      "result_sha256": "fe1cda9e823a364c696c0202ecd17f0071e7d1bca3a4614a5b6d1715fdcdb68c",
+      "selected_evidence_sha256": "5e83d564dfb8d5db36e7134bec1d7f328a6dc80b85a42d19739830f707f6702a",
+      "original_component_audit": "239 primary/244 total references,263 executed tooling hashes,16 shared contract Git bindings;227 assertions,92 responses,21 complete native errors,29 SQL statements,108 policy checks,7 outage denials with no further SQL;4706 Node entries and4187 installed package files checked. Final code/report bytes are identical; this aggregate review does not claim a fresh runtime rerun."
+    },
+    "corpus": "Original independent review binds actual owned-QGIS small/100k/1m executions, reviewer small/negative subprocesses and independent complete1.1m-row audit. Generator/template/fixtures/native receipts unchanged. Trusted generated profile, not arbitrary untrusted parser sandbox."
+  },
+  "independent_checks": {
+    "report": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-aggregate-checks-001/checks.json",
+    "sha256": "7cb7ae08d0314953b49907495772e20ed6d7bbfc546d1f3cd9666eb52d9497e3",
+    "actual_commands": [
+      {
+        "argv": [
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+          "-m",
+          "unittest",
+          "tests.test_native_contracts",
+          "tests.test_contract_traceability",
+          "-v"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree/plan",
+        "exit_code": 0,
+        "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-aggregate-checks-001/check-0.log",
+        "sha256": "ae33c4e7870aa2db78284e8836aa9eb1e70cef668a92ab7182ccb472ba7830e1",
+        "tail": "ssing_task_and_nonlocal_contract_rejected (tests.test_contract_traceability.TraceabilityTests.test_missing_task_and_nonlocal_contract_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 29 tests in 0.207s\n\nOK\n"
+      },
+      {
+        "argv": [
+          "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+          "tools/validate_package.py",
+          "--require-schemas"
+        ],
+        "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree/plan",
+        "exit_code": 0,
+        "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-aggregate-checks-001/check-1.log",
+        "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23",
+        "tail": "Plan references and acyclic dependencies: PASS {'repositories': 15, 'tasks': 66, 'requirements': 24, 'sources': 65}\nJSON Schema 2020-12 and format/example checks: PASS (10 schemas/examples)\n"
+      }
+    ],
+    "result": "29 independent contract/traceability tests and10 schemas passed on integrated bytes; those exact code/schema bytes remain unchanged at final head. Full503/35/14 counts are producer logs inspected/rehashed, not claimed as reviewer reruns. Component native/runtime checks are explicitly reused under byte equality.",
+    "final_credential_marker_scan": {
+      "files": 214,
+      "hits": [],
+      "limit": "Heuristic GitHub/AWS/key marker scan supplements manual public evidence inspection and original runtime diagnostic scans; not proof against every possible credential format."
+    }
+  },
+  "source_rights_security_disposition": {
+    "custody": "Koop exact333518a19d43adf2fd12faed1a3be52d9c90dd3f remains ClassB, no new repository or independently moving authority; candidate002 complete closure and explicit historical-lock identity supplementation unchanged. No lifecycle execution, dependency/Node/source bytes or controlled runtime profile relabeled. FND08 selected owned engines retain their identities.",
+    "notices": "Root independently reviewed exactcb5a1a9 source history/grants/generated Unicode table and staged source. I verified that report hash and final bundle/helper bytes, without representing root historical review as my fresh reconstruction. Precise missing-notice/source finding is remedied for the reviewed stage; installer must actually carry it. Original npm archive/lock unchanged; LGPL/source/composition obligations and broader binary/brand/signing duties remain.",
+    "security": "Known protobufjs advisory is explicitly retained, with bounded JSON-only/no user reflection schema exposure; not called unaffected or shipped. Prototype uses current catalog checks before SQL, explicit no-cache, scoped credential cursorHMAC, read-only DB role, finite parser/routes, streaming byte limits, native safe errors and audited cleanup. Full production key rotation, row/field security, all output routes, untrusted parser isolation and product vulnerability disposition remain required.",
+    "destructive": "Only synthetic disposable job-owned database/service work was executed by component workers; cleanup/source invariance inspected. No managed branch mutations, user/private/employer data, production changes, third-party namespace publication, remote resets/deletions, credentials installation or secret-bearing public profiles introduced."
+  },
+  "resolved_aggregate_finding": {
+    "description": "ADR012 and contract prose implied simultaneous concurrent edits despite actual revision creation between page requests.",
+    "resolution": "Final17-file delta says revisions created between page requests and explicitly retains simultaneous read/write/general concurrent-edit acceptance in later API/database tasks. Original criteria and chapter02 revision consistency requirement unchanged."
+  },
+  "bounded_limits": [
+    "Point XY/EPSG4326 object-policy-only immutable snapshots; all7 SQL attributes fetched before requested projection; no SQL projection-pushdown claim.",
+    "Native keyset cursor and C1 offset remain separate; custom serviceRevision/dataRevision parameters are prototype inputs; named proprietary clients and complete C1 directory/map export/legend/identify remain untested.",
+    "Decimal-text conversion checks tested values, not arbitrary IEEE754 precision; no general int64/date-only/Z/M/null/empty geometry or transform support.",
+    "29 observed SQL durations are one fixture observation, not capacity/deep-offset complexity guarantees. Inter-page new revision is not concurrent read/write coverage.",
+    "Real full API/security/product tests, OIDC completeness, Windows/Linux product journeys, publication saga, notebook isolation, browser/accessibility, restore/upgrade, independent repair, installer/signing and distribution remain open.",
+    "Separate agents share one GitHub account; this review is not an independent GitHub approving identity. No live CI, gate pass, merge or task acceptance is fabricated by this receipt."
+  ]
+}

@@ -1,3 +1,44 @@
+# Active delivery — 3 October 2026, PLT-01 and DB-01
+
+FND-06 is accepted/Merged at `d0218209d435f80c21400dc38abc2c4d69d805bc`
+([PR #77](https://github.com/aloerch/ambisgis-platform/pull/77)). Its original
+contract, five-goal traceability and measured Koop reuse criteria passed within
+the documented limits. The exact merged tree passed a fresh 227-assertion
+PostGIS/catalog/Koop run against 100,000 rows. Independent review verified
+sources, raw results, service/database shutdown and credential cleanup.
+[Acceptance and evidence](verification/fnd06-acceptance/acceptance-and-merge.json)
+record the normal protected merge and original requirement boundaries.
+
+PLT-01 is claimed/In progress on `plt-01/development-install`; the runtime-input
+component uses `plt-01/runtime-inputs`. Work implements a persistent loopback
+Compose installation, one configuration/secrets authority and useful readiness.
+DB-01 is claimed/In progress in `aloerch/ambisgis-geodb` on
+`db-01/managed-schema`, based on `b7e5888b11a4b3d2246daeffe0173113f1628f2d`.
+It implements typed managed schemas, stable UUID/ObjectID mappings and the
+DEFAULT version foundation. Neither task is accepted yet.
+
+PLT-01 runtime preparation has retained 219 exact signed RPM inputs and 148
+matching source groups. Static checks and inert extraction pass; no new runtime
+has been executed. Independent security review found selected Podman 6.0.2
+affected by CVE-2026-94603. Engine execution is held while an owned source
+backport/build and rejection guards are prepared. This is a technical blocker
+for the selected runtime, not an owner-approval request or installer acceptance.
+DB-01 has 22 real database tests, three schema guards and 12 independent
+privilege probes passing at reviewed head `8dfb38c6211b2235db14bc5fb9ec34e3b80513aa`;
+protected PR integration and a fresh postmerge database run remain.
+
+Combined FND-06 checks passed 503 package tests, ten schema/example pairs,
+35 Koop guards and 14 notice guards; these remain distinct from product tests.
+Project tracking retains 93 items, 24 fields, seven views and 15 repositories.
+All unrelated planning and archive decisions were preserved.
+
+The complete scoped MVP, persistent installation acceptance, full API/security
+suites, desktop/branch/portal/notebook journeys, Windows, independent repair,
+human-only evaluations and release gates remain open. The
+[requirements matrix](docs/delivery-requirements-matrix.md) controls scope.
+
+## Prior checkpoints retained below
+
 # Active delivery — 3 October 2026, FND-06
 
 FND-08 is accepted/Merged at `6d18637e39818e60bcc947d3a7c252e84ab48fe0`

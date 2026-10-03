@@ -37,11 +37,11 @@
   },
   "repository": "aloerch/ambisgis-platform",
   "repository_id": 1376927351,
-  "branch": "fnd-06/contracts-and-koop",
-  "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
-  "task": "FND-06 shared contracts, synthetic corpus, threat model and Koop reuse spike",
-  "state": "In progress; complete FND-06 candidate and component reviews assembled; aggregate review, protected merge and acceptance pending",
-  "pr": "https://github.com/aloerch/ambisgis-platform/pull/77",
+  "branch": "plt-01/development-install",
+  "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+  "task": "PLT-01 persistent developer installation and DB-01 managed schema/identity foundation",
+  "state": "FND-06 accepted/Merged after actual postmerge checks; PLT-01 and DB-01 claimed/In progress",
+  "pr": null,
   "tests": [
     {
       "scope": "source publication implementation integrated with PR72",
@@ -132,16 +132,18 @@
     "FND-07",
     "GOV-01",
     "GOV-02",
-    "FND-08"
+    "FND-08",
+    "FND-06"
   ],
   "next": [
-    "Complete aggregate FND-06 exact-head review and hosted checks",
-    "Normal protected PR merge, actual post-merge verification and acceptance tracking",
-    "Then claim dependency-ready PLT-01 and DB-01 with live evidence"
+    "Retain and independently review exact rootless runtime inputs and assemble owned product images",
+    "Implement and actually test persistent loopback init/up/status/doctor and two-user useful readiness",
+    "Implement and actually test typed managed dataset migrations and persistent UUID/ObjectID registry",
+    "Independently review eligible PLT-01 and DB-01 increments before protected merge"
   ],
   "product_acceptance": false,
   "release_artifact": null,
-  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5967865641",
+  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5968688553",
   "workflow": {
     "pr": 72,
     "merge": "8c3612dd3e4ee992d930f1417798b66f467784e9",
@@ -149,16 +151,20 @@
   },
   "active_workers": [
     {
-      "agent": "/root/publication_review",
-      "task": "Final aggregate FND-06 criteria, source/authority and exact-head review"
+      "agent": "/root",
+      "task": "PLT-01 runtime/dependency custody, image assembly and shared integration"
     },
     {
       "agent": "/root/fnd03_identity",
-      "task": "Completed corpus/notice implementation; read-only PLT-01 preflight, no claim"
+      "task": "PLT-01 persistent CLI/configuration/Compose"
     },
     {
       "agent": "/root/fnd04_prototype",
-      "task": "Completed actual Koop experiment; read-only DB-01 preflight, no claim"
+      "task": "DB-01 typed schemas, migrations and stable identity"
+    },
+    {
+      "agent": "/root/publication_review",
+      "task": "Independent runtime custody and implementation review"
     }
   ],
   "evidence": "plan/verification/authorized-successors/publication.json",
@@ -235,7 +241,7 @@
     },
     "observation_note": "Historical 88-item observation before FND-05 acceptance; current renderer_progress and project_checkpoint supersede its FND-05 In progress row."
   },
-  "checkpoint_parent_commit": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
+  "checkpoint_parent_commit": "d0218209d435f80c21400dc38abc2c4d69d805bc",
   "owned_spine_progress": {
     "java": {
       "local_head": "8e32797aed66be2c5fea430bba3df23a6e67465b",
@@ -417,5 +423,76 @@
     "runtime_review_sha256": "7aaebc9fd15403940df7b55fb832ea7602da3f8394e31469192c4c2befc783e7",
     "notice_commit": "cb5a1a945bd94b80f2d52cc0faa6e0bf93303485",
     "notice_review_sha256": "7a601f36c4eb2c84f1e9cbe324ebf6b0e659e0b2ec66eaa126b13b2f307dbb8a"
+  },
+  "fnd06_acceptance": {
+    "task": "FND-06",
+    "delivery": "Merged",
+    "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5968688553",
+    "merge": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+    "head": "a5c9e8141fce4dd5ad2433dabb5bd687de683c14",
+    "pr": "https://github.com/aloerch/ambisgis-platform/pull/77",
+    "postmerge": {
+      "merge": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+      "reviewed_head": "a5c9e8141fce4dd5ad2433dabb5bd687de683c14",
+      "runtime": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/run-001/result.json",
+        "sha256": "f96cd3cc60fd90ce22216bd90ce228b0da4d8f7e48f76e28ba623c75ab2a0f49"
+      },
+      "postmerge_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-postmerge-review-d021820.json",
+        "sha256": "31f61b3db7514f4292e6ab128ea3c4a5b91f6d9bf16e7dce0ba121f589b65a11",
+        "reviewer": "/root/publication_review",
+        "findings": [],
+        "concerns": []
+      }
+    },
+    "next_tasks": [
+      {
+        "task": "PLT-01",
+        "repository": "aloerch/ambisgis-platform",
+        "issue": 11,
+        "branch": "plt-01/development-install",
+        "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+        "claim": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5968689528",
+        "delivery": "In progress"
+      },
+      {
+        "task": "DB-01",
+        "repository": "aloerch/ambisgis-geodb",
+        "issue": 2,
+        "branch": "db-01/managed-schema",
+        "base": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+        "claim": "https://github.com/aloerch/ambisgis-geodb/issues/2#issuecomment-5968690345",
+        "delivery": "In progress"
+      }
+    ],
+    "items": 93,
+    "fields": 24,
+    "views": 7,
+    "repositories": 15,
+    "all_unrelated_values_preserved": true,
+    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd06-acceptance-attempts/83687d31-6d16-4f8b-91d9-7663dcd31ac2"
+  },
+  "plt01_runtime_preparation": {
+    "branch": "plt-01/runtime-inputs",
+    "lock": "build-support/container-inputs/retained-inputs.lock.json",
+    "packages": 219,
+    "source_groups": 148,
+    "static_helper_tests": 38,
+    "package_tests": 503,
+    "schema_examples": 10,
+    "runtime_executed": false,
+    "security_blocker": "Podman6.0.2 affected by CVE-2026-94603; source backport and reviewed native regression pending",
+    "owned_source_repair_branch": "plt-01/podman-security"
+  },
+  "db01_checkpoint": {
+    "branch": "db-01/managed-schema",
+    "head": "8dfb38c6211b2235db14bc5fb9ec34e3b80513aa",
+    "runtime_producer": "f3fb30ba844c4098c4544e097c582495b516bb22",
+    "real_database_tests": 22,
+    "pure_schema_tests": 3,
+    "independent_security_probes": 12,
+    "accepted": false,
+    "remaining": "Protected PR integration, fresh postmerge database verification and tracking"
   }
 }
