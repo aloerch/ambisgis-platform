@@ -7,7 +7,7 @@ engine, approve distribution or complete PLT-01 installation acceptance.
 
 The bundle contains `bin/ambisgis`, the exact installer Python sources, a
 separate retained Python 3.13 interpreter/stdlib/Compose module tree, patched
-Podman/rootlessport from build-002, retained runc/conmon/netavark/aardvark/pasta,
+owned Podman/rootlessport and runc, retained conmon/netavark/aardvark/pasta,
 the seccomp profile and component notices. Image application Python remains
 3.12. Image source labels/manifests retain their reviewed `5e5d38b` producer
 identity; the separately hashed runtime custody/closure binds these later
@@ -18,7 +18,8 @@ inputs and writes `bundle.json`, `runtime-files.json`, source/custody manifests
 and `assembly-result.json`. It validates the complete closure and all four OCI
 archives with the existing installer. No image pull, build, package script,
 package install, service or engine is invoked. The selected package source
-locks and patched-engine build records remain unchanged in the notice tree.
+locks and original build receipts retain their identities; successor build
+records and modification notices are also included in the notice tree.
 Source archives stay in the referenced retained custody; this is not a complete
 redistribution source package. The output parent and input custody are trusted
 operator-controlled directories; existing output is rejected.
@@ -127,6 +128,33 @@ recursively private mode while rejecting shared/slave propagation, conflicting
 modes and duplicate options. The original failing regression is preserved;
 the rest of the ownership, image, network, mount and isolation checks remain
 mandatory. The never-started original container and its data remain retained.
+
+The fourth attempt passed the repaired native container inspection, then failed
+during systemd cgroup registration with an interactive-authorization error.
+The database remained created with no running process; shutdown and separate
+reconciliation found no running installation services. The exact source trace
+shows that runc invokes `busctl --user --no-pager status` to discover the bus
+owner. A missing helper makes this detection fail and selects the system bus.
+This is a source-supported diagnosis, not an observed D-Bus connection trace.
+
+The successor assembly includes the unchanged retained systemd 261.2 `busctl`
+in the private helper directory, with its original signed-payload provenance,
+source custody and notices. Its required libraries are already in the private
+runtime closure. The native `OwnerUID` result remains authoritative; no UID is
+guessed and no host policy, cgroup manager or isolation setting is changed.
+Actual loader resolution and successful user-bus cgroup registration remain
+installation tests. The original four failed attempts remain retained.
+
+The same source investigation found that direct ordinary Podman-to-runc calls
+construct fresh environments that omit the private library path and, for some
+calls, PATH and the user-bus address. The [owned environment successor](podman-environment.md)
+preserves the calculated runtime directory and copies only PATH, the private
+library path and the session-bus address. The last value is included only when
+rootless, preserving the existing rootful exclusion. Six ordinary callsites use
+the helper; conmon, container initialization and checkpoint/restore paths retain
+their original source. The existing three Podman repairs and vendor tree also
+retain their exact bytes. Standalone environment-unit results and compilation
+remain distinct from the installation and runtime-security acceptance gates.
 
 In-process tests run with the retained CI Python:
 

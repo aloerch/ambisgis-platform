@@ -19,7 +19,7 @@ from elf_closure import elf
 
 BUILD = Path('/home/revelberry/Projects/AmbisGIS/build-worktrees')
 INERT = BUILD / 'plt01-runtime/inert-002'
-PODMAN = BUILD / 'plt01-podman-build/build-002'
+PODMAN = ROOT.parent / 'plt01-runtime-checks/podman-env-build-002'
 RUNC = ROOT.parent / 'plt01-runtime-checks/runc-build-002'
 RUNC_ARCHIVE = Path('/home/revelberry/Projects/AmbisGIS/source-archives/plt01-container/obs-source/runc-64446271a17ff823ebb1b17b0b955d06/runc-1.5.1.tar.xz')
 IMAGES = ROOT.parent / 'plt01-runtime-checks/images-003'
@@ -30,12 +30,16 @@ PINS = {
     BUILD / 'plt01-container-inputs/payload-001/receipt.json': '6d685c53f28d75e66923f4e3c1c652398f76c41a48863caa10d3dbcf87591650',
     BUILD / 'plt01-image-inputs/payload-001/receipt.json': '24b9de32cc79a9836bc6dc82cb9d84b00a7b2bea4b23b9c7f725246170b30ce4',
     IMAGES / 'result.json': 'b947700af26584f92386f81b90daf6fc97d62f3ea49f082922ba5bcfe4b1948a',
-    PODMAN / 'bin/podman': 'f0ada84d303ab34eedae436cb5417328de537b89cd683c9aea35288e3ec6589d',
-    PODMAN / 'bin/rootlessport': 'fcc916f1cf597a9dd75ff9824abb299222c3fd1b5d49a7d2d4b2d1fa1918573c',
-    PODMAN / 'result.json': '0f65a25904208c2239bf7a6f53448331e1739fdd2a3919ba6b11cf10b39c9591',
-    PODMAN / 'invocation.json': 'bcfaf2b4a884036d030aa3f25b55aff0e08798256591b10bd53fadc4734c5782',
-    PODMAN / 'commands.json': 'ffb5374242576d800cd85eaca01c238f3e0468f832e1f72fdb5b755d41a89ef6',
-    PODMAN / 'network.json': '00e4806e4af95f716919fc1505ae91afad8fd0350e45807e72e53aa823a1a0df',
+    PODMAN / 'bin/podman': 'cf959bb7548942e904831f4ee95ac67e3232cc530a9ef2626128c24d6ca0852f',
+    PODMAN / 'bin/rootlessport': '7caee62fca7ebc077dd95dfcd515b34808c6fa4682221d44620a27aed54ffe7a',
+    PODMAN / 'result.json': '3bf0eabd2c2ea5a920561734d66c6a70abae2fbacb9acda8f5602c6ceb881a22',
+    PODMAN / 'MODIFICATIONS.txt': '6f05204cf69cef94df454f92cd5334f5aedd8f8824642529a426c75c4c988095',
+    PODMAN / 'commands.json': 'fa20679c261b7883d09385b7b32a7c67c2ce67853da1f375ba065f2a1cafe40f',
+    PODMAN / 'invocation.json': 'e386aa4a096a0c803729dc4a11ed01bd33314caf8ffd0cbb1aab8dfe78c27fa4',
+    PODMAN / 'network.json': 'd9c39a950f738f4d4ad93ec6ae52fdad3de637aa7387ed7f506d6bec39a7fffc',
+    PODMAN / 'owned-source.patch': '33ba96feefb088be4c1095624ae5d58493eed66bbe3515dcbbdef1e2a4dcfae6',
+    PODMAN / 'preparation.json': '6c35101d5395282a3fffa8a0e12643540db91d7de8d34bde9ad432a0adf703e0',
+    PODMAN / 'toolchain.json': '88c9dfab2f03d59019b96d94ca119c5a3aa12cf8509c0da7547747123e19f60a',
     RUNC_ARCHIVE: 'db743b39fd7de8da88adce5a61a54529a494928cd59227fffb622f5cb4ba6ef9',
     RUNC / 'result.json': '64ac169e79dd481fb5d6488b4c32f39ffc30f1cf902c3bbb1c807916f0b9ea00',
     RUNC / 'invocation.json': '9a283834d11f89f87ce0bc74ac3ab3576b3bfdbcc31edc194e27576140f34156',
@@ -276,6 +280,40 @@ def add_owned_runc(writer, original):
     ).encode(), origin={'modified_source_notice': True})
 
 
+def add_owned_podman(writer):
+    """Bind the independently reviewed ordinary-environment successor build."""
+    result = json.loads(regular(PODMAN / 'result.json', PINS[PODMAN / 'result.json']).read_bytes())
+    if result['exit_code'] != 0 or result['unchanged'] != {
+            'source': True, 'prior_source': True, 'baseline': True, 'toolchain': True}:
+        raise ValueError('Owned Podman environment build is incomplete or changed')
+    for name, identity in result['records'].items(): regular(PODMAN / safe_name(name), identity)
+    invocation = json.loads((PODMAN / 'invocation.json').read_bytes())
+    regular(PODMAN / 'build-executed.py', invocation['recipe_sha256'])
+    regular(Path(__file__).with_name('podman_env_build.py'), invocation['recipe_sha256'])
+    preparation = json.loads((PODMAN / 'preparation.json').read_bytes())
+    if preparation['vendor_unchanged'] is not True:
+        raise ValueError('Existing Podman vendor source changed')
+    for name in ('podman', 'rootlessport'):
+        destination = 'runtime/engine/podman' if name == 'podman' else 'runtime/helpers/rootlessport'
+        writer.put(destination, source=PODMAN / 'bin' / name, sha256=PINS[PODMAN / 'bin' / name], executable=True,
+                   origin={'owned_build': str(PODMAN), 'result_sha256': PINS[PODMAN / 'result.json']})
+    prefix = 'runtime/notices/podman-owned-build/'
+    for name in ('result.json', *result['records']):
+        writer.put(prefix + name, source=PODMAN / name, sha256=PINS[PODMAN / name],
+                   origin={'original_build_record': True, 'producer': str(PODMAN)})
+    writer.put(prefix + 'build-executed.py', source=PODMAN / 'build-executed.py', sha256=invocation['recipe_sha256'],
+               origin={'owned_recipe': True, 'producer': str(PODMAN)})
+    for name in ('LICENSE', 'libpod/ambisgis_oci_environment.go', 'libpod/ambisgis_oci_environment_test.go'):
+        row = preparation['patched'][name]
+        if row['kind'] != 'file': raise ValueError('Unexpected owned Podman source member')
+        writer.put(prefix + 'source/' + name, source=PODMAN / 'source' / name, sha256=row['sha256'],
+                   origin={'owned_podman_source': name, 'producer': str(PODMAN)})
+    for index, row in enumerate(preparation['existing_patches']):
+        writer.put(prefix + 'prior-patches/' + str(index) + '-' + Path(row['file']).name,
+                   source=Path(row['file']), sha256=row['sha256'],
+                   origin={'retained_prior_patch': True, 'source': row['file']})
+
+
 def assemble(output):
     os.umask(0o077)
     for path, sha in PINS.items(): regular(path, sha)
@@ -293,13 +331,13 @@ def assemble(output):
             destination = 'runtime/helpers/' + Path(path).name
         writer.put(destination, source=INERT / path, sha256=row['sha256'],
                    executable=path.startswith('runtime/bin/'), origin=row)
-    for name in ('podman', 'rootlessport'):
-        destination = 'runtime/engine/podman' if name == 'podman' else 'runtime/helpers/rootlessport'
-        writer.put(destination, source=PODMAN / 'bin' / name, sha256=PINS[PODMAN / 'bin' / name], executable=True,
-                   origin={'owned_build': str(PODMAN), 'result_sha256': digest(PODMAN / 'result.json')})
+    add_owned_podman(writer)
     copy_package(writer, inventory, 'usr/bin/env', 'runtime/engine/env', executable=True)
     copy_package(writer, inventory, 'usr/share/licenses/coreutils/COPYING', 'runtime/notices/licenses/coreutils/COPYING')
     copy_package(writer, inventory, 'usr/bin/systemd-run', 'runtime/engine/systemd-run', executable=True)
+    # runc's native rootless DetectUID invokes this exact retained helper via
+    # the private PATH. It reads the existing user bus; no UID is substituted.
+    copy_package(writer, inventory, 'usr/bin/busctl', 'runtime/helpers/busctl', executable=True)
     observations = add_elf_dependencies(writer, inventory)
     prerequisites, host_sources = host_inventory(inventory)
     for source in sorted((ROOT / 'installer').glob('*.py')):
@@ -324,11 +362,6 @@ def assemble(output):
     writer.document('runtime/configuration/ordinary-command.json', {'source_sha256': digest(program_source),
                      'internal_client_sha256': hashlib.sha256(programs[0].encode()).hexdigest()})
     writer.document('runtime/configuration/host-prerequisites.json', prerequisites)
-    for name in ('result.json', 'invocation.json', 'commands.json', 'network.json'):
-        writer.put('runtime/notices/podman-owned-build/' + name, source=PODMAN / name,
-                   sha256=PINS[PODMAN / name], origin={'original_build_record': True})
-    writer.put('runtime/notices/podman-owned-build/LICENSE', source=PODMAN / 'source/LICENSE',
-               origin={'exact_retained_owned_build_source': str(PODMAN / 'source/LICENSE')})
     for name in ('retained-inputs.lock.json', 'python312-image-inputs.lock.json'):
         writer.put('runtime/notices/retained-locks/' + name, source=INPUTS / name, sha256=PINS[INPUTS / name],
                    origin={'original_input_lock': True, 'qualification': 'Custody only, original runtime hold wording preserved.'})

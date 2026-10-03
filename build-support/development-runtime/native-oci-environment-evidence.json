@@ -1,0 +1,250 @@
+{
+  "actual_checks": {
+    "baseline_expected_failures": 4,
+    "integrated_validation": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-007/result.json",
+      "sha256": "ff692efe02163e40fce7a26fe7c0710cb0652da7bbd6d363552e8e65c42c7311"
+    },
+    "logs": [
+      {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/baseline-unit.log",
+        "sha256": "31283896153f899a69d532eda56285024106aa50bb198f7053161a3ed18fbaeb"
+      },
+      {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/environment-unit.log",
+        "sha256": "c91c8b1c023d703ec676b792bf59b03682ac40ad0afb40b74512cdb117051a0e"
+      }
+    ],
+    "package_tests": 565,
+    "production_environment_passes": 4,
+    "runtime_guards": 24,
+    "schemas": 10,
+    "source_and_toolchain_unchanged": {
+      "baseline": true,
+      "prior_source": true,
+      "source": true,
+      "toolchain": true
+    }
+  },
+  "actual_prior_lifecycle": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/result.json",
+    "sha256": "f1e946a7962a4bdb98167696b288cd358213dc81485ced56726d9081d5b8c9d6"
+  },
+  "actual_prior_reconciliation": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/reconciliation.json",
+    "sha256": "ff7c00667ed2af7d04f67d515d1afb53bd3c006efa6fbc3bdc6339c0a2895fd9"
+  },
+  "build": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/result.json",
+    "sha256": "3bf0eabd2c2ea5a920561734d66c6a70abae2fbacb9acda8f5602c6ceb881a22"
+  },
+  "busctl": {
+    "archive_sha256": "1cfacf4f6ff784cd49fe8404f16cd89510925553cd651e1bf88532dbf4f4c911",
+    "current_path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/relocated-bundle/runtime/bin:/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/relocated-bundle/runtime/helpers",
+    "invocation": [
+      "busctl",
+      "--user",
+      "--no-pager",
+      "status"
+    ],
+    "member": {
+      "bytes": 99072,
+      "kind": "file",
+      "materialized_mode": "0600",
+      "path": "usr/bin/busctl",
+      "sha256": "b14988d2311dda74516000f69bf670f993ff7842daf76b0909c8b50a27bb3724",
+      "signed_mode": "0o100755"
+    },
+    "new_library_needed": false,
+    "output_contract": "Trim each line; find prefix OwnerUID=, parse decimal with strconv.Atoi. Exact systemd source emits sd_bus_creds_get_owner_uid result for bus owner; user address prioritizes DBUS_SESSION_BUS_ADDRESS. No observed execution/output claimed.",
+    "package": {
+      "arch": "x86_64",
+      "epoch": "0",
+      "name": "systemd",
+      "release": "1.2",
+      "version": "261.2"
+    },
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/plt01-container-inputs/payload-001/systemd-261.2-1.2.x86_64/usr/bin/busctl",
+    "payload_receipt": "/home/revelberry/Projects/AmbisGIS/build-worktrees/plt01-container-inputs/payload-001/receipt.json",
+    "payload_receipt_sha256": "6d685c53f28d75e66923f4e3c1c652398f76c41a48863caa10d3dbcf87591650",
+    "proposed_native_mapping": "runtime/helpers/busctl",
+    "recursive_elf_closure": [
+      {
+        "elf": {
+          "interpreter": "/lib64/ld-linux-x86-64.so.2",
+          "needed": [
+            "libsystemd-shared-261.2-1.2.so",
+            "libc.so.6"
+          ],
+          "rpath": [],
+          "runpath": [
+            "/usr/lib64/systemd"
+          ],
+          "soname": []
+        },
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/plt01-container-inputs/payload-001/systemd-261.2-1.2.x86_64/usr/bin/busctl",
+        "resolved": {
+          "libc.so.6": {
+            "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/relocated-bundle/runtime/lib64/libc.so.6",
+            "sha256": "090f858814642a3f28e5f4ae6499667e7901e47902ca3e72fb9c8a1967a3b8df"
+          },
+          "libsystemd-shared-261.2-1.2.so": {
+            "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/relocated-bundle/runtime/lib64/libsystemd-shared-261.2-1.2.so",
+            "sha256": "2ca9d9099a3581bee6e3e7fbddc55b35ad4768fa96cd28f0159d226327217117"
+          }
+        },
+        "sha256": "b14988d2311dda74516000f69bf670f993ff7842daf76b0909c8b50a27bb3724"
+      },
+      {
+        "elf": {
+          "interpreter": null,
+          "needed": [],
+          "rpath": [],
+          "runpath": [],
+          "soname": [
+            "ld-linux-x86-64.so.2"
+          ]
+        },
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/relocated-bundle/runtime/lib64/ld-linux-x86-64.so.2",
+        "resolved": {},
+        "sha256": "1f36b4d1ad5b25dc469e317e02f1bf26dfb0043c68d40e30f6c519a2b036f52f"
+      },
+      {
+        "elf": {
+          "interpreter": "/lib64/ld-linux-x86-64.so.2",
+          "needed": [
+            "ld-linux-x86-64.so.2"
+          ],
+          "rpath": [],
+          "runpath": [],
+          "soname": [
+            "libc.so.6"
+          ]
+        },
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/relocated-bundle/runtime/lib64/libc.so.6",
+        "resolved": {
+          "ld-linux-x86-64.so.2": {
+            "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/relocated-bundle/runtime/lib64/ld-linux-x86-64.so.2",
+            "sha256": "1f36b4d1ad5b25dc469e317e02f1bf26dfb0043c68d40e30f6c519a2b036f52f"
+          }
+        },
+        "sha256": "090f858814642a3f28e5f4ae6499667e7901e47902ca3e72fb9c8a1967a3b8df"
+      },
+      {
+        "elf": {
+          "interpreter": null,
+          "needed": [
+            "libc.so.6",
+            "ld-linux-x86-64.so.2"
+          ],
+          "rpath": [],
+          "runpath": [],
+          "soname": [
+            "libsystemd-shared-261.2-1.2.so"
+          ]
+        },
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/relocated-bundle/runtime/lib64/libsystemd-shared-261.2-1.2.so",
+        "resolved": {
+          "ld-linux-x86-64.so.2": {
+            "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/relocated-bundle/runtime/lib64/ld-linux-x86-64.so.2",
+            "sha256": "1f36b4d1ad5b25dc469e317e02f1bf26dfb0043c68d40e30f6c519a2b036f52f"
+          },
+          "libc.so.6": {
+            "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/relocated-bundle/runtime/lib64/libc.so.6",
+            "sha256": "090f858814642a3f28e5f4ae6499667e7901e47902ca3e72fb9c8a1967a3b8df"
+          }
+        },
+        "sha256": "2ca9d9099a3581bee6e3e7fbddc55b35ad4768fa96cd28f0159d226327217117"
+      }
+    ],
+    "resolves_currently": false,
+    "runpath_note": "busctl DT_RUNPATH /usr/lib64/systemd; the validated private LD_LIBRARY_PATH is earlier in ELF loader search. Existing closure bytes reused; actual loaded-map proof remains pending.",
+    "source_archive": "/home/revelberry/Projects/AmbisGIS/source-archives/plt01-container/obs-source/systemd-0092d42418b02d521cc36341d1a6c3b2/systemd-261.2.tar.xz",
+    "source_archive_sha256": "cc84192fe4c7bc1373df650e6cbb81109d4fff268f9afac12edd3856fde95fef",
+    "source_members": [
+      {
+        "member": "systemd-261.2/src/busctl/busctl.c",
+        "sha256": "633a66d7b65eac3b5f1b36e715e4ea3e58932e3a4cbab5788c5025043545900d"
+      },
+      {
+        "member": "systemd-261.2/src/libsystemd/sd-bus/bus-dump.c",
+        "sha256": "5a1d4b5c4ab27c52e78914aa5ef4a7ba2b6b1ed9d1e0e2cebdf575ea980dce7a"
+      },
+      {
+        "member": "systemd-261.2/src/libsystemd/sd-bus/sd-bus.c",
+        "sha256": "dbc2ea42d0f3174bd44d49473dc71afd75b5d030b7f460671a2f7561ff6fcf07"
+      }
+    ]
+  },
+  "distribution_approved": false,
+  "frozen_preflight": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-preflight-002/result.json",
+    "sha256": "f95dbdbe9389b18deffc653d4fc645b95be2965533ea9e43bcb8626636c2be12"
+  },
+  "full_installation_acceptance": false,
+  "held_probe_executed": false,
+  "independent_completed_build_review": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-oci-env-build-review-001/result.json",
+    "sha256": "fea94596d5a111201666e160e96ae536c8d504bc76c09dc50eee3e986e87290d"
+  },
+  "independent_preexecution_review": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-oci-env-preexecution-review-001/result.json",
+    "sha256": "cd979c67e7893f09be867ce126c547249e72eb5a72923e9b2bce57ad095a0536"
+  },
+  "integrated_parent": "08aae464aaf98bf20c8a1d1d2b90cf1f0e64a4f9",
+  "prior_failed_inert_preparation": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-preflight-001/result.json",
+    "sha256": "d97e85d4ba5300222c1ec458f807eac0e08572fbeaf04adc9a841a9adae0e6ab"
+  },
+  "records": {
+    "MODIFICATIONS.txt": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/MODIFICATIONS.txt",
+      "sha256": "6f05204cf69cef94df454f92cd5334f5aedd8f8824642529a426c75c4c988095"
+    },
+    "commands.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/commands.json",
+      "sha256": "fa20679c261b7883d09385b7b32a7c67c2ce67853da1f375ba065f2a1cafe40f"
+    },
+    "invocation.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/invocation.json",
+      "sha256": "e386aa4a096a0c803729dc4a11ed01bd33314caf8ffd0cbb1aab8dfe78c27fa4"
+    },
+    "network.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/network.json",
+      "sha256": "d9c39a950f738f4d4ad93ec6ae52fdad3de637aa7387ed7f506d6bec39a7fffc"
+    },
+    "owned-source.patch": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/owned-source.patch",
+      "sha256": "33ba96feefb088be4c1095624ae5d58493eed66bbe3515dcbbdef1e2a4dcfae6"
+    },
+    "preparation.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/preparation.json",
+      "sha256": "6c35101d5395282a3fffa8a0e12643540db91d7de8d34bde9ad432a0adf703e0"
+    },
+    "toolchain.json": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/toolchain.json",
+      "sha256": "88c9dfab2f03d59019b96d94ca119c5a3aa12cf8509c0da7547747123e19f60a"
+    }
+  },
+  "remaining": [
+    "Independent final assembler and complete bundle review.",
+    "Fresh ordinary lifecycle using exact reviewed bundle; successful cgroup registration remains unverified.",
+    "Original PLT01 supplemental network, OS, authorization, concurrency, redaction and cleanup matrix.",
+    "Runtime security qualification, source distribution, phase exits and full scoped MVP remain open."
+  ],
+  "schema_version": 1,
+  "scope": "Owned ordinary OCI environment repair and retained busctl packaging; full installation acceptance pending",
+  "source_commit": "0dad2602004ad7071636d9582606396ec8ab0a9f",
+  "source_diagnosis": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-004/read-only-diagnosis-001/source-diagnosis.json",
+    "sha256": "bb6a5a0b2380532e9c2c6d02ff049cb879b2ba320e1a394574bc02ada564af9b"
+  },
+  "source_files": {
+    "README.md": "6e83aed3c50c21267a228a683d586e7a79fb2c4ea74d8abe79b817b6eef19c0d",
+    "build_bundle.py": "4fdcfe5c4c970d492ddb90211f20fed5575bddf52f55721334fd2b284131ee39",
+    "podman-environment.md": "e80e5a8b3bf23982d0027acabcb9cd27614275643b4963611b2e39d1aa19517f",
+    "podman_env_build.py": "4647ed2c7ed2698f916e304b8b2460348eaae8f61dcbb9f65603356008d74553",
+    "test_podman_env_build.py": "d42ad9d61c97b7ddde651cddd231a81e058c62f530bf4ddbcf8cae9630538fdf"
+  },
+  "task": "PLT-01"
+}
