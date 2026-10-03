@@ -31,8 +31,11 @@ reproducibility. Unexplained content differences remain failures.
   runner. [Client PR #1](https://github.com/aloerch/ambisgis-mapstore-client/pull/1)
   merged the two formatting repairs at
   `c1f6ad9df52f08ac3bfd7211db9e3ee744b21407`. Whole-client lint and 510 actual
-  sandboxed browser assertions pass at its reviewed source; fresh production
-  builds at the merged pin are separately required. Catalog custody includes
+  sandboxed browser assertions pass at its reviewed source. [Fresh merged-client
+  pairs](../verification/fnd08-client-successor/README.md) produce three identical
+  catalog outputs and 1,038 UI assets with zero unexplained differences. The
+  actual fresh-build native runner passes lint and all 510 browser assertions.
+  Catalog custody includes
   209 wheels and 199 sdists. Ten no-sdist packages retain inspectable embedded
   Python source and identity leads; complete standalone build inputs and source
   bootstrap for those packages remain unproven, as recorded in the linked
