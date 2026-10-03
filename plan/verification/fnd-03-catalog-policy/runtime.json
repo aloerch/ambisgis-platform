@@ -1,0 +1,126 @@
+{
+  "accepted_candidate_sha256": "0d7a61818d73ad27135f9bb0756797bd2c4f7e10c717d3536517534eca57cf99",
+  "all_http_assertions_passed": true,
+  "base_commit": "8c3612dd3e4ee992d930f1417798b66f467784e9",
+  "branch": "fnd-03/catalog-policy-v2",
+  "claim_url": "https://github.com/aloerch/ambisgis-platform/issues/4#issuecomment-5966057973",
+  "cleanup": {
+    "database_stopped": true,
+    "private_config_scrubbed": true,
+    "services": {
+      "engine-protected": {
+        "secret_hits": 0,
+        "stopped": true
+      },
+      "engine-provision": {
+        "secret_hits": 0,
+        "stopped": true
+      },
+      "engine-restart": {
+        "secret_hits": 0,
+        "stopped": true
+      },
+      "gateway": {
+        "secret_hits": 0,
+        "stopped": true
+      },
+      "geonode-restart": {
+        "secret_hits": 0,
+        "stopped": true
+      },
+      "geonode-runtime": {
+        "secret_hits": 0,
+        "stopped": true
+      }
+    }
+  },
+  "compiler_policy_sha256": "9a527c311232f9a71d6cd1cbcc40e684f6d74d9666cdcdb929c2f94e9977f5c4",
+  "diagnostic_secret_hits": 0,
+  "engine_policy_configuration_unchanged": true,
+  "http_assertions": 142,
+  "independent_review": "pending; no self-review presented as independent",
+  "limitations": [
+    "Single-node Linux loopback fixture, not installer/TLS/production deployment",
+    "WFS 1.0.0 GetFeature JSON only; other outputs are denied pending implementation/tests",
+    "Native HTTP OAuth issuance is tested; full OIDC/browser SSO is not",
+    "Sharing mutations use native ORM, not an implemented administration UI",
+    "No claim that already authorized responses can be recalled",
+    "PostgreSQL retains documented supervisor exception because native setsid is denied"
+  ],
+  "migrations": 482,
+  "native_tests": 70,
+  "owned_installed_files": 2843,
+  "owned_war_sha256": "90493ef3e96016bd150439d07b2e0adbcd2ec4292bd648f29c246e18422eebe1",
+  "package_checks": {
+    "geonode_harness_tests": 118,
+    "java_runtime_tests": 4,
+    "logs": {
+      "geonode-harness-final.log": "8a29e8871af75965aeb2f9c61fb006c2bc495ef58a01082e093266ad1c28927b",
+      "java-runtime-tests.log": "111c07497a205a1761e3c03e01f288c00a53914dfaab3b421e1048a2f2f0b557",
+      "package-schemas.log": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+      "package-tests.log": "ff757032eb9bcc4242351f5822880f5b46d282596eaa6a58d2fd6bbdc0f856a5"
+    },
+    "schemas": 4,
+    "unittest_count": 444
+  },
+  "prior_attempts": [
+    {
+      "attempt": "attempt-01",
+      "error": {
+        "message": "[Errno 2] No such file or directory: '/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd03-runtime/attempt-01/geonode-runtime.log'",
+        "type": "FileNotFoundError"
+      },
+      "passed_http_assertions": 0,
+      "receipt_sha256": "8f3d9901e7e29b6f8ca979844f00c76e90060ecbb0605ace3d8b4a05597f70c4",
+      "result_exit_code": 1,
+      "scope": "retained harness failure; not accepted"
+    },
+    {
+      "attempt": "attempt-02",
+      "error": {
+        "message": "'function' object has no attribute 'futures'",
+        "type": "AttributeError"
+      },
+      "passed_http_assertions": 94,
+      "receipt_sha256": "a3367e2cd22118fb0172575dba4ca4cebfe73fa7d7aafb3e00d19a8994b33412",
+      "result_exit_code": 1,
+      "scope": "retained harness failure; not accepted"
+    }
+  ],
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "result_exit_code": 0,
+  "retained_receipts": {
+    "application-inventory.json": "61aea3010a6a40dcc5175c4f49e2ea8179e3bf627c32f1b29c773948ac00a5c3",
+    "catalog-result.json": "1f75e78fa50108214e943239fd907ec9fb63124a434595f49911b618c61a79ab",
+    "installed-origin-after.json": "3d6cc812d46d95c3c85e560555b6a9219908baabbee040dffb60f22e959ad6ce",
+    "installed-origin-before.json": "3d6cc812d46d95c3c85e560555b6a9219908baabbee040dffb60f22e959ad6ce",
+    "launcher/network-denial.json": "c9a99450eed567a8a5a3c7a1b368e7ffbe8035c3b694a012c64d08c558d27e68",
+    "launcher/result.json": "1f8361e6684062072f8213de7d5e4a17256a47bae59835c6607b8225ac6691d8",
+    "migrations-migrate.json": "7701ab6403c251cce466f027d4d38406ac501a900424a6ddde572cb0fa793c34",
+    "native-tests.json": "a313db961ed4260bdffcd49ac3706828cb6b2eee7d0c336ac186698551604e58",
+    "network-loopback.json": "e9c76d7a30a61be6ac15fffa7557c2089ae1ac1d46b213223e999499a79ab1d5",
+    "network-loopback.probes.json": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825",
+    "result.json": "5049fa8114bc61f684006721c8ea10053710718ed6d37413568a6d27f3a6ee87",
+    "tooling.json": "900e7dbaa85130754a0332db51a697d694be2b1195053c41a01e256577c56058"
+  },
+  "retained_runtime": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd03-runtime/attempt-03",
+  "schema_version": 1,
+  "scope": "Two-user catalog identity and ACL spike; not all T-AUTH-ALL surfaces or an installable product",
+  "source_sha256": {
+    "build-support/geonode/catalog_fixture.py": "50e0b1db81e0f992732c0304b9b186057dad639d010f5913a73960801516cda0",
+    "build-support/geonode/catalog_journey.py": "341f5d0a0d8d3083fa863196574faac23516240deebe8887655ebe242fda7c39",
+    "build-support/geonode/fixture_settings.py": "48b59ba1508ed195acb559c4247f114eaa632c30a207a3fd1b5e6b9503c32675",
+    "build-support/geonode/manage_fixture.py": "966dda03a2925b69aa2d0aa0bec194027f6fb72c44f95136321c68e6b503d130",
+    "build-support/geonode/run.py": "24fe1fa92b20418d99e6219e4ffdb00ddc53e49fc510d0e52e2185dfe1f7ee98",
+    "build-support/geonode/test_catalog_policy.py": "b2d01ec08ce25d1ca8b0b6e33292999657660538da1696b2c2b636b0f4578805",
+    "build-support/java/runtime-fixtures/ConfiguredGeoServerRuntime.java": "c57a87176c24c09df4d67530452a0e965ef3da85c8bea8b08b891d673fe92d6a",
+    "build-support/java/runtime_inputs.py": "01f1b7dded7361c12a5f5991baf1bb82109ff0d6587007c96fc6bcb8ee44840d",
+    "services/control-plane/ambisgis_policy/__init__.py": "17e1d950c09541f0d4c75abb33a9a62521159e8eee069dc15d091226dfd436cc",
+    "services/control-plane/ambisgis_policy/catalog.py": "0391a1fad8bf975cc8f65d4deb8e4f004de1e03d607685496d573bd63dd3fe1d",
+    "services/control-plane/ambisgis_policy/gateway.py": "28b87d0d4ee4a643d08d48ef4976ece3b57f79a03c81c35756a72516e8b0c93a",
+    "services/gateway/CatalogPolicyFilter.java": "9a527c311232f9a71d6cd1cbcc40e684f6d74d9666cdcdb929c2f94e9977f5c4"
+  },
+  "task": "FND-03",
+  "tooling_unchanged": true
+}

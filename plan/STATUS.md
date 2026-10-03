@@ -1,5 +1,12 @@
 # Active delivery — standing delegation
 
+FND-03 now has a [real catalog-policy implementation and evidence](docs/fnd-03-catalog-policy.md)
+on `fnd-03/catalog-policy-v2`: 142 gateway/engine authorization assertions,
+70 native GeoNode tests, 482 migrations, unchanged owned component artifacts and
+clean disposable runtime teardown pass. Independent review and PR merge remain
+pending. This is the bounded identity/ACL spike, not full T-AUTH-ALL or an
+installable product. Global delivery sequencing remains with the integrator.
+
 Live main is PR #71 merge `5213f31cd51aed5230d7bd550cc03662bcfb566f`, verified on 2026-10-02 America/Los_Angeles. The [standing policy](docs/standing-delivery-policy.md) supersedes older procedural stops below. Work is on `delivery/standing-delegation`, with independent review and tested gates, followed by exact source publication and dependency-ready product work. FND-02 remains accepted/Merged; no scoped MVP or release is claimed.
 
 [Current delivery ledger](docs/delivery-ledger.json) · [all 24 required capabilities and acceptance](docs/delivery-requirements-matrix.md).
