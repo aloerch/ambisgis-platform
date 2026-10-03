@@ -1,15 +1,19 @@
 """Independent-oracle regression checks; no service or installer acceptance."""
 import copy
+import io
 import json
+import os
 from pathlib import Path
 import struct
 import tempfile
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
+import uuid
 import zlib
 
 import journey_probe as probe
+import catalog_permission_probe as policy_probe
 
 
 def image(*, centers=((128, 384), (256, 256)), color=(32, 120, 180)):
@@ -131,6 +135,14 @@ class CreatedTokenCleanup(unittest.TestCase):
         self.assertFalse(self.grants)
         self.assertEqual(len(self.revocations), 4)
 
+    def test_item_policy_restoration_failure_still_cleans_token_families(self):
+        def exercise():
+            self.journey.login('owner');self.journey.login('viewer')
+            raise RuntimeError('Native item-policy restoration is incomplete.')
+        self.journey.exercise=exercise
+        with self.assertRaisesRegex(RuntimeError,'item-policy restoration'):self.journey.run()
+        self.assertFalse(self.grants);self.assertEqual(len(self.revocations),4)
+
     def test_scope_validation_failure_cleans_already_issued_tokens(self):
         self.response_change = lambda value: value.update(scope='read')
         self.journey.exercise = self.exercise
@@ -188,6 +200,162 @@ class CreatedTokenCleanup(unittest.TestCase):
                 with self.assertRaisesRegex(RuntimeError, 'secret scan'):
                     probe.main(SimpleNamespace(output=output, directory=Path(directory)))
             self.assertFalse((output / 'result.json').exists())
+
+
+class PermissionOrchestration(unittest.TestCase):
+    """Real orchestration with inert pipe peer, not native permission evidence."""
+    def setUp(self):
+        self.journey=object.__new__(probe.Journey)
+        self.journey.product={'install_id':'c1009991-b05e-4547-9b24-64d6c3976650'}
+        self.journey.runtime=SimpleNamespace(podman='/inert/podman',global_args=[],environment={},root=Path('/inert'))
+        self.journey.permission_cleanup=None;self.journey.permission_events=[]
+        self.granted=False;self.fail_restore=False;self.actions=[];test=self
+        class Process:
+            def __init__(self,*args,**kwargs):
+                self.code=None;fd,self.writefd=os.pipe();self.stdout=os.fdopen(fd,'rb',buffering=0)
+                self.stdin=self;self.closed=False
+                self.original=policy_probe.fingerprint({'granted':False})
+                expected=str(uuid.uuid5(uuid.UUID(test.journey.product['install_id']),'diagnostic-private-points'))
+                self.emit({'event':'ready','identity':{'install_id':test.journey.product['install_id'],'resource_uuid':expected},'policy_sha256':self.original})
+            def emit(self,row):os.write(self.writefd,(json.dumps(row)+'\n').encode())
+            def write(self,body):
+                value=policy_probe.action(body.decode());test.actions.append(value)
+                if value=='finish':
+                    if not test.fail_restore:test.granted=False
+                    self.emit({'event':'cleanup','complete':not test.fail_restore,'before_sha256':self.original,
+                               'sequence_complete':test.actions==['grant','revoke','grant','finish'],
+                               'after_sha256':self.original if not test.fail_restore else 'different'})
+                    self.code=0
+                else:
+                    test.granted=value=='grant'
+                    self.emit({'event':value,'granted':test.granted,'policy_sha256':policy_probe.fingerprint({'granted':test.granted})})
+            def flush(self):pass
+            def close(self):
+                if not self.closed:os.close(self.writefd);self.closed=True
+            def wait(self,timeout=None):return self.code
+            def poll(self):return self.code
+        self.launch=patch.object(probe.subprocess,'Popen',Process);self.launch.start();self.addCleanup(self.launch.stop)
+
+    def test_same_token_in_all_phases_and_restored_before_final_denial(self):
+        calls=[]
+        def reads(token,*,allowed,title):
+            calls.append((token,allowed,title));self.assertIs(self.granted,allowed);return [{'oracle':'inert'}]
+        self.journey.protected_reads=reads
+        value=self.journey.item_permission_roundtrip('unchanged-token','original-title')
+        self.assertEqual(calls,[('unchanged-token',allow,'original-title') for allow in (True,False,True,False)])
+        self.assertEqual(self.actions,['grant','revoke','grant','finish']);self.assertFalse(self.granted)
+        self.assertTrue(value['restoration']['complete'])
+
+    def test_http_oracle_failure_restores_permission(self):
+        def reads(*args,**kwargs):raise ValueError('independent feature oracle failed')
+        self.journey.protected_reads=reads
+        with self.assertRaisesRegex(ValueError,'feature oracle'):self.journey.item_permission_roundtrip('token','title')
+        self.assertEqual(self.actions,['grant','finish']);self.assertFalse(self.granted)
+        self.assertTrue(self.journey.permission_cleanup['complete'])
+
+    def test_failed_restoration_prevents_passing_result(self):
+        self.fail_restore=True;self.journey.protected_reads=lambda *a,**k:[]
+        with self.assertRaisesRegex(RuntimeError,'restoration'):self.journey.item_permission_roundtrip('token','title')
+        self.assertFalse(self.journey.permission_cleanup['complete'])
+
+    def test_actual_policy_restoration_failure_still_runs_outer_token_cleanup(self):
+        self.fail_restore=True;events=[]
+        self.journey.protected_reads=lambda *a,**k:[]
+        self.journey.exercise=lambda:self.journey.item_permission_roundtrip('same-token','title')
+        def cleanup():
+            events.append('tokens');return {'complete':True}
+        self.journey.cleanup_tokens=cleanup
+        with self.assertRaisesRegex(RuntimeError,'restoration'):self.journey.run()
+        self.assertEqual(self.actions,['grant','revoke','grant','finish'])
+        self.assertEqual(events,['tokens']);self.assertTrue(self.journey.cleanup_result['complete'])
+        self.assertFalse(self.journey.permission_cleanup['complete'])
+
+    def test_token_cleanup_failure_preserves_successful_policy_cleanup_receipt(self):
+        self.journey.protected_reads=lambda *a,**k:[]
+        self.journey.exercise=lambda:self.journey.item_permission_roundtrip('same-token','title')
+        self.journey.cleanup_tokens=lambda:{'complete':False,'tokens':[{'revoked':False}]}
+        with self.assertRaisesRegex(RuntimeError,'token cleanup'):self.journey.run()
+        self.assertFalse(self.granted);self.assertTrue(self.journey.permission_cleanup['complete'])
+        native=self.journey.permission_cleanup['native']
+        self.assertEqual(native['before_sha256'],native['after_sha256'])
+        self.assertTrue(native['sequence_complete']);self.assertFalse(self.journey.cleanup_result['complete'])
+
+
+class InternalRequestBoundary(unittest.TestCase):
+    def test_unlisted_method_path_pairs_reject_before_connection(self):
+        pairs=[('DELETE','/geoserver/rest/workspaces/caller-chosen'),
+               ('PUT','/geoserver/rest/workspaces'),('POST','/geoserver/web/'),
+               ('GET','/geoserver/rest/workspaces/other'),('GET','/geoserver/wfs?caller=target'),
+               ('DELETE','/geoserver//wfs'),('PUT','/geoserver/%77fs'),
+               ('GET','/geoserver/rest/../rest/workspaces')]
+        for method,path in pairs:
+            value={'method':method,'path':path,'headers':[['Authorization','Bearer synthetic']],'body':''}
+            with self.subTest(method=method,path=path),patch.object(probe.http.client,'HTTPConnection',
+                    side_effect=AssertionError('forbidden target reached connection creation')) as connect:
+                with patch('sys.stdin',io.StringIO(json.dumps(value))),patch('sys.stdout',io.StringIO()),self.assertRaises(ValueError):
+                    exec(probe.INTERNAL_CLIENT,{'__name__':'__test__'})
+                connect.assert_not_called()
+
+    def execute(self,value):
+        calls=[]
+        class Connection:
+            def __init__(self,host,port,timeout):calls.append(('target',host,port))
+            def putrequest(self,*args):calls.append(('request',*args))
+            def putheader(self,*args):calls.append(('header',*args))
+            def endheaders(self,body):calls.append(('body',body))
+            def getresponse(self):return SimpleNamespace(status=403,read=lambda limit:b'',getheaders=lambda:[])
+            def close(self):pass
+        with patch.object(probe.http.client,'HTTPConnection',Connection),patch('sys.stdin',io.StringIO(json.dumps(value))),patch('sys.stdout',io.StringIO()):
+            exec(probe.INTERNAL_CLIENT,{'__name__':'__test__'})
+        return calls
+
+    def test_actual_header_pairs_survive_and_target_is_fixed(self):
+        value={'method':'GET','path':'/geoserver/wfs?'+probe.FEATURE_QUERY,'headers':[['Authorization','Bearer owner'],['authorization','Bearer viewer']],'body':''}
+        calls=self.execute(value)
+        self.assertEqual(calls[0],('target','geoserver',8080))
+        self.assertIn(('header','Authorization','Bearer owner'),calls)
+        self.assertIn(('header','authorization','Bearer viewer'),calls)
+
+    def test_arbitrary_method_target_header_and_body_are_rejected(self):
+        good={'method':'GET','path':'/geoserver/wfs?'+probe.FEATURE_QUERY,'headers':[],'body':''}
+        variants=[{'method':'PATCH'},{'path':'http://foreign/geoserver/wfs'},{'host':'foreign'},
+                  {'headers':[['Host','foreign']]},{'method':'POST','body':probe.base64.b64encode(b'<feature insert="yes"/>').decode()}]
+        for change in variants:
+            with self.subTest(change=change),self.assertRaises(ValueError):self.execute({**good,**change})
+        value={**good,'method':'POST','path':'/geoserver/wfs','body':probe.base64.b64encode(probe.EMPTY_TRANSACTION).decode()}
+        self.assertIn(('body',probe.EMPTY_TRANSACTION),self.execute(value))
+
+    def test_negative_matrix_cannot_pass_if_duplicate_auth_is_accepted(self):
+        journey=object.__new__(probe.Journey);journey.request=lambda *args,**kwargs:(200,b'')
+        with self.assertRaisesRegex(ValueError,'duplicate Authorization'):journey.route_negatives('owner','viewer')
+
+    def test_negative_matrix_covers_both_paths_and_never_changes_features(self):
+        journey=object.__new__(probe.Journey);seen=[]
+        def request(path,**kwargs):
+            seen.append((path,kwargs))
+            denied=403 if kwargs.get('direct') or kwargs.get('method','GET')=='GET' and not path.startswith('/geoserver/') else 404
+            return denied,b''
+        journey.request=request
+        facts=journey.route_negatives('owner','viewer')
+        self.assertTrue(any(row['case']=='empty_transaction' and row['direct_engine'] for row in facts))
+        self.assertEqual({row.get('method') for row in facts if row['case']=='write_method'},{'POST','PUT','DELETE'})
+        self.assertTrue(all(kwargs.get('raw_body') in (None,probe.EMPTY_TRANSACTION) for _,kwargs in seen))
+
+    def test_every_declared_direct_request_matches_finite_projection(self):
+        journey=object.__new__(probe.Journey);seen=[]
+        def request(path,**kwargs):
+            direct=kwargs.get('direct',False)
+            if direct:
+                value={'method':kwargs.get('method','GET'),'path':path,
+                       'headers':kwargs.get('extra',[]),
+                       'body':probe.base64.b64encode(kwargs.get('raw_body',b'')).decode()}
+                calls=self.execute(value);self.assertEqual(calls[0],('target','geoserver',8080));seen.append(path)
+            return (403 if direct or kwargs.get('method','GET')=='GET' and not path.startswith('/geoserver/') else 404),b''
+        journey.request=request;journey.route_negatives('owner','viewer')
+        for name,query in [('wfs',probe.FEATURE_QUERY),('wms',probe.MAP_QUERY)]:
+            for suffix in ('','&request=GetFeature'):
+                self.execute({'method':'GET','path':'/geoserver/'+name+'?'+query+suffix,'headers':[],'body':''})
+        self.assertGreater(len(seen),30)
 
 
 if __name__ == '__main__': unittest.main()

@@ -151,11 +151,19 @@ class RuntimeTests(unittest.TestCase):
             if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == 'INTERNAL_CLIENT' for t in node.targets):
                 program = ast.literal_eval(node.value)
         target = self.bundle / 'runtime/configuration'; target.mkdir(parents=True)
-        (target / 'ordinary-command.json').write_text(json.dumps({'internal_client_sha256': hashlib.sha256(program.encode()).hexdigest()}))
+        permission = (ROOT / 'deploy/development/catalog_permission_probe.py').read_text()
+        (target / 'ordinary-command.json').write_text(json.dumps({'internal_client_sha256': hashlib.sha256(program.encode()).hexdigest(),
+                     'catalog_permission_sha256': hashlib.sha256(permission.encode()).hexdigest()}))
         tail = ['exec', '-i', self.name + '-gateway', '/opt/ambisgis/python/bin/python3', '-c', program]
         self.engine(tail)
         tail[-1] += '\nprint(1)'
         with self.assertRaises(InstallError): self.engine(tail)
+        authorized = ['exec','-i',self.name+'-catalog','/opt/ambisgis/python/bin/python3','-c',permission]
+        self.engine(authorized)
+        for bad in [authorized+['arbitrary-argument'], authorized[:-1]+[permission+'\nprint(1)'],
+                    authorized[:-1]+[program], ['exec','-i',self.name+'-gateway',*authorized[3:]],
+                    ['exec','-i',self.name+'-catalog-init',*authorized[3:]]]:
+            with self.assertRaises(InstallError):self.engine(bad)
 
     def test_native_timer_has_exact_unit_program_store_and_interval(self):
         cid = 'c' * 64

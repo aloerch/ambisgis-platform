@@ -2,7 +2,9 @@
 import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
+from unittest.mock import patch
 
 import lifecycle_check as lifecycle
 sys.path.insert(0, str(lifecycle.ROOT / 'plan/tests'))
@@ -68,6 +70,44 @@ class LifecycleBoundaryTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             check.save()
         self.assertFalse((output / 'result.json').exists())
+
+
+class ProtectedRepetitionTests(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
+        root=Path(self.temp.name);self.check=lifecycle.Check(root/'installation',root/'evidence')
+        self.calls=[];self.check.metadata=lambda title:self.calls.append(('metadata',title))
+        self.check.preserve_identity=lambda:self.calls.append(('preserve',))
+        self.check.stage=lambda *args:self.calls.append(('stage',args[0]))
+        self.identity={'resource_uuid':'same-resource','viewer_pk':2,'owner_pk':1}
+        test=self
+        class Journey:
+            def __init__(self,path):
+                test.calls.append(('construct',));self.cleanup_result={'complete':True}
+                self.permission_cleanup={'complete':True};self.browsers=[];self.rows=[];self.permission_events=[]
+            def run(self):
+                test.calls.append(('run',))
+                return {'retained_metadata_title':'old-title','native_item_permission_roundtrip':{
+                    'identity':dict(test.identity),'restoration':{'native':{'after_sha256':'unchanged'}}}}
+        self.patcher=patch.object(lifecycle.journey_module,'Journey',Journey);self.patcher.start();self.addCleanup(self.patcher.stop)
+
+    def test_persistence_is_checked_before_repeated_journey_can_write(self):
+        self.check.protected_journey('after restart','old-title')
+        self.assertEqual(self.calls[:4],[('metadata','old-title'),('preserve',),('construct',),('run',)])
+        self.assertEqual(self.check.record['http_journeys'][0]['stage'],'after restart')
+        self.assertEqual(self.check.record['permission_cleanup'],[{'complete':True}])
+
+    def test_lost_metadata_prevents_journey_rewrite(self):
+        def fail(title):raise ValueError('old metadata missing')
+        self.check.metadata=fail
+        with self.assertRaisesRegex(ValueError,'old metadata'):self.check.protected_journey('after recovery','old-title')
+        self.assertNotIn(('construct',),self.calls)
+
+    def test_native_identity_drift_blocks_success(self):
+        self.check.protected_journey('initial')
+        self.identity['viewer_pk']=99
+        with self.assertRaisesRegex(ValueError,'native principals'):self.check.protected_journey('after reinit','old-title')
+        self.assertEqual(len(self.check.record['http_journeys']),1)
 
 
 if __name__ == '__main__':

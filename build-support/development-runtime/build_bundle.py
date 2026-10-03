@@ -359,8 +359,12 @@ def assemble(output):
     programs = [ast.literal_eval(node.value) for node in ast.parse(program_source.read_text()).body
                 if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == 'INTERNAL_CLIENT' for t in node.targets)]
     if len(programs) != 1: raise ValueError('diagnostic program binding missing')
+    permission_source = ROOT / 'deploy/development/catalog_permission_probe.py'
+    writer.put('runtime/configuration/catalog-permission-source.py', source=permission_source,
+               origin={'owned_acceptance_program': str(permission_source), 'sha256': digest(permission_source)})
     writer.document('runtime/configuration/ordinary-command.json', {'source_sha256': digest(program_source),
-                     'internal_client_sha256': hashlib.sha256(programs[0].encode()).hexdigest()})
+                     'internal_client_sha256': hashlib.sha256(programs[0].encode()).hexdigest(),
+                     'catalog_permission_sha256': digest(permission_source)})
     writer.document('runtime/configuration/host-prerequisites.json', prerequisites)
     for name in ('retained-inputs.lock.json', 'python312-image-inputs.lock.json'):
         writer.put('runtime/notices/retained-locks/' + name, source=INPUTS / name, sha256=PINS[INPUTS / name],
