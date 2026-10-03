@@ -1,0 +1,141 @@
+{
+  "base_commit": "5213f31cd51aed5230d7bd550cc03662bcfb566f",
+  "branch": "fnd-07/authorized-successors",
+  "checks": [
+    {
+      "command": "python3 -B -m unittest discover -s plan/tests -p test_authorized_successors.py -v",
+      "errors": 0,
+      "failures": 0,
+      "scope": "Mocked API safety plus real local Git creation/ancestor-race refusal; not remote delivery",
+      "skips": 0,
+      "tests": 13
+    },
+    {
+      "command": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python3 -B -m unittest discover -s tests -v",
+      "errors": 0,
+      "execution": "flatpak-spawn --host sh; cwd plan",
+      "failures": 0,
+      "log": {
+        "bytes": 63191,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/source-publication-evidence/tests-host-001.log",
+        "sha256": "77e342a7742b8171d814ca674718d52eae437028879a030ac61ef73450ffdeb4"
+      },
+      "skips": 0,
+      "tests": 428
+    },
+    {
+      "command": "/home/revelberry/Projects/AmbisGIS/build-worktrees/jupyter-slice/run-002/hub-env/bin/python3 -B tools/validate_package.py --require-schemas",
+      "execution": "flatpak-spawn --host sh; cwd plan",
+      "log": {
+        "bytes": 189,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/source-publication-evidence/schemas-host-001.log",
+        "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+      },
+      "schemas": 4,
+      "status": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "status": "passed"
+    }
+  ],
+  "implementation": [
+    {
+      "bytes": 16852,
+      "path": "plan/tools/publish_authorized_successors.py",
+      "sha256": "b000c5e5fb2d3cbbdb68f781fa4ac671bb165058d42533b6ee22e9b00851d218"
+    },
+    {
+      "bytes": 10692,
+      "path": "plan/tests/test_authorized_successors.py",
+      "sha256": "eb6d13e7cc84564bba070cfe00e0b8e434f5fdef42d4476e824a94076961d93a"
+    }
+  ],
+  "independent_review": {
+    "findings_fixed": [
+      "Preserve newly observed/created refs between operations, not only original inventory.",
+      "Re-read both roots at end and require all apply destinations exact."
+    ],
+    "mechanism": "Separate-context parent integration agent reviewed actual implementation during development; final independent reviewer requested by integrator is pending.",
+    "regression_tests": [
+      "test_new_review_ref_deleted_or_moved_between_steps_is_held",
+      "test_final_readback_detects_earlier_root_drift"
+    ]
+  },
+  "kind": "authorized-successor-helper-prepublication-validation",
+  "limits": [
+    "No source was published by this increment.",
+    "Original manifests, recipes, source candidates and historical receipts are unchanged.",
+    "Package/schema/source checks are not GIS product tests."
+  ],
+  "live_preflight": {
+    "apply": false,
+    "destinations": [
+      {
+        "ref": "refs/heads/ambisgis/review/fnd-07-notices-v1",
+        "root_id": "geotools",
+        "status": "ready"
+      },
+      {
+        "ref": "refs/heads/ambisgis/main",
+        "root_id": "geotools",
+        "status": "ready"
+      },
+      {
+        "ref": "refs/heads/ambisgis/review/fnd-07-publication-snapshot-v1",
+        "root_id": "qgis",
+        "status": "ready"
+      },
+      {
+        "ref": "refs/heads/ambisgis/main",
+        "root_id": "qgis",
+        "status": "ready"
+      }
+    ],
+    "journal": {
+      "bytes": 220151,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/source-publication-evidence/preflight-001.jsonl",
+      "sha256": "8543e6e0cd6991688f76a8e382f856b469440fcd5c2e69eefedfd84e4fe8140d"
+    },
+    "principal": {
+      "id": 15285626,
+      "login": "aloerch"
+    },
+    "settings_mutation_attempts": 0,
+    "source_mutation_attempts": 0,
+    "status": "passed"
+  },
+  "local_integrity": "Both actual successor sources, prior receipts, strict Git object integrity, GeoTools exact notice/model delta and QGIS complete exclusions/provenance/resource boundaries reverified by new helper before live preflight.",
+  "owner_delegation_sha256": "40d4bac51de35df99aa81f7c16db45f54644145272ce0a5f424aca208f38c402",
+  "prior_failures_retained": [
+    {
+      "log": {
+        "bytes": 68839,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/source-publication-evidence/tests-flatpak-missing-jsonschema.log",
+        "sha256": "5852c16f36968ddfdea38f39f83acc6b158501fa519d6044a33ff30a95714185"
+      },
+      "reason": "Flatpak default Python has no jsonschema: one failure, five errors, seven skips; not accepted validation. Retained isolated Python used afterward."
+    },
+    {
+      "log": {
+        "bytes": 64888,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/source-publication-evidence/tests-flatpak-maintenance-race.log",
+        "sha256": "aa09962ac6be06aa573b3b5838a6cd14c0b5d8e62d0fd64371d903d228347be9"
+      },
+      "reason": "Flatpak retained Python run: existing test_qgis_publication.PublicationGuards.test_exact_root_and_independent_bundle_restore hit disappearing restored.git/objects/maintenance.lock in unchanged historical isolation verifier. One error in 428 tests; zero skips. No recipe modified. Unchanged actual-host rerun passed all 428."
+    }
+  ],
+  "recorded_at": "2026-10-03T05:14:04.587571+00:00",
+  "remaining": [
+    "Final separate-context review of implementation and evidence.",
+    "Reviewed --apply with current integrity/destination/settings checks.",
+    "Fresh owned-remote source recovery and complete notice/exclusion verification.",
+    "Exact replay journal proving zero writes.",
+    "Publication evidence and FND-07 acceptance reconciliation by integrator."
+  ],
+  "remote_changes": [],
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "schema_version": 1,
+  "task": "FND-07"
+}
