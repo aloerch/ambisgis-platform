@@ -1,0 +1,49 @@
+{
+  "cli_failure": {
+    "command": "up",
+    "returncode": 1,
+    "stderr_bytes": 96,
+    "stdout_bytes": 0
+  },
+  "error_type": "RuntimeError",
+  "finished": "2026-10-03T20:31:56.808876+00:00",
+  "full_installation_acceptance": false,
+  "install_id": "6f5cbe7c-2437-46dc-8f8a-8e3221158d2b",
+  "persistent_data_deleted": false,
+  "schema_version": 1,
+  "scope": "Actual ordinary CLI, bundle relocation, persistent identity/metadata, service fault/recovery and shutdown only",
+  "shutdown": {
+    "attempted": true,
+    "persistent_data_preserved": true,
+    "running_services": 0
+  },
+  "source": {
+    "build-support/geonode/protocol_probe.py": "fdbe712228e55a5af8ed2f35171c2c0e29327a2a1009a44b3312d4b575551109",
+    "deploy/development/journey_probe.py": "51f9c2068d2109815c1027ecb4df5fdca96abffdc9cc10516fc5c137014510af",
+    "deploy/development/lifecycle_check.py": "aa6e117d9f0e6969a78c9fdf8ce27263e86ad471673972a4a12dddf7dea08708"
+  },
+  "stages": [
+    {
+      "at": "2026-10-03T20:31:07.874842+00:00",
+      "facts": {
+        "bundle_sha256": "2db32f17f599e74cab7e8aef23fb3b13501e7482d1d560508c335997e23de2dd",
+        "original": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-005/bundle.json",
+        "relocated": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-002/relocated-bundle/bundle.json"
+      },
+      "name": "verified relocated bundle"
+    },
+    {
+      "at": "2026-10-03T20:31:16.359647+00:00",
+      "facts": {
+        "created": true,
+        "install_id": "6f5cbe7c-2437-46dc-8f8a-8e3221158d2b"
+      },
+      "name": "fresh init"
+    }
+  ],
+  "started": "2026-10-03T20:30:58.382689+00:00",
+  "status": "failed",
+  "targeted_probe_executed": false,
+  "task": "PLT-01",
+  "token_cleanup": []
+}
