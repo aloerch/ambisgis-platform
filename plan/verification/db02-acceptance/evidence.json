@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "task": "DB-02",
+  "merge": "c963e2baae1901935b25b0d436e988b47e153eb8",
+  "reviewed_head": "f023ea5548a32d6821830c04888a4cfd7dcab854",
+  "files": [
+    {
+      "path": "acceptance-and-merge.json",
+      "sha256": "83aa094f7c0718f97b55da27f0d7e1a78ab19c5dd7b07b7483cfc7b67d8b37dd",
+      "original": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-acceptance-summary.json"
+    },
+    {
+      "path": "postmerge-runtime.json",
+      "sha256": "905e78f17e24cd0bb879d9e98398032a0d70474164c6a1f0a65aa16a3ac17d0b",
+      "original": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-db02-001/acceptance.json"
+    },
+    {
+      "path": "postmerge-regression.json",
+      "sha256": "ab78f3acdeedd44c833e7544c91dcc48276b62b4c35e4028bdee8443f64c7c81",
+      "original": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-db01-001/acceptance.json"
+    },
+    {
+      "path": "postmerge-review.json",
+      "sha256": "dfe3d16b18a5e49543d70659d88a3c08c674b11b611f69e01d6fcb1f8e8e76dc",
+      "original": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db02-postmerge-review-c963e2b.json"
+    },
+    {
+      "path": "implementation-review.json",
+      "sha256": "e9eb333f8f178b4105f5f40c589e73688ea20f6c82f451872e5534c60519ac3b",
+      "original": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db02-final-review-f023ea5.json"
+    },
+    {
+      "path": "postmerge-control.json",
+      "sha256": "64e90290764c68fce79dd207ff515db5d8229c7bbfabe83e8a40444eaa95787c",
+      "original": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-control-001/result.json"
+    },
+    {
+      "path": "acceptance-helper-review.json",
+      "sha256": "38ffd59ef2502067798b14713545ba4f733b50f2469159e2ba2749840180d319",
+      "original": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db02-acceptance-helper-review-001/result.json"
+    },
+    {
+      "path": "merge-result.json",
+      "sha256": "f7681842f22725a97cb4a39764ddc6b338bc071466c10c7a49bebefad8cefa77",
+      "original": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-merge-result.json"
+    }
+  ],
+  "tests": {
+    "postmerge_db02": 12,
+    "postmerge_db01": 22,
+    "postmerge_schema": 6,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "clusters_stopped": true
+  },
+  "review_separation": "Root independently reviewed implementation authored by db02_validation; db02_validation verified root-executed postmerge runs and root acceptance helper.",
+  "scope": "DB-02 acceptance only; branches, branch edits, production migration and complete scoped MVP remain open."
+}

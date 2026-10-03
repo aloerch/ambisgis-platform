@@ -1,0 +1,14 @@
+{
+  "repository": "aloerch/ambisgis-geodb",
+  "repository_id": 1376927417,
+  "number": 12,
+  "url": "https://github.com/aloerch/ambisgis-geodb/pull/12",
+  "merged": true,
+  "merge_commit_sha": "c963e2baae1901935b25b0d436e988b47e153eb8",
+  "head": "f023ea5548a32d6821830c04888a4cfd7dcab854",
+  "merged_at": "2026-10-03T18:47:35Z",
+  "review_comment": "https://github.com/aloerch/ambisgis-geodb/pull/12#issuecomment-5972340334",
+  "project_delivery": "In review",
+  "postmerge_acceptance": "pending",
+  "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-merge-attempts/473c381e-bc57-46db-8725-9440bad0dce7"
+}
