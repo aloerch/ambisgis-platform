@@ -1,0 +1,17 @@
+test_archive_non_date_metadata_is_not_ignored (test_owned_builds.OwnedBuilds.test_archive_non_date_metadata_is_not_ignored) ... ok
+test_changed_native_support_manifest_is_rejected (test_owned_builds.OwnedBuilds.test_changed_native_support_manifest_is_rejected) ... ok
+test_exact_blob_export_retains_export_ignored_source (test_owned_builds.OwnedBuilds.test_exact_blob_export_retains_export_ignored_source) ... ok
+test_frontend_mutation_boundary_accepts_only_declared_generated_outputs (test_owned_builds.OwnedBuilds.test_frontend_mutation_boundary_accepts_only_declared_generated_outputs) ... ok
+test_job_paths_attributed_but_changed_logic_rejected (test_owned_builds.OwnedBuilds.test_job_paths_attributed_but_changed_logic_rejected) ... ok
+test_original_native_source_mutation_is_rejected (test_owned_builds.OwnedBuilds.test_original_native_source_mutation_is_rejected) ... ok
+test_static_archive_dates_attributed_without_hiding_payload_change (test_owned_builds.OwnedBuilds.test_static_archive_dates_attributed_without_hiding_payload_change) ... ok
+test_synthetic_donor_positive_control_changes (test_owned_builds.OwnedBuilds.test_synthetic_donor_positive_control_changes) ... ok
+test_ui_compare_command_fails_on_changed_logic_and_retains_diagnosis (test_owned_builds.OwnedBuilds.test_ui_compare_command_fails_on_changed_logic_and_retains_diagnosis) ... ok
+test_ui_generated_hash_and_job_path_do_not_hide_logic_change (test_owned_builds.OwnedBuilds.test_ui_generated_hash_and_job_path_do_not_hide_logic_change) ... ok
+test_unexpected_gitlink_rejected_and_exact_gitlink_recorded (test_owned_builds.OwnedBuilds.test_unexpected_gitlink_rejected_and_exact_gitlink_recorded) ... ok
+test_wrong_tree_rejected_before_source_write (test_owned_builds.OwnedBuilds.test_wrong_tree_rejected_before_source_write) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.113s
+
+OK

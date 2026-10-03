@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "/usr/bin/unshare",
+    "--user",
+    "--map-current-user",
+    "--net",
+    "--keep-caps",
+    "/usr/bin/python3",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-client-successor/browser-helper.py",
+    "--build",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-client-successor/frontend-pair-001/build-1",
+    "--platform",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/final-client-pairs-worktree",
+    "--output",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-client-successor/native-001",
+    "--chrome",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/frontend-completion/browser-inputs/chromium/chrome",
+    "--parent-namespace",
+    "net:[4026531833]"
+  ],
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "started_at": "2026-10-03T08:21:34.006007+00:00",
+  "exit_code": 0,
+  "finished_at": "2026-10-03T08:22:48.616548+00:00"
+}

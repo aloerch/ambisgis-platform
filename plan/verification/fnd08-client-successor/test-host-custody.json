@@ -1,0 +1,337 @@
+{
+  "additional_packages": [
+    {
+      "arch": "x86_64",
+      "bytes": 1313781,
+      "epoch": "0",
+      "installed_header_sha256": "6e0e8b76db234766db617bf67db965056ffebb9e06c5ab5ed9281ff92128caf2",
+      "license": "GPL-2.0-only",
+      "location": "x86_64/iproute2-7.2-1.1.x86_64.rpm",
+      "name": "iproute2",
+      "publisher_digest": "a44841954e7e7da7070cf57e547e52a3bfdb8eaeb7154db81df3a26c8c6263078f019f6ffd7a71b67aaea9a1377500e1c894101ed365558fd1218ec32bbea134",
+      "publisher_digest_algorithm": "sha512",
+      "release": "1.1",
+      "repository_url": "https://download.opensuse.org/tumbleweed/repo/oss",
+      "retrieval_urls": [
+        "https://download.opensuse.org/history/20260916/tumbleweed/repo/oss/x86_64/iproute2-7.2-1.1.x86_64.rpm",
+        "https://download.opensuse.org/tumbleweed/repo/oss/x86_64/iproute2-7.2-1.1.x86_64.rpm"
+      ],
+      "source_build_disturl": "obs://build.opensuse.org/openSUSE:Factory/standard/3440a3db4a3011ec8720dde79a9ac76e-iproute2",
+      "source_rpm": "iproute2-7.2-1.1.src.rpm",
+      "version": "7.2"
+    },
+    {
+      "arch": "x86_64",
+      "bytes": 229455,
+      "epoch": "0",
+      "installed_header_sha256": "aa0460158fed6b65fcbeedae3518545d2d0f7a6ce220bdfe819bd03a82dfcfb3",
+      "license": "LGPL-2.1-only",
+      "location": "x86_64/libbpf1-1.7.0-2.1.x86_64.rpm",
+      "name": "libbpf1",
+      "publisher_digest": "a47f6a0a8c25b484e88231867622c7140ecd12f05199af5b4e12d5b22f9e8687c0d96d2020a62bac00de5ce28084034f61e07642275f4a2c3a43dcd752a2c130",
+      "publisher_digest_algorithm": "sha512",
+      "release": "2.1",
+      "repository_url": "https://download.opensuse.org/tumbleweed/repo/oss",
+      "retrieval_urls": [
+        "https://download.opensuse.org/history/20260916/tumbleweed/repo/oss/x86_64/libbpf1-1.7.0-2.1.x86_64.rpm",
+        "https://download.opensuse.org/tumbleweed/repo/oss/x86_64/libbpf1-1.7.0-2.1.x86_64.rpm"
+      ],
+      "source_build_disturl": "obs://build.opensuse.org/openSUSE:Factory/standard/bd0433f40c30c39c28bf5e1401dc369f-libbpf",
+      "source_rpm": "libbpf-1.7.0-2.1.src.rpm",
+      "version": "1.7.0"
+    },
+    {
+      "arch": "x86_64",
+      "bytes": 26325,
+      "epoch": "0",
+      "installed_header_sha256": "3e429c65c74c19a58ecee907d2911d19077ad13759bf48db1e9f09691edcb401",
+      "license": "LGPL-2.1-or-later",
+      "location": "x86_64/libmnl0-1.0.5-2.7.x86_64.rpm",
+      "name": "libmnl0",
+      "publisher_digest": "d4f5998813492281792799520a96096f95da9983b85de968ab07a324d5aae4b05a8d1ac4a657fb2007f2499fd6606f01a9338d50d7b0b2e0a073b13057b5ee82",
+      "publisher_digest_algorithm": "sha512",
+      "release": "2.7",
+      "repository_url": "https://download.opensuse.org/tumbleweed/repo/oss",
+      "retrieval_urls": [
+        "https://download.opensuse.org/history/20260916/tumbleweed/repo/oss/x86_64/libmnl0-1.0.5-2.7.x86_64.rpm",
+        "https://download.opensuse.org/tumbleweed/repo/oss/x86_64/libmnl0-1.0.5-2.7.x86_64.rpm"
+      ],
+      "source_build_disturl": "obs://build.opensuse.org/openSUSE:Factory/standard/fe4c1434882706b601cd6bd77fc8d4ae-libmnl",
+      "source_rpm": "libmnl-1.0.5-2.7.src.rpm",
+      "version": "1.0.5"
+    },
+    {
+      "arch": "x86_64",
+      "bytes": 36488,
+      "epoch": "0",
+      "installed_header_sha256": "7c495b9804c2b459e560cf8e64c6e69b69a39e52394838e614534ce398f39a63",
+      "license": "Artistic-2.0 AND GPL-2.0-only",
+      "location": "x86_64/libxtables12-1.8.13-1.4.x86_64.rpm",
+      "name": "libxtables12",
+      "publisher_digest": "11057f1d6bce1ff50ef2bb37c5e6d3a11a311ab913b94e4662b9044dba1be8d11833faa72a67aa5a74ea719b4b393fd145add54029e297425a6a6c9383f0a92c",
+      "publisher_digest_algorithm": "sha512",
+      "release": "1.4",
+      "repository_url": "https://download.opensuse.org/tumbleweed/repo/oss",
+      "retrieval_urls": [
+        "https://download.opensuse.org/history/20260916/tumbleweed/repo/oss/x86_64/libxtables12-1.8.13-1.4.x86_64.rpm",
+        "https://download.opensuse.org/tumbleweed/repo/oss/x86_64/libxtables12-1.8.13-1.4.x86_64.rpm"
+      ],
+      "source_build_disturl": "obs://build.opensuse.org/openSUSE:Factory/standard/f4e5242afef66afeaf87cc3cb2641dc1-iptables",
+      "source_rpm": "iptables-1.8.13-1.4.src.rpm",
+      "version": "1.8.13"
+    }
+  ],
+  "additional_tools": {
+    "bytes": 2258,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/additional-host-tools.json",
+    "sha256": "23a26f86cb8a2d429a2b502c6df22d3495199bb6106fcbd240cfc46272e1d1ef"
+  },
+  "binary_signatures_verified": 42,
+  "helper_commit": "6b055752f74343b9cc93978f65f96291dd309784",
+  "helpers": [
+    {
+      "bytes": 15436,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-worktree/build-support/host-inputs/inventory.py",
+      "sha256": "fa59f958fd589cdcc7662db2a2a31f5928668693588311f7ba386a8d39c5493d"
+    },
+    {
+      "bytes": 11068,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-worktree/build-support/host-inputs/retain.py",
+      "sha256": "5f00cabea1d63e1d12b6d6de459d32d488024280c11e586b14e89119503da0c3"
+    },
+    {
+      "bytes": 6599,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-worktree/build-support/host-inputs/verify_payload.py",
+      "sha256": "049a527aeccf5139e5d2a30ee18f7014b8934fca0a579c143cd350aebd4d59cb"
+    }
+  ],
+  "initial_spine_package_count": 276,
+  "initial_spine_prior_binary_receipt": {
+    "bytes": 238354,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/host-binaries-007.json",
+    "sha256": "4d5264386c03cd89eee33993973182fb5d7e1ed42ba7ea3175f0888405d84c1e"
+  },
+  "initial_spine_selection": {
+    "bytes": 2682536,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/host-inputs-selection-007.json",
+    "sha256": "fe1f178407e3cbb15217861483fbafd380ee877db789cb540d671a0b74ec2df9"
+  },
+  "initial_spine_selection_unchanged": true,
+  "limits": [
+    "Current installed-file correspondence, not backdated observation or full source-to-binary bootstrap.",
+    "Library observations are ldd resolution, not captured process maps. libxtables12 is an exact installed provider dependency of iproute2, not a claim that this test process dynamically mapped it.",
+    "Seven unreadable nonselected files and other generated/out-of-scope package entries remain counted; no selected-path difference.",
+    "No rights/signing/deployment or whole FND08 acceptance is implied."
+  ],
+  "no_install_or_package_scripts": true,
+  "no_new_trust": true,
+  "nonselected_payload_diagnostics": {
+    "directory": 936,
+    "ghost-not-shipped": 21,
+    "match": 1160,
+    "outside-build-file-scope": 73,
+    "unreadable": 7
+  },
+  "package_count": 42,
+  "receipts": [
+    {
+      "bytes": 1375,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/test-host-inputs/observation.json",
+      "sha256": "454dc5087937155270a3c9f8d5804e73c390bf4965cd85d37706af5a351d0463"
+    },
+    {
+      "bytes": 690,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/test-host-inputs/selection-command.json",
+      "sha256": "3ffecdb90b1955b66581d9ba78b71fe13294dca05d39b04ee3355bdf5d05bbab"
+    },
+    {
+      "bytes": 35646,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/test-host-inputs/binaries.json",
+      "sha256": "d19300084a5f438d3056ed3a1395ca6c9768760a5fc7aeac5256f598f8661046"
+    },
+    {
+      "bytes": 173692,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/test-host-inputs/sources.json",
+      "sha256": "f420d01a41215fbf0a6755d391d82f7307a862e57edce573808e57d64a931622"
+    },
+    {
+      "bytes": 696310,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/test-host-inputs/payload.json",
+      "sha256": "54e3dea9c9798fadc84ec2898d1d8a0a6e5437da2aba7e7c1656b8ac7b5345c2"
+    },
+    {
+      "bytes": 35141,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/test-host-inputs/binaries-replay.json",
+      "sha256": "b91884096c9f176d4ba4d8a8250acff0a1272ad670f25ab6f2052d3d3f8182db"
+    },
+    {
+      "bytes": 168560,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/test-host-inputs/sources-replay.json",
+      "sha256": "374ed2117b110fd3b2447aa735a472ba53dd81ff12570b6bba22e90b8825cc60"
+    },
+    {
+      "bytes": 2195,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/test-host-inputs/binaries-replay-network.json",
+      "sha256": "86b897bcec8a6e760e6609f993cfc76b518c2aeb3ee37f344f58e3bcd8cb1230"
+    },
+    {
+      "bytes": 2193,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/test-host-inputs/sources-replay-network.json",
+      "sha256": "cf78836e2c59f2a83608d2dfa458a5a7ad8cf8de66881be5a2b6364eae42b4c8"
+    }
+  ],
+  "recorded_at": "2026-10-03T08:15:19.134320+00:00",
+  "reused_package_count": 38,
+  "scope": "Separate supplemental host custody for the merged client lint successor test environment; initial-spine lock unchanged.",
+  "selected_paths_correspond": 11,
+  "selected_payload_differences": 0,
+  "selection": {
+    "bytes": 448412,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-frontend/lint-validation-001/test-host-inputs/selection.json",
+    "sha256": "55a1db37edd5d79875ef1a0874ed23dc71bc39193f1616b56a52fb810b40cd1a"
+  },
+  "source_diagnostic_disposition": "Four collection diagnostics cover already selected pam/permissions packages whose exact SRPM listing is absent. The separate source receipt verifies all33 corresponding groups through retained signed SRPMs or exact OBS inputs; original diagnostic retained.",
+  "source_groups": 33,
+  "source_metadata_collection_diagnostics": [
+    {
+      "error": "No exact source RPM for pam-1.7.2+git48-1.1.src.rpm",
+      "installed": {
+        "arch": "x86_64",
+        "epoch": "0",
+        "installed_header_sha256": "62f6f0c2b5b4c965adb693dc4837ee199b3b4b16553c7736a4119f1bfbd12de6",
+        "name": "pam",
+        "reasons": [
+          {
+            "required_by": "util-linux",
+            "requirement": "R libpam.so.0()(64bit)"
+          },
+          {
+            "required_by": "util-linux",
+            "requirement": "R libpam.so.0(LIBPAM_1.0)(64bit)"
+          },
+          {
+            "required_by": "util-linux",
+            "requirement": "R libpam_misc.so.0()(64bit)"
+          },
+          {
+            "required_by": "util-linux",
+            "requirement": "R libpam_misc.so.0(LIBPAM_MISC_1.0)(64bit)"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R libpam.so.0()(64bit)"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R libpam.so.0(LIBPAM_1.0)(64bit)"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R libpam.so.0(LIBPAM_EXTENSION_1.0)(64bit)"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R libpam.so.0(LIBPAM_EXTENSION_1.1)(64bit)"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R libpam.so.0(LIBPAM_MODUTIL_1.0)(64bit)"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R libpam.so.0(LIBPAM_MODUTIL_1.1)(64bit)"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R libpam.so.0(LIBPAM_MODUTIL_1.1.3)(64bit)"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R libpam.so.0(LIBPAM_MODUTIL_1.1.9)(64bit)"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R libpam.so.0(LIBPAM_MODUTIL_1.3.2)(64bit)"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R libpam.so.0(LIBPAM_MODUTIL_1.4.1)(64bit)"
+          }
+        ],
+        "release": "1.1",
+        "source_build_disturl": "obs://build.opensuse.org/openSUSE:Factory/standard/df2759f803e0e35fd65bd3777750735f-pam",
+        "source_rpm": "pam-1.7.2+git48-1.1.src.rpm",
+        "version": "1.7.2+git48"
+      }
+    },
+    {
+      "error": "No exact source RPM for permissions-1699_20260806-1.1.src.rpm",
+      "installed": {
+        "arch": "x86_64",
+        "epoch": "0",
+        "installed_header_sha256": "74e587272a6ce5bdb5b12f8376888246765481d9689da7266125820dc67d8411",
+        "name": "permctl",
+        "reasons": [
+          {
+            "required_by": "permissions",
+            "requirement": "R permctl"
+          },
+          {
+            "required_by": "permissions-config",
+            "requirement": "R permctl"
+          }
+        ],
+        "release": "1.1",
+        "source_build_disturl": "obs://build.opensuse.org/openSUSE:Factory/standard/4bf62d9ee5d5f6d7e2179660e75ec198-permissions",
+        "source_rpm": "permissions-1699_20260806-1.1.src.rpm",
+        "version": "1699_20260806"
+      }
+    },
+    {
+      "error": "No exact source RPM for permissions-1699_20260806-1.1.src.rpm",
+      "installed": {
+        "arch": "x86_64",
+        "epoch": "0",
+        "installed_header_sha256": "e8d46bc53e86211b90c94cd1d58a4c07633f8f89a4b62d0e1569738d4c0c21c2",
+        "name": "permissions",
+        "reasons": [
+          {
+            "required_by": "util-linux",
+            "requirement": "R permissions"
+          },
+          {
+            "required_by": "pam",
+            "requirement": "R permissions"
+          }
+        ],
+        "release": "1.1",
+        "source_build_disturl": "obs://build.opensuse.org/openSUSE:Factory/standard/4bf62d9ee5d5f6d7e2179660e75ec198-permissions",
+        "source_rpm": "permissions-1699_20260806-1.1.src.rpm",
+        "version": "1699_20260806"
+      }
+    },
+    {
+      "error": "No exact source RPM for permissions-1699_20260806-1.1.src.rpm",
+      "installed": {
+        "arch": "noarch",
+        "epoch": "0",
+        "installed_header_sha256": "eabc80e12a649b004cda8c65a9cc81e2a854212f8a4c062f8f6d6cc11d2ad1b8",
+        "name": "permissions-config",
+        "reasons": [
+          {
+            "required_by": "permissions",
+            "requirement": "R permissions-config"
+          },
+          {
+            "required_by": "permissions-config",
+            "requirement": "R config(permissions-config) = 1699_20260806-1.1"
+          }
+        ],
+        "release": "1.1",
+        "source_build_disturl": "obs://build.opensuse.org/openSUSE:Factory/standard/4bf62d9ee5d5f6d7e2179660e75ec198-permissions",
+        "source_rpm": "permissions-1699_20260806-1.1.src.rpm",
+        "version": "1699_20260806"
+      }
+    }
+  ]
+}
