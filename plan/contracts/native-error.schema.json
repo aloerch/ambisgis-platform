@@ -30,6 +30,7 @@
             "UNAUTHENTICATED",
             "NOT_FOUND_OR_FORBIDDEN",
             "POLICY_UNAVAILABLE",
+            "BACKEND_UNAVAILABLE",
             "SCHEMA_MISMATCH",
             "REVISION_UNAVAILABLE",
             "INVALID_CURSOR",

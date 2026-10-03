@@ -99,6 +99,16 @@ and nonexistent resources use the same unauthorized response. Actual native
 HTTP status mapping and C1 error fidelity are API-01/API-03 contracts; they must
 be tested through the facade, not inferred from a schema.
 
+The experiment distinguishes an unavailable policy authority (`POLICY_UNAVAILABLE`)
+from an unavailable database/provider dependency (`BACKEND_UNAVAILABLE`). A
+transient dependency outage returns native HTTP 503 with `retryable: true` and
+`remediation: retry_later`. An unexpected persistent backend fault uses a safe
+message, `retryable: false` and `contact_operator`; it never promises that retrying
+will repair a fault. Executed statement/lock budgets use `LIMIT_EXCEEDED`.
+All native error paths require the complete versioned envelope and a generated
+correlation UUID. Compatibility errors use their separately tested output shape;
+they must not expose backend exceptions or weaken authorization.
+
 Advertised capabilities come from a tested per-service profile. Omit or reject
 operations/encodings not executed. A C1 facade must guard discovery, metadata,
 query and direct backend routes, not only a provider callback. Koop's default

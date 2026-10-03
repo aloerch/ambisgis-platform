@@ -125,6 +125,20 @@ class NativeContractTests(unittest.TestCase):
         with self.assertRaises(ContractError): validate_schema("job",doc)
         doc["publication_stage"] = "ACTIVE"
         validate_schema("job",doc)
+    def test_dependency_failure_requires_complete_safe_native_error_envelope(self):
+        doc = json.loads((ROOT / "examples/native-error.json").read_text())
+        doc["error"].update(code="BACKEND_UNAVAILABLE", message="Query dependency unavailable",
+                            retryable=True, remediation="retry_later")
+        validate_schema("native-error", doc)
+        for key in ["code", "message", "correlation_id", "retryable", "remediation"]:
+            missing = deepcopy(doc)
+            del missing["error"][key]
+            with self.assertRaises(ContractError):
+                validate_schema("native-error", missing)
+        leaked = deepcopy(doc)
+        leaked["error"]["backend_trace"] = "SELECT private_table"
+        with self.assertRaises(ContractError):
+            validate_schema("native-error", leaked)
     def test_no_credentials_or_arbitrary_code_in_new_envelopes(self):
         for name,key in [("notebook-run","token"),("app-event","javascript"),("job","database_password")]:
             doc = json.loads((ROOT / "examples" / (name + ".json")).read_text())
