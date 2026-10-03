@@ -83,3 +83,7 @@ FND-08 criteria, including recorded raw reproducibility differences; it does not
 accept full source-toolchain bootstrap, OWN-02 repair, installation or release.
 FND-06 is dependency-ready and claimed for contracts, corpus, threat model and the
 mandatory Koop comparison. Its architecture/adoption decisions await evidence.
+
+## FND-06 acceptance and first product foundations — 2026-10-03
+
+[ADR012](adrs/012-initial-shared-contracts.md) and [ADR013](adrs/013-koop-query-codec-reuse.md) are accepted within FND-06's original bounded engineering scope after PR77 merged at `d0218209d435f80c21400dc38abc2c4d69d805bc` and a fresh actual 227-assertion runtime passed independent review. [Exact acceptance evidence](verification/fnd06-acceptance/acceptance-and-merge.json) retains original failures, source/notices and all product limits. PLT-01 and DB-01 are now claimed for persistent installation and managed schema/identity implementation. No full product, C1, human-only or distribution acceptance is inferred.

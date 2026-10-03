@@ -1,6 +1,6 @@
 # ADR 012 — Initial shared contracts and authority boundaries
 
-Status: engineering proposal under final FND-06 review. The executed Koop
+Status: initial engineering boundary accepted with FND-06 at `d0218209`. The executed Koop
 comparison and measured reuse decision are recorded in ADR013; no product API
 or phase acceptance follows from this ADR. API-01 still owns the complete
 OpenAPI specification before handlers.
@@ -98,3 +98,5 @@ the remaining routes and acceptance tests. Human-only pilot and manual
 assistive-technology gates remain open. See [contract semantics](../docs/fnd-06-contracts.md),
 [threat model](../docs/fnd-06-threat-model.md) and the unchanged
 [complete requirement matrix](../docs/delivery-requirements-matrix.md).
+
+Acceptance evidence: [FND-06 acceptance and fresh postmerge verification](../verification/fnd06-acceptance/acceptance-and-merge.json). The original bounded profile and later product/distribution obligations remain unchanged.
