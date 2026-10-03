@@ -10,7 +10,7 @@ from unittest.mock import patch
 
 from custody import (TREE, VERSIONS, WORKSPACES, archive_files, production_lock,
                      regular, resolve, source_manifest, verify_inventory, verify_sri)
-from install import source_projection, verify_installed, verify_reviewed
+from install import mandatory_paths, source_projection, verify_installed, verify_reviewed
 
 
 class CustodyGuards(unittest.TestCase):
@@ -219,6 +219,42 @@ class CustodyGuards(unittest.TestCase):
         extra.write_text('throw new Error("unselected code")')
         with self.assertRaisesRegex(ValueError, 'unexpected installed file'):
             verify_installed(self.root, self.root, lock)
+
+    def optional_graph(self):
+        _, lock, _ = production_lock(self.fixture())
+        lock['packages']['packages/core']['optionalDependencies'] = {'optional-root': '1.0.0'}
+        lock['packages']['node_modules/optional-root'] = {
+            'version': '1.0.0', 'dependencies': {'transitive': '1.0.0'}}
+        lock['packages']['node_modules/transitive'] = {'version': '1.0.0'}
+        return lock
+
+    def test_transitive_optional_omission_without_optional_flag(self):
+        lock = self.optional_graph()
+        self.assertNotIn('node_modules/transitive', mandatory_paths(lock))
+        self.assertNotIn('node_modules/optional-root', mandatory_paths(lock))
+
+    def test_shared_required_and_optional_path_stays_required(self):
+        lock = self.optional_graph()
+        lock['packages']['packages/logger']['dependencies']['transitive'] = '1.0.0'
+        self.assertIn('node_modules/transitive', mandatory_paths(lock))
+
+    def test_forged_optional_flag_cannot_allow_required_omission(self):
+        lock = self.optional_graph()
+        row = lock['packages']['node_modules/transitive']
+        row.update(optional=True, resolved='file:registry/example.tgz', integrity='sha512-Zg==')
+        lock['packages'].pop('node_modules/optional-root')
+        lock['packages']['packages/core']['dependencies']['transitive'] = '1.0.0'
+        with self.assertRaisesRegex(ValueError, 'required installed package missing'):
+            verify_installed(self.root, self.root, lock)
+
+    def test_optional_override_and_optional_peer_are_not_mandatory(self):
+        lock = self.optional_graph()
+        row = lock['packages']['packages/core']
+        row['dependencies']['optional-root'] = '1.0.0'
+        row['peerDependencies'] = {'transitive': '1.0.0'}
+        row['peerDependenciesMeta'] = {'transitive': {'optional': True}}
+        self.assertNotIn('node_modules/optional-root', mandatory_paths(lock))
+        self.assertNotIn('node_modules/transitive', mandatory_paths(lock))
 
 
 if __name__ == '__main__':
