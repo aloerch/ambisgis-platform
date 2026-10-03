@@ -174,7 +174,8 @@ class InstallerStateTests(unittest.TestCase):
             with self.assertRaisesRegex(InstallError, 'initialization failed'):
                 runtime.up(self.root, timeout=0)
             commands = [tuple(call.args) for call in selected.compose.call_args_list]
-            self.assertEqual(commands[-1], ('--profile', 'bootstrap', 'run', '--rm', '--no-deps', 'catalog-init'))
+            self.assertEqual(commands[-1], ('--profile', 'bootstrap', 'run', '-T', '--rm', '--no-deps',
+                             '--name', config.project_name(selected.config) + '-catalog-init', 'catalog-init'))
             self.assertEqual(len(commands), 2)
 
     def test_fresh_sql_health_failure_prevents_repeat_up_mutations(self):

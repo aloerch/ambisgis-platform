@@ -70,7 +70,7 @@ class Runtime:
         empty = self.paths['config'] / 'compose.env'
         if not empty.exists():
             atomic_write(empty, b'')
-        return self.run([self.provider, '--podman-path', self.podman,
+        return self.run([self.provider, '--in-pod', 'false', '--podman-path', self.podman,
                          '--podman-args=' + shlex.join(self.global_args), '--env-file', str(empty),
                          '--no-ansi', '--parallel', '4', '-p', config.project_name(self.config),
                          '-f', str(self.root / 'compose.json'), *arguments], **kwargs)
@@ -308,10 +308,10 @@ def up(root, *, timeout=180):
         # A fresh one-shot container performs native migrations and first-run
         # enrollment under the DB advisory lock. Its secret view never reaches
         # the serving catalog. Repeated runs preserve existing credentials/data.
-        runtime.compose('--profile', 'bootstrap', 'run', '--rm', '--no-deps',
-                        'catalog-init', timeout=600)
-        runtime.compose('--profile', 'bootstrap', 'run', '--rm', '--no-deps',
-                        'geoserver-init', timeout=240)
+        runtime.compose('--profile', 'bootstrap', 'run', '-T', '--rm', '--no-deps',
+                        '--name', config.project_name(runtime.config) + '-catalog-init', 'catalog-init', timeout=600)
+        runtime.compose('--profile', 'bootstrap', 'run', '-T', '--rm', '--no-deps',
+                        '--name', config.project_name(runtime.config) + '-geoserver-init', 'geoserver-init', timeout=240)
         runtime.compose('up', '-d', '--no-build', '--pull', 'never', *bundle.SERVICES, timeout=180)
         deadline = time.monotonic() + timeout
         result = runtime.status()
