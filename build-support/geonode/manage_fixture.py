@@ -411,7 +411,11 @@ def serve(config):
     if site.hostname != "127.0.0.1":
         raise ValueError("HTTP fixture listener requires site_url host 127.0.0.1")
     logging.getLogger("geonode.fixture").warning("AMBISGIS_GEONODE_LOG_CAPTURE_CONTROL")
-    with make_server(site.hostname, site.port, observed_application(controlled_role_transport(controlled_transport(get_wsgi_application(), config), config)),
+    application = get_wsgi_application()
+    if config.get('catalog_policy'):
+        from ambisgis_policy.catalog import wrap
+        application = wrap(application, service_key=config['policy_key'], application_id=config['client_id'])
+    with make_server(site.hostname, site.port, observed_application(controlled_role_transport(controlled_transport(application, config), config)),
                      server_class=ThreadedWSGIServer, handler_class=QuietRequestHandler) as server:
         emit({"event": "listening", "host": site.hostname, "port": site.port, "application": "geonode.urls"})
         server.serve_forever()

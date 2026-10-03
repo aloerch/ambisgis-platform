@@ -280,6 +280,12 @@ public final class ConfiguredGeoServerRuntime {
         app.setParentLoaderPriority(false);
         app.setThrowUnavailableOnStartupException(true);
         app.setInitParameter("GEOSERVER_DATA_DIR", data.toString());
+        if (System.getProperty("ambisgis.catalog.origin") != null) {
+            javax.servlet.Filter policy = (javax.servlet.Filter) Class.forName("CatalogPolicyFilter")
+                    .getConstructor().newInstance();
+            app.addFilter(new org.eclipse.jetty.servlet.FilterHolder(policy), "/*",
+                    java.util.EnumSet.allOf(javax.servlet.DispatcherType.class));
+        }
         Path fixtureContext = data.resolve("fixture-context.xml");
         if (Files.exists(fixtureContext, LinkOption.NOFOLLOW_LINKS)) {
             if (!Files.isRegularFile(fixtureContext, LinkOption.NOFOLLOW_LINKS))

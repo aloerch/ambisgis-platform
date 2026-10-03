@@ -164,6 +164,7 @@ class SafeApplicationLog(logging.Formatter):
             config = load_config(config_path)
             self.secrets = [config[key] for key in ("secret_key", "api_key", "client_secret", "second_client_secret")]
             self.secrets += [config.get("role_service_api_key", "")]
+            self.secrets += [config.get("policy_key", "")]
             self.secrets = [value for value in self.secrets if value]
             self.secrets += list(config["passwords"].values())
             self.secrets += [config[key]["password"] for key in ("database", "runtime_database") if key in config]

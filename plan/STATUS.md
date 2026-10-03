@@ -1,10 +1,10 @@
 # Active delivery — standing delegation
 
-Platform PR #72 merged normally at `8c3612dd3e4ee992d930f1417798b66f467784e9` with required CI, independent automated review and post-merge smoke checks. The [standing policy](docs/standing-delivery-policy.md) is active.
+FND-07 is accepted/Merged following [PR #73](https://github.com/aloerch/ambisgis-platform/pull/73), merge `7812efa3502ec1d7004b485d35b433eea56ce13e`, exact source publication, independent recovery and zero-write replay. [Delegated acceptance](https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5966156208) retains the original criteria; FND-02 remains accepted. The [standing policy](docs/standing-delivery-policy.md) is active.
 
-The exact authorized GeoTools/QGIS review and canonical refs are published and independently recovered. All eleven canonical source refs now resolve to their selected identities; publication replay made zero writes. [Source acceptance evidence](docs/authorized-successors-delivery.md) retains the unchanged task criteria and remaining build/release gates. Final evidence PR review/merge and FND-07 tracking reconciliation remain pending at this checkpoint. FND-03 and FND-04 are In progress with real runtime tests; FND-08 follows source acceptance. No installable MVP or release is claimed.
+FND-03 has [real catalog-policy implementation and evidence](docs/fnd-03-catalog-policy.md): 142 gateway/engine authorization assertions, 70 native GeoNode tests, 482 migrations and clean teardown pass. Initial separate-context security review found no material issues; final base integration/test/review binding and normal PR merge remain pending. This is the bounded identity/ACL spike, not full T-AUTH-ALL or an installable product. FND-04 prototype correctness/measurements continue; FND-08 owned builds are In progress.
 
-[Current delivery ledger](docs/delivery-ledger.json) · [all 24 requirements](docs/delivery-requirements-matrix.md).
+[Delivery ledger](docs/delivery-ledger.json) · [all 24 requirements](docs/delivery-requirements-matrix.md).
 
 ## Historical checkpoint follows unchanged
 
