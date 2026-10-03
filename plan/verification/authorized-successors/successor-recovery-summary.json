@@ -1,0 +1,182 @@
+{
+  "authorization_sha256": "40d4bac51de35df99aa81f7c16db45f54644145272ce0a5f424aca208f38c402",
+  "base_commit": "8c3612dd3e4ee992d930f1417798b66f467784e9",
+  "explicit_commands_verified": 37,
+  "finished_at": "2026-10-03T05:39:36.719330+00:00",
+  "full_private_receipt": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/remote-recovery-001/recovery.json",
+    "sha256": "5de1e9eab46a38fa9779e8320d750de3c0f8da870db34179d26a948a6be948f4"
+  },
+  "helper_head": "0de2945ee1d29f00af19229720c43e3071b9571b",
+  "kind": "public-safe-independent-successor-recovery-summary",
+  "limits": [
+    "Source delivery integrity only; not rebuilt binaries, product acceptance, or certification of other fork refs/network objects."
+  ],
+  "proposal_sha256": "1510cba3c5d96fa4be7f464352541277b41fc53629445fcb10ffcd4904cb7bdb",
+  "recovery_script": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/remote-recovery-001/independent-recovery.py",
+    "sha256": "c0dc4be891e9e9d0d5b66adea6445f4826f00605dcdd710f8610d792b3088325"
+  },
+  "repositories": [
+    {
+      "commit": "3363c3d4ae8adfe3ed2024c27f92ec63855093be",
+      "comparison": {
+        "changed_paths": [
+          "build/maven/xmlcodegen/pom.xml",
+          "modules/plugin/imagemosaic/pom.xml"
+        ],
+        "files": [
+          {
+            "after_sha256": "a3ce39aeb35aa59e245f12b8ce252899caebe6cad127bcf501ef8bc2245a9fe1",
+            "all_other_bytes_equal": true,
+            "description": "Pinned EMF common/ecore dependency management to 2.15.0.",
+            "functional_date": "2026-09-20",
+            "functional_platform_commit": "d229468e1cef44f81d9be837068e0a80166b7eb7",
+            "notice": "<!--\n  AmbisGIS modification notice (original licenses and copyrights retained).\n  Functional change recorded 2026-09-20: Pinned EMF common/ecore dependency management to 2.15.0.\n  Accepted source changes materialized 2026-09-22 (UTC-07:00).\n  This notice added 2026-09-28 (UTC); no effective POM behavior changed.\n-->\n",
+            "path": "build/maven/xmlcodegen/pom.xml",
+            "sha256": "bf9d93ada08207b72f98754a19d9f9cec4b17264c43deb08ecea2eab4e5702d1",
+            "xml_configuration_equal": true
+          },
+          {
+            "after_sha256": "31c91435319d906092bdda1fbfaa0a79ebe65cd5abdb5366bd6791a1e0575f49",
+            "all_other_bytes_equal": true,
+            "description": "Removed Oracle-only test dependency and unused provided ojdbc14.",
+            "functional_date": "2026-09-21",
+            "functional_platform_commit": "e1b960588c51beb35f83c5f1c5d137e85a0d414c",
+            "notice": "<!--\n  AmbisGIS modification notice (original licenses and copyrights retained).\n  Functional change recorded 2026-09-21: Removed Oracle-only test dependency and unused provided ojdbc14.\n  Accepted source changes materialized 2026-09-22 (UTC-07:00).\n  This notice added 2026-09-28 (UTC); no effective POM behavior changed.\n-->\n",
+            "path": "modules/plugin/imagemosaic/pom.xml",
+            "sha256": "55ddcec1c65d32aaca83da069c854346f045fe55ca8fa024ae47ba25a6ee9bd9",
+            "xml_configuration_equal": true
+          }
+        ],
+        "old_product_is_ancestor": false,
+        "parent": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+        "tracked_entries": 17920,
+        "tree": "ebb65f687763ce40445eb02f6ce710dc1eaa1e00",
+        "unchanged_entries": 17918
+      },
+      "complete_source_inventory": {
+        "bytes": 2545096,
+        "equals_retained_source": true,
+        "git_ls_tree_rz_sha256": "9722881f97a276d6680a5aa2abd9a16580c9cec06425eb5d1048479ea29318ca"
+      },
+      "current_remote": {
+        "actions": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "commit": "3363c3d4ae8adfe3ed2024c27f92ec63855093be",
+        "default_branch": "main",
+        "observed_at": "2026-10-03T05:38:23.773141+00:00",
+        "owner": {
+          "id": 15285626,
+          "login": "aloerch"
+        },
+        "parents": [
+          "aac73e9b89821331e77f67f1dd0921e541a78cfc"
+        ],
+        "private": false,
+        "refs": {
+          "refs/heads/ambisgis/main": "3363c3d4ae8adfe3ed2024c27f92ec63855093be",
+          "refs/heads/ambisgis/review/fnd-07-notices-v1": "3363c3d4ae8adfe3ed2024c27f92ec63855093be",
+          "refs/heads/main": "9a4f847e8b83875169e279999659052a0cc2bf14"
+        },
+        "repository": "aloerch/ambisgis-geotools",
+        "repository_id": 1376927869,
+        "tree": "ebb65f687763ce40445eb02f6ce710dc1eaa1e00"
+      },
+      "fetch_refspec": "refs/heads/ambisgis/review/fnd-07-notices-v1:refs/heads/ambisgis/review/fnd-07-notices-v1",
+      "fetch_url": "https://github.com/aloerch/ambisgis-geotools.git",
+      "fsck": "passed",
+      "history": {
+        "accepted_base_commit": "aac73e9b89821331e77f67f1dd0921e541a78cfc",
+        "accepted_base_tree": "acfbe55e74aa9cc9d1134fadeefc4218390ad9ad",
+        "commit_set_sha256": "11b19f2be5e98c69db4b2f50e359b525fd98991f0854fcc441b907c46afc9d42",
+        "commits": 10404,
+        "equals_retained_source": true
+      },
+      "isolation": "Fresh complete HTTPS fetch; no alternates, shallow/promisor store, local shared objects, hooks, filters, global/system config, donor or submodule fallback",
+      "repository": "aloerch/ambisgis-geotools",
+      "repository_id": 1376927869,
+      "root_id": "geotools",
+      "source_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/remote-recovery-001/geotools.git",
+      "status": "verified",
+      "tree": "ebb65f687763ce40445eb02f6ce710dc1eaa1e00"
+    },
+    {
+      "commit": "86af40542b219b0da6df1a43914413443330c0c0",
+      "complete_source_inventory": {
+        "bytes": 3653382,
+        "equals_retained_source": true,
+        "git_ls_tree_rz_sha256": "dcf0b0ec1eed1a4b95133dabc78e0c9357a5de7535782780d2e4ca2248b63ea0"
+      },
+      "current_remote": {
+        "actions": {
+          "enabled": false,
+          "sha_pinning_required": false
+        },
+        "commit": "86af40542b219b0da6df1a43914413443330c0c0",
+        "default_branch": "master",
+        "observed_at": "2026-10-03T05:39:36.705624+00:00",
+        "owner": {
+          "id": 15285626,
+          "login": "aloerch"
+        },
+        "parents": [],
+        "private": false,
+        "refs": {
+          "refs/heads/ambisgis/main": "86af40542b219b0da6df1a43914413443330c0c0",
+          "refs/heads/ambisgis/review/fnd-07-publication-snapshot-v1": "86af40542b219b0da6df1a43914413443330c0c0",
+          "refs/heads/master": "09d73a2b827841320e798d1f18c84a4776dbd265"
+        },
+        "repository": "aloerch/ambisgis-qgis",
+        "repository_id": 1376927721,
+        "tree": "84ea1b18fdf5721819fee34fe06cdef7ea82afdc"
+      },
+      "fetch_refspec": "refs/heads/ambisgis/review/fnd-07-publication-snapshot-v1:refs/heads/ambisgis/review/fnd-07-publication-snapshot-v1",
+      "fetch_url": "https://github.com/aloerch/ambisgis-qgis.git",
+      "isolation": "Fresh complete HTTPS fetch; no alternates, shallow/promisor store, local shared objects, hooks, filters, global/system config, donor or submodule fallback",
+      "object_verification": {
+        "alternates_replacements_promisors_hooks_filters": "absent",
+        "commit": "86af40542b219b0da6df1a43914413443330c0c0",
+        "forbidden_objects": [],
+        "fsck": "passed",
+        "object_types": {
+          "blob": 28979,
+          "commit": 1,
+          "tree": 4015
+        },
+        "objects": 32995,
+        "parent_count": 0,
+        "refs": [
+          "refs/heads/ambisgis/review/fnd-07-publication-snapshot-v1 86af40542b219b0da6df1a43914413443330c0c0"
+        ],
+        "source_entries": 32451,
+        "stored_equals_reachable": true,
+        "tree": "84ea1b18fdf5721819fee34fe06cdef7ea82afdc"
+      },
+      "repository": "aloerch/ambisgis-qgis",
+      "repository_id": 1376927721,
+      "resources": {
+        "catalogue_effective_xml_equal": true,
+        "exact_omissions": 1130,
+        "idempotent_replay_mutations": 0,
+        "inventory_sha256": "400197272ed65f22075ccc157bf0332230f9518ca31ada733fe9c0fc159a9082",
+        "retained_colorbrewer": 265,
+        "selected_entries": 4371,
+        "unchanged_entries": 4351
+      },
+      "root_id": "qgis",
+      "source_path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/remote-recovery-001/qgis.git",
+      "status": "verified",
+      "tree": "84ea1b18fdf5721819fee34fe06cdef7ea82afdc"
+    }
+  ],
+  "reviewer": "separate-context publication_review agent",
+  "schema_version": 1,
+  "settings_mutation_attempts": 0,
+  "source_mutation_attempts": 0,
+  "started_at": "2026-10-03T05:37:50.979370+00:00",
+  "status": "passed",
+  "task": "FND-07"
+}

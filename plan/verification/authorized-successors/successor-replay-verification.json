@@ -1,0 +1,45 @@
+{
+  "all_refs_defaults_actions_preserved": true,
+  "apply": true,
+  "execution_finished_at": "2026-10-03T05:36:13.973305+00:00",
+  "execution_started_at": "2026-10-03T05:35:20.163744+00:00",
+  "helper_head": "0de2945ee1d29f00af19229720c43e3071b9571b",
+  "implementation_sha256": "b000c5e5fb2d3cbbdb68f781fa4ac671bb165058d42533b6ee22e9b00851d218",
+  "journal": {
+    "bytes": 236236,
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/source-publication-replay-001.jsonl",
+    "sha256": "cd25f3f4b4914b64ae10f117c36b06f88fddf9307ee218d227f20f949d0cc836"
+  },
+  "kind": "independently-verified-exact-successor-replay",
+  "mutation_or_uncertain_events": 0,
+  "results": [
+    {
+      "ref": "refs/heads/ambisgis/review/fnd-07-notices-v1",
+      "root_id": "geotools",
+      "status": "already-exact"
+    },
+    {
+      "ref": "refs/heads/ambisgis/main",
+      "root_id": "geotools",
+      "status": "already-exact"
+    },
+    {
+      "ref": "refs/heads/ambisgis/review/fnd-07-publication-snapshot-v1",
+      "root_id": "qgis",
+      "status": "already-exact"
+    },
+    {
+      "ref": "refs/heads/ambisgis/main",
+      "root_id": "qgis",
+      "status": "already-exact"
+    }
+  ],
+  "reviewer": "separate-context publication_review agent",
+  "schema_version": 1,
+  "scope": "Independent verification of actual replay journal; no new source mutations or product/build tests.",
+  "settings_mutation_attempts": 0,
+  "source_mutation_attempts": 0,
+  "status": "passed",
+  "task": "FND-07",
+  "verified_at": "2026-10-03T05:44:14.466836+00:00"
+}

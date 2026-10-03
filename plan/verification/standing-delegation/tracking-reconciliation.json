@@ -1,0 +1,58 @@
+{
+  "status": "reconciled",
+  "failed_run_id": "bc50349c-7cd6-41c0-a8a7-7f63ad994a05",
+  "reason": "Final preservation assertion observed GitHub Project built-in Status Todo\u2192Done after accepted GOV-02 issue closure; all requested writes had completed. No retry of writes.",
+  "changes": [
+    {
+      "task": "FND-03",
+      "changes": {
+        "Evidence": [
+          null,
+          "https://github.com/aloerch/ambisgis-platform/issues/4#issuecomment-5966057973"
+        ],
+        "Delivery": [
+          "Backlog",
+          "In progress"
+        ]
+      }
+    },
+    {
+      "task": "FND-04",
+      "changes": {
+        "Evidence": [
+          null,
+          "https://github.com/aloerch/ambisgis-geodb/issues/1#issuecomment-5966058477"
+        ],
+        "Delivery": [
+          "Backlog",
+          "In progress"
+        ]
+      }
+    },
+    {
+      "task": "GOV-02",
+      "changes": {
+        "Status": [
+          "Todo",
+          "Done"
+        ],
+        "Evidence": [
+          "https://github.com/aloerch/ambisgis-platform/pull/52",
+          "https://github.com/aloerch/ambisgis-platform/pull/52 | standing delivery https://github.com/aloerch/ambisgis-platform/pull/72"
+        ]
+      }
+    }
+  ],
+  "new_item": {
+    "__typename": "PullRequest",
+    "id": "PR_kwDOUhI-d88AAAABGZbyQg",
+    "number": 72,
+    "url": "https://github.com/aloerch/ambisgis-platform/pull/72",
+    "repository": {
+      "nameWithOwner": "aloerch/ambisgis-platform"
+    }
+  },
+  "fields_preserved": 24,
+  "views_preserved": 7,
+  "remote_mutations": 0
+}

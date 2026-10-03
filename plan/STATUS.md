@@ -1,8 +1,10 @@
 # Active delivery — standing delegation
 
-Live main is PR #71 merge `5213f31cd51aed5230d7bd550cc03662bcfb566f`, verified on 2026-10-02 America/Los_Angeles. The [standing policy](docs/standing-delivery-policy.md) supersedes older procedural stops below. Work is on `delivery/standing-delegation`, with independent review and tested gates, followed by exact source publication and dependency-ready product work. FND-02 remains accepted/Merged; no scoped MVP or release is claimed.
+Platform PR #72 merged normally at `8c3612dd3e4ee992d930f1417798b66f467784e9` with required CI, independent automated review and post-merge smoke checks. The [standing policy](docs/standing-delivery-policy.md) is active.
 
-[Current delivery ledger](docs/delivery-ledger.json) · [all 24 required capabilities and acceptance](docs/delivery-requirements-matrix.md).
+The exact authorized GeoTools/QGIS review and canonical refs are published and independently recovered. All eleven canonical source refs now resolve to their selected identities; publication replay made zero writes. [Source acceptance evidence](docs/authorized-successors-delivery.md) retains the unchanged task criteria and remaining build/release gates. Final evidence PR review/merge and FND-07 tracking reconciliation remain pending at this checkpoint. FND-03 and FND-04 are In progress with real runtime tests; FND-08 follows source acceptance. No installable MVP or release is claimed.
+
+[Current delivery ledger](docs/delivery-ledger.json) · [all 24 requirements](docs/delivery-requirements-matrix.md).
 
 ## Historical checkpoint follows unchanged
 
