@@ -1,3 +1,11 @@
+# Active delivery — standing delegation
+
+Live main is PR #71 merge `5213f31cd51aed5230d7bd550cc03662bcfb566f`, verified on 2026-10-02 America/Los_Angeles. The [standing policy](docs/standing-delivery-policy.md) supersedes older procedural stops below. Work is on `delivery/standing-delegation`, with independent review and tested gates, followed by exact source publication and dependency-ready product work. FND-02 remains accepted/Merged; no scoped MVP or release is claimed.
+
+[Current delivery ledger](docs/delivery-ledger.json) · [all 24 required capabilities and acceptance](docs/delivery-requirements-matrix.md).
+
+## Historical checkpoint follows unchanged
+
 # Current checkpoint — FND-07 canonical delivery and local source repairs
 
 The owner-authorized batch created and independently recovered all nine exact

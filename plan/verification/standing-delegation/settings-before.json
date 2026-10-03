@@ -1,0 +1,29 @@
+{
+  "repository": {
+    "id": 1376927351,
+    "full_name": "aloerch/ambisgis-platform",
+    "default_branch": "ambisgis/main",
+    "allow_auto_merge": false,
+    "permissions": {
+      "admin": true,
+      "maintain": true,
+      "push": true,
+      "triage": true,
+      "pull": true
+    }
+  },
+  "protection": {
+    "protected": false,
+    "response": {
+      "message": "Branch not protected",
+      "documentation_url": "https://docs.github.com/rest/branches/branch-protection#get-branch-protection",
+      "status": "404"
+    }
+  },
+  "rulesets": [],
+  "actions": {
+    "enabled": true,
+    "allowed_actions": "all",
+    "sha_pinning_required": false
+  }
+}
