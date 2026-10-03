@@ -106,6 +106,31 @@
   "base_commit": "7812efa3502ec1d7004b485d35b433eea56ce13e",
   "full_fnd08_acceptance": false,
   "historical_receipts_modified": false,
+  "independent_review_repair": {
+    "actual_pair_comparison": {
+      "bytes": 757994,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-java/donor-drift-failclosed-final.json",
+      "sha256": "ba9e209dde8c7689039bebb35bc1a800d503fb842ad55b5bf21bb30a5eae781c"
+    },
+    "comparator": {
+      "bytes": 11549,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/java-successor-worktree/build-support/java/donor_drift.py",
+      "sha256": "500af4353265cbf0f01545e70a1f00841d4e7e8a50765e4f3cc763e58c4f3cf6"
+    },
+    "finding": "Comparator reported unexplained content drift without failing its command.",
+    "helper_tests": {
+      "bytes": 61079,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/java-successor-worktree/plan/verification/fnd08-java-successor/fnd08-java-unit-reviewed.log",
+      "sha256": "47309c31fe7e7be3e64e8c916e8e3ea200a3e7c98e26466f26c482dd1f5cd98c"
+    },
+    "producer_path_audit": {
+      "bytes": 10017,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-java/producer-path-audit.json",
+      "sha256": "0ba254deaaadd86ee78b962d7e9a7635025a70d3d9da071fa67918b0ec7430aa"
+    },
+    "resolution": "Preserve diagnostic report then raise ValueError on any unexplained content drift. Compare-level nested bytecode regression proves command failure.",
+    "scope": "Comparator-only change; historical executed producer snapshots and outputs untouched."
+  },
   "inventory": {
     "actual_maven_jar_count": 1007,
     "selected_maven_file_count": 9208,
@@ -1522,6 +1547,21 @@
       "bytes": 60902,
       "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/java-successor-worktree/plan/verification/fnd08-java-successor/fnd08-java-unit-final2.log",
       "sha256": "0522acf1c96f34cbae8b8549cf962eda01e361ead1625060036012e1a484d8ab"
+    },
+    {
+      "bytes": 757994,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-java/donor-drift-failclosed-final.json",
+      "sha256": "ba9e209dde8c7689039bebb35bc1a800d503fb842ad55b5bf21bb30a5eae781c"
+    },
+    {
+      "bytes": 10017,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-java/producer-path-audit.json",
+      "sha256": "0ba254deaaadd86ee78b962d7e9a7635025a70d3d9da071fa67918b0ec7430aa"
+    },
+    {
+      "bytes": 61079,
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/java-successor-worktree/plan/verification/fnd08-java-successor/fnd08-java-unit-reviewed.log",
+      "sha256": "47309c31fe7e7be3e64e8c916e8e3ea200a3e7c98e26466f26c482dd1f5cd98c"
     }
   ],
   "remote_mutations": [],

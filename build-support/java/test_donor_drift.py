@@ -1,10 +1,14 @@
 from pathlib import Path
+import hashlib
+import json
 import os
+import subprocess
+import sys
 import tempfile
 import unittest
 import zipfile
 
-from donor_drift import (attribute_archive, chronology, describe, drift, floating_resolver,
+from donor_drift import (PRODUCER_INPUTS, attribute_archive, chronology, describe, drift, floating_resolver,
                          prepare, timestamp_changes, unexplained, zip_entries)
 
 
@@ -64,3 +68,30 @@ class DonorDriftFixtures(unittest.TestCase):
         self.assertTrue(chronology(first,second,fixture)['ordered'])
         os.utime(paths[0],ns=(103,103))
         with self.assertRaisesRegex(ValueError,'precede first build'):chronology(first,second,fixture)
+
+    def test_compare_command_fails_and_retains_nested_bytecode_diagnostic(self):
+        prepare(self.root)
+        builds=[]
+        for n,data in enumerate((b'old bytecode',b'new bytecode')):
+            if n:drift(self.root)
+            build=Path(self.tmp.name)/str(n);build.mkdir();builds.append(build)
+            (build/'started.json').write_text('{}')
+            target=build/'work/source';target.mkdir(parents=True)
+            inner=build/'inner.jar'
+            with zipfile.ZipFile(inner,'w') as z:z.writestr('Example.class',data)
+            war=target/'product.war'
+            with zipfile.ZipFile(war,'w') as z:z.writestr('WEB-INF/lib/inner.jar',inner.read_bytes())
+            names=['build-support/java/'+p for p in PRODUCER_INPUTS]+['build-support/postgis/offline_exec.py']
+            manifest={name:'a'*64 for name in names}
+            (build/'tooling-manifest.json').write_text(json.dumps(manifest))
+            result={k:'same' for k in ('source_successor','source_inputs_sha256','retained_inputs_sha256','runner_sha256','toolchain','tooling_manifest_sha256')}
+            result.update(result_exit_code=0,network={'verified':True},artifacts={'built':[
+                {'path':'product.war','sha256':hashlib.sha256(war.read_bytes()).hexdigest()}]})
+            (build/'result.json').write_text(json.dumps(result))
+        output=Path(self.tmp.name)/'comparison.json'
+        done=subprocess.run([sys.executable,str(Path(__file__).with_name('donor_drift.py')),'compare',
+            '--fixture',str(self.root),'--first',str(builds[0]),'--second',str(builds[1]),
+            '--output',str(output)],capture_output=True,text=True)
+        self.assertNotEqual(done.returncode,0)
+        self.assertIn('Unexplained product content changes',done.stderr)
+        self.assertEqual(json.loads(output.read_text())['unexplained_content_changes'],1)

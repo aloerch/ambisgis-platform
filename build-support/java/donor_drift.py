@@ -182,6 +182,8 @@ def compare(first,second,fixture,output):
         'unexplained_content_changes':sum(r['unexplained_content_changes'] for r in outputs),
         'network_receipts':[before['network'],after['network']],
         'normalization_applied':False,'full_fnd08_acceptance':False})
+    if any(r['unexplained_content_changes'] for r in outputs):
+        raise ValueError('Unexplained product content changes; diagnostic report retained')
 
 
 def main():
