@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/publication_review",
+  "created_utc": "2026-10-03T09:32:45.838395+00:00",
+  "repository": "aloerch/ambisgis-platform",
+  "branch": "fnd-06/koop-custody",
+  "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "head": "65c210e0ee72a5d5c55fd6c20e18c5a8e831c3f6",
+  "tree": "273e5d3e3c003d0936d6b196bad178b21b3860e9",
+  "working_directory": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree",
+  "clean": true,
+  "decision": "PASS for the exact private, disposable FND06 acquisition/install and bounded synthetic runtime evaluation; NOT product adoption, redistribution, deployment or C1 acceptance",
+  "changed_files": [
+    {
+      "path": "build-support/koop/custody.py",
+      "sha256": "0431a935ba45a3961288bf500362cbf2f529d3b39f20cef1616da7a0c51870ad"
+    },
+    {
+      "path": "build-support/koop/inputs.json",
+      "sha256": "f9fb44113047a08cdcc1905b401a87615f3525b5c9f6e67344a23e076d0ffbde"
+    },
+    {
+      "path": "build-support/koop/install.py",
+      "sha256": "156da65a06759020c48a54a9c7ef85b6983adb77b2b18de823319fcacfbd11a5"
+    },
+    {
+      "path": "build-support/koop/retain.py",
+      "sha256": "4de599a4b2fc3ecc05f717e5d4bafa90cc316ce38659aa17b448389c95588806"
+    },
+    {
+      "path": "build-support/koop/test_custody.py",
+      "sha256": "50f26bbe3a9a3fd182f78f77f8559079fddab868c773412e4e8fde30414438d5"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/README.md",
+      "sha256": "539b592b0b7f89fdb21b994c40395ac5d521e811f385400cc9f4af1702ab23ce"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/candidate001-checkpoint.json",
+      "sha256": "fbfbeb30f8b72861a05b79a1c9e952bdfc8e5f3bf758d279f7cb8eae2bdc5515"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/embedded-notices-final.json",
+      "sha256": "b3476cb0d9888e5dd77108d8babcdcbdfe7ab157414190f79901ed9f210062ec"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/embedded-notices.json",
+      "sha256": "23854a39668d80d6d9f17a65f1795a84114413d01a170850fcf221ee285f6c95"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/evidence.json",
+      "sha256": "6002294787389422cdfc2a1c5a3585b863295495b865e8d6692f2e6d6306dc84"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/guards-final.log",
+      "sha256": "3cacb9072b59f2e08c983155f015654c1e637cfe4ee6fd145f2491ef31afe256"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/guards.log",
+      "sha256": "435f76834eb8a8c1eb21d52588cb66f735fbcdb543daa7d02232ed3c05a7a52a"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/host-python-plan-tests.log",
+      "sha256": "8d86d3f00260b57fe0dd0959b0a7a3f9348231bcfb436856c5265f4569b492d9"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/host-python-schemas.log",
+      "sha256": "bff470db25e15db2d8c649b6006a9eccb6e49b0bb17c25cbc95e6099a007f933"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/plan-tests.log",
+      "sha256": "d38cad85ee224146566061f2051e5dcc3fca7ab3881eb210ed61a7f88be8dd60"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/schemas.log",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    }
+  ],
+  "candidate": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002",
+  "candidate_manifest_sha256": "ae3c5d548e95f23467cc63d571e54d44fec494f906291da7362263590d97b642",
+  "production_lock_sha256": "c9c37a80426a490c8cd2bf9ac7a341b53de1f41ee3da121ed52eb5cc7deb0378",
+  "supplement_sha256": "524a4f6d9e0ba9ec4d5a6c5983b7086067b34fb125968bb0b15866ead78ab45b",
+  "evidence_sha256": "6002294787389422cdfc2a1c5a3585b863295495b865e8d6692f2e6d6306dc84",
+  "independent_byte_audit": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-koop-candidate002-byte-audit.json",
+    "sha256": "52e46ddf90e7c81191cf6ce51fde0f22852b230bcf8fb169a10cda4e71de3562"
+  },
+  "rejected_candidate001": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-koop-candidate001-independent-preflight.json",
+    "sha256": "171fc9deca4343c528904ea941d91b3510b53a322cdc25fd5b7c611d03ded84e",
+    "disposition": "Preserved unchanged; missing identities repaired only in fresh candidate002. No candidate001 install or package execution."
+  },
+  "checks": {
+    "source_files_git_blob_mode_bound": 447,
+    "retained_files_rehashed": 610,
+    "registry_archives_sri_sha256_shasum_verified": 238,
+    "registry_install_paths": 252,
+    "graph_entries": 265,
+    "dependency_edges_satisfying_exact_observed_ranges": 421,
+    "archive_dependency_declaration_mismatches": 0,
+    "remaining_unresolved_registry_paths": 0,
+    "explicit_missing_identity_supplements": 121,
+    "supplemented_install_paths": 127,
+    "checkpoint_reference_files_rehashed": 25,
+    "embedded_notice_members_rehashed": 23,
+    "owned_guard_tests": 17,
+    "owned_guard_failures": 0,
+    "owned_guard_skips": 0,
+    "guard_command": "flatpak-spawn --host python3 -m unittest discover -s build-support/koop -p test_custody.py -v",
+    "owned_inventory_verifier": "custody.verify_inventory(candidate-002), executed only reviewed owned Python source",
+    "package_code_executed_by_reviewer": false
+  },
+  "source_review": [
+    "Complete retained source archive/Git blob inventory and reconstructed Git trees; six source workspace manifests reconcile stale original versions without changing runtime sources.",
+    "Third-party versions/dependency graph fixed to original lock. 127 missing identities explicitly supplemented by retained exact-version registry metadata; no claim these SRIs came from original lock.",
+    "All 13 declared install/prepare hooks disabled. Registry archives contain no inventoried .node/.wasm/.so/.dll/.exe members. Retained optional farmhash is omitted; exact source supports OBJECTID_FEATURE_HASH=javascript fallback, with explicit stable int32 ObjectIDs.",
+    "Reviewed exact install.py clean HOME/config/cache, sanitized Node probe, fresh source projection and socket-denied npm ci --offline --ignore-scripts --omit=dev --omit=optional --no-audit --no-fund. Every installed member/link and source projection checked; unexpected installed modules/links fail. Wrapper explicitly is not a hostile-code/filesystem sandbox.",
+    "Read actual core auth registration, provider route construction, caching, data-provider hooks, output routes, filtersApplied flags, metadata defaults and overrides, query renderer and precompiled protobuf schema path."
+  ],
+  "fixed_findings": [
+    "FND06-CUSTODY-001: partial closure silently skipped 127 unresolved registry paths; now full closure and fail-closed guards.",
+    "Node version probe previously inherited host NODE_OPTIONS/NODE_PATH; now explicit clean environment and cwd.",
+    "Installed verification previously checked expected members only; now complete regular-file/link inventory rejects unexpected modules/link targets."
+  ],
+  "runtime_conditions": [
+    "Use synthetic fixtures/disposable owned database only; no production or remote mutation.",
+    "No secrets passed to dependency lifecycle; all lifecycle remains disabled. Runtime credentials must be private temporary least-privilege and invalidated at shutdown.",
+    "Mandatory finite owned boundary must authorize every discovery/metadata/query/count/extent/page and direct backend path against existing catalog authority. Do not rely on default no-op authorize.",
+    "Disable default positive authorization/data cache for spike; default key omits principal/policy/revision. Explicit auth/cache setup precedes provider registration.",
+    "Only provider can set filtersApplied flags after authoritative database predicates/paging/projection. Never forward client-supplied flags or raw SQL into in-memory query engines.",
+    "Project truthful capabilities and reject untested PBF/renderer/edit/token routes; false pagination metadata is discarded by inherited normalization and global overrides do not suppress all defaults.",
+    "Sanitize runtime NODE_OPTIONS/NODE_PATH/config inputs; node-config imported config overrides constructor settings. Record actual effective limits and endpoints.",
+    "Actual successful install/runtime/DB pushdown/authorization/revocation/limits/output tests remain required and cannot be inferred from this review."
+  ],
+  "rights_boundary": {
+    "koop": "Apache-2.0 source notices retained",
+    "geojson_validation": "LGPL-3 declaration, license and JavaScript source retained; no waiver of corresponding-source or redistribution duties",
+    "tr46": "MIT manifest declaration exists but complete exact source/archive notice provenance is unresolved. Private evaluation only; explicit blocker before redistribution/product release, and adoption disposition must preserve this limitation.",
+    "other_embedded_notices": "Six filename-only gaps have actual README/source notice hashes reverified; no invented grant or upstream contact."
+  },
+  "security_scope": "No vulnerability-free assertion. Protobuf7.4 is in GHSA-xq3m-2v4x-88gg range; inspected Koop uses committed precompiled schema with protobufjs/minimal, not untrusted reflection descriptors. PBF remains unaccepted. General Node/dependency security, hostile-code sandboxing and full product security are not certified.",
+  "primary_advisory": "https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-xq3m-2v4x-88gg",
+  "controls": "16 added files limited to local custody/installation helpers, tests and public-safe provenance. Existing gate/workflow/authority/criteria files unchanged; no settings, refs, secrets, deletion, source replacement or new policy authority. No remote writes by reviewer."
+}

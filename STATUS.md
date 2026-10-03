@@ -1,3 +1,37 @@
+# Active delivery — 3 October 2026, FND-06
+
+FND-08 is accepted/Merged at `6d18637e39818e60bcc947d3a7c252e84ab48fe0`
+([PR #76](https://github.com/aloerch/ambisgis-platform/pull/76)). All original
+foundation criteria passed within the recorded scope. Fresh post-merge execution
+used the final retained Java build and owned QGIS stage: 152 HTTP assertions,
+70 native identity tests and 49 image checks passed; source integrity and cleanup
+were independently verified. [Acceptance and exact evidence](plan/verification/fnd08-acceptance/acceptance-and-merge.json)
+retain raw reproducibility differences, six named inherited Java skips per build,
+and the later source-bootstrap, disconnected repair and release obligations.
+
+FND-06 remains In progress in [PR #77](https://github.com/aloerch/ambisgis-platform/pull/77)
+on `fnd-06/contracts-and-koop`. Shared contracts, a complete synthetic corpus,
+the threat model, actual Koop experiment and exact notice supplement now have
+component review. Combined checks pass 503 package tests, ten schema/example
+checks, 35 Koop guards and 14 notice guards. The actual runtime passes 227
+assertions over 100,000 database rows; the separate owned-QGIS corpus runs cover
+small, 100,000-address and 1,000,000-address fixtures.
+
+The [measured decision](plan/adrs/013-koop-query-codec-reuse.md) reuses the unchanged
+Koop query encoder behind owned policy/query/revision boundaries.
+[Final candidate evidence](plan/verification/fnd06-final/evidence.json) preserves
+original failures and exact limits. Aggregate review, protected integration and
+post-merge acceptance are pending. Project tracking records 93 items, 24 fields,
+seven views and 15 repositories with unrelated planning preserved. PLT-01 and
+DB-01 become ready only after FND-06 acceptance.
+
+The [ledger](plan/docs/delivery-ledger.json) and [all 24 requirements](plan/docs/delivery-requirements-matrix.md)
+govern continuation under the [standing delegation](plan/docs/standing-delivery-policy.md).
+The complete scoped MVP, installer, publication/branch/portal/notebook journeys,
+independent repair, human-only evaluations and release gates remain open.
+
+## Prior checkpoints retained below
+
 # Active delivery — 3 October 2026
 
 FND-03, FND-04, FND-05 and FND-07 are accepted/Merged within their original

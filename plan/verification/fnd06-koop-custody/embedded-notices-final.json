@@ -1,0 +1,177 @@
+[
+  {
+    "name": "@esri/proj-codes",
+    "version": "3.4.0",
+    "archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/8d68b211e276ca92df2ea6e4c7c3f9437b0eb3c1a81627cddaedacc107eab159.tgz",
+      "sha256": "6fd817c009116c4c862cc0985125bc3dd4d7cb7250ffbef68624e30882cb3178",
+      "bytes": 780986
+    },
+    "embedded_notice_members": [
+      {
+        "member": "package/README.md",
+        "sha256": "62fd34747698bdd0760b22565d756d7ccd792ce72feb344d10df2efd8be7fa09"
+      }
+    ],
+    "explicit_notice_gap": false
+  },
+  {
+    "name": "cookie-signature",
+    "version": "1.0.6",
+    "archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/0be4ee194fbeabe82a97f92a9c5f9fb27a09d2bc015e929a8ab902a80472ac30.tgz",
+      "sha256": "89f345e24abee506e690eb6ff5bd1973957f916cba72b2a224ab2355544d5313",
+      "bytes": 2111
+    },
+    "embedded_notice_members": [
+      {
+        "member": "package/Readme.md",
+        "sha256": "1621ed10d0b2f865eb8608e0474a356cf7a9737a384b6593b61b30a9f6e50366"
+      }
+    ],
+    "explicit_notice_gap": false
+  },
+  {
+    "name": "easy-table",
+    "version": "1.2.0",
+    "archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/aebe02a1a6fa09f2e1d4e8271cfb15490764fc138195409d64c2178d525f7ca3.tgz",
+      "sha256": "933293d44e2254ab0b4b3d0edb49a2fdce02473878c11637eab63266fb89cb9c",
+      "bytes": 7160
+    },
+    "embedded_notice_members": [
+      {
+        "member": "package/README.md",
+        "sha256": "99bf754dbdf4ae8fd068765fc493373f3045991032c9a79c051804c102bee515"
+      }
+    ],
+    "explicit_notice_gap": false
+  },
+  {
+    "name": "filelist",
+    "version": "1.0.4",
+    "archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/0e7fb9f96037febdb6ffed7d4178bfc28b93c05b43a77d3897f59886c430d075.tgz",
+      "sha256": "4928e5c5b221aa1a1be92df77e625956061600258c1ced5c6a105d39871ce826",
+      "bytes": 6677
+    },
+    "embedded_notice_members": [
+      {
+        "member": "FileList-v1.0.4/index.js",
+        "sha256": "cae1deb98621f487d8da5fd2f77c4cdd2f0312ecd3ee9c7ff2021defec89c9af"
+      }
+    ],
+    "explicit_notice_gap": false
+  },
+  {
+    "name": "jake",
+    "version": "10.8.5",
+    "archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/3ae2b1d8ab499310291a1a48da98e6c14801d5644ff3f09d46b6a75ebe8c8fca.tgz",
+      "sha256": "1a056b667a95e889c55c3fd43b2a594814af8a2ba71db0e7877b71b736f6ed70",
+      "bytes": 39929
+    },
+    "embedded_notice_members": [
+      {
+        "member": "jake-v10.8.5/lib/publish_task.js",
+        "sha256": "69699837b492782868a2bf47262b1ec674563935c28efc4915bc81f273288b44"
+      },
+      {
+        "member": "jake-v10.8.5/lib/parseargs.js",
+        "sha256": "c2be6d44b5ba54df8551a30cfdb8fdc041c4e2c16805e9136413154dba6c5105"
+      },
+      {
+        "member": "jake-v10.8.5/lib/test_task.js",
+        "sha256": "b52a157ef4c2eec4ba3f94630d1478c84b37c4904179759ea734c6f98dfe92e1"
+      },
+      {
+        "member": "jake-v10.8.5/lib/jake.js",
+        "sha256": "012f5ee2740a9620e3c3c5c050b0b0b073f02103a90abd4add2bb7d0a0074339"
+      },
+      {
+        "member": "jake-v10.8.5/lib/package_task.js",
+        "sha256": "3b269a0fb9f57e1b0c6ddd96454a49d9abf62d2918acdbfe01e91683ed5a40aa"
+      },
+      {
+        "member": "jake-v10.8.5/lib/api.js",
+        "sha256": "d34d1b2ff123a12928122db95a724c160f031d77033506229deb0793dd9555b1"
+      },
+      {
+        "member": "jake-v10.8.5/lib/program.js",
+        "sha256": "0d0ba975a2386c9d1040dc476d60a108ee787fa0f791df74fccd45d5d37e8d59"
+      },
+      {
+        "member": "jake-v10.8.5/lib/loader.js",
+        "sha256": "7e98c209d4e565eababf768b53ac69707e1329dfdda33feff0a2506b486175d8"
+      },
+      {
+        "member": "jake-v10.8.5/lib/utils/index.js",
+        "sha256": "66691f8cc51985993fdd60c65564dad611cb4b84f21aaf7cb5444f235416653d"
+      },
+      {
+        "member": "jake-v10.8.5/lib/utils/file.js",
+        "sha256": "c06c467b3224078fbdb33d5bfdfc733dd28bbb198f12e921e321079430e7fdd1"
+      },
+      {
+        "member": "jake-v10.8.5/bin/cli.js",
+        "sha256": "77fcf272a544a3b44afb28446dceb5d8e10dfa7720e5785237b38dadba684e1e"
+      },
+      {
+        "member": "jake-v10.8.5/test/integration/file_task.js",
+        "sha256": "adbfe43785950d4d69de105231051c9f8d27f7959c38bd20a019c5b2f6305f48"
+      },
+      {
+        "member": "jake-v10.8.5/test/integration/rule.js",
+        "sha256": "4adcdeca90cc15991ba4067a1a69d08e4d0beac5da6583501321b9cdac12e296"
+      },
+      {
+        "member": "jake-v10.8.5/test/integration/file.js",
+        "sha256": "3f69170eead7e0ede14970dd241049fc0dcc3808b161ddc1229a5faae233ff2b"
+      },
+      {
+        "member": "jake-v10.8.5/test/integration/jakelib/publish.jake.js",
+        "sha256": "8c979323f69c536b2284aac605bd34bc9b5bef2dbaec10caa26cfdfe61af2bef"
+      },
+      {
+        "member": "jake-v10.8.5/test/integration/jakelib/rule.jake.js",
+        "sha256": "95861810215a625833a190ca63dfd3132e93bbc7567ded3dd9015a62092d4b3f"
+      },
+      {
+        "member": "jake-v10.8.5/test/unit/parseargs.js",
+        "sha256": "1843ea9f1e2ddf628788d9951140ea6ccdcb46b3c8aec21099388e6bb3445acf"
+      },
+      {
+        "member": "jake-v10.8.5/test/unit/namespace.js",
+        "sha256": "26b2f659a451b15ce09c561edfccf47773147aeb417c59a4b4288fe9384a00db"
+      }
+    ],
+    "explicit_notice_gap": false
+  },
+  {
+    "name": "murmurhash",
+    "version": "2.0.1",
+    "archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/b856e8ac51658e2ae77a0151f5bb109b4c5da11810736bd7e159580c16d97269.tgz",
+      "sha256": "04dbd6c26dcd8936d5d6926b922a073d713a68456aadc12bab8d5b8342b735cd",
+      "bytes": 3288
+    },
+    "embedded_notice_members": [
+      {
+        "member": "package/README.md",
+        "sha256": "be49bd2eac117ea2fe813e7b840893a6f813ee1ccd4444ddf37c864694e9aef1"
+      }
+    ],
+    "explicit_notice_gap": false
+  },
+  {
+    "name": "tr46",
+    "version": "0.0.3",
+    "archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz",
+      "sha256": "164ae1eb32cea353551bbc7f9358dcaae4ffabbe65ec37a92ca464a9570a2a0a",
+      "bytes": 64681
+    },
+    "embedded_notice_members": [],
+    "explicit_notice_gap": true
+  }
+]

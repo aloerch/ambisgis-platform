@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "layer_id": "10000000-0000-4000-8000-000000000003",
+  "service_revision": "10000000-0000-4000-8000-000000000005",
+  "data_revision": "10000000-0000-4000-8000-000000000006",
+  "mode": "features",
+  "fields": [
+    "fid",
+    "object_id",
+    "name",
+    "population"
+  ],
+  "filter": {
+    "op": "ge",
+    "field": "population",
+    "value": {
+      "type": "int32",
+      "value": 100
+    }
+  },
+  "order_by": [
+    {
+      "field": "population",
+      "direction": "asc"
+    }
+  ],
+  "page_size": 100,
+  "output_crs": "EPSG:4326"
+}

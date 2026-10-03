@@ -2,7 +2,9 @@
 
 Current checkpoint: **2026-10-03**, platform repository `aloerch/ambisgis-platform`
 (ID `1376927351`), live merged baseline
-`337cc4f7438848575e075e8d90f59d9d37e4309e` (PR #75). FND-08 remains in progress.
+`6d18637e39818e60bcc947d3a7c252e84ab48fe0` (PR #76). FND-08 is accepted/Merged;
+FND-06 is claimed/In progress. [Final acceptance](../verification/fnd08-acceptance/acceptance-and-merge.json)
+binds the independently verified final-artifact post-merge runtime.
 This index is not product acceptance. E2 retains the original PR #71 baseline
 `5213f31cd51aed5230d7bd550cc03662bcfb566f` and its historical evidence.
 

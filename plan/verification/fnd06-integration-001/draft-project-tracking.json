@@ -1,0 +1,15 @@
+{
+  "task": "FND-06",
+  "delivery": "In progress",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/77",
+  "pr_node_id": "PR_kwDOUhI-d88AAAABGaqNtQ",
+  "draft": true,
+  "head": "6736b7df728f5ffedb125fd9b2e26c2a7b7a6956",
+  "comment": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5967865641",
+  "items_before": 92,
+  "items": 93,
+  "fields": 24,
+  "views": 7,
+  "repositories": 15,
+  "all_unrelated_values_preserved": true
+}

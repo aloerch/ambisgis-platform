@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/publication_review",
+  "created_utc": "2026-10-03T09:43:52.616875+00:00",
+  "repository": "aloerch/ambisgis-platform",
+  "branch": "fnd-06/koop-custody",
+  "base": "65c210e0ee72a5d5c55fd6c20e18c5a8e831c3f6",
+  "head": "9dc4680b2d273252d17c78545d94d14e676fb111",
+  "tree": "ea8a2762c27c54a2278df74b477a965c81f4e7ec",
+  "clean": true,
+  "decision": "PASS focused helper repair; fresh offline install002 may proceed under unchanged private synthetic evaluation preflight conditions. No adoption/distribution/runtime acceptance.",
+  "changed_files": [
+    {
+      "path": "build-support/koop/install.py",
+      "sha256": "bd29ba2090a69e7ca1c281203d16c5e51685aaf6375fe5bfae1670bedacd136e"
+    },
+    {
+      "path": "build-support/koop/test_custody.py",
+      "sha256": "34a1351ace6aba6cf99b24d662a0187dc0f6c6acce910acef9d1ab1b1d4cd4b3"
+    },
+    {
+      "path": "plan/verification/fnd06-koop-custody/README.md",
+      "sha256": "d50932ff36bba17b5d59939e11cd976269d6973e5acd9ea5a5ec5b2bc143a085"
+    }
+  ],
+  "prior_review": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-koop-preexecution-review-65c210e.json",
+    "sha256": "9a4eb7aeb362892e7abb9f26580de8383585e26c338904d9dc6bdb16cda26fb1"
+  },
+  "reason": "Original locked optional/devOptional annotations were incomplete; npm correctly omitted15 transitive optional-only nodes lacking optional:true. Verification previously stopped at base64-js. No manifest/archive/version/source change required.",
+  "independent_review": "Read actual mandatory_paths and verify_installed delta. Exact root plus all6 workspace dependencies/nonoptional peers determine mandatory reachability. optionalDependencies overrides excluded; any required path wins irrespective optional:true metadata. Exact Node resolution and workspace links retained; missing registry identity guard still applies to every registry row.",
+  "independent_checks": {
+    "mandatory_registry_paths": 213,
+    "optional_only_registry_paths": 39,
+    "actual_install001_registry_paths": 213,
+    "missing_mandatory_paths": 0,
+    "missing_optional_only_paths": 39,
+    "omitted_without_original_optional_flag": 15,
+    "actual_installed_regular_files_reverified": 4187,
+    "actual_links_reverified": 12,
+    "guard_tests": 21,
+    "guard_failures": 0,
+    "guard_errors": 0,
+    "guard_skips": 0,
+    "guard_command": "flatpak-spawn --host python3 -m unittest discover -s build-support/koop -p test_custody.py -v",
+    "guard_cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree",
+    "regressions": [
+      "transitive optional-only omission without optional flag",
+      "shared required and optional path remains required",
+      "forged optional:true cannot excuse required omission",
+      "optional dependency override and optional peer excluded"
+    ],
+    "inspection_only": "Reviewer recomputed closure independently with separate stdlib BFS, then invoked reviewed verify_installed on actual installed files read-only; no acquired package imports or lifecycle execution."
+  },
+  "unchanged_candidate": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002",
+    "manifest_sha256": "ae3c5d548e95f23467cc63d571e54d44fec494f906291da7362263590d97b642",
+    "production_lock_sha256": "c9c37a80426a490c8cd2bf9ac7a341b53de1f41ee3da121ed52eb5cc7deb0378",
+    "source_and_all_archives": "Bound transitively by unchanged complete manifest; prior610file/238archive audit reused, no new input selection."
+  },
+  "failed_attempt_preserved": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/install-001",
+    "original_executed_install_helper_sha256": "156da65a06759020c48a54a9c7ef85b6983adb77b2b18de823319fcacfbd11a5",
+    "npm_log_sha256": "8b3c1f2156776e90b85e13be241b865bda15acbbceba1d019b5f51c591907a19",
+    "network_receipt_sha256": "3c89f735255d253c2a7d1151f072f5c007ad45cd86ee990c176a15e7241f3504",
+    "no_receipt_rewritten": true,
+    "scope": "Read-only diagnostic verification does not relabel install001 as successful; fresh install required."
+  },
+  "controls": "Only owned install verifier, adversarial tests and failure documentation changed; no gate/workflow/authority/contract/source/lock alteration, secrets, deletion or remote mutation. tr46 notice distribution blocker and LGPL duties remain; original runtime security conditions unchanged."
+}

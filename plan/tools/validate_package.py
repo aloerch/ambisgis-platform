@@ -92,7 +92,56 @@ def validate_examples(root: Path = ROOT) -> int:
         for layout in page['layouts'].values():
             if any(p['widget_id'] not in widgets for p in layout):
                 raise ValueError('Unknown layout widget.')
-    return len(pairs)
+    # Shared FND-06 schemas resolve local resources only, with no network fetch.
+    if __package__:
+        from .native_contracts import validate_schema
+    else:
+        from native_contracts import validate_schema
+    shared = ['layer', 'native-query', 'native-error', 'job', 'notebook-run', 'app-event']
+    for name in ['common', *shared]:
+        Draft202012Validator.check_schema(json.loads((root/'contracts'/f'{name}.schema.json').read_text()))
+    for name in shared:
+        validate_schema(name, json.loads((root/'examples'/f'{name}.json').read_text()), root=root)
+    validate_contract_package(root)
+    return len(pairs) + len(shared)
+
+
+def validate_contract_package(root: Path = ROOT, package=None) -> None:
+    """Prevent initial contracts from dropping required scope or claiming release."""
+    package = package if package is not None else json.loads((root/'contracts/contract-package.json').read_text())
+    requirements = json.loads((root/'requirements.json').read_text())['requirements']
+    tasks = json.loads((root/'backlog.json').read_text())['tasks']
+    rows = package['requirements']
+    if len(rows) != 24 or {r['id'] for r in rows} != {f'R{i:02}' for i in range(1,25)}:
+        raise ValueError('All R01–R24 must remain in the contract package.')
+    by_id = {r['id']: r for r in rows}
+    for req in requirements:
+        row = by_id[req['id']]
+        for key in ['user_goal','required_for_scoped_release','tests']:
+            if row[key] != req[key]:
+                raise ValueError(f'Changed requirement mapping: {req["id"]}/{key}')
+        if row['tasks'] != [t['id'] for t in tasks if req['id'] in t['requirement_ids']]:
+            raise ValueError(f'Incomplete task mapping: {req["id"]}')
+        if not row['contracts'] or not set(row['contracts']) <= package['contracts'].keys():
+            raise ValueError(f'Missing contract boundary: {req["id"]}')
+        if row['product_test_status'] != 'open':
+            raise ValueError('Contract checks do not accept product test families.')
+    for filename in package['contracts'].values():
+        if Path(filename).name != filename or not (root/'contracts'/filename).is_file():
+            raise ValueError('Missing local contract schema.')
+    phases = package['phase_gates']
+    if len(phases) != 8 or {p['id'] for p in phases} != {f'P{i}' for i in range(8)}:
+        raise ValueError('All P0–P7 exit gates must remain.')
+    roadmap = (root/'docs/09-roadmap-and-acceptance.md').read_text()
+    for phase in phases:
+        line = next((s for s in roadmap.splitlines() if s.startswith('| '+phase['id']+' —')), '')
+        cells = [s.strip() for s in line.split('|')[1:-1]]
+        if len(cells) != 3 or phase['outcome'] != cells[1] or phase['exit_evidence'] != cells[2]:
+            raise ValueError('Phase gate differs from controlling chapter 09.')
+        if phase['accepted'] is not False:
+            raise ValueError('Initial contract acceptance cannot accept a delivery phase.')
+    if package['product_accepted'] is not False:
+        raise ValueError('Contract package is not scoped MVP acceptance.')
 
 
 def main(argv: list[str] | None = None) -> int:

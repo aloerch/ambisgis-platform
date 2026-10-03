@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ambisgis:contracts:native-query:v1",
+  "title": "AmbisGIS initial native-query contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "layer_id",
+    "service_revision",
+    "data_revision",
+    "mode"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "layer_id": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "service_revision": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "data_revision": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "mode": {
+      "enum": [
+        "features",
+        "count",
+        "extent"
+      ]
+    },
+    "filter": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/filter"
+    },
+    "bbox": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/bbox"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+      },
+      "minItems": 1,
+      "maxItems": 64
+    },
+    "order_by": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "field",
+          "direction"
+        ],
+        "properties": {
+          "field": {
+            "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+          },
+          "direction": {
+            "$ref": "urn:ambisgis:contracts:common:v1#/$defs/direction"
+          }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 4
+    },
+    "page_size": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "cursor": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4096,
+      "pattern": "^[A-Za-z0-9_.-]+$"
+    },
+    "output_crs": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/crs"
+    }
+  }
+}

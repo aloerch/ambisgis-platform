@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ambisgis:contracts:notebook-run:v1",
+  "title": "AmbisGIS initial notebook-run contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "notebook_item_id",
+    "notebook_revision",
+    "environment_digest",
+    "parameters",
+    "read_items",
+    "publish_targets",
+    "idempotency_key",
+    "timeout_seconds",
+    "input_revisions",
+    "package_lock_digest",
+    "sdk_version"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "notebook_item_id": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "notebook_revision": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "environment_digest": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/sha256"
+    },
+    "parameters": {
+      "type": "object",
+      "maxProperties": 32,
+      "propertyNames": {
+        "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+      },
+      "additionalProperties": {
+        "$ref": "urn:ambisgis:contracts:common:v1#/$defs/literal"
+      }
+    },
+    "read_items": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+      },
+      "minItems": 0,
+      "maxItems": 64
+    },
+    "publish_targets": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+      },
+      "minItems": 0,
+      "maxItems": 16
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 16,
+      "maxLength": 128
+    },
+    "timeout_seconds": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3600
+    },
+    "input_revisions": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "item_id",
+          "revision_id"
+        ],
+        "properties": {
+          "item_id": {
+            "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+          },
+          "revision_id": {
+            "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+          }
+        }
+      }
+    },
+    "package_lock_digest": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/sha256"
+    },
+    "sdk_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    }
+  }
+}

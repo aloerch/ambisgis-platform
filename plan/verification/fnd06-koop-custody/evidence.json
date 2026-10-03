@@ -1,0 +1,156 @@
+{
+  "recorded_at": "2026-10-03T09:29:36.464387+00:00",
+  "task": "FND-06 Koop pre-execution custody",
+  "source_commit": "333518a19d43adf2fd12faed1a3be52d9c90dd3f",
+  "source_tree": "3357f74aa588b18703f26cdb5b5a5f7809d7d150",
+  "source_files": 447,
+  "registry_archives": 238,
+  "registry_install_paths": 252,
+  "reused_archives": 97,
+  "supplemented_install_paths": 127,
+  "exact_version_metadata_supplements": 121,
+  "guard_tests": 17,
+  "guard_exit_code": 0,
+  "plan_tests": 457,
+  "plan_test_failures": 0,
+  "schema_checks": 4,
+  "validation_environment": "existing retained delivery-control/ci-env",
+  "host_python_attempt": "preserved: jsonschema unavailable; no package changes made",
+  "installation_executed": false,
+  "acquired_package_code_executed": false,
+  "runtime_compatibility_tested": false,
+  "remote_writes": false,
+  "references": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/manifest.json",
+      "sha256": "ae3c5d548e95f23467cc63d571e54d44fec494f906291da7362263590d97b642",
+      "bytes": 130856
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/source.tar.gz",
+      "sha256": "3c61a42da248db9235f2cc45c3f721a8b2dedc55a65fed2f9c5e5a06d8564678",
+      "bytes": 555122
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/source-tree.json",
+      "sha256": "0f5f4954d6d6ce47019b2f206d5389a11412c71b46051892f727326a625151fc",
+      "bytes": 154390
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/source-files.json",
+      "sha256": "26b123ace4021fb118c9b99c34ee03e2e16bccd6f782f82e6d42e4dfdeda8f92",
+      "bytes": 112205
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/original-package-lock.json",
+      "sha256": "284039c58e1517dd85a0efa65512446958edefe5403be586aa40bf5367b9f406",
+      "bytes": 1220721
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/package-lock.json",
+      "sha256": "c9c37a80426a490c8cd2bf9ac7a341b53de1f41ee3da121ed52eb5cc7deb0378",
+      "bytes": 109164
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/resolution-supplements.json",
+      "sha256": "524a4f6d9e0ba9ec4d5a6c5983b7086067b34fb125968bb0b15866ead78ab45b",
+      "bytes": 78989
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/reconciliation.json",
+      "sha256": "8720d96674f06fd76562684ca34912b82da9a554321b96e2f88453e11a8cb5e4",
+      "bytes": 117033
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/source-notices.json",
+      "sha256": "dffd1f8f368769a865bf0603ddc9b02247cd1c79860001dfe89644439bd18a1e",
+      "bytes": 4935
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry-inventory.json",
+      "sha256": "112bb8ae0a3cbe9a452409160c1d2591fb858924d89496179a7bab1fde6ee520",
+      "bytes": 1112880
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/acquisition-002/started.json",
+      "sha256": "7bc08a766a4bed827abe0be7068eb50bd7cbf2c25babace49a4d5f40b4e663ae",
+      "bytes": 685
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/acquisition-002/command.json",
+      "sha256": "5a627bb77a28f85943e096b1a1fa84005d7ab554533b088e01ad5b4ad708be5b",
+      "bytes": 756
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/acquisition-002/acquisition.log",
+      "sha256": "19a3bc6671f75e4af95639dee8881f74464392f141ba96e8c5bb6b9aec53338b",
+      "bytes": 224
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/acquisition-002/tooling/custody.py",
+      "sha256": "6f940bd7a1c8dda7ad16ee78dbae921d68242fffe751cebc8cfdd0ca05a45eb4",
+      "bytes": 13840
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/acquisition-002/tooling/retain.py",
+      "sha256": "4de599a4b2fc3ecc05f717e5d4bafa90cc316ce38659aa17b448389c95588806",
+      "bytes": 9963
+    }
+  ],
+  "embedded_notices": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree/plan/verification/fnd06-koop-custody/embedded-notices-final.json",
+    "sha256": "b3476cb0d9888e5dd77108d8babcdcbdfe7ab157414190f79901ed9f210062ec",
+    "bytes": 6550
+  },
+  "notice_gap": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/notices-001/tr46-notice-gap.json",
+    "sha256": "1341d4bec6d62704831297cc50132726583807fa141dbfc2dc3c81bcda3baf30",
+    "bytes": 639
+  },
+  "notice_source_metadata": {
+    "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/notices-001/tr46-tree.json",
+    "sha256": "14eadf03ef7356228ce6a6556c390a6368853f49c7d22632330275ff287a43ba",
+    "bytes": 2920
+  },
+  "guard_log": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree/plan/verification/fnd06-koop-custody/guards-final.log",
+    "sha256": "3cacb9072b59f2e08c983155f015654c1e637cfe4ee6fd145f2491ef31afe256",
+    "bytes": 2121
+  },
+  "package_logs": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree/plan/verification/fnd06-koop-custody/plan-tests.log",
+      "sha256": "d38cad85ee224146566061f2051e5dcc3fca7ab3881eb210ed61a7f88be8dd60",
+      "bytes": 67584
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree/plan/verification/fnd06-koop-custody/schemas.log",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+      "bytes": 189
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree/plan/verification/fnd06-koop-custody/host-python-plan-tests.log",
+      "sha256": "8d86d3f00260b57fe0dd0959b0a7a3f9348231bcfb436856c5265f4569b492d9",
+      "bytes": 73432
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree/plan/verification/fnd06-koop-custody/host-python-schemas.log",
+      "sha256": "bff470db25e15db2d8c649b6006a9eccb6e49b0bb17c25cbc95e6099a007f933",
+      "bytes": 219
+    }
+  ],
+  "rejected_candidate001": {
+    "checkpoint": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree/plan/verification/fnd06-koop-custody/candidate001-checkpoint.json",
+      "sha256": "fbfbeb30f8b72861a05b79a1c9e952bdfc8e5f3bf758d279f7cb8eae2bdc5515",
+      "bytes": 3218
+    },
+    "manifest": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-001/manifest.json",
+      "sha256": "1f3079785e0d21c32228e43234d192fc40030f7878f1e2708fc996141429ce9c",
+      "bytes": 53407
+    },
+    "reason": "Independent review found127 selected registry paths missing archive identity and acquisition. No execution occurred."
+  },
+  "scope": "Corrected candidate custody and static source review only; independent review precedes install/runtime; missing tr46 notice disposition before distribution."
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ambisgis:contracts:layer:v1",
+  "title": "AmbisGIS initial layer contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "item_id",
+    "service_id",
+    "layer_id",
+    "dataset_id",
+    "service_layer_id",
+    "service_revision",
+    "data_revision",
+    "profile",
+    "policy_mode",
+    "geometry",
+    "fields",
+    "identity_field",
+    "object_id_field"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "item_id": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "service_id": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "layer_id": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "dataset_id": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "service_layer_id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "service_revision": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "data_revision": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/uuid"
+    },
+    "profile": {
+      "const": "fnd06-addresses-v1"
+    },
+    "policy_mode": {
+      "enum": [
+        "object",
+        "row-field"
+      ]
+    },
+    "geometry": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/geometry"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:ambisgis:contracts:common:v1#/$defs/field"
+      },
+      "minItems": 1,
+      "maxItems": 64
+    },
+    "identity_field": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+    },
+    "object_id_field": {
+      "$ref": "urn:ambisgis:contracts:common:v1#/$defs/identifier"
+    }
+  }
+}

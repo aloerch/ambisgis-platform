@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-10-03T10:45:51.572423+00:00",
+  "head": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
+  "tests": [
+    {
+      "name": "package",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree/plan",
+      "returncode": 0,
+      "log_sha256": "c7c9f841d3c5f3d105c6f99827fd802cdf1492fab33a4092e029eba61529b10a"
+    },
+    {
+      "name": "schemas",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree/plan",
+      "returncode": 0,
+      "log_sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23"
+    },
+    {
+      "name": "koop-guards",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "build-support/koop",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree",
+      "returncode": 0,
+      "log_sha256": "59dc7c1c31cd9d7477198042c4b0b327ffa0088c8eb3781b372ce1a3bca9712b"
+    },
+    {
+      "name": "notice-guards",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "plan/verification/fnd06-tr46-notices/test_tr46_notices.py",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree",
+      "returncode": 0,
+      "log_sha256": "033fffc990c3c4e8305519a7443798fe204184ebfe35cd821a0cc53b7b3d6c5c"
+    },
+    {
+      "name": "diff",
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+        "HEAD"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree",
+      "returncode": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "environment_binding": {
+    "PYTHONPATH": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-worktree/plan/tools",
+    "TR46_ARCHIVE": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz"
+  }
+}

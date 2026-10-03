@@ -1,0 +1,26 @@
+[
+  {
+    "name": "@esri/proj-codes",
+    "version": "3.4.0",
+    "archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-001/registry/8d68b211e276ca92df2ea6e4c7c3f9437b0eb3c1a81627cddaedacc107eab159.tgz",
+      "sha256": "6fd817c009116c4c862cc0985125bc3dd4d7cb7250ffbef68624e30882cb3178",
+      "bytes": 780986
+    },
+    "member": "package/README.md",
+    "sha256": "62fd34747698bdd0760b22565d756d7ccd792ce72feb344d10df2efd8be7fa09",
+    "notice_present": true
+  },
+  {
+    "name": "murmurhash",
+    "version": "2.0.1",
+    "archive": {
+      "path": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-001/registry/b856e8ac51658e2ae77a0151f5bb109b4c5da11810736bd7e159580c16d97269.tgz",
+      "sha256": "04dbd6c26dcd8936d5d6926b922a073d713a68456aadc12bab8d5b8342b735cd",
+      "bytes": 3288
+    },
+    "member": "package/README.md",
+    "sha256": "be49bd2eac117ea2fe813e7b840893a6f813ee1ccd4444ddf37c864694e9aef1",
+    "notice_present": true
+  }
+]

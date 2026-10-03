@@ -1,0 +1,5 @@
+# Preserve exact retained third-party bytes, including historical whitespace.
+/UNICODE-LICENSE.txt -whitespace
+/sources/generateMappingTable.js -whitespace
+/provenance/icu56-license.html -whitespace
+/sources/IdnaMappingTable-8.0.0.txt -whitespace

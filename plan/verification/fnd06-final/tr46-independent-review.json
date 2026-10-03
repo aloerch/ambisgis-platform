@@ -1,0 +1,115 @@
+{
+  "reviewed_at": "2026-10-03T10:35:46.664329+00:00",
+  "base": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
+  "head": "cb5a1a945bd94b80f2d52cc0faa6e0bf93303485",
+  "changed_files": {
+    "build-support/koop/notices/tr46-0.0.3/.gitattributes": "ba46803726b132d087f7b2c4d2f1538560a4e155d8275c77f4476397983ee3fb",
+    "build-support/koop/notices/tr46-0.0.3/MIT-LICENSE.txt": "eeed1ca176eebad5c73870e233cfff03981fecd319c969475dfa3633036c336b",
+    "build-support/koop/notices/tr46-0.0.3/NOTICE.txt": "4cb80c4a22e20eab6428866530e76f9ff5e0df58f06980b4f13b5b2183112e10",
+    "build-support/koop/notices/tr46-0.0.3/README.md": "592b9d2cdc109654692f4deb82c149b235e816eb0b16b6bc8dbb2294f6215eab",
+    "build-support/koop/notices/tr46-0.0.3/UNICODE-LICENSE.txt": "5413a36c98c49fc422e4966bc4a068dc443826f91dfd37d59cf0576dc2121709",
+    "build-support/koop/notices/tr46-0.0.3/input-manifest.json": "760dba33ab7b05ecf622c5a5be93b20d7e31734e2ade76fb601530229fd82e1a",
+    "build-support/koop/notices/tr46-0.0.3/provenance/icu56-license-blob.json": "2b2cd99ec66237ae86db82819183db26476454f95ddaa6709aa68fe9708bb744",
+    "build-support/koop/notices/tr46-0.0.3/provenance/icu56-license.html": "a4fd81c0bb0aee44d90376562f53c62d17ce252b93190251d172ec837ee5c6c8",
+    "build-support/koop/notices/tr46-0.0.3/provenance/icu56-tag.json": "a8d95a15251757afda37defb2f7ca50e980522f988261d958449fa4351e5500f",
+    "build-support/koop/notices/tr46-0.0.3/provenance/license-commit.json": "c2225b970272514830b9e470c300765cec77509100e09b4f2a3f968636be543b",
+    "build-support/koop/notices/tr46-0.0.3/provenance/license-tree.json": "6f8dcd2b682209bd2a03e558100efb102b680a3bc90b69f7879029b4fba8ac98",
+    "build-support/koop/notices/tr46-0.0.3/provenance/selected-commit.json": "715218e9b963ff079a015307d20cb56e7d4796450b5df7520b6af0c86dd9b4e8",
+    "build-support/koop/notices/tr46-0.0.3/provenance/selected-tree.json": "14eadf03ef7356228ce6a6556c390a6368853f49c7d22632330275ff287a43ba",
+    "build-support/koop/notices/tr46-0.0.3/sources/IdnaMappingTable-8.0.0.txt": "5e9f5929130b713e698162ac5b60a99ccfb831606686b1c50777cd920b55dee2",
+    "build-support/koop/notices/tr46-0.0.3/sources/generateMappingTable.js": "7e236cd8f70870ed149068f9b6aa4d382289c2c2f72c71f0bc42c2e0f1beed9f",
+    "build-support/koop/notices/tr46-0.0.3/sources/index.js": "8194f9425ce9ab06ea9aebcd64a85ec064d95d61bb349f8f1c98762ad256638e",
+    "build-support/koop/tr46_notices.py": "51dc583d55b712838f990530afe9bdf6ccdfb48e5b71d87b97b1d70070500442",
+    "plan/docs/fnd-06-tr46-notice-supplement.md": "6fecbe6186ce7c1b4a165a17a6622cffdf93e201daf061fc20ed4f8b15cd9567",
+    "plan/verification/fnd06-tr46-notices/commands.json": "606186832f3953305c597913bf1a37136cf2de04864115f797a79780c18dea89",
+    "plan/verification/fnd06-tr46-notices/evidence.json": "19f0f8fc5c364b179bd40d8eaa13f41e83c8db9994f9a98798c51cde08015645",
+    "plan/verification/fnd06-tr46-notices/executed-run-checks.py": "a42a06906f4c704191996f0408264af371198bcd49865145aeb5e7c026f064e5",
+    "plan/verification/fnd06-tr46-notices/guards-network.json": "aa1f663b37585bf8bfb8dbcf0a4984ac49e70822e0b855148231bb2782e00d6e",
+    "plan/verification/fnd06-tr46-notices/guards.stderr": "6f04d7a1d51660a67fa65926574a096d7fe057a91806c0cb956624c681749128",
+    "plan/verification/fnd06-tr46-notices/guards.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plan/verification/fnd06-tr46-notices/package-schemas.log": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23",
+    "plan/verification/fnd06-tr46-notices/package-tests.log": "eaf4b59dc344fba9ec23ab1f6eaecb2263393333c1b9a0782e3272dd6121d263",
+    "plan/verification/fnd06-tr46-notices/stage-manifest.json": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+    "plan/verification/fnd06-tr46-notices/stage-network.json": "a6c37a1682383390833cc36282cf3d09fadb224eb740ca5f41d97b689fa6c98d",
+    "plan/verification/fnd06-tr46-notices/stage.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plan/verification/fnd06-tr46-notices/stage.stdout": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+    "plan/verification/fnd06-tr46-notices/staged-verifier-network.json": "9ee2b6a3f67ccb458cd3bfd51cae0275aa3a6d3c4c09842ce1c665e114d8b841",
+    "plan/verification/fnd06-tr46-notices/staged-verifier.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plan/verification/fnd06-tr46-notices/staged-verifier.stdout": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+    "plan/verification/fnd06-tr46-notices/test_tr46_notices.py": "7ebb06b01924798c8b7846157abc1e5a5fe62d7a71817622b73191f53abe9b52",
+    "plan/verification/fnd06-tr46-notices/verify-network.json": "6ba0105fa4a3ece9df22fe1d56ac53a576c004619888f8845209efa0178ed118",
+    "plan/verification/fnd06-tr46-notices/verify.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plan/verification/fnd06-tr46-notices/verify.stdout": "bf8b4ae21162f10a0ebcccc67c908166a0df85dc779aa9d2f5957a310a5bb359"
+  },
+  "checks": [
+    {
+      "name": "guards",
+      "argv": [
+        "python3",
+        "plan/verification/fnd06-tr46-notices/test_tr46_notices.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "log_sha256": "735f1f1d68e261acc6973eb2e3f3736f2f6b4fb4c6c469d36185eefdfc09a08d"
+    },
+    {
+      "name": "stage",
+      "argv": [
+        "python3",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/tr46_notices.py",
+        "stage",
+        "--archive",
+        "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz",
+        "--output",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-tr46-independent-002/stage"
+      ],
+      "returncode": 0,
+      "log_sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2"
+    },
+    {
+      "name": "staged-source-only",
+      "argv": [
+        "python3",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-tr46-independent-002/stage/source/tr46-0.0.3/tr46_notices.py",
+        "verify-stage",
+        "--archive",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-tr46-independent-002/stage/source/tr46-0.0.3/original-npm-archive.tgz",
+        "--bundle",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-tr46-independent-002/stage/source/tr46-0.0.3/supplement",
+        "--output",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-tr46-independent-002/stage"
+      ],
+      "returncode": 0,
+      "log_sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2"
+    }
+  ],
+  "stage_manifest_sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+  "archive_unchanged": true,
+  "evidence_sha256": "19f0f8fc5c364b179bd40d8eaa13f41e83c8db9994f9a98798c51cde08015645",
+  "reviewer": "/root",
+  "repository": "aloerch/ambisgis-platform",
+  "branch": "fnd-06/tr46-notice-supplement",
+  "clean": true,
+  "decision": "PASS exact source/notice supplement. The missing full tr46 notice/generated-data provenance finding is remedied for the reviewed supplement and staged software/documentation/source layout; broader product packaging and distribution remain unapproved.",
+  "historical_provenance_review_sha256": "21a404d88ce105f0260d444edf508cae84e42003573e860a4301d671d307f9ff",
+  "selected_references_rehashed": 17,
+  "targeted_tests": 14,
+  "independent_stage_matches_producer": true,
+  "reviewed_behavior": [
+    "Read full standalone helper and actual14guard suite; fixed manifest digest, exactfile/directorysets, regular inputs, symlink ancestor rejection, no network/install/thirdpartycode, new output only with preserved partial failures",
+    "Recomputed all original/donor root and nested Git trees; same13priorentries, direct notice-only successor and4identical npm source members",
+    "Reconstructed remaining generated member from retained Unicode8 source:8179rows/260049bytes exact; full MIT bytes and complete historical Unicode section preserved",
+    "Actual independent fresh stage and staged-source-only verify both pass; rewritten manifest/content, omitted/extra/symlink inputs, archive tampering/unsafe structures and existing-output negatives pass",
+    "Narrow bundle-local whitespace attributes cover exactly4hashverified thirdparty paths; original bytes remain unchanged",
+    "Reviewed complete notices and modification statement in both software and documentation, with unchanged original archive/generatedtable/sourceinputs/helper retained together"
+  ],
+  "boundaries": [
+    "No archive/lock/installed-runtime/shared-installer mutation",
+    "ClassB retained dependency evidence, no new public repository or donor synchronization",
+    "Future installer/release must include reviewed notices and source obligations; unrelated LGPL and other dependencies, branding, security, signing and release acceptance remain open",
+    "Private evaluation/staging only; no deployment or blanket legal/distribution certification"
+  ],
+  "prior_attempts": [
+    "Independent001 passed original supplement; final fourth-path source-whitespace preservation updated onlymanifest/helperbinding, new independent002 passed; oldstage preserved"
+  ]
+}

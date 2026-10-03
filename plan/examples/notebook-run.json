@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "notebook_item_id": "10000000-0000-4000-8000-000000000008",
+  "notebook_revision": "10000000-0000-4000-8000-000000000009",
+  "environment_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "parameters": {
+    "threshold": {
+      "type": "int32",
+      "value": 100
+    }
+  },
+  "read_items": [
+    "10000000-0000-4000-8000-000000000001"
+  ],
+  "publish_targets": [],
+  "idempotency_key": "synthetic-run-0001",
+  "timeout_seconds": 300,
+  "input_revisions": [
+    {
+      "item_id": "10000000-0000-4000-8000-000000000001",
+      "revision_id": "10000000-0000-4000-8000-000000000009"
+    }
+  ],
+  "package_lock_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "sdk_version": "0.0.0-fixture-unimplemented"
+}

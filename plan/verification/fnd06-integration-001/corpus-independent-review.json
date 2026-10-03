@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "reviewer": "publication_review",
+  "reviewed_at": "2026-10-03T10:03:00.862929+00:00",
+  "status": "No unresolved material findings in the reviewed synthetic corpus increment.",
+  "repository": "aloerch/ambisgis-platform",
+  "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-worktree",
+  "branch": "fnd-06/synthetic-corpus",
+  "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "head": "c0983e6898b991a16c62dab066a9f40ded88c155",
+  "tree": "160cd9cd3be332646576544afc524b29f0645f21",
+  "clean": true,
+  "scope": "Independent code, fixture, custody and actual native evidence review. Whole FND06 and Koop adoption are pending the separate real provider/runtime and aggregate reviews.",
+  "criteria": [
+    "Original FND06 requires agreed authoritative tiers/ownership, all five user goals retaining traceable acceptance tests, and tested Koop output/pushdown/pagination/permission/licensing before bespoke C1 encoding. These criteria remain unchanged.",
+    "Chapter09 section4 corpus cases, chapters02/06 explicit CRS/dimension policy, chapter08 license policy and chapter11 source authority considered. Corpus provides inputs; it does not waive R01-R24, P0-P7, T-API-01/T-SEC-ABUSE or human-only gates."
+  ],
+  "changed_files": {
+    "plan/docs/fnd-06-synthetic-corpus.md": "056d7cfcc7254069a84a217ad30ae665338e08ff827f09e9d1246feae0fe7362",
+    "plan/fixtures/synthetic-corpus/README.md": "200f9a9ca3a00770ebaf0682adef893b13db88146a9094606b603285fa08be09",
+    "plan/fixtures/synthetic-corpus/author_project.py": "6f9f4d422f9876f796a1e6dd0078e7b84868783ee2e521f46c995865f9ed7aa3",
+    "plan/fixtures/synthetic-corpus/expected-small.json": "64a64430a58619c3ddb132531ccb9ee7631e60fbbdcbc80f0fcb9b2d2214ea50",
+    "plan/fixtures/synthetic-corpus/small/README.txt": "9c748578fe7bd38bb9749652cbb96a73648e4bedc21754885374ed2794fe68c2",
+    "plan/fixtures/synthetic-corpus/small/addresses.geojson": "cef35342997a939a5af5a8710931bdc0d62f4c4502df16af1c75db7bc254d939",
+    "plan/fixtures/synthetic-corpus/small/addresses.ndjson": "7f6bbd0ee06d614bbcb776edfe9e8ee60d47f6b514bf1f77ddac8609c8b5a34f",
+    "plan/fixtures/synthetic-corpus/small/attachment-references.json": "5b06070b427f5830252b0230a9314b105706e5b992a1cc20cddf1df5d7f43c16",
+    "plan/fixtures/synthetic-corpus/small/attachments/inspection.txt": "d3ad3fb21430ce7e11ddb3c3d7c273e870c2f61e40041173509f49f113481021",
+    "plan/fixtures/synthetic-corpus/small/expected-small.json": "94d2aa70aeba40c995bb242d1437ae9a24a5bada03cb2cf4801db479172b3d7c",
+    "plan/fixtures/synthetic-corpus/small/inspections.csv": "b8094408dd19183d7b290628d75611a5e78d43ce73c603784b9acaf97c6acd9e",
+    "plan/fixtures/synthetic-corpus/small/inspections.csvt": "78a78f5ad4185377af1e5c5865207be0af5f5d8f917a8c5d0f016dbbbc294f8f",
+    "plan/fixtures/synthetic-corpus/small/invalid/abuse-inputs.json": "6610344b186af596e1b2d5fdadf67d801081093fb456633730784fa9866f91ac",
+    "plan/fixtures/synthetic-corpus/small/invalid/duplicate-object-id.geojson": "c5a0bf39619350a96bf30ec7920d3a1acca37966cb7f8a1044c6c93dd90168a6",
+    "plan/fixtures/synthetic-corpus/small/invalid/duplicate-uuid.geojson": "a4c0f4dc751ffbcf6fe2f9f672be71e5f86742ed4585725019effb7e7b319e17",
+    "plan/fixtures/synthetic-corpus/small/invalid/orphan-inspection.csv": "e2d496ef4984b7f8e4a8929b619eeb17657f682387e57f1a879f65ef28088f25",
+    "plan/fixtures/synthetic-corpus/small/invalid/self-intersection.geojson": "9fb7d9ca3703e19b8021d2b6e850a4d6e3426cc61998f3cbc073d431f7a591e2",
+    "plan/fixtures/synthetic-corpus/small/invalid/typed-errors.json": "7a0effe9b433d000390a377b265bf3ef8126ce4c19887281c410361548d0c612",
+    "plan/fixtures/synthetic-corpus/small/manifest.json": "9d55e9bdffeee83e4d9bd09166469c1360987b8572cb27ad42087c9eca878efb",
+    "plan/fixtures/synthetic-corpus/small/native/dimensions.csv": "380ab81df1135eac0376c4f3f68ff1ecb6470b52524806bd57e47f5e34d04d24",
+    "plan/fixtures/synthetic-corpus/small/native/epsg2230.csv": "37d0fc4c9e28fa3f842741e3dd5eeecefc54a2dbc7a5ca4acd2b19a53c8637c7",
+    "plan/fixtures/synthetic-corpus/small/native/null-empty-geometry.geojson": "b3d3f3bfda0bd3e5ea72af4388b390325ca72126ab9a39f2778362665799699f",
+    "plan/fixtures/synthetic-corpus/small/native/typed-values.csv": "cc3026299c913ee77f53e022d186a7bee7d53873617dab19ce003a9aa056c2f8",
+    "plan/fixtures/synthetic-corpus/small/parcels.geojson": "50221324d6158c813b26e22f36db17ec1f88eb2d97c9e2022a7a0d8caa92e594",
+    "plan/fixtures/synthetic-corpus/small/policy-scenarios.json": "09244a2562b46a4049ea88993e5a9a9fd83bcc4d93a5e526080977798c4caeec",
+    "plan/fixtures/synthetic-corpus/small/raster/multiband-band-1.raw": "48284c7e09c546a12aeaa191e82f6868149c872dd25f6c2db14f40e1494a3868",
+    "plan/fixtures/synthetic-corpus/small/raster/multiband-band-2.raw": "2a4a677da3f9f7e28a8f2cb1c0dd3d8853b53a010d86d32fc786801b7e05c638",
+    "plan/fixtures/synthetic-corpus/small/raster/multiband-band-3.raw": "56dc03f267f1a5fea5431893dd528aac61a10be8567e44d8a15eecfa2f67472d",
+    "plan/fixtures/synthetic-corpus/small/raster/multiband.vrt": "83df48faf454d7cca33b7543d864ba76cba57c3dd02882acfbd3ae9db2a84fe9",
+    "plan/fixtures/synthetic-corpus/small/raster/time-20260101-band-1.raw": "1c6ab6d5790d8ea5ef7e7200d5cd5289f92db1b69bda3313dbc573a45cfc6756",
+    "plan/fixtures/synthetic-corpus/small/raster/time-20260101.vrt": "ed67d5e5b4a0bfae073df617571c513c96472e49a946be9f8cff24837a869164",
+    "plan/fixtures/synthetic-corpus/small/raster/time-20260102-band-1.raw": "8ad457392f6884d69a6604fa627a269637b1f41c00771c34e1fe1656e6b393d5",
+    "plan/fixtures/synthetic-corpus/small/raster/time-20260102.vrt": "1c58fb5096f2af371d53dfa7ba67231513d43a0cf9725d7519f4e2e91b26d463",
+    "plan/fixtures/synthetic-corpus/small/raster/time-mosaic.csv": "c1801be7393d3abb1bb130c676dfd5a4b479fe20586932ce7f96e4f4b39a0ece",
+    "plan/fixtures/synthetic-corpus/small/rich-style.qgs": "7a66ac84a6ac37f775e482f51ff6d60a518b9b268ad01d88616267deb794ce58",
+    "plan/fixtures/synthetic-corpus/small/roads.geojson": "59fbbb0a8856c7b8697c9404a6ac9f404b3efd1ddb6e14a88127158ff291137e",
+    "plan/fixtures/synthetic-corpus/small/schema.json": "3b9120e45aede5c4a4863dd27405d5db3fa0a535e4ce163fb7f67ade2bbca5f7",
+    "plan/fixtures/synthetic-corpus/templates/rich-style.qgs": "7a66ac84a6ac37f775e482f51ff6d60a518b9b268ad01d88616267deb794ce58",
+    "plan/fixtures/synthetic-corpus/verification/author-project-002.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "plan/fixtures/synthetic-corpus/verification/author-project-command-002.json": "732c4162c87d1dad2654c848e7296061ca305ed2d323dc543342acbd1b1c98ed",
+    "plan/fixtures/synthetic-corpus/verification/author-project-network-002.json": "6526f1354985b54bbc17af7d53b5e7f2a6d54b2670794cacdd1010f0249d27e4",
+    "plan/fixtures/synthetic-corpus/verification/evidence.json": "52615f55aa6247fbe8765598951ea8f4b845eb1c3afd2b9ccc26dfdd8c552bf6",
+    "plan/fixtures/synthetic-corpus/verification/exercise-scales.py": "babf6eb03496f6cc007a0490d4592a1102d3920f74724846663f23fdd942be69",
+    "plan/fixtures/synthetic-corpus/verification/failed-attempts/initial-authoring.json": "239b9998fa112bc54b4c011467c24b0efe554355cbd2884c1423ccb7c58b48fb",
+    "plan/fixtures/synthetic-corpus/verification/failed-attempts/initial-native.json": "c1ada44fc452bc05ff38c4adc8643c2df55b34017d74f93a407ca640ec453d4f",
+    "plan/fixtures/synthetic-corpus/verification/failed-attempts/round004-truncated-negative.json": "2ceaeb7eaa7ad8f737ecbf0244684cbf3d283fe77004f0134b2d7b09fb338db4",
+    "plan/fixtures/synthetic-corpus/verification/final-checks.py": "7c3934b41a098f13d6dda577a0610c9903a5aa783deddef24d3dd5e12bfbd3b6",
+    "plan/fixtures/synthetic-corpus/verification/large-manifests/100000.json": "5aeb5aad8a0f47780fdcba69bc6b568689bb14dc6b30927fa1e14b6796e06a88",
+    "plan/fixtures/synthetic-corpus/verification/large-manifests/1000000.json": "b480f7687b33e7c5d89bdd24eb5fb04996feb51c1f34ba891d57f976ba1fc4b8",
+    "plan/fixtures/synthetic-corpus/verification/native-scale-100000-command.json": "2910da60093f28e927c3f0f62430f6caafc959f5ff1e83b5f3aa1bcfc78b1af8",
+    "plan/fixtures/synthetic-corpus/verification/native-scale-100000-network.json": "562287bbc35d1160cf19ed42ec26b65e7d69c6ff8380515be3936bcdbbf16963",
+    "plan/fixtures/synthetic-corpus/verification/native-scale-100000.json": "e9fa65dc60a92e5a8aee4679aae0bef5fe9b7bf527cfe80f8ce8b721b8f4eec5",
+    "plan/fixtures/synthetic-corpus/verification/native-scale-100000.log": "fdd7dfec338630b334b3edb985308a3156b44b75084c01969db5e76d475466ee",
+    "plan/fixtures/synthetic-corpus/verification/native-scale-1000000-command.json": "b7e7d141eef2de0c78a2d0f8bb45977c6801db65460d519691633d3b91495089",
+    "plan/fixtures/synthetic-corpus/verification/native-scale-1000000-network.json": "5e3a50ff230ba0959a9e0482e972a2dd4e4bceb1e3090b99e87c92f432bb6800",
+    "plan/fixtures/synthetic-corpus/verification/native-scale-1000000.json": "7f6657cf105b41618ded9047972b5cd7efe677fd510841ecb9112dfebe978192",
+    "plan/fixtures/synthetic-corpus/verification/native-scale-1000000.log": "e4bda0af8712483a5ce198892e2f62296ef7cf44af3a3dc7d46cc6607402889b",
+    "plan/fixtures/synthetic-corpus/verification/native-small-command.json": "0d4097d6c01c8fe54f509a7ab666018f0fbcc8dc48bf58899fdb804e77d168b8",
+    "plan/fixtures/synthetic-corpus/verification/native-small-network.json": "7ee39a4ebb067b5830a6f65c6ef7e05400dbd1e5a741dd5b8972e6b44954f942",
+    "plan/fixtures/synthetic-corpus/verification/native-small.json": "2bfc9767e35b4aa463785a78f3ba56ea4a64ee3ec90469c531d9bcd0dc921d13",
+    "plan/fixtures/synthetic-corpus/verification/native-small.log": "2c30492d377f4ea0c56580ff7e8929f3f39ce7fcfd7d32d0dcce986922237cdf",
+    "plan/fixtures/synthetic-corpus/verification/package-schemas.log": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+    "plan/fixtures/synthetic-corpus/verification/package-tests.log": "7b45e99e128056285f9ab03e4c2bc32ce4011a133c0575f1b80c80302db432ac",
+    "plan/fixtures/synthetic-corpus/verification/project-evidence.py": "0e0fd426d088b828d8df98cca66291a6ce7257d1fe21cce1b87a417a6179bd89",
+    "plan/fixtures/synthetic-corpus/verification/reject-changed-feet-command.json": "7d85ed064612c93307519fd2888b99bd10e56a63ba48039002db858fee17eec0",
+    "plan/fixtures/synthetic-corpus/verification/reject-changed-feet-derivative-manifest.json": "ed9eb91c7b358018f8cf98b528b753f2c6d751ed6b9da32c6d16156032abe817",
+    "plan/fixtures/synthetic-corpus/verification/reject-changed-feet-log.json": "8321b7839dc32e9f563887676d3445a7a93a99428c8486f6469b889c0ec82ca0",
+    "plan/fixtures/synthetic-corpus/verification/reject-changed-feet-network.json": "46e5c5e32f7b134dc9f90a667867987c9f370375a8a8544591a3f964248fea24",
+    "plan/fixtures/synthetic-corpus/verification/reject-truncated-ndjson-command.json": "6caa9a7192cf031eaa4f32387fcdcc7b3b824c06a09093bebc2ce9c4963939c1",
+    "plan/fixtures/synthetic-corpus/verification/reject-truncated-ndjson-derivative-manifest.json": "441ac09ee26c7c8f2f024b4dfe2f433b5c647eb02e07fcea3b660f5972d76809",
+    "plan/fixtures/synthetic-corpus/verification/reject-truncated-ndjson-network.json": "bae667ca901d51612ed09114296475236e480cbeaea960a70000299a8ef32f3d",
+    "plan/fixtures/synthetic-corpus/verification/reject-truncated-ndjson.log": "dfe3b94c622dba8f62b25600f36e281e1f28f6f8e444bc1677043a1d23dfaf5b",
+    "plan/fixtures/synthetic-corpus/verification/scale-100000-command.json": "0a958290068584286d144d175930d8ef308e324953287ff92f5a91a2d79d2eb0",
+    "plan/fixtures/synthetic-corpus/verification/scale-100000-network.json": "0ae50247fd6cecf7a2c2637dd35c7510e087c0435cf1fd390521cca7d76f8703",
+    "plan/fixtures/synthetic-corpus/verification/scale-1000000-command.json": "f402f592ad1bcd7c31b0177a8a32885301affdba96354033453c7fe88d652209",
+    "plan/fixtures/synthetic-corpus/verification/scale-1000000-network.json": "a136b990ea761ab569ab0d17ddff53c878f8c27bb11a271dfcc5b05fd946d2e9",
+    "plan/fixtures/synthetic-corpus/verification/scale-results.json": "1c21527a8a3fe312f48f174366d80df0e910b7985bd0ef97a3e2e5819a70396d",
+    "plan/fixtures/synthetic-corpus/verification/wrong-owned-source-001-command.json": "56273f98ebeb161b4b93b99b33189c72430308022a2899bd79fe5093386a2497",
+    "plan/fixtures/synthetic-corpus/verification/wrong-owned-source-001-derivative-manifest.json": "9d55e9bdffeee83e4d9bd09166469c1360987b8572cb27ad42087c9eca878efb",
+    "plan/fixtures/synthetic-corpus/verification/wrong-owned-source-001-network.json": "235d39ec733c0d305bd836d277564f420ec8f0e667c629015a62c5cf40183e3e",
+    "plan/fixtures/synthetic-corpus/verification/wrong-owned-source-001.log": "59440e7a83ec9eab4ab830188210e8cc7f7f4a9cc465900e30b990d67fe867ab",
+    "plan/fixtures/synthetic-corpus/verification/wrong-owned-source-config.json": "b1172aa79247620921629119f2283efd4ec1c223e889895c5e050397cee3c4fc",
+    "plan/tests/test_synthetic_corpus.py": "79048bfa20735968f818b8ef1ee4c0753603efec5791932776bfaf6179ebdbd0",
+    "plan/tools/synthetic_corpus.py": "3b5dbef208989b54e8640348083dcc9d51c696f0dd8cef1f1c58b8f2d92b0f52"
+  },
+  "control_scope": "84 additions only: one corpus document, fixture/template/evidence tree, one new test module and one new helper. Existing workflows, gates, package/schema validators, source locks, standing delegation, catalog authority, production modules, shared ledger, backlog and original acceptance criteria unchanged.",
+  "evidence": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-worktree/plan/fixtures/synthetic-corpus/verification/evidence.json",
+    "sha256": "52615f55aa6247fbe8765598951ea8f4b845eb1c3afd2b9ccc26dfdd8c552bf6",
+    "public_references_rehashed": 42,
+    "source_bindings_rehashed": 6,
+    "producer_sha256": "3b5dbef208989b54e8640348083dcc9d51c696f0dd8cef1f1c58b8f2d92b0f52",
+    "executed_scripts_match_retained_originals": true,
+    "changed_feet_log_json_preserves_exact_raw_bytes": true
+  },
+  "independent_checks": [
+    {
+      "command": "flatpak-spawn --host python3 -m unittest discover -s tests -p test_synthetic_corpus.py -v",
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-worktree/plan",
+      "passed": 17,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "coverage": "Determinism/full checked-in regeneration, hand scalar oracle, numeric/date text, IDs, relationships, invalid cases, binary raster samples, limits, existing-output preservation, symlink/report ancestors, rewritten-manifest QGS/VRT external references."
+    },
+    {
+      "check": "Actual complete payload and row audit",
+      "result": "Rehashed every actual file and exact32-member sets in all five final corpus directories (small,100k,1m,changed-feet,truncated-NDJSON). Scanned all12/100000/1000000 NDJSON rows: UUIDv5 recomputed from literal namespace/version/seed/dataset/index; uniqueness, GeoJSON id equality, sequential ObjectIDs; population660/5499840/54999840; null and empty counts each2/16667/166667. Both derivative inputs remained unchanged."
+    },
+    {
+      "host_command": "flatpak-spawn --host python3 /home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-runtime/independent-native-driver-001.py",
+      "driver": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/executed-driver.py",
+      "driver_sha256": "de28243d207a483b18ec8c5141de515ab26f9911e60b4a738e8c9e67ee717cfd",
+      "summary": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/summary.json",
+      "summary_sha256": "7b1eb0ff972a827054d266bfaeaed821316214b59d437bfd673f6e524ff61c83",
+      "result": "My actual owned-QGIS small native run exits0. Actual changed-feet and empty-NDJSON native negatives each exit1, no passing report. Socket denial probes pass, and full input membership/sizes/hashes remain unchanged."
+    },
+    {
+      "command": "flatpak-spawn --host git diff --check 6d18637e39818e60bcc947d3a7c252e84ab48fe0 c0983e6898b991a16c62dab066a9f40ded88c155",
+      "result": "pass"
+    },
+    {
+      "check": "Credential-pattern and manual source/data/project/log inspection",
+      "result": "No token-prefix, PEM private key, authenticated URL, password= or Authorization Bearer pattern matches in changed paths; no actual credential material identified. A bounded inspection, not a universal secret-scanner claim."
+    }
+  ],
+  "producer_checks": "Inspected/rehashed final actual small/100k/1m native runs exit0 and wrong-source/changed-feet/empty-NDJSON negatives exit1, command-bound socket denial and no negative passing reports. Producer474 package tests (17 corpus) and4schemas pass; exact logs bound. I reran17 corpus tests and three native subprocesses, not the entire474-test suite.",
+  "native_scope": "Real GDAL vector counts, first12 actual attribute/geometry comparisons, raster samples/NoData, two time tiles, XYZ/XYM/XYZM/empty/null, invalid polygon GEOS rejection, actual CSV EPSG2230 transformation, four local QGIS project layers and nonempty512x384 native render. Actual ownedQGIS86af40542b219b0da6df1a43914413443330c0c0, stage002 manifest2527ac72341fa52fa7f446800b8cecd5cb5e02e8192334f0a9649c9e81214248 and config5990ce8512cc548d9900241ee06e8e6df4f9a8865d3b65a6ffef7cdb5a10f3e7 reused honestly; actual binding/font hashes retained.",
+  "resolved_findings": [
+    "Original EPSG2230 check ignored CSV and used a literal point. Final reads actual CSV SRID/UUID/WKT coordinates, verifies expected fixture, transforms that point and records its input/hash; actual changed-point negative passes.",
+    "Original zip comparison could stop early and claim first12 success. Final requires all12 rows with ordered ObjectIDs; actual empty-NDJSON negative passes.",
+    "Actual negative exposed traceback-retained provider locals causing shutdown exit139. Final clears inspected traceback frames while QGIS is alive, leaves except, shuts down, then raises plain failure. My actual negatives exit1 and no receipt. All original failed receipts remain failed and retained.",
+    "Confirmed earlier root repairs in code: exact approved QGS/VRT/raw profile before parsing, output/report ancestor symlink guards, owned source/binding/font checks, PROJ networking disabled, fallback/ballpark disabled and actual operation/grids recorded."
+  ],
+  "boundaries": [
+    "Synthetic first-party fixtures under existing GPL-3.0-or-later policy, no organization/real-person/proprietary data or copied runtime/font bytes. Third-party runtime/font rights remain.",
+    "One catalog retained: policy scenario files are future setup expectations, not grants or passing authorization tests. Abuse strings remain inert.",
+    "No remote writes, settings, credentials, deployment, SQL mutation, deletion or source edits in this review. Generator refuses existing destinations/symlink ancestors and retains partial failures. Authoring is explicitly for disposable fixture outputs."
+  ],
+  "limits": [
+    "Trusted self-generated fixture profile, not a general hostile-QGIS/upload validator or filesystem sandbox. Offline wrapper allows AF_UNIX and host filesystem access.",
+    "EPSG2230 operation has4metre reported accuracy and no grids;0.01USsurveyfoot inverse consistency is not centimetre geodesy or arbitrary grid-transform support.",
+    "Large timings are single fixture generation observations, not service/database capacity or memory benchmarks; uniqueness verifier uses a set.",
+    "High-precision decimal/largeID/date/time checks are text/oracle checks, not native typed-column roundtrips; nonempty render is not cross-engine fidelity.",
+    "All five original user-goal tests remain required. Real query policy, editing, publishing, clients, notebooks, concurrency and recovery remain owning-module acceptance; corpus availability does not complete FND06."
+  ],
+  "review_attempt_notes": [
+    "Initial independent-driver host launch from container/tmp failed before execution because host/tmp differs; copied identical driver into shared runtime path, then succeeded.",
+    "Initial review-save validation expected projection script inside round005; it is retained in its parent runtime directory. Correct path rehashed and compared; no report had been written by the failed assertion."
+  ],
+  "private_raw_refs": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/changed-feet-command.json",
+      "sha256": "70a25609324ebc5e4dfab7a289aa5175e267d679a70d6f1d04e92db13829045e",
+      "bytes": 5289
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/changed-feet-network.json",
+      "sha256": "ed1f3e87539b81d139e4bce35b57385069f706f9fb1f21584b4049e6397811a4",
+      "bytes": 2216
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/changed-feet.log",
+      "sha256": "5081e9c81296adf3ab096ebf875d39830f1b1a8cbc7c8176063703f7a6cdc5e4",
+      "bytes": 29
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/executed-driver.py",
+      "sha256": "de28243d207a483b18ec8c5141de515ab26f9911e60b4a738e8c9e67ee717cfd",
+      "bytes": 2623
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/small-command.json",
+      "sha256": "56f30d86fd945dc8e948f76d4355de563317300a8426e91adf974f7cde1b3067",
+      "bytes": 5267
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/small-network.json",
+      "sha256": "0c374a01659c3cf7313181909acaacc64c210051e97587d9af01d6589261a66c",
+      "bytes": 2202
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/small.json",
+      "sha256": "2bfc9767e35b4aa463785a78f3ba56ea4a64ee3ec90469c531d9bcd0dc921d13",
+      "bytes": 3919
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/small.log",
+      "sha256": "2c30492d377f4ea0c56580ff7e8929f3f39ce7fcfd7d32d0dcce986922237cdf",
+      "bytes": 3241
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/summary.json",
+      "sha256": "7b1eb0ff972a827054d266bfaeaed821316214b59d437bfd673f6e524ff61c83",
+      "bytes": 419
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/truncated-ndjson-command.json",
+      "sha256": "7ca4f1a72c616afdd38b747dfb6cfe65cb1c0128aa447ef71c1574248a5c1211",
+      "bytes": 5301
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/truncated-ndjson-network.json",
+      "sha256": "c672b15b6a3b7a9d2fdc467a3246f2370f6409d95b4f3a877718bcd83b53d253",
+      "bytes": 2224
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-corpus-independent-001/truncated-ndjson.log",
+      "sha256": "dfe3b94c622dba8f62b25600f36e281e1f28f6f8e444bc1677043a1d23dfaf5b",
+      "bytes": 75
+    }
+  ]
+}

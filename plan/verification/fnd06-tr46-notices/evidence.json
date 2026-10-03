@@ -1,0 +1,117 @@
+{
+  "actual_source_files": {
+    "build-support/koop/tr46_notices.py": "51dc583d55b712838f990530afe9bdf6ccdfb48e5b71d87b97b1d70070500442",
+    "plan/docs/fnd-06-tr46-notice-supplement.md": "6fecbe6186ce7c1b4a165a17a6622cffdf93e201daf061fc20ed4f8b15cd9567",
+    "plan/verification/fnd06-tr46-notices/test_tr46_notices.py": "7ebb06b01924798c8b7846157abc1e5a5fe62d7a71817622b73191f53abe9b52"
+  },
+  "actual_stage_path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-002/stage",
+  "archive_sha256": "164ae1eb32cea353551bbc7f9358dcaae4ffabbe65ec37a92ca464a9570a2a0a",
+  "base_commit": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
+  "guarded_inputs_unchanged": true,
+  "historical_source_equivalence": "All root/nested trees recomputed; all13 pre-existing entries unchanged;4 archive members equal source blobs; fifth member reconstructs byte-exactly from pinnedUnicode8 source.",
+  "input_manifest_sha256": "760dba33ab7b05ecf622c5a5be93b20d7e31734e2ade76fb601530229fd82e1a",
+  "package_tests": 502,
+  "preserved_whitespace_paths": {
+    "UNICODE-LICENSE.txt": {
+      "bytes": 1970,
+      "sha256": "5413a36c98c49fc422e4966bc4a068dc443826f91dfd37d59cf0576dc2121709"
+    },
+    "provenance/icu56-license.html": {
+      "bytes": 20237,
+      "sha256": "a4fd81c0bb0aee44d90376562f53c62d17ce252b93190251d172ec837ee5c6c8"
+    },
+    "sources/IdnaMappingTable-8.0.0.txt": {
+      "bytes": 793222,
+      "sha256": "5e9f5929130b713e698162ac5b60a99ccfb831606686b1c50777cd920b55dee2"
+    },
+    "sources/generateMappingTable.js": {
+      "bytes": 1231,
+      "sha256": "7e236cd8f70870ed149068f9b6aa4d382289c2c2f72c71f0bc42c2e0f1beed9f"
+    }
+  },
+  "prior_stage": {
+    "commands_sha256": "2756cb969ffc574f830276134e1a6448c553fc8ed49af29f5424e0118d43ac79",
+    "disposition": "Passed earlier stage remains unchanged privately. Final rerun binds one additional scoped whitespace-preservation path for the unchanged historical Unicode data EOF; no runtime/source-data change.",
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-001",
+    "stage_manifest_sha256": "8f69d5be55f89d812b13e6448b57d0ec1442e4e0646f6588c43e85996dff36e7"
+  },
+  "remaining_integration": "Integrator must include staged software/documentation notices and source in any later candidate; broader rights/security/adoption/distribution remain separately gated.",
+  "schema_examples": 10,
+  "schema_version": 1,
+  "scope": "Exact tr46@0.0.3 notice/source supplement only; no package installation, runtime/data changes, Koop adoption or product distribution approval.",
+  "selected_evidence": {
+    "commands.json": {
+      "bytes": 9313,
+      "sha256": "606186832f3953305c597913bf1a37136cf2de04864115f797a79780c18dea89"
+    },
+    "executed-run-checks.py": {
+      "bytes": 3567,
+      "sha256": "a42a06906f4c704191996f0408264af371198bcd49865145aeb5e7c026f064e5"
+    },
+    "guards-network.json": {
+      "bytes": 1877,
+      "sha256": "aa1f663b37585bf8bfb8dbcf0a4984ac49e70822e0b855148231bb2782e00d6e"
+    },
+    "guards.stderr": {
+      "bytes": 2225,
+      "sha256": "6f04d7a1d51660a67fa65926574a096d7fe057a91806c0cb956624c681749128"
+    },
+    "guards.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "package-schemas.log": {
+      "bytes": 190,
+      "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23"
+    },
+    "package-tests.log": {
+      "bytes": 74471,
+      "sha256": "eaf4b59dc344fba9ec23ab1f6eaecb2263393333c1b9a0782e3272dd6121d263"
+    },
+    "stage-manifest.json": {
+      "bytes": 5976,
+      "sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2"
+    },
+    "stage-network.json": {
+      "bytes": 2145,
+      "sha256": "a6c37a1682383390833cc36282cf3d09fadb224eb740ca5f41d97b689fa6c98d"
+    },
+    "stage.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stage.stdout": {
+      "bytes": 5976,
+      "sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2"
+    },
+    "staged-verifier-network.json": {
+      "bytes": 2279,
+      "sha256": "9ee2b6a3f67ccb458cd3bfd51cae0275aa3a6d3c4c09842ce1c665e114d8b841"
+    },
+    "staged-verifier.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "staged-verifier.stdout": {
+      "bytes": 5976,
+      "sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2"
+    },
+    "verify-network.json": {
+      "bytes": 2036,
+      "sha256": "6ba0105fa4a3ece9df22fe1d56ac53a576c004619888f8845209efa0178ed118"
+    },
+    "verify.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verify.stdout": {
+      "bytes": 1592,
+      "sha256": "bf8b4ae21162f10a0ebcccc67c908166a0df85dc779aa9d2f5957a310a5bb359"
+    }
+  },
+  "selected_run": "run-002",
+  "stage_manifest_sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+  "staged_file_count": 26,
+  "targeted_tests": 14,
+  "task": "FND-06"
+}

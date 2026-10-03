@@ -72,3 +72,14 @@ condition. [The handoff](docs/canonical-and-publication-repairs-handoff.md) bind
 actual source identities, recovery/equivalence evidence and unchanged FND-07
 criteria. No held-root publication, default switch, merge, final task acceptance
 or FND-08 execution is implied.
+
+## FND-08 acceptance and FND-06 start — 2026-10-03
+
+[PR #76](https://github.com/aloerch/ambisgis-platform/pull/76) merged the independently
+reviewed owned initial-spine build evidence as `6d18637e39818e60bcc947d3a7c252e84ab48fe0`.
+[Actual acceptance](verification/fnd08-acceptance/acceptance-and-merge.json) follows
+fresh final-artifact runtime and independent verification. This accepts the original
+FND-08 criteria, including recorded raw reproducibility differences; it does not
+accept full source-toolchain bootstrap, OWN-02 repair, installation or release.
+FND-06 is dependency-ready and claimed for contracts, corpus, threat model and the
+mandatory Koop comparison. Its architecture/adoption decisions await evidence.

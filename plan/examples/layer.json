@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "item_id": "10000000-0000-4000-8000-000000000001",
+  "service_id": "10000000-0000-4000-8000-000000000002",
+  "layer_id": "10000000-0000-4000-8000-000000000003",
+  "dataset_id": "10000000-0000-4000-8000-000000000004",
+  "service_layer_id": 0,
+  "service_revision": "10000000-0000-4000-8000-000000000005",
+  "data_revision": "10000000-0000-4000-8000-000000000006",
+  "profile": "fnd06-addresses-v1",
+  "policy_mode": "object",
+  "geometry": {
+    "type": "Point",
+    "crs": "EPSG:4326",
+    "dimensions": "XY",
+    "nullable": false
+  },
+  "fields": [
+    {
+      "name": "fid",
+      "type": "uuid",
+      "nullable": false,
+      "read_only": true
+    },
+    {
+      "name": "object_id",
+      "type": "int32",
+      "nullable": false,
+      "read_only": true
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "nullable": true,
+      "read_only": true,
+      "max_length": 256
+    },
+    {
+      "name": "district",
+      "type": "string",
+      "nullable": false,
+      "read_only": true,
+      "max_length": 32
+    },
+    {
+      "name": "population",
+      "type": "int32",
+      "nullable": false,
+      "read_only": true
+    },
+    {
+      "name": "elevation",
+      "type": "decimal",
+      "nullable": true,
+      "read_only": true,
+      "precision": 12,
+      "scale": 3
+    },
+    {
+      "name": "observed_at",
+      "type": "timestamp",
+      "nullable": false,
+      "read_only": true
+    }
+  ],
+  "identity_field": "fid",
+  "object_id_field": "object_id"
+}

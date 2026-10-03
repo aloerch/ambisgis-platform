@@ -1,0 +1,22 @@
+test_corrupt_registry_archive_rejected (test_custody.CustodyGuards.test_corrupt_registry_archive_rejected) ... ok
+test_corrupt_source_blob_rejected (test_custody.CustodyGuards.test_corrupt_source_blob_rejected) ... ok
+test_explicit_supplement_preserves_locked_version (test_custody.CustodyGuards.test_explicit_supplement_preserves_locked_version) ... ok
+test_extra_symlink_directory_rejected (test_custody.CustodyGuards.test_extra_symlink_directory_rejected) ... ok
+test_missing_and_symlink_input_rejected (test_custody.CustodyGuards.test_missing_and_symlink_input_rejected) ... ok
+test_missing_lock_dependency_rejected (test_custody.CustodyGuards.test_missing_lock_dependency_rejected) ... ok
+test_missing_registry_identity_cannot_pass_closure (test_custody.CustodyGuards.test_missing_registry_identity_cannot_pass_closure) ... ok
+test_missing_source_file_rejected (test_custody.CustodyGuards.test_missing_source_file_rejected) ... ok
+test_nested_resolution_and_dev_graph_omission (test_custody.CustodyGuards.test_nested_resolution_and_dev_graph_omission) ... ok
+test_projection_preserves_runtime_fields_and_original (test_custody.CustodyGuards.test_projection_preserves_runtime_fields_and_original) ... ok
+test_relabelled_production_lock_rejected (test_custody.CustodyGuards.test_relabelled_production_lock_rejected) ... ok
+test_relabelled_retained_manifest_rejected (test_custody.CustodyGuards.test_relabelled_retained_manifest_rejected) ... ok
+test_relabelled_tree_metadata_rejected (test_custody.CustodyGuards.test_relabelled_tree_metadata_rejected) ... ok
+test_traversal_and_archive_links_rejected (test_custody.CustodyGuards.test_traversal_and_archive_links_rejected) ... ok
+test_unexpected_installed_module_rejected (test_custody.CustodyGuards.test_unexpected_installed_module_rejected) ... ok
+test_valid_archive_matches_git_blob (test_custody.CustodyGuards.test_valid_archive_matches_git_blob) ... ok
+test_wrong_workspace_version_rejected (test_custody.CustodyGuards.test_wrong_workspace_version_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.007s
+
+OK
