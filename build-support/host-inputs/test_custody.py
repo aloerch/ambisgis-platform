@@ -83,6 +83,15 @@ class InventoryBoundaryTests(unittest.TestCase):
 
 
 class RetentionBoundaryTests(unittest.TestCase):
+    def test_binary_symlink_rejected_before_directory_creation(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d); outside = root / 'outside'; outside.mkdir()
+            (root / 'retained').symlink_to(outside, target_is_directory=True)
+            with patch('urllib.request.urlopen', side_effect=AssertionError('network')):
+                with self.assertRaisesRegex(ValueError, 'Symlink'):
+                    retain.binary({'location': 'x86_64/compiler.rpm'}, root / 'retained')
+            self.assertEqual([], list(outside.iterdir()))
+
     def test_source_listing_symlink_rejected_before_network_or_write(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)

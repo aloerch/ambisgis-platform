@@ -93,6 +93,7 @@ def verify_rpm(path, entry, source=False):
 def binary(entry, retained):
     name = Path(entry['location']).name
     dest = retained / 'rpms' / name
+    checked_path(dest)
     dest.parent.mkdir(parents=True, exist_ok=True)
     attempts = []
     for url in entry['retrieval_urls']:

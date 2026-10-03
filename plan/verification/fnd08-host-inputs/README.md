@@ -34,10 +34,14 @@ could be written through an existing symlink before the later download guard.
 Both are repaired in `4debc63`, with positive and negative tests. The final
 retained replay uses those repaired helpers; 276 binaries and 175 source
 groups verify with network calls prohibited. Failed earlier attempts and the
-reviewer's original reproduction remain in private evidence.
+reviewer's original reproduction remain in private evidence. A subsequent
+integration review found the binary destination directory also needed its
+symlink check before directory creation; that check and a zero-write negative
+test are now included. This guard-only correction does not relabel earlier
+executed receipts; the final replay below records its helper digest.
 
 The collector and projection are in [build-support/host-inputs](../../../build-support/host-inputs/README.md).
-Their 19 guard tests cover identity drift, provider syntax, unresolved linkage,
+Their 20 guard tests cover identity drift, provider syntax, unresolved linkage,
 source-entry digests, retained corruption, redirected destinations and
 incomplete evidence. They are package/custody tests, not GIS product tests.
 
