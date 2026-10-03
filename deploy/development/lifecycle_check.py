@@ -79,6 +79,8 @@ class Check:
         self.initial_config = None
         self.initial_secrets = None
         self.rt = None
+        self.native_identity = None
+        self.native_policy_sha256 = None
 
     def safe(self, text):
         return not any(value in text for value in self.secrets) and not any(
@@ -161,6 +163,33 @@ class Check:
             raise RuntimeError('owned installation services did not stop')
         return {'attempted': True, 'running_services': 0, 'persistent_data_preserved': True}
 
+    def protected_journey(self, name, expected_title=None):
+        # Persistence assertions MUST precede a journey that can edit metadata.
+        if expected_title is not None:
+            self.metadata(expected_title)
+            self.preserve_identity()
+        journey = journey_module.Journey(self.directory)
+        try:
+            result = journey.run()
+        finally:
+            self.record['token_cleanup'].append(journey.cleanup_result)
+            self.record.setdefault('permission_cleanup', []).append(journey.permission_cleanup)
+            self.browsers += [browser for _, browser in journey.browsers]
+        identity = result['native_item_permission_roundtrip']['identity']
+        policy = result['native_item_permission_roundtrip']['restoration']['native']['after_sha256']
+        if self.native_identity is None:
+            self.native_identity, self.native_policy_sha256 = identity, policy
+        elif self.native_identity != identity or self.native_policy_sha256 != policy:
+            raise ValueError('native principals/resource/permissions changed across lifecycle')
+        if expected_title is not None and result['retained_metadata_title'] != expected_title:
+            raise ValueError('repeated journey changed retained metadata expectation')
+        self.preserve_identity()
+        row = {'stage': name, 'result': result, 'requests': journey.rows, 'permission_events': journey.permission_events}
+        self.record.setdefault('http_journeys', []).append(row)
+        if 'http_journey' not in self.record: self.record['http_journey'] = row
+        self.stage(name, {'completed': True, 'native_identity_and_permissions_preserved': True})
+        return result['retained_metadata_title']
+
     def exercise(self, args):
         self.bundle_path, self.launcher = relocate(args.bundle, args.bundle_sha256, self.output / 'relocated-bundle')
         self.bundle_sha256 = args.bundle_sha256
@@ -183,15 +212,7 @@ class Check:
             if self.cli(command)['readiness']['ready'] is not True:
                 raise ValueError('running CLI readiness failed')
         self.stage('fresh up status doctor', {'useful_readiness': True})
-        journey = journey_module.Journey(self.directory)
-        try:
-            result = journey.run()
-        finally:
-            self.record['token_cleanup'].append(journey.cleanup_result)
-            self.browsers += [browser for _, browser in journey.browsers]
-        self.record['http_journey'] = {'result': result, 'requests': journey.rows}
-        title = result['retained_metadata_title']
-        self.stage('protected map query metadata journey', {'completed': True})
+        title = self.protected_journey('protected map query metadata journey')
         self.stop_owned()
         self.preserve_identity()
         self.stage('stopped persistent installation', {'identity_and_credentials_unchanged': True})
@@ -210,6 +231,7 @@ class Check:
         self.metadata(title)
         self.preserve_identity()
         self.stage('restart preserves metadata and credentials', {'verified': True})
+        self.protected_journey('full protected journey after restart', title)
         repeated = self.cli('init')
         if repeated.get('created') is not False or repeated['install_id'] != first['install_id']:
             raise ValueError('reinitialization changed installation identity')
@@ -219,6 +241,7 @@ class Check:
         self.metadata(title)
         self.preserve_identity()
         self.stage('reinitialization preserves metadata and credentials', {'verified': True})
+        self.protected_journey('full protected journey after reinitialization', title)
         self.rt.engine('stop', '--time', '45', name + '-geoserver', timeout=90)
         down = self.wait_ready(False, timeout=30)
         if down['readiness'].get('checks', {}).get('map') is not False:
@@ -226,12 +249,20 @@ class Check:
         diagnostic = self.cli('doctor', expected=1)
         if diagnostic['readiness']['ready'] is not False:
             raise ValueError('doctor concealed a stopped dependency')
-        self.stage('stopped renderer produces useful failure', {'readiness': down['readiness'], 'doctor_exit': 1})
+        live_probe = journey_module.Journey(self.directory)
+        live_code, live_body = live_probe.request('/health/live')
+        if (down['services']['gateway']['process'] != 'running' or live_code != 200
+                or json.loads(live_body).get('install_id') != self.record['install_id']
+                or json.loads(live_body).get('live') is not True):
+            raise ValueError('gateway liveness was not preserved during renderer fault')
+        self.stage('stopped renderer produces useful failure', {'readiness': down['readiness'], 'doctor_exit': 1,
+                   'gateway_process': 'running', 'gateway_live_status': live_code, 'live_request': live_probe.rows})
         self.rt.engine('start', name + '-geoserver', timeout=90)
         self.wait_ready()
         self.metadata(title)
         self.preserve_identity()
         self.stage('dependency recovery preserves state', {'verified': True})
+        self.protected_journey('full protected journey after dependency recovery', title)
 
 
 def main(args):
@@ -242,7 +273,8 @@ def main(args):
     output.mkdir(mode=0o700, parents=True)
     check = Check(directory, output)
     check.record['source'] = {str(p.relative_to(ROOT)): digest(p) for p in
-        (Path(__file__).resolve(), ROOT / 'deploy/development/journey_probe.py', ROOT / 'build-support/geonode/protocol_probe.py')}
+        (Path(__file__).resolve(), ROOT / 'deploy/development/journey_probe.py', journey_module.POLICY_PROGRAM,
+         ROOT / 'build-support/geonode/protocol_probe.py')}
     passed = False
     try:
         check.exercise(args)

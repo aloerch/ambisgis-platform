@@ -131,9 +131,11 @@ def engine_arguments(arguments, root, selected_root, product, selection):
         allowed = bool(remaining) and len(set(remaining)) == len(remaining) and all(x in names for x in remaining)
     elif command == 'exec':
         allowed = args == [project + '-database', '/opt/ambisgis/bin/health', 'database']
-        if len(args) == 5 and args[:4] == ['-i', project + '-gateway', '/opt/ambisgis/python/bin/python3', '-c']:
-            pinned = read_json(selected_root / 'runtime/configuration/ordinary-command.json')
-            allowed = hashlib.sha256(args[4].encode()).hexdigest() == pinned['internal_client_sha256']
+        if len(args) == 5:
+            for role, key in (('gateway', 'internal_client_sha256'), ('catalog', 'catalog_permission_sha256')):
+                if args[:4] == ['-i', project + '-' + role, '/opt/ambisgis/python/bin/python3', '-c']:
+                    pinned = read_json(selected_root / 'runtime/configuration/ordinary-command.json')
+                    allowed = hashlib.sha256(args[4].encode()).hexdigest() == pinned.get(key)
     elif command == 'ps':
         allowed = args == ['--filter', 'label=io.podman.compose.project=' + project, '-a', '--format', 'json']
     elif command == 'network':
