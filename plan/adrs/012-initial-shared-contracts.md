@@ -1,8 +1,9 @@
 # ADR 012 — Initial shared contracts and authority boundaries
 
-Status: engineering proposal under FND-06 review. Koop adoption awaits the
-separate executed comparison; no product API or phase acceptance follows from
-this ADR. API-01 still owns the complete OpenAPI specification before handlers.
+Status: engineering proposal under final FND-06 review. The executed Koop
+comparison and measured reuse decision are recorded in ADR013; no product API
+or phase acceptance follows from this ADR. API-01 still owns the complete
+OpenAPI specification before handlers.
 
 ## Context and decision
 
@@ -80,6 +81,11 @@ proprietary-client interoperability. New bespoke encoding is deferred until the
 measured adoption/rejection decision. Exact-version archive supplementation for
 missing historical lock identities is recorded separately from original-lock
 evidence and independently reviewed before package execution.
+
+[ADR013](013-koop-query-codec-reuse.md) records that executed comparison and
+selects the unchanged, retained query encoder behind the owned boundaries. Its
+finite tested profile and remaining implementation/distribution obligations are
+part of the decision; selection does not complete the C1 facade.
 
 ## Consequences and verification
 

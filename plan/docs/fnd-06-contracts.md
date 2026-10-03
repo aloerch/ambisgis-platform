@@ -176,11 +176,28 @@ scheduler or notebook isolation; NB-01–NB-05 retain their real tests.
 
 ## Verification and remaining work
 
+The original five product goals retain their complete acceptance families:
+
+| Goal | Original requirements | Required product acceptance tests |
+|---|---|---|
+| Service and metadata administration | R01–R03 | T-INSTALL-01, T-SRV-01, T-API-01, T-QUERY-01, T-COMPAT-C1, T-META-01 |
+| Managed geodatabase and branch editing | R04–R07 | T-DB-SCHEMA, T-DB-IDENTITY, T-EDIT-01, T-EDIT-RETRY, T-VERSION-SNAPSHOT, T-VERSION-ORACLE, T-VERSION-RACE, T-VERSION-POST, T-VERSION-RECOVERY |
+| Modern portal, maps, dashboards and apps | R08–R10 | T-PORTAL-01, T-A11Y-01, T-WEBMAP-01, T-DASHBOARD-01, T-APP-01, T-APP-SHARING |
+| Integrated spatial notebooks | R11–R13 | T-NB-ISOLATION, T-NB-ENV, T-SDK-01, T-NB-PUBLISH, T-NB-SCHEDULE |
+| QGIS publication | R14–R17 | T-QGIS-PUBLISH, T-PUBLISH-CRASH, T-TILES-01, T-RASTER-01, T-CARTO-01, T-INGEST-01, T-OVERWRITE-01 |
+
+Cross-cutting R18–R24 retain authorization, recovery, release, source ownership,
+independent maintenance, consolidation and Project evidence. The machine-checked
+index preserves each original goal ID, task mapping and test family. Its initial
+review/status text is a frozen input snapshot, not a command to reset live task
+progress; the delivery ledger and accepted ADRs record subsequent decisions.
+
 The initial tests exercise schema examples, typed-query rejection/normalization,
 cursor integrity and complete requirement/phase mapping. Every original
 requirement, task mapping and named test family remains in `contract-package.json`.
-No product test family changes to passed from these checks. The corpus and real
-Koop/PostGIS/catalog experiment are separate FND-06 deliverables. API-01/02/03,
+No product test family changes to passed from these checks. The reviewed corpus
+and [measured Koop decision](../adrs/013-koop-query-codec-reuse.md) have separate
+native/runtime evidence. API-01/02/03,
 domain and journey tasks remain necessary, including Windows/Linux desktop,
 manual accessibility, representative-user pilots, installation/restore/upgrade,
 disconnected repair and release artifacts.
