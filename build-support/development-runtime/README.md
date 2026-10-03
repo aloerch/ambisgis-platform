@@ -164,7 +164,7 @@ installation's private `pause.pid` and relocated executable; retaining it is
 not an application-service or helper-cleanup acceptance result. Failed runs,
 container state, data and the owned network remain preserved.
 
-The bounded socket successor constructs `AMBISGIS_SYSTEMD_USER_SOCKET` from
+The [bounded socket successor](podman-systemd-socket.md) constructs `AMBISGIS_SYSTEMD_USER_SOCKET` from
 `/run/user/<actual caller UID>/systemd/private`. It validates every component
 against symlinks, requires the enclosing owned runtime directory to be 0700,
 rejects a group/other-writable manager directory, and requires an owned Unix
@@ -175,6 +175,16 @@ its original fallback, peer authentication and rootful behavior. Source and
 filesystem tests do not prove successful D-Bus authentication, timer lifecycle
 or installation acceptance; those require the independently reviewed successor
 build and a fresh ordinary installation.
+
+The retained socket build ran only the standalone selector regression: both
+original fallback cases passed, the old implementation failed both explicit
+socket cases, and the new helper passed all four. Podman and rootlessport then
+compiled offline without running either binary or inherited native suites.
+Source, baseline and toolchain inventories remained unchanged. The assembly
+binds these exact outputs and carries the new patch, native connection source,
+pure helper/test, all four prior patches and dated modification notice.
+These results establish a built candidate; they do not pass timer or runtime
+security qualification.
 
 In-process tests run with the retained CI Python:
 

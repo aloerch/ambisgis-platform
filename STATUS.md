@@ -18,26 +18,32 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 has four independently reviewed owned OCI images and a retained ordinary
-runtime bundle. Three actual installation attempts remain failed and preserved.
-The first two exposed native stderr/JSON mixing and the provider's exact version
-argument form; both have bounded repairs. The third created a database container
-that never started: sealed runc initialization lost its private library search
-path, and inspection rejected native recursive-private tmpfs normalization.
-No installation service or lifecycle runner remains running. The owned network and all persistent data
-are retained; the original shutdown receipt still records incomplete validation.
-A corrected source-owned runc build passes three focused native environment
-subcases. The frozen repair candidate 67e12a1 and inert bundle-007 report 565 package,
-19 runtime and ten schema checks passing. Independent artifact/bundle review
-and a fresh lifecycle remain pending.
-[Actual attempts and reconciliations](plan/verification/plt01-lifecycle/evidence.json)
-do not establish installation acceptance.
+PLT-01 has four independently reviewed owned OCI images. Five actual startup
+attempts remain failed and preserved. Successive owned repairs resolved stream,
+provider-argument, loader and ordinary child-environment defects. Attempt005
+reached health-timer creation, then looked for the systemd manager socket inside
+the installation's private runtime directory. The database process is gone and
+five other containers were absent. One exactly identified native rootless pause
+helper is retained with its private namespace state, data and network; this is
+not a running application service or completed helper-cleanup result.
+
+The successor validates the actual caller's existing private manager socket
+while preserving installation-private XDG storage. Its offline native selector
+regression passed four cases after two expected baseline failures; compilation
+and full source/toolchain integrity checks passed. Separate artifact/bundle
+review and fresh installed execution remain required. Reviewed authorization
+and recovery drivers now include finite internal HTTP targets, same-token native
+item grant/revoke/regrant and persistence-first repeated journeys. Their inert
+checks do not establish installed behavior.
+[Actual attempts and reconciliation](plan/verification/plt01-lifecycle/evidence-005.json)
+and [socket build contract](build-support/development-runtime/podman-systemd-socket.md)
+retain these boundaries. Full PLT-01 and scoped MVP acceptance remain open.
 
 The held targeted engine probe remains unexecuted after the earlier platform
 termination. The native Goal still reports blocked; foreground delivery continues.
 Restoring native automatic continuation requires the user control /goal resume
 in the existing thread. [Original diagnosis](plan/verification/runtime-recovery/2026-10-03.json)
-and [latest progress](plan/verification/runtime-recovery/progress-004.json)
+and [latest progress](plan/verification/runtime-recovery/progress-005.json)
 distinguish this platform state from current product work.
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.

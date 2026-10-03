@@ -1,0 +1,42 @@
+{
+  "all_helpers_gone": false,
+  "attempts": 5,
+  "data_deleted": false,
+  "diagnosis": [
+    "Attempt004 reached systemd cgroup registration and failed. Source diagnosis found omitted user-bus helper and ordinary child environment; owned repaired build was independently reviewed before attempt005.",
+    "Attempt005 reached native health-timer creation; rootless connection looked for systemd/private inside installation-private XDG_RUNTIME_DIR. No timer or complete service lifecycle acceptance is inferred."
+  ],
+  "failures_retained": 5,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "last_frozen_bundle_sha256": "452dc463ebd87a579f94ea26ae3373ea5f4eb8e583e14aa9fe4648b414db7c33",
+  "last_frozen_head": "fa94d821705e6b4f2d171aa52d2dc2b86cfacc34",
+  "last_install_id": "3a304aa9-729e-42b2-8c21-4b721f207a54",
+  "last_state": "Database container remains created with no application process; five other containers absent. Exact owned rootless namespace pause process retained, together with data/network. Full helper cleanup has not passed.",
+  "observed_at": "2026-10-03T23:25:00.419419+00:00",
+  "previous_evidence": "plan/verification/plt01-lifecycle/evidence.json",
+  "reconciled": true,
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-004.json",
+      "sha256": "f1e946a7962a4bdb98167696b288cd358213dc81485ced56726d9081d5b8c9d6"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-004.json",
+      "sha256": "ff7c00667ed2af7d04f67d515d1afb53bd3c006efa6fbc3bdc6339c0a2895fd9"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-005.json",
+      "sha256": "39ccedf5c7eb6efd21e7784c9f415216a962c5de7a8d39d2eb51028abda60ba6"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-005.json",
+      "sha256": "8ffe87e7182851d3d731cc18d0eb069fdfd70a110b8667c1d63078b98496b3fb"
+    }
+  ],
+  "remaining": "Fresh reviewed successor installation, all original network/OS/concurrency/authorization/recovery/log/cleanup acceptance and held runtime-security distinction remain open.",
+  "runtime_executed": true,
+  "schema_version": 1,
+  "status": "In progress",
+  "task": "PLT-01"
+}

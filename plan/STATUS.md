@@ -3,8 +3,8 @@
 The authoritative implementation checkpoint is [the repository status](../STATUS.md).
 DB-03 is accepted/Merged at 13fb7c9bff9d011838b768802a6ab63f932bd228 after
 86 fresh checks and independent verification. PLT-01 remains In progress after
-three preserved ordinary startup failures; installation and full MVP acceptance
-remain open. [Current evidence](verification/runtime-recovery/progress-004.json)
+five preserved ordinary startup failures; installation and full MVP acceptance
+remain open. [Current evidence](verification/runtime-recovery/progress-005.json)
 records the blocked native Goal and continuing foreground work.
 
 ## Historical plan-package checkpoints follow unchanged
