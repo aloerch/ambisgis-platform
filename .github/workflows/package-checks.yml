@@ -23,7 +23,7 @@ jobs:
           printf '%s' "$SOURCE_SHA" | grep -Eq '^[0-9a-f]{40}$'
           git init source
           git -C source remote add origin https://github.com/aloerch/ambisgis-platform.git
-          git -C source fetch --no-tags --depth=1 origin "$SOURCE_SHA"
+          git -C source fetch --no-tags origin "$SOURCE_SHA"
           git -C source checkout --detach FETCH_HEAD
           test "$(git -C source rev-parse HEAD)" = "$SOURCE_SHA"
       - name: Install hash-locked validation tools
