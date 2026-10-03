@@ -656,7 +656,10 @@ class InstallerStateTests(unittest.TestCase):
         # Synthetic Podman 6 field representation, checked against retained
         # libpod inspect source. Native inspection remains a separate gate.
         service = config.compose(selected.config, selected.selection, self.root)['services'][role]
-        return {'Image': selected.selection['images'][role.removesuffix('-init')]['image_id'], 'Config': {
+        oci = selected.paths['run'] / ('inspect-' + role) / 'config.json'
+        oci.parent.mkdir(mode=0o700, exist_ok=True)
+        oci.write_bytes(canonical({'linux': {'sysctl': service['sysctls']}}))
+        return {'OCIConfigPath': str(oci), 'Image': selected.selection['images'][role.removesuffix('-init')]['image_id'], 'Config': {
             'Labels': service['labels'], 'User': service['user'], 'Cmd': [role],
             'Entrypoint': ['/opt/ambisgis/bin/service'], 'Hostname': 'synthetic-container',
             'Env': ['container=podman', 'HOSTNAME=synthetic-container']},
@@ -723,6 +726,70 @@ class InstallerStateTests(unittest.TestCase):
                     compose.assert_not_called()
                 self.assertEqual(before, self.state())
                 self.assertTrue(all(args[:2] in [('container', 'exists'), ('container', 'inspect')] for args in calls))
+
+    def test_actual_oci_sysctl_map_must_match_ipv4_profile(self):
+        self.init(); selected = runtime.Runtime(self.root); row = self.inspection(selected)
+        path = Path(row['OCIConfigPath']); original = path.read_bytes()
+        for value in ({}, {'linux': {}}, {'linux': {'sysctl': {}}},
+                      {'linux': {'sysctl': {'net.ipv6.conf.all.disable_ipv6': '0', 'net.ipv6.conf.default.disable_ipv6': '0'}}},
+                      {'linux': {'sysctl': {'net.ipv6.conf.all.disable_ipv6': '1', 'net.ipv6.conf.default.disable_ipv6': '1', 'net.ipv4.ip_forward': '1'}}}):
+            with self.subTest(value=value):
+                path.write_bytes(canonical(value))
+                with self.assertRaisesRegex(InstallError, 'sysctls'): selected.container_security(row, 'catalog')
+        path.write_bytes(original)
+        selected.container_security(row, 'catalog')
+
+    def test_oci_path_rejects_escape_links_specials_and_oversized_content(self):
+        self.init(); selected = runtime.Runtime(self.root); row = self.inspection(selected)
+        path = Path(row['OCIConfigPath']); original = path.read_bytes()
+        outside = self.base / 'outside-oci'; outside.write_bytes(original)
+        changed = dict(row, OCIConfigPath=str(outside))
+        with self.assertRaises(InstallError): selected.container_security(changed, 'catalog')
+        for kind in ('link', 'fifo', 'oversized'):
+            path.unlink()
+            if kind == 'link': path.symlink_to(outside)
+            elif kind == 'fifo': os.mkfifo(path)
+            else: path.write_bytes(b' ' * (8 * 1024 * 1024 + 1))
+            with self.subTest(kind=kind), self.assertRaises(InstallError): selected.container_security(row, 'catalog')
+        redirected = selected.paths['run'] / 'redirected'
+        redirected.symlink_to(path.parent, target_is_directory=True)
+        with self.assertRaises(InstallError):
+            selected.container_security(dict(row, OCIConfigPath=str(redirected / 'config.json')), 'catalog')
+        self.assertEqual(outside.read_bytes(), original)
+
+    def test_existing_network_security_drift_rejected_before_any_compose_change(self):
+        self.init(); selected = runtime.Runtime(self.root)
+        original = {'name': config.project_name(selected.config) + '_internal', 'driver': 'bridge',
+                    'internal': True, 'ipv6_enabled': False, 'dns_enabled': True,
+                    'labels': {'org.ambisgis.install-id': selected.config['install_id']},
+                    'subnets': [{'subnet': '10.89.0.0/24', 'gateway': '10.89.0.1'}],
+                    'ipam_options': {'driver': 'host-local'}}
+        with patch.object(selected, 'engine', side_effect=[(0,b''), (0,json.dumps([original]).encode())]):
+            self.assertTrue(selected.network()['verified'])
+        modifications = [lambda v: v.update(internal=False), lambda v: v.update(ipv6_enabled=True),
+                         lambda v: v.pop('ipv6_enabled'), lambda v: v.update(driver='macvlan'),
+                         lambda v: v.update(labels={'org.ambisgis.install-id': 'another'}),
+                         lambda v: v.update(routes=[{'destination': '0.0.0.0/0','gateway': '10.89.0.1'}]),
+                         lambda v: v.update(network_dns_servers=['8.8.8.8']),
+                         lambda v: v.update(options={'mode': 'unmanaged'}),
+                         lambda v: v.update(subnets=[{'subnet': 'fd00::/64'}]),
+                         lambda v: v.update(subnets=[{'subnet': '192.0.2.0/24','gateway': '8.8.8.8'}]),
+                         lambda v: v.update(ipam_options={'driver': 'dhcp'})]
+        for index, modify in enumerate(modifications):
+            with self.subTest(index=index):
+                value = copy.deepcopy(original); modify(value); calls = []
+                def engine(*args, **kwargs):
+                    calls.append(args)
+                    if args[:2] == ('container','exists'): return 1,b''
+                    if args[:2] == ('network','exists'): return 0,b''
+                    if args[:2] == ('network','inspect'): return 0,json.dumps([value]).encode()
+                    raise AssertionError('unexpected producer mutation')
+                before = self.state()
+                with patch.object(runtime,'Runtime',return_value=selected), patch.object(selected,'engine',side_effect=engine), patch.object(selected,'compose') as compose:
+                    with self.assertRaisesRegex(InstallError,'network'): runtime.up(self.root,timeout=0)
+                    compose.assert_not_called()
+                self.assertEqual(before,self.state())
+                self.assertTrue(all(args[:2] in [('container','exists'),('network','exists'),('network','inspect')] for args in calls))
 
     def test_loaded_checkpoint_annotation_rejected(self):
         self.init(); selected = runtime.Runtime(self.root)

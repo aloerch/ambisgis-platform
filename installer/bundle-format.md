@@ -82,6 +82,14 @@ private namespaces, exact bind membership/access, bounded temporary mount,
 command and image-bound environment. Podman may add only its informational
 container/hostname variables. Native inspection and OCI/mapping/network tests
 must confirm the selected runtime's representations before acceptance.
+Podman 6 does not expose `HostConfig.Sysctls`; the installer reads its actual
+`OCIConfigPath`, confined to this installation's private runtime storage/run
+roots, and compares `linux.sysctl` exactly with the generated IPv4-only map.
+The existing named network is independently inspected for installation ownership,
+internal bridge mode, disabled IPv6, native DNS and private IPv4 subnets, with
+no unexpected routes, DNS overrides or driver options. This check runs before
+Compose even when the network exists without any containers. It is configuration
+validation; actual route/socket/egress tests remain mandatory.
 The initial network is explicitly IPv4-only (`enable_ipv6: false` plus container
 IPv6-disable sysctls). The selected backend's actual configuration and IPv6
 negative/egress tests are required; `internal: true` alone is not an isolation

@@ -1,15 +1,17 @@
 """Explicit local runtime invocation and installation-scoped lifecycle."""
 import http.client
+import ipaddress
 import json
 import os
 from pathlib import Path
 import shlex
 import subprocess
+import stat
 import tempfile
 import time
 
 from . import bundle, config
-from .state import InstallError, atomic_write, locked, private_directory
+from .state import InstallError, atomic_write, checked_path, locked, private_directory, read_json
 
 
 class Runtime:
@@ -150,6 +152,20 @@ class Runtime:
         rootless/SELinux/OCI namespace behavior still has native acceptance tests.
         """
         expected = config.compose(self.config, self.selection, self.root)['services'][role]
+        # This Podman version does not expose a HostConfig.Sysctls field. Bind
+        # the actual OCI file named by its inspected OCIConfigPath instead.
+        try:
+            path = checked_path(row['OCIConfigPath'])
+            if not any(path.is_relative_to(self.paths[name]) for name in ('storage', 'run')):
+                raise ValueError('OCI configuration escaped installation storage')
+            info = path.stat()
+            if not stat.S_ISREG(info.st_mode) or info.st_uid != os.getuid() or info.st_mode & 0o022:
+                raise ValueError('unsafe OCI configuration file')
+            oci = read_json(path)
+            if oci['linux']['sysctl'] != expected['sysctls']:
+                raise ValueError('container IPv4-only sysctl drift')
+        except (OSError, KeyError, TypeError, ValueError) as error:
+            raise InstallError('Container OCI configuration or IPv4-only sysctls differ from this installation.') from error
         host, process = row['HostConfig'], row['Config']
         def environment(items):
             if not isinstance(items, list) or any(not isinstance(value, str) or '=' not in value for value in items):
@@ -206,6 +222,33 @@ class Runtime:
                     or mount.get('SubPath') or set(mount.get('Options', [])) - {'rbind', 'bind', 'nosuid', 'nodev', 'noexec'}):
                 raise ValueError('container mount access or source drift')
 
+    def network(self):
+        name = config.project_name(self.config) + '_internal'
+        code, _ = self.engine('network', 'exists', name, allow_failure=True)
+        if code == 1: return None
+        if code != 0: raise InstallError('Installation network state is unavailable; no mutation was attempted.')
+        _, output = self.engine('network', 'inspect', name)
+        try:
+            rows = json.loads(output)
+            if not isinstance(rows, list) or len(rows) != 1: raise ValueError()
+            value = rows[0]
+            if (value['name'] != name or value['driver'] != 'bridge' or value['internal'] is not True
+                    or value['ipv6_enabled'] is not False or value['dns_enabled'] is not True
+                    or value['labels'].get('org.ambisgis.install-id') != self.config['install_id']
+                    or value.get('routes') or value.get('network_dns_servers') or value.get('options')
+                    or value.get('ipam_options', {}) not in ({}, {'driver': 'host-local'})):
+                raise ValueError()
+            subnets = value['subnets']
+            if not isinstance(subnets, list) or not subnets: raise ValueError()
+            for subnet in subnets:
+                network = ipaddress.IPv4Network(subnet['subnet'], strict=True)
+                if not network.is_private or network.is_loopback or network.is_link_local: raise ValueError()
+                if subnet.get('gateway') and ipaddress.IPv4Address(subnet['gateway']) not in network: raise ValueError()
+                if subnet.get('lease_range'): raise ValueError()
+        except (KeyError, TypeError, ValueError, AttributeError) as error:
+            raise InstallError('Installation network ownership, driver, routing or IPv4-only configuration differs.') from error
+        return {'name': name, 'internal': True, 'ipv6_enabled': False, 'driver': 'bridge', 'verified': True}
+
     def readiness(self):
         connection = http.client.HTTPConnection('127.0.0.1', self.config['listen']['port'], timeout=14)
         try:
@@ -233,7 +276,7 @@ class Runtime:
 
     def status(self):
         return {'command': 'status', 'install_id': self.config['install_id'],
-                'services': self.processes(), 'readiness': self.readiness()}
+                'services': self.processes(), 'network': self.network(), 'readiness': self.readiness()}
 
 
 def up(root, *, timeout=180):
@@ -241,6 +284,9 @@ def up(root, *, timeout=180):
         runtime = Runtime(root)
         # Validate existing names/ownership before a Compose invocation can act.
         existing = runtime.processes(include_initializers=True)
+        network = runtime.network()
+        if network is None and any(row['process'] != 'absent' for row in existing.values()):
+            raise InstallError('Existing containers have lost their installation network; no mutation was attempted.')
         for role in bundle.SERVICES:
             runtime.image(role, load=True)
         database_name = config.project_name(runtime.config) + '-database'
