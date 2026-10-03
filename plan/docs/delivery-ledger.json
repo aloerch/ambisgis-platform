@@ -14,50 +14,28 @@
   },
   "repository": "aloerch/ambisgis-platform",
   "repository_id": 1376927351,
-  "branch": "delivery/standing-delegation",
-  "base": "5213f31cd51aed5230d7bd550cc03662bcfb566f",
-  "task": "GOV-02 workflow conversion (prior view acceptance preserved)",
-  "state": "independently-reviewed-local-tests-passed; initial PR/CI pending",
+  "branch": "fnd-07/authorized-successors",
+  "base": "8c3612dd3e4ee992d930f1417798b66f467784e9",
+  "task": "FND-07 authorized successor publication and source acceptance",
+  "state": "source publication/recovery/replay passed; final evidence PR review pending",
   "pr": null,
   "tests": [
     {
-      "name": "package-tests",
-      "command": [
-        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
-        "-m",
-        "unittest",
-        "discover",
-        "-s",
-        "tests",
-        "-v"
-      ],
-      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/delivery-worktree/plan",
-      "started_at": "2026-10-03T05:16:01.950328+00:00",
-      "finished_at": "2026-10-03T05:16:14.913846+00:00",
-      "exit_code": 0,
-      "log_sha256": "d92f391856e81b60a50a9ebf3304b05f60beb4e9be69a37d37444465f2bab60d",
-      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/package-tests-final-01.log",
-      "tests": 444,
-      "skips": 0
-    },
-    {
-      "name": "schemas",
-      "command": [
-        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
-        "tools/validate_package.py",
-        "--require-schemas"
-      ],
-      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/delivery-worktree/plan",
-      "started_at": "2026-10-03T05:16:14.914464+00:00",
-      "finished_at": "2026-10-03T05:16:15.062518+00:00",
-      "exit_code": 0,
-      "log_sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
-      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/schemas-final-01.log"
+      "scope": "source publication implementation integrated with PR72",
+      "head": "0de2945ee1d29f00af19229720c43e3071b9571b",
+      "package_tests": 457,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "schemas": 4,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/source-integrated-tests-01.log",
+      "log_sha256": "b565ef5a7ffc22484b84f383aab0fa87c8066a89f80d9a8dc295b1d3cf7f1a76",
+      "note": "Final evidence-head tests must be rerun and bound before merge."
     }
   ],
   "source_publication": {
-    "geotools": "authorized; fresh local integrity passed; not published",
-    "qgis": "authorized; fresh local integrity passed; not published"
+    "geotools": "exact review and canonical refs published, independently recovered",
+    "qgis": "exact review and canonical refs published, independently recovered; snapshot scope only"
   },
   "accepted": [
     "FND-01",
@@ -66,11 +44,33 @@
     "GOV-02 prior view work"
   ],
   "next": [
-    "Review/test/merge workflow conversion",
-    "Publish and independently recover two exact successors; FND-07 acceptance",
-    "FND-08 owned build; FND-03/04/05 independently ready"
+    "Final independent FND-07 evidence review, required CI, normal merge and acceptance tracking",
+    "FND-08 owned rebuilds and moving-upstream immunity",
+    "Continue FND-03/FND-04 actual product prototypes; FND-05 independently ready"
   ],
   "product_acceptance": false,
   "release_artifact": null,
-  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5965793874"
+  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5965793874",
+  "workflow": {
+    "pr": 72,
+    "merge": "8c3612dd3e4ee992d930f1417798b66f467784e9",
+    "state": "merged and smoke tested"
+  },
+  "active_workers": [
+    {
+      "task": "FND-03",
+      "branch": "fnd-03/catalog-policy-v2",
+      "repository": "aloerch/ambisgis-platform",
+      "state": "In progress; real catalog/engine policy tests",
+      "claim": "https://github.com/aloerch/ambisgis-platform/issues/4#issuecomment-5966057973"
+    },
+    {
+      "task": "FND-04",
+      "branch": "fnd-04/typed-prototype",
+      "repository": "aloerch/ambisgis-geodb",
+      "state": "In progress; real PostgreSQL/PostGIS prototype tests",
+      "claim": "https://github.com/aloerch/ambisgis-geodb/issues/1#issuecomment-5966058477"
+    }
+  ],
+  "evidence": "plan/verification/authorized-successors/publication.json"
 }

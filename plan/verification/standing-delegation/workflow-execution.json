@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "task": "GOV-02",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/72",
+  "reviewed_head": "e4a4845d8483e8e3a8692ad4255c249421c3b320",
+  "base": "5213f31cd51aed5230d7bd550cc03662bcfb566f",
+  "merge_commit": "8c3612dd3e4ee992d930f1417798b66f467784e9",
+  "merge_method": "normal authenticated auto-merge, no administrator bypass",
+  "review_comment": "https://github.com/aloerch/ambisgis-platform/pull/72#issuecomment-5965939710",
+  "independent_review": "separate-context /root/workflow_review; shared GitHub account, not a second approving identity",
+  "local_tests": {
+    "tests": 444,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "schemas": 4,
+    "log_sha256": "031c3c9cd99786943bec4005dd5011357990d04c9ab96eee89a2cbaea94d69b7"
+  },
+  "ci": {
+    "run_id": 37099643881,
+    "job_id": 111136506108,
+    "check": "package-and-schema",
+    "app_id": 15368,
+    "conclusion": "success"
+  },
+  "post_merge_smoke": {
+    "tests": 29,
+    "schemas": 4,
+    "exit_code": 0,
+    "log_sha256": "2ab85e9a8c1b631911ecee7356c36e2bc5f33df218fa3eab6fb76c8b482266b7"
+  },
+  "settings_before": "settings-before.json",
+  "settings_after": "settings-after.json",
+  "settings_changes": [
+    "Enabled auto-merge",
+    "Required successful package-and-schema (GitHub Actions app 15368) and delegated-review status",
+    "Enforced protection for administrators; force pushes/deletion prohibited; no mandatory personal review"
+  ],
+  "settings_unchanged": [
+    "Existing default branch",
+    "All source fork settings",
+    "Actions configuration",
+    "No credentials/scopes installed"
+  ],
+  "recovery_observation": "tracking-reconciliation.json",
+  "cross_turn_continuation": "pending first observed automatic continuation",
+  "release_acceptance": false
+}
