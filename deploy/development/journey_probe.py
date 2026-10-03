@@ -23,7 +23,7 @@ import zlib
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from installer import config, runtime
-from installer.state import checked_path, digest, private_directory
+from installer.state import checked_path, digest, no_duplicate_keys, private_directory
 
 CLIENT = ROOT / 'build-support/geonode/protocol_probe.py'
 spec = importlib.util.spec_from_file_location('installed_identity_protocol', CLIENT)
@@ -48,6 +48,49 @@ try:
  print(json.dumps({'status':r.status,'headers':r.getheaders(),'body':base64.b64encode(body).decode()}))
 finally:c.close()
 """
+
+
+class TrackedOAuthBrowser(protocol.OAuthBrowser):
+    """Keep only this helper's newly issued token families for finally cleanup."""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.created_tokens = []
+        self.token_sets = []
+        self.issuance_accounted_for = True
+
+    def exchange(self, authorization, verifier=None):
+        # A lost issuance response may leave an unknown grant. Never report
+        # successful cleanup merely because no token string reached the client.
+        self.issuance_accounted_for = False
+        return super().exchange(authorization, verifier)
+
+    def refresh(self, refresh_token):
+        self.issuance_accounted_for = False
+        return super().refresh(refresh_token)
+
+    def _tokens(self, response):
+        if response.status in (400, 401):
+            self.issuance_accounted_for = True  # Explicit grant/client rejection.
+        elif response.status == 200:
+            try:
+                value = json.loads(response.body, object_pairs_hook=no_duplicate_keys)
+                accounted_for = True
+                for key in ('access_token', 'refresh_token'):
+                    token = value.get(key)
+                    if key == 'refresh_token' and token is None:
+                        continue
+                    if not isinstance(token, str) or not token or len(token) > 512:
+                        accounted_for = False
+                        continue
+                    # Keep each known token even if another field is malformed.
+                    self.created_tokens.append((key, token))
+                    self.secrets.add(token)
+                self.issuance_accounted_for = accounted_for
+            except (ValueError, TypeError, AttributeError):
+                self.issuance_accounted_for = False
+        token_set = super()._tokens(response)
+        self.token_sets.append(token_set)
+        return token_set
 
 
 def features(body):
@@ -133,6 +176,8 @@ class Journey:
         self.product = self.runtime.config
         self.secrets = config.secret_material(installation)
         self.rows = []
+        self.browsers = []
+        self.cleanup_result = None
 
     def request(self, path, *, token=None, method='GET', payload=None, extra=(), direct=False):
         headers = [('Authorization', 'Bearer ' + token)] if token else []
@@ -166,17 +211,52 @@ class Journey:
 
     def login(self, role):
         origin = config.service_configuration(self.product)['public_origin']
-        browser = protocol.OAuthBrowser(origin, self.secrets['oauth_client'], origin + '/oauth/callback',
-                                         self.secrets['oauth_secret'], scope='read write')
+        browser = TrackedOAuthBrowser(origin, self.secrets['oauth_client'], origin + '/oauth/callback',
+                                       self.secrets['oauth_secret'], scope='read write')
+        self.browsers.append((role, browser))
         token = browser.exchange(browser.authorize(self.product[role], self.secrets[role + '_password']))
-        if set(token.scope.split()) != {'read', 'write'}: raise ValueError('granted OAuth scope differs')
-        return browser, token.access_token
+        if not browser.issuance_accounted_for or set(token.scope.split()) != {'read', 'write'}:
+            raise ValueError('granted OAuth scope or issuance accounting differs')
+        return browser, token
 
     def run(self):
+        try:
+            return self.exercise()
+        finally:
+            self.cleanup_result = self.cleanup_tokens()
+            if not self.cleanup_result['complete']:
+                raise RuntimeError('Newly created token cleanup is incomplete; journey cannot pass.')
+
+    def cleanup_tokens(self):
+        rows, incomplete, seen = [], [], set()
+        for role, browser in self.browsers:
+            if not browser.issuance_accounted_for:
+                incomplete.append(role)
+            # Revoke refresh grants first, then the associated access tokens.
+            for kind, token in sorted(browser.created_tokens, key=lambda item: item[0] != 'refresh_token'):
+                if (kind, token) in seen:
+                    continue
+                seen.add((kind, token))
+                row = {'principal': role, 'kind': kind, 'revoked': False}
+                try:
+                    response = browser.revoke(token, hint=kind)
+                    row.update(status=response.status, revoked=response.status == 200)
+                except Exception as error:
+                    row['error_type'] = type(error).__name__
+                rows.append(row)
+        return {'complete': not incomplete and all(row['revoked'] for row in rows),
+                'unaccounted_issuance_principals': incomplete, 'tokens': rows}
+
+    def contains_secret(self, text):
+        return (any(secret in text for secret in self.secrets.values())
+                or any(browser.secrets.matches(text) for _, browser in self.browsers))
+
+    def exercise(self):
         status = self.runtime.status()
         if not status['readiness']['ready'] or any(row['process'] != 'running' for row in status['services'].values()):
             raise ValueError('installation is not ready')
-        owner_browser, owner = self.login('owner'); viewer_browser, viewer = self.login('viewer')
+        owner_browser, owner_tokens = self.login('owner'); viewer_browser, viewer_tokens = self.login('viewer')
+        owner, viewer = owner_tokens.access_token, viewer_tokens.access_token
         checks = []
         for direct in (False, True):
             prefix = '/geoserver' if direct else ''
@@ -234,10 +314,12 @@ def main(args):
         record.update(status='failed', error_type=type(error).__name__)
         raise RuntimeError('Protected journey failed; see selected private receipt.') from None
     finally:
-        if 'journey' in locals(): record['requests'] = journey.rows
+        if 'journey' in locals():
+            record['requests'] = journey.rows
+            record['token_cleanup'] = journey.cleanup_result
         record['finished'] = datetime.now(timezone.utc).isoformat()
         text = json.dumps(record, indent=2, sort_keys=True) + '\n'
-        if 'journey' in locals() and any(secret in text for secret in journey.secrets.values()):
+        if 'journey' in locals() and journey.contains_secret(text):
             raise RuntimeError('Receipt secret scan failed; no receipt written')
         (output / 'result.json').write_text(text)
 
