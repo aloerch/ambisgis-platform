@@ -14,8 +14,8 @@ from common import export_owned,git,inventory,sha
 
 HERE=Path(__file__).resolve().parent;PLATFORM=HERE.parents[1]
 SOURCES={
-    'mapstore-client':{'commit':'a0d3f434cea69dadc93d35e13bc969b844aceea1',
-                       'tree':'8055ca37333ee3037f63624f2e1d6ee548d416f1','repository_id':1376928013,
+    'mapstore-client':{'commit':'c1f6ad9df52f08ac3bfd7211db9e3ee744b21407',
+                       'tree':'4b7d454ec77490317d73db1821b0cc14d53cdbb8','repository_id':1376928013,
                        'gitlinks':{'geonode_mapstore_client/client/MapStore2':'88064efbf20ef0aaffebe357f7a99a1ab4fb23b8'}},
     'mapstore':{'commit':'88064efbf20ef0aaffebe357f7a99a1ab4fb23b8',
                 'tree':'11b6eb8616b90c72570c4f3aad82212b52f1cdbe','repository_id':1376928043},

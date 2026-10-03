@@ -19,8 +19,8 @@ PLATFORM_COMMIT='0876999d7535d792d0024586981c762b2f9bf513'
 SOURCES={
     'geonode':{'commit':'2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4',
                'tree':'f8fda01733dae258e319df14f42677cf3bd83e20','repository_id':1376927978},
-    'mapstore-client':{'commit':'a0d3f434cea69dadc93d35e13bc969b844aceea1',
-                       'tree':'8055ca37333ee3037f63624f2e1d6ee548d416f1','repository_id':1376928013,
+    'mapstore-client':{'commit':'c1f6ad9df52f08ac3bfd7211db9e3ee744b21407',
+                       'tree':'4b7d454ec77490317d73db1821b0cc14d53cdbb8','repository_id':1376928013,
                        'gitlinks':{'geonode_mapstore_client/client/MapStore2':'88064efbf20ef0aaffebe357f7a99a1ab4fb23b8'}},
 }
 
