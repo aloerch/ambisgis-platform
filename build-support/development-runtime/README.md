@@ -89,6 +89,16 @@ uses graphroot/runroot without the redundant deprecated rootless_storage_path.
 The original failed installation and receipts remain unchanged; bundle-005
 contains the repair for a separately reviewed fresh lifecycle attempt.
 
+The second attempt validated all four image identities, then failed before
+container/network creation because the pinned provider's version probe includes
+an empty command slot: `Podman.output(['--version'], '', [])` produces
+`['--version', '']`. Bundle-006 canonicalizes exactly this representation to
+`['--version']`. It does not strip empty arguments from other commands or accept
+additional version flags. The regression executes the exact retained provider
+method in process while intercepting its subprocess boundary before child
+creation. Its original failing result and the failed lifecycle remain retained;
+passing argument tests do not establish installation acceptance.
+
 In-process tests run with the retained CI Python:
 
 ```sh

@@ -9,8 +9,9 @@ from pathlib import Path
 import sys
 import tempfile
 import tomllib
+from types import SimpleNamespace
 import unittest
-from unittest.mock import patch
+from unittest.mock import AsyncMock, patch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
@@ -47,6 +48,33 @@ class RuntimeTests(unittest.TestCase):
             self.bundle, self.product, self.selection), self.globals + tail)
         with self.assertRaises(InstallError): self.engine(['--remote', *tail])
         with self.assertRaises(InstallError): adapter.engine_arguments(tail, self.root, self.bundle, self.product, self.selection)
+
+    def test_real_provider_version_output_empty_command_is_narrowly_canonicalized(self):
+        provider_root = Path('/home/revelberry/Projects/AmbisGIS/build-worktrees/plt01-runtime/inert-002/runtime/lib/python3.13/site-packages')
+        file = provider_root / 'podman_compose.py'
+        self.assertEqual(hashlib.sha256(file.read_bytes()).hexdigest(),
+                         '14320ec9102f4aa9602426f2f4e549ca5c6536beb1ccc9de2931ad84e450b919')
+        for directory in (provider_root, provider_root.parents[2] / 'lib64/python3.13/site-packages'):
+            sys.path.insert(0, str(directory)); self.addCleanup(sys.path.remove, str(directory))
+        import podman_compose as provider
+        executable = str(self.bundle / 'runtime/bin/podman')
+        self.assertEqual(Path(provider.__file__).resolve(), file.resolve())
+        process = SimpleNamespace(returncode=0, communicate=AsyncMock(return_value=(b'podman version synthetic\n', b'')))
+        # Exercise the exact producer.output implementation, intercepting the
+        # subprocess boundary before any child or engine can be created.
+        with patch.object(provider.asyncio, 'create_subprocess_exec', AsyncMock(return_value=process)) as launch:
+            result = asyncio.run(provider.Podman(SimpleNamespace(), executable).output(['--version'], '', []))
+        launch.assert_awaited_once()
+        self.assertEqual(launch.call_args.args, (executable, '--version', ''))
+        self.assertEqual(result, b'podman version synthetic\n')
+        self.assertEqual(adapter.engine_arguments(list(launch.call_args.args[1:]), self.root, self.bundle,
+                         self.product, self.selection), ['--version'])
+        self.assertEqual(adapter.engine_arguments(['--version'], self.root, self.bundle,
+                         self.product, self.selection), ['--version'])
+        for arguments in (['--version', '', ''], ['--version', '--remote'],
+                          self.globals + ['image', '', 'inspect', self.selection['images']['database']['image_id']]):
+            with self.assertRaises(InstallError):
+                adapter.engine_arguments(arguments, self.root, self.bundle, self.product, self.selection)
 
     def test_lifecycle_is_named_and_cannot_remove_data_or_pull(self):
         for tail in [['start', self.name + '-database'], ['stop', '--time', '45', self.name + '-catalog'],

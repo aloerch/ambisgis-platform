@@ -99,7 +99,10 @@ def expected_container(arguments, operation, root, selected_root, product):
 
 def engine_arguments(arguments, root, selected_root, product, selection):
     """Return canonical argv, rejecting unsupported flags without dropping any."""
-    if arguments == ['--version']: return arguments
+    # The pinned podman-compose 1.6.0 Podman.output(['--version'], '', [])
+    # includes its empty command slot. Canonicalize only this version probe;
+    # empty arguments in all other operations remain subject to exact guards.
+    if arguments in (['--version'], ['--version', '']): return ['--version']
     globals_ = global_arguments(root)
     if arguments[:len(globals_)] == globals_:
         tail = arguments[len(globals_):]
