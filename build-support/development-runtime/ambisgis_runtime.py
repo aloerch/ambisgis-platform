@@ -208,6 +208,30 @@ def prepare_configs(root, selected_root):
     return paths
 
 
+def systemd_user_environment():
+    """Select the caller's existing manager independently of private engine XDG."""
+    uid = os.getuid()
+    user_runtime = checked_path(Path('/run/user') / str(uid))
+    info = user_runtime.stat()
+    if (not stat.S_ISDIR(info.st_mode) or info.st_uid != uid
+            or stat.S_IMODE(info.st_mode) != 0o700):
+        raise InstallError('An existing private systemd user runtime directory is required.')
+    bus = checked_path(user_runtime / 'bus')
+    info = bus.stat()
+    if not stat.S_ISSOCK(info.st_mode) or info.st_uid != uid:
+        raise InstallError('The existing systemd user bus is unavailable.')
+    manager = checked_path(user_runtime / 'systemd')
+    info = manager.stat()
+    if not stat.S_ISDIR(info.st_mode) or info.st_uid != uid or info.st_mode & 0o022:
+        raise InstallError('The existing systemd user manager directory is unsafe.')
+    private = checked_path(manager / 'private')
+    info = private.stat()
+    if not stat.S_ISSOCK(info.st_mode) or info.st_uid != uid or info.st_mode & 0o077:
+        raise InstallError('The existing private systemd user manager socket is unavailable.')
+    return {'DBUS_SESSION_BUS_ADDRESS': 'unix:path=' + str(bus),
+            'AMBISGIS_SYSTEMD_USER_SOCKET': str(private)}
+
+
 def child_environment(root, selected_root, *, bus=True):
     runtime = selected_root / 'runtime'; config_root = root / 'runtime/config'
     result = {'HOME': str(root / 'runtime/home'), 'XDG_CONFIG_HOME': str(config_root),
@@ -223,15 +247,7 @@ def child_environment(root, selected_root, *, bus=True):
               'CONTAINERS_REGISTRIES_CONF': str(config_root / 'registries.conf'),
               'CONTAINERS_POLICY_JSON': str(config_root / 'policy.json')}
     if bus:
-        path = checked_path(Path('/run/user') / str(os.getuid()) / 'bus')
-        for parent in (path.parent,):
-            info = parent.stat()
-            if info.st_uid != os.getuid() or stat.S_IMODE(info.st_mode) != 0o700:
-                raise InstallError('An existing private systemd user runtime directory is required.')
-        info = path.stat()
-        if not stat.S_ISSOCK(info.st_mode) or info.st_uid != os.getuid():
-            raise InstallError('The existing systemd user bus is unavailable.')
-        result['DBUS_SESSION_BUS_ADDRESS'] = 'unix:path=' + str(path)
+        result.update(systemd_user_environment())
     return result
 
 

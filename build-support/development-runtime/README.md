@@ -156,6 +156,26 @@ their original source. The existing three Podman repairs and vendor tree also
 retain their exact bytes. Standalone environment-unit results and compilation
 remain distinct from the installation and runtime-security acceptance gates.
 
+The fifth attempt reached native health-timer creation, then failed because
+Podman looked for `systemd/private` inside the installation's private runtime
+directory. The database process exited, the other five containers were absent,
+and its native rootless pause process remained. That helper is bound to this
+installation's private `pause.pid` and relocated executable; retaining it is
+not an application-service or helper-cleanup acceptance result. Failed runs,
+container state, data and the owned network remain preserved.
+
+The bounded socket successor constructs `AMBISGIS_SYSTEMD_USER_SOCKET` from
+`/run/user/<actual caller UID>/systemd/private`. It validates every component
+against symlinks, requires the enclosing owned runtime directory to be 0700,
+rejects a group/other-writable manager directory, and requires an owned Unix
+socket without group/other access. The session-bus check remains mandatory.
+Caller-provided socket and bus values are discarded; the engine's HOME/XDG,
+configuration and storage remain private. Native source selection preserves
+its original fallback, peer authentication and rootful behavior. Source and
+filesystem tests do not prove successful D-Bus authentication, timer lifecycle
+or installation acceptance; those require the independently reviewed successor
+build and a fresh ordinary installation.
+
 In-process tests run with the retained CI Python:
 
 ```sh
