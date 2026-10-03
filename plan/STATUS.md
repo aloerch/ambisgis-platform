@@ -1,10 +1,10 @@
 # Active delivery — standing delegation
 
-Platform PR #72 merged normally at `8c3612dd3e4ee992d930f1417798b66f467784e9` with required CI, independent automated review and post-merge smoke checks. The [standing policy](docs/standing-delivery-policy.md) is active.
+FND-03 and FND-04 are accepted/Merged after separate-context review, real runtime/database tests, normal protected merges and post-merge checks. Platform [PR #74](https://github.com/aloerch/ambisgis-platform/pull/74) merged as `0876999d7535d792d0024586981c762b2f9bf513`; geodatabase [PR #10](https://github.com/aloerch/ambisgis-geodb/pull/10) merged as `b7e5888b11a4b3d2246daeffe0173113f1628f2d`. [Acceptance and checks](verification/foundation-prototypes/acceptance-and-merge.json) retain each prototype's bounded scope. Full product authorization and production geodatabase acceptance remain open.
 
-The exact authorized GeoTools/QGIS review and canonical refs are published and independently recovered. All eleven canonical source refs now resolve to their selected identities; publication replay made zero writes. [Source acceptance evidence](docs/authorized-successors-delivery.md) retains the unchanged task criteria and remaining build/release gates. Final evidence PR review/merge and FND-07 tracking reconciliation remain pending at this checkpoint. FND-03 and FND-04 are In progress with real runtime tests; FND-08 follows source acceptance. No installable MVP or release is claimed.
+FND-07 is accepted/Merged via [PR #73](https://github.com/aloerch/ambisgis-platform/pull/73), merge `7812efa3502ec1d7004b485d35b433eea56ce13e`, with all eleven canonical source refs, exact successor publication, independent recovery and zero-write replay. [Source acceptance](verification/authorized-successors/acceptance-and-merge.json) preserves the unchanged criteria; FND-02 stays accepted.
 
-[Current delivery ledger](docs/delivery-ledger.json) · [all 24 requirements](docs/delivery-requirements-matrix.md).
+FND-08 owned builds and FND-05 desktop publishing/rendering are In progress. The native goal runtime has actually continued across a turn boundary; the [ledger](docs/delivery-ledger.json) records the observed continuation and stop mechanism. No installable MVP, packaged release or completed product acceptance is claimed. The [standing policy](docs/standing-delivery-policy.md) and [all 24 requirements](docs/delivery-requirements-matrix.md) govern continuation.
 
 ## Historical checkpoint follows unchanged
 

@@ -10,14 +10,37 @@
     "external_supervisor": false,
     "state_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integration",
     "stop_command": "python3 plan/tools/delivery_runtime.py --state-dir /home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integration stop",
-    "cross_turn_continuation": "pending first observed automatic continuation"
+    "cross_turn_continuation": {
+      "status": "observed",
+      "observed_at": "2026-10-03T06:04:33Z",
+      "mechanism": "native goal continuation after final checkpoint",
+      "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+      "previous_turn_classification": "progress",
+      "previous_turn_evidence": [
+        "PR72 and PR73 normal protected merges",
+        "Four exact authorized source refs published; independent recovery and zero-write replay",
+        "FND07 accepted/Merged and FND08 claimed/In progress",
+        "FND03/FND04 substantive implementations with actual runtime tests and material review fixes"
+      ],
+      "resume_reconciliation": {
+        "live_platform_main": "7812efa3502ec1d7004b485d35b433eea56ce13e",
+        "working_branch": "fnd-08/owned-spine",
+        "integration_checkpoint": "completed",
+        "active_agents": [
+          "/root",
+          "/root/fnd03_identity",
+          "/root/fnd04_prototype",
+          "/root/publication_review"
+        ]
+      }
+    }
   },
   "repository": "aloerch/ambisgis-platform",
   "repository_id": 1376927351,
-  "branch": "fnd-07/authorized-successors",
-  "base": "8c3612dd3e4ee992d930f1417798b66f467784e9",
-  "task": "FND-07 authorized successor publication and source acceptance",
-  "state": "source publication/recovery/replay passed; final evidence PR review pending",
+  "branch": "fnd-08/owned-spine",
+  "base": "7812efa3502ec1d7004b485d35b433eea56ce13e",
+  "task": "FND-08 owned initial spine builds and T-OWN-02",
+  "state": "In progress; exact successor paired builds, host input custody and desktop publication prototype",
   "pr": null,
   "tests": [
     {
@@ -40,17 +63,20 @@
   "accepted": [
     "FND-01",
     "FND-02",
+    "FND-03",
+    "FND-04",
+    "FND-07",
     "GOV-01",
-    "GOV-02 prior view work"
+    "GOV-02"
   ],
   "next": [
-    "Final independent FND-07 evidence review, required CI, normal merge and acceptance tracking",
-    "FND-08 owned rebuilds and moving-upstream immunity",
-    "Continue FND-03/FND-04 actual product prototypes; FND-05 independently ready"
+    "Complete FND-08 paired owned-spine builds, selected-input inventory and donor-drift evidence",
+    "Complete FND-05 desktop packaging/rendering and authorization prototype with separate-context review",
+    "FND-06 becomes ready after FND-05 and FND-08 acceptance; preserve contract/threat-model/Koop spike criteria"
   ],
   "product_acceptance": false,
   "release_artifact": null,
-  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5965793874",
+  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/7#issuecomment-5966157278",
   "workflow": {
     "pr": 72,
     "merge": "8c3612dd3e4ee992d930f1417798b66f467784e9",
@@ -58,19 +84,98 @@
   },
   "active_workers": [
     {
-      "task": "FND-03",
-      "branch": "fnd-03/catalog-policy-v2",
-      "repository": "aloerch/ambisgis-platform",
-      "state": "In progress; real catalog/engine policy tests",
-      "claim": "https://github.com/aloerch/ambisgis-platform/issues/4#issuecomment-5966057973"
+      "agent": "/root/fnd03_identity",
+      "task": "FND-08 QGIS successor paired builds",
+      "branch": "fnd-08/qgis-successor",
+      "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-qgis-worktree"
     },
     {
-      "task": "FND-04",
-      "branch": "fnd-04/typed-prototype",
-      "repository": "aloerch/ambisgis-geodb",
-      "state": "In progress; real PostgreSQL/PostGIS prototype tests",
-      "claim": "https://github.com/aloerch/ambisgis-geodb/issues/1#issuecomment-5966058477"
+      "agent": "/root/fnd04_prototype",
+      "task": "FND-08 Java successor and remaining initial-spine paired builds",
+      "branch": "fnd-08/java-successor",
+      "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/java-successor-worktree"
+    },
+    {
+      "agent": "/root/publication_review",
+      "task": "FND-05 desktop/renderer prototype",
+      "branches": [
+        "fnd-05/desktop-renderer-spike",
+        "fnd-05/renderer-policy-spike"
+      ],
+      "claim": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1#issuecomment-5966378608"
     }
   ],
-  "evidence": "plan/verification/authorized-successors/publication.json"
+  "evidence": "plan/verification/authorized-successors/publication.json",
+  "source_acceptance": {
+    "task": "FND-07",
+    "state": "Merged",
+    "pr": 73,
+    "reviewed_head": "89467a57a2bd25deb13249ead0912840f4028a0a",
+    "merge": "7812efa3502ec1d7004b485d35b433eea56ce13e",
+    "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5966156208"
+  },
+  "prototype_acceptance": {
+    "status": "passed",
+    "tasks": [
+      {
+        "task": "FND-03",
+        "delivery": "Merged",
+        "pr": "https://github.com/aloerch/ambisgis-platform/pull/74",
+        "merge": "0876999d7535d792d0024586981c762b2f9bf513",
+        "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/4#issuecomment-5966376406"
+      },
+      {
+        "task": "FND-04",
+        "delivery": "Merged",
+        "pr": "https://github.com/aloerch/ambisgis-geodb/pull/10",
+        "merge": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+        "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/1#issuecomment-5966377536"
+      },
+      {
+        "task": "FND-05",
+        "delivery": "In progress",
+        "claim": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1#issuecomment-5966378608"
+      }
+    ],
+    "items": 88,
+    "fields": 24,
+    "views": 7,
+    "fnd03_post_merge": {
+      "merge": "0876999d7535d792d0024586981c762b2f9bf513",
+      "reviewed_head": "63c6e4f2351192d07b3f2ca14c3238a9e5333564",
+      "merged_tree_equals_reviewed_tree": true,
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "build-support/geonode",
+        "-p",
+        "test_catalog_policy.py",
+        "-v"
+      ],
+      "tests": 6,
+      "schemas": 4,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd03-post-merge-smoke.log",
+      "log_sha256": "0750d008acd71a2b68f8d1f9dc6ad10327c0911984a5575d3cff72b0e94600b2",
+      "native_runtime_reuse": "Unchanged executed-source digests verified before merge; no new real runtime invocation claimed."
+    },
+    "geodb_post_merge": {
+      "merge": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+      "reviewed_head": "75ef3f7f34067dec53435df8967751b960176fd1",
+      "same_tree": true,
+      "real_db_tests": [
+        "test_07_atomic_group_post_and_idempotent_retry",
+        "test_15_no_public_direct_write_or_function_bypass",
+        "test_25_null_or_invalid_resolution_never_clears_conflict"
+      ],
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "cluster_stopped": true,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/geodb-post-merge-smoke.log",
+      "log_sha256": "5c40bde11290607e0505f32bc19c84ae32a5e2dc49e1c96282348f61c2f640e2"
+    }
+  }
 }
