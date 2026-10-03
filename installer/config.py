@@ -44,7 +44,16 @@ def validate(value, root):
 
 def load(root):
     root = private_directory(root)
-    return validate(read_json(root / 'product.json', private=True), root)
+    value = validate(read_json(root / 'product.json', private=True), root)
+    storage_directories(root)
+    return value
+
+
+def storage_directories(root, *, create=False):
+    """Validate every persistent bind source before rendering or engine calls."""
+    private_directory(root / 'data', create=create)
+    for name in DATA_NAMES:
+        private_directory(root / 'data' / name, create=create)
 
 
 def secret_material(root):
@@ -115,6 +124,7 @@ def compose(config, selection, root):
 
 def render(root, config, selection):
     root = private_directory(root)
+    storage_directories(root)
     generated = private_directory(root / 'generated', create=True)
     material = secret_material(root)
     scopes = {
@@ -159,9 +169,7 @@ def initialize(directory, bundle_path, bundle_sha256, *, port=None, owner=None, 
             config = candidate
             private_directory(root / 'secrets', create=True)
             atomic_write(root / 'secrets' / 'product.json', {name: secrets.token_urlsafe(48) for name in SECRET_NAMES})
-            private_directory(root / 'data', create=True)
-            for name in DATA_NAMES:
-                private_directory(root / 'data' / name, create=True)
+            storage_directories(root, create=True)
             atomic_write(root / 'product.json', config)
             created = True
         render(root, config, selection)

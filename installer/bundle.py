@@ -24,7 +24,8 @@ def sha256(value):
 
 
 def relative(root, name):
-    if not isinstance(name, str) or not name or Path(name).is_absolute() or '..' in Path(name).parts:
+    if (not isinstance(name, str) or not name or Path(name).is_absolute() or '..' in Path(name).parts
+            or str(Path(name)) != name or name == '.'):
         raise InstallError('Bundle members must use contained relative paths.')
     return checked_path(root / name)
 
@@ -45,19 +46,51 @@ def member(root, record, *, executable=False, verify=True):
 
 def verify_manifest(root, reference):
     manifest = read_json(member(root, reference))
-    exact_keys(manifest, ('schema_version', 'files'), ('symlinks',))
-    if manifest['schema_version'] != 1 or not isinstance(manifest['files'], list) or not manifest['files']:
+    exact_keys(manifest, ('schema_version', 'roots', 'files'), ('symlinks', 'directories'))
+    if (type(manifest['schema_version']) is not int or manifest['schema_version'] != 1
+            or not isinstance(manifest['files'], list) or not manifest['files']
+            or not isinstance(manifest['roots'], list) or not manifest['roots']
+            or any(not isinstance(manifest.get(key, []), list) for key in ('directories', 'symlinks'))):
         raise InstallError('The runtime closure manifest is missing.')
+    def trusted_directory(path):
+        info = path.lstat()
+        if not stat.S_ISDIR(info.st_mode) or info.st_mode & 0o022 or info.st_uid not in (0, os.getuid()):
+            raise InstallError('Runtime closure directories must have trusted owners and no group/public write access.')
+    roots = []
+    directories = set()
+    for name in manifest['roots']:
+        path = relative(root, name)
+        if path == root or not path.is_dir() or any(path.is_relative_to(other) or other.is_relative_to(path) for other in roots):
+            raise InstallError('Runtime closure roots must be distinct contained directories.')
+        roots.append(path)
+        directories.add(str(path.relative_to(root)))
+        # A writable parent could replace an otherwise verified subtree.
+        while path.is_relative_to(root):
+            trusted_directory(path)
+            path = path.parent
+    def contained(path):
+        return any(path.is_relative_to(base) for base in roots)
+    def parents(path):
+        while path != root and contained(path):
+            directories.add(str(path.relative_to(root)))
+            path = path.parent
     names = set()
     for record in manifest['files']:
-        if record.get('path') in names:
+        exact_keys(record, ('path', 'sha256'))
+        if not isinstance(record['path'], str) or record['path'] in names:
             raise InstallError('Duplicate runtime closure member.')
         names.add(record.get('path'))
-        member(root, record)
+        path = member(root, record)
+        if not contained(path): raise InstallError('Runtime file is outside the complete closure roots.')
+        if path.stat().st_uid not in (0, os.getuid()): raise InstallError('Runtime file has an untrusted owner.')
+        parents(path.parent)
+    links = set()
     for record in manifest.get('symlinks', []):
         exact_keys(record, ('path', 'target'))
         name, target = record['path'], record['target']
-        if not isinstance(name, str) or Path(name).is_absolute() or '..' in Path(name).parts or name in names:
+        if (not isinstance(name, str) or not name or str(Path(name)) != name or name == '.'
+                or Path(name).is_absolute() or '..' in Path(name).parts or name in names
+                or not isinstance(target, str) or not target):
             raise InstallError('Invalid or duplicate runtime symlink member.')
         link = checked_path((root / name).parent) / Path(name).name
         if not link.is_symlink() or os.readlink(link) != target or Path(target).is_absolute():
@@ -65,8 +98,33 @@ def verify_manifest(root, reference):
         resolved = link.resolve(strict=True)
         if not resolved.is_relative_to(root) or str(resolved.relative_to(root)) not in names:
             raise InstallError('Runtime symlinks must resolve to a verified bundle file.')
+        if not contained(link) or link.lstat().st_uid not in (0, os.getuid()):
+            raise InstallError('Runtime symlink is outside the closure roots or has an untrusted owner.')
         names.add(name)
-    return names
+        links.add(name)
+        parents(link.parent)
+    for name in manifest.get('directories', []):
+        path = relative(root, name)
+        if not contained(path) or not path.is_dir(): raise InstallError('Invalid declared runtime directory.')
+        parents(path)
+    actual = set()
+    observed_directories = set()
+    for base in roots:
+        for parent, children, files in os.walk(base, followlinks=False):
+            path = Path(parent)
+            trusted_directory(path)
+            observed_directories.add(str(path.relative_to(root)))
+            for name in children + files:
+                entry = path / name; info = entry.lstat(); relative_name = str(entry.relative_to(root))
+                if stat.S_ISDIR(info.st_mode): continue
+                if stat.S_ISLNK(info.st_mode):
+                    if relative_name not in links: raise InstallError('Unmanifested runtime symlink.')
+                elif not stat.S_ISREG(info.st_mode):
+                    raise InstallError('Special files are forbidden in runtime closure roots.')
+                actual.add(relative_name)
+    if actual != names or observed_directories != directories:
+        raise InstallError('Runtime closure has missing or unmanifested files, links or directories; no producer was executed.')
+    return names, roots
 
 
 def host_prerequisites(value):
@@ -138,7 +196,7 @@ def load(path, expected_sha256, *, verify_images=True, image_receipts=None):
     member(root, value['source_manifest'])
     runtime = value['runtime']
     exact_keys(runtime, ('podman', 'compose', 'environment', 'files_manifest', 'prerequisites'))
-    names = verify_manifest(root, runtime['files_manifest'])
+    names, closure_roots = verify_manifest(root, runtime['files_manifest'])
     for tool in ('podman', 'compose'):
         member(root, runtime[tool], executable=True)
         if runtime[tool]['path'] not in names:
@@ -149,8 +207,9 @@ def load(path, expected_sha256, *, verify_images=True, image_receipts=None):
         if not isinstance(entries, list) or not entries:
             raise InstallError('Runtime paths must be nonempty lists of bundle directories.')
         for entry in entries:
-            if ':' in entry or not relative(root, entry).is_dir():
-                raise InstallError('Runtime paths must be contained bundle directories.')
+            path = relative(root, entry)
+            if ':' in entry or not path.is_dir() or not any(path.is_relative_to(base) for base in closure_roots):
+                raise InstallError('Runtime search paths must stay inside complete verified closure roots.')
     host_prerequisites(read_json(member(root, runtime['prerequisites'])))
     images = value['images']
     exact_keys(images, SERVICES, ('qgis',))

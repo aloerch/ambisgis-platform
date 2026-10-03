@@ -15,7 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'services/developme
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / 'services/control-plane'))
 from installer import bundle, config, runtime
 from installer.state import InstallError, canonical, digest, locked
-from ambisgis_development import common, gateway, geoserver
+from ambisgis_development import common, database, gateway, geoserver
 from installer import image_archive
 
 
@@ -63,7 +63,7 @@ class InstallerStateTests(unittest.TestCase):
             (self.inputs / 'bin' / tool).write_bytes(b'configuration test input\n')
             (self.inputs / 'bin' / tool).chmod(0o700)
         (self.inputs / 'source.json').write_bytes(b'{"test_only":true}\n')
-        self.put('closure.json', {'schema_version': 1, 'files': [self.ref('bin/podman'), self.ref('bin/compose')]})
+        self.put('closure.json', {'schema_version': 1, 'roots': ['bin'], 'files': [self.ref('bin/podman'), self.ref('bin/compose')]})
         helper = self.inputs / 'bin/podman'
         self.put('prerequisites.json', {'schema_version': 1, 'host_tools': [{
             'path': str(helper), 'sha256': digest(helper), 'uid': os.getuid(), 'gid': os.getgid(),
@@ -238,6 +238,134 @@ class InstallerStateTests(unittest.TestCase):
         with self.assertRaises(InstallError): self.init()
         self.assertFalse(self.root.exists())
 
+    def closure(self, value):
+        self.put('closure.json', value)
+        self.document['runtime']['files_manifest'] = self.ref('closure.json')
+        self.seal()
+
+    def test_unlisted_startup_module_helper_or_library_rejected_before_execution(self):
+        for directory in ('python', 'python/package', 'lib', 'helpers'):
+            (self.inputs / directory).mkdir(exist_ok=True)
+        value = json.loads((self.inputs / 'closure.json').read_text())
+        value.update(roots=['bin', 'python', 'lib', 'helpers'], directories=['python/package', 'lib', 'helpers'])
+        self.closure(value)
+        self.document['runtime']['environment'].update(PYTHONPATH=['python'], LD_LIBRARY_PATH=['lib'])
+        self.seal(); self.init()
+        for name in ('python/sitecustomize.py', 'python/startup.pth', 'python/package/__init__.py',
+                     'helpers/unlisted-conmon', 'lib/libunlisted.so'):
+            with self.subTest(name=name):
+                added = self.inputs / name
+                added.write_bytes(b'unlisted executable input; must never be loaded\n')
+                before = self.state(); identity = digest(self.manifest)
+                with patch.object(runtime.subprocess, 'run') as execute:
+                    with self.assertRaisesRegex(InstallError, 'unmanifested'): self.init()
+                    with self.assertRaisesRegex(InstallError, 'unmanifested'): runtime.Runtime(self.root)
+                    execute.assert_not_called()
+                self.assertEqual(before, self.state())
+                self.assertEqual(identity, digest(self.manifest))
+                self.assertFalse((self.root / 'runtime').exists())
+                added.unlink()
+
+    def test_closure_rejects_special_unlisted_link_and_directory(self):
+        name = self.inputs / 'bin/extra'
+        for kind in ('fifo', 'symlink', 'directory'):
+            with self.subTest(kind=kind):
+                if kind == 'fifo': os.mkfifo(name)
+                elif kind == 'symlink': name.symlink_to('podman')
+                else: name.mkdir()
+                with self.assertRaises(InstallError): self.init()
+                self.assertFalse(self.root.exists())
+                name.rmdir() if kind == 'directory' else name.unlink()
+
+    def test_declared_relative_link_and_empty_directory_are_verified(self):
+        (self.inputs / 'bin/alias').symlink_to('podman')
+        (self.inputs / 'bin/empty').mkdir()
+        value = json.loads((self.inputs / 'closure.json').read_text())
+        value.update(symlinks=[{'path': 'bin/alias', 'target': 'podman'}], directories=['bin/empty'])
+        self.closure(value)
+        self.init()
+        (self.inputs / 'bin/alias').unlink()
+        (self.inputs / 'bin/alias').symlink_to('compose')
+        with self.assertRaises(InstallError): runtime.Runtime(self.root)
+
+    def test_closure_roots_and_ancestors_cannot_be_writable(self):
+        for path in (self.inputs, self.inputs / 'bin'):
+            mode = path.stat().st_mode & 0o777
+            path.chmod(0o777)
+            try:
+                with self.assertRaisesRegex(InstallError, 'directories'): self.init()
+                self.assertFalse(self.root.exists())
+            finally: path.chmod(mode)
+        (self.inputs / 'runtime/nested').mkdir(parents=True)
+        (self.inputs / 'runtime/nested/input').write_bytes(b'retained')
+        value = {'schema_version': 1, 'roots': ['runtime/nested'], 'files': [self.ref('runtime/nested/input')]}
+        self.closure(value)
+        (self.inputs / 'runtime').chmod(0o777)
+        with self.assertRaisesRegex(InstallError, 'directories'):
+            bundle.verify_manifest(self.inputs, self.ref('closure.json'))
+
+    def test_search_directory_must_be_in_complete_manifest_root(self):
+        (self.inputs / 'unlisted-python').mkdir()
+        self.document['runtime']['environment']['PYTHONPATH'] = ['unlisted-python']
+        self.seal()
+        with self.assertRaisesRegex(InstallError, 'search paths'): self.init()
+        self.assertFalse(self.root.exists())
+
+    def test_malformed_overlapping_or_aliased_closure_roots_rejected(self):
+        original = json.loads((self.inputs / 'closure.json').read_text())
+        for roots in ([], ['.'], ['bin', 'bin'], ['bin/'], ['bin', 'bin/nested']):
+            with self.subTest(roots=roots):
+                self.closure(dict(original, roots=roots))
+                with self.assertRaises(InstallError): self.init()
+                self.assertFalse(self.root.exists())
+
+    def test_replaced_data_bind_directories_rejected_without_changes_or_execution(self):
+        self.init()
+        outside = self.base / 'outside'; outside.mkdir(mode=0o700)
+        sentinel = outside / 'do-not-touch'; sentinel.write_bytes(b'external data')
+        for relative in ('data', *('data/' + name for name in config.DATA_NAMES)):
+            with self.subTest(path=relative):
+                path = self.root / relative; saved = path.with_name(path.name + '-saved')
+                path.rename(saved); path.symlink_to(outside, target_is_directory=True)
+                before = self.state()
+                try:
+                    with patch.object(runtime.subprocess, 'run') as execute:
+                        with self.assertRaises(InstallError): self.init()
+                        with self.assertRaises(InstallError): runtime.up(self.root)
+                        execute.assert_not_called()
+                    self.assertEqual(before, self.state())
+                    self.assertEqual(list(outside.iterdir()), [sentinel])
+                    self.assertEqual(sentinel.read_bytes(), b'external data')
+                    self.assertFalse((self.root / 'runtime').exists())
+                finally:
+                    path.unlink(); saved.rename(path)
+
+    def test_unsafe_data_directory_modes_fail_without_permission_repair(self):
+        self.init()
+        for path in (self.root / 'data', *(self.root / 'data' / name for name in config.DATA_NAMES)):
+            with self.subTest(path=path):
+                path.chmod(0o750); before = self.state()
+                try:
+                    with self.assertRaises(InstallError): self.init()
+                    with self.assertRaises(InstallError): runtime.Runtime(self.root)
+                    self.assertEqual(path.stat().st_mode & 0o777, 0o750)
+                    self.assertEqual(before, self.state())
+                finally: path.chmod(0o700)
+
+    def test_role_memberships_and_ownership_fail_before_bootstrap_mutations(self):
+        # Query scheduling regression only; actual PostgreSQL catalog semantics
+        # and SET ROLE/DML/DDL behavior still require the native acceptance run.
+        for trigger in ('pg_auth_members', 'pg_shdepend', 'rolsuper'):
+            for role in database.SERVING_ROLES:
+                with self.subTest(trigger=trigger, role=role):
+                    statements = []
+                    def sql(statement, *args, **kwargs):
+                        statements.append(statement)
+                        return '1' if trigger in statement and "rolname='" + role + "'" in statement else '0'
+                    with patch.object(database, 'sql', side_effect=sql):
+                        with self.assertRaises(ValueError): database.bootstrap({}, {'database_admin': 'private-test-value'})
+                    self.assertTrue(all(statement.startswith('SELECT ') for statement in statements))
+
     def test_changed_archive_is_rejected_before_state_creation(self):
         (self.inputs / 'image.tar').write_bytes(b'changed')
         with self.assertRaises(InstallError): self.init()
@@ -253,6 +381,20 @@ class InstallerStateTests(unittest.TestCase):
             self.document['runtime']['environment'] = {key: ['bin']}
             self.seal()
             with self.assertRaises(InstallError): self.init()
+
+    def test_child_environment_excludes_operator_startup_and_connection_paths(self):
+        self.init()
+        with patch.dict(os.environ, {'CONTAINER_HOST': 'unix:///untrusted', 'CONTAINER_CONNECTION': 'untrusted',
+                                    'PYTHONPATH': '/untrusted', 'PYTHONHOME': '/untrusted',
+                                    'LD_PRELOAD': '/untrusted.so', 'PODMAN_COMPOSE_PROVIDER': '/untrusted'}):
+            selected = runtime.Runtime(self.root)
+        for name in ('CONTAINER_HOST', 'CONTAINER_CONNECTION', 'PYTHONHOME', 'LD_PRELOAD', 'PODMAN_COMPOSE_PROVIDER'):
+            self.assertNotIn(name, selected.environment)
+        self.assertEqual(selected.environment['PYTHONSAFEPATH'], '1')
+        self.assertEqual(selected.environment['PYTHONNOUSERSITE'], '1')
+        self.assertNotIn('PYTHONPATH', selected.environment)
+        self.assertEqual(selected.environment['PATH'], str(self.inputs / 'bin'))
+        self.assertEqual(selected.environment['HOME'], str(self.root / 'runtime/home'))
 
     def test_bundle_escape_and_symlink_parent_are_rejected(self):
         self.document['runtime']['podman']['path'] = '../bundle/bin/podman'

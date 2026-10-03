@@ -21,6 +21,7 @@ class Runtime:
                                      verify_images=verify_images, image_receipts=self.image_receipts)
         self.bundle_root = Path(self.config['bundle']['path']).parent
         self.paths = {}
+        private_directory(self.root / 'runtime', create=True)
         for name in ('home', 'config', 'data', 'run', 'storage', 'networks', 'hooks', 'tmp'):
             self.paths[name] = private_directory(self.root / 'runtime' / name, create=True)
         self.environment = self.clean_environment()
@@ -37,7 +38,7 @@ class Runtime:
         value = {'HOME': str(self.paths['home']), 'XDG_CONFIG_HOME': str(self.paths['config']),
                  'XDG_DATA_HOME': str(self.paths['data']), 'XDG_RUNTIME_DIR': str(self.paths['run']),
                  'TMPDIR': str(self.paths['tmp']), 'LANG': 'C.UTF-8', 'LC_ALL': 'C.UTF-8',
-                 'PYTHONNOUSERSITE': '1', 'PYTHONDONTWRITEBYTECODE': '1'}
+                 'PYTHONNOUSERSITE': '1', 'PYTHONSAFEPATH': '1', 'PYTHONDONTWRITEBYTECODE': '1'}
         for key, paths in self.selection['runtime']['environment'].items():
             value[key] = os.pathsep.join(str(bundle.relative(self.bundle_root, path)) for path in paths)
         return value

@@ -9,6 +9,10 @@ import time
 from .common import DATA, inputs, read, save
 
 PREFIX = Path('/opt/ambisgis/postgres')
+ROLES = {'ambisgis_catalog_owner': 'catalog_migrator', 'ambisgis_catalog_app': 'catalog_runtime',
+         'ambisgis_render_reader': 'render_reader', 'ambisgis_transport_owner': 'transport_migrator',
+         'ambisgis_transport_reader': 'transport_reader'}
+SERVING_ROLES = ('ambisgis_catalog_app', 'ambisgis_render_reader', 'ambisgis_transport_reader')
 
 
 def call(arguments, *, env=None, timeout=60, data=None):
@@ -26,19 +30,30 @@ def sql(statement, secret, *, database='postgres'):
                 env=environment, data=statement.encode())
 
 
+def validate_roles(password):
+    # NOINHERIT alone does not prevent SET ROLE, including predefined powerful
+    # roles. Refuse existing grants/ownership; never silently revoke operator data.
+    for role in ROLES:
+        invalid = sql("SELECT count(*) FROM pg_roles WHERE rolname='" + role + "' AND (rolsuper OR rolcreatedb OR rolcreaterole OR rolreplication OR rolbypassrls OR rolinherit OR NOT rolcanlogin);", password)
+        membership = sql("SELECT count(*) FROM pg_auth_members WHERE member=(SELECT oid FROM pg_roles WHERE rolname='" + role + "');", password)
+        if invalid != '0' or membership != '0':
+            raise ValueError('existing database role has unsafe privileges or memberships')
+        if role in SERVING_ROLES:
+            owned = sql("SELECT count(*) FROM pg_shdepend WHERE refclassid='pg_authid'::regclass AND refobjid=(SELECT oid FROM pg_roles WHERE rolname='" + role + "') AND deptype='o';", password)
+            if owned != '0':
+                raise ValueError('serving database role owns objects')
+
+
 def bootstrap(config, secrets):
     password = secrets['database_admin']
     # Installation/catalog roles only. DB-01 owns all managed branch schemas.
-    roles = {'ambisgis_catalog_owner': 'catalog_migrator', 'ambisgis_catalog_app': 'catalog_runtime',
-             'ambisgis_render_reader': 'render_reader', 'ambisgis_transport_owner': 'transport_migrator',
-             'ambisgis_transport_reader': 'transport_reader'}
-    for role, key in roles.items():
+    # Check already existing roles before any role/database/schema mutation.
+    validate_roles(password)
+    for role, key in ROLES.items():
         exists = sql("SELECT count(*) FROM pg_roles WHERE rolname='" + role + "';", password)
         if exists == '0':
             sql('CREATE ROLE ' + role + " LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOBYPASSRLS PASSWORD '" + secrets[key] + "';", password)
-        invalid = sql("SELECT count(*) FROM pg_roles WHERE rolname='" + role + "' AND (rolsuper OR rolcreatedb OR rolcreaterole OR rolreplication OR rolbypassrls);", password)
-        if invalid != '0':
-            raise ValueError('existing database role has unsafe privileges')
+    validate_roles(password)
     exists = sql("SELECT count(*) FROM pg_database WHERE datname='ambisgis_catalog';", password)
     if exists == '0':
         sql('CREATE DATABASE ambisgis_catalog OWNER ambisgis_catalog_owner;', password)
@@ -46,6 +61,8 @@ def bootstrap(config, secrets):
     if owner != 'ambisgis_catalog_owner':
         raise ValueError('catalog database has a conflicting owner')
     sql("""CREATE EXTENSION IF NOT EXISTS postgis;
+        REVOKE ALL ON DATABASE ambisgis_catalog FROM PUBLIC;
+        GRANT CONNECT ON DATABASE ambisgis_catalog TO ambisgis_catalog_owner, ambisgis_catalog_app, ambisgis_render_reader;
         REVOKE CREATE ON SCHEMA public FROM PUBLIC;
         GRANT USAGE, CREATE ON SCHEMA public TO ambisgis_catalog_owner;
         GRANT USAGE ON SCHEMA public TO ambisgis_catalog_app;

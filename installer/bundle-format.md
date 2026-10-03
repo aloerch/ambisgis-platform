@@ -29,11 +29,21 @@ ID and manifest digest. Compose runs the verified immutable image ID with pull
 disabled. No checkpoint/restore operation is part of this installer.
 
 `runtime.files_manifest` references an exact JSON document containing
-`schema_version: 1`, `files: [{path, sha256}]` and optionally
-`symlinks: [{path, target}]`. Symlinks must be relative and resolve to declared,
+`schema_version: 1`, `roots: ["runtime", "python", "configuration"]`,
+`files: [{path, sha256}]` and optionally `symlinks: [{path, target}]` and
+`directories: ["runtime/required-empty-directory"]`. Select the actual assembler
+layout; roots must be nonoverlapping contained directories. Every recursive
+file and link under each root must be declared; directory membership is exactly
+the parents implied by files/links plus explicitly declared directories. Extra
+files (including startup modules, `.pth` files, helpers and libraries), links,
+empty directories and special files cause pre-execution rejection. Root and
+intermediate bundle directories require trusted ownership and cannot be group
+or publicly writable. Symlinks must be relative and resolve to declared,
 verified regular files within the bundle. Include runtime executables, helper
 binaries, libraries, Python modules, policy/configuration files and required
-runtime assets. Image archive content has its own image and source inventories.
+runtime assets. Every wrapper-referenced executable/helper/configuration root
+must be in this complete closure. Image archive content has its own image and
+source inventories outside these execution roots.
 
 `runtime.prerequisites` references the document described by
 `host-prerequisites.schema.json`. Host helper hashes, owners, modes and exact
@@ -44,7 +54,8 @@ network tests. This initial bundle is qualified for its recorded kernel; it does
 not claim compatibility with every Linux installation.
 
 `runtime.environment` accepts only `PATH`, `LD_LIBRARY_PATH` and `PYTHONPATH`.
-Values are lists of relative bundle directories. The installer creates a clean
+Values are lists of relative bundle directories within complete closure roots.
+Python user-site and unsafe current-directory imports are disabled. The installer creates a clean
 child environment, selects its Compose provider explicitly and supplies
 installation-specific configuration/storage/runtime paths. Neither inherited
 connection/provider variables nor host container hooks/registries are accepted.
@@ -84,6 +95,11 @@ only the initialization job enables native schema creation/update. Two fixed
 transport rules cover the diagnostic WMS map and WFS feature query. They are
 not user permission records: the mandatory Java filter consults the native
 catalog on each request, and native REST/admin routes are unreachable.
+Database bootstrap refuses dangerous role attributes, any role membership
+(including a route through `SET ROLE` or predefined roles), and serving-role
+ownership of database objects. It rejects these existing states before schema
+changes instead of silently revoking privileges. Real role/ownership, DML/DDL
+and membership adversarial checks remain native installation acceptance gates.
 
 Package `deploy/development/{service,health}` as the fixed image entrypoints,
 with the retained interpreter at `/opt/ambisgis/python/bin/python3`. Install the
@@ -101,6 +117,10 @@ product configuration. Generated Compose and service JSON are projections.
 Reinitialization preserves installation identity, credentials and data. The
 installer rejects incompatible bundle/enrollment changes instead of treating
 them as an upgrade or resetting an existing installation.
+Every named persistent bind directory and its storage root must remain private,
+owned by the installing user and free of symlink ancestors. Reinitialization
+and runtime construction revalidate these paths before rendering or executing
+the engine; they do not follow replacement links or repair permissions silently.
 
 First-party installer code follows the plan's GPL-3.0-or-later policy; this does
 not relicense bundled dependencies. The complete product distribution, sources,
