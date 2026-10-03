@@ -105,3 +105,22 @@ existing catalog authority for the real PostGIS/Koop experiment. Output flags,
 pushdown, immutable-revision pagination, error fidelity, cache isolation,
 revocation, route/capability restrictions and resource limits still need actual
 tests. No parallel permission model or bespoke C1 encoder is introduced here.
+
+## First installation and optional closure repair
+
+After independent pre-execution review of `65c210e0`, private `install-001`
+completed npm's socket-denied install with 219 packages (213 registry packages
+and six workspace links), but failed post-install verification on `base64-js`.
+The original lock omits `optional` flags for fifteen transitive optional-only
+packages. All 39 omitted registry paths are reachable only through optional
+edges; no mandatory package was missing. The failed attempt and its executed
+tooling snapshots remain unchanged under
+`build-worktrees/fnd06-koop/installation-command-001` and `install-001`.
+
+The verification repair derives mandatory reachability from the root and every
+selected workspace, resolving exact Node installation paths. Optional dependency
+overrides and optional peers do not create mandatory edges. Any mandatory path
+remains required regardless of an inherited `optional` flag. Four new adversarial
+tests cover transitive omission, shared reachability, forged flags and overrides.
+Candidate002 source, lock, metadata and archives are unchanged. A fresh install
+will use the reviewed repair; this failed attempt is not relabeled as passing.

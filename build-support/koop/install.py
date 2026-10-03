@@ -12,7 +12,7 @@ import shutil
 import subprocess
 import tarfile
 
-from custody import (COMMIT, TREE, WORKSPACES, archive_files, require, save, sha,
+from custody import (COMMIT, TREE, WORKSPACES, archive_files, require, resolve, save, sha,
                      source_manifest, verify_inventory)
 
 HERE = Path(__file__).resolve().parent
@@ -39,18 +39,48 @@ def source_projection(files, app):
     return changes
 
 
+def mandatory_paths(lock):
+    """Compute required reachability; inherited optional flags are not authority."""
+    packages = lock['packages']
+    pending = [''] + ['packages/' + name for name in WORKSPACES]
+    visited = set()
+    required = set()
+    while pending:
+        parent = pending.pop()
+        if parent in visited:
+            continue
+        visited.add(parent)
+        require(parent in packages, 'required workspace/root lock row missing')
+        row = packages[parent]
+        for kind in ('dependencies', 'peerDependencies'):
+            for name in row.get(kind, {}):
+                if name in row.get('optionalDependencies', {}):
+                    continue
+                if kind == 'peerDependencies' and row.get('peerDependenciesMeta', {}).get(name, {}).get('optional'):
+                    continue
+                target = resolve(packages, parent, name)
+                required.add(target)
+                pending.append(packages[target]['resolved'] if packages[target].get('link') else target)
+    return required
+
+
 def verify_installed(app, inputs, lock):
     rows = []
     expected_files = set()
     workspace_links = {}
+    for name, row in lock['packages'].items():
+        if name.startswith('node_modules/') and not row.get('link'):
+            require(row.get('resolved') and row.get('integrity'), 'unresolved installed registry identity: ' + name)
+    required = mandatory_paths(lock)
     for name, row in lock['packages'].items():
         if not name.startswith('node_modules/') or row.get('link'):
             continue
         require(row.get('resolved') and row.get('integrity'), 'unresolved installed registry identity: ' + name)
         path = app / name
         if not path.exists():
-            require(row.get('optional'), 'required installed package missing: ' + name)
-            rows.append({'path': name, 'version': row['version'], 'omitted_optional': True})
+            require(name not in required, 'required installed package missing: ' + name)
+            rows.append({'path': name, 'version': row['version'], 'omitted_optional': True,
+                         'omission_basis': 'no mandatory path from selected root/workspaces'})
             continue
         require(not path.is_symlink(), 'registry package directory is a link')
         files = archive_files(inputs / row['resolved'][5:])
@@ -93,7 +123,8 @@ def verify_installed(app, inputs, lock):
                         'unexpected installed file: ' + relative)
                 installed_files.append({'path': relative, 'sha256': sha(path), 'bytes': path.stat().st_size})
     require(expected_files <= {row['path'] for row in installed_files}, 'installed expected file inventory incomplete')
-    return {'packages': rows, 'files': installed_files, 'links': installed_links}
+    return {'packages': rows, 'files': installed_files, 'links': installed_links,
+            'mandatory_install_paths': sorted(required)}
 
 
 def install(inputs, output, specification):
