@@ -1,3 +1,5 @@
+> Active authority: [standing owner delegation](plan/docs/standing-delivery-policy.md), owner task sections 2 and 5. It supersedes earlier routine approval/continuation stops while preserving all product acceptance, rights/security blockers, excluded actions and historical records. Read it before applying procedural gates below.
+
 All design-package paths referenced below are relative to `plan/`. Read `plan/AGENTS.md` and the controlling individual specifications before implementation. Root product code follows the same boundaries.
 
 # AmbisGIS agent instructions

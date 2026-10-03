@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "authorization": "plan/authorizations/2026-10-02-standing-delegation.md",
+  "authorization_sha256": "40d4bac51de35df99aa81f7c16db45f54644145272ce0a5f424aca208f38c402",
+  "runtime": {
+    "kind": "native-codex-goal",
+    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+    "integrator": "/root",
+    "maximum_agents": 4,
+    "external_supervisor": false,
+    "state_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integration",
+    "stop_command": "python3 plan/tools/delivery_runtime.py --state-dir /home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integration stop",
+    "cross_turn_continuation": "pending first observed automatic continuation"
+  },
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "branch": "delivery/standing-delegation",
+  "base": "5213f31cd51aed5230d7bd550cc03662bcfb566f",
+  "task": "GOV-02 workflow conversion (prior view acceptance preserved)",
+  "state": "independently-reviewed-local-tests-passed; initial PR/CI pending",
+  "pr": null,
+  "tests": [
+    {
+      "name": "package-tests",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/delivery-worktree/plan",
+      "started_at": "2026-10-03T05:16:01.950328+00:00",
+      "finished_at": "2026-10-03T05:16:14.913846+00:00",
+      "exit_code": 0,
+      "log_sha256": "d92f391856e81b60a50a9ebf3304b05f60beb4e9be69a37d37444465f2bab60d",
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/package-tests-final-01.log",
+      "tests": 444,
+      "skips": 0
+    },
+    {
+      "name": "schemas",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/delivery-worktree/plan",
+      "started_at": "2026-10-03T05:16:14.914464+00:00",
+      "finished_at": "2026-10-03T05:16:15.062518+00:00",
+      "exit_code": 0,
+      "log_sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/schemas-final-01.log"
+    }
+  ],
+  "source_publication": {
+    "geotools": "authorized; fresh local integrity passed; not published",
+    "qgis": "authorized; fresh local integrity passed; not published"
+  },
+  "accepted": [
+    "FND-01",
+    "FND-02",
+    "GOV-01",
+    "GOV-02 prior view work"
+  ],
+  "next": [
+    "Review/test/merge workflow conversion",
+    "Publish and independently recover two exact successors; FND-07 acceptance",
+    "FND-08 owned build; FND-03/04/05 independently ready"
+  ],
+  "product_acceptance": false,
+  "release_artifact": null,
+  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/9#issuecomment-5965793874"
+}

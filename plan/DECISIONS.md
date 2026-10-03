@@ -1,3 +1,5 @@
+> Active authority: [standing owner delegation](docs/standing-delivery-policy.md), owner task sections 2 and 5. It supersedes earlier routine approval/continuation stops while preserving all product acceptance, rights/security blockers, excluded actions and historical records. Read it before applying procedural gates below.
+
 # Decision index — revision 2
 
 | Decision | Status | Evidence / consequence |

@@ -1,3 +1,5 @@
+> Active authority: [standing owner delegation](docs/standing-delivery-policy.md), owner task sections 2 and 5. It supersedes earlier routine approval/continuation stops while preserving all product acceptance, rights/security blockers, excluded actions and historical records. Read it before applying procedural gates below.
+
 # Paste into Codex in Visual Studio Code
 
 Implement **AmbisGIS**, the independently maintained GIS product specified in this revision 2 workspace. Read `AGENTS.md`, `README.md`, `REVISION_2_CHANGES.md`, chapters 00/08/09/11/12, `DECISIONS.md`, `repositories.json`, `project.json`, `requirements.json` and `backlog.json`. Read detailed component specifications as tasks require them.
