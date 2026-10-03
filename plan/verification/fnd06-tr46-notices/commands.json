@@ -1,0 +1,136 @@
+{
+  "base_commit": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
+  "helper_sha256": "51dc583d55b712838f990530afe9bdf6ccdfb48e5b71d87b97b1d70070500442",
+  "input_manifest_sha256": "760dba33ab7b05ecf622c5a5be93b20d7e31734e2ade76fb601530229fd82e1a",
+  "guarded_inputs_before": {
+    "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz": "164ae1eb32cea353551bbc7f9358dcaae4ffabbe65ec37a92ca464a9570a2a0a",
+    "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/manifest.json": "ae3c5d548e95f23467cc63d571e54d44fec494f906291da7362263590d97b642",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/inputs.json": "f9fb44113047a08cdcc1905b401a87615f3525b5c9f6e67344a23e076d0ffbde",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/custody.py": "0431a935ba45a3961288bf500362cbf2f529d3b39f20cef1616da7a0c51870ad",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/install.py": "bd29ba2090a69e7ca1c281203d16c5e51685aaf6375fe5bfae1670bedacd136e",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/retain.py": "4de599a4b2fc3ecc05f717e5d4bafa90cc316ce38659aa17b448389c95588806",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/test_custody.py": "34a1351ace6aba6cf99b24d662a0187dc0f6c6acce910acef9d1ab1b1d4cd4b3"
+  },
+  "runs": [
+    {
+      "name": "verify",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/postgis/offline_exec.py",
+        "--evidence",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-002/verify-network.json",
+        "--",
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/tr46_notices.py",
+        "verify",
+        "--archive",
+        "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree",
+      "started_at": "2026-10-03T10:31:08.258479+00:00",
+      "finished_at": "2026-10-03T10:31:08.337426+00:00",
+      "exit_code": 0,
+      "selected_environment": {
+        "TR46_ARCHIVE": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout_sha256": "bf8b4ae21162f10a0ebcccc67c908166a0df85dc779aa9d2f5957a310a5bb359",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "network_sha256": "6ba0105fa4a3ece9df22fe1d56ac53a576c004619888f8845209efa0178ed118"
+    },
+    {
+      "name": "stage",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/postgis/offline_exec.py",
+        "--evidence",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-002/stage-network.json",
+        "--",
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/tr46_notices.py",
+        "stage",
+        "--archive",
+        "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz",
+        "--output",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-002/stage"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree",
+      "started_at": "2026-10-03T10:31:08.337596+00:00",
+      "finished_at": "2026-10-03T10:31:08.434283+00:00",
+      "exit_code": 0,
+      "selected_environment": {
+        "TR46_ARCHIVE": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout_sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "network_sha256": "a6c37a1682383390833cc36282cf3d09fadb224eb740ca5f41d97b689fa6c98d"
+    },
+    {
+      "name": "staged-verifier",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/postgis/offline_exec.py",
+        "--evidence",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-002/staged-verifier-network.json",
+        "--",
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-002/stage/source/tr46-0.0.3/tr46_notices.py",
+        "verify-stage",
+        "--archive",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-002/stage/source/tr46-0.0.3/original-npm-archive.tgz",
+        "--bundle",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-002/stage/source/tr46-0.0.3/supplement",
+        "--output",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-002/stage"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree",
+      "started_at": "2026-10-03T10:31:08.434812+00:00",
+      "finished_at": "2026-10-03T10:31:08.512125+00:00",
+      "exit_code": 0,
+      "selected_environment": {
+        "TR46_ARCHIVE": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout_sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "network_sha256": "9ee2b6a3f67ccb458cd3bfd51cae0275aa3a6d3c4c09842ce1c665e114d8b841"
+    },
+    {
+      "name": "guards",
+      "argv": [
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/postgis/offline_exec.py",
+        "--evidence",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-runtime/run-002/guards-network.json",
+        "--",
+        "/usr/bin/python3",
+        "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/plan/verification/fnd06-tr46-notices/test_tr46_notices.py",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree",
+      "started_at": "2026-10-03T10:31:08.512726+00:00",
+      "finished_at": "2026-10-03T10:31:08.925229+00:00",
+      "exit_code": 0,
+      "selected_environment": {
+        "TR46_ARCHIVE": "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6f04d7a1d51660a67fa65926574a096d7fe057a91806c0cb956624c681749128",
+      "network_sha256": "aa1f663b37585bf8bfb8dbcf0a4984ac49e70822e0b855148231bb2782e00d6e"
+    }
+  ],
+  "guarded_inputs_after": {
+    "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/registry/365413f62144e1b6242d1bf5312aebee2b6a73df29813d92e374458361ab7fba.tgz": "164ae1eb32cea353551bbc7f9358dcaae4ffabbe65ec37a92ca464a9570a2a0a",
+    "/home/revelberry/Projects/AmbisGIS/source-archives/fnd06-koop/candidate-002/manifest.json": "ae3c5d548e95f23467cc63d571e54d44fec494f906291da7362263590d97b642",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/inputs.json": "f9fb44113047a08cdcc1905b401a87615f3525b5c9f6e67344a23e076d0ffbde",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/custody.py": "0431a935ba45a3961288bf500362cbf2f529d3b39f20cef1616da7a0c51870ad",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/install.py": "bd29ba2090a69e7ca1c281203d16c5e51685aaf6375fe5bfae1670bedacd136e",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/retain.py": "4de599a4b2fc3ecc05f717e5d4bafa90cc316ce38659aa17b448389c95588806",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-tr46-notices-worktree/build-support/koop/test_custody.py": "34a1351ace6aba6cf99b24d662a0187dc0f6c6acce910acef9d1ab1b1d4cd4b3"
+  },
+  "guarded_inputs_unchanged": true,
+  "stage_manifest_sha256": "84a309d25cdf385da5d59492573cf9c46c5e8bb518d0b6f0e98f7e0a61f9c5a2",
+  "scope": "Actual supplemental notice/source staging, reconstruction and guards; no install, dependency change, product adoption or distribution approval."
+}

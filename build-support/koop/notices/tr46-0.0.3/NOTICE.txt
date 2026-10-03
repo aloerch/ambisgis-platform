@@ -1,0 +1,36 @@
+Supplemental notices for the exact retained tr46 0.0.3 package
+
+The original npm archive (SHA-256
+164ae1eb32cea353551bbc7f9358dcaae4ffabbe65ec37a92ca464a9570a2a0a)
+omitted full license notices. This separately identified supplement supplies
+historical notices and source provenance. It does not claim those notices were
+present in the original archive and does not alter that archive or runtime code.
+
+tr46 code: Copyright (c) 2016 Sebastian Mayr. See MIT-LICENSE.txt for the
+complete copyright, permission notice and disclaimer. The exact selected source
+a8009f9ce80ff5dbe71dd71e203afe4e4c878d28 is the direct parent of official commit
+3a6f29721e7063b9ffd421e461a54beae6170001, which adds only this MIT notice.
+Every pre-existing source-tree entry is identical across these commits.
+
+Unicode data: Copyright (c) 1991-2015 Unicode, Inc. All rights reserved.
+See UNICODE-LICENSE.txt for the complete historical copyright and permission
+notice, disclaimer and restriction on promotional use of the holder's name.
+
+Modification statement: lib/mappingTable.json is a transformed representation
+of the Unicode 8.0.0 IdnaMappingTable.txt data. The generator removes comments,
+converts hexadecimal code-point ranges and replacement values to integers,
+and serializes the resulting rows as compact JSON. The retained Unicode source
+has SHA-256 5e9f5929130b713e698162ac5b60a99ccfb831606686b1c50777cd920b55dee2.
+The 8,179-row generated table is byte-identical to the selected package member,
+SHA-256 b6b39724dca9011113a08d9d6910204062b58169e98952acdfbd19bf2c31bbff.
+The supplement makes no algorithm or runtime-data changes. Retain this clear
+modification statement in the software and its associated documentation.
+
+Carry this file and both complete license files with the software and its
+documentation. Preserve the source/provenance bundle for reproducible checks.
+Do not execute the original generator's floating Unicode download: the supplied
+verification helper reads the pinned local Unicode 8.0.0 input only.
+
+This supplement addresses only the identified tr46 archive. It is not approval
+of Koop adoption, the rest of its dependency closure, security, product release,
+trademarks or distribution. Those decisions retain their independent gates.
