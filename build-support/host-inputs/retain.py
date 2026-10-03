@@ -37,9 +37,13 @@ def checked_url(url):
     return url
 
 
-def fetch(url, dest, expected_size, expected_digest, algorithm):
-    if dest.is_symlink() or any(parent.is_symlink() for parent in dest.parents):
+def checked_path(path):
+    if path.is_symlink() or any(parent.is_symlink() for parent in path.parents):
         raise ValueError('Symlink at retained destination')
+
+
+def fetch(url, dest, expected_size, expected_digest, algorithm):
+    checked_path(dest)
     if dest.exists():
         if dest.stat().st_size != expected_size or digest(dest, algorithm) != expected_digest:
             raise ValueError('Retained bytes changed: ' + str(dest))
@@ -64,6 +68,7 @@ def fetch(url, dest, expected_size, expected_digest, algorithm):
 
 
 def verify_rpm(path, entry, source=False):
+    checked_path(path)
     if digest(path, entry['publisher_digest_algorithm']) != entry['publisher_digest']:
         raise ValueError('RPM publisher digest mismatch')
     signature = subprocess.run(['rpmkeys', '--checksig', str(path)], text=True,
@@ -136,14 +141,18 @@ def source_listing(data, revision):
 
 
 def source(entry, sources, retained):
+    # Bind every source form to the exact signed binary, including cached SRPMs.
+    verified = verify_rpm(retained / 'rpms' / Path(entry['location']).name, entry)
     candidates = [e for e in sources if Path(e['location']).name == entry['source_rpm']]
     if candidates:
         src = candidates[0]; path = retained / 'source-rpms' / entry['source_rpm']
+        checked_path(path)
         if path.exists():
+            source_verified = verify_rpm(path, src, source=True)
+            if source_verified['disturl'] != verified['disturl']:
+                raise ValueError('Source RPM build revision differs from signed binary')
             return {'source_rpm': entry['source_rpm'], 'kind': 'retained-source-rpm',
-                    'sha256': digest(path), 'verification': verify_rpm(path, src, source=True)}
-    # The exact signed binary must already have been retained and verified.
-    verified = verify_rpm(retained / 'rpms' / Path(entry['location']).name, entry)
+                    'sha256': digest(path), 'verification': source_verified}
     project, revision, package = obs_identity(verified['disturl'])
     # OBS multibuild flavors share the source package and exact source digest.
     # The response still must match the signed binary's full source revision.
@@ -151,8 +160,10 @@ def source(entry, sources, retained):
     url = 'https://api.opensuse.org/public/source/' + urllib.parse.quote(project, safe='') + '/' + urllib.parse.quote(source_package, safe='')
     listing_url = url + '?rev=' + revision
     dest = retained / 'obs-source' / (package.replace(':', '_') + '-' + revision)
+    checked_path(dest)
     dest.mkdir(parents=True, exist_ok=True)
     listing = dest / 'directory.xml'
+    checked_path(listing)
     if listing.exists():
         data = listing.read_bytes()
     else:

@@ -82,6 +82,45 @@ class InventoryBoundaryTests(unittest.TestCase):
 
 
 class RetentionBoundaryTests(unittest.TestCase):
+    def test_source_listing_symlink_rejected_before_network_or_write(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / 'outside').mkdir()
+            (root / 'retained').mkdir()
+            (root / 'retained' / 'obs-source').symlink_to(root / 'outside', target_is_directory=True)
+            entry = {'location': 'x86_64/compiler-1-1.x86_64.rpm',
+                     'source_rpm': 'compiler-1-1.src.rpm'}
+            revision = 'obs://build.opensuse.org/openSUSE:Factory/standard/' + 'a' * 32 + '-compiler'
+            with patch.object(retain, 'verify_rpm', return_value={'disturl': revision}), \
+                 patch('urllib.request.urlopen', side_effect=AssertionError('network')):
+                with self.assertRaisesRegex(ValueError, 'Symlink'):
+                    retain.source(entry, [], root / 'retained')
+            self.assertEqual([], list((root / 'outside').iterdir()))
+
+    def test_cached_source_rpm_must_match_signed_binary_revision(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            source = root / 'source-rpms' / 'compiler-1-1.src.rpm'
+            source.parent.mkdir()
+            source.write_bytes(b'retained source package')
+            entry = {'location': 'x86_64/compiler-1-1.x86_64.rpm',
+                     'source_rpm': source.name}
+            candidate = {'location': 'src/' + source.name}
+            binary_revision = 'obs://build.opensuse.org/openSUSE:Factory/standard/' + 'a' * 32 + '-compiler'
+            for source_revision in [binary_revision, binary_revision.replace('a' * 32, 'b' * 32)]:
+                with patch.object(retain, 'verify_rpm', side_effect=[
+                        {'disturl': binary_revision}, {'disturl': source_revision}]) as verify, \
+                     patch('urllib.request.urlopen', side_effect=AssertionError('network')):
+                    if source_revision == binary_revision:
+                        result = retain.source(entry, [candidate], root)
+                        self.assertEqual('retained-source-rpm', result['kind'])
+                    else:
+                        with self.assertRaisesRegex(ValueError, 'revision differs'):
+                            retain.source(entry, [candidate], root)
+                    self.assertEqual(2, verify.call_count)
+                    self.assertEqual(root / 'rpms' / Path(entry['location']).name,
+                                     verify.call_args_list[0].args[0])
+
     def test_rpm_url_is_public_exact_publisher_only(self):
         accepted = 'https://download.opensuse.org/history/20260916/tumbleweed/repo/oss/x86_64/rpm-1.x86_64.rpm'
         self.assertEqual(accepted, retain.checked_url(accepted))
