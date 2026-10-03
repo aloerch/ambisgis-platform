@@ -110,6 +110,9 @@ def run(args):
         custody = TASK / 'source-archives/fnd06-koop/candidate-002'
         verify_inventory(custody)
         installation = args.installation.resolve()
+        from koop_runtime_inputs import node_binding
+        node_before = node_binding(custody / 'node.tar.xz', installation / 'toolchain')
+        save(output / 'node-toolchain-before.json', node_before)
         selected = json.loads((installation / 'result.json').read_text())
         if selected.get('result_exit_code') != 0 or selected['input_manifest_sha256'] != sha(custody / 'manifest.json'):
             raise ValueError('installation identity differs')
@@ -204,6 +207,9 @@ def run(args):
         if after != origin: raise RuntimeError('catalog installed source changed')
         installed_after = verify_installed(installation / 'app', custody, json.loads((custody / 'package-lock.json').read_text()))
         if installed_after != installed_before: raise RuntimeError('Koop installed bytes changed')
+        node_after = node_binding(custody / 'node.tar.xz', installation / 'toolchain')
+        save(output / 'node-toolchain-after.json', node_after)
+        if node_after != node_before: raise RuntimeError('Node runtime files changed')
         if any(digest(snapshot / p) != h for p, h in hashes.items()): raise RuntimeError('executed tooling changed')
         result['origins_unchanged'] = True
         result['result_exit_code'] = int(code != 0 or result['child']['result_exit_code'] != 0)

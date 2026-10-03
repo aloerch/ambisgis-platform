@@ -1,9 +1,11 @@
 import hashlib
 import json
+import io
 from pathlib import Path
 import tempfile
+import tarfile
 import unittest
-from koop_runtime_inputs import corpus_binding, digest, verify_blob
+from koop_runtime_inputs import corpus_binding, digest, verify_blob, node_binding
 
 
 class RuntimeInputGuards(unittest.TestCase):
@@ -39,3 +41,14 @@ class RuntimeInputGuards(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'reviewed checkpoint'): verify_blob(self.payload, blob)
         self.payload.unlink()
         with self.assertRaisesRegex(ValueError, 'missing/nonregular'): verify_blob(self.payload, blob)
+
+    def test_changed_runtime_binary_rejected(self):
+        archive = self.root / 'node.tar'
+        extracted = self.root / 'toolchain'; extracted.mkdir()
+        binary = extracted / 'node'; binary.write_bytes(b'exact selected binary'); binary.chmod(0o755)
+        with tarfile.open(archive, 'w') as stream:
+            member = tarfile.TarInfo('node'); member.mode = 0o755; member.size = binary.stat().st_size
+            stream.addfile(member, io.BytesIO(binary.read_bytes()))
+        node_binding(archive, extracted)
+        binary.write_bytes(b'changed runtime bytes')
+        with self.assertRaisesRegex(ValueError, 'Node runtime'): node_binding(archive, extracted)

@@ -3,6 +3,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import tarfile
 
 CONTRACT = 'a31a285b5e659a08bc6c18c393cfe5a8581bf293'
 
@@ -53,3 +54,34 @@ def corpus_binding(root, manifest_sha256):
     if payload.stat().st_size != row['bytes'] or digest(payload) != row['sha256']:
         raise ValueError('selected corpus payload identity differs')
     return manifest
+
+
+def node_binding(archive_path, extracted):
+    """Verify actual runtime files/modes/links against the retained tool archive."""
+    extracted = Path(extracted).resolve()
+    rows, expected = [], set()
+    with tarfile.open(archive_path) as archive:
+        for member in archive:
+            relative = Path(member.name)
+            if relative.is_absolute() or '..' in relative.parts:
+                raise ValueError('unsafe Node archive path')
+            path = extracted / relative
+            if member.isdir(): continue
+            if not path.resolve().is_relative_to(extracted): raise ValueError('Node runtime path escapes custody')
+            if member.issym():
+                if not path.is_symlink() or str(path.readlink()) != member.linkname:
+                    raise ValueError('Node runtime link differs')
+                rows.append({'path': member.name, 'link': member.linkname})
+            elif member.isfile():
+                if not path.is_file() or path.is_symlink() or path.stat().st_size != member.size:
+                    raise ValueError('Node runtime file identity differs')
+                expected_sha = hashlib.file_digest(archive.extractfile(member), 'sha256').hexdigest()
+                if digest(path) != expected_sha or path.stat().st_mode & 0o777 != member.mode & 0o777:
+                    raise ValueError('Node runtime bytes/mode differ')
+                rows.append({'path': member.name, 'sha256': expected_sha, 'bytes': member.size, 'mode': member.mode & 0o777})
+            else:
+                raise ValueError('unsupported Node archive member')
+            expected.add(member.name)
+    actual = {p.relative_to(extracted).as_posix() for p in extracted.rglob('*') if p.is_file() or p.is_symlink()}
+    if actual != expected: raise ValueError('Node runtime file set differs')
+    return rows
