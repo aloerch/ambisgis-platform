@@ -16,8 +16,9 @@ FND-08 is In progress on `fnd-08/owned-spine`, based on merged platform
 build evidence has independent review. The two-file client lint repair merged in
 [PR #1](https://github.com/aloerch/ambisgis-mapstore-client/pull/1) at
 `c1f6ad9df52f08ac3bfd7211db9e3ee744b21407`, with whole-client lint and 510 native
-browser assertions passing. Fresh catalog/UI pairs select that exact commit;
-final aggregate review and acceptance remain pending. [Build evidence and limits](plan/docs/fnd-08-owned-spine.md)
+browser assertions passing. Fresh catalog/UI pairs at that exact commit pass, with three byte-identical catalog
+outputs and zero unexplained UI differences. Final aggregate review and acceptance
+remain pending. [Build evidence and limits](plan/docs/fnd-08-owned-spine.md)
 include all retained failures, named skips and raw reproducibility differences.
 
 The [ledger](plan/docs/delivery-ledger.json) and [all 24 requirements](plan/docs/delivery-requirements-matrix.md)

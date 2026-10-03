@@ -2,16 +2,16 @@
 
 The PostgreSQL/PostGIS, catalog, rendering/cache and UI components have actual
 owned-source builds and retained inputs. Separate-context review has checked the
-native, Java, QGIS and host-input evidence. Final aggregate acceptance remains
-open while fresh catalog/UI pairs select the reviewed client lint successor.
+native, Java, QGIS and host-input evidence. Fresh catalog/UI pairs now select the reviewed client lint successor and pass
+independent review. Final aggregate review and acceptance remain open.
 This is the initial build foundation; no installer or completed GIS is claimed.
 
 ## Original acceptance and evidence
 
 | Unchanged FND-08 criterion | Current evidence and remaining work |
 | --- | --- |
-| Initial vertical-slice components build without resolving upstream branch tips or fetching unrecorded packages. | Exact owned commits, original Git blob/mode inventories, retained dependency manifests, fresh output/cache directories and command-bound network denial are recorded in the component receipts below. The client formatting successor merged through PR #1; fresh catalog/UI pairs explicitly select that merged commit. |
-| A simulated upstream API/branch change does not change selected inputs or outputs. | Each qualifying pair creates its synthetic donor fixture before build one, changes only that fixture after completion and builds again. A deliberately floating resolver changes, while exact owned selections stay fixed. Comparisons retain raw hashes and attribute only recorded path/date/build-ID/webpack references; changed code or unexplained membership/content fails. New client pairs are still pending. |
+| Initial vertical-slice components build without resolving upstream branch tips or fetching unrecorded packages. | Exact owned commits, original Git blob/mode inventories, retained dependency manifests, fresh output/cache directories and command-bound network denial are recorded in the component receipts below. The client formatting successor merged through PR #1; four fresh catalog/UI builds explicitly select that merged commit and pass. |
+| A simulated upstream API/branch change does not change selected inputs or outputs. | Each qualifying pair creates its synthetic donor fixture before build one, changes only that fixture after completion and builds again. A deliberately floating resolver changes, while exact owned selections stay fixed. Comparisons retain raw hashes and attribute only recorded path/date/build-ID/webpack references; changed code or unexplained membership/content fails. Fresh client pairs pass with the same explicit attribution boundaries. |
 | The source inventory includes libraries, plugins, styles, fonts, CRS resources, toolchains and base image dependencies. | Complete component source/input manifests include native/spatial libraries and notices, Java dependencies and plugin resources, Python/npm inputs, QGIS fonts/styles/resources and selected host RPM/source closure. The additional browser-isolation tools have a separately reviewed custody supplement. No compiler bootstrap or recreated OS image is inferred. |
 
 [Chapter 11 T-OWN-02](11-independent-product-and-source-ownership.md) tests whether
@@ -77,8 +77,9 @@ Independent reviewers reproduced material fail-open comparison and redirected
 path defects. Forward fixes, adversarial regressions and fresh retained replay
 are preserved with the original failures. Changes to review helpers are bound
 separately from older producer snapshots; old executions are never relabeled.
-The aggregate review has freshly passed 146 helper tests and awaits the final
-client pair evidence and final documentation/head binding.
+The aggregate review has freshly passed 146 helper tests. The final client
+pair increment has separate review; final aggregate documentation/head binding
+and protected PR integration remain pending.
 
 Raw reproducibility is explicitly false where path, timestamp or build-ID
 variation is recorded. Diagnostic comparison does not rewrite distributed bytes.

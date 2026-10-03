@@ -40,7 +40,7 @@
   "branch": "fnd-08/owned-spine",
   "base": "337cc4f7438848575e075e8d90f59d9d37e4309e",
   "task": "FND-08 owned initial spine builds and T-OWN-02",
-  "state": "In progress; native, Java, QGIS and selected-host evidence reviewed; fresh merged-client catalog/UI pairs and final aggregate review pending",
+  "state": "In progress; all initial component builds and custody increments independently reviewed, final aggregate review and protected PR integration pending",
   "pr": null,
   "tests": [
     {
@@ -54,6 +54,46 @@
       "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/source-integrated-tests-01.log",
       "log_sha256": "b565ef5a7ffc22484b84f383aab0fa87c8066a89f80d9a8dc295b1d3cf7f1a76",
       "note": "Final evidence-head tests must be rerun and bound before merge."
+    },
+    {
+      "scope": "Documentation checkpoint b611d7b; plan tests separate from GIS builds",
+      "head": "b611d7b3547d25cdd0b3cce7300f848afea591c9",
+      "package_tests": 457,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "schemas": 4,
+      "note": "Separate final-client increment also ran all457 tests and4schemas; final integrated-head validation follows.",
+      "actual_results": [
+        {
+          "name": "package",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-worktree/plan",
+          "exit_code": 0,
+          "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd08-docs-package-001.log",
+          "sha256": "a931d7cbcdc1f1545a4ce872cdb7fcb0009aeca7e6b45c78a3a53e8522591f04"
+        },
+        {
+          "name": "schemas",
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+            "tools/validate_package.py",
+            "--require-schemas"
+          ],
+          "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-worktree/plan",
+          "exit_code": 0,
+          "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd08-docs-schemas-001.log",
+          "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+        }
+      ]
     }
   ],
   "source_publication": {
@@ -71,9 +111,9 @@
     "GOV-02"
   ],
   "next": [
-    "Finish fresh FND-08 catalog/UI pairs at merged client pin and supplemental test-tool custody review",
-    "Complete final FND-08 aggregate review, normal protected PR merge and post-merge checks",
-    "FND-06 becomes ready after FND-08 acceptance; retain its contracts, threat model and Koop comparison criteria"
+    "Complete final FND-08 aggregate review, required checks and normal protected merge",
+    "Verify exact merged artifact/recipe identities and applicable post-merge checks; reconcile original FND-08 criteria",
+    "Claim dependency-ready FND-06 with contracts, threat model, synthetic corpus and mandatory Koop comparison criteria"
   ],
   "product_acceptance": false,
   "release_artifact": null,
@@ -86,17 +126,17 @@
   "active_workers": [
     {
       "agent": "/root/fnd03_identity",
-      "task": "Independent supplemental test-tool custody and final client-pair review"
+      "task": "Final client pair and supplemental tool custody review completed"
     },
     {
       "agent": "/root/fnd04_prototype",
-      "task": "Fresh catalog/UI pairs at merged client source pin",
+      "task": "Fresh pair increment completed; read-only FND-06 preparation while acceptance pending",
       "branch": "fnd-08/final-client-pairs",
       "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/final-client-pairs-worktree"
     },
     {
       "agent": "/root/publication_review",
-      "task": "Independent aggregate FND-08 review and separate FND-05 delegation classification"
+      "task": "Independent final aggregate FND-08 review"
     }
   ],
   "evidence": "plan/verification/authorized-successors/publication.json",
@@ -173,7 +213,7 @@
     },
     "observation_note": "Historical 88-item observation before FND-05 acceptance; current renderer_progress and project_checkpoint supersede its FND-05 In progress row."
   },
-  "checkpoint_parent_commit": "6b055752f74343b9cc93978f65f96291dd309784",
+  "checkpoint_parent_commit": "7de422c19c265532008618884d4b710402cf388e",
   "owned_spine_progress": {
     "java": {
       "local_head": "8e32797aed66be2c5fea430bba3df23a6e67465b",
@@ -194,12 +234,20 @@
       "matching_payload_files": 24889,
       "network_replay_calls": 0,
       "final_replay": "host-retained-replay-008.json",
-      "retainer_sha256": "5f00cabea1d63e1d12b6d6de459d32d488024280c11e586b14e89119503da0c3"
+      "retainer_sha256": "5f00cabea1d63e1d12b6d6de459d32d488024280c11e586b14e89119503da0c3",
+      "test_tool_supplement": {
+        "evidence": "plan/verification/fnd08-client-successor/test-host-custody.json",
+        "review_sha256": "36386e56500ac64a8e7792b779ba8cd84aec38efb82c6b3166b41fad991c0050",
+        "packages": 42,
+        "source_groups": 33,
+        "new_packages_beyond_initial_selection": 4,
+        "selected_paths": 11
+      }
     },
     "remaining_slices": {
       "local_head": "20aeefcdc65c0b589f14d3c287cf0a72e92d87e3",
       "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/remaining-slices-worktree",
-      "independent_review": "passed original pairs; new client pairs pending",
+      "independent_review": "Passed original pairs and new merged-client pair increment",
       "native_browser_assertions": 510,
       "inherited_lint_errors": 5,
       "lint_successor": {
@@ -211,9 +259,20 @@
         "browser_assertions": 510,
         "browser_skips": 0,
         "historical_failed_lint_receipts_preserved": true,
-        "fresh_catalog_ui_pairs": "running"
+        "fresh_catalog_ui_pairs": "passed actual builds, explicit UI attribution and fresh native browser/lint"
       },
-      "review_sha256": "193d7bac50ee7bba95add29b127bfd3efc1f61e36cb1686103e05c9c686cbcb2"
+      "review_sha256": "193d7bac50ee7bba95add29b127bfd3efc1f61e36cb1686103e05c9c686cbcb2",
+      "final_client_increment": {
+        "head": "28ebedad98e3f5f6a3bfcc92bf9feda80012cef3",
+        "review_sha256": "3558ee06a37aba3b07c2a77705e9e70432dadd68d2db030729013922a97b8444",
+        "evidence": "plan/verification/fnd08-client-successor/evidence.json",
+        "evidence_sha256": "42425a63b2d5ec431e6583ed334a6af24a0bf70e7badd56b1dc2a825f180e9cf",
+        "catalog_byte_identical_outputs": 3,
+        "ui_logical_assets": 1038,
+        "ui_unexplained_differences": 0,
+        "native_browser_assertions": 510,
+        "lint_exit_code": 0
+      }
     },
     "qgis": {
       "local_guard_head": "e0b41082e5a1906febbfbed583396d5dd75e6128",
