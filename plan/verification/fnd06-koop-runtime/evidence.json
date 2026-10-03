@@ -1,0 +1,1302 @@
+{
+  "addresses": 100000,
+  "assertions": 227,
+  "contract_commit": "a31a285b5e659a08bc6c18c393cfe5a8581bf293",
+  "corpus": {
+    "addresses_sha256": "c19c155a402b00522fde6afe90168eb156531f05d306bfc700348309789a9d88",
+    "manifest_sha256": "5aeb5aad8a0f47780fdcba69bc6b568689bb14dc6b30927fa1e14b6796e06a88",
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-runtime/round-005/scale-100000"
+  },
+  "counter_scope_note": "tests.json stores some counters before the final outage probes; final_counters here are recomputed from completed immutable files.",
+  "evidence_generator": {
+    "bytes": 6535,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree/build-support/koop/summarize.py",
+    "sha256": "7b56c5d2817ec733cd39fbb641bf80b70dcddced1d2f5c84d6f7a9d0d907ad45"
+  },
+  "final_counters": {
+    "catalog_checks": 108,
+    "changed_empty_extent": 1,
+    "changed_metadata": 1,
+    "changed_responses": 2,
+    "koop": {
+      "authorize": 53,
+      "cacheInsert": 0,
+      "cacheRetrieve": 37,
+      "getData": 37,
+      "rawResponses": 53
+    },
+    "raw_koop_responses": 53,
+    "sql_statements": 29
+  },
+  "implementation_head": "00036aaa099d2952856d083dc673d39815f8ed04",
+  "input_manifest_sha256": "ae3c5d548e95f23467cc63d571e54d44fec494f906291da7362263590d97b642",
+  "installed_registry_files_verified": 4187,
+  "limits": [
+    "All seven SQL fields fetched internally; no projection-pushdown claim.",
+    "C1 resultOffset can scan its prefix in PostgreSQL; memory transfer bounded to page+1, not constant-time deep paging.",
+    "Raw EXPLAIN predicates are retained only for this explicitly synthetic private fixture.",
+    "No named ArcGIS desktop client, Windows, C1 adoption, distribution or production OIDC claim."
+  ],
+  "maximum_rows_fetched_per_statement": 101,
+  "node_archive_entries_verified": 4706,
+  "prior_attempts": [
+    {
+      "actual_assertions": null,
+      "attempt": "runtime-001",
+      "error": {
+        "message": "koop exited before readiness",
+        "type": "RuntimeError"
+      },
+      "receipt": {
+        "bytes": 32611,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-001/result.json",
+        "sha256": "0ed1dc1735df671a040092c6ec7d6cfaf61dff85fd048603380e32499bcfca07"
+      },
+      "result_exit_code": 1
+    },
+    {
+      "actual_assertions": 165,
+      "attempt": "runtime-002",
+      "error": {
+        "message": "runtime assertions failed",
+        "type": "RuntimeError"
+      },
+      "receipt": {
+        "bytes": 62268,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-002/result.json",
+        "sha256": "e28d96e4b1ed04bb77fb0e679b7f3148e9bf5b6816be47dda54de114f6051c73"
+      },
+      "result_exit_code": 1
+    },
+    {
+      "actual_assertions": 175,
+      "attempt": "runtime-003",
+      "error": null,
+      "receipt": {
+        "bytes": 63827,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-003/result.json",
+        "sha256": "26358f750e2d57e6d645bb23b79e2704a9317e0106785dc2ed0f23e7fd0bd1ce"
+      },
+      "result_exit_code": 0
+    },
+    {
+      "actual_assertions": 227,
+      "attempt": "runtime-004",
+      "error": null,
+      "receipt": {
+        "bytes": 72648,
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-004/result.json",
+        "sha256": "1173f07570ff23efcc58bd99c7286b4fc213f4376bcdaf3f3db8f451ccba174a"
+      },
+      "result_exit_code": 0
+    }
+  ],
+  "references": [
+    {
+      "bytes": 72660,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/result.json",
+      "sha256": "fe1cda9e823a364c696c0202ecd17f0071e7d1bca3a4614a5b6d1715fdcdb68c"
+    },
+    {
+      "bytes": 42149,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/child-result.json",
+      "sha256": "543d1b943374aa319bcabc709b7dc76a8e38a5d6690461292804e6424df4df33"
+    },
+    {
+      "bytes": 34069,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/tests.json",
+      "sha256": "657ff90e1181c7d0adabcca529c179653b88320f0eb2b30f859bbba1a61cfe3c"
+    },
+    {
+      "bytes": 1087,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/fixture.json",
+      "sha256": "0b9f8aeb46a749763364dc94814964619604a4e81699c8efc7e13b639dcf7f5e"
+    },
+    {
+      "bytes": 2456,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/invocation.json",
+      "sha256": "d4657da52409f3428eccfa541ffe023a82011cf82ebd2555bfa8cb4c83146568"
+    },
+    {
+      "bytes": 27924,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/tooling.json",
+      "sha256": "2718529b5deac0cf7cc978a2ddf3569d807deaaea3b828b79c1793e0ef10d12e"
+    },
+    {
+      "bytes": 3218,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/contract-bindings.json",
+      "sha256": "1ea3dcfafc9e3adb5db380356816e7534428b9cc6383be2e5671a79bddd47249"
+    },
+    {
+      "bytes": 4367,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/corpus-manifest.json",
+      "sha256": "5aeb5aad8a0f47780fdcba69bc6b568689bb14dc6b30927fa1e14b6796e06a88"
+    },
+    {
+      "bytes": 1514,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/layer.json",
+      "sha256": "91436b7d8250f662646abe8ffb123bf9a3dbee1be307c8d18e93af64431c0903"
+    },
+    {
+      "bytes": 1803,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/network.json",
+      "sha256": "25be78f35ef577e72cd78012640a776f35f414c8d6f2a43582d09168eb208f55"
+    },
+    {
+      "bytes": 12029,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/network.probes.json",
+      "sha256": "59b6bc4ec6824208cd573e056790a73e4ca6ff679b19f2dcadd2ae60ce33c825"
+    },
+    {
+      "bytes": 795936,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/koop-installed-before.json",
+      "sha256": "58b839a10c689c332c3e54bfc961cae620b58517416c669f87ff31683de9f8fb"
+    },
+    {
+      "bytes": 1089420,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/node-toolchain-before.json",
+      "sha256": "c30c2830fb043796d84452f640b8e9c2efc8b2ab1011b85093c386251d62a4d6"
+    },
+    {
+      "bytes": 1089420,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/node-toolchain-after.json",
+      "sha256": "c30c2830fb043796d84452f640b8e9c2efc8b2ab1011b85093c386251d62a4d6"
+    },
+    {
+      "bytes": 385591,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/catalog-origin-before.json",
+      "sha256": "3d6cc812d46d95c3c85e560555b6a9219908baabbee040dffb60f22e959ad6ce"
+    },
+    {
+      "bytes": 385591,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/catalog-origin-after.json",
+      "sha256": "3d6cc812d46d95c3c85e560555b6a9219908baabbee040dffb60f22e959ad6ce"
+    },
+    {
+      "bytes": 46979,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/native-audit.jsonl",
+      "sha256": "8e612e5ab3b1ae982f9b784eaed00b66b992904e42d937ee3114718e84a4bc8d"
+    },
+    {
+      "bytes": 103,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/koop-stats.json",
+      "sha256": "e9eb4f67f8a14522e3bc30db793cedc92934db74b9b966ffaa7d9ab07eefaf8a"
+    },
+    {
+      "bytes": 3865,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/codec-diagnostics.json",
+      "sha256": "e9f9ba88552499630e44488b895c95c479ff667eebe8c051efd6ff6dce269a6d"
+    },
+    {
+      "bytes": 774,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/codec-diagnostics-command.json",
+      "sha256": "236f93ac9388cab8f316744816a86cf62b3972121c4de4a7cbc7227943665636"
+    },
+    {
+      "bytes": 3653,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/issuance.json",
+      "sha256": "8cb4d49436afe0131f34d643f23cc7d3bd8b6770a70015364e193d2c89ee2a93"
+    },
+    {
+      "bytes": 4169,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/outer-invocation-observed.json",
+      "sha256": "64e73db91ae0e29a59d0af0d3960c0f710f9ee78c4c0bf05d5af8fdedbac663f"
+    },
+    {
+      "bytes": 2269,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00001.json",
+      "sha256": "904b984b5d125b4388f690b21a8731ce590553701329f551acebd2f2acd58a7f"
+    },
+    {
+      "bytes": 2274,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00002.json",
+      "sha256": "ee1fc53fa4005cef8d05fad86c992049d00472e96438771bf12bb46c14c8cfb8"
+    },
+    {
+      "bytes": 1632,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00003.json",
+      "sha256": "d47efd27b305cef6925afac65434ad99378959a4dfe38832be8127e3b81a1449"
+    },
+    {
+      "bytes": 1204,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00004.json",
+      "sha256": "bd8514cf458eb37e8fc9b696dd71f1a88b5fcc291d1dbcbf684a14ad6d7922e6"
+    },
+    {
+      "bytes": 3771,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00005.json",
+      "sha256": "df72dd0129aab0b3fa0b29218918ed3e2e0d92aec9621abbe94c1ed3c4caf177"
+    },
+    {
+      "bytes": 492,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00006.json",
+      "sha256": "df52df616fb2c2fa3795efc9c690f04bb070f2af8c645724d4330e1ae7c960a6"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00007.json",
+      "sha256": "57413ce83ee1d989e384dfd3a82c6e2d9052a23c4204706bd2d7df11aa4c2d7c"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00008.json",
+      "sha256": "57413ce83ee1d989e384dfd3a82c6e2d9052a23c4204706bd2d7df11aa4c2d7c"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00009.json",
+      "sha256": "6aea6dfe6561984cdc5c54ead84d47d2cf29e48253ae282aef237404adad4661"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00010.json",
+      "sha256": "6aea6dfe6561984cdc5c54ead84d47d2cf29e48253ae282aef237404adad4661"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00011.json",
+      "sha256": "b0beaf5a3dbe82ae841ac88bdc3b1174d7e4dec57454b6539e556e58eaadc600"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00012.json",
+      "sha256": "1fb6f6be8607ab15c04198cba240a52c2ae4524e5d0d79068813f1972f29054c"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00013.json",
+      "sha256": "0c07187ea6d064441225b3cba26a7b1e8bc702fcf332b457dae8e26892ba68a6"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00014.json",
+      "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+    },
+    {
+      "bytes": 1420,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00015.json",
+      "sha256": "1928fd66297e6c9a315147fe4ff1ccbb8f8a3b91050c7ad0dc7bb38df0647ca3"
+    },
+    {
+      "bytes": 1420,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00016.json",
+      "sha256": "1928fd66297e6c9a315147fe4ff1ccbb8f8a3b91050c7ad0dc7bb38df0647ca3"
+    },
+    {
+      "bytes": 16,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00017.json",
+      "sha256": "a3a872eeb95f4cb4768f72d93491ed130185c8f8249dba475771c4e84e332360"
+    },
+    {
+      "bytes": 117,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00018.json",
+      "sha256": "88b6210b550b642c752229481c0d9fbfaa2007ddb85120beee7968a9daecec9a"
+    },
+    {
+      "bytes": 111,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00019.json",
+      "sha256": "3b7989da38a462e4402c96bc327396c39225f749be92833549da9fa680653782"
+    },
+    {
+      "bytes": 1837,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00020.json",
+      "sha256": "2fee626b64472acdad8f0b5a22288fb6390fcadd1a1b1d3a44fa88e1329c796a"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00021.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00022.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00023.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00024.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00025.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00026.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 22664,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00027.json",
+      "sha256": "7ca3e99ac7355f9681eaa584a65459852f558d387f1da91b962626092fae1adf"
+    },
+    {
+      "bytes": 16,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00028.json",
+      "sha256": "a3a872eeb95f4cb4768f72d93491ed130185c8f8249dba475771c4e84e332360"
+    },
+    {
+      "bytes": 117,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00029.json",
+      "sha256": "86e7a7f0c91187d029634902fe8b74151943d9b5e1d6bfa2a6f0698bd75d51d8"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00030.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00031.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00032.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 4865,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00033.json",
+      "sha256": "4443ac716b1beb673de645c319d369d4cde1675af69ae138aaddc5699ba1fc60"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00034.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00035.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00036.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00037.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00038.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00039.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00040.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00041.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00042.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 63,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00043.json",
+      "sha256": "8aefdb1f1a2dbe13d15bc948c4782ea4eda8cae4d43d9385532e51533d49c05d"
+    },
+    {
+      "bytes": 63,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00044.json",
+      "sha256": "8aefdb1f1a2dbe13d15bc948c4782ea4eda8cae4d43d9385532e51533d49c05d"
+    },
+    {
+      "bytes": 63,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00045.json",
+      "sha256": "8aefdb1f1a2dbe13d15bc948c4782ea4eda8cae4d43d9385532e51533d49c05d"
+    },
+    {
+      "bytes": 69,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00046.json",
+      "sha256": "d9085d8412b9f3586b3345f344e97785d869794e8d90863c7d0b34e6accb2885"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00047.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 63,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00048.json",
+      "sha256": "8aefdb1f1a2dbe13d15bc948c4782ea4eda8cae4d43d9385532e51533d49c05d"
+    },
+    {
+      "bytes": 68,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00049.json",
+      "sha256": "f9f4ce9556d41d13547328f5ed842438ebcf482e970343d2090167986839996c"
+    },
+    {
+      "bytes": 66,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00050.json",
+      "sha256": "4bb6eb176fb014df79d559ca0b335e17e48968a9ff47097c0d4bc8637af15fdb"
+    },
+    {
+      "bytes": 66,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00051.json",
+      "sha256": "4bb6eb176fb014df79d559ca0b335e17e48968a9ff47097c0d4bc8637af15fdb"
+    },
+    {
+      "bytes": 66,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00052.json",
+      "sha256": "4bb6eb176fb014df79d559ca0b335e17e48968a9ff47097c0d4bc8637af15fdb"
+    },
+    {
+      "bytes": 66,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/raw-00053.json",
+      "sha256": "4bb6eb176fb014df79d559ca0b335e17e48968a9ff47097c0d4bc8637af15fdb"
+    },
+    {
+      "bytes": 268,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00001.json",
+      "sha256": "a7885a2b6df1ccdc3196d91440c9e7473e6026a492ba566460d32854c9ba4935"
+    },
+    {
+      "bytes": 268,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00002.json",
+      "sha256": "10ac469d550e4832af3fdc2f9aa00aab99163dbead816142288f742b9a4bccc0"
+    },
+    {
+      "bytes": 268,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00003.json",
+      "sha256": "578b20ee2905411d5b053f98f89c66e22feba2d7ca76f93109a699da4e8c2fe6"
+    },
+    {
+      "bytes": 268,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00004.json",
+      "sha256": "2a0d150b294c244edaf16c79617a06f480e5b58a4fc622bb540e7232d08332eb"
+    },
+    {
+      "bytes": 268,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00005.json",
+      "sha256": "a016df6dc2cebe52697f69eb7df3c17fc7bcdfb44ee1cbbe9426ad15922b9ef3"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00006.json",
+      "sha256": "d832df26c7efb0b51e7369e961e0eb8913d8cdc27369123d50a3f0bfebf1150f"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00007.json",
+      "sha256": "acb3add512ca5bad5fa808d4bd3f19102d8fed31a7fde70ed216b27babc31e5f"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00008.json",
+      "sha256": "acb3add512ca5bad5fa808d4bd3f19102d8fed31a7fde70ed216b27babc31e5f"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00009.json",
+      "sha256": "e5d533004bec265b6c7f473c5fa71d244ddb056e40e54c5a65be309fcd97ea69"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00010.json",
+      "sha256": "e5d533004bec265b6c7f473c5fa71d244ddb056e40e54c5a65be309fcd97ea69"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00011.json",
+      "sha256": "954c3b8015246283fd9c2eda55e7a16ec6fbacb2fef107cd9474a42a4d6816a0"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00012.json",
+      "sha256": "75452b7d921084d09273896c374759195e94fa7abac19b60d1ab313b47f57a8b"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00013.json",
+      "sha256": "141d3aa051180ecd1fa56ec462d0ccdfef28d2e213880a0dd8d270a9c42a70ac"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00014.json",
+      "sha256": "d3c0fb513bf3e627bafa346deb789b857ff32e00529adac5061977feb2c0a8a8"
+    },
+    {
+      "bytes": 268,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00015.json",
+      "sha256": "847c1c9c49a6d801434e90ca2cbd2004e1ed155c2eb6b22b1749968624806bbe"
+    },
+    {
+      "bytes": 268,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00016.json",
+      "sha256": "847c1c9c49a6d801434e90ca2cbd2004e1ed155c2eb6b22b1749968624806bbe"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00017.json",
+      "sha256": "35d1db1bafa20af5162e7222349c5fb8008b46e93dd1619a30317b514da1e48d"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00018.json",
+      "sha256": "818f818c8e8f7b7b78085072a1989e2a0519a621fa81494af71207cced43dc31"
+    },
+    {
+      "bytes": 265,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00019.json",
+      "sha256": "5f9328f5559e360c08431805a45a49241a88ec654f2ce6b932926e7e00942cad"
+    },
+    {
+      "bytes": 268,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00020.json",
+      "sha256": "af0970d4cf0e85dbb35629b7ae00e65fe8b88dc79cf7e833c707193cf40be504"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00021.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00022.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00023.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00024.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00025.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00026.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 269,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00027.json",
+      "sha256": "d9d0ec61590d3f9973d4c7836066137191ca49490c714300dd5a032d51bede88"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00028.json",
+      "sha256": "35d1db1bafa20af5162e7222349c5fb8008b46e93dd1619a30317b514da1e48d"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00029.json",
+      "sha256": "c7943bbab4d1b9c034736763d0c5847e52978c225977147a14fd2dd73509a0c5"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00030.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00031.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00032.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00033.json",
+      "sha256": "6e37114510ec7c95a54c4d6420d7c2108d030afc28d20cd495cc09521ce7ac0f"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00034.json",
+      "sha256": "0193aba1a119164c36c48e27c82d121175f92e77020dc635a00d1080c9ddba67"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00035.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 267,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00036.json",
+      "sha256": "2a520c187fdcc2fd034017927d12053634a81655df1ac81b6dbd48f101fd8c1b"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00037.json",
+      "sha256": "9b5065510c5c13d7b7bdd1016a7c366b4e5c9d187e5fc7cc214dd1739de24dbd"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00038.json",
+      "sha256": "9b5065510c5c13d7b7bdd1016a7c366b4e5c9d187e5fc7cc214dd1739de24dbd"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00039.json",
+      "sha256": "9b5065510c5c13d7b7bdd1016a7c366b4e5c9d187e5fc7cc214dd1739de24dbd"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00040.json",
+      "sha256": "9b5065510c5c13d7b7bdd1016a7c366b4e5c9d187e5fc7cc214dd1739de24dbd"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00041.json",
+      "sha256": "9b5065510c5c13d7b7bdd1016a7c366b4e5c9d187e5fc7cc214dd1739de24dbd"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00042.json",
+      "sha256": "9b5065510c5c13d7b7bdd1016a7c366b4e5c9d187e5fc7cc214dd1739de24dbd"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00043.json",
+      "sha256": "c5faccda7c2d6d776967225494d98eef939a71a3ce77fc3d770613050cca0422"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00044.json",
+      "sha256": "c5faccda7c2d6d776967225494d98eef939a71a3ce77fc3d770613050cca0422"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00045.json",
+      "sha256": "c5faccda7c2d6d776967225494d98eef939a71a3ce77fc3d770613050cca0422"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00046.json",
+      "sha256": "87a56580c3fe9026a96df82822b36e05cd9e0fc12f81957ba80e43fea60baebd"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00047.json",
+      "sha256": "9b5065510c5c13d7b7bdd1016a7c366b4e5c9d187e5fc7cc214dd1739de24dbd"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00048.json",
+      "sha256": "c5faccda7c2d6d776967225494d98eef939a71a3ce77fc3d770613050cca0422"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00049.json",
+      "sha256": "34882b5628b6a32c47b811064c2321ce00be1412f1ec21984122ada35f747a92"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00050.json",
+      "sha256": "c0995e9975d488b082877c4d29f2899944a32fce1054b6157c853f58e6a7cb0a"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00051.json",
+      "sha256": "c0995e9975d488b082877c4d29f2899944a32fce1054b6157c853f58e6a7cb0a"
+    },
+    {
+      "bytes": 266,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00052.json",
+      "sha256": "c0995e9975d488b082877c4d29f2899944a32fce1054b6157c853f58e6a7cb0a"
+    },
+    {
+      "bytes": 265,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/projection-00053.json",
+      "sha256": "853c0eb2830f11b0d3165c627a8cbea7625d3f4bc9425d78fd60410589fd8cbd"
+    },
+    {
+      "bytes": 203,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/backend-direct-denied.json",
+      "sha256": "ddc94b256c1afed018412a5239f2e7b9035f6f93a44754b4c72610b8c0494bcf"
+    },
+    {
+      "bytes": 189,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/backend-invalid-utf8.json",
+      "sha256": "c1b78dff060c68b909abf2fbc9dfaddecec1c8198de84341aca6689139bbfe4c"
+    },
+    {
+      "bytes": 189,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/backend-utf16.json",
+      "sha256": "b1269a83f7b7de89a9f42383e5b569eb253c2c44453f873037f11a122ea65e4e"
+    },
+    {
+      "bytes": 1837,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-bbox.json",
+      "sha256": "2fee626b64472acdad8f0b5a22288fb6390fcadd1a1b1d3a44fa88e1329c796a"
+    },
+    {
+      "bytes": 66,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-catalog-outage-count.json",
+      "sha256": "4bb6eb176fb014df79d559ca0b335e17e48968a9ff47097c0d4bc8637af15fdb"
+    },
+    {
+      "bytes": 66,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-catalog-outage-extent.json",
+      "sha256": "4bb6eb176fb014df79d559ca0b335e17e48968a9ff47097c0d4bc8637af15fdb"
+    },
+    {
+      "bytes": 66,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-catalog-outage-features.json",
+      "sha256": "4bb6eb176fb014df79d559ca0b335e17e48968a9ff47097c0d4bc8637af15fdb"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-count-0.json",
+      "sha256": "57413ce83ee1d989e384dfd3a82c6e2d9052a23c4204706bd2d7df11aa4c2d7c"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-count-1.json",
+      "sha256": "57413ce83ee1d989e384dfd3a82c6e2d9052a23c4204706bd2d7df11aa4c2d7c"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-count-2.json",
+      "sha256": "6aea6dfe6561984cdc5c54ead84d47d2cf29e48253ae282aef237404adad4661"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-count-3.json",
+      "sha256": "6aea6dfe6561984cdc5c54ead84d47d2cf29e48253ae282aef237404adad4661"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-count-4.json",
+      "sha256": "b0beaf5a3dbe82ae841ac88bdc3b1174d7e4dec57454b6539e556e58eaadc600"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-count-5.json",
+      "sha256": "1fb6f6be8607ab15c04198cba240a52c2ae4524e5d0d79068813f1972f29054c"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-count-6.json",
+      "sha256": "0c07187ea6d064441225b3cba26a7b1e8bc702fcf332b457dae8e26892ba68a6"
+    },
+    {
+      "bytes": 11,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-count-7.json",
+      "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+    },
+    {
+      "bytes": 16,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-count-all.json",
+      "sha256": "a3a872eeb95f4cb4768f72d93491ed130185c8f8249dba475771c4e84e332360"
+    },
+    {
+      "bytes": 15,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-empty-extent.json",
+      "sha256": "ac2d1380838ee9ab8cdef54dc8508e02fb5d5e611d7ae9b2760cbc746cde9444"
+    },
+    {
+      "bytes": 117,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-extent-small.json",
+      "sha256": "88b6210b550b642c752229481c0d9fbfaa2007ddb85120beee7968a9daecec9a"
+    },
+    {
+      "bytes": 2269,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-first.json",
+      "sha256": "904b984b5d125b4388f690b21a8731ce590553701329f551acebd2f2acd58a7f"
+    },
+    {
+      "bytes": 3771,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-full-small.json",
+      "sha256": "df72dd0129aab0b3fa0b29218918ed3e2e0d92aec9621abbe94c1ed3c4caf177"
+    },
+    {
+      "bytes": 66,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-metadata-outage.json",
+      "sha256": "4bb6eb176fb014df79d559ca0b335e17e48968a9ff47097c0d4bc8637af15fdb"
+    },
+    {
+      "bytes": 1632,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-offset-10.json",
+      "sha256": "d47efd27b305cef6925afac65434ad99378959a4dfe38832be8127e3b81a1449"
+    },
+    {
+      "bytes": 1204,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-offset-12.json",
+      "sha256": "bd8514cf458eb37e8fc9b696dd71f1a88b5fcc291d1dbcbf684a14ad6d7922e6"
+    },
+    {
+      "bytes": 2274,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-offset-5.json",
+      "sha256": "ee1fc53fa4005cef8d05fad86c992049d00472e96438771bf12bb46c14c8cfb8"
+    },
+    {
+      "bytes": 492,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-projection.json",
+      "sha256": "df52df616fb2c2fa3795efc9c690f04bb070f2af8c645724d4330e1ae7c960a6"
+    },
+    {
+      "bytes": 1420,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-unicode-get.json",
+      "sha256": "1928fd66297e6c9a315147fe4ff1ccbb8f8a3b91050c7ad0dc7bb38df0647ca3"
+    },
+    {
+      "bytes": 1420,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/c1-unicode-post.json",
+      "sha256": "1928fd66297e6c9a315147fe4ff1ccbb8f8a3b91050c7ad0dc7bb38df0647ca3"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/disabled-reader-count.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 63,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/http-bad-percent.json",
+      "sha256": "8aefdb1f1a2dbe13d15bc948c4782ea4eda8cae4d43d9385532e51533d49c05d"
+    },
+    {
+      "bytes": 62,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/http-compressed.json",
+      "sha256": "dca15daf5b3a1a7cc1cf89b47e99727f0d47d338d3aa2ef612c556b3d4405e35"
+    },
+    {
+      "bytes": 63,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/http-duplicate.json",
+      "sha256": "8aefdb1f1a2dbe13d15bc948c4782ea4eda8cae4d43d9385532e51533d49c05d"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/http-long-credential.json",
+      "sha256": "677e3f158b37e3f47a33d89901793fc2a7137d9f99224a8c84e0cc32c500f131"
+    },
+    {
+      "bytes": 62,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/http-oversize.json",
+      "sha256": "dca15daf5b3a1a7cc1cf89b47e99727f0d47d338d3aa2ef612c556b3d4405e35"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/http-spoofed-policy.json",
+      "sha256": "677e3f158b37e3f47a33d89901793fc2a7137d9f99224a8c84e0cc32c500f131"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/metadata-private.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 1629,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/metadata-public.json",
+      "sha256": "74f5b561219bbb8cc55599647c6be9898555e84218e8c12ea49fcf45d8c27606"
+    },
+    {
+      "bytes": 190,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-catalog-outage-count.json",
+      "sha256": "e948991a1bc2c1c5af7f5014eef7489488ae32b5ff8a9c7fe1427557bb080415"
+    },
+    {
+      "bytes": 190,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-catalog-outage-extent.json",
+      "sha256": "d734e2eec87600b956b0f60ae04cf08dd6eaff7729b566c8257327accbee2e9c"
+    },
+    {
+      "bytes": 190,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-catalog-outage-features.json",
+      "sha256": "79056172acc0f37f9129b14ff1ee66d61a28b3feb5bed87c8f69687c88d06aef"
+    },
+    {
+      "bytes": 179,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-cursor-changed-principal.json",
+      "sha256": "f0003be8b8fb475bc7763bd16bc798f6364672ef6b3c04d7f9358ad816599d3b"
+    },
+    {
+      "bytes": 179,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-cursor-changed-projection.json",
+      "sha256": "485365c4dd64900622bf110dc417028cfaa6b68f4597a9b4ff32acf352e5bca1"
+    },
+    {
+      "bytes": 179,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-cursor-changed-query.json",
+      "sha256": "9db27f8a38adacef496100f3b9aa4c56125becbc18730854ddf16d60d1f19903"
+    },
+    {
+      "bytes": 191,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-cursor-changed-revision.json",
+      "sha256": "5b6b96d44333ec45c59a87097468ff322195bbda3845e134ca955d467b8d1e71"
+    },
+    {
+      "bytes": 179,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-cursor-cross-resource.json",
+      "sha256": "e9c582d986641bc92930bb4463dedc33cf1250311f8bf46b39d3b8a3c8030472"
+    },
+    {
+      "bytes": 179,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-cursor-expired.json",
+      "sha256": "4333c23808159c2403fa9b4b47262b2f788f25da279dfa61a842411e7e0f0862"
+    },
+    {
+      "bytes": 179,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-cursor-tampered.json",
+      "sha256": "ba85be6974dd01da63ec33f0954686416cc14adb8df2f30804c1772814b986fd"
+    },
+    {
+      "bytes": 1350,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-keyset-0.json",
+      "sha256": "6b58d6e96901d2102a85ce4ac25af762fd944361849444ab22cf75580086d5a3"
+    },
+    {
+      "bytes": 1351,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-keyset-1.json",
+      "sha256": "0fa07088bc0abf3a1ebc04466f6a2d7cca1a03ad85221fa1a346bd0f7706fc6f"
+    },
+    {
+      "bytes": 1333,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-keyset-2.json",
+      "sha256": "1c596e573b4427eacab64ce91e5908214e89e9385d84614b32ace5ea0f173ef7"
+    },
+    {
+      "bytes": 940,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-keyset-3.json",
+      "sha256": "d451e2d887b308b20612f87efb565edf4e0fef9360c80019e733e0598d68bcee"
+    },
+    {
+      "bytes": 182,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-lock-timeout.json",
+      "sha256": "dd97c3e92e80641cdba46cc4a3b62b62975e221b512cd7b28d0fa74ddf5a81ca"
+    },
+    {
+      "bytes": 203,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-method-brew.json",
+      "sha256": "9e8db4fbcf61492850975e3ab9929f544786e21919d7e37935f1670409f15f1a"
+    },
+    {
+      "bytes": 203,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-method-delete.json",
+      "sha256": "bf9a9032e5522cbdb82ceb6fb17becda3f87a35e813d94a015d3dfc3d158f42d"
+    },
+    {
+      "bytes": 203,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-method-get.json",
+      "sha256": "94e275eb24b8ba27fdf28387de0b386603f06ff5dc3dd4a33b361b3366613b0e"
+    },
+    {
+      "bytes": 203,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-method-options.json",
+      "sha256": "a1b6853c2951176a21fc0abca6d16ec46a4f9b9a16f87677ffb6a12808897b9e"
+    },
+    {
+      "bytes": 203,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-method-patch.json",
+      "sha256": "761480227e82cb7890e13aa11a15089aecdd79a0fc173e25443ff84fd8c8bf75"
+    },
+    {
+      "bytes": 203,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-method-put.json",
+      "sha256": "2d261531e3fc5134bb07043417f7dd416e6d934f3ea65152173544aab4272874"
+    },
+    {
+      "bytes": 1351,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-old-snapshot-after-new-revision.json",
+      "sha256": "0fa07088bc0abf3a1ebc04466f6a2d7cca1a03ad85221fa1a346bd0f7706fc6f"
+    },
+    {
+      "bytes": 203,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-revoked-cursor.json",
+      "sha256": "ec7a14653d597b86289b3a9acd14e0b8f7b4980ae9348810234fa92fde496fac"
+    },
+    {
+      "bytes": 16,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/native-total.json",
+      "sha256": "a3a872eeb95f4cb4768f72d93491ed130185c8f8249dba475771c4e84e332360"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-missing-reader-count.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-missing-reader-extent.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-missing-reader-features.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-private_points-anon-count.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-private_points-anon-extent.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-private_points-anon-features.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-private_points-outsider-count.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-private_points-outsider-extent.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-private_points-outsider-features.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 16,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-private_points-reader-count.json",
+      "sha256": "a3a872eeb95f4cb4768f72d93491ed130185c8f8249dba475771c4e84e332360"
+    },
+    {
+      "bytes": 117,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-private_points-reader-extent.json",
+      "sha256": "86e7a7f0c91187d029634902fe8b74151943d9b5e1d6bfa2a6f0698bd75d51d8"
+    },
+    {
+      "bytes": 22664,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/permission-private_points-reader-features.json",
+      "sha256": "7ca3e99ac7355f9681eaa584a65459852f558d387f1da91b962626092fae1adf"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/revoke-public-count.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-0.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-1.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-10.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 63,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-11.json",
+      "sha256": "8aefdb1f1a2dbe13d15bc948c4782ea4eda8cae4d43d9385532e51533d49c05d"
+    },
+    {
+      "bytes": 68,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-12.json",
+      "sha256": "f9f4ce9556d41d13547328f5ed842438ebcf482e970343d2090167986839996c"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-2.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-3.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-4.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-5.json",
+      "sha256": "20ac10e7157f0523c7626b5f4ce9b5bbfae10758bb3e41d4907afa909a797db4"
+    },
+    {
+      "bytes": 63,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-6.json",
+      "sha256": "8aefdb1f1a2dbe13d15bc948c4782ea4eda8cae4d43d9385532e51533d49c05d"
+    },
+    {
+      "bytes": 63,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-7.json",
+      "sha256": "8aefdb1f1a2dbe13d15bc948c4782ea4eda8cae4d43d9385532e51533d49c05d"
+    },
+    {
+      "bytes": 63,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-8.json",
+      "sha256": "8aefdb1f1a2dbe13d15bc948c4782ea4eda8cae4d43d9385532e51533d49c05d"
+    },
+    {
+      "bytes": 69,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-query-9.json",
+      "sha256": "d9085d8412b9f3586b3345f344e97785d869794e8d90863c7d0b34e6accb2885"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-route-0.json",
+      "sha256": "837f10e5fceb373aaf75f2f1640369b83fc87f427f6522c885be90b2d3c4e404"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-route-1.json",
+      "sha256": "837f10e5fceb373aaf75f2f1640369b83fc87f427f6522c885be90b2d3c4e404"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-route-2.json",
+      "sha256": "837f10e5fceb373aaf75f2f1640369b83fc87f427f6522c885be90b2d3c4e404"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-route-3.json",
+      "sha256": "837f10e5fceb373aaf75f2f1640369b83fc87f427f6522c885be90b2d3c4e404"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-route-4.json",
+      "sha256": "837f10e5fceb373aaf75f2f1640369b83fc87f427f6522c885be90b2d3c4e404"
+    },
+    {
+      "bytes": 70,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/responses/unsupported-route-5.json",
+      "sha256": "837f10e5fceb373aaf75f2f1640369b83fc87f427f6522c885be90b2d3c4e404"
+    },
+    {
+      "bytes": 697,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/catalog-initialize-command.json",
+      "sha256": "1b39ef6e30b0c127f31011eb4351b77ee94611e48383114ea4657b4a971ed602"
+    },
+    {
+      "bytes": 691,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/check-command.json",
+      "sha256": "a739e1b39f8f8c23d406eb4f8adf606e08374a41334d9f3859f2facfccb37717"
+    },
+    {
+      "bytes": 693,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/credential-cleanup-command.json",
+      "sha256": "a8f0c76de38f47434dc8908db9057bc6d519f979ede16a56f0848b4afec6aca2"
+    },
+    {
+      "bytes": 693,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/migrate-command.json",
+      "sha256": "16fa72a29902a3dd5073bb6e0d8c2be78ba9580092ebbb359ed4962e90d4de87"
+    },
+    {
+      "bytes": 701,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/mutation-disable-reader-command.json",
+      "sha256": "489db7d78a2912113e7a799e87dcfb7621268c975cd889bac5a02008e3e10329"
+    },
+    {
+      "bytes": 700,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/mutation-enable-reader-command.json",
+      "sha256": "bde0cd23cf8d89a034169c82a1835289033c90b1c7079caca512f2f19303a5e0"
+    },
+    {
+      "bytes": 696,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/mutation-group-add-command.json",
+      "sha256": "9ea9688374527ce12a3618bbe558e8a35a85ba288009b19514e351aa5c06b83e"
+    },
+    {
+      "bytes": 699,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/mutation-group-remove-command.json",
+      "sha256": "5dd1a264d79cb83a027c451aab2517042fc4a2b517652b70cfff18b020cae003"
+    },
+    {
+      "bytes": 701,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/mutation-public-restore-command.json",
+      "sha256": "727aeaf84665caaf3b13c863b24c069ee9afae69fdba6d88f9bfa88bad344af8"
+    },
+    {
+      "bytes": 700,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/mutation-public-revoke-command.json",
+      "sha256": "cceeaf4e87cf044335b272dfbc6ebc2cfa301f86c3b09f30aa16de8aa4dcc475"
+    },
+    {
+      "bytes": 695,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/provision-command.json",
+      "sha256": "fc44470e5a623dc522a71963cd0c961968fd8fe515f3ddc2d04885d5f9445dba"
+    },
+    {
+      "bytes": 21435,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/catalog-runtime.log",
+      "sha256": "a1f409c273bc9bb608c8cba31bd4390571200f0b36dcee93b62b81804b415bb6"
+    },
+    {
+      "bytes": 113,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/koop-runtime.log",
+      "sha256": "fc4eeeb1f42199a04bee5fdabbc46f28085518f3ec03552da5e67ddbf03e5149"
+    },
+    {
+      "bytes": 45,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/native-runtime.log",
+      "sha256": "958d908334f76d9eb34443bc78ffbb577a8201ec39bae8162839d3951d82c89b"
+    },
+    {
+      "bytes": 789,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/install-002/result.json",
+      "sha256": "98ada85f969877784254af8139fe6f7bd80f0c1730f7886ee2afc7b19776cc57"
+    },
+    {
+      "bytes": 795936,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/install-002/installed.json",
+      "sha256": "58b839a10c689c332c3e54bfc961cae620b58517416c669f87ff31683de9f8fb"
+    },
+    {
+      "bytes": 2057,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/install-002/network.json",
+      "sha256": "daefba094e678110e63d0c7f26cf18efe71d5faa514ddf09523fa64ea5ca9651"
+    },
+    {
+      "bytes": 1535,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/install-002/install-command.json",
+      "sha256": "a7d3e36191083a0c837d892a2e38824e863885f3f753e70af1dd361c9e1bfad2"
+    },
+    {
+      "bytes": 1747,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/install-002/manifest-projection.json",
+      "sha256": "49031e48b78599847d5de165be4ec3f826782e0793b9e632368f17d16eaa8ad1"
+    }
+  ],
+  "runtime": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005",
+  "schema_version": 1,
+  "scope": "Private bounded Koop reuse spike; not production C1/client acceptance or distribution approval.",
+  "source_commit": "333518a19d43adf2fd12faed1a3be52d9c90dd3f",
+  "source_files_verified": 447,
+  "sql_elapsed_ms": {
+    "max": 18.752204,
+    "median": 7.606,
+    "min": 4.327549
+  },
+  "task": "FND-06"
+}
