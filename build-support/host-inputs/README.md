@@ -3,7 +3,9 @@
 These tools retain the compiler, headers, build utilities and mapped runtime
 libraries actually selected by the FND-08 Linux builds. The starting observation
 contains sixteen compiler/tool executables; the QGIS runtime adds observed
-library, locale and resource paths. Only this selected set and its conservative
+library, locale and resource paths. Native/catalog/browser build records add
+the actual system tool and resolved-library paths, including Python 3.12's
+bootstrap modules. Only this selected set and its conservative
 installed RPM providers are included. The unrelated full host package inventory
 remains private.
 
@@ -56,6 +58,12 @@ utilities; the selection manifest preserves that full list. Collection can exit
 nonzero for unavailable source-RPM metadata even when the later source recovery
 retains the exact OBS build inputs. Keep the original diagnostic and the separate
 source recovery proof; do not rename an OBS source directory as an original RPM.
+
+`summarize.py` binds the selection, binary/source/payload receipts and retained
+no-network replay, checks the additional observed system paths, and projects
+only selected custody data into a public lock. It rejects missing packages,
+source groups, provider dependencies, payload coverage and failed replay. It
+does not replace actual signature or payload verification.
 
 This work establishes input custody and current installed-file correspondence.
 It does not backdate observations to earlier build starts, independently rebuild

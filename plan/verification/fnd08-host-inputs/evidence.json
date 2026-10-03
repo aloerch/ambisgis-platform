@@ -1,0 +1,105 @@
+{
+  "task": "FND-08",
+  "full_fnd08_acceptance": false,
+  "receipts": {
+    "selection": {
+      "file": "host-inputs-selection-007.json",
+      "sha256": "fe1f178407e3cbb15217861483fbafd380ee877db789cb540d671a0b74ec2df9",
+      "bytes": 2682536
+    },
+    "binaries": {
+      "file": "host-binaries-007.json",
+      "sha256": "4d5264386c03cd89eee33993973182fb5d7e1ed42ba7ea3175f0888405d84c1e",
+      "bytes": 238354
+    },
+    "sources": {
+      "file": "host-sources-007.json",
+      "sha256": "a7a4f051329cf62ba5d4f89c3d068583d1f96c386daa7ce6e188d749f5eccb5f",
+      "bytes": 775350
+    },
+    "payload": {
+      "file": "host-payload-correspondence-007.json",
+      "sha256": "bb47cd1820af73a078c14d6b8a0363909c9fa7898a6d6d18b796ed8da6ab0023",
+      "bytes": 12790452
+    },
+    "replay": {
+      "file": "host-retained-replay-007.json",
+      "sha256": "400d1becc9343df7dc6faa95ee66725f189bbddf9c2a97fa7d0db3ad699c99db",
+      "bytes": 950346
+    },
+    "observation": {
+      "file": "fnd08-selected-host-observations.json",
+      "sha256": "42af96a5a2a5e396f74d3d48ddfbcc83d7646c9a676f3c1db28eb58fe1063533",
+      "bytes": 64409
+    }
+  },
+  "tool_observation_sha256": "d40136b6a03b3ca33d906e2644c3342048aeaf9b2ac88d0571e92e6ad4395d6e",
+  "qgis_runtime_observation_sha256": "0c2f37df15bc2707bea2ffeee552a6c71bc1ab3c719cd91349b13cda71ccf341",
+  "counts": {
+    "binary_packages": 276,
+    "source_groups": 175,
+    "source_forms": {
+      "exact-obs-build-sources": 106,
+      "retained-source-rpm": 69
+    },
+    "selected_files": 244,
+    "payload_files": {
+      "match": 24889,
+      "directory": 2538,
+      "outside-build-file-scope": 197,
+      "unreadable": 8,
+      "ghost-not-shipped": 25,
+      "generated-link": 3
+    }
+  },
+  "payload_observed_at": {
+    "started_at": "2026-10-03T07:34:22.864868+00:00",
+    "finished_at": "2026-10-03T07:34:30.019382+00:00"
+  },
+  "historical_source_metadata_diagnostics": [
+    {
+      "package": "crypto-policies",
+      "error": "No exact source RPM for crypto-policies-20250714.cd6043a-5.1.src.rpm"
+    },
+    {
+      "package": "pam",
+      "error": "No exact source RPM for pam-1.7.2+git48-1.1.src.rpm"
+    },
+    {
+      "package": "pam-extra",
+      "error": "No exact source RPM for pam-full-src-1.7.2+git48-1.1.src.rpm"
+    },
+    {
+      "package": "permctl",
+      "error": "No exact source RPM for permissions-1699_20260806-1.1.src.rpm"
+    },
+    {
+      "package": "permissions",
+      "error": "No exact source RPM for permissions-1699_20260806-1.1.src.rpm"
+    },
+    {
+      "package": "permissions-config",
+      "error": "No exact source RPM for permissions-1699_20260806-1.1.src.rpm"
+    },
+    {
+      "package": "rpm",
+      "error": "No exact source RPM for rpm-4.20.1-10.1.src.rpm"
+    },
+    {
+      "package": "rpm-plugin-selinux",
+      "error": "No exact source RPM for rpm-4.20.1-10.1.src.rpm"
+    }
+  ],
+  "limits": [
+    "OBS source directories are distinct from retained original source RPMs.",
+    "Observations are not backdated to previous build starts.",
+    "8 unreadable package files outside the selected build-input set remain explicit.",
+    "Generated host caches, compiler bootstrap, clean supported installation, full rights/security review and OWN-02 remain open.",
+    "No whole-host package inventory or home/configuration contents are projected."
+  ],
+  "public_selected_input_lock": {
+    "file": "selected-inputs.json",
+    "sha256": "ef39d7c556f47e6b42cf8e0078f86baca908ff067310208f9e80d6219bc86ffd",
+    "bytes": 1154240
+  }
+}

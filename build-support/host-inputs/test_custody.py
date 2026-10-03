@@ -9,6 +9,7 @@ from unittest.mock import patch
 import inventory
 import retain
 import verify_payload
+import summarize
 
 
 class InventoryBoundaryTests(unittest.TestCase):
@@ -183,6 +184,38 @@ class RetentionBoundaryTests(unittest.TestCase):
             for name in ['/root/.gnupg', '/home/person/.ssh/id_rsa', '/etc/shadow']:
                 result = verify_payload.inspect_file(Path(name), 0o100600, '', '', 8)
                 self.assertEqual('outside-build-file-scope', result['status'])
+
+
+class PublicProjectionTests(unittest.TestCase):
+    def example(self):
+        return {
+            'selection': {'packages': [{'location': 'x86_64/tool.rpm', 'source_rpm': 'tool.src.rpm'}],
+                          'selection_paths': ['/usr/bin/tool'], 'selected_file_observations': [],
+                          'explicit_packages': [], 'metadata_catalogs': [],
+                          'generated_host_resources': [], 'limits': [], 'unresolved': []},
+            'binaries': {'failures': [], 'results': [{'file': '/retained/tool.rpm', 'sha256': 'a' * 64,
+                                                     'verification': {'disturl': 'pinned'}}]},
+            'sources': {'failures': [], 'results': [{'source_rpm': 'tool.src.rpm',
+                         'kind': 'retained-source-rpm', 'sha256': 'b' * 64, 'verification': {}}]},
+            'payload': {'status': 'selected-build-inputs-match', 'uncovered_selected_paths': [],
+                        'blocking_build_input_differences': [], 'selected_paths': 1, 'generated_package_links': []},
+            'replay': {'network_calls': 0, 'all_binary_network_flags_false': True,
+                       'all_obs_network_flags_false': True, 'binary_count': 1, 'source_count': 1}}
+
+    def test_missing_binary_or_source_cannot_be_summarized_as_complete(self):
+        for kind in ('binaries', 'sources'):
+            values = self.example(); values[kind]['results'] = []
+            with self.assertRaises(ValueError): summarize.project(**values)
+        values = self.example()
+        self.assertEqual(1, len(summarize.project(**values)['packages']))
+
+    def test_unresolved_provider_or_failed_payload_or_network_replay_rejected(self):
+        for failure in ('provider', 'payload', 'replay'):
+            values = self.example()
+            if failure == 'provider': values['selection']['unresolved'] = [{'error': 'Missing required provider'}]
+            elif failure == 'payload': values['payload']['uncovered_selected_paths'] = ['/usr/bin/tool']
+            else: values['replay']['all_binary_network_flags_false'] = False
+            with self.assertRaises(ValueError): summarize.project(**values)
 
 
 if __name__ == '__main__':
