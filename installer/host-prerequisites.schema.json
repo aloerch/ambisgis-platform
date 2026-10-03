@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ambisgis:development-host-prerequisites:1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "host_tools": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "uid": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "gid": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "mode": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4095
+          },
+          "capability_hex": {
+            "type": "string",
+            "pattern": "^(?:[a-f0-9]{2})*$"
+          }
+        },
+        "required": [
+          "path",
+          "sha256",
+          "uid",
+          "gid",
+          "mode",
+          "capability_hex"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "kernel_release": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minimum_subordinate_ids": {
+          "type": "integer",
+          "minimum": 65536
+        },
+        "cgroup_controllers": {
+          "type": "array",
+          "minItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "fuse_required": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "kernel_release",
+        "minimum_subordinate_ids",
+        "cgroup_controllers",
+        "fuse_required"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "host_tools",
+    "requirements"
+  ],
+  "additionalProperties": false
+}

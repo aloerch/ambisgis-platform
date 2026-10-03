@@ -1,0 +1,3 @@
+#!/opt/ambisgis/python/bin/python3
+import runpy
+runpy.run_module('ambisgis_development.health', run_name='__main__')
