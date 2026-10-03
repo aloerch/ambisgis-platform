@@ -1,0 +1,956 @@
+{
+  "evidence_reuse": "Unchanged prior full-history/source-diff/notice evidence explicitly reused for identical commit/tree identities. No source refetch, full-history reexecution, new builds or product acceptance tests for these nine roots.",
+  "finished_at": "2026-10-03T05:44:19.904979+00:00",
+  "fresh_checks": "GitHub owner/repository ID/public visibility, canonical/review/default refs via owned HTTPS, commit/tree API identity, disabled Actions.",
+  "kind": "prior-nine-canonical-current-identity-check",
+  "new_builds": 0,
+  "new_full_history_fetches": 0,
+  "platform_head": "0de2945ee1d29f00af19229720c43e3071b9571b",
+  "principal": {
+    "id": 15285626,
+    "login": "aloerch"
+  },
+  "remote_mutation_attempts": 0,
+  "repositories": [
+    {
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-postgresql",
+            "--jq",
+            "{id,full_name,owner:{login:.owner.login,id:.owner.id},private,default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "2f5a915654bccccc8afe4a2e25e2364b61bdd6ea766189198b8ee1166086caf2"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-postgresql/actions/permissions",
+            "--jq",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e4114ede75f0b547f5f7a4db9a16b7674a1b23b199eb1566d86791d61d6938d3"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-replace-objects",
+            "-c",
+            "core.hooksPath=/dev/null",
+            "-c",
+            "credential.helper=",
+            "-c",
+            "http.followRedirects=false",
+            "-c",
+            "protocol.file.allow=never",
+            "-c",
+            "protocol.ext.allow=never",
+            "ls-remote",
+            "--exit-code",
+            "--refs",
+            "https://github.com/aloerch/ambisgis-postgresql.git",
+            "refs/heads/ambisgis/main",
+            "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+            "refs/heads/master"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "1e9248652b8fdf9829a89c8bcc568c64387d27fd793aec36fd2584f7cb77e74c"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-postgresql/git/commits/2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+            "--jq",
+            "{sha,tree:{sha:.tree.sha},parents:[.parents[].sha]}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "bed38e1c4f48de486c96ff673bbba1891701dccdd4d8b6165638e6230977ade3"
+        }
+      ],
+      "commit": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+      "default": {
+        "name": "master",
+        "sha": "c62b330912e2095dc8dee2f749adf7e5d94ca611"
+      },
+      "history_evidence_reused": {
+        "history_commits": 55932,
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "source_diff_notice_evidence_unchanged": true
+      },
+      "observed_at": "2026-10-03T05:44:15.983952+00:00",
+      "parents": [
+        "492b517f362a4325bbcd6c1aa6f1204b7696d7ed"
+      ],
+      "refs": {
+        "refs/heads/ambisgis/main": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4": "2ff1375b5dd8bf09d8cb0e795974528180fd75ca",
+        "refs/heads/master": "c62b330912e2095dc8dee2f749adf7e5d94ca611"
+      },
+      "repository": "aloerch/ambisgis-postgresql",
+      "repository_id": 1376927644,
+      "root_id": "postgresql",
+      "status": "verified",
+      "tree": "598df31816bda464f5b904c0badbcb25bafcc4f1"
+    },
+    {
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-postgis",
+            "--jq",
+            "{id,full_name,owner:{login:.owner.login,id:.owner.id},private,default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "3489d3d318bfc10bf867d564a9fd4a2d9f9c4589eeb304755c4c2474b5c1eac9"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-postgis/actions/permissions",
+            "--jq",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e4114ede75f0b547f5f7a4db9a16b7674a1b23b199eb1566d86791d61d6938d3"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-replace-objects",
+            "-c",
+            "core.hooksPath=/dev/null",
+            "-c",
+            "credential.helper=",
+            "-c",
+            "http.followRedirects=false",
+            "-c",
+            "protocol.file.allow=never",
+            "-c",
+            "protocol.ext.allow=never",
+            "ls-remote",
+            "--exit-code",
+            "--refs",
+            "https://github.com/aloerch/ambisgis-postgis.git",
+            "refs/heads/ambisgis/main",
+            "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+            "refs/heads/master"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "6af8b56ef17f444c88c396f11cbb70c157e5f4ecf53cf5e97ca0ed85a70557fe"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-postgis/git/commits/9816f82458db774e62906cfb2c4f01f8b262c862",
+            "--jq",
+            "{sha,tree:{sha:.tree.sha},parents:[.parents[].sha]}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "be1b99731f63ff86b1538150772cc17241722026e9424f8249374fdf1ca00868"
+        }
+      ],
+      "commit": "9816f82458db774e62906cfb2c4f01f8b262c862",
+      "default": {
+        "name": "master",
+        "sha": "84890ccbe53549130de8a2b75a72ab3a54b570d1"
+      },
+      "history_evidence_reused": {
+        "history_commits": 18349,
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "source_diff_notice_evidence_unchanged": true
+      },
+      "observed_at": "2026-10-03T05:44:15.996900+00:00",
+      "parents": [
+        "8150016e768bae6b9279cadf47ec9417c242a696"
+      ],
+      "refs": {
+        "refs/heads/ambisgis/main": "9816f82458db774e62906cfb2c4f01f8b262c862",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4": "9816f82458db774e62906cfb2c4f01f8b262c862",
+        "refs/heads/master": "84890ccbe53549130de8a2b75a72ab3a54b570d1"
+      },
+      "repository": "aloerch/ambisgis-postgis",
+      "repository_id": 1376927690,
+      "root_id": "postgis",
+      "status": "verified",
+      "tree": "ee927efacdc5a00d698cab2da047ad2232d1f579"
+    },
+    {
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-jupyterhub",
+            "--jq",
+            "{id,full_name,owner:{login:.owner.login,id:.owner.id},private,default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e6fa0c8a5296d0b8088edf829cf56dc8c3a72c07c929014d5e56216d0675862a"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-jupyterhub/actions/permissions",
+            "--jq",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e4114ede75f0b547f5f7a4db9a16b7674a1b23b199eb1566d86791d61d6938d3"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-replace-objects",
+            "-c",
+            "core.hooksPath=/dev/null",
+            "-c",
+            "credential.helper=",
+            "-c",
+            "http.followRedirects=false",
+            "-c",
+            "protocol.file.allow=never",
+            "-c",
+            "protocol.ext.allow=never",
+            "ls-remote",
+            "--exit-code",
+            "--refs",
+            "https://github.com/aloerch/ambisgis-jupyterhub.git",
+            "refs/heads/ambisgis/main",
+            "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+            "refs/heads/main"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "2ae73a95b238c2547b63087971441371f85584e306cb0541fc522ea4f3a7b7cb"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-jupyterhub/git/commits/129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+            "--jq",
+            "{sha,tree:{sha:.tree.sha},parents:[.parents[].sha]}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "246ea92ca02b49a6c07028160070a9058489c05022ccae8644effaefa600686a"
+        }
+      ],
+      "commit": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+      "default": {
+        "name": "main",
+        "sha": "929ef417d1e337a17a5e3ebfdd0e0143b021f91d"
+      },
+      "history_evidence_reused": {
+        "history_commits": 8821,
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "source_diff_notice_evidence_unchanged": true
+      },
+      "observed_at": "2026-10-03T05:44:15.987044+00:00",
+      "parents": [
+        "3e516c6f382b481e815ec455befb2f14d80d337b"
+      ],
+      "refs": {
+        "refs/heads/ambisgis/main": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4": "129e6b0a06dcf1aa17b580bf0f0a61dfd9dbce3a",
+        "refs/heads/main": "929ef417d1e337a17a5e3ebfdd0e0143b021f91d"
+      },
+      "repository": "aloerch/ambisgis-jupyterhub",
+      "repository_id": 1376927753,
+      "root_id": "jupyterhub",
+      "status": "verified",
+      "tree": "a9ab20c5ff0641870194d666fcd1516ee2f2d65e"
+    },
+    {
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-jupyterlab",
+            "--jq",
+            "{id,full_name,owner:{login:.owner.login,id:.owner.id},private,default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "8604f44d9ee2421705bbcd7c79299375301a33d4f6b84730922440e189a0a960"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-jupyterlab/actions/permissions",
+            "--jq",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e4114ede75f0b547f5f7a4db9a16b7674a1b23b199eb1566d86791d61d6938d3"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-replace-objects",
+            "-c",
+            "core.hooksPath=/dev/null",
+            "-c",
+            "credential.helper=",
+            "-c",
+            "http.followRedirects=false",
+            "-c",
+            "protocol.file.allow=never",
+            "-c",
+            "protocol.ext.allow=never",
+            "ls-remote",
+            "--exit-code",
+            "--refs",
+            "https://github.com/aloerch/ambisgis-jupyterlab.git",
+            "refs/heads/ambisgis/main",
+            "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+            "refs/heads/main"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "b9bd223133dad469564e139d6a65886e3d8f5ca185f6c4f3ce07a64927fe14e7"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-jupyterlab/git/commits/e7255a9334c12ad8f9cb15db27584215fab5ece2",
+            "--jq",
+            "{sha,tree:{sha:.tree.sha},parents:[.parents[].sha]}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e65f4629f07d71f3ef3bd7629c5d5fc337415c600e3e5020f0b1e377cf98961e"
+        }
+      ],
+      "commit": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+      "default": {
+        "name": "main",
+        "sha": "5ad633d6747371452c2f5fe465d18a70b8f3195d"
+      },
+      "history_evidence_reused": {
+        "history_commits": 27053,
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "source_diff_notice_evidence_unchanged": true
+      },
+      "observed_at": "2026-10-03T05:44:19.458507+00:00",
+      "parents": [
+        "08c20a121297016a352f8f6f96aabd25b5703aab"
+      ],
+      "refs": {
+        "refs/heads/ambisgis/main": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4": "e7255a9334c12ad8f9cb15db27584215fab5ece2",
+        "refs/heads/main": "5ad633d6747371452c2f5fe465d18a70b8f3195d"
+      },
+      "repository": "aloerch/ambisgis-jupyterlab",
+      "repository_id": 1376927783,
+      "root_id": "jupyterlab",
+      "status": "verified",
+      "tree": "0edadc56fb04f944097c0658a9a51686ba68bd16"
+    },
+    {
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-geowebcache",
+            "--jq",
+            "{id,full_name,owner:{login:.owner.login,id:.owner.id},private,default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "282acb0d158b5de5daa57872b948d268c8d9061366416490dd085319757ca6eb"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-geowebcache/actions/permissions",
+            "--jq",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e4114ede75f0b547f5f7a4db9a16b7674a1b23b199eb1566d86791d61d6938d3"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-replace-objects",
+            "-c",
+            "core.hooksPath=/dev/null",
+            "-c",
+            "credential.helper=",
+            "-c",
+            "http.followRedirects=false",
+            "-c",
+            "protocol.file.allow=never",
+            "-c",
+            "protocol.ext.allow=never",
+            "ls-remote",
+            "--exit-code",
+            "--refs",
+            "https://github.com/aloerch/ambisgis-geowebcache.git",
+            "refs/heads/ambisgis/main",
+            "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+            "refs/heads/main"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "922a812ce0dd9749d69a461bd68cf24dcdbbbea1121bbce298021b51552dd5d0"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-geowebcache/git/commits/b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+            "--jq",
+            "{sha,tree:{sha:.tree.sha},parents:[.parents[].sha]}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "dc59fab3910965f464ba779dd3b6bd2ad2e3120e59c5066c37d8c214baa40649"
+        }
+      ],
+      "commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+      "default": {
+        "name": "main",
+        "sha": "821bae4793863555321cd7a935137c80b8eded73"
+      },
+      "history_evidence_reused": {
+        "history_commits": 2908,
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "source_diff_notice_evidence_unchanged": true
+      },
+      "observed_at": "2026-10-03T05:44:17.295535+00:00",
+      "parents": [
+        "59640420454b73f1e04e8409cc6ed43f4b24fed2"
+      ],
+      "refs": {
+        "refs/heads/ambisgis/main": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+        "refs/heads/main": "821bae4793863555321cd7a935137c80b8eded73"
+      },
+      "repository": "aloerch/ambisgis-geowebcache",
+      "repository_id": 1376927892,
+      "root_id": "geowebcache",
+      "status": "verified",
+      "tree": "8df655d13b9955776fe1532dfb27fac64612a772"
+    },
+    {
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-geoserver",
+            "--jq",
+            "{id,full_name,owner:{login:.owner.login,id:.owner.id},private,default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "ea84f0d406745ac15ffe9d4d463b1e8b438fcdd0b92bfb6c80e2f9c057fd346d"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-geoserver/actions/permissions",
+            "--jq",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e4114ede75f0b547f5f7a4db9a16b7674a1b23b199eb1566d86791d61d6938d3"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-replace-objects",
+            "-c",
+            "core.hooksPath=/dev/null",
+            "-c",
+            "credential.helper=",
+            "-c",
+            "http.followRedirects=false",
+            "-c",
+            "protocol.file.allow=never",
+            "-c",
+            "protocol.ext.allow=never",
+            "ls-remote",
+            "--exit-code",
+            "--refs",
+            "https://github.com/aloerch/ambisgis-geoserver.git",
+            "refs/heads/ambisgis/main",
+            "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+            "refs/heads/main"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "f415e2d1d63f59d21b57920fc681107597d7f2c5ac3eafca24f93a30487486a2"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-geoserver/git/commits/fd2fe1dfcc78fa974bdb81673872879336312077",
+            "--jq",
+            "{sha,tree:{sha:.tree.sha},parents:[.parents[].sha]}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "d1586c14e5ec0fc7806dfaf8474427aee042a72e68cf63a09976b7446644340f"
+        }
+      ],
+      "commit": "fd2fe1dfcc78fa974bdb81673872879336312077",
+      "default": {
+        "name": "main",
+        "sha": "98c7c567a9fa3b691915fa2fc613d90d90d78b62"
+      },
+      "history_evidence_reused": {
+        "history_commits": 14753,
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "source_diff_notice_evidence_unchanged": true
+      },
+      "observed_at": "2026-10-03T05:44:17.309303+00:00",
+      "parents": [
+        "e0673323400321c0f3409fbae68b4871dc328d8a"
+      ],
+      "refs": {
+        "refs/heads/ambisgis/main": "fd2fe1dfcc78fa974bdb81673872879336312077",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4": "fd2fe1dfcc78fa974bdb81673872879336312077",
+        "refs/heads/main": "98c7c567a9fa3b691915fa2fc613d90d90d78b62"
+      },
+      "repository": "aloerch/ambisgis-geoserver",
+      "repository_id": 1376927947,
+      "root_id": "geoserver",
+      "status": "verified",
+      "tree": "c12018e88493a351c60c370f2a43894701acf995"
+    },
+    {
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-geonode",
+            "--jq",
+            "{id,full_name,owner:{login:.owner.login,id:.owner.id},private,default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "5d58595d79838a56714c116be87fd7718506d63751c16d60027cd186af189a40"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-geonode/actions/permissions",
+            "--jq",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e4114ede75f0b547f5f7a4db9a16b7674a1b23b199eb1566d86791d61d6938d3"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-replace-objects",
+            "-c",
+            "core.hooksPath=/dev/null",
+            "-c",
+            "credential.helper=",
+            "-c",
+            "http.followRedirects=false",
+            "-c",
+            "protocol.file.allow=never",
+            "-c",
+            "protocol.ext.allow=never",
+            "ls-remote",
+            "--exit-code",
+            "--refs",
+            "https://github.com/aloerch/ambisgis-geonode.git",
+            "refs/heads/ambisgis/main",
+            "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+            "refs/heads/master"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "98420aeced33e7d5107ec3cfc20bdb9e20d560faff5c419ba93efa4e64c62e19"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-geonode/git/commits/2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+            "--jq",
+            "{sha,tree:{sha:.tree.sha},parents:[.parents[].sha]}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "69187a583a4f56f0402f53ee54ad3e2248fa67271e1493adc0f0242a6b827160"
+        }
+      ],
+      "commit": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+      "default": {
+        "name": "master",
+        "sha": "ddfdc44cabf13931fb1d53d35809699d6e4766ae"
+      },
+      "history_evidence_reused": {
+        "history_commits": 19486,
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "source_diff_notice_evidence_unchanged": true
+      },
+      "observed_at": "2026-10-03T05:44:18.611944+00:00",
+      "parents": [
+        "a1db97e81dfc26c16bb4ee1a5d2b408877af66c9"
+      ],
+      "refs": {
+        "refs/heads/ambisgis/main": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4": "2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4",
+        "refs/heads/master": "ddfdc44cabf13931fb1d53d35809699d6e4766ae"
+      },
+      "repository": "aloerch/ambisgis-geonode",
+      "repository_id": 1376927978,
+      "root_id": "geonode",
+      "status": "verified",
+      "tree": "f8fda01733dae258e319df14f42677cf3bd83e20"
+    },
+    {
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-mapstore-client",
+            "--jq",
+            "{id,full_name,owner:{login:.owner.login,id:.owner.id},private,default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e0c4a3258d2b7dd33dbd4deda520394777bc5da40c3c0a2fb68c5c14ef76fa69"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-mapstore-client/actions/permissions",
+            "--jq",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e4114ede75f0b547f5f7a4db9a16b7674a1b23b199eb1566d86791d61d6938d3"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-replace-objects",
+            "-c",
+            "core.hooksPath=/dev/null",
+            "-c",
+            "credential.helper=",
+            "-c",
+            "http.followRedirects=false",
+            "-c",
+            "protocol.file.allow=never",
+            "-c",
+            "protocol.ext.allow=never",
+            "ls-remote",
+            "--exit-code",
+            "--refs",
+            "https://github.com/aloerch/ambisgis-mapstore-client.git",
+            "refs/heads/ambisgis/main",
+            "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+            "refs/heads/master"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "7c98f5888630730e303c9cdf6add20395e539656f054da965ed3ca087032e33f"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-mapstore-client/git/commits/a0d3f434cea69dadc93d35e13bc969b844aceea1",
+            "--jq",
+            "{sha,tree:{sha:.tree.sha},parents:[.parents[].sha]}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "5595ed7a4bf19209c02a14311249168ef90ab661ebd8dfcd56caac5c2c36a23b"
+        }
+      ],
+      "commit": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+      "default": {
+        "name": "master",
+        "sha": "673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7"
+      },
+      "history_evidence_reused": {
+        "history_commits": 1803,
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "source_diff_notice_evidence_unchanged": true
+      },
+      "observed_at": "2026-10-03T05:44:18.811491+00:00",
+      "parents": [
+        "7ca4822125b67999c97cb4aa1faa84b8a28eee9b"
+      ],
+      "refs": {
+        "refs/heads/ambisgis/main": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4": "a0d3f434cea69dadc93d35e13bc969b844aceea1",
+        "refs/heads/master": "673a854c4b3b0694f8e9e6d81cc10ce5846d8ac7"
+      },
+      "repository": "aloerch/ambisgis-mapstore-client",
+      "repository_id": 1376928013,
+      "root_id": "mapstore-client",
+      "status": "verified",
+      "tree": "8055ca37333ee3037f63624f2e1d6ee548d416f1"
+    },
+    {
+      "actions": {
+        "enabled": false,
+        "sha_pinning_required": false
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-mapstore",
+            "--jq",
+            "{id,full_name,owner:{login:.owner.login,id:.owner.id},private,default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "da0c01e4c3c7ab64b84ddb72702304b03e59b062738ed29553ab8b225cd1d088"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-mapstore/actions/permissions",
+            "--jq",
+            "."
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "e4114ede75f0b547f5f7a4db9a16b7674a1b23b199eb1566d86791d61d6938d3"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-replace-objects",
+            "-c",
+            "core.hooksPath=/dev/null",
+            "-c",
+            "credential.helper=",
+            "-c",
+            "http.followRedirects=false",
+            "-c",
+            "protocol.file.allow=never",
+            "-c",
+            "protocol.ext.allow=never",
+            "ls-remote",
+            "--exit-code",
+            "--refs",
+            "https://github.com/aloerch/ambisgis-mapstore.git",
+            "refs/heads/ambisgis/main",
+            "refs/heads/ambisgis/review/fnd-07-baseline-v4",
+            "refs/heads/master"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "361f7a997a551579304d2dcbe20e44effaf350fc366209730dc6400b2f38aaae"
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "--hostname",
+            "github.com",
+            "--method",
+            "GET",
+            "repos/aloerch/ambisgis-mapstore/git/commits/88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+            "--jq",
+            "{sha,tree:{sha:.tree.sha},parents:[.parents[].sha]}"
+          ],
+          "exit_code": 0,
+          "stdout_sha256": "0faa0f5988f7ee1b6eceed60a590f9ab8735786cbf2203a628a7246221a6187b"
+        }
+      ],
+      "commit": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+      "default": {
+        "name": "master",
+        "sha": "0eedc8b7184d3b753d0581963814726f1e5ec8eb"
+      },
+      "history_evidence_reused": {
+        "history_commits": 5605,
+        "receipt_sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+        "source_diff_notice_evidence_unchanged": true
+      },
+      "observed_at": "2026-10-03T05:44:19.904722+00:00",
+      "parents": [
+        "0f3518737f29f4049b131247ce981e94519d9ab0"
+      ],
+      "refs": {
+        "refs/heads/ambisgis/main": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+        "refs/heads/ambisgis/review/fnd-07-baseline-v4": "88064efbf20ef0aaffebe357f7a99a1ab4fb23b8",
+        "refs/heads/master": "0eedc8b7184d3b753d0581963814726f1e5ec8eb"
+      },
+      "repository": "aloerch/ambisgis-mapstore",
+      "repository_id": 1376928043,
+      "root_id": "mapstore",
+      "status": "verified",
+      "tree": "11b6eb8616b90c72570c4f3aad82212b52f1cdbe"
+    }
+  ],
+  "reviewer": "separate-context publication_review agent",
+  "schema_version": 1,
+  "started_at": "2026-10-03T05:44:14.478764+00:00",
+  "status": "passed",
+  "task": "FND-07",
+  "unchanged_prior_receipts": [
+    {
+      "path": "plan/verification/canonical-and-publication-repairs/canonical-delivery.json",
+      "sha256": "139a88e6c4ccbc16b9be74a13b1dec2106ae00834e9138bca94da02777c23d16",
+      "unchanged_since": "5213f31cd51aed5230d7bd550cc03662bcfb566f"
+    },
+    {
+      "path": "plan/verification/canonical-and-publication-repairs/canonical-remote-delivery.json",
+      "sha256": "d9f428c97edca874c288a6fb8753746c770d6c5944d9b05d1c114d3d916e1812",
+      "unchanged_since": "5213f31cd51aed5230d7bd550cc03662bcfb566f"
+    },
+    {
+      "path": "plan/verification/source-ref-promotion/remote-delivery.json",
+      "sha256": "ea237c635a6990d739ffe1cb9fe191e2f506c947f33400f286b3586822389e90",
+      "unchanged_since": "5213f31cd51aed5230d7bd550cc03662bcfb566f"
+    }
+  ]
+}

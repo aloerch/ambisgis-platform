@@ -1,15 +1,10 @@
 # Active delivery — standing delegation
 
-FND-03 now has a [real catalog-policy implementation and evidence](docs/fnd-03-catalog-policy.md)
-on `fnd-03/catalog-policy-v2`: 142 gateway/engine authorization assertions,
-70 native GeoNode tests, 482 migrations, unchanged owned component artifacts and
-clean disposable runtime teardown pass. Independent review and PR merge remain
-pending. This is the bounded identity/ACL spike, not full T-AUTH-ALL or an
-installable product. Global delivery sequencing remains with the integrator.
+FND-07 is accepted/Merged following [PR #73](https://github.com/aloerch/ambisgis-platform/pull/73), merge `7812efa3502ec1d7004b485d35b433eea56ce13e`, exact source publication, independent recovery and zero-write replay. [Delegated acceptance](https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5966156208) retains the original criteria; FND-02 remains accepted. The [standing policy](docs/standing-delivery-policy.md) is active.
 
-Live main is PR #71 merge `5213f31cd51aed5230d7bd550cc03662bcfb566f`, verified on 2026-10-02 America/Los_Angeles. The [standing policy](docs/standing-delivery-policy.md) supersedes older procedural stops below. Work is on `delivery/standing-delegation`, with independent review and tested gates, followed by exact source publication and dependency-ready product work. FND-02 remains accepted/Merged; no scoped MVP or release is claimed.
+FND-03 has [real catalog-policy implementation and evidence](docs/fnd-03-catalog-policy.md): 142 gateway/engine authorization assertions, 70 native GeoNode tests, 482 migrations and clean teardown pass. Initial separate-context security review found no material issues; final base integration/test/review binding and normal PR merge remain pending. This is the bounded identity/ACL spike, not full T-AUTH-ALL or an installable product. FND-04 prototype correctness/measurements continue; FND-08 owned builds are In progress.
 
-[Current delivery ledger](docs/delivery-ledger.json) · [all 24 required capabilities and acceptance](docs/delivery-requirements-matrix.md).
+[Delivery ledger](docs/delivery-ledger.json) · [all 24 requirements](docs/delivery-requirements-matrix.md).
 
 ## Historical checkpoint follows unchanged
 

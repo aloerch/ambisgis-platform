@@ -1,0 +1,75 @@
+{
+  "recorded_at": "2026-10-03T05:27:20.916307+00:00",
+  "repository": {
+    "id": 1376927351,
+    "full_name": "aloerch/ambisgis-platform",
+    "default_branch": "ambisgis/main",
+    "allow_auto_merge": true
+  },
+  "protection": {
+    "url": "https://api.github.com/repos/aloerch/ambisgis-platform/branches/ambisgis/main/protection",
+    "required_status_checks": {
+      "url": "https://api.github.com/repos/aloerch/ambisgis-platform/branches/ambisgis/main/protection/required_status_checks",
+      "strict": true,
+      "contexts": [
+        "package-and-schema",
+        "delegated-review"
+      ],
+      "contexts_url": "https://api.github.com/repos/aloerch/ambisgis-platform/branches/ambisgis/main/protection/required_status_checks/contexts",
+      "checks": [
+        {
+          "context": "package-and-schema",
+          "app_id": 15368
+        },
+        {
+          "context": "delegated-review",
+          "app_id": null
+        }
+      ]
+    },
+    "required_signatures": {
+      "url": "https://api.github.com/repos/aloerch/ambisgis-platform/branches/ambisgis/main/protection/required_signatures",
+      "enabled": false
+    },
+    "enforce_admins": {
+      "url": "https://api.github.com/repos/aloerch/ambisgis-platform/branches/ambisgis/main/protection/enforce_admins",
+      "enabled": true
+    },
+    "required_linear_history": {
+      "enabled": false
+    },
+    "allow_force_pushes": {
+      "enabled": false
+    },
+    "allow_deletions": {
+      "enabled": false
+    },
+    "block_creations": {
+      "enabled": false
+    },
+    "required_conversation_resolution": {
+      "enabled": false
+    },
+    "lock_branch": {
+      "enabled": false
+    },
+    "allow_fork_syncing": {
+      "enabled": false
+    }
+  },
+  "actions": {
+    "enabled": true,
+    "allowed_actions": "all",
+    "sha_pinning_required": false
+  },
+  "rulesets": [],
+  "observed_passing_check": {
+    "id": 111136506108,
+    "name": "package-and-schema",
+    "head_sha": "e4a4845d8483e8e3a8692ad4255c249421c3b320",
+    "status": "completed",
+    "conclusion": "success",
+    "details_url": "https://github.com/aloerch/ambisgis-platform/actions/runs/37099643881/job/111136506108"
+  },
+  "review_status_id": 55503042221
+}

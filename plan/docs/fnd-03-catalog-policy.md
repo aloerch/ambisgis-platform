@@ -5,8 +5,12 @@ Platform `aloerch/ambisgis-platform`, repository ID `1376927351`, branch
 `8c3612dd3e4ee992d930f1417798b66f467784e9`. The live
 [claim](https://github.com/aloerch/ambisgis-platform/issues/4#issuecomment-5966057973)
 is authorized by the standing owner delegation. FND-02 remains accepted/Merged.
-FND-03 has successful implementation evidence; independent review and its PR
-merge remain pending. No product release or complete T-AUTH-ALL pass is claimed.
+The task branch subsequently merged PR #73 main at
+`7812efa3502ec1d7004b485d35b433eea56ce13e`; the only conflict was the active
+STATUS text, resolved to preserve both current task states and historical records.
+The executed policy/compiler/harness bytes are unchanged. Initial independent
+security review found no material issues, with 77 supplementary adversarial checks;
+final integration test/review binding and PR merge remain pending. No product release or complete T-AUTH-ALL pass is claimed.
 
 The implementation adds a read-only catalog policy module and gateway in
 `services/control-plane/ambisgis_policy`, plus a source-compiled mandatory engine
