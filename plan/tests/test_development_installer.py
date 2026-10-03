@@ -728,6 +728,25 @@ class InstallerStateTests(unittest.TestCase):
                 self.assertEqual(before, self.state())
                 self.assertTrue(all(args[:2] in [('container', 'exists'), ('container', 'inspect')] for args in calls))
 
+    def test_native_tmpfs_projection_accepts_only_private_propagation(self):
+        fixture = json.loads((Path(__file__).resolve().parents[2] /
+            'build-support/development-runtime/fixtures/native-tmpfs-003.json').read_text())
+        selected_options = fixture['inspect']['HostConfig']['Tmpfs']['/tmp']
+        self.assertEqual(selected_options.split(','), fixture['oci']['mounts'][0]['options'])
+        self.init(); selected = runtime.Runtime(self.root); row = self.inspection(selected)
+        row['HostConfig']['Tmpfs'] = fixture['inspect']['HostConfig']['Tmpfs']
+        selected.container_security(row, 'catalog')
+        for options in ('rw,nosuid,nodev,size=256m,rshared,tmpcopyup',
+                        'rw,nosuid,nodev,size=256m,slave,tmpcopyup',
+                        'rw,nosuid,nodev,size=256m,rslave,tmpcopyup',
+                        'rw,nosuid,nodev,size=256m,rprivate,shared,tmpcopyup',
+                        'rw,nosuid,nodev,size=256m,rprivate,private,tmpcopyup',
+                        'rw,nosuid,nodev,size=256m,rprivate,rprivate,tmpcopyup'):
+            with self.subTest(options=options):
+                changed = copy.deepcopy(row); changed['HostConfig']['Tmpfs']['/tmp'] = options
+                with self.assertRaisesRegex(ValueError, 'tmpfs'):
+                    selected.container_security(changed, 'catalog')
+
     def test_actual_oci_sysctl_map_must_match_ipv4_profile(self):
         self.init(); selected = runtime.Runtime(self.root); row = self.inspection(selected)
         path = Path(row['OCIConfigPath']); original = path.read_bytes()

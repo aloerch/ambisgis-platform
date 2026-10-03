@@ -99,6 +99,35 @@ method in process while intercepting its subprocess boundary before child
 creation. Its original failing result and the failed lifecycle remain retained;
 passing argument tests do not establish installation acceptance.
 
+The third lifecycle attempt created the owned database container but did not
+start it. Its retained native error identified missing `libpathrs.so.0` during
+runc startup, despite that library being present in the verified bundle. The
+exact runc source constructs a fresh environment for its sealed init executable
+without the relocated library search path. `runc_build.py` applies a narrow
+source repair that carries only the wrapper-validated `LD_LIBRARY_PATH` beside
+the existing `GOMAXPROCS`; the later native init `Clearenv` remains unchanged.
+The offline build uses the retained runc 1.5.1 archive's own matching vendor
+tree, existing Go/GCC/sysroot custody and fresh build/cache directories. Only
+`TestAmbisGISInitEnvironment` runs, covering absence, the private library path
+and exclusion of unrelated variables. No runc CLI or container is executed.
+
+Build-001 is retained but excluded because its Git revision field contained a
+descriptive label. Corrected build-002 leaves upstream revision metadata at its
+default and binds the archive, patch and output hashes in external custody.
+The candidate carries the exact source archive, patch, build records, original
+Apache license, thirty vendor notice files and a dated modification notice.
+Required static archives are absent from the selected toolchain, so static
+linking is not claimed. Native library resolution after the repair remains an
+ordinary installation acceptance test.
+
+The same failed attempt revealed Podman's default `rprivate` tmpfs propagation
+in both actual inspection and OCI data. Its selected, sanitized projection is
+retained in `fixtures/native-tmpfs-003.json`. Inspection now accepts this
+recursively private mode while rejecting shared/slave propagation, conflicting
+modes and duplicate options. The original failing regression is preserved;
+the rest of the ownership, image, network, mount and isolation checks remain
+mandatory. The never-started original container and its data remain retained.
+
 In-process tests run with the retained CI Python:
 
 ```sh

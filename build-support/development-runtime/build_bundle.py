@@ -20,6 +20,8 @@ from elf_closure import elf
 BUILD = Path('/home/revelberry/Projects/AmbisGIS/build-worktrees')
 INERT = BUILD / 'plt01-runtime/inert-002'
 PODMAN = BUILD / 'plt01-podman-build/build-002'
+RUNC = ROOT.parent / 'plt01-runtime-checks/runc-build-002'
+RUNC_ARCHIVE = Path('/home/revelberry/Projects/AmbisGIS/source-archives/plt01-container/obs-source/runc-64446271a17ff823ebb1b17b0b955d06/runc-1.5.1.tar.xz')
 IMAGES = ROOT.parent / 'plt01-runtime-checks/images-003'
 INPUTS = ROOT.parent / 'plt01-inputs-worktree/build-support/container-inputs'
 CONTROL = BUILD / 'delivery-control'
@@ -34,6 +36,15 @@ PINS = {
     PODMAN / 'invocation.json': 'bcfaf2b4a884036d030aa3f25b55aff0e08798256591b10bd53fadc4734c5782',
     PODMAN / 'commands.json': 'ffb5374242576d800cd85eaca01c238f3e0468f832e1f72fdb5b755d41a89ef6',
     PODMAN / 'network.json': '00e4806e4af95f716919fc1505ae91afad8fd0350e45807e72e53aa823a1a0df',
+    RUNC_ARCHIVE: 'db743b39fd7de8da88adce5a61a54529a494928cd59227fffb622f5cb4ba6ef9',
+    RUNC / 'result.json': '64ac169e79dd481fb5d6488b4c32f39ffc30f1cf902c3bbb1c807916f0b9ea00',
+    RUNC / 'invocation.json': '9a283834d11f89f87ce0bc74ac3ab3576b3bfdbcc31edc194e27576140f34156',
+    RUNC / 'commands.json': 'e153f924399bad3ae36a0d849218278f0745eb0b957f2657fef086399a3659eb',
+    RUNC / 'preparation.json': '467455a1b068ba132debaa8d27227a88fd6d06ec705b233eb40ee7d90de116ca',
+    RUNC / 'toolchain.json': '88c9dfab2f03d59019b96d94ca119c5a3aa12cf8509c0da7547747123e19f60a',
+    RUNC / 'network.json': '2a137fdc2855b10907cace98347210116cdb99c1f3d4a9ab1e64063b7c76626d',
+    RUNC / 'owned-source.patch': '9132b82fbccf032cbf113be79a2b82d6608ea8bb4b1590400132371f4a12ec65',
+    RUNC / 'bin/runc': '88a8ad522d529ad484d07631d0e55caf44f4a156fce181c4074952e2c33c49ef',
     INPUTS / 'retained-inputs.lock.json': 'b7fa4c75199a9abedc9c1a749886f8bafd79dae47ea063d0556588edad8a8271',
     INPUTS / 'python312-image-inputs.lock.json': 'fc7449babfee72a361da2ad309c463a4ec33ef89a28fbfdc2fa63e5d882bfefd',
     CONTROL / 'host-payload-correspondence-007.json': 'bb47cd1820af73a078c14d6b8a0363909c9fa7898a6d6d18b796ed8da6ab0023',
@@ -230,6 +241,41 @@ def host_tinfo_correspondence(path, raw_hash):
             'source_directory': str(root), 'verification': 'Rebound prior signed header/payload attestation; no new signature verification or source rebuild.'}
 
 
+def add_owned_runc(writer, original):
+    result = json.loads(regular(RUNC / 'result.json', PINS[RUNC / 'result.json']).read_bytes())
+    if result['exit_code'] != 0 or result['unchanged'] != {'original': True, 'source': True, 'toolchain': True}:
+        raise ValueError('Owned runc build is incomplete or changed')
+    for name, identity in result['records'].items(): regular(RUNC / safe_name(name), identity)
+    source = json.loads((RUNC / 'preparation.json').read_bytes())
+    if not source['init_clearenv_source_unchanged']:
+        raise ValueError('Native init environment isolation changed')
+    invocation = json.loads((RUNC / 'invocation.json').read_bytes())
+    regular(RUNC / 'build-executed.py', invocation['recipe_sha256'])
+    writer.put('runtime/helpers/runc', source=RUNC / 'bin/runc', sha256=PINS[RUNC / 'bin/runc'], executable=True,
+        origin={'owned_build': str(RUNC), 'result_sha256': PINS[RUNC / 'result.json'], 'replaced_retained_input': original})
+    prefix = 'runtime/notices/runc-owned-build/'
+    for name in ('result.json', 'invocation.json', 'commands.json', 'preparation.json', 'toolchain.json', 'network.json', 'owned-source.patch'):
+        writer.put(prefix + name, source=RUNC / name, sha256=PINS[RUNC / name], origin={'original_build_record': True})
+    writer.put(prefix + 'build-executed.py', source=RUNC / 'build-executed.py', sha256=invocation['recipe_sha256'], origin={'owned_recipe': True})
+    writer.put(prefix + 'runc-1.5.1.tar.xz', source=RUNC_ARCHIVE, sha256=PINS[RUNC_ARCHIVE], origin={'exact_retained_source_with_vendor': True})
+    names = ['LICENSE', 'libcontainer/ambisgis_environment_test.go'] + sorted(n for n in source['patched']
+        if n.startswith('vendor/') and Path(n).name.lower().startswith(('license', 'copying', 'notice')))
+    for name in names:
+        row = source['patched'][name]
+        if row['kind'] != 'file': raise ValueError('Unexpected source notice member')
+        writer.put(prefix + 'source/' + name, source=RUNC / 'source' / safe_name(name), sha256=row['sha256'],
+                   origin={'owned_runc_source': name, 'source_archive_sha256': PINS[RUNC_ARCHIVE]})
+    writer.put(prefix + 'MODIFICATIONS.txt', data=(
+        'AmbisGIS development packaging modification, 2026-10-03.\n'
+        'runc 1.5.1 retains Apache-2.0 and its original notices. Exact vendor notices are included separately.\n'
+        'The sealed init bootstrap now carries only the owned launcher-validated LD_LIBRARY_PATH in addition to the existing GOMAXPROCS.\n'
+        'Later native init Clearenv and container environment handling remain unchanged. See owned-source.patch and preparation.json.\n'
+        'The source archive, patch and build hashes identify this derived binary; no Git commit value is invented.\n'
+        'Build-001 is excluded for misleading revision metadata; this artifact is corrected build-002.\n'
+        'Only the pure bootstrap environment unit was executed. Runtime installation/security and distribution approval remain pending.\n'
+    ).encode(), origin={'modified_source_notice': True})
+
+
 def assemble(output):
     os.umask(0o077)
     for path, sha in PINS.items(): regular(path, sha)
@@ -239,6 +285,10 @@ def assemble(output):
     if actual != {r['path'] for r in payload['files']}: raise ValueError('retained runtime payload membership differs')
     for row in payload['files']:
         path = row['path']; destination = path
+        if path == 'runtime/bin/runc':
+            regular(INERT / path, row['sha256'])
+            add_owned_runc(writer, row)
+            continue
         if path.startswith('runtime/bin/') and Path(path).name != 'python3.13':
             destination = 'runtime/helpers/' + Path(path).name
         writer.put(destination, source=INERT / path, sha256=row['sha256'],

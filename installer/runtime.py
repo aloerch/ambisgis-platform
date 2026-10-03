@@ -207,9 +207,12 @@ class Runtime:
         tmpfs = host.get('Tmpfs')
         if not isinstance(tmpfs, dict) or set(tmpfs) != {'/tmp'} or not isinstance(tmpfs['/tmp'], str):
             raise ValueError('container tmpfs membership drift')
-        options = set(tmpfs['/tmp'].split(','))
-        if (not {'rw', 'nosuid', 'nodev'} <= options or len(options & {'size=256m', 'size=268435456'}) != 1
-                or options - {'rw', 'nosuid', 'nodev', 'noexec', 'size=256m', 'size=268435456', 'mode=1777', 'tmpcopyup'}):
+        option_list = tmpfs['/tmp'].split(','); options = set(option_list)
+        # The pinned native tmpfs normalizer adds recursive private propagation.
+        # Do not accept shared/slave alternatives or duplicate/conflicting flags.
+        if (len(options) != len(option_list) or not {'rw', 'nosuid', 'nodev'} <= options
+                or len(options & {'size=256m', 'size=268435456'}) != 1
+                or options - {'rw', 'nosuid', 'nodev', 'noexec', 'size=256m', 'size=268435456', 'mode=1777', 'tmpcopyup', 'rprivate'}):
             raise ValueError('container tmpfs permissions or limits drift')
         wanted = {mount['target']: mount for mount in expected['volumes']}
         mounts = row['Mounts']
