@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "base": "5213f31cd51aed5230d7bd550cc03662bcfb566f",
+  "commands": [
+    {
+      "name": "package-tests",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/delivery-worktree/plan",
+      "started_at": "2026-10-03T05:16:01.950328+00:00",
+      "finished_at": "2026-10-03T05:16:14.913846+00:00",
+      "exit_code": 0,
+      "log_sha256": "d92f391856e81b60a50a9ebf3304b05f60beb4e9be69a37d37444465f2bab60d",
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/package-tests-final-01.log",
+      "tests": 444,
+      "skips": 0
+    },
+    {
+      "name": "schemas",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/delivery-worktree/plan",
+      "started_at": "2026-10-03T05:16:14.914464+00:00",
+      "finished_at": "2026-10-03T05:16:15.062518+00:00",
+      "exit_code": 0,
+      "log_sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/schemas-final-01.log"
+    }
+  ],
+  "product_acceptance": false,
+  "negative_recovery_test_before_fix": "two expected assertion failures, then 10 targeted recovery tests passed",
+  "environment_limit": "Sandbox Python lacks jsonschema: agent run 443 tests had 1 failure, 5 errors, 7 skips. Final run uses fresh CPython3.12 hash-locked offline-installed tooling.",
+  "continuation": "Native goal active; actual automatic cross-turn continuation is pending first turn boundary; helper tests do not prove autonomous Codex session resume."
+}
