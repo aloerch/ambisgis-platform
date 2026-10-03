@@ -40,7 +40,7 @@
   "branch": "fnd-06/contracts-and-koop",
   "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
   "task": "FND-06 shared contracts, synthetic corpus, threat model and Koop reuse spike",
-  "state": "In progress; contracts, corpus and Koop custody helpers independently reviewed; fresh offline installation passed; real runtime experiment and reuse ADR pending",
+  "state": "In progress; complete FND-06 candidate and component reviews assembled; aggregate review, protected merge and acceptance pending",
   "pr": "https://github.com/aloerch/ambisgis-platform/pull/77",
   "tests": [
     {
@@ -105,6 +105,18 @@
       "errors": 0,
       "skips": 0,
       "evidence": "plan/verification/fnd06-integration-001/evidence.json"
+    },
+    {
+      "scope": "Final combined FND-06 implementation; package and real runtime evidence remain distinct",
+      "head": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
+      "package_tests": 503,
+      "schemas": 10,
+      "koop_guards": 35,
+      "tr46_notice_guards": 14,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "evidence": "plan/verification/fnd06-final/evidence.json"
     }
   ],
   "source_publication": {
@@ -123,9 +135,9 @@
     "FND-08"
   ],
   "next": [
-    "Complete actual authorized Koop/PostGIS/catalog experiment and independent runtime review",
-    "Record measured Koop reuse decision with exact rights and security limits",
-    "Obtain aggregate FND-06 review, protected PR integration and post-merge verification"
+    "Complete aggregate FND-06 exact-head review and hosted checks",
+    "Normal protected PR merge, actual post-merge verification and acceptance tracking",
+    "Then claim dependency-ready PLT-01 and DB-01 with live evidence"
   ],
   "product_acceptance": false,
   "release_artifact": null,
@@ -137,16 +149,16 @@
   },
   "active_workers": [
     {
+      "agent": "/root/publication_review",
+      "task": "Final aggregate FND-06 criteria, source/authority and exact-head review"
+    },
+    {
       "agent": "/root/fnd03_identity",
-      "task": "Completed corpus; read-only tr46 notice/data provenance research"
+      "task": "Completed corpus/notice implementation; read-only PLT-01 preflight, no claim"
     },
     {
       "agent": "/root/fnd04_prototype",
-      "task": "Actual bounded Koop HTTP, PostGIS and native catalog experiment"
-    },
-    {
-      "agent": "/root/publication_review",
-      "task": "Independent provider/runtime implementation and evidence review"
+      "task": "Completed actual Koop experiment; read-only DB-01 preflight, no claim"
     }
   ],
   "evidence": "plan/verification/authorized-successors/publication.json",
@@ -223,7 +235,7 @@
     },
     "observation_note": "Historical 88-item observation before FND-05 acceptance; current renderer_progress and project_checkpoint supersede its FND-05 In progress row."
   },
-  "checkpoint_parent_commit": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
+  "checkpoint_parent_commit": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
   "owned_spine_progress": {
     "java": {
       "local_head": "8e32797aed66be2c5fea430bba3df23a6e67465b",
@@ -396,10 +408,14 @@
     "corpus_commit": "c0983e6898b991a16c62dab066a9f40ded88c155",
     "custody_commit": "65c210e0ee72a5d5c55fd6c20e18c5a8e831c3f6",
     "install_repair_commit": "9dc4680b2d273252d17c78545d94d14e676fb111",
-    "integrated_head": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
-    "evidence": "plan/verification/fnd06-integration-001/evidence.json",
-    "runtime": "Real experiment in progress; first logger-interface failure retained with verified cleanup, no runtime acceptance yet",
+    "integrated_head": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
+    "evidence": "plan/verification/fnd06-final/evidence.json",
+    "runtime": "Actual runtime005 passes227 assertions; exact runtime and source/evidence independently reviewed",
     "corpus": "Reviewed native small/100k/1m success and malformed-input rejections; all1.1m rows independently scanned",
-    "distribution_blocker": "Exact tr46 notice/generated-data provenance under investigation; private evaluation only"
+    "distribution_blocker": "Specific tr46 missing-notice/source finding remedied for reviewed supplement/staged layout; full artifact rights/security/signing/brand/release obligations remain open",
+    "runtime_commit": "f942670525253b9f3008563386a237a69b68549d",
+    "runtime_review_sha256": "7aaebc9fd15403940df7b55fb832ea7602da3f8394e31469192c4c2befc783e7",
+    "notice_commit": "cb5a1a945bd94b80f2d52cc0faa6e0bf93303485",
+    "notice_review_sha256": "7a601f36c4eb2c84f1e9cbe324ebf6b0e659e0b2ec66eaa126b13b2f307dbb8a"
   }
 }

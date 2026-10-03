@@ -78,8 +78,10 @@ Dataset revisions are immutable snapshots for the experiment. Mutation creates
 a distinct revision; old pages either retain their exact snapshot or receive
 `REVISION_UNAVAILABLE`. A C1 `resultOffset` can only be adapted within an explicit
 immutable revision. It is not the native pagination contract or an authorization
-boundary. Measure ties, concurrent edits, changed query/identity/revision, expiry
-and tampering. The database role is read-only on snapshots and cannot write
+boundary. Measure ties, new revisions created between page requests, changed
+query/identity/revision, expiry and tampering. Simultaneous read/write and general
+concurrent-edit tests remain required in the later API/database tasks. The
+database role is read-only on snapshots and cannot write
 managed branches. The ephemeral fixture loader is a separate controlled role.
 
 The existing catalog read probe returns HTTP 204/403/503 and carries no stable

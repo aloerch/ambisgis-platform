@@ -1,0 +1,40 @@
+test_corrupt_registry_archive_rejected (test_custody.CustodyGuards.test_corrupt_registry_archive_rejected) ... ok
+test_corrupt_source_blob_rejected (test_custody.CustodyGuards.test_corrupt_source_blob_rejected) ... ok
+test_explicit_supplement_preserves_locked_version (test_custody.CustodyGuards.test_explicit_supplement_preserves_locked_version) ... ok
+test_extra_symlink_directory_rejected (test_custody.CustodyGuards.test_extra_symlink_directory_rejected) ... ok
+test_forged_optional_flag_cannot_allow_required_omission (test_custody.CustodyGuards.test_forged_optional_flag_cannot_allow_required_omission) ... ok
+test_missing_and_symlink_input_rejected (test_custody.CustodyGuards.test_missing_and_symlink_input_rejected) ... ok
+test_missing_lock_dependency_rejected (test_custody.CustodyGuards.test_missing_lock_dependency_rejected) ... ok
+test_missing_registry_identity_cannot_pass_closure (test_custody.CustodyGuards.test_missing_registry_identity_cannot_pass_closure) ... ok
+test_missing_source_file_rejected (test_custody.CustodyGuards.test_missing_source_file_rejected) ... ok
+test_nested_resolution_and_dev_graph_omission (test_custody.CustodyGuards.test_nested_resolution_and_dev_graph_omission) ... ok
+test_optional_override_and_optional_peer_are_not_mandatory (test_custody.CustodyGuards.test_optional_override_and_optional_peer_are_not_mandatory) ... ok
+test_projection_preserves_runtime_fields_and_original (test_custody.CustodyGuards.test_projection_preserves_runtime_fields_and_original) ... ok
+test_relabelled_production_lock_rejected (test_custody.CustodyGuards.test_relabelled_production_lock_rejected) ... ok
+test_relabelled_retained_manifest_rejected (test_custody.CustodyGuards.test_relabelled_retained_manifest_rejected) ... ok
+test_relabelled_tree_metadata_rejected (test_custody.CustodyGuards.test_relabelled_tree_metadata_rejected) ... ok
+test_shared_required_and_optional_path_stays_required (test_custody.CustodyGuards.test_shared_required_and_optional_path_stays_required) ... ok
+test_transitive_optional_omission_without_optional_flag (test_custody.CustodyGuards.test_transitive_optional_omission_without_optional_flag) ... ok
+test_traversal_and_archive_links_rejected (test_custody.CustodyGuards.test_traversal_and_archive_links_rejected) ... ok
+test_unexpected_installed_module_rejected (test_custody.CustodyGuards.test_unexpected_installed_module_rejected) ... ok
+test_valid_archive_matches_git_blob (test_custody.CustodyGuards.test_valid_archive_matches_git_blob) ... ok
+test_wrong_workspace_version_rejected (test_custody.CustodyGuards.test_wrong_workspace_version_rejected) ... ok
+test_ambiguous_aggregate_rejected (test_native.NativeBoundaryGuards.test_ambiguous_aggregate_rejected) ... ok
+test_budgets_and_unknown_formats_rejected (test_native.NativeBoundaryGuards.test_budgets_and_unknown_formats_rejected) ... ok
+test_false_booleans_are_feature_mode (test_native.NativeBoundaryGuards.test_false_booleans_are_feature_mode) ... ok
+test_keyset_desc_null_then_tie_is_parameterized (test_native.NativeBoundaryGuards.test_keyset_desc_null_then_tie_is_parameterized) ... ok
+test_malformed_credentials_fail_before_http (test_native.NativeBoundaryGuards.test_malformed_credentials_fail_before_http) ... ok
+test_offset_requires_exact_immutable_revision (test_native.NativeBoundaryGuards.test_offset_requires_exact_immutable_revision) ... ok
+test_row_field_restrictions_not_implied_by_projection (test_native.NativeBoundaryGuards.test_row_field_restrictions_not_implied_by_projection) ... ok
+test_unsupported_where_never_broadens (test_native.NativeBoundaryGuards.test_unsupported_where_never_broadens) ... ok
+test_where_values_remain_parameters (test_native.NativeBoundaryGuards.test_where_values_remain_parameters) ... ok
+test_changed_payload_rejected_before_execution (test_runtime_inputs.RuntimeInputGuards.test_changed_payload_rejected_before_execution) ... ok
+test_changed_runtime_binary_rejected (test_runtime_inputs.RuntimeInputGuards.test_changed_runtime_binary_rejected) ... ok
+test_contract_blob_changed_or_missing (test_runtime_inputs.RuntimeInputGuards.test_contract_blob_changed_or_missing) ... ok
+test_missing_payload_rejected_before_execution (test_runtime_inputs.RuntimeInputGuards.test_missing_payload_rejected_before_execution) ... ok
+test_relabelled_manifest_rejected (test_runtime_inputs.RuntimeInputGuards.test_relabelled_manifest_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 0.043s
+
+OK

@@ -9,18 +9,21 @@ were independently verified. [Acceptance and exact evidence](verification/fnd08-
 retain raw reproducibility differences, six named inherited Java skips per build,
 and the later source-bootstrap, disconnected repair and release obligations.
 
-FND-06 is claimed/In progress on `fnd-06/contracts-and-koop`, based on that merge.
-Its dependencies FND-03/FND-04/FND-05/FND-08 are accepted. Initial shared
-contracts, the synthetic corpus and Koop custody helpers have independent review
-in [draft PR #77](https://github.com/aloerch/ambisgis-platform/pull/77).
-Combined checks pass 502 package tests, ten schema/example checks and 21 custody
-guards. Actual owned-QGIS checks pass for small, 100,000-address and 1,000,000-address
-fixtures; malformed inputs are rejected. [Exact checkpoint evidence](verification/fnd06-integration-001/evidence.json)
-records the tested heads and limits. The real Koop/catalog/PostGIS experiment
-and measured reuse decision remain in progress. FND-06 acceptance and product
-APIs remain open. Project reconciliation recorded 93 items, 24 fields, seven
-views and 15 repositories;
-unrelated planning and history were preserved.
+FND-06 remains In progress in [PR #77](https://github.com/aloerch/ambisgis-platform/pull/77)
+on `fnd-06/contracts-and-koop`. Shared contracts, a complete synthetic corpus,
+the threat model, actual Koop experiment and exact notice supplement now have
+component review. Combined checks pass 503 package tests, ten schema/example
+checks, 35 Koop guards and 14 notice guards. The actual runtime passes 227
+assertions over 100,000 database rows; the separate owned-QGIS corpus runs cover
+small, 100,000-address and 1,000,000-address fixtures.
+
+The [measured decision](adrs/013-koop-query-codec-reuse.md) reuses the unchanged
+Koop query encoder behind owned policy/query/revision boundaries.
+[Final candidate evidence](verification/fnd06-final/evidence.json) preserves
+original failures and exact limits. Aggregate review, protected integration and
+post-merge acceptance are pending. Project tracking records 93 items, 24 fields,
+seven views and 15 repositories with unrelated planning preserved. PLT-01 and
+DB-01 become ready only after FND-06 acceptance.
 
 The [ledger](docs/delivery-ledger.json) and [all 24 requirements](docs/delivery-requirements-matrix.md)
 govern continuation under the [standing delegation](docs/standing-delivery-policy.md).

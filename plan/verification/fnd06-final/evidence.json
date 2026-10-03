@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-03T10:48:25.075653+00:00",
+  "task": "FND-06",
+  "repository": "aloerch/ambisgis-platform",
+  "branch": "fnd-06/contracts-and-koop",
+  "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "tested_head": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/77",
+  "state": "In progress; complete candidate evidence assembled for aggregate review",
+  "files": [
+    {
+      "path": "koop-independent-review.json",
+      "sha256": "7aaebc9fd15403940df7b55fb832ea7602da3f8394e31469192c4c2befc783e7",
+      "bytes": 16038
+    },
+    {
+      "path": "tr46-independent-review.json",
+      "sha256": "7a601f36c4eb2c84f1e9cbe324ebf6b0e659e0b2ec66eaa126b13b2f307dbb8a",
+      "bytes": 9494
+    },
+    {
+      "path": "tr46-provenance-review.json",
+      "sha256": "21a404d88ce105f0260d444edf508cae84e42003573e860a4301d671d307f9ff",
+      "bytes": 1939
+    },
+    {
+      "path": "backend-contract-validation.json",
+      "sha256": "583353e330914d4dd23c66d8760b12019354bf3aa7f9b750a90205b35cc250a5",
+      "bytes": 1143
+    },
+    {
+      "path": "combined-validation.json",
+      "sha256": "9bb1521b0a75c366a5891c2d9931bc3e030e738f7196a8def1caa121a6b6c3bd",
+      "bytes": 2605
+    },
+    {
+      "path": "package.log",
+      "sha256": "c7c9f841d3c5f3d105c6f99827fd802cdf1492fab33a4092e029eba61529b10a",
+      "bytes": 74660
+    },
+    {
+      "path": "schemas.log",
+      "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23",
+      "bytes": 190
+    },
+    {
+      "path": "koop-guards.log",
+      "sha256": "59dc7c1c31cd9d7477198042c4b0b327ffa0088c8eb3781b372ce1a3bca9712b",
+      "bytes": 4499
+    },
+    {
+      "path": "notice-guards.log",
+      "sha256": "033fffc990c3c4e8305519a7443798fe204184ebfe35cd821a0cc53b7b3d6c5c",
+      "bytes": 2225
+    },
+    {
+      "path": "diff.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "checks": {
+    "package_tests": 503,
+    "schema_example_pairs": 10,
+    "koop_guards": 35,
+    "tr46_notice_guards": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "component_evidence": {
+    "contracts": "../fnd06-contracts/validation.json",
+    "corpus": "../../fixtures/synthetic-corpus/verification/evidence.json",
+    "custody": "../fnd06-koop-custody/README.md",
+    "runtime": "../fnd06-koop-runtime/evidence.json",
+    "notices": "../fnd06-tr46-notices/evidence.json",
+    "initial_reviews": "../fnd06-integration-001/evidence.json"
+  },
+  "runtime": {
+    "actual_attempt": "runtime-005",
+    "assertions": 227,
+    "addresses": 100000,
+    "catalog_checks": 108,
+    "sql_statements": 29,
+    "raw_koop_responses": 53,
+    "changed_metadata_responses": 1,
+    "changed_empty_extent_responses": 1,
+    "cache_inserts": 0,
+    "all_origins_unchanged": true,
+    "cleanup_passed": true
+  },
+  "decision": "Reuse the unchanged retained FeatureServer JSON query encoder behind owned typed query/catalog/revision/capability boundaries; complete C1 and distribution remain unaccepted",
+  "acceptance_criteria": [
+    {
+      "criterion": "Native/OGC/ArcGIS tiers and authoritative ownership agreed.",
+      "evidence": [
+        "plan/adrs/012-initial-shared-contracts.md",
+        "plan/adrs/013-koop-query-codec-reuse.md",
+        "plan/docs/fnd-06-contracts.md"
+      ],
+      "status": "candidate supplied; final aggregate review pending"
+    },
+    {
+      "criterion": "All five user goals retain traceable acceptance tests.",
+      "evidence": [
+        "plan/contracts/contract-package.json",
+        "plan/tests/test_contract_traceability.py",
+        "plan/docs/fnd-06-contracts.md"
+      ],
+      "status": "all original R01-R24, task/test mappings and P0-P7 exits preserved; product tests remain open"
+    },
+    {
+      "criterion": "Koop adoption/rejection records tested output, query pushdown, pagination, permission and licensing evidence before bespoke C1 encoding.",
+      "evidence": [
+        "plan/adrs/013-koop-query-codec-reuse.md",
+        "plan/verification/fnd06-koop-runtime/evidence.json",
+        "plan/verification/fnd06-tr46-notices/evidence.json"
+      ],
+      "status": "measured bounded decision and component reviews supplied; aggregate acceptance pending"
+    }
+  ],
+  "remaining": [
+    "Independent aggregate exact-head review and hosted CI",
+    "Normal protected merge and actual post-merge checks",
+    "Issue and Project transitions supported by accepted evidence"
+  ],
+  "next_after_acceptance": [
+    "PLT-01",
+    "DB-01"
+  ],
+  "product_acceptance": false,
+  "release_artifact": null
+}

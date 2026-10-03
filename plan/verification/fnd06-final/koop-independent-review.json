@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "reviewer": "publication_review",
+  "at": "2026-10-03T10:40:39.365747+00:00",
+  "decision": "No unresolved material findings for this bounded private Koop reuse experiment. This is not complete C1, distribution, release or aggregate FND06 acceptance.",
+  "repository": "aloerch/ambisgis-platform",
+  "branch": "fnd-06/koop-custody",
+  "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree",
+  "head": "f942670525253b9f3008563386a237a69b68549d",
+  "tree": "5605238d4e506a86e60f9230b4d680a8166c0bf7",
+  "reviewed_increment_base": "9dc4680b2d273252d17c78545d94d14e676fb111",
+  "original_task_base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "clean": true,
+  "actual_runtime_producer": "00036aaa099d2952856d083dc673d39815f8ed04",
+  "changed_file_scope": {
+    "build-support/koop/backend.py": "1b38b0a3492579b23ea6dc9bfd51f77c7f574e985028431eb19e3ba5c654fa39",
+    "build-support/koop/codec_diagnostics.js": "2bd88a5dad75d32607e8b5a95c1d5fbec6508030c32facac95abcb2177dd0b12",
+    "build-support/koop/koop_runtime_inputs.py": "2c92a3513d1fb7218d59feb1ae16bfa617f0661d18e9d4aa10cb1ad12b201e8b",
+    "build-support/koop/native.py": "204b065d6d167d24d013fcdcd22cab985fffb90183362ec3a294f7d2e1cdcb34",
+    "build-support/koop/provider.js": "a360f3da1c91e34389daf284e4cd129092d8534cd7f226462ba61a25bf0e2dc4",
+    "build-support/koop/runtime.py": "5d3537722f95647f4ff352f3cc884de4e7e27269db364769997d4d4628eaf325",
+    "build-support/koop/runtime_cases.py": "1829bc8bac4f488633159c5efc67efc71995d43a873dd5948e9105a1f92d2dea",
+    "build-support/koop/runtime_fixture.py": "199307cea53e1bad3cddaec6af9098a7ecf1d29761042b565339ca4e7f468136",
+    "build-support/koop/summarize.py": "7b56c5d2817ec733cd39fbb641bf80b70dcddced1d2f5c84d6f7a9d0d907ad45",
+    "build-support/koop/test_native.py": "c7fec041a3daa97e268b9559b07c6e94f4400dec88be43686fc6af1f08e81ab5",
+    "build-support/koop/test_runtime_inputs.py": "2db77e40e5561604e629fb671ee4cf76663e778dae3fe40c8ca8ce2d36cb4b2d",
+    "plan/verification/fnd06-koop-runtime/README.md": "456ff54b543c2e7e21dc1a7941d8d8757c5e61fc736abdeb8b75dbd1a545cd90",
+    "plan/verification/fnd06-koop-runtime/evidence.json": "5e83d564dfb8d5db36e7134bec1d7f328a6dc80b85a42d19739830f707f6702a",
+    "plan/verification/fnd06-koop-runtime/guards.log": "3f0f3ae05330f3a4a09ff6dc8eab87a3fc243fb6b7fdf5fcd5ff0e6729e94c99",
+    "plan/verification/fnd06-koop-runtime/package-schemas.log": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a",
+    "plan/verification/fnd06-koop-runtime/package-tests.log": "f158fcfbd719337b4e3b528857a327bc643c60f6e104acec29e8f35a81e05d69"
+  },
+  "controls": "16 runtime/evidence additions after previously reviewed9dc4680 acquisition/install repair. Only build-support/koop and plan/verification/fnd06-koop-runtime changed. No inherited source, lock, workflow, merge gate, catalog policy, geodatabase schema, shared ledger, original acceptance criterion or deployment setting changed in this increment. The summarizer and public docs are post-run additions, not falsely labeled as runtime005 executed code.",
+  "original_scope": "FND06 requires authoritative native/OGC/ArcGIS tiers, traceable tests for all five original user goals, and tested Koop output/query pushdown/pagination/permissions/licensing before bespoke C1 encoding. This supplies measured reuse evidence; it does not broaden those requirements or waive human-only/product gates.",
+  "actual_evidence": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-koop-worktree/plan/verification/fnd06-koop-runtime/evidence.json",
+    "sha256": "5e83d564dfb8d5db36e7134bec1d7f328a6dc80b85a42d19739830f707f6702a",
+    "runtime": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005",
+    "result_sha256": "fe1cda9e823a364c696c0202ecd17f0071e7d1bca3a4614a5b6d1715fdcdb68c",
+    "tests_sha256": "657ff90e1181c7d0adabcca529c179653b88320f0eb2b30f859bbba1a61cfe3c",
+    "independent_audit": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-koop-runtime005-independent-audit.json",
+    "independent_audit_sha256": "b7ac83e80365eb93f65b16983e8deabff2920a72f710ffe95733109a3a87540f",
+    "primary_references": 239,
+    "all_references_including_history_and_generator": 244,
+    "executed_tooling_hashes": 263,
+    "shared_contract_bindings": 16,
+    "actual_http_responses_rehashed": 92,
+    "native_error_responses_schema_validated": 21,
+    "actual_assertions": 227,
+    "successful_sql_statements": 29,
+    "final_catalog_checks": 108,
+    "outage_checks_without_new_sql": 7,
+    "raw_koop_responses": 53,
+    "permitted_projections": 2,
+    "maximum_observed_rows_fetched": 101,
+    "all_services_and_database_stopped": true,
+    "credentials_invalidated_and_configuration_scrubbed": true,
+    "no_diagnostic_secret_hits": true
+  },
+  "independent_verification": [
+    "Read actual native.py/backend.py/provider.js/runtime.py/runtime_fixture.py/runtime_cases.py and tests, then exact frozen-code deltas from executed runtime003 to c455b62 and Node-guard00036aa. Read summarizer/README and verified final16-file source scope.",
+    "Independently executed34 custody/native/input guards at c455b62 (21 custody+9 query+4 input), then all5 input guards after Node-corruption test was added at00036aa. This covers35 distinct final guard cases, without pretending the earlier34-run contained the later test. Producer final35-test log separately checked.",
+    "Independently reran all24 shared native-contract tests and10schema/example checks at a31a285; inspected its exact additive3-file delta. Producer worker base457-package/4schema logs checked; full newer aggregate package test remains integrator responsibility.",
+    "Independently reverified candidate002 complete retained inventory and actual install0024187 files/12 links against installed.json; then verified4706 actual extracted Node file/link entries and permission bits against retained archiveSHA d6c664df3f3f61458e8c277585571328522d705166723a7c7823a9253a4d15a0.",
+    "Rehashed244 final evidence references,263 actual executed tooling members and16 exact shared Git bindings. The layer example is a semantically exact JSON reserialization, while validators/schemas are byte copies. Final source code matches actual00036aa producer; all original inputs and old failed receipts retained.",
+    "Audited all92 recorded HTTP response hashes, validated21 native error envelopes independently, inspected raw feature/date/type/nullability values, native/C1 counts/extents/pages and seven real catalog outage denials. All29 successful SQL statements immediately follow catalog204, use read-only transactions and feature LIMIT; no SQL follows final authority outage.",
+    "Verified53 raw-response/projection pairs and exactly2 owned transformations: closed truthful metadata and empty extent null. Feature attributes/geometries remain unchanged Koop output. Recomputed summarize.py result from actual retained results and obtained exact equality to committed evidence.json.",
+    "Ran git diff --check on final increment; inspected changed sources/docs/public evidence for secrets, scope expansion and destructive/remote behavior."
+  ],
+  "authorization_and_data_review": [
+    "The one native catalog remains authoritative; fresh catalog checks precede cursor/data processing. Trusted internal backend key is not accepted from external callers; exact finite route/parameter allowlists, duplicate/prototype-key rejection and no positive cache protect the adapter. No secondary grants/tokens/schema authority introduced.",
+    "The query compiler uses typed validated AST, fixed schema/column allowlists, bound values, actual PostgreSQL bbox/predicate/order/aggregate work and bounded page+1 transfer. Read-only query role cannot mutate snapshots or read token tables. All seven SQL fields are fetched; projected output is not SQL projection pushdown.",
+    "Native keyset cursor binds credential HMAC plus resource and full normalized query/revisions/projection, with unique tie-breaker and NULLS LAST. Actual changed-principal test has two authorized callers: fixture-outsider owns group_points, reader has group grant; actual response is400INVALID_CURSOR. This is credential binding, not a catalog policy-revision claim. C1 OFFSET requires explicit immutable revision and may scan prefixes.",
+    "Actual owner fixture insert creates another revision between page requests; it demonstrates snapshot selection, not simultaneous transaction concurrency. Real database lock contention separately exercises deadline behavior.",
+    "UTF8 body/form parsing,32KiB input and2MiB streaming response limits, finite JSON-only output, precise field vocabulary/nullability and default-capability projection are reviewed. Runtime evidence observed max101 fetched rows; it is not a1000-row-capacity or arbitrary client conformance claim."
+  ],
+  "resolved_findings": [
+    "Native JSON bytes previously allowed UTF16/32 via json.loads; final decoder requires strictUTF8 and actual malformedUTF8/UTF16 requests reject.",
+    "Permission positives previously could accept invalid_json marker as success; final tests require status and expected mode-shaped results.",
+    "Actual002 revealed wrong timestamp/type/nullability output from first-party esriFieldType input vocabulary and missing nullable declarations. Reading unchanged codec mapping showed correct provider Integer/Double/Date/GUID/String names; corrected adapter now passes exact output tests. Failed002 is not evidence of an unchanged-codec defect.",
+    "Intermediate003 error envelopes were incomplete. Final complete versioned safe envelopes validate against approveda31 schema, distinguish policy/backend/lock failures and reject unknown methods without inherited HTML/trace echoes.",
+    "Actual authority-outage matrix now covers native/C1 feature/count/extent and C1 metadata, with no SQL growth.",
+    "Root identified contradictory broad supportsAdvancedQueries=false plus supportsOrderBy=true. Final finite profile omits the broad flag, retaining explicit tested per-operation flags and unqualified named-client discovery.",
+    "Extracted Node originally lacked runtime before/after archive comparison; final guard verifies actual file bytes/modes/links and rejects a changed binary, with fresh005 execution."
+  ],
+  "shared_contract_increment": {
+    "base": "0ea9431cc40b5d19d0110ab77685c624b8772ad7",
+    "head": "a31a285b5e659a08bc6c18c393cfe5a8581bf293",
+    "changed_files": {
+      "plan/contracts/native-error.schema.json": "20ec94e6a03ceeabf389853c507f66aea0885d45b120b56ff2a7337cb02c2994",
+      "plan/docs/fnd-06-contracts.md": "e010db47fedead449950b33b047db5bcf1c6c5b42d4e9b20f31a9095c2757753",
+      "plan/tests/test_native_contracts.py": "a4c46494ce5fd91827fa2404a7a8be2efc885028fadafcc3e077abec8db3ccfa"
+    },
+    "assessment": "Additive BACKEND_UNAVAILABLE enum and safe transient/persistent failure guidance plus missing-fields/extra-trace regression. Query/cursor semantics, existing schemas/gates and original criteria unchanged. Independently24tests and10schemas pass."
+  },
+  "adr_review": "Substantively reviewed root draft ADR013: unchanged ClassB codec behind owned native/catalog authority is supported by measured results; inherited routes/cache/overclaims and filtersApplied hazards must remain contained. Root will bind final ADR to005 and separately reviewed rights supplement in aggregate commit. Requested wording correction from concurrent insertion to insertion between page requests; no full product/client acceptance implied.",
+  "rights_and_source": [
+    "No source edits to retained Koop333518a19d43adf2fd12faed1a3be52d9c90dd3f/tree3357f74aa588b18703f26cdb5b5a5f7809d7d150 or238-archive graph. Historical unresolved lock identities remain explicit121 exact-version metadata supplements for127 paths, not fabricated original-lock provenance.",
+    "Fresh offline install skips lifecycle and optional native farmhash closure; runtime uses reviewed JavaScript fallback and explicit ObjectIDs. LGPL-3 geojson-validation and Apache/MIT/other notices remain obligations.",
+    "Root separately reviewed exact tr46/Unicode notice supplement atcb5a1a945bd94b80f2d52cc0faa6e0bf93303485; receipt SHA7a601f36c4eb2c84f1e9cbe324ebf6b0e659e0b2ec66eaa126b13b2f307dbb8a rehashed here. I do not claim to have repeated that separate historical-provenance audit. No archive/lock/runtime bytes change through the supplement. Broader installer/combined-distribution/security disposition remains open.",
+    "Known protobuf advisory is not waived: JSON-only private profile denies PBF/reflection/untrusted-schema paths. Product source/security disposition and regressions remain required before shipping or enabling other routes."
+  ],
+  "boundaries": [
+    "Read-only independent review; no source edits, remote writes, settings changes, production deployment, new repository or external messaging. Only private review receipts written.",
+    "Owned PostgreSQL15.19/PostGIS3.5.7 and actual native GeoNode OAuth/catalog used in controlled synthetic fixture; existing reviewed PostgreSQL setsid exception explicit. Loopback supervisor is not a hostile filesystem/process sandbox. All services/DB stop, synthetic credentials invalidated/config scrubbed.",
+    "Public evidence contains hashes/paths and bounded observations; private configuration, keys, raw diagnostic logs and actual credential material are not committed. Raw SQL plans contain synthetic values and are not a production logging design."
+  ],
+  "limitations": [
+    "Finite object-policy-only read-only PointXY EPSG4326 experiment with explicit prototype serviceRevision/dataRevision parameters. Native/OGC/ArcGIS tiers remain separate; no named ArcGIS client or Windows qualification.",
+    "No row/field-policy implementation, generic transforms, arbitrary decimal/largeID/Z/M/null geometry, edits/sync/versioning, MapServer, attachments, statistics or production revision discovery/key lifecycle provided. Full native/C1 API and all five original user-goal demonstrations remain original tasks.",
+    "227 is the number of actual assertions, not227HTTP requests;92HTTP response files are recorded.108final catalog checks differ from101 captured before outage in tests.json. Timings are one fixture observation, not SLO/capacity evidence.",
+    "Independent reviewer executed guards, schema checks and full byte/origin audits; the real227-assertion HTTP/database run was executed by worker and audited here, not falsely claimed as an independent rerun."
+  ],
+  "outer_execution": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/runtime-005/outer-invocation-observed.json",
+    "sha256": "64e73db91ae0e29a59d0af0d3960c0f710f9ee78c4c0bf05d5af8fdedbac663f",
+    "assessment": "Actual outer host command explicitly transcribed after completed tool session82324, matching current/retained setup helper hashes. This is not relabeled as a pre-existing launcher. Child command/environment/tooling captured by runtime invocation.json."
+  },
+  "primary_source_consulted": {
+    "url": "https://developers.arcgis.com/rest/services-reference/enterprise/query-feature-service-layer/",
+    "claim": "Esri orderByFields documentation ties support to supportsAdvancedQueries. The previous false broad flag contradicted true orderBy subflag; finite-profile omission adopted without claiming named-client discovery qualification."
+  },
+  "reviewer_corrections": [
+    "Initial cursor concern assumed outsider lacked group permission from its name; actual native catalog fixture explicitly makes it owner. Verified raw400INVALID_CURSOR and withdrew concern; no redundant test required.",
+    "Read-only audit script assumptions were corrected for semantic layer JSON reserialization, non-response bounded-case names, and later-added summarize.py not belonging to executed runtime snapshot. These failed audit attempts wrote no acceptance receipt and did not change sources or old evidence."
+  ]
+}

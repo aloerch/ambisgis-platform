@@ -74,13 +74,15 @@ claim follows from a native branch or FeatureServer-shaped response.
 
 Before selecting a C1 encoder, FND-06 must execute the retained Koop packages
 with an authorized bounded native provider. Measure query pushdown, pagination
-under concurrent changes, actual output/error encodings, truthful metadata,
+with new revisions created between page requests, actual output/error encodings, truthful metadata,
 permission revocation/outage/cache isolation, limits and source/notices. A
 FeatureServer success cannot establish MapServer export/legend/identify or named
 proprietary-client interoperability. New bespoke encoding is deferred until the
 measured adoption/rejection decision. Exact-version archive supplementation for
 missing historical lock identities is recorded separately from original-lock
 evidence and independently reviewed before package execution.
+Simultaneous read/write and general concurrent-edit acceptance remain required
+in the later API/database tasks; this experiment does not replace them.
 
 [ADR013](013-koop-query-codec-reuse.md) records that executed comparison and
 selects the unchanged, retained query encoder behind the owned boundaries. Its

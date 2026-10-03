@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-10-03T10:24:05.763123+00:00",
+  "reviewer": "/root",
+  "scope": "Independent historical source/generated-data evidence review, before concrete notice supplement review",
+  "input_report_sha256": "8f197db4656c5623d15538dc6b1f87710265d35886c62287e0ecd6ecee88cae8",
+  "files_rehashed": 31,
+  "unchanged_source_tree_entries": 13,
+  "source_root_tree": "7b86f219be315cb2c5b99768c2b1642cf2b262ae",
+  "notice_root_tree": "8fd3089743b3401643611efce88105a92303456a",
+  "all_nested_trees_recomputed": true,
+  "archive_members": 5,
+  "tracked_members_byte_bound": 4,
+  "generated_rows": 8179,
+  "generated_bytes": 260049,
+  "generated_sha256": "b6b39724dca9011113a08d9d6910204062b58169e98952acdfbd19bf2c31bbff",
+  "primary_sources_independently_read": [
+    "https://github.com/jsdom/tr46/commit/3a6f29721e7063b9ffd421e461a54beae6170001",
+    "https://www.unicode.org/Public/idna/8.0.0/IdnaMappingTable.txt",
+    "https://raw.githubusercontent.com/unicode-org/icu/24c90c0693a0ba7aea00986c34676b55f766cfac/icu4c/license.html"
+  ],
+  "decision": "Supports exact historical MIT and Unicode notice supplement without dependency/source-byte change. No rights waiver or generalized distribution approval.",
+  "requirements": [
+    "Complete exact MIT grant and copyright retained",
+    "Complete Unicode1991-2015 section1 grant, disclaimer and name restriction retained with software and accompanying documentation",
+    "Clear generated-table modification statement with software and documentation",
+    "Retained exact Unicode8 input and byte-equivalent reconstruction, no floating generator fetch",
+    "Verify concrete final supplement/packaging before clearing the missing-notice finding"
+  ],
+  "prior_check": "Initial reviewer assertion expected API tree .sha to be tree ID; responses echo requested commit. Recomputed every tree object independently and matched root to exact commit tree, with no source evidence change."
+}
