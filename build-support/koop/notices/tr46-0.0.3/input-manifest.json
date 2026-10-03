@@ -1,0 +1,133 @@
+{
+  "archive": {
+    "bytes": 64681,
+    "members": {
+      "package/.npmignore": {
+        "bytes": 40,
+        "equal_to_both_historical_source_trees": true,
+        "git_blob": "96e9161fde31e9906718f689d5cc135e507a51e1",
+        "path": "package/.npmignore",
+        "sha256": "220244e94c71eccaccee66cac3ccd592f503f4a21caabbde6b92d16ce4434ba1"
+      },
+      "package/index.js": {
+        "bytes": 7567,
+        "equal_to_both_historical_source_trees": true,
+        "git_blob": "9ce12ca2d026fa202f7a0d32e0a7c8526660ed78",
+        "path": "package/index.js",
+        "sha256": "8194f9425ce9ab06ea9aebcd64a85ec064d95d61bb349f8f1c98762ad256638e"
+      },
+      "package/lib/.gitkeep": {
+        "bytes": 0,
+        "equal_to_both_historical_source_trees": true,
+        "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "path": "package/lib/.gitkeep",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "package/lib/mappingTable.json": {
+        "bytes": 260049,
+        "equal_to_both_historical_source_trees": false,
+        "git_blob": "89cf19a74072fb71a9865e0efc6588ba56cdab3f",
+        "path": "package/lib/mappingTable.json",
+        "sha256": "b6b39724dca9011113a08d9d6910204062b58169e98952acdfbd19bf2c31bbff"
+      },
+      "package/package.json": {
+        "bytes": 732,
+        "equal_to_both_historical_source_trees": true,
+        "git_blob": "b6826da1f7817f97ad6d307d698ad2004807c40a",
+        "path": "package/package.json",
+        "sha256": "615087f58ee138fd35c2b414c355b72e36e5919725b8aecc1c34f6a5585b9779"
+      }
+    },
+    "sha256": "164ae1eb32cea353551bbc7f9358dcaae4ffabbe65ec37a92ca464a9570a2a0a"
+  },
+  "files": {
+    ".gitattributes": {
+      "bytes": 247,
+      "sha256": "ba46803726b132d087f7b2c4d2f1538560a4e155d8275c77f4476397983ee3fb"
+    },
+    "MIT-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "eeed1ca176eebad5c73870e233cfff03981fecd319c969475dfa3633036c336b"
+    },
+    "NOTICE.txt": {
+      "bytes": 2245,
+      "sha256": "4cb80c4a22e20eab6428866530e76f9ff5e0df58f06980b4f13b5b2183112e10"
+    },
+    "README.md": {
+      "bytes": 2291,
+      "sha256": "592b9d2cdc109654692f4deb82c149b235e816eb0b16b6bc8dbb2294f6215eab"
+    },
+    "UNICODE-LICENSE.txt": {
+      "bytes": 1970,
+      "sha256": "5413a36c98c49fc422e4966bc4a068dc443826f91dfd37d59cf0576dc2121709"
+    },
+    "provenance/icu56-license-blob.json": {
+      "bytes": 28869,
+      "sha256": "2b2cd99ec66237ae86db82819183db26476454f95ddaa6709aa68fe9708bb744"
+    },
+    "provenance/icu56-license.html": {
+      "bytes": 20237,
+      "sha256": "a4fd81c0bb0aee44d90376562f53c62d17ce252b93190251d172ec837ee5c6c8"
+    },
+    "provenance/icu56-tag.json": {
+      "bytes": 359,
+      "sha256": "a8d95a15251757afda37defb2f7ca50e980522f988261d958449fa4351e5500f"
+    },
+    "provenance/license-commit.json": {
+      "bytes": 4881,
+      "sha256": "c2225b970272514830b9e470c300765cec77509100e09b4f2a3f968636be543b"
+    },
+    "provenance/license-tree.json": {
+      "bytes": 3132,
+      "sha256": "6f8dcd2b682209bd2a03e558100efb102b680a3bc90b69f7879029b4fba8ac98"
+    },
+    "provenance/selected-commit.json": {
+      "bytes": 3948,
+      "sha256": "715218e9b963ff079a015307d20cb56e7d4796450b5df7520b6af0c86dd9b4e8"
+    },
+    "provenance/selected-tree.json": {
+      "bytes": 2920,
+      "sha256": "14eadf03ef7356228ce6a6556c390a6368853f49c7d22632330275ff287a43ba"
+    },
+    "sources/IdnaMappingTable-8.0.0.txt": {
+      "bytes": 793222,
+      "sha256": "5e9f5929130b713e698162ac5b60a99ccfb831606686b1c50777cd920b55dee2"
+    },
+    "sources/generateMappingTable.js": {
+      "bytes": 1231,
+      "sha256": "7e236cd8f70870ed149068f9b6aa4d382289c2c2f72c71f0bc42c2e0f1beed9f"
+    },
+    "sources/index.js": {
+      "bytes": 7567,
+      "sha256": "8194f9425ce9ab06ea9aebcd64a85ec064d95d61bb349f8f1c98762ad256638e"
+    }
+  },
+  "notice_source": {
+    "commit": "3a6f29721e7063b9ffd421e461a54beae6170001",
+    "license_blob": "e90f20a5cc7763e1ad07e5c15c193c51cdf3182b",
+    "tree": "8fd3089743b3401643611efce88105a92303456a"
+  },
+  "package": "tr46",
+  "schema_version": 1,
+  "scope": "Notice/source supplement for the exact archive; not product adoption or distribution approval.",
+  "selected_source": {
+    "commit": "a8009f9ce80ff5dbe71dd71e203afe4e4c878d28",
+    "tree": "7b86f219be315cb2c5b99768c2b1642cf2b262ae"
+  },
+  "unicode_notice_source": {
+    "blob": "878232262db9d54ea4265337799b36b79999cbc1",
+    "commit": "24c90c0693a0ba7aea00986c34676b55f766cfac",
+    "path": "icu4c/license.html",
+    "repository": "unicode-org/icu",
+    "section": "1. Unicode Data Files and Software",
+    "sha256": "a4fd81c0bb0aee44d90376562f53c62d17ce252b93190251d172ec837ee5c6c8"
+  },
+  "unicode_source": {
+    "rows": 8179,
+    "sha256": "5e9f5929130b713e698162ac5b60a99ccfb831606686b1c50777cd920b55dee2",
+    "table_sha256": "b6b39724dca9011113a08d9d6910204062b58169e98952acdfbd19bf2c31bbff",
+    "url": "https://www.unicode.org/Public/idna/8.0.0/IdnaMappingTable.txt",
+    "version": "8.0.0"
+  },
+  "version": "0.0.3"
+}

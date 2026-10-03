@@ -1,0 +1,148 @@
+{
+  "files": {
+    "documentation/notices/tr46-0.0.3/MIT-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "eeed1ca176eebad5c73870e233cfff03981fecd319c969475dfa3633036c336b"
+    },
+    "documentation/notices/tr46-0.0.3/NOTICE.txt": {
+      "bytes": 2245,
+      "sha256": "4cb80c4a22e20eab6428866530e76f9ff5e0df58f06980b4f13b5b2183112e10"
+    },
+    "documentation/notices/tr46-0.0.3/UNICODE-LICENSE.txt": {
+      "bytes": 1970,
+      "sha256": "5413a36c98c49fc422e4966bc4a068dc443826f91dfd37d59cf0576dc2121709"
+    },
+    "software/notices/tr46-0.0.3/MIT-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "eeed1ca176eebad5c73870e233cfff03981fecd319c969475dfa3633036c336b"
+    },
+    "software/notices/tr46-0.0.3/NOTICE.txt": {
+      "bytes": 2245,
+      "sha256": "4cb80c4a22e20eab6428866530e76f9ff5e0df58f06980b4f13b5b2183112e10"
+    },
+    "software/notices/tr46-0.0.3/UNICODE-LICENSE.txt": {
+      "bytes": 1970,
+      "sha256": "5413a36c98c49fc422e4966bc4a068dc443826f91dfd37d59cf0576dc2121709"
+    },
+    "source/tr46-0.0.3/generated/mappingTable.json": {
+      "bytes": 260049,
+      "sha256": "b6b39724dca9011113a08d9d6910204062b58169e98952acdfbd19bf2c31bbff"
+    },
+    "source/tr46-0.0.3/original-npm-archive.tgz": {
+      "bytes": 64681,
+      "sha256": "164ae1eb32cea353551bbc7f9358dcaae4ffabbe65ec37a92ca464a9570a2a0a"
+    },
+    "source/tr46-0.0.3/supplement/.gitattributes": {
+      "bytes": 247,
+      "sha256": "ba46803726b132d087f7b2c4d2f1538560a4e155d8275c77f4476397983ee3fb"
+    },
+    "source/tr46-0.0.3/supplement/MIT-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "eeed1ca176eebad5c73870e233cfff03981fecd319c969475dfa3633036c336b"
+    },
+    "source/tr46-0.0.3/supplement/NOTICE.txt": {
+      "bytes": 2245,
+      "sha256": "4cb80c4a22e20eab6428866530e76f9ff5e0df58f06980b4f13b5b2183112e10"
+    },
+    "source/tr46-0.0.3/supplement/README.md": {
+      "bytes": 2291,
+      "sha256": "592b9d2cdc109654692f4deb82c149b235e816eb0b16b6bc8dbb2294f6215eab"
+    },
+    "source/tr46-0.0.3/supplement/UNICODE-LICENSE.txt": {
+      "bytes": 1970,
+      "sha256": "5413a36c98c49fc422e4966bc4a068dc443826f91dfd37d59cf0576dc2121709"
+    },
+    "source/tr46-0.0.3/supplement/input-manifest.json": {
+      "bytes": 5065,
+      "sha256": "760dba33ab7b05ecf622c5a5be93b20d7e31734e2ade76fb601530229fd82e1a"
+    },
+    "source/tr46-0.0.3/supplement/provenance/icu56-license-blob.json": {
+      "bytes": 28869,
+      "sha256": "2b2cd99ec66237ae86db82819183db26476454f95ddaa6709aa68fe9708bb744"
+    },
+    "source/tr46-0.0.3/supplement/provenance/icu56-license.html": {
+      "bytes": 20237,
+      "sha256": "a4fd81c0bb0aee44d90376562f53c62d17ce252b93190251d172ec837ee5c6c8"
+    },
+    "source/tr46-0.0.3/supplement/provenance/icu56-tag.json": {
+      "bytes": 359,
+      "sha256": "a8d95a15251757afda37defb2f7ca50e980522f988261d958449fa4351e5500f"
+    },
+    "source/tr46-0.0.3/supplement/provenance/license-commit.json": {
+      "bytes": 4881,
+      "sha256": "c2225b970272514830b9e470c300765cec77509100e09b4f2a3f968636be543b"
+    },
+    "source/tr46-0.0.3/supplement/provenance/license-tree.json": {
+      "bytes": 3132,
+      "sha256": "6f8dcd2b682209bd2a03e558100efb102b680a3bc90b69f7879029b4fba8ac98"
+    },
+    "source/tr46-0.0.3/supplement/provenance/selected-commit.json": {
+      "bytes": 3948,
+      "sha256": "715218e9b963ff079a015307d20cb56e7d4796450b5df7520b6af0c86dd9b4e8"
+    },
+    "source/tr46-0.0.3/supplement/provenance/selected-tree.json": {
+      "bytes": 2920,
+      "sha256": "14eadf03ef7356228ce6a6556c390a6368853f49c7d22632330275ff287a43ba"
+    },
+    "source/tr46-0.0.3/supplement/sources/IdnaMappingTable-8.0.0.txt": {
+      "bytes": 793222,
+      "sha256": "5e9f5929130b713e698162ac5b60a99ccfb831606686b1c50777cd920b55dee2"
+    },
+    "source/tr46-0.0.3/supplement/sources/generateMappingTable.js": {
+      "bytes": 1231,
+      "sha256": "7e236cd8f70870ed149068f9b6aa4d382289c2c2f72c71f0bc42c2e0f1beed9f"
+    },
+    "source/tr46-0.0.3/supplement/sources/index.js": {
+      "bytes": 7567,
+      "sha256": "8194f9425ce9ab06ea9aebcd64a85ec064d95d61bb349f8f1c98762ad256638e"
+    },
+    "source/tr46-0.0.3/tr46_notices.py": {
+      "bytes": 14194,
+      "sha256": "51dc583d55b712838f990530afe9bdf6ccdfb48e5b71d87b97b1d70070500442"
+    }
+  },
+  "verification": {
+    "archive_sha256": "164ae1eb32cea353551bbc7f9358dcaae4ffabbe65ec37a92ca464a9570a2a0a",
+    "complete_notices_verified": [
+      "MIT-LICENSE.txt",
+      "UNICODE-LICENSE.txt",
+      "NOTICE.txt"
+    ],
+    "helper_sha256": "51dc583d55b712838f990530afe9bdf6ccdfb48e5b71d87b97b1d70070500442",
+    "input_manifest_sha256": "760dba33ab7b05ecf622c5a5be93b20d7e31734e2ade76fb601530229fd82e1a",
+    "inputs_unchanged": true,
+    "mapping_byte_equal": true,
+    "mapping_rows": 8179,
+    "mapping_sha256": "b6b39724dca9011113a08d9d6910204062b58169e98952acdfbd19bf2c31bbff",
+    "members": {
+      "package/.npmignore": {
+        "bytes": 40,
+        "sha256": "220244e94c71eccaccee66cac3ccd592f503f4a21caabbde6b92d16ce4434ba1",
+        "source_tree_match": true
+      },
+      "package/index.js": {
+        "bytes": 7567,
+        "sha256": "8194f9425ce9ab06ea9aebcd64a85ec064d95d61bb349f8f1c98762ad256638e",
+        "source_tree_match": true
+      },
+      "package/lib/.gitkeep": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "source_tree_match": true
+      },
+      "package/lib/mappingTable.json": {
+        "bytes": 260049,
+        "sha256": "b6b39724dca9011113a08d9d6910204062b58169e98952acdfbd19bf2c31bbff",
+        "source_tree_match": false
+      },
+      "package/package.json": {
+        "bytes": 732,
+        "sha256": "615087f58ee138fd35c2b414c355b72e36e5919725b8aecc1c34f6a5585b9779",
+        "source_tree_match": true
+      }
+    },
+    "scope": "Exact notice/source supplement only; no product adoption or distribution approval.",
+    "status": "verified",
+    "unchanged_source_entries": 13
+  }
+}

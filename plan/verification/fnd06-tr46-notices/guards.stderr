@@ -1,0 +1,19 @@
+test_actual_staging_and_self_contained_verifier (__main__.NoticeSupplementTests.test_actual_staging_and_self_contained_verifier) ... ok
+test_api_tree_sha_is_not_mistaken_for_the_root_tree_hash (__main__.NoticeSupplementTests.test_api_tree_sha_is_not_mistaken_for_the_root_tree_hash) ... ok
+test_archive_hash_tamper_rejected_before_output_creation (__main__.NoticeSupplementTests.test_archive_hash_tamper_rejected_before_output_creation) ... ok
+test_archive_parser_rejects_link_traversal_duplicate_and_oversized (__main__.NoticeSupplementTests.test_archive_parser_rejects_link_traversal_duplicate_and_oversized) ... ok
+test_complete_real_archive_source_and_data_coverage (__main__.NoticeSupplementTests.test_complete_real_archive_source_and_data_coverage) ... ok
+test_existing_destination_is_never_overwritten (__main__.NoticeSupplementTests.test_existing_destination_is_never_overwritten) ... ok
+test_missing_extra_and_symlink_bundle_members_rejected (__main__.NoticeSupplementTests.test_missing_extra_and_symlink_bundle_members_rejected) ... ok
+test_notice_and_rewritten_manifest_cannot_authorize_changes (__main__.NoticeSupplementTests.test_notice_and_rewritten_manifest_cannot_authorize_changes) ... ok
+test_output_symlink_and_ancestor_rejected_before_write (__main__.NoticeSupplementTests.test_output_symlink_and_ancestor_rejected_before_write) ... ok
+test_rewritten_stage_manifest_cannot_authorize_notice_loss (__main__.NoticeSupplementTests.test_rewritten_stage_manifest_cannot_authorize_notice_loss) ... ok
+test_stage_extra_file_symlink_and_changed_receipt_rejected (__main__.NoticeSupplementTests.test_stage_extra_file_symlink_and_changed_receipt_rejected) ... ok
+test_tree_recomputation_rejects_forged_leaf_and_nested_tree (__main__.NoticeSupplementTests.test_tree_recomputation_rejects_forged_leaf_and_nested_tree) ... ok
+test_two_new_stages_have_identical_complete_bytes (__main__.NoticeSupplementTests.test_two_new_stages_have_identical_complete_bytes) ... ok
+test_unicode_conversion_rejects_invalid_codepoint_bounds (__main__.NoticeSupplementTests.test_unicode_conversion_rejects_invalid_codepoint_bounds) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.333s
+
+OK
