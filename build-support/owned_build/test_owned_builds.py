@@ -8,7 +8,9 @@ import unittest
 
 from common import export_owned,git
 from fixture import prepare,drift,floating_resolver
-from pair_native import diagnose
+from pair_native import diagnose,require_matching_inputs
+from native import require_unchanged_source
+from frontend import require_only_generated_changes
 from compare_frontend import content_difference,logical_path
 
 
@@ -46,6 +48,32 @@ class OwnedBuilds(unittest.TestCase):
     def test_synthetic_donor_positive_control_changes(self):
         path=self.root/'fixture';prepare(path);before=floating_resolver(path);drift(path)
         self.assertNotEqual(before['payload_sha256'],floating_resolver(path)['payload_sha256'])
+
+    def test_original_native_source_mutation_is_rejected(self):
+        require_unchanged_source({'postgresql':{},'postgis':{}})
+        with self.assertRaisesRegex(ValueError,'modified selected original source'):
+            require_unchanged_source({'postgresql':{'owned.c':{'before':'a','after':'b'}},'postgis':{}})
+
+    def test_changed_native_support_manifest_is_rejected(self):
+        first={key:'a'*64 for key in ('source_inputs_sha256','support_inputs_sha256',
+                                     'support_manifest_sha256','tooling_manifest_sha256')}
+        self.assertEqual(require_matching_inputs([first,first])['support_manifest_sha256'],['a'*64]*2)
+        second={**first,'support_manifest_sha256':'b'*64}
+        with self.assertRaisesRegex(ValueError,'input identities changed'):
+            require_matching_inputs([first,second])
+
+    def test_frontend_mutation_boundary_accepts_only_declared_generated_outputs(self):
+        require_only_generated_changes({'mapstore':{},'mapstore-client':{
+            'geonode_mapstore_client/client/version.txt':{},
+            'geonode_mapstore_client/static/mapstore/dist/js/entry.js':{}}})
+        for component,path in (
+            ('mapstore','web/client/security.js'),
+            ('mapstore-client','geonode_mapstore_client/client/js/security.js'),
+            ('mapstore-client','geonode_mapstore_client/static/mapstore/auth.json'),
+            ('mapstore-client','geonode_mapstore_client/static/mapstore/dist-evil/js/entry.js')):
+            with self.subTest(component=component,path=path):
+                with self.assertRaisesRegex(ValueError,'outside generated outputs'):
+                    require_only_generated_changes({component:{path:{}}})
 
     def files(self,a,b):
         first,second=self.root/'build-1',self.root/'build-2';first.mkdir();second.mkdir()

@@ -119,14 +119,26 @@ recorded invocations provide the actual custody and output paths. Native
 correctly failed on then-unattributed generated dates. The final native pair
 uses a fresh rerun with the supported build-date setting.
 
-Validation: nine new helper tests; 22 existing native, 118 catalog and 39
+Validation: twelve new helper tests; 22 existing native, 118 catalog and 39
 frontend helper tests; 457 plan unit tests; and four JSON Schema/example checks
 passed. Package tests are not GIS product acceptance. The final tooling path
-audit matches the build snapshots except for one trailing empty line removed
-from `common.py` after the builds; it records the exact original/final hashes
-and verifies this precise byte difference. Snapshots remain untouched, and no
+audit records the original/final hashes, including one trailing empty line
+removed from `common.py` and the post-build review guards described below.
+Snapshots remain untouched, and no
 filesystem race prevention is claimed. Pair/comparator
 analysis changes have separate final identities and do not relabel historical
 producer snapshots. Host executable/library observations were sent to the
 integrator for the selected host source/binary custody union; resolved-library
 inspection is not represented as captured process memory maps.
+
+Independent review found final guards which recorded original source changes
+without rejecting them and omitted the native support manifest from paired
+input equality. The corrected native producer rejects any changed original
+source. The corrected UI producer permits only its declared generated dist,
+translation and version paths; original client and MapStore source changes fail.
+The native pair now also requires identical `support_manifest_sha256` values.
+Adversarial regressions cover all three boundaries. The supplemental guard
+receipt replays those checks against the actual original pair results: native
+source changes are empty, support manifests match, and each UI change is within
+the precise generated-path boundary. This is a post-build guard verification,
+not a claim that historical builds executed the corrected producer bytes.

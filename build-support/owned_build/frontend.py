@@ -25,6 +25,18 @@ SOURCES={
 def write(path,data):path.write_text(json.dumps(data,sort_keys=True,indent=2)+'\n')
 
 
+def require_only_generated_changes(changes):
+    allowed_files={'geonode_mapstore_client/client/version.txt',
+                   'geonode_mapstore_client/static/mapstore/version.txt'}
+    allowed_directories=('geonode_mapstore_client/client/dist/',
+                         'geonode_mapstore_client/static/mapstore/dist/',
+                         'geonode_mapstore_client/static/mapstore/ms-translations/')
+    for component,rows in changes.items():
+        for path in rows:
+            if component!='mapstore-client' or not (path in allowed_files or path.startswith(allowed_directories)):
+                raise ValueError('Frontend build modified original source outside generated outputs: '+component+'/'+path)
+
+
 def main(args):
     spec=importlib.util.spec_from_file_location('retained_frontend_builder',PLATFORM/'build-support/frontend/build.py')
     helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
@@ -83,6 +95,7 @@ def main(args):
         outputs=helper.inventory(static);write(root/'output-manifest.json',outputs);report['output_manifest_sha256']=sha(root/'output-manifest.json')
         report['source_changes']={name:{p:{'before':digest,'after':sha(paths[name]/p) if (paths[name]/p).is_file() else None}
             for p,digest in rows.items() if not (paths[name]/p).is_file() or sha(paths[name]/p)!=digest} for name,rows in sources.items()}
+        require_only_generated_changes(report['source_changes'])
         helper.verify_inputs(args.inputs,retained);report['result_exit_code']=0
     except BaseException as error:
         report['error']={'type':type(error).__name__,'message':str(error)};raise

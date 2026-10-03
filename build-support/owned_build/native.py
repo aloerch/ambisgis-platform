@@ -26,6 +26,11 @@ SOURCES={
 def write(path,data):path.write_text(json.dumps(data,sort_keys=True,indent=2)+'\n')
 
 
+def require_unchanged_source(changes):
+    if any(changes.values()):
+        raise ValueError('Native build modified selected original source')
+
+
 def installed_inventory(root):
     result={}
     for p in sorted(root.rglob('*')):
@@ -115,6 +120,7 @@ def main(args):
         report['source_changes']={name:{path:{'before':digest,'after':sha(sources[name]/path) if (sources[name]/path).is_file() else None}
             for path,digest in entries.items() if not (sources[name]/path).is_file() or sha(sources[name]/path)!=digest}
             for name,entries in source_inputs.items()}
+        require_unchanged_source(report['source_changes'])
         if installed_inventory(s)!=support:raise ValueError('Retained support prefix changed')
         report['result_exit_code']=0
     except BaseException as error:

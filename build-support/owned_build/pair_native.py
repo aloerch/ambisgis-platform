@@ -18,6 +18,14 @@ PLATFORM=HERE.parents[1]
 def write(path,data):path.write_text(json.dumps(data,sort_keys=True,indent=2)+'\n')
 
 
+def require_matching_inputs(results):
+    inputs={key:[result[key] for result in results] for key in (
+        'source_inputs_sha256','support_inputs_sha256','support_manifest_sha256','tooling_manifest_sha256')}
+    if len(results)!=2 or any(a!=b for a,b in inputs.values()):
+        raise ValueError('Paired selected input identities changed')
+    return inputs
+
+
 def build_id(path):
     if path.read_bytes()[:4]!=b'\x7fELF':return None
     text=subprocess.check_output(['/usr/bin/readelf','-n',str(path)],text=True)
@@ -82,8 +90,7 @@ def main(args):
             if result['result_exit_code'] or proof.get('status')!='completed' or proof.get('command_exit_code')!=0:
                 raise ValueError('Build or network-denial evidence failed')
             results.append(result)
-        inputs={k:[r[k] for r in results] for k in ('source_inputs_sha256','support_inputs_sha256','tooling_manifest_sha256')}
-        if any(a!=b for a,b in inputs.values()):raise ValueError('Paired selected input identities changed')
+        inputs=require_matching_inputs(results)
         inventories=[json.loads((root/f'build-{n}/output-manifest.json').read_text()) for n in (1,2)]
         if set(inventories[0])!=set(inventories[1]):raise ValueError('Installed membership differs')
         outputs=[]
