@@ -1,3 +1,14 @@
+# Current plan-package pointer — 3 October 2026
+
+The authoritative implementation checkpoint is [the repository status](../STATUS.md).
+DB-03 is accepted/Merged at 13fb7c9bff9d011838b768802a6ab63f932bd228 after
+86 fresh checks and independent verification. PLT-01 remains In progress after
+three preserved ordinary startup failures; installation and full MVP acceptance
+remain open. [Current evidence](verification/runtime-recovery/progress-004.json)
+records the blocked native Goal and continuing foreground work.
+
+## Historical plan-package checkpoints follow unchanged
+
 # Active delivery — 3 October 2026, PLT-01 and DB-01
 
 FND-06 is accepted/Merged at `d0218209d435f80c21400dc38abc2c4d69d805bc`

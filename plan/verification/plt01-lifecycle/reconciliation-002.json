@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "run_id": "5ce01a3a-89fe-4c61-b096-7794912ff5b4",
+  "scope": "Completed ordinary lifecycle002, no remote writes attempted",
+  "receipt_sha256": "4ad8fe63ebcdf8595abee02a2c1da5daef483b683041273f43b1490e78506a21",
+  "live_owned_containers": [],
+  "network_absent": true,
+  "wrapper_and_child_absent": true,
+  "persistent_data_preserved": true,
+  "all_four_images_verified_in_state_diagnosis": true,
+  "reconciled": true
+}

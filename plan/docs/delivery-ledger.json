@@ -33,14 +33,20 @@
           "/root/publication_review"
         ]
       }
+    },
+    "current_observation": {
+      "at": "2026-10-03T21:24:28.748942+00:00",
+      "native_goal_status": "blocked",
+      "foreground_integrator": "/root",
+      "automatic_continuation": "Unavailable until user /goal resume in the existing thread; no external supervisor started."
     }
   },
   "repository": "aloerch/ambisgis-platform",
   "repository_id": 1376927351,
   "branch": "plt-01/development-install",
   "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
-  "task": "PLT-01 development installation and DB-03 typed branch snapshots",
-  "state": "FND-06, DB-01 and DB-02 accepted/Merged; PLT-01 and DB-03 In progress. Native Goal remains blocked; foreground implementation continues.",
+  "task": "PLT-01 repeatable development installation",
+  "state": "FND-06, DB-01, DB-02 and DB-03 accepted/Merged. PLT-01 In progress after retained actual startup failures. Native Goal blocked; foreground delivery continues.",
   "pr": null,
   "tests": [
     {
@@ -138,9 +144,9 @@
     "DB-02"
   ],
   "next": [
-    "Review paired owned OCI archives, then wire separately reviewed retained ordinary runtime; targeted probe remains held",
-    "Define failing real snapshot/DDL/cancellation/quota cases; implement immutable migration003 and branch lifecycle",
-    "API-01 and PLT-02 depend on PLT-01; complete scoped MVP remains open"
+    "Complete independent review of owned runc loader/profile repair and its inert bundle, then fresh ordinary installation lifecycle.",
+    "Pass original PLT-01 installation/readiness/restart/persistence criteria with actual tests and independent review.",
+    "API-01/PLT-02 await PLT-01; DB-04 additionally awaits API-04. Complete scoped MVP and release remain open."
   ],
   "product_acceptance": false,
   "release_artifact": null,
@@ -538,7 +544,7 @@
   },
   "execution_checkpoint": {
     "schema_version": 1,
-    "observed_at": "2026-10-03T19:12:24.536647+00:00",
+    "observed_at": "2026-10-03T21:24:28.748942+00:00",
     "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
     "integrator": "/root",
     "native_goal": {
@@ -591,7 +597,10 @@
       "Resumed unaffected implementation in this existing root context; no internal DB/settings edits or background service",
       "Held targeted engine probe under platform restriction; prior technical preflight is not execution authorization",
       "Claimed DB-02 from accepted DB-01 and assigned a bounded independent worker",
-      "Accepted DB-02 after normal protected merge, fresh real tests and separate reviews; claimed dependency-ready DB-03 without disturbing unrelated Project planning"
+      "Accepted DB-02 after normal protected merge, fresh real tests and separate reviews; claimed dependency-ready DB-03 without disturbing unrelated Project planning",
+      "Published, normally merged and accepted DB03 after independent implementation review,86 fresh postmerge checks and separate evidence verification.",
+      "Executed three ordinary installation attempts; preserved and reconciled all failures. Four images load and verify. No service started in attempt003.",
+      "Retained source repair for private runc library-path reexec and native tmpfs normalization is undergoing separate review; no held targeted probe executed."
     ],
     "current_tasks": [
       {
@@ -599,45 +608,48 @@
         "state": "In progress",
         "worktree": "plt01-worktree",
         "branch": "plt-01/development-install",
-        "head": "5e5d38b9205debad029c49020552bd9e10b0314d",
-        "next": "Review paired owned OCI archives, then wire separately reviewed retained ordinary runtime; targeted probe remains held",
-        "pr": null
-      },
-      {
-        "id": "DB-03",
-        "state": "In progress",
-        "worktree": "db03-worktree",
-        "branch": "db-03/typed-snapshots",
-        "base": "c963e2baae1901935b25b0d436e988b47e153eb8",
-        "head": "c963e2baae1901935b25b0d436e988b47e153eb8",
-        "claim": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5972562596",
-        "next": "Define failing real snapshot/DDL/cancellation/quota cases; implement immutable migration003 and branch lifecycle"
+        "last_frozen_head": "5387068031bc226a7faf4deb9c9329d379230cc2",
+        "working_successor": "Frozen source repair67e12a1 and inert bundle007; independent build/bundle review pending",
+        "next": "Finish source/artifact/bundle review and run a fresh ordinary lifecycle; retain failures and original acceptance scope",
+        "pr": null,
+        "repair_candidate": {
+          "head": "67e12a1693a85daf242a982393273b779a6c72a7",
+          "bundle_sha256": "c6b4eb308c6b5aed5c952bbfe3499554c4be3856ebda57e3dadbd1ede789e7c7",
+          "reported_checks": {
+            "runtime": 19,
+            "package": 565,
+            "schemas": 10,
+            "native_environment_subcases": 3
+          },
+          "independent_review": "Build and bundle review pending; no native runtime acceptance",
+          "evidence_sha256": "e4e3ff765c38486706211a572b8d04353eb80dcb4c53d7b4f00b26dbed5c2555"
+        }
       }
     ],
     "last_completed": {
-      "merge": "DB-02 PR12 c963e2baae1901935b25b0d436e988b47e153eb8",
-      "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/3#issuecomment-5972547940",
-      "implementation": "DB-02 domains/defaults/subtypes/relations/rules and version-group scoped constraint timing",
-      "tests": "Fresh postmerge 12 DB02 +22 DB01 +6 schema tests, zero skips. Root independent implementation review plus three additional real DB cases. Postmerge runs independently verified.",
-      "limitations": "No PLT-01 runtime/container install acceptance or release claimed"
+      "merge": "DB-03 PR13 13fb7c9bff9d011838b768802a6ab63f932bd228",
+      "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
+      "implementation": "Typed branch snapshots and durable private creation/activation, finite quotas and lifecycle metadata",
+      "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified.",
+      "limitations": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open."
     },
     "worker_observations": {
-      "root": "Active foreground integrator; DB02 accepted, DB03 claimed, reviewing PLT01 image source/artifacts",
-      "fnd03_identity": "Final paired image assemblies and ordinary runtime-bundle design",
-      "db02_validation": "DB03 failing baseline/design and implementation assigned",
-      "publication_review": "Unavailable: followup failed with agent thread limit reached",
-      "fnd04_prototype": "Errored cyber_policy; targeted task not replayed"
+      "root": "Foreground integrator; DB03 accepted, installer source/bundle review and checkpoint updates",
+      "fnd03_identity": "Owned ordinary runc loader/profile repair and inert bundle assembly",
+      "db02_validation": "Independent corrected runc source/build audit; DB03 verification complete",
+      "fnd04_prototype": "Earlier cyber_policy termination; held task not replayed"
     },
     "remote_state": {
       "platform_main": "d0218209d435f80c21400dc38abc2c4d69d805bc",
-      "geodb_main": "c963e2baae1901935b25b0d436e988b47e153eb8",
+      "geodb_main": "13fb7c9bff9d011838b768802a6ab63f932bd228",
       "FND-06": "Merged",
       "DB-01": "Merged",
       "PLT-01": "In progress",
       "DB-02": "Merged",
       "API-01": "Backlog; PLT-01 pending",
       "PLT-02": "Backlog; PLT-01 pending",
-      "DB-03": "In progress"
+      "DB-03": "Merged",
+      "DB-04": "Backlog; API-04 required"
     },
     "owner_action_required_for_current_safe_work": false,
     "evidence": {
@@ -657,7 +669,9 @@
         "executed": false
       },
       "package_checks": "Private delivery-control/recovery-20261003/package-001/result.json",
-      "db02_acceptance": "plan/verification/db02-acceptance/evidence.json"
+      "db02_acceptance": "plan/verification/db02-acceptance/evidence.json",
+      "db03_acceptance": "plan/verification/db03-acceptance/evidence.json",
+      "ordinary_lifecycle": "plan/verification/plt01-lifecycle/evidence.json"
     }
   },
   "db02_claim": {
@@ -734,9 +748,10 @@
     "delivery": "In progress",
     "accepted": false,
     "unrelated_planning_preserved": true,
-    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-claim-attempts/c6d82022-d24a-4ebb-a9a9-85036c23b882"
+    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-claim-attempts/c6d82022-d24a-4ebb-a9a9-85036c23b882",
+    "observation_note": "Historical claim; db03_acceptance supersedes its In progress state."
   },
-  "updated_at": "2026-10-03T19:12:24.536647+00:00",
+  "updated_at": "2026-10-03T21:24:28.748942+00:00",
   "plt01_image_review": {
     "head": "b8ae679288dd3431c3e216aedab1bd2220653aea",
     "receipt": "plan/verification/plt01-image-review/review.json",
@@ -745,5 +760,131 @@
     "members": 56924,
     "assembly_tests": 22,
     "runtime_executed": false
+  },
+  "db03_acceptance": {
+    "task": "DB-03",
+    "repository": "aloerch/ambisgis-geodb",
+    "issue": 4,
+    "delivery": "Merged",
+    "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
+    "merge": "13fb7c9bff9d011838b768802a6ab63f932bd228",
+    "head": "9e474ea0deccfa9a416da6d5a264c88c6ad3523d",
+    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/13",
+    "postmerge": {
+      "body": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-acceptance-body.md",
+        "sha256": "d9f80d88d8bfaab530b50e0dd9e4aa7fe33e23f76ae8675be199eb04ab277fcf"
+      },
+      "canonical": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-canonical-001/result.json",
+        "sha256": "7a72a6fad6e7daefd2168503ee4568f4829a01962eaaf2d370fcf4a2155b722b"
+      },
+      "control": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-control-001/result.json",
+        "sha256": "2c1d0cb1a577afaad96e6dbf95d8afaa163db833806ddd40dc5695836b3bc19c"
+      },
+      "db01": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-db01-001/acceptance.json",
+        "sha256": "e474d76083202de9059e16aedeb5d6d1c8721cdfded88dc8f36452fadbf5d87d"
+      },
+      "db02": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-db02-001/acceptance.json",
+        "sha256": "b90536fc74b9c9d1c045986f556428c20c74f6fec9a91323c154114ea8fe657e"
+      },
+      "db03": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-db03-001/acceptance.json",
+        "sha256": "5b04e329bbf2eed9888568a9bae0b41bb3fc8f4549d1aabe1d2c81daa624eadd"
+      },
+      "implementation_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db03-final-review-9e474ea.json",
+        "sha256": "a05acb2fc471ed3086d27112f432b5b3448d6a50a9cc82d07c353a2eeffacc7d"
+      },
+      "merge": "13fb7c9bff9d011838b768802a6ab63f932bd228",
+      "postmerge_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db03-postmerge-review-13fb7c9.json",
+        "reviewer": "/root/db02_validation",
+        "sha256": "d94a476ec563f8051987de16d73038f76af3bb877c59727415f73198031bf63a"
+      },
+      "prototype": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-prototype-001/acceptance.json",
+        "sha256": "c03c8446f8ea000d0dbaad0ca1d17793d7dd5a315d3396fa4431cce19e61ec60"
+      },
+      "reviewed_head": "9e474ea0deccfa9a416da6d5a264c88c6ad3523d"
+    },
+    "items": 93,
+    "fields": 24,
+    "views": 7,
+    "repositories": 15,
+    "all_unrelated_values_preserved": true,
+    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-acceptance-attempts/af93b013-8faa-4de2-b587-9a335fa829da",
+    "next_ready_task": "Continue PLT-01; API-01/PLT-02 await PLT-01, DB-04 awaits API-04",
+    "remaining": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open."
+  },
+  "plt01_actual_lifecycle": {
+    "schema_version": 1,
+    "task": "PLT-01",
+    "status": "In progress",
+    "runtime_executed": true,
+    "full_installation_acceptance": false,
+    "held_targeted_probe_executed": false,
+    "attempts": 3,
+    "failures_retained": 3,
+    "last_install_id": "a424b33a-2337-41b6-b673-917ddf5fbdfd",
+    "last_state": "One database container created but never started; no running service, runner or child process; owned network and all persistent data retained. Original automatic-shutdown receipt remains incomplete.",
+    "diagnosis": [
+      "Attempt001: merged native stderr warning contaminated JSON stdout; separate bounded streams repaired.",
+      "Attempt002: exact retained Compose provider version query includes an empty command slot; narrow canonicalization repaired.",
+      "Attempt003: sealed runc init loses the private library search path; native rprivate tmpfs normalization rejected by inspection. Corrected owned source rebuild and profile repair under independent review; no fresh native acceptance yet."
+    ],
+    "last_frozen_head": "5387068031bc226a7faf4deb9c9329d379230cc2",
+    "last_frozen_bundle_sha256": "e8a34bc3d9014229c8110667bd3734a357d72b09c7054f39bad5bb704ed03835",
+    "last_frozen_tests": {
+      "package": 564,
+      "runtime": 16,
+      "schemas": 10,
+      "skipped": 0
+    },
+    "references": [
+      {
+        "path": "plan/verification/plt01-lifecycle/attempt-001.json",
+        "sha256": "6f1f70e212d9c332623e2a89b5fc8dd15a6d1b90674e4b6bec1e668adda406aa"
+      },
+      {
+        "path": "plan/verification/plt01-lifecycle/attempt-002.json",
+        "sha256": "4ad8fe63ebcdf8595abee02a2c1da5daef483b683041273f43b1490e78506a21"
+      },
+      {
+        "path": "plan/verification/plt01-lifecycle/attempt-003.json",
+        "sha256": "877201072ddd0f2901b3016a05475b312faa326ce2283502d4fe1345e2d6b677"
+      },
+      {
+        "path": "plan/verification/plt01-lifecycle/reconciliation-001.json",
+        "sha256": "0a419c992735642c3120b47ee776883869bc9336ddf4af353cd8a555bfc68344"
+      },
+      {
+        "path": "plan/verification/plt01-lifecycle/reconciliation-002.json",
+        "sha256": "fb8814e8dac797954e9d1d09995561e92f80603be95042dbf53fdc631058c497"
+      },
+      {
+        "path": "plan/verification/plt01-lifecycle/reconciliation-003.json",
+        "sha256": "9840bc6dc3761ab00ac1afff33bebab800390e13ca958c9ab63c49ca9283a79c"
+      },
+      {
+        "path": "plan/verification/plt01-lifecycle/bundle006-independent-review.json",
+        "sha256": "8f76f67c2021a84e9e3fda9e8f21dbc11bc8961009c7c78e1b5f00251e4f95f2"
+      }
+    ],
+    "repair_candidate": {
+      "head": "67e12a1693a85daf242a982393273b779a6c72a7",
+      "bundle_sha256": "c6b4eb308c6b5aed5c952bbfe3499554c4be3856ebda57e3dadbd1ede789e7c7",
+      "reported_checks": {
+        "runtime": 19,
+        "package": 565,
+        "schemas": 10,
+        "native_environment_subcases": 3
+      },
+      "independent_review": "Build and bundle review pending; no native runtime acceptance",
+      "evidence_sha256": "e4e3ff765c38486706211a572b8d04353eb80dcb4c53d7b4f00b26dbed5c2555"
+    }
   }
 }

@@ -18,20 +18,27 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 has a reviewed installer and token-cleanup helper. The owned patched
-container-engine build passed its 113 native unit entries. Two assemblies
-produced identical archives for all four development images. Independent review
-verified all 56,924 archive members and reran 22 inert assembly tests
-([review](plan/verification/plt01-image-review/review.json)). Ordinary runtime
-bundle wiring and actual installation tests remain pending. The targeted engine probe
-remains held after a platform cyber_policy termination; no container installation
-acceptance is claimed. The recovery inspection found no local STOP, held lock,
-failed integration checkpoint or authentication failure. The native Goal remains
-blocked; foreground work continues in the same root context. Restoring native
-automatic continuation requires the user control `/goal resume`.
-[Diagnosis](plan/verification/runtime-recovery/2026-10-03.json) and
-[latest observed progress](plan/verification/runtime-recovery/progress-003.json)
-distinguish the platform state from project task progress.
+PLT-01 has four independently reviewed owned OCI images and a retained ordinary
+runtime bundle. Three actual installation attempts remain failed and preserved.
+The first two exposed native stderr/JSON mixing and the provider's exact version
+argument form; both have bounded repairs. The third created a database container
+that never started: sealed runc initialization lost its private library search
+path, and inspection rejected native recursive-private tmpfs normalization.
+No installation service or lifecycle runner remains running. The owned network and all persistent data
+are retained; the original shutdown receipt still records incomplete validation.
+A corrected source-owned runc build passes three focused native environment
+subcases. The frozen repair candidate 67e12a1 and inert bundle-007 report 565 package,
+19 runtime and ten schema checks passing. Independent artifact/bundle review
+and a fresh lifecycle remain pending.
+[Actual attempts and reconciliations](plan/verification/plt01-lifecycle/evidence.json)
+do not establish installation acceptance.
+
+The held targeted engine probe remains unexecuted after the earlier platform
+termination. The native Goal still reports blocked; foreground delivery continues.
+Restoring native automatic continuation requires the user control /goal resume
+in the existing thread. [Original diagnosis](plan/verification/runtime-recovery/2026-10-03.json)
+and [latest progress](plan/verification/runtime-recovery/progress-004.json)
+distinguish this platform state from current product work.
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.
 Independent review confirmed shutdown, unchanged sources and zero test skips.
@@ -49,14 +56,23 @@ implementation review and verification of the root-run postmerge evidence remain
 separate. Both disposable database clusters stopped cleanly.
 [Acceptance evidence](plan/verification/db02-acceptance/evidence.json) records
 issue closure and Delivery Verified → Merged with other Project values preserved.
-DB-03 is claimed/In progress on `db-03/typed-snapshots`, based on that accepted
-merge. It covers consistent typed snapshots, branch lifecycle and bounded quotas;
-actual concurrent DEFAULT edit, schema exclusion and failure/cancellation tests
-must pass before acceptance. Branch edit/history and reconcile/post remain later
-tasks.
+DB-03 is accepted/Merged at
+13fb7c9bff9d011838b768802a6ab63f932bd228
+([PR #13](https://github.com/aloerch/ambisgis-geodb/pull/13)). It adds consistent
+typed branch bases, private durable creation, cancellation/recovery, finite
+logical-payload quotas and lifecycle metadata. Fresh execution on the merged
+tree passed 86 checks (80 real database and six schema cases), with no skips.
+All five databases stopped, and independent verification checked 391 tracked
+files, 22 sources and 72 retained runtime artifacts.
+[Acceptance evidence](plan/verification/db03-acceptance/evidence.json) records
+issue closure and Delivery Verified → Merged with unrelated Project values
+preserved. Branch editing, external API authorization, attachments, complete
+history, reconcile/post and physical garbage collection remain later work.
+DB-04 still depends on API-04 and is not ready merely after DB-03 acceptance.
 API-01 and PLT-02 still await PLT-01.
 
-Combined FND-06 checks passed 503 package tests, ten schema/example pairs,
+The reviewed bundle-006 PLT-01 candidate passed 564 package tests, 16 runtime guards and
+ten schema/example checks. Earlier FND-06 checks passed 503 package tests,
 35 Koop guards and 14 notice guards; these remain distinct from product tests.
 Project tracking retains 93 items, 24 fields, seven views and 15 repositories.
 All unrelated planning and archive decisions were preserved.

@@ -1,0 +1,97 @@
+{
+  "assembly": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-006/assembly-result.json",
+    "sha256": "a1a42353b2f1a95eeafaec5e3ca91505f5c45b95bacbcae829e3b99b7291a5d3"
+  },
+  "bundle": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-006/bundle.json",
+    "sha256": "e8a34bc3d9014229c8110667bd3734a357d72b09c7054f39bad5bb704ed03835"
+  },
+  "candidate_head": "5387068031bc226a7faf4deb9c9329d379230cc2",
+  "closure": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-006/runtime-files.json",
+    "sha256": "2a6e4c9b97bf5cdf345fe5a84b7f046cb1894905a8049a238f674fb14f405373"
+  },
+  "custody": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-006/runtime/configuration/custody.json",
+    "sha256": "bd780d16860a0e25412b1b86310696dfe8039e0215951a23a0115642f33b4529"
+  },
+  "distribution_approved": false,
+  "full_installation_acceptance": false,
+  "host_prerequisites": 12,
+  "limitations": [
+    "No engine or runtime services executed by this review.",
+    "Static ELF bindings do not qualify actual loader mappings or ABI.",
+    "Existing host shell, dynamic loader, systemd user service, kernel and SELinux policy remain explicit host prerequisites.",
+    "Held targeted probe was not invoked and its acceptance remains pending."
+  ],
+  "origin_counts": {
+    "archive_sha256,bytes,mode,package,package_member,path,resolved_source,sha256,signed_link_chain": 1214,
+    "archive_sha256,member,package,path,payload_receipt,payload_receipt_sha256,sha256,signed_mode": 4,
+    "exact_retained_owned_build_source": 1,
+    "existing_first_party_policy,source": 1,
+    "existing_policy": 1,
+    "generated": 3,
+    "generated_launcher": 7,
+    "original_build_record": 4,
+    "original_input_lock,qualification": 2,
+    "owned_build,result_sha256": 2,
+    "owned_source,sha256": 8
+  },
+  "prior_image_review": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-image-review-b8ae679/result.json",
+    "sha256": "b68d9ee0cdb4c58b5ec054f8537f8a15771baf907fad976123cb20f00898abca"
+  },
+  "reviewer": "/root",
+  "reviewer_script": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-runtime-review-003/review.py",
+    "sha256": "1269df446064c436d850e391554041e4c0bc6f91c22a2c1e208fccbeca0686a2"
+  },
+  "runtime_directories": 180,
+  "runtime_executed": false,
+  "runtime_files": 1248,
+  "schema_version": 1,
+  "source_files": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/build-support/development-runtime/ambisgis_runtime.py",
+      "sha256": "7e5809877fe22fb6ca2c5a38566c88af2a5d52b10b3f0665d155f51f7b2330be"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/build-support/development-runtime/build_bundle.py",
+      "sha256": "ab1fa17da0d8af26eecad45e8f5012c2ff7fe3a91915fe91375d903511542729"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/build-support/development-runtime/test_build_bundle.py",
+      "sha256": "ecbea03581378485cb49d003c3cf1bd8abd29235d3fc224f2bf6aad354ab3728"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/build-support/development-runtime/test_runtime.py",
+      "sha256": "8d10e590c5319969b8f1dd4d610a3bfe591aadaf3ba7c2dcb71923c359e438d4"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/installer/runtime.py",
+      "sha256": "9e57a0fa16b0186c3cbfd361c2b1814b72fe90cd33c82fcab8bcb8bfb20a63da"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/plan/tests/test_development_installer.py",
+      "sha256": "b6019cc288793985f49da9fcf4a621913e421b2b074530ea096f50b00b5a66e3"
+    }
+  ],
+  "source_review": [
+    "complete adapter, assembler and helper tests",
+    "native health timer argv and private configuration restoration",
+    "exact retained provider argv for six ordinary roles",
+    "host-only retained tinfo correspondence",
+    "authoritative Compose pod, TTY and initializer-name options",
+    "startup repair: separate stdout/stderr with combined output bound; private graphroot setting",
+    "provider version probe exact empty command canonicalization; all other argument guards retained"
+  ],
+  "status": "PASS",
+  "tests": {
+    "exit_code": 0,
+    "log": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-runtime-review-003/tests.log",
+      "sha256": "561323f9d748f521d5b3e17746c48c548f34ec3d8f1a5b0fb7260b67d3e4f8d8"
+    }
+  }
+}
