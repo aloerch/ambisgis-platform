@@ -1,0 +1,5 @@
+case,WKT,srid,z,m
+xyz,POINT Z (-117 32 12.5),4326,12.5,
+xym,POINT M (-117 32 7.25),4326,,7.25
+xyzm,POINT ZM (-117 32 12.5 7.25),4326,12.5,7.25
+empty,POINT EMPTY,4326,,

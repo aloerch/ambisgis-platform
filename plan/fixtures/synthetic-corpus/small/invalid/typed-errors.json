@@ -1,0 +1,1 @@
+[{"expected":"DOMAIN_VIOLATION","field":"population","value":-1},{"expected":"TYPE_MISMATCH","field":"population","value":"ten"},{"expected":"INVALID_TIMESTAMP","field":"observed_at","value":"2026-02-30T00:00:00Z"},{"expected":"DOMAIN_VIOLATION","field":"district","value":"unknown"},{"expected":"C1_ID_OUT_OF_RANGE","field":"object_id","value":2147483648}]

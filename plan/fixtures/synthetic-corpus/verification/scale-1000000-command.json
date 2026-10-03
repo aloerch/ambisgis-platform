@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-worktree/build-support/postgis/offline_exec.py",
+    "--evidence",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-runtime/round-005/scale-1000000-network.json",
+    "--",
+    "/usr/bin/python3",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-worktree/plan/tools/synthetic_corpus.py",
+    "generate",
+    "--output",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-runtime/round-005/scale-1000000",
+    "--addresses",
+    "1000000"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"status\": \"generated\", \"addresses\": 1000000, \"files\": 32, \"manifest_sha256\": \"b480f7687b33e7c5d89bdd24eb5fb04996feb51c1f34ba891d57f976ba1fc4b8\"}\n",
+  "stderr": ""
+}

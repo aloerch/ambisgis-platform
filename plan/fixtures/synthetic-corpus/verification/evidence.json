@@ -1,0 +1,342 @@
+{
+  "base_commit": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "custody_files": [
+    {
+      "bytes": 2840,
+      "path": "final-checks.py",
+      "sha256": "7c3934b41a098f13d6dda577a0610c9903a5aa783deddef24d3dd5e12bfbd3b6"
+    },
+    {
+      "bytes": 2364,
+      "path": "exercise-scales.py",
+      "sha256": "babf6eb03496f6cc007a0490d4592a1102d3920f74724846663f23fdd942be69"
+    },
+    {
+      "bytes": 1171,
+      "path": "scale-results.json",
+      "sha256": "1c21527a8a3fe312f48f174366d80df0e910b7985bd0ef97a3e2e5819a70396d"
+    },
+    {
+      "bytes": 70396,
+      "path": "package-tests.log",
+      "sha256": "7b45e99e128056285f9ab03e4c2bc32ce4011a133c0575f1b80c80302db432ac"
+    },
+    {
+      "bytes": 189,
+      "path": "package-schemas.log",
+      "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+    },
+    {
+      "bytes": 794,
+      "path": "scale-100000-command.json",
+      "sha256": "0a958290068584286d144d175930d8ef308e324953287ff92f5a91a2d79d2eb0"
+    },
+    {
+      "bytes": 1968,
+      "path": "scale-100000-network.json",
+      "sha256": "0ae50247fd6cecf7a2c2637dd35c7510e087c0435cf1fd390521cca7d76f8703"
+    },
+    {
+      "bytes": 4367,
+      "path": "large-manifests/100000.json",
+      "sha256": "5aeb5aad8a0f47780fdcba69bc6b568689bb14dc6b30927fa1e14b6796e06a88"
+    },
+    {
+      "bytes": 798,
+      "path": "scale-1000000-command.json",
+      "sha256": "f402f592ad1bcd7c31b0177a8a32885301affdba96354033453c7fe88d652209"
+    },
+    {
+      "bytes": 1970,
+      "path": "scale-1000000-network.json",
+      "sha256": "a136b990ea761ab569ab0d17ddff53c878f8c27bb11a271dfcc5b05fd946d2e9"
+    },
+    {
+      "bytes": 4370,
+      "path": "large-manifests/1000000.json",
+      "sha256": "b480f7687b33e7c5d89bdd24eb5fb04996feb51c1f34ba891d57f976ba1fc4b8"
+    },
+    {
+      "bytes": 4787,
+      "path": "author-project-command-002.json",
+      "sha256": "732c4162c87d1dad2654c848e7296061ca305ed2d323dc543342acbd1b1c98ed"
+    },
+    {
+      "bytes": 2227,
+      "path": "author-project-network-002.json",
+      "sha256": "6526f1354985b54bbc17af7d53b5e7f2a6d54b2670794cacdd1010f0249d27e4"
+    },
+    {
+      "bytes": 0,
+      "path": "author-project-002.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "failed_attempts": [
+    {
+      "disposition": "Provider lifetime at shutdown; failed process, not accepted.",
+      "name": "initial-authoring",
+      "raw_command_exit": -11,
+      "receipt": {
+        "bytes": 2229,
+        "path": "failed-attempts/initial-authoring.json",
+        "sha256": "239b9998fa112bc54b4c011467c24b0efe554355cbd2884c1423ccb7c58b48fb"
+      },
+      "wrapper_exit": 139
+    },
+    {
+      "disposition": "Earlier internal passing result preceded fatal shutdown and is not accepted.",
+      "name": "initial-native",
+      "raw_command_exit": -11,
+      "receipt": {
+        "bytes": 2025,
+        "path": "failed-attempts/initial-native.json",
+        "sha256": "c1ada44fc452bc05ff38c4adc8643c2df55b34017d74f93a407ca640ec453d4f"
+      },
+      "wrapper_exit": 139
+    },
+    {
+      "disposition": "Correct rejection exposed traceback/provider lifetime crash; fixed and rerun cleanly in round005.",
+      "name": "round004-truncated-negative",
+      "raw_command_exit": -11,
+      "receipt": {
+        "bytes": 2207,
+        "path": "failed-attempts/round004-truncated-negative.json",
+        "sha256": "2ceaeb7eaa7ad8f737ecbf0244684cbf3d283fe77004f0134b2d7b09fb338db4"
+      },
+      "wrapper_exit": 139
+    }
+  ],
+  "package_checks": {
+    "schemas": {
+      "command": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python tools/validate_package.py --require-schemas",
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-worktree/plan",
+      "exit_code": 0,
+      "schemas_examples_passed": 4
+    },
+    "tests": {
+      "command": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python -m unittest discover -s tests -v",
+      "corpus_tests": 17,
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-worktree/plan",
+      "exit_code": 0,
+      "note": "The final printed failed receipt is expected output of an existing negative package test; unittest result is OK.",
+      "passed": 474
+    }
+  },
+  "payloads_unchanged_from_initial_large_generation": true,
+  "producer_sha256": "3b5dbef208989b54e8640348083dcc9d51c696f0dd8cef1f1c58b8f2d92b0f52",
+  "projection": {
+    "note": "Executed script produced selected projection; subsequent presentation-only change JSON-encoded the exact changed-feet raw log to preserve its trailing space without a diff whitespace error.",
+    "script": "project-evidence.py",
+    "sha256": "0e0fd426d088b828d8df98cca66291a6ce7257d1fe21cce1b87a417a6179bd89"
+  },
+  "rights": "First-party GPL-3.0-or-later under existing project policy; no third-party runtime/font bytes included.",
+  "runs": {
+    "native-scale-100000": {
+      "actual_exit": 0,
+      "actual_runtime_config_sha256": "5990ce8512cc548d9900241ee06e8e6df4f9a8865d3b65a6ffef7cdb5a10f3e7",
+      "corpus_manifest_sha256": "5aeb5aad8a0f47780fdcba69bc6b568689bb14dc6b30927fa1e14b6796e06a88",
+      "expected_exit": 0,
+      "files": [
+        {
+          "bytes": 4954,
+          "path": "native-scale-100000-command.json",
+          "sha256": "2910da60093f28e927c3f0f62430f6caafc959f5ff1e83b5f3aa1bcfc78b1af8"
+        },
+        {
+          "bytes": 2197,
+          "path": "native-scale-100000-network.json",
+          "sha256": "562287bbc35d1160cf19ed42ec26b65e7d69c6ff8380515be3936bcdbbf16963"
+        },
+        {
+          "bytes": 3245,
+          "path": "native-scale-100000.log",
+          "sha256": "fdd7dfec338630b334b3edb985308a3156b44b75084c01969db5e76d475466ee"
+        },
+        {
+          "bytes": 3923,
+          "path": "native-scale-100000.json",
+          "sha256": "e9fa65dc60a92e5a8aee4679aae0bef5fe9b7bf527cfe80f8ce8b721b8f4eec5"
+        }
+      ],
+      "post_run_complete_membership_sizes_and_hashes_verified": true,
+      "producer_still_matches_executed_snapshot": true
+    },
+    "native-scale-1000000": {
+      "actual_exit": 0,
+      "actual_runtime_config_sha256": "5990ce8512cc548d9900241ee06e8e6df4f9a8865d3b65a6ffef7cdb5a10f3e7",
+      "corpus_manifest_sha256": "b480f7687b33e7c5d89bdd24eb5fb04996feb51c1f34ba891d57f976ba1fc4b8",
+      "expected_exit": 0,
+      "files": [
+        {
+          "bytes": 4957,
+          "path": "native-scale-1000000-command.json",
+          "sha256": "b7e7d141eef2de0c78a2d0f8bb45977c6801db65460d519691633d3b91495089"
+        },
+        {
+          "bytes": 2199,
+          "path": "native-scale-1000000-network.json",
+          "sha256": "5e3a50ff230ba0959a9e0482e972a2dd4e4bceb1e3090b99e87c92f432bb6800"
+        },
+        {
+          "bytes": 3247,
+          "path": "native-scale-1000000.log",
+          "sha256": "e4bda0af8712483a5ce198892e2f62296ef7cf44af3a3dc7d46cc6607402889b"
+        },
+        {
+          "bytes": 3925,
+          "path": "native-scale-1000000.json",
+          "sha256": "7f6657cf105b41618ded9047972b5cd7efe677fd510841ecb9112dfebe978192"
+        }
+      ],
+      "post_run_complete_membership_sizes_and_hashes_verified": true,
+      "producer_still_matches_executed_snapshot": true
+    },
+    "native-small": {
+      "actual_exit": 0,
+      "actual_runtime_config_sha256": "5990ce8512cc548d9900241ee06e8e6df4f9a8865d3b65a6ffef7cdb5a10f3e7",
+      "corpus_manifest_sha256": "9d55e9bdffeee83e4d9bd09166469c1360987b8572cb27ad42087c9eca878efb",
+      "expected_exit": 0,
+      "files": [
+        {
+          "bytes": 4933,
+          "path": "native-small-command.json",
+          "sha256": "0d4097d6c01c8fe54f509a7ab666018f0fbcc8dc48bf58899fdb804e77d168b8"
+        },
+        {
+          "bytes": 2183,
+          "path": "native-small-network.json",
+          "sha256": "7ee39a4ebb067b5830a6f65c6ef7e05400dbd1e5a741dd5b8972e6b44954f942"
+        },
+        {
+          "bytes": 3241,
+          "path": "native-small.log",
+          "sha256": "2c30492d377f4ea0c56580ff7e8929f3f39ce7fcfd7d32d0dcce986922237cdf"
+        },
+        {
+          "bytes": 3919,
+          "path": "native-small.json",
+          "sha256": "2bfc9767e35b4aa463785a78f3ba56ea4a64ee3ec90469c531d9bcd0dc921d13"
+        }
+      ],
+      "post_run_complete_membership_sizes_and_hashes_verified": true,
+      "producer_still_matches_executed_snapshot": true
+    },
+    "reject-changed-feet": {
+      "actual_exit": 1,
+      "actual_runtime_config_sha256": "5990ce8512cc548d9900241ee06e8e6df4f9a8865d3b65a6ffef7cdb5a10f3e7",
+      "corpus_manifest_sha256": "ed9eb91c7b358018f8cf98b528b753f2c6d751ed6b9da32c6d16156032abe817",
+      "expected_exit": 1,
+      "files": [
+        {
+          "bytes": 4954,
+          "path": "reject-changed-feet-command.json",
+          "sha256": "7d85ed064612c93307519fd2888b99bd10e56a63ba48039002db858fee17eec0"
+        },
+        {
+          "bytes": 2197,
+          "path": "reject-changed-feet-network.json",
+          "sha256": "46e5c5e32f7b134dc9f90a667867987c9f370375a8a8544591a3f964248fea24"
+        },
+        {
+          "bytes": 158,
+          "path": "reject-changed-feet-log.json",
+          "representation": "JSON string preserves exact original log whitespace; raw hash included",
+          "sha256": "8321b7839dc32e9f563887676d3445a7a93a99428c8486f6469b889c0ec82ca0"
+        },
+        {
+          "bytes": 5292,
+          "path": "reject-changed-feet-derivative-manifest.json",
+          "sha256": "ed9eb91c7b358018f8cf98b528b753f2c6d751ed6b9da32c6d16156032abe817"
+        }
+      ],
+      "passing_report_absent": true,
+      "post_run_complete_membership_sizes_and_hashes_verified": true,
+      "post_run_data_matches_exact_derivative_created_by_executed_script": true,
+      "producer_still_matches_executed_snapshot": true
+    },
+    "reject-truncated-ndjson": {
+      "actual_exit": 1,
+      "actual_runtime_config_sha256": "5990ce8512cc548d9900241ee06e8e6df4f9a8865d3b65a6ffef7cdb5a10f3e7",
+      "corpus_manifest_sha256": "441ac09ee26c7c8f2f024b4dfe2f433b5c647eb02e07fcea3b660f5972d76809",
+      "expected_exit": 1,
+      "files": [
+        {
+          "bytes": 4966,
+          "path": "reject-truncated-ndjson-command.json",
+          "sha256": "6caa9a7192cf031eaa4f32387fcdcc7b3b824c06a09093bebc2ce9c4963939c1"
+        },
+        {
+          "bytes": 2205,
+          "path": "reject-truncated-ndjson-network.json",
+          "sha256": "bae667ca901d51612ed09114296475236e480cbeaea960a70000299a8ef32f3d"
+        },
+        {
+          "bytes": 75,
+          "path": "reject-truncated-ndjson.log",
+          "sha256": "dfe3b94c622dba8f62b25600f36e281e1f28f6f8e444bc1677043a1d23dfaf5b"
+        },
+        {
+          "bytes": 5289,
+          "path": "reject-truncated-ndjson-derivative-manifest.json",
+          "sha256": "441ac09ee26c7c8f2f024b4dfe2f433b5c647eb02e07fcea3b660f5972d76809"
+        }
+      ],
+      "passing_report_absent": true,
+      "post_run_complete_membership_sizes_and_hashes_verified": true,
+      "post_run_data_matches_exact_derivative_created_by_executed_script": true,
+      "producer_still_matches_executed_snapshot": true
+    },
+    "wrong-owned-source-001": {
+      "actual_exit": 1,
+      "actual_runtime_config_sha256": "b1172aa79247620921629119f2283efd4ec1c223e889895c5e050397cee3c4fc",
+      "corpus_manifest_sha256": "9d55e9bdffeee83e4d9bd09166469c1360987b8572cb27ad42087c9eca878efb",
+      "expected_exit": 1,
+      "files": [
+        {
+          "bytes": 4972,
+          "path": "wrong-owned-source-001-command.json",
+          "sha256": "56273f98ebeb161b4b93b99b33189c72430308022a2899bd79fe5093386a2497"
+        },
+        {
+          "bytes": 2212,
+          "path": "wrong-owned-source-001-network.json",
+          "sha256": "235d39ec733c0d305bd836d277564f420ec8f0e667c629015a62c5cf40183e3e"
+        },
+        {
+          "bytes": 45,
+          "path": "wrong-owned-source-001.log",
+          "sha256": "59440e7a83ec9eab4ab830188210e8cc7f7f4a9cc465900e30b990d67fe867ab"
+        },
+        {
+          "bytes": 4355,
+          "path": "wrong-owned-source-001-derivative-manifest.json",
+          "sha256": "9d55e9bdffeee83e4d9bd09166469c1360987b8572cb27ad42087c9eca878efb"
+        },
+        {
+          "bytes": 3931,
+          "path": "wrong-owned-source-config.json",
+          "sha256": "b1172aa79247620921629119f2283efd4ec1c223e889895c5e050397cee3c4fc"
+        }
+      ],
+      "passing_report_absent": true,
+      "post_run_complete_membership_sizes_and_hashes_verified": true,
+      "producer_still_matches_executed_snapshot": true,
+      "selected_config_unchanged_except_deliberate_zero_source_commit": true
+    }
+  },
+  "schema_version": 1,
+  "scope": "Synthetic corpus generation, native fixture inspection and package checks only; not product/API/policy acceptance.",
+  "selected_round": "round-005",
+  "small_manifest_sha256": "9d55e9bdffeee83e4d9bd09166469c1360987b8572cb27ad42087c9eca878efb",
+  "source_files": {
+    "plan/docs/fnd-06-synthetic-corpus.md": "056d7cfcc7254069a84a217ad30ae665338e08ff827f09e9d1246feae0fe7362",
+    "plan/fixtures/synthetic-corpus/author_project.py": "6f9f4d422f9876f796a1e6dd0078e7b84868783ee2e521f46c995865f9ed7aa3",
+    "plan/fixtures/synthetic-corpus/expected-small.json": "64a64430a58619c3ddb132531ccb9ee7631e60fbbdcbc80f0fcb9b2d2214ea50",
+    "plan/fixtures/synthetic-corpus/templates/rich-style.qgs": "7a66ac84a6ac37f775e482f51ff6d60a518b9b268ad01d88616267deb794ce58",
+    "plan/tests/test_synthetic_corpus.py": "79048bfa20735968f818b8ef1ee4c0753603efec5791932776bfaf6179ebdbd0",
+    "plan/tools/synthetic_corpus.py": "3b5dbef208989b54e8640348083dcc9d51c696f0dd8cef1f1c58b8f2d92b0f52"
+  },
+  "synthetic": true,
+  "task": "FND-06"
+}

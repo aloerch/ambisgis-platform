@@ -1,0 +1,1 @@
+{"note":"Inert negative test strings only; do not dereference or execute.","package_paths":["../outside.txt","/absolute.txt","a/../../outside.txt"],"remote_sources":["http://127.0.0.1/","http://169.254.169.254/"],"sort_fields":["name;SELECT 1","__not_a_field__"],"where":["name = 'x' OR 1=1; DROP TABLE addresses;--","unknown(name) = 1"]}

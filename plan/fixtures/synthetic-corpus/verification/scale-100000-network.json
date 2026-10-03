@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "started_utc": "2026-10-03T09:51:13.177514+00:00",
+  "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan",
+  "command": [
+    "/usr/bin/python3",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-worktree/plan/tools/synthetic_corpus.py",
+    "generate",
+    "--output",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-runtime/round-005/scale-100000",
+    "--addresses",
+    "100000"
+  ],
+  "platform": "Linux-7.2.5-1-default-x86_64-with-glibc2.44",
+  "mechanism": "Linux seccomp BPF with PR_SET_NO_NEW_PRIVS",
+  "scope": "calling process and descendants; non-AF_UNIX socket creation denied",
+  "limitations": [
+    "Host filesystem, tools and libraries are not isolated or retained by this wrapper",
+    "AF_UNIX services remain accessible, including any local proxy or descriptor broker",
+    "This is a trusted build check, not a hostile-code sandbox or whole-product independence proof"
+  ],
+  "status": "completed",
+  "resolved_executable": "/usr/bin/python3",
+  "closed_inherited_fds": [],
+  "kernel_state": {
+    "no_new_privs": 1,
+    "seccomp_mode": 2,
+    "filter_sha256": "80209a572c659661957fd1977f8c02d1756ed53f94d80c78d181a502fedcc551"
+  },
+  "probes": [
+    {
+      "family": "AF_INET",
+      "operation": "socket(SOCK_STREAM)",
+      "errno": 1,
+      "errno_name": "EPERM",
+      "expected_errno": 1,
+      "passed": true
+    },
+    {
+      "family": "AF_INET6",
+      "operation": "socket(SOCK_STREAM)",
+      "errno": 1,
+      "errno_name": "EPERM",
+      "expected_errno": 1,
+      "passed": true
+    },
+    {
+      "family": "AF_UNIX",
+      "operation": "socket(SOCK_STREAM)",
+      "errno": 0,
+      "errno_name": "SUCCESS",
+      "expected_errno": 0,
+      "passed": true
+    },
+    {
+      "family": "AF_UNIX",
+      "operation": "socketpair send/recv",
+      "errno": 0,
+      "passed": true
+    }
+  ],
+  "command_exit_code": 0,
+  "finished_utc": "2026-10-03T09:51:14.047819+00:00"
+}
