@@ -90,12 +90,17 @@ def classpath(staged):
     return os.pathsep.join(files)
 
 
-def compile_launcher(java_home, staged, output):
+def compile_launcher(java_home, staged, output, policy_source=None):
     """Compile the project-owned launcher under the existing socket-denial runner."""
     java_home, staged, output = Path(java_home), Path(staged), Path(output)
     cp = classpath(staged)
     output.mkdir(parents=True, exist_ok=False)
     shutil.copyfile(LAUNCHER, output / LAUNCHER.name)
+    sources = [str(output / LAUNCHER.name)]
+    if policy_source is not None:
+        policy_source = Path(policy_source)
+        shutil.copyfile(policy_source, output / 'CatalogPolicyFilter.java')
+        sources.append(str(output / 'CatalogPolicyFilter.java'))
     (output / 'classes').mkdir()
     offline = Path(__file__).resolve().parents[1] / 'postgis/offline_exec.py'
     report = {'result_exit_code': 1, 'launcher_source_sha256': sha(LAUNCHER),
@@ -104,7 +109,9 @@ def compile_launcher(java_home, staged, output):
     try:
         command = [sys.executable, str(offline), '--evidence', str(output / 'network-denial.json'),
                    '--', str(java_home / 'bin/javac'), '--release', '17', '-cp', cp,
-                   '-d', str(output / 'classes'), str(output / LAUNCHER.name)]
+                   '-d', str(output / 'classes'), *sources]
+        if policy_source is not None:
+            report['policy_source_sha256'] = sha(policy_source)
         report['command'] = command
         with (output / 'compile.log').open('x') as stream:
             report['exit_code'] = execute(command, output,

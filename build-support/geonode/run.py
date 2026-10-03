@@ -41,6 +41,7 @@ def save(path, value, private=False):
 def private_values(config):
     values = [config[k] for k in ('secret_key', 'api_key', 'client_secret', 'second_client_secret')]
     values += [config.get('role_service_api_key', '')]
+    values += [config.get('policy_key', '')]
     values += list(config['passwords'].values())
     values += [config[k]['password'] for k in ('database', 'runtime_database')]
     return values
@@ -146,7 +147,10 @@ def child(invocation):
             report['commands'].append({'action': action, 'exit_code': code, 'log_sha256': digest(capture.path), 'diagnostic_secret_hits': capture.leaks, 'source_redactions': capture.source_redactions})
             if code or capture.security_failures: raise RuntimeError('GeoNode command unsuccessful: ' + action)
         if invocation.get('integration'):
-            from journey import exercise
+            if config.get('catalog_policy'):
+                from catalog_journey import exercise
+            else:
+                from journey import exercise
             report['journey'] = exercise(invocation, config, values)
             if report['journey']['result_exit_code']: raise RuntimeError('real HTTP journey failed')
         report['result_exit_code'] = 0
@@ -202,6 +206,10 @@ def run(args):
                   'oidc_rsa_private_key_file': str(output / 'oidc-key.pem'), 'strict_verifier': args.strict_verifier,
                   'strict_roles': args.strict_roles, 'role_service_username': 'fixture-role-service',
                   'role_service_api_key': secrets.token_urlsafe(36)}
+        if getattr(args, 'catalog_policy', False):
+            config['catalog_policy'] = True
+            config['policy_key'] = secrets.token_urlsafe(36)
+            config['gateway_port'] = fresh_port()
         if args.strict_roles and (not args.strict_verifier or (args.integration and (not args.build or not args.war_sha256))):
             raise ValueError('strict roles require strict verifier, integration and explicit build/WAR digest')
         values = private_values(config)
@@ -237,7 +245,8 @@ def run(args):
                 raise ValueError('retained #59 WAR digest mismatch')
             save(output / 'application-inventory.json', inventory)
             result['runtime_inputs'] = runtime_inputs.stage(TASK / 'source-archives/java-http-auth/maven', output / 'servlet')
-            result['launcher'] = runtime_inputs.compile_launcher(java_home, output / 'servlet', output / 'launcher')
+            policy_source = HERE.parents[1] / 'services/gateway/CatalogPolicyFilter.java' if config.get('catalog_policy') else None
+            result['launcher'] = runtime_inputs.compile_launcher(java_home, output / 'servlet', output / 'launcher', policy_source)
             invocation['runtime'] = {'source': str(build / 'work/source'), 'java_home': str(java_home),
                 'servlet': str(output / 'servlet'), 'launcher': str(output / 'launcher'),
                 'war': inventory['war_path'], 'war_sha256': expected_war,
@@ -254,6 +263,8 @@ def run(args):
                     target = destination / component / source.relative_to(HERE.parent / component)
                     target.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copyfile(source, target)
+        if config.get('catalog_policy'):
+            shutil.copytree(HERE.parents[1] / 'services/control-plane/ambisgis_policy', destination / 'geonode/ambisgis_policy', ignore=shutil.ignore_patterns('__pycache__'))
         snapshot = {str(p.relative_to(destination)): digest(p) for p in destination.rglob('*') if p.is_file()}
         save(output / 'tooling.json', snapshot)
         invocation['environment']['PYTHONPATH'] = str(destination / 'geonode')
@@ -313,6 +324,7 @@ if __name__ == '__main__':
     parser.add_argument('--python', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--integration', action='store_true')
+    parser.add_argument('--catalog-policy', action='store_true')
     parser.add_argument('--strict-verifier', action='store_true')
     parser.add_argument('--strict-roles', action='store_true')
     parser.add_argument('--build', type=Path)
