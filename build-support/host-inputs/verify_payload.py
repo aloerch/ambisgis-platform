@@ -58,6 +58,7 @@ def is_build_input(path, selected):
     return (str(path) in selected or str(path.resolve()) in selected or
             str(path).startswith(('/usr/include/', '/usr/lib64/gcc/', '/usr/lib/gcc/',
                                  '/usr/lib64/python3.13/', '/usr/lib/python3.13/',
+                                 '/usr/lib64/python3.12/', '/usr/lib/python3.12/',
                                  '/usr/share/perl5/', '/usr/lib/perl5/', '/usr/lib64/perl5/',
                                  '/usr/share/cmake', '/usr/share/bison/', '/usr/share/aclocal/')))
 

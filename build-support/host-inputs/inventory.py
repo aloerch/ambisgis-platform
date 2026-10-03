@@ -228,6 +228,12 @@ def inventory(args):
             row['repository_url'] = catalog['repository_url']
             (binary if catalog['kind'] == 'binary' else sources).append(row)
     paths = selected_paths(observation)
+    for requested in args.file:
+        path = Path(requested).resolve(strict=True)
+        if not str(path).startswith(('/usr/', '/bin/', '/sbin/', '/lib/', '/lib64/')) or not path.is_file():
+            raise ValueError('Additional observed input must be a system build file')
+        paths.append(str(path))
+    paths = sorted(set(paths))
     generated_resources = []
     if args.runtime_observation:
         runtime = json.loads(args.runtime_observation.read_text())
@@ -270,6 +276,7 @@ def inventory(args):
         'metadata': pinned['metadata'], 'source_metadata': pinned['source_metadata'],
         'metadata_catalogs': catalogs,
         'selection_paths': paths, 'explicit_packages': args.package,
+        'additional_observed_files': args.file,
         'selected_file_observations': [{'path': path, 'sha256': digest(path),
                                         'bytes': Path(path).stat().st_size} for path in paths],
         'linkage_exceptions': [{'path': row['resolved'], 'reason': 'Verified shebang script; observed ldd says not a dynamic executable. Interpreter/provider dependencies are retained separately.'}
@@ -298,6 +305,7 @@ def main():
     parser.add_argument('--catalogs', type=Path)
     parser.add_argument('--runtime-observation', type=Path)
     parser.add_argument('--package', action='append', default=[])
+    parser.add_argument('--file', action='append', default=[])
     parser.add_argument('--output', type=Path, required=True)
     return inventory(parser.parse_args())
 
