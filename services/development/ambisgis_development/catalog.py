@@ -14,6 +14,8 @@ from .startup_diagnostics import stage as startup_stage
 def setup(role):
     os.environ['AMBISGIS_SERVICE_ROLE'] = role
     os.environ['DJANGO_SETTINGS_MODULE'] = 'ambisgis_development.catalog_settings'
+    from .catalog_compat import activate_distutils
+    activate_distutils()
     import django
     django.setup()
 
