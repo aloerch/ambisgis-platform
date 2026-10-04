@@ -2,6 +2,8 @@
 import json
 import sys
 
+from .startup_diagnostics import failure_record
+
 
 def main(arguments=None):
     arguments = sys.argv[1:] if arguments is None else arguments
@@ -26,7 +28,7 @@ def main(arguments=None):
 if __name__ == '__main__':
     try:
         main()
-    except Exception:
+    except Exception as error:
         # Never emit exception values/locals containing database URLs or secrets.
-        print(json.dumps({'event': 'service_start_failed', 'detail': 'Inspect installation state and owned dependency readiness.'}), file=sys.stderr)
+        print(json.dumps(failure_record(error)), file=sys.stderr)
         raise SystemExit(1)
