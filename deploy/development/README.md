@@ -127,3 +127,39 @@ and all other bundle/configuration contracts remain unchanged. Choose supported
 paths before creating a new installation; this capability does not authorize an
 automatic relocation or upgrade of existing state. Filesystem/inert tests of
 these checks do not qualify an actual installation or replace native acceptance.
+
+The optional `runtime.dns_profile: "native-direct-v1"` capability selects the
+retained netavark direct aardvark-DNS launch path. The immutable bundle must
+specify exactly `runtime.environment.PATH: ["runtime/bin", "runtime/helpers"]`.
+The selected bundle path cannot contain a colon, independently of the optional
+ASCII path profile, because it would create additional PATH lookup locations.
+Every load, including init, reinit and runtime preflight, rejects any filesystem
+object named `systemd-run` in either directory or `/usr/sbin`. This includes
+non-executable files, directories, special files and dangling links. The two
+bundle directories remain subject to the full manifested closure and symlink
+checks; no inherited caller PATH is consulted. A lookup that cannot be checked
+fails closed. These checks run before installation/lock/runtime directory
+creation or native execution, preserving existing configuration and credentials
+on rejection. They never remove or modify host files.
+
+The exact retained native launcher appends `/usr/sbin` unless its PATH string
+already contains that substring. This capability conservatively requires
+`/usr/sbin/systemd-run` to be absent even in the substring case. It is an explicit
+host prerequisite, not a request to uninstall a host utility. A host or bundle
+that fails it requires a separately qualified selection. An omitted capability
+retains legacy behavior; unknown, null and non-string values are rejected. The
+schema version, owned health-timer selector and other runtime boundaries remain
+unchanged.
+
+The direct path retains the existing rootless network namespace, fixed aardvark
+binary/configuration/port, PID file and native DNS update/teardown logic. It does
+not create a separate DNS systemd scope. The daemon inherits its launching
+cgroup; the retained daemonization attempts `setsid` without enforcing success.
+Neither that behavior nor a passing bundle guard proves survival after a user
+session or parent cgroup is stopped. Actual DNS resolution, observed executable,
+PID/start time, namespace/session/cgroup identities, persistence after CLI exit,
+repeated startup, and last-container-stop PID/listener cleanup and recreation
+remain required installation checks. Native readiness notification precedes
+confirmation of all DNS listener binds, so it is not itself a DNS success oracle.
+No new runtime success or full installation acceptance is claimed by these
+filesystem/inert tests.

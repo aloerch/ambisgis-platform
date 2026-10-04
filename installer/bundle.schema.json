@@ -158,6 +158,12 @@
           "enum": [
             "owned-health-timer-ascii-v1"
           ]
+        },
+        "dns_profile": {
+          "type": "string",
+          "enum": [
+            "native-direct-v1"
+          ]
         }
       },
       "required": [
