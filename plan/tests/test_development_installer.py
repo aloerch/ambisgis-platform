@@ -819,6 +819,89 @@ class InstallerStateTests(unittest.TestCase):
             with self.assertRaisesRegex(InstallError, 'Checkpoint/restore'): selected.image('database')
 
 
+    def test_path_profile_bad_installation_leaves_no_first_init_state(self):
+        self.document['runtime']['path_profile'] = 'owned-health-timer-ascii-v1'
+        self.seal()
+        for name in ('has space','has:colon','caf\u00e9','has$dollar','has%percent','has\\slash','has\nline','has\ttab'):
+            self.root = self.base / name
+            with self.subTest(name=repr(name)), self.assertRaisesRegex(InstallError,'ASCII'):
+                self.init()
+            self.assertFalse(self.root.exists())
+
+    def test_path_profile_bad_bundle_leaves_installation_absent(self):
+        import shutil
+        self.document['runtime']['path_profile'] = 'owned-health-timer-ascii-v1'
+        self.seal()
+        for name in ('bundle space','bundle:colon','bundl\u00e9','bundle$dollar','bundle%percent','bundle\\slash','bundle\nline','bundle\ttab'):
+            copied = self.base / name
+            shutil.copytree(self.inputs,copied)
+            with self.subTest(name=repr(name)),self.assertRaisesRegex(InstallError,'ASCII'):
+                config.initialize(self.root,copied/'bundle.json',self.identity)
+            self.assertFalse(self.root.exists())
+
+    def test_path_profile_unknown_values_are_not_legacy(self):
+        for value in (None,False,0,[],{},'', 'unknown'):
+            self.document['runtime']['path_profile']=value;self.seal()
+            with self.subTest(value=value),self.assertRaisesRegex(InstallError,'path profile'):
+                self.init()
+            self.assertFalse(self.root.exists())
+
+    def test_path_profile_allowed_names_preserve_reinitialization(self):
+        self.document['runtime']['path_profile']='owned-health-timer-ascii-v1';self.seal()
+        self.root=self.base/'Install_A-9.v1'
+        first=self.init();before=self.state();second=self.init()
+        self.assertEqual(first['install_id'],second['install_id'])
+        self.assertFalse(second['created']);self.assertEqual(before,self.state())
+        selected=runtime.Runtime(self.root)
+        self.assertEqual(selected.bundle_root,self.inputs)
+        self.assertTrue((self.root/'runtime').is_dir())
+
+    def test_path_profile_legacy_bundle_retains_unicode_and_space_support(self):
+        import shutil
+        copied=self.base/'Legacy bundle caf\u00e9';shutil.copytree(self.inputs,copied)
+        self.root=self.base/'Legacy installation caf\u00e9'
+        result=config.initialize(self.root,copied/'bundle.json',self.identity)
+        self.assertTrue(result['created'])
+        self.assertNotIn('path_profile',bundle.load(copied/'bundle.json',self.identity)['runtime'])
+
+    def test_path_profile_failed_reinit_and_runtime_preserve_existing_state(self):
+        self.root=self.base/'existing space';self.init()
+        self.document['runtime']['path_profile']='owned-health-timer-ascii-v1';self.seal()
+        # Deliberately constructed synthetic existing state binds the new
+        # manifest; this test does not perform a product upgrade/migration.
+        path=self.root/'product.json';value=json.loads(path.read_bytes())
+        value['bundle']['sha256']=self.identity;path.write_bytes(canonical(value))
+        (self.root/'.lock').unlink();before=self.state()
+        with self.assertRaisesRegex(InstallError,'ASCII'):self.init()
+        self.assertEqual(before,self.state());self.assertFalse((self.root/'.lock').exists())
+        with patch.object(runtime.Runtime,'run',side_effect=AssertionError('No native call permitted')) as run:
+            for command in (runtime.Runtime,runtime.up,runtime.status,runtime.doctor):
+                with self.subTest(command=command.__name__),self.assertRaisesRegex(InstallError,'ASCII'):command(self.root)
+                self.assertEqual(before,self.state())
+                self.assertFalse((self.root/'runtime').exists());self.assertFalse((self.root/'.lock').exists())
+            run.assert_not_called()
+
+    def test_path_profile_pure_path_validation_is_exact_and_read_only(self):
+        selected={'runtime':{'path_profile':'owned-health-timer-ascii-v1'}}
+        for invalid in ('/','relative','//double','/double//slash','/trailing/','/dot/./path','/parent/../path','/space here','/caf\u00e9','/colon:path','/dollar$','/percent%','/back\\slash','/new\nline','/tab\tpath'):
+            for field in ('install','bundle'):
+                with self.subTest(invalid=repr(invalid),field=field),self.assertRaisesRegex(InstallError,'ASCII'):
+                    bundle.validate_runtime_paths(selected,invalid if field=='install' else '/valid-install',bundle_root=invalid if field=='bundle' else '/valid-bundle')
+        self.assertIsNone(bundle.validate_runtime_paths(selected,'/Valid_9/.hidden/a-b',bundle_root='/Good.Bundle_1'))
+        self.assertIsNone(bundle.validate_runtime_paths({'runtime':{}},'/legacy space',bundle_root='/legacy\u00e9'))
+
+    def test_path_profile_schema_matches_optional_enum(self):
+        import jsonschema
+        schema=json.loads((Path(__file__).resolve().parents[2]/'installer/bundle.schema.json').read_bytes())
+        validator=jsonschema.Draft202012Validator(schema)
+        self.assertEqual(list(validator.iter_errors(self.document)),[])
+        for value in ('owned-health-timer-ascii-v1',None,False,0,[],{},'', 'unknown'):
+            value_document=copy.deepcopy(self.document);value_document['runtime']['path_profile']=value
+            errors=list(validator.iter_errors(value_document))
+            if value=='owned-health-timer-ascii-v1':self.assertEqual(errors,[])
+            else:self.assertTrue(errors)
+
+
 class RuntimeOutputTests(unittest.TestCase):
     """Exercise real subprocess streams with a tiny local Python producer.
 

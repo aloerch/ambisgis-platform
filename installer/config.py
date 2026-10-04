@@ -146,6 +146,7 @@ def render(root, config, selection):
 def initialize(directory, bundle_path, bundle_sha256, *, port=None, owner=None, viewer=None):
     root = checked_path(directory)
     selection = bundle.load(bundle_path, bundle_sha256)
+    bundle.validate_runtime_paths(selection, root, bundle_root=checked_path(bundle_path).parent)
     # Never adopt preexisting application/user data by directory title. An
     # interrupted first init without its final configuration fails closed.
     if root.exists() and not (root / 'product.json').exists() and any(root.iterdir()):

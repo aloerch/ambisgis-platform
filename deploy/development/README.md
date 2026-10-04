@@ -96,3 +96,34 @@ dependencies keep their own notices, corresponding sources and restrictions.
 Waitress 3.0.2 requires both its exact source LICENSE/COPYRIGHT and the complete
 vendored wasyncore notice beside software and supporting documentation. No
 product distribution, signing or organizational deployment approval is implied.
+
+
+The owned native health-timer bundle declares optional
+`runtime.path_profile: "owned-health-timer-ascii-v1"` in its immutable bundle
+manifest. That capability requires clean absolute selected bundle and
+installation paths containing only ASCII letters, digits, slash, dot, underscore
+and hyphen. Root `/`, parent components, spaces, non-ASCII, colon, dollar,
+percent, backslash and control bytes are unsupported. Existing `Path` lexical
+normalization of equivalent raw spellings, such as repeated separators and
+single-dot components, remains unchanged; validation applies to the resulting
+selected paths. The pure validator itself requires a clean spelling. The
+restriction prevents ambiguous loader PATH components and systemd interpolation;
+it is checked before first-init directories, reinit writes, runtime directories,
+command-lock creation or native calls. `doctor` reports the same specific path
+error before inspecting services. No filesystem relocation or state rewrite is
+performed, and existing credentials/data are preserved on rejection.
+
+The shared pure `validate_runtime_paths(selected_bundle, install_root,
+bundle_root=...)` receives the verified bundle and its explicit location. Bundle
+load validates its own root; init and Runtime additionally validate the actual
+installation root. Public runtime commands perform a read-only preflight before
+the command lock, then repeat validation under the lock. The owned producer also
+checks its computed physical bundle root in the shell launcher before loading
+retained Python/libraries; that producer guard is maintained separately.
+
+The field is optional: bundles without it retain their existing path behavior.
+Unknown or non-string profile values are rejected, including null. Version1
+and all other bundle/configuration contracts remain unchanged. Choose supported
+paths before creating a new installation; this capability does not authorize an
+automatic relocation or upgrade of existing state. Filesystem/inert tests of
+these checks do not qualify an actual installation or replace native acceptance.
