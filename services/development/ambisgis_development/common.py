@@ -90,8 +90,42 @@ def request(origin, method, path, *, headers=None, body=None, limit=4 * 1024 * 1
 def serve(application, port=8000):
     # Waitress is a separately retained, reviewed dependency supplied by the
     # image assembler. Never import/install it during bundle discovery/init.
-    from waitress import serve as run
-    run(application, host='0.0.0.0', port=port, threads=4, connection_limit=64,
-        backlog=64, channel_timeout=20, cleanup_interval=5, max_request_header_size=16384,
-        max_request_body_size=65536, expose_tracebacks=False, ident='AmbisGIS',
-        clear_untrusted_proxy_headers=True, trusted_proxy=None, channel_request_lookahead=0)
+    import logging
+    import signal
+    from waitress import create_server, wasyncore
+    from waitress.task import ThreadedTaskDispatcher
+
+    stopping = False
+    def request_stop(signum, frame):
+        nonlocal stopping
+        stopping = True
+
+    channels, previous = {}, {}
+    dispatcher = ThreadedTaskDispatcher()
+    try:
+        for signum in (signal.SIGTERM, signal.SIGINT):
+            previous[signum] = signal.signal(signum, request_stop)
+        logging.basicConfig()
+        dispatcher.set_thread_count(4)
+        server = create_server(application, map=channels, _dispatcher=dispatcher,
+            host='0.0.0.0', port=port, threads=4, connection_limit=64,
+            backlog=64, channel_timeout=20, cleanup_interval=5, max_request_header_size=16384,
+            max_request_body_size=65536, expose_tracebacks=False, ident='AmbisGIS',
+            clear_untrusted_proxy_headers=True, trusted_proxy=None, channel_request_lookahead=0)
+        server.print_listen('Serving on http://{}:{}')
+        while channels and not stopping:
+            wasyncore.loop(timeout=0.25, count=1, map=channels,
+                           use_poll=server.adj.asyncore_use_poll)
+    finally:
+        try:
+            try:
+                dispatcher.shutdown(timeout=5)
+                # Waitress returns True even when its bounded wait expires.
+                with dispatcher.lock:
+                    if dispatcher.threads:
+                        raise RuntimeError('service worker shutdown incomplete')
+            finally:
+                wasyncore.close_all(channels)
+        finally:
+            for signum, handler in previous.items():
+                signal.signal(signum, handler)
