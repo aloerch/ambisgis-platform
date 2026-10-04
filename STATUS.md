@@ -18,64 +18,21 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 remains In progress after sixteen preserved ordinary installation failures.
-Local candidate `5b8dc2a8ae71a821ab39e73431421eebf695e839` and bundle021 use images
-built from `bdd0736d22fae4956a67d4c370e58515b224b291`. The retained 19:55:10 UTC
-readback still shows [draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78)
-open and unmerged at `1baae0f48bcd69cb709e1aa0cfec80ba0895790b`; the fifteen
-reachable platform commits through the candidate are not yet published.
+PLT-01 remains In progress. Eighteen ordinary failures remain preserved; attempt019 completed twenty recorded stages and four protected journeys but returned incomplete because six DNS namespace-binding observations are unsupported. Full installation, P1 and scoped MVP acceptance remain open.
 
-The importer shuts down both queues. Three real predecessor regression cases
-failed and the same three fixed cases passed; the fresh serial owned aggregate
-separately passed its three focused Maven tests. Genuine per-root Git metadata,
-9,208 locked inputs and strict artifact revision checks bind the owned sources.
-[GeoServer PR #1](https://github.com/aloerch/ambisgis-geoserver/pull/1) and
-[GeoTools PR #1](https://github.com/aloerch/ambisgis-geotools/pull/1) merged normally
-with trees equal to the compiled revisions. Earlier build failures remain
-retained. No full-WAR byte reproducibility or diagnostic003 thread-owner claim
-is made.
+The reviewed local source is dfba5a60527a0eb2ffa0aef67310f02467e5617a with 1,549 source files. Images025/026 retain source cb057e3ef38013865e25a3cb9c864e26db02cff7; bundle023 binds the current installer source and passes independent review for 1,320 runtime files, 374 ELF objects and twelve host prerequisites. Only two installer modules and custody differ from bundle022; image, native, WAR and Java bytes are unchanged. The latest 23:34:50 UTC readback still shows platform PR78 open and draft at 73eda452935ee8e42e2e38c1d646b0e5e643ce6c; this later source/outcome increment is not yet published.
 
-Historical initializer004 completed at source869/bundle020. Full attempt015
-later failed; its reviewed effects retain catalog exit137, a known pause and
-six unavailable process reads. The subsequent created-state, rootlessport and
-shared-service shutdown repairs have source and native-fixture evidence.
-Validation030 passed 40 image-helper, 77 runtime, 121 development, 682 package
-and ten schema checks; validation031 repeated 77/682/10 with explicit unchanged
-40/121 reuse. All 1,545 tracked source files matched the recorded checks.
-Images023/024 are byte-identical and independently reviewed. Bundle021 audit003
-passed for 1,320 runtime files, 374 ELF objects and twelve host prerequisites;
-the earlier two auditor schema failures remain preserved.
+The sequence-visibility correction grants only SELECT on exact transport-owner/public sequences. The old synthetic visibility check failed and 41 fixed PostgreSQL checks passed; advancement, DDL and delegation remain denied. Normal integration, paired images025/026 and bundle022 were independently reviewed. This does not reopen DB03 acceptance.
 
-Actual attempt016 completed relocation and fresh initialization, then `up`
-returned1 with 622 stdout bytes and no stderr. GeoServer serving reached
-Hibernate validation, which reported a missing `hibernate_sequence`. Database
-and catalog health was healthy; gateway was unhealthy and GeoServer remained
-starting. The full readiness milestone and later GIS, authorization, persistence,
-recovery and DNS journeys did not pass. Final reviewed accounting found all six
-roles nonrunning: database/catalog/gateway exit0, GeoServer exit1, and both
-initializers absent. Eight known timer/service units were not loaded. The owned
-pause remains, six process observations were unavailable, and DNS/global helper
-cleanup is unverified. No observer signal, retry or deletion was performed.
+Attempt017 reached useful readiness, then the DNS helper failed ValueError before any protected journey. A reviewed host-only correction verifies fresh exact root0 UID/GID mappings while retaining file, mount and race guards. Attempt018 passed DNS wire and its initial 138-request journey, then timed out during restart. Retained source and filesystem evidence demonstrated a tmpfs restart-mode defect; the original exception frame remains unobserved. Declaring and validating mode1777 produced bundle023 without changing images. Fresh checks passed 132 development, 77 runtime, 692 package and ten schemas with zero skips; unchanged 40 image-helper checks are explicitly reused.
 
-Retained Hibernate and PostgreSQL source demonstrates a sequence-metadata
-visibility mismatch for the read-only transport role. A separate frozen proposal
-grants SELECT only on exact owner/public sequences and preserves advancement,
-DDL and delegation denials. Seven inert guards changed from five baseline
-failures to seven passes. Root's actual fresh PostgreSQL regression reproduced
-the baseline visibility failure and passed all 41 fixed cases; both clusters
-stopped. Independent review of that native evidence remains pending in this
-snapshot. The proposal is not integrated or published in this candidate. Source
-evidence does not independently prove the original installation's sequence state.
-[Evidence016](plan/verification/plt01-lifecycle/evidence-016.json) binds the exact
-facts and limits. PLT-01, full P1 and scoped MVP acceptance remain open.
+Attempt019 passed initial readiness and four DNS wire checks, then all four protected map/query/metadata journeys across restart, reinitialization and dependency recovery. The journeys recorded 552 data requests: 88 responses200, 428 responses403 and 36 responses404, including 328 route negatives, sixteen map/query oracles and four restored native policies. Metadata and credentials persisted; stopping the renderer produced the expected useful failure and recovery restored service. Ten cleanup sessions recorded 28 successful token revocations with no unaccounted issuance principal. This count excludes OAuth traffic and the separate liveness request and does not prove 28 distinct token values.
 
-The targeted runtime qualification remains held and unexecuted. Native Goal
-was blocked in the latest retained root-tool observation, recorded at 19:36:07
-UTC on 4 October 2026, with 12,420,153 tokens and 30,612 seconds reported and no
-configured budget. This is its record timestamp, not the exact tool-response
-instant. Foreground delivery continues without a native resume claim.
-[Current progress](plan/verification/runtime-recovery/progress-016.json) keeps
-those states separate; `/goal resume` concerns native automatic continuation only.
+Independent final accounting found all six roles nonrunning: database/catalog/gateway exit0, GeoServer exit143 and two initializers absent. All four retained health snapshots were healthy, but services are stopped. Eight current service/conmon PIDs were absent and eight exact persisted timer/service units were not loaded. A verified pause remains and five process observations were unavailable. Three stored native errors match the owned already-running start-state error; their originating operation/time is unrecorded. GeoServer 143 is not clean exit0. DNS daemon cleanup is verified, while namespace binding, overall DNS cleanup and global helper absence remain unverified.
+
+The next safe work is bounded ordinary concurrent CLI init/up verification and the reviewed source/outcome publication gates. The separate targeted qualification remains held and unexecuted. Native Goal remains blocked in root tool testimony recorded 23:34:50 UTC, with 12,420,153 tokens used, 30,612 seconds and no configured token budget; the record time is not the precise response instant. Foreground work continues without a native resume claim.
+
+See [evidence018](plan/verification/plt01-lifecycle/evidence-018.json) and [progress018](plan/verification/runtime-recovery/progress-018.json).
 
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.

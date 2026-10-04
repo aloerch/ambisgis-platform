@@ -1,22 +1,20 @@
-# Current plan-package pointer — 4 October 2026 UTC
+# Current delivery status
 
-The authoritative checkpoint is [the repository status](../STATUS.md).
-DB-03 and all accepted foundations remain unchanged. PLT-01 remains In progress
-after sixteen ordinary failures. Owned GeoServer/GeoTools source repairs merged;
-historical initializer004 completed. The reviewed runtime repairs, validation030
-(40/77/121/682/10), validation031 (77/682/10 with40/121 reuse), images023/024 and
-bundle021 are complete source/artifact evidence, not installation acceptance.
-Actual016 failed readiness with a GeoServer Hibernate sequence-validation error.
-Reviewed effects record all six roles nonrunning, database/catalog/gateway exit0,
-GeoServer exit1 and eight known units not loaded. A pause remains, six process
-reads were unavailable, and DNS/global helper cleanup is unverified. The isolated
-SELECT-only sequence-visibility proposal has seven passing inert guards and an
-actual 41-case PostgreSQL pass after an expected baseline failure; both fresh
-clusters stopped. Native-evidence review and integration remain pending here.
-Local candidate5b8
-remains distinct from published draft1ba and image-sourcebdd073.
-[Current evidence](verification/runtime-recovery/progress-016.json) separates
-foreground work from the blocked native Goal observation recorded19:36:07 UTC.
+PLT-01 remains In progress. Eighteen ordinary failures remain preserved; attempt019 completed twenty recorded stages and four protected journeys but returned incomplete because six DNS namespace-binding observations are unsupported. Full installation, P1 and scoped MVP acceptance remain open.
+
+The reviewed local source is dfba5a60527a0eb2ffa0aef67310f02467e5617a with 1,549 source files. Images025/026 retain source cb057e3ef38013865e25a3cb9c864e26db02cff7; bundle023 binds the current installer source and passes independent review for 1,320 runtime files, 374 ELF objects and twelve host prerequisites. Only two installer modules and custody differ from bundle022; image, native, WAR and Java bytes are unchanged. The latest 23:34:50 UTC readback still shows platform PR78 open and draft at 73eda452935ee8e42e2e38c1d646b0e5e643ce6c; this later source/outcome increment is not yet published.
+
+The sequence-visibility correction grants only SELECT on exact transport-owner/public sequences. The old synthetic visibility check failed and 41 fixed PostgreSQL checks passed; advancement, DDL and delegation remain denied. Normal integration, paired images025/026 and bundle022 were independently reviewed. This does not reopen DB03 acceptance.
+
+Attempt017 reached useful readiness, then the DNS helper failed ValueError before any protected journey. A reviewed host-only correction verifies fresh exact root0 UID/GID mappings while retaining file, mount and race guards. Attempt018 passed DNS wire and its initial 138-request journey, then timed out during restart. Retained source and filesystem evidence demonstrated a tmpfs restart-mode defect; the original exception frame remains unobserved. Declaring and validating mode1777 produced bundle023 without changing images. Fresh checks passed 132 development, 77 runtime, 692 package and ten schemas with zero skips; unchanged 40 image-helper checks are explicitly reused.
+
+Attempt019 passed initial readiness and four DNS wire checks, then all four protected map/query/metadata journeys across restart, reinitialization and dependency recovery. The journeys recorded 552 data requests: 88 responses200, 428 responses403 and 36 responses404, including 328 route negatives, sixteen map/query oracles and four restored native policies. Metadata and credentials persisted; stopping the renderer produced the expected useful failure and recovery restored service. Ten cleanup sessions recorded 28 successful token revocations with no unaccounted issuance principal. This count excludes OAuth traffic and the separate liveness request and does not prove 28 distinct token values.
+
+Independent final accounting found all six roles nonrunning: database/catalog/gateway exit0, GeoServer exit143 and two initializers absent. All four retained health snapshots were healthy, but services are stopped. Eight current service/conmon PIDs were absent and eight exact persisted timer/service units were not loaded. A verified pause remains and five process observations were unavailable. Three stored native errors match the owned already-running start-state error; their originating operation/time is unrecorded. GeoServer 143 is not clean exit0. DNS daemon cleanup is verified, while namespace binding, overall DNS cleanup and global helper absence remain unverified.
+
+The next safe work is bounded ordinary concurrent CLI init/up verification and the reviewed source/outcome publication gates. The separate targeted qualification remains held and unexecuted. Native Goal remains blocked in root tool testimony recorded 23:34:50 UTC, with 12,420,153 tokens used, 30,612 seconds and no configured token budget; the record time is not the precise response instant. Foreground work continues without a native resume claim.
+
+See [evidence018](verification/plt01-lifecycle/evidence-018.json) and [progress018](verification/runtime-recovery/progress-018.json).
 
 ## Historical plan-package checkpoints follow unchanged
 

@@ -1,0 +1,330 @@
+{
+  "artifacts": {
+    "assembler_sha256": "10aa86430bf28305cb4017a7ac1c10af626c3553fba8c7fe4897eacc0b50775e",
+    "bundle": "023",
+    "bundle_candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+    "bundle_review": {
+      "evidence_id": "bundle023-review",
+      "sha256": "ec81567ff02f21536c78aebdae2070b9d660d633b4034f040bda5aa83ec3c3c2"
+    },
+    "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
+    "elf_objects": 374,
+    "host_prerequisites": 12,
+    "image_native_war_java_bytes_unchanged_from022": true,
+    "image_review": {
+      "evidence_id": "images025-review",
+      "sha256": "55956c70c5dd299cedde6d8ec7904841eb8b6e3d6d4e4ce975c1f0fdd0ace9a3"
+    },
+    "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+    "images": "025/026",
+    "new_bundle_runtime_delta": [
+      "runtime/modules/installer/config.py",
+      "runtime/modules/installer/runtime.py",
+      "runtime/configuration/custody.json"
+    ],
+    "paired_archives_byte_identical": true,
+    "paired_roles": 4,
+    "runtime_executed_during_assembly_or_audit": false,
+    "runtime_files": 1320
+  },
+  "checks": {
+    "all_exit_codes_zero": true,
+    "dns_host_validation": {
+      "development": 132,
+      "package": 689,
+      "schemas": 10
+    },
+    "explicit_unchanged_reuse": {
+      "image_helpers": 40
+    },
+    "final_document_package_schema_checks": "Pending fresh post-document checks before publication; not credited here.",
+    "reuse_limit": "Image inputs and helper sources are unchanged from the independently reviewed images025/026 and runtime-validation032 lineage. Earlier native fixture and source reviews are reused only for their unchanged scope.",
+    "scope": "Source/helper/package/schema checks and a separate synthetic PostgreSQL fixture; actual ordinary journeys are recorded separately.",
+    "sequence_native_fixed": 41,
+    "sequence_validation": {
+      "development": 121,
+      "package": 689,
+      "schemas": 10
+    },
+    "skips": 0,
+    "source_files": 1549,
+    "tmpfs_validation": {
+      "development": 132,
+      "package": 692,
+      "runtime": 77,
+      "schemas": 10
+    }
+  },
+  "completed_source_and_artifact_boundary": "SELECT-only transport sequence visibility, fresh mapped-owner DNS resolver validation, and explicit tmpfs restart permissions are integrated and independently reviewed. Images025/026 remain exact; bundle023 changes only two installer modules and custody. Actual019 completes four protected journeys and persistence/reinitialization/recovery but remains incomplete because six DNS namespace-binding observations are unsupported.",
+  "current_task": {
+    "branch": "plt-01/development-install",
+    "delivery": "In progress",
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "id": "PLT-01",
+    "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+    "local_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+    "published_head": "73eda452935ee8e42e2e38c1d646b0e5e643ce6c",
+    "published_readback_at": "2026-10-04T23:34:50.719935+00:00"
+  },
+  "foreground_delivery": "active",
+  "held_targeted_probe_executed": false,
+  "installation_accepted": false,
+  "last_completed_accepted_task": {
+    "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
+    "implementation": "Typed branch snapshots and durable private creation/activation, finite quotas and lifecycle metadata",
+    "limitations": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open.",
+    "merge": "DB-03 PR13 13fb7c9bff9d011838b768802a6ab63f932bd228",
+    "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified."
+  },
+  "latest_application_diagnostic": {
+    "applicability": "Historical initializer004 diagnostic only. Its limited result is preserved; subsequent full019 outcome and remaining DNS limits are recorded separately here.",
+    "bundle": "020",
+    "complete_output_retained": true,
+    "database_readiness_passed": true,
+    "effects": {
+      "all_helpers_gone": false,
+      "dns_cleanup_verified": false,
+      "guard_wrapper_child_absent": true,
+      "independent_review": "PASS_RETAINED_DIAGNOSTIC_SUCCESS_EFFECTS_REVIEW",
+      "known_persisted_units_not_loaded": true,
+      "owned_pause_retained": true,
+      "owned_services_stopped": true,
+      "persistent_data_preserved": true,
+      "root_reconciled": true,
+      "runtime_configuration_unchanged": true
+    },
+    "initializer_exit_code": 0,
+    "name": "geoserver-init-replay-004",
+    "original_and_three_prior_diagnostics_unchanged": true,
+    "outer_deadline_seconds": 240,
+    "persistent_initialized_marker_verified": true,
+    "private_capture_bytes": {
+      "stderr": 960,
+      "stdout": 5672
+    },
+    "python_java_deadline_seconds": 180,
+    "scope": "Fresh private standard database and ordinary GeoServer initializer only; no catalog/gateway/serving/full installation journey.",
+    "source_head": "869db18865e16287c9f029fcbd732be9bd797a3b",
+    "status": "COMPLETED_PRIVATE_INITIALIZER_OBSERVATION"
+  },
+  "latest_completed_ordinary_attempt": {
+    "attempt": 19,
+    "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
+    "completed_protected_journeys": 4,
+    "count_limits": "552 recorded data requests exclude OAuth traffic and the separate gateway liveness request. Twenty-eight recorded revocations across ten cleanup sessions are not a claim of twenty-eight distinct token values.",
+    "dns": {
+      "classification": "namespace_binding_unavailable",
+      "daemon_cleanup_driver_verified": true,
+      "exact_mapped_owner_proofs": 4,
+      "fixed_database_udp_queries_verified": 4,
+      "incomplete_checks": 6,
+      "namespace_binding_verified": false,
+      "overall_cleanup_verified": false,
+      "running_identity_observations": 4,
+      "shutdown_observations": 2
+    },
+    "driver_shutdown": {
+      "dns_daemon_cleanup_verified": true,
+      "dns_namespace_binding_verified": false,
+      "dns_overall_cleanup_verified": false,
+      "persistent_data_preserved": true,
+      "running_services": 0
+    },
+    "error_type_recorded": false,
+    "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
+    "finished_at": "2026-10-04T23:20:38.556361+00:00",
+    "full_installation_acceptance": false,
+    "held_targeted_probe_executed": false,
+    "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+    "journey_totals": {
+      "completed_journeys": 4,
+      "data_requests": 552,
+      "data_status_counts": {
+        "200": 88,
+        "403": 428,
+        "404": 36
+      },
+      "map_query_oracles": 16,
+      "native_policy_restorations": 4,
+      "post_negative_unchanged_oracles": 20,
+      "recorded_tokens_revoked": 28,
+      "route_negative_cases": 328,
+      "same_token_permission_reads": 60,
+      "token_cleanup_sessions": 10,
+      "unaccounted_issuance_principals": 0
+    },
+    "persistence": {
+      "dependency_recovery_verified": true,
+      "metadata_uuid_and_title_same_all_four_journeys": true,
+      "reinitialization_verified": true,
+      "restart_verified": true,
+      "stop_identity_credentials_unchanged": true,
+      "stopped_renderer_useful_failure_verified": true
+    },
+    "preceding_failed_attempts_preserved": 18,
+    "recorded_driver_stages": [
+      {
+        "at": "2026-10-04T23:06:48.750464+00:00",
+        "name": "verified relocated bundle"
+      },
+      {
+        "at": "2026-10-04T23:06:57.332210+00:00",
+        "name": "fresh init"
+      },
+      {
+        "at": "2026-10-04T23:09:51.121453+00:00",
+        "name": "fresh up status doctor"
+      },
+      {
+        "at": "2026-10-04T23:09:51.126535+00:00",
+        "name": "native DNS after initial CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:10:20.195211+00:00",
+        "name": "DNS wire after initial CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:11:40.765295+00:00",
+        "name": "protected map query metadata journey"
+      },
+      {
+        "at": "2026-10-04T23:12:01.803513+00:00",
+        "name": "stopped persistent installation"
+      },
+      {
+        "at": "2026-10-04T23:12:18.978040+00:00",
+        "name": "restart preserves metadata and credentials"
+      },
+      {
+        "at": "2026-10-04T23:12:18.988136+00:00",
+        "name": "native DNS after restart"
+      },
+      {
+        "at": "2026-10-04T23:12:49.018705+00:00",
+        "name": "DNS wire after restart"
+      },
+      {
+        "at": "2026-10-04T23:14:16.632183+00:00",
+        "name": "full protected journey after restart"
+      },
+      {
+        "at": "2026-10-04T23:15:36.660669+00:00",
+        "name": "reinitialization preserves metadata and credentials"
+      },
+      {
+        "at": "2026-10-04T23:15:36.677830+00:00",
+        "name": "native DNS after repeated CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:16:07.066502+00:00",
+        "name": "DNS wire after repeated CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:17:34.509878+00:00",
+        "name": "full protected journey after reinitialization"
+      },
+      {
+        "at": "2026-10-04T23:18:07.585126+00:00",
+        "name": "stopped renderer produces useful failure"
+      },
+      {
+        "at": "2026-10-04T23:18:22.319841+00:00",
+        "name": "dependency recovery preserves state"
+      },
+      {
+        "at": "2026-10-04T23:18:22.345071+00:00",
+        "name": "native DNS after dependency recovery"
+      },
+      {
+        "at": "2026-10-04T23:18:52.634233+00:00",
+        "name": "DNS wire after dependency recovery"
+      },
+      {
+        "at": "2026-10-04T23:20:20.796309+00:00",
+        "name": "full protected journey after dependency recovery"
+      }
+    ],
+    "recorded_stage_count": 20,
+    "reviewed_effects": {
+      "all_four_retained_health_snapshots": "healthy, last five health exit codes zero; services are stopped, so this is not current readiness",
+      "all_helpers_gone": false,
+      "all_six_roles_nonrunning": true,
+      "dns_cleanup_verified": false,
+      "four_present_roles_full_security_passed": true,
+      "geoserver_exit_limit": "Exit143 is compatible with signal15 and is not clean exit0 or independent proof of graceful shutdown.",
+      "guard_wrapper_child_absent": true,
+      "initializers_absent": 2,
+      "known_persisted_timer_service_units_not_loaded": 8,
+      "known_service_conmon_pid_absences": 8,
+      "native_state_limit": "Equality covers only this post-diagnosis final observer, not the earlier lifecycle.",
+      "native_state_unchanged_during_final_observer": true,
+      "observer_data_deleted": false,
+      "observer_retry": false,
+      "observer_signals_sent": false,
+      "owned_pause_retained": true,
+      "reconciled": true,
+      "serving_role_exits": {
+        "catalog": 0,
+        "database": 0,
+        "gateway": 0,
+        "geoserver": 143
+      },
+      "stored_native_errors": "Three roles retain the exact owned-source already-running start-state error; operation and time are unrecorded. Fresh retained inspection independently shows exited/Pid0.",
+      "unavailable_process_reads": 5
+    },
+    "source_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+    "started_at": "2026-10-04T23:06:38.631835+00:00",
+    "status": "incomplete"
+  },
+  "mvp_accepted": false,
+  "native_goal": {
+    "assistant_resume_performed": false,
+    "budget_configured": false,
+    "exact_original_trigger": "unknown",
+    "foreground_delivery_continues": true,
+    "held_targeted_probe_executed": false,
+    "native_resume_claimed": false,
+    "original_terminal_cause": "cyber_policy",
+    "recorded_at": "2026-10-04T23:34:50.720439+00:00",
+    "remainingTokens": null,
+    "source": "Root get_goal tool testimony during this foreground context; recording timestamp is not precise tool response instant.",
+    "status": "blocked",
+    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+    "timeUsedSeconds": 30612,
+    "timestamp_meaning": "Persisted root testimony record time, not the precise tool-response instant.",
+    "tokensUsed": 12420153,
+    "updatedAt": 1791034102
+  },
+  "next_action": "Prepare and review bounded ordinary concurrent CLI init/up checks, and publish this reviewed source/outcome increment after final document, history and text gates. DNS namespace-binding and overall cleanup evidence remain incomplete; the separate held targeted qualification stays unexecuted.",
+  "observed_at": "2026-10-04T23:43:43.930813+00:00",
+  "owner_action_required_for_current_safe_work": false,
+  "previous_progress": "progress-016.json",
+  "references": {
+    "plan/verification/plt01-lifecycle/evidence-018.json": {
+      "path": "plan/verification/plt01-lifecycle/evidence-018.json",
+      "sha256": "ac4d85fa15d7fd92dd10506924fc501d3deccce2637487bc4347263e5a6c607b"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Foreground delivery checkpoint; not native Goal automatic continuation.",
+  "source_merges": [
+    {
+      "head": "bb35e79ea6129cbedc3074a1729dba0c6a381965",
+      "merge": "bc0b80af22f6554598bd54c5e03f5bf61dc750d2",
+      "merged_at": "2026-10-04T17:20:31Z",
+      "pr": 1,
+      "repository": "aloerch/ambisgis-geoserver",
+      "tree": "4f6de8ffb4724e427e013ede6ce86c474bf9415c",
+      "url": "https://github.com/aloerch/ambisgis-geoserver/pull/1"
+    },
+    {
+      "head": "9b002d50df9d91e53cd42921510d9fa80d74c82a",
+      "merge": "d360efd79801b0bed1d4a569fd816d1c4de474bc",
+      "merged_at": "2026-10-04T17:20:40Z",
+      "pr": 1,
+      "repository": "aloerch/ambisgis-geotools",
+      "tree": "ae9e0941465a9f5d423e5e11f3e55809d7c3bad1",
+      "url": "https://github.com/aloerch/ambisgis-geotools/pull/1"
+    }
+  ]
+}
