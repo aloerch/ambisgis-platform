@@ -11,6 +11,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -47,6 +48,27 @@ class PublicationGuards(unittest.TestCase):
         actual = q.restore_bundle(bundle, restored, commit, tree, expected, set())
         self.assertEqual(actual['objects'], result['objects'])
         self.assertNotEqual((repo / 'objects').stat().st_ino, (restored / 'objects').stat().st_ino)
+
+    def test_restore_never_starts_automatic_maintenance(self):
+        repo, commit, tree, expected = self.repository()
+        bundle = self.root / 'snapshot.bundle'
+        q.git(repo, 'bundle', 'create', str(bundle), q.REF)
+        trace = self.root / 'restore-trace.jsonl'
+        with patch.dict(q.GIT_ENV, {'GIT_TRACE2_EVENT': str(trace)}):
+            actual = q.restore_bundle(bundle, self.root / 'restored.git',
+                                      commit, tree, expected, set())
+        self.assertEqual((actual['commit'], actual['tree']), (commit, tree))
+        self.assertTrue(actual['stored_equals_reachable'])
+        events = [json.loads(line) for line in trace.read_text().splitlines()]
+        self.assertTrue(any(event.get('event') == 'cmd_name' and
+                            event.get('name') == 'fetch' for event in events),
+                        'trace must observe the actual restore fetch')
+        maintenance = [event for event in events
+                       if event.get('event') == 'child_start' and
+                       any(argument in ('maintenance', 'gc', 'git-maintenance', 'git-gc')
+                           for argument in event.get('argv', []))]
+        self.assertEqual(maintenance, [],
+                         'verified restore must not launch automatic maintenance')
 
     def test_wrong_commit_tree_and_complete_source_inventory(self):
         repo, commit, tree, expected = self.repository()
