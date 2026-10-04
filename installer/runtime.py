@@ -144,10 +144,12 @@ class Runtime:
                 expected = {'8000/tcp': [{'HostIp': '127.0.0.1', 'HostPort': str(self.config['listen']['port'])}]} if role == 'gateway' else {}
                 if ports != expected:
                     raise ValueError()
-                self.container_security(row, role)
+                validation = self.container_security(row, role)
                 state = row['State']
                 results[role] = {'process': 'running' if state.get('Running') else 'stopped',
                                  'engine_health': (state.get('Health') or {}).get('Status', 'unavailable')}
+                if validation == 'created_intent':
+                    results[role].update(process='created', configuration_validation=validation)
             except (KeyError, ValueError, TypeError, AttributeError) as error:
                 raise InstallError('Container ownership, image, ports, security, mounts or namespaces differ from this installation.') from error
         return results
@@ -160,18 +162,37 @@ class Runtime:
         rootless/SELinux/OCI namespace behavior still has native acceptance tests.
         """
         expected = config.compose(self.config, self.selection, self.root)['services'][role]
-        # This Podman version does not expose a HostConfig.Sysctls field. Bind
-        # the actual OCI file named by its inspected OCIConfigPath instead.
+        # A never-started native Configured container is reported as "created".
+        # Its faithful owned inspect projection proves intended sysctls; it does
+        # not prove realized OCI state. Every existing OCI path is still checked.
+        validation = 'realized_oci'
         try:
-            path = checked_path(row['OCIConfigPath'])
-            if not any(path.is_relative_to(self.paths[name]) for name in ('storage', 'run')):
-                raise ValueError('OCI configuration escaped installation storage')
-            info = path.stat()
-            if not stat.S_ISREG(info.st_mode) or info.st_uid != os.getuid() or info.st_mode & 0o022:
-                raise ValueError('unsafe OCI configuration file')
-            oci = read_json(path)
-            if oci['linux']['sysctl'] != expected['sysctls']:
-                raise ValueError('container IPv4-only sysctl drift')
+            if row.get('OCIConfigPath', '') == '':
+                state = row['State']
+                zero_time = '0001-01-01T00:00:00Z'
+                if (state['Status'] != 'created'
+                        or any(state[key] is not False for key in ('Running', 'Paused', 'Dead', 'OOMKilled', 'Restarting'))
+                        or any(type(state.get(key, 0)) is not int or state.get(key, 0) != 0
+                               for key in ('Pid', 'ConmonPid', 'ExitCode'))
+                        or 'Pid' not in state or 'ExitCode' not in state
+                        or state['Error'] != ''
+                        or any(state.get(key, False) is not False for key in ('Checkpointed', 'Restored'))
+                        or state['StartedAt'] != zero_time or state['FinishedAt'] != zero_time):
+                    raise ValueError('missing realized OCI configuration')
+                intended = row['HostConfig']['Sysctls']
+                if type(intended) is not dict or intended != expected['sysctls']:
+                    raise ValueError('container intended IPv4-only sysctl drift')
+                validation = 'created_intent'
+            else:
+                path = checked_path(row['OCIConfigPath'])
+                if not any(path.is_relative_to(self.paths[name]) for name in ('storage', 'run')):
+                    raise ValueError('OCI configuration escaped installation storage')
+                info = path.stat()
+                if not stat.S_ISREG(info.st_mode) or info.st_uid != os.getuid() or info.st_mode & 0o022:
+                    raise ValueError('unsafe OCI configuration file')
+                oci = read_json(path)
+                if oci['linux']['sysctl'] != expected['sysctls']:
+                    raise ValueError('container IPv4-only sysctl drift')
         except (OSError, KeyError, TypeError, ValueError) as error:
             raise InstallError('Container OCI configuration or IPv4-only sysctls differ from this installation.') from error
         host, process = row['HostConfig'], row['Config']
@@ -232,6 +253,7 @@ class Runtime:
                     or mount.get('Mode') not in ('', selected['bind']['selinux'])
                     or mount.get('SubPath') or set(mount.get('Options', [])) - {'rbind', 'bind', 'nosuid', 'nodev', 'noexec'}):
                 raise ValueError('container mount access or source drift')
+        return validation
 
     def network(self):
         name = config.project_name(self.config) + '_internal'
