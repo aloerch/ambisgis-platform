@@ -1,0 +1,80 @@
+{
+  "all_helpers_gone": false,
+  "attempts": 9,
+  "candidate_repair": "Fixed retained GDAL/GEOS Django settings, bounded preservation of fixed startup-failure metadata, and a separate fixed ordinary DNS functional check. All remain subject to independent source review and actual affected installation tests.",
+  "cleanup_limits": "Exact last persisted database timer/service reported not loaded. Owned pause632058/start8334579, data and network deliberately retained; no blanket helper or DNS cleanup acceptance.",
+  "data_deleted": false,
+  "database_observation": {
+    "automatic_restarts": 0,
+    "event": "database_ready",
+    "explicit_health_exec_exit": 0,
+    "final_exit": 0,
+    "final_state": "stopped",
+    "health_exit_codes": [
+      1,
+      0,
+      0
+    ]
+  },
+  "diagnosis": [
+    "New images contain the twelve retained C.utf8 category files and fixed startup diagnostics; paired archives are byte-identical and independently audited.",
+    "Removed catalog initializer output was not retained by the existing runtime; its exact runtime cause remains unknown. Catalog marker and private issuer key exist; no initialized marker was observed.",
+    "Source inspection identifies absent explicit Django GIS-library settings and absent automatic discovery tools despite shipped GDAL/GEOS libraries. Repair and independent implementation review remain pending."
+  ],
+  "dns_cleanup_verified": false,
+  "dns_identity_verified": false,
+  "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+  "failures_retained": 9,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "image_source_head": "58e87e0bc823d9f5644fb4f4123e516aebf1d30e",
+  "last_frozen_bundle_sha256": "bdf1459ddeba71ef50fb723511dc1458aa219b142a4d520022437c56f5a1e839",
+  "last_install_id": "9c899326-3b6d-4972-ac5a-dade9b44ecdb",
+  "last_state": "Relocation/init passed. Database reached useful health and explicit pre-migration health recheck exited0. Catalog initializer started, exited1 and was removed by original --rm. Serving application journeys were not reached.",
+  "observation_corrections": [
+    "Final absence does not mean no initializer was created: retained events show catalog-init start, exit1 and removal.",
+    "The three database health records are initial failure1 followed by success0,0; they are not three successful checks."
+  ],
+  "observed_at": "2026-10-04T04:07:51.937752+00:00",
+  "previous_evidence": "plan/verification/plt01-lifecycle/evidence-008.json",
+  "private_reference_hashes": {
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-adoption009-control-review-001/result.json": "f2ee39a29181ee477b767570d88ffa0493c70dfd325add85a43d67c2c576a1b8",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-images005-independent-review-002/result.json": "ca2e60f258bc3cd092377c73c0e492b479cee7a64065da31787ed2552d3ce68e",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-lifecycle009-evidence-review001/result.json": "0f52909b05ea8f6ff7d9a0c79debd44c5881a866e5dab6a627bda3996db237d2",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-runtime-bundle012-review-001/result.json": "d67da890b7f01ff60277b0cac0642420b02efff396f71f884a16fa6eec47657b",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-pair-002/result.json": "b5f10f7d6d91fcd14f15a62a550d06f408746815c591d6ab9003978e7a2ead41",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-009/read-only-diagnosis-001/database.json": "8e1bab3fe97df045763952f22c61562a1ac8c06bb0a0904c5c37cce74f7b363f",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-009/read-only-diagnosis-001/result.json": "2a8360a7f0bc5a10ed9592f2e5d547884b43dfb5d1a30cbfaa2b50af570f763f",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-009/read-only-state-001/result.json": "c5bb244f1b64ffeb0b152e69eaf402a8a7772b17d9bc762acc20703ccced8352",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-009/read-only-timer-001/result.json": "7a607418d40e068f96e8f411de9873e03d7688a99e5bb72106a1e79b992a5a32",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-013/result.json": "83f719c00efefd1eb577d6b9526eb50e395406abae3f54de97f717d140cd0aa7"
+  },
+  "published_head": "314f11e243a11ed6c494bdd2aa70ef18f4ec049a",
+  "reconciled": true,
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-009.json",
+      "sha256": "8dbf97dd0cbdd583d8845d3f5460ce245fa1fbba84ff77a37308012c01c3403a"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-009.json",
+      "sha256": "44b6af61884ff0c81f9134414ece8d2627cecf81ee4dd5ea58e37955366276c4"
+    }
+  ],
+  "remaining": "Actual catalog/render/gateway initialization, private authorization/map/query/metadata, persistence/recovery, DNS transport/identity/lifetime, original network/OS/concurrency/log/helper criteria and held targeted qualification. PLT-01, P1 and full MVP remain open.",
+  "runtime_executed": true,
+  "schema_version": 1,
+  "source_checks": {
+    "development": 101,
+    "image_helpers": 40,
+    "package": 604,
+    "runtime": 51,
+    "schemas": 10,
+    "scope": "Validation013 at58e87 plus exact final two-line commit51f903 rebind; unchanged image/development source reuses validation012.",
+    "skips": 0,
+    "source_files": 1485
+  },
+  "source_head": "51f903f6a1e2083f58bdc4b16eb68ba24281a6c4",
+  "status": "In progress",
+  "task": "PLT-01"
+}

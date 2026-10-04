@@ -1,0 +1,101 @@
+{
+  "all_helpers_gone": false,
+  "catalog_initializer_observed_exit": 1,
+  "catalog_initializer_removed_by_original_run": true,
+  "containers": {
+    "catalog": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "catalog-init": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "database": {
+      "engine_health": "healthy",
+      "process": "stopped"
+    },
+    "gateway": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "geoserver": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "geoserver-init": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    }
+  },
+  "data_deleted": false,
+  "database_observed_ready": true,
+  "dns_cleanup_verified": false,
+  "dns_files": {
+    "runtime/run/networks/aardvark-dns": {
+      "directory_entries": [],
+      "exists": true,
+      "mode": "0o755",
+      "symlink": false,
+      "uid": 1000
+    },
+    "runtime/run/networks/aardvark-dns/aardvark.pid": {
+      "exists": false,
+      "symlink": false
+    },
+    "runtime/run/networks/rootless-netns/rootless-netns": {
+      "exists": false,
+      "symlink": false
+    }
+  },
+  "dns_runtime_identity_verified": false,
+  "failed_guard_run_id": "37157f1d-e5f3-46c5-97b6-e1e03ddecc61",
+  "full_installation_acceptance": false,
+  "guard_wrapper_child_absent": true,
+  "install_id": "9c899326-3b6d-4972-ac5a-dade9b44ecdb",
+  "installation": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/installation-009",
+  "last_persisted_health_units": {
+    "both_not_loaded": true,
+    "receipt": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-009/read-only-timer-001/result.json",
+    "scope": "Exact persisted database timer/service; no blanket system unit or earlier attempt claim",
+    "sha256": "7a607418d40e068f96e8f411de9873e03d7688a99e5bb72106a1e79b992a5a32"
+  },
+  "lifecycle": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-009/result.json",
+    "sha256": "8dbf97dd0cbdd583d8845d3f5460ce245fa1fbba84ff77a37308012c01c3403a",
+    "status": "failed"
+  },
+  "lifecycle_retried": false,
+  "matching_processes": [
+    {
+      "comm": "podman pause",
+      "command_sha256": "17347f22dbefdf9604dc1b345b180419f21d0e9db0d54083029d3e5f6fe9dfa5",
+      "executable": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-009/relocated-bundle/runtime/engine/podman",
+      "pid": 632058,
+      "start_ticks": 8334579,
+      "state": "S",
+      "uid": 1000
+    }
+  ],
+  "native_database_state": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-009/read-only-state-001/result.json",
+    "sha256": "c5bb244f1b64ffeb0b152e69eaf402a8a7772b17d9bc762acc20703ccced8352"
+  },
+  "network": {
+    "driver": "bridge",
+    "internal": true,
+    "ipv6_enabled": false,
+    "name": "ambisgis-9c8993263b6d4972ac5adade9b44ecdb_internal",
+    "verified": true
+  },
+  "preserved_helper": "Owned rootless pause process deliberately retained",
+  "read_only_diagnosis": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-009/read-only-diagnosis-001/result.json",
+    "sha256": "2a8360a7f0bc5a10ed9592f2e5d547884b43dfb5d1a30cbfaa2b50af570f763f"
+  },
+  "reconciled": true,
+  "recorded_at": "2026-10-04T03:52:56.381803+00:00",
+  "remote_mutations": false,
+  "schema_version": 1,
+  "signals_sent": false
+}

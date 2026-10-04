@@ -18,36 +18,39 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 has four independently reviewed owned OCI images. Eight actual startup
-attempts remain failed and preserved. Attempt008 passed relocation and fresh
-initialization, then failed during up. The database entrypoint repeatedly exited during startup. Read-only inspection
-found its marker/socket directory and no pgdata directory; engine metadata records
-383 automatic restarts.
-Read-only reconciliation found the database stopped, other five containers
-absent, and the last persisted health timer/service not loaded. The exact owned
-rootless pause helper, persistent data and network remain retained. Earlier
-restart units were not enumerated. No application journey or DNS cleanup passed.
+PLT-01 remains In progress after nine preserved ordinary installation failures.
+The retained-locale and safe startup-diagnostic repairs are integrated locally at
+`51f903f6a1e2083f58bdc4b16eb68ba24281a6c4`. Images005/006 are byte-identical;
+independent review verified all 57,004 image members and bundle012's 1,309 runtime
+files. Required checks passed: 604 package, 51 runtime, ten schemas; unchanged
+image/development sources retain the 40/101 checks from validation012.
 
-[Draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78) publishes
-reviewed source `314f11e243a11ed6c494bdd2aa70ef18f4ec049a`; it is unmerged.
-Its unchanged bytes passed 585 package, 51 runtime, 101 development-helper and
-ten schema/example checks. Independent review verified source, bundle011 and
-publication history. Guarded direct DNS selection and read-only identity/cleanup
-observations are implemented; actual running DNS proof was not reached. The
-concurrency helper still has not run against a live installation.
+Attempt009 passed relocation and fresh initialization. The database emitted
+`database_ready`; its first health check failed during startup, then two passed.
+The explicit pre-migration health recheck exited0. Catalog-init then started,
+exited1 and was removed by the original one-shot command. No serving application
+journey was reached. The database stopped cleanly with no automatic restarts.
+Read-only reconciliation found the exact health timer/service not loaded and the
+owned rootless pause helper retained. Data and network remain; DNS identity and
+full helper cleanup were not established.
 
-Source/image review establishes missing C.UTF-8 locale data. Generic startup logs
-do not establish the precise runtime initialization failure. The next repair
-projects twelve matching already-retained locale files and adds fixed nonsecret
-startup diagnostics. Source implementation and independent review are pending.
-[Actual attempts and reconciliation](plan/verification/plt01-lifecycle/evidence-008.json)
-retain the evidence limits. Full PLT-01 and scoped MVP acceptance remain open.
+The catalog initializer's precise error is unknown because its output was not
+retained. Source inspection identifies missing explicit Django GDAL/GEOS library
+settings and discovery tools. Fixed owned-library settings, bounded preservation
+of finite startup-failure metadata and an ordinary DNS functional check are being
+implemented and independently reviewed in separate worktrees. The next actual
+installation remains necessary.
+
+[Draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78) still publishes
+`314f11e243a11ed6c494bdd2aa70ef18f4ec049a`; newer local work is not yet pushed.
+[Actual attempt and reconciliation](plan/verification/plt01-lifecycle/evidence-009.json)
+retain these limits. Full PLT-01, P1 and scoped MVP acceptance remain open.
 
 The held targeted engine probe remains unexecuted after the earlier platform
 termination. The native Goal still reports blocked; foreground delivery continues.
 Restoring native automatic continuation requires the user control /goal resume
 in the existing thread. [Original diagnosis](plan/verification/runtime-recovery/2026-10-03.json)
-and [latest progress](plan/verification/runtime-recovery/progress-008.json)
+and [latest progress](plan/verification/runtime-recovery/progress-009.json)
 distinguish this platform state from current product work.
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.
