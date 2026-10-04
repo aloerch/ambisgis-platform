@@ -202,6 +202,20 @@ class RuntimeTests(unittest.TestCase):
         for bad in [args + ['--root', str(self.root / 'runtime/storage')], ['--root', '/other/store'], ['--root']]:
             with self.assertRaises(InstallError): adapter.timer_installation(bad)
 
+    def test_dns_wire_program_is_gateway_only_no_stdin_or_extra_arguments(self):
+        program = (ROOT / 'deploy/development/dns_wire_probe.py').read_text()
+        target = self.bundle / 'runtime/configuration'; target.mkdir(parents=True)
+        binding = target / 'ordinary-command.json'
+        binding.write_text(json.dumps({'dns_wire_sha256': hashlib.sha256(program.encode()).hexdigest()}))
+        tail = ['exec', self.name + '-gateway', '/opt/ambisgis/python/bin/python3', '-c', program]
+        self.assertEqual(self.engine(tail), self.globals + tail)
+        for bad in [tail + ['8.8.8.8'], tail + ['other.example'], ['exec', '-i', *tail[1:]],
+                    ['exec', self.name + '-catalog', *tail[2:]], ['exec', self.name + '-gateway', '/bin/sh'],
+                    tail[:-1] + [program + '\nprint(1)'], tail[:-1] + ['print(1)']]:
+            with self.subTest(prefix=bad[:4]), self.assertRaises(InstallError): self.engine(bad)
+        binding.write_text('{}')
+        with self.assertRaises(InstallError): self.engine(tail)
+
     def test_real_retained_provider_arguments_match_all_six_roles_without_execution(self):
         provider_root = os.environ.get('AMBISGIS_TEST_PROVIDER')
         # The test runner supplies the exact already-reviewed retained provider;

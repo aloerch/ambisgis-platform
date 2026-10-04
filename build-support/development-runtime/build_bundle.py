@@ -376,9 +376,13 @@ def assemble(output):
     permission_source = ROOT / 'deploy/development/catalog_permission_probe.py'
     writer.put('runtime/configuration/catalog-permission-source.py', source=permission_source,
                origin={'owned_acceptance_program': str(permission_source), 'sha256': digest(permission_source)})
+    dns_source = ROOT / 'deploy/development/dns_wire_probe.py'
+    writer.put('runtime/configuration/dns-wire-source.py', source=dns_source,
+               origin={'owned_acceptance_program': str(dns_source), 'sha256': digest(dns_source)})
     writer.document('runtime/configuration/ordinary-command.json', {'source_sha256': digest(program_source),
-                     'internal_client_sha256': hashlib.sha256(programs[0].encode()).hexdigest(),
-                     'catalog_permission_sha256': digest(permission_source)})
+                      'internal_client_sha256': hashlib.sha256(programs[0].encode()).hexdigest(),
+                      'catalog_permission_sha256': digest(permission_source),
+                      'dns_wire_sha256': digest(dns_source)})
     writer.document('runtime/configuration/host-prerequisites.json', prerequisites)
     for name in ('retained-inputs.lock.json', 'python312-image-inputs.lock.json'):
         writer.put('runtime/notices/retained-locks/' + name, source=INPUTS / name, sha256=PINS[INPUTS / name],

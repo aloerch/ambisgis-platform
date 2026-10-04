@@ -28,6 +28,9 @@ dns_spec = importlib.util.spec_from_file_location('ordinary_dns_observation', RO
 dns_module = importlib.util.module_from_spec(dns_spec)
 sys.modules[dns_spec.name] = dns_module
 dns_spec.loader.exec_module(dns_module)
+functional_spec = importlib.util.spec_from_file_location('ordinary_dns_function', ROOT / 'deploy/development/dns_function.py')
+functional_module = importlib.util.module_from_spec(functional_spec)
+functional_spec.loader.exec_module(functional_module)
 
 
 DNS_UNAVAILABLE = frozenset({'observation_permission', 'observation_unavailable', 'namespace_binding_unavailable'})
@@ -76,7 +79,7 @@ class Check:
         self.output = output
         self.record = {'schema_version': 1, 'task': 'PLT-01', 'status': 'running', 'started': utc(),
                        'full_installation_acceptance': False, 'targeted_probe_executed': False,
-                       'scope': 'Actual ordinary CLI, bundle relocation, persistent identity/metadata, service fault/recovery, read-only native DNS observations and shutdown only',
+                       'scope': 'Actual ordinary CLI, bundle relocation, persistent identity/metadata, service fault/recovery, read-only native DNS observations, fixed DNS wire query and shutdown only',
                        'stages': [], 'token_cleanup': [], 'persistent_data_deleted': False}
         self.secrets = []
         self.browsers = []
@@ -187,6 +190,13 @@ class Check:
                          'identity_verified': value.get('identity_verified') is True,
                          'namespace_binding_verified': value.get('namespace_binding_verified') is True})
 
+    def dns_function(self, name):
+        # This actual wire exchange is distinct from daemon identity/lifetime
+        # evidence, HTTP readiness, NSS and /etc/hosts lookup behavior.
+        value = functional_module.observe(self.rt)
+        self.record.setdefault('dns_function', []).append({'at': utc(), 'stage': name, 'result': value})
+        self.stage(name, {'fixed_database_wire_query_verified': True})
+
     def observe_dns_stopped(self, timeout=15):
         if self.dns_expectation is None:
             return None
@@ -282,6 +292,7 @@ class Check:
                 raise ValueError('running CLI readiness failed')
         self.stage('fresh up status doctor', {'useful_readiness': True})
         self.observe_dns('native DNS after initial CLI exit')
+        self.dns_function('DNS wire after initial CLI exit')
         title = self.protected_journey('protected map query metadata journey')
         self.stop_owned()
         self.preserve_identity()
@@ -302,6 +313,7 @@ class Check:
         self.preserve_identity()
         self.stage('restart preserves metadata and credentials', {'verified': True})
         self.observe_dns('native DNS after restart')
+        self.dns_function('DNS wire after restart')
         self.protected_journey('full protected journey after restart', title)
         repeated = self.cli('init')
         if repeated.get('created') is not False or repeated['install_id'] != first['install_id']:
@@ -313,6 +325,7 @@ class Check:
         self.preserve_identity()
         self.stage('reinitialization preserves metadata and credentials', {'verified': True})
         self.observe_dns('native DNS after repeated CLI exit')
+        self.dns_function('DNS wire after repeated CLI exit')
         self.protected_journey('full protected journey after reinitialization', title)
         self.rt.engine('stop', '--time', '45', name + '-geoserver', timeout=90)
         down = self.wait_ready(False, timeout=30)
@@ -335,6 +348,7 @@ class Check:
         self.preserve_identity()
         self.stage('dependency recovery preserves state', {'verified': True})
         self.observe_dns('native DNS after dependency recovery')
+        self.dns_function('DNS wire after dependency recovery')
         self.protected_journey('full protected journey after dependency recovery', title)
 
 
@@ -347,7 +361,8 @@ def main(args):
     check = Check(directory, output)
     check.record['source'] = {str(p.relative_to(ROOT)): digest(p) for p in
         (Path(__file__).resolve(), ROOT / 'deploy/development/journey_probe.py', journey_module.POLICY_PROGRAM,
-         ROOT / 'build-support/geonode/protocol_probe.py', ROOT / 'deploy/development/dns_observation.py')}
+         ROOT / 'build-support/geonode/protocol_probe.py', ROOT / 'deploy/development/dns_observation.py',
+         ROOT / 'deploy/development/dns_function.py', ROOT / 'deploy/development/dns_wire_probe.py')}
     passed = False
     try:
         check.exercise(args)
