@@ -22,14 +22,14 @@ INERT = BUILD / 'plt01-runtime/inert-002'
 PODMAN = ROOT.parent / 'plt01-runtime-checks/podman-health-timer-build-001'
 RUNC = ROOT.parent / 'plt01-runtime-checks/runc-build-002'
 RUNC_ARCHIVE = Path('/home/revelberry/Projects/AmbisGIS/source-archives/plt01-container/obs-source/runc-64446271a17ff823ebb1b17b0b955d06/runc-1.5.1.tar.xz')
-IMAGES = ROOT.parent / 'plt01-runtime-checks/images-007'
+IMAGES = ROOT.parent / 'plt01-runtime-checks/images-009'
 INPUTS = ROOT.parent / 'plt01-inputs-worktree/build-support/container-inputs'
 CONTROL = BUILD / 'delivery-control'
 PINS = {
     INERT / 'runtime-payload.json': 'd73b431af1fdb89f47196363e265be957b2eb369cf0cf107bf34514ebde9e83b',
     BUILD / 'plt01-container-inputs/payload-001/receipt.json': '6d685c53f28d75e66923f4e3c1c652398f76c41a48863caa10d3dbcf87591650',
     BUILD / 'plt01-image-inputs/payload-001/receipt.json': '24b9de32cc79a9836bc6dc82cb9d84b00a7b2bea4b23b9c7f725246170b30ce4',
-    IMAGES / 'result.json': '1c0eb514657bdd44e2430aa3b45543f755732289cf8d4a8f344e5775f55d7b58',
+    IMAGES / 'result.json': '51bb3fa0eb46ee645bb96db95edc9af89bdc38774d365176e9ca05707e5030a0',
     PODMAN / 'bin/podman': '42178d5a85f9dd23ab688f8c34491e20f1c57543e63d5ee9c511b4a23565c2b4',
     PODMAN / 'bin/rootlessport': '6b868441aed6c8917103eaac689b5f98a002a426701aec3931dfe6078be46ce1',
     PODMAN / 'result.json': '8123fb4804541ce686918e4984fd00e6c4adb46240e7a31a5ed2720fca99f343',
