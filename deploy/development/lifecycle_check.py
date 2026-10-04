@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from installer import bundle, config, runtime
 from installer.state import checked_path, digest
+from installer.diagnostics import from_cli
 
 spec = importlib.util.spec_from_file_location('ordinary_installation_journey', ROOT / 'deploy/development/journey_probe.py')
 journey_module = importlib.util.module_from_spec(spec)
@@ -124,6 +125,9 @@ class Check:
         if done.returncode != expected:
             self.record['cli_failure'] = {'command': command, 'returncode': done.returncode,
                                          'stdout_bytes': len(done.stdout), 'stderr_bytes': len(done.stderr)}
+            failure = from_cli(done.stderr, command)
+            if failure is not None:
+                self.record['cli_failure']['startup_failure'] = failure
             raise RuntimeError('ordinary CLI stage failed')
         value = json.loads(done.stdout)
         if value.get('command') != command:

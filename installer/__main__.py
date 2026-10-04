@@ -6,6 +6,7 @@ import sys
 
 from . import config, runtime
 from .state import InstallError
+from .diagnostics import startup_fields
 
 
 def main(argv=None):
@@ -31,7 +32,11 @@ def main(argv=None):
         print(json.dumps(result, sort_keys=True))
         return 0 if args.command == 'init' or result.get('ready', result.get('readiness', {}).get('ready', False)) else 1
     except InstallError as error:
-        print(json.dumps({'command': args.command, 'ok': False, 'error': str(error)}), file=sys.stderr)
+        result = {'command': args.command, 'ok': False, 'error': str(error)}
+        failure = startup_fields(getattr(error, 'startup_failure', None))
+        if failure is not None:
+            result['startup_failure'] = failure
+        print(json.dumps(result), file=sys.stderr)
         return 1
     except (OSError, ValueError, KeyError, TypeError):
         # JSON/parser/native errors can contain credentials, paths or response
