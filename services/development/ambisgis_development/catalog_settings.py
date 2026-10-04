@@ -35,6 +35,9 @@ os.environ.update({
 })
 SOURCE = importlib.import_module('geonode.settings')
 globals().update({key: value for key, value in vars(SOURCE).items() if key.isupper()})
+# Select the image's retained libraries without host discovery tools.
+GDAL_LIBRARY_PATH = '/opt/ambisgis/support/lib/libgdal.so'
+GEOS_LIBRARY_PATH = '/opt/ambisgis/support/lib/libgeos_c.so'
 ROOT_URLCONF = 'geonode.urls'
 SECRET_KEY = PRIVATE['django_key']
 DEBUG = False
