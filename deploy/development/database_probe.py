@@ -108,13 +108,51 @@ def main(args):
             database.validate_existing_privileges(material['database_admin'])
             as_role('ambisgis_catalog_app', "INSERT INTO protected_rows(value) VALUES ('allowed'); UPDATE protected_rows SET value='updated' WHERE id=2; DELETE FROM protected_rows WHERE id=2;")
             if as_role('ambisgis_transport_reader', 'SELECT count(*) FROM protected_rules;', 'ambisgis_transport') != '1': raise AssertionError('SELECT failed')
+            # Same query used by the retained Hibernate PostgreSQL dialect.
+            # SELECT visibility must not confer sequence advancement or DDL.
+            admin('SET ROLE ambisgis_transport_owner; CREATE SEQUENCE hibernate_sequence; '
+                  'CREATE SEQUENCE "quoted sequence"; CREATE SCHEMA private_fixture; '
+                  'CREATE SEQUENCE private_fixture.hidden_sequence; RESET ROLE; '
+                  'CREATE SEQUENCE foreign_owner_sequence;', 'ambisgis_transport')
+            def visible_sequences():
+                rows = as_role('ambisgis_transport_reader', 'select * from information_schema.sequences;', 'ambisgis_transport')
+                return {(row.split('|')[1], row.split('|')[2]) for row in rows.splitlines()}
+            expected_sequences = {('public', name) for name in ('protected_rules_id_seq', 'hibernate_sequence', 'quoted sequence')}
+            if visible_sequences() != expected_sequences: raise AssertionError('Hibernate sequence metadata is not exactly visible')
+            database.validate_existing_privileges(material['database_admin'])
+            record['cases'].append({'name': 'future_owner_public_sequence_select_visible', 'passed': True})
+            # Model an existing installation whose sequences predate the new
+            # default ACL. Only exact owner/public objects may gain SELECT.
+            admin('REVOKE SELECT ON SEQUENCE hibernate_sequence,"quoted sequence" FROM ambisgis_transport_reader;', 'ambisgis_transport')
+            if visible_sequences() != {('public', 'protected_rules_id_seq')}: raise AssertionError('fixture revoke did not hide metadata')
+            database.bootstrap({}, material)
+            database.bootstrap({}, material)
+            if visible_sequences() != expected_sequences: raise AssertionError('existing owned sequence metadata not restored')
+            if admin("SELECT count(*) FROM pg_class c WHERE c.relkind='S' AND c.relname IN ('foreign_owner_sequence','hidden_sequence') AND has_sequence_privilege('ambisgis_transport_reader',c.oid,'SELECT,USAGE,UPDATE');", 'ambisgis_transport') != '0':
+                raise AssertionError('backfill reached another owner or schema')
+            record['cases'].append({'name': 'existing_exact_owner_public_backfill_repeat_safe', 'passed': True})
+
+            sequence_before = admin('SELECT last_value,is_called FROM hibernate_sequence;', 'ambisgis_transport')
             for name, role, statement, db in [
                 ('application_ddl_denied', 'ambisgis_catalog_app', 'CREATE TABLE forbidden(id int);', 'ambisgis_catalog'),
                 ('application_set_owner_denied', 'ambisgis_catalog_app', 'SET ROLE ambisgis_catalog_owner;', 'ambisgis_catalog'),
                 ('transport_insert_denied', 'ambisgis_transport_reader', "INSERT INTO protected_rules(value) VALUES ('forbidden');", 'ambisgis_transport'),
                 ('transport_sequence_denied', 'ambisgis_transport_reader', "SELECT nextval('protected_rules_id_seq');", 'ambisgis_transport'),
+                ('transport_setval_denied', 'ambisgis_transport_reader', "SELECT setval('hibernate_sequence',42);", 'ambisgis_transport'),
+                ('transport_nextval_denied', 'ambisgis_transport_reader', "SELECT nextval('hibernate_sequence');", 'ambisgis_transport'),
+                ('transport_sequence_ddl_denied', 'ambisgis_transport_reader', 'ALTER SEQUENCE hibernate_sequence RESTART WITH 42;', 'ambisgis_transport'),
+                ('transport_create_sequence_denied', 'ambisgis_transport_reader', 'CREATE SEQUENCE forbidden_sequence;', 'ambisgis_transport'),
+                ('transport_set_owner_denied', 'ambisgis_transport_reader', 'SET ROLE ambisgis_transport_owner;', 'ambisgis_transport'),
             ]:
                 as_role(role, statement, db, fail=True); record['cases'].append({'name': name, 'passed': True})
+            if admin('SELECT last_value,is_called FROM hibernate_sequence;', 'ambisgis_transport') != sequence_before:
+                raise AssertionError('denied reader operations changed sequence state')
+            # PostgreSQL may warn instead of failing GRANT without grant option;
+            # assert no delegated privilege, rather than relying on its exit code.
+            as_role('ambisgis_transport_reader', 'GRANT SELECT ON SEQUENCE hibernate_sequence TO ambisgis_render_reader;', 'ambisgis_transport')
+            if admin("SELECT has_sequence_privilege('ambisgis_render_reader','hibernate_sequence','SELECT,USAGE,UPDATE');", 'ambisgis_transport') != 'f':
+                raise AssertionError('reader delegated sequence privilege')
+            record['cases'].append({'name': 'transport_sequence_state_and_delegation_unchanged', 'passed': True})
 
             def state():
                 parts = [admin("SELECT row_to_json(t) FROM (SELECT rolname,rolsuper,rolinherit,rolcreaterole,rolcreatedb,rolcanlogin,rolreplication,rolbypassrls FROM pg_roles ORDER BY oid) t;"),
@@ -128,6 +166,7 @@ def main(args):
                                                   ('pg_default_acl','*','oid')]:
                         parts.append(admin(f'SELECT row_to_json(t) FROM (SELECT {fields} FROM {table} ORDER BY {order}) t;', db))
                     parts.append(admin('TABLE ' + ('protected_rows' if db == 'ambisgis_catalog' else 'protected_rules') + ';', db))
+                    if db == 'ambisgis_transport': parts.append(admin('SELECT last_value,is_called FROM hibernate_sequence;', db))
                 return hashlib.sha256('\n'.join(parts).encode()).hexdigest()
 
             cases = [
@@ -145,10 +184,20 @@ def main(args):
                 ('transport_column_write', 'GRANT UPDATE(value) ON protected_rules TO ambisgis_transport_reader;', 'REVOKE UPDATE(value) ON protected_rules FROM ambisgis_transport_reader;', 'ambisgis_transport'),
                 ('transport_public_write', 'GRANT DELETE ON protected_rules TO PUBLIC;', 'REVOKE DELETE ON protected_rules FROM PUBLIC;', 'ambisgis_transport'),
                 ('transport_sequence_usage', 'GRANT USAGE ON protected_rules_id_seq TO ambisgis_transport_reader;', 'REVOKE USAGE ON protected_rules_id_seq FROM ambisgis_transport_reader;', 'ambisgis_transport'),
+                ('transport_sequence_update', 'GRANT UPDATE ON hibernate_sequence TO ambisgis_transport_reader;', 'REVOKE UPDATE ON hibernate_sequence FROM ambisgis_transport_reader;', 'ambisgis_transport'),
+                ('transport_sequence_grant_option', 'GRANT SELECT ON hibernate_sequence TO ambisgis_transport_reader WITH GRANT OPTION;', 'REVOKE GRANT OPTION FOR SELECT ON hibernate_sequence FROM ambisgis_transport_reader;', 'ambisgis_transport'),
+                ('transport_sequence_public_select', 'GRANT SELECT ON hibernate_sequence TO PUBLIC;', 'REVOKE SELECT ON hibernate_sequence FROM PUBLIC;', 'ambisgis_transport'),
+                ('transport_sequence_cross_owner_select', 'GRANT SELECT ON foreign_owner_sequence TO ambisgis_transport_reader;', 'REVOKE SELECT ON foreign_owner_sequence FROM ambisgis_transport_reader;', 'ambisgis_transport'),
+                ('transport_sequence_cross_schema_select', 'GRANT SELECT ON private_fixture.hidden_sequence TO ambisgis_transport_reader;', 'REVOKE SELECT ON private_fixture.hidden_sequence FROM ambisgis_transport_reader;', 'ambisgis_transport'),
                 ('protected_function_execute', 'CREATE FUNCTION protected_function() RETURNS int LANGUAGE sql SECURITY DEFINER AS $$SELECT 1$$; REVOKE ALL ON FUNCTION protected_function() FROM PUBLIC; GRANT EXECUTE ON FUNCTION protected_function() TO ambisgis_catalog_app;', 'DROP FUNCTION protected_function();', 'ambisgis_catalog'),
                 ('public_protected_function_execute', 'CREATE FUNCTION protected_function() RETURNS int LANGUAGE sql SECURITY DEFINER AS $$SELECT 1$$;', 'DROP FUNCTION protected_function();', 'ambisgis_catalog'),
                 ('system_function_execute', 'GRANT EXECUTE ON FUNCTION pg_catalog.pg_read_file(text) TO ambisgis_catalog_app;', 'REVOKE EXECUTE ON FUNCTION pg_catalog.pg_read_file(text) FROM ambisgis_catalog_app;', 'ambisgis_catalog'),
                 ('future_table_write', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public GRANT UPDATE ON TABLES TO ambisgis_transport_reader;', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public REVOKE UPDATE ON TABLES FROM ambisgis_transport_reader;', 'ambisgis_transport'),
+                ('future_sequence_usage', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public GRANT USAGE ON SEQUENCES TO ambisgis_transport_reader;', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public REVOKE USAGE ON SEQUENCES FROM ambisgis_transport_reader;', 'ambisgis_transport'),
+                ('future_sequence_update', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public GRANT UPDATE ON SEQUENCES TO ambisgis_transport_reader;', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public REVOKE UPDATE ON SEQUENCES FROM ambisgis_transport_reader;', 'ambisgis_transport'),
+                ('future_sequence_grant_option', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public GRANT SELECT ON SEQUENCES TO ambisgis_transport_reader WITH GRANT OPTION;', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public REVOKE GRANT OPTION FOR SELECT ON SEQUENCES FROM ambisgis_transport_reader;', 'ambisgis_transport'),
+                ('future_sequence_cross_schema', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA private_fixture GRANT SELECT ON SEQUENCES TO ambisgis_transport_reader;', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA private_fixture REVOKE SELECT ON SEQUENCES FROM ambisgis_transport_reader;', 'ambisgis_transport'),
+                ('future_sequence_cross_owner', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_admin IN SCHEMA public GRANT SELECT ON SEQUENCES TO ambisgis_transport_reader;', 'ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_admin IN SCHEMA public REVOKE SELECT ON SEQUENCES FROM ambisgis_transport_reader;', 'ambisgis_transport'),
             ]
             original_sql = database.sql
             for name, poison, repair, db in cases:
