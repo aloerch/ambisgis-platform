@@ -109,7 +109,7 @@ def compose(config, selection, root):
             'read_only': True, 'cap_drop': ['ALL'],
             'security_opt': ['no-new-privileges:true'],
             'sysctls': {'net.ipv6.conf.all.disable_ipv6': '1', 'net.ipv6.conf.default.disable_ipv6': '1'},
-            'tmpfs': ['/tmp:rw,nosuid,nodev,size=256m'],
+            'tmpfs': ['/tmp:rw,nosuid,nodev,size=256m,mode=1777'],
             'volumes': mounts, 'networks': ['internal'],
             'stop_grace_period': '45s', 'restart': 'unless-stopped',
             'healthcheck': {'test': ['CMD', '/opt/ambisgis/bin/health', role], 'interval': '15s', 'timeout': '15s', 'retries': 3, 'start_period': '60s'},
