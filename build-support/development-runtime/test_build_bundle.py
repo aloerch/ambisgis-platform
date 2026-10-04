@@ -1,5 +1,7 @@
 """Small inert assembly negatives; selected executables are never run."""
 from pathlib import Path
+import hashlib
+from unittest import mock
 import tempfile
 import subprocess
 import unittest
@@ -83,6 +85,98 @@ class BundleAssemblyTests(unittest.TestCase):
             self.assertNotIn('/home/', text)
             self.assertNotIn('eval ', text)
             self.assertIn('unset LD_PRELOAD LD_AUDIT', text)
+
+
+class OwnedNativePairAssemblyTests(unittest.TestCase):
+    SOURCES = (
+        'LICENSE', 'libpod/ambisgis_oci_environment.go', 'libpod/ambisgis_oci_environment_test.go',
+        'pkg/systemd/dbus.go', 'pkg/systemd/ambisgis_user_socket.go', 'pkg/systemd/ambisgis_user_socket_test.go',
+        'libpod/healthcheck_linux.go', 'libpod/ambisgis_health_timer.go', 'libpod/ambisgis_health_timer_test.go',
+        'libpod/container_inspect.go', 'libpod/define/container_inspect.go',
+        'libpod/ambisgis_inspect_sysctls.go', 'libpod/ambisgis_inspect_sysctls_test.go',
+        'cmd/rootlessport/main.go', 'cmd/rootlessport/ambisgis_rootlessport.go',
+        'cmd/rootlessport/ambisgis_rootlessport_test.go',
+    )
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)
+        self.base = Path(self.tmp.name); self.native = self.base / 'native'
+        self.native.mkdir(); self.producers = self.base / 'producers'; self.producers.mkdir()
+        self.pins = {}
+        def put(name, data):
+            path = self.native / name; path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(data); self.pins[path] = hashlib.sha256(data).hexdigest()
+            return self.pins[path]
+        self.put = put
+        recipe = b'# inert fixture only, never executed\n'
+        for name in ('podman_health_timer_build.py', 'podman_rootlessport_build.py'):
+            (self.producers / name).write_bytes(recipe)
+        recipe_hash = put('build-executed.py', recipe)
+        put('bin/podman', b'inert engine bytes'); put('bin/rootlessport', b'inert helper bytes')
+        put('bin/unshipped.test', b'not a runtime artifact')
+        patched = {}
+        for name in self.SOURCES:
+            patched[name] = {'kind': 'file', 'sha256': put('source/' + name, ('inert ' + name).encode())}
+        patch = self.native / 'predecessor.patch'; put('predecessor.patch', b'inert retained patch')
+        self.preparation = {'vendor_unchanged': True, 'patched': patched,
+                            'existing_patches': [{'file': str(patch), 'sha256': self.pins[patch]}]}
+        put('preparation.json', build.encoded(self.preparation))
+        put('invocation.json', build.encoded({'recipe_sha256': recipe_hash}))
+        put('owned-source.patch', b'inert successor patch'); put('MODIFICATIONS.txt', b'inert notice')
+        self.record_names = ('preparation.json', 'invocation.json', 'owned-source.patch', 'MODIFICATIONS.txt')
+        self.result = {'exit_code': 0, 'unchanged': {'source': True, 'prior_source': True,
+                       'baseline': True, 'toolchain': True}, 'records': {}}
+        self.refresh()
+        for name, value in (('PODMAN', self.native), ('PINS', self.pins),
+                            ('__file__', str(self.producers / 'build_bundle.py'))):
+            patcher = mock.patch.object(build, name, value); patcher.start(); self.addCleanup(patcher.stop)
+        self.writer = build.Writer(self.base / 'out')
+
+    def refresh(self):
+        self.put('preparation.json', build.encoded(self.preparation))
+        self.result['records'] = {name: self.pins[self.native / name] for name in self.record_names}
+        self.put('result.json', build.encoded(self.result))
+
+    def test_exact_pair_and_all_composed_source_notices_are_retained(self):
+        build.add_owned_podman(self.writer)
+        executable = {name for name, row in self.writer.rows.items() if row['mode'] & 0o111}
+        self.assertEqual(executable, {'runtime/engine/podman', 'runtime/helpers/rootlessport'})
+        prefix = 'runtime/notices/podman-owned-build/source/'
+        self.assertEqual({name[len(prefix):] for name in self.writer.rows if name.startswith(prefix)}, set(self.SOURCES))
+        for name in self.SOURCES:
+            self.assertEqual((self.writer.root / prefix / name).read_bytes(), (self.native / 'source' / name).read_bytes())
+        self.assertEqual((self.writer.root / 'runtime/notices/podman-owned-build/prior-patches/0-predecessor.patch').read_bytes(), b'inert retained patch')
+        self.assertFalse(any('unshipped.test' in name for name in self.writer.rows))
+
+    def test_failed_build_refused_before_copy(self):
+        self.result['exit_code'] = 1; self.refresh()
+        with self.assertRaises(ValueError): build.add_owned_podman(self.writer)
+        self.assertEqual(self.writer.rows, {})
+
+    def test_changed_source_custody_refused_before_copy(self):
+        self.result['unchanged']['source'] = False; self.refresh()
+        with self.assertRaises(ValueError): build.add_owned_podman(self.writer)
+        self.assertEqual(self.writer.rows, {})
+
+    def test_binary_drift_refused(self):
+        (self.native / 'bin/podman').write_bytes(b'changed binary')
+        with self.assertRaises(ValueError): build.add_owned_podman(self.writer)
+        self.assertFalse((self.writer.root / 'runtime/engine/podman').exists())
+
+    def test_local_composed_recipe_drift_refused(self):
+        (self.producers / 'podman_rootlessport_build.py').write_bytes(b'changed recipe')
+        with self.assertRaises(ValueError): build.add_owned_podman(self.writer)
+        self.assertEqual(self.writer.rows, {})
+
+    def test_composed_source_notice_drift_refused(self):
+        (self.native / 'source/cmd/rootlessport/ambisgis_rootlessport.go').write_bytes(b'changed source')
+        with self.assertRaises(ValueError): build.add_owned_podman(self.writer)
+        self.assertFalse((self.writer.root / 'runtime/notices/podman-owned-build/source/cmd/rootlessport/ambisgis_rootlessport.go').exists())
+
+    def test_vendor_change_refused_before_copy(self):
+        self.preparation['vendor_unchanged'] = False; self.refresh()
+        with self.assertRaises(ValueError): build.add_owned_podman(self.writer)
+        self.assertEqual(self.writer.rows, {})
 
 
 if __name__ == '__main__': unittest.main()

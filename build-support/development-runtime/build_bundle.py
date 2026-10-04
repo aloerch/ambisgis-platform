@@ -19,7 +19,7 @@ from elf_closure import elf
 
 BUILD = Path('/home/revelberry/Projects/AmbisGIS/build-worktrees')
 INERT = BUILD / 'plt01-runtime/inert-002'
-PODMAN = ROOT.parent / 'plt01-runtime-checks/podman-health-timer-build-001'
+PODMAN = ROOT.parent / 'plt01-runtime-checks/podman-rootlessport-build-001'
 RUNC = ROOT.parent / 'plt01-runtime-checks/runc-build-002'
 RUNC_ARCHIVE = Path('/home/revelberry/Projects/AmbisGIS/source-archives/plt01-container/obs-source/runc-64446271a17ff823ebb1b17b0b955d06/runc-1.5.1.tar.xz')
 IMAGES = ROOT.parent / 'plt01-runtime-checks/images-021'
@@ -30,15 +30,15 @@ PINS = {
     BUILD / 'plt01-container-inputs/payload-001/receipt.json': '6d685c53f28d75e66923f4e3c1c652398f76c41a48863caa10d3dbcf87591650',
     BUILD / 'plt01-image-inputs/payload-001/receipt.json': '24b9de32cc79a9836bc6dc82cb9d84b00a7b2bea4b23b9c7f725246170b30ce4',
     IMAGES / 'result.json': 'e90681b45e3c537d8833489c95c9040b8877300730565ea95445ffef35ea346f',
-    PODMAN / 'bin/podman': '42178d5a85f9dd23ab688f8c34491e20f1c57543e63d5ee9c511b4a23565c2b4',
-    PODMAN / 'bin/rootlessport': '6b868441aed6c8917103eaac689b5f98a002a426701aec3931dfe6078be46ce1',
-    PODMAN / 'result.json': '8123fb4804541ce686918e4984fd00e6c4adb46240e7a31a5ed2720fca99f343',
-    PODMAN / 'MODIFICATIONS.txt': 'ecc8e57ccad52420cdc212293a96023c313294928c8d489a4301c9e3247efbcd',
-    PODMAN / 'commands.json': 'e06aac5c5a6263d469ca53cac5304408267fadf09be94a77ab6f79c41170d2d7',
-    PODMAN / 'invocation.json': '286b69204edd418d2defb008cc60ba4a3026c2589708bdb5ba893989a036f8ea',
-    PODMAN / 'network.json': 'cedee92ebb75746b07714dfc0b0b1d4ee8dbed00f6b946714ac27dbd1d364d7c',
-    PODMAN / 'owned-source.patch': 'f3b15a9d64ffb19acee386cfcdfb2add717993305867d0ce6c0635c4fcd2d677',
-    PODMAN / 'preparation.json': '23550906b7ee3d58252c201c2c824c18c1b1cc1d207f3f64516351b0f73f64cf',
+    PODMAN / 'bin/podman': '8640ec4ea08486d2d0fe51295cbdde301b27d73d32265341620ed982ff54054f',
+    PODMAN / 'bin/rootlessport': '78ea08fbc5620109582dc032bfb5c39185a2560a08d1319de9826c0e4adccae1',
+    PODMAN / 'result.json': '047c26fce2795434935331f6129c0267e26b1174a76cada858f9aae958766f57',
+    PODMAN / 'MODIFICATIONS.txt': '4e7c5058a10a2254cb96f017968b0f5bfc10c8e97454204dd33f6f8f19220249',
+    PODMAN / 'commands.json': '17470b7f336ce478f73da1e8acbe2dae5d7e88f09cd6c0f267b40d2d12d6e8ca',
+    PODMAN / 'invocation.json': 'd625fc8424ac7ecbc2ee8b88208dd888fd2bdb093c9d700112f6241b73d9d0f0',
+    PODMAN / 'network.json': 'eaa211f40835b3cef2536f7397cc9537ca6e7eb37c36a478b42b7f9be0e9f633',
+    PODMAN / 'owned-source.patch': '5e2cb786c6e2692653d87b0f983cfdb8f98c7552a17da812309405a8eec507f8',
+    PODMAN / 'preparation.json': 'afd3962bad50e7ea9ef963d0f49ade8f08c73509cfe1842bc82910d35533aebd',
     PODMAN / 'toolchain.json': '88c9dfab2f03d59019b96d94ca119c5a3aa12cf8509c0da7547747123e19f60a',
     RUNC_ARCHIVE: 'db743b39fd7de8da88adce5a61a54529a494928cd59227fffb622f5cb4ba6ef9',
     RUNC / 'result.json': '64ac169e79dd481fb5d6488b4c32f39ffc30f1cf902c3bbb1c807916f0b9ea00',
@@ -290,15 +290,15 @@ def add_owned_runc(writer, original):
 
 
 def add_owned_podman(writer):
-    """Bind the reviewed finite native health-timer successor and exact source."""
+    """Bind the reviewed inspect/rootlessport successor and exact source."""
     result = json.loads(regular(PODMAN / 'result.json', PINS[PODMAN / 'result.json']).read_bytes())
     if result['exit_code'] != 0 or result['unchanged'] != {
             'source': True, 'prior_source': True, 'baseline': True, 'toolchain': True}:
-        raise ValueError('Owned Podman health-timer build is incomplete or changed')
+        raise ValueError('Owned Podman inspect/rootlessport build is incomplete or changed')
     for name, identity in result['records'].items(): regular(PODMAN / safe_name(name), identity)
     invocation = json.loads((PODMAN / 'invocation.json').read_bytes())
     regular(PODMAN / 'build-executed.py', invocation['recipe_sha256'])
-    regular(Path(__file__).with_name('podman_health_timer_build.py'), invocation['recipe_sha256'])
+    regular(Path(__file__).with_name('podman_rootlessport_build.py'), invocation['recipe_sha256'])
     preparation = json.loads((PODMAN / 'preparation.json').read_bytes())
     if preparation['vendor_unchanged'] is not True:
         raise ValueError('Existing Podman vendor source changed')
@@ -314,7 +314,11 @@ def add_owned_podman(writer):
                origin={'owned_recipe': True, 'producer': str(PODMAN)})
     for name in ('LICENSE', 'libpod/ambisgis_oci_environment.go', 'libpod/ambisgis_oci_environment_test.go',
                  'pkg/systemd/dbus.go', 'pkg/systemd/ambisgis_user_socket.go', 'pkg/systemd/ambisgis_user_socket_test.go',
-                 'libpod/healthcheck_linux.go', 'libpod/ambisgis_health_timer.go', 'libpod/ambisgis_health_timer_test.go'):
+                 'libpod/healthcheck_linux.go', 'libpod/ambisgis_health_timer.go', 'libpod/ambisgis_health_timer_test.go',
+                 'libpod/container_inspect.go', 'libpod/define/container_inspect.go',
+                 'libpod/ambisgis_inspect_sysctls.go', 'libpod/ambisgis_inspect_sysctls_test.go',
+                 'cmd/rootlessport/main.go', 'cmd/rootlessport/ambisgis_rootlessport.go',
+                 'cmd/rootlessport/ambisgis_rootlessport_test.go'):
         row = preparation['patched'][name]
         if row['kind'] != 'file': raise ValueError('Unexpected owned Podman source member')
         writer.put(prefix + 'source/' + name, source=PODMAN / 'source' / name, sha256=row['sha256'],
