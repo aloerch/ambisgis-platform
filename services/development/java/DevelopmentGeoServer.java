@@ -1,5 +1,8 @@
 /* SPDX-License-Identifier: GPL-3.0-or-later */
 import java.io.InputStream;
+import java.lang.management.ManagementFactory;
+import java.lang.management.ThreadInfo;
+import java.lang.management.ThreadMXBean;
 import java.nio.file.*;
 import java.security.MessageDigest;
 import java.util.*;
@@ -21,6 +24,120 @@ public final class DevelopmentGeoServer {
 
     @FunctionalInterface
     interface Action { void run() throws Exception; }
+
+    // Diagnostic data only. No names, file names, line numbers or exception text
+    // are serialized. Production obtains these fields solely from ThreadInfo.
+    record ThreadSample(long id, boolean daemon, Thread.State state, String name, StackTraceElement[] stack) {}
+    interface ThreadSource {
+        long currentId();
+        long[] ids();
+        ThreadSample[] samples(long[] ids, int depth);
+    }
+
+    static final int THREAD_LIMIT = 256;
+    static final int FRAME_LIMIT = 32;
+    static final int THREAD_OUTPUT_LIMIT = 524288;
+
+    static ThreadSource nativeThreads() {
+        ThreadMXBean bean = ManagementFactory.getThreadMXBean();
+        return new ThreadSource() {
+            public long currentId() { return Thread.currentThread().getId(); }
+            public long[] ids() { return bean.getAllThreadIds(); }
+            public ThreadSample[] samples(long[] ids, int depth) {
+                ThreadInfo[] infos = bean.getThreadInfo(ids, depth);
+                ThreadSample[] result = new ThreadSample[infos.length];
+                for (int i = 0; i < infos.length; i++) {
+                    ThreadInfo info = infos[i];
+                    if (info != null) result[i] = new ThreadSample(info.getThreadId(), info.isDaemon(),
+                            info.getThreadState(), info.getThreadName(), info.getStackTrace());
+                }
+                return result;
+            }
+        };
+    }
+
+    // Each accepted pair is bound to retained source/class inventory in the
+    // diagnostic document. Prefix matches never authorize class/method output.
+    static String frameSymbol(StackTraceElement frame) {
+        if (frame == null) return "OTHER";
+        return switch (frame.getClassName() + "#" + frame.getMethodName()) {
+            case "jdk.internal.misc.Unsafe#park" -> "UNSAFE_PARK";
+            case "java.util.concurrent.locks.LockSupport#park" -> "LOCK_SUPPORT_PARK";
+            case "java.util.concurrent.locks.LockSupport#parkNanos" -> "LOCK_SUPPORT_PARK_NANOS";
+            case "java.lang.Object#wait" -> "OBJECT_WAIT";
+            case "java.lang.Thread#run" -> "THREAD_RUN";
+            case "java.lang.Thread#sleep" -> "THREAD_SLEEP";
+            case "java.util.concurrent.ThreadPoolExecutor#runWorker" -> "EXECUTOR_RUN_WORKER";
+            case "java.util.concurrent.ThreadPoolExecutor#getTask" -> "EXECUTOR_GET_TASK";
+            case "java.util.concurrent.ThreadPoolExecutor$Worker#run" -> "EXECUTOR_WORKER_RUN";
+            case "java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue#take" -> "SCHEDULED_QUEUE_TAKE";
+            case "java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue#poll" -> "SCHEDULED_QUEUE_POLL";
+            case "java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask#run" -> "SCHEDULED_TASK_RUN";
+            case "java.util.concurrent.FutureTask#run" -> "FUTURE_RUN";
+            case "java.util.concurrent.FutureTask#runAndReset" -> "FUTURE_RUN_RESET";
+            case "java.util.concurrent.Executors$RunnableAdapter#call" -> "RUNNABLE_ADAPTER_CALL";
+            case "java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject#await" -> "CONDITION_AWAIT";
+            case "java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject#awaitNanos" -> "CONDITION_AWAIT_NANOS";
+            case "java.util.concurrent.LinkedBlockingQueue#take" -> "LINKED_QUEUE_TAKE";
+            case "java.util.concurrent.ArrayBlockingQueue#take" -> "ARRAY_QUEUE_TAKE";
+            case "java.util.TimerThread#mainLoop" -> "TIMER_LOOP";
+            case "java.util.TimerThread#run" -> "TIMER_RUN";
+            case "org.geoserver.config.AsynchResourceIterator$MapperRunner#run" -> "RESOURCE_MAPPER_RUN";
+            case "org.geoserver.security.GeoServerAuthenticationKeyProvider$AuthKeyMapperSyncRunnable#run" -> "AUTHKEY_SYNC_RUN";
+            case "org.geowebcache.storage.blobstore.file.FileBlobStore$DefferredDirectoryDeleteTask#run" -> "GWC_DELETE_RUN";
+            default -> "OTHER";
+        };
+    }
+
+    static String threadFamily(String name) {
+        if (name == null || name.length() > 160) return "OTHER";
+        if (name.matches("pool-[1-9][0-9]*-thread-[1-9][0-9]*")) return "DEFAULT_EXECUTOR";
+        if (name.matches("GuavaAuthCache-[0-9]+-[0-9]+")) return "GUAVA_AUTH_CACHE";
+        if (name.matches("GeoServerAuthenticationKey-[0-9]+-[0-9]+")) return "AUTHKEY_SYNC";
+        if (name.equals("GT authority factory disposer")) return "GT_AUTHORITY_DISPOSER";
+        // Loader names append resource names. Report only the fixed family.
+        if (name.startsWith("Loader")) return "RESOURCE_LOADER_CANDIDATE";
+        return "OTHER";
+    }
+
+    static String threadSnapshot(ThreadSource source) {
+        long[] ids = source.ids();
+        if (ids == null) throw new IllegalStateException();
+        if (ids.length > THREAD_LIMIT) return threadStatus("THREAD_OVERFLOW");
+        Set<Long> distinct = new HashSet<>();
+        for (long id : ids) if (id <= 0 || !distinct.add(id)) throw new IllegalStateException();
+        long current = source.currentId();
+        if (current <= 0) throw new IllegalStateException();
+        ThreadSample[] samples = source.samples(ids.clone(), FRAME_LIMIT);
+        if (samples == null || samples.length != ids.length) throw new IllegalStateException();
+        List<String> rows = new ArrayList<>();
+        int gone = 0, daemon = 0, self = 0;
+        for (int i = 0; i < samples.length; i++) {
+            ThreadSample sample = samples[i];
+            if (sample == null) { gone++; continue; }
+            if (sample.id() != ids[i] || sample.state() == null || sample.stack() == null
+                    || sample.stack().length > FRAME_LIMIT) throw new IllegalStateException();
+            if (sample.id() == current) { self++; continue; }
+            if (sample.daemon()) { daemon++; continue; }
+            StringJoiner frames = new StringJoiner(",", "[", "]");
+            for (StackTraceElement frame : sample.stack()) frames.add("\"" + frameSymbol(frame) + "\"");
+            rows.add("{\"id\":" + sample.id() + ",\"state\":\"" + sample.state().name()
+                    + "\",\"name_family\":\"" + threadFamily(sample.name()) + "\",\"possibly_truncated\":"
+                    + (sample.stack().length == FRAME_LIMIT) + ",\"frames\":" + frames + "}");
+        }
+        String result = "{\"event\":\"geoserver_post_stop_threads\",\"schema_version\":1,\"status\":\"OBSERVED\","
+                + "\"scanned\":" + ids.length + ",\"raced_away\":" + gone + ",\"daemon_omitted\":" + daemon
+                + ",\"current_omitted\":" + self + ",\"non_daemon\":[" + String.join(",", rows) + "]}";
+        // All projected text is ASCII. Never emit a silently truncated record.
+        if (result.length() > THREAD_OUTPUT_LIMIT) return threadStatus("OUTPUT_OVERFLOW");
+        return result;
+    }
+
+    static String threadStatus(String status) {
+        if (!Set.of("THREAD_OVERFLOW", "OUTPUT_OVERFLOW", "UNAVAILABLE").contains(status))
+            throw new IllegalArgumentException();
+        return "{\"event\":\"geoserver_post_stop_threads\",\"schema_version\":1,\"status\":\"" + status + "\"}";
+    }
 
     /** Finite initialization evidence only. Never inspect messages, causes or paths. */
     static final class Progress {
@@ -57,10 +174,20 @@ public final class DevelopmentGeoServer {
             emit("{\"event\":\"geoserver_initialization_failure\",\"phase\":\"" + phase.name()
                     + "\",\"exception_class\":\"" + kind + "\"}");
         }
+
+        void afterStop(Action observation) {
+            if (!enabled) return;
+            try { observation.run(); }
+            catch (Exception | Error unavailable) { emit(threadStatus("UNAVAILABLE")); }
+        }
     }
 
     /** Keep the existing finally-stop and exception precedence, independently testable. */
     static void lifecycle(Progress progress, Action start, Action body, Action stop) throws Exception {
+        lifecycle(progress, start, body, stop, () -> {});
+    }
+
+    static void lifecycle(Progress progress, Action start, Action body, Action stop, Action observation) throws Exception {
         try {
             progress.at(Phase.SERVER_START);
             start.run();
@@ -74,6 +201,7 @@ public final class DevelopmentGeoServer {
             try {
                 stop.run();
                 progress.at(Phase.SERVER_STOPPED);
+                progress.afterStop(observation);
             } catch (Exception | Error failure) {
                 progress.failed(failure);
                 throw failure;
@@ -209,6 +337,6 @@ public final class DevelopmentGeoServer {
                 System.out.println("AMBISGIS_ENGINE_READY install_id=" + install);
                 server.join();
             }
-        }, server::stop);
+        }, server::stop, () -> progress.emit(threadSnapshot(nativeThreads())));
     }
 }
