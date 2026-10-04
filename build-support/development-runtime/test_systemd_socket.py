@@ -66,6 +66,22 @@ class UserManagerSocketTests(unittest.TestCase):
         self.assertNotIn('DBUS_SESSION_BUS_ADDRESS', env)
         self.assertEqual(self.requests, [])
 
+    def test_owned_health_profile_is_constructed_without_inheriting_selector(self):
+        for inherited in (None, '', 'untrusted-profile', 'development-v1'):
+            with self.subTest(inherited=inherited), patch.dict(os.environ, {}, clear=True):
+                if inherited is not None:
+                    os.environ['AMBISGIS_HEALTH_TIMER_PROFILE'] = inherited
+                env = self.environment()
+                self.assertEqual(env.get('AMBISGIS_HEALTH_TIMER_PROFILE'), 'development-v1')
+                self.assertEqual(env['AMBISGIS_SYSTEMD_USER_SOCKET'], str(self.private))
+
+    def test_no_bus_mode_does_not_select_native_health_profile(self):
+        with patch.dict(os.environ, {'AMBISGIS_HEALTH_TIMER_PROFILE': 'development-v1'}):
+            env = self.environment(bus=False)
+        self.assertNotIn('AMBISGIS_HEALTH_TIMER_PROFILE', env)
+        self.assertNotIn('AMBISGIS_SYSTEMD_USER_SOCKET', env)
+        self.assertEqual(self.requests, [])
+
     def test_missing_or_regular_file_manager_endpoint_is_rejected(self):
         self.private.unlink()
         with self.assertRaises((InstallError, OSError)):

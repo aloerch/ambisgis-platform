@@ -18,32 +18,31 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 has four independently reviewed owned OCI images. Five actual startup
-attempts remain failed and preserved. Successive owned repairs resolved stream,
-provider-argument, loader and ordinary child-environment defects. Attempt005
-reached health-timer creation, then looked for the systemd manager socket inside
-the installation's private runtime directory. The database process is gone and
-five other containers were absent. One exactly identified native rootless pause
-helper is retained with its private namespace state, data and network; this is
-not a running application service or completed helper-cleanup result.
+PLT-01 has four independently reviewed owned OCI images. Six actual startup
+attempts remain failed and preserved. Attempt006 passed relocation and fresh
+initialization, then reached native health-timer creation through the corrected
+manager socket. The external timer wrapper rejected its runtime context. Source
+inspection identifies a namespace-sensitive host-ownership/socket check; the
+actual first rejected value remains uncaptured. The database application process
+is gone and the other five containers were absent. Its exact native rootless
+pause helper, data and network remain retained; helper cleanup has not passed.
 
-The successor validates the actual caller's existing private manager socket
-while preserving installation-private XDG storage. Its offline native selector
-regression passed four cases after two expected baseline failures; compilation
-and full source/toolchain integrity checks passed. Separate artifact/bundle
-review and fresh installed execution remain required. Reviewed authorization
-and recovery drivers now include finite internal HTTP targets, same-token native
-item grant/revoke/regrant and persistence-first repeated journeys. Their inert
-checks do not establish installed behavior.
-[Actual attempts and reconciliation](plan/verification/plt01-lifecycle/evidence-005.json)
-and [socket build contract](build-support/development-runtime/podman-systemd-socket.md)
+[Draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78) publishes the
+reviewed source at `8f5f4e9c172816c8d10fc8c893c957d706c38b90`. Package/schema CI
+passed at that head; the PR remains unmerged and installation unaccepted.
+The next bounded repair uses the existing native manager connection for a finite
+timer-plus-service request. It preserves host-ownership checks and records
+partial/uncertain effects for reconciliation. Reviewed authorization/recovery
+drivers and a command-concurrency helper are present; their inert checks do not
+establish installed behavior.
+[Actual attempts and reconciliation](plan/verification/plt01-lifecycle/evidence-006.json)
 retain these boundaries. Full PLT-01 and scoped MVP acceptance remain open.
 
 The held targeted engine probe remains unexecuted after the earlier platform
 termination. The native Goal still reports blocked; foreground delivery continues.
 Restoring native automatic continuation requires the user control /goal resume
 in the existing thread. [Original diagnosis](plan/verification/runtime-recovery/2026-10-03.json)
-and [latest progress](plan/verification/runtime-recovery/progress-005.json)
+and [latest progress](plan/verification/runtime-recovery/progress-006.json)
 distinguish this platform state from current product work.
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.

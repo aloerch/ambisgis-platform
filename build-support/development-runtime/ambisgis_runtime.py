@@ -250,6 +250,8 @@ def child_environment(root, selected_root, *, bus=True):
               'CONTAINERS_POLICY_JSON': str(config_root / 'policy.json')}
     if bus:
         result.update(systemd_user_environment())
+        # Owned finite native health timers; never inherit an operator selector.
+        result['AMBISGIS_HEALTH_TIMER_PROFILE'] = 'development-v1'
     return result
 
 

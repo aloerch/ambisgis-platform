@@ -46,8 +46,8 @@
   "branch": "plt-01/development-install",
   "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
   "task": "PLT-01 repeatable development installation",
-  "state": "FND-06, DB-01, DB-02 and DB-03 accepted/Merged. PLT-01 In progress after retained actual startup failures. Native Goal blocked; foreground delivery continues.",
-  "pr": null,
+  "state": "PLT01 In progress: draftPR78 published at8f5f4e9; lifecycle006 failed and reconciled. Bounded native timer repair in progress; no installation or full MVP acceptance.",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
   "tests": [
     {
       "scope": "source publication implementation integrated with PR72",
@@ -141,12 +141,12 @@
     "FND-08",
     "FND-06",
     "DB-01",
-    "DB-02"
+    "DB-02",
+    "DB-03"
   ],
   "next": [
-    "Complete independent review of owned runc loader/profile repair and its inert bundle, then fresh ordinary installation lifecycle.",
-    "Pass original PLT-01 installation/readiness/restart/persistence criteria with actual tests and independent review.",
-    "API-01/PLT-02 await PLT-01; DB-04 additionally awaits API-04. Complete scoped MVP and release remain open."
+    "Integrate reviewed command-concurrency helper and implement/review the bounded native health-timer source repair; no retry until exact successor source/build/bundle review.",
+    "Complete original PLT01 acceptance before API01/PLT02; DB04 still requires API04."
   ],
   "product_acceptance": false,
   "release_artifact": null,
@@ -159,15 +159,18 @@
   "active_workers": [
     {
       "agent": "/root",
-      "task": "PLT01 integration and independent reviews; shared contracts and migration ordering"
+      "state": "Foreground integrator; native timer source integration",
+      "observed_at": "2026-10-04T00:03:59.469917+00:00"
     },
     {
       "agent": "/root/fnd03_identity",
-      "task": "PLT01 owned OCI assembly and ordinary retained runtime wiring"
+      "state": "Source-only native timer producer preparation",
+      "observed_at": "2026-10-04T00:03:59.469917+00:00"
     },
     {
       "agent": "/root/db02_validation",
-      "task": "DB03 typed branch snapshots and lifecycle"
+      "state": "Independent native timer source/pre-execution review",
+      "observed_at": "2026-10-04T00:03:59.469917+00:00"
     }
   ],
   "evidence": "plan/verification/authorized-successors/publication.json",
@@ -546,56 +549,14 @@
     "current_tasks": [
       {
         "branch": "plt-01/development-install",
-        "head": "d845be11d0cb7aa612e1dd9c274171877641088e",
+        "head": "8f5f4e9c172816c8d10fc8c893c957d706c38b90",
         "id": "PLT-01",
-        "last_frozen_head": "d845be11d0cb7aa612e1dd9c274171877641088e",
-        "local_commits": {
-          "acceptance_driver": "19d140aba4050d0f396d93f22b54f426b94bdcf8",
-          "integration": "3c8a5dd4aa54187525b5b62de1e123da674bcdf9",
-          "socket_wrapper": "1d85c0c2bd77caecb06103767a3705a5a56628c8"
-        },
-        "next": "Finish independent completed-build review, validate and assemble exact bundle009, then independently review before fresh lifecycle006",
-        "pr": null,
-        "repair_candidate": {
-          "bundle_sha256": "c6b4eb308c6b5aed5c952bbfe3499554c4be3856ebda57e3dadbd1ede789e7c7",
-          "evidence_sha256": "e4e3ff765c38486706211a572b8d04353eb80dcb4c53d7b4f00b26dbed5c2555",
-          "head": "67e12a1693a85daf242a982393273b779a6c72a7",
-          "independent_review": "runc build002 and bundle007 independently passed their bounded inert reviews and were adopted for failed ordinary lifecycle004; no installation acceptance",
-          "reported_checks": {
-            "native_environment_subcases": 3,
-            "package": 565,
-            "runtime": 19,
-            "schemas": 10
-          }
-        },
-        "runtime_environment_successor": {
-          "actual_checks": {
-            "baseline_expected_failures": 4,
-            "new_helper_passes": 4,
-            "package_tests": 565,
-            "runtime_guards": 24,
-            "schemas": 10
-          },
-          "build_result_sha256": "3bf0eabd2c2ea5a920561734d66c6a70abae2fbacb9acda8f5602c6ceb881a22",
-          "bundle_review": "PASS bb7bc497f4200ae910167ad172697c0717ac758227468ba6b131ca51ac86d06a",
-          "bundle_sha256": "452dc463ebd87a579f94ea26ae3373ea5f4eb8e583e14aa9fe4648b414db7c33",
-          "independent_completed_build_review_sha256": "fea94596d5a111201666e160e96ae536c8d504bc76c09dc50eee3e986e87290d",
-          "independent_preexecution_review_sha256": "cd979c67e7893f09be867ce126c547249e72eb5a72923e9b2bce57ad095a0536",
-          "installation_acceptance": false,
-          "source_commit": "0dad2602004ad7071636d9582606396ec8ab0a9f"
-        },
+        "next": "Integrate reviewed command-concurrency helper and implement/review the bounded native health-timer source repair; no retry until exact successor source/build/bundle review.",
+        "pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
         "state": "In progress",
-        "working_successor": "Owned socket producer built offline; assembler candidate updated to actual outputs; artifact review pending",
-        "worktree": "plt01-worktree",
-        "socket_successor": {
-          "producer_commit": "98fcf69b2e45b797e1edf9b3622c16a53e3c05c1",
-          "build_result_sha256": "81693d5bb1915127a68ed38901d6e934d1dd55c376e4fd42dffb5e09316695e7",
-          "preexecution_review_sha256": "859835ee5b57f3e5711ba3dc53656f63e07242f15d2dd81c89bdffe7d3504623",
-          "native_cases_passed": 4,
-          "baseline_expected_failures": 2,
-          "compiled_binaries_executed": false,
-          "artifact_review": "pending"
-        }
+        "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree",
+        "draft": true,
+        "latest_installation": "lifecycle006 failed during native external systemd-run wrapper; no installed service journey accepted"
       }
     ],
     "diagnosis": {
@@ -698,6 +659,36 @@
           "schemas": 10
         },
         "reuse": "Exact integrated3c8a5dd4 source; later native producer adds six independently passing inert guards. Final assembler validation remains pending."
+      },
+      "concurrency_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-concurrency-source-review-001/result.json",
+        "sha256": "e5ab73479c20b74d7a5d61c56d318d1a1df95ab70ac705ddff1501023254164d"
+      },
+      "lifecycle006": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/result.json",
+        "sha256": "e5b969fe073d529be6d95bc27acd8ce9736a9e4d6c075de271b230c8dd278f7c"
+      },
+      "native_timer_alternatives": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/source-diagnosis-001/alternatives.json",
+        "sha256": "b1673fd9ef2cd78a2dda0ff873ca89a3eff1c9500707f94ea2020f325d1f0a78"
+      },
+      "pr78_readback": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/recovery-20261003/live-pr78-readback-001.json",
+        "sha256": "fb62d230e10dafef3b078682f914dea2ca0bf9a6d61a5daeec627fe2fb796891"
+      },
+      "reconciliation006": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/reconciliation.json",
+        "sha256": "4598c486b7d78f409c071c875c4114be55e16eb1c3651a59e07cd317dc92987b"
+      },
+      "runtime_validation_009": {
+        "checks": {
+          "package": 565,
+          "runtime": 37,
+          "schemas": 10
+        },
+        "journey_lifecycle_reuse": "32+8 unchanged integrated-source-008",
+        "path": "Private plt01-runtime-checks/runtime-validation-009/result.json",
+        "sha256": "cab83ec0b8f27ab65a0c39699383e54f3c310a941a5bd39ee54217cbbb11b44d"
       }
     },
     "installed_runtime": {
@@ -716,8 +707,8 @@
     },
     "native_goal": {
       "automatic_continuation": "not active while native Goal is blocked",
-      "objective": "Unchanged complete scoped R01\u2013R24/P0\u2013P7 MVP under standing-delivery-policy.md",
-      "observed_at": "2026-10-03T23:12:42.467854+00:00",
+      "objective": "Unchanged complete scoped R01–R24/P0–P7 MVP under standing-delivery-policy.md",
+      "observed_at": "2026-10-04T00:03:59.469917+00:00",
       "quota_status": "unknown",
       "remaining_tokens": null,
       "reported_tokens_used": 12420153,
@@ -725,7 +716,7 @@
       "token_budget": "not configured in returned state",
       "user_action": "Use /goal resume in the existing thread to restore native continuation; no second integrator is started"
     },
-    "observed_at": "2026-10-03T23:25:00.419419+00:00",
+    "observed_at": "2026-10-04T00:03:59.469917+00:00",
     "observed_terminal": {
       "at": "2026-10-03T13:28:22.795Z",
       "category": "Platform cybersecurity-risk flag",
@@ -748,7 +739,8 @@
       "Independently reviewed owned runc build002 and bundle007; actual004 accepted native container inspection but failed systemd cgroup registration.",
       "Completed independent original PLT01 acceptance-gap audit and source-only missing-busctl/direct-OCI-environment diagnosis; bounded local repair underway.",
       "Built ordinary OCI environment successor from exact retained inputs; four old-block regressions fail and four production-helper cases pass. Independent completed-build review and24/565/10 checks pass. Bundle008 assembled without engine execution; installation remains unaccepted.",
-      "Bundle008 independently reviewed and adopted; ordinary lifecycle005 failed at systemd private-socket lookup. Wrapper/child/database process gone; exact installation-owned persistent rootless pause helper remains and is explicitly retained, not counted as a service or cleanup pass. Guard failure reconciled before creating isolated successor worktree."
+      "Bundle008 independently reviewed and adopted; ordinary lifecycle005 failed at systemd private-socket lookup. Wrapper/child/database process gone; exact installation-owned persistent rootless pause helper remains and is explicitly retained, not counted as a service or cleanup pass. Guard failure reconciled before creating isolated successor worktree.",
+      "Reconciled lifecycle006 failed guard7e408e9c and preserved stopped container, data, network and exact native pause helper; acknowledgement consumed by successful draft publication guard4052ac8c."
     ],
     "remote_state": {
       "API-01": "Backlog; PLT-01 pending",
@@ -757,7 +749,7 @@
       "DB-03": "Merged",
       "DB-04": "Backlog; API-04 required",
       "FND-06": "Merged",
-      "PLT-01": "In progress",
+      "PLT-01": "In progress; draft PR78 open, exact-head package-and-schema CI passed, unmerged",
       "PLT-02": "Backlog; PLT-01 pending",
       "geodb_main": "13fb7c9bff9d011838b768802a6ab63f932bd228",
       "platform_main": "d0218209d435f80c21400dc38abc2c4d69d805bc"
@@ -765,10 +757,15 @@
     "schema_version": 1,
     "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
     "worker_observations": {
-      "db02_validation": "Implementing separate command-concurrency acceptance helper; no native execution",
-      "fnd03_identity": "Independent completed socket-build artifact review",
+      "db02_validation": "Running independent source-only timer design review",
+      "fnd03_identity": "Running source-only native timer producer implementation",
       "fnd04_prototype": "Earlier platform termination; held task not replayed",
-      "root": "Foreground integrator; actual bounded offline build completed, assembler/checkpoint integration underway"
+      "root": "Foreground integrator; recording006 failure and actual draftPR78 publication"
+    },
+    "latest_completed_implementation_boundary": {
+      "checks": "24 inert command-concurrency tests independently passed; helper not yet integrated or executed against installer CLI",
+      "installation_acceptance": false,
+      "publication": "Draft PR78 head8f5f4e9 published with progress issue comment5974709477; base unchanged; no merge, settings/workflow or Project mutation"
     }
   },
   "db02_claim": {
@@ -848,7 +845,7 @@
     "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-claim-attempts/c6d82022-d24a-4ebb-a9a9-85036c23b882",
     "observation_note": "Historical claim; db03_acceptance supersedes its In progress state."
   },
-  "updated_at": "2026-10-03T23:25:00.419419+00:00",
+  "updated_at": "2026-10-04T00:03:59.469917+00:00",
   "plt01_image_review": {
     "head": "b8ae679288dd3431c3e216aedab1bd2220653aea",
     "receipt": "plan/verification/plt01-image-review/review.json",
@@ -983,48 +980,14 @@
       "independent_review": "Build and bundle review pending; no native runtime acceptance",
       "evidence_sha256": "e4e3ff765c38486706211a572b8d04353eb80dcb4c53d7b4f00b26dbed5c2555"
     },
-    "observation_note": "Historical first-three-attempt record; plt01_latest_lifecycle and evidence-005.json contain newer failed attempts and preserved helper state."
+    "observation_note": "Historical first-three-attempt record; plt01_latest_lifecycle and evidence-006.json contain newer failed attempts and preserved helper state."
   },
   "plt01_latest_lifecycle": {
-    "schema_version": 1,
-    "task": "PLT-01",
-    "status": "In progress",
-    "observed_at": "2026-10-03T23:25:00.419419+00:00",
-    "runtime_executed": true,
-    "attempts": 5,
-    "failures_retained": 5,
+    "status": "failed",
+    "attempts": 6,
     "full_installation_acceptance": false,
-    "held_targeted_probe_executed": false,
-    "previous_evidence": "plan/verification/plt01-lifecycle/evidence.json",
-    "last_install_id": "3a304aa9-729e-42b2-8c21-4b721f207a54",
-    "last_frozen_head": "fa94d821705e6b4f2d171aa52d2dc2b86cfacc34",
-    "last_frozen_bundle_sha256": "452dc463ebd87a579f94ea26ae3373ea5f4eb8e583e14aa9fe4648b414db7c33",
-    "last_state": "Database container remains created with no application process; five other containers absent. Exact owned rootless namespace pause process retained, together with data/network. Full helper cleanup has not passed.",
-    "diagnosis": [
-      "Attempt004 reached systemd cgroup registration and failed. Source diagnosis found omitted user-bus helper and ordinary child environment; owned repaired build was independently reviewed before attempt005.",
-      "Attempt005 reached native health-timer creation; rootless connection looked for systemd/private inside installation-private XDG_RUNTIME_DIR. No timer or complete service lifecycle acceptance is inferred."
-    ],
     "reconciled": true,
-    "data_deleted": false,
     "all_helpers_gone": false,
-    "remaining": "Fresh reviewed successor installation, all original network/OS/concurrency/authorization/recovery/log/cleanup acceptance and held runtime-security distinction remain open.",
-    "references": [
-      {
-        "path": "plan/verification/plt01-lifecycle/attempt-004.json",
-        "sha256": "f1e946a7962a4bdb98167696b288cd358213dc81485ced56726d9081d5b8c9d6"
-      },
-      {
-        "path": "plan/verification/plt01-lifecycle/reconciliation-004.json",
-        "sha256": "ff7c00667ed2af7d04f67d515d1afb53bd3c006efa6fbc3bdc6339c0a2895fd9"
-      },
-      {
-        "path": "plan/verification/plt01-lifecycle/attempt-005.json",
-        "sha256": "39ccedf5c7eb6efd21e7784c9f415216a962c5de7a8d39d2eb51028abda60ba6"
-      },
-      {
-        "path": "plan/verification/plt01-lifecycle/reconciliation-005.json",
-        "sha256": "8ffe87e7182851d3d731cc18d0eb069fdfd70a110b8667c1d63078b98496b3fb"
-      }
-    ]
+    "evidence": "plan/verification/plt01-lifecycle/evidence-006.json"
   }
 }

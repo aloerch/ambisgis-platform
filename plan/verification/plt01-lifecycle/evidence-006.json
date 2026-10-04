@@ -1,0 +1,44 @@
+{
+  "all_helpers_gone": false,
+  "attempts": 6,
+  "candidate_repair": "An explicitly selected finite native timer-plus-auxiliary-service request can use the existing verified connection and host-context health bootstrap. Host ownership checks remain unchanged. A single request does not guarantee rollback; all partial or uncertain effects require reconciliation.",
+  "ci": {
+    "conclusion": "success",
+    "head": "8f5f4e9c172816c8d10fc8c893c957d706c38b90",
+    "name": "package-and-schema",
+    "scope": "Plan package/schema validation, not installation acceptance",
+    "url": "https://github.com/aloerch/ambisgis-platform/actions/runs/37162777173/job/111319481284"
+  },
+  "data_deleted": false,
+  "diagnosis": [
+    "Attempt006 advanced beyond the private manager socket lookup into native systemd-run. The owned wrapper rejected runtime input/configuration; the actual first rejection, argument vector and namespace UID map were not captured.",
+    "Retained source shows native rootless re-execution in a user namespace, followed by external systemd-run without a namespace override. The wrapper validates host-owned prerequisites and derives the manager socket from its current UID, which are incompatible with this nested view. Pure source/metadata checks reproduce this incompatibility; this remains a source-supported diagnosis."
+  ],
+  "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+  "failures_retained": 6,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "last_frozen_bundle_sha256": "7620710d9a301e36510f1aaa832c82f334d52745240a7fac1d02f412f0bb3814",
+  "last_frozen_head": "8f5f4e9c172816c8d10fc8c893c957d706c38b90",
+  "last_install_id": "f2c31db5-36df-4f08-9570-9a358790e1d2",
+  "last_state": "Database container remains created with no running application process; other five containers absent. Exact native rootless pause helper retained with private namespace state, data and network.",
+  "observed_at": "2026-10-04T00:08:11.505280+00:00",
+  "previous_evidence": "plan/verification/plt01-lifecycle/evidence-005.json",
+  "published_head": "8f5f4e9c172816c8d10fc8c893c957d706c38b90",
+  "reconciled": true,
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-006.json",
+      "sha256": "e5b969fe073d529be6d95bc27acd8ce9736a9e4d6c075de271b230c8dd278f7c"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-006.json",
+      "sha256": "4598c486b7d78f409c071c875c4114be55e16eb1c3651a59e07cd317dc92987b"
+    }
+  ],
+  "remaining": "Fresh reviewed successor installation and original native timer/authorization/network/OS/concurrency/recovery/log/cleanup acceptance remain open. The held targeted runtime probe is separate and remains unpassed.",
+  "runtime_executed": true,
+  "schema_version": 1,
+  "status": "In progress",
+  "task": "PLT-01"
+}

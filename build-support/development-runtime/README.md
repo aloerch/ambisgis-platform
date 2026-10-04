@@ -203,3 +203,17 @@ After independent source review, the separate lifecycle driver will relocate
 the complete bundle before first init, exercise actual protected services,
 preserve identity/credentials/edited metadata across restart and reinit, fault
 and recover only the renderer, and retain all persistent data on shutdown.
+
+The sixth attempt passed the private socket lookup and reached the external
+health-timer wrapper. Its generic input/configuration guard failed. Retained
+source and pure metadata checks show that the native rootless user namespace
+changes the host ownership and UID view used by that wrapper; the actual first
+rejected value was not captured. The source diagnosis and stopped-state
+reconciliation are retained with the original failed attempt.
+
+The adapter now constructs the constant `AMBISGIS_HEALTH_TIMER_PROFILE=development-v1`
+only after existing manager endpoint validation. It never inherits a caller's
+selector, and its no-bus environment does not carry this authority. The selected
+owned native timer repair is being separately reviewed and built. Host owner,
+private socket, complete bundle and finite health-command checks stay mandatory.
+Source checks are not successful timer creation or installation acceptance.
