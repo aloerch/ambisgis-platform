@@ -14,6 +14,7 @@ CATEGORIES = {"invalid_input": "validation", "os_failure": "os_error",
               "child_failed": "child_exit", "timeout": "timeout",
               "operation_failed": "runtime", "unexpected": "unexpected",
               "module_missing": "import", "import_failed": "import",
+              "gdal_extension_missing": "import", "gdal_extension_import_failed": "import",
               "attribute_missing": "attribute", "name_missing": "name",
               "configuration_failed": "configuration"}
 DETAIL = "Inspect installation state and owned dependency readiness."

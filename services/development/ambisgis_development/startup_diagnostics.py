@@ -14,6 +14,7 @@ CATEGORIES = {"invalid_input": "validation", "os_failure": "os_error",
               "child_failed": "child_exit", "timeout": "timeout",
               "operation_failed": "runtime", "unexpected": "unexpected",
               "module_missing": "import", "import_failed": "import",
+              "gdal_extension_missing": "import", "gdal_extension_import_failed": "import",
               "attribute_missing": "attribute", "name_missing": "name",
               "configuration_failed": "configuration"}
 OS_ERRORS = (OSError, FileNotFoundError, FileExistsError, PermissionError,
@@ -73,6 +74,14 @@ def fields_for(stage, error):
         fields.update(code="invalid_input", category="validation")
     elif kind is ModuleNotFoundError:
         fields.update(code="module_missing", category="import")
+        # Only builtin slots on this exact builtin type are read. Unknown
+        # names, subclasses, messages and paths never become diagnostics.
+        name = ImportError.name.__get__(error, ModuleNotFoundError)
+        if type(name) is str and name in ("_gdal", "osgeo._gdal"):
+            fields["code"] = "gdal_extension_missing"
+            context = BaseException.__context__.__get__(error, ModuleNotFoundError)
+            if type(context) is ImportError:
+                fields["code"] = "gdal_extension_import_failed"
     elif kind is ImportError:
         fields.update(code="import_failed", category="import")
     elif kind is AttributeError:
