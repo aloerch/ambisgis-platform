@@ -1,0 +1,22 @@
+{
+  "predecessor": "fd2fe1dfcc78fa974bdb81673872879336312077",
+  "retained_inputs_sha256": "a8c8c1c21c3d4edd929c20dbeedf0b0a243d33e3e57276688014b12b108245a5",
+  "schema_version": 1,
+  "sources": {
+    "geoserver": {
+      "commit": "bb35e79ea6129cbedc3074a1729dba0c6a381965",
+      "repository_id": 1376927947,
+      "tree": "4f6de8ffb4724e427e013ede6ce86c474bf9415c"
+    },
+    "geotools": {
+      "commit": "9b002d50df9d91e53cd42921510d9fa80d74c82a",
+      "repository_id": 1376927869,
+      "tree": "ae9e0941465a9f5d423e5e11f3e55809d7c3bad1"
+    },
+    "geowebcache": {
+      "commit": "b4e9a30c8e2be00b9aa87fb17324efa8e489ac22",
+      "repository_id": 1376927892,
+      "tree": "8df655d13b9955776fe1532dfb27fac64612a772"
+    }
+  }
+}

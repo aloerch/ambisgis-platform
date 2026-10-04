@@ -23,10 +23,43 @@ GEO = '2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4'
 CLIENT = 'c1f6ad9df52f08ac3bfd7211db9e3ee744b21407'
 PG = '2ff1375b5dd8bf09d8cb0e795974528180fd75ca'
 GIS = '9816f82458db774e62906cfb2c4f01f8b262c862'
-GS = 'fd2fe1dfcc78fa974bdb81673872879336312077'
-GT = '3363c3d4ae8adfe3ed2024c27f92ec63855093be'
+GS = 'bb35e79ea6129cbedc3074a1729dba0c6a381965'
+GT = '9b002d50df9d91e53cd42921510d9fa80d74c82a'
 GWC = 'b4e9a30c8e2be00b9aa87fb17324efa8e489ac22'
-WAR = '115a6a74e32847ded96c127531039e348f8be823badbf5643afbc72b00c5180b'
+WAR = '1d64aa447674943b302f8b9365d565eb35acbb1ba0a919a36ca612eeb0145a25'
+
+
+JAVA_SOURCES = {'geoserver': {'commit': 'bb35e79ea6129cbedc3074a1729dba0c6a381965', 'tree': '4f6de8ffb4724e427e013ede6ce86c474bf9415c', 'repository_id': 1376927947}, 'geotools': {'commit': '9b002d50df9d91e53cd42921510d9fa80d74c82a', 'tree': 'ae9e0941465a9f5d423e5e11f3e55809d7c3bad1', 'repository_id': 1376927869}, 'geowebcache': {'commit': 'b4e9a30c8e2be00b9aa87fb17324efa8e489ac22', 'tree': '8df655d13b9955776fe1532dfb27fac64612a772', 'repository_id': 1376927892}}
+
+def verify_successor(result, review, build_ref, war_ref, selected, pass_status):
+    """Pure identity gate; successful compilation alone cannot authorize adoption."""
+    counts = {'tests': 3, 'passed': 3, 'failures': 0, 'errors': 0, 'skipped': 0}
+    revisions = {name: row['commit'] for name, row in selected.items()}
+    family_counts = {'geotools': 49, 'geoserver': 40, 'geowebcache': 11}
+    if (result['result_exit_code'] != 0 or result['source_files_unchanged'] is not True or
+            result['source_successor'] != selected or result['native_execution']['counts'] != counts):
+        raise ValueError('Successor build source/test identity differs')
+    if (result['artifacts']['war'] != war_ref['path'] or
+            result['artifacts']['war_sha256'] != war_ref['sha256']):
+        raise ValueError('Successor build WAR identity differs')
+    identity = result['artifact_source_identity']
+    if (identity['per_root_revisions_verified'] != revisions or
+            identity['embedded_counts'] != family_counts or identity['embedded_owned_jars'] != 100 or
+            identity['war_sha256'] != war_ref['sha256'] or identity['localized_revision_resources'] != 23):
+        raise ValueError('Successor artifact source metadata differs')
+    if (not pass_status.startswith('PASS_') or review['status'] != pass_status or review['findings'] != [] or
+            review['artifact_adoption_pass'] is not True or review['actual_build_success'] is not True or
+            review['actual_reactor_test_success'] is not True):
+        raise ValueError('Actual independent artifact adoption review did not pass')
+    if (review['actual_result'] != build_ref or review['war'] != war_ref or
+            review['source_head'] != selected['geoserver']['commit'] or
+            review['source_tree'] != selected['geoserver']['tree'] or
+            review['source_successor'] != selected):
+        raise ValueError('Independent review binds a different build/WAR/source selection')
+    checks = review['checks']
+    if (checks['owned_embedded_jars_match_fresh_modules'] != 100 or
+            any(checks[key] != counts[key] for key in ('tests', 'failures', 'errors', 'skipped'))):
+        raise ValueError('Independent review artifact/test counts differ')
 
 
 def ref(path, expected=None):
@@ -295,18 +328,28 @@ def main(args):
     groups['catalog'] = group + [support_id, support_notice_id]
     groups['gateway'] = []
 
-    # Retain exact final WAR, projected tested profile and new compiled filters.
+    # Retain exact successor WAR and inert WAR-bound profile; runtime acceptance is pending.
     final = work / 'fnd08-postmerge-final/run-001'
-    java = work / 'fnd08-java/run-005'
-    java_proof = ref(java / 'result.json', 'a243c8123af156c5030579ceb8471f2a51a3394ddca9ce4f8377b245f4da58e4')
+    java = Path('/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/importer-successor-build-004')
+    profile_root = Path('/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/importer-runtime-profile-001')
+    java_proof = ref(java / 'result.json', '1fde530a64a41f7bcafe15b0a4a775747177cef7091cde97752f18ddf3f09182')
+    result = a.document(java / 'result.json')
+    if result['result_exit_code'] != 0 or result['source_files_unchanged'] is not True:
+        raise ValueError('owned successor build failed or source changed')
     java_revisions = {'geoserver': GS, 'geotools': GT, 'geowebcache': GWC}
     if {name: row['commit'] for name, row in a.document(java / 'result.json')['source_successor'].items()} != java_revisions:
         raise ValueError('owned Java source selection differs')
     war = java / 'work/source/geoserver/src/web/app/target/geoserver.war'
+    build_review = ref(Path('/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-importer-build004-artifact-review-002/result.json'), 'ae273289a4d416c0247186e922573cd889f28d72d66e6654249dd9fb89028553')
+    verify_successor(result, a.document(Path(build_review['path'])), java_proof,
+                     {'path': str(war), 'sha256': WAR}, JAVA_SOURCES,
+                     'PASS_OWNED_IMPORTER_BUILD_ARTIFACT_REVIEW')
     java_rows = {'opt/ambisgis/geoserver/application.war': file_row(war, 'owned GeoServer ' + GS, 0o644, WAR),
-                 'opt/ambisgis/geoserver/runtime-profile.json': file_row(final / 'runtime-profile.json', 'accepted final profile projection', 0o644,
-                  '960d30000604a44483fd9638d4b205b0b6e09019d104ce5c504a396a272838a7')}
-    profile = a.document(final / 'runtime-profile.json')
+                 'opt/ambisgis/geoserver/runtime-profile.json': file_row(profile_root / 'runtime-profile.json', 'inert successor WAR profile projection; no runtime acceptance', 0o644,
+                  '422ff815ead18c822d15c69bb53354cf230b770abdafbee30c056d80e8badb97')}
+    profile = a.document(profile_root / 'runtime-profile.json')
+    if profile['war_sha256'] != WAR:
+        raise ValueError('successor profile does not bind selected WAR')
     with zipfile.ZipFile(war) as archive:
         for key in ('renderer', 'imageio', 'json'):
             member = profile[key + '_member']; data = archive.read(member)
@@ -331,7 +374,7 @@ def main(args):
         if name.startswith('DevelopmentFilterChecks'): continue
         put(java_rows, 'opt/ambisgis/geoserver/launcher/' + name, file_row(classes / 'classes' / name, 'reviewed owned launcher compile', 0o644, sha))
     for path, sha in compile_receipt['source'].items(): ref(Path(path), sha)
-    groups['geoserver'] = [mapped('geoserver', java_rows, [java_proof, ref(final / 'postmerge-smoke.json'),
+    groups['geoserver'] = [mapped('geoserver', java_rows, [java_proof, build_review, ref(profile_root / 'result.json', '930fe0b02c5e6d4db740f01b7763b23becb0316a010c453a6e993a308885b31f'),
         servlet_manifest, ref(classes / 'result.json')], java_revisions)]
     jdk = work / 'java-resolution/toolchain/jdk-17.0.20.1+1'
     jdk_archive = custody / 'java-resolution/toolchain/OpenJDK17U-jdk_x64_linux_hotspot_17.0.20.1_1.tar.gz'
