@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "scope": "Selected native Podman inspection/OCI projection from failed ordinary lifecycle003; no secrets, identities or host paths copied. Not evidence that a container started.",
+  "raw_inspect_sha256": "945d26a0bf3cb4807d8bf02e413b0bc8c7f50aa7b93378b33302c17de5b901be",
+  "raw_oci_sha256": "04f05502b74cce3aba27d02dad1e075124a58277d637198041a916ecb4f07af9",
+  "inspect": {
+    "HostConfig": {
+      "Tmpfs": {
+        "/tmp": "rw,nosuid,nodev,size=256m,rprivate,tmpcopyup"
+      }
+    }
+  },
+  "oci": {
+    "mounts": [
+      {
+        "destination": "/tmp",
+        "type": "tmpfs",
+        "source": "tmpfs",
+        "options": [
+          "rw",
+          "nosuid",
+          "nodev",
+          "size=256m",
+          "rprivate",
+          "tmpcopyup"
+        ]
+      }
+    ]
+  }
+}

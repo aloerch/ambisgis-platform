@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "source": {
+    "deploy/development/lifecycle_check.py": "aa6e117d9f0e6969a78c9fdf8ce27263e86ad471673972a4a12dddf7dea08708",
+    "deploy/development/test_lifecycle_check.py": "23ddd5599c2c361d025a16195c8afc500e4dde51ebbda7532ef89c96a605b213"
+  },
+  "command": [
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "test_lifecycle_check",
+    "-v"
+  ],
+  "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/deploy/development",
+  "exit_code": 0,
+  "test_log_sha256": "06457b56c7d05fbbca6016e8921279f94ce0a1bb8aa694bedef54ff41526c030",
+  "tests": 5,
+  "findings": [],
+  "scope": "Independent full source read and inert tests only; no runtime acceptance",
+  "limitations": [
+    "PIPE output size checked after completion, not a streaming memory bound",
+    "No engine or installation invoked"
+  ],
+  "reviewed_at_epoch": 1791056181.023385
+}

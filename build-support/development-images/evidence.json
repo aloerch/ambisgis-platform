@@ -1,0 +1,183 @@
+{
+  "derived_proj": {
+    "bytes": 1385,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-selection-007/proj-relocation.json",
+    "sha256": "6149cb7e76e9560cf635a9cee90ba6b24c2f1fff4288e18276143139eb6450a3"
+  },
+  "distribution_approved": false,
+  "full_installation_acceptance": false,
+  "identical_archive_bytes": true,
+  "identical_source_manifest": true,
+  "images": {
+    "catalog": {
+      "image_id": "sha256:166127beaed72de2613b7a396a17cb2d29da9c0d79c1c860ccf7a7591f795ad4",
+      "manifest_digest": "sha256:3673930a6dc0e6680ab0349774dfcac9f4d8295c83b684b9866d7e46bbb056b6",
+      "path": "catalog.oci.tar",
+      "reference": "localhost/ambisgis/catalog:5e5d38b9205debad029c49020552bd9e10b0314d",
+      "sha256": "ad560b7c7241a33f5c7327aa7b7d0085ad8b348fe3026d85f861be8a3854363d",
+      "source_manifest_sha256": "ef2d37036a3f3d9ebde6f0f7fa2f07c3046dead9f10a5b77e719045311212af6"
+    },
+    "database": {
+      "image_id": "sha256:c85d889e556fccb885f304a11b4da355efef0176d4c5c70c377b3314d8c67f63",
+      "manifest_digest": "sha256:667f6d191b0c98f9f5b9ccec6e468b0be559b565d8e8fe8f9a5922bc0b42e33a",
+      "path": "database.oci.tar",
+      "reference": "localhost/ambisgis/database:5e5d38b9205debad029c49020552bd9e10b0314d",
+      "sha256": "3253e3f842d3f7006ed8d3c0b5d805d0666580c3f610098a2a37750db74a121b",
+      "source_manifest_sha256": "ef2d37036a3f3d9ebde6f0f7fa2f07c3046dead9f10a5b77e719045311212af6"
+    },
+    "gateway": {
+      "image_id": "sha256:146b333939b9130fa616801bc6f171ff7d22a8922e2f0e9e75669d27c563724c",
+      "manifest_digest": "sha256:d8ee3ff7eb4579513740af282a9abc72b178c33791b2266b9d168521ca9cd45b",
+      "path": "gateway.oci.tar",
+      "reference": "localhost/ambisgis/gateway:5e5d38b9205debad029c49020552bd9e10b0314d",
+      "sha256": "afe8a66ba8b81277edc2cba5b54392fd6102d27cc79a094c015a8f4136bccf86",
+      "source_manifest_sha256": "ef2d37036a3f3d9ebde6f0f7fa2f07c3046dead9f10a5b77e719045311212af6"
+    },
+    "geoserver": {
+      "image_id": "sha256:8c6d02b5c9dd257a0c8859ce6b79a6776efb9922be7b7347f46ba03261933a86",
+      "manifest_digest": "sha256:588f7575939db5a283ee56d45aa9093f28baeb2b4a2e6e370f495e83ec2cd4eb",
+      "path": "geoserver.oci.tar",
+      "reference": "localhost/ambisgis/geoserver:5e5d38b9205debad029c49020552bd9e10b0314d",
+      "sha256": "bd47914ebdbf9efdf4043ece35e3075093e0e959f1405d36f9772444aae63e8e",
+      "source_manifest_sha256": "ef2d37036a3f3d9ebde6f0f7fa2f07c3046dead9f10a5b77e719045311212af6"
+    }
+  },
+  "implementation_head": "5e5d38b9205debad029c49020552bd9e10b0314d",
+  "independent_readelf": {
+    "bytes": 539,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/proj-independent-001/result.json",
+    "sha256": "1d1d6de5b9921f25e37c0516ca211300371fd9eff0930fac976fc39c55f5ffee"
+  },
+  "limits": [
+    "Actual nonroot mapping, SELinux, ABI relocation and persistent installer journey remain pending.",
+    "Static ELF context is potential lookup, not proof of executed native closure.",
+    "Eight absent names belong to unused full-JDK GUI/audio/splash libraries;25 libjvm dependencies rely on Java launcher loading the included server library.",
+    "Catalog preserves an alternate ARM64 Selenium helper; that helper is not qualified on the x86-64 developer profile.",
+    "Third-party corresponding source is retained in referenced custody; images are not a complete source release.",
+    "The existing targeted runtime probe hold remains effective."
+  ],
+  "paired_assembly": {
+    "bytes": 2391,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-pair-001/result.json",
+    "sha256": "3b431d656db808a9725c4d1f61c9cc7bc8ad851379c9445e7ed3995d1ffcc5d9"
+  },
+  "producer_result": {
+    "bytes": 2316,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/images-003/result.json",
+    "sha256": "b947700af26584f92386f81b90daf6fc97d62f3ea49f082922ba5bcfe4b1948a"
+  },
+  "retained_prior_candidate": {
+    "bytes": 2316,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/images-002/result.json",
+    "sha256": "e28d55d45ee69ff719d6e5062a96a5fc9f92a89c3eca79f2e86ab8dd4081dcb3"
+  },
+  "runtime_executed": false,
+  "schema_version": 1,
+  "scope": "Inert owned developer images; no engine/image execution and no installation or distribution approval",
+  "selection": {
+    "bytes": 158969,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-selection-007/selection.json",
+    "sha256": "d26e200bffa6e3240b4e97abce63951a7894f718da564958850d9279da7f93b8"
+  },
+  "source_manifest": {
+    "bytes": 18105937,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/images-003/source-manifest.json",
+    "sha256": "ef2d37036a3f3d9ebde6f0f7fa2f07c3046dead9f10a5b77e719045311212af6"
+  },
+  "static_elf": {
+    "catalog": {
+      "conditional_loader_context_count": 0,
+      "elf_members": 751,
+      "missing": [],
+      "other_machine_members": [
+        {
+          "member": "opt/ambisgis/python-site/selenium/webdriver/common/linux-arm64/selenium-manager",
+          "other_machine": 183
+        }
+      ],
+      "receipt": {
+        "bytes": 378260,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-elf-final-001/catalog.json",
+        "sha256": "47e933103a50467831ec6d6de4cb1be757a6098fe2004110f03d6f9676334b31"
+      }
+    },
+    "database": {
+      "conditional_loader_context_count": 0,
+      "elf_members": 640,
+      "missing": [],
+      "other_machine_members": [],
+      "receipt": {
+        "bytes": 325730,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-elf-final-001/database.json",
+        "sha256": "39a775f2a379b74e4c34ccb056e66614e76d1dc46ea617647beb05a8470c7913"
+      }
+    },
+    "gateway": {
+      "conditional_loader_context_count": 0,
+      "elf_members": 404,
+      "missing": [],
+      "other_machine_members": [],
+      "receipt": {
+        "bytes": 177048,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-elf-final-001/gateway.json",
+        "sha256": "0f36cb44f01d9dbb9ca879916039d3b53a407f5cafef339b2a27542cf6eeaf8e"
+      }
+    },
+    "geoserver": {
+      "conditional_loader_context_count": 25,
+      "elf_members": 473,
+      "missing": [
+        {
+          "member": "opt/ambisgis/java/lib/libawt_xawt.so",
+          "needed": "libXext.so.6"
+        },
+        {
+          "member": "opt/ambisgis/java/lib/libawt_xawt.so",
+          "needed": "libX11.so.6"
+        },
+        {
+          "member": "opt/ambisgis/java/lib/libawt_xawt.so",
+          "needed": "libXrender.so.1"
+        },
+        {
+          "member": "opt/ambisgis/java/lib/libawt_xawt.so",
+          "needed": "libXtst.so.6"
+        },
+        {
+          "member": "opt/ambisgis/java/lib/libawt_xawt.so",
+          "needed": "libXi.so.6"
+        },
+        {
+          "member": "opt/ambisgis/java/lib/libjsound.so",
+          "needed": "libasound.so.2"
+        },
+        {
+          "member": "opt/ambisgis/java/lib/libsplashscreen.so",
+          "needed": "libX11.so.6"
+        },
+        {
+          "member": "opt/ambisgis/java/lib/libsplashscreen.so",
+          "needed": "libXext.so.6"
+        }
+      ],
+      "other_machine_members": [],
+      "receipt": {
+        "bytes": 224770,
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-elf-final-001/geoserver.json",
+        "sha256": "23bb4129e5ecbda3cb284b29177ef9f4e97805fbe6bc0de8d57d1c56fff503c6"
+      }
+    }
+  },
+  "task": "PLT-01",
+  "test_counts": {
+    "image_guards": 22,
+    "plan_package": 559,
+    "schemas": 10,
+    "token_cleanup_and_oracles": 15
+  },
+  "tests": {
+    "bytes": 2767,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-helper-tests-001/result.json",
+    "sha256": "a62ac887f5cfaf7b644cda4dec21606ba477e7959f8caf40aa8db6d7b9d28d0b"
+  }
+}

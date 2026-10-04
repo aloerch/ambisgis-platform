@@ -1,0 +1,61 @@
+{
+  "all_helpers_gone": false,
+  "container_process_absent": true,
+  "live_owned_containers": [
+    {
+      "id": "663be0a5d28e4f3f6486d8f047be49426984ff0461397fab2b7add1651276cd3",
+      "running": false,
+      "source": "read-only-diagnosis-002",
+      "status": "created"
+    }
+  ],
+  "other_five_containers_absent": true,
+  "persistent_data_and_network_preserved": true,
+  "reconciled": true,
+  "reconciliation_boundary": "Known failed command has terminated and its remaining effects are identified and deliberately retained. This is not helper-cleanup or installation acceptance; no process was killed and no data, lock or receipt removed.",
+  "recorded_at_utc": "2026-10-03T22:58:59.468225+00:00",
+  "recorded_container_pid": 520322,
+  "references": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/result.json",
+      "sha256": "39ccedf5c7eb6efd21e7784c9f415216a962c5de7a8d39d2eb51028abda60ba6"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/read-only-diagnosis-002/result.json",
+      "sha256": "8052642c1708c82ed75c1824d97eaaadcdaad84b32d4825a797dcc3bf60cf0eb"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/source/pkg/rootless/rootless_linux.c",
+      "sha256": "c7741541982c0c136536472e487aafe3e42f6a5013f6b6619adb8991bff980a6"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-env-build-002/source/docs/source/markdown/podman-system-migrate.1.md",
+      "sha256": "a37c8908a0aee31b2c08777b750345e8bb09a0ad38cf643a40dff8e9dc521e5b"
+    }
+  ],
+  "remaining_work": [
+    "Repair direct systemd user-manager socket selection without changing private XDG storage.",
+    "Complete actual timer/helper cleanup acceptance separately."
+  ],
+  "retained_owned_namespace_helper": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/user.slice/podman-pause-a1cd4396.scope",
+    "comm": "podman pause",
+    "executable": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/relocated-bundle/runtime/engine/podman",
+    "gid_map": "         0       1000          1\n         1     100000      65536\n",
+    "interpretation": "Native persistent rootless namespace process remains, exactly bound to this retained installation and relocated executable; it is not an application service. Native source documents persistence independently of stopped containers.",
+    "namespaces": {
+      "mnt": "mnt:[4026533652]",
+      "net": "net:[4026531833]",
+      "user": "user:[4026533639]"
+    },
+    "pid": 519528,
+    "pid_file": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/installation-005/runtime/run/libpod/tmp/pause.pid",
+    "pid_file_sha256": "0c9106d62b87a352cb83e38fe5b2f14d3bd3f78c34cce7de7c491cde1ff5bc3a",
+    "start_ticks": "6471086",
+    "uid_map": "         0       1000          1\n         1     100000      65536\n"
+  },
+  "run_id": "8b2b6a9c-ba20-4703-a8d9-4d94ff197a8f",
+  "schema_version": 1,
+  "scope": "Failed ordinary development lifecycle005; no remote writes attempted",
+  "wrapper_and_child_absent": true
+}

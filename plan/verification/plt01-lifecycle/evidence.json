@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "task": "PLT-01",
+  "status": "In progress",
+  "runtime_executed": true,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "attempts": 3,
+  "failures_retained": 3,
+  "last_install_id": "a424b33a-2337-41b6-b673-917ddf5fbdfd",
+  "last_state": "One database container created but never started; no running service, runner or child process; owned network and all persistent data retained. Original automatic-shutdown receipt remains incomplete.",
+  "diagnosis": [
+    "Attempt001: merged native stderr warning contaminated JSON stdout; separate bounded streams repaired.",
+    "Attempt002: exact retained Compose provider version query includes an empty command slot; narrow canonicalization repaired.",
+    "Attempt003: sealed runc init loses the private library search path; native rprivate tmpfs normalization rejected by inspection. Corrected owned source rebuild and profile repair under independent review; no fresh native acceptance yet."
+  ],
+  "last_frozen_head": "5387068031bc226a7faf4deb9c9329d379230cc2",
+  "last_frozen_bundle_sha256": "e8a34bc3d9014229c8110667bd3734a357d72b09c7054f39bad5bb704ed03835",
+  "last_frozen_tests": {
+    "package": 564,
+    "runtime": 16,
+    "schemas": 10,
+    "skipped": 0
+  },
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-001.json",
+      "sha256": "6f1f70e212d9c332623e2a89b5fc8dd15a6d1b90674e4b6bec1e668adda406aa"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-002.json",
+      "sha256": "4ad8fe63ebcdf8595abee02a2c1da5daef483b683041273f43b1490e78506a21"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-003.json",
+      "sha256": "877201072ddd0f2901b3016a05475b312faa326ce2283502d4fe1345e2d6b677"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-001.json",
+      "sha256": "0a419c992735642c3120b47ee776883869bc9336ddf4af353cd8a555bfc68344"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-002.json",
+      "sha256": "fb8814e8dac797954e9d1d09995561e92f80603be95042dbf53fdc631058c497"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-003.json",
+      "sha256": "9840bc6dc3761ab00ac1afff33bebab800390e13ca958c9ab63c49ca9283a79c"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/bundle006-independent-review.json",
+      "sha256": "8f76f67c2021a84e9e3fda9e8f21dbc11bc8961009c7c78e1b5f00251e4f95f2"
+    }
+  ],
+  "repair_candidate": {
+    "head": "67e12a1693a85daf242a982393273b779a6c72a7",
+    "bundle_sha256": "c6b4eb308c6b5aed5c952bbfe3499554c4be3856ebda57e3dadbd1ede789e7c7",
+    "reported_checks": {
+      "runtime": 19,
+      "package": 565,
+      "schemas": 10,
+      "native_environment_subcases": 3
+    },
+    "independent_review": "Build and bundle review pending; no native runtime acceptance",
+    "evidence_sha256": "e4e3ff765c38486706211a572b8d04353eb80dcb4c53d7b4f00b26dbed5c2555"
+  }
+}

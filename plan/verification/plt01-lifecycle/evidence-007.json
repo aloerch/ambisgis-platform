@@ -1,0 +1,47 @@
+{
+  "all_helpers_gone": false,
+  "attempts": 7,
+  "candidate_repair": "Explicit native-direct-v1 bundle capability omits obsolete PATH scope launcher and fails closed on any replacement in the exact private/native host lookup locations. Health timers, private DNS and all existing host/ownership checks remain required.",
+  "data_deleted": false,
+  "diagnosis": [
+    "Retained netavark source constructs the systemd-run scope invocation, which the existing health-only wrapper rejects before context validation. Actual failing argv was not captured; pure argument parsing reproduces the source-derived rejection.",
+    "The nested rootless network mount namespace also hides the host user manager path; a grammar-only fix would not establish correct scope startup.",
+    "The native direct DNS branch is retained behavior. A dedicated DNS systemd scope is not an original PLT-01 requirement; direct mode inherits the caller cgroup and needs actual identity/namespace/lifetime/cleanup verification."
+  ],
+  "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+  "failures_retained": 7,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "last_frozen_bundle_sha256": "5fe09486a32c63d5e08ef8c8b0691a6f5e5607b202664da008182965ce0c57c4",
+  "last_frozen_head": "4afba4c213a094344b40a665edffb531e4f76ff5",
+  "last_install_id": "5f07d9e7-98bb-4baf-b175-be7d5ec75810",
+  "last_state": "Relocation/init passed; startup failed while netavark launched aardvark DNS. Persisted native health unit name was observed in an immutable copy of engine metadata. Later exact GetUnit readback reported timer/service not loaded; driver/database PIDs absent and exact owned pause helper retained. No application journey ran.",
+  "observation_correction": "Initial read-only diagnosis incorrectly sourced a null health_unit_name from an unrelated inspect field. Original receipt is retained; diagnosis002 removes the field. Actual hcUnitName was subsequently obtained from exact native metadata, not inferred from inspect.",
+  "observed_at": "2026-10-04T01:22:12.194473+00:00",
+  "previous_evidence": "plan/verification/plt01-lifecycle/evidence-006.json",
+  "private_reference_hashes": {
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-dns-launch-source-diagnosis-001/result.json": "58ca7d06638d6ca0ac685f1f76eb6d595b306935c99777b7a8bb394b1ade80d3",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-dns-profile-design-001/result.json": "eaef1743c3991835bd7c4519ed50ff6141c628ec06f34cccd3d5d6b8c8b51c3d",
+    "plt01-runtime-checks/lifecycle-007/read-only-diagnosis-002/result.json": "2442ba5ec391854fafb4c8d58ea6b5a8c05f806e0aa4fc10b7819fed9a602c27",
+    "plt01-runtime-checks/lifecycle-007/read-only-state-001/result.json": "03df6fd57d03cac03a12d202203f78370c43851361b3c10748b0fc122987fb85",
+    "plt01-runtime-checks/lifecycle-007/read-only-timer-001/result.json": "4af4c67ac0203d891f076a8b9e750ead47a92ea343afb7ad129a3e7bc077a5f9"
+  },
+  "progress_comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5975318567",
+  "published_head": "4afba4c213a094344b40a665edffb531e4f76ff5",
+  "reconciled": true,
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-007.json",
+      "sha256": "148801fb2ab931fb97feae4c2d6119aff0f53376f55ef2e6f04d759cfeb43d6c"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-007.json",
+      "sha256": "e9f2d8ee1b825cb5e7928c888d6bb6e37bb947cd7b2c6fe99221204e3252e884"
+    }
+  ],
+  "remaining": "Fresh reviewed successor installation, actual DNS/PID/ns/cgroup/cleanup and original service/authorization/network/OS/concurrency/recovery/log acceptance remain open. Held targeted runtime qualification remains separate and unpassed.",
+  "runtime_executed": true,
+  "schema_version": 1,
+  "status": "In progress",
+  "task": "PLT-01"
+}

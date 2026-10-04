@@ -1,0 +1,54 @@
+{
+  "base": "8d8bc5b3bb6aab0845a267d3b1780d18addfc4a3",
+  "changed_files": [
+    ".github/workflows/prototype-checks.yml",
+    "docs/delivery-gates.md",
+    "evidence/db01/ci-equivalent.json"
+  ],
+  "concerns": [],
+  "controls": [
+    "Exact original workflow prefix unchanged: only PR/push ambisgis/main, repo guard, exact owned SHA fetch/detach/equality check, Ubuntu24.04, Python3.12 guard, five-minute timeout, permissions empty, concurrency unchanged.",
+    "No actions, dependencies, tokens, secrets, upload, publishing, deployment or merge added.",
+    "Original12 oracle tests retained; added3 schema tests cannot stand in for22 actual database methods, independent probes or exact-source trusted gate.",
+    "No original acceptance, source/test/harness or evidence77 inventory changes."
+  ],
+  "evidence": {
+    "independent_command": [
+      "/usr/bin/python3.12",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_schema.py",
+      "-v"
+    ],
+    "independent_exit_code": 0,
+    "independent_log": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-ci-review-001/test.log",
+      "sha256": "98255dd853c46071b27c02bee9886e1f142a3f268c281c3cd4cf48e04cd61e5a"
+    },
+    "local_equivalent_references_rehashed": 5,
+    "original_full_review": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-review-8d8bc5b.json",
+      "sha256": "220889d16b26944c55fe8f74a416308fe6997d6892d7e9e96451da5d7a3f0e37"
+    },
+    "public_local_equivalent": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db01-worktree/evidence/db01/ci-equivalent.json",
+      "sha256": "dccd7ab0692657d5a1d620e440585edd0ee78858b8763e8b3a50d1fe30a0e2b2"
+    },
+    "source_files_rehashed": 6
+  },
+  "findings": [],
+  "head": "8dfb38c6211b2235db14bc5fb9ec34e3b80513aa",
+  "remaining": "Hosted Actions success and parent-controlled exact-head gate/normal merge/postmerge checks remain unclaimed.",
+  "remote_writes": false,
+  "repository": "aloerch/ambisgis-geodb",
+  "repository_id": 1376927417,
+  "task": "DB-01 controlled CI delta",
+  "tree": "8f97837dd6094f47c7175306091d5ecd85b72ba4",
+  "verdict": "PASS: one appended pure-schema unittest command; original CI and separate real-database/review gates preserved",
+  "workflow_sha256": "d183c88b7217d211ef0562161e126d3f2f3cb931e51d2afae455244163764356"
+}

@@ -1,0 +1,4 @@
+#!/opt/ambisgis/python/bin/python3
+"""Image entrypoint: interpreter and import roots are fixed by owned assembly."""
+import runpy
+runpy.run_module('ambisgis_development.entrypoint', run_name='__main__')

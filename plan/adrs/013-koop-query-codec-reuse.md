@@ -1,6 +1,6 @@
 # ADR 013 — Reuse the retained Koop query encoder behind owned contracts
 
-Status: measured engineering decision under final FND-06 review. Product
+Status: measured engineering decision accepted with FND-06 at `d0218209`. Product
 integration, release and complete C1 acceptance remain open.
 
 ## Decision and authority
@@ -142,3 +142,5 @@ remain in the shared contract index. FND-06's measured reuse decision does not
 pass T-COMPAT-C1, T-AUTH-ALL, T-SEC-ABUSE or any full product journey. Source repair,
 installation, desktop platforms, browser/accessibility, notebook isolation,
 restore, human-only pilots and release gates remain with their original tasks.
+
+Acceptance evidence: [FND-06 acceptance and fresh postmerge verification](../verification/fnd06-acceptance/acceptance-and-merge.json). The original bounded profile and later product/distribution obligations remain unchanged.

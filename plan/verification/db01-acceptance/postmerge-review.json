@@ -1,0 +1,125 @@
+{
+  "scope": "Independent read-only verification of actual fresh DB01 postmerge acceptance, original criterion scope only",
+  "repository": "aloerch/ambisgis-geodb",
+  "repository_id": 1376927417,
+  "pr": 11,
+  "merge_commit": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
+  "reviewed_head": "8dfb38c6211b2235db14bc5fb9ec34e3b80513aa",
+  "base": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+  "tree": "8f97837dd6094f47c7175306091d5ecd85b72ba4",
+  "findings": [],
+  "concerns": [],
+  "decision": "PASS for original DB01 managed identity/typed-schema foundation after actual protected merge",
+  "runtime": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/acceptance.json",
+    "sha256": "527a46b4edd9d9130dde71eef5b8b37b14aa300ad1acdb46576633577babcca4"
+  },
+  "references": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/acceptance.json",
+      "sha256": "527a46b4edd9d9130dde71eef5b8b37b14aa300ad1acdb46576633577babcca4"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/inputs.json",
+      "sha256": "67caccdd4de3699776da41863e9c381a2acd5cf5d04206076fc23c4d7a0a3205"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/runtime.json",
+      "sha256": "d8ada08e7b3f8f107b1f80f480e40684c3d961b8388f51fd490b5104878bfd37"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/fixture-runtime.json",
+      "sha256": "98afe0853ab8ee9f6eccb582a4998e53f89913f80c6cab5f57f3f4a3540122dc"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/tests.log",
+      "sha256": "93cb68051b989266aaf1cd73b034015b674b6b35aa30ed1543ea015d32f66b1a"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/commands.json",
+      "sha256": "ccd40688e95ba9b908c914217a5b364e66eaf0b4edfcfa0ecdbfb1f7d2417706"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/job.json",
+      "sha256": "b57744997e033a288fab1204015c81c65113bf7ef7fcba818564f083e128a9c7"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/postgres.log",
+      "sha256": "b4296218beb85f0e30558288956862195db5b20e074a460a84b11db9ffe56de9"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/managed-export.json",
+      "sha256": "73072ae7bbdb1880cda021a9b924c024704c76ea545c4adb5a77350717d89eb9"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-control-001/invocation.json",
+      "sha256": "0dea6cfe6c8da3ecb5ff2e705a02592c79f3511083a60710c419d2938922ce1d"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-control-001/result.json",
+      "sha256": "fbad0622c013573ebeced777a0e26eafed9705cfe2fdca5a3a84c9f5b5b876e1"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-control-001/runtime.log",
+      "sha256": "280de11b99a945a287b2cb8485a1d976151ccf79256369b809cd1a1a6546bd84"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-review-8d8bc5b.json",
+      "sha256": "220889d16b26944c55fe8f74a416308fe6997d6892d7e9e96451da5d7a3f0e37"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-ci-review-8dfb38c.json",
+      "sha256": "1337e8a1d78d5a4cf0fd6a946fe7ef8f4dd58c0fadebcee21be15f5d91e2e4f4"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-merge-helper-review-0a4716e.json",
+      "sha256": "82ebdaf10b061ad41dafb3304dd1876393cd649d17760a262132bbd088112178"
+    }
+  ],
+  "checks": {
+    "exact_merge_parents_and_same_reviewed_tree": true,
+    "detached_worktree_clean": true,
+    "all_tracked_files_rehashed_and_git_bound": 41,
+    "actual_executed_sources_rehashed": 16,
+    "owned_runtime_artifacts_rehashed": 72,
+    "actual_real_database_test_methods": 22,
+    "actual_pure_guards": 3,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "source_unchanged": true,
+    "database_stopped": true,
+    "postmaster_pid_absent": true,
+    "private_socket_files_removed": true,
+    "empty_private_socket_directory_retained_mode": "0700",
+    "no_readable_process_for_job_cluster": true,
+    "utf8_and_actual_managed_migration_bound": true
+  },
+  "actual_command": {
+    "argv": [
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/run-003/venv/bin/python",
+      "-B",
+      "tools/run_managed_acceptance.py",
+      "--prefix",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/prefix",
+      "--runtime-evidence",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003-evidence-final.json",
+      "--evidence",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001"
+    ],
+    "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db01-postmerge-worktree",
+    "exit_code": 0
+  },
+  "timing": {
+    "producer_total_seconds": 12.83262914199804,
+    "unittest_reported_seconds": 2.813
+  },
+  "evidence_interpretation": "Fresh postmerge25test run is actual. Prior12 independent privilege probes and unchangedFND04 regression remain explicitly reused through identical reviewed source; no fresh broad regression or production migration is claimed. Disposable synthetic local cluster remained owned by this job and was stopped; no external credentials or production data used.",
+  "limits": [
+    "DEFAULT-only managed schema foundation; named branches/full edit history/API policy integration/production restore remain later tasks",
+    "Task acceptance and tracking mutation remain with root under standing delegation; this receipt performs no remote changes",
+    "Not product release, public distribution, installer or broader GIS acceptance"
+  ],
+  "reviewer_check_correction": "Initial inline audit unnecessarily required deletion of the private socket directory; it is retained empty0700 by the existing fixture. Corrected read-only check verifies actual socket files gone, no postmasterPID/process and shutdown log; no product change or new test execution.",
+  "remote_writes_by_reviewer": false
+}
