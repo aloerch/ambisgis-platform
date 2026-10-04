@@ -19,58 +19,53 @@ managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
 PLT-01 remains In progress after fourteen preserved ordinary installation failures.
-Reviewed source 2bc52ba9f5302b5b969f3bda2315eeafc1e7dd33 is published in
-[draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78), without merge
-or acceptance. The reviewed OAuth bootstrap correction is included. Validation023
-passed 658 package, 52 runtime, 121 development, 40 image-helper and ten schema
-checks. Pin validation024 passed 658/52/10 and explicitly reused unchanged 40/121
-checks from023. All 1,522 tracked source files remained unchanged during checks.
-Images015/016 from c3b6a718 are byte-identical. Audited bundle017 contains 1,311
-runtime files, 374 ELF objects and twelve host prerequisites. These checks are
-separate from installed GIS acceptance and exclude the new GeoServer component.
+Reviewed source `1baae0f48bcd69cb709e1aa0cfec80ba0895790b` is published in
+[draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78), open and
+unmerged. Validation025 passed 662 package, 52 runtime, 121 development,
+40 image-helper and ten schema checks. Validation026 passed 662/52/10 and
+explicitly reused unchanged 40/121 checks. All 1,527 tracked source files were
+unchanged during those checks. Images017/018 are byte-identical; independently
+audited bundle018 has 1,311 runtime files, 374 ELF objects and twelve host
+prerequisites. [Published source CI](https://github.com/aloerch/ambisgis-platform/actions/runs/37203397726/job/111439495981)
+passed. These checks exclude the new JVM observation component and do not prove
+installed GIS acceptance.
 
-Attempt014 passed relocation and fresh init. Catalog-init completed with exit0,
-was removed and left its initialized marker. GeoServer-init then exited1 after
-the Python Java deadline, producing entrypoint/timeout/timeout. Serving roles and
-protected-service, persistence/recovery and DNS journeys were not reached.
-Independent effects review confirms database health and stopped exit0, known
-persisted timer/service absence, and retained owned pause/data/network. Complete
-helper and DNS cleanup are not claimed; the original timeout cause is unobserved.
+Attempt014 advanced through catalog initialization, then GeoServer initialization
+timed out. A second separate private initializer diagnostic with the reviewed
+configuration/phase changes also failed. It emitted all normal body phases,
+`SERVER_STOPPED` and final `MAIN_COMPLETE`, then reached the unchanged 180-second
+Java deadline. That final phase precedes launcher return; it does not independently
+prove return or identify a surviving thread. The temporary marker phase was
+observed; the persistent initialized marker was absent because Python writes it
+only after successful JVM exit. The original attempt014 cause remains unobserved.
 
-A separate fresh private database plus unchanged GeoServer-initializer diagnostic
-also failed. Its complete private logs exposed missing native imageProcessing
-settings and rejection of an unsupported PATCH REST rule. A context-cleanup
-start message does not establish stop completion or the Java phase at timeout.
-The source-supported configuration defects and the unresolved total timeout are
-distinct; raw logs are not published. The original attempt014 cause is not inferred.
+Independent effects review confirms a healthy database stopped with exit0,
+initializer exit1/removal, known persisted timer/service absence, unchanged prior
+data and a retained owned pause process. No serving roles or protected-service,
+persistence/recovery or DNS journeys ran. Complete helper/DNS cleanup is not claimed.
+Raw private logs are not published.
 
-The five-file correction at 13f3084a83c5b45a901a74d03be67e9b7c612531 passed
-independent source/Java review and is integrated locally as
-d6d49ca26ba5209f72b0cbc2baf986af081f494e; it is not published. It fills
-native image-processing defaults, removes PATCH from the native admin rule and
-adds finite initialization diagnostics while preserving the mandatory request
-filter, finally-stop behavior and deadlines. Four Python cases had two baseline
-failures and all four passed after correction; root independently replayed those
-same cases. Root's Java compilation and executable checks passed 63 request and
-66 finite-diagnostic assertions. These checks do not prove GeoServer startup or
-resolve its timeout. Combined integration checks, rebuilt artifacts and a fresh
-ordinary installation remain next; no forced exit or timeout increase is proposed.
+The three-file JVM observation component at
+`676ef0dce6a65940e769d66eea1bb276a4703ad4` passed independent source/Java
+review and is integrated locally as `22cb4eacb843abafab159a68046cbc2b3aae3053`;
+it is not published. It adds init-only, bounded post-stop
+thread evidence with fixed symbols and explicit unknown/overflow states; it does
+not interrupt threads, shut down pools, force JVM exit or raise timeouts. Root
+Java004 compile/check commands passed 63 request, 66 phase and 67 thread checks.
+These are source/fixture checks; a surviving JVM resource remains unobserved.
+Validation027 and rebuilt images/bundle are pending before the next private
+initializer observation.
+[Evidence015](plan/verification/plt01-lifecycle/evidence-015.json) records this
+source/artifact checkpoint, not a fifteenth ordinary installation attempt.
 
-The normal push, draft update and
-[progress comment](https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5979325190)
-are recorded; [source CI](https://github.com/aloerch/ambisgis-platform/actions/runs/37197801004/job/111423168988)
-passed. [Attempt014](plan/verification/plt01-lifecycle/evidence-014.json) and the
-[separate diagnostic](plan/verification/plt01-lifecycle/geoserver-diagnostic-001.json)
-retain the limits. PLT-01, full P1 and scoped MVP acceptance remain open.
+The targeted runtime qualification remains held and unexecuted. The last supplied
+native Goal observation remains blocked at 13:10:28 UTC on 4 October 2026,
+12,420,153 tokens and 30,612 seconds reported, without a configured budget.
+Foreground delivery continues; no native resume is claimed. User action
+`/goal resume` concerns native automatic continuation only.
+[Latest progress](plan/verification/runtime-recovery/progress-015.json) preserves
+this distinction. PLT-01, full P1 and scoped MVP acceptance remain open.
 
-The targeted runtime qualification remains held and unexecuted. Root last
-observed the native Goal blocked at 11:11:31 UTC on 4 October 2026, with 12,420,153
-tokens used, 30,612 seconds reported and no configured budget. Foreground delivery
-continues; this tool testimony is not a native resume. The original platform
-terminal category was cyber_policy; its exact trigger remains unknown. User
-action /goal resume concerns native automatic continuation only.
-[Latest progress](plan/verification/runtime-recovery/progress-014.json) preserves
-this distinction and the original recovery history.
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.
 Independent review confirmed shutdown, unchanged sources and zero test skips.
