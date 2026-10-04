@@ -1,0 +1,94 @@
+{
+  "artifacts": {
+    "podman": {
+      "kind": "file",
+      "mode": 493,
+      "sha256": "42178d5a85f9dd23ab688f8c34491e20f1c57543e63d5ee9c511b4a23565c2b4"
+    },
+    "rootlessport": {
+      "kind": "file",
+      "mode": 493,
+      "sha256": "6b868441aed6c8917103eaac689b5f98a002a426701aec3931dfe6078be46ce1"
+    },
+    "timer.test": {
+      "kind": "file",
+      "mode": 493,
+      "sha256": "e13f8018af71cfc6e615b17f14d40aaf432fc0ec8922414750106f4b199ac74f"
+    }
+  },
+  "bundle_assembly": "pending source path-profile integration and complete candidate review",
+  "commands": [
+    {
+      "exit_code": 0,
+      "log_sha256": "908e43ba5a21e1ca38eb8e26e298a2760c7368e686ce2168db207173a9e8aec2",
+      "name": "timer-compile",
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "c07cd9e6c6fa0b09cea0e2c6761ab0ca8cc897a0ff9dd174614c29720989fb96",
+      "name": "timer-unit",
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "50463c28ee860e0c9c77fd9db5ed2ebf052fec8c959fe62cd1d539a81dc20779",
+      "name": "podman-build",
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "log_sha256": "14d5a7e2cd0361b3b37ddfbdf71265312e3ce8af5f7e580753d7c850b7a429cf",
+      "name": "rootlessport-build",
+      "passed": true
+    }
+  ],
+  "distribution_approved": false,
+  "engine_executed": false,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "independent_artifact_review": "PASS; 1040 references and complete source/toolchain rehashed; ten-object static ELF closure, no RPATH/RUNPATH",
+  "independent_preexecution_review": "PASS",
+  "integration_commit": "fa05cc16541a6696ff3b5c59407e72c2f5b8ee94",
+  "invocation_sha256": "286b69204edd418d2defb008cc60ba4a3026c2589708bdb5ba893989a036f8ea",
+  "manager_connected": false,
+  "native_helper_cases_passed": 14,
+  "native_helper_scope": "Real standalone Go tests exercise exact D-Bus property types/values and injected job/save callbacks. They do not connect to or test a running manager.",
+  "observed_at": "2026-10-04T00:29:50.466327+00:00",
+  "partial_failure": "One timer-plus-service request is not atomic rollback; attempted identity remains in all uncertain post-submission failures and requires reconciliation. No collision-triggered deletion.",
+  "patch_sha256": "f3b15a9d64ffb19acee386cfcdfb2add717993305867d0ce6c0635c4fcd2d677",
+  "producer_commit": "1ec510a83868caa174e8c1ed7e3c22bbd1ec349a",
+  "recipe_sha256": "a0f513009df3356e360f59521b29f790c5273aeb5049d9c6f346b2369653741d",
+  "references": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-health-timer-build-001/result.json",
+      "sha256": "8123fb4804541ce686918e4984fd00e6c4adb46240e7a31a5ed2720fca99f343"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-health-timer-preexecution-review-001/result.json",
+      "sha256": "d97ae68cf20b3b66de22777e96ed42906e31c3df0627670a82048d7bd40e42f7"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-health-timer-build-review-001/result.json",
+      "sha256": "2e82de57646cef6965ebdb411c5ab9965fb823a625c26dec0067033febdef76d"
+    }
+  ],
+  "schema_version": 1,
+  "selected_profile": "development-v1; constructed by the owned validated launcher, never inherited",
+  "source_baseline_limitation": "Original failure and patched success are source presence/shape checks, not an old-code native behavior regression.",
+  "source_scope": {
+    "new_change": "One selected createTimer branch plus finite property/completion helper and standalone tests; original native path and start/cleanup source unchanged",
+    "prior_entries": 9964,
+    "prior_repairs_preserved": 5,
+    "successor_entries": 9966,
+    "toolchain_entries": 18313,
+    "unchanged_vendor_entries": 5487
+  },
+  "task": "PLT-01",
+  "unchanged": {
+    "baseline": true,
+    "prior_source": true,
+    "source": true,
+    "toolchain": true
+  }
+}

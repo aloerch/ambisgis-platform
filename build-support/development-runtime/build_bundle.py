@@ -19,7 +19,7 @@ from elf_closure import elf
 
 BUILD = Path('/home/revelberry/Projects/AmbisGIS/build-worktrees')
 INERT = BUILD / 'plt01-runtime/inert-002'
-PODMAN = ROOT.parent / 'plt01-runtime-checks/podman-systemd-build-001'
+PODMAN = ROOT.parent / 'plt01-runtime-checks/podman-health-timer-build-001'
 RUNC = ROOT.parent / 'plt01-runtime-checks/runc-build-002'
 RUNC_ARCHIVE = Path('/home/revelberry/Projects/AmbisGIS/source-archives/plt01-container/obs-source/runc-64446271a17ff823ebb1b17b0b955d06/runc-1.5.1.tar.xz')
 IMAGES = ROOT.parent / 'plt01-runtime-checks/images-003'
@@ -30,15 +30,15 @@ PINS = {
     BUILD / 'plt01-container-inputs/payload-001/receipt.json': '6d685c53f28d75e66923f4e3c1c652398f76c41a48863caa10d3dbcf87591650',
     BUILD / 'plt01-image-inputs/payload-001/receipt.json': '24b9de32cc79a9836bc6dc82cb9d84b00a7b2bea4b23b9c7f725246170b30ce4',
     IMAGES / 'result.json': 'b947700af26584f92386f81b90daf6fc97d62f3ea49f082922ba5bcfe4b1948a',
-    PODMAN / 'bin/podman': '9a344c2dfc04b64cbea906b4207221446fb2f479baf9bcf2085dffd9d9a1edfe',
-    PODMAN / 'bin/rootlessport': '440ae3bea5d86c959dd6198b6a8d35e43f1498ee9b586d2aac5c139b019917f3',
-    PODMAN / 'result.json': '81693d5bb1915127a68ed38901d6e934d1dd55c376e4fd42dffb5e09316695e7',
-    PODMAN / 'MODIFICATIONS.txt': 'b2840e8188584403d242d7e4f3be46760020c6ea0a75a17453733a157dc39349',
-    PODMAN / 'commands.json': '83d6bd9a1577d59ac246bc69f52b5aecb9a78dc223035fde993ac46c449acabc',
-    PODMAN / 'invocation.json': '7746b7db7625d29f25eb5c001a44c5e0321c3305fae96d307d92a58d3d3c0d1f',
-    PODMAN / 'network.json': '16cc2d6712a6ac036af0ea72befc27cb6c7ccb123953acfb8caf3cc7d3c96842',
-    PODMAN / 'owned-source.patch': 'fdd938036b1e51d220cffe325a893b6d26775f06fd790453abdfe5739af48d23',
-    PODMAN / 'preparation.json': '29df4a295c6496fb6a5c8402f7572631cedef1a0d0678a997ea9b39f1b48caba',
+    PODMAN / 'bin/podman': '42178d5a85f9dd23ab688f8c34491e20f1c57543e63d5ee9c511b4a23565c2b4',
+    PODMAN / 'bin/rootlessport': '6b868441aed6c8917103eaac689b5f98a002a426701aec3931dfe6078be46ce1',
+    PODMAN / 'result.json': '8123fb4804541ce686918e4984fd00e6c4adb46240e7a31a5ed2720fca99f343',
+    PODMAN / 'MODIFICATIONS.txt': 'ecc8e57ccad52420cdc212293a96023c313294928c8d489a4301c9e3247efbcd',
+    PODMAN / 'commands.json': 'e06aac5c5a6263d469ca53cac5304408267fadf09be94a77ab6f79c41170d2d7',
+    PODMAN / 'invocation.json': '286b69204edd418d2defb008cc60ba4a3026c2589708bdb5ba893989a036f8ea',
+    PODMAN / 'network.json': 'cedee92ebb75746b07714dfc0b0b1d4ee8dbed00f6b946714ac27dbd1d364d7c',
+    PODMAN / 'owned-source.patch': 'f3b15a9d64ffb19acee386cfcdfb2add717993305867d0ce6c0635c4fcd2d677',
+    PODMAN / 'preparation.json': '23550906b7ee3d58252c201c2c824c18c1b1cc1d207f3f64516351b0f73f64cf',
     PODMAN / 'toolchain.json': '88c9dfab2f03d59019b96d94ca119c5a3aa12cf8509c0da7547747123e19f60a',
     RUNC_ARCHIVE: 'db743b39fd7de8da88adce5a61a54529a494928cd59227fffb622f5cb4ba6ef9',
     RUNC / 'result.json': '64ac169e79dd481fb5d6488b4c32f39ffc30f1cf902c3bbb1c807916f0b9ea00',
@@ -108,7 +108,16 @@ def shell_launcher(mode, *, public=False):
 set -eu
 unset LD_PRELOAD LD_AUDIT GLIBC_TUNABLES ENV BASH_ENV CDPATH
 case "$0" in /*) entry="$0";; *) entry="$PWD/$0";; esac
-base=$(CDPATH= cd -P -- "${entry%/*}/''' + ascent + '''" && pwd -P)
+base=$(CDPATH= cd -P -- "${entry%/*}/''' + ascent + '''" && pwd -P && printf '.')
+# Preserve trailing path newlines until validation; command substitution would
+# otherwise strip them and could select a different sibling bundle.
+base=${base%.}
+base=${base%$'\\n'}
+export LC_ALL=C
+case "$base" in /|*[!A-Za-z0-9_./-]*)
+  printf '%s\\n' 'The owned development bundle requires an absolute ASCII path using letters, digits, underscore, dot, slash and hyphen.' >&2
+  exit 125;;
+esac
 export LD_LIBRARY_PATH="$base/runtime/lib64"
 exec "$base/runtime/engine/env" -i \\
   LANG=C.UTF-8 LC_ALL=C.UTF-8 PYTHONNOUSERSITE=1 PYTHONSAFEPATH=1 PYTHONDONTWRITEBYTECODE=1 \\
@@ -281,15 +290,15 @@ def add_owned_runc(writer, original):
 
 
 def add_owned_podman(writer):
-    """Bind the independently reviewed user-manager socket successor build."""
+    """Bind the reviewed finite native health-timer successor and exact source."""
     result = json.loads(regular(PODMAN / 'result.json', PINS[PODMAN / 'result.json']).read_bytes())
     if result['exit_code'] != 0 or result['unchanged'] != {
             'source': True, 'prior_source': True, 'baseline': True, 'toolchain': True}:
-        raise ValueError('Owned Podman socket build is incomplete or changed')
+        raise ValueError('Owned Podman health-timer build is incomplete or changed')
     for name, identity in result['records'].items(): regular(PODMAN / safe_name(name), identity)
     invocation = json.loads((PODMAN / 'invocation.json').read_bytes())
     regular(PODMAN / 'build-executed.py', invocation['recipe_sha256'])
-    regular(Path(__file__).with_name('podman_systemd_build.py'), invocation['recipe_sha256'])
+    regular(Path(__file__).with_name('podman_health_timer_build.py'), invocation['recipe_sha256'])
     preparation = json.loads((PODMAN / 'preparation.json').read_bytes())
     if preparation['vendor_unchanged'] is not True:
         raise ValueError('Existing Podman vendor source changed')
@@ -304,7 +313,8 @@ def add_owned_podman(writer):
     writer.put(prefix + 'build-executed.py', source=PODMAN / 'build-executed.py', sha256=invocation['recipe_sha256'],
                origin={'owned_recipe': True, 'producer': str(PODMAN)})
     for name in ('LICENSE', 'libpod/ambisgis_oci_environment.go', 'libpod/ambisgis_oci_environment_test.go',
-                 'pkg/systemd/dbus.go', 'pkg/systemd/ambisgis_user_socket.go', 'pkg/systemd/ambisgis_user_socket_test.go'):
+                 'pkg/systemd/dbus.go', 'pkg/systemd/ambisgis_user_socket.go', 'pkg/systemd/ambisgis_user_socket_test.go',
+                 'libpod/healthcheck_linux.go', 'libpod/ambisgis_health_timer.go', 'libpod/ambisgis_health_timer_test.go'):
         row = preparation['patched'][name]
         if row['kind'] != 'file': raise ValueError('Unexpected owned Podman source member')
         writer.put(prefix + 'source/' + name, source=PODMAN / 'source' / name, sha256=row['sha256'],
@@ -399,7 +409,8 @@ def assemble(output):
     writer.document('runtime-files.json', closure)
     manifest = {'schema_version': 1, 'kind': 'ambisgis.development-bundle', 'target': {'os': 'linux', 'architecture': 'x86_64'},
                 'product_revision': result['platform_revision'], 'source_manifest': ref('source-manifest.json'),
-                'runtime': {'podman': ref('runtime/bin/podman'), 'compose': ref('runtime/bin/compose'),
+                'runtime': {'path_profile': 'owned-health-timer-ascii-v1',
+                    'podman': ref('runtime/bin/podman'), 'compose': ref('runtime/bin/compose'),
                     'environment': {'PATH': ['runtime/bin', 'runtime/helpers'], 'LD_LIBRARY_PATH': ['runtime/lib64'],
                         'PYTHONPATH': ['runtime/modules', 'runtime/lib/python3.13/site-packages', 'runtime/lib64/python3.13/site-packages']},
                     'files_manifest': ref('runtime-files.json'), 'prerequisites': ref('runtime/configuration/host-prerequisites.json')},

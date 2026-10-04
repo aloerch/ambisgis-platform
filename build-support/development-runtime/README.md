@@ -214,6 +214,17 @@ reconciliation are retained with the original failed attempt.
 The adapter now constructs the constant `AMBISGIS_HEALTH_TIMER_PROFILE=development-v1`
 only after existing manager endpoint validation. It never inherits a caller's
 selector, and its no-bus environment does not carry this authority. The selected
-owned native timer repair is being separately reviewed and built. Host owner,
+[owned native timer repair](podman-health-timer.md) compiled from retained inputs;
+all fourteen standalone property/completion cases passed. Independent artifact
+review passed; bundle integration and actual installation remain required. Host owner,
 private socket, complete bundle and finite health-command checks stay mandatory.
 Source checks are not successful timer creation or installation acceptance.
+
+The new bundle declares `runtime.path_profile=owned-health-timer-ascii-v1`.
+This selected profile requires absolute installation and bundle paths containing
+only ASCII letters, digits, underscore, dot, slash and hyphen; filesystem root,
+spaces, colons, expansions, escapes and controls are unsupported. The generated
+launcher checks its computed base before setting the private library search
+path. Its shell-only tests replace the runtime with an inert sentinel and do
+not execute a retained interpreter, engine or installer. The corresponding
+installer path validation is specific to bundles declaring this profile.

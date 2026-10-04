@@ -41,6 +41,21 @@ class RuntimeTests(unittest.TestCase):
     def engine(self, tail):
         return adapter.engine_arguments(self.globals + tail, self.root, self.bundle, self.product, self.selection)
 
+    def test_direct_wrapper_rejects_path_profile_before_derived_configuration(self):
+        product = {'bundle': {'path': str(self.bundle / 'bundle.json'), 'sha256': '0' * 64}}
+        selection = {'runtime': {'path_profile': 'owned-health-timer-ascii-v1'}}
+        with patch.object(adapter.config, 'load', return_value=product), \
+             patch.object(adapter.bundle, 'load', return_value=selection), \
+             patch.object(adapter.bundle, 'validate_runtime_paths', create=True,
+                          side_effect=InstallError('Unsupported ASCII installation path')) as validate, \
+             patch.object(adapter.config, 'compose', return_value={}) as compose, \
+             patch.object(adapter, 'read_json', return_value={}) as read:
+            with self.assertRaisesRegex(InstallError, 'ASCII'):
+                adapter.context(self.bundle, self.root)
+            validate.assert_called_once_with(selection, self.root, bundle_root=self.bundle)
+            compose.assert_not_called()
+            read.assert_not_called()
+
     def test_global_positions_are_preserved_canonically(self):
         tail = ['image', 'exists', self.selection['images']['database']['image_id']]
         self.assertEqual(self.engine(tail), self.globals + tail)

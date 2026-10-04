@@ -30,12 +30,15 @@ pause helper, data and network remain retained; helper cleanup has not passed.
 [Draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78) publishes the
 reviewed source at `8f5f4e9c172816c8d10fc8c893c957d706c38b90`. Package/schema CI
 passed at that head; the PR remains unmerged and installation unaccepted.
-The next bounded repair uses the existing native manager connection for a finite
-timer-plus-service request. It preserves host-ownership checks and records
-partial/uncertain effects for reconciliation. Reviewed authorization/recovery
+The bounded native timer repair compiled from retained sources and passed all
+14 standalone property/completion cases plus independent artifact review. Its
+finite timer-plus-service request preserves host-ownership checks and records
+partial/uncertain effects for reconciliation. Bundle integration and actual
+manager/service execution remain pending. Reviewed authorization/recovery
 drivers and a command-concurrency helper are present; their inert checks do not
 establish installed behavior.
 [Actual attempts and reconciliation](plan/verification/plt01-lifecycle/evidence-006.json)
+and [native build evidence](build-support/development-runtime/native-health-timer-evidence.json)
 retain these boundaries. Full PLT-01 and scoped MVP acceptance remain open.
 
 The held targeted engine probe remains unexecuted after the earlier platform

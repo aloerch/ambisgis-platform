@@ -312,6 +312,7 @@ def context(selected_root, root=None):
     if selected_path.parent != selected_root:
         raise InstallError('Runtime launcher and installation select different bundles.')
     selection = bundle.load(selected_path, product['bundle']['sha256'], verify_images=False)
+    bundle.validate_runtime_paths(selection, root, bundle_root=selected_root)
     expected = config.compose(product, selection, root)
     if read_json(root / 'compose.json', private=True) != expected:
         raise InstallError('Derived Compose configuration differs from product configuration.')
