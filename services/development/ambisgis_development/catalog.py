@@ -51,7 +51,7 @@ def initialize():
         from django.core.management import call_command
         from django.db import connection, transaction
         from django.contrib.auth import get_user_model
-        from django.contrib.auth.hashers import check_password
+        from django.utils.crypto import constant_time_compare
         from django.contrib.contenttypes.models import ContentType
         from django.contrib.sites.models import Site
         from django.utils import timezone
@@ -79,7 +79,7 @@ def initialize():
                 if (app.name != 'AmbisGIS development' or app.redirect_uris != product['public_origin'] + '/oauth/callback'
                         or app.skip_authorization or app.client_type != Application.CLIENT_CONFIDENTIAL
                         or app.authorization_grant_type != Application.GRANT_AUTHORIZATION_CODE
-                        or not check_password(secrets['oauth_secret'], app.client_secret)):
+                        or not constant_time_compare(secrets['oauth_secret'], app.client_secret)):
                     raise ValueError('conflicting native OAuth application')
                 users = {}
                 for role in ('owner', 'viewer'):
