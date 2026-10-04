@@ -8,6 +8,7 @@ import re
 import uuid
 
 from .common import DATA, SAMPLE, inputs, read, response, save, serve
+from .startup_diagnostics import stage as startup_stage
 
 
 def setup(role):
@@ -18,107 +19,116 @@ def setup(role):
 
 
 def initialize():
-    product, secrets = inputs()
-    marker = DATA / 'installation.json'
-    identity = {'schema_version': 1, 'install_id': product['install_id'], 'purpose': 'developer-catalog'}
-    if marker.exists():
-        if read(marker) != identity:
-            raise ValueError('catalog data belongs to another installation')
-    else:
-        if any(DATA.iterdir()):
-            raise ValueError('will not adopt an unmarked catalog volume')
-        save(marker, identity)
-    keypath = DATA / 'oidc-key.pem'
-    if not keypath.exists():
-        if (DATA / 'initialized.json').exists():
-            raise ValueError('persistent issuer key is missing; do not silently rotate it')
-        from cryptography.hazmat.primitives.asymmetric import rsa
-        from cryptography.hazmat.primitives import serialization
-        key = rsa.generate_private_key(public_exponent=65537, key_size=3072)
-        value = key.private_bytes(serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption())
-        fd = os.open(keypath, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
-        with os.fdopen(fd, 'wb') as output: output.write(value)
-    if keypath.is_symlink() or keypath.stat().st_mode & 0o077:
-        raise ValueError('issuer signing key must be private')
-    setup('catalog-init')
-    from django.core.management import call_command
-    from django.db import connection, transaction
-    from django.contrib.auth import get_user_model
-    from django.contrib.auth.hashers import check_password
-    from django.contrib.contenttypes.models import ContentType
-    from django.contrib.sites.models import Site
-    from django.utils import timezone
-    from allauth.account.models import EmailAddress
-    from geonode.base.models import ResourceBase
-    from guardian.models import UserObjectPermission, GroupObjectPermission
-    from guardian.shortcuts import assign_perm
-    from oauth2_provider.models import get_application_model, get_access_token_model
-    lock_key = str(uuid.UUID(product['install_id']).int & ((1 << 63) - 1))
-    with connection.cursor() as cursor:
-        cursor.execute('SELECT pg_try_advisory_lock(%s)', [lock_key])
-        if not cursor.fetchone()[0]: raise ValueError('another catalog initialization is running')
+    with startup_stage('catalog_input'):
+        product, secrets = inputs()
+    with startup_stage('catalog_identity'):
+        marker = DATA / 'installation.json'
+        identity = {'schema_version': 1, 'install_id': product['install_id'], 'purpose': 'developer-catalog'}
+        if marker.exists():
+            if read(marker) != identity:
+                raise ValueError('catalog data belongs to another installation')
+        else:
+            if any(DATA.iterdir()):
+                raise ValueError('will not adopt an unmarked catalog volume')
+            save(marker, identity)
+        keypath = DATA / 'oidc-key.pem'
+        if not keypath.exists():
+            if (DATA / 'initialized.json').exists():
+                raise ValueError('persistent issuer key is missing; do not silently rotate it')
+            from cryptography.hazmat.primitives.asymmetric import rsa
+            from cryptography.hazmat.primitives import serialization
+            key = rsa.generate_private_key(public_exponent=65537, key_size=3072)
+            value = key.private_bytes(serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption())
+            fd = os.open(keypath, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+            with os.fdopen(fd, 'wb') as output: output.write(value)
+        if keypath.is_symlink() or keypath.stat().st_mode & 0o077:
+            raise ValueError('issuer signing key must be private')
+    with startup_stage('catalog_setup'):
+        setup('catalog-init')
+    with startup_stage('catalog_models'):
+        from django.core.management import call_command
+        from django.db import connection, transaction
+        from django.contrib.auth import get_user_model
+        from django.contrib.auth.hashers import check_password
+        from django.contrib.contenttypes.models import ContentType
+        from django.contrib.sites.models import Site
+        from django.utils import timezone
+        from allauth.account.models import EmailAddress
+        from geonode.base.models import ResourceBase
+        from guardian.models import UserObjectPermission, GroupObjectPermission
+        from guardian.shortcuts import assign_perm
+        from oauth2_provider.models import get_application_model, get_access_token_model
+    with startup_stage('catalog_lock'):
+        lock_key = str(uuid.UUID(product['install_id']).int & ((1 << 63) - 1))
+        with connection.cursor() as cursor:
+            cursor.execute('SELECT pg_try_advisory_lock(%s)', [lock_key])
+            if not cursor.fetchone()[0]: raise ValueError('another catalog initialization is running')
     try:
-        call_command('migrate', interactive=False, verbosity=0)
-        User, Application = get_user_model(), get_application_model()
-        resource_uuid = str(uuid.uuid5(uuid.UUID(product['install_id']), 'diagnostic-private-points'))
-        with transaction.atomic():
-            app, created = Application.objects.get_or_create(client_id=secrets['oauth_client'], defaults={
-                'name': 'AmbisGIS development', 'client_secret': secrets['oauth_secret'],
-                'client_type': Application.CLIENT_CONFIDENTIAL, 'authorization_grant_type': Application.GRANT_AUTHORIZATION_CODE,
-                'redirect_uris': product['public_origin'] + '/oauth/callback', 'skip_authorization': False})
-            if (app.name != 'AmbisGIS development' or app.redirect_uris != product['public_origin'] + '/oauth/callback'
-                    or app.skip_authorization or app.client_type != Application.CLIENT_CONFIDENTIAL
-                    or app.authorization_grant_type != Application.GRANT_AUTHORIZATION_CODE
-                    or not check_password(secrets['oauth_secret'], app.client_secret)):
-                raise ValueError('conflicting native OAuth application')
-            users = {}
-            for role in ('owner', 'viewer'):
-                name = product[role]
-                user, created = User.objects.get_or_create(username=name, defaults={
-                    'email': name + '@example.invalid', 'is_active': True, 'is_staff': False, 'is_superuser': False})
+        with startup_stage('catalog_migrations'):
+            call_command('migrate', interactive=False, verbosity=0)
+        with startup_stage('catalog_bootstrap'):
+            User, Application = get_user_model(), get_application_model()
+            resource_uuid = str(uuid.uuid5(uuid.UUID(product['install_id']), 'diagnostic-private-points'))
+            with transaction.atomic():
+                app, created = Application.objects.get_or_create(client_id=secrets['oauth_client'], defaults={
+                    'name': 'AmbisGIS development', 'client_secret': secrets['oauth_secret'],
+                    'client_type': Application.CLIENT_CONFIDENTIAL, 'authorization_grant_type': Application.GRANT_AUTHORIZATION_CODE,
+                    'redirect_uris': product['public_origin'] + '/oauth/callback', 'skip_authorization': False})
+                if (app.name != 'AmbisGIS development' or app.redirect_uris != product['public_origin'] + '/oauth/callback'
+                        or app.skip_authorization or app.client_type != Application.CLIENT_CONFIDENTIAL
+                        or app.authorization_grant_type != Application.GRANT_AUTHORIZATION_CODE
+                        or not check_password(secrets['oauth_secret'], app.client_secret)):
+                    raise ValueError('conflicting native OAuth application')
+                users = {}
+                for role in ('owner', 'viewer'):
+                    name = product[role]
+                    user, created = User.objects.get_or_create(username=name, defaults={
+                        'email': name + '@example.invalid', 'is_active': True, 'is_staff': False, 'is_superuser': False})
+                    if created:
+                        user.set_password(secrets[role + '_password']); user.save(update_fields=['password'])
+                        EmailAddress.objects.get_or_create(user=user, email=user.email, defaults={'verified': True, 'primary': True})
+                    if user.is_superuser or user.is_staff:
+                        raise ValueError('developer sample principals must not be administrators')
+                    users[role] = user
+                health, created = User.objects.get_or_create(username='installation-health', defaults={
+                    'email': 'installation-health@example.invalid', 'is_active': True, 'is_staff': False, 'is_superuser': False})
                 if created:
-                    user.set_password(secrets[role + '_password']); user.save(update_fields=['password'])
-                    EmailAddress.objects.get_or_create(user=user, email=user.email, defaults={'verified': True, 'primary': True})
-                if user.is_superuser or user.is_staff:
-                    raise ValueError('developer sample principals must not be administrators')
-                users[role] = user
-            health, created = User.objects.get_or_create(username='installation-health', defaults={
-                'email': 'installation-health@example.invalid', 'is_active': True, 'is_staff': False, 'is_superuser': False})
-            if created:
-                health.set_unusable_password(); health.save(update_fields=['password'])
-            if health.has_usable_password() or health.is_staff or health.is_superuser:
-                raise ValueError('health identity must be a noninteractive reader')
-            if app.user_id is None:
-                app.user = users['owner']; app.save(update_fields=['user'])
-            elif app.user_id != users['owner'].pk:
-                raise ValueError('native OAuth application belongs to another principal')
-            resource, created = ResourceBase.objects.get_or_create(uuid=resource_uuid, defaults={
-                'alternate': SAMPLE, 'title': 'Private installation sample', 'abstract': 'Synthetic unmanaged diagnostic data; not a managed branch layer.',
-                'owner': users['owner'], 'is_published': True, 'is_approved': True, 'resource_type': 'dataset'})
-            if resource.alternate != SAMPLE or resource.owner_id != users['owner'].pk or ResourceBase.objects.filter(alternate=SAMPLE).count() != 1:
-                raise ValueError('conflicting diagnostic catalog binding')
-            if created:
-                content_type = ContentType.objects.get_for_model(resource)
-                UserObjectPermission.objects.filter(object_pk=str(resource.pk), content_type=content_type).delete()
-                GroupObjectPermission.objects.filter(object_pk=str(resource.pk), content_type=content_type).delete()
-                assign_perm('view_resourcebase', users['owner'], resource)
-                assign_perm('change_resourcebase', users['owner'], resource)
-                assign_perm('view_resourcebase', health, resource)
-            # A generated machine credential is restricted by native guardian to
-            # this sample only. User-facing acceptance uses real HTTP OAuth grants.
-            token, created = get_access_token_model().objects.get_or_create(token=secrets['health_token'], defaults={
-                'user': health, 'application': app, 'scope': 'read', 'expires': timezone.now() + timedelta(days=365)})
-            if token.user_id != health.pk or token.application_id != app.pk or token.scope != 'read':
-                raise ValueError('health token has a conflicting native binding')
-            Site.objects.update_or_create(id=1, defaults={'domain': product['public_origin'].split('//', 1)[1], 'name': 'AmbisGIS development'})
+                    health.set_unusable_password(); health.save(update_fields=['password'])
+                if health.has_usable_password() or health.is_staff or health.is_superuser:
+                    raise ValueError('health identity must be a noninteractive reader')
+                if app.user_id is None:
+                    app.user = users['owner']; app.save(update_fields=['user'])
+                elif app.user_id != users['owner'].pk:
+                    raise ValueError('native OAuth application belongs to another principal')
+                resource, created = ResourceBase.objects.get_or_create(uuid=resource_uuid, defaults={
+                    'alternate': SAMPLE, 'title': 'Private installation sample', 'abstract': 'Synthetic unmanaged diagnostic data; not a managed branch layer.',
+                    'owner': users['owner'], 'is_published': True, 'is_approved': True, 'resource_type': 'dataset'})
+                if resource.alternate != SAMPLE or resource.owner_id != users['owner'].pk or ResourceBase.objects.filter(alternate=SAMPLE).count() != 1:
+                    raise ValueError('conflicting diagnostic catalog binding')
+                if created:
+                    content_type = ContentType.objects.get_for_model(resource)
+                    UserObjectPermission.objects.filter(object_pk=str(resource.pk), content_type=content_type).delete()
+                    GroupObjectPermission.objects.filter(object_pk=str(resource.pk), content_type=content_type).delete()
+                    assign_perm('view_resourcebase', users['owner'], resource)
+                    assign_perm('change_resourcebase', users['owner'], resource)
+                    assign_perm('view_resourcebase', health, resource)
+                # A generated machine credential is restricted by native guardian to
+                # this sample only. User-facing acceptance uses real HTTP OAuth grants.
+                token, created = get_access_token_model().objects.get_or_create(token=secrets['health_token'], defaults={
+                    'user': health, 'application': app, 'scope': 'read', 'expires': timezone.now() + timedelta(days=365)})
+                if token.user_id != health.pk or token.application_id != app.pk or token.scope != 'read':
+                    raise ValueError('health token has a conflicting native binding')
+                Site.objects.update_or_create(id=1, defaults={'domain': product['public_origin'].split('//', 1)[1], 'name': 'AmbisGIS development'})
         # Static assets and browser sessions are persistent; repeated init does
         # not reset user passwords, resource metadata, grants or issued tokens.
-        call_command('collectstatic', interactive=False, verbosity=0)
-        if not (DATA / 'initialized.json').exists():
-            save(DATA / 'initialized.json', {'install_id': product['install_id'], 'resource_uuid': resource_uuid})
+        with startup_stage('catalog_static'):
+            call_command('collectstatic', interactive=False, verbosity=0)
+            if not (DATA / 'initialized.json').exists():
+                save(DATA / 'initialized.json', {'install_id': product['install_id'], 'resource_uuid': resource_uuid})
         print(json.dumps({'event': 'catalog_initialized', 'install_id': product['install_id'], 'resource_uuid': resource_uuid}), flush=True)
     finally:
-        with connection.cursor() as cursor: cursor.execute('SELECT pg_advisory_unlock(%s)', [lock_key])
+        with startup_stage('catalog_unlock'):
+            with connection.cursor() as cursor: cursor.execute('SELECT pg_advisory_unlock(%s)', [lock_key])
 
 
 def principal(authorization, client_id):
