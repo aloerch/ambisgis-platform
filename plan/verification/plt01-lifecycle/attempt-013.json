@@ -1,0 +1,65 @@
+{
+  "cli_failure": {
+    "command": "up",
+    "returncode": 1,
+    "startup_failure": {
+      "category": "validation",
+      "code": "invalid_input",
+      "stage": "catalog_bootstrap"
+    },
+    "stderr_bytes": 198,
+    "stdout_bytes": 0
+  },
+  "error_type": "RuntimeError",
+  "finished": "2026-10-04T09:53:08.258149+00:00",
+  "full_installation_acceptance": false,
+  "incomplete_checks": [],
+  "install_id": "ea67df1e-751d-4697-ba2b-3ab03231fb04",
+  "persistent_data_deleted": false,
+  "schema_version": 1,
+  "scope": "Actual ordinary CLI, bundle relocation, persistent identity/metadata, service fault/recovery, read-only native DNS observations, fixed DNS wire query and shutdown only",
+  "shutdown": {
+    "attempted": true,
+    "dns": {
+      "classification": "no_prior_identity",
+      "cleanup_verified": false,
+      "daemon_cleanup_verified": false,
+      "status": "unobserved"
+    },
+    "persistent_data_preserved": true,
+    "running_services": 0
+  },
+  "source": {
+    "build-support/geonode/protocol_probe.py": "fdbe712228e55a5af8ed2f35171c2c0e29327a2a1009a44b3312d4b575551109",
+    "deploy/development/catalog_permission_probe.py": "e7cd217b7cce15d03640da0fb246d70da4a560a9a682362ce29b604ab99abf97",
+    "deploy/development/dns_function.py": "ad5579d09944ebc61442c3b0aab5aaba46d371a8d16a822933704c5fe8b149ad",
+    "deploy/development/dns_observation.py": "a7aa1744ecf24235fabcef965c01a4ce6e1ab5c557f186468496a016d6fa79d5",
+    "deploy/development/dns_wire_probe.py": "0698efb83c9b8050b3d62a08a89fcf33813f8da60c5f3e6940802f5093fc7647",
+    "deploy/development/journey_probe.py": "d64bfaf9dcddf3f66dacede34daf3a9640bca9cf940f987e71ac23853633ff6b",
+    "deploy/development/lifecycle_check.py": "eed8d736f519d18f754b018d63e33880c024bde4a224a7f98a3af42656cfa50c"
+  },
+  "stages": [
+    {
+      "at": "2026-10-04T09:50:56.614381+00:00",
+      "facts": {
+        "bundle_sha256": "7ed251fc7fa640e8d715c70ebc47a79bda77ce023b5b4ad79f628820d3d1f59e",
+        "original": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-016/bundle.json",
+        "relocated": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-013/relocated-bundle/bundle.json"
+      },
+      "name": "verified relocated bundle"
+    },
+    {
+      "at": "2026-10-04T09:51:05.188982+00:00",
+      "facts": {
+        "created": true,
+        "install_id": "ea67df1e-751d-4697-ba2b-3ab03231fb04"
+      },
+      "name": "fresh init"
+    }
+  ],
+  "started": "2026-10-04T09:50:46.666679+00:00",
+  "status": "failed",
+  "targeted_probe_executed": false,
+  "task": "PLT-01",
+  "token_cleanup": []
+}

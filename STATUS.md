@@ -1,4 +1,4 @@
-# Active delivery — 3 October 2026, PLT-01 and DB-03
+# Active delivery — 4 October 2026 UTC, PLT-01 and DB-03
 
 FND-06 is accepted/Merged at `d0218209d435f80c21400dc38abc2c4d69d805bc`
 ([PR #77](https://github.com/aloerch/ambisgis-platform/pull/77)). Its original
@@ -18,56 +18,51 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 remains In progress after twelve preserved ordinary installation failures.
-Reviewed source is published at 8c0b7100f4c217f1fd133fe5113ba38a54fd70d1 in
+PLT-01 remains In progress after thirteen preserved ordinary installation failures.
+Reviewed source b31c4e751ec9b611927c957625902d3af7f0b0fe is published in
 [draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78), without merge
-or acceptance. Paired images011/012 from f84c4fc1 and bundle015 were independently
-audited. Validation020 passed 639 package, 52 runtime and ten schema checks over
-1,509 unchanged source files; unchanged image/development helper sources retain
-40/121 passing checks from validation019. Earlier failures remain preserved.
+or acceptance. Retained distutils activation passed independent source review.
+Validation021 passed 649 package, 52 runtime, 121 development, 40 image-helper and
+ten schema checks; pin validation022 passed 649/52/10 with explicit unchanged
+40/121 reuse. All 1,516 tracked source files remained unchanged during checks.
+Images013/014 from 81cbc326 are byte-identical. Independently audited bundle016
+from b31c4e75 has 1,311 runtime files, 374 ELF objects and twelve host prerequisites.
+These source/inert checks are separate from installed GIS acceptance.
 
-Attempt012 passed relocation and fresh initialization. The database became ready,
-with health results [1,0,0], explicit readiness exit 0, no automatic restarts and
-final shutdown exit 0. Catalog-init started, exited 1 and was removed by the
-original run. The CLI again retained catalog_setup/module_missing/import;
-neither GDAL-specific diagnostic code was emitted. The missing module and prior
-native GIS-library loading remain unproven. Serving journeys and DNS checks were
-not reached. Exact last timer/service identities were not loaded; the owned
-pause helper, data and network remain preserved. No complete helper or DNS
-cleanup acceptance is claimed.
+Attempt013 passed relocation and fresh init, then failed
+catalog_bootstrap/invalid_input/validation. Its exact exception and operation
+remain unobserved. Database health was [1,0,0,0,0], explicit readiness exited 0,
+no automatic restart occurred and final shutdown exited 0. Catalog-init started,
+exited 1 and was removed by the original run. Protected-service, restart/recovery
+and DNS journeys were not reached. Independent effects review confirms only the
+known persisted timer/service were not loaded; exact owned pause/data/network
+remain retained. Complete helper and DNS cleanup are not claimed.
 
-Separate private setup-only diagnostics preserved their original failures.
-Diagnostic003 retained a native health timer profile rejection. Its reviewed
-successor used the exact no-healthcheck option with pre-start validation, then
-started and reported missing module distutils through a finite allowlist.
-Native attach and final exit were zero. Owned removal, unchanged 1,627 original
-entries and the existing retained pause were independently verified. This is
-a successful diagnostic observation, not successful application setup or an
-additional full installation attempt.
+Source review found the native Application model stores a raw client secret,
+while bootstrap checked it as a user-password hash. A frozen three-file repair
+uses Django constant_time_compare, preserving every other catalog byte and
+metadata/owner/transaction guard. Independent review replayed nine new inert guards and four retained-function
+cases. The sixteen author affected checks, which include those same nine,
+passed and were reused as author evidence. Synthetic model
+collaborators do not run Django setup, ORM/database or native services and do
+not prove attempt013's exact frame. The reviewed correction is now integrated
+locally as 26056894347071f4e06993ffaf1cc91310fc61de; combined checks, rebuilt
+artifacts and a fresh ordinary installation remain next. Earlier failures and the separate limited
+missing-distutils observation remain retained.
 
-The reviewed image already contains setuptools82.0.1's compatibility provider.
-Its startup hook is outside standard site directories on the custom Python
-path. Explicit activation is being prepared on the isolated
-plt-01/catalog-distutils branch. No completed product repair or original012
-setup success is claimed. The held qualification remains unexecuted.
+The normal push, draft update and
+[progress comment](https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5978911190)
+are recorded; [source CI](https://github.com/aloerch/ambisgis-platform/actions/runs/37194657940/job/111413907698)
+passed. [Attempt and reconciliation](plan/verification/plt01-lifecycle/evidence-013.json)
+retain the limits. PLT-01, full P1 and scoped MVP acceptance remain open.
 
-The normal source push, draft body update and
-[progress comment](https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5977728860)
-are recorded. [Source package/schema CI](https://github.com/aloerch/ambisgis-platform/actions/runs/37186074236/job/111388130542)
-passed at the published head. A preceding bundle-pin control mismatch failed
-before source write, was reconciled, and is retained as a control failure, not a
-product test failure. [Actual attempt and reconciliation](plan/verification/plt01-lifecycle/evidence-012.json)
-preserve the limits. Full PLT-01, P1 and scoped MVP acceptance remain open.
-
-The held targeted engine probe remains unexecuted after the earlier platform
-termination. The native Goal still reports blocked, with 12,420,153 tokens used
-and no configured limit in the returned state; foreground delivery continues.
-The original terminal category was cyber_policy; its exact trigger remains
-unknown. Restoring native automatic continuation requires the user control
-/goal resume in the existing thread.
-[Original diagnosis](plan/verification/runtime-recovery/2026-10-03.json) and
-[latest progress](plan/verification/runtime-recovery/progress-012.json) distinguish
-this platform state from current product work.
+The targeted runtime qualification remains held and unexecuted. Root last
+observed the native Goal blocked at 10:22:35 UTC on 4 October 2026, with 12,420,153
+tokens used and no configured limit. Foreground delivery continues; this tool
+testimony is not a native resume. The original platform terminal category was
+cyber_policy; its exact trigger remains unknown.
+[Latest progress](plan/verification/runtime-recovery/progress-013.json) preserves
+this distinction and the original recovery history.
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.
 Independent review confirmed shutdown, unchanged sources and zero test skips.

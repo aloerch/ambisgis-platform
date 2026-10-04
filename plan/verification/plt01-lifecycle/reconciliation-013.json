@@ -1,0 +1,373 @@
+{
+  "all_helpers_gone": false,
+  "containers": {
+    "catalog": {
+      "present": false
+    },
+    "catalog-init": {
+      "present": false
+    },
+    "database": {
+      "data_mount": {
+        "Destination": "/var/lib/ambisgis",
+        "Source": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/installation-013/data/postgres",
+        "Type": "bind"
+      },
+      "health": "healthy",
+      "health_exit_codes": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "id": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "log": {
+        "bytes": 127,
+        "fixed_events": [
+          {
+            "event": "database_ready"
+          }
+        ],
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-013/read-only-reconciliation-001/database.log",
+        "sha256": "09f3fa24b0ad8fad30a688e1eb5ba60427c06cd29d95b1af25e6e59ed6a7febc"
+      },
+      "present": true,
+      "raw_inspect": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-013/read-only-reconciliation-001/database.json",
+        "sha256": "4922780f8a9aea8930b14018a9934b2899a861bebba6b3f4ecd081e145253371"
+      },
+      "restart_count": 0,
+      "state": {
+        "ExitCode": 0,
+        "FinishedAt": "2026-10-04T02:53:02.45178574-07:00",
+        "Pid": 0,
+        "Running": false,
+        "StartedAt": "2026-10-04T02:51:44.366953345-07:00",
+        "Status": "exited"
+      }
+    },
+    "gateway": {
+      "present": false
+    },
+    "geoserver": {
+      "present": false
+    },
+    "geoserver-init": {
+      "present": false
+    }
+  },
+  "data_deleted": false,
+  "dns_cleanup_verified": false,
+  "dns_files": {
+    "runtime/run/networks/aardvark-dns": {
+      "exists": true,
+      "mode": "0o755",
+      "symlink": false,
+      "uid": 1000
+    },
+    "runtime/run/networks/aardvark-dns/aardvark.pid": {
+      "exists": false,
+      "symlink": false
+    },
+    "runtime/run/networks/rootless-netns/rootless-netns": {
+      "exists": false,
+      "symlink": false
+    }
+  },
+  "dns_runtime_identity_verified": false,
+  "events": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-013/read-only-reconciliation-001/events.log",
+    "sha256": "db4bf1fb24db36a18b63feacabc8c8189289eb733e4df9b0596f1834b07eb77c"
+  },
+  "failed_guard_run_id": "d6a74e05-1d2d-40ab-a4f3-dec531443705",
+  "full_installation_acceptance": false,
+  "guard_wrapper_child_absent": true,
+  "held_probe_executed": false,
+  "install_id": "ea67df1e-751d-4697-ba2b-3ab03231fb04",
+  "known_units_not_loaded": true,
+  "lifecycle": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-013/result.json",
+    "sha256": "837e86e9bf30ab723b766fd69938ae4c77ceffcb30aee1bfbccc2efb51e0dc6e"
+  },
+  "lifecycle_retried": false,
+  "limitations": [
+    "catalog_bootstrap/invalid_input is a finite phase/category; exact failing condition is not established.",
+    "Absent initializers may have run and been removed: selected events are authoritative for this bounded observation.",
+    "Timer observations cover available exact persisted names, not unknown or removed-container names.",
+    "No prior live DNS identity is available; missing files alone do not establish cleanup.",
+    "Process observations cover this relocated bundle and exact completed guard PIDs at a point in time; no blanket process teardown claim."
+  ],
+  "markers": {
+    "catalog/initialized.json": {
+      "exists": false,
+      "symlink": false
+    },
+    "catalog/installation.json": {
+      "bytes": 116,
+      "exists": true,
+      "gid": 1000,
+      "mode": "0o600",
+      "symlink": false,
+      "uid": 1000
+    },
+    "catalog/oidc-key.pem": {
+      "bytes": 2484,
+      "exists": true,
+      "gid": 1000,
+      "mode": "0o600",
+      "symlink": false,
+      "uid": 1000
+    },
+    "geoserver/installation.json": {
+      "exists": false,
+      "symlink": false
+    },
+    "postgres/installation.json": {
+      "bytes": 117,
+      "exists": true,
+      "gid": 1000,
+      "mode": "0o600",
+      "symlink": false,
+      "uid": 1000
+    },
+    "postgres/pgdata": {
+      "bytes": 484,
+      "exists": true,
+      "gid": 1000,
+      "mode": "0o700",
+      "symlink": false,
+      "uid": 1000
+    }
+  },
+  "matching_bundle_processes": [
+    {
+      "comm": "podman pause",
+      "command_sha256": "02ec19e774cb3401409bb9956cc94e06931e498f24a34999267d9a4304602709",
+      "executable": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-013/relocated-bundle/runtime/engine/podman",
+      "pid": 681347,
+      "start_ticks": 10524721,
+      "state": "S",
+      "uid": 1000
+    }
+  ],
+  "native_state": {
+    "database": {
+      "container_id": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "exited": true,
+      "finishedTime": "2026-10-04T02:53:02.45178574-07:00",
+      "hcUnitName": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc-550648b6445c44f1",
+      "startedTime": "2026-10-04T02:51:44.366953345-07:00",
+      "state": 6,
+      "stoppedByUser": true
+    }
+  },
+  "native_state_proof": {
+    "available": true,
+    "copy_created": false,
+    "source_sha256": "52313c15f372437063627410161239851e69770122ec29f2fba078986ae376ea",
+    "source_unchanged": true
+  },
+  "network": {
+    "driver": "bridge",
+    "internal": true,
+    "ipv6_enabled": false,
+    "name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04_internal",
+    "verified": true
+  },
+  "pause": {
+    "pid": 681347,
+    "present": true,
+    "start_ticks": 10524721,
+    "verified_preserved": true
+  },
+  "processes": {
+    "catalog": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "catalog-init": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "database": {
+      "engine_health": "healthy",
+      "process": "stopped"
+    },
+    "gateway": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "geoserver": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "geoserver-init": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    }
+  },
+  "reconciled": true,
+  "recorded_at": "2026-10-04T10:01:02.491610+00:00",
+  "remote_mutations": false,
+  "runtime_config_bytes_unchanged": true,
+  "schema_version": 1,
+  "scope": "Fixed attempt013 read-only owned effects; no cleanup, retry or repair",
+  "selected_events": [
+    {
+      "ContainerExitCode": null,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "create",
+      "Time": "2026-10-04T02:51:43.394170312-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "init",
+      "Time": "2026-10-04T02:51:44.363149004-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "start",
+      "Time": "2026-10-04T02:51:44.371078852-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "health_status",
+      "Time": "2026-10-04T02:51:45.311864207-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "health_status",
+      "Time": "2026-10-04T02:52:01.892893857-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "exec",
+      "Time": "2026-10-04T02:52:08.636392777-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": 0,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "exec_died",
+      "Time": "2026-10-04T02:52:08.785351949-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "89c584110b71b0d74475bc5259fe84ef779c58318a0f0f0b9a223c160a821517",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-catalog-init",
+      "Status": "create",
+      "Time": "2026-10-04T02:52:15.661795151-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "89c584110b71b0d74475bc5259fe84ef779c58318a0f0f0b9a223c160a821517",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-catalog-init",
+      "Status": "init",
+      "Time": "2026-10-04T02:52:15.812670464-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "89c584110b71b0d74475bc5259fe84ef779c58318a0f0f0b9a223c160a821517",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-catalog-init",
+      "Status": "start",
+      "Time": "2026-10-04T02:52:15.816739815-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "89c584110b71b0d74475bc5259fe84ef779c58318a0f0f0b9a223c160a821517",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-catalog-init",
+      "Status": "attach",
+      "Time": "2026-10-04T02:52:15.837175178-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "health_status",
+      "Time": "2026-10-04T02:52:17.93912957-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "health_status",
+      "Time": "2026-10-04T02:52:34.893978441-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": 1,
+      "ID": "89c584110b71b0d74475bc5259fe84ef779c58318a0f0f0b9a223c160a821517",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-catalog-init",
+      "Status": "died",
+      "Time": "2026-10-04T02:52:50.884613659-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "health_status",
+      "Time": "2026-10-04T02:52:50.932152838-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": 1,
+      "ID": "89c584110b71b0d74475bc5259fe84ef779c58318a0f0f0b9a223c160a821517",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-catalog-init",
+      "Status": "remove",
+      "Time": "2026-10-04T02:52:52.813621982-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": 0,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "died",
+      "Time": "2026-10-04T02:53:02.457634726-07:00",
+      "TimeNano": null
+    },
+    {
+      "ContainerExitCode": null,
+      "ID": "fe1664c0fad2874010745090463752eff794518a96cb79d3f682e7dcd614b0dc",
+      "Name": "ambisgis-ea67df1e751d4697ba2b3ab03231fb04-database",
+      "Status": "cleanup",
+      "Time": "2026-10-04T02:53:02.789149472-07:00",
+      "TimeNano": null
+    }
+  ],
+  "signals_sent": false,
+  "startup_failure": {
+    "category": "validation",
+    "code": "invalid_input",
+    "stage": "catalog_bootstrap"
+  },
+  "timers": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-013/read-only-reconciliation-001/timers.json",
+    "sha256": "abb16bee53dc713aff12c423e2b7fae933f995ff2bc55dc29788919254985f35"
+  },
+  "unexpected_matching_processes": []
+}

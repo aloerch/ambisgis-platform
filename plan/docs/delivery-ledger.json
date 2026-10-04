@@ -228,16 +228,16 @@
   },
   "evidence": "plan/verification/authorized-successors/publication.json",
   "execution_checkpoint": {
-    "current_action": "Implement and independently review explicit activation of the already retained setuptools distutils provider, with origin/preload checks and a pinned Python3.12 failing/fixed witness; then run integrated checks and affected image, bundle and ordinary installation tests.",
+    "current_action": "Run exact combined checks on the reviewed OAuth source integration, rebuild affected images/bundle and execute fresh reviewed ordinary lifecycle014. Inert tests do not establish installation acceptance.",
     "current_tasks": [
       {
         "branch": "plt-01/development-install",
         "delivery": "In progress",
         "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
         "id": "PLT-01",
-        "local_head": "8c0b7100f4c217f1fd133fe5113ba38a54fd70d1",
-        "local_increment": "Implement and independently review explicit activation of the already retained setuptools distutils provider, with origin/preload checks and a pinned Python3.12 failing/fixed witness; then run integrated checks and affected image, bundle and ordinary installation tests.",
-        "published_head": "8c0b7100f4c217f1fd133fe5113ba38a54fd70d1",
+        "local_head": "26056894347071f4e06993ffaf1cc91310fc61de",
+        "local_increment": "Run exact combined checks on the reviewed OAuth source integration, rebuild affected images/bundle and execute fresh reviewed ordinary lifecycle014. Inert tests do not establish installation acceptance.",
+        "published_head": "b31c4e751ec9b611927c957625902d3af7f0b0fe",
         "repository": "aloerch/ambisgis-platform",
         "repository_id": 1376927351,
         "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree"
@@ -329,10 +329,18 @@
       "lifecycle010": "plan/verification/plt01-lifecycle/evidence-010.json",
       "lifecycle011": "plan/verification/plt01-lifecycle/evidence-011.json",
       "lifecycle012": "plan/verification/plt01-lifecycle/evidence-012.json",
+      "lifecycle013": {
+        "path": "plan/verification/plt01-lifecycle/evidence-013.json",
+        "sha256": "72683c9d24011e70eb89d8f04efdd34c4516cbf9e7d739a410709d956b1edaf5"
+      },
       "live_local": "Private delivery-control/recovery-20261003/live-local-001.json",
       "native_timer_alternatives": {
         "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/source-diagnosis-001/alternatives.json",
         "sha256": "b1673fd9ef2cd78a2dda0ff873ca89a3eff1c9500707f94ea2020f325d1f0a78"
+      },
+      "oauth_source_integration": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integrated-catalog-oauth-secret-001.json",
+        "sha256": "5aeb02d454f54655c6b53f571fa25ec2ac440e6f70b1108e8a843a41af6ef885"
       },
       "ordinary_lifecycle": "plan/verification/plt01-lifecycle/evidence.json",
       "ordinary_source_diagnosis": {
@@ -349,6 +357,10 @@
       "progress007": "plan/verification/runtime-recovery/progress-007.json",
       "progress011": "plan/verification/runtime-recovery/progress-011.json",
       "progress012": "plan/verification/runtime-recovery/progress-012.json",
+      "progress013": {
+        "path": "plan/verification/runtime-recovery/progress-013.json",
+        "sha256": "eaa3320fd52ef7d4a373908f09f317354f2c001a430e64cc2e5be674710012c1"
+      },
       "python312_payload": {
         "executed": false,
         "packages": 32,
@@ -434,34 +446,34 @@
       "unchanged_prior_capture_cleanup_checks_reused": 109
     },
     "latest_completed_implementation_boundary": {
-      "actual_installation": "Relocation and fresh init passed. Database became ready; health records [1,0,0], explicit readiness exit 0, no automatic restarts and final stop exit 0. Catalog initializer started, exited 1 and was removed by the original run. The CLI again preserved catalog_setup/module_missing/import; neither GDAL-specific code was emitted. The missing module and prior native GIS loading remain unproven. Serving journeys and DNS checks were not reached.",
+      "actual_installation": "Attempt013 passed relocation and fresh init, then failed catalog_bootstrap/invalid_input/validation. Database health [1,0,0,0,0], explicit readiness0, no automatic restarts and final exit0; catalog-init started, died1 and was removed. Protected-service, persistence/restart/recovery and DNS journeys were not reached. Exact original exception and failing operation remain unobserved.",
       "checks": {
         "development": 121,
         "image_helpers": 40,
-        "package": 639,
+        "package": 649,
         "runtime": 52,
         "schemas": 10,
-        "scope": "Validation020 matches all 1509 source bytes committed as 8c0b7100; unchanged image/development helper sources retain 40/121 checks from validation019. Prior017 failure, QGIS maintenance correction and all earlier receipts remain retained.",
+        "scope": "Validation022 package/runtime/schema after two-line pin; unchanged image/development inputs explicitly reuse validation021. No installed GIS acceptance.",
         "skips": 0,
-        "source_files": 1509
+        "source_files": 1516
       },
-      "implementation": "Two finite GDAL-specific diagnostic codes integrated with unchanged catalog operations. Paired images011/012 and bundle015 independently audited; native runtime binaries unchanged. The codes did not identify the missing module during attempt012."
+      "implementation": "Reviewed retained distutils activation, source checks021/022, audited paired images013/014 and bundle016."
     },
     "native_goal": {
       "automatic_continuation": "Not active while native Goal blocked",
-      "observed_at": "2026-10-04T08:34:05Z",
-      "previous_timestamped_observation": "2026-10-04T06:34:28Z",
+      "observed_at": "2026-10-04T10:22:35Z",
+      "previous_timestamped_observation": "2026-10-04T09:33:32Z",
       "quota_status": "unknown",
       "remaining_tokens": null,
       "reported_time_used_seconds": 30612,
       "reported_tokens_used": 12420153,
       "reported_updated_at": 1791034102,
-      "source": "Clock-bracketed root get_goal at2026-10-04T08:34:05Z; tool testimony only, no raw transcript or native resume.",
+      "source": "Root clock-bracketed get_goal tool testimony at10:22:35UTC: blocked,12420153 tokens,30612 seconds,remainingnull,updated1791034102. No raw transcript, independent query or native resume by proposal author.",
       "status": "blocked",
       "token_budget": "not configured in returned state",
       "user_action": "Use /goal resume in this same thread for native automatic continuation"
     },
-    "observed_at": "2026-10-04T09:06:50.263745+00:00",
+    "observed_at": "2026-10-04T10:29:18.150958+00:00",
     "observed_terminal": {
       "at": "2026-10-03T13:28:22.795Z",
       "category": "Platform cybersecurity-risk flag",
@@ -495,7 +507,7 @@
       "DB-03": "Merged",
       "DB-04": "Backlog; API-04 required",
       "FND-06": "Merged",
-      "PLT-01": "In progress; draft PR78 at 8c0b7100 unmerged, package/schema CI success. Actual attempt012 failed catalog_setup/module_missing; separate reviewed private replay002 failed native start with no application report.",
+      "PLT-01": "In progress; PR78 draft at b31c4e75 with package/schema CI success. Attempt013 failed catalog_bootstrap/invalid_input; exact frame unobserved. OAuth repair independently reviewed, no installation pass.",
       "PLT-02": "Backlog; PLT-01 pending",
       "geodb_main": "13fb7c9bff9d011838b768802a6ab63f932bd228",
       "platform_main": "d0218209d435f80c21400dc38abc2c4d69d805bc"
@@ -503,10 +515,10 @@
     "schema_version": 1,
     "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
     "worker_observations": {
-      "db02_validation": "Independently reviewed004 observation/effects and retained-provider activation options.",
-      "fnd03_identity": "Assigned source repair on plt-01/catalog-distutils from8c0b7100; final implementation/test review pending.",
-      "observed_at": "2026-10-04T09:06:50.263745+00:00",
-      "root": "Completed/reconciled004 and created isolated repair branch; preparing this evidence snapshot without changing root source or remote."
+      "db02_validation": "Independently reviewed actual013 effects, source mismatch and OAuth repair.",
+      "fnd03_identity": "Prepared isolated frozen repair and private evidence proposal; no native/remote/root source mutation.",
+      "observed_at": "2026-10-04T10:29:18.150958+00:00",
+      "root": "Sole integrator/native/remote writer; published reviewed b31c draft."
     }
   },
   "fnd06_acceptance": {
