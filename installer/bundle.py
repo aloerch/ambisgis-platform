@@ -180,6 +180,22 @@ def host_prerequisites(value):
             raise InstallError('The selected rootless storage backend requires accessible /dev/fuse.')
 
 
+def validate_runtime_paths(selected_bundle, install_root, *, bundle_root):
+    """Pure, bundle-selected path capability; legacy bundles retain their rules."""
+    runtime = selected_bundle['runtime']
+    if 'path_profile' not in runtime:
+        return
+    profile = runtime['path_profile']
+    if not isinstance(profile, str) or profile != 'owned-health-timer-ascii-v1':
+        raise InstallError('Unsupported bundle runtime path profile.')
+    paths = (bundle_root,) if install_root is None else (bundle_root, install_root)
+    for path in paths:
+        value = os.fspath(path) if isinstance(path, (str, os.PathLike)) else None
+        if (not isinstance(value, str) or not re.fullmatch(r'/[A-Za-z0-9_./-]+', value)
+                or any(part in ('', '.', '..') for part in value[1:].split('/'))):
+            raise InstallError("This owned health-timer bundle requires clean absolute ASCII bundle and installation paths using only letters, digits, '/', '.', '_' and '-'. Choose supported paths before init; existing state was preserved.")
+
+
 def load(path, expected_sha256, *, verify_images=True, image_receipts=None):
     path = checked_path(path)
     if digest(path) != sha256(expected_sha256):
@@ -195,7 +211,8 @@ def load(path, expected_sha256, *, verify_images=True, image_receipts=None):
     root = path.parent
     member(root, value['source_manifest'])
     runtime = value['runtime']
-    exact_keys(runtime, ('podman', 'compose', 'environment', 'files_manifest', 'prerequisites'))
+    exact_keys(runtime, ('podman', 'compose', 'environment', 'files_manifest', 'prerequisites'), ('path_profile',))
+    validate_runtime_paths(value, None, bundle_root=root)
     names, closure_roots = verify_manifest(root, runtime['files_manifest'])
     for tool in ('podman', 'compose'):
         member(root, runtime[tool], executable=True)

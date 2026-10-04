@@ -22,6 +22,7 @@ class Runtime:
         self.selection = bundle.load(self.config['bundle']['path'], self.config['bundle']['sha256'],
                                      verify_images=verify_images, image_receipts=self.image_receipts)
         self.bundle_root = Path(self.config['bundle']['path']).parent
+        bundle.validate_runtime_paths(self.selection, self.root, bundle_root=self.bundle_root)
         self.paths = {}
         private_directory(self.root / 'runtime', create=True)
         for name in ('home', 'config', 'data', 'run', 'storage', 'networks', 'hooks', 'tmp'):
@@ -288,7 +289,20 @@ class Runtime:
                 'services': self.processes(), 'network': self.network(), 'readiness': self.readiness()}
 
 
+def validate_selected_paths(root):
+    """Read-only preflight before even creating a missing command lock file.
+
+    Runtime repeats validation while the lock is held, before state/native work.
+    Archive contents are checked by the normal Runtime construction under lock.
+    """
+    root = private_directory(root)
+    product = config.load(root)
+    selection = bundle.load(product['bundle']['path'], product['bundle']['sha256'], verify_images=False)
+    bundle.validate_runtime_paths(selection, root, bundle_root=Path(product['bundle']['path']).parent)
+
+
 def up(root, *, timeout=180):
+    validate_selected_paths(root)
     with locked(root):
         runtime = Runtime(root)
         # Validate existing names/ownership before a Compose invocation can act.
@@ -333,11 +347,13 @@ def up(root, *, timeout=180):
 
 
 def status(root):
+    validate_selected_paths(root)
     with locked(root):
         return Runtime(root).status()
 
 
 def doctor(root):
+    validate_selected_paths(root)
     with locked(root):
         runtime = Runtime(root)
         images = {role: runtime.image(role) for role in bundle.SERVICES}

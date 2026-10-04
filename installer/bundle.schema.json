@@ -152,6 +152,12 @@
             "sha256"
           ],
           "additionalProperties": false
+        },
+        "path_profile": {
+          "type": "string",
+          "enum": [
+            "owned-health-timer-ascii-v1"
+          ]
         }
       },
       "required": [
