@@ -11,6 +11,7 @@ import tempfile
 import time
 
 from . import bundle, config
+from .diagnostics import OperationFailure
 from .state import InstallError, atomic_write, checked_path, locked, private_directory, read_json
 
 
@@ -67,7 +68,7 @@ class Runtime:
         # Native warnings belong to the private diagnostic stream. They must
         # never precede machine-readable image/container/network JSON stdout.
         if result.returncode and not allow_failure:
-            raise InstallError('Local runtime operation failed (exit ' + str(result.returncode) + '); use doctor.')
+            raise OperationFailure(result.returncode, output, diagnostic)
         return result.returncode, output
 
     def engine(self, *arguments, **kwargs):
