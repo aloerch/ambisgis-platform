@@ -98,7 +98,9 @@ def configuration(product, secrets, initialize):
     registry = ET.Element('roleRegistry', {'version': '1.0', 'xmlns': 'http://www.geoserver.org/security/roles'})
     for name in ('roleList', 'userList', 'groupList'): child(registry, name)
     emit('security/role/transport/roles.xml', registry)
-    write(data / 'security/rest.properties', '/**;GET,HEAD,OPTIONS,POST,PUT,PATCH,DELETE=ROLE_ADMINISTRATOR\n')
+    # The selected native parser accepts these six methods. Unsupported PATCH
+    # invalidates the entire rule; the mandatory owned filter denies non-GETs.
+    write(data / 'security/rest.properties', '/**;GET,HEAD,OPTIONS,POST,PUT,DELETE=ROLE_ADMINISTRATOR\n')
     write(data / 'security/services.properties', 'wfs.Transaction=ROLE_ADMINISTRATOR\n')
     write(data / 'security/layers.properties', '*.*.r=ROLE_ADMINISTRATOR\n*.*.w=ROLE_ADMINISTRATOR\nmode=HIDE\n')
     write(data / 'geofence/geofence-server.properties', 'ruleReaderBackend=ruleReaderService\nruleReaderFrontend=ruleReaderService\nuseRolesToFilter=false\ngrantWriteToWorkspacesToAuthenticatedUsers=false\n')
@@ -113,6 +115,11 @@ def configuration(product, secrets, initialize):
           'geofenceDataSource.username=' + role + '\ngeofenceDataSource.password=' + password + '\n')
     global_info = ET.Element('global')
     global_info.append(xml('settings', id='development-settings', charset='UTF-8', numDecimals=8, verbose='false', verboseExceptions='false'))
+    # XStreamPersister aliases imageProcessing to jai. Its absence is not
+    # repaired by GeoServerInfoImpl.readResolve; make native defaults explicit.
+    global_info.append(xml('jai', allowInterpolation='false', recycling='false',
+                           tilePriority=5, tileThreads=7, memoryCapacity=0.5,
+                           memoryThreshold=0.75, imageIOCache='false', pngEncoderType='PNGJ'))
     emit('global.xml', global_info)
     emit('wfs.xml', xml('wfs', id='development-wfs', name='WFS', enabled='true', title='Synthetic installation query', serviceLevel='BASIC', maxFeatures=2))
     emit('wms.xml', xml('wms', id='development-wms', name='WMS', enabled='true', title='Synthetic installation map'))
