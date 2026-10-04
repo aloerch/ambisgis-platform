@@ -7,10 +7,15 @@ from .state import InstallError
 # The isolated service emits the same finite contract. A cross-module test
 # binds these sets; no service package or native library is imported by the CLI.
 STAGES = frozenset({"entrypoint", "input", "identity", "storage", "password",
-                    "password_cleanup", "initdb", "server", "readiness", "bootstrap"})
+                    "password_cleanup", "initdb", "server", "readiness", "bootstrap",
+                    "catalog_input", "catalog_identity", "catalog_setup", "catalog_models",
+                    "catalog_lock", "catalog_migrations", "catalog_bootstrap", "catalog_static", "catalog_unlock"})
 CATEGORIES = {"invalid_input": "validation", "os_failure": "os_error",
               "child_failed": "child_exit", "timeout": "timeout",
-              "operation_failed": "runtime", "unexpected": "unexpected"}
+              "operation_failed": "runtime", "unexpected": "unexpected",
+              "module_missing": "import", "import_failed": "import",
+              "attribute_missing": "attribute", "name_missing": "name",
+              "configuration_failed": "configuration"}
 DETAIL = "Inspect installation state and owned dependency readiness."
 LIMIT = 4 * 1024 * 1024
 
