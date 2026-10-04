@@ -668,7 +668,7 @@ class InstallerStateTests(unittest.TestCase):
                 'PublishAllPorts': False, 'CapAdd': [], 'CapDrop': ['CAP_CHOWN'],
                 'SecurityOpt': ['no-new-privileges'], 'UsernsMode': 'private', 'PidMode': 'private',
                 'UTSMode': 'private', 'IpcMode': 'shareable', 'CgroupMode': 'private',
-                'Devices': [], 'GroupAdd': [], 'Tmpfs': {'/tmp': 'rw,nosuid,nodev,size=256m'}},
+                'Devices': [], 'GroupAdd': [], 'Tmpfs': {'/tmp': 'rw,nosuid,nodev,size=256m,mode=1777'}},
             'EffectiveCaps': [], 'BoundingCaps': [], 'State': {'Running': True, 'Health': {'Status': 'healthy'}},
             'NetworkSettings': {'Networks': {config.project_name(selected.config) + '_internal': {}}},
             'Mounts': [{'Type': 'bind', 'Source': m['source'], 'Destination': m['target'],
@@ -698,7 +698,8 @@ class InstallerStateTests(unittest.TestCase):
             lambda x: x['HostConfig'].update(Devices=[{'PathOnHost': '/dev/sda'}]),
             lambda x: x['HostConfig'].update(GroupAdd=['root']),
             lambda x: x['HostConfig'].update(Tmpfs={'/tmp': 'rw,nosuid,nodev,size=256m', '/escape': 'rw'}),
-            lambda x: x['HostConfig'].update(Tmpfs={'/tmp': 'rw,size=256m'}),
+            lambda x: x['HostConfig'].update(Tmpfs={'/tmp': 'rw,size=256m,mode=1777'}),
+            lambda x: x['HostConfig'].update(Tmpfs={'/tmp': 'rw,nosuid,nodev,size=256m'}),
             lambda x: x['Config'].update(User='0:0'),
             lambda x: x['Config'].update(Entrypoint=['/bin/sh']),
             lambda x: x['Config'].update(Cmd=['catalog-init']),
@@ -734,18 +735,64 @@ class InstallerStateTests(unittest.TestCase):
         selected_options = fixture['inspect']['HostConfig']['Tmpfs']['/tmp']
         self.assertEqual(selected_options.split(','), fixture['oci']['mounts'][0]['options'])
         self.init(); selected = runtime.Runtime(self.root); row = self.inspection(selected)
-        row['HostConfig']['Tmpfs'] = fixture['inspect']['HostConfig']['Tmpfs']
+        # Preserve the historical native projection: its implicit mode is now
+        # rejected. The following projection adds only the declared fixed mode;
+        # this inert guard is not a new native mount observation.
+        row['HostConfig']['Tmpfs'] = copy.deepcopy(fixture['inspect']['HostConfig']['Tmpfs'])
+        with self.assertRaisesRegex(ValueError, 'tmpfs'):
+            selected.container_security(row, 'catalog')
+        row['HostConfig']['Tmpfs']['/tmp'] = selected_options + ',mode=1777'
         selected.container_security(row, 'catalog')
-        for options in ('rw,nosuid,nodev,size=256m,rshared,tmpcopyup',
-                        'rw,nosuid,nodev,size=256m,slave,tmpcopyup',
-                        'rw,nosuid,nodev,size=256m,rslave,tmpcopyup',
-                        'rw,nosuid,nodev,size=256m,rprivate,shared,tmpcopyup',
-                        'rw,nosuid,nodev,size=256m,rprivate,private,tmpcopyup',
-                        'rw,nosuid,nodev,size=256m,rprivate,rprivate,tmpcopyup'):
+        for options in ('rw,nosuid,nodev,size=256m,mode=1777,rshared,tmpcopyup',
+                        'rw,nosuid,nodev,size=256m,mode=1777,slave,tmpcopyup',
+                        'rw,nosuid,nodev,size=256m,mode=1777,rslave,tmpcopyup',
+                        'rw,nosuid,nodev,size=256m,mode=1777,rprivate,shared,tmpcopyup',
+                        'rw,nosuid,nodev,size=256m,mode=1777,rprivate,private,tmpcopyup',
+                        'rw,nosuid,nodev,size=256m,mode=1777,rprivate,rprivate,tmpcopyup'):
             with self.subTest(options=options):
                 changed = copy.deepcopy(row); changed['HostConfig']['Tmpfs']['/tmp'] = options
                 with self.assertRaisesRegex(ValueError, 'tmpfs'):
                     selected.container_security(changed, 'catalog')
+
+    def test_generated_tmpfs_mode_is_explicit_for_all_roles(self):
+        self.init()
+        services = json.loads((self.root / 'compose.json').read_text())['services']
+        self.assertEqual(set(services), {*bundle.SERVICES, 'catalog-init', 'geoserver-init'})
+        for role, service in services.items():
+            with self.subTest(role=role):
+                self.assertEqual(service['tmpfs'], ['/tmp:rw,nosuid,nodev,size=256m,mode=1777'])
+                self.assertTrue(service['read_only'])
+                self.assertEqual(service['user'], str(os.getuid()) + ':' + str(os.getgid()))
+                self.assertEqual(service['userns_mode'], 'keep-id')
+                self.assertEqual(service['cap_drop'], ['ALL'])
+                self.assertEqual(service['security_opt'], ['no-new-privileges:true'])
+                self.assertTrue(all(m['read_only'] for m in service['volumes']
+                                    if m['target'].startswith('/run/')))
+
+    def test_tmpfs_mode_rejects_missing_duplicate_conflicting_and_unsafe_values(self):
+        self.init(); selected = runtime.Runtime(self.root)
+        base = 'rw,nosuid,nodev,size=256m'
+        for role in (*bundle.SERVICES, 'catalog-init', 'geoserver-init'):
+            original = self.inspection(selected, role)
+            selected.container_security(original, role)
+            for suffix in ('', ',mode=0755', ',mode=0777', ',mode=01777',
+                           ',mode=0', ',mode=2777', ',mode=4777', ',mode=-1',
+                           ',mode=1777,mode=1777', ',mode=1777,mode=0755',
+                           ',mode=0755,mode=1777', ',mode=1777,ro', ',mode=1777,suid'):
+                with self.subTest(role=role, suffix=suffix):
+                    row = copy.deepcopy(original)
+                    row['HostConfig']['Tmpfs']['/tmp'] = base + suffix
+                    with self.assertRaisesRegex(ValueError, 'tmpfs'):
+                        selected.container_security(row, role)
+
+    def test_tmpfs_mode_preserves_allowed_native_normalization(self):
+        self.init(); selected = runtime.Runtime(self.root)
+        for size in ('size=256m', 'size=268435456'):
+            for extra in ('', ',noexec', ',rprivate,tmpcopyup', ',noexec,rprivate,tmpcopyup'):
+                with self.subTest(size=size, extra=extra):
+                    row = self.inspection(selected)
+                    row['HostConfig']['Tmpfs']['/tmp'] = 'rw,nosuid,nodev,' + size + ',mode=1777' + extra
+                    self.assertEqual(selected.container_security(row, 'catalog'), 'realized_oci')
 
     def test_actual_oci_sysctl_map_must_match_ipv4_profile(self):
         self.init(); selected = runtime.Runtime(self.root); row = self.inspection(selected)
