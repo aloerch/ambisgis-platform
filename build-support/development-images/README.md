@@ -21,6 +21,7 @@ python recipe.py \
   --custody /absolute/retained/source-archives \
   --java-classes /absolute/plt01-runtime-checks/java-002 \
   --python-lock /absolute/python312-image-inputs.lock.json \
+  --locale-payload /absolute/locale-input-001/payload \
   --gpl3-notice /absolute/retained/geodb/COPYING \
   --output /absolute/new-selection
 python assemble.py --selection /absolute/new-selection/selection.json \
@@ -79,3 +80,32 @@ recorded custody limitations remain visible.
 Before adoption, independently review the concrete selection and archives, then
 perform the authorized ordinary installer tests with the separately qualified
 runtime. The existing targeted runtime-probe hold is unaffected by this recipe.
+
+## Retained C.UTF-8 data correction
+
+The original `images-004` archive is preserved. It requested `C.UTF-8` but
+contained no `/usr/lib/locale` data. Lifecycle008's suppressed child diagnostics
+do not prove that this defect caused its observed database exit. Missing
+`pgdata` also does not distinguish an early failure from `initdb` cleanup.
+
+`locale_projection.py` now verifies a separate inert extraction of the exact
+retained `glibc-locale-base-2.44-2.1` RPM against `locale-inputs.json`. The common
+image selection adds only its twelve `C.utf8` category files, with regular 0644
+image modes. Its version/build matches the selected libc. The helper verifies
+the complete receipt/header identities, signed category hashes, actual selected
+file membership and bytes, contained package paths, retained RPM/source custody,
+and existing libc/full `LICENSES` bytes before producing entries. Other locales,
+alias files, package commands and scripts are not projected. The original
+retained sources, extraction and old images are never modified.
+
+The exact full LGPL2.1 and Unicode LicenseV3 texts from the retained matching
+glibc source archive accompany these data under
+`/opt/ambisgis/notices/glibc-locale/`. The original glibc notice mapping is retained.
+This carries source notices; it does not approve a product distribution.
+
+The explicit database `--locale=C.UTF-8 --encoding=UTF8` contract remains.
+`C` with UTF8 encoding would change character classification/case behavior;
+PostgreSQL fixes these locale properties when a database is created. No existing
+database is migrated or reinitialized by this projection. The inert guard suite
+and retained-byte projection witness establish packaging inputs only. Fresh
+reviewed image assembly and actual ordinary startup remain required.

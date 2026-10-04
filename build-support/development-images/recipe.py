@@ -17,6 +17,7 @@ import zipfile
 
 import assemble as a
 import relocate_proj
+import locale_projection
 
 GEO = '2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4'
 CLIENT = 'c1f6ad9df52f08ac3bfd7211db9e3ee744b21407'
@@ -173,6 +174,9 @@ def main(args):
                            ref(args.python_lock, 'fc7449babfee72a361da2ad309c463a4ec33ef89a28fbfdc2fa63e5d882bfefd')],
         'scripts_executed': False, 'mode_projection': 'signed ordinary bits; no capabilities, setuid or package scripts'})
     common = [mapped('system-python', system, [payload_ref, ref(inert_path), projection_ref])]
+    locale_rows, locale_provenance = locale_projection.select(
+        work, custody, args.locale_payload, system, generated / 'locale-notices')
+    common.append(mapped('glibc-c-utf8', locale_rows, locale_provenance))
 
     modules = {}
     for source, destination in [('services/development/ambisgis_development', 'ambisgis_development'),
@@ -368,6 +372,7 @@ if __name__ == '__main__':
     parser.add_argument('--custody', type=Path, required=True)
     parser.add_argument('--java-classes', type=Path, required=True)
     parser.add_argument('--python-lock', type=Path, required=True)
+    parser.add_argument('--locale-payload', type=Path, required=True)
     parser.add_argument('--gpl3-notice', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     main(parser.parse_args())
