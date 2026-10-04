@@ -7,6 +7,7 @@ import subprocess
 import time
 
 from .common import DATA, inputs, read, save
+from .startup_diagnostics import ChildFailure, StartupFailure
 
 PREFIX = Path('/opt/ambisgis/postgres')
 ROLES = {'ambisgis_catalog_owner': 'catalog_migrator', 'ambisgis_catalog_app': 'catalog_runtime',
@@ -20,7 +21,7 @@ def call(arguments, *, env=None, timeout=60, data=None):
     value = subprocess.run([str(x) for x in arguments], input=data, stdout=subprocess.PIPE,
                            stderr=subprocess.DEVNULL, env=env, timeout=timeout)
     if value.returncode:
-        raise RuntimeError('owned database command failed')
+        raise ChildFailure(value.returncode)
     return value.stdout.decode().strip()
 
 
@@ -168,67 +169,91 @@ def bootstrap(config, secrets):
 
 
 def main():
-    config, secrets = inputs()
-    marker = DATA / 'installation.json'
-    identity = {'schema_version': 1, 'install_id': config['install_id'], 'purpose': 'developer-database'}
-    if marker.exists():
-        if read(marker) != identity:
-            raise ValueError('database directory belongs to a different installation')
-    else:
-        if any(DATA.iterdir()):
-            raise ValueError('will not adopt an unmarked database directory')
-        save(marker, identity)
-    pgdata, socket = DATA / 'pgdata', DATA / 'socket'
-    if pgdata.is_symlink() or socket.is_symlink():
-        raise ValueError('database storage cannot redirect outside its volume')
-    socket.mkdir(mode=0o700, exist_ok=True)
-    if not (pgdata / 'PG_VERSION').exists():
-        pwfile = Path('/tmp/initial-database-password')
-        descriptor = os.open(pwfile, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
-        with os.fdopen(descriptor, 'w') as output:
-            output.write(secrets['database_admin'])
-        try:
-            call([PREFIX / 'bin/initdb', '-D', pgdata, '--username=ambisgis_admin', '--auth-local=scram-sha-256',
-                  '--auth-host=scram-sha-256', '--encoding=UTF8', '--locale=C.UTF-8', '--pwfile=' + str(pwfile)])
-        finally:
-            pwfile.unlink()
-    # Only the catalog roles are reachable over the private container network.
-    # The superuser stays on the database container's owner-only Unix socket.
-    hba = ('local all ambisgis_admin scram-sha-256\n'
-           'host ambisgis_catalog ambisgis_catalog_owner,ambisgis_catalog_app,ambisgis_render_reader 0.0.0.0/0 scram-sha-256\n'
-           'host ambisgis_transport ambisgis_transport_owner,ambisgis_transport_reader 0.0.0.0/0 scram-sha-256\n'
-           'host all all 0.0.0.0/0 reject\n'
-           'host all all ::/0 reject\n')
-    target = pgdata / 'pg_hba.conf'
-    if target.is_symlink():
-        raise ValueError('database authentication configuration cannot be a symlink')
-    target.write_text(hba)
-    target.chmod(0o600)
-    process = subprocess.Popen([str(PREFIX / 'bin/postgres'), '-D', str(pgdata), '-p', '5432',
-                                '-c', 'listen_addresses=*', '-c', 'unix_socket_directories=' + str(socket),
-                                '-c', 'log_statement=none', '-c', 'log_min_error_statement=panic'],
-                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    def stop(signum, frame):
-        if process.poll() is None:
-            process.send_signal(signal.SIGINT)
-    signal.signal(signal.SIGTERM, stop); signal.signal(signal.SIGINT, stop)
+    stage = 'input'
     try:
-        deadline = time.monotonic() + 60
-        while True:
+        config, secrets = inputs()
+        stage = 'identity'
+        marker = DATA / 'installation.json'
+        identity = {'schema_version': 1, 'install_id': config['install_id'], 'purpose': 'developer-database'}
+        if marker.exists():
+            if read(marker) != identity:
+                raise ValueError('database directory belongs to a different installation')
+        else:
+            if any(DATA.iterdir()):
+                raise ValueError('will not adopt an unmarked database directory')
+            save(marker, identity)
+        stage = 'storage'
+        pgdata, socket = DATA / 'pgdata', DATA / 'socket'
+        if pgdata.is_symlink() or socket.is_symlink():
+            raise ValueError('database storage cannot redirect outside its volume')
+        socket.mkdir(mode=0o700, exist_ok=True)
+        if not (pgdata / 'PG_VERSION').exists():
+            stage = 'password'
+            pwfile = Path('/tmp/initial-database-password')
+            descriptor = os.open(pwfile, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+            primary = None
             try:
-                if sql('SELECT 1;', secrets['database_admin']) == '1':
-                    break
-            except (RuntimeError, subprocess.TimeoutExpired):
-                pass
-            if process.poll() is not None or time.monotonic() >= deadline:
-                raise RuntimeError('database did not become available')
-            time.sleep(0.5)
-        bootstrap(config, secrets)
-        print(json.dumps({'event': 'database_ready', 'install_id': config['install_id']}), flush=True)
-        raise SystemExit(process.wait())
-    finally:
-        stop(None, None)
-        process.wait(timeout=40)
+                with os.fdopen(descriptor, 'w') as output:
+                    output.write(secrets['database_admin'])
+                stage = 'initdb'
+                call([PREFIX / 'bin/initdb', '-D', pgdata, '--username=ambisgis_admin', '--auth-local=scram-sha-256',
+                      '--auth-host=scram-sha-256', '--encoding=UTF8', '--locale=C.UTF-8', '--pwfile=' + str(pwfile)])
+            except Exception as error:
+                primary = StartupFailure(stage, error)
+                raise primary from None
+            finally:
+                try:
+                    pwfile.unlink()
+                except Exception as error:
+                    raise StartupFailure('password_cleanup', primary if primary is not None else error,
+                                         cleanup_failed=True) from None
+        stage = 'storage'
+        # Only the catalog roles are reachable over the private container network.
+        # The superuser stays on the database container's owner-only Unix socket.
+        hba = ('local all ambisgis_admin scram-sha-256\n'
+               'host ambisgis_catalog ambisgis_catalog_owner,ambisgis_catalog_app,ambisgis_render_reader 0.0.0.0/0 scram-sha-256\n'
+               'host ambisgis_transport ambisgis_transport_owner,ambisgis_transport_reader 0.0.0.0/0 scram-sha-256\n'
+               'host all all 0.0.0.0/0 reject\n'
+               'host all all ::/0 reject\n')
+        target = pgdata / 'pg_hba.conf'
+        if target.is_symlink():
+            raise ValueError('database authentication configuration cannot be a symlink')
+        target.write_text(hba)
+        target.chmod(0o600)
+        stage = 'server'
+        process = subprocess.Popen([str(PREFIX / 'bin/postgres'), '-D', str(pgdata), '-p', '5432',
+                                    '-c', 'listen_addresses=*', '-c', 'unix_socket_directories=' + str(socket),
+                                    '-c', 'log_statement=none', '-c', 'log_min_error_statement=panic'],
+                                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        def stop(signum, frame):
+            if process.poll() is None:
+                process.send_signal(signal.SIGINT)
+        signal.signal(signal.SIGTERM, stop); signal.signal(signal.SIGINT, stop)
+        try:
+            stage = 'readiness'
+            deadline = time.monotonic() + 60
+            while True:
+                try:
+                    if sql('SELECT 1;', secrets['database_admin']) == '1':
+                        break
+                except (RuntimeError, subprocess.TimeoutExpired):
+                    pass
+                returncode = process.poll()
+                if returncode is not None:
+                    raise ChildFailure(returncode)
+                if time.monotonic() >= deadline:
+                    raise TimeoutError('database did not become available')
+                time.sleep(0.5)
+            stage = 'bootstrap'
+            bootstrap(config, secrets)
+            print(json.dumps({'event': 'database_ready', 'install_id': config['install_id']}), flush=True)
+            stage = 'server'
+            raise SystemExit(process.wait())
+        finally:
+            stop(None, None)
+            process.wait(timeout=40)
+    except Exception as error:
+        raise StartupFailure(stage, error) from None
 
 
 def health():
