@@ -228,16 +228,16 @@
   },
   "evidence": "plan/verification/authorized-successors/publication.json",
   "execution_checkpoint": {
-    "current_action": "Run exact combined checks on the reviewed OAuth source integration, rebuild affected images/bundle and execute fresh reviewed ordinary lifecycle014. Inert tests do not establish installation acceptance.",
+    "current_action": "Run combined checks on the reviewed GeoServer source integration, rebuild affected images/bundle, and make a separately reviewed fresh ordinary installation attempt. No timeout increase or forced JVM exit is proposed.",
     "current_tasks": [
       {
         "branch": "plt-01/development-install",
         "delivery": "In progress",
         "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
         "id": "PLT-01",
-        "local_head": "26056894347071f4e06993ffaf1cc91310fc61de",
-        "local_increment": "Run exact combined checks on the reviewed OAuth source integration, rebuild affected images/bundle and execute fresh reviewed ordinary lifecycle014. Inert tests do not establish installation acceptance.",
-        "published_head": "b31c4e751ec9b611927c957625902d3af7f0b0fe",
+        "local_head": "d6d49ca26ba5209f72b0cbc2baf986af081f494e",
+        "local_increment": "Run combined checks on the reviewed GeoServer source integration, rebuild affected images/bundle, and make a separately reviewed fresh ordinary installation attempt. No timeout increase or forced JVM exit is proposed.",
+        "published_head": "2bc52ba9f5302b5b969f3bda2315eeafc1e7dd33",
         "repository": "aloerch/ambisgis-platform",
         "repository_id": 1376927351,
         "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree"
@@ -282,6 +282,10 @@
       "db02_acceptance": "plan/verification/db02-acceptance/evidence.json",
       "db03_acceptance": "plan/verification/db03-acceptance/evidence.json",
       "doctor": "Private delivery-control/recovery-20261003/doctor-redacted-001.json",
+      "geoserver_diagnostic001": {
+        "path": "plan/verification/plt01-lifecycle/geoserver-diagnostic-001.json",
+        "sha256": "fd7fdd2e9f4b05428167a75e7f81d8e2368a9fbb51de7f9f311494df89ec5951"
+      },
       "integrated_source_008": {
         "checks": {
           "journey_policy": 32,
@@ -333,6 +337,10 @@
         "path": "plan/verification/plt01-lifecycle/evidence-013.json",
         "sha256": "72683c9d24011e70eb89d8f04efdd34c4516cbf9e7d739a410709d956b1edaf5"
       },
+      "lifecycle014": {
+        "path": "plan/verification/plt01-lifecycle/evidence-014.json",
+        "sha256": "d2783ff1186878b737980df671e8167b38ab43ab0a028a719fe07d3181ab6125"
+      },
       "live_local": "Private delivery-control/recovery-20261003/live-local-001.json",
       "native_timer_alternatives": {
         "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/source-diagnosis-001/alternatives.json",
@@ -360,6 +368,10 @@
       "progress013": {
         "path": "plan/verification/runtime-recovery/progress-013.json",
         "sha256": "eaa3320fd52ef7d4a373908f09f317354f2c001a430e64cc2e5be674710012c1"
+      },
+      "progress014": {
+        "path": "plan/verification/runtime-recovery/progress-014.json",
+        "sha256": "be7ac9b08be8b494aaf90a6c2170d642466dff5a4c306da2b4718cbdbe7f0d19"
       },
       "python312_payload": {
         "executed": false,
@@ -411,69 +423,62 @@
       "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified."
     },
     "latest_application_diagnostic": {
-      "candidate": "004",
-      "effects_review_sha256": "72632791ef717d5aacee87f79a128b2504d4e3dc91c787bc8a650ffbd8fde8f7",
-      "final_state": {
-        "ExitCode": 0,
-        "Pid": 0,
-        "Running": false,
-        "Status": "exited"
+      "all_helpers_gone": false,
+      "configuration_defects_observed": 2,
+      "effects_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-geoserver-init-replay-evidence-review-002/result.json",
+        "sha256": "af2d4ac332bc1d64ba8e62ac7f2f6079c692d9ef82c89a08ce6e3db59bba3ec0"
       },
       "full_installation_acceptance": false,
       "held_probe_executed": false,
-      "limits": [
-        "Exact intrinsic missing-module name was observed during setup-only execution with the reviewed image and copied inputs.",
-        "This is not successful Django setup or installation. Exact first importing frame and original012 exception object were not observed.",
-        "Only the owned diagnostic container was removed; existing pause, original data and network remain retained.",
-        "004 used no-healthcheck and exact zero-health projection; normal product health timers were unchanged."
-      ],
-      "native_start_exit": 0,
-      "new_inert_checks": 47,
-      "observation": {
-        "missing_module": "distutils",
-        "name_source": "builtin_ImportError.name",
-        "schema_version": 1,
-        "status": "missing_module_observed"
+      "name": "geoserver-init-replay-001",
+      "original014_cause": "unobserved",
+      "result": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-replay-001/execution/result.json",
+        "sha256": "38791f2a2bf932436294fcf91937a61374d5f8b84dca70c513ef73ee7c8f3762"
       },
-      "original_entries": 1627,
-      "original_persistent_state_unchanged": true,
-      "owned_diagnostic_cleanup_verified": true,
-      "reconciliation_sha256": "beb440e4dc03f577ccd9f485f629774cc3e2407080b35c41b9a255b85e0220c7",
-      "result_sha256": "18024a6307b606a2a9db0b2d0e63f92885b4ee524e02bcce789c5b41f6311a57",
-      "setup_completed": false,
-      "source_review_sha256": "a2925f391f63eb889a5862358463a2e5a50d6c32fedf29dfc6b321992c943d40",
-      "status": "completed_missing_module_observation",
-      "unchanged_prior_capture_cleanup_checks_reused": 109
+      "source_head": "2bc52ba9f5302b5b969f3bda2315eeafc1e7dd33",
+      "status": "FAILED",
+      "timeout_location": "unresolved"
     },
     "latest_completed_implementation_boundary": {
-      "actual_installation": "Attempt013 passed relocation and fresh init, then failed catalog_bootstrap/invalid_input/validation. Database health [1,0,0,0,0], explicit readiness0, no automatic restarts and final exit0; catalog-init started, died1 and was removed. Protected-service, persistence/restart/recovery and DNS journeys were not reached. Exact original exception and failing operation remain unobserved.",
+      "actual_installation": "Attempt014 catalog-init completed; GeoServer-init timed out. No serving or protected/persistence/DNS acceptance.",
       "checks": {
-        "development": 121,
-        "image_helpers": 40,
-        "package": 649,
-        "runtime": 52,
-        "schemas": 10,
-        "scope": "Validation022 package/runtime/schema after two-line pin; unchanged image/development inputs explicitly reuse validation021. No installed GIS acceptance.",
+        "new_geoserver_component_included": false,
+        "scope": "Source/inert checks, not installed GIS acceptance.",
         "skips": 0,
-        "source_files": 1516
+        "tracked_source_files": 1522,
+        "validation023": {
+          "development": 121,
+          "image_helpers": 40,
+          "package": 658,
+          "runtime": 52,
+          "schemas": 10
+        },
+        "validation024": {
+          "explicit_unchanged_reuse_from023": {
+            "development": 121,
+            "image_helpers": 40
+          },
+          "package": 658,
+          "runtime": 52,
+          "schemas": 10
+        }
       },
-      "implementation": "Reviewed retained distutils activation, source checks021/022, audited paired images013/014 and bundle016."
+      "implementation": "Reviewed OAuth source, validations023/024, paired images015/016 and audited bundle017."
     },
     "native_goal": {
       "automatic_continuation": "Not active while native Goal blocked",
-      "observed_at": "2026-10-04T10:22:35Z",
-      "previous_timestamped_observation": "2026-10-04T09:33:32Z",
-      "quota_status": "unknown",
+      "observed_at": "2026-10-04T11:11:31Z",
       "remaining_tokens": null,
       "reported_time_used_seconds": 30612,
       "reported_tokens_used": 12420153,
-      "reported_updated_at": 1791034102,
-      "source": "Root clock-bracketed get_goal tool testimony at10:22:35UTC: blocked,12420153 tokens,30612 seconds,remainingnull,updated1791034102. No raw transcript, independent query or native resume by proposal author.",
+      "source": "Root get_goal/clock tool testimony supplied to this worker; no independent Goal query or raw transcript copy.",
       "status": "blocked",
       "token_budget": "not configured in returned state",
-      "user_action": "Use /goal resume in this same thread for native automatic continuation"
+      "user_action": "/goal resume in this same thread is a user action for native automatic continuation only; foreground delivery continues."
     },
-    "observed_at": "2026-10-04T10:29:18.150958+00:00",
+    "observed_at": "2026-10-04T11:55:10.247525+00:00",
     "observed_terminal": {
       "at": "2026-10-03T13:28:22.795Z",
       "category": "Platform cybersecurity-risk flag",
@@ -483,6 +488,54 @@
       "turn_id": "01a1005c-e3c7-7742-b817-eed39401449b"
     },
     "owner_action_required_for_current_safe_work": false,
+    "pending_component": {
+      "base": "2bc52ba9f5302b5b969f3bda2315eeafc1e7dd33",
+      "branch": "plt-01/geoserver-init",
+      "changes": [
+        "Populate the native jai alias with retained ImageProcessingInfo defaults.",
+        "Remove unsupported PATCH only from the native REST admin rule; the mandatory owned request filter remains unchanged.",
+        "Emit finite initialization phases and exact allowlisted exception classes without messages, paths or cause traversal; preserve finally-stop, timeouts and exception precedence."
+      ],
+      "combined_independent_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-geoserver-init-source-review-001/result.json",
+        "sha256": "69f31ec580354659a7d4f20227c4a1debbb3c6ca123a3a34329fb4efb0017208"
+      },
+      "component_commit": "13f3084a83c5b45a901a74d03be67e9b7c612531",
+      "files": 5,
+      "integration_receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integrated-geoserver-init-source-001.json",
+        "sha256": "809fc721ad91fbdf489d3d1a967523d2068af01e52eb490a027f798a6638575b"
+      },
+      "java_checks": {
+        "class_files": 8,
+        "compiler_and_checks_exit_codes": [
+          0,
+          0
+        ],
+        "finite_initialization_diagnostic_checks": 66,
+        "receipt": {
+          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/java-003/result.json",
+          "sha256": "0772c9ecbc1151ef45841d374a1853e50457fe8a9659510504a98df5f385a330"
+        },
+        "request_guards": 63,
+        "runtime_application_started": false
+      },
+      "published": false,
+      "python_checks": {
+        "additional_coverage_from_replay": false,
+        "baseline_failures": 2,
+        "cases": 4,
+        "fixed_passes": 4,
+        "root_independent_replay_same_cases": true
+      },
+      "root_integrated": true,
+      "root_merge": "d6d49ca26ba5209f72b0cbc2baf986af081f494e",
+      "runtime_repair_proven": false,
+      "source_freeze": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-source-001/freeze.json",
+        "sha256": "5808f1d847af4697ef60a892532cb7df75b768eaa058fadfaa1e6738e81d0b29"
+      }
+    },
     "recovery_performed": [
       "Read-only guard/code, runtime version/help/doctor and sanitized terminal-event inspection",
       "Fresh GitHub identity/repo/main/issue/Project and local worktree reconciliation",
@@ -507,7 +560,7 @@
       "DB-03": "Merged",
       "DB-04": "Backlog; API-04 required",
       "FND-06": "Merged",
-      "PLT-01": "In progress; PR78 draft at b31c4e75 with package/schema CI success. Attempt013 failed catalog_bootstrap/invalid_input; exact frame unobserved. OAuth repair independently reviewed, no installation pass.",
+      "PLT-01": "In progress; PR78 draft at2bc52ba9 with successful package/schema CI. Attempt014 failed; new GeoServer component is integrated locally at d6d49ca, not published. No installation acceptance.",
       "PLT-02": "Backlog; PLT-01 pending",
       "geodb_main": "13fb7c9bff9d011838b768802a6ab63f932bd228",
       "platform_main": "d0218209d435f80c21400dc38abc2c4d69d805bc"
@@ -515,10 +568,10 @@
     "schema_version": 1,
     "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
     "worker_observations": {
-      "db02_validation": "Independently reviewed actual013 effects, source mismatch and OAuth repair.",
-      "fnd03_identity": "Prepared isolated frozen repair and private evidence proposal; no native/remote/root source mutation.",
-      "observed_at": "2026-10-04T10:29:18.150958+00:00",
-      "root": "Sole integrator/native/remote writer; published reviewed b31c draft."
+      "db02_validation": "Independently reviewed actual014 and diagnostic001 effects; combined new component source/Java review passed.",
+      "fnd03_identity": "Authored frozen isolated configuration/diagnostics component and this private evidence proposal; no native or remote execution.",
+      "observed_at": "2026-10-04T11:55:10.247525+00:00",
+      "root": "Sole native/remote integrator; published2bc draft and ran retained Java checks. Root integrated reviewed13f3084 as d6d49ca; combined checks/artifacts remain pending."
     }
   },
   "fnd06_acceptance": {

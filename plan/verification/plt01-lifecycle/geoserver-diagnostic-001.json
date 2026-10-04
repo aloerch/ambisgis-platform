@@ -1,0 +1,169 @@
+{
+  "actual_result": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-replay-001/execution/result.json",
+    "sha256": "38791f2a2bf932436294fcf91937a61374d5f8b84dca70c513ef73ee7c8f3762"
+  },
+  "bundle": "017",
+  "effects": {
+    "all_helpers_gone": false,
+    "database_restart_count": 0,
+    "database_stopped_exit_code": 0,
+    "dns_cleanup_verified": false,
+    "geoserver_initialized_marker_present": false,
+    "geoserver_initializer_died_exit_code": 1,
+    "geoserver_initializer_removed": true,
+    "known_persisted_timer_and_service_not_loaded": true,
+    "last_five_health_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "original014_entries_verified_unchanged": 4109,
+    "pause_retained": {
+      "pid": 695945,
+      "start_ticks": 11068754
+    },
+    "persistent_data_preserved": true
+  },
+  "execution": {
+    "complete_private_capture_bytes": {
+      "stderr": 357,
+      "stdout": 14711
+    },
+    "database_readiness_passed": true,
+    "initializer_exit_code": 1,
+    "outer_initializer_deadline_seconds": 240,
+    "python_java_deadline_seconds": 180,
+    "raw_logs_copied_to_public_evidence": false,
+    "serving_roles_started": false
+  },
+  "full_installation_acceptance": false,
+  "held_probe_executed": false,
+  "independent_effects_review": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-geoserver-init-replay-evidence-review-002/result.json",
+    "sha256": "af2d4ac332bc1d64ba8e62ac7f2f6079c692d9ef82c89a08ce6e3db59bba3ec0"
+  },
+  "installation_id": "18c48ea9-2693-4fc0-9332-5a60b8d122f0",
+  "limits": [
+    "The exact Java timeout location remains unresolved.",
+    "The exact original lifecycle014 cause remains unobserved; this fresh diagnostic is distinct.",
+    "No protected map/query/metadata journey, service readiness, installation or full MVP acceptance."
+  ],
+  "observations": [
+    {
+      "finding": "Native ImageNInitializer dereferenced missing imageProcessing settings.",
+      "limit": "GeoServerLoader catches initializer failures; this observation alone does not prove the entire startup or timeout cause.",
+      "source_supported_defect": true
+    },
+    {
+      "finding": "Native REST access-rule parser rejected the rule containing unsupported PATCH.",
+      "limit": "The mandatory owned HTTP filter remains separate and unchanged.",
+      "source_supported_defect": true
+    },
+    {
+      "finding": "Context-destruction cleanup started at 11:22:49 UTC.",
+      "limit": "The start message does not prove completion, exact Java phase at timeout, or JVM liveness after main completion.",
+      "source_supported_defect": false
+    }
+  ],
+  "read_only_effects": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-replay-001/execution/read-only-reconciliation-001/result.json",
+    "sha256": "758c9e13fecfe0835b284de30ad2ae7c6c969b4d893feefc68670a49f8db6690"
+  },
+  "references": {
+    "component_commit": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/committed-geoserver-init-source-001.json",
+      "sha256": "23bffe9e64158910b395fd9d7b18511983ac2fe338cd6e621bd0c3a4ea44ab77"
+    },
+    "diagnostic001_control_review": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-geoserver-init-replay-review-001/result.json",
+      "sha256": "941af8fbe35c9a6e4132d779da17800a029565b5ded6010b4b8f62af721806af"
+    },
+    "diagnostic001_stderr_private": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-replay-001/execution/initializer-stderr.json",
+      "sha256": "094f0294e481bfe5440e5e768d0dd890ce76749e001baa70f77d547679c1eaef"
+    },
+    "diagnostic001_stdout_private": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-replay-001/execution/initializer-stdout.json",
+      "sha256": "44d7437608876fb653ff87ffade70157129f5a00988be06a5a6102bb29782dab"
+    },
+    "java003_checks_log": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/java-003/step-1.log",
+      "sha256": "16097a9437af3f811c4ba4e834cf88f0f1b5369a0e5db1530bf521c27d49b7cb"
+    },
+    "native_contract": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-source-001/native-contract.json",
+      "sha256": "5d05b0f5470bec671b7642538589c7a87ebbcd572e490adb65a324cf9b4bb11e"
+    },
+    "python_baseline": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-source-001/baseline.json",
+      "sha256": "fad4ea2cd8dfd6dc156cffa3de336e9bf05fa7c88a74df2dd79584b7b249ed2f"
+    },
+    "python_fixed": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-source-001/fixed.json",
+      "sha256": "6c75303bb5a1508788a9dff9581fa392a3e44537afed41773b8f4d56fe06796a"
+    },
+    "root_python_replay": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-geoserver-source-root-preflight-001/result.json",
+      "sha256": "651f379b68bcd8c9be027a17973dffb09c52cf51cd296a9b55f1f88236275b28"
+    },
+    "source_diagnosis": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-geoserver014-source-diagnosis-001/result.json",
+      "sha256": "65e91a0c97b31918cdce2231f28c651d3996c179666e6f83e4aba87cec7834c4"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Fresh private standard database plus unchanged GeoServer initializer application diagnostic; not an installation acceptance substitute.",
+  "source_head": "2bc52ba9f5302b5b969f3bda2315eeafc1e7dd33",
+  "source_repair": {
+    "base": "2bc52ba9f5302b5b969f3bda2315eeafc1e7dd33",
+    "branch": "plt-01/geoserver-init",
+    "changes": [
+      "Populate the native jai alias with retained ImageProcessingInfo defaults.",
+      "Remove unsupported PATCH only from the native REST admin rule; the mandatory owned request filter remains unchanged.",
+      "Emit finite initialization phases and exact allowlisted exception classes without messages, paths or cause traversal; preserve finally-stop, timeouts and exception precedence."
+    ],
+    "combined_independent_review": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-geoserver-init-source-review-001/result.json",
+      "sha256": "69f31ec580354659a7d4f20227c4a1debbb3c6ca123a3a34329fb4efb0017208"
+    },
+    "component_commit": "13f3084a83c5b45a901a74d03be67e9b7c612531",
+    "files": 5,
+    "integration_receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integrated-geoserver-init-source-001.json",
+      "sha256": "809fc721ad91fbdf489d3d1a967523d2068af01e52eb490a027f798a6638575b"
+    },
+    "java_checks": {
+      "class_files": 8,
+      "compiler_and_checks_exit_codes": [
+        0,
+        0
+      ],
+      "finite_initialization_diagnostic_checks": 66,
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/java-003/result.json",
+        "sha256": "0772c9ecbc1151ef45841d374a1853e50457fe8a9659510504a98df5f385a330"
+      },
+      "request_guards": 63,
+      "runtime_application_started": false
+    },
+    "published": false,
+    "python_checks": {
+      "additional_coverage_from_replay": false,
+      "baseline_failures": 2,
+      "cases": 4,
+      "fixed_passes": 4,
+      "root_independent_replay_same_cases": true
+    },
+    "root_integrated": true,
+    "root_merge": "d6d49ca26ba5209f72b0cbc2baf986af081f494e",
+    "runtime_repair_proven": false,
+    "source_freeze": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-source-001/freeze.json",
+      "sha256": "5808f1d847af4697ef60a892532cb7df75b768eaa058fadfaa1e6738e81d0b29"
+    }
+  },
+  "status": "FAILED"
+}

@@ -3,9 +3,13 @@
 The authoritative implementation checkpoint is [the repository status](../STATUS.md).
 DB-03 is accepted/Merged at 13fb7c9bff9d011838b768802a6ab63f932bd228 after
 86 fresh checks and independent verification. PLT-01 remains In progress after
-thirteen preserved ordinary startup failures; installation and full MVP acceptance
-remain open. [Current evidence](verification/runtime-recovery/progress-013.json)
-records the blocked native Goal and continuing foreground work.
+fourteen ordinary installation failures and a separate private GeoServer
+initializer diagnostic. Catalog initialization advanced; serving readiness and
+the Java timeout cause remain unproved. A configuration/finite-diagnostics
+component passed source/Java review and is integrated locally; combined checks
+and rebuilt artifacts remain pending.
+[Current evidence](verification/runtime-recovery/progress-014.json) records the
+blocked native Goal, continuing foreground work and open installation/MVP scope.
 
 ## Historical plan-package checkpoints follow unchanged
 
