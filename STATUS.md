@@ -18,38 +18,36 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 has four independently reviewed owned OCI images. Seven actual startup
-attempts remain failed and preserved. Attempt007 passed relocation and fresh
-initialization and persisted the native health-timer identity. Network setup then
-failed when the guarded systemd scope wrapper rejected the DNS launch. Source
-parsing reproduces this rejection; actual failing argv was not captured. Later
-read-only queries found the exact timer/service not loaded. The driver and
-recorded database process are gone; the owned namespace pause helper, data and
-network remain retained. No application journey or complete cleanup has passed.
+PLT-01 has four independently reviewed owned OCI images. Eight actual startup
+attempts remain failed and preserved. Attempt008 passed relocation and fresh
+initialization, then failed during up. The database entrypoint repeatedly exited during startup. Read-only inspection
+found its marker/socket directory and no pgdata directory; engine metadata records
+383 automatic restarts.
+Read-only reconciliation found the database stopped, other five containers
+absent, and the last persisted health timer/service not loaded. The exact owned
+rootless pause helper, persistent data and network remain retained. Earlier
+restart units were not enumerated. No application journey or DNS cleanup passed.
 
-[Draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78) publishes the
-reviewed source at `4afba4c213a094344b40a665edffb531e4f76ff5`; it is unmerged.
-That source passed 573 package, 51 runtime, 64 development-helper and ten
-schema/example checks. The bounded native timer producer passed 14 pure cases,
-and its rebuilt artifacts and bundle010 received independent review. Those
-checks remain distinct from the failed seventh ordinary installation. The
-command-concurrency helper is integrated but has not run against a live install.
+[Draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78) publishes
+reviewed source `314f11e243a11ed6c494bdd2aa70ef18f4ec049a`; it is unmerged.
+Its unchanged bytes passed 585 package, 51 runtime, 101 development-helper and
+ten schema/example checks. Independent review verified source, bundle011 and
+publication history. Guarded direct DNS selection and read-only identity/cleanup
+observations are implemented; actual running DNS proof was not reached. The
+concurrency helper still has not run against a live installation.
 
-The next repair selects netavark's existing direct DNS daemon branch through an
-explicit bundle profile and rejects an unexpected scope launcher in its lookup
-paths. DNS remains enabled in its native network namespace; the daemon inherits
-the caller's cgroup. Separate design review found no requirement for a dedicated
-DNS systemd scope. Implementation review and actual DNS readiness, namespace,
-cgroup, lifetime and cleanup evidence remain necessary before acceptance.
-[Actual attempts and reconciliation](plan/verification/plt01-lifecycle/evidence-007.json)
-and [native build evidence](build-support/development-runtime/native-health-timer-evidence.json)
-retain these boundaries. Full PLT-01 and scoped MVP acceptance remain open.
+Source/image review establishes missing C.UTF-8 locale data. Generic startup logs
+do not establish the precise runtime initialization failure. The next repair
+projects twelve matching already-retained locale files and adds fixed nonsecret
+startup diagnostics. Source implementation and independent review are pending.
+[Actual attempts and reconciliation](plan/verification/plt01-lifecycle/evidence-008.json)
+retain the evidence limits. Full PLT-01 and scoped MVP acceptance remain open.
 
 The held targeted engine probe remains unexecuted after the earlier platform
 termination. The native Goal still reports blocked; foreground delivery continues.
 Restoring native automatic continuation requires the user control /goal resume
 in the existing thread. [Original diagnosis](plan/verification/runtime-recovery/2026-10-03.json)
-and [latest progress](plan/verification/runtime-recovery/progress-007.json)
+and [latest progress](plan/verification/runtime-recovery/progress-008.json)
 distinguish this platform state from current product work.
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.

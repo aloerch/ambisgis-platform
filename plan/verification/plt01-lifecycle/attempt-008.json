@@ -1,0 +1,58 @@
+{
+  "cli_failure": {
+    "command": "up",
+    "returncode": 1,
+    "stderr_bytes": 155,
+    "stdout_bytes": 0
+  },
+  "error_type": "RuntimeError",
+  "finished": "2026-10-04T02:27:28.515519+00:00",
+  "full_installation_acceptance": false,
+  "incomplete_checks": [],
+  "install_id": "6fa2bc9b-98f7-44da-96c0-b0edcb9ff479",
+  "persistent_data_deleted": false,
+  "schema_version": 1,
+  "scope": "Actual ordinary CLI, bundle relocation, persistent identity/metadata, service fault/recovery, read-only native DNS observations and shutdown only",
+  "shutdown": {
+    "attempted": true,
+    "dns": {
+      "classification": "no_prior_identity",
+      "cleanup_verified": false,
+      "daemon_cleanup_verified": false,
+      "status": "unobserved"
+    },
+    "persistent_data_preserved": true,
+    "running_services": 0
+  },
+  "source": {
+    "build-support/geonode/protocol_probe.py": "fdbe712228e55a5af8ed2f35171c2c0e29327a2a1009a44b3312d4b575551109",
+    "deploy/development/catalog_permission_probe.py": "e7cd217b7cce15d03640da0fb246d70da4a560a9a682362ce29b604ab99abf97",
+    "deploy/development/dns_observation.py": "a7aa1744ecf24235fabcef965c01a4ce6e1ab5c557f186468496a016d6fa79d5",
+    "deploy/development/journey_probe.py": "d64bfaf9dcddf3f66dacede34daf3a9640bca9cf940f987e71ac23853633ff6b",
+    "deploy/development/lifecycle_check.py": "f7170b5e4693d1f2daddcf3eec8ac3102b6fca0890216fd701ef72b7e7c61c7f"
+  },
+  "stages": [
+    {
+      "at": "2026-10-04T02:23:23.029541+00:00",
+      "facts": {
+        "bundle_sha256": "e7955755fbb25709122acb60293cb2967e3c4426a0fd6aeb5c26dd7a9e7ad459",
+        "original": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-011/bundle.json",
+        "relocated": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-008/relocated-bundle/bundle.json"
+      },
+      "name": "verified relocated bundle"
+    },
+    {
+      "at": "2026-10-04T02:23:31.613066+00:00",
+      "facts": {
+        "created": true,
+        "install_id": "6fa2bc9b-98f7-44da-96c0-b0edcb9ff479"
+      },
+      "name": "fresh init"
+    }
+  ],
+  "started": "2026-10-04T02:23:13.105701+00:00",
+  "status": "failed",
+  "targeted_probe_executed": false,
+  "task": "PLT-01",
+  "token_cleanup": []
+}

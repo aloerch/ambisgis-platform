@@ -1,134 +1,4 @@
 {
-  "schema_version": 1,
-  "authorization": "plan/authorizations/2026-10-02-standing-delegation.md",
-  "authorization_sha256": "40d4bac51de35df99aa81f7c16db45f54644145272ce0a5f424aca208f38c402",
-  "runtime": {
-    "kind": "native-codex-goal",
-    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
-    "integrator": "/root",
-    "maximum_agents": 4,
-    "external_supervisor": false,
-    "state_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integration",
-    "stop_command": "python3 plan/tools/delivery_runtime.py --state-dir /home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integration stop",
-    "cross_turn_continuation": {
-      "status": "observed",
-      "observed_at": "2026-10-03T06:04:33Z",
-      "mechanism": "native goal continuation after final checkpoint",
-      "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
-      "previous_turn_classification": "progress",
-      "previous_turn_evidence": [
-        "PR72 and PR73 normal protected merges",
-        "Four exact authorized source refs published; independent recovery and zero-write replay",
-        "FND07 accepted/Merged and FND08 claimed/In progress",
-        "FND03/FND04 substantive implementations with actual runtime tests and material review fixes"
-      ],
-      "resume_reconciliation": {
-        "live_platform_main": "7812efa3502ec1d7004b485d35b433eea56ce13e",
-        "working_branch": "fnd-08/owned-spine",
-        "integration_checkpoint": "completed",
-        "active_agents": [
-          "/root",
-          "/root/fnd03_identity",
-          "/root/fnd04_prototype",
-          "/root/publication_review"
-        ]
-      }
-    },
-    "current_observation": {
-      "at": "2026-10-03T21:24:28.748942+00:00",
-      "native_goal_status": "blocked",
-      "foreground_integrator": "/root",
-      "automatic_continuation": "Unavailable until user /goal resume in the existing thread; no external supervisor started."
-    }
-  },
-  "repository": "aloerch/ambisgis-platform",
-  "repository_id": 1376927351,
-  "branch": "plt-01/development-install",
-  "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
-  "task": "PLT-01 repeatable development installation",
-  "state": "PLT-01 In progress; source4af published in draft PR78. Lifecycle007 failed and reconciled; explicit direct-DNS repair in implementation/review. DB03 and earlier acceptances preserved; installation/full MVP unaccepted.",
-  "pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
-  "tests": [
-    {
-      "scope": "source publication implementation integrated with PR72",
-      "head": "0de2945ee1d29f00af19229720c43e3071b9571b",
-      "package_tests": 457,
-      "failures": 0,
-      "errors": 0,
-      "skips": 0,
-      "schemas": 4,
-      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/source-integrated-tests-01.log",
-      "log_sha256": "b565ef5a7ffc22484b84f383aab0fa87c8066a89f80d9a8dc295b1d3cf7f1a76",
-      "note": "Final evidence-head tests must be rerun and bound before merge."
-    },
-    {
-      "scope": "Documentation checkpoint b611d7b; plan tests separate from GIS builds",
-      "head": "b611d7b3547d25cdd0b3cce7300f848afea591c9",
-      "package_tests": 457,
-      "failures": 0,
-      "errors": 0,
-      "skips": 0,
-      "schemas": 4,
-      "note": "Separate final-client increment also ran all457 tests and4schemas; final integrated-head validation follows.",
-      "actual_results": [
-        {
-          "name": "package",
-          "command": [
-            "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
-            "-m",
-            "unittest",
-            "discover",
-            "-s",
-            "tests",
-            "-v"
-          ],
-          "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-worktree/plan",
-          "exit_code": 0,
-          "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd08-docs-package-001.log",
-          "sha256": "a931d7cbcdc1f1545a4ce872cdb7fcb0009aeca7e6b45c78a3a53e8522591f04"
-        },
-        {
-          "name": "schemas",
-          "command": [
-            "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
-            "tools/validate_package.py",
-            "--require-schemas"
-          ],
-          "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-worktree/plan",
-          "exit_code": 0,
-          "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd08-docs-schemas-001.log",
-          "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
-        }
-      ]
-    },
-    {
-      "scope": "FND-06 contract/corpus/custody integrated checkpoint; package checks separate from native GIS evidence",
-      "head": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
-      "package_tests": 502,
-      "schemas": 10,
-      "koop_custody_tests": 21,
-      "failures": 0,
-      "errors": 0,
-      "skips": 0,
-      "evidence": "plan/verification/fnd06-integration-001/evidence.json"
-    },
-    {
-      "scope": "Final combined FND-06 implementation; package and real runtime evidence remain distinct",
-      "head": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
-      "package_tests": 503,
-      "schemas": 10,
-      "koop_guards": 35,
-      "tr46_notice_guards": 14,
-      "failures": 0,
-      "errors": 0,
-      "skips": 0,
-      "evidence": "plan/verification/fnd06-final/evidence.json"
-    }
-  ],
-  "source_publication": {
-    "geotools": "exact review and canonical refs published, independently recovered",
-    "qgis": "exact review and canonical refs published, independently recovered; snapshot scope only"
-  },
   "accepted": [
     "FND-01",
     "FND-02",
@@ -144,736 +14,155 @@
     "DB-02",
     "DB-03"
   ],
-  "next": [
-    "Integrate reviewed command-concurrency helper and implement/review the bounded native health-timer source repair; no retry until exact successor source/build/bundle review.",
-    "Complete original PLT01 acceptance before API01/PLT02; DB04 still requires API04."
-  ],
-  "product_acceptance": false,
-  "release_artifact": null,
-  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5968688553",
-  "workflow": {
-    "pr": 72,
-    "merge": "8c3612dd3e4ee992d930f1417798b66f467784e9",
-    "state": "merged and smoke tested"
-  },
   "active_workers": [
     {
       "agent": "/root",
-      "state": "Foreground integrator; native timer source integration",
-      "observed_at": "2026-10-04T00:03:59.469917+00:00"
+      "observed_at": "2026-10-04T00:03:59.469917+00:00",
+      "state": "Foreground integrator; native timer source integration"
     },
     {
       "agent": "/root/fnd03_identity",
-      "state": "Source-only native timer producer preparation",
-      "observed_at": "2026-10-04T00:03:59.469917+00:00"
+      "observed_at": "2026-10-04T00:03:59.469917+00:00",
+      "state": "Source-only native timer producer preparation"
     },
     {
       "agent": "/root/db02_validation",
-      "state": "Independent native timer source/pre-execution review",
-      "observed_at": "2026-10-04T00:03:59.469917+00:00"
+      "observed_at": "2026-10-04T00:03:59.469917+00:00",
+      "state": "Independent native timer source/pre-execution review"
     }
   ],
-  "evidence": "plan/verification/authorized-successors/publication.json",
-  "source_acceptance": {
-    "task": "FND-07",
-    "state": "Merged",
-    "pr": 73,
-    "reviewed_head": "89467a57a2bd25deb13249ead0912840f4028a0a",
-    "merge": "7812efa3502ec1d7004b485d35b433eea56ce13e",
-    "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5966156208"
-  },
-  "prototype_acceptance": {
-    "status": "passed",
-    "tasks": [
-      {
-        "task": "FND-03",
-        "delivery": "Merged",
-        "pr": "https://github.com/aloerch/ambisgis-platform/pull/74",
-        "merge": "0876999d7535d792d0024586981c762b2f9bf513",
-        "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/4#issuecomment-5966376406"
-      },
-      {
-        "task": "FND-04",
-        "delivery": "Merged",
-        "pr": "https://github.com/aloerch/ambisgis-geodb/pull/10",
-        "merge": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
-        "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/1#issuecomment-5966377536"
-      },
-      {
-        "task": "FND-05",
-        "delivery": "In progress",
-        "claim": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1#issuecomment-5966378608"
-      }
-    ],
-    "items": 88,
-    "fields": 24,
-    "views": 7,
-    "fnd03_post_merge": {
-      "merge": "0876999d7535d792d0024586981c762b2f9bf513",
-      "reviewed_head": "63c6e4f2351192d07b3f2ca14c3238a9e5333564",
-      "merged_tree_equals_reviewed_tree": true,
-      "command": [
-        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
-        "-m",
-        "unittest",
-        "discover",
-        "-s",
-        "build-support/geonode",
-        "-p",
-        "test_catalog_policy.py",
-        "-v"
-      ],
-      "tests": 6,
-      "schemas": 4,
-      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd03-post-merge-smoke.log",
-      "log_sha256": "0750d008acd71a2b68f8d1f9dc6ad10327c0911984a5575d3cff72b0e94600b2",
-      "native_runtime_reuse": "Unchanged executed-source digests verified before merge; no new real runtime invocation claimed."
-    },
-    "geodb_post_merge": {
-      "merge": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
-      "reviewed_head": "75ef3f7f34067dec53435df8967751b960176fd1",
-      "same_tree": true,
-      "real_db_tests": [
-        "test_07_atomic_group_post_and_idempotent_retry",
-        "test_15_no_public_direct_write_or_function_bypass",
-        "test_25_null_or_invalid_resolution_never_clears_conflict"
-      ],
-      "failures": 0,
-      "errors": 0,
-      "skips": 0,
-      "cluster_stopped": true,
-      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/geodb-post-merge-smoke.log",
-      "log_sha256": "5c40bde11290607e0505f32bc19c84ae32a5e2dc49e1c96282348f61c2f640e2"
-    },
-    "observation_note": "Historical 88-item observation before FND-05 acceptance; current renderer_progress and project_checkpoint supersede its FND-05 In progress row."
-  },
+  "authorization": "plan/authorizations/2026-10-02-standing-delegation.md",
+  "authorization_sha256": "40d4bac51de35df99aa81f7c16db45f54644145272ce0a5f424aca208f38c402",
+  "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+  "branch": "plt-01/development-install",
   "checkpoint_parent_commit": "d0218209d435f80c21400dc38abc2c4d69d805bc",
-  "owned_spine_progress": {
-    "java": {
-      "local_head": "8e32797aed66be2c5fea430bba3df23a6e67465b",
-      "integrated": true,
-      "evidence": "plan/verification/fnd08-java-successor/evidence.json",
-      "review_sha256": "de0918c4be88b5331e1d29f99c3ac0eea96678cc07c0f43b3bfb5616f56df1f9",
-      "native_pass_per_build": 359,
-      "native_skips_per_build": 6
-    },
-    "host": {
-      "local_head": "a327eccb20cd36a3a956c60302c9a8f1f5a9b5de",
-      "evidence": "plan/verification/fnd08-host-inputs/evidence.json",
-      "review_sha256": "5f5add3ecd0d1bd3b513b5e5391acd7b385bd90fc5e96576df5b2455f2b50f38",
-      "guard_tests": 20,
-      "selected_binaries": 276,
-      "source_groups": 175,
-      "observed_system_paths": 244,
-      "matching_payload_files": 24889,
-      "network_replay_calls": 0,
-      "final_replay": "host-retained-replay-008.json",
-      "retainer_sha256": "5f00cabea1d63e1d12b6d6de459d32d488024280c11e586b14e89119503da0c3",
-      "test_tool_supplement": {
-        "evidence": "plan/verification/fnd08-client-successor/test-host-custody.json",
-        "review_sha256": "36386e56500ac64a8e7792b779ba8cd84aec38efb82c6b3166b41fad991c0050",
-        "packages": 42,
-        "source_groups": 33,
-        "new_packages_beyond_initial_selection": 4,
-        "selected_paths": 11
-      }
-    },
-    "remaining_slices": {
-      "local_head": "20aeefcdc65c0b589f14d3c287cf0a72e92d87e3",
-      "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/remaining-slices-worktree",
-      "independent_review": "Passed original pairs and new merged-client pair increment",
-      "native_browser_assertions": 510,
-      "inherited_lint_errors": 5,
-      "lint_successor": {
-        "pr": "https://github.com/aloerch/ambisgis-mapstore-client/pull/1",
-        "merge": "c1f6ad9df52f08ac3bfd7211db9e3ee744b21407",
-        "reviewed_head": "3b2e1044f2a5600ce4c594417ef78e3e9d8c3f23",
-        "review_sha256": "c723a1691058c8e2efdc14b71114a9a7196f1d73ad2436abee474ddc17f3f4c8",
-        "lint_exit_code": 0,
-        "browser_assertions": 510,
-        "browser_skips": 0,
-        "historical_failed_lint_receipts_preserved": true,
-        "fresh_catalog_ui_pairs": "passed actual builds, explicit UI attribution and fresh native browser/lint"
-      },
-      "review_sha256": "193d7bac50ee7bba95add29b127bfd3efc1f61e36cb1686103e05c9c686cbcb2",
-      "final_client_increment": {
-        "head": "28ebedad98e3f5f6a3bfcc92bf9feda80012cef3",
-        "review_sha256": "3558ee06a37aba3b07c2a77705e9e70432dadd68d2db030729013922a97b8444",
-        "evidence": "plan/verification/fnd08-client-successor/evidence.json",
-        "evidence_sha256": "42425a63b2d5ec431e6583ed334a6af24a0bf70e7badd56b1dc2a825f180e9cf",
-        "catalog_byte_identical_outputs": 3,
-        "ui_logical_assets": 1038,
-        "ui_unexplained_differences": 0,
-        "native_browser_assertions": 510,
-        "lint_exit_code": 0
-      }
-    },
-    "qgis": {
-      "local_guard_head": "e0b41082e5a1906febbfbed583396d5dd75e6128",
-      "qualifying_pair": [
-        "build-003",
-        "build-004"
-      ],
-      "final_build": "build-004 complete; stage-002 runtime/native checks pass",
-      "native_skips": 0,
-      "local_head": "91032ab565e73e63491147dbfc98cca0cf11f39c",
-      "installed_entries": 8105,
-      "raw_identical": 8056,
-      "attributed_path_build_id_variants": 49,
-      "unexplained_differences": 0,
-      "final_real_native_passed": 82,
-      "review_sha256": "22210961b3aa450103613bcf5bb03b64fa52e2f0d7ecc6d372da8576209058eb"
-    }
-  },
-  "renderer_progress": {
-    "prs": [
-      {
-        "repository": "aloerch/ambisgis-platform",
-        "pr": 75,
-        "merge": "337cc4f7438848575e075e8d90f59d9d37e4309e"
-      },
-      {
-        "repository": "aloerch/ambisgis-qgis-plugin",
-        "pr": 6,
-        "merge": "f2a7dcbea2dac5ad5c41bb825093014c7341d46c"
-      }
-    ],
-    "postmerge_receipt": "plan/verification/fnd-05/postmerge-smoke.json",
-    "postmerge_sha256": "7d2db43cf8a4f02d8c79d33f1f1e1f704a35004fbe06d0f4e52a6b8a8fe4c630",
-    "state": "Original FND-05 prototype accepted/Merged; issue closed and Project reconciled after actual post-merge verification",
-    "renderer_http_assertions": 152,
-    "checked_png_images": 49,
-    "native_identity_role_tests": 70,
-    "independent_rehashed_postmerge_refs": 73,
-    "cleanup_passed": true,
-    "acceptance": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1#issuecomment-5967122058",
-    "evidence": "plan/verification/fnd-05/acceptance-and-merge.json",
-    "tracking_gate_resolution": {
-      "initial_automatic_rejection": "Interpreted process Human approval label as human-only criterion; no action executed",
-      "evidence": "Original owner sections2/5/6 and independent authority-only classification found no human-subject criterion in FND-05 prototype",
-      "independent_authority_review_sha256": "448859b5ddb79107f341e3b9d55a4fa597722349279d08c12b5815d2ca4a5981",
-      "result": "Same action reconsidered by automatic review and authorized; no alternate route or gate bypass",
-      "human_only_product_evaluations": "remain open"
-    }
-  },
-  "project_checkpoint": {
-    "items": 93,
-    "fields": 24,
-    "views": 7,
-    "repositories": 15,
-    "all_unrelated_values_preserved": true,
-    "evidence": "plan/verification/fnd06-integration-001/draft-project-tracking.json"
-  },
-  "prior_checkpoints": [
-    {
-      "task": "FND-08 owned initial spine builds and T-OWN-02",
-      "branch": "fnd-08/owned-spine",
-      "base": "337cc4f7438848575e075e8d90f59d9d37e4309e",
-      "state": "In progress; all initial component builds and custody increments independently reviewed, final aggregate review and protected PR integration pending",
-      "pr": null,
-      "checkpoint_parent_commit": "7de422c19c265532008618884d4b710402cf388e"
-    },
-    {
-      "task": "FND-06 shared contracts, synthetic corpus, threat model and Koop reuse spike",
-      "branch": "fnd-06/contracts-and-koop",
-      "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
-      "state": "In progress; dependency evidence verified and issue claimed; implementation and independent review pending",
-      "pr": null,
-      "checkpoint_parent_commit": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
-      "project_checkpoint": {
-        "items": 92,
-        "fields": 24,
-        "views": 7,
-        "repositories": 15,
-        "all_unrelated_values_preserved": true
-      }
-    }
-  ],
-  "owned_spine_acceptance": {
-    "status": "passed",
-    "task": "FND-08",
-    "delivery": "Merged",
-    "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/7#issuecomment-5967417969",
-    "pr": "https://github.com/aloerch/ambisgis-platform/pull/76",
-    "merge": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
-    "reviewed_head": "f9e16a91e818be13e281501edd9b71c175ec5044",
-    "postmerge_receipt": {
-      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/postmerge-smoke.json",
-      "sha256": "44bd37777aac7489aaf59314ea01b227cdc176fc5eecddd60d7eceb6b12363a7"
-    },
-    "next_task": {
-      "id": "FND-06",
-      "delivery": "In progress",
-      "claim": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5967420494",
-      "branch": "fnd-06/contracts-and-koop",
-      "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0"
-    },
-    "items_before": 91,
-    "items": 92,
-    "fields": 24,
-    "views": 7,
-    "repositories": 15,
-    "all_unrelated_values_preserved": true
-  },
-  "fnd06_progress": {
-    "contract_commit": "10146441b08b90d26188e6c88c7c04de4b68b423",
-    "corpus_commit": "c0983e6898b991a16c62dab066a9f40ded88c155",
-    "custody_commit": "65c210e0ee72a5d5c55fd6c20e18c5a8e831c3f6",
-    "install_repair_commit": "9dc4680b2d273252d17c78545d94d14e676fb111",
-    "integrated_head": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
-    "evidence": "plan/verification/fnd06-final/evidence.json",
-    "runtime": "Actual runtime005 passes227 assertions; exact runtime and source/evidence independently reviewed",
-    "corpus": "Reviewed native small/100k/1m success and malformed-input rejections; all1.1m rows independently scanned",
-    "distribution_blocker": "Specific tr46 missing-notice/source finding remedied for reviewed supplement/staged layout; full artifact rights/security/signing/brand/release obligations remain open",
-    "runtime_commit": "f942670525253b9f3008563386a237a69b68549d",
-    "runtime_review_sha256": "7aaebc9fd15403940df7b55fb832ea7602da3f8394e31469192c4c2befc783e7",
-    "notice_commit": "cb5a1a945bd94b80f2d52cc0faa6e0bf93303485",
-    "notice_review_sha256": "7a601f36c4eb2c84f1e9cbe324ebf6b0e659e0b2ec66eaa126b13b2f307dbb8a"
-  },
-  "fnd06_acceptance": {
-    "task": "FND-06",
-    "delivery": "Merged",
-    "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5968688553",
-    "merge": "d0218209d435f80c21400dc38abc2c4d69d805bc",
-    "head": "a5c9e8141fce4dd5ad2433dabb5bd687de683c14",
-    "pr": "https://github.com/aloerch/ambisgis-platform/pull/77",
-    "postmerge": {
-      "merge": "d0218209d435f80c21400dc38abc2c4d69d805bc",
-      "reviewed_head": "a5c9e8141fce4dd5ad2433dabb5bd687de683c14",
-      "runtime": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/run-001/result.json",
-        "sha256": "f96cd3cc60fd90ce22216bd90ce228b0da4d8f7e48f76e28ba623c75ab2a0f49"
-      },
-      "postmerge_review": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-postmerge-review-d021820.json",
-        "sha256": "31f61b3db7514f4292e6ab128ea3c4a5b91f6d9bf16e7dce0ba121f589b65a11",
-        "reviewer": "/root/publication_review",
-        "findings": [],
-        "concerns": []
-      }
-    },
-    "next_tasks": [
-      {
-        "task": "PLT-01",
-        "repository": "aloerch/ambisgis-platform",
-        "issue": 11,
-        "branch": "plt-01/development-install",
-        "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
-        "claim": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5968689528",
-        "delivery": "In progress"
-      },
-      {
-        "task": "DB-01",
-        "repository": "aloerch/ambisgis-geodb",
-        "issue": 2,
-        "branch": "db-01/managed-schema",
-        "base": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
-        "claim": "https://github.com/aloerch/ambisgis-geodb/issues/2#issuecomment-5968690345",
-        "delivery": "In progress"
-      }
-    ],
-    "items": 93,
-    "fields": 24,
-    "views": 7,
-    "repositories": 15,
-    "all_unrelated_values_preserved": true,
-    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd06-acceptance-attempts/83687d31-6d16-4f8b-91d9-7663dcd31ac2"
-  },
-  "plt01_runtime_preparation": {
-    "branch": "plt-01/runtime-inputs",
-    "lock": "build-support/container-inputs/retained-inputs.lock.json",
-    "packages": 219,
-    "source_groups": 148,
-    "static_helper_tests": 38,
-    "package_tests": 503,
-    "schema_examples": 10,
-    "runtime_executed": false,
-    "security_blocker": "Podman6.0.2 affected by CVE-2026-94603; source backport and reviewed native regression pending",
-    "owned_source_repair_branch": "plt-01/podman-security"
-  },
-  "db01_checkpoint": {
-    "branch": "db-01/managed-schema",
-    "head": "8dfb38c6211b2235db14bc5fb9ec34e3b80513aa",
-    "runtime_producer": "f3fb30ba844c4098c4544e097c582495b516bb22",
-    "real_database_tests": 22,
-    "pure_schema_tests": 3,
-    "independent_security_probes": 12,
-    "accepted": true,
-    "remaining": "Named branches, edit history, policy/read API integration, production migration/restore and full MVP remain open.",
-    "merge": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
-    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/11",
-    "delivery": "Merged",
-    "postmerge_real_database_tests": 22,
-    "postmerge_schema_guards": 3
-  },
   "db01_acceptance": {
-    "task": "DB-01",
-    "repository": "aloerch/ambisgis-geodb",
-    "issue": 2,
-    "delivery": "Merged",
     "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/2#issuecomment-5969459479",
-    "merge": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
+    "all_unrelated_values_preserved": true,
+    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db01-acceptance-attempts/03632c12-c6d6-4c3d-9c99-0084840c90b6",
+    "delivery": "Merged",
+    "fields": 24,
     "head": "8dfb38c6211b2235db14bc5fb9ec34e3b80513aa",
-    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/11",
+    "issue": 2,
+    "items": 93,
+    "merge": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
+    "next_ready_task": "DB-02 (dependency DB-01 accepted; claim requires fresh live issue review)",
     "postmerge": {
-      "merge": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
-      "reviewed_head": "8dfb38c6211b2235db14bc5fb9ec34e3b80513aa",
-      "runtime": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/acceptance.json",
-        "sha256": "527a46b4edd9d9130dde71eef5b8b37b14aa300ad1acdb46576633577babcca4"
-      },
-      "postmerge_review": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-postmerge-review-ef9ef73.json",
-        "sha256": "3272f745bb943ad86f43ae6ee25ac3699c6852f53c5254d4faf32477eb13d35d",
-        "reviewer": "/root/publication_review"
+      "body": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db01-acceptance-body.md",
+        "sha256": "7353fa9496ae362a5298bcd97e6284438ec0f48aee3cc66b6ff8b45b9e55702e"
       },
       "control": {
         "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-control-001/result.json",
         "sha256": "fbad0622c013573ebeced777a0e26eafed9705cfe2fdca5a3a84c9f5b5b876e1"
       },
-      "body": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db01-acceptance-body.md",
-        "sha256": "7353fa9496ae362a5298bcd97e6284438ec0f48aee3cc66b6ff8b45b9e55702e"
+      "merge": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
+      "postmerge_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db01-postmerge-review-ef9ef73.json",
+        "reviewer": "/root/publication_review",
+        "sha256": "3272f745bb943ad86f43ae6ee25ac3699c6852f53c5254d4faf32477eb13d35d"
+      },
+      "reviewed_head": "8dfb38c6211b2235db14bc5fb9ec34e3b80513aa",
+      "runtime": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db01/postmerge-001/acceptance.json",
+        "sha256": "527a46b4edd9d9130dde71eef5b8b37b14aa300ad1acdb46576633577babcca4"
       }
     },
-    "items": 93,
-    "fields": 24,
-    "views": 7,
+    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/11",
+    "remaining": "Named branches, edit history, policy/read API integration, production migration/restore and full MVP remain open.",
     "repositories": 15,
-    "all_unrelated_values_preserved": true,
-    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db01-acceptance-attempts/03632c12-c6d6-4c3d-9c99-0084840c90b6",
-    "next_ready_task": "DB-02 (dependency DB-01 accepted; claim requires fresh live issue review)",
-    "remaining": "Named branches, edit history, policy/read API integration, production migration/restore and full MVP remain open."
+    "repository": "aloerch/ambisgis-geodb",
+    "task": "DB-01",
+    "views": 7
   },
-  "execution_checkpoint": {
-    "current_tasks": [
-      {
-        "id": "PLT-01",
-        "repository": "aloerch/ambisgis-platform",
-        "repository_id": 1376927351,
-        "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree",
-        "branch": "plt-01/development-install",
-        "published_head": "4afba4c213a094344b40a665edffb531e4f76ff5",
-        "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
-        "delivery": "In progress",
-        "local_increment": "Explicit direct-DNS bundle capability and attempt007 evidence; implementation and independent review in progress"
-      }
-    ],
-    "diagnosis": {
-      "cause": "The root turn ended with an explicit platform cyber_policy error; an engine-probe worker later reported the same error class.",
-      "confidence": "high for observed termination category; exact triggering content and UI-internal state transition unknown",
-      "not_supported_as_cause": [
-        "No local STOP marker",
-        "No held integration lock",
-        "Last integration checkpoint completed successfully",
-        "GitHub identity and API access verified",
-        "Codex doctor reports configured ChatGPT authentication and provider HTTP/WebSocket reachability"
-      ],
-      "other_observations": [
-        "Doctor search-command warning corresponds to unavailable host rg; Python filesystem/text reads remain available.",
-        "Bare codex is absent from host PATH; extension-bundled absolute CLI works.",
-        "Doctor reports no separate background daemon; the current foreground turn is active. This is not evidence of missing scheduler installation."
-      ],
-      "pending_platform_approvals": "none exposed to this turn",
-      "queued_user_inputs": "unknown beyond messages already delivered"
-    },
-    "evidence": {
-      "acceptance_driver_review": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-acceptance-source-root-review-002/result.json",
-        "sha256": "8fa5fee8a13f6942e58145968ecf91c215fbcaf0b1fd9bed588f6df9afbfafdc"
-      },
-      "acceptance_gap_audit": {
-        "full_installation_acceptance": false,
-        "path": "Private delivery-control/trust/plt01-acceptance-gap-001/result.json",
-        "sha256": "9e3047fed992b01ae3312ad32ab6597f80376efee74bf5c054569fad2e04f4ff"
-      },
-      "bundle007_review": {
-        "scope": "1290 files/12hostprereqs/19guards; no runtime acceptance",
-        "sha256": "3faaeff863905884fc3ebc1374ba99e0af353312521b5b69a3a4ec7b8494cedc"
-      },
-      "db02_acceptance": "plan/verification/db02-acceptance/evidence.json",
-      "db03_acceptance": "plan/verification/db03-acceptance/evidence.json",
-      "doctor": "Private delivery-control/recovery-20261003/doctor-redacted-001.json",
-      "lifecycle004": {
-        "full_installation_acceptance": false,
-        "path": "Private plt01-runtime-checks/lifecycle-004/result.json",
-        "persistent_data_preserved": true,
-        "reconciled": true,
-        "running_services": 0,
-        "sha256": "f1e946a7962a4bdb98167696b288cd358213dc81485ced56726d9081d5b8c9d6",
-        "status": "failed"
-      },
-      "lifecycle005": {
-        "all_helpers_gone": false,
-        "full_installation_acceptance": false,
-        "reconciled": true,
-        "reconciliation": {
-          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/reconciliation.json",
-          "sha256": "8ffe87e7182851d3d731cc18d0eb069fdfd70a110b8667c1d63078b98496b3fb"
-        },
-        "result": {
-          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/result.json",
-          "sha256": "39ccedf5c7eb6efd21e7784c9f415216a962c5de7a8d39d2eb51028abda60ba6"
-        },
-        "retained_pause_pid": 519528,
-        "running_services": 0,
-        "status": "failed"
-      },
-      "live_local": "Private delivery-control/recovery-20261003/live-local-001.json",
-      "ordinary_lifecycle": "plan/verification/plt01-lifecycle/evidence.json",
-      "ordinary_source_diagnosis": {
-        "path": "Private plt01-runtime-checks/lifecycle-004/read-only-diagnosis-001/source-diagnosis.json",
-        "scope": "Source inference; no observed D-Bus socket trace",
-        "sha256": "bb6a5a0b2380532e9c2c6d02ff049cb879b2ba320e1a394574bc02ada564af9b"
-      },
-      "package_checks": "Private delivery-control/recovery-20261003/package-001/result.json",
-      "probe_hold_sha256": "88df92a0060cd55d54ab0b91d7c5df048a0348b1a062d84183599c322b2064ea",
-      "python312_payload": {
-        "executed": false,
-        "packages": 32,
-        "path": "Private build-worktrees/plt01-image-inputs/payload-001/receipt.json",
-        "sha256": "24b9de32cc79a9836bc6dc82cb9d84b00a7b2bea4b23b9c7f725246170b30ce4",
-        "source_groups": 29
-      },
-      "root_terminal": "Private native rollout task_complete event only; raw transcript not copied or published",
-      "runtime_build_review": {
-        "scope": "Inert source/build/closure review; no installation acceptance",
-        "sha256": "a147008a7aed94308e9ebbd8e73ea0970a601afd24de81c5efc1f95277acbef0"
-      },
-      "socket_wrapper_review": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-systemd-wrapper-review-001/result.json",
-        "sha256": "6a079e98272760ca0ca99e49e297c351a275181b9d0ebbcc851ab814d8f38355"
-      },
-      "token_cleanup_review": {
-        "path": "Private delivery-control/trust/plt01-token-cleanup-review-001/result.json",
-        "sha256": "5d25f04705c9123497cb551de2e184afb80d8ea0871a23f7b6dfc357328b1cc8"
-      },
-      "integrated_source_008": {
-        "path": "Private plt01-runtime-checks/integrated-source-008/result.json",
-        "sha256": "2d24a05891c3fc9c8492ab3b37e82746068bf879a1105fcaac8214cb70569227",
-        "checks": {
-          "journey_policy": 32,
-          "lifecycle": 8,
-          "runtime": 31,
-          "package": 565,
-          "schemas": 10
-        },
-        "reuse": "Exact integrated3c8a5dd4 source; later native producer adds six independently passing inert guards. Final assembler validation remains pending."
-      },
-      "concurrency_review": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-concurrency-source-review-001/result.json",
-        "sha256": "e5ab73479c20b74d7a5d61c56d318d1a1df95ab70ac705ddff1501023254164d"
-      },
-      "lifecycle006": {
-        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/result.json",
-        "sha256": "e5b969fe073d529be6d95bc27acd8ce9736a9e4d6c075de271b230c8dd278f7c"
-      },
-      "native_timer_alternatives": {
-        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/source-diagnosis-001/alternatives.json",
-        "sha256": "b1673fd9ef2cd78a2dda0ff873ca89a3eff1c9500707f94ea2020f325d1f0a78"
-      },
-      "pr78_readback": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/recovery-20261003/live-pr78-readback-001.json",
-        "sha256": "fb62d230e10dafef3b078682f914dea2ca0bf9a6d61a5daeec627fe2fb796891"
-      },
-      "reconciliation006": {
-        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/reconciliation.json",
-        "sha256": "4598c486b7d78f409c071c875c4114be55e16eb1c3651a59e07cd317dc92987b"
-      },
-      "runtime_validation_009": {
-        "checks": {
-          "package": 565,
-          "runtime": 37,
-          "schemas": 10
-        },
-        "journey_lifecycle_reuse": "32+8 unchanged integrated-source-008",
-        "path": "Private plt01-runtime-checks/runtime-validation-009/result.json",
-        "sha256": "cab83ec0b8f27ab65a0c39699383e54f3c310a941a5bd39ee54217cbbb11b44d"
-      },
-      "lifecycle007": "plan/verification/plt01-lifecycle/evidence-007.json",
-      "progress007": "plan/verification/runtime-recovery/progress-007.json"
-    },
-    "installed_runtime": {
-      "cli": "0.160.0",
-      "doctor_overall": "warning: search command could not be verified",
-      "extension": "openai.chatgpt-26.930.31730-linux-x64",
-      "supported_lifecycle_reference": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex"
-    },
-    "integrator": "/root",
-    "last_completed": {
-      "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
-      "implementation": "Typed branch snapshots and durable private creation/activation, finite quotas and lifecycle metadata",
-      "limitations": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open.",
-      "merge": "DB-03 PR13 13fb7c9bff9d011838b768802a6ab63f932bd228",
-      "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified."
-    },
-    "native_goal": {
-      "status": "blocked",
-      "source": "Fresh get_goal response in this foreground turn",
-      "observed_at": "2026-10-04T01:24:43.831177+00:00",
-      "reported_tokens_used": 12420153,
-      "token_budget": "not configured in returned state",
-      "remaining_tokens": null,
-      "quota_status": "unknown",
-      "automatic_continuation": "Not active while native Goal blocked",
-      "user_action": "Use /goal resume in this same thread for native automatic continuation"
-    },
-    "observed_at": "2026-10-04T01:24:43.831177+00:00",
-    "observed_terminal": {
-      "at": "2026-10-03T13:28:22.795Z",
-      "category": "Platform cybersecurity-risk flag",
-      "code": "cyber_policy",
-      "exact_triggering_content": "unknown",
-      "final_message_present": false,
-      "turn_id": "01a1005c-e3c7-7742-b817-eed39401449b"
-    },
-    "owner_action_required_for_current_safe_work": false,
-    "recovery_performed": [
-      "Read-only guard/code, runtime version/help/doctor and sanitized terminal-event inspection",
-      "Fresh GitHub identity/repo/main/issue/Project and local worktree reconciliation",
-      "Preserved accepted FND-06/DB-01 and all historical evidence",
-      "Resumed unaffected implementation in this existing root context; no internal DB/settings edits or background service",
-      "Held targeted engine probe under platform restriction; prior technical preflight is not execution authorization",
-      "Claimed DB-02 from accepted DB-01 and assigned a bounded independent worker",
-      "Accepted DB-02 after normal protected merge, fresh real tests and separate reviews; claimed dependency-ready DB-03 without disturbing unrelated Project planning",
-      "Published, normally merged and accepted DB03 after independent implementation review,86 fresh postmerge checks and separate evidence verification.",
-      "Executed four ordinary installation attempts, preserved and reconciled all failures. Four image identities verify; no database service started in attempt004.",
-      "Independently reviewed owned runc build002 and bundle007; actual004 accepted native container inspection but failed systemd cgroup registration.",
-      "Completed independent original PLT01 acceptance-gap audit and source-only missing-busctl/direct-OCI-environment diagnosis; bounded local repair underway.",
-      "Built ordinary OCI environment successor from exact retained inputs; four old-block regressions fail and four production-helper cases pass. Independent completed-build review and24/565/10 checks pass. Bundle008 assembled without engine execution; installation remains unaccepted.",
-      "Bundle008 independently reviewed and adopted; ordinary lifecycle005 failed at systemd private-socket lookup. Wrapper/child/database process gone; exact installation-owned persistent rootless pause helper remains and is explicitly retained, not counted as a service or cleanup pass. Guard failure reconciled before creating isolated successor worktree.",
-      "Reconciled lifecycle006 failed guard7e408e9c and preserved stopped container, data, network and exact native pause helper; acknowledgement consumed by successful draft publication guard4052ac8c.",
-      "Reconciled failed lifecycle007 using corrected inspect projection, immutable exact engine metadata, finite GetUnit readback and exact process identity; preserved owned pause/data/network. Exact failed run acknowledgement consumed by completed normal draft publicationc40949e7."
-    ],
-    "remote_state": {
-      "API-01": "Backlog; PLT-01 pending",
-      "DB-01": "Merged",
-      "DB-02": "Merged",
-      "DB-03": "Merged",
-      "DB-04": "Backlog; API-04 required",
-      "FND-06": "Merged",
-      "PLT-01": "In progress; draft PR78 source4af published, unmerged; latest CI not claimed by this checkpoint.",
-      "PLT-02": "Backlog; PLT-01 pending",
-      "geodb_main": "13fb7c9bff9d011838b768802a6ab63f932bd228",
-      "platform_main": "d0218209d435f80c21400dc38abc2c4d69d805bc"
-    },
-    "schema_version": 1,
-    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
-    "worker_observations": {
-      "root": "Foreground integration and attempt007 evidence",
-      "fnd03_identity": "Implementing optional direct-DNS profile in separate local worktree",
-      "db02_validation": "Implementing source-bound read-only DNS process/cleanup observation helper in separate local worktree",
-      "fnd04_prototype": "Earlier platform termination; held task not replayed"
-    },
-    "latest_completed_implementation_boundary": {
-      "implementation": "Owned native health timer, selected path validation, concurrent-installation helper; exact source4af published to existing draft",
-      "checks": {
-        "runtime": 51,
-        "development_helpers": 64,
-        "package": 573,
-        "schema_examples": 10,
-        "native_health_timer_pure_cases": 14
-      },
-      "latest_actual_installation": "Seventh ordinary attempt passed relocation/init, then failed DNS scope launch; no application journey ran",
-      "latest_acceptance": "DB-03 merged13fb7c9bff9d011838b768802a6ab63f932bd228,86 fresh postmerge checks; prior FND/DB acceptances preserved"
-    }
-  },
-  "db02_claim": {
-    "task": "DB-02",
-    "repo": "aloerch/ambisgis-geodb",
-    "repository_id": 1376927417,
-    "issue": 3,
-    "branch": "db-02/schema-validation",
-    "base": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
-    "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db02-worktree",
-    "claim": "https://github.com/aloerch/ambisgis-geodb/issues/3#issuecomment-5972029810",
-    "delivery": "In progress",
-    "accepted": false,
-    "unrelated_planning_preserved": true,
-    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-claim-attempts/a510acd6-1cb7-48b8-9533-c2de91f60400",
-    "observation_note": "Historical claim; db02_acceptance supersedes its In progress state."
+  "db01_checkpoint": {
+    "accepted": true,
+    "branch": "db-01/managed-schema",
+    "delivery": "Merged",
+    "head": "8dfb38c6211b2235db14bc5fb9ec34e3b80513aa",
+    "independent_security_probes": 12,
+    "merge": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
+    "postmerge_real_database_tests": 22,
+    "postmerge_schema_guards": 3,
+    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/11",
+    "pure_schema_tests": 3,
+    "real_database_tests": 22,
+    "remaining": "Named branches, edit history, policy/read API integration, production migration/restore and full MVP remain open.",
+    "runtime_producer": "f3fb30ba844c4098c4544e097c582495b516bb22"
   },
   "db02_acceptance": {
-    "task": "DB-02",
-    "repository": "aloerch/ambisgis-geodb",
-    "issue": 3,
-    "delivery": "Merged",
     "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/3#issuecomment-5972547940",
-    "merge": "c963e2baae1901935b25b0d436e988b47e153eb8",
+    "all_unrelated_values_preserved": true,
+    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-acceptance-attempts/b7737a0b-e840-414b-b77c-7c93b6172fd1",
+    "delivery": "Merged",
+    "fields": 24,
     "head": "f023ea5548a32d6821830c04888a4cfd7dcab854",
-    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/12",
+    "issue": 3,
+    "items": 93,
+    "merge": "c963e2baae1901935b25b0d436e988b47e153eb8",
+    "next_ready_task": "DB-03 (DB-02 and FND-04 accepted; claim requires fresh live issue review)",
     "postmerge": {
-      "merge": "c963e2baae1901935b25b0d436e988b47e153eb8",
-      "reviewed_head": "f023ea5548a32d6821830c04888a4cfd7dcab854",
-      "runtime": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-db02-001/acceptance.json",
-        "sha256": "905e78f17e24cd0bb879d9e98398032a0d70474164c6a1f0a65aa16a3ac17d0b"
-      },
-      "regression": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-db01-001/acceptance.json",
-        "sha256": "ab78f3acdeedd44c833e7544c91dcc48276b62b4c35e4028bdee8443f64c7c81"
-      },
-      "postmerge_review": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db02-postmerge-review-c963e2b.json",
-        "sha256": "dfe3d16b18a5e49543d70659d88a3c08c674b11b611f69e01d6fcb1f8e8e76dc",
-        "reviewer": "/root/db02_validation"
-      },
-      "implementation_review": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db02-final-review-f023ea5.json",
-        "sha256": "e9eb333f8f178b4105f5f40c589e73688ea20f6c82f451872e5534c60519ac3b"
+      "body": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-acceptance-body.md",
+        "sha256": "aed91d2af6cf20db8b5174a8158469f85312f7e5a090477019d33412bc5af401"
       },
       "control": {
         "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-control-001/result.json",
         "sha256": "64e90290764c68fce79dd207ff515db5d8229c7bbfabe83e8a40444eaa95787c"
       },
-      "body": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-acceptance-body.md",
-        "sha256": "aed91d2af6cf20db8b5174a8158469f85312f7e5a090477019d33412bc5af401"
+      "implementation_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db02-final-review-f023ea5.json",
+        "sha256": "e9eb333f8f178b4105f5f40c589e73688ea20f6c82f451872e5534c60519ac3b"
+      },
+      "merge": "c963e2baae1901935b25b0d436e988b47e153eb8",
+      "postmerge_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db02-postmerge-review-c963e2b.json",
+        "reviewer": "/root/db02_validation",
+        "sha256": "dfe3d16b18a5e49543d70659d88a3c08c674b11b611f69e01d6fcb1f8e8e76dc"
+      },
+      "regression": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-db01-001/acceptance.json",
+        "sha256": "ab78f3acdeedd44c833e7544c91dcc48276b62b4c35e4028bdee8443f64c7c81"
+      },
+      "reviewed_head": "f023ea5548a32d6821830c04888a4cfd7dcab854",
+      "runtime": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-db02-001/acceptance.json",
+        "sha256": "905e78f17e24cd0bb879d9e98398032a0d70474164c6a1f0a65aa16a3ac17d0b"
       }
     },
-    "items": 93,
-    "fields": 24,
-    "views": 7,
+    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/12",
+    "remaining": "Named branches, edit history, policy/read API integration, production migration/restore and full MVP remain open.",
     "repositories": 15,
-    "all_unrelated_values_preserved": true,
-    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-acceptance-attempts/b7737a0b-e840-414b-b77c-7c93b6172fd1",
-    "next_ready_task": "DB-03 (DB-02 and FND-04 accepted; claim requires fresh live issue review)",
-    "remaining": "Named branches, edit history, policy/read API integration, production migration/restore and full MVP remain open."
+    "repository": "aloerch/ambisgis-geodb",
+    "task": "DB-02",
+    "views": 7
   },
-  "db03_claim": {
-    "task": "DB-03",
+  "db02_claim": {
+    "accepted": false,
+    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-claim-attempts/a510acd6-1cb7-48b8-9533-c2de91f60400",
+    "base": "ef9ef7364a7babc2ebcb4841c2c670633af59d59",
+    "branch": "db-02/schema-validation",
+    "claim": "https://github.com/aloerch/ambisgis-geodb/issues/3#issuecomment-5972029810",
+    "delivery": "In progress",
+    "issue": 3,
+    "observation_note": "Historical claim; db02_acceptance supersedes its In progress state.",
     "repo": "aloerch/ambisgis-geodb",
     "repository_id": 1376927417,
-    "issue": 4,
-    "branch": "db-03/typed-snapshots",
-    "base": "c963e2baae1901935b25b0d436e988b47e153eb8",
-    "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db03-worktree",
-    "claim": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5972562596",
-    "delivery": "In progress",
-    "accepted": false,
+    "task": "DB-02",
     "unrelated_planning_preserved": true,
-    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-claim-attempts/c6d82022-d24a-4ebb-a9a9-85036c23b882",
-    "observation_note": "Historical claim; db03_acceptance supersedes its In progress state."
-  },
-  "updated_at": "2026-10-04T01:24:43.831177+00:00",
-  "plt01_image_review": {
-    "head": "b8ae679288dd3431c3e216aedab1bd2220653aea",
-    "receipt": "plan/verification/plt01-image-review/review.json",
-    "sha256": "b68d9ee0cdb4c58b5ec054f8537f8a15771baf907fad976123cb20f00898abca",
-    "paired_archives": 4,
-    "members": 56924,
-    "assembly_tests": 22,
-    "runtime_executed": false
+    "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db02-worktree"
   },
   "db03_acceptance": {
-    "task": "DB-03",
-    "repository": "aloerch/ambisgis-geodb",
-    "issue": 4,
-    "delivery": "Merged",
     "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
-    "merge": "13fb7c9bff9d011838b768802a6ab63f932bd228",
+    "all_unrelated_values_preserved": true,
+    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-acceptance-attempts/af93b013-8faa-4de2-b587-9a335fa829da",
+    "delivery": "Merged",
+    "fields": 24,
     "head": "9e474ea0deccfa9a416da6d5a264c88c6ad3523d",
-    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/13",
+    "issue": 4,
+    "items": 93,
+    "merge": "13fb7c9bff9d011838b768802a6ab63f932bd228",
+    "next_ready_task": "Continue PLT-01; API-01/PLT-02 await PLT-01, DB-04 awaits API-04",
     "postmerge": {
       "body": {
         "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-acceptance-body.md",
@@ -915,39 +204,457 @@
       },
       "reviewed_head": "9e474ea0deccfa9a416da6d5a264c88c6ad3523d"
     },
-    "items": 93,
-    "fields": 24,
-    "views": 7,
+    "pr": "https://github.com/aloerch/ambisgis-geodb/pull/13",
+    "remaining": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open.",
     "repositories": 15,
+    "repository": "aloerch/ambisgis-geodb",
+    "task": "DB-03",
+    "views": 7
+  },
+  "db03_claim": {
+    "accepted": false,
+    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-claim-attempts/c6d82022-d24a-4ebb-a9a9-85036c23b882",
+    "base": "c963e2baae1901935b25b0d436e988b47e153eb8",
+    "branch": "db-03/typed-snapshots",
+    "claim": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5972562596",
+    "delivery": "In progress",
+    "issue": 4,
+    "observation_note": "Historical claim; db03_acceptance supersedes its In progress state.",
+    "repo": "aloerch/ambisgis-geodb",
+    "repository_id": 1376927417,
+    "task": "DB-03",
+    "unrelated_planning_preserved": true,
+    "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db03-worktree"
+  },
+  "evidence": "plan/verification/authorized-successors/publication.json",
+  "execution_checkpoint": {
+    "current_tasks": [
+      {
+        "branch": "plt-01/development-install",
+        "delivery": "In progress",
+        "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+        "id": "PLT-01",
+        "local_increment": "Project exactly twelve matching already-retained glibc C.utf8 category files with signed binary/source/notice custody, and add fixed nonsecret startup stage/failure codes. Source implementation and independent review remain pending.",
+        "published_head": "314f11e243a11ed6c494bdd2aa70ef18f4ec049a",
+        "repository": "aloerch/ambisgis-platform",
+        "repository_id": 1376927351,
+        "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree"
+      }
+    ],
+    "diagnosis": {
+      "cause": "The root turn ended with an explicit platform cyber_policy error; an engine-probe worker later reported the same error class.",
+      "confidence": "high for observed termination category; exact triggering content and UI-internal state transition unknown",
+      "not_supported_as_cause": [
+        "No local STOP marker",
+        "No held integration lock",
+        "Last integration checkpoint completed successfully",
+        "GitHub identity and API access verified",
+        "Codex doctor reports configured ChatGPT authentication and provider HTTP/WebSocket reachability"
+      ],
+      "other_observations": [
+        "Doctor search-command warning corresponds to unavailable host rg; Python filesystem/text reads remain available.",
+        "Bare codex is absent from host PATH; extension-bundled absolute CLI works.",
+        "Doctor reports no separate background daemon; the current foreground turn is active. This is not evidence of missing scheduler installation."
+      ],
+      "pending_platform_approvals": "none exposed to this turn",
+      "queued_user_inputs": "unknown beyond messages already delivered"
+    },
+    "evidence": {
+      "acceptance_driver_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-acceptance-source-root-review-002/result.json",
+        "sha256": "8fa5fee8a13f6942e58145968ecf91c215fbcaf0b1fd9bed588f6df9afbfafdc"
+      },
+      "acceptance_gap_audit": {
+        "full_installation_acceptance": false,
+        "path": "Private delivery-control/trust/plt01-acceptance-gap-001/result.json",
+        "sha256": "9e3047fed992b01ae3312ad32ab6597f80376efee74bf5c054569fad2e04f4ff"
+      },
+      "bundle007_review": {
+        "scope": "1290 files/12hostprereqs/19guards; no runtime acceptance",
+        "sha256": "3faaeff863905884fc3ebc1374ba99e0af353312521b5b69a3a4ec7b8494cedc"
+      },
+      "concurrency_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-concurrency-source-review-001/result.json",
+        "sha256": "e5ab73479c20b74d7a5d61c56d318d1a1df95ab70ac705ddff1501023254164d"
+      },
+      "db02_acceptance": "plan/verification/db02-acceptance/evidence.json",
+      "db03_acceptance": "plan/verification/db03-acceptance/evidence.json",
+      "doctor": "Private delivery-control/recovery-20261003/doctor-redacted-001.json",
+      "integrated_source_008": {
+        "checks": {
+          "journey_policy": 32,
+          "lifecycle": 8,
+          "package": 565,
+          "runtime": 31,
+          "schemas": 10
+        },
+        "path": "Private plt01-runtime-checks/integrated-source-008/result.json",
+        "reuse": "Exact integrated3c8a5dd4 source; later native producer adds six independently passing inert guards. Final assembler validation remains pending.",
+        "sha256": "2d24a05891c3fc9c8492ab3b37e82746068bf879a1105fcaac8214cb70569227"
+      },
+      "lifecycle004": {
+        "full_installation_acceptance": false,
+        "path": "Private plt01-runtime-checks/lifecycle-004/result.json",
+        "persistent_data_preserved": true,
+        "reconciled": true,
+        "running_services": 0,
+        "sha256": "f1e946a7962a4bdb98167696b288cd358213dc81485ced56726d9081d5b8c9d6",
+        "status": "failed"
+      },
+      "lifecycle005": {
+        "all_helpers_gone": false,
+        "full_installation_acceptance": false,
+        "reconciled": true,
+        "reconciliation": {
+          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/reconciliation.json",
+          "sha256": "8ffe87e7182851d3d731cc18d0eb069fdfd70a110b8667c1d63078b98496b3fb"
+        },
+        "result": {
+          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/result.json",
+          "sha256": "39ccedf5c7eb6efd21e7784c9f415216a962c5de7a8d39d2eb51028abda60ba6"
+        },
+        "retained_pause_pid": 519528,
+        "running_services": 0,
+        "status": "failed"
+      },
+      "lifecycle006": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/result.json",
+        "sha256": "e5b969fe073d529be6d95bc27acd8ce9736a9e4d6c075de271b230c8dd278f7c"
+      },
+      "lifecycle007": "plan/verification/plt01-lifecycle/evidence-007.json",
+      "lifecycle008": "plan/verification/plt01-lifecycle/evidence-008.json",
+      "live_local": "Private delivery-control/recovery-20261003/live-local-001.json",
+      "native_timer_alternatives": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/source-diagnosis-001/alternatives.json",
+        "sha256": "b1673fd9ef2cd78a2dda0ff873ca89a3eff1c9500707f94ea2020f325d1f0a78"
+      },
+      "ordinary_lifecycle": "plan/verification/plt01-lifecycle/evidence.json",
+      "ordinary_source_diagnosis": {
+        "path": "Private plt01-runtime-checks/lifecycle-004/read-only-diagnosis-001/source-diagnosis.json",
+        "scope": "Source inference; no observed D-Bus socket trace",
+        "sha256": "bb6a5a0b2380532e9c2c6d02ff049cb879b2ba320e1a394574bc02ada564af9b"
+      },
+      "package_checks": "Private delivery-control/recovery-20261003/package-001/result.json",
+      "pr78_readback": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/recovery-20261003/live-pr78-readback-001.json",
+        "sha256": "fb62d230e10dafef3b078682f914dea2ca0bf9a6d61a5daeec627fe2fb796891"
+      },
+      "probe_hold_sha256": "88df92a0060cd55d54ab0b91d7c5df048a0348b1a062d84183599c322b2064ea",
+      "progress007": "plan/verification/runtime-recovery/progress-007.json",
+      "python312_payload": {
+        "executed": false,
+        "packages": 32,
+        "path": "Private build-worktrees/plt01-image-inputs/payload-001/receipt.json",
+        "sha256": "24b9de32cc79a9836bc6dc82cb9d84b00a7b2bea4b23b9c7f725246170b30ce4",
+        "source_groups": 29
+      },
+      "reconciliation006": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/reconciliation.json",
+        "sha256": "4598c486b7d78f409c071c875c4114be55e16eb1c3651a59e07cd317dc92987b"
+      },
+      "root_terminal": "Private native rollout task_complete event only; raw transcript not copied or published",
+      "runtime_build_review": {
+        "scope": "Inert source/build/closure review; no installation acceptance",
+        "sha256": "a147008a7aed94308e9ebbd8e73ea0970a601afd24de81c5efc1f95277acbef0"
+      },
+      "runtime_validation_009": {
+        "checks": {
+          "package": 565,
+          "runtime": 37,
+          "schemas": 10
+        },
+        "journey_lifecycle_reuse": "32+8 unchanged integrated-source-008",
+        "path": "Private plt01-runtime-checks/runtime-validation-009/result.json",
+        "sha256": "cab83ec0b8f27ab65a0c39699383e54f3c310a941a5bd39ee54217cbbb11b44d"
+      },
+      "socket_wrapper_review": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-systemd-wrapper-review-001/result.json",
+        "sha256": "6a079e98272760ca0ca99e49e297c351a275181b9d0ebbcc851ab814d8f38355"
+      },
+      "token_cleanup_review": {
+        "path": "Private delivery-control/trust/plt01-token-cleanup-review-001/result.json",
+        "sha256": "5d25f04705c9123497cb551de2e184afb80d8ea0871a23f7b6dfc357328b1cc8"
+      }
+    },
+    "installed_runtime": {
+      "cli": "0.160.0",
+      "doctor_overall": "warning: search command could not be verified",
+      "extension": "openai.chatgpt-26.930.31730-linux-x64",
+      "supported_lifecycle_reference": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex"
+    },
+    "integrator": "/root",
+    "last_completed": {
+      "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
+      "implementation": "Typed branch snapshots and durable private creation/activation, finite quotas and lifecycle metadata",
+      "limitations": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open.",
+      "merge": "DB-03 PR13 13fb7c9bff9d011838b768802a6ab63f932bd228",
+      "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified."
+    },
+    "latest_completed_implementation_boundary": {
+      "checks": {
+        "development": 101,
+        "package": 585,
+        "runtime": 51,
+        "schemas": 10,
+        "scope": "Tests run before final commit; unchanged committed314f source bytes independently rebound.",
+        "skips": 0,
+        "source_files": 1475
+      },
+      "head": "314f11e243a11ed6c494bdd2aa70ef18f4ec049a",
+      "installation_status": "failed",
+      "progress": "plan/verification/runtime-recovery/progress-008.json"
+    },
+    "native_goal": {
+      "automatic_continuation": "Not active while native Goal blocked",
+      "observed_at": "2026-10-04T01:24:43.831177+00:00",
+      "quota_status": "unknown",
+      "remaining_tokens": null,
+      "reported_tokens_used": 12420153,
+      "source": "Fresh get_goal response in this foreground turn",
+      "status": "blocked",
+      "token_budget": "not configured in returned state",
+      "user_action": "Use /goal resume in this same thread for native automatic continuation"
+    },
+    "observed_at": "2026-10-04T02:50:48.572389+00:00",
+    "observed_terminal": {
+      "at": "2026-10-03T13:28:22.795Z",
+      "category": "Platform cybersecurity-risk flag",
+      "code": "cyber_policy",
+      "exact_triggering_content": "unknown",
+      "final_message_present": false,
+      "turn_id": "01a1005c-e3c7-7742-b817-eed39401449b"
+    },
+    "owner_action_required_for_current_safe_work": false,
+    "recovery_performed": [
+      "Read-only guard/code, runtime version/help/doctor and sanitized terminal-event inspection",
+      "Fresh GitHub identity/repo/main/issue/Project and local worktree reconciliation",
+      "Preserved accepted FND-06/DB-01 and all historical evidence",
+      "Resumed unaffected implementation in this existing root context; no internal DB/settings edits or background service",
+      "Held targeted engine probe under platform restriction; prior technical preflight is not execution authorization",
+      "Claimed DB-02 from accepted DB-01 and assigned a bounded independent worker",
+      "Accepted DB-02 after normal protected merge, fresh real tests and separate reviews; claimed dependency-ready DB-03 without disturbing unrelated Project planning",
+      "Published, normally merged and accepted DB03 after independent implementation review,86 fresh postmerge checks and separate evidence verification.",
+      "Executed four ordinary installation attempts, preserved and reconciled all failures. Four image identities verify; no database service started in attempt004.",
+      "Independently reviewed owned runc build002 and bundle007; actual004 accepted native container inspection but failed systemd cgroup registration.",
+      "Completed independent original PLT01 acceptance-gap audit and source-only missing-busctl/direct-OCI-environment diagnosis; bounded local repair underway.",
+      "Built ordinary OCI environment successor from exact retained inputs; four old-block regressions fail and four production-helper cases pass. Independent completed-build review and24/565/10 checks pass. Bundle008 assembled without engine execution; installation remains unaccepted.",
+      "Bundle008 independently reviewed and adopted; ordinary lifecycle005 failed at systemd private-socket lookup. Wrapper/child/database process gone; exact installation-owned persistent rootless pause helper remains and is explicitly retained, not counted as a service or cleanup pass. Guard failure reconciled before creating isolated successor worktree.",
+      "Reconciled lifecycle006 failed guard7e408e9c and preserved stopped container, data, network and exact native pause helper; acknowledgement consumed by successful draft publication guard4052ac8c.",
+      "Reconciled failed lifecycle007 using corrected inspect projection, immutable exact engine metadata, finite GetUnit readback and exact process identity; preserved owned pause/data/network. Exact failed run acknowledgement consumed by completed normal draft publicationc40949e7."
+    ],
+    "remote_state": {
+      "API-01": "Backlog; PLT-01 pending",
+      "DB-01": "Merged",
+      "DB-02": "Merged",
+      "DB-03": "Merged",
+      "DB-04": "Backlog; API-04 required",
+      "FND-06": "Merged",
+      "PLT-01": "In progress; draft PR78 source4af published, unmerged; latest CI not claimed by this checkpoint.",
+      "PLT-02": "Backlog; PLT-01 pending",
+      "geodb_main": "13fb7c9bff9d011838b768802a6ab63f932bd228",
+      "platform_main": "d0218209d435f80c21400dc38abc2c4d69d805bc"
+    },
+    "schema_version": 1,
+    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+    "worker_observations": {
+      "db02_validation": "Implementing source-bound read-only DNS process/cleanup observation helper in separate local worktree",
+      "fnd03_identity": "Implementing optional direct-DNS profile in separate local worktree",
+      "fnd04_prototype": "Earlier platform termination; held task not replayed",
+      "root": "Foreground integration and attempt007 evidence"
+    }
+  },
+  "fnd06_acceptance": {
+    "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5968688553",
     "all_unrelated_values_preserved": true,
-    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-acceptance-attempts/af93b013-8faa-4de2-b587-9a335fa829da",
-    "next_ready_task": "Continue PLT-01; API-01/PLT-02 await PLT-01, DB-04 awaits API-04",
-    "remaining": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open."
+    "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd06-acceptance-attempts/83687d31-6d16-4f8b-91d9-7663dcd31ac2",
+    "delivery": "Merged",
+    "fields": 24,
+    "head": "a5c9e8141fce4dd5ad2433dabb5bd687de683c14",
+    "items": 93,
+    "merge": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+    "next_tasks": [
+      {
+        "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+        "branch": "plt-01/development-install",
+        "claim": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5968689528",
+        "delivery": "In progress",
+        "issue": 11,
+        "repository": "aloerch/ambisgis-platform",
+        "task": "PLT-01"
+      },
+      {
+        "base": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+        "branch": "db-01/managed-schema",
+        "claim": "https://github.com/aloerch/ambisgis-geodb/issues/2#issuecomment-5968690345",
+        "delivery": "In progress",
+        "issue": 2,
+        "repository": "aloerch/ambisgis-geodb",
+        "task": "DB-01"
+      }
+    ],
+    "postmerge": {
+      "merge": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+      "postmerge_review": {
+        "concerns": [],
+        "findings": [],
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-postmerge-review-d021820.json",
+        "reviewer": "/root/publication_review",
+        "sha256": "31f61b3db7514f4292e6ab128ea3c4a5b91f6d9bf16e7dce0ba121f589b65a11"
+      },
+      "reviewed_head": "a5c9e8141fce4dd5ad2433dabb5bd687de683c14",
+      "runtime": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/run-001/result.json",
+        "sha256": "f96cd3cc60fd90ce22216bd90ce228b0da4d8f7e48f76e28ba623c75ab2a0f49"
+      }
+    },
+    "pr": "https://github.com/aloerch/ambisgis-platform/pull/77",
+    "repositories": 15,
+    "task": "FND-06",
+    "views": 7
+  },
+  "fnd06_progress": {
+    "contract_commit": "10146441b08b90d26188e6c88c7c04de4b68b423",
+    "corpus": "Reviewed native small/100k/1m success and malformed-input rejections; all1.1m rows independently scanned",
+    "corpus_commit": "c0983e6898b991a16c62dab066a9f40ded88c155",
+    "custody_commit": "65c210e0ee72a5d5c55fd6c20e18c5a8e831c3f6",
+    "distribution_blocker": "Specific tr46 missing-notice/source finding remedied for reviewed supplement/staged layout; full artifact rights/security/signing/brand/release obligations remain open",
+    "evidence": "plan/verification/fnd06-final/evidence.json",
+    "install_repair_commit": "9dc4680b2d273252d17c78545d94d14e676fb111",
+    "integrated_head": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
+    "notice_commit": "cb5a1a945bd94b80f2d52cc0faa6e0bf93303485",
+    "notice_review_sha256": "7a601f36c4eb2c84f1e9cbe324ebf6b0e659e0b2ec66eaa126b13b2f307dbb8a",
+    "runtime": "Actual runtime005 passes227 assertions; exact runtime and source/evidence independently reviewed",
+    "runtime_commit": "f942670525253b9f3008563386a237a69b68549d",
+    "runtime_review_sha256": "7aaebc9fd15403940df7b55fb832ea7602da3f8394e31469192c4c2befc783e7"
+  },
+  "next": [
+    "Independently review retained locale and startup-diagnostic increments; build/review exact successor images and bundle before fresh ordinary lifecycle.",
+    "Complete original PLT01 acceptance before API01/PLT02; DB04 still requires API04."
+  ],
+  "owned_spine_acceptance": {
+    "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/7#issuecomment-5967417969",
+    "all_unrelated_values_preserved": true,
+    "delivery": "Merged",
+    "fields": 24,
+    "items": 92,
+    "items_before": 91,
+    "merge": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+    "next_task": {
+      "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+      "branch": "fnd-06/contracts-and-koop",
+      "claim": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5967420494",
+      "delivery": "In progress",
+      "id": "FND-06"
+    },
+    "postmerge_receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd08-postmerge-final/run-001/postmerge-smoke.json",
+      "sha256": "44bd37777aac7489aaf59314ea01b227cdc176fc5eecddd60d7eceb6b12363a7"
+    },
+    "pr": "https://github.com/aloerch/ambisgis-platform/pull/76",
+    "repositories": 15,
+    "reviewed_head": "f9e16a91e818be13e281501edd9b71c175ec5044",
+    "status": "passed",
+    "task": "FND-08",
+    "views": 7
+  },
+  "owned_spine_progress": {
+    "host": {
+      "evidence": "plan/verification/fnd08-host-inputs/evidence.json",
+      "final_replay": "host-retained-replay-008.json",
+      "guard_tests": 20,
+      "local_head": "a327eccb20cd36a3a956c60302c9a8f1f5a9b5de",
+      "matching_payload_files": 24889,
+      "network_replay_calls": 0,
+      "observed_system_paths": 244,
+      "retainer_sha256": "5f00cabea1d63e1d12b6d6de459d32d488024280c11e586b14e89119503da0c3",
+      "review_sha256": "5f5add3ecd0d1bd3b513b5e5391acd7b385bd90fc5e96576df5b2455f2b50f38",
+      "selected_binaries": 276,
+      "source_groups": 175,
+      "test_tool_supplement": {
+        "evidence": "plan/verification/fnd08-client-successor/test-host-custody.json",
+        "new_packages_beyond_initial_selection": 4,
+        "packages": 42,
+        "review_sha256": "36386e56500ac64a8e7792b779ba8cd84aec38efb82c6b3166b41fad991c0050",
+        "selected_paths": 11,
+        "source_groups": 33
+      }
+    },
+    "java": {
+      "evidence": "plan/verification/fnd08-java-successor/evidence.json",
+      "integrated": true,
+      "local_head": "8e32797aed66be2c5fea430bba3df23a6e67465b",
+      "native_pass_per_build": 359,
+      "native_skips_per_build": 6,
+      "review_sha256": "de0918c4be88b5331e1d29f99c3ac0eea96678cc07c0f43b3bfb5616f56df1f9"
+    },
+    "qgis": {
+      "attributed_path_build_id_variants": 49,
+      "final_build": "build-004 complete; stage-002 runtime/native checks pass",
+      "final_real_native_passed": 82,
+      "installed_entries": 8105,
+      "local_guard_head": "e0b41082e5a1906febbfbed583396d5dd75e6128",
+      "local_head": "91032ab565e73e63491147dbfc98cca0cf11f39c",
+      "native_skips": 0,
+      "qualifying_pair": [
+        "build-003",
+        "build-004"
+      ],
+      "raw_identical": 8056,
+      "review_sha256": "22210961b3aa450103613bcf5bb03b64fa52e2f0d7ecc6d372da8576209058eb",
+      "unexplained_differences": 0
+    },
+    "remaining_slices": {
+      "final_client_increment": {
+        "catalog_byte_identical_outputs": 3,
+        "evidence": "plan/verification/fnd08-client-successor/evidence.json",
+        "evidence_sha256": "42425a63b2d5ec431e6583ed334a6af24a0bf70e7badd56b1dc2a825f180e9cf",
+        "head": "28ebedad98e3f5f6a3bfcc92bf9feda80012cef3",
+        "lint_exit_code": 0,
+        "native_browser_assertions": 510,
+        "review_sha256": "3558ee06a37aba3b07c2a77705e9e70432dadd68d2db030729013922a97b8444",
+        "ui_logical_assets": 1038,
+        "ui_unexplained_differences": 0
+      },
+      "independent_review": "Passed original pairs and new merged-client pair increment",
+      "inherited_lint_errors": 5,
+      "lint_successor": {
+        "browser_assertions": 510,
+        "browser_skips": 0,
+        "fresh_catalog_ui_pairs": "passed actual builds, explicit UI attribution and fresh native browser/lint",
+        "historical_failed_lint_receipts_preserved": true,
+        "lint_exit_code": 0,
+        "merge": "c1f6ad9df52f08ac3bfd7211db9e3ee744b21407",
+        "pr": "https://github.com/aloerch/ambisgis-mapstore-client/pull/1",
+        "review_sha256": "c723a1691058c8e2efdc14b71114a9a7196f1d73ad2436abee474ddc17f3f4c8",
+        "reviewed_head": "3b2e1044f2a5600ce4c594417ef78e3e9d8c3f23"
+      },
+      "local_head": "20aeefcdc65c0b589f14d3c287cf0a72e92d87e3",
+      "native_browser_assertions": 510,
+      "review_sha256": "193d7bac50ee7bba95add29b127bfd3efc1f61e36cb1686103e05c9c686cbcb2",
+      "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/remaining-slices-worktree"
+    }
   },
   "plt01_actual_lifecycle": {
-    "schema_version": 1,
-    "task": "PLT-01",
-    "status": "In progress",
-    "runtime_executed": true,
-    "full_installation_acceptance": false,
-    "held_targeted_probe_executed": false,
     "attempts": 3,
-    "failures_retained": 3,
-    "last_install_id": "a424b33a-2337-41b6-b673-917ddf5fbdfd",
-    "last_state": "One database container created but never started; no running service, runner or child process; owned network and all persistent data retained. Original automatic-shutdown receipt remains incomplete.",
     "diagnosis": [
       "Attempt001: merged native stderr warning contaminated JSON stdout; separate bounded streams repaired.",
       "Attempt002: exact retained Compose provider version query includes an empty command slot; narrow canonicalization repaired.",
       "Attempt003: sealed runc init loses the private library search path; native rprivate tmpfs normalization rejected by inspection. Corrected owned source rebuild and profile repair under independent review; no fresh native acceptance yet."
     ],
-    "last_frozen_head": "5387068031bc226a7faf4deb9c9329d379230cc2",
+    "failures_retained": 3,
+    "full_installation_acceptance": false,
+    "held_targeted_probe_executed": false,
     "last_frozen_bundle_sha256": "e8a34bc3d9014229c8110667bd3734a357d72b09c7054f39bad5bb704ed03835",
+    "last_frozen_head": "5387068031bc226a7faf4deb9c9329d379230cc2",
     "last_frozen_tests": {
       "package": 564,
       "runtime": 16,
       "schemas": 10,
       "skipped": 0
     },
+    "last_install_id": "a424b33a-2337-41b6-b673-917ddf5fbdfd",
+    "last_state": "One database container created but never started; no running service, runner or child process; owned network and all persistent data retained. Original automatic-shutdown receipt remains incomplete.",
+    "observation_note": "Historical first-three-attempt record; plt01_latest_lifecycle and evidence-006.json contain newer failed attempts and preserved helper state.",
     "references": [
       {
         "path": "plan/verification/plt01-lifecycle/attempt-001.json",
@@ -979,26 +686,322 @@
       }
     ],
     "repair_candidate": {
-      "head": "67e12a1693a85daf242a982393273b779a6c72a7",
       "bundle_sha256": "c6b4eb308c6b5aed5c952bbfe3499554c4be3856ebda57e3dadbd1ede789e7c7",
-      "reported_checks": {
-        "runtime": 19,
-        "package": 565,
-        "schemas": 10,
-        "native_environment_subcases": 3
-      },
+      "evidence_sha256": "e4e3ff765c38486706211a572b8d04353eb80dcb4c53d7b4f00b26dbed5c2555",
+      "head": "67e12a1693a85daf242a982393273b779a6c72a7",
       "independent_review": "Build and bundle review pending; no native runtime acceptance",
-      "evidence_sha256": "e4e3ff765c38486706211a572b8d04353eb80dcb4c53d7b4f00b26dbed5c2555"
+      "reported_checks": {
+        "native_environment_subcases": 3,
+        "package": 565,
+        "runtime": 19,
+        "schemas": 10
+      }
     },
-    "observation_note": "Historical first-three-attempt record; plt01_latest_lifecycle and evidence-006.json contain newer failed attempts and preserved helper state."
+    "runtime_executed": true,
+    "schema_version": 1,
+    "status": "In progress",
+    "task": "PLT-01"
+  },
+  "plt01_image_review": {
+    "assembly_tests": 22,
+    "head": "b8ae679288dd3431c3e216aedab1bd2220653aea",
+    "members": 56924,
+    "paired_archives": 4,
+    "receipt": "plan/verification/plt01-image-review/review.json",
+    "runtime_executed": false,
+    "sha256": "b68d9ee0cdb4c58b5ec054f8537f8a15771baf907fad976123cb20f00898abca"
   },
   "plt01_latest_lifecycle": {
-    "evidence": "plan/verification/plt01-lifecycle/evidence-007.json",
-    "attempts": 7,
-    "status": "failed",
-    "reconciled": true,
     "all_helpers_gone": false,
+    "attempts": 8,
+    "bundle_sha256": "e7955755fbb25709122acb60293cb2967e3c4426a0fd6aeb5c26dd7a9e7ad459",
+    "evidence": "plan/verification/plt01-lifecycle/evidence-008.json",
     "full_installation_acceptance": false,
-    "bundle_sha256": "5fe09486a32c63d5e08ef8c8b0691a6f5e5607b202664da008182965ce0c57c4"
+    "reconciled": true,
+    "status": "failed"
+  },
+  "plt01_runtime_preparation": {
+    "branch": "plt-01/runtime-inputs",
+    "lock": "build-support/container-inputs/retained-inputs.lock.json",
+    "owned_source_repair_branch": "plt-01/podman-security",
+    "package_tests": 503,
+    "packages": 219,
+    "runtime_executed": false,
+    "schema_examples": 10,
+    "security_blocker": "Podman6.0.2 affected by CVE-2026-94603; source backport and reviewed native regression pending",
+    "source_groups": 148,
+    "static_helper_tests": 38
+  },
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+  "prior_checkpoints": [
+    {
+      "base": "337cc4f7438848575e075e8d90f59d9d37e4309e",
+      "branch": "fnd-08/owned-spine",
+      "checkpoint_parent_commit": "7de422c19c265532008618884d4b710402cf388e",
+      "pr": null,
+      "state": "In progress; all initial component builds and custody increments independently reviewed, final aggregate review and protected PR integration pending",
+      "task": "FND-08 owned initial spine builds and T-OWN-02"
+    },
+    {
+      "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+      "branch": "fnd-06/contracts-and-koop",
+      "checkpoint_parent_commit": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+      "pr": null,
+      "project_checkpoint": {
+        "all_unrelated_values_preserved": true,
+        "fields": 24,
+        "items": 92,
+        "repositories": 15,
+        "views": 7
+      },
+      "state": "In progress; dependency evidence verified and issue claimed; implementation and independent review pending",
+      "task": "FND-06 shared contracts, synthetic corpus, threat model and Koop reuse spike"
+    }
+  ],
+  "product_acceptance": false,
+  "project_checkpoint": {
+    "all_unrelated_values_preserved": true,
+    "evidence": "plan/verification/fnd06-integration-001/draft-project-tracking.json",
+    "fields": 24,
+    "items": 93,
+    "repositories": 15,
+    "views": 7
+  },
+  "prototype_acceptance": {
+    "fields": 24,
+    "fnd03_post_merge": {
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "build-support/geonode",
+        "-p",
+        "test_catalog_policy.py",
+        "-v"
+      ],
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd03-post-merge-smoke.log",
+      "log_sha256": "0750d008acd71a2b68f8d1f9dc6ad10327c0911984a5575d3cff72b0e94600b2",
+      "merge": "0876999d7535d792d0024586981c762b2f9bf513",
+      "merged_tree_equals_reviewed_tree": true,
+      "native_runtime_reuse": "Unchanged executed-source digests verified before merge; no new real runtime invocation claimed.",
+      "reviewed_head": "63c6e4f2351192d07b3f2ca14c3238a9e5333564",
+      "schemas": 4,
+      "tests": 6
+    },
+    "geodb_post_merge": {
+      "cluster_stopped": true,
+      "errors": 0,
+      "failures": 0,
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/geodb-post-merge-smoke.log",
+      "log_sha256": "5c40bde11290607e0505f32bc19c84ae32a5e2dc49e1c96282348f61c2f640e2",
+      "merge": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+      "real_db_tests": [
+        "test_07_atomic_group_post_and_idempotent_retry",
+        "test_15_no_public_direct_write_or_function_bypass",
+        "test_25_null_or_invalid_resolution_never_clears_conflict"
+      ],
+      "reviewed_head": "75ef3f7f34067dec53435df8967751b960176fd1",
+      "same_tree": true,
+      "skips": 0
+    },
+    "items": 88,
+    "observation_note": "Historical 88-item observation before FND-05 acceptance; current renderer_progress and project_checkpoint supersede its FND-05 In progress row.",
+    "status": "passed",
+    "tasks": [
+      {
+        "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/4#issuecomment-5966376406",
+        "delivery": "Merged",
+        "merge": "0876999d7535d792d0024586981c762b2f9bf513",
+        "pr": "https://github.com/aloerch/ambisgis-platform/pull/74",
+        "task": "FND-03"
+      },
+      {
+        "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/1#issuecomment-5966377536",
+        "delivery": "Merged",
+        "merge": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+        "pr": "https://github.com/aloerch/ambisgis-geodb/pull/10",
+        "task": "FND-04"
+      },
+      {
+        "claim": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1#issuecomment-5966378608",
+        "delivery": "In progress",
+        "task": "FND-05"
+      }
+    ],
+    "views": 7
+  },
+  "release_artifact": null,
+  "renderer_progress": {
+    "acceptance": "https://github.com/aloerch/ambisgis-qgis-plugin/issues/1#issuecomment-5967122058",
+    "checked_png_images": 49,
+    "cleanup_passed": true,
+    "evidence": "plan/verification/fnd-05/acceptance-and-merge.json",
+    "independent_rehashed_postmerge_refs": 73,
+    "native_identity_role_tests": 70,
+    "postmerge_receipt": "plan/verification/fnd-05/postmerge-smoke.json",
+    "postmerge_sha256": "7d2db43cf8a4f02d8c79d33f1f1e1f704a35004fbe06d0f4e52a6b8a8fe4c630",
+    "prs": [
+      {
+        "merge": "337cc4f7438848575e075e8d90f59d9d37e4309e",
+        "pr": 75,
+        "repository": "aloerch/ambisgis-platform"
+      },
+      {
+        "merge": "f2a7dcbea2dac5ad5c41bb825093014c7341d46c",
+        "pr": 6,
+        "repository": "aloerch/ambisgis-qgis-plugin"
+      }
+    ],
+    "renderer_http_assertions": 152,
+    "state": "Original FND-05 prototype accepted/Merged; issue closed and Project reconciled after actual post-merge verification",
+    "tracking_gate_resolution": {
+      "evidence": "Original owner sections2/5/6 and independent authority-only classification found no human-subject criterion in FND-05 prototype",
+      "human_only_product_evaluations": "remain open",
+      "independent_authority_review_sha256": "448859b5ddb79107f341e3b9d55a4fa597722349279d08c12b5815d2ca4a5981",
+      "initial_automatic_rejection": "Interpreted process Human approval label as human-only criterion; no action executed",
+      "result": "Same action reconsidered by automatic review and authorized; no alternate route or gate bypass"
+    }
+  },
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "runtime": {
+    "cross_turn_continuation": {
+      "mechanism": "native goal continuation after final checkpoint",
+      "observed_at": "2026-10-03T06:04:33Z",
+      "previous_turn_classification": "progress",
+      "previous_turn_evidence": [
+        "PR72 and PR73 normal protected merges",
+        "Four exact authorized source refs published; independent recovery and zero-write replay",
+        "FND07 accepted/Merged and FND08 claimed/In progress",
+        "FND03/FND04 substantive implementations with actual runtime tests and material review fixes"
+      ],
+      "resume_reconciliation": {
+        "active_agents": [
+          "/root",
+          "/root/fnd03_identity",
+          "/root/fnd04_prototype",
+          "/root/publication_review"
+        ],
+        "integration_checkpoint": "completed",
+        "live_platform_main": "7812efa3502ec1d7004b485d35b433eea56ce13e",
+        "working_branch": "fnd-08/owned-spine"
+      },
+      "status": "observed",
+      "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7"
+    },
+    "current_observation": {
+      "at": "2026-10-03T21:24:28.748942+00:00",
+      "automatic_continuation": "Unavailable until user /goal resume in the existing thread; no external supervisor started.",
+      "foreground_integrator": "/root",
+      "native_goal_status": "blocked"
+    },
+    "external_supervisor": false,
+    "integrator": "/root",
+    "kind": "native-codex-goal",
+    "maximum_agents": 4,
+    "state_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integration",
+    "stop_command": "python3 plan/tools/delivery_runtime.py --state-dir /home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integration stop",
+    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7"
+  },
+  "schema_version": 1,
+  "source_acceptance": {
+    "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/6#issuecomment-5966156208",
+    "merge": "7812efa3502ec1d7004b485d35b433eea56ce13e",
+    "pr": 73,
+    "reviewed_head": "89467a57a2bd25deb13249ead0912840f4028a0a",
+    "state": "Merged",
+    "task": "FND-07"
+  },
+  "source_publication": {
+    "geotools": "exact review and canonical refs published, independently recovered",
+    "qgis": "exact review and canonical refs published, independently recovered; snapshot scope only"
+  },
+  "state": "PLT-01 In progress; source314f published in draft PR78. Lifecycle008 failed and reconciled; retained-locale and safe diagnostic repairs in isolated implementation. DB03 and earlier acceptances preserved; installation/full MVP unaccepted.",
+  "task": "PLT-01 repeatable development installation",
+  "tests": [
+    {
+      "errors": 0,
+      "failures": 0,
+      "head": "0de2945ee1d29f00af19229720c43e3071b9571b",
+      "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/source-integrated-tests-01.log",
+      "log_sha256": "b565ef5a7ffc22484b84f383aab0fa87c8066a89f80d9a8dc295b1d3cf7f1a76",
+      "note": "Final evidence-head tests must be rerun and bound before merge.",
+      "package_tests": 457,
+      "schemas": 4,
+      "scope": "source publication implementation integrated with PR72",
+      "skips": 0
+    },
+    {
+      "actual_results": [
+        {
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-worktree/plan",
+          "exit_code": 0,
+          "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd08-docs-package-001.log",
+          "name": "package",
+          "sha256": "a931d7cbcdc1f1545a4ce872cdb7fcb0009aeca7e6b45c78a3a53e8522591f04"
+        },
+        {
+          "command": [
+            "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+            "tools/validate_package.py",
+            "--require-schemas"
+          ],
+          "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd08-worktree/plan",
+          "exit_code": 0,
+          "log": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd08-docs-schemas-001.log",
+          "name": "schemas",
+          "sha256": "5727f44870817cd48f5a0f1220cba84c3f91da93f54303b8d07c669f31c6d69a"
+        }
+      ],
+      "errors": 0,
+      "failures": 0,
+      "head": "b611d7b3547d25cdd0b3cce7300f848afea591c9",
+      "note": "Separate final-client increment also ran all457 tests and4schemas; final integrated-head validation follows.",
+      "package_tests": 457,
+      "schemas": 4,
+      "scope": "Documentation checkpoint b611d7b; plan tests separate from GIS builds",
+      "skips": 0
+    },
+    {
+      "errors": 0,
+      "evidence": "plan/verification/fnd06-integration-001/evidence.json",
+      "failures": 0,
+      "head": "c6af1ad061e12a90bc78026d536a3e51960a63e6",
+      "koop_custody_tests": 21,
+      "package_tests": 502,
+      "schemas": 10,
+      "scope": "FND-06 contract/corpus/custody integrated checkpoint; package checks separate from native GIS evidence",
+      "skips": 0
+    },
+    {
+      "errors": 0,
+      "evidence": "plan/verification/fnd06-final/evidence.json",
+      "failures": 0,
+      "head": "ce22b20a5339351f8aa15549f4ea6fb3fa0b8849",
+      "koop_guards": 35,
+      "package_tests": 503,
+      "schemas": 10,
+      "scope": "Final combined FND-06 implementation; package and real runtime evidence remain distinct",
+      "skips": 0,
+      "tr46_notice_guards": 14
+    }
+  ],
+  "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5968688553",
+  "updated_at": "2026-10-04T02:50:48.572389+00:00",
+  "workflow": {
+    "merge": "8c3612dd3e4ee992d930f1417798b66f467784e9",
+    "pr": 72,
+    "state": "merged and smoke tested"
   }
 }

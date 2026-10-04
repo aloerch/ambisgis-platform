@@ -1,0 +1,62 @@
+{
+  "all_helpers_gone": false,
+  "attempts": 8,
+  "candidate_repair": "Project exactly twelve matching already-retained glibc C.utf8 category files with signed binary/source/notice custody, and add fixed nonsecret startup stage/failure codes. Source implementation and independent review remain pending.",
+  "cleanup_limits": "Only last persisted health timer/service were queried and reported not loaded; earlier automatic-restart units were not enumerated. Exact owned pause 575701/start7839369 retained.",
+  "data_deleted": false,
+  "diagnosis": [
+    "Source/image inspection establishes missing C.UTF-8 locale files; exact PostgreSQL/libc sources require those files for the configured locale.",
+    "Existing generic startup logs do not establish the precise initdb failure. Marker/socket existence narrows the stage but does not prove the locale defect was the only runtime cause.",
+    "The unchanged image includes the native keep-id passwd projection; current static ELF closure has no missing entry, without proving actual dynamic loading."
+  ],
+  "dns_cleanup_verified": false,
+  "dns_identity_verified": false,
+  "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+  "failures_retained": 8,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "last_frozen_bundle_sha256": "e7955755fbb25709122acb60293cb2967e3c4426a0fd6aeb5c26dd7a9e7ad459",
+  "last_install_id": "6fa2bc9b-98f7-44da-96c0-b0edcb9ff479",
+  "last_state": "Relocation/init passed; up failed. Database entrypoint repeatedly exited during startup; read-only inspection found its marker/socket directory and no pgdata directory. Engine metadata records 383 automatic restarts. No useful health, application journey or running DNS identity was reached.",
+  "observation_correction": "Initial read-only diagnosis encountered nullable Health.Log after retaining raw inspect; successor diagnosis uses an empty list for absent health history. Original raw evidence remains unchanged.",
+  "observed_at": "2026-10-04T02:50:48.572389+00:00",
+  "previous_evidence": "plan/verification/plt01-lifecycle/evidence-007.json",
+  "private_reference_hashes": {
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-database008-source-diagnosis-001/result.json": "3532d01919dcc83e626b0d4e5b57efa4194040e8c96de24b80fbf00015322743",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-lifecycle008-evidence-review-001/result.json": "93e0fed8722ce7fc5ccf602f340e533e8a78b10612b770c1840f10cc5cf83efe",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-lifecycle008-reconciliation-review-001/result.json": "c6901205e8d4205862292afd58d2023411c918b646286bf733444e0d3ac157f6",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-runtime-bundle011-review-002/result.json": "b38b35fa0b5c80eed41c900dfb993689fd4166defdd557039856daeee2fcfd71",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-008/read-only-diagnosis-002/result.json": "1b554c6e4f92ec0d17eaa01ed0fc8d1d462b8dd8d15f7831a10649645b810fc2",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-008/read-only-state-001/result.json": "509729740756194a29ee922838692db83f4cda7ba19858f77f6beb58ea69f359",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-008/read-only-timer-001/result.json": "454f0f8e2a16b5c44c3ebc1f116d0d639922dec5adeb8b219111e9bf432e1fdb",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/locale-input-001/result.json": "df585d4c099363f4d965edeee160fb3b4211dbddbc36d58eca428c31572a67bd",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-011/result.json": "89fc2eceef70e07faa3f4f0c76a98f6c0a16c46bf9891f986d65ff4fa49642c2"
+  },
+  "progress_comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5975878766",
+  "published_head": "314f11e243a11ed6c494bdd2aa70ef18f4ec049a",
+  "reconciled": true,
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-008.json",
+      "sha256": "d4bdf898de87ef962bed6cb9c06b3e9892a75f922366492a7c06e170a920ce56"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-008.json",
+      "sha256": "f4bfc921f652813bd0fabceef8305d74b70deacfafd05b26feaca4e33ec1176a"
+    }
+  ],
+  "remaining": "Fresh reviewed images/bundle and ordinary installation; actual DNS transport/identity/lifetime, service authorization/network/OS/concurrency/recovery/log and helper acceptance. Held targeted qualification, P1 and full MVP remain open.",
+  "runtime_executed": true,
+  "schema_version": 1,
+  "source_checks": {
+    "development": 101,
+    "package": 585,
+    "runtime": 51,
+    "schemas": 10,
+    "scope": "Tests run before final commit; unchanged committed314f source bytes independently rebound.",
+    "skips": 0,
+    "source_files": 1475
+  },
+  "status": "In progress",
+  "task": "PLT-01"
+}
