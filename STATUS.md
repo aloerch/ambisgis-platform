@@ -18,53 +18,64 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 remains In progress after fourteen preserved ordinary installation failures.
-Reviewed source `1baae0f48bcd69cb709e1aa0cfec80ba0895790b` is published in
-[draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78), open and
-unmerged. Validation025 passed 662 package, 52 runtime, 121 development,
-40 image-helper and ten schema checks. Validation026 passed 662/52/10 and
-explicitly reused unchanged 40/121 checks. All 1,527 tracked source files were
-unchanged during those checks. Images017/018 are byte-identical; independently
-audited bundle018 has 1,311 runtime files, 374 ELF objects and twelve host
-prerequisites. [Published source CI](https://github.com/aloerch/ambisgis-platform/actions/runs/37203397726/job/111439495981)
-passed. These checks exclude the new JVM observation component and do not prove
-installed GIS acceptance.
+PLT-01 remains In progress after sixteen preserved ordinary installation failures.
+Local candidate `5b8dc2a8ae71a821ab39e73431421eebf695e839` and bundle021 use images
+built from `bdd0736d22fae4956a67d4c370e58515b224b291`. The retained 19:55:10 UTC
+readback still shows [draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78)
+open and unmerged at `1baae0f48bcd69cb709e1aa0cfec80ba0895790b`; the fifteen
+reachable platform commits through the candidate are not yet published.
 
-Attempt014 advanced through catalog initialization, then GeoServer initialization
-timed out. A second separate private initializer diagnostic with the reviewed
-configuration/phase changes also failed. It emitted all normal body phases,
-`SERVER_STOPPED` and final `MAIN_COMPLETE`, then reached the unchanged 180-second
-Java deadline. That final phase precedes launcher return; it does not independently
-prove return or identify a surviving thread. The temporary marker phase was
-observed; the persistent initialized marker was absent because Python writes it
-only after successful JVM exit. The original attempt014 cause remains unobserved.
+The importer shuts down both queues. Three real predecessor regression cases
+failed and the same three fixed cases passed; the fresh serial owned aggregate
+separately passed its three focused Maven tests. Genuine per-root Git metadata,
+9,208 locked inputs and strict artifact revision checks bind the owned sources.
+[GeoServer PR #1](https://github.com/aloerch/ambisgis-geoserver/pull/1) and
+[GeoTools PR #1](https://github.com/aloerch/ambisgis-geotools/pull/1) merged normally
+with trees equal to the compiled revisions. Earlier build failures remain
+retained. No full-WAR byte reproducibility or diagnostic003 thread-owner claim
+is made.
 
-Independent effects review confirms a healthy database stopped with exit0,
-initializer exit1/removal, known persisted timer/service absence, unchanged prior
-data and a retained owned pause process. No serving roles or protected-service,
-persistence/recovery or DNS journeys ran. Complete helper/DNS cleanup is not claimed.
-Raw private logs are not published.
+Historical initializer004 completed at source869/bundle020. Full attempt015
+later failed; its reviewed effects retain catalog exit137, a known pause and
+six unavailable process reads. The subsequent created-state, rootlessport and
+shared-service shutdown repairs have source and native-fixture evidence.
+Validation030 passed 40 image-helper, 77 runtime, 121 development, 682 package
+and ten schema checks; validation031 repeated 77/682/10 with explicit unchanged
+40/121 reuse. All 1,545 tracked source files matched the recorded checks.
+Images023/024 are byte-identical and independently reviewed. Bundle021 audit003
+passed for 1,320 runtime files, 374 ELF objects and twelve host prerequisites;
+the earlier two auditor schema failures remain preserved.
 
-The three-file JVM observation component at
-`676ef0dce6a65940e769d66eea1bb276a4703ad4` passed independent source/Java
-review and is integrated locally as `22cb4eacb843abafab159a68046cbc2b3aae3053`;
-it is not published. It adds init-only, bounded post-stop
-thread evidence with fixed symbols and explicit unknown/overflow states; it does
-not interrupt threads, shut down pools, force JVM exit or raise timeouts. Root
-Java004 compile/check commands passed 63 request, 66 phase and 67 thread checks.
-These are source/fixture checks; a surviving JVM resource remains unobserved.
-Validation027 and rebuilt images/bundle are pending before the next private
-initializer observation.
-[Evidence015](plan/verification/plt01-lifecycle/evidence-015.json) records this
-source/artifact checkpoint, not a fifteenth ordinary installation attempt.
+Actual attempt016 completed relocation and fresh initialization, then `up`
+returned1 with 622 stdout bytes and no stderr. GeoServer serving reached
+Hibernate validation, which reported a missing `hibernate_sequence`. Database
+and catalog health was healthy; gateway was unhealthy and GeoServer remained
+starting. The full readiness milestone and later GIS, authorization, persistence,
+recovery and DNS journeys did not pass. Final reviewed accounting found all six
+roles nonrunning: database/catalog/gateway exit0, GeoServer exit1, and both
+initializers absent. Eight known timer/service units were not loaded. The owned
+pause remains, six process observations were unavailable, and DNS/global helper
+cleanup is unverified. No observer signal, retry or deletion was performed.
 
-The targeted runtime qualification remains held and unexecuted. The last supplied
-native Goal observation remains blocked at 13:10:28 UTC on 4 October 2026,
-12,420,153 tokens and 30,612 seconds reported, without a configured budget.
-Foreground delivery continues; no native resume is claimed. User action
-`/goal resume` concerns native automatic continuation only.
-[Latest progress](plan/verification/runtime-recovery/progress-015.json) preserves
-this distinction. PLT-01, full P1 and scoped MVP acceptance remain open.
+Retained Hibernate and PostgreSQL source demonstrates a sequence-metadata
+visibility mismatch for the read-only transport role. A separate frozen proposal
+grants SELECT only on exact owner/public sequences and preserves advancement,
+DDL and delegation denials. Seven inert guards changed from five baseline
+failures to seven passes. Root's actual fresh PostgreSQL regression reproduced
+the baseline visibility failure and passed all 41 fixed cases; both clusters
+stopped. Independent review of that native evidence remains pending in this
+snapshot. The proposal is not integrated or published in this candidate. Source
+evidence does not independently prove the original installation's sequence state.
+[Evidence016](plan/verification/plt01-lifecycle/evidence-016.json) binds the exact
+facts and limits. PLT-01, full P1 and scoped MVP acceptance remain open.
+
+The targeted runtime qualification remains held and unexecuted. Native Goal
+was blocked in the latest retained root-tool observation, recorded at 19:36:07
+UTC on 4 October 2026, with 12,420,153 tokens and 30,612 seconds reported and no
+configured budget. This is its record timestamp, not the exact tool-response
+instant. Foreground delivery continues without a native resume claim.
+[Current progress](plan/verification/runtime-recovery/progress-016.json) keeps
+those states separate; `/goal resume` concerns native automatic continuation only.
 
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.

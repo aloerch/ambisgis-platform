@@ -1,17 +1,22 @@
 # Current plan-package pointer — 4 October 2026 UTC
 
-The authoritative implementation checkpoint is [the repository status](../STATUS.md).
-DB-03 remains accepted/Merged at 13fb7c9bff9d011838b768802a6ab63f932bd228.
-PLT-01 remains In progress after fourteen ordinary failures and two separate
-private GeoServer initializer diagnostics. The latest diagnostic emitted normal
-stop/final phases then timed out; a surviving JVM resource is still unobserved.
-Published draft1ba includes reviewed configuration/phase changes and passing
-source/artifact checks. The bounded thread-observation component
-passed Java004 checks63/66/67 and independent review, and is integrated locally at
-22cb4eac. Combined checks and rebuilt artifacts remain pending. No runtime repair
-is claimed.
-[Current evidence](verification/runtime-recovery/progress-015.json) preserves the
-blocked native Goal, continuing foreground work and open installation/MVP scope.
+The authoritative checkpoint is [the repository status](../STATUS.md).
+DB-03 and all accepted foundations remain unchanged. PLT-01 remains In progress
+after sixteen ordinary failures. Owned GeoServer/GeoTools source repairs merged;
+historical initializer004 completed. The reviewed runtime repairs, validation030
+(40/77/121/682/10), validation031 (77/682/10 with40/121 reuse), images023/024 and
+bundle021 are complete source/artifact evidence, not installation acceptance.
+Actual016 failed readiness with a GeoServer Hibernate sequence-validation error.
+Reviewed effects record all six roles nonrunning, database/catalog/gateway exit0,
+GeoServer exit1 and eight known units not loaded. A pause remains, six process
+reads were unavailable, and DNS/global helper cleanup is unverified. The isolated
+SELECT-only sequence-visibility proposal has seven passing inert guards and an
+actual 41-case PostgreSQL pass after an expected baseline failure; both fresh
+clusters stopped. Native-evidence review and integration remain pending here.
+Local candidate5b8
+remains distinct from published draft1ba and image-sourcebdd073.
+[Current evidence](verification/runtime-recovery/progress-016.json) separates
+foreground work from the blocked native Goal observation recorded19:36:07 UTC.
 
 ## Historical plan-package checkpoints follow unchanged
 

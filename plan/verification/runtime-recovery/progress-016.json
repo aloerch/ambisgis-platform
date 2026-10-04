@@ -1,0 +1,210 @@
+{
+  "artifacts": {
+    "bundle": "021",
+    "bundle_built": true,
+    "bundle_candidate_head": "5b8dc2a8ae71a821ab39e73431421eebf695e839",
+    "bundle_independent_review": "passed",
+    "bundle_review_attempts": "Final auditor003 passed;001/002 retained reviewer-only schema failures, with no artifact discrepancy claimed.",
+    "elf_objects": 374,
+    "host_prerequisites": 12,
+    "image_independent_review_passed": true,
+    "image_members": 57014,
+    "image_source_head": "bdd0736d22fae4956a67d4c370e58515b224b291",
+    "images": "023/024",
+    "paired_archives_byte_identical": true,
+    "runtime_executed_during_assembly": false,
+    "runtime_files": 1320,
+    "source_pin_changes": 2
+  },
+  "checks": {
+    "all_exit_codes_zero": true,
+    "explicit_unchanged_reuse_from030": {
+      "development": 121,
+      "image_helpers": 40
+    },
+    "skips": 0,
+    "source_check_limit": "Source/helper/package/schema checks, not installed GIS acceptance.",
+    "source_unchanged_during_checks": true,
+    "tracked_source_files": 1545,
+    "validation030": {
+      "development": 121,
+      "image_helpers": 40,
+      "package": 682,
+      "runtime": 77,
+      "schemas": 10
+    },
+    "validation031": {
+      "package": 682,
+      "runtime": 77,
+      "schemas": 10
+    }
+  },
+  "completed_source_and_artifact_boundary": "Owned GS/GT source merges and importer build004; reviewed created-state, rootlessport and service shutdown repairs; validation030/031; paired images023/024 and built bundle021. Bundle021 independent audit003 passed; ordinary016 failed readiness and its finite effects were independently reviewed.",
+  "current_task": {
+    "branch": "plt-01/development-install",
+    "delivery": "In progress",
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "id": "PLT-01",
+    "image_source_head": "bdd0736d22fae4956a67d4c370e58515b224b291",
+    "local_head": "5b8dc2a8ae71a821ab39e73431421eebf695e839",
+    "published_head": "1baae0f48bcd69cb709e1aa0cfec80ba0895790b",
+    "published_readback_at": "2026-10-04T19:55:10.457102+00:00"
+  },
+  "foreground_delivery": "active",
+  "held_targeted_probe_executed": false,
+  "installation_accepted": false,
+  "last_completed_accepted_task": {
+    "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
+    "implementation": "Typed branch snapshots and durable private creation/activation, finite quotas and lifecycle metadata",
+    "limitations": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open.",
+    "merge": "DB-03 PR13 13fb7c9bff9d011838b768802a6ab63f932bd228",
+    "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified."
+  },
+  "latest_application_diagnostic": {
+    "applicability": "Historical result only. Retained WAR, Java launcher and initializer source are unchanged; new bundle initialization and full journeys still require lifecycle016.",
+    "bundle": "020",
+    "complete_output_retained": true,
+    "database_readiness_passed": true,
+    "effects": {
+      "all_helpers_gone": false,
+      "dns_cleanup_verified": false,
+      "guard_wrapper_child_absent": true,
+      "independent_review": "PASS_RETAINED_DIAGNOSTIC_SUCCESS_EFFECTS_REVIEW",
+      "known_persisted_units_not_loaded": true,
+      "owned_pause_retained": true,
+      "owned_services_stopped": true,
+      "persistent_data_preserved": true,
+      "root_reconciled": true,
+      "runtime_configuration_unchanged": true
+    },
+    "initializer_exit_code": 0,
+    "name": "geoserver-init-replay-004",
+    "original_and_three_prior_diagnostics_unchanged": true,
+    "outer_deadline_seconds": 240,
+    "persistent_initialized_marker_verified": true,
+    "private_capture_bytes": {
+      "stderr": 960,
+      "stdout": 5672
+    },
+    "python_java_deadline_seconds": 180,
+    "scope": "Fresh private standard database and ordinary GeoServer initializer only; no catalog/gateway/serving/full installation journey.",
+    "source_head": "869db18865e16287c9f029fcbd732be9bd797a3b",
+    "status": "COMPLETED_PRIVATE_INITIALIZER_OBSERVATION"
+  },
+  "latest_completed_ordinary_attempt": {
+    "attempt": 16,
+    "completed_driver_stages": [
+      "verified relocated bundle",
+      "fresh init"
+    ],
+    "diagnosis_limit": "Selected Hibernate queries privilege-filtered information_schema.sequences. The reader lacks sequence privileges in this candidate. Source establishes a metadata-visibility mismatch; this snapshot contains no direct SQL proof of the exact installation sequence state.",
+    "driver_shutdown": {
+      "dns_classification": "no_prior_identity",
+      "dns_cleanup_verified": false,
+      "persistent_data_preserved": true,
+      "running_services": 0
+    },
+    "finished_at": "2026-10-04T20:09:41.637815+00:00",
+    "observed_startup_error": "GeoServer Hibernate schema validation reported missing hibernate_sequence.",
+    "readiness": "The full up/readiness milestone failed. Retained database/catalog health was healthy; gateway unhealthy and GeoServer starting are failed readiness evidence.",
+    "reviewed_effects": {
+      "all_four_present_roles_security_passed": true,
+      "all_helpers_gone": false,
+      "all_six_roles_nonrunning": true,
+      "data_deleted": false,
+      "dns_cleanup_verified": false,
+      "guard_wrapper_child_absent": true,
+      "initializers_absent": 2,
+      "known_persisted_timer_service_units_not_loaded": 8,
+      "known_service_conmon_pid_absences": 8,
+      "lifecycle_retried": false,
+      "owned_pause_retained": true,
+      "runtime_config_native_state_source_unchanged_by_observer": true,
+      "serving_role_exits": {
+        "catalog": 0,
+        "database": 0,
+        "gateway": 0,
+        "geoserver": 1
+      },
+      "signals_sent_by_observer": false,
+      "unavailable_process_reads": 6
+    },
+    "source_head": "5b8dc2a8ae71a821ab39e73431421eebf695e839",
+    "status": "failed",
+    "stderr_bytes": 0,
+    "stdout_bytes": 622,
+    "structured_startup_failure": false,
+    "up_exit_code": 1
+  },
+  "mvp_accepted": false,
+  "native_goal": {
+    "assistant_resume_performed": false,
+    "budget_configured": false,
+    "foreground_work_continues": true,
+    "objective_unchanged": true,
+    "recorded_at": "2026-10-04T19:36:07.275768+00:00",
+    "remainingTokens": null,
+    "source": "Root get_goal testimony retained during image23/24 assembly;19:36:07 UTC is the record timestamp, not the precise tool-response instant.",
+    "status": "blocked",
+    "supported_owner_resume_action": "/goal resume in same thread",
+    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+    "timeUsedSeconds": 30612,
+    "tokensUsed": 12420153,
+    "updatedAt": 1791034102
+  },
+  "next_action": "Finish independent review of the isolated sequence-visibility database regression; integrate only after reviewed actual evidence, then rebuild/review artifacts and rerun the original full installation journeys.",
+  "observed_at": "2026-10-04T20:40:57.118747+00:00",
+  "owner_action_required_for_current_safe_work": false,
+  "previous_progress": "progress-015.json",
+  "references": {
+    "plan/verification/plt01-lifecycle/evidence-016.json": {
+      "path": "plan/verification/plt01-lifecycle/evidence-016.json",
+      "sha256": "9da6deec141263fe0bb261c7c2e85be0f06fc4fe4ce7ff1311f439ec811ad8d9"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Foreground delivery checkpoint; not native Goal automatic continuation.",
+  "sequence_visibility_proposal": {
+    "behavior": "SELECT-only metadata/value access for exact transport-owner/public sequences; future default and filtered existing backfill, consistent ACL audit; advancement, DDL and delegation remain denied.",
+    "full_installation_acceptance": false,
+    "inert_baseline": {
+      "errors": 0,
+      "failures": 5,
+      "tests": 7
+    },
+    "inert_fixed": {
+      "errors": 0,
+      "failures": 0,
+      "skips": 0,
+      "tests": 7
+    },
+    "native_database_validation": {
+      "baseline": "Actual sequence-visibility check failed as expected.",
+      "both_fresh_clusters_stopped": true,
+      "fixed_passed": 41,
+      "independent_actual_review": "pending",
+      "scope": "Fresh synthetic Unix-only PostgreSQL clusters; no engine/container or original installation database execution."
+    },
+    "status": "Frozen isolated source proposal with source review and actual database regression; not integrated or published in candidate5b8. Independent native-evidence review is pending in this snapshot."
+  },
+  "source_merges": [
+    {
+      "head": "bb35e79ea6129cbedc3074a1729dba0c6a381965",
+      "merge": "bc0b80af22f6554598bd54c5e03f5bf61dc750d2",
+      "merged_at": "2026-10-04T17:20:31Z",
+      "pr": 1,
+      "repository": "aloerch/ambisgis-geoserver",
+      "tree": "4f6de8ffb4724e427e013ede6ce86c474bf9415c",
+      "url": "https://github.com/aloerch/ambisgis-geoserver/pull/1"
+    },
+    {
+      "head": "9b002d50df9d91e53cd42921510d9fa80d74c82a",
+      "merge": "d360efd79801b0bed1d4a569fd816d1c4de474bc",
+      "merged_at": "2026-10-04T17:20:40Z",
+      "pr": 1,
+      "repository": "aloerch/ambisgis-geotools",
+      "tree": "ae9e0941465a9f5d423e5e11f3e55809d7c3bad1",
+      "url": "https://github.com/aloerch/ambisgis-geotools/pull/1"
+    }
+  ]
+}
