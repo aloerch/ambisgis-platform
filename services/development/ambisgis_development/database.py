@@ -50,13 +50,15 @@ def privilege_audit(database):
     """Finite serving policy, including PUBLIC/column grants and grant options.
 
     The catalog application gets ordinary table DML and sequence usage; the
-    transport reader gets SELECT. Neither may create objects, delegate grants,
+    transport reader gets table/sequence SELECT. Sequence SELECT exposes schema
+    metadata and values, without nextval/setval. Neither may create objects, delegate grants,
     execute application routines, or acquire privileges on the other's data.
     Owned PostGIS extension SELECT/EXECUTE defaults remain usable.
     """
     owner = DATABASE_OWNERS[database]
     reader = 'ambisgis_catalog_app' if database == 'ambisgis_catalog' else 'ambisgis_transport_reader'
     table_privileges = "('SELECT','INSERT','UPDATE','DELETE')" if database == 'ambisgis_catalog' else "('SELECT')"
+    sequence_privileges = "('USAGE','SELECT')" if database == 'ambisgis_catalog' else "('SELECT')"
     names = ','.join("'" + name + "'" for name in SERVING_ROLES)
     return f"""WITH serving AS (SELECT oid,rolname FROM pg_roles WHERE rolname IN ({names})),
       objects AS (SELECT c.*,n.nspname,EXISTS(SELECT 1 FROM pg_depend d JOIN pg_extension e ON e.oid=d.refobjid
@@ -84,9 +86,9 @@ def privilege_audit(database):
           CROSS JOIN unnest(ARRAY['USAGE','SELECT','UPDATE']) p(priv)
           WHERE c.relkind='S' AND (has_sequence_privilege(r.oid,c.oid,p.priv||' WITH GRANT OPTION')
             OR (has_sequence_privilege(r.oid,c.oid,p.priv) AND NOT (
-                '{database}'='ambisgis_catalog' AND r.rolname='ambisgis_catalog_app'
+                r.rolname='{reader}'
                 AND c.relowner=(SELECT oid FROM pg_roles WHERE rolname='{owner}')
-                AND c.nspname='public' AND p.priv IN ('USAGE','SELECT'))))
+                AND c.nspname='public' AND p.priv IN {sequence_privileges})))
         UNION ALL SELECT 'function:'||r.rolname||':'||n.nspname||'.'||p.proname FROM serving r CROSS JOIN pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace
           WHERE has_function_privilege(r.oid,p.oid,'EXECUTE') AND (
             p.prosecdef OR has_function_privilege(r.oid,p.oid,'EXECUTE WITH GRANT OPTION')
@@ -105,7 +107,7 @@ def privilege_audit(database):
             AND d.defaclrole=(SELECT oid FROM pg_roles WHERE rolname='{owner}')
             AND d.defaclnamespace=(SELECT oid FROM pg_namespace WHERE nspname='public')
             AND ((d.defaclobjtype='r' AND a.privilege_type IN {table_privileges})
-              OR (d.defaclobjtype='S' AND '{database}'='ambisgis_catalog' AND a.privilege_type IN ('USAGE','SELECT')))))
+              OR (d.defaclobjtype='S' AND a.privilege_type IN {sequence_privileges}))))
       ) SELECT count(*) FROM problems;"""
 
 
@@ -164,6 +166,20 @@ def bootstrap(config, secrets):
         GRANT USAGE ON SCHEMA public TO ambisgis_transport_reader;
         ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public
           GRANT SELECT ON TABLES TO ambisgis_transport_reader;
+        ALTER DEFAULT PRIVILEGES FOR ROLE ambisgis_transport_owner IN SCHEMA public
+          GRANT SELECT ON SEQUENCES TO ambisgis_transport_reader;
+        DO $transport_sequences$
+        DECLARE target record;
+        BEGIN
+          FOR target IN SELECT n.nspname,c.relname FROM pg_class c
+            JOIN pg_namespace n ON n.oid=c.relnamespace
+            WHERE c.relkind='S' AND n.nspname='public'
+              AND c.relowner='ambisgis_transport_owner'::regrole
+          LOOP
+            EXECUTE format('GRANT SELECT ON SEQUENCE %I.%I TO ambisgis_transport_reader',
+                           target.nspname,target.relname);
+          END LOOP;
+        END; $transport_sequences$;
         """, password, database='ambisgis_transport')
     validate_existing_privileges(password)
 
