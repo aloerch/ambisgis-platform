@@ -213,5 +213,68 @@ class DNSObservationIntegrationTests(unittest.TestCase):
         self.assertEqual(json.loads((output / 'result.json').read_text())['status'], 'incomplete')
 
 
+class DNSFunctionalIntegrationTests(unittest.TestCase):
+    def setUp(self):
+        from types import SimpleNamespace
+        self.temp = tempfile.TemporaryDirectory(); self.addCleanup(self.temp.cleanup)
+        base = Path(self.temp.name); self.root = base / 'installation'; self.root.mkdir()
+        (self.root / 'product.json').write_bytes(b'fixed synthetic config')
+        (self.root / 'secrets').mkdir(); (self.root / 'secrets/product.json').write_bytes(b'fixed synthetic secret')
+        self.check = lifecycle.Check(self.root, base)
+        self.events = []; self.init_count = 0
+        self.product = {'install_id': 'aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee'}
+        self.rt = SimpleNamespace(config=self.product, engine=lambda *a, **k: (0, b''))
+        self.check.stage = lambda name, facts: self.events.append(('stage', name))
+        self.check.metadata = lambda title: self.events.append(('metadata', title))
+        self.check.preserve_identity = lambda: self.events.append(('identity',))
+        self.check.prepare_dns_observation = lambda: None
+        self.check.observe_dns = lambda name: self.events.append(('daemon', name))
+        self.check.stop_owned = lambda: {'running_services': 0}
+        self.check.wait_ready = lambda ready=True, **kw: {'readiness': {'checks': {'map': ready}},
+                                                         'services': {'gateway': {'process': 'running'}}}
+        self.check.protected_journey = lambda name, *args: self.events.append(('journey', name)) or 'retained-title'
+        def cli(command, **kw):
+            self.events.append(('cli_return', command))
+            if command == 'init':
+                self.init_count += 1
+                return {'created': self.init_count == 1, 'install_id': self.product['install_id']}
+            return {'ready': True, 'readiness': {'ready': kw.get('expected', 0) == 0}}
+        self.check.cli = cli
+        self.args = SimpleNamespace(bundle=base / 'unused', bundle_sha256='0' * 64)
+
+    def exercise(self, *, fail=False):
+        from types import SimpleNamespace
+        def observe(rt):
+            self.assertIs(rt, self.rt); self.events.append(('wire',))
+            if fail: raise ValueError('synthetic wire mismatch')
+            return {'status': 'verified', 'full_installation_acceptance': False}
+        live = SimpleNamespace(rows=[], request=lambda _: (200, json.dumps(
+            {'install_id': self.product['install_id'], 'live': True}).encode()))
+        with patch.object(lifecycle, 'relocate', return_value=(self.args.bundle, self.args.bundle)), \
+                patch.object(lifecycle.runtime, 'Runtime', return_value=self.rt), \
+                patch.object(lifecycle.config, 'secret_material', return_value={}), \
+                patch.object(lifecycle.functional_module, 'observe', side_effect=observe), \
+                patch.object(lifecycle.journey_module, 'Journey', return_value=live):
+            self.check.exercise(self.args)
+
+    def test_four_wire_checks_follow_cli_and_preserved_metadata_before_journeys(self):
+        self.exercise()
+        positions = [i for i, value in enumerate(self.events) if value == ('wire',)]
+        self.assertEqual(len(positions), 4)
+        self.assertLess(self.events.index(('cli_return', 'up')), positions[0])
+        for index, position in enumerate(positions):
+            previous = positions[index - 1] if index else 0
+            if index:
+                self.assertIn(('metadata', 'retained-title'), self.events[previous + 1:position])
+                self.assertIn(('identity',), self.events[previous + 1:position])
+            self.assertEqual(self.events[position + 2][0], 'journey')
+        self.assertEqual(len(self.check.record['dns_function']), 4)
+
+    def test_wire_failure_stops_before_protected_journey_without_false_evidence(self):
+        with self.assertRaisesRegex(ValueError, 'wire mismatch'): self.exercise(fail=True)
+        self.assertFalse(any(event[0] == 'journey' for event in self.events))
+        self.assertNotIn('dns_function', self.check.record)
+
+
 if __name__ == '__main__':
     unittest.main()
