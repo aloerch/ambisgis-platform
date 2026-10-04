@@ -819,6 +819,180 @@ class InstallerStateTests(unittest.TestCase):
             with self.assertRaisesRegex(InstallError, 'Checkpoint/restore'): selected.image('database')
 
 
+    def direct_dns_fixture(self):
+        # Full synthetic closure with the exact selected PATH; no tool executes.
+        for name in ('runtime/bin', 'runtime/helpers'):
+            (self.inputs / name).mkdir(parents=True)
+        closure = json.loads((self.inputs / 'closure.json').read_bytes())
+        closure['roots'].append('runtime')
+        closure['directories'] = ['runtime/bin', 'runtime/helpers']
+        self.document['runtime']['dns_profile'] = 'native-direct-v1'
+        self.document['runtime']['environment']['PATH'] = ['runtime/bin', 'runtime/helpers']
+        self.closure(closure)
+        # Only the literal additional native search location is substituted.
+        # lstat on a real temporary entry exercises all kinds, including links.
+        self.dns_host_entry = self.base / 'synthetic-host-systemd-run'
+        original_lstat = Path.lstat
+        self.dns_lookups = []
+        def observed_lstat(path, *args, **kwargs):
+            if path == Path('/usr/sbin/systemd-run'):
+                self.dns_lookups.append(str(path))
+                return original_lstat(self.dns_host_entry, *args, **kwargs)
+            return original_lstat(path, *args, **kwargs)
+        observation = patch.object(Path, 'lstat', observed_lstat)
+        observation.start(); self.addCleanup(observation.stop)
+
+    def test_dns_profile_allowed_lookup_ignores_caller_path_and_preserves_reinit(self):
+        self.direct_dns_fixture()
+        (self.base / 'systemd-run').write_bytes(b'outside selected PATH')
+        with patch.dict(os.environ, {'PATH': str(self.base), 'AMBISGIS_DNS_PROFILE': 'caller-value'}):
+            first = self.init(); before = self.state(); second = self.init()
+        self.assertEqual(first['install_id'], second['install_id'])
+        self.assertFalse(second['created']); self.assertEqual(before, self.state())
+        self.assertTrue(self.dns_lookups)
+        self.assertEqual(set(self.dns_lookups), {'/usr/sbin/systemd-run'})
+
+    def test_dns_profile_unknown_values_fail_before_first_init(self):
+        self.direct_dns_fixture()
+        for value in (None, False, 0, [], {}, '', 'native-direct-v2'):
+            self.document['runtime']['dns_profile'] = value; self.seal()
+            with self.subTest(value=value), self.assertRaisesRegex(InstallError, 'DNS profile'):
+                self.init()
+            self.assertFalse(self.root.exists())
+
+    def test_dns_profile_requires_exact_owned_path(self):
+        self.direct_dns_fixture()
+        for path in (None, [], ['bin'], ['runtime/helpers', 'runtime/bin'],
+                     ['runtime/bin'], ['runtime/bin', 'runtime/helpers', 'bin'],
+                     ['runtime/bin', 'runtime/helpers', '/usr/sbin'], 'runtime/bin:runtime/helpers'):
+            environment = self.document['runtime']['environment']
+            if path is None: environment.pop('PATH', None)
+            else: environment['PATH'] = path
+            self.seal()
+            with self.subTest(path=path), self.assertRaisesRegex(InstallError, 'DNS profile.*PATH'):
+                self.init()
+            self.assertFalse(self.root.exists())
+
+    def test_dns_profile_without_path_profile_rejects_colon_in_bundle_root(self):
+        import shutil
+        self.direct_dns_fixture()
+        self.assertNotIn('path_profile', self.document['runtime'])
+        for name in ('bundle:extra-search', 'parent:extra/bundle'):
+            copied = self.base / name
+            shutil.copytree(self.inputs, copied)
+            with self.subTest(name=name), self.assertRaisesRegex(InstallError, 'DNS profile.*colon'):
+                config.initialize(self.root, copied / 'bundle.json', self.identity)
+            self.assertFalse(self.root.exists())
+
+    def test_dns_profile_rejects_even_manifested_bundle_helpers(self):
+        self.direct_dns_fixture()
+        original = json.loads((self.inputs / 'closure.json').read_bytes())
+        for directory in ('runtime/bin', 'runtime/helpers'):
+            name = directory + '/systemd-run'; entry = self.inputs / name
+            for kind in ('executable', 'nonexecutable', 'directory', 'symlink'):
+                with self.subTest(directory=directory, kind=kind):
+                    closure = copy.deepcopy(original)
+                    if kind == 'directory':
+                        entry.mkdir(); closure['directories'].append(name)
+                    elif kind == 'symlink':
+                        entry.symlink_to('../../bin/podman')
+                        closure['symlinks'] = [{'path': name, 'target': '../../bin/podman'}]
+                    else:
+                        entry.write_bytes(b'never executed'); entry.chmod(0o700 if kind == 'executable' else 0o600)
+                        closure['files'].append(self.ref(name))
+                    self.closure(closure)
+                    # This input genuinely passes the independent closure guard.
+                    bundle.verify_manifest(self.inputs, self.ref('closure.json'))
+                    with self.assertRaisesRegex(InstallError, 'DNS profile.*systemd-run'): self.init()
+                    self.assertFalse(self.root.exists())
+                    entry.rmdir() if kind == 'directory' else entry.unlink()
+                    self.closure(original)
+
+    def test_dns_profile_rejects_unmanifested_dangling_and_special_lookup_entries(self):
+        self.direct_dns_fixture()
+        for directory in ('runtime/bin', 'runtime/helpers'):
+            entry = self.inputs / directory / 'systemd-run'
+            for kind in ('dangling-link', 'fifo'):
+                with self.subTest(directory=directory, kind=kind):
+                    if kind == 'fifo': os.mkfifo(entry)
+                    else: entry.symlink_to('absent')
+                    with self.assertRaisesRegex(InstallError, 'DNS profile.*systemd-run'): self.init()
+                    self.assertFalse(self.root.exists()); entry.unlink()
+
+    def test_dns_profile_rejects_every_host_lookup_object_without_touching_it(self):
+        self.direct_dns_fixture()
+        for kind in ('executable', 'nonexecutable', 'directory', 'symlink', 'dangling-link', 'fifo'):
+            with self.subTest(kind=kind):
+                entry = self.dns_host_entry
+                if kind == 'directory': entry.mkdir()
+                elif kind in ('symlink', 'dangling-link'):
+                    entry.symlink_to(self.inputs / 'bin/podman' if kind == 'symlink' else self.base / 'absent')
+                elif kind == 'fifo': os.mkfifo(entry)
+                else:
+                    entry.write_bytes(b'host input must not be executed or removed')
+                    entry.chmod(0o700 if kind == 'executable' else 0o600)
+                before = entry.lstat()
+                with self.assertRaisesRegex(InstallError, 'DNS profile.*systemd-run'): self.init()
+                self.assertEqual(entry.lstat(), before); self.assertFalse(self.root.exists())
+                entry.rmdir() if kind == 'directory' else entry.unlink()
+
+    def test_dns_profile_lookup_errors_fail_closed(self):
+        self.direct_dns_fixture()
+        original_lstat = Path.lstat
+        def inaccessible(path, *args, **kwargs):
+            if path == Path('/usr/sbin/systemd-run'): raise PermissionError('synthetic inaccessible lookup')
+            return original_lstat(path, *args, **kwargs)
+        with patch.object(Path, 'lstat', inaccessible):
+            with self.assertRaisesRegex(InstallError, 'DNS profile.*lookup'): self.init()
+        self.assertFalse(self.root.exists())
+
+    def test_dns_profile_drift_preserves_reinit_and_blocks_runtime_before_mutation(self):
+        self.direct_dns_fixture(); self.init()
+        (self.root / 'data/postgres/retained-row').write_bytes(b'persistent state')
+        (self.root / '.lock').unlink(); before = self.state()
+        # Host drift does not change any selected immutable bundle bytes.
+        self.dns_host_entry.symlink_to(self.base / 'absent')
+        with patch.object(runtime.Runtime, 'run', side_effect=AssertionError('No native call permitted')) as run:
+            for command in (self.init, lambda: runtime.Runtime(self.root), lambda: runtime.up(self.root),
+                            lambda: runtime.status(self.root), lambda: runtime.doctor(self.root)):
+                with self.assertRaisesRegex(InstallError, 'DNS profile.*systemd-run'): command()
+                self.assertEqual(before, self.state())
+                self.assertFalse((self.root / '.lock').exists())
+                self.assertFalse((self.root / 'runtime').exists())
+            run.assert_not_called()
+        self.dns_host_entry.unlink()
+        self.assertFalse(self.init()['created'])
+        self.assertEqual(config.secret_material(self.root), json.loads(before['secrets/product.json']))
+
+    def test_dns_profile_does_not_replace_complete_closure_or_allow_linked_roots(self):
+        self.direct_dns_fixture()
+        entry = self.inputs / 'runtime/helpers/unlisted-helper'; entry.write_bytes(b'unknown bytes')
+        with self.assertRaisesRegex(InstallError, 'unmanifested'): self.init()
+        entry.unlink()
+        real = self.base / 'outside-helpers'; real.mkdir()
+        (self.inputs / 'runtime/helpers').rmdir(); (self.inputs / 'runtime/helpers').symlink_to(real)
+        with self.assertRaisesRegex(InstallError, 'symlink'): self.init()
+        self.assertFalse(self.root.exists()); self.assertEqual(list(real.iterdir()), [])
+
+    def test_dns_profile_legacy_omission_preserves_existing_lookup_behavior(self):
+        self.direct_dns_fixture()
+        self.document['runtime'].pop('dns_profile'); self.document['runtime']['environment']['PATH'] = ['bin']
+        self.dns_host_entry.write_bytes(b'legacy host helper not executed'); self.seal()
+        self.init()
+        self.assertEqual(self.dns_lookups, [])
+        self.assertNotIn('dns_profile', bundle.load(self.manifest, self.identity)['runtime'])
+
+    def test_dns_profile_schema_matches_optional_enum(self):
+        import jsonschema
+        schema = json.loads((Path(__file__).resolve().parents[2] / 'installer/bundle.schema.json').read_bytes())
+        validator = jsonschema.Draft202012Validator(schema)
+        self.assertEqual(list(validator.iter_errors(self.document)), [])
+        for value in ('native-direct-v1', None, False, 0, [], {}, '', 'unknown'):
+            selected = copy.deepcopy(self.document); selected['runtime']['dns_profile'] = value
+            errors = list(validator.iter_errors(selected))
+            if value == 'native-direct-v1': self.assertEqual(errors, [])
+            else: self.assertTrue(errors)
+
     def test_path_profile_bad_installation_leaves_no_first_init_state(self):
         self.document['runtime']['path_profile'] = 'owned-health-timer-ascii-v1'
         self.seal()

@@ -196,6 +196,39 @@ def validate_runtime_paths(selected_bundle, install_root, *, bundle_root):
             raise InstallError("This owned health-timer bundle requires clean absolute ASCII bundle and installation paths using only letters, digits, '/', '.', '_' and '-'. Choose supported paths before init; existing state was preserved.")
 
 
+def validate_dns_profile(selected_bundle, *, bundle_root):
+    """Require the selected native direct-DNS lookup boundary before execution."""
+    runtime = selected_bundle['runtime']
+    if 'dns_profile' not in runtime:
+        return
+    if not isinstance(runtime['dns_profile'], str) or runtime['dns_profile'] != 'native-direct-v1':
+        raise InstallError('Unsupported bundle runtime DNS profile.')
+    environment = runtime['environment']
+    if (not isinstance(environment, dict)
+            or environment.get('PATH') != ['runtime/bin', 'runtime/helpers']):
+        raise InstallError('The native-direct-v1 DNS profile requires exactly runtime/bin and runtime/helpers in PATH.')
+    root = checked_path(bundle_root)
+    if ':' in str(root):
+        raise InstallError('The native-direct-v1 DNS profile does not permit a colon in the selected bundle path; it would add unverified PATH locations.')
+    directories = [relative(root, name) for name in ('runtime/bin', 'runtime/helpers')]
+    if any(not directory.is_dir() for directory in directories):
+        raise InstallError('The native-direct-v1 DNS profile requires both owned PATH directories.')
+    # Retained netavark exec.go appends /usr/sbin unless PATH contains that
+    # substring. Check it unconditionally as a conservative host prerequisite,
+    # even if the selected bundle path itself happens to contain /usr/sbin.
+    directories.append(checked_path('/usr/sbin'))
+    for directory in directories:
+        try:
+            (directory / 'systemd-run').lstat()
+        except FileNotFoundError:
+            continue
+        except OSError:
+            raise InstallError('The native-direct-v1 DNS profile lookup could not be verified; no producer was executed.') from None
+        # Native detection tests metadata existence rather than executability.
+        # lstat also rejects dangling links and every other filesystem kind.
+        raise InstallError('The native-direct-v1 DNS profile requires systemd-run to be absent from its owned PATH and /usr/sbin; select a qualified bundle/host without modifying host files.')
+
+
 def load(path, expected_sha256, *, verify_images=True, image_receipts=None):
     path = checked_path(path)
     if digest(path) != sha256(expected_sha256):
@@ -211,8 +244,9 @@ def load(path, expected_sha256, *, verify_images=True, image_receipts=None):
     root = path.parent
     member(root, value['source_manifest'])
     runtime = value['runtime']
-    exact_keys(runtime, ('podman', 'compose', 'environment', 'files_manifest', 'prerequisites'), ('path_profile',))
+    exact_keys(runtime, ('podman', 'compose', 'environment', 'files_manifest', 'prerequisites'), ('path_profile', 'dns_profile'))
     validate_runtime_paths(value, None, bundle_root=root)
+    validate_dns_profile(value, bundle_root=root)
     names, closure_roots = verify_manifest(root, runtime['files_manifest'])
     for tool in ('podman', 'compose'):
         member(root, runtime[tool], executable=True)
