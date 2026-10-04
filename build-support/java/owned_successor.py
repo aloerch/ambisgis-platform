@@ -109,7 +109,8 @@ def export_owned(repo, selection, destination):
             'export_method':'exact blob bytes and executable modes; no attributes/patches/ref resolution'}
 
 
-def prepare_sources(recovered, repos, destination):
+def prepare_sources(recovered, repos, destination, selections=None):
+    selections = SOURCES if selections is None else selections
     recipes=recovered/'recipes.json'
     if sha(recipes)!=RECOVERY_SHA:
         raise ValueError('Recovered source recipe identity mismatch')
@@ -119,7 +120,7 @@ def prepare_sources(recovered, repos, destination):
         raise ValueError('Recovered Java source inventory mismatch')
     destination.mkdir(parents=True,exist_ok=False)
     evidence={}
-    for name,selection in SOURCES.items():
+    for name,selection in selections.items():
         evidence[name]=export_owned(repos[name],selection,destination/name)
     for name in VENDORS:
         shutil.copytree(prior/name,destination/name)
@@ -157,10 +158,27 @@ def artifact_origins(source):
     return {'built':built,'war':str(wars[0]),'war_sha256':sha(wars[0]),'owned_embedded_jars':matches}
 
 
-def build(args):
+def configure_source_identity(cmd, env, source):
+    """Use per-module SCM lookup in a serial reactor with no ambient Git config."""
+    if any(arg == '-T' or arg.startswith('-T') or arg.startswith('--threads') for arg in cmd):
+        raise ValueError('Source identity requires serial Maven execution')
+    cmd.append('-Dgit.commit.runOnlyOnce=false')
+    for name in list(env):
+        if name.startswith('GIT_'):
+            del env[name]
+    env.update(GIT_CONFIG_NOSYSTEM='1', GIT_CONFIG_GLOBAL='/dev/null',
+               GIT_NO_REPLACE_OBJECTS='1', GIT_TERMINAL_PROMPT='0',
+               GIT_ALLOW_PROTOCOL='file', GIT_OPTIONAL_LOCKS='0',
+               GIT_CEILING_DIRECTORIES=str(source))
+
+
+def build(args, *, selections=None, task="FND-08", purpose="new owned source producer",
+          test_module=None, test_selector=None, expected_test_count=None,
+          expected_retained_inputs_sha256=None, scm_metadata=False, executor=execute):
+    selections = SOURCES if selections is None else selections
     output=args.output.absolute();output.mkdir(parents=True,exist_ok=False)
-    report={'task':'FND-08','purpose':'new owned source producer','started_at':datetime.now(timezone.utc).isoformat(),
-            'source_successor':SOURCES,'historical_receipts_modified':False,'full_fnd08_acceptance':False,
+    report={'task':task,'purpose':purpose,'started_at':datetime.now(timezone.utc).isoformat(),
+            'source_successor':selections,'historical_receipts_modified':False,'full_fnd08_acceptance':False,
             'result_exit_code':1,'runner_sha256':sha(Path(__file__))}
     start=time.monotonic();write_json(output/'started.json',report)
     tooling=output/'tooling'
@@ -176,10 +194,15 @@ def build(args):
     try:
         (output/'work').mkdir();(output/'work/logs').mkdir();(output/'work/user').mkdir()
         (output/'work/empty-global-settings.xml').write_text('<settings/>\n')
-        report['preparation'],originals=prepare_sources(args.recovered,{'geotools':args.geotools_repo,
-            'geoserver':args.recovered/'repos/geoserver','geowebcache':args.recovered/'repos/geowebcache'},source)
+        repos={'geotools':args.geotools_repo,
+            'geoserver':getattr(args, 'geoserver_repo', None) or args.recovered/'repos/geoserver',
+            'geowebcache':args.recovered/'repos/geowebcache'}
+        report['preparation'],originals=prepare_sources(args.recovered,repos,source,selections)
         write_json(output/'source-inputs.json',originals)
         report['source_inputs_sha256']=sha(output/'source-inputs.json')
+        if scm_metadata:
+            import owned_scm
+            report['scm_metadata']=owned_scm.prepare(source,repos,selections)
         tools=json.loads((HERE/'toolchain-inputs.json').read_text())
         report['toolchain']=toolchain.verify_extracted(args.toolchain_custody,tools,args.tools)
         report['toolchain_gaps']=tools['remaining_gaps']
@@ -187,6 +210,10 @@ def build(args):
         rows=materialize(args.custody,output/'retained-repository',no_oracle=True)
         rows,report['variant_inputs']=variant_inputs.apply(output/'retained-repository',rows,HERE/'json-nojpeg2000-variant-inputs.json')
         write_json(output/'retained-inputs.json',rows);report['retained_inputs_sha256']=sha(output/'retained-inputs.json')
+        if expected_retained_inputs_sha256 is not None:
+            report['expected_retained_inputs_sha256']=expected_retained_inputs_sha256
+            if report['retained_inputs_sha256'] != expected_retained_inputs_sha256:
+                raise ValueError('Retained input selection differs from the locked predecessor')
         settings=output/'settings.xml'
         settings.write_text('<settings><mirrors><mirror><id>ambisgis-custody</id><mirrorOf>*</mirrorOf><url>'+
                             (output/'retained-repository').as_uri()+'</url></mirror></mirrors></settings>\n')
@@ -197,17 +224,23 @@ def build(args):
             '-Dallow.test.failure.ignore=false','-Dproject.build.outputTimestamp=2026-10-02T00:00:00Z']
         # Both source and Maven state are fresh. No user/global Maven settings or cache is consulted.
         env['SOURCE_DATE_EPOCH']='1790899200'
+        if scm_metadata:
+            configure_source_identity(cmd,env,source)
         offline=ROOT/'build-support/postgis/offline_exec.py'
         wrapped=[sys.executable,str(offline),'--evidence',str(output/'network-denial.json'),'--',*cmd]
         report.update(command=wrapped,environment=env)
         with (output/'maven.log').open('x') as log:
-            report['build_exit_code']=execute(wrapped,source,env,log,args.timeout)
+            report['build_exit_code']=executor(wrapped,source,env,log,args.timeout)
         report['network']=verify_network_receipt(output/'network-denial.json',report['build_exit_code'])
         report['source_files_unchanged']=all((source/p).is_file() and sha(source/p)==digest for p,digest in originals.items())
         if report['build_exit_code'] or not report['source_files_unchanged']:
             raise ValueError('Owned aggregate build failed or changed original source')
         report['artifacts']=artifact_origins(source)
-        report['native_execution']=native_tests(output,java,maven,args.timeout)
+        if scm_metadata:
+            report['artifact_source_identity']=owned_scm.verify_artifacts(source,report['artifacts'],selections)
+        report['native_execution']=native_tests(output,java,maven,args.timeout,
+            module=test_module,selector=test_selector,expected_count=expected_test_count,
+            scm_metadata=scm_metadata,executor=executor)
         report['native_tests']=test_reports(source)
         report['native_tests_pending']=False
         report['source_files_unchanged']=all((source/p).is_file() and sha(source/p)==digest for p,digest in originals.items())
@@ -223,23 +256,32 @@ def build(args):
     return report['result_exit_code']
 
 
-def native_tests(output,java,maven,timeout):
+def native_tests(output,java,maven,timeout, *, module=None, selector=None, expected_count=None,
+                 scm_metadata=False, executor=execute):
     """Execute inherited referencing cases from these newly compiled sources."""
-    selector='%regex[org/geotools/referencing/.*Test.class],!%regex[.*OnlineTest.class],!%regex[.*StressTest.class]'
+    module = 'org.geotools:gt-referencing' if module is None else module
+    selector = ('%regex[org/geotools/referencing/.*Test.class],!%regex[.*OnlineTest.class],!%regex[.*StressTest.class]'
+                if selector is None else selector)
     cmd,env=command(output/'work',java,maven,'dependencies',output/'fresh-m2',output/'settings.xml',output.name,role_service=True)
-    cmd=cmd[:cmd.index('-pl')]+['-pl','org.geotools:gt-referencing','-am','test',
+    cmd=cmd[:cmd.index('-pl')]+['-pl',module,'-am','test',
         '-Dspotless.check.skip=true','-Dmaven.test.failure.ignore=false','-Dallow.test.failure.ignore=false',
         '-Dtest='+selector,'-Dsurefire.failIfNoSpecifiedTests=false']
+    if scm_metadata:
+        configure_source_identity(cmd,env,output/'work/source')
     offline=output/'tooling/build-support/postgis/offline_exec.py'
     wrapped=[sys.executable,str(offline),'--evidence',str(output/'native-network-denial.json'),'--',*cmd]
     with (output/'native-tests.log').open('x') as log:
-        status=execute(wrapped,output/'work/source',env,log,timeout)
+        status=executor(wrapped,output/'work/source',env,log,timeout)
     network=verify_network_receipt(output/'native-network-denial.json',status)
     native=test_reports(output/'work/source')
     if status or native['failures'] or native['errors'] or native['passed']<=0:
-        raise ValueError('New-source native referencing tests failed or did not execute')
+        raise ValueError('New-source native tests failed or did not execute')
+    if expected_count is not None and (native['tests'] != expected_count
+            or native['passed'] != expected_count or native['skipped'] != 0):
+        raise ValueError('Expected native test count or no-skip requirement differs')
     return {'command':wrapped,'selector':selector,'network':network,'counts':{k:native[k] for k in ('tests','passed','failures','errors','skipped')},
-            'limits':'Referencing cases only; Online/Stress and reported skips are not product acceptance.'}
+            'module':module,
+            'limits':'Only the recorded module/selector; reported skips are not product acceptance.'}
 
 
 def main():
