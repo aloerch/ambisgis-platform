@@ -228,16 +228,16 @@
   },
   "evidence": "plan/verification/authorized-successors/publication.json",
   "execution_checkpoint": {
-    "current_action": "Establish both retained GIS library settings before inherited GeoNode settings can import GIS loaders, retain the post-inheritance assignments, and add finite catalog phase diagnostics. Frozen corrections require final independent review, integrated checks, rebuilt artifacts and a fresh ordinary installation.",
+    "current_action": "Investigate catalog_setup/module_missing using bounded source and retained-input diagnostics in the new isolated worktree. The missing module is not yet identified. Any correction requires a failing test, independent review, integrated checks and affected artifact validation before a fresh ordinary installation.",
     "current_tasks": [
       {
         "branch": "plt-01/development-install",
         "delivery": "In progress",
         "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
         "id": "PLT-01",
-        "local_head": "e8eb1943e2d9bb17b8fe1a9da82dd67af9ebd6ce",
-        "local_increment": "Establish both retained GIS library settings before inherited GeoNode settings can import GIS loaders, retain the post-inheritance assignments, and add finite catalog phase diagnostics. Frozen corrections require final independent review, integrated checks, rebuilt artifacts and a fresh ordinary installation.",
-        "published_head": "314f11e243a11ed6c494bdd2aa70ef18f4ec049a",
+        "local_head": "5d19a6f4c1d6c5cb6f8973a61e2c19a16c3f01f6",
+        "local_increment": "Investigate catalog_setup/module_missing using bounded source and retained-input diagnostics in the new isolated worktree. The missing module is not yet identified. Any correction requires a failing test, independent review, integrated checks and affected artifact validation before a fresh ordinary installation.",
+        "published_head": "f57bd0989c7ea7f2b303c49aff5c87dad0e01bfa",
         "repository": "aloerch/ambisgis-platform",
         "repository_id": 1376927351,
         "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree"
@@ -327,6 +327,7 @@
       "lifecycle008": "plan/verification/plt01-lifecycle/evidence-008.json",
       "lifecycle009": "plan/verification/plt01-lifecycle/evidence-009.json",
       "lifecycle010": "plan/verification/plt01-lifecycle/evidence-010.json",
+      "lifecycle011": "plan/verification/plt01-lifecycle/evidence-011.json",
       "live_local": "Private delivery-control/recovery-20261003/live-local-001.json",
       "native_timer_alternatives": {
         "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/source-diagnosis-001/alternatives.json",
@@ -345,6 +346,7 @@
       },
       "probe_hold_sha256": "88df92a0060cd55d54ab0b91d7c5df048a0348b1a062d84183599c322b2064ea",
       "progress007": "plan/verification/runtime-recovery/progress-007.json",
+      "progress011": "plan/verification/runtime-recovery/progress-011.json",
       "python312_payload": {
         "executed": false,
         "packages": 32,
@@ -395,31 +397,34 @@
       "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified."
     },
     "latest_completed_implementation_boundary": {
-      "actual_installation": "Relocation and fresh init passed. Database became ready; health records [1,0,0], explicit readiness exit 0, no restarts and final stop exit 0. Catalog initializer started, exited 1 and was removed. The CLI preserved entrypoint/unexpected metadata; serving journeys and DNS observations were not reached.",
+      "actual_installation": "Relocation and fresh init passed. Database became ready; health records [1,0,0], explicit readiness exit 0, no restarts and final stop exit 0. Catalog initializer started, exited 1 and was removed. The CLI preserved catalog_setup/module_missing/import metadata; the missing module and prior native GIS loading remain unproven. Serving journeys and DNS checks were not reached.",
       "checks": {
         "development": 121,
         "image_helpers": 40,
-        "package": 620,
+        "package": 630,
         "runtime": 52,
         "schemas": 10,
-        "scope": "Validation015 at image-source0ce1d960 plus exact two-line pin committed as e8eb1943; unchanged image/development sources reuse validation014. New import-order/phase corrections remain separately pending integration.",
+        "scope": "Validation018 matches all 1504 source bytes committed as 5d19a6f4; unchanged image/development helper sources retain 40/121 checks from validation016. Validation017 failure and the independently replayed QGIS maintenance correction remain preserved.",
         "skips": 0,
-        "source_files": 1498
+        "source_files": 1504
       },
-      "implementation": "Reviewed retained GIS paths, bounded initializer failure reporting and fixed DNS function integrated; paired images007/008 and bundle013 independently audited."
+      "implementation": "Independently reviewed pre-import and post-inheritance owned GIS paths plus finite catalog phase diagnostics integrated. Paired images009/010 and bundle014 audited; narrow per-fetch Git automatic-maintenance suppression preserves isolated QGIS restore checks."
     },
     "native_goal": {
       "automatic_continuation": "Not active while native Goal blocked",
-      "observed_at": "2026-10-04T05:14:04Z",
+      "observed_at": "2026-10-04T06:34:28Z",
+      "previous_timestamped_observation": "2026-10-04T05:14:04Z",
       "quota_status": "unknown",
       "remaining_tokens": null,
+      "reported_time_used_seconds": 30612,
       "reported_tokens_used": 12420153,
-      "source": "Root get_goal response paired with UTC clock; retained as tool-transcript observation",
+      "reported_updated_at": 1791034102,
+      "source": "Root get_goal response bracketed by UTC clock at2026-10-04T06:34:28Z; root tool-transcript testimony, no raw transcript exported. No native Goal resume or state change claimed.",
       "status": "blocked",
       "token_budget": "not configured in returned state",
       "user_action": "Use /goal resume in this same thread for native automatic continuation"
     },
-    "observed_at": "2026-10-04T05:16:47.389359+00:00",
+    "observed_at": "2026-10-04T06:35:41.363926+00:00",
     "observed_terminal": {
       "at": "2026-10-03T13:28:22.795Z",
       "category": "Platform cybersecurity-risk flag",
@@ -453,7 +458,7 @@
       "DB-03": "Merged",
       "DB-04": "Backlog; API-04 required",
       "FND-06": "Merged",
-      "PLT-01": "In progress; draftPR78 at314f11e unmerged. Local51f903 and new source repairs not yet published.",
+      "PLT-01": "In progress; draft PR78 at f57bd098 unmerged, package/schema CI success. Local 5d19a6f4 includes reviewed QGIS restore fix and image pins, not yet published.",
       "PLT-02": "Backlog; PLT-01 pending",
       "geodb_main": "13fb7c9bff9d011838b768802a6ab63f932bd228",
       "platform_main": "d0218209d435f80c21400dc38abc2c4d69d805bc"
@@ -461,10 +466,10 @@
     "schema_version": 1,
     "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
     "worker_observations": {
-      "db02_validation": "Independent review of root finite catalog-stage diagnostics; import-order source frozen.",
-      "fnd03_identity": "Independent import-order and attempt010 reconciliation reviews completed.",
-      "observed_at": "2026-10-04T05:16:47.389359+00:00",
-      "root": "Catalog diagnostic reflection finding corrected; evidence preparation and integration pending final reviews."
+      "db02_validation": "Completed independent images009/010, bundle014, QGIS restore and attempt011 retained-evidence reviews; preparing this private evidence proposal.",
+      "fnd03_identity": "Independent source/publication/adoption reviews completed; bounded source diagnosis continues separately.",
+      "observed_at": "2026-10-04T06:35:41.363926+00:00",
+      "root": "Reconciled attempt011 and consumed its exact failed-guard acknowledgement only to create isolated catalog import-diagnostics worktree; no native retry."
     }
   },
   "fnd06_acceptance": {
