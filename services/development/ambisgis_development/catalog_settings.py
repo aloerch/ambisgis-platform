@@ -33,6 +33,10 @@ os.environ.update({
     'DJANGO_EMAIL_BACKEND': 'django.core.mail.backends.locmem.EmailBackend',
     'SESSION_COOKIE_SECURE': 'False', 'CSRF_COOKIE_SECURE': 'False', 'SECURE_SSL_REDIRECT': 'False',
 })
+# GeoNode imports GIS code while its settings are still loading.
+# Keep these visible to Django's re-entrant settings loader.
+GDAL_LIBRARY_PATH = '/opt/ambisgis/support/lib/libgdal.so'
+GEOS_LIBRARY_PATH = '/opt/ambisgis/support/lib/libgeos_c.so'
 SOURCE = importlib.import_module('geonode.settings')
 globals().update({key: value for key, value in vars(SOURCE).items() if key.isupper()})
 # Select the image's retained libraries without host discovery tools.

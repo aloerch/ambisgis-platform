@@ -20,7 +20,7 @@ PATHS = {
 }
 
 
-def fixture_settings(source=SETTINGS, role="catalog", inherited=None):
+def fixture_settings(source=SETTINGS, role="catalog", inherited=None, import_observer=None):
     """Execute the owned settings with synthetic input and an inert source stub."""
     with tempfile.TemporaryDirectory() as directory, ExitStack() as stack:
         data = Path(directory)
@@ -44,7 +44,11 @@ def fixture_settings(source=SETTINGS, role="catalog", inherited=None):
         for target in ("subprocess.Popen", "subprocess.run", "socket.socket",
                        "ctypes.CDLL", "ctypes.PyDLL", "os.system"):
             stack.enter_context(patch(target, side_effect=AssertionError("external execution forbidden")))
-        imported = stack.enter_context(patch("importlib.import_module", return_value=source_settings))
+        def inherited_import(name):
+            if import_observer is not None:
+                import_observer(module)
+            return source_settings
+        imported = stack.enter_context(patch("importlib.import_module", side_effect=inherited_import))
         spec = importlib.util.spec_from_file_location("_catalog_path_fixture.catalog_settings", source)
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
@@ -77,6 +81,28 @@ class CatalogLibraryPathsTests(unittest.TestCase):
             with self.subTest(value_type=type(value).__name__):
                 module, _ = fixture_settings(inherited=dict.fromkeys(PATHS, value))
                 self.assertEqual({name: getattr(module, name, None) for name in PATHS}, PATHS)
+
+    def test_paths_exist_while_inherited_settings_are_still_importing(self):
+        for role in ("catalog", "catalog-init"):
+            with self.subTest(role=role):
+                observed = []
+                def during_import(module):
+                    observed.append({name: getattr(module, name, None) for name in PATHS})
+                    self.assertEqual(observed[-1], PATHS)
+                fixture_settings(role=role, import_observer=during_import)
+                self.assertEqual(observed, [PATHS])
+
+    def test_early_paths_survive_hostile_inherited_settings(self):
+        observed = []
+        def during_import(module):
+            observed.append({name: getattr(module, name, None) for name in PATHS})
+            self.assertEqual(observed[-1], PATHS)
+        module, _ = fixture_settings(
+            inherited={name: "/inherited/redirect.so" for name in PATHS},
+            import_observer=during_import,
+        )
+        self.assertEqual(observed, [PATHS])
+        self.assertEqual({name: getattr(module, name, None) for name in PATHS}, PATHS)
 
     def test_serving_role_keeps_runtime_credentials(self):
         module, url = fixture_settings()
