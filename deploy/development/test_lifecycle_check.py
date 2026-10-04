@@ -110,5 +110,108 @@ class ProtectedRepetitionTests(unittest.TestCase):
         self.assertEqual(len(self.check.record['http_journeys']),1)
 
 
+class DNSObservationIntegrationTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(); self.addCleanup(self.temp.cleanup)
+        root = Path(self.temp.name)
+        self.check = lifecycle.Check(root / 'installation', root)
+        self.check.dns_expectation = object()
+        self.check.stage = lambda *args: None
+        self.running = {'status': 'verified', 'classification': 'running',
+                        'identity_verified': True, 'namespace_binding_verified': True}
+        self.gone = {'status': 'verified', 'classification': 'gone',
+                     'cleanup_verified': True, 'daemon_cleanup_verified': True}
+
+    def test_verified_running_identity_is_retained_for_cleanup(self):
+        with patch.object(lifecycle.dns_module, 'observe_running', return_value=self.running) as observe:
+            self.check.observe_dns('after CLI exit')
+        observe.assert_called_once_with(self.check.dns_expectation)
+        self.assertIs(self.check.dns_running, self.running)
+        self.assertEqual(self.check.record['incomplete_checks'], [])
+
+    def test_unsupported_binding_is_retained_and_never_becomes_a_pass(self):
+        value = dict(self.running, status='unsupported', namespace_binding_verified=False,
+                     classification='namespace_binding_unavailable')
+        with patch.object(lifecycle.dns_module, 'observe_running', return_value=value):
+            self.check.observe_dns('after CLI exit')
+        self.assertIs(self.check.dns_running, value)
+        self.assertEqual(self.check.record['incomplete_checks'], [
+            {'stage': 'after CLI exit', 'classification': 'namespace_binding_unavailable'}])
+        self.assertEqual(self.check.record['dns_observations'][0]['result']['status'], 'unsupported')
+
+    def test_identity_mismatch_is_recorded_and_stops_the_journey(self):
+        value = {'status': 'failed', 'classification': 'executable_mismatch', 'identity_verified': False}
+        with patch.object(lifecycle.dns_module, 'observe_running', return_value=value):
+            with self.assertRaisesRegex(RuntimeError, 'identity observation'):
+                self.check.observe_dns('after CLI exit')
+        self.assertIsNone(self.check.dns_running)
+        self.assertEqual(self.check.record['dns_observations'][0]['result'], value)
+
+    def test_native_async_cleanup_is_bounded_and_records_every_observation(self):
+        self.check.dns_running = self.running
+        live = {'status': 'failed', 'classification': 'live_retained', 'cleanup_verified': False}
+        with patch.object(lifecycle.dns_module, 'observe_stopped', side_effect=[live, self.gone]) as observe, \
+                patch.object(lifecycle.time, 'sleep') as sleep:
+            self.assertEqual(self.check.observe_dns_stopped(), self.gone)
+        self.assertEqual(observe.call_count, 2); sleep.assert_called_once_with(0.25)
+        self.assertEqual(len(self.check.record['dns_cleanup'][0]), 2)
+
+    def test_persistent_live_process_does_not_get_cleanup_credit(self):
+        self.check.dns_running = self.running
+        live = {'status': 'failed', 'classification': 'live_retained', 'cleanup_verified': False}
+        with patch.object(lifecycle.dns_module, 'observe_stopped', return_value=live) as observe, \
+                patch.object(lifecycle.time, 'sleep') as sleep:
+            with self.assertRaisesRegex(RuntimeError, 'cleanup observation'):
+                self.check.observe_dns_stopped(timeout=0)
+        observe.assert_called_once(); sleep.assert_not_called()
+
+    def test_pid_reuse_is_not_polled_or_overlooked(self):
+        self.check.dns_running = self.running
+        reused = {'status': 'failed', 'classification': 'pid_reused', 'cleanup_verified': False}
+        with patch.object(lifecycle.dns_module, 'observe_stopped', return_value=reused) as observe, \
+                patch.object(lifecycle.time, 'sleep') as sleep:
+            with self.assertRaisesRegex(RuntimeError, 'cleanup observation'):
+                self.check.observe_dns_stopped()
+        observe.assert_called_once(); sleep.assert_not_called()
+
+    def test_unsupported_status_cannot_mask_known_cleanup_failures(self):
+        self.check.dns_running = self.running
+        for code in ('pid_reused', 'pidfile_changed', 'live_retained', 'pidfile_retained', 'config_retained'):
+            with self.subTest(code=code):
+                value = {'status': 'unsupported', 'classification': code, 'cleanup_verified': False}
+                with patch.object(lifecycle.dns_module, 'observe_stopped', return_value=value):
+                    with self.assertRaisesRegex(RuntimeError, 'cleanup observation'):
+                        self.check.observe_dns_stopped(timeout=0)
+        self.assertEqual(self.check.record['incomplete_checks'], [])
+
+    def test_unsupported_status_cannot_mask_running_identity_mismatch(self):
+        value = {'status': 'unsupported', 'classification': 'executable_mismatch', 'identity_verified': True}
+        with patch.object(lifecycle.dns_module, 'observe_running', return_value=value):
+            with self.assertRaisesRegex(RuntimeError, 'identity observation'):
+                self.check.observe_dns('after CLI exit')
+        self.assertIsNone(self.check.dns_running)
+        self.assertEqual(self.check.record['incomplete_checks'], [])
+
+    def test_absence_without_previous_identity_is_unobserved(self):
+        with patch.object(lifecycle.dns_module, 'observe_stopped') as observe:
+            value = self.check.observe_dns_stopped()
+        observe.assert_not_called()
+        self.assertEqual(value['status'], 'unobserved')
+        self.assertFalse(value['cleanup_verified'])
+        self.assertFalse(value['daemon_cleanup_verified'])
+
+    def test_incomplete_observation_makes_completed_journey_exit_nonzero(self):
+        from argparse import Namespace
+        root = Path(self.temp.name); output = root / 'evidence'
+        def exercise(check, args):
+            check.record['incomplete_checks'].append({'stage': 'DNS', 'classification': 'namespace_binding_unavailable'})
+        with patch.object(lifecycle.Check, 'exercise', exercise), \
+                patch.object(lifecycle.Check, 'stop_owned', return_value={'running_services': 0}):
+            code = lifecycle.main(Namespace(directory=root / 'new-installation', output=output,
+                bundle=root / 'unused-bundle.json', bundle_sha256='0' * 64))
+        self.assertEqual(code, 1)
+        self.assertEqual(json.loads((output / 'result.json').read_text())['status'], 'incomplete')
+
+
 if __name__ == '__main__':
     unittest.main()

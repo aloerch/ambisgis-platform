@@ -46,7 +46,7 @@
   "branch": "plt-01/development-install",
   "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
   "task": "PLT-01 repeatable development installation",
-  "state": "PLT01 In progress: draftPR78 published at8f5f4e9; lifecycle006 failed and reconciled. Bounded native timer repair in progress; no installation or full MVP acceptance.",
+  "state": "PLT-01 In progress; source4af published in draft PR78. Lifecycle007 failed and reconciled; explicit direct-DNS repair in implementation/review. DB03 and earlier acceptances preserved; installation/full MVP unaccepted.",
   "pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
   "tests": [
     {
@@ -548,15 +548,15 @@
   "execution_checkpoint": {
     "current_tasks": [
       {
-        "branch": "plt-01/development-install",
-        "head": "8f5f4e9c172816c8d10fc8c893c957d706c38b90",
         "id": "PLT-01",
-        "next": "Integrate reviewed command-concurrency helper and implement/review the bounded native health-timer source repair; no retry until exact successor source/build/bundle review.",
-        "pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
-        "state": "In progress",
+        "repository": "aloerch/ambisgis-platform",
+        "repository_id": 1376927351,
         "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree",
-        "draft": true,
-        "latest_installation": "lifecycle006 failed during native external systemd-run wrapper; no installed service journey accepted"
+        "branch": "plt-01/development-install",
+        "published_head": "4afba4c213a094344b40a665edffb531e4f76ff5",
+        "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+        "delivery": "In progress",
+        "local_increment": "Explicit direct-DNS bundle capability and attempt007 evidence; implementation and independent review in progress"
       }
     ],
     "diagnosis": {
@@ -689,7 +689,9 @@
         "journey_lifecycle_reuse": "32+8 unchanged integrated-source-008",
         "path": "Private plt01-runtime-checks/runtime-validation-009/result.json",
         "sha256": "cab83ec0b8f27ab65a0c39699383e54f3c310a941a5bd39ee54217cbbb11b44d"
-      }
+      },
+      "lifecycle007": "plan/verification/plt01-lifecycle/evidence-007.json",
+      "progress007": "plan/verification/runtime-recovery/progress-007.json"
     },
     "installed_runtime": {
       "cli": "0.160.0",
@@ -706,17 +708,17 @@
       "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified."
     },
     "native_goal": {
-      "automatic_continuation": "not active while native Goal is blocked",
-      "objective": "Unchanged complete scoped R01–R24/P0–P7 MVP under standing-delivery-policy.md",
-      "observed_at": "2026-10-04T00:03:59.469917+00:00",
-      "quota_status": "unknown",
-      "remaining_tokens": null,
-      "reported_tokens_used": 12420153,
       "status": "blocked",
+      "source": "Fresh get_goal response in this foreground turn",
+      "observed_at": "2026-10-04T01:24:43.831177+00:00",
+      "reported_tokens_used": 12420153,
       "token_budget": "not configured in returned state",
-      "user_action": "Use /goal resume in the existing thread to restore native continuation; no second integrator is started"
+      "remaining_tokens": null,
+      "quota_status": "unknown",
+      "automatic_continuation": "Not active while native Goal blocked",
+      "user_action": "Use /goal resume in this same thread for native automatic continuation"
     },
-    "observed_at": "2026-10-04T00:03:59.469917+00:00",
+    "observed_at": "2026-10-04T01:24:43.831177+00:00",
     "observed_terminal": {
       "at": "2026-10-03T13:28:22.795Z",
       "category": "Platform cybersecurity-risk flag",
@@ -740,7 +742,8 @@
       "Completed independent original PLT01 acceptance-gap audit and source-only missing-busctl/direct-OCI-environment diagnosis; bounded local repair underway.",
       "Built ordinary OCI environment successor from exact retained inputs; four old-block regressions fail and four production-helper cases pass. Independent completed-build review and24/565/10 checks pass. Bundle008 assembled without engine execution; installation remains unaccepted.",
       "Bundle008 independently reviewed and adopted; ordinary lifecycle005 failed at systemd private-socket lookup. Wrapper/child/database process gone; exact installation-owned persistent rootless pause helper remains and is explicitly retained, not counted as a service or cleanup pass. Guard failure reconciled before creating isolated successor worktree.",
-      "Reconciled lifecycle006 failed guard7e408e9c and preserved stopped container, data, network and exact native pause helper; acknowledgement consumed by successful draft publication guard4052ac8c."
+      "Reconciled lifecycle006 failed guard7e408e9c and preserved stopped container, data, network and exact native pause helper; acknowledgement consumed by successful draft publication guard4052ac8c.",
+      "Reconciled failed lifecycle007 using corrected inspect projection, immutable exact engine metadata, finite GetUnit readback and exact process identity; preserved owned pause/data/network. Exact failed run acknowledgement consumed by completed normal draft publicationc40949e7."
     ],
     "remote_state": {
       "API-01": "Backlog; PLT-01 pending",
@@ -749,7 +752,7 @@
       "DB-03": "Merged",
       "DB-04": "Backlog; API-04 required",
       "FND-06": "Merged",
-      "PLT-01": "In progress; draft PR78 open, exact-head package-and-schema CI passed, unmerged",
+      "PLT-01": "In progress; draft PR78 source4af published, unmerged; latest CI not claimed by this checkpoint.",
       "PLT-02": "Backlog; PLT-01 pending",
       "geodb_main": "13fb7c9bff9d011838b768802a6ab63f932bd228",
       "platform_main": "d0218209d435f80c21400dc38abc2c4d69d805bc"
@@ -757,15 +760,22 @@
     "schema_version": 1,
     "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
     "worker_observations": {
-      "db02_validation": "Running independent source-only timer design review",
-      "fnd03_identity": "Running source-only native timer producer implementation",
-      "fnd04_prototype": "Earlier platform termination; held task not replayed",
-      "root": "Foreground integrator; recording006 failure and actual draftPR78 publication"
+      "root": "Foreground integration and attempt007 evidence",
+      "fnd03_identity": "Implementing optional direct-DNS profile in separate local worktree",
+      "db02_validation": "Implementing source-bound read-only DNS process/cleanup observation helper in separate local worktree",
+      "fnd04_prototype": "Earlier platform termination; held task not replayed"
     },
     "latest_completed_implementation_boundary": {
-      "checks": "24 inert command-concurrency tests independently passed; helper not yet integrated or executed against installer CLI",
-      "installation_acceptance": false,
-      "publication": "Draft PR78 head8f5f4e9 published with progress issue comment5974709477; base unchanged; no merge, settings/workflow or Project mutation"
+      "implementation": "Owned native health timer, selected path validation, concurrent-installation helper; exact source4af published to existing draft",
+      "checks": {
+        "runtime": 51,
+        "development_helpers": 64,
+        "package": 573,
+        "schema_examples": 10,
+        "native_health_timer_pure_cases": 14
+      },
+      "latest_actual_installation": "Seventh ordinary attempt passed relocation/init, then failed DNS scope launch; no application journey ran",
+      "latest_acceptance": "DB-03 merged13fb7c9bff9d011838b768802a6ab63f932bd228,86 fresh postmerge checks; prior FND/DB acceptances preserved"
     }
   },
   "db02_claim": {
@@ -845,7 +855,7 @@
     "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-claim-attempts/c6d82022-d24a-4ebb-a9a9-85036c23b882",
     "observation_note": "Historical claim; db03_acceptance supersedes its In progress state."
   },
-  "updated_at": "2026-10-04T00:03:59.469917+00:00",
+  "updated_at": "2026-10-04T01:24:43.831177+00:00",
   "plt01_image_review": {
     "head": "b8ae679288dd3431c3e216aedab1bd2220653aea",
     "receipt": "plan/verification/plt01-image-review/review.json",
@@ -983,11 +993,12 @@
     "observation_note": "Historical first-three-attempt record; plt01_latest_lifecycle and evidence-006.json contain newer failed attempts and preserved helper state."
   },
   "plt01_latest_lifecycle": {
+    "evidence": "plan/verification/plt01-lifecycle/evidence-007.json",
+    "attempts": 7,
     "status": "failed",
-    "attempts": 6,
-    "full_installation_acceptance": false,
     "reconciled": true,
     "all_helpers_gone": false,
-    "evidence": "plan/verification/plt01-lifecycle/evidence-006.json"
+    "full_installation_acceptance": false,
+    "bundle_sha256": "5fe09486a32c63d5e08ef8c8b0691a6f5e5607b202664da008182965ce0c57c4"
   }
 }

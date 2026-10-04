@@ -24,6 +24,13 @@ spec = importlib.util.spec_from_file_location('ordinary_installation_journey', R
 journey_module = importlib.util.module_from_spec(spec)
 sys.modules[spec.name] = journey_module
 spec.loader.exec_module(journey_module)
+dns_spec = importlib.util.spec_from_file_location('ordinary_dns_observation', ROOT / 'deploy/development/dns_observation.py')
+dns_module = importlib.util.module_from_spec(dns_spec)
+sys.modules[dns_spec.name] = dns_module
+dns_spec.loader.exec_module(dns_module)
+
+
+DNS_UNAVAILABLE = frozenset({'observation_permission', 'observation_unavailable', 'namespace_binding_unavailable'})
 
 
 def utc():
@@ -69,7 +76,7 @@ class Check:
         self.output = output
         self.record = {'schema_version': 1, 'task': 'PLT-01', 'status': 'running', 'started': utc(),
                        'full_installation_acceptance': False, 'targeted_probe_executed': False,
-                       'scope': 'Actual ordinary CLI, bundle relocation, persistent identity/metadata, service fault/recovery and shutdown only',
+                       'scope': 'Actual ordinary CLI, bundle relocation, persistent identity/metadata, service fault/recovery, read-only native DNS observations and shutdown only',
                        'stages': [], 'token_cleanup': [], 'persistent_data_deleted': False}
         self.secrets = []
         self.browsers = []
@@ -81,6 +88,9 @@ class Check:
         self.rt = None
         self.native_identity = None
         self.native_policy_sha256 = None
+        self.dns_expectation = None
+        self.dns_running = None
+        self.record['incomplete_checks'] = []
 
     def safe(self, text):
         return not any(value in text for value in self.secrets) and not any(
@@ -150,6 +160,61 @@ class Check:
             if not cleanup['complete']:
                 raise RuntimeError('lifecycle token cleanup incomplete')
 
+    def prepare_dns_observation(self):
+        if self.rt.selection['runtime'].get('dns_profile') != 'native-direct-v1':
+            self.record['dns_profile_observation'] = 'not selected by this bundle'
+            return
+        manifest = json.loads(bundle.member(self.rt.bundle_root,
+            self.rt.selection['runtime']['files_manifest']).read_bytes())
+        self.dns_expectation = dns_module.from_verified(self.directory, self.rt.config,
+            self.rt.bundle_root, manifest, os.getuid())
+
+    def observe_dns(self, name):
+        if self.dns_expectation is None:
+            return
+        value = dns_module.observe_running(self.dns_expectation)
+        self.record.setdefault('dns_observations', []).append({'at': utc(), 'stage': name, 'result': value})
+        unavailable = value['status'] == 'unsupported' and value['classification'] in DNS_UNAVAILABLE
+        if value.get('identity_verified') is True and (value['status'] == 'verified' or unavailable):
+            self.dns_running = value
+        if unavailable:
+            self.record['incomplete_checks'].append({'stage': name, 'classification': value['classification']})
+        self.save()
+        if value['status'] != 'verified' and not unavailable:
+            raise RuntimeError('native DNS identity observation failed')
+        self.stage(name, {'observation_status': value['status'],
+                         'classification': value['classification'],
+                         'identity_verified': value.get('identity_verified') is True,
+                         'namespace_binding_verified': value.get('namespace_binding_verified') is True})
+
+    def observe_dns_stopped(self, timeout=15):
+        if self.dns_expectation is None:
+            return None
+        if self.dns_running is None:
+            return {'status': 'unobserved', 'classification': 'no_prior_identity',
+                    'cleanup_verified': False, 'daemon_cleanup_verified': False}
+        deadline = time.monotonic() + timeout
+        observations = []
+        while True:
+            value = dns_module.observe_stopped(self.dns_expectation, self.dns_running)
+            observations.append({'at': utc(), 'result': value})
+            # Only native asynchronous process/file removal is pollable. An
+            # identity mismatch, PID reuse or unavailable read is not retried.
+            if (value['classification'] not in dns_module.TRANSIENT_CLEANUP
+                    or time.monotonic() >= deadline):
+                break
+            time.sleep(0.25)
+        self.record.setdefault('dns_cleanup', []).append(observations)
+        unavailable = value['status'] == 'unsupported' and value['classification'] in DNS_UNAVAILABLE
+        if unavailable:
+            self.record['incomplete_checks'].append({'stage': 'DNS shutdown',
+                                                     'classification': value['classification']})
+        self.save()
+        if (value['status'] != 'verified' and not unavailable) or (
+                value['status'] == 'verified' and value.get('cleanup_verified') is not True):
+            raise RuntimeError('native DNS cleanup observation failed')
+        return value
+
     def stop_owned(self):
         if self.rt is None:
             return {'attempted': False, 'reason': 'no runtime invocation was reached'}
@@ -161,7 +226,10 @@ class Check:
         after = self.rt.processes(include_initializers=True)
         if any(row['process'] == 'running' for row in after.values()):
             raise RuntimeError('owned installation services did not stop')
-        return {'attempted': True, 'running_services': 0, 'persistent_data_preserved': True}
+        result = {'attempted': True, 'running_services': 0, 'persistent_data_preserved': True}
+        dns = self.observe_dns_stopped()
+        if dns is not None: result['dns'] = dns
+        return result
 
     def protected_journey(self, name, expected_title=None):
         # Persistence assertions MUST precede a journey that can edit metadata.
@@ -203,6 +271,7 @@ class Check:
         self.secrets = list(config.secret_material(self.directory).values())
         self.record['install_id'] = first['install_id']
         self.rt = runtime.Runtime(self.directory)
+        self.prepare_dns_observation()
         self.stage('fresh init', {'created': True, 'install_id': first['install_id']})
         value = self.cli('up')
         if value.get('ready') is not True:
@@ -212,6 +281,7 @@ class Check:
             if self.cli(command)['readiness']['ready'] is not True:
                 raise ValueError('running CLI readiness failed')
         self.stage('fresh up status doctor', {'useful_readiness': True})
+        self.observe_dns('native DNS after initial CLI exit')
         title = self.protected_journey('protected map query metadata journey')
         self.stop_owned()
         self.preserve_identity()
@@ -231,6 +301,7 @@ class Check:
         self.metadata(title)
         self.preserve_identity()
         self.stage('restart preserves metadata and credentials', {'verified': True})
+        self.observe_dns('native DNS after restart')
         self.protected_journey('full protected journey after restart', title)
         repeated = self.cli('init')
         if repeated.get('created') is not False or repeated['install_id'] != first['install_id']:
@@ -241,6 +312,7 @@ class Check:
         self.metadata(title)
         self.preserve_identity()
         self.stage('reinitialization preserves metadata and credentials', {'verified': True})
+        self.observe_dns('native DNS after repeated CLI exit')
         self.protected_journey('full protected journey after reinitialization', title)
         self.rt.engine('stop', '--time', '45', name + '-geoserver', timeout=90)
         down = self.wait_ready(False, timeout=30)
@@ -262,6 +334,7 @@ class Check:
         self.metadata(title)
         self.preserve_identity()
         self.stage('dependency recovery preserves state', {'verified': True})
+        self.observe_dns('native DNS after dependency recovery')
         self.protected_journey('full protected journey after dependency recovery', title)
 
 
@@ -274,7 +347,7 @@ def main(args):
     check = Check(directory, output)
     check.record['source'] = {str(p.relative_to(ROOT)): digest(p) for p in
         (Path(__file__).resolve(), ROOT / 'deploy/development/journey_probe.py', journey_module.POLICY_PROGRAM,
-         ROOT / 'build-support/geonode/protocol_probe.py')}
+         ROOT / 'build-support/geonode/protocol_probe.py', ROOT / 'deploy/development/dns_observation.py')}
     passed = False
     try:
         check.exercise(args)
@@ -287,7 +360,10 @@ def main(args):
         except Exception as error:
             check.record['shutdown'] = {'complete': False, 'error_type': type(error).__name__}
             passed = False
-        check.record.update(status='passed' if passed else 'failed', finished=utc())
+        status = 'passed' if passed else 'failed'
+        if passed and check.record['incomplete_checks']:
+            status, passed = 'incomplete', False
+        check.record.update(status=status, finished=utc())
         check.save()
     print(json.dumps({'status': check.record['status'], 'receipt': str(output / 'result.json')}), flush=True)
     return 0 if passed else 1

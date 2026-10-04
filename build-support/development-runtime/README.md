@@ -67,17 +67,39 @@ Stop/start/restart and down can affect only this installation; persistent bind
 data and image/volume deletion are excluded. The fixed HTTP diagnostic client
 is bound to its source hash, not a general Python execution escape.
 
-The engine's native health timers invoke `systemd-run` with only PATH forwarded.
-The narrow adapter validates the original 15s interval, unit/container ID,
-program and private store arguments, then uses an exact health bootstrap and
-WorkingDirectory. That bootstrap restores private config/loader/environment
-before the native healthcheck. It adds only the transient health units already
-created by Podman. Normal container stop removes them using the native
-lifecycle; actual cleanup must be observed. The native conmon exit command is
-different: retained engine `configureConmonEnv` forwards its strict environment
-(except NOTIFY_SOCKET), and retained conmon `ctr_exit.c` uses `execv`, preserving
-it. Its raw engine cleanup has absolute store arguments and private config
-paths, so it does not require the ordinary wrapper's cwd.
+The selected native health-timer helper creates the finite timer/service pair
+through the verified user-manager connection. Its fixed health bootstrap restores
+private configuration, loader paths and environment. Native container stop
+removes the units; actual cleanup still needs observation. The older restrictive
+`systemd-run` dispatcher and retained raw binary remain source/closure members,
+but this candidate does not publish a `systemd-run` launcher on its PATH.
+
+The explicit `runtime.dns_profile: "native-direct-v1"` selects netavark's retained
+native direct DNS branch. It keeps the same owned aardvark executable, private
+configuration, port and network namespace. Aardvark forks with its native PID
+file, attempts session detachment without enforcing success, and inherits the
+caller's cgroup. A dedicated systemd DNS scope or separate DNS resource limits
+are not claimed. Bundle
+validation requires the exact private PATH and rejects any `systemd-run` object
+in either private lookup directory or the additional `/usr/sbin` search location
+used by the retained network launcher. No host file is removed and no ambient
+PATH is accepted. This stronger absence prerequisite also checks `/usr/sbin`
+when native substring logic would not append it. A changed host lookup path
+requires requalification. Ordinary init/up/status/doctor and internal launchers
+load the verified bundle before producer execution. Historical bundles without
+the optional DNS profile keep their previous validation behavior.
+
+The native direct branch requires real DNS readiness after the CLI exits and
+exact daemon PID, executable, namespace, cgroup and last-container-stop cleanup
+evidence before installation acceptance. Source selection and absence guards
+alone do not pass these checks. The seventh ordinary attempt failed before
+those measurements; its original failure and reconciliation remain preserved.
+
+The native conmon exit command remains separate: retained engine
+`configureConmonEnv` forwards its strict environment (except NOTIFY_SOCKET), and
+retained conmon `ctr_exit.c` uses `execv`, preserving it. Its raw engine cleanup
+has absolute store arguments and private configuration paths, so it does not
+require the ordinary wrapper's working directory.
 
 The first ordinary lifecycle attempt passed relocation/init and loaded the
 database image, then exposed a stream-handling defect: a native stderr warning

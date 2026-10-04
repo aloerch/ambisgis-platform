@@ -18,26 +18,30 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 has four independently reviewed owned OCI images. Six actual startup
-attempts remain failed and preserved. Attempt006 passed relocation and fresh
-initialization, then reached native health-timer creation through the corrected
-manager socket. The external timer wrapper rejected its runtime context. Source
-inspection identifies a namespace-sensitive host-ownership/socket check; the
-actual first rejected value remains uncaptured. The database application process
-is gone and the other five containers were absent. Its exact native rootless
-pause helper, data and network remain retained; helper cleanup has not passed.
+PLT-01 has four independently reviewed owned OCI images. Seven actual startup
+attempts remain failed and preserved. Attempt007 passed relocation and fresh
+initialization and persisted the native health-timer identity. Network setup then
+failed when the guarded systemd scope wrapper rejected the DNS launch. Source
+parsing reproduces this rejection; actual failing argv was not captured. Later
+read-only queries found the exact timer/service not loaded. The driver and
+recorded database process are gone; the owned namespace pause helper, data and
+network remain retained. No application journey or complete cleanup has passed.
 
 [Draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78) publishes the
-reviewed source at `8f5f4e9c172816c8d10fc8c893c957d706c38b90`. Package/schema CI
-passed at that head; the PR remains unmerged and installation unaccepted.
-The bounded native timer repair compiled from retained sources and passed all
-14 standalone property/completion cases plus independent artifact review. Its
-finite timer-plus-service request preserves host-ownership checks and records
-partial/uncertain effects for reconciliation. Bundle integration and actual
-manager/service execution remain pending. Reviewed authorization/recovery
-drivers and a command-concurrency helper are present; their inert checks do not
-establish installed behavior.
-[Actual attempts and reconciliation](plan/verification/plt01-lifecycle/evidence-006.json)
+reviewed source at `4afba4c213a094344b40a665edffb531e4f76ff5`; it is unmerged.
+That source passed 573 package, 51 runtime, 64 development-helper and ten
+schema/example checks. The bounded native timer producer passed 14 pure cases,
+and its rebuilt artifacts and bundle010 received independent review. Those
+checks remain distinct from the failed seventh ordinary installation. The
+command-concurrency helper is integrated but has not run against a live install.
+
+The next repair selects netavark's existing direct DNS daemon branch through an
+explicit bundle profile and rejects an unexpected scope launcher in its lookup
+paths. DNS remains enabled in its native network namespace; the daemon inherits
+the caller's cgroup. Separate design review found no requirement for a dedicated
+DNS systemd scope. Implementation review and actual DNS readiness, namespace,
+cgroup, lifetime and cleanup evidence remain necessary before acceptance.
+[Actual attempts and reconciliation](plan/verification/plt01-lifecycle/evidence-007.json)
 and [native build evidence](build-support/development-runtime/native-health-timer-evidence.json)
 retain these boundaries. Full PLT-01 and scoped MVP acceptance remain open.
 
@@ -45,7 +49,7 @@ The held targeted engine probe remains unexecuted after the earlier platform
 termination. The native Goal still reports blocked; foreground delivery continues.
 Restoring native automatic continuation requires the user control /goal resume
 in the existing thread. [Original diagnosis](plan/verification/runtime-recovery/2026-10-03.json)
-and [latest progress](plan/verification/runtime-recovery/progress-006.json)
+and [latest progress](plan/verification/runtime-recovery/progress-007.json)
 distinguish this platform state from current product work.
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.

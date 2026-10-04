@@ -363,7 +363,10 @@ def assemble(output):
         'AmbisGIS owned installer and runtime adapter: GPL-3.0-or-later, following the existing first-party policy.\n'
         'Exact corresponding Python sources are carried under runtime/modules; build recipe/source hashes are in custody.json.\n'
         'This development artifact is not an approved product distribution. Original component notices remain separately retained.\n').encode(), origin={'existing_policy': True})
-    for mode in ('ambisgis', 'podman', 'compose', 'newuidmap', 'newgidmap', 'systemd-run', 'healthcheck-timer'):
+    # Native health timers use the owned D-Bus helper. Omitting the obsolete
+    # PATH scope launcher selects netavark's retained direct DNS daemon branch;
+    # the explicit bundle profile rejects any replacement in its lookup paths.
+    for mode in ('ambisgis', 'podman', 'compose', 'newuidmap', 'newgidmap', 'healthcheck-timer'):
         writer.put(('bin/' if mode == 'ambisgis' else 'runtime/bin/') + mode,
                    data=shell_launcher(mode, public=mode == 'ambisgis'), executable=True, origin={'generated_launcher': mode})
     program_source = ROOT / 'deploy/development/journey_probe.py'
@@ -409,7 +412,7 @@ def assemble(output):
     writer.document('runtime-files.json', closure)
     manifest = {'schema_version': 1, 'kind': 'ambisgis.development-bundle', 'target': {'os': 'linux', 'architecture': 'x86_64'},
                 'product_revision': result['platform_revision'], 'source_manifest': ref('source-manifest.json'),
-                'runtime': {'path_profile': 'owned-health-timer-ascii-v1',
+                'runtime': {'path_profile': 'owned-health-timer-ascii-v1', 'dns_profile': 'native-direct-v1',
                     'podman': ref('runtime/bin/podman'), 'compose': ref('runtime/bin/compose'),
                     'environment': {'PATH': ['runtime/bin', 'runtime/helpers'], 'LD_LIBRARY_PATH': ['runtime/lib64'],
                         'PYTHONPATH': ['runtime/modules', 'runtime/lib/python3.13/site-packages', 'runtime/lib64/python3.13/site-packages']},
