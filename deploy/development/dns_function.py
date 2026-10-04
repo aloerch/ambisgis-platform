@@ -1,4 +1,5 @@
 """Ordinary fixed-service DNS evidence; no NSS/hosts-file success substitute."""
+from contextlib import contextmanager
 import hashlib
 import importlib.util
 import ipaddress
@@ -93,6 +94,96 @@ def expected(product, selection, network, database, gateway, resolver):
     return value
 
 
+def root_mapping(raw):
+    """Map namespace root to the different namespace opening this proc file."""
+    if type(raw) is not bytes or not 0 < len(raw) <= 4096:
+        raise ValueError('bounded root mapping required')
+    lines = raw.splitlines()
+    if not 0 < len(lines) <= 32:
+        raise ValueError('bounded root mapping required')
+    rows = []
+    for line in lines:
+        if re.fullmatch(rb'[ \t]*[0-9]+[ \t]+[0-9]+[ \t]+[0-9]+[ \t]*', line) is None:
+            raise ValueError('invalid root mapping')
+        inside, outside, size = map(int, line.split())
+        if (size <= 0 or inside + size > 2**32 - 1 or outside + size > 2**32 - 1
+                or any(inside < i + n and i < inside + size or outside < o + n and o < outside + size
+                       for i, o, n in rows)):
+            raise ValueError('ambiguous root mapping')
+        rows.append([inside, outside, size])
+    roots = [outside for inside, outside, size in rows if inside == 0]
+    if len(roots) != 1:
+        raise ValueError('namespace root mapping missing')
+    return roots[0], rows
+
+
+def proc_bytes(directory, name):
+    # Callers use only stat/uid_map/gid_map, relative to one retained proc FD.
+    if name not in ('stat', 'uid_map', 'gid_map'):
+        raise ValueError('unexpected process field')
+    fd = os.open(name, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK, dir_fd=directory)
+    with os.fdopen(fd, 'rb') as stream:
+        if not stat.S_ISREG(os.fstat(stream.fileno()).st_mode):
+            raise ValueError('nonregular process field')
+        raw = stream.read(4097)
+    if not 0 < len(raw) <= 4096:
+        raise ValueError('bounded process field required')
+    return raw
+
+
+def process_start(raw, pid):
+    try:
+        first, tail = raw.split(b' (', 1)
+        fields = tail.rsplit(b') ', 1)[1].split()
+        if (int(first) != pid or len(fields) < 20 or fields[0] not in (b'R', b'S', b'D', b'T', b't', b'W', b'K', b'P', b'I')
+                or re.fullmatch(rb'[0-9]+', fields[19]) is None or int(fields[19]) <= 0):
+            raise ValueError()
+        return int(fields[19])
+    except (IndexError, ValueError):
+        raise ValueError('live gateway process identity unavailable') from None
+
+
+def namespace_identity(info):
+    return [info.st_dev, info.st_ino]
+
+
+@contextmanager
+def gateway_process(gateway):
+    pid = gateway['State']['Pid']
+    if gateway['State']['Running'] is not True or type(pid) is not int or not 1 < pid < 2**31:
+        raise ValueError('live gateway process required')
+    directory = os.open('/proc/' + str(pid), os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+    try:
+        def sample():
+            start = process_start(proc_bytes(directory, 'stat'), pid)
+            target = namespace_identity(os.stat('ns/user', dir_fd=directory))
+            observer = namespace_identity(os.stat('/proc/self/ns/user'))
+            # Same-namespace maps describe the parent, unlike caller-relative stat.
+            # https://man7.org/linux/man-pages/man7/user_namespaces.7.html
+            if target == observer:
+                raise ValueError('different observer user namespace required')
+            uid, uid_map = root_mapping(proc_bytes(directory, 'uid_map'))
+            gid, gid_map = root_mapping(proc_bytes(directory, 'gid_map'))
+            if (process_start(proc_bytes(directory, 'stat'), pid) != start
+                    or namespace_identity(os.stat('ns/user', dir_fd=directory)) != target
+                    or namespace_identity(os.stat('/proc/self/ns/user')) != observer):
+                raise ValueError('gateway process changed')
+            return {'pid': pid, 'start_ticks': start, 'user_namespace': target,
+                    'observer_user_namespace': observer, 'root_uid': uid, 'root_gid': gid,
+                    'uid_map': uid_map, 'gid_map': gid_map}
+        before = sample()
+        yield before
+        if sample() != before:
+            raise ValueError('gateway process or root mapping changed')
+    finally:
+        os.close(directory)
+
+
+def file_identity(info):
+    return [info.st_dev, info.st_ino, info.st_mode, info.st_uid, info.st_gid,
+            info.st_size, info.st_mtime_ns, info.st_ctime_ns]
+
+
 def resolver_bytes(rt, gateway):
     path = checked_path(gateway['ResolvConfPath'])
     if not any(path.is_relative_to(rt.paths[key]) for key in ('run', 'storage')):
@@ -102,15 +193,20 @@ def resolver_bytes(rt, gateway):
     mounts = [row for row in oci['mounts'] if row.get('destination') == '/etc/resolv.conf']
     if len(mounts) != 1 or mounts[0].get('type') != 'bind' or mounts[0].get('source') != str(path):
         raise ValueError('resolver mount differs from inspected source')
-    fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW)
-    with os.fdopen(fd, 'rb') as stream:
-        info = os.fstat(stream.fileno())
-        if (not stat.S_ISREG(info.st_mode) or info.st_uid != os.getuid()
-                or info.st_mode & 0o022):
-            raise ValueError('unsafe owned resolver source')
-        raw = stream.read(4097)
-    wire.resolver_config(raw)
-    return raw
+    with gateway_process(gateway) as owner:
+        fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+        with os.fdopen(fd, 'rb') as stream:
+            info = os.fstat(stream.fileno())
+            if (not stat.S_ISREG(info.st_mode) or info.st_uid != owner['root_uid']
+                    or info.st_gid != owner['root_gid'] or info.st_mode & 0o022):
+                raise ValueError('unsafe owned resolver source')
+            identity = file_identity(info)
+            raw = stream.read(4097)
+            if (file_identity(os.fstat(stream.fileno())) != identity
+                    or file_identity(os.stat(path, follow_symlinks=False)) != identity):
+                raise ValueError('owned resolver source changed')
+        wire.resolver_config(raw)
+    return raw, dict(owner, resolver_file=identity)
 
 
 def snapshot(rt):
@@ -132,8 +228,21 @@ def snapshot(rt):
     code, raw = rt.engine('network', 'inspect', project + '_internal')
     if code:
         raise ValueError('network inspect failed')
-    resolver = resolver_bytes(rt, rows['gateway'])
-    return expected(rt.config, rt.selection, one(raw), rows['database'], rows['gateway'], resolver)
+    resolver, process = resolver_bytes(rt, rows['gateway'])
+    network = one(raw)
+    identity = expected(rt.config, rt.selection, network, rows['database'], rows['gateway'], resolver)
+    # Bracket the process/file read with a fresh exact owned-container check.
+    code, raw = rt.engine('container', 'inspect', project + '-gateway')
+    if code:
+        raise ValueError('gateway reinspection failed')
+    after = one(raw)
+    rt.container_security(after, 'gateway')
+    if (expected(rt.config, rt.selection, network, rows['database'], after, resolver) != identity
+            or any(after['State'][key] != rows['gateway']['State'][key] for key in ('Pid', 'StartedAt'))
+            or any(after[key] != rows['gateway'][key] for key in ('OCIConfigPath', 'ResolvConfPath'))):
+        raise ValueError('gateway identity changed during resolver observation')
+    identity['gateway_process'] = process
+    return identity
 
 
 def verified_response(raw, identity):
