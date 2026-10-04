@@ -18,39 +18,41 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 remains In progress after nine preserved ordinary installation failures.
-The retained-locale and safe startup-diagnostic repairs are integrated locally at
-`51f903f6a1e2083f58bdc4b16eb68ba24281a6c4`. Images005/006 are byte-identical;
-independent review verified all 57,004 image members and bundle012's 1,309 runtime
-files. Required checks passed: 604 package, 51 runtime, ten schemas; unchanged
-image/development sources retain the 40/101 checks from validation012.
+PLT-01 remains In progress after ten preserved ordinary installation failures.
+The reviewed GIS-library settings, bounded initializer reporting and fixed DNS
+function are integrated locally at `e8eb1943e2d9bb17b8fe1a9da82dd67af9ebd6ce`.
+Images007/008 are byte-identical; independent review verified all 57,004 image
+members and bundle013's 1,311 runtime files. Required checks passed: 620 package,
+52 runtime and ten schemas; unchanged image/development sources retain the
+40/121 checks from validation014.
 
-Attempt009 passed relocation and fresh initialization. The database emitted
-`database_ready`; its first health check failed during startup, then two passed.
-The explicit pre-migration health recheck exited0. Catalog-init then started,
-exited1 and was removed by the original one-shot command. No serving application
-journey was reached. The database stopped cleanly with no automatic restarts.
-Read-only reconciliation found the exact health timer/service not loaded and the
-owned rootless pause helper retained. Data and network remain; DNS identity and
-full helper cleanup were not established.
+Attempt010 passed relocation and fresh initialization. The database became
+ready, with health results [1,0,0], explicit pre-migration readiness exit 0,
+no automatic restarts and final shutdown exit 0. Catalog-init started, exited 1
+and was removed. The CLI now retained fixed entrypoint/unexpected metadata,
+but the underlying exception remains unknown. Serving journeys and DNS checks
+were not reached. Reconciliation confirms the exact last timer/service not
+loaded and the owned pause helper retained; data and network remain preserved.
 
-The catalog initializer's precise error is unknown because its output was not
-retained. Source inspection identifies missing explicit Django GDAL/GEOS library
-settings and discovery tools. Fixed owned-library settings, bounded preservation
-of finite startup-failure metadata and an ordinary DNS functional check are being
-implemented and independently reviewed in separate worktrees. The next actual
-installation remains necessary.
+New source tracing found an early GeoNode import path to Django GIS loaders
+before the post-inheritance library settings exist. The earlier completed-settings
+witness missed this boundary. A correction that sets the fixed paths before
+import and reasserts them after inheritance passes the new re-entry witness and
+independent review. Finite catalog phase diagnostics are also being reviewed.
+Integrated checks, affected artifact rebuilding and a fresh installation remain
+necessary; these source results do not identify attempt010's precise exception.
 
 [Draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78) still publishes
 `314f11e243a11ed6c494bdd2aa70ef18f4ec049a`; newer local work is not yet pushed.
-[Actual attempt and reconciliation](plan/verification/plt01-lifecycle/evidence-009.json)
-retain these limits. Full PLT-01, P1 and scoped MVP acceptance remain open.
+[Actual attempt and reconciliation](plan/verification/plt01-lifecycle/evidence-010.json)
+retain the diagnostic path corrections and limits. Full PLT-01, P1 and scoped MVP
+acceptance remain open.
 
 The held targeted engine probe remains unexecuted after the earlier platform
 termination. The native Goal still reports blocked; foreground delivery continues.
 Restoring native automatic continuation requires the user control /goal resume
 in the existing thread. [Original diagnosis](plan/verification/runtime-recovery/2026-10-03.json)
-and [latest progress](plan/verification/runtime-recovery/progress-009.json)
+and [latest progress](plan/verification/runtime-recovery/progress-010.json)
 distinguish this platform state from current product work.
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.
