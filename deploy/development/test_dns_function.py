@@ -1,4 +1,5 @@
 """Synthetic wire/identity fixtures only; no engine, socket or live process."""
+from contextlib import nullcontext
 import hashlib
 import io
 import json
@@ -38,7 +39,8 @@ def identities():
         rows.append({'Id': str(index + 2) * 64, 'Name': project + '-' + role,
                      'Image': selection['images'][role]['image_id'],
                      'Config': {'Labels': {'org.ambisgis.install-id': product['install_id'], 'org.ambisgis.role': role}},
-                     'State': {'Running': True}, 'HostConfig': {'Dns': [], 'DnsOptions': [], 'DnsSearch': []},
+                     'State': {'Running': True, 'Pid': 4321, 'StartedAt': 'synthetic-start'},
+                     'OCIConfigPath': '/synthetic/config.json', 'ResolvConfPath': '/synthetic/resolv.conf', 'HostConfig': {'Dns': [], 'DnsOptions': [], 'DnsSearch': []},
                      'NetworkSettings': {'Networks': {network['name']: {'IPAddress': '10.87.0.' + str(index),
                          'IPPrefixLen': 24, 'Gateway': '10.87.0.1', 'NetworkID': network['id'], 'Aliases': [role]}}}})
     return product, selection, network, *rows
@@ -201,7 +203,10 @@ class IdentityTests(InertOnly):
             oci.write_text(json.dumps({'mounts': [mount]}))
             rt = SimpleNamespace(paths={'storage': storage, 'run': base / 'run'})
             row = {'ResolvConfPath': str(resolver), 'OCIConfigPath': str(oci)}
-            self.assertEqual(dns.resolver_bytes(rt, row), RESOLVER)
+            owner = {'root_uid': os.getuid(), 'root_gid': os.getgid()}
+            guard = patch.object(dns, 'gateway_process', side_effect=lambda row: nullcontext(owner))
+            guard.start(); self.addCleanup(guard.stop)
+            self.assertEqual(dns.resolver_bytes(rt, row)[0], RESOLVER)
             resolver.chmod(0o666)
             with self.assertRaises(ValueError): dns.resolver_bytes(rt, row)
             resolver.chmod(0o600); resolver.unlink(); target = base / 'outside'; target.write_bytes(RESOLVER); resolver.symlink_to(target)
@@ -217,11 +222,12 @@ class IdentityTests(InertOnly):
         product, selection, network, database, gateway = identities()
         rt = Mock(config=product, selection=selection)
         rt.processes.return_value = {role: {'process': 'running'} for role in ('database', 'gateway')}
-        rt.engine.side_effect = [(0, json.dumps([row]).encode()) for row in (gateway, database, network)]
-        with patch.object(dns, 'resolver_bytes', return_value=RESOLVER):
-            self.assertEqual(dns.snapshot(rt), dns.expected(product, selection, network, database, gateway, RESOLVER))
+        rt.engine.side_effect = [(0, json.dumps([row]).encode()) for row in (gateway, database, network, gateway)]
+        with patch.object(dns, 'resolver_bytes', return_value=(RESOLVER, {'pid': 4321})):
+            wanted = dns.expected(product, selection, network, database, gateway, RESOLVER)
+            self.assertEqual(dns.snapshot(rt), dict(wanted, gateway_process={'pid': 4321}))
         self.assertEqual(rt.image.call_count, 2); rt.processes.assert_called_once(); rt.network.assert_called_once()
-        self.assertEqual(rt.container_security.call_count, 2)
+        self.assertEqual(rt.container_security.call_count, 3)
 
     def test_observe_checks_program_and_before_after_identity_before_success(self):
         identity = dns.expected(*identities(), RESOLVER)
@@ -242,6 +248,187 @@ class IdentityTests(InertOnly):
             with patch.object(dns, 'snapshot') as snapshot:
                 with self.assertRaises(ValueError): dns.observe(rt)
                 snapshot.assert_not_called(); rt.engine.assert_not_called()
+
+
+class RootMappingTests(InertOnly):
+    def test_exact_caller_relative_root_mapping(self):
+        raw = b'1000 1000 1\n0 100000 1000\n1001 101001 64536\n'
+        self.assertEqual(dns.root_mapping(raw), (100000, [[1000, 1000, 1], [0, 100000, 1000], [1001, 101001, 64536]]))
+        self.assertEqual(dns.root_mapping(b'0 0 4294967295\n')[0], 0)
+        self.assertEqual(dns.root_mapping(b'0 765432 1\n')[0], 765432)
+
+    def test_missing_malformed_overlapping_and_oversized_maps_reject(self):
+        bad = [b'', '0 0 1', b'0 0 1 extra', b'0 0 1\n\n', b'0 -1 1', b'+0 0 1', b'0 0 0',
+               b'0 4294967295 1', b'0 0 4294967296', b'4294967294 0 2', b'1 10 1',
+               b'0 100 2\n1 300 1', b'0 100 2\n2 101 1', b'0 100 1\n0 200 1',
+               b'0 100 1\n1 100 1', b'0 0 1' + b' ' * 4096, b'0 0 1\n' * 33, b'0 0 \xff']
+        for raw in bad:
+            with self.subTest(raw=repr(raw)[:40]), self.assertRaises(ValueError): dns.root_mapping(raw)
+
+    def test_process_stat_rejects_wrong_reused_dead_or_malformed_identity(self):
+        raw = process_stat()
+        self.assertEqual(dns.process_start(raw, 4321), 4567)
+        for value in (raw.replace(b'4321 ', b'4322 ', 1), raw.replace(b') S ', b') Z '),
+                      raw.replace(b') S ', b') X '), process_stat(ticks=0), b'4321 (bad) S 1', b'invalid'):
+            with self.subTest(value=value[:35]), self.assertRaises(ValueError): dns.process_start(value, 4321)
+
+    def test_proc_reader_is_bounded_regular_and_fixed_relative_only(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            directory_fd = os.open(base, os.O_RDONLY | os.O_DIRECTORY)
+            self.addCleanup(os.close, directory_fd)
+            (base / 'uid_map').write_bytes(b'0 100000 1\n')
+            self.assertEqual(dns.proc_bytes(directory_fd, 'uid_map'), b'0 100000 1\n')
+            (base / 'uid_map').write_bytes(b'x' * 4097)
+            with self.assertRaises(ValueError): dns.proc_bytes(directory_fd, 'uid_map')
+            (base / 'uid_map').unlink(); (base / 'uid_map').symlink_to(base / 'missing')
+            with self.assertRaises(OSError): dns.proc_bytes(directory_fd, 'uid_map')
+            with self.assertRaises(ValueError): dns.proc_bytes(directory_fd, '../stat')
+
+
+def process_stat(ticks=4567):
+    return b'4321 (synthetic ) process) S ' + b'0 ' * 18 + str(ticks).encode() + b' 0\n'
+
+
+def namespace_stat(inode):
+    return SimpleNamespace(st_dev=5, st_ino=inode)
+
+
+class GatewayProcessTests(InertOnly):
+    def run_capture(self, *, proc=None, namespaces=None, gateway=None, during=None):
+        row = gateway or {'State': {'Running': True, 'Pid': 4321}}
+        def fixed_read(fd, name):
+            self.assertEqual(fd, 123)
+            return {'stat': process_stat(), 'uid_map': b'0 100000 1000\n1000 1000 1\n',
+                    'gid_map': b'0 200000 1000\n1000 1000 1\n'}[name]
+        def fixed_namespace(path, **kwargs):
+            if path == 'ns/user':
+                self.assertEqual(kwargs, {'dir_fd': 123}); return namespace_stat(20)
+            self.assertEqual(path, '/proc/self/ns/user'); self.assertEqual(kwargs, {}); return namespace_stat(10)
+        with patch.object(dns.os, 'open', return_value=123) as opened, \
+                patch.object(dns.os, 'close') as closed, \
+                patch.object(dns, 'proc_bytes', side_effect=proc or fixed_read), \
+                patch.object(dns.os, 'stat', side_effect=namespaces or fixed_namespace):
+            try:
+                with dns.gateway_process(row) as proof:
+                    if during: during(proof)
+                    result = dict(proof)
+                return result
+            finally:
+                if opened.called:
+                    opened.assert_called_once_with('/proc/4321', os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+                    closed.assert_called_once_with(123)
+
+    def test_exact_root_maps_and_different_namespace_are_bound(self):
+        value = self.run_capture()
+        self.assertEqual((value['pid'], value['start_ticks'], value['root_uid'], value['root_gid']), (4321, 4567, 100000, 200000))
+        self.assertNotEqual(value['user_namespace'], value['observer_user_namespace'])
+
+    def test_same_namespace_or_unavailable_identity_rejects(self):
+        with self.assertRaises(ValueError): self.run_capture(namespaces=lambda *a, **k: namespace_stat(10))
+        with self.assertRaises(PermissionError): self.run_capture(proc=Mock(side_effect=PermissionError('private')))
+        for pid in (True, 0, 1, -1, 2**31, '4321'):
+            with self.subTest(pid=pid), self.assertRaises(ValueError): self.run_capture(gateway={'State': {'Running': True, 'Pid': pid}})
+        with self.assertRaises(ValueError): self.run_capture(gateway={'State': {'Running': False, 'Pid': 4321}})
+
+    def test_process_namespace_and_mapping_changes_reject_and_close(self):
+        for field in ('stat', 'uid_map', 'gid_map'):
+            counts = {}
+            def changed(fd, name):
+                counts[name] = counts.get(name, 0) + 1
+                value = {'stat': process_stat(), 'uid_map': b'0 100000 1', 'gid_map': b'0 200000 1'}[name]
+                if name == field and counts[name] > (2 if name == 'stat' else 1):
+                    return process_stat(9999) if name == 'stat' else b'0 99999 1'
+                return value
+            with self.subTest(field=field), self.assertRaises(ValueError): self.run_capture(proc=changed)
+        calls = {'target': 0, 'observer': 0}
+        def changed_namespace(path, **kwargs):
+            key = 'target' if path == 'ns/user' else 'observer'; calls[key] += 1
+            return namespace_stat(20 if key == 'target' and calls[key] == 1 else 30 if key == 'target' else 10)
+        with self.assertRaises(ValueError): self.run_capture(namespaces=changed_namespace)
+        with self.assertRaises(RuntimeError): self.run_capture(during=Mock(side_effect=RuntimeError('private')))
+
+
+class MappedResolverTests(InertOnly):
+    def fixture(self):
+        temporary = tempfile.TemporaryDirectory(); self.addCleanup(temporary.cleanup)
+        base = Path(temporary.name); storage = base / 'storage'; storage.mkdir()
+        resolver = storage / 'resolv.conf'; resolver.write_bytes(RESOLVER); resolver.chmod(0o600)
+        oci = storage / 'config.json'
+        oci.write_text(json.dumps({'mounts': [{'destination': '/etc/resolv.conf', 'type': 'bind', 'source': str(resolver)}]}))
+        return SimpleNamespace(paths={'storage': storage, 'run': base / 'run'}), {'ResolvConfPath': str(resolver), 'OCIConfigPath': str(oci)}, resolver
+
+    def mapped_stat(self, real, uid=100000, gid=200000, **changes):
+        fields = {name: getattr(real, name) for name in ('st_dev', 'st_ino', 'st_mode', 'st_uid', 'st_gid', 'st_size', 'st_mtime_ns', 'st_ctime_ns')}
+        fields.update(st_uid=uid, st_gid=gid); fields.update(changes)
+        return SimpleNamespace(**fields)
+
+    def test_mapped_root_resolver_accepted_without_observer_uid_substitution(self):
+        rt, row, resolver = self.fixture(); real = resolver.stat()
+        mapped = self.mapped_stat(real)
+        owner = {'root_uid': 100000, 'root_gid': 200000, 'pid': 4321, 'start_ticks': 4567}
+        original_stat = dns.os.stat
+        def selected_stat(path, *args, **kwargs):
+            if Path(path) == resolver: return mapped
+            return original_stat(path, *args, **kwargs)
+        # create=True permits the same actual behavior witness against old source.
+        with patch.object(dns, 'gateway_process', create=True, side_effect=lambda row: nullcontext(owner)), \
+                patch.object(dns.os, 'fstat', return_value=mapped), \
+                patch.object(dns.os, 'stat', side_effect=selected_stat), \
+                patch.object(dns.os, 'getuid', return_value=1000):
+            result = dns.resolver_bytes(rt, row)
+        self.assertEqual(result[0], RESOLVER)
+        self.assertEqual(result[1]['root_uid'], 100000)
+        self.assertEqual(result[1]['root_gid'], 200000)
+
+    def test_wrong_mapped_uid_gid_and_resolver_inode_drift_reject(self):
+        rt, row, resolver = self.fixture(); real = resolver.stat()
+        owner = {'root_uid': 100000, 'root_gid': 200000}
+        for changes in ({'uid': 100001}, {'gid': 200001}, {'st_mode': real.st_mode | 0o002}):
+            with self.subTest(changes=changes), patch.object(dns, 'gateway_process', side_effect=lambda row: nullcontext(owner)), \
+                    patch.object(dns.os, 'fstat', return_value=self.mapped_stat(real, **changes)), self.assertRaises(ValueError):
+                dns.resolver_bytes(rt, row)
+        original_fstat = dns.os.fstat
+        for key, value in (('st_ino', real.st_ino + 1), ('st_size', real.st_size + 1), ('st_mtime_ns', real.st_mtime_ns + 1)):
+            calls = []
+            def changed_fstat(fd):
+                actual = original_fstat(fd)
+                if actual.st_ino != real.st_ino: return actual
+                calls.append(fd)
+                return self.mapped_stat(real, **({key: value} if len(calls) > 1 else {}))
+            with self.subTest(key=key), patch.object(dns, 'gateway_process', side_effect=lambda row: nullcontext(owner)), \
+                    patch.object(dns.os, 'fstat', side_effect=changed_fstat), self.assertRaises(ValueError):
+                dns.resolver_bytes(rt, row)
+            self.assertEqual(len(calls), 2)
+
+    def test_safe_modes_and_exact_path_inode_are_preserved(self):
+        rt, row, resolver = self.fixture()
+        owner = {'root_uid': os.getuid(), 'root_gid': os.getgid()}
+        for mode in (0o400, 0o600, 0o644):
+            resolver.chmod(mode)
+            with patch.object(dns, 'gateway_process', side_effect=lambda row: nullcontext(owner)):
+                self.assertEqual(dns.resolver_bytes(rt, row)[0], RESOLVER)
+        real = resolver.stat(); original_stat = dns.os.stat
+        def changed_path(path, *args, **kwargs):
+            actual = original_stat(path, *args, **kwargs)
+            if Path(path) == resolver and kwargs.get('follow_symlinks') is False:
+                return self.mapped_stat(real, uid=real.st_uid, gid=real.st_gid, st_ino=real.st_ino + 1)
+            return actual
+        with patch.object(dns, 'gateway_process', side_effect=lambda row: nullcontext(owner)), \
+                patch.object(dns.os, 'stat', side_effect=changed_path), self.assertRaises(ValueError):
+            dns.resolver_bytes(rt, row)
+
+    def test_snapshot_rejects_fresh_container_pid_start_or_path_drift(self):
+        for field, replacement in (('Pid', 9999), ('StartedAt', 'changed'), ('ResolvConfPath', '/changed'), ('OCIConfigPath', '/changed')):
+            product, selection, network, database, gateway = identities()
+            after = json.loads(json.dumps(gateway))
+            if field in ('Pid', 'StartedAt'): after['State'][field] = replacement
+            else: after[field] = replacement
+            rt = Mock(config=product, selection=selection)
+            rt.processes.return_value = {role: {'process': 'running'} for role in ('database', 'gateway')}
+            rt.engine.side_effect = [(0, json.dumps([row]).encode()) for row in (gateway, database, network, after)]
+            with self.subTest(field=field), patch.object(dns, 'resolver_bytes', return_value=(RESOLVER, {'pid': 4321})), self.assertRaises(ValueError):
+                dns.snapshot(rt)
 
 
 if __name__ == '__main__':
