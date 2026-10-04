@@ -18,40 +18,46 @@ DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
 managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
 foundation. PLT-01 installation acceptance remains open.
 
-PLT-01 remains In progress after eleven preserved ordinary installation failures.
-The reviewed early GIS-library settings and finite catalog phase diagnostics are
-integrated locally at 5d19a6f4c1d6c5cb6f8973a61e2c19a16c3f01f6, together with
-the bounded QGIS restore correction. Images009/010 are byte-identical; independent
-review verified all 57,004 image members and bundle014's 1,311 runtime files.
-Required checks passed: 630 package, 52 runtime and ten schemas; unchanged
-image/development helper sources retain the 40/121 checks from validation016.
+PLT-01 remains In progress after twelve preserved ordinary installation failures.
+Reviewed source is published at 8c0b7100f4c217f1fd133fe5113ba38a54fd70d1 in
+[draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78), without merge
+or acceptance. Paired images011/012 from f84c4fc1 and bundle015 were independently
+audited. Validation020 passed 639 package, 52 runtime and ten schema checks over
+1,509 unchanged source files; unchanged image/development helper sources retain
+40/121 passing checks from validation019. Earlier failures remain preserved.
 
-Attempt011 passed relocation and fresh initialization. The database became
-ready, with health results [1,0,0], explicit pre-migration readiness exit 0,
-no automatic restarts and final shutdown exit 0. Catalog-init started, exited 1
-and was removed. The CLI retained catalog_setup/module_missing/import;
-the missing module and prior native GIS-library loading remain unproven.
-Serving journeys and DNS checks were not reached. The exact last timer/service
-were not loaded; the owned pause helper, data and network remain preserved.
-A bounded source diagnosis is the next step. No complete helper or DNS cleanup
-acceptance is claimed.
+Attempt012 passed relocation and fresh initialization. The database became ready,
+with health results [1,0,0], explicit readiness exit 0, no automatic restarts and
+final shutdown exit 0. Catalog-init started, exited 1 and was removed by the
+original run. The CLI again retained catalog_setup/module_missing/import;
+neither GDAL-specific diagnostic code was emitted. The missing module and prior
+native GIS-library loading remain unproven. Serving journeys and DNS checks were
+not reached. Exact last timer/service identities were not loaded; the owned
+pause helper, data and network remain preserved. No complete helper or DNS
+cleanup acceptance is claimed.
 
-Validation017's package failure remains retained: isolation encountered a vanished
-Git maintenance lock. Real local Git traces reproduced an automatic-maintenance
-child before the per-fetch correction and none afterward; all 22 publication
-guards passed with isolation and object checks unchanged. This does not identify
-the vanished file's creator retrospectively. Validation018 passed after review.
+Separate private setup-only diagnostics preserved their original failures.
+Diagnostic003 retained a native health timer profile rejection. Its reviewed
+successor used the exact no-healthcheck option with pre-start validation, then
+started and reported missing module distutils through a finite allowlist.
+Native attach and final exit were zero. Owned removal, unchanged 1,627 original
+entries and the existing retained pause were independently verified. This is
+a successful diagnostic observation, not successful application setup or an
+additional full installation attempt.
 
-[Draft PR #78](https://github.com/aloerch/ambisgis-platform/pull/78) publishes
-f57bd0989c7ea7f2b303c49aff5c87dad0e01bfa;
-[source package/schema CI](https://github.com/aloerch/ambisgis-platform/actions/runs/37180911896/job/111373130477)
-passed. An interrupted publication control was reconciled read-only: the normal
-push and intended body update had landed, and only the missing
-[progress comment](https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5977065236)
-was completed, without repeating either mutation. Local 5d19a6f4 is not yet
-published. [Actual attempt and reconciliation](plan/verification/plt01-lifecycle/evidence-011.json)
-preserve all prior failures and limits. Full PLT-01, P1 and scoped MVP acceptance
-remain open; no merge or release is claimed.
+The reviewed image already contains setuptools82.0.1's compatibility provider.
+Its startup hook is outside standard site directories on the custom Python
+path. Explicit activation is being prepared on the isolated
+plt-01/catalog-distutils branch. No completed product repair or original012
+setup success is claimed. The held qualification remains unexecuted.
+
+The normal source push, draft body update and
+[progress comment](https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5977728860)
+are recorded. [Source package/schema CI](https://github.com/aloerch/ambisgis-platform/actions/runs/37186074236/job/111388130542)
+passed at the published head. A preceding bundle-pin control mismatch failed
+before source write, was reconciled, and is retained as a control failure, not a
+product test failure. [Actual attempt and reconciliation](plan/verification/plt01-lifecycle/evidence-012.json)
+preserve the limits. Full PLT-01, P1 and scoped MVP acceptance remain open.
 
 The held targeted engine probe remains unexecuted after the earlier platform
 termination. The native Goal still reports blocked, with 12,420,153 tokens used
@@ -60,7 +66,7 @@ The original terminal category was cyber_policy; its exact trigger remains
 unknown. Restoring native automatic continuation requires the user control
 /goal resume in the existing thread.
 [Original diagnosis](plan/verification/runtime-recovery/2026-10-03.json) and
-[latest progress](plan/verification/runtime-recovery/progress-011.json) distinguish
+[latest progress](plan/verification/runtime-recovery/progress-012.json) distinguish
 this platform state from current product work.
 DB-01 passed 22 real database tests and three schema guards again from the
 exact merged source; all 41 tracked files and 72 runtime artifacts were verified.

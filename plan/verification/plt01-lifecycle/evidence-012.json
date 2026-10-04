@@ -1,0 +1,218 @@
+{
+  "all_helpers_gone": false,
+  "application_diagnostic": {
+    "candidate": "004",
+    "effects_review_sha256": "72632791ef717d5aacee87f79a128b2504d4e3dc91c787bc8a650ffbd8fde8f7",
+    "final_state": {
+      "ExitCode": 0,
+      "Pid": 0,
+      "Running": false,
+      "Status": "exited"
+    },
+    "full_installation_acceptance": false,
+    "held_probe_executed": false,
+    "limits": [
+      "Exact intrinsic missing-module name was observed during setup-only execution with the reviewed image and copied inputs.",
+      "This is not successful Django setup or installation. Exact first importing frame and original012 exception object were not observed.",
+      "Only the owned diagnostic container was removed; existing pause, original data and network remain retained.",
+      "004 used no-healthcheck and exact zero-health projection; normal product health timers were unchanged."
+    ],
+    "native_start_exit": 0,
+    "new_inert_checks": 47,
+    "observation": {
+      "missing_module": "distutils",
+      "name_source": "builtin_ImportError.name",
+      "schema_version": 1,
+      "status": "missing_module_observed"
+    },
+    "original_entries": 1627,
+    "original_persistent_state_unchanged": true,
+    "owned_diagnostic_cleanup_verified": true,
+    "reconciliation_sha256": "beb440e4dc03f577ccd9f485f629774cc3e2407080b35c41b9a255b85e0220c7",
+    "result_sha256": "18024a6307b606a2a9db0b2d0e63f92885b4ee524e02bcce789c5b41f6311a57",
+    "setup_completed": false,
+    "source_review_sha256": "a2925f391f63eb889a5862358463a2e5a50d6c32fedf29dfc6b321992c943d40",
+    "status": "completed_missing_module_observation",
+    "unchanged_prior_capture_cleanup_checks_reused": 109
+  },
+  "application_diagnostic_history": [
+    {
+      "candidate": "002",
+      "guard_reconciliation": "Not yet bound in this proposal; the setup control receipt establishes only its owned cleanup and original-state comparison.",
+      "independent_review_sha256": "80d71b2a87203b0b7bfadb63babacf15d754fd1dcdf0cc3b7b19c19b57db1557",
+      "later_reconciliation_sha256": "e51e9780785f99e2b2349e5a8c99be0d6058589bdb1ada6ddf15b3a2e5c7433e",
+      "limits": [
+        "Original controller discarded native stderr and owned State.Error; no actual start cause established.",
+        "Successful removal and original-state equality do not imply complete installation helper/DNS cleanup."
+      ],
+      "missing_module_identity_observed": false,
+      "native_start_exit": 125,
+      "observation": null,
+      "original_candidate_retained": true,
+      "original_persistent_state_unchanged": true,
+      "owned_diagnostic_cleanup_verified": true,
+      "result_sha256": "07e6c35e0eef10848c90ac9e32c30568a1e674fcbc8980fcb1146ba3b44cbd99",
+      "runtime_execution_attempted": true,
+      "scope": "Separate finite private ordinary application setup diagnostic; no application report. Not an installation attempt or held engine/security qualification.",
+      "status": "native_start_failed_without_application_report",
+      "stderr_bytes": 158,
+      "stdout_bytes": 0,
+      "successor_freeze_sha256": "d47aded6dcf2bb68cc7673ca91ada1622608843fb895300969b99bdea6df89c0"
+    },
+    {
+      "candidate": "003",
+      "interval_limit": "Default30s is source-derived; no raw Config.Healthcheck was retained.",
+      "native_start_exit": 125,
+      "observation": null,
+      "private_error_text_published": false,
+      "reconciliation_sha256": "66f9ac682c314562a42b81fa93be2899ac490aef405c1243c4e68a1e315b4a16",
+      "result_sha256": "f3d2878447c468538e2d259d5c2022157151a6a090cb970ea4ee284c6f83d061",
+      "review_sha256": "6e59e1599fa2812c39b798f4424ace5aa24bd696895d1200260296245363502c",
+      "source_defined_cause": "owned health timer profile rejection"
+    }
+  ],
+  "attempts": 12,
+  "candidate_repair": "Implement and independently review explicit activation of the already retained setuptools distutils provider, with origin/preload checks and a pinned Python3.12 failing/fixed witness; then run integrated checks and affected image, bundle and ordinary installation tests.",
+  "cleanup_limits": "Exact last persisted database timer/service reported not loaded. Owned pause 666662/start 9580232, data and network deliberately retained; no complete helper or DNS cleanup acceptance.",
+  "data_deleted": false,
+  "database_observation": {
+    "automatic_restarts": 0,
+    "event": "database_ready",
+    "explicit_health_exec_exit": 0,
+    "final_exit": 0,
+    "final_state": "stopped",
+    "health_exit_codes": [
+      1,
+      0,
+      0
+    ]
+  },
+  "diagnosis": [
+    "Images011/012 and bundle015 were independently audited against exact reviewed source. Both image builds match byte-for-byte; native runtime binaries remain unchanged.",
+    "Attempt012 again reports catalog_setup/module_missing/import; neither finite GDAL-specific code was emitted. This does not identify the missing module or prove successful native GIS loading. The removed initializer did run and fail, as its retained native events establish.",
+    "Exact retained dependency-source scanning found six pkg_resources import sites in optional/fallback, sample, benchmark or test contexts; no uncaught django.setup dependency was demonstrated. No speculative package change is adopted.",
+    "The first private setup replay candidate remained unexecuted after independent review found missing tmpfs projection and exit-consistency guards. Independently reviewed successor002 passed create/pre-start projection but native start returned125 with zero stdout bytes and no application report. Its exact owned container was removed, absence verified and original1627-entry snapshot unchanged. This separate diagnostic failure supplies no missing-module identity and is not a thirteenth installation attempt.",
+    "Independent static inspection of actual catalog OCI bytes confirms the configured Python symlink and its interpreter target exist. An absent-entrypoint hypothesis is refuted; executable presence does not establish runtime loading or explain native start125.",
+    "A prior bundle pin application control failed before writing source because its expected review-status literal differed from the new receipt. The failure was reconciled, then the exact status expectation was corrected; it is not a product test failure. Earlier017 Git restore failure and its reviewed per-fetch maintenance fix remain preserved in prior evidence.",
+    "Diagnostic003 retained a source-defined health timer rejection. Reviewed004 corrected only its health-disable option plus exact projection and observed missing distutils with attach0/final exited0. Independent source assessment confirms the retained setuptools82.0.1 provider and unprocessed startup hook on the custom Python path. This snapshot claims no product correction or setup acceptance."
+  ],
+  "dns_cleanup_verified": false,
+  "dns_identity_verified": false,
+  "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+  "failures_retained": 12,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "image_source_head": "f84c4fc1a91485385063ec1153b27cc0eedc53d9",
+  "last_frozen_bundle_sha256": "67510e1348ef232e842e5bc38412f6e4a050772a8dced7b6433513c0b0f2b3c8",
+  "last_install_id": "6b88264e-9b37-4a99-bb79-a6ce400b596c",
+  "last_state": "Relocation and fresh init passed. Database became ready; health records [1,0,0], explicit readiness exit 0, no automatic restarts and final stop exit 0. Catalog initializer started, exited 1 and was removed by the original run. The CLI again preserved catalog_setup/module_missing/import; neither GDAL-specific code was emitted. The missing module and prior native GIS loading remain unproven. Serving journeys and DNS checks were not reached.",
+  "observation_corrections": [
+    "Current initializer absence does not mean it never ran; exact native events establish start, exit1 and original --rm removal.",
+    "Neither GDAL-specific code was emitted; this narrows the finite observed diagnostic only, without establishing native-library load success."
+  ],
+  "observed_at": "2026-10-04T09:06:50.263745+00:00",
+  "previous_evidence": "plan/verification/plt01-lifecycle/evidence-011.json",
+  "private_reference_hashes": {
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/bundle015-assembly.log": "f081a4ab788919b8010275d4d779c5ca1cfc3fa65bac1c552784b5de27e94421",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/bundle015-pin-control-failure-reconciliation.json": "73b369761a1dc2b87beae6e1b7a7e375a579cb6b0cbf5d7988ec27dd4ee6937c",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/plt01-draft-publication-attempts/7ffeb7ce-6da4-41b0-8b9c-bcb382ab31ac/result.json": "bdce646825fad26492cbb596c5725174b6f6f9ae67cdb719afbfb7dae5107a2d",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/recovery-20261003/pr78-source8c0b710-checks.json": "dc2213ea82a291f809a122e0472bd3bdde56c26663ba251693b9078f8489fe94",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-adoption012-control-review-001/result.json": "663aa46a7ea1d0e710eb4eead9db6f7c106a09b6bc24dbe7a476b66be6c3a341",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-import-diagnostics-review-001/result.json": "bab67b535af33f8e3f337091bddfc78bac1dbdb9d08b99d56b7d708642c966b1",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-import-integration-review-001/result.json": "b0d52c64c69dfae8f002a1f7d2fb8a33a70246c0f6e1c263d5d1b07a29634bc7",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-setup-replay-review-001/result.json": "6db14340b4e9a9f3a06ba676fee03ddacc6796fb1af810655f300571daf29096",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-setup-replay-review-002/result.json": "80d71b2a87203b0b7bfadb63babacf15d754fd1dcdf0cc3b7b19c19b57db1557",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-setup-replay-review-003/result.json": "351cb5d77f9e7a2651c8dd85e77601de36017f4a946b96312ed63921f47a53cb",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-setup-replay-review-004/result.json": "a2925f391f63eb889a5862358463a2e5a50d6c32fedf29dfc6b321992c943d40",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-setup-replay002-entrypoint-review-001/result.json": "cc853ac7a90010bc7974ad5732f0185b4257593816020417c50ef5b26e44948e",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-setup-replay002-reconciliation-review-001/result.json": "232766ee5dad3e2351cb42585e19240d9542ae7e0363d73c3dc5ae31b22b0ec9",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-setup-replay003-reconciliation-review-001/health-flag-source-contract.json": "292ebf5f6c57a43b7a72bb7588a5179e0b6824f9b977fe09f9030ba71d5c7c6a",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-setup-replay003-reconciliation-review-001/result.json": "6e59e1599fa2812c39b798f4424ace5aa24bd696895d1200260296245363502c",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-setup-replay004-reconciliation-review-001/result.json": "72632791ef717d5aacee87f79a128b2504d4e3dc91c787bc8a650ffbd8fde8f7",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-distutils-activation-options-review-001/result.json": "b320d82cf7a173890f83db36f17f207b5d234e60d7965c207dfdff6a975a46a9",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-evidence012-source-root-review-001/result.json": "425f993c056046b06ac097f5eabdb8253bbcee75d6d9cffa6c7e9e320f90e3cf",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-images011-independent-review-001/result.json": "ec8e4af355e410b3a4c62a17be0f4b7642fa5c91eedef202ddd0d299d366c1dd",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-lifecycle012-reconciliation-review-001/result.json": "95a2f9987617fa93a2f71b6249d4211e544e7557a94ccbc3e96907001b4b2790",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-publication-history-review-017/result.json": "5db07858c42a7b0b0f5c2a7469797280bb5210c1c6172d0dcbd7c7b56a0f2546",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-publication-history-review-018/result.json": "2dc208a77a158a9f767361e36475286d4192cb7e079aa8267f6eaf8de0fd6e0e",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-runtime-bundle015-review-001/result.json": "6ca5f1e5284f681dfcbf945d06ed249ec14e1adcd55408824731c2894314c80a",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-015/assembly-result.json": "9aa24bcc12058f7d0054f227127af831e8557a914d41c0ae7df0e34cdbca7d7f",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-015/bundle.json": "67510e1348ef232e842e5bc38412f6e4a050772a8dced7b6433513c0b0f2b3c8",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-015/runtime-files.json": "fb615c125ce5f6f9b65e16cb7e6b4470e89a38d922850ae72f8d3be381259446",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-setup-replay-001/freeze.json": "22f9785015890150b57d950b5bfea4d737570d847cf26832bb49c2e27e475c41",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-setup-replay-002/execution/result.json": "07e6c35e0eef10848c90ac9e32c30568a1e674fcbc8980fcb1146ba3b44cbd99",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-setup-replay-002/freeze.json": "d47aded6dcf2bb68cc7673ca91ada1622608843fb895300969b99bdea6df89c0",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-setup-replay-002/inert-results.json": "783e8ffd0e2ddc28d38e7d656d20b779bf5b5ca69e52a5586b867d2fa446a3b6",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-setup-replay-002/reconciliation.json": "e51e9780785f99e2b2349e5a8c99be0d6058589bdb1ada6ddf15b3a2e5c7433e",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-setup-replay-003/execution/result.json": "f3d2878447c468538e2d259d5c2022157151a6a090cb970ea4ee284c6f83d061",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-setup-replay-003/reconciliation.json": "66f9ac682c314562a42b81fa93be2899ac490aef405c1243c4e68a1e315b4a16",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-setup-replay-004/execution/result.json": "18024a6307b606a2a9db0b2d0e63f92885b4ee524e02bcce789c5b41f6311a57",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-setup-replay-004/reconciliation.json": "beb440e4dc03f577ccd9f485f629774cc3e2407080b35c41b9a255b85e0220c7",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-pair-005/result.json": "d52cfedb986a01d87c77f1ed5b4c84a2cf634473d8d84da721606f0e7386dcf1",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/images-011/result.json": "d0df076723d9f1e4daffacda4fc10c360a6323c81b7ac75811ebd763d4a90f38",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/images-012/result.json": "d0df076723d9f1e4daffacda4fc10c360a6323c81b7ac75811ebd763d4a90f38",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-012/read-only-diagnosis-001/mounted-database-markers.json": "37c234d4f120e3f25527b7a10cc89af09e9d77e7a0cdd6a849607ba002449d62",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-012/read-only-diagnosis-001/result.json": "d064a707d59654bb0e2385ec19f53a4db4ec24b986e8cc0a07c0744109103724",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-012/read-only-state-001/result.json": "2bd99ffe3ea66faf2d687175312dc4250b76626fc62358c57671fc260e6d4ed2",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-012/read-only-timer-001/result.json": "6d603ad78428f343ded9b474b137b16431252d5ca181a4ef9a8eef5b3f5b4854",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-012/reconciliation.json": "94a014e76535d9e82d9315aea09a4d296990bd04147d4a60c1a696aae7e7c350",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-012/result.json": "a2474d6389bb237a7e84b4b1620f4f869c1320551cefb575d8597eaf79066347",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-017/package.log": "7406982e4fbb80e4e57021fd97bd0ddcbb5f29f7e5a2d5e743a1cdcc0a9db01f",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-019/development.log": "c73e321d49f52c0a19decb283b70c38040a7e9eeee4199feaccd60eedc4cfb53",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-019/image_helpers.log": "69eb67e8317a302499d37edf8673dcda7ec19fea5a2e8b1237a5fe9101cc67c8",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-019/result.json": "3ef2dc652c8c5ed861562b86837c797fad5066ee5fb20243ad1c48bce7060e16",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-020/package.log": "85dcbdd45a790425075c94eb97d6eb3a975ae7b9b0ca7e3f2ae1cda4e9996a42",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-020/result.json": "ef2d02124c01676c6c31410baec784660060f3bf848338f7f780a47a5409d123",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-020/runtime.log": "b7142d7397aec931b95ca4ab251270749c4df322cbdb43c80c447613d432cb84",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-020/schemas.log": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23"
+  },
+  "publication": {
+    "body_sha256": "a6b6edffda9e699e64132a2a0103e12598876c1536a887df4e8f8e080b3f6fe0",
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "head": "8c0b7100f4c217f1fd133fe5113ba38a54fd70d1",
+    "issue_project_state_changed": false,
+    "merged": false,
+    "normal_push_and_body_update_confirmed": true,
+    "package_schema_ci": {
+      "conclusion": "success",
+      "head": "8c0b7100f4c217f1fd133fe5113ba38a54fd70d1",
+      "job": "https://github.com/aloerch/ambisgis-platform/actions/runs/37186074236/job/111388130542",
+      "observed_at": "2026-10-04T07:33:50.650274+00:00",
+      "scope": "Source package/schema CI; not native installation acceptance."
+    },
+    "progress_comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5977728860"
+  },
+  "published_head": "8c0b7100f4c217f1fd133fe5113ba38a54fd70d1",
+  "reconciled": true,
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-012.json",
+      "sha256": "a2474d6389bb237a7e84b4b1620f4f869c1320551cefb575d8597eaf79066347"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-012.json",
+      "sha256": "94a014e76535d9e82d9315aea09a4d296990bd04147d4a60c1a696aae7e7c350"
+    }
+  ],
+  "remaining": "Actual catalog/render/gateway initialization, private authorization/map/query/metadata, persistence/recovery, DNS transport/identity/lifetime, original network/OS/concurrency/log/helper criteria and held targeted qualification. PLT-01, P1 and full MVP remain open.",
+  "runtime_executed": true,
+  "schema_version": 1,
+  "source_checks": {
+    "development": 121,
+    "image_helpers": 40,
+    "package": 639,
+    "runtime": 52,
+    "schemas": 10,
+    "scope": "Validation020 matches all 1509 source bytes committed as 8c0b7100; unchanged image/development helper sources retain 40/121 checks from validation019. Prior017 failure, QGIS maintenance correction and all earlier receipts remain retained.",
+    "skips": 0,
+    "source_files": 1509
+  },
+  "source_head": "8c0b7100f4c217f1fd133fe5113ba38a54fd70d1",
+  "startup_failure": {
+    "category": "import",
+    "code": "module_missing",
+    "stage": "catalog_setup"
+  },
+  "status": "In progress",
+  "task": "PLT-01"
+}
