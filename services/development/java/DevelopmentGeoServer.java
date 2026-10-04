@@ -14,6 +14,74 @@ import org.eclipse.jetty.webapp.WebAppContext;
 
 /** Persistent developer application; all engines load from the exact retained WAR. */
 public final class DevelopmentGeoServer {
+    enum Phase {
+        SERVER_START, SERVER_STARTED, TRANSPORT_START, TRANSPORT_COMPLETE,
+        WAR_RECHECK, INITIALIZED_MARKER, SERVER_STOP, SERVER_STOPPED, MAIN_COMPLETE
+    }
+
+    @FunctionalInterface
+    interface Action { void run() throws Exception; }
+
+    /** Finite initialization evidence only. Never inspect messages, causes or paths. */
+    static final class Progress {
+        private final boolean enabled;
+        private final java.util.function.Consumer<String> sink;
+        private Phase phase = Phase.SERVER_START;
+
+        Progress(boolean enabled, java.util.function.Consumer<String> sink) {
+            this.enabled = enabled;
+            this.sink = sink;
+        }
+
+        private void emit(String value) {
+            if (!enabled) return;
+            // A diagnostic sink failure must not change native start/stop or
+            // replace the application's exception. Only this emission is caught.
+            try { sink.accept(value); } catch (RuntimeException | Error unavailable) { }
+        }
+
+        void at(Phase value) {
+            phase = value;
+            emit("{\"event\":\"geoserver_initialization_phase\",\"phase\":\"" + phase.name() + "\"}");
+        }
+
+        void failed(Throwable failure) {
+            Class<?> type = failure.getClass();
+            String kind = type == java.lang.reflect.InvocationTargetException.class ? "InvocationTargetException"
+                    : type == java.io.IOException.class ? "IOException"
+                    : type == IllegalStateException.class ? "IllegalStateException"
+                    : type == IllegalArgumentException.class ? "IllegalArgumentException"
+                    : type == NullPointerException.class ? "NullPointerException"
+                    : type == RuntimeException.class ? "RuntimeException"
+                    : type == Exception.class ? "Exception" : "OTHER";
+            emit("{\"event\":\"geoserver_initialization_failure\",\"phase\":\"" + phase.name()
+                    + "\",\"exception_class\":\"" + kind + "\"}");
+        }
+    }
+
+    /** Keep the existing finally-stop and exception precedence, independently testable. */
+    static void lifecycle(Progress progress, Action start, Action body, Action stop) throws Exception {
+        try {
+            progress.at(Phase.SERVER_START);
+            start.run();
+            progress.at(Phase.SERVER_STARTED);
+            body.run();
+        } catch (Exception | Error failure) {
+            progress.failed(failure);
+            throw failure;
+        } finally {
+            progress.at(Phase.SERVER_STOP);
+            try {
+                stop.run();
+                progress.at(Phase.SERVER_STOPPED);
+            } catch (Exception | Error failure) {
+                progress.failed(failure);
+                throw failure;
+            }
+        }
+        progress.at(Phase.MAIN_COMPLETE);
+    }
+
     private static void transport(ClassLoader loader, boolean initialize) throws Exception {
         Class<?> extensions = loader.loadClass("org.geoserver.platform.GeoServerExtensions");
         Class<?> api = loader.loadClass("org.geoserver.geofence.services.RuleAdminService");
@@ -121,22 +189,26 @@ public final class DevelopmentGeoServer {
             }
         };
         server.setHandler(new HandlerList(health, app));
-        try {
-            server.start();
+        Progress progress = new Progress(initialize, System.err::println);
+        lifecycle(progress, server::start, () -> {
             if (!app.isAvailable() || app.getUnavailableException() != null) throw new IllegalStateException("native engine unavailable");
             Path extracted = app.getBaseResource().getFile().toPath().toRealPath();
             if (!extracted.startsWith(state.resolve("webapp").toRealPath())) throw new IllegalStateException("external exploded WAR reused");
             ClassLoader loader = app.getClassLoader();
             Thread.currentThread().setContextClassLoader(loader);
+            progress.at(Phase.TRANSPORT_START);
             transport(loader, initialize);
+            progress.at(Phase.TRANSPORT_COMPLETE);
+            progress.at(Phase.WAR_RECHECK);
             if (!hash(war).equals(config.getProperty("war_sha256"))) throw new IllegalStateException("owned WAR changed during start");
             if (initialize) {
                 Files.writeString(state.resolve("initialized"), install, StandardOpenOption.CREATE_NEW);
+                progress.at(Phase.INITIALIZED_MARKER);
             } else {
                 policy.activate();
                 System.out.println("AMBISGIS_ENGINE_READY install_id=" + install);
                 server.join();
             }
-        } finally { server.stop(); }
+        }, server::stop);
     }
 }
