@@ -1,0 +1,79 @@
+{
+  "current_task": {
+    "branch": "plt-01/development-install",
+    "delivery": "In progress",
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "id": "PLT-01",
+    "local_increment": "Explicit direct-DNS bundle capability and attempt007 evidence; implementation and independent review in progress",
+    "published_head": "4afba4c213a094344b40a665edffb531e4f76ff5",
+    "repository": "aloerch/ambisgis-platform",
+    "repository_id": 1376927351,
+    "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree"
+  },
+  "held_targeted_probe_executed": false,
+  "installation_accepted": false,
+  "integrator": "/root",
+  "last_completed": {
+    "checks": {
+      "development_helpers": 64,
+      "native_health_timer_pure_cases": 14,
+      "package": 573,
+      "runtime": 51,
+      "schema_examples": 10
+    },
+    "implementation": "Owned native health timer, selected path validation, concurrent-installation helper; exact source4af published to existing draft",
+    "latest_acceptance": "DB-03 merged13fb7c9bff9d011838b768802a6ab63f932bd228,86 fresh postmerge checks; prior FND/DB acceptances preserved",
+    "latest_actual_installation": "Seventh ordinary attempt passed relocation/init, then failed DNS scope launch; no application journey ran"
+  },
+  "mvp_complete": false,
+  "native_goal": {
+    "automatic_continuation": "Not active while native Goal blocked",
+    "observed_at": "2026-10-04T01:24:43.831177+00:00",
+    "quota_status": "unknown",
+    "remaining_tokens": null,
+    "reported_tokens_used": 12420153,
+    "source": "Fresh get_goal response in this foreground turn",
+    "status": "blocked",
+    "token_budget": "not configured in returned state",
+    "user_action": "Use /goal resume in this same thread for native automatic continuation"
+  },
+  "next_action": "Review/test finite direct-DNS capability and read-only observer, assemble/audit a fresh bundle, then execute a new ordinary installation. No blind retry of failed007.",
+  "observed_at": "2026-10-04T01:24:43.831177+00:00",
+  "observed_terminal": {
+    "at": "2026-10-03T13:28:22.795Z",
+    "cause_confidence": "High for terminal error category; unknown exact trigger/internal stalled-state transition",
+    "code": "cyber_policy",
+    "exact_triggering_content": "unknown"
+  },
+  "owner_action_required_for_current_safe_work": false,
+  "reconciliation": {
+    "acknowledged_by_completed_run": "c40949e7-eec9-4d21-863b-48214299297b",
+    "all_helpers_gone": false,
+    "exact_health_timer_service_not_loaded": true,
+    "failed_run_id": "e1ba44a7-e489-487c-add8-c64f447baa1f",
+    "path": "plan/verification/plt01-lifecycle/reconciliation-007.json",
+    "retained_owned_pause": true,
+    "sha256": "e9f2d8ee1b825cb5e7928c888d6bb6e37bb947cd7b2c6fe99221204e3252e884"
+  },
+  "references": {
+    "bundle010_review_sha256": "8efd69a639ec38fbae75a4b1841041cc1f984a816c2a3095e707bb57cca2437f",
+    "direct_dns_design_review_sha256": "c1abf65706c28a83cfa3d9c73d1b2b0b8cd4a3adf3fe02179e1ebab87186d861",
+    "lifecycle": "plan/verification/plt01-lifecycle/evidence-007.json",
+    "publication_sha256": "1b3280e96e3cccde42dd808bf90c66e2ada3a6d07765134cc6b2210b91f57013",
+    "source_validation_sha256": "882c16f78727e0e417718cc7bf81c9461e1d6353fb1b3c05e16737d7c39629bb"
+  },
+  "remote_changes": [
+    "Normal reviewed task-branch push8f5 to4af",
+    "Existing draft PR78 body updated",
+    "PLT-01 progress comment5975318567; issue/Project state unchanged"
+  ],
+  "schema_version": 1,
+  "scope": "Foreground delivery checkpoint; saved evidence is not a live worker or automatic continuation",
+  "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+  "worker_observations": {
+    "db02_validation": "Implementing source-bound read-only DNS process/cleanup observation helper in separate local worktree",
+    "fnd03_identity": "Implementing optional direct-DNS profile in separate local worktree",
+    "fnd04_prototype": "Earlier platform termination; held task not replayed",
+    "root": "Foreground integration and attempt007 evidence"
+  }
+}

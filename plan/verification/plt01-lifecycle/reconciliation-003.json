@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "run_id": "eae02317-f166-4437-9e8c-774e0241f0e6",
+  "scope": "Completed ordinary lifecycle003; no remote writes attempted",
+  "receipt_sha256": "877201072ddd0f2901b3016a05475b312faa326ce2283502d4fe1345e2d6b677",
+  "live_owned_containers": [
+    {
+      "id": "1a399448c4c6ca60d57983d12347a5b923163e2b90dd705ee3f4289bcfcec91e",
+      "name": "ambisgis-a424b33a233741b6b673917ddf5fbdfd-database",
+      "status": "created",
+      "running": false,
+      "pid": 0
+    }
+  ],
+  "live_matching_processes": [],
+  "wrapper_and_child_absent": true,
+  "persistent_data_preserved": true,
+  "shutdown_receipt_remains_incomplete": true,
+  "remaining_work": "Investigate missing libpathrs loader dependency and exact native tmpfs normalization. Retain stopped container and owned network; do not represent strict profile acceptance as passed.",
+  "reconciled": true,
+  "preparation_note": "First read-only ps used an unsupported alternative argv and was rejected before engine execution; corrected to exact existing approved scoped form."
+}

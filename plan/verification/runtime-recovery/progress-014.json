@@ -1,0 +1,111 @@
+{
+  "completed_source_and_artifact_boundary": "Reviewed OAuth correction; validations023/024, images015/016 and bundle017.",
+  "component_repair": {
+    "base": "2bc52ba9f5302b5b969f3bda2315eeafc1e7dd33",
+    "branch": "plt-01/geoserver-init",
+    "changes": [
+      "Populate the native jai alias with retained ImageProcessingInfo defaults.",
+      "Remove unsupported PATCH only from the native REST admin rule; the mandatory owned request filter remains unchanged.",
+      "Emit finite initialization phases and exact allowlisted exception classes without messages, paths or cause traversal; preserve finally-stop, timeouts and exception precedence."
+    ],
+    "combined_independent_review": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-geoserver-init-source-review-001/result.json",
+      "sha256": "69f31ec580354659a7d4f20227c4a1debbb3c6ca123a3a34329fb4efb0017208"
+    },
+    "component_commit": "13f3084a83c5b45a901a74d03be67e9b7c612531",
+    "files": 5,
+    "integration_receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integrated-geoserver-init-source-001.json",
+      "sha256": "809fc721ad91fbdf489d3d1a967523d2068af01e52eb490a027f798a6638575b"
+    },
+    "java_checks": {
+      "class_files": 8,
+      "compiler_and_checks_exit_codes": [
+        0,
+        0
+      ],
+      "finite_initialization_diagnostic_checks": 66,
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/java-003/result.json",
+        "sha256": "0772c9ecbc1151ef45841d374a1853e50457fe8a9659510504a98df5f385a330"
+      },
+      "request_guards": 63,
+      "runtime_application_started": false
+    },
+    "published": false,
+    "python_checks": {
+      "additional_coverage_from_replay": false,
+      "baseline_failures": 2,
+      "cases": 4,
+      "fixed_passes": 4,
+      "root_independent_replay_same_cases": true
+    },
+    "root_integrated": true,
+    "root_merge": "d6d49ca26ba5209f72b0cbc2baf986af081f494e",
+    "runtime_repair_proven": false,
+    "source_freeze": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/geoserver-init-source-001/freeze.json",
+      "sha256": "5808f1d847af4697ef60a892532cb7df75b768eaa058fadfaa1e6738e81d0b29"
+    }
+  },
+  "current_task": {
+    "branch": "plt-01/development-install",
+    "delivery": "In progress",
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "id": "PLT-01",
+    "local_head": "d6d49ca26ba5209f72b0cbc2baf986af081f494e",
+    "published_head": "2bc52ba9f5302b5b969f3bda2315eeafc1e7dd33"
+  },
+  "foreground_delivery": "active",
+  "held_targeted_probe_executed": false,
+  "installation_accepted": false,
+  "last_completed_accepted_task": {
+    "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
+    "implementation": "Typed branch snapshots and durable private creation/activation, finite quotas and lifecycle metadata",
+    "limitations": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open.",
+    "merge": "DB-03 PR13 13fb7c9bff9d011838b768802a6ab63f932bd228",
+    "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified."
+  },
+  "latest_application_diagnostic": {
+    "configuration_defects_observed": 2,
+    "name": "geoserver-init-replay-001",
+    "original014_cause": "unobserved",
+    "status": "FAILED",
+    "timeout_location": "unresolved"
+  },
+  "latest_ordinary_attempt": {
+    "attempt": 14,
+    "catalog_initialization_completed": true,
+    "failure": "entrypoint/timeout/timeout",
+    "serving_acceptance": false,
+    "status": "FAILED"
+  },
+  "mvp_accepted": false,
+  "native_goal": {
+    "automatic_continuation": "Not active while native Goal blocked",
+    "observed_at": "2026-10-04T11:11:31Z",
+    "remaining_tokens": null,
+    "reported_time_used_seconds": 30612,
+    "reported_tokens_used": 12420153,
+    "source": "Root get_goal/clock tool testimony supplied to this worker; no independent Goal query or raw transcript copy.",
+    "status": "blocked",
+    "token_budget": "not configured in returned state",
+    "user_action": "/goal resume in this same thread is a user action for native automatic continuation only; foreground delivery continues."
+  },
+  "next_action": "Run combined checks on the reviewed GeoServer source integration, rebuild affected images/bundle, and make a separately reviewed fresh ordinary installation attempt. No timeout increase or forced JVM exit is proposed.",
+  "observed_at": "2026-10-04T11:55:10.247525+00:00",
+  "owner_action_required_for_current_safe_work": false,
+  "previous_progress": "progress-013.json",
+  "references": {
+    "evidence-014.json": {
+      "path": "plan/verification/plt01-lifecycle/evidence-014.json",
+      "sha256": "d2783ff1186878b737980df671e8167b38ab43ab0a028a719fe07d3181ab6125"
+    },
+    "geoserver-diagnostic-001.json": {
+      "path": "plan/verification/plt01-lifecycle/geoserver-diagnostic-001.json",
+      "sha256": "fd7fdd2e9f4b05428167a75e7f81d8e2368a9fbb51de7f9f311494df89ec5951"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Foreground delivery snapshot, not native Goal automatic continuation"
+}

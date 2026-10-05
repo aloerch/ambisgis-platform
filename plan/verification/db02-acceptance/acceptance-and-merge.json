@@ -1,0 +1,47 @@
+{
+  "task": "DB-02",
+  "repository": "aloerch/ambisgis-geodb",
+  "issue": 3,
+  "delivery": "Merged",
+  "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/3#issuecomment-5972547940",
+  "merge": "c963e2baae1901935b25b0d436e988b47e153eb8",
+  "head": "f023ea5548a32d6821830c04888a4cfd7dcab854",
+  "pr": "https://github.com/aloerch/ambisgis-geodb/pull/12",
+  "postmerge": {
+    "merge": "c963e2baae1901935b25b0d436e988b47e153eb8",
+    "reviewed_head": "f023ea5548a32d6821830c04888a4cfd7dcab854",
+    "runtime": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-db02-001/acceptance.json",
+      "sha256": "905e78f17e24cd0bb879d9e98398032a0d70474164c6a1f0a65aa16a3ac17d0b"
+    },
+    "regression": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-db01-001/acceptance.json",
+      "sha256": "ab78f3acdeedd44c833e7544c91dcc48276b62b4c35e4028bdee8443f64c7c81"
+    },
+    "postmerge_review": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db02-postmerge-review-c963e2b.json",
+      "sha256": "dfe3d16b18a5e49543d70659d88a3c08c674b11b611f69e01d6fcb1f8e8e76dc",
+      "reviewer": "/root/db02_validation"
+    },
+    "implementation_review": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db02-final-review-f023ea5.json",
+      "sha256": "e9eb333f8f178b4105f5f40c589e73688ea20f6c82f451872e5534c60519ac3b"
+    },
+    "control": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-control-001/result.json",
+      "sha256": "64e90290764c68fce79dd207ff515db5d8229c7bbfabe83e8a40444eaa95787c"
+    },
+    "body": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-acceptance-body.md",
+      "sha256": "aed91d2af6cf20db8b5174a8158469f85312f7e5a090477019d33412bc5af401"
+    }
+  },
+  "items": 93,
+  "fields": 24,
+  "views": 7,
+  "repositories": 15,
+  "all_unrelated_values_preserved": true,
+  "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db02-acceptance-attempts/b7737a0b-e840-414b-b77c-7c93b6172fd1",
+  "next_ready_task": "DB-03 (DB-02 and FND-04 accepted; claim requires fresh live issue review)",
+  "remaining": "Named branches, edit history, policy/read API integration, production migration/restore and full MVP remain open."
+}

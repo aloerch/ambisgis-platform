@@ -1,0 +1,49 @@
+{
+  "task": "FND-06",
+  "delivery": "Merged",
+  "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/5#issuecomment-5968688553",
+  "merge": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+  "head": "a5c9e8141fce4dd5ad2433dabb5bd687de683c14",
+  "pr": "https://github.com/aloerch/ambisgis-platform/pull/77",
+  "postmerge": {
+    "merge": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+    "reviewed_head": "a5c9e8141fce4dd5ad2433dabb5bd687de683c14",
+    "runtime": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/run-001/result.json",
+      "sha256": "f96cd3cc60fd90ce22216bd90ce228b0da4d8f7e48f76e28ba623c75ab2a0f49"
+    },
+    "postmerge_review": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-postmerge-review-d021820.json",
+      "sha256": "31f61b3db7514f4292e6ab128ea3c4a5b91f6d9bf16e7dce0ba121f589b65a11",
+      "reviewer": "/root/publication_review",
+      "findings": [],
+      "concerns": []
+    }
+  },
+  "next_tasks": [
+    {
+      "task": "PLT-01",
+      "repository": "aloerch/ambisgis-platform",
+      "issue": 11,
+      "branch": "plt-01/development-install",
+      "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+      "claim": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5968689528",
+      "delivery": "In progress"
+    },
+    {
+      "task": "DB-01",
+      "repository": "aloerch/ambisgis-geodb",
+      "issue": 2,
+      "branch": "db-01/managed-schema",
+      "base": "b7e5888b11a4b3d2246daeffe0173113f1628f2d",
+      "claim": "https://github.com/aloerch/ambisgis-geodb/issues/2#issuecomment-5968690345",
+      "delivery": "In progress"
+    }
+  ],
+  "items": 93,
+  "fields": 24,
+  "views": 7,
+  "repositories": 15,
+  "all_unrelated_values_preserved": true,
+  "attempt_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/fnd06-acceptance-attempts/83687d31-6d16-4f8b-91d9-7663dcd31ac2"
+}

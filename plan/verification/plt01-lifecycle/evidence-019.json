@@ -1,0 +1,640 @@
+{
+  "artifacts": {
+    "assembly": {
+      "evidence_id": "bundle024-assembly",
+      "sha256": "cecb888b019bb36070375d33133f499c8e4bb71fd0df2e945b9ca02d956ac193"
+    },
+    "bundle": {
+      "evidence_id": "bundle024",
+      "sha256": "c93581f580d7153a52d813fc6ef43b0cf592fc2c0628ba6e04b852487960e615"
+    },
+    "bundle_number": "024",
+    "candidate_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+    "changed_runtime_paths_from023": [
+      "runtime/configuration/custody.json",
+      "runtime/modules/installer/config.py",
+      "runtime/modules/installer/state.py"
+    ],
+    "closure": {
+      "evidence_id": "bundle024-closure",
+      "sha256": "c1d88d86050e63ae85c758073981e6f9c79dbd2e4fcb29e5923cf70151d80522"
+    },
+    "distribution_or_installation_acceptance": false,
+    "elf_files": 374,
+    "host_prerequisites": 12,
+    "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+    "images_reused": [
+      "025",
+      "026"
+    ],
+    "review": {
+      "evidence_id": "bundle024-audit",
+      "sha256": "b2118b45a80419ac91cfa48e7c53a10b57300c297366a97c9097fb096b3f130c"
+    },
+    "runtime_files": 1320,
+    "unchanged": "Native binaries, image archives, WAR/Java payloads and service/runtime driver bytes remain identical to their bound prior artifacts."
+  },
+  "checks": {
+    "all_exit_codes_zero": true,
+    "final_document_package_schema_checks": "Pending fresh final-head 701 package and 10 schema checks; not credited here.",
+    "helper_validation": {
+      "development": 140,
+      "package": 692,
+      "schemas": 10
+    },
+    "image_helpers_reused": 40,
+    "initializer_validation": {
+      "development": 140,
+      "package": 701,
+      "runtime": 77,
+      "schemas": 10
+    },
+    "initializer_validation_ref": {
+      "evidence_id": "initializer-validation",
+      "sha256": "8831a4c90863b20bf6e27c72c90d64706a96c57e1d73c8ef70020250ab4af3f7"
+    },
+    "scope": "Source/helper/package/schema validation; separate actual ordinary concurrency outcomes below.",
+    "skips": 0,
+    "source_files": 1551,
+    "source_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f"
+  },
+  "concurrency_helper": {
+    "component": "3786d2a9a32a4865648d70f0a686f4eb013a87f7",
+    "existing_inert_tests": 24,
+    "integration_head": "a948b4cd75917e898839baf4700f88148ef94f09",
+    "new_inert_tests": 8,
+    "source_review": {
+      "evidence_id": "concurrency-helper-source-review",
+      "sha256": "fdceca6f192f0666e6996ca52cf173fb1b4124c0ab7994aa70ca75287cb13275"
+    }
+  },
+  "delivery": "In progress",
+  "final_effects": {
+    "all_helpers_gone": false,
+    "all_owned_roles_nonrunning": true,
+    "dns_arrays_present": false,
+    "dns_cleanup_verified": false,
+    "exit_codes": {
+      "catalog": 0,
+      "database": 0,
+      "gateway": 0,
+      "geoserver": 143
+    },
+    "full_installation_acceptance": false,
+    "geoserver_exit_limit": "143 is consistent with SIGTERM exit semantics; it is not a graceful exit-zero claim.",
+    "health": "Last retained health was healthy for all four stopped roles, with five zero codes each; this is not current running readiness.",
+    "initializers_absent": 2,
+    "known_service_conmon_pids_absent": 8,
+    "known_units_not_loaded": 8,
+    "native_errors": "All four retained State.Error values match the fixed owned-source container-is-running error. The operation and time that persisted it are unobserved.",
+    "native_state_equality_scope": "Only fresh post-diagnosis db.sql snapshot across this final observer",
+    "observer": {
+      "evidence_id": "concurrency002-final-observer",
+      "sha256": "0954ebc22f40c3143b553e93e51155c4226b1e6900f62cb3a73ed65937326a5f"
+    },
+    "other_available_matching_bundle_processes": 0,
+    "pause": {
+      "pid": 1001900,
+      "present": true,
+      "start_ticks": 16074946,
+      "verified_preserved": true
+    },
+    "reconciled": true,
+    "review": {
+      "evidence_id": "concurrency002-final-review",
+      "sha256": "709cdab75a519e63169db6e9e70cbf9af824827cd59791b4c62a053077a00482"
+    },
+    "scope": "Finite owned-role, known PID/unit and observer-window state accounting.",
+    "unavailable_process_reads": 6
+  },
+  "full_P1_acceptance": false,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "historical_ordinary019_reuse": {
+    "bundle": "023",
+    "namespace_binding_unavailable_observations": 6,
+    "protected_journeys": 4,
+    "review": {
+      "evidence_id": "ordinary019-journey-review",
+      "sha256": "d4c70c062ceb1261db71661ae04cccae739a4faa8f6d1b62703bdacf2847a5e0"
+    },
+    "scope": "Unchanged service/runtime/driver restart, reinitialization and recovery readiness evidence remains historical019 evidence. It is not relabeled as a bundle024 lifecycle run.",
+    "source_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+    "stages": 20,
+    "status": "incomplete",
+    "validation_scope": {
+      "evidence_id": "initializer-validation-scope",
+      "sha256": "9b9b39bad85b3a3cca48b944a50bb0f199ddaafc96467f9d451e2c3acaa7109f"
+    }
+  },
+  "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+  "initializer_lock_repair": {
+    "authorship": "db02_validation authored the fix; parent root independently reviewed its source and executed validation.",
+    "behavior": "Validate and open an existing lock without O_CREAT; return busy while held, or retain the same acquired lock through existing-product reinitialization. A missing product after acquisition remains rejected without credential creation.",
+    "component": "09121cd1f33ea854ad90aac13f52909688d94705",
+    "count_correction": {
+      "evidence_id": "initializer-function-count-correction",
+      "sha256": "da76af0355bec49e4772e17ec07d757b3caccdc5db7dea97498743d2edaef189"
+    },
+    "inert_fixed_cases": 18,
+    "integration_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+    "limitations": "The pre-flock lock-creation window still conservatively refuses. Unsafe lock files and unmarked roots without a completed product remain rejected; a normal persistent unlocked .lock with a valid product is accepted.",
+    "preserved_prior_qualified_functions": 108,
+    "source_review": {
+      "evidence_id": "initializer-independent-source-review",
+      "sha256": "14c6d188652c3ce38f4aa204e9c30688d2354bc3f2d1c45113b363d09b5a643c"
+    }
+  },
+  "latest_completed_concurrency": {
+    "attempt": {
+      "evidence_id": "concurrency002-attempt",
+      "sha256": "b3b1d83a5d32d1a8042c52a0082af8b5a40d5db69a1ff2c44c004b80cd1eb2a6"
+    },
+    "bundle_sha256": "c93581f580d7153a52d813fc6ef43b0cf592fc2c0628ba6e04b852487960e615",
+    "configuration_and_credentials_hashes_unchanged": true,
+    "full_installation_acceptance": false,
+    "install_id": "2d8b1731-7b10-462e-a7a2-8e43830f6161",
+    "limits": "Recorded native IDs, title and policy restoration do not establish installed SQL-role, migration cardinality or native uniqueness acceptance. Ten recorded revocations are not a proof of ten globally distinct credentials.",
+    "outcome_review": {
+      "evidence_id": "concurrency002-outcome-review",
+      "sha256": "7d5ca425a5167bca69cac1c20f29c898955c471b438e1ee2f4926e2301af0a0f"
+    },
+    "pair_facts": [
+      {
+        "children_reaped": 2,
+        "command": "init",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "created",
+          "busy"
+        ],
+        "overlap_observed": true,
+        "reinitialize": false,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      },
+      {
+        "children_reaped": 2,
+        "command": "up",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "busy",
+          "ready"
+        ],
+        "overlap_observed": true,
+        "reinitialize": false,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      },
+      {
+        "children_reaped": 2,
+        "command": "init",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "busy",
+          "existing"
+        ],
+        "overlap_observed": true,
+        "reinitialize": true,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      },
+      {
+        "children_reaped": 2,
+        "command": "up",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "busy",
+          "ready"
+        ],
+        "overlap_observed": true,
+        "reinitialize": false,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      }
+    ],
+    "selected_native_identity_policy_title_preserved": true,
+    "source_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+    "status": "passed",
+    "totals": {
+      "busy_peers": 4,
+      "cli_children": 8,
+      "created_installations_observed": 1,
+      "data_requests": 276,
+      "data_statuses": {
+        "200": 44,
+        "403": 214,
+        "404": 18
+      },
+      "map_query_oracles": 8,
+      "native_policy_restorations": 2,
+      "pairs": 4,
+      "post_negative_oracles": 10,
+      "protected_journeys": 2,
+      "recorded_token_revocations": 10,
+      "route_negatives": 164,
+      "same_valid_token_reads": 30,
+      "token_cleanup_sessions": 3,
+      "token_revocation_statuses": {
+        "200": 10
+      },
+      "unaccounted_issuance_principals": 0
+    }
+  },
+  "latest_completed_ordinary_attempt": {
+    "attempt": 19,
+    "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
+    "completed_protected_journeys": 4,
+    "count_limits": "552 recorded data requests exclude OAuth traffic and the separate gateway liveness request. Twenty-eight recorded revocations across ten cleanup sessions are not a claim of twenty-eight distinct token values.",
+    "dns": {
+      "classification": "namespace_binding_unavailable",
+      "daemon_cleanup_driver_verified": true,
+      "exact_mapped_owner_proofs": 4,
+      "fixed_database_udp_queries_verified": 4,
+      "incomplete_checks": 6,
+      "namespace_binding_verified": false,
+      "overall_cleanup_verified": false,
+      "running_identity_observations": 4,
+      "shutdown_observations": 2
+    },
+    "driver_shutdown": {
+      "dns_daemon_cleanup_verified": true,
+      "dns_namespace_binding_verified": false,
+      "dns_overall_cleanup_verified": false,
+      "persistent_data_preserved": true,
+      "running_services": 0
+    },
+    "error_type_recorded": false,
+    "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
+    "finished_at": "2026-10-04T23:20:38.556361+00:00",
+    "full_installation_acceptance": false,
+    "held_targeted_probe_executed": false,
+    "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+    "journey_totals": {
+      "completed_journeys": 4,
+      "data_requests": 552,
+      "data_status_counts": {
+        "200": 88,
+        "403": 428,
+        "404": 36
+      },
+      "map_query_oracles": 16,
+      "native_policy_restorations": 4,
+      "post_negative_unchanged_oracles": 20,
+      "recorded_tokens_revoked": 28,
+      "route_negative_cases": 328,
+      "same_token_permission_reads": 60,
+      "token_cleanup_sessions": 10,
+      "unaccounted_issuance_principals": 0
+    },
+    "persistence": {
+      "dependency_recovery_verified": true,
+      "metadata_uuid_and_title_same_all_four_journeys": true,
+      "reinitialization_verified": true,
+      "restart_verified": true,
+      "stop_identity_credentials_unchanged": true,
+      "stopped_renderer_useful_failure_verified": true
+    },
+    "preceding_failed_attempts_preserved": 18,
+    "recorded_driver_stages": [
+      {
+        "at": "2026-10-04T23:06:48.750464+00:00",
+        "name": "verified relocated bundle"
+      },
+      {
+        "at": "2026-10-04T23:06:57.332210+00:00",
+        "name": "fresh init"
+      },
+      {
+        "at": "2026-10-04T23:09:51.121453+00:00",
+        "name": "fresh up status doctor"
+      },
+      {
+        "at": "2026-10-04T23:09:51.126535+00:00",
+        "name": "native DNS after initial CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:10:20.195211+00:00",
+        "name": "DNS wire after initial CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:11:40.765295+00:00",
+        "name": "protected map query metadata journey"
+      },
+      {
+        "at": "2026-10-04T23:12:01.803513+00:00",
+        "name": "stopped persistent installation"
+      },
+      {
+        "at": "2026-10-04T23:12:18.978040+00:00",
+        "name": "restart preserves metadata and credentials"
+      },
+      {
+        "at": "2026-10-04T23:12:18.988136+00:00",
+        "name": "native DNS after restart"
+      },
+      {
+        "at": "2026-10-04T23:12:49.018705+00:00",
+        "name": "DNS wire after restart"
+      },
+      {
+        "at": "2026-10-04T23:14:16.632183+00:00",
+        "name": "full protected journey after restart"
+      },
+      {
+        "at": "2026-10-04T23:15:36.660669+00:00",
+        "name": "reinitialization preserves metadata and credentials"
+      },
+      {
+        "at": "2026-10-04T23:15:36.677830+00:00",
+        "name": "native DNS after repeated CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:16:07.066502+00:00",
+        "name": "DNS wire after repeated CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:17:34.509878+00:00",
+        "name": "full protected journey after reinitialization"
+      },
+      {
+        "at": "2026-10-04T23:18:07.585126+00:00",
+        "name": "stopped renderer produces useful failure"
+      },
+      {
+        "at": "2026-10-04T23:18:22.319841+00:00",
+        "name": "dependency recovery preserves state"
+      },
+      {
+        "at": "2026-10-04T23:18:22.345071+00:00",
+        "name": "native DNS after dependency recovery"
+      },
+      {
+        "at": "2026-10-04T23:18:52.634233+00:00",
+        "name": "DNS wire after dependency recovery"
+      },
+      {
+        "at": "2026-10-04T23:20:20.796309+00:00",
+        "name": "full protected journey after dependency recovery"
+      }
+    ],
+    "recorded_stage_count": 20,
+    "reviewed_effects": {
+      "all_four_retained_health_snapshots": "healthy, last five health exit codes zero; services are stopped, so this is not current readiness",
+      "all_helpers_gone": false,
+      "all_six_roles_nonrunning": true,
+      "dns_cleanup_verified": false,
+      "four_present_roles_full_security_passed": true,
+      "geoserver_exit_limit": "Exit143 is compatible with signal15 and is not clean exit0 or independent proof of graceful shutdown.",
+      "guard_wrapper_child_absent": true,
+      "initializers_absent": 2,
+      "known_persisted_timer_service_units_not_loaded": 8,
+      "known_service_conmon_pid_absences": 8,
+      "native_state_limit": "Equality covers only this post-diagnosis final observer, not the earlier lifecycle.",
+      "native_state_unchanged_during_final_observer": true,
+      "observer_data_deleted": false,
+      "observer_retry": false,
+      "observer_signals_sent": false,
+      "owned_pause_retained": true,
+      "reconciled": true,
+      "serving_role_exits": {
+        "catalog": 0,
+        "database": 0,
+        "gateway": 0,
+        "geoserver": 143
+      },
+      "stored_native_errors": "Three roles retain the exact owned-source already-running start-state error; operation and time are unrecorded. Fresh retained inspection independently shows exited/Pid0.",
+      "unavailable_process_reads": 5
+    },
+    "source_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+    "started_at": "2026-10-04T23:06:38.631835+00:00",
+    "status": "incomplete"
+  },
+  "native_goal": {
+    "assistant_resume_performed": false,
+    "budget_configured": false,
+    "exact_original_trigger": "unknown",
+    "foreground_delivery_continues": true,
+    "held_targeted_probe_executed": false,
+    "native_resume_claimed": false,
+    "original_terminal_cause": "cyber_policy",
+    "recorded_at": "2026-10-05T02:00:24.835586+00:00",
+    "remainingTokens": null,
+    "source": "Fresh parent root get_goal tool testimony in the current foreground context; exact response timestamp unavailable. recorded_at is this document recording time.",
+    "status": "blocked",
+    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+    "timeUsedSeconds": 30612,
+    "timestamp_meaning": "Persisted root testimony record time, not the precise tool-response instant.",
+    "tokensUsed": 12420153,
+    "updatedAt": 1791034102
+  },
+  "next_action": "Independently review and publish this source/evidence increment, then implement an installed native-identity, schema and serving-role oracle using a fresh owned test installation. That oracle is intended next work, not implemented or passed; it does not reuse a synthetic cluster probe on existing installations or substitute for the held targeted qualification.",
+  "previous_evidence": "evidence-018.json",
+  "prior_concurrency001": {
+    "attempt": {
+      "evidence_id": "concurrency001-attempt",
+      "sha256": "4619a655e282802b4132819add8fe78a086debe7ea2b09b9d28a87703a86a4eb"
+    },
+    "bundle": "023",
+    "final_review": {
+      "evidence_id": "concurrency001-final-review",
+      "sha256": "703611f583b8b928a03b14e4308447bec35c39b1c65676fb66250b1105576b1c"
+    },
+    "review": {
+      "evidence_id": "concurrency001-outcome-review",
+      "sha256": "076ba70cdbb21952a3b00df9f0abd03eeed5a9c29511ccc7c2ef7d251f618f2e"
+    },
+    "source_head": "a948b4cd75917e898839baf4700f88148ef94f09",
+    "status": "passed"
+  },
+  "recorded_at": "2026-10-05T02:00:24.835586+00:00",
+  "references": [
+    {
+      "evidence_id": "bundle023-audit",
+      "sha256": "ec81567ff02f21536c78aebdae2070b9d660d633b4034f040bda5aa83ec3c3c2"
+    },
+    {
+      "evidence_id": "bundle024",
+      "sha256": "c93581f580d7153a52d813fc6ef43b0cf592fc2c0628ba6e04b852487960e615"
+    },
+    {
+      "evidence_id": "bundle024-assembly",
+      "sha256": "cecb888b019bb36070375d33133f499c8e4bb71fd0df2e945b9ca02d956ac193"
+    },
+    {
+      "evidence_id": "bundle024-audit",
+      "sha256": "b2118b45a80419ac91cfa48e7c53a10b57300c297366a97c9097fb096b3f130c"
+    },
+    {
+      "evidence_id": "bundle024-closure",
+      "sha256": "c1d88d86050e63ae85c758073981e6f9c79dbd2e4fcb29e5923cf70151d80522"
+    },
+    {
+      "evidence_id": "bundle024-production",
+      "sha256": "15b384f92aa68e73111d79cfcb4776aaaae2bd9363aa54a6f2164115d2c3fc92"
+    },
+    {
+      "evidence_id": "bundle024-template-root-review",
+      "sha256": "a26c6314cf4ca352c9381b8c7a95d12886687c2e2055ec1cb18571a1323078c4"
+    },
+    {
+      "evidence_id": "concurrency-helper-integration",
+      "sha256": "829c41dde110b24997d0d62cef388bb4c21aec499532e9a2180dd0c8f6142f9d"
+    },
+    {
+      "evidence_id": "concurrency-helper-proposal",
+      "sha256": "4820ea1173e821dd988fc619a1ae66d6257eb17b8e73e4ee9863f9456ae4ebb9"
+    },
+    {
+      "evidence_id": "concurrency-helper-source-review",
+      "sha256": "fdceca6f192f0666e6996ca52cf173fb1b4124c0ab7994aa70ca75287cb13275"
+    },
+    {
+      "evidence_id": "concurrency-helper-validation",
+      "sha256": "5595eb18ce54316486b09212e760aed9a7ed3b97cc18f1620aeadc2277ab6091"
+    },
+    {
+      "evidence_id": "concurrency001-attempt",
+      "sha256": "4619a655e282802b4132819add8fe78a086debe7ea2b09b9d28a87703a86a4eb"
+    },
+    {
+      "evidence_id": "concurrency001-final-observer",
+      "sha256": "55d7e2c1283b02c510eddc31eb0aeeced5c7c2b8079ce300bc8454ec0f0a2a01"
+    },
+    {
+      "evidence_id": "concurrency001-final-review",
+      "sha256": "703611f583b8b928a03b14e4308447bec35c39b1c65676fb66250b1105576b1c"
+    },
+    {
+      "evidence_id": "concurrency001-outcome-review",
+      "sha256": "076ba70cdbb21952a3b00df9f0abd03eeed5a9c29511ccc7c2ef7d251f618f2e"
+    },
+    {
+      "evidence_id": "concurrency002-attempt",
+      "sha256": "b3b1d83a5d32d1a8042c52a0082af8b5a40d5db69a1ff2c44c004b80cd1eb2a6"
+    },
+    {
+      "evidence_id": "concurrency002-completed-guard",
+      "sha256": "e6919baff443222cfd7079e3815288b4f1b54b33d860d8945d88b88f9142b95a"
+    },
+    {
+      "evidence_id": "concurrency002-final-observer",
+      "sha256": "0954ebc22f40c3143b553e93e51155c4226b1e6900f62cb3a73ed65937326a5f"
+    },
+    {
+      "evidence_id": "concurrency002-final-review",
+      "sha256": "709cdab75a519e63169db6e9e70cbf9af824827cd59791b4c62a053077a00482"
+    },
+    {
+      "evidence_id": "concurrency002-first-effects-review",
+      "sha256": "5d9aeeb9ce9a91d85a81991cc510aecafa636a7a8c6f858e1c63260a1c4c0963"
+    },
+    {
+      "evidence_id": "concurrency002-first-observer",
+      "sha256": "9448b8b0a84ed97c04e0c14a0a8cd118ddfc76d298cda500f975178fc8721969"
+    },
+    {
+      "evidence_id": "concurrency002-outcome-review",
+      "sha256": "7d5ca425a5167bca69cac1c20f29c898955c471b438e1ee2f4926e2301af0a0f"
+    },
+    {
+      "evidence_id": "held-targeted-probe-marker",
+      "sha256": "88df92a0060cd55d54ab0b91d7c5df048a0348b1a062d84183599c322b2064ea"
+    },
+    {
+      "evidence_id": "images025-audit",
+      "sha256": "55956c70c5dd299cedde6d8ec7904841eb8b6e3d6d4e4ce975c1f0fdd0ace9a3"
+    },
+    {
+      "evidence_id": "initializer-function-count-correction",
+      "sha256": "da76af0355bec49e4772e17ec07d757b3caccdc5db7dea97498743d2edaef189"
+    },
+    {
+      "evidence_id": "initializer-independent-source-review",
+      "sha256": "14c6d188652c3ce38f4aa204e9c30688d2354bc3f2d1c45113b363d09b5a643c"
+    },
+    {
+      "evidence_id": "initializer-integration",
+      "sha256": "72a43d02ccfc3056fbc7ac50e29e8b9a995e3a534cb64f7d6bde480baa75db83"
+    },
+    {
+      "evidence_id": "initializer-integration-correspondence",
+      "sha256": "170166585481e673cdce09681a0487eaf38eb63a57016b88b408d641f82b6738"
+    },
+    {
+      "evidence_id": "initializer-proposal",
+      "sha256": "1892497b8a8abf85430e1badc4fd52ae85e50d74877bb95f1989ca112ce48904"
+    },
+    {
+      "evidence_id": "initializer-validation",
+      "sha256": "8831a4c90863b20bf6e27c72c90d64706a96c57e1d73c8ef70020250ab4af3f7"
+    },
+    {
+      "evidence_id": "initializer-validation-scope",
+      "sha256": "9b9b39bad85b3a3cca48b944a50bb0f199ddaafc96467f9d451e2c3acaa7109f"
+    },
+    {
+      "evidence_id": "ordinary019-final-effects-review",
+      "sha256": "c211c9ee04875340832fc35d9f17469db67e67c6f1411e8d617d672febb1a580"
+    },
+    {
+      "evidence_id": "ordinary019-journey-review",
+      "sha256": "d4c70c062ceb1261db71661ae04cccae739a4faa8f6d1b62703bdacf2847a5e0"
+    },
+    {
+      "evidence_id": "previous-public-evidence018",
+      "sha256": "ac4d85fa15d7fd92dd10506924fc501d3deccce2637487bc4347263e5a6c607b"
+    },
+    {
+      "evidence_id": "previous-public-progress018",
+      "sha256": "a79d1315d657932c249fd7fec64fe8fb04b105c1e2e1bfbcf2fbec6b577120e2"
+    },
+    {
+      "evidence_id": "requirements-matrix-freeze",
+      "sha256": "bc52388b40d2e465d2588ccd07721ce35f2b9ed766a42279710922329f1aaee8"
+    },
+    {
+      "evidence_id": "requirements-matrix-independent-review",
+      "sha256": "808946ff166f68cdc7ab4e6fa7a12e43dce30b3050b966b027f1ab73a7dae3af"
+    }
+  ],
+  "remaining": [
+    "Installed native-identity/schema/serving-role oracle is planned, not implemented or passed.",
+    "DNS namespace binding and overall helper/DNS cleanup remain unverified; this concurrency helper emits no DNS arrays.",
+    "Final document review, final-head package/schema, full unpublished-history/privacy, rendered public text and exact-head CI gates remain pending.",
+    "Original PLT/P1/MVP, broader OS/desktop/notebook/accessibility/restore and release requirements retain their original acceptance scope."
+  ],
+  "requirements_matrix": {
+    "review": {
+      "evidence_id": "requirements-matrix-independent-review",
+      "sha256": "808946ff166f68cdc7ab4e6fa7a12e43dce30b3050b966b027f1ab73a7dae3af"
+    },
+    "scope": "Exact reviewed reconciliation of existing accepted DB-01/02/03 evidence; no new acceptance.",
+    "sha256": "ce5bc983302a1610037f0b32e3715bd016dea30ed6da1ffd6f8fda307b9dccfd"
+  },
+  "review_independence": {
+    "bundle_controller_and_audit": "Author db02_validation; root independently reviewed controller; artifact audit discloses authorship.",
+    "concurrency_helper": "Author fnd03_identity; independent db02_validation source review.",
+    "final_effects": "Root executed peer-authored/root-reviewed observer; db02_validation reviewed retained evidence without native calls.",
+    "initializer_source": "Author db02_validation; independent root source review is authoritative.",
+    "proposal_author": "db02_validation; this private draft awaits independent semantic review."
+  },
+  "schema_version": 1,
+  "scope": "Concurrency helper and initializer-lock repair, bundle024, actual concurrency001/002 and finite retained effects; no full installation/P1/MVP acceptance.",
+  "scoped_MVP_acceptance": false,
+  "source_files": 1551,
+  "source_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+  "source_publication": {
+    "authority": "Parent root read-only trusted API testimony; worker made no remote query. Exact response timestamp not provided.",
+    "draft": true,
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "local_candidate_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+    "main": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+    "merged": false,
+    "open": true,
+    "publication_of_this_increment": "Pending final document/head/history/privacy/text/CI gates.",
+    "published_head": "7d0efc03495e55803d0482b881564e5e67ae6bdd"
+  },
+  "source_tree": "0faf307a67d603ae0a00fe5a2ba1f49c89dfdd1e",
+  "task": "PLT-01"
+}

@@ -1,0 +1,23 @@
+{
+  "task": "FND-06",
+  "state": "Merged",
+  "scope": "Original bounded contracts/corpus/threat-model/Koop decision only; full product suites and release remain open",
+  "files": {
+    "acceptance-and-merge.json": {
+      "sha256": "a8babba8a97a0f3517dedea07739961ef0929d2ad38ce6aeda81941e14da0be8",
+      "bytes": 1953
+    },
+    "aggregate-review.json": {
+      "sha256": "9142bc1f59779d4f943523c24398808842d3cbc8d469aeed60745a1154643759",
+      "bytes": 63876
+    },
+    "postmerge-review.json": {
+      "sha256": "31f61b3db7514f4292e6ab128ea3c4a5b91f6d9bf16e7dce0ba121f589b65a11",
+      "bytes": 7342
+    },
+    "postmerge-summary.json": {
+      "sha256": "42b2d8ea3ab117d01e0832667df4e3c5790a7541f3d9778546a7c26b8b755e47",
+      "bytes": 61114
+    }
+  }
+}

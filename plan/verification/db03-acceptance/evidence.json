@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "task": "DB-03",
+  "delivery": "Merged",
+  "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
+  "merge": "13fb7c9bff9d011838b768802a6ab63f932bd228",
+  "reviewed_head": "9e474ea0deccfa9a416da6d5a264c88c6ad3523d",
+  "references": [
+    {
+      "path": "plan/verification/db03-acceptance/db03-postmerge.json",
+      "sha256": "5b04e329bbf2eed9888568a9bae0b41bb3fc8f4549d1aabe1d2c81daa624eadd",
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-db03-001/acceptance.json"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/db01-postmerge.json",
+      "sha256": "e474d76083202de9059e16aedeb5d6d1c8721cdfded88dc8f36452fadbf5d87d",
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-db01-001/acceptance.json"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/db02-postmerge.json",
+      "sha256": "b90536fc74b9c9d1c045986f556428c20c74f6fec9a91323c154114ea8fe657e",
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-db02-001/acceptance.json"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/prototype-postmerge.json",
+      "sha256": "c03c8446f8ea000d0dbaad0ca1d17793d7dd5a315d3396fa4431cce19e61ec60",
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-prototype-001/acceptance.json"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/canonical-postmerge.json",
+      "sha256": "7a72a6fad6e7daefd2168503ee4568f4829a01962eaaf2d370fcf4a2155b722b",
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-canonical-001/result.json"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/implementation-review.json",
+      "sha256": "a05acb2fc471ed3086d27112f432b5b3448d6a50a9cc82d07c353a2eeffacc7d",
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db03-final-review-9e474ea.json"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/postmerge-review.json",
+      "sha256": "d94a476ec563f8051987de16d73038f76af3bb877c59727415f73198031bf63a",
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db03-postmerge-review-13fb7c9.json"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/postmerge-control.json",
+      "sha256": "2c1d0cb1a577afaad96e6dbf95d8afaa163db833806ddd40dc5695836b3bc19c",
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/db03/postmerge-control-001/result.json"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/merge.json",
+      "sha256": "b3d80b03a01540faaf896b2b8b1bd5aa653d2d1d390e4c78f22504db2c43733d",
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-merge-result.json"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/publication.json",
+      "sha256": "7980d78eb73bdf4c0402388c8046a7d40991d524afbf02823a93a09bfe2a59f6",
+      "source": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/db03-publication-result.json"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/acceptance-and-merge.json",
+      "sha256": "e35ee211e4974b6341603833f534f9ec8b08c45b837573086094f97f9fe87e58"
+    },
+    {
+      "path": "plan/verification/db03-acceptance/acceptance-comment.md",
+      "sha256": "d9f80d88d8bfaab530b50e0dd9e4aa7fe33e23f76ae8675be199eb04ab277fcf"
+    }
+  ],
+  "tests": {
+    "postmerge_total": 86,
+    "real_database_cases": 80,
+    "pure_schema_cases": 6,
+    "skipped": 0,
+    "clusters_stopped": 5
+  },
+  "limits": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open.",
+  "next": "Continue PLT-01; API-01/PLT-02 await PLT-01, DB-04 awaits API-04"
+}

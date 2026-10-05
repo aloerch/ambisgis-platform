@@ -1,0 +1,95 @@
+{
+  "all_helpers_gone": false,
+  "attempts": 10,
+  "candidate_repair": "Establish both retained GIS library settings before inherited GeoNode settings can import GIS loaders, retain the post-inheritance assignments, and add finite catalog phase diagnostics. Frozen corrections require final independent review, integrated checks, rebuilt artifacts and a fresh ordinary installation.",
+  "cleanup_limits": "Exact last persisted database timer/service reported not loaded. Owned pause 644506/start8727813, data and network deliberately retained; no complete helper or DNS cleanup acceptance.",
+  "data_deleted": false,
+  "database_observation": {
+    "automatic_restarts": 0,
+    "event": "database_ready",
+    "explicit_health_exec_exit": 0,
+    "final_exit": 0,
+    "final_state": "stopped",
+    "health_exit_codes": [
+      1,
+      0,
+      0
+    ]
+  },
+  "diagnosis": [
+    "Actual images007/008 and bundle013 were independently audited; the source/reporting/DNS repairs and image selection were integrated and tested.",
+    "The exact catalog exception remains unknown. The new reporting boundary retained only entrypoint/unexpected metadata. Marker/private issuer key exist; initialized marker does not.",
+    "A newly traced GeoNode serializer import can reach Django GIS loaders before the current post-inheritance library settings exist. Exact pinned Settings/LazySettings and GIS loader selection witnesses reproduce both early failures and both proposed corrected selections without native loading.",
+    "The earlier completed-settings witness and its review did not cover this early import boundary. This source-order defect does not retrospectively prove the precise exception in attempt010."
+  ],
+  "dns_cleanup_verified": false,
+  "dns_identity_verified": false,
+  "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+  "failures_retained": 10,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "image_source_head": "0ce1d9609c7d7487cd372c2466cbb609e2f60e1c",
+  "last_frozen_bundle_sha256": "84f454c47c5a7f35c1c8f2da09233e981866d81af5a234027c371175ba4f9d11",
+  "last_install_id": "1927f2e7-9f44-45a6-b430-20317f087fee",
+  "last_state": "Relocation and fresh init passed. Database became ready; health records [1,0,0], explicit readiness exit 0, no restarts and final stop exit 0. Catalog initializer started, exited 1 and was removed. The CLI preserved entrypoint/unexpected metadata; serving journeys and DNS observations were not reached.",
+  "observation_corrections": [
+    "First read-only diagnosis assumed a top-level LogPath field and failed; the corrected observation used actual HostConfig.LogConfig.Path. Both controls and receipts remain retained.",
+    "Initial metadata inspection used data/database rather than the actual native data/postgres mount. A separate native-mount-bound observation confirms marker and pgdata exist; the earlier absence fields are not database-state evidence.",
+    "Database health records are initial failure 1 then two successes 0,0; native events prove catalog initializer creation, failure and removal despite its final absence."
+  ],
+  "observed_at": "2026-10-04T05:16:47.389359+00:00",
+  "previous_evidence": "plan/verification/plt01-lifecycle/evidence-009.json",
+  "private_reference_hashes": {
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/recovery-20261003/live-after-lifecycle010.json": "f321e88e4a3dfdc224721a581a0d1bc87a827be5f561bac081a482da77274748",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-adoption010-control-review-001/result.json": "903978c714e44ea89cd3e12de25481df145619fb77beb2fba1267d81a136f6ee",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-import-order-diagnosis-001/result.json": "c201b175152bc77fd5bd5d356c4809b92b0275004d8ab61ea100d45332cf1912",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-import-order-review-001/result.json": "be513edcdc15db3710d8a59b51047ead4e056661ffae646962f039cb3e2c1494",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-import-order-witness-001/result.json": "bb1e46f259381f9eb1bdbd5966e19890cf4f626ebb8f181446d3f2496f11a85b",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-images007-independent-review-001/result.json": "b2fd8ef8b299a351dc633dd1dc23643c48fd2ada636a4d19175c1abc90fac872",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-lifecycle010-reconciliation-review-001/result.json": "f15d9dc95f496de181d248aea1f63bde311178cea8a973e267bbbcab426bb8a1",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-publication-history-review-013/result.json": "b0686c2d5e8e7d4916eff092ff2026e0d3458d075b07df59a122a691ddf9778f",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-publication-history-review-014/result.json": "5f3d29083dd63f8583a2abd2269eab9122470b0418dab8288a84cfa003874753",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-runtime-bundle013-review-001/result.json": "fdb03b9a83fccc422c3c6bed834e535bf90f227ae46f453a7afd53234b0031f1",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-pair-003/result.json": "f9138bda299d3fb0a2a915c0fa94acfb54ae9a5cf6034f05f0433968e75c3276",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-010/read-only-diagnosis-002/database.json": "6bb432080012df25dfbe630fe453cfddc2d5368d307c800697a5c079f645f5b6",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-010/read-only-diagnosis-002/mounted-database-markers.json": "2a0fa639d8579fa72453a09aed73224cfffd1907c6c4fd98b04097153a14ff02",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-010/read-only-diagnosis-002/result.json": "07c3bd66c4cdb9715fd62ba3c22695b573a662e599cf5f57d5223b781c4e85a6",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-010/read-only-state-001/result.json": "1efaea329f98bb7b7bef5304cf456813f7310ee30053da952dd36d0c9ba82acb",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-010/read-only-timer-001/result.json": "fe50ff47b55838d9df812b1c6053bd302429131b760aa35c88478154517b46e5",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-014/result.json": "ef694648ac6660d5fc1f9fb08c2b578d037ad8b36088a5576bfefcd1b134bca0",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-015/result.json": "4762ea015674011528a3ea8285c861503629eb4cde39f6a559e99d05f2c4bfb8"
+  },
+  "published_head": "314f11e243a11ed6c494bdd2aa70ef18f4ec049a",
+  "reconciled": true,
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-010.json",
+      "sha256": "a68c0259c25062bd8bb83796f36350136da5e19f8b0c2b7a2feada0c9e9b4271"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-010.json",
+      "sha256": "141b8f86913a6a11d6b52187b68978cf4f6a61ff450b245a5d09c778f1cacc80"
+    }
+  ],
+  "remaining": "Actual catalog/render/gateway initialization, private authorization/map/query/metadata, persistence/recovery, DNS transport/identity/lifetime, original network/OS/concurrency/log/helper criteria and held targeted qualification. PLT-01, P1 and full MVP remain open.",
+  "runtime_executed": true,
+  "schema_version": 1,
+  "source_checks": {
+    "development": 121,
+    "image_helpers": 40,
+    "package": 620,
+    "runtime": 52,
+    "schemas": 10,
+    "scope": "Validation015 at image-source0ce1d960 plus exact two-line pin committed as e8eb1943; unchanged image/development sources reuse validation014. New import-order/phase corrections remain separately pending integration.",
+    "skips": 0,
+    "source_files": 1498
+  },
+  "source_head": "e8eb1943e2d9bb17b8fe1a9da82dd67af9ebd6ce",
+  "startup_failure": {
+    "category": "unexpected",
+    "code": "unexpected",
+    "stage": "entrypoint"
+  },
+  "status": "In progress",
+  "task": "PLT-01"
+}

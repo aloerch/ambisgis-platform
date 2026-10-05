@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-03T11:20:48.770867+00:00",
+  "reviewer": "/root/publication_review",
+  "mechanism": "separate-agent",
+  "repository": "aloerch/ambisgis-platform",
+  "repository_id": 1376927351,
+  "pr": 77,
+  "merge_commit": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+  "reviewed_head": "a5c9e8141fce4dd5ad2433dabb5bd687de683c14",
+  "base": "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+  "tree": "3fc49bdf5023efe8964ca12b76ed6faedbc8b32f",
+  "findings": [],
+  "concerns": [],
+  "decision": "Fresh actual postmerge execution and independent byte/output/cleanup audit pass. No observed integration regression or integrity failure blocks acceptance of the unchanged bounded FND-06 foundation criteria. This receipt supplies the postmerge technical verification; issue/Project acceptance remains an explicit integrator action, and full product/C1/distribution/human-only gates remain open.",
+  "runtime": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/run-001/result.json",
+    "sha256": "f96cd3cc60fd90ce22216bd90ce228b0da4d8f7e48f76e28ba623c75ab2a0f49"
+  },
+  "summary": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/summary-001.json",
+    "sha256": "42b2d8ea3ab117d01e0832667df4e3c5790a7541f3d9778546a7c26b8b755e47"
+  },
+  "independent_raw_audit": {
+    "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/fnd06-postmerge-runtime-independent-audit.json",
+    "sha256": "a9ca9640a008c99a26c5e62aa33dfd0cc6084670333ad5a11a98598c24cee93e"
+  },
+  "merged_source": {
+    "checkout": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-postmerge-worktree",
+    "clean": true,
+    "detached": true,
+    "same_tree_as_reviewed": true,
+    "normal_merge_parents": [
+      "6d18637e39818e60bcc947d3a7c252e84ab48fe0",
+      "a5c9e8141fce4dd5ad2433dabb5bd687de683c14"
+    ],
+    "remote_commit_identity_independently_read": true,
+    "actual_merged_source_files_rehashed": 282,
+    "executed_tooling_files_rehashed": 281,
+    "shared_contract_git_bindings_reverified": 16,
+    "contract_checkpoint": "a31a285b5e659a08bc6c18c393cfe5a8581bf293",
+    "contract_note": "All16 actual consumed contract/schema/helper bytes match this original reviewed checkpoint and the merged tree. The historical schema identity is preserved; no stale-code substitution."
+  },
+  "actual_runtime_checks": {
+    "assertions": 227,
+    "passed": 227,
+    "http_response_hashes_verified": 92,
+    "native_error_envelopes_independently_schema_validated": 21,
+    "database_addresses": 100000,
+    "sql_queries": 29,
+    "catalog_checks": 108,
+    "outage_denials_with_no_further_sql": 7,
+    "raw_koop_responses": 53,
+    "changed_metadata": 1,
+    "changed_empty_extent": 1,
+    "other_response_transformations": 0,
+    "cache_inserts": 0,
+    "maximum_observed_fetched_rows": 101,
+    "all_queries_read_only_and_preceded_by_current_catalog204": true,
+    "otherwise_authorized_changed_credential_cursor_status": 400,
+    "otherwise_authorized_changed_credential_cursor_error": "INVALID_CURSOR",
+    "node_archive_entries_independently_reverified": 4706,
+    "node_before_after_equal": true,
+    "catalog_origin_before_after_equal": true,
+    "synthetic_corpus_manifest_sha256": "5aeb5aad8a0f47780fdcba69bc6b568689bb14dc6b30927fa1e14b6796e06a88",
+    "corpus_payload_sha256": "c19c155a402b00522fde6afe90168eb156531f05d306bfc700348309789a9d88"
+  },
+  "cleanup": {
+    "catalog_native_koop_services_stopped": true,
+    "owned_postgresql_stopped": true,
+    "database_pidfile_actually_absent": true,
+    "all_exit_results_passed": true,
+    "fixture_credentials_invalidated": true,
+    "private_configuration_scrubbed": true,
+    "private_key_scrubbed": true,
+    "diagnostic_secret_hits": 0,
+    "diagnostic_security_failures": 0,
+    "supervisor_and_network_receipt_verified": true,
+    "datagram_hits": 0,
+    "source_unchanged": true
+  },
+  "actual_execution": {
+    "preexecution_launcher": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/control-001/launch.py",
+      "sha256": "dc4a850dec78951c200018555622b88961c41a80c6b8ac2f8dde5c98c5ec1781"
+    },
+    "invocation": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/control-001/outer-invocation.json",
+      "sha256": "ec39b2435f2cd7e2e812b2dd3a2215d2cde802a830001f3c295dbeb43a89f710"
+    },
+    "completion": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/control-001/outer-result.json",
+      "sha256": "64dd977bf0d534d3518b51a7964b3ff59a40521caca3d93fe318183fe89b1412"
+    },
+    "recorded_before_execution": true,
+    "command": [
+      "/usr/bin/python3",
+      "build-support/koop/runtime.py",
+      "--python",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/run-003/venv/bin/python",
+      "--installation",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-koop/install-002",
+      "--contract",
+      "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-postmerge-worktree",
+      "--corpus",
+      "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-corpus-runtime/round-005/scale-100000",
+      "--corpus-manifest-sha256",
+      "5aeb5aad8a0f47780fdcba69bc6b568689bb14dc6b30927fa1e14b6796e06a88",
+      "--output",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/run-001"
+    ],
+    "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/fnd06-postmerge-worktree",
+    "exit_code": 0,
+    "elapsed_seconds": 65.9748418929994
+  },
+  "final_evidence_verification": {
+    "primary_references_rehashed": 246,
+    "total_references_including_report_source_and_original_history": 249,
+    "report_adapter": {
+      "bytes": 7642,
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/fnd06-postmerge/control-001/postmerge-summary.py",
+      "sha256": "ec461717b138d7dbb4c988afc9a845c84bc811185a754dd9d4fe665124bdcf85"
+    },
+    "exact_adapter_diff_verified": true,
+    "independently_recomputed_summary_equals_worker_summary": true,
+    "adapter_change_scope": "Unchanged runtime/output/cleanup assertions; replaces unavailable historical sibling lookup and old observed outer transcript with real postmerge pre-execution/after-source receipts and original history at its unchanged location. Adds merged tree/clean-source checks. No runtime source or failed historical receipt rewritten."
+  },
+  "limitations": [
+    "Linux private synthetic read-only PointXY/object-policy experiment; all7 SQL attributes fetched before projection. No general policy/CRS/geometry/encoding support.",
+    "Native keyset and C1 offset/custom immutable-revision parameters remain distinct; no named ArcGIS client/full C1/error-format or productionOIDC acceptance.",
+    "All original five goals, R01-R24, P0-P7, simultaneous read/write product tests, installation/recovery/desktop/notebook/security/rights/signing/brand/human-only acceptance remain open.",
+    "No new broad package/corpus/notice test rerun claimed by reviewer. This audit independently rehashed and evaluated a fresh actual worker-run postmerge experiment; prior unchanged corpus/notice tests remain explicitly bound in aggregate review.",
+    "No remote writes by reviewer and no generic distribution/legal clearance inferred."
+  ]
+}

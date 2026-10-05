@@ -1,0 +1,109 @@
+{
+  "binary": {
+    "path": "fnd08-host-inputs/rpms/glibc-locale-base-2.44-2.1.x86_64.rpm",
+    "sha256": "ed04a3f84ac17ffa535ea31b216b9fc00640fbbf1ebcafd72fd223f965219f6d",
+    "signed_header_sha256": "a5b9854977628d2cb725bfaa719c179cee3a99d4a8283dcbaceddc0b6deb2182"
+  },
+  "historical_receipts": {
+    "host-binaries-007.json": "4d5264386c03cd89eee33993973182fb5d7e1ed42ba7ea3175f0888405d84c1e",
+    "host-inputs-selection-007.json": "fe1f178407e3cbb15217861483fbafd380ee877db789cb540d671a0b74ec2df9",
+    "host-payload-correspondence-007.json": "bb47cd1820af73a078c14d6b8a0363909c9fa7898a6d6d18b796ed8da6ab0023",
+    "host-sources-007.json": "a7a4f051329cf62ba5d4f89c3d068583d1f96c386daa7ce6e188d749f5eccb5f"
+  },
+  "identity": {
+    "arch": "x86_64",
+    "epoch": "0",
+    "name": "glibc-locale-base",
+    "release": "2.1",
+    "version": "2.44"
+  },
+  "members": {
+    "usr/lib/locale/C.utf8/LC_ADDRESS": {
+      "bytes": 127,
+      "sha256": "26e2800affab801cb36d4ff9625a95c3abceeda2b6553a7aecd0cfcf34c98099"
+    },
+    "usr/lib/locale/C.utf8/LC_COLLATE": {
+      "bytes": 1406,
+      "sha256": "47a5f5359a8f324abc39d69a7f6241a2ac0e2fbbeae5b9c3a756e682b75d087b"
+    },
+    "usr/lib/locale/C.utf8/LC_CTYPE": {
+      "bytes": 369120,
+      "sha256": "40680545df4f92443c15e7c6f51a7fdc9154ebedd9eff1ed5c48437039add365"
+    },
+    "usr/lib/locale/C.utf8/LC_IDENTIFICATION": {
+      "bytes": 258,
+      "sha256": "be5c6f4aa0cc2c05ab5ce3ed43c538cd7decbf97b42bc7c73f19414292f4dd4c"
+    },
+    "usr/lib/locale/C.utf8/LC_MEASUREMENT": {
+      "bytes": 23,
+      "sha256": "bb14a6f2cbd5092a755e8f272079822d3e842620dd4542a8dfa1e5e72fc6115b"
+    },
+    "usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES": {
+      "bytes": 48,
+      "sha256": "f9ad02f1d8eba721d4cbd50c365b5c681c39aec008f90bfc2be2dc80bfbaddcb"
+    },
+    "usr/lib/locale/C.utf8/LC_MONETARY": {
+      "bytes": 270,
+      "sha256": "bfd9e9975443b834582493fe9a8d7aefcd989376789c17470a1e548aee76fd55"
+    },
+    "usr/lib/locale/C.utf8/LC_NAME": {
+      "bytes": 62,
+      "sha256": "14507aad9f806112e464b9ca94c93b2e4d759ddc612b5f87922d7cac7170697d"
+    },
+    "usr/lib/locale/C.utf8/LC_NUMERIC": {
+      "bytes": 50,
+      "sha256": "f5976e6b3e6b24dfe03caad6a5b98d894d8110d8bd15507e690fd60fd3e04ab2"
+    },
+    "usr/lib/locale/C.utf8/LC_PAPER": {
+      "bytes": 34,
+      "sha256": "cde048b81e2a026517cc707c906aebbd50f5ee3957b6f0c1c04699dffcb7c015"
+    },
+    "usr/lib/locale/C.utf8/LC_TELEPHONE": {
+      "bytes": 47,
+      "sha256": "f4caf0d12844219b65ba42edc7ec2f5ac1b2fc36a3c88c28887457275daca1ee"
+    },
+    "usr/lib/locale/C.utf8/LC_TIME": {
+      "bytes": 3360,
+      "sha256": "0910b595d1d5d4e52cc0f415bbb1ff07c015d6860d34aae02505dd9973a63154"
+    }
+  },
+  "notice_source": {
+    "members": {
+      "glibc-2.44/COPYING.LESSERv2": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+      "glibc-2.44/localedata/unicode-gen/unicode-license.txt": "abf84f74dea2812799e1dbef7f0581adf7db244881e4febb8684f441568da0ad"
+    },
+    "path": "plt01-images/obs-source/glibc-1e3439944f7109bd2957875c9b725311/glibc-2.44.tar.xz",
+    "sha256": "37f600f2bef3c5e8300147059568b2a2e40a7ad6ccc65ce942556d49429cc667"
+  },
+  "payload": {
+    "audit_sha256": "458392db730351d369961c6d9a4dfcf937849b5ee8ec29dfae623a14f59afc15",
+    "audit_sibling": "audit.json",
+    "producer_result_sha256": "df585d4c099363f4d965edeee160fb3b4211dbddbc36d58eca428c31572a67bd",
+    "producer_result_sibling": "result.json",
+    "sha256": "6eff7e03ec3d8ea08eae1c02ee65ca94a3252c52f738089a03f7dcb702256447"
+  },
+  "schema_version": 1,
+  "scope": "Only retained C.utf8 locale data; no scripts, compilation or runtime execution",
+  "source": {
+    "disturl": "obs://build.opensuse.org/openSUSE:Factory/standard/1e3439944f7109bd2957875c9b725311-glibc",
+    "path": "fnd08-host-inputs/source-rpms/glibc-2.44-2.1.src.rpm",
+    "sha256": "8e12ce03d5ca05f44fb78d21600c183274da2059c2382e7ca6075995f6cf1a32",
+    "signed_header_sha256": "495e1f3203c796c211e15cd6d53f8cc43fc25d431dc1d1724be8642d2f2e040e"
+  },
+  "source_receipts": [
+    {
+      "path": "plt01-image-inputs/sources-001.json",
+      "sha256": "bb09af3e032a00aec80bc79a059880053534e131a0f012858ab702cb461ea352"
+    }
+  ],
+  "system_bindings": {
+    "usr/lib64/libc.so.6": {
+      "archive_sha256": "f757fbe4dc147d0da6aa4110549762b6c8806a3cac54494d16feeaa1facc6772",
+      "sha256": "090f858814642a3f28e5f4ae6499667e7901e47902ca3e72fb9c8a1967a3b8df"
+    },
+    "usr/share/licenses/glibc/LICENSES": {
+      "archive_sha256": "f757fbe4dc147d0da6aa4110549762b6c8806a3cac54494d16feeaa1facc6772",
+      "sha256": "b22a69aa3f80a5201818c66cb0df0f25f9fa13cf5861b0093a058dbd12d50dce"
+    }
+  }
+}

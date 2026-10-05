@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "task": "PLT-01",
+  "repository": "aloerch/ambisgis-platform",
+  "base": "5387068031bc226a7faf4deb9c9329d379230cc2",
+  "source_files": {
+    "build-support/development-runtime/README.md": "60037cd8a918a526529d9fc3307aca74e7defd3be7410ba9c659072e8a2bbdc4",
+    "build-support/development-runtime/ambisgis_runtime.py": "7e5809877fe22fb6ca2c5a38566c88af2a5d52b10b3f0665d155f51f7b2330be",
+    "build-support/development-runtime/build_bundle.py": "a302a1af5fc31a402f523fa9fe501de74ec93fe3c02a393d59c7f3bcbaaa2aac",
+    "build-support/development-runtime/fixtures/native-tmpfs-003.json": "8bf80db0ce5f30fcb2d96fae8097443dff3cdddb6cff232126e4bbffb3e794e9",
+    "build-support/development-runtime/runc_build.py": "3961658eac89594a4c2d440b858569cf4ae05f7b2c7d227d152f643bd6a988c0",
+    "build-support/development-runtime/test_build_bundle.py": "ecbea03581378485cb49d003c3cf1bd8abd29235d3fc224f2bf6aad354ab3728",
+    "build-support/development-runtime/test_runc_build.py": "d2963881fe9169b749c34848aee27dcab543b056907bee95d67993bf7df3f354",
+    "build-support/development-runtime/test_runtime.py": "8d10e590c5319969b8f1dd4d610a3bfe591aadaf3ba7c2dcb71923c359e438d4",
+    "installer/runtime.py": "3aff96b034c49939bb26912d0625ee03881325da2e429ee27ea9f6591faaa936",
+    "plan/tests/test_development_installer.py": "bdbde2a17fa62996249bf9248bdd88e3741596761bd8ce972c75e16d85e24d58"
+  },
+  "source_patch": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/owned-source.patch",
+    "sha256": "9132b82fbccf032cbf113be79a2b82d6608ea8bb4b1590400132371f4a12ec65",
+    "diff": "--- a/libcontainer/container_linux.go\n+++ b/libcontainer/container_linux.go\n@@ -491,6 +491,17 @@\n \tcmd.Env = append(cmd.Env,\n \t\t\"_LIBCONTAINER_FIFOFD=\"+strconv.Itoa(stdioFdCount+len(cmd.ExtraFiles)-1))\n \treturn nil\n+}\n+\n+// ambisgisInitEnvironment preserves only the owned launcher's validated\n+// library path for the sealed init executable's loader. The normal init\n+// Clearenv boundary and container process environment remain unchanged.\n+func ambisgisInitEnvironment(getenv func(string) string) []string {\n+\tenv := []string{\"GOMAXPROCS=\" + getenv(\"GOMAXPROCS\")}\n+\tif libraryPath := getenv(\"LD_LIBRARY_PATH\"); libraryPath != \"\" {\n+\t\tenv = append(env, \"LD_LIBRARY_PATH=\"+libraryPath)\n+\t}\n+\treturn env\n }\n \n func (c *Container) newParentProcess(p *Process) (parentProcess, error) {\n@@ -542,7 +553,7 @@\n \tif cmd.SysProcAttr == nil {\n \t\tcmd.SysProcAttr = &unix.SysProcAttr{}\n \t}\n-\tcmd.Env = append(cmd.Env, \"GOMAXPROCS=\"+os.Getenv(\"GOMAXPROCS\"))\n+\tcmd.Env = ambisgisInitEnvironment(os.Getenv)\n \tcmd.ExtraFiles = append(cmd.ExtraFiles, p.ExtraFiles...)\n \tif p.ConsoleSocket != nil {\n \t\tcmd.ExtraFiles = append(cmd.ExtraFiles, p.ConsoleSocket)\n"
+  },
+  "references": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-003/result.json",
+      "sha256": "877201072ddd0f2901b3016a05475b312faa326ce2283502d4fe1345e2d6b677"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-003/read-only-diagnosis-001/result.json",
+      "sha256": "cef53c5e8373909ba814e0804de15974abdaa08fe41a16cd9900fb5e63a3a8d8"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-003/read-only-diagnosis-001/source-diagnosis.json",
+      "sha256": "0b1d39d4abeb8aa879aec048b605931b5ac7cbb70297309fa96721a6a27fff0e"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-003/read-only-diagnosis-001/packaging-feasibility.json",
+      "sha256": "599ee938b7412c4574582cec579b734bda5ecaa0fb44e852d7778e8506218aa4"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/tmpfs-failure-001/result.json",
+      "sha256": "c8f771cf866a6d0e9b3a3fa688b4afd881dcb64b26fed0ef26e5ac7c47a851e5"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/tmpfs-failure-001/test.log",
+      "sha256": "6c32a53aad090ef7e2ac12cc1863192aee1693985e3777ea46a13d0f6e219c1e"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-006/result.json",
+      "sha256": "4eee855de35d53b6ad4231735381c3e5d7761df4af2f68cf8b7cf6f0317381bd"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-006/runtime.log",
+      "sha256": "41a7ade7e21a6647f9c3b4c37342fb9f6f4652df16d008d29b20127f930390cb"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-006/package.log",
+      "sha256": "932777c00a774ec0e0f20404c185a45e76efb732b7c543b41ac92aa50aa36fe4"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-006/schemas.log",
+      "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-001/result.json",
+      "sha256": "bd0ba664f2422478430ef78c760639078c3442da072f1fee3f7114d1719fd86d"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-001/invocation.json",
+      "sha256": "5e0d5b71a4b9227757560435a9d9cd8752d73f5b156667b82bc35cc65b66e7aa"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/result.json",
+      "sha256": "64ac169e79dd481fb5d6488b4c32f39ffc30f1cf902c3bbb1c807916f0b9ea00"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/invocation.json",
+      "sha256": "9a283834d11f89f87ce0bc74ac3ab3576b3bfdbcc31edc194e27576140f34156"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/preparation.json",
+      "sha256": "467455a1b068ba132debaa8d27227a88fd6d06ec705b233eb40ee7d90de116ca"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/commands.json",
+      "sha256": "e153f924399bad3ae36a0d849218278f0745eb0b957f2657fef086399a3659eb"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/network.json",
+      "sha256": "2a137fdc2855b10907cace98347210116cdb99c1f3d4a9ab1e64063b7c76626d"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/toolchain.json",
+      "sha256": "88c9dfab2f03d59019b96d94ca119c5a3aa12cf8509c0da7547747123e19f60a"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/owned-source.patch",
+      "sha256": "9132b82fbccf032cbf113be79a2b82d6608ea8bb4b1590400132371f4a12ec65"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/bootstrap-environment-unit.log",
+      "sha256": "11a227ad597c97ccd43f9f16e41dfc6b193f1160866f154d07e7a52f90d874ce"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-007/assembly-result.json",
+      "sha256": "c33f2271c646a688d23caa46ab1be3d81dd078369e6d3a61f585d56c0eaaa9eb"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-007/bundle.json",
+      "sha256": "c6b4eb308c6b5aed5c952bbfe3499554c4be3856ebda57e3dadbd1ede789e7c7"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-007/runtime-files.json",
+      "sha256": "e819e428bfd959af433ca0c5b4f9d03ebe05809fcb022c624541135396d0b97e"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-007/runtime/configuration/custody.json",
+      "sha256": "2f118e41426faa0d0d2c2f17727fd8e5c64690c4f001a408e836a97c95105988"
+    }
+  ],
+  "commands": [
+    {
+      "name": "runtime",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "build-support/development-runtime",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree",
+      "exit_code": 0,
+      "seconds": 7.912386417388916,
+      "log_sha256": "41a7ade7e21a6647f9c3b4c37342fb9f6f4652df16d008d29b20127f930390cb"
+    },
+    {
+      "name": "package",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/plan",
+      "exit_code": 0,
+      "seconds": 13.024771690368652,
+      "log_sha256": "932777c00a774ec0e0f20404c185a45e76efb732b7c543b41ac92aa50aa36fe4"
+    },
+    {
+      "name": "schemas",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-B",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/plan",
+      "exit_code": 0,
+      "seconds": 0.16660499572753906,
+      "log_sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23"
+    }
+  ],
+  "build_command": [
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+    "-B",
+    "build-support/development-runtime/runc_build.py",
+    "--output",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002"
+  ],
+  "assembly_command": [
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+    "-B",
+    "build-support/development-runtime/build_bundle.py",
+    "--output",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-007"
+  ],
+  "build": {
+    "artifacts": {
+      "bootstrap.test": {
+        "kind": "file",
+        "mode": 448,
+        "sha256": "212e71f55ba6ca45290f255c3f9229668f94e7ffba4df90bd72607a1cb49742c"
+      },
+      "runc": {
+        "kind": "file",
+        "mode": 448,
+        "sha256": "88a8ad522d529ad484d07631d0e55caf44f4a156fce181c4074952e2c33c49ef"
+      }
+    },
+    "container_executed": false,
+    "exit_code": 0,
+    "full_installation_acceptance": false,
+    "held_targeted_probe_executed": false,
+    "outer_command": [
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+      "-B",
+      "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/offline-executed.py",
+      "--evidence",
+      "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/network.json",
+      "--",
+      "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+      "-B",
+      "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002/build-executed.py",
+      "--child",
+      "--output",
+      "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runc-build-002"
+    ],
+    "records": {
+      "commands.json": "e153f924399bad3ae36a0d849218278f0745eb0b957f2657fef086399a3659eb",
+      "invocation.json": "9a283834d11f89f87ce0bc74ac3ab3576b3bfdbcc31edc194e27576140f34156",
+      "network.json": "2a137fdc2855b10907cace98347210116cdb99c1f3d4a9ab1e64063b7c76626d",
+      "owned-source.patch": "9132b82fbccf032cbf113be79a2b82d6608ea8bb4b1590400132371f4a12ec65",
+      "preparation.json": "467455a1b068ba132debaa8d27227a88fd6d06ec705b233eb40ee7d90de116ca",
+      "toolchain.json": "88c9dfab2f03d59019b96d94ca119c5a3aa12cf8509c0da7547747123e19f60a"
+    },
+    "runc_cli_executed": false,
+    "schema_version": 1,
+    "unchanged": {
+      "original": true,
+      "source": true,
+      "toolchain": true
+    }
+  },
+  "assembly": {
+    "assembler_sha256": "a302a1af5fc31a402f523fa9fe501de74ec93fe3c02a393d59c7f3bcbaaa2aac",
+    "bundle_sha256": "c6b4eb308c6b5aed5c952bbfe3499554c4be3856ebda57e3dadbd1ede789e7c7",
+    "distribution_approved": false,
+    "files_manifest_sha256": "e819e428bfd959af433ca0c5b4f9d03ebe05809fcb022c624541135396d0b97e",
+    "full_installation_acceptance": false,
+    "host_prerequisites": 12,
+    "runtime_executed": false,
+    "runtime_regular_files": 1290,
+    "schema_version": 1,
+    "static_elf_members": 373
+  },
+  "tests": {
+    "pure_runtime_guards": 19,
+    "package": 565,
+    "schemas": 10,
+    "native_bootstrap_environment_test": {
+      "name": "TestAmbisGISInitEnvironment",
+      "subcases": [
+        "absent",
+        "owned",
+        "unrelated"
+      ],
+      "passed": 3,
+      "scope": "Production environment-construction helper only. No runc CLI, init process, namespaces or containers."
+    },
+    "skipped": 0
+  },
+  "failures_preserved": {
+    "lifecycle_003": "Actual signed dynamic runc could not resolve libpathrs during startup; container created/never started. Read-only inspection and later root reconciliation remain separate receipts.",
+    "tmpfs_guard": "Actual selected native inspect/OCI options failed prior guard because rprivate was absent from allow-list. Corrected test includes shared/slave/conflict/duplicate rejection.",
+    "runc_build_001": "Build succeeded but is excluded from adoption because a descriptive label was placed in gitCommit. Corrected build002 retains default upstream revision metadata and external exact byte custody."
+  },
+  "rights_scope": "Existing runc Apache-2.0 and original notices retained. Complete source archive includes matching vendor; 30 exact vendor license/notice files, patch and dated modification notice accompany candidate. No product distribution approval.",
+  "four_images_and_image_source_manifest_unchanged": true,
+  "old_sources_bundles_and_installation_preserved": true,
+  "read_only_native_diagnosis_executed": true,
+  "new_runc_cli_executed": false,
+  "engine_lifecycle_mutations_by_worker": false,
+  "held_targeted_probe_executed": false,
+  "remote_mutations": false,
+  "full_installation_acceptance": false,
+  "limitations": [
+    "Actual repaired sealed-init loader resolution, rootless isolation and useful persistent services require independently reviewed ordinary lifecycle execution.",
+    "The native test is a focused environment-construction regression, not runtime acceptance.",
+    "Retained compiler/sysroot with socket denial still relies on explicitly bound host shell/loader/kernel; not a complete OS toolchain bootstrap.",
+    "No full static dependency closure is claimed or silently substituted."
+  ]
+}

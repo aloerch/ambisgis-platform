@@ -1,0 +1,93 @@
+{
+  "actual_validation": {
+    "author_clusters_stopped": 15,
+    "db01_and_schema": 28,
+    "db02": 12,
+    "db03": 20,
+    "independent_canonical_snapshot": 1,
+    "independent_cluster_stopped": true,
+    "prototype": 25,
+    "reference": 12,
+    "skips": 0,
+    "sources_unchanged": true
+  },
+  "authorization": "Owner standing delegation section2 plus recovery instruction section6 covers routine security engineering and disposable-test migrations after independent review and actual tests.",
+  "base": "c963e2baae1901935b25b0d436e988b47e153eb8",
+  "concerns": [],
+  "evidence": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db03-worktree/evidence/db03/evidence.json",
+      "sha256": "9fca8417fbe720c3148121cbda447324b1f71c7b76e913a2810feffeae0ccf0f"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db03-root-runtime-review-001/result.json",
+      "sha256": "90bfa1d524112d88e8163a8b4b1c95c86d574757bf4a7ff282b1118326bba67c"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/db03-evidence-audit-001.json",
+      "sha256": "72baf216f7ce66e45f2c986e682f68e144108ea0fc94fc4a48c6b79e4601b0e7"
+    }
+  ],
+  "findings": [],
+  "head": "9e474ea0deccfa9a416da6d5a264c88c6ad3523d",
+  "implementation_author": "/root/db02_validation",
+  "independent_context": true,
+  "limits": [
+    "Native backend branch metadata and typed creation only; named-branch edits await DB04 and external catalog authorization awaits API04.",
+    "Finite logical payload accounting excludes physical pages/indexes/WAL/DEFAULT storage; no production capacity claim.",
+    "No physical GC, attachments, owner transfer, reconcile/post or full edit history accepted here.",
+    "Disposable owned database migrations were tested; no production database was changed.",
+    "Independent automated review is recorded as such and is not presented as human release/security approval."
+  ],
+  "remote_mutations": false,
+  "repository": "aloerch/ambisgis-geodb",
+  "repository_id": 1376927417,
+  "resolved_during_review": [
+    "RR reservation overbooking and quota reconfiguration race",
+    "Snapshot source FK blocked DEFAULT writers",
+    "Deferred branch/version integrity trigger lacked owner read privilege at commit",
+    "Valid snapshot_id field collided with internal snapshot key",
+    "Compressed TOAST size undercounted the logical source byte bound"
+  ],
+  "review_kind": "independent automated implementation review and actual owned-database test",
+  "reviewed": [
+    "Append-only migration003;001/002 and workflow bytes unchanged",
+    "Single registry and schema authority; backend-only finite grants and fixed definer paths",
+    "Private creating reservation, atomic typed base/current copy, seal and creation anchor",
+    "Group SHARE/KEY SHARE protocol and whole-transaction40001 retry with outer statement/lock bounds",
+    "Quota tuple revisions serialize reservations/configuration/copy accounting without blocking DEFAULT writes",
+    "Immutable group/default source FK avoids mutable DEFAULT row-lock interference",
+    "Snapshot key preserves valid user snapshot_id; typed CHECK/geometry/relationship/identity constraints retained",
+    "Uncompressed UTF-8 canonical logical bytes bounded before hashing and copying; exact source-bound and retained usage tests",
+    "Cancellation, connection loss, failed reservation recovery, stable operation replay and exact deleted UUID alias",
+    "Existing regression-test updates reflect only migration003 and schema-generation advance; no test suppression"
+  ],
+  "reviewer": "/root",
+  "schema_version": 1,
+  "task": "DB-03",
+  "tested_sources": {
+    "managed/__init__.py": "5be4a4e358240fef5c0a2d7d82e725a603a7d18ae7f4e3466d1df2feeb773a6b",
+    "managed/branches.py": "d1b928817d04a3895e5f530563ca67e2d07764cddb428d436ba8ae65754e6814",
+    "managed/database.py": "c372f4d9295b5b33b715eda5c218fdbce70a7c177769c3007ed6324e19782695",
+    "managed/migrate.py": "b1540e8f94dc739ec2f028df90acec48a1cf08301830b40cb97dbec9504b53bf",
+    "managed/rules.py": "b0fb720a30c5e8f9989a32517b4bdf94e58c5e3eb72ea726a8660a97801499db",
+    "managed/schema.py": "31826a34a941cee918a92d7d31061678579718ea0b33dcd80b8adb23ba42217f",
+    "migrations/001_managed.sql": "b462f947fcc5914f8e2c50dbab0e8505fc3868e5b973017789020cd8de5a33dd",
+    "migrations/002_schema_rules.sql": "e90974f1bebe95cbc3dc0eb847a2cd204248f79d59a04214ca1643b7d4a57be5",
+    "migrations/003_typed_snapshots.sql": "dc66048998948fe1e78ce51518854704425ddeb1d009a429bde61e6975df48fb",
+    "prototype/__init__.py": "88369c224b481071a5e01e0d1392d646787f74ba4d641a18a7729c5f40f23082",
+    "prototype/database.py": "4b12e46c98a610297bd2bffa240955c43b0c91e8c024337a91a6bcfa73c17451",
+    "prototype/reference.py": "ac4882ce9d8c15d5c1435dd8e835a85a297df7ad03df246d22d28cb92440f76d",
+    "tests/test_branch_snapshot_database.py": "7d01e56b40ee3fe1c8f885a5e174412455a4f5799d1219eb99efa3eddd1850e6",
+    "tests/test_database.py": "8485f0bdf6dcb9b6794d4fbf20aa5624bd169f641d72098ecb5c7f6b9065b86f",
+    "tests/test_managed_database.py": "07adf3d2ab10ade75588819246ab5d41ad8d0b40b39b198526e6d3495a2dd40a",
+    "tests/test_reference.py": "aadf48581e0f370015385e98875d456bd9c81e3fd46d72df63414022ca1c4c4e",
+    "tests/test_schema.py": "9a1de7140a8838eda37c456a494fdb970c00fa9493d056c8ebb079267c454434",
+    "tests/test_schema_rules_database.py": "7e15e4bfa1c1d64def4f8b6e567e2cd90f3b728e58a6f0f6c5d597718a236ac1",
+    "tools/benchmark.py": "c0bde168bb5dc7020e2ec199a68676f96411a0b061cb2cb4761857314ab77f84",
+    "tools/run_acceptance.py": "3fda170c7be825b80653b97cdb76406dbdf8b57cefeb1712f876ea9d482d246f",
+    "tools/run_managed_acceptance.py": "53eb3b0b1f3674ff8c22e3f90744974cacbd66fe7ee9e0b951193377fd0a8854",
+    "tools/summarize_managed.py": "8f4ebb5a7aa00a1ec7c57683cebf87130a82a7797a6546534abf068778b14b99"
+  },
+  "tree": "1bbf6d15d290aca9efd625054c95d1112b0bad76"
+}

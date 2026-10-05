@@ -1,0 +1,157 @@
+{
+  "actual_attempt": {
+    "catalog_initialized_marker_bytes": 118,
+    "catalog_initializer_exit_code": 0,
+    "catalog_initializer_removed": true,
+    "dns_function_or_identity_evidence": false,
+    "exact_original_failure_cause": "unobserved",
+    "failure": {
+      "category": "timeout",
+      "code": "timeout",
+      "phase": "entrypoint"
+    },
+    "geoserver_initializer_exit_code": 1,
+    "geoserver_initializer_removed": true,
+    "geoserver_installation_marker_observed": true,
+    "installation_id": "87cb6031-f08b-4082-9b4b-3055255ec8cd",
+    "number": 14,
+    "protected_and_persistence_journeys_reached": false,
+    "relocation_and_fresh_init_passed": true,
+    "result": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-014/result.json",
+      "sha256": "26f8aaf2eb67c3256351edb2152d931d98daf36a7b69cbcc0c9b812934fb12b1"
+    },
+    "serving_roles_created": false,
+    "status": "FAILED"
+  },
+  "artifacts": {
+    "bundle": "017",
+    "byte_identical_pair": true,
+    "elf_objects": 374,
+    "host_prerequisites": 12,
+    "images": [
+      "015",
+      "016"
+    ],
+    "runtime_files": 1311
+  },
+  "delivery": "In progress",
+  "diagnostic": "geoserver-diagnostic-001.json",
+  "full_installation_acceptance": false,
+  "held_probe_executed": false,
+  "image_source_head": "c3b6a71852c8f000b0917b2e49740c148ece4567",
+  "previous_evidence": "evidence-013.json",
+  "publication": {
+    "ci_url": "https://github.com/aloerch/ambisgis-platform/actions/runs/37197801004/job/111423168988",
+    "comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5979325190",
+    "draft": true,
+    "head": "2bc52ba9f5302b5b969f3bda2315eeafc1e7dd33",
+    "live_readback_at": "2026-10-04T11:12:24.103419+00:00",
+    "main": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+    "merged": false,
+    "package_and_schema_ci": "success",
+    "pr": "https://github.com/aloerch/ambisgis-platform/pull/78"
+  },
+  "reconciled_effects": {
+    "all_helpers_gone": false,
+    "database_final_exit_code": 0,
+    "database_restart_count": 0,
+    "dns_cleanup_verified": false,
+    "explicit_database_readiness_exit_code": 0,
+    "independent_review": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-lifecycle014-reconciliation-review-001/result.json",
+      "sha256": "1d3152098000adcee26290c1a1996fd538e373bdee2129a3043cfdafebc65125"
+    },
+    "known_persisted_timer_and_service_not_loaded": true,
+    "last_five_health_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "pause_retained": {
+      "pid": 690142,
+      "start_ticks": 10866248
+    },
+    "persistent_data_and_network_preserved": true,
+    "receipt": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-014/read-only-reconciliation-001/result.json",
+      "sha256": "434fd8df0e28c1ec448d04046559e06848382c92543ddafed8b31aaccf2fb6ce"
+    }
+  },
+  "references": {
+    "bundle017": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-017/bundle.json",
+      "sha256": "b72019dd52807185af1e549440269d13f100b7b1f4f2112500bd1452887ff917"
+    },
+    "bundle017_assembly": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-017/assembly-result.json",
+      "sha256": "0c7775967f6ee8786fefbae21fce7be81cdfefaa2cc8aad22c9df57a8db643b0"
+    },
+    "bundle017_review": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-runtime-bundle017-review-001/result.json",
+      "sha256": "8a2c11076df168c7b00d7f759e6a3a5bfad485a421aa71a723d3696883e4be13"
+    },
+    "image_pair007": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-pair-007/result.json",
+      "sha256": "7a309402610878408a8b4a3603ee247f3699997c8d439cacdba85519570b3a13"
+    },
+    "images015_review": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-images015-independent-review-001/result.json",
+      "sha256": "e1696bd546c527d20c9564d9f77b61888ee6d021f9140277791647bd30dee492"
+    },
+    "live_publication016": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/recovery-20261003/post-publication016-live-state.json",
+      "sha256": "bacf550b336bd43532e08cdf43ee6669f1ca5844b4d97015e010e2db4c6590da"
+    },
+    "marker_observation": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-014/progress-marker-observation-001.json",
+      "sha256": "5b66935d12baacefe8e0fd9be3269265b42cafc68a649b0231a8526fa9237367"
+    },
+    "publication016": {
+      "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/plt01-draft-publication-attempts/d1b0f65d-c515-46e5-8024-1de3a8e650e8/result.json",
+      "sha256": "3dde97a5ae1fb3ac33627b8b7bfaf2cc409cc72e1121f332b59833e93b9c4f61"
+    },
+    "validation023": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-023/result.json",
+      "sha256": "ad1607f654381e5b424d701de806d90800adeb9543148c6bfcbb3046a40921cc"
+    },
+    "validation024": {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-024/result.json",
+      "sha256": "97b9ef899da1ed93f0c8312a8afa8de45c7f25075b7a53ad899c13e35254d49e"
+    }
+  },
+  "remaining": [
+    "New component independently reviewed and integrated; fresh combined source/artifact checks remain pending.",
+    "Observed new Java phases or successful initialization in a fresh ordinary attempt; neither is claimed yet.",
+    "Protected services, restart/reinit/recovery, functional DNS and daemon cleanup, port/OS/concurrency/log matrices and full PLT-01/P1/MVP acceptance remain open.",
+    "The held targeted runtime qualification remains excluded and unexecuted."
+  ],
+  "schema_version": 1,
+  "snapshot_at": "2026-10-04T11:55:10.247525+00:00",
+  "source_checks": {
+    "new_geoserver_component_included": false,
+    "scope": "Source/inert checks, not installed GIS acceptance.",
+    "skips": 0,
+    "tracked_source_files": 1522,
+    "validation023": {
+      "development": 121,
+      "image_helpers": 40,
+      "package": 658,
+      "runtime": 52,
+      "schemas": 10
+    },
+    "validation024": {
+      "explicit_unchanged_reuse_from023": {
+        "development": 121,
+        "image_helpers": 40
+      },
+      "package": 658,
+      "runtime": 52,
+      "schemas": 10
+    }
+  },
+  "source_head": "2bc52ba9f5302b5b969f3bda2315eeafc1e7dd33",
+  "task": "PLT-01"
+}

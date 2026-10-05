@@ -1,0 +1,79 @@
+{
+  "current_task": {
+    "branch": "plt-01/development-install",
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "id": "PLT-01",
+    "local_head": "51f903f6a1e2083f58bdc4b16eb68ba24281a6c4",
+    "published_head": "314f11e243a11ed6c494bdd2aa70ef18f4ec049a",
+    "repository": "aloerch/ambisgis-platform",
+    "state": "In progress"
+  },
+  "held_targeted_probe_executed": false,
+  "installation_accepted": false,
+  "integrator": "/root",
+  "last_completed": {
+    "actual_installation": "Relocation/init passed. Database reached useful health and explicit pre-migration health recheck exited0. Catalog initializer started, exited1 and was removed by original --rm. Serving application journeys were not reached.",
+    "checks": {
+      "development": 101,
+      "image_helpers": 40,
+      "package": 604,
+      "runtime": 51,
+      "schemas": 10,
+      "scope": "Validation013 at58e87 plus exact final two-line commit51f903 rebind; unchanged image/development source reuses validation012.",
+      "skips": 0,
+      "source_files": 1485
+    },
+    "implementation": "Retained locale projection and fixed safe startup diagnostics integrated at51f903; actual images005006 and bundle012 independently reviewed."
+  },
+  "mvp_complete": false,
+  "native_goal": {
+    "automatic_continuation": "Not active while native Goal blocked",
+    "observed_at": "2026-10-04T04:05:01Z",
+    "quota_status": "unknown",
+    "remaining_tokens": null,
+    "reported_tokens_used": 12420153,
+    "source": "Fresh get_goal response paired with UTC clock observation",
+    "status": "blocked",
+    "token_budget": "not configured in returned state",
+    "user_action": "Use /goal resume in this same thread for native automatic continuation"
+  },
+  "next_action": "Fixed retained GDAL/GEOS Django settings, bounded preservation of fixed startup-failure metadata, and a separate fixed ordinary DNS functional check. All remain subject to independent source review and actual affected installation tests.",
+  "observed_at": "2026-10-04T04:07:51.937752+00:00",
+  "observed_terminal": {
+    "at": "2026-10-03T13:28:22.795Z",
+    "cause_confidence": "High for terminal error category; unknown exact trigger/internal stalled-state transition",
+    "code": "cyber_policy",
+    "exact_triggering_content": "unknown"
+  },
+  "owner_action_required_for_current_safe_work": false,
+  "reconciliation": {
+    "acknowledged_after_actual_reconciliation": true,
+    "all_helpers_gone": false,
+    "evidence": "plan/verification/plt01-lifecycle/evidence-009.json",
+    "failed_guard_run_id": "37157f1d-e5f3-46c5-97b6-e1e03ddecc61",
+    "next_action_performed": "Created isolated source repair worktrees only; no native retry."
+  },
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/evidence-009.json",
+      "sha256": "f26c9612b3951cf0acfc18cd7b2a5c780b00cd4088a1a95764f301df60be8804"
+    }
+  ],
+  "remote_changes": {
+    "draft_pr_body_updated": false,
+    "issue_closed": false,
+    "last_published_head": "314f11e243a11ed6c494bdd2aa70ef18f4ec049a",
+    "merge": false,
+    "normal_task_branch_push": false,
+    "project_settings_workflows_releases_changed": false
+  },
+  "schema_version": 1,
+  "scope": "Foreground delivery checkpoint; saved evidence is not a live worker or automatic continuation",
+  "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+  "worker_observations": {
+    "db02_validation": "Fixed owned GDAL/GEOS settings source and inert loader witness",
+    "fnd03_identity": "Fixed ordinary DNS functional source and inert tests",
+    "observed_at": "2026-10-04T04:07:51.937752+00:00",
+    "root": "Bounded initializer failure reporting source/inert tests in isolated worktree"
+  }
+}

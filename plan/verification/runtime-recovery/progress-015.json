@@ -1,0 +1,122 @@
+{
+  "completed_source_and_artifact_boundary": "Configuration/phase diagnostics, validations025/026, paired images017/018 and audited bundle018; published draft1ba.",
+  "component_observation": {
+    "base": "1baae0f48bcd69cb709e1aa0cfec80ba0895790b",
+    "branch": "plt-01/geoserver-jvm-lifecycle",
+    "changes": "Init-only bounded post-stop ThreadMXBean observation; fixed symbols, unknown/overflow/races explicit, no raw thread names or messages. Stop precedence, serving mode and deadlines preserved.",
+    "component_commit": "676ef0dce6a65940e769d66eea1bb276a4703ad4",
+    "files": 3,
+    "independent_review": {
+      "findings": [],
+      "sha256": "88603cc021c3608d0bac844dfb510447d4e18638d684035b751ec6c1ae8558df",
+      "status": "PASS_PRODUCT_SOURCE_AND_ACTUAL_JAVA_CHECK_REVIEW"
+    },
+    "java004": {
+      "application_started": false,
+      "check_log_sha256": "7c8d4f3198503ffffbf7717b2b87fe0d9c68ad10676c050dc08477b0c77eb9aa",
+      "excluded_test_classes": 3,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "independent_review": "PASS; same actual63/66/67 checks, not additional executions credited here",
+      "phase_checks": 66,
+      "production_classes": 9,
+      "receipt_sha256": "8e17f435a83c661bc297eed9b3574ac2a1dff6e32d415a4699bc0e418371a1f6",
+      "request_checks": 63,
+      "thread_checks": 67,
+      "total_class_files": 12
+    },
+    "published": false,
+    "references": {
+      "java004": {
+        "evidence_id": "java004",
+        "sha256": "8e17f435a83c661bc297eed9b3574ac2a1dff6e32d415a4699bc0e418371a1f6"
+      },
+      "jvm_integration": {
+        "evidence_id": "jvm_integration",
+        "sha256": "104ca9a878a89ee3c240030f17c183db0f7a0135a508bcca40be9cc0c688f31c"
+      },
+      "jvm_source_diagnosis": {
+        "evidence_id": "jvm_source_diagnosis",
+        "sha256": "e22478f6a937a079721cb5cef266f2cf7d4a5c0ac50e63b0dc765500becaa9d0"
+      },
+      "jvm_source_freeze": {
+        "evidence_id": "jvm_source_freeze",
+        "sha256": "a1bd756f53f2e6c36bd0482e03aedc17538ba93068e72b14bee7aee43e8125da"
+      },
+      "jvm_source_java_review": {
+        "evidence_id": "jvm_source_java_review",
+        "sha256": "88603cc021c3608d0bac844dfb510447d4e18638d684035b751ec6c1ae8558df"
+      },
+      "jvm_symbol_inventory": {
+        "evidence_id": "jvm_symbol_inventory",
+        "sha256": "e2687a355d8c9148dba7e8ded16c638922cf99c9ecd1efb9c021e84dae1ffda0"
+      }
+    },
+    "remaining": "Combined validation027, rebuilt images/bundle and actual initializer observation pending.",
+    "root_integrated": true,
+    "root_integration": {
+      "merge": "22cb4eacb843abafab159a68046cbc2b3aae3053",
+      "receipt_sha256": "104ca9a878a89ee3c240030f17c183db0f7a0135a508bcca40be9cc0c688f31c"
+    },
+    "runtime_repair_claimed": false
+  },
+  "current_task": {
+    "branch": "plt-01/development-install",
+    "delivery": "In progress",
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "id": "PLT-01",
+    "local_head": "22cb4eacb843abafab159a68046cbc2b3aae3053",
+    "published_head": "1baae0f48bcd69cb709e1aa0cfec80ba0895790b"
+  },
+  "foreground_delivery": "active",
+  "held_targeted_probe_executed": false,
+  "installation_accepted": false,
+  "last_completed_accepted_task": {
+    "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
+    "implementation": "Typed branch snapshots and durable private creation/activation, finite quotas and lifecycle metadata",
+    "limitations": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open.",
+    "merge": "DB-03 PR13 13fb7c9bff9d011838b768802a6ab63f932bd228",
+    "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified."
+  },
+  "latest_application_diagnostic": {
+    "jvm_thread_cause": "unobserved",
+    "name": "geoserver-init-replay-002",
+    "normal_stop_and_final_phase_emitted": true,
+    "original014_cause": "unobserved",
+    "persistent_initialized_marker_present": false,
+    "status": "FAILED"
+  },
+  "latest_ordinary_attempt": {
+    "attempt": 14,
+    "catalog_initialization_completed": true,
+    "failure": "entrypoint/timeout/timeout",
+    "serving_acceptance": false,
+    "status": "FAILED"
+  },
+  "mvp_accepted": false,
+  "native_goal": {
+    "automatic_continuation": "Not active while native Goal blocked",
+    "observed_at": "2026-10-04T13:10:28Z",
+    "remaining_tokens": null,
+    "reported_time_used_seconds": 30612,
+    "reported_tokens_used": 12420153,
+    "source": "Fresh root get_goal/clock tool testimony supplied to this worker at 13:10:28 UTC; no independent Goal query or raw transcript copy.",
+    "status": "blocked",
+    "token_budget": "not configured in returned state",
+    "user_action": "/goal resume in this same thread is a user action for native automatic continuation only; foreground delivery continues."
+  },
+  "next_action": "Run validation027 on the reviewed JVM observation integration, then build and independently review successor images/bundle before a fresh private initializer observation. No forced JVM exit, pool shutdown or timeout increase; current service/MVP acceptance remains open.",
+  "observed_at": "2026-10-04T13:13:06.517084+00:00",
+  "owner_action_required_for_current_safe_work": false,
+  "previous_progress": "progress-014.json",
+  "references": {
+    "plan/verification/plt01-lifecycle/evidence-015.json": {
+      "path": "plan/verification/plt01-lifecycle/evidence-015.json",
+      "sha256": "8cd4b9c5cdfd084f93802020cd34e7c9442fa5e9d49243f9ee2533d1f1f6a949"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Foreground delivery snapshot; not native Goal automatic continuation."
+}

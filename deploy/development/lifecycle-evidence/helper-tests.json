@@ -1,0 +1,27 @@
+{
+  "task": "PLT-01",
+  "scope": "Five inert relocation/adoption/evidence boundary checks only. No engine execution or installation acceptance.",
+  "command": [
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "deploy/development",
+    "-p",
+    "test_lifecycle_check.py",
+    "-v"
+  ],
+  "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree",
+  "exit_code": 0,
+  "tests": 5,
+  "skips": 0,
+  "source": {
+    "deploy/development/lifecycle_check.py": "aa6e117d9f0e6969a78c9fdf8ce27263e86ad471673972a4a12dddf7dea08708",
+    "deploy/development/test_lifecycle_check.py": "23ddd5599c2c361d025a16195c8afc500e4dde51ebbda7532ef89c96a605b213"
+  },
+  "log_sha256": "2538b60f7c4f996c0252c967047afbcbc098833741581226fbe9f204458b2f48",
+  "observed_at": "2026-10-03T19:29:14.944947+00:00",
+  "prior_run": "61 tests passed; discovery also included the 56 imported fixture tests. Changed fixture import to module to limit discovery to five intended cases."
+}

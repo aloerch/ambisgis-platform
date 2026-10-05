@@ -32,7 +32,7 @@ Compliant project-owned experimental/MVP prereleases are authorized only after d
 
 ## Continuation and stop
 
-The actual runner is the existing Codex native-goal thread `01a1001c-60c3-7680-a640-54a47bbe6be7`, integrator `/root`, maximum three delegated workers plus integrator. Native continuation is active; no recursive supervisor or new service is installed. Installed `codex-cli 0.160.0`, supported `codex exec resume <SESSION_ID>` and existing ChatGPT login were inspected. Host tools use the existing `flatpak-spawn --host` bridge; credentials are never copied.
+The actual runner is the existing Codex native-goal thread `01a1001c-60c3-7680-a640-54a47bbe6be7`, integrator `/root`, maximum three delegated workers plus integrator. Native continuation was observed during the initial delivery run. Its current state is recorded separately in the ledger execution checkpoint; this policy is not liveness telemetry. No recursive supervisor or new service is installed. Installed `codex-cli 0.160.0`, supported `codex exec resume <SESSION_ID>` and existing ChatGPT login were inspected. Host tools use the existing `flatpak-spawn --host` bridge; credentials are never copied.
 
 The owner can revoke/stop in this thread or pause/clear the native goal. Honor platform limits, quota and interruption. Save a concise ledger and reconcile live/local state on resume. Use one integration lock, bounded retries/backoff and readback after ambiguous writes. Checkpoint truthfully if continuation is unavailable; do not imply that a saved checkpoint is a running process. Continue independent safe work through external gates, and batch only genuine owner setup/decision requests. Delegation ends at scoped MVP delivery or revocation.
 

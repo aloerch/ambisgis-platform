@@ -1,0 +1,673 @@
+{
+  "artifacts": {
+    "assembler_sha256": "10aa86430bf28305cb4017a7ac1c10af626c3553fba8c7fe4897eacc0b50775e",
+    "bundle": "023",
+    "bundle_candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+    "bundle_review": {
+      "evidence_id": "bundle023-review",
+      "sha256": "ec81567ff02f21536c78aebdae2070b9d660d633b4034f040bda5aa83ec3c3c2"
+    },
+    "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
+    "elf_objects": 374,
+    "host_prerequisites": 12,
+    "image_native_war_java_bytes_unchanged_from022": true,
+    "image_review": {
+      "evidence_id": "images025-review",
+      "sha256": "55956c70c5dd299cedde6d8ec7904841eb8b6e3d6d4e4ce975c1f0fdd0ace9a3"
+    },
+    "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+    "images": "025/026",
+    "new_bundle_runtime_delta": [
+      "runtime/modules/installer/config.py",
+      "runtime/modules/installer/runtime.py",
+      "runtime/configuration/custody.json"
+    ],
+    "paired_archives_byte_identical": true,
+    "paired_roles": 4,
+    "runtime_executed_during_assembly_or_audit": false,
+    "runtime_files": 1320
+  },
+  "checks": {
+    "all_exit_codes_zero": true,
+    "dns_host_validation": {
+      "development": 132,
+      "package": 689,
+      "schemas": 10
+    },
+    "explicit_unchanged_reuse": {
+      "image_helpers": 40
+    },
+    "final_document_package_schema_checks": "Pending fresh post-document checks before publication; not credited here.",
+    "reuse_limit": "Image inputs and helper sources are unchanged from the independently reviewed images025/026 and runtime-validation032 lineage. Earlier native fixture and source reviews are reused only for their unchanged scope.",
+    "scope": "Source/helper/package/schema checks and a separate synthetic PostgreSQL fixture; actual ordinary journeys are recorded separately.",
+    "sequence_native_fixed": 41,
+    "sequence_validation": {
+      "development": 121,
+      "package": 689,
+      "schemas": 10
+    },
+    "skips": 0,
+    "source_files": 1549,
+    "tmpfs_validation": {
+      "development": 132,
+      "package": 692,
+      "runtime": 77,
+      "schemas": 10
+    }
+  },
+  "delivery": "In progress",
+  "dns_resolver_owner": {
+    "component_head": "13e20a1ef181d03998700145269418adfc80d164",
+    "diagnosis_limit": "Original017 ValueError frame remains unobserved; the retained-file witness establishes the guarded ownership mismatch, not the exact historical exception frame.",
+    "independent_source_reviewer": "/root",
+    "integrated_head": "31da5ad4af19c3386d36c9362b7cb5a810c2d753",
+    "reviews": [
+      {
+        "evidence_id": "dns-owner-source-review",
+        "sha256": "2c1d1b1bd5e825ef038d44d706ec31e08dd70ebef11920ebdc1bae898b2a7f6a"
+      },
+      {
+        "evidence_id": "dns-owner-reuse-review",
+        "sha256": "b69984a47e2e3a0eae791c9fe4d58b4ff7d283b110eee471e180396f9f37bade"
+      },
+      {
+        "evidence_id": "dns-owner-integration-review",
+        "sha256": "4aef0402ee41dd5f3449dc8a17857bd27763d757e98e04b4acc6fa34ed3016db"
+      }
+    ],
+    "scope": "Three host-helper/test/document files only; no packaged module, wire probe, lifecycle driver, image or bundle022 bytes changed.",
+    "security": "Exact fresh target root0 uid/gid mapping from a different user namespace, anchored PID/start/user-namespace checks before and after; contained single bind, nofollow, inode, mode and hash checks retained. Unavailable evidence fails closed. No namespace entry.",
+    "source_author": "/root/db02_validation",
+    "tests": "Original retained-file witness failed; 29 fixed pure cases and 11 independent root cases passed. Fresh132 development/689 package/10 schema checks passed."
+  },
+  "final_effects": {
+    "all_four_retained_health_snapshots": "healthy, last five health exit codes zero; services are stopped, so this is not current readiness",
+    "all_helpers_gone": false,
+    "all_six_roles_nonrunning": true,
+    "dns_cleanup_verified": false,
+    "four_present_roles_full_security_passed": true,
+    "geoserver_exit_limit": "Exit143 is compatible with signal15 and is not clean exit0 or independent proof of graceful shutdown.",
+    "guard_wrapper_child_absent": true,
+    "initializers_absent": 2,
+    "known_persisted_timer_service_units_not_loaded": 8,
+    "known_service_conmon_pid_absences": 8,
+    "native_state_limit": "Equality covers only this post-diagnosis final observer, not the earlier lifecycle.",
+    "native_state_unchanged_during_final_observer": true,
+    "observer_data_deleted": false,
+    "observer_retry": false,
+    "observer_signals_sent": false,
+    "owned_pause_retained": true,
+    "reconciled": true,
+    "serving_role_exits": {
+      "catalog": 0,
+      "database": 0,
+      "gateway": 0,
+      "geoserver": 143
+    },
+    "stored_native_errors": "Three roles retain the exact owned-source already-running start-state error; operation and time are unrecorded. Fresh retained inspection independently shows exited/Pid0.",
+    "unavailable_process_reads": 5
+  },
+  "full_P1_acceptance": false,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+  "intermediate_public_evidence017_created": false,
+  "latest_completed_ordinary_attempt": {
+    "attempt": 19,
+    "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
+    "completed_protected_journeys": 4,
+    "count_limits": "552 recorded data requests exclude OAuth traffic and the separate gateway liveness request. Twenty-eight recorded revocations across ten cleanup sessions are not a claim of twenty-eight distinct token values.",
+    "dns": {
+      "classification": "namespace_binding_unavailable",
+      "daemon_cleanup_driver_verified": true,
+      "exact_mapped_owner_proofs": 4,
+      "fixed_database_udp_queries_verified": 4,
+      "incomplete_checks": 6,
+      "namespace_binding_verified": false,
+      "overall_cleanup_verified": false,
+      "running_identity_observations": 4,
+      "shutdown_observations": 2
+    },
+    "driver_shutdown": {
+      "dns_daemon_cleanup_verified": true,
+      "dns_namespace_binding_verified": false,
+      "dns_overall_cleanup_verified": false,
+      "persistent_data_preserved": true,
+      "running_services": 0
+    },
+    "error_type_recorded": false,
+    "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
+    "finished_at": "2026-10-04T23:20:38.556361+00:00",
+    "full_installation_acceptance": false,
+    "held_targeted_probe_executed": false,
+    "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+    "journey_totals": {
+      "completed_journeys": 4,
+      "data_requests": 552,
+      "data_status_counts": {
+        "200": 88,
+        "403": 428,
+        "404": 36
+      },
+      "map_query_oracles": 16,
+      "native_policy_restorations": 4,
+      "post_negative_unchanged_oracles": 20,
+      "recorded_tokens_revoked": 28,
+      "route_negative_cases": 328,
+      "same_token_permission_reads": 60,
+      "token_cleanup_sessions": 10,
+      "unaccounted_issuance_principals": 0
+    },
+    "persistence": {
+      "dependency_recovery_verified": true,
+      "metadata_uuid_and_title_same_all_four_journeys": true,
+      "reinitialization_verified": true,
+      "restart_verified": true,
+      "stop_identity_credentials_unchanged": true,
+      "stopped_renderer_useful_failure_verified": true
+    },
+    "preceding_failed_attempts_preserved": 18,
+    "recorded_driver_stages": [
+      {
+        "at": "2026-10-04T23:06:48.750464+00:00",
+        "name": "verified relocated bundle"
+      },
+      {
+        "at": "2026-10-04T23:06:57.332210+00:00",
+        "name": "fresh init"
+      },
+      {
+        "at": "2026-10-04T23:09:51.121453+00:00",
+        "name": "fresh up status doctor"
+      },
+      {
+        "at": "2026-10-04T23:09:51.126535+00:00",
+        "name": "native DNS after initial CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:10:20.195211+00:00",
+        "name": "DNS wire after initial CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:11:40.765295+00:00",
+        "name": "protected map query metadata journey"
+      },
+      {
+        "at": "2026-10-04T23:12:01.803513+00:00",
+        "name": "stopped persistent installation"
+      },
+      {
+        "at": "2026-10-04T23:12:18.978040+00:00",
+        "name": "restart preserves metadata and credentials"
+      },
+      {
+        "at": "2026-10-04T23:12:18.988136+00:00",
+        "name": "native DNS after restart"
+      },
+      {
+        "at": "2026-10-04T23:12:49.018705+00:00",
+        "name": "DNS wire after restart"
+      },
+      {
+        "at": "2026-10-04T23:14:16.632183+00:00",
+        "name": "full protected journey after restart"
+      },
+      {
+        "at": "2026-10-04T23:15:36.660669+00:00",
+        "name": "reinitialization preserves metadata and credentials"
+      },
+      {
+        "at": "2026-10-04T23:15:36.677830+00:00",
+        "name": "native DNS after repeated CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:16:07.066502+00:00",
+        "name": "DNS wire after repeated CLI exit"
+      },
+      {
+        "at": "2026-10-04T23:17:34.509878+00:00",
+        "name": "full protected journey after reinitialization"
+      },
+      {
+        "at": "2026-10-04T23:18:07.585126+00:00",
+        "name": "stopped renderer produces useful failure"
+      },
+      {
+        "at": "2026-10-04T23:18:22.319841+00:00",
+        "name": "dependency recovery preserves state"
+      },
+      {
+        "at": "2026-10-04T23:18:22.345071+00:00",
+        "name": "native DNS after dependency recovery"
+      },
+      {
+        "at": "2026-10-04T23:18:52.634233+00:00",
+        "name": "DNS wire after dependency recovery"
+      },
+      {
+        "at": "2026-10-04T23:20:20.796309+00:00",
+        "name": "full protected journey after dependency recovery"
+      }
+    ],
+    "recorded_stage_count": 20,
+    "reviewed_effects": {
+      "all_four_retained_health_snapshots": "healthy, last five health exit codes zero; services are stopped, so this is not current readiness",
+      "all_helpers_gone": false,
+      "all_six_roles_nonrunning": true,
+      "dns_cleanup_verified": false,
+      "four_present_roles_full_security_passed": true,
+      "geoserver_exit_limit": "Exit143 is compatible with signal15 and is not clean exit0 or independent proof of graceful shutdown.",
+      "guard_wrapper_child_absent": true,
+      "initializers_absent": 2,
+      "known_persisted_timer_service_units_not_loaded": 8,
+      "known_service_conmon_pid_absences": 8,
+      "native_state_limit": "Equality covers only this post-diagnosis final observer, not the earlier lifecycle.",
+      "native_state_unchanged_during_final_observer": true,
+      "observer_data_deleted": false,
+      "observer_retry": false,
+      "observer_signals_sent": false,
+      "owned_pause_retained": true,
+      "reconciled": true,
+      "serving_role_exits": {
+        "catalog": 0,
+        "database": 0,
+        "gateway": 0,
+        "geoserver": 143
+      },
+      "stored_native_errors": "Three roles retain the exact owned-source already-running start-state error; operation and time are unrecorded. Fresh retained inspection independently shows exited/Pid0.",
+      "unavailable_process_reads": 5
+    },
+    "source_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+    "started_at": "2026-10-04T23:06:38.631835+00:00",
+    "status": "incomplete"
+  },
+  "native_goal": {
+    "assistant_resume_performed": false,
+    "budget_configured": false,
+    "exact_original_trigger": "unknown",
+    "foreground_delivery_continues": true,
+    "held_targeted_probe_executed": false,
+    "native_resume_claimed": false,
+    "original_terminal_cause": "cyber_policy",
+    "recorded_at": "2026-10-04T23:34:50.720439+00:00",
+    "remainingTokens": null,
+    "source": "Root get_goal tool testimony during this foreground context; recording timestamp is not precise tool response instant.",
+    "status": "blocked",
+    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+    "timeUsedSeconds": 30612,
+    "timestamp_meaning": "Persisted root testimony record time, not the precise tool-response instant.",
+    "tokensUsed": 12420153,
+    "updatedAt": 1791034102
+  },
+  "next_action": "Prepare and review bounded ordinary concurrent CLI init/up checks, and publish this reviewed source/outcome increment after final document, history and text gates. DNS namespace-binding and overall cleanup evidence remain incomplete; the separate held targeted qualification stays unexecuted.",
+  "preserved_failures": "All ordinary001\u2013018 failures, diagnostic attempts and verifier/preparation failures remain immutable. Final017 observer001 unit-name regex failure and corrected002 evidence remain separate. No unsuccessful result is relabeled.",
+  "previous_evidence": "evidence-016.json",
+  "prior_actual_attempts": [
+    {
+      "attempt": 17,
+      "bundle": "022",
+      "completed": "Fresh up/status/doctor useful readiness passed. DNS daemon identity was verified with namespace binding unsupported; the next DNS helper failed ValueError before its stage. No protected HTTP journey ran.",
+      "effects": "All six roles nonrunning; four stopped with security checks, eight known PID absences and eight exact units not loaded; pause retained, six process reads unavailable, DNS/global helper cleanup unverified.",
+      "exact_exception_frame": "unobserved",
+      "references": [
+        {
+          "evidence_id": "actual017",
+          "sha256": "fede047365c639c9ff9f6a177a600c9713c81c95b65d174c0a8423bd52958652"
+        },
+        {
+          "evidence_id": "actual017-effects-review",
+          "sha256": "9317361b49dd3290e82612ef11ed1726ba811e4ffa60c9f0d746117031a5db93"
+        }
+      ],
+      "source_head": "fddd05c2c3983ee4e939274bfa945b505b08566c",
+      "status": "failed"
+    },
+    {
+      "attempt": 18,
+      "bundle": "022",
+      "completed": "Initial useful readiness, DNS wire and one138-request protected journey passed; seven stages included stopped persistent identity/credential preservation. Restart then failed TimeoutError.",
+      "effects": "Four serving roles stopped; database/catalog/gateway exit0 and GeoServer exit1. Eight known PID absences and eight exact units not loaded; pause retained, six process reads unavailable, DNS/global helper cleanup unverified.",
+      "exact_exception_frame": "unobserved",
+      "references": [
+        {
+          "evidence_id": "actual018",
+          "sha256": "30bf04e00b1bd335ba30ee55e58e869b90aaf56cd34356a297ee2d49c9d69655"
+        },
+        {
+          "evidence_id": "actual018-first-review",
+          "sha256": "65a1363e0f3d3ca5a8d51d7e3028e39c05d15c9c3528db1c9d94b3ed1c205ea9"
+        },
+        {
+          "evidence_id": "actual018-effects-review",
+          "sha256": "0905f99a0f8b96b91161ec70b87edb984b970b079f2a6ec21bbd36cbfc125b58"
+        },
+        {
+          "evidence_id": "restart-source-diagnosis",
+          "sha256": "9a220ff94d4be84771073d8eae4dd3874373fa99643398414513717e89bf65bb"
+        }
+      ],
+      "source_head": "31da5ad4af19c3386d36c9362b7cb5a810c2d753",
+      "status": "failed"
+    }
+  ],
+  "recorded_at": "2026-10-04T23:43:43.930813+00:00",
+  "references": [
+    {
+      "evidence_id": "sequence-source-review",
+      "sha256": "e0fa7b9656ad1de041944af685bab521bf645a3b2bfc10db2eb23f2f5acec45d"
+    },
+    {
+      "evidence_id": "sequence-native-result",
+      "sha256": "b861322d4829d0171c0f9c87183ca46c278f4b167b041a32a0e555006f7b13e0"
+    },
+    {
+      "evidence_id": "sequence-native-review",
+      "sha256": "4b04469df62813bfe29af2f4f21355337e31fc82facbb564d372893d29a12354"
+    },
+    {
+      "evidence_id": "sequence-source-validation",
+      "sha256": "0286997fba936cf0080f34b3d33c369f24083b1e3b1f2f8b540e1fa8fd494112"
+    },
+    {
+      "evidence_id": "sequence-integration",
+      "sha256": "29655b94aa924b64df0a080ead2cf2368957972e723c863a86e9c1aaedcefd11"
+    },
+    {
+      "evidence_id": "sequence-integration-validation",
+      "sha256": "c620c1a6177e0d727f8bb50163abe32551ae8e11685118af4e3b87302366d8cb"
+    },
+    {
+      "evidence_id": "sequence-integration-review",
+      "sha256": "69600ef3c5d45e1faefe087c386a3b55d9dadae4449c65e64082d073ac231389"
+    },
+    {
+      "evidence_id": "image-pair012",
+      "sha256": "70188e6f489daf3b8ba0f6a451c6a62537dde85ebbd048e60c0524d1475b7f99"
+    },
+    {
+      "evidence_id": "images025-review",
+      "sha256": "55956c70c5dd299cedde6d8ec7904841eb8b6e3d6d4e4ce975c1f0fdd0ace9a3"
+    },
+    {
+      "evidence_id": "bundle022-production",
+      "sha256": "8b8d8820e337fdd19459e069b8be07a5a59cd8f394cdedd424bfaa8f4cfa7f25"
+    },
+    {
+      "evidence_id": "bundle022",
+      "sha256": "5f446e51b102788791cb033014fa22302f2bb15320685414a4b929f888dbf71b"
+    },
+    {
+      "evidence_id": "bundle022-review",
+      "sha256": "fb433c3cf21bb0e6af729210d905fa4781badc526f291b96e23bbeb422169a8c"
+    },
+    {
+      "evidence_id": "runtime-validation032",
+      "sha256": "5b99df0ea69bb6df998a5da4e93e4e83849421d757a1790c9751e206824708ed"
+    },
+    {
+      "evidence_id": "actual017",
+      "sha256": "fede047365c639c9ff9f6a177a600c9713c81c95b65d174c0a8423bd52958652"
+    },
+    {
+      "evidence_id": "actual017-effects",
+      "sha256": "636bbe042254a362e28e19a3bf04028b66166fc32498ba5e2b993f8277f9a88a"
+    },
+    {
+      "evidence_id": "actual017-effects-review",
+      "sha256": "9317361b49dd3290e82612ef11ed1726ba811e4ffa60c9f0d746117031a5db93"
+    },
+    {
+      "evidence_id": "dns-owner-proposal",
+      "sha256": "b930b25d5fc64e541dca21216f717b93a063c423afd572882996d2cb0fd1a9f3"
+    },
+    {
+      "evidence_id": "dns-owner-source-review",
+      "sha256": "2c1d1b1bd5e825ef038d44d706ec31e08dd70ebef11920ebdc1bae898b2a7f6a"
+    },
+    {
+      "evidence_id": "dns-owner-reuse-review",
+      "sha256": "b69984a47e2e3a0eae791c9fe4d58b4ff7d283b110eee471e180396f9f37bade"
+    },
+    {
+      "evidence_id": "dns-owner-validation",
+      "sha256": "dacc75fe44bb511d70807f148e106989467bbcf3d7bd01ad738aad43ea352868"
+    },
+    {
+      "evidence_id": "dns-owner-integration",
+      "sha256": "60cf2a54396aaa0e9200fa313ec19c50505d936e6d8f69147accd4aabd219405"
+    },
+    {
+      "evidence_id": "dns-owner-integration-review",
+      "sha256": "4aef0402ee41dd5f3449dc8a17857bd27763d757e98e04b4acc6fa34ed3016db"
+    },
+    {
+      "evidence_id": "actual018",
+      "sha256": "30bf04e00b1bd335ba30ee55e58e869b90aaf56cd34356a297ee2d49c9d69655"
+    },
+    {
+      "evidence_id": "actual018-first-review",
+      "sha256": "65a1363e0f3d3ca5a8d51d7e3028e39c05d15c9c3528db1c9d94b3ed1c205ea9"
+    },
+    {
+      "evidence_id": "actual018-effects",
+      "sha256": "22c88d07f36712c1d949fedd8fdb2328e1a7521ac675113db1ccddbd36299a81"
+    },
+    {
+      "evidence_id": "actual018-effects-review",
+      "sha256": "0905f99a0f8b96b91161ec70b87edb984b970b079f2a6ec21bbd36cbfc125b58"
+    },
+    {
+      "evidence_id": "restart-source-diagnosis",
+      "sha256": "9a220ff94d4be84771073d8eae4dd3874373fa99643398414513717e89bf65bb"
+    },
+    {
+      "evidence_id": "tmpfs-proposal",
+      "sha256": "23389548f5f75a25f197e66b6d10ad2b96152030f0732a3c4963484d220c9591"
+    },
+    {
+      "evidence_id": "tmpfs-source-review",
+      "sha256": "6fc733593966f01f68e67495aec25dc8a65ddedea0e1e830cca602f1b0138e1a"
+    },
+    {
+      "evidence_id": "tmpfs-image-inclusion",
+      "sha256": "a8d093f59b1b02737cbae8c9ff89888799eec291642d8ff58c08aaff4f965241"
+    },
+    {
+      "evidence_id": "tmpfs-validation",
+      "sha256": "61c338a3b083f8c2717cf8f145066b4379de6c4dc6d1dbdfe36643bc9adfe562"
+    },
+    {
+      "evidence_id": "tmpfs-integration",
+      "sha256": "f34880b83807dc8cc14bde7b29fd0466242ce447f02afefc7d6252938bbdfa2c"
+    },
+    {
+      "evidence_id": "bundle023-production",
+      "sha256": "3c74a395d52720200f015ba48c2d6f97cf55793ee3852920ed6aa801a4208222"
+    },
+    {
+      "evidence_id": "bundle023",
+      "sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20"
+    },
+    {
+      "evidence_id": "bundle023-assembly",
+      "sha256": "fb630b38582c86dd980f0c82e4685901f69df97051ac9a540fb3a74c42b3d09e"
+    },
+    {
+      "evidence_id": "bundle023-closure",
+      "sha256": "5852ff7ff86b5a5487791f1c5876c32bd86c62e41ae84b3f29de1b6bee21fed0"
+    },
+    {
+      "evidence_id": "bundle023-review",
+      "sha256": "ec81567ff02f21536c78aebdae2070b9d660d633b4034f040bda5aa83ec3c3c2"
+    },
+    {
+      "evidence_id": "actual019",
+      "sha256": "33a6b071c2f56fd5cc53f0f4c164a8cde9e94e73767ffe490b0ff456eb9f0821"
+    },
+    {
+      "evidence_id": "actual019-first-effects",
+      "sha256": "888cd148bf73795066b6af98c69f33fda769998da7b0d3007844d3c3dfd5f9d5"
+    },
+    {
+      "evidence_id": "actual019-journey-review",
+      "sha256": "d4c70c062ceb1261db71661ae04cccae739a4faa8f6d1b62703bdacf2847a5e0"
+    },
+    {
+      "evidence_id": "actual019-final-effects",
+      "sha256": "8d03fae0d592871bf334d78653f4d962b2d1d4d3a61bd62568294159d26fb7b0"
+    },
+    {
+      "evidence_id": "actual019-final-review",
+      "sha256": "c211c9ee04875340832fc35d9f17469db67e67c6f1411e8d617d672febb1a580"
+    },
+    {
+      "evidence_id": "history025",
+      "sha256": "5d06967081fc88010f6c3e4ed9dd8ed7f6430cde2bfda4c5fd4585cd49946a2a"
+    },
+    {
+      "evidence_id": "history026",
+      "sha256": "6f83e58765f29452edcc832427c50451b4aca3a9c7a561ec134c650ac4f87bac"
+    },
+    {
+      "evidence_id": "history027",
+      "sha256": "cf15621ccaabf2033c5b04bebf17e9d74c0bda187d93d9c61f6412b4ff7d08ac"
+    },
+    {
+      "evidence_id": "publication018",
+      "sha256": "5e1af74e183170a9d127716761adafc489c819ed010fd4b03c3fad8a022a9238"
+    },
+    {
+      "evidence_id": "publication019-preparation-live",
+      "sha256": "e4e3081569a0f87bbd31b50f95d258cb0925ddb5656be00dbd6413e42ee3ff2a"
+    },
+    {
+      "evidence_id": "native-goal-root-testimony",
+      "sha256": "c8fce1ef65efabcbc2554f116434859fe4e77656a78d6451c1c3f1068b8bd8f8"
+    },
+    {
+      "evidence_id": "held-targeted-probe",
+      "sha256": "88df92a0060cd55d54ab0b91d7c5df048a0348b1a062d84183599c322b2064ea"
+    }
+  ],
+  "remaining": [
+    "DNS namespace-binding and overall cleanup evidence remain incomplete in six observations.",
+    "Bounded ordinary concurrent CLI init/up checks are a next safe source-controlled task; no outcome assumed.",
+    "Final five-document review, exact final-head history/privacy, rendered public text and post-document package/schema checks precede publication.",
+    "Full PLT/P1/MVP, desktop/notebook/accessibility/restore and release acceptance remain governed by their original task evidence."
+  ],
+  "review_independence": {
+    "dns_helper": "Author db02_validation; root source review and peer inclusion review reused explicitly.",
+    "final019_observer": "Author fnd03_identity; independent root source/binding review; db02 retained effects review.",
+    "first019_observer": "Author db02_validation; independent root source/binding review. Worker actual-evidence review performs no native execution.",
+    "tmpfs_repair": "Author fnd03_identity; root source review reused explicitly."
+  },
+  "reviewed_journey_detail": {
+    "all_cleanup_complete": true,
+    "all_revocation_http_statuses": 200,
+    "map_query_oracles": "Four per journey: exact point IDs/coordinates and512x512 map with832 non-background pixels on gateway/direct-engine paths. Sixteen total.",
+    "metadata_uuid_and_title_same_all_four": true,
+    "native_policy_before_after_hash_equal": true,
+    "native_policy_restorations": 4,
+    "phases": [
+      "initial",
+      "after restart",
+      "after reinitialization",
+      "after dependency recovery"
+    ],
+    "post_negative_unchanged_oracles": 20,
+    "recorded_revocations": 28,
+    "requests_per_journey": 138,
+    "route_negatives_per_journey": {
+      "admin_route": 4,
+      "duplicate_authorization": 12,
+      "empty_transaction": 2,
+      "malformed_authorization": 16,
+      "malformed_query": 36,
+      "write_method": 12
+    },
+    "same_token_grant_revoke_regrant": "Five reads per phase per journey return200/403/200; sixty reads in total.",
+    "status_counts_per_journey": {
+      "200": 22,
+      "403": 107,
+      "404": 9
+    },
+    "token_cleanup_sessions": 10,
+    "unaccounted_issuance_principals": 0,
+    "unique_token_count_proved": false
+  },
+  "schema_version": 1,
+  "scope": "Combined reviewed source/artifact and ordinary017\u2013019 outcome increment; full installation/P1/MVP/release acceptance remains open.",
+  "scoped_MVP_acceptance": false,
+  "sequence_visibility": {
+    "acceptance_limit": "Does not reopen or expand accepted DB03. Original016 exact database sequence state was not directly established.",
+    "behavior": "SELECT-only access for exact transport-owner/public sequences through filtered backfill and future default privileges; sequence advancement, setval, DDL and delegation remain denied.",
+    "bundle022_head": "fddd05c2c3983ee4e939274bfa945b505b08566c",
+    "component_head": "c22845cd68ce917845e69c66d0bf6170abfddf48",
+    "integrated_image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+    "native_regression": {
+      "AF_INET_and_AF_INET6_denied": true,
+      "baseline": "Expected Hibernate sequence metadata visibility assertion failed.",
+      "both_fresh_clusters_stopped": true,
+      "fixed_passed": 41,
+      "scope": "Fresh Unix-only synthetic PostgreSQL clusters, not the original installation database."
+    },
+    "reviews": [
+      {
+        "evidence_id": "sequence-source-review",
+        "sha256": "e0fa7b9656ad1de041944af685bab521bf645a3b2bfc10db2eb23f2f5acec45d"
+      },
+      {
+        "evidence_id": "sequence-native-review",
+        "sha256": "4b04469df62813bfe29af2f4f21355337e31fc82facbb564d372893d29a12354"
+      },
+      {
+        "evidence_id": "sequence-integration-review",
+        "sha256": "69600ef3c5d45e1faefe087c386a3b55d9dadae4449c65e64082d073ac231389"
+      }
+    ]
+  },
+  "source_files": 1549,
+  "source_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+  "source_publication": {
+    "draft": true,
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "local_candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+    "main": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+    "merged": false,
+    "new_source_and_outcome_increment_published": false,
+    "previous_publication_comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5984320234",
+    "published_head": "73eda452935ee8e42e2e38c1d646b0e5e643ce6c",
+    "readback_recorded_at": "2026-10-04T23:34:50.719935+00:00"
+  },
+  "source_tree": "04dfcb058efba771e158a43c409d3ffa495d6f0a",
+  "task": "PLT-01",
+  "tmpfs_restart": {
+    "behavior": "Declare mode1777 for the existing tmpfs and require that exact option in the drift validator. Existing flags, mounts, UID and initialized-container security requirements remain unchanged.",
+    "component_head": "ba7a8acf4831088d49fef89409c745f6ec6fbeff",
+    "diagnosis": "Retained source and stopped backing-directory mode establish a restart-mode defect: initial tmpfs1777 can inherit existing backing-directory0755 on restart without an explicit mode. Actual018 emitted426 fixed errno13 records after stop, but the original exception frame is unavailable.",
+    "files": [
+      "installer/config.py",
+      "installer/runtime.py",
+      "plan/tests/test_development_installer.py"
+    ],
+    "image_reuse": "All eighteen service source inputs remain identical to images025/026. No image or native rebuild is credited or needed for this exact installer-only scope.",
+    "independent_source_reviewer": "/root",
+    "integrated_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+    "reviews": [
+      {
+        "evidence_id": "tmpfs-source-review",
+        "sha256": "6fc733593966f01f68e67495aec25dc8a65ddedea0e1e830cca602f1b0138e1a"
+      },
+      {
+        "evidence_id": "tmpfs-image-inclusion",
+        "sha256": "a8d093f59b1b02737cbae8c9ff89888799eec291642d8ff58c08aaff4f965241"
+      },
+      {
+        "evidence_id": "bundle023-review",
+        "sha256": "ec81567ff02f21536c78aebdae2070b9d660d633b4034f040bda5aa83ec3c3c2"
+      }
+    ],
+    "source_author": "/root/fnd03_identity",
+    "tests": "Four old focused cases produced13 failing assertions;86 affected fixed cases and8 independent negative-option cases passed. The86 count includes the four focused cases. Fresh132/77/692/10 checks passed with zero skips."
+  }
+}

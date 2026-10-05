@@ -1,0 +1,78 @@
+{
+  "current_task": {
+    "branch": "plt-01/development-install",
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "id": "PLT-01",
+    "published_head": "314f11e243a11ed6c494bdd2aa70ef18f4ec049a",
+    "repository": "aloerch/ambisgis-platform",
+    "state": "In progress"
+  },
+  "held_targeted_probe_executed": false,
+  "installation_accepted": false,
+  "integrator": "/root",
+  "last_completed": {
+    "actual_installation": "Lifecycle008 failed and reconciled; no installed-service journey accepted",
+    "checks": {
+      "development": 101,
+      "package": 585,
+      "runtime": 51,
+      "schemas": 10,
+      "scope": "Tests run before final commit; unchanged committed314f source bytes independently rebound.",
+      "skips": 0,
+      "source_files": 1475
+    },
+    "implementation": "Guarded direct DNS profile and read-only native DNS observation integrated/reviewed at314f11e",
+    "publication_comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5975878766"
+  },
+  "mvp_complete": false,
+  "native_goal": {
+    "automatic_continuation": "Not active while native Goal blocked",
+    "observed_at": "2026-10-04T01:24:43.831177+00:00",
+    "quota_status": "unknown",
+    "remaining_tokens": null,
+    "reported_tokens_used": 12420153,
+    "source": "Fresh get_goal response in this foreground turn",
+    "status": "blocked",
+    "token_budget": "not configured in returned state",
+    "user_action": "Use /goal resume in this same thread for native automatic continuation"
+  },
+  "next_action": "Project exactly twelve matching already-retained glibc C.utf8 category files with signed binary/source/notice custody, and add fixed nonsecret startup stage/failure codes. Source implementation and independent review remain pending.",
+  "observed_at": "2026-10-04T02:50:48.572389+00:00",
+  "observed_terminal": {
+    "at": "2026-10-03T13:28:22.795Z",
+    "cause_confidence": "High for terminal error category; unknown exact trigger/internal stalled-state transition",
+    "code": "cyber_policy",
+    "exact_triggering_content": "unknown"
+  },
+  "owner_action_required_for_current_safe_work": false,
+  "reconciliation": {
+    "acknowledged_after_actual_reconciliation": true,
+    "all_helpers_gone": false,
+    "evidence": "plan/verification/plt01-lifecycle/evidence-008.json",
+    "failed_guard_run_id": "5501ff16-45a4-4088-ade2-dc68fd3e055d",
+    "next_action_performed": "Created isolated source worktrees for bounded repair; later reviewed source publication completed."
+  },
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/evidence-008.json",
+      "sha256": "b1067b5f0f3b51e82c7faffc136b3ad54a4a7ed084e20b2208666982e64e11bd"
+    }
+  ],
+  "remote_changes": {
+    "draft_pr_body_updated": true,
+    "issue_closed": false,
+    "issue_comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5975878766",
+    "merge": false,
+    "normal_task_branch_push": "4afba4c213a094344b40a665edffb531e4f76ff5 -> 314f11e243a11ed6c494bdd2aa70ef18f4ec049a",
+    "project_settings_workflows_releases_changed": false
+  },
+  "schema_version": 1,
+  "scope": "Foreground delivery checkpoint; saved evidence is not a live worker or automatic continuation",
+  "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+  "worker_observations": {
+    "db02_validation": "Implementing fixed safe startup diagnostics in plt01-init-diagnostics-worktree",
+    "fnd03_identity": "Implementing retained locale projection in plt01-locale-projection-worktree",
+    "observed_at": "2026-10-04T02:50:48.572389+00:00",
+    "root": "Foreground integrator retaining evidence and preparing source integration"
+  }
+}

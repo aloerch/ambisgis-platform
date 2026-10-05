@@ -1,0 +1,42 @@
+{
+  "merge": "c963e2baae1901935b25b0d436e988b47e153eb8",
+  "reviewed_head": "f023ea5548a32d6821830c04888a4cfd7dcab854",
+  "tree": "6252128955d23c17d77c52bfd9df8108c6df2e27",
+  "started": "2026-10-03T18:48:28.091001+00:00",
+  "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db02-postmerge-worktree",
+  "commands": [
+    {
+      "argv": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/run-003/venv/bin/python",
+        "-B",
+        "tools/run_managed_acceptance.py",
+        "--schema-rules",
+        "--prefix",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/prefix",
+        "--runtime-evidence",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003-evidence-final.json",
+        "--evidence",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-db02-001"
+      ],
+      "returncode": 0,
+      "log_sha256": "200877531deb5909c950bbb93c7d434fad4ff68f5fc97459d55bc1da9e762268"
+    },
+    {
+      "argv": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/geonode-role-propagation/run-003/venv/bin/python",
+        "-B",
+        "tools/run_managed_acceptance.py",
+        "--prefix",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003/prefix",
+        "--runtime-evidence",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/postgis-slice/run-003-evidence-final.json",
+        "--evidence",
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/db02/postmerge-db01-001"
+      ],
+      "returncode": 0,
+      "log_sha256": "f0308ecc151cbcf6e8c03003762086145ab575e57a251b670fb98831d0e857da"
+    }
+  ],
+  "ended": "2026-10-03T18:48:52.712427+00:00",
+  "tracked_clean": true
+}

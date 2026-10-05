@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "task": "PLT-01",
+  "repository": "aloerch/ambisgis-platform",
+  "base": "49705d5832e49a5065948d9a02064e49eab01857",
+  "scope": "Reviewed-input ordinary runtime adapter source, pure tests and inert bundle assembly only",
+  "source_files": {
+    "installer/runtime.py": "2f5e774208dd7127d2c79023bfa498e7e528c4c28efa59693ce90229ba9ecf51",
+    "plan/tests/test_development_installer.py": "7637ff78ae4329e7c27711fdeb06b5d79ce23629f98ded5ad88a6adfded37ab3",
+    "build-support/development-runtime/ambisgis_runtime.py": "b3c2d4aa8f11ae9b5626d7a9087797465bf18a1a55f282dec2e7cbd15fb4ec46",
+    "build-support/development-runtime/build_bundle.py": "ab1fa17da0d8af26eecad45e8f5012c2ff7fe3a91915fe91375d903511542729",
+    "build-support/development-runtime/test_build_bundle.py": "ecbea03581378485cb49d003c3cf1bd8abd29235d3fc224f2bf6aad354ab3728",
+    "build-support/development-runtime/test_runtime.py": "cbdd1f6497bbca4c30a7c1701d820be7e0c005c98292ede5cb0e7d037bb15fee",
+    "build-support/development-runtime/README.md": "3ea003c84a0705ceeb8ebe075abb97792d983a63f6b166a479af2cd8ca375307"
+  },
+  "references": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-003/result.json",
+      "sha256": "f9ea3ee452a5d414a143098f1ad83839dfdd527d7a5e3a561b07a23a59b31de7"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-003/runtime.log",
+      "sha256": "4128a00c46eb4c21cf6e6b35552357196b86737e30394d06932990db7501a948"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-003/package.log",
+      "sha256": "e6b12e306b2da0a548a8c19af2ce177dd46b45922d25a2edb91c07611e6c1119"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-003/schemas.log",
+      "sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-004/assembly-result.json",
+      "sha256": "ad45b7c612941b262c670879c5cc2fe1046db44abd40f59fc43d6e9a7111d67a"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-004/bundle.json",
+      "sha256": "6d5e534ea7b84e04efc11dde221fbac59bd361470a0b6c3c8f24586e8360d31d"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-004/runtime-files.json",
+      "sha256": "e90cce07034730c73c0c0560ba81c62b3af7e67a49bc11966d0ee6d1ae7e261c"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-004/runtime/configuration/elf-inputs.json",
+      "sha256": "be6ec77027f83209da3e08717f1237228154f9435b88732346a0a909e1834cdf"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-004/runtime/configuration/host-prerequisites.json",
+      "sha256": "5e4053ae2c673ae01787ea0f048675d0501a96d0dceab9eb5cee8c0c0381ce72"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-004/runtime/configuration/custody.json",
+      "sha256": "20eacd71b9a46db5c0d2a37dd1defcd65c9d2ab57e08612de6e04f8d7c5472a4"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-final-evidence-001/conmon-source.json",
+      "sha256": "befd861eb6381a4681fc32255c2c8e96c59191c7b96b6fcbed974526524dbd74"
+    }
+  ],
+  "commands": [
+    {
+      "name": "runtime",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "build-support/development-runtime",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree",
+      "exit_code": 0,
+      "seconds": 7.650950908660889,
+      "log_sha256": "4128a00c46eb4c21cf6e6b35552357196b86737e30394d06932990db7501a948"
+    },
+    {
+      "name": "package",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/plan",
+      "exit_code": 0,
+      "seconds": 12.709490776062012,
+      "log_sha256": "e6b12e306b2da0a548a8c19af2ce177dd46b45922d25a2edb91c07611e6c1119"
+    },
+    {
+      "name": "schemas",
+      "command": [
+        "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+        "-B",
+        "tools/validate_package.py",
+        "--require-schemas"
+      ],
+      "cwd": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-worktree/plan",
+      "exit_code": 0,
+      "seconds": 0.1694943904876709,
+      "log_sha256": "4d0b3c469c26d7c23f2ba10c21a8189753e87085f9f310a3356ba262cb896e23"
+    }
+  ],
+  "assembly_command": [
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/ci-env/bin/python",
+    "-B",
+    "build-support/development-runtime/build_bundle.py",
+    "--output",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-004"
+  ],
+  "assembly": {
+    "assembler_sha256": "ab1fa17da0d8af26eecad45e8f5012c2ff7fe3a91915fe91375d903511542729",
+    "bundle_sha256": "6d5e534ea7b84e04efc11dde221fbac59bd361470a0b6c3c8f24586e8360d31d",
+    "distribution_approved": false,
+    "files_manifest_sha256": "e90cce07034730c73c0c0560ba81c62b3af7e67a49bc11966d0ee6d1ae7e261c",
+    "full_installation_acceptance": false,
+    "host_prerequisites": 12,
+    "runtime_executed": false,
+    "runtime_regular_files": 1248,
+    "schema_version": 1,
+    "static_elf_members": 373
+  },
+  "tests": {
+    "runtime_in_process": 15,
+    "package": 559,
+    "schemas": 10,
+    "skipped": 0
+  },
+  "superseded_attempts": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-001",
+      "status": "failed",
+      "reason": "Actual host tinfo did not match PLT snapshot; exact already-retained FND08 host-only correspondence subsequently added."
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-002",
+      "status": "superseded",
+      "reason": "Succeeded on preliminary source; final notices and bootstrap naming refinements not yet included."
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-003",
+      "status": "superseded",
+      "reason": "Succeeded before fixed initializer-name refinement."
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-001/result.json",
+      "sha256": "0c919402f31c9507da382cb05b2e09c16db4029ee9741adb7e06a323e00eecfe",
+      "status": "failed",
+      "reason": "Existing test expected prior run argv without -T."
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-002/result.json",
+      "sha256": "8465bea524d929959319e03d7f77cf0d66038f42db27387cefff87cb47bfce87",
+      "status": "failed",
+      "reason": "Indentation error in the test expectation edit; corrected before final successful checks."
+    }
+  ],
+  "limitations": [
+    "No engine, mapping helper, systemd unit, launcher, container or installer was executed by this work.",
+    "Static SONAME closure is not actual ABI/loader mapping or runtime acceptance.",
+    "Host bootstrap trust and source-custody qualifications retain their documented limits.",
+    "The held targeted probe remains held; runtime security and full installation acceptance are unpassed.",
+    "Image source identity remains its original reviewed producer; runtime source hashes bind this later adapter."
+  ],
+  "remote_mutations": false,
+  "full_installation_acceptance": false,
+  "distribution_approved": false
+}

@@ -1,0 +1,579 @@
+{
+  "artifacts": {
+    "assembly": {
+      "evidence_id": "bundle025-assembly",
+      "receipt": "assembly-result.json",
+      "sha256": "0d662d1da52a044dff4f10a254df04a41ddddd4c5754d1ca4656cae0fe9030cc"
+    },
+    "bundle": {
+      "evidence_id": "bundle025",
+      "receipt": "bundle.json",
+      "sha256": "4cefd644e0336a19d3bc561cafaf84efbe11381f3ec4c79219c87ad05f8fc94a"
+    },
+    "bundle_number": "025",
+    "candidate_head": "1ccdf88cbc9af56b94c4c64b572b23b21448b58c",
+    "changed_runtime_scope": "Owned command adapter and immutable program registry, retained exact oracle source and custody; images/native binaries/installer modules remain unchanged.",
+    "closure": {
+      "evidence_id": "bundle025-closure",
+      "receipt": "runtime-files.json",
+      "sha256": "ff13efe4c79d26cf9ce702d2b58d378a420a7746281ab63af513faca0c72eb68"
+    },
+    "distribution_or_installation_acceptance": false,
+    "elf_files": 374,
+    "host_prerequisites": 12,
+    "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+    "images_reused": [
+      "025",
+      "026"
+    ],
+    "review": {
+      "evidence_id": "bundle025-audit",
+      "receipt": "result.json",
+      "sha256": "b607563bcb6b6d68160cf14a5b7bb302a3f482e8681e9511e08571a032d8f2f8"
+    },
+    "runtime_files": 1321
+  },
+  "checks": {
+    "all_exit_codes_zero": true,
+    "development": 170,
+    "final_document_package_schema_checks": "Pending fresh final-document701 package and10 schema checks before the draft push; exact pushed-head CI readback follows publication and is not yet claimed.",
+    "package": 701,
+    "runtime": 83,
+    "schemas": 10,
+    "scope": "Actual source tests; package/schema checks are separate from GIS product acceptance.",
+    "skips": 0,
+    "source_files": 1555,
+    "source_head": "1ccdf88cbc9af56b94c4c64b572b23b21448b58c",
+    "validation": {
+      "evidence_id": "registration-validation",
+      "receipt": "result.json",
+      "sha256": "134b9e283f9323da447b92e7447d18b787c3fb6037fe1176489e53d356e65ddd"
+    }
+  },
+  "delivery": "In progress",
+  "draft_state": "FROZEN_PROPOSAL_PENDING_INDEPENDENT_DOCUMENT_REVIEW_AND_PUBLICATION",
+  "failed_concurrency_attempts_preserved": [
+    {
+      "attempt": "concurrency003",
+      "attempt_ref": {
+        "evidence_id": "concurrency003-attempt",
+        "receipt": "result.json",
+        "sha256": "da22a9c5df134e514f382b0592f8e39ff1b06f3294a60a1e11be542022d2da44"
+      },
+      "effects_review": {
+        "evidence_id": "concurrency003-effects-review",
+        "receipt": "result.json",
+        "sha256": "d1c0b814d921c0f1b20e924bd2d19099d50a843337f1ae93d55910c72eff79a8"
+      },
+      "observed": "ValueError with no retained oracle snapshot or native program receipt; original exact cause unobserved.",
+      "outcome_review": {
+        "evidence_id": "concurrency003-outcome-review",
+        "receipt": "result.json",
+        "sha256": "f22493b796e54832aa4cfcc2ef46201d0581ad8aaeb2bcf9f58ecb1bb26a0bbc"
+      },
+      "status": "failed"
+    },
+    {
+      "attempt": "concurrency004",
+      "attempt_ref": {
+        "evidence_id": "concurrency004-attempt",
+        "receipt": "result.json",
+        "sha256": "b5b3b2c9341e697a9377a5b2fccf97f810df017e24086133d31d730e06aaa21a"
+      },
+      "attribution_limit": "Pure replay of exact source-derived004 argv through the shipped owned dispatcher rejects the unregistered program before native exec; actual004 stderr and exact original frame were not retained. This is not a retroactive pass or proof of003 exact cause.",
+      "effects_review": {
+        "evidence_id": "concurrency004-effects-review",
+        "receipt": "result.json",
+        "sha256": "61c5f7caf7e4e71b3e78934ad4979b48ea4fa4032eee227dfe9e0896ba030087"
+      },
+      "observed": "Finite diagnostics recorded host_native_receipt/ValueError and engine125; SQLSTATE/rollback were not observed.",
+      "outcome_review": {
+        "evidence_id": "concurrency004-outcome-review",
+        "receipt": "result.json",
+        "sha256": "9861d95aefda1eb114cbd873f757590b305213d3331551c0d9255ff50b3ce8ba"
+      },
+      "source_reproduction": {
+        "evidence_id": "dispatch-source-reproduction",
+        "receipt": "result.json",
+        "sha256": "62620ab6c7b163da65fa9162f9ab2ec0bb9067ae6101a277c641687a817059a7"
+      },
+      "status": "failed"
+    }
+  ],
+  "final_effects": {
+    "all_helpers_gone": false,
+    "config_and_source_unchanged": true,
+    "dns_cleanup_verified": false,
+    "first_independent_review": {
+      "evidence_id": "concurrency005-first-effects-review",
+      "receipt": "result.json",
+      "sha256": "efc12b62a2d9970b015b2ecb6c602ab64bda69b9ec4a3cf211c07df93073b2e5"
+    },
+    "first_observer": {
+      "evidence_id": "concurrency005-first-observer",
+      "receipt": "result.json",
+      "sha256": "b95702595e6e845904b3d9ca3558b1d78544260402b163d5fa766139104777ac"
+    },
+    "full_installation_acceptance": false,
+    "geoserver_exit_limit": "143 is compatible with configured SIGTERM, not graceful exit0 proof.",
+    "guard_wrapper_child_absent": true,
+    "health_log_limit": "Healthy last-five-zero records are historical; bounded current-file snapshots do not establish complete log history or current readiness.",
+    "independent_review": {
+      "evidence_id": "concurrency005-final-effects-review",
+      "receipt": "result.json",
+      "sha256": "2d7160296ea4c006178ec53af0e27c06aeb5e573e6c0f82fc2aa4e3eb80efcfc"
+    },
+    "initializers_absent": 2,
+    "known_service_conmon_pids_absent": 8,
+    "known_timer_service_units_not_loaded": 8,
+    "limit": "Finite owned-role/PID/unit and available process observations; retained pause and six unavailable reads prevent global helper/cleanup claims. No new DNS proof. SQL authority is the separate outcome review, not the effects observer.",
+    "native_state_bytes_unchanged_during_observer": true,
+    "native_state_equality_scope": "Only fresh post-diagnosis db.sql bytes across the final observer, not the earlier lifecycle.",
+    "observer": {
+      "evidence_id": "concurrency005-final-observer",
+      "receipt": "result.json",
+      "sha256": "1c592be39ef0ff007a74f134b8bc6adcad6616753a7565eb21de1546e0f2cf9c"
+    },
+    "observer_data_deleted": false,
+    "observer_lifecycle_retried": false,
+    "observer_signals_sent": false,
+    "other_available_matching_bundle_processes": 0,
+    "owned_pause_retained": true,
+    "process_observation_unavailable": 6,
+    "reconciled": true,
+    "serving_pids_zero": true,
+    "serving_role_exits": {
+      "catalog": 0,
+      "database": 0,
+      "gateway": 0,
+      "geoserver": 143
+    },
+    "serving_roles_stopped": 4,
+    "status": "independently_reviewed_finite_effects_accounting",
+    "stored_native_error_limit": "All four roles retain exact owned-source CID-specific already-running start-state errors. Operation/time and cause are unrecorded; stopped/Pid0 is separately observed."
+  },
+  "full_P1_acceptance": false,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "historical_ordinary019_reuse": {
+    "completed_protected_journeys": 4,
+    "completed_stages": 20,
+    "evidence": "evidence-018.json",
+    "incomplete_namespace_checks": 6,
+    "limit": "Original source/artifact identities, failures and DNS limits are preserved; no relabeling as current-bundle acceptance.",
+    "source_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+    "status": "incomplete"
+  },
+  "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+  "latest_completed_concurrency": {
+    "attempt": {
+      "evidence_id": "concurrency005-attempt",
+      "receipt": "result.json",
+      "sha256": "e0ed912512456d01ff96683c65591997ffb58ebf31f83b63268c7034f051dae2"
+    },
+    "bundle_sha256": "4cefd644e0336a19d3bc561cafaf84efbe11381f3ec4c79219c87ad05f8fc94a",
+    "configuration_and_credentials_hashes_unchanged": true,
+    "data_request_statuses": {
+      "200": 44,
+      "403": 214,
+      "404": 18
+    },
+    "data_requests": 276,
+    "driver_shutdown": {
+      "persistent_data_preserved": true,
+      "running_services": 0
+    },
+    "full_installation_acceptance": false,
+    "independent_outcome_review_status": "PASS_RETAINED_ORDINARY_CONCURRENCY_AND_INSTALLED_SQL_OUTCOME_REVIEW",
+    "installed_database_oracle": {
+      "authenticated_read_before_denial": true,
+      "before_after_snapshots_equal": true,
+      "catalog_counts": {
+        "applications": 1,
+        "migrations": 482,
+        "principals": 4,
+        "resources": 1
+      },
+      "engine_return_code": "0",
+      "fixed_transactional_denials_per_observation": 19,
+      "fixed_transactional_denials_total": 38,
+      "full_migration_graph_or_managed_geodatabase_acceptance": false,
+      "independent_review": {
+        "evidence_id": "concurrency005-sql-review",
+        "receipt": "sql-receipt-review.json",
+        "sha256": "596ac953824e4c0b434837829cf1809cc31a44af27ab4007ccfbaf6c7272dc5d"
+      },
+      "independent_verification": "Independent fixed-receipt validation confirmed authenticated reads, all38 SQLSTATE42501 denials, rollback and equal before/after selected snapshots.",
+      "independently_reviewed_installed_sql_role_acceptance": true,
+      "logical_state_unchanged_each_observation": true,
+      "migration_secret_file_surface_verified": false,
+      "native_uniqueness_acceptance": false,
+      "nontransactional_sequence_calls": false,
+      "observations": 2,
+      "producer_complete": true,
+      "producer_installed_sql_role_acceptance": true,
+      "producer_status": "passed",
+      "required_sqlstate": "42501",
+      "rollback_recorded_each_case": true,
+      "snapshot_groups": [
+        "selected catalog principals/resources/applications and applied migrations",
+        "role/ownership and schema catalogs",
+        "transport policy and sequence metadata"
+      ],
+      "snapshot_timing_limit": "The source-bound ordering is verified; individual snapshot timestamps were not retained.",
+      "transport_counts": {
+        "rules": 2,
+        "sequence": 1
+      }
+    },
+    "installed_sql_role_acceptance": true,
+    "outcome_review": {
+      "evidence_id": "concurrency005-outcome-review",
+      "receipt": "result.json",
+      "sha256": "933ceb8bdabc32702c84d889523690bdf70dc1dceecc464cfec043a741b594f1"
+    },
+    "pair_facts": [
+      {
+        "children_reaped": 2,
+        "command": "init",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "busy",
+          "created"
+        ],
+        "overlap_observed": true,
+        "reinitialize": false,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      },
+      {
+        "children_reaped": 2,
+        "command": "up",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "ready",
+          "busy"
+        ],
+        "overlap_observed": true,
+        "reinitialize": false,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      },
+      {
+        "children_reaped": 2,
+        "command": "init",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "existing",
+          "busy"
+        ],
+        "overlap_observed": true,
+        "reinitialize": true,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      },
+      {
+        "children_reaped": 2,
+        "command": "up",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "ready",
+          "busy"
+        ],
+        "overlap_observed": true,
+        "reinitialize": false,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      }
+    ],
+    "protected_journeys": 2,
+    "recorded_revocation_limit": "Ten HTTP200 revocation records across three cleanup sessions; not a claim of ten globally distinct credentials.",
+    "recorded_token_revocations": 10,
+    "route_negatives": 164,
+    "same_valid_token_reads": 30,
+    "selected_native_identity_policy_title_preserved": true,
+    "source_head": "1ccdf88cbc9af56b94c4c64b572b23b21448b58c",
+    "status": "passed",
+    "token_cleanup_sessions": 3,
+    "unaccounted_issuance_principals": 0
+  },
+  "native_goal": {
+    "assistant_resume_performed": false,
+    "budget_configured": false,
+    "exact_original_trigger": "unknown",
+    "foreground_delivery_continues": true,
+    "held_targeted_probe_executed": false,
+    "native_resume_claimed": false,
+    "original_terminal_cause": "cyber_policy",
+    "recorded_at": "2026-10-05T04:46:19.048395+00:00",
+    "remainingTokens": null,
+    "source": "Parent root current Goal-tool testimony supplied for publication021 preparation; precise tool-response timestamp unavailable. This timestamp records the draft, not a native resume.",
+    "status": "blocked",
+    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+    "timeUsedSeconds": 30612,
+    "timestamp_meaning": "Persisted root testimony record time, not the precise tool-response instant.",
+    "tokensUsed": 12420153,
+    "updatedAt": 1791034102
+  },
+  "next_action": "Implement strict role-scoped secret input validation at service, health and catalog-settings call sites and fixed serving-container credential-file checks in a fresh synthetic installation. Verify absence of migration credentials from catalog, GeoServer and gateway serving mounts/generated persistent files without retaining values; preserve the distinct database bootstrap credential scope. This is future enforcement and test work, not an implementation/pass or evidence of an existing exposure, and does not replace the held targeted qualification.",
+  "previous_evidence": "evidence-019.json",
+  "recorded_at": "2026-10-05T05:01:53.528398+00:00",
+  "references": [
+    {
+      "evidence_id": "bundle025",
+      "receipt": "bundle.json",
+      "sha256": "4cefd644e0336a19d3bc561cafaf84efbe11381f3ec4c79219c87ad05f8fc94a"
+    },
+    {
+      "evidence_id": "bundle025-assembly",
+      "receipt": "assembly-result.json",
+      "sha256": "0d662d1da52a044dff4f10a254df04a41ddddd4c5754d1ca4656cae0fe9030cc"
+    },
+    {
+      "evidence_id": "bundle025-audit",
+      "receipt": "result.json",
+      "sha256": "b607563bcb6b6d68160cf14a5b7bb302a3f482e8681e9511e08571a032d8f2f8"
+    },
+    {
+      "evidence_id": "bundle025-closure",
+      "receipt": "runtime-files.json",
+      "sha256": "ff13efe4c79d26cf9ce702d2b58d378a420a7746281ab63af513faca0c72eb68"
+    },
+    {
+      "evidence_id": "bundle025-production",
+      "receipt": "result.json",
+      "sha256": "be4e987c5ebe25a7d5dbd4ad2f91809b3941c5560e46934194592f2481179f32"
+    },
+    {
+      "evidence_id": "concurrency003-attempt",
+      "receipt": "result.json",
+      "sha256": "da22a9c5df134e514f382b0592f8e39ff1b06f3294a60a1e11be542022d2da44"
+    },
+    {
+      "evidence_id": "concurrency003-effects-review",
+      "receipt": "result.json",
+      "sha256": "d1c0b814d921c0f1b20e924bd2d19099d50a843337f1ae93d55910c72eff79a8"
+    },
+    {
+      "evidence_id": "concurrency003-outcome-review",
+      "receipt": "result.json",
+      "sha256": "f22493b796e54832aa4cfcc2ef46201d0581ad8aaeb2bcf9f58ecb1bb26a0bbc"
+    },
+    {
+      "evidence_id": "concurrency004-attempt",
+      "receipt": "result.json",
+      "sha256": "b5b3b2c9341e697a9377a5b2fccf97f810df017e24086133d31d730e06aaa21a"
+    },
+    {
+      "evidence_id": "concurrency004-effects-review",
+      "receipt": "result.json",
+      "sha256": "61c5f7caf7e4e71b3e78934ad4979b48ea4fa4032eee227dfe9e0896ba030087"
+    },
+    {
+      "evidence_id": "concurrency004-outcome-review",
+      "receipt": "result.json",
+      "sha256": "9861d95aefda1eb114cbd873f757590b305213d3331551c0d9255ff50b3ce8ba"
+    },
+    {
+      "evidence_id": "concurrency005-attempt",
+      "receipt": "result.json",
+      "sha256": "e0ed912512456d01ff96683c65591997ffb58ebf31f83b63268c7034f051dae2"
+    },
+    {
+      "evidence_id": "concurrency005-final-effects-review",
+      "receipt": "result.json",
+      "sha256": "2d7160296ea4c006178ec53af0e27c06aeb5e573e6c0f82fc2aa4e3eb80efcfc"
+    },
+    {
+      "evidence_id": "concurrency005-final-observer",
+      "receipt": "result.json",
+      "sha256": "1c592be39ef0ff007a74f134b8bc6adcad6616753a7565eb21de1546e0f2cf9c"
+    },
+    {
+      "evidence_id": "concurrency005-final-privacy",
+      "receipt": "privacy.json",
+      "sha256": "ebcf6d71bd9fb85e9766d7b5a02b2410e9f1e828d4b521aad61bd7e7dd5f4dc5"
+    },
+    {
+      "evidence_id": "concurrency005-first-effects-review",
+      "receipt": "result.json",
+      "sha256": "efc12b62a2d9970b015b2ecb6c602ab64bda69b9ec4a3cf211c07df93073b2e5"
+    },
+    {
+      "evidence_id": "concurrency005-first-observer",
+      "receipt": "result.json",
+      "sha256": "b95702595e6e845904b3d9ca3558b1d78544260402b163d5fa766139104777ac"
+    },
+    {
+      "evidence_id": "concurrency005-outcome-review",
+      "receipt": "result.json",
+      "sha256": "933ceb8bdabc32702c84d889523690bdf70dc1dceecc464cfec043a741b594f1"
+    },
+    {
+      "evidence_id": "concurrency005-privacy",
+      "receipt": "privacy.json",
+      "sha256": "606508bdfdaa1dc0ea179c1274906d1282c51dd8b1958816c007bad10a35e3ff"
+    },
+    {
+      "evidence_id": "concurrency005-sql-review",
+      "receipt": "sql-receipt-review.json",
+      "sha256": "596ac953824e4c0b434837829cf1809cc31a44af27ab4007ccfbaf6c7272dc5d"
+    },
+    {
+      "evidence_id": "diagnostics-integration-review",
+      "receipt": "result.json",
+      "sha256": "dadcce6c2ec0844ab129d3f5130151eac7bfc10d702d2fcf5ccd41892a12207f"
+    },
+    {
+      "evidence_id": "diagnostics-source-review",
+      "receipt": "result.json",
+      "sha256": "4ea7be31b4e144e9c92b5110041552a338d57fdfbb69dc7df2ba5a8dfb5363dc"
+    },
+    {
+      "evidence_id": "dispatch-source-reproduction",
+      "receipt": "result.json",
+      "sha256": "62620ab6c7b163da65fa9162f9ab2ec0bb9067ae6101a277c641687a817059a7"
+    },
+    {
+      "evidence_id": "held-targeted-qualification",
+      "receipt": "plt01-podman-probe-execution-hold-001.json",
+      "sha256": "88df92a0060cd55d54ab0b91d7c5df048a0348b1a062d84183599c322b2064ea"
+    },
+    {
+      "evidence_id": "images025",
+      "receipt": "result.json",
+      "sha256": "025f3047d6afd3a4138781bd435946803c75fd6ffb974a0a407730bab227e277"
+    },
+    {
+      "evidence_id": "images025-audit",
+      "receipt": "result.json",
+      "sha256": "55956c70c5dd299cedde6d8ec7904841eb8b6e3d6d4e4ce975c1f0fdd0ace9a3"
+    },
+    {
+      "evidence_id": "live-before-publication021",
+      "receipt": "pre-publication021-live-state.json",
+      "sha256": "d53a3887fd617596406847118aecb70a3fa929365c30678e5700561d0cfef7a8"
+    },
+    {
+      "evidence_id": "oracle-integration-review",
+      "receipt": "result.json",
+      "sha256": "1eb8c39133bc134cf38b5aca03c04361130296e892f1b64870fd172cffb6ca9d"
+    },
+    {
+      "evidence_id": "oracle-source-review",
+      "receipt": "result.json",
+      "sha256": "6ef15f7237cdeaaaeee60ca10c3cbb79516fe5c8cd3a84107afe90fcf43d2932"
+    },
+    {
+      "evidence_id": "registration-inclusion",
+      "receipt": "artifact-inclusion.json",
+      "sha256": "6852d5e7c589bb6bce01090f070046572313e8f845536014f7961b8cccf283ac"
+    },
+    {
+      "evidence_id": "registration-integration",
+      "receipt": "result.json",
+      "sha256": "93f0e044e09ab89b288ed4810b8c2cd640a3babb5a95b96e4779476d93b0d01d"
+    },
+    {
+      "evidence_id": "registration-integration-review",
+      "receipt": "result.json",
+      "sha256": "27462390fc60491eba404f4c0dc8d600495ccabf52c20d33c01d277d886705aa"
+    },
+    {
+      "evidence_id": "registration-source-proposal",
+      "receipt": "freeze.json",
+      "sha256": "9a02130058bb904d5d75aa535d0b6621b50b72175c18e2e6554dd3aa77b12b67"
+    },
+    {
+      "evidence_id": "registration-source-review",
+      "receipt": "result.json",
+      "sha256": "c4c6acf0374080db755b86232fe8a4a54639c2f8f2381bacee5d06beddad9305"
+    },
+    {
+      "evidence_id": "registration-validation",
+      "receipt": "result.json",
+      "sha256": "134b9e283f9323da447b92e7447d18b787c3fb6037fe1176489e53d356e65ddd"
+    },
+    {
+      "evidence_id": "source-history031",
+      "receipt": "result.json",
+      "sha256": "3933cf0f0c78abd89c5b4cc5a6e036f1991c97697e5198665bc9fb90e784d2e6"
+    },
+    {
+      "evidence_id": "source-history031-privacy005",
+      "receipt": "privacy-refresh-after005-001.json",
+      "sha256": "526e6883262c5fefef64bb0e09b981b8e6d3b2a225705a34ee50bfbdd59d6223"
+    }
+  ],
+  "remaining": [
+    "Serving-container migration-secret file-surface acceptance remains unproved.",
+    "The declared network/listener/administrative/egress/acquisition matrix and per-role OS profile/resource-limit acceptance remain open.",
+    "Supported clean-host, DNS namespace binding and global helper/DNS cleanup remain unproved; concurrency has no DNS arrays.",
+    "Full migration graph, general native uniqueness, managed-geodatabase, PLT/P1/MVP and all R01\u2013R24/P0\u2013P7 product/human/release requirements remain open within their original scope.",
+    "Before a draft push: final document semantic review, exact-head local package/schema validation, history/privacy and rendered-text review. After the approved draft push/text update: read back CI for the exact pushed head; publication alone is not a CI pass."
+  ],
+  "review_independence": {
+    "assembly_controller": "Authored db02, independently reviewed and executed by root.",
+    "outcome_and_effects": "Root actual executions; db02 independently reviewed005 outcome, first effects and finite final effects. SQL acceptance is sourced to the outcome review; observer facts have their separate scope.",
+    "proposal_author": "fnd03_identity; independent root documentation review remains required.",
+    "source_author": "fnd03_identity; independent db02 source/integration reviews are the source correctness authority."
+  },
+  "schema_version": 1,
+  "scope": "Bounded installed database oracle, exact command registration, concurrency005 and retained failures; not full installation acceptance.",
+  "scoped_MVP_acceptance": false,
+  "source_files": 1555,
+  "source_head": "1ccdf88cbc9af56b94c4c64b572b23b21448b58c",
+  "source_publication": {
+    "authority": "Retained parent-root read-only API reconciliation; no worker remote calls.",
+    "draft": true,
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "issue11_open": true,
+    "local_candidate_head": "1ccdf88cbc9af56b94c4c64b572b23b21448b58c",
+    "main": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+    "merged": false,
+    "observation": {
+      "evidence_id": "live-before-publication021",
+      "receipt": "pre-publication021-live-state.json",
+      "sha256": "d53a3887fd617596406847118aecb70a3fa929365c30678e5700561d0cfef7a8"
+    },
+    "observed_at": "2026-10-05T04:32:01.556941+00:00",
+    "open": true,
+    "publication_of_this_increment": "Pending pre-push document/local validation/history/privacy/text gates, then approved draft push/text update and separate exact pushed-head CI readback.",
+    "published_head": "17df14ac32b90ec957b2b0f29517315377f10ecd"
+  },
+  "source_registration": {
+    "behavior": "The immutable registry retains and pins the exact installed database oracle; the owned adapter permits only its exact database-role interpreter/-c/program hash. Arbitrary programs, other roles, stdin and extra arguments remain rejected.",
+    "changed_files": [
+      "build-support/development-runtime/ambisgis_runtime.py",
+      "build-support/development-runtime/build_bundle.py",
+      "build-support/development-runtime/test_build_bundle.py",
+      "build-support/development-runtime/test_runtime.py"
+    ],
+    "images_unchanged": true,
+    "integration": {
+      "evidence_id": "registration-integration",
+      "receipt": "result.json",
+      "sha256": "93f0e044e09ab89b288ed4810b8c2cd640a3babb5a95b96e4779476d93b0d01d"
+    },
+    "integration_review": {
+      "evidence_id": "registration-integration-review",
+      "receipt": "result.json",
+      "sha256": "27462390fc60491eba404f4c0dc8d600495ccabf52c20d33c01d277d886705aa"
+    },
+    "new_bundle_required": true,
+    "prior_reuse_correction": "Prior host-only inclusion reviews proved unchanged payload bytes but missed the existing command allowlist dependency; the new bundle fixes that dependency without rewriting old receipts.",
+    "program_sha256": "607a7811df89574e47a25c5620d57f176c2e0ef4966150f4732bc90c7c8b93e6",
+    "proposal": {
+      "evidence_id": "registration-source-proposal",
+      "receipt": "freeze.json",
+      "sha256": "9a02130058bb904d5d75aa535d0b6621b50b72175c18e2e6554dd3aa77b12b67"
+    },
+    "source_review": {
+      "evidence_id": "registration-source-review",
+      "receipt": "result.json",
+      "sha256": "c4c6acf0374080db755b86232fe8a4a54639c2f8f2381bacee5d06beddad9305"
+    }
+  },
+  "source_tree": "0da3bf2ee8c3e7667a9507e82df74c0a03b9b00d",
+  "task": "PLT-01"
+}

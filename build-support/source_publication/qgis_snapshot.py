@@ -389,7 +389,7 @@ def restore_bundle(bundle, output, commit, tree, expected, forbidden):
     finally:
         header.close()
     git(output, 'bundle', 'verify', str(bundle))
-    git(output, '-c', 'protocol.file.allow=always', 'fetch', '--no-tags', '--no-write-fetch-head',
+    git(output, '-c', 'protocol.file.allow=always', 'fetch', '--no-auto-maintenance', '--no-tags', '--no-write-fetch-head',
         str(bundle), REF + ':' + REF)
     return verify_repository(output, commit, tree, expected, forbidden)
 

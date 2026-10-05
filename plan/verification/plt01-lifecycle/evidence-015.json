@@ -1,0 +1,262 @@
+{
+  "artifacts": {
+    "bundle": "018",
+    "elf_objects": 374,
+    "host_prerequisites": 12,
+    "images": "017/018",
+    "new_jvm_observation_included": false,
+    "paired_archive_bytes_identical": true,
+    "runtime_files": 1311
+  },
+  "current_local_source_head": "22cb4eacb843abafab159a68046cbc2b3aae3053",
+  "diagnostic": {
+    "database_readiness_passed": true,
+    "effects": {
+      "all_helpers_gone": false,
+      "database_last_five_health_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "database_restart_count": 0,
+      "database_stopped_exit_code": 0,
+      "dns_cleanup_verified": false,
+      "explicit_database_readiness_exit_code": 0,
+      "initializer_died1_and_removed": true,
+      "known_persisted_timer_and_service_not_loaded": true,
+      "original_installation_and_prior_diagnostic_unchanged": true,
+      "owned_pause_retained": true,
+      "persistent_data_preserved": true,
+      "serving_roles_absent": true
+    },
+    "failure": {
+      "category": "timeout",
+      "code": "timeout",
+      "stage": "entrypoint"
+    },
+    "initializer_exit_code": 1,
+    "interpretation": "SERVER_STOPPED and final MAIN_COMPLETE were emitted. This does not independently prove launcher return, identify a surviving JVM thread, or explain historical attempt014.",
+    "name": "geoserver-init-replay-002",
+    "ordered_phases": [
+      "SERVER_START",
+      "SERVER_STARTED",
+      "TRANSPORT_START",
+      "TRANSPORT_COMPLETE",
+      "WAR_RECHECK",
+      "INITIALIZED_MARKER",
+      "SERVER_STOP",
+      "SERVER_STOPPED",
+      "MAIN_COMPLETE"
+    ],
+    "outer_deadline_seconds": 240,
+    "outer_deadline_triggered": false,
+    "pattern_absence_limit": "Not proof of all configuration correctness or installed-service acceptance.",
+    "persistent_initialized_marker_present": false,
+    "persistent_marker_contract": "Python writes the persistent marker only after successful JVM exit.",
+    "previous_config_error_patterns_absent_in_this_capture": true,
+    "private_capture_bytes": {
+      "stderr": 969,
+      "stdout": 5672
+    },
+    "python_java_deadline_seconds": 180,
+    "status": "FAILED",
+    "temporary_marker_phase_emitted": true
+  },
+  "full_installation_acceptance": false,
+  "held_probe_executed": false,
+  "image_source": "f2fc1821dbc75a78537ecb7f068c6c75ddce883e",
+  "latest_ordinary_attempt": "evidence-014.json",
+  "ordinary_installation_attempts": 14,
+  "publication": {
+    "base": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+    "ci_url": "https://github.com/aloerch/ambisgis-platform/actions/runs/37203397726/job/111439495981",
+    "draft": true,
+    "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+    "head": "1baae0f48bcd69cb709e1aa0cfec80ba0895790b",
+    "merged": false,
+    "observed_at": "2026-10-04T12:59:21.203765+00:00",
+    "package_schema_ci": "success"
+  },
+  "published_and_artifact_source": "1baae0f48bcd69cb709e1aa0cfec80ba0895790b",
+  "raw_private_streams_copied": false,
+  "recorded_at": "2026-10-04T13:13:06.517084+00:00",
+  "references": {
+    "bundle018": {
+      "evidence_id": "bundle018",
+      "sha256": "21acf767eab5f6793de192c727ee0d0516bd1664100548293aca19c903d3731a"
+    },
+    "bundle018_review": {
+      "evidence_id": "bundle018_review",
+      "sha256": "bb968e0db15006d71005f1385c9e43c0e4f5820b4689cefa56caa6fe8326b5fc"
+    },
+    "diagnostic002_effects": {
+      "evidence_id": "diagnostic002_effects",
+      "sha256": "61be94ec2c9c88ec6859a2edca7720b2e550cde4ccc5ea501171c22971e9f15b"
+    },
+    "diagnostic002_effects_review": {
+      "evidence_id": "diagnostic002_effects_review",
+      "sha256": "343e693ed0e85bebc82511562ff5f685fa1e3e1e73b8f6c238dd63195b6f4f0b"
+    },
+    "diagnostic002_result": {
+      "evidence_id": "diagnostic002_result",
+      "sha256": "36108af6e8949c72ab136fcc45de7858e9adb35678596b93a316a415410868ac"
+    },
+    "diagnostic002_stderr_private": {
+      "evidence_id": "diagnostic002_stderr_private",
+      "sha256": "1640713ce0937993c6e452c31fe6551a4d0530706599e3be2ee99a39fe778921"
+    },
+    "diagnostic002_stdout_private": {
+      "evidence_id": "diagnostic002_stdout_private",
+      "sha256": "b888864e68025ce06c89513f24027f3b1ada5975936a938c291985dc5107e47d"
+    },
+    "image_pair008": {
+      "evidence_id": "image_pair008",
+      "sha256": "d7eacea247be1e74e03cd2c3374334436563631caebca2c7baff15c652515a7c"
+    },
+    "images017_result": {
+      "evidence_id": "images017_result",
+      "sha256": "576ab5bba01c211a2e05b06ac2a7aac4c8b9dc35c7d6b214b3ed82cce79d80ee"
+    },
+    "images017_review": {
+      "evidence_id": "images017_review",
+      "sha256": "6df1292db36d576c8b28467b262c651f5193138a301f5394beba1a6d205aa119"
+    },
+    "java004": {
+      "evidence_id": "java004",
+      "sha256": "8e17f435a83c661bc297eed9b3574ac2a1dff6e32d415a4699bc0e418371a1f6"
+    },
+    "java004_checks": {
+      "evidence_id": "java004_checks",
+      "sha256": "7c8d4f3198503ffffbf7717b2b87fe0d9c68ad10676c050dc08477b0c77eb9aa"
+    },
+    "jvm_integration": {
+      "evidence_id": "jvm_integration",
+      "sha256": "104ca9a878a89ee3c240030f17c183db0f7a0135a508bcca40be9cc0c688f31c"
+    },
+    "jvm_source_diagnosis": {
+      "evidence_id": "jvm_source_diagnosis",
+      "sha256": "e22478f6a937a079721cb5cef266f2cf7d4a5c0ac50e63b0dc765500becaa9d0"
+    },
+    "jvm_source_freeze": {
+      "evidence_id": "jvm_source_freeze",
+      "sha256": "a1bd756f53f2e6c36bd0482e03aedc17538ba93068e72b14bee7aee43e8125da"
+    },
+    "jvm_source_java_review": {
+      "evidence_id": "jvm_source_java_review",
+      "sha256": "88603cc021c3608d0bac844dfb510447d4e18638d684035b751ec6c1ae8558df"
+    },
+    "jvm_symbol_inventory": {
+      "evidence_id": "jvm_symbol_inventory",
+      "sha256": "e2687a355d8c9148dba7e8ded16c638922cf99c9ecd1efb9c021e84dae1ffda0"
+    },
+    "publication017": {
+      "evidence_id": "publication017",
+      "sha256": "c238a5a1f6539d83b7c7115d10cde62cd359fa2b7c296ace99469f5df55d9eac"
+    },
+    "publication017_live": {
+      "evidence_id": "publication017_live",
+      "sha256": "5f95e23e82096516c1c2f1b2a39d21c2d620b019a3573830be838d9be1710d90"
+    },
+    "validation025": {
+      "evidence_id": "validation025",
+      "sha256": "857ea648c4fe4759430b7645e6af2c09443df85d5fdc926e44aa3d32de38cc1e"
+    },
+    "validation026": {
+      "evidence_id": "validation026",
+      "sha256": "e91eed6acd07a661454b24c31816b57e04c9a990465f0e59de6504dcd9dbcf86"
+    }
+  },
+  "remaining": [
+    "JVM lifetime cause remains unobserved; source candidates are hypotheses.",
+    "No protected map/query/metadata, persistence/recovery or functional DNS journey completed in this diagnostic.",
+    "PLT-01, P1, scoped MVP, distribution and release acceptance remain open.",
+    "Held targeted runtime qualification remains excluded and unexecuted."
+  ],
+  "schema_version": 1,
+  "scope": "Current PLT-01 source/artifact checkpoint and second private GeoServer initializer diagnostic; not a fifteenth ordinary installation attempt.",
+  "source_checks": {
+    "new_jvm_observation_component_included": false,
+    "scope": "Source and inert fixtures, not installation acceptance.",
+    "tracked_source_files": 1527,
+    "validation025": {
+      "development": 121,
+      "image_helpers": 40,
+      "package": 662,
+      "runtime": 52,
+      "schemas": 10
+    },
+    "validation026": {
+      "explicit_unchanged_reuse_from025": {
+        "development": 121,
+        "image_helpers": 40
+      },
+      "package": 662,
+      "runtime": 52,
+      "schemas": 10
+    }
+  },
+  "source_observation_increment": {
+    "base": "1baae0f48bcd69cb709e1aa0cfec80ba0895790b",
+    "branch": "plt-01/geoserver-jvm-lifecycle",
+    "changes": "Init-only bounded post-stop ThreadMXBean observation; fixed symbols, unknown/overflow/races explicit, no raw thread names or messages. Stop precedence, serving mode and deadlines preserved.",
+    "component_commit": "676ef0dce6a65940e769d66eea1bb276a4703ad4",
+    "files": 3,
+    "independent_review": {
+      "findings": [],
+      "sha256": "88603cc021c3608d0bac844dfb510447d4e18638d684035b751ec6c1ae8558df",
+      "status": "PASS_PRODUCT_SOURCE_AND_ACTUAL_JAVA_CHECK_REVIEW"
+    },
+    "java004": {
+      "application_started": false,
+      "check_log_sha256": "7c8d4f3198503ffffbf7717b2b87fe0d9c68ad10676c050dc08477b0c77eb9aa",
+      "excluded_test_classes": 3,
+      "exit_codes": [
+        0,
+        0
+      ],
+      "independent_review": "PASS; same actual63/66/67 checks, not additional executions credited here",
+      "phase_checks": 66,
+      "production_classes": 9,
+      "receipt_sha256": "8e17f435a83c661bc297eed9b3574ac2a1dff6e32d415a4699bc0e418371a1f6",
+      "request_checks": 63,
+      "thread_checks": 67,
+      "total_class_files": 12
+    },
+    "published": false,
+    "references": {
+      "java004": {
+        "evidence_id": "java004",
+        "sha256": "8e17f435a83c661bc297eed9b3574ac2a1dff6e32d415a4699bc0e418371a1f6"
+      },
+      "jvm_integration": {
+        "evidence_id": "jvm_integration",
+        "sha256": "104ca9a878a89ee3c240030f17c183db0f7a0135a508bcca40be9cc0c688f31c"
+      },
+      "jvm_source_diagnosis": {
+        "evidence_id": "jvm_source_diagnosis",
+        "sha256": "e22478f6a937a079721cb5cef266f2cf7d4a5c0ac50e63b0dc765500becaa9d0"
+      },
+      "jvm_source_freeze": {
+        "evidence_id": "jvm_source_freeze",
+        "sha256": "a1bd756f53f2e6c36bd0482e03aedc17538ba93068e72b14bee7aee43e8125da"
+      },
+      "jvm_source_java_review": {
+        "evidence_id": "jvm_source_java_review",
+        "sha256": "88603cc021c3608d0bac844dfb510447d4e18638d684035b751ec6c1ae8558df"
+      },
+      "jvm_symbol_inventory": {
+        "evidence_id": "jvm_symbol_inventory",
+        "sha256": "e2687a355d8c9148dba7e8ded16c638922cf99c9ecd1efb9c021e84dae1ffda0"
+      }
+    },
+    "remaining": "Combined validation027, rebuilt images/bundle and actual initializer observation pending.",
+    "root_integrated": true,
+    "root_integration": {
+      "merge": "22cb4eacb843abafab159a68046cbc2b3aae3053",
+      "receipt_sha256": "104ca9a878a89ee3c240030f17c183db0f7a0135a508bcca40be9cc0c688f31c"
+    },
+    "runtime_repair_claimed": false
+  }
+}

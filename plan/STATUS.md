@@ -1,3 +1,69 @@
+# Current delivery status
+
+PLT-01 remains In progress. Current source `1ccdf88cbc9af56b94c4c64b572b23b21448b58c` contains 1,555 files, including the installed database oracle, finite failure diagnostics and the four-file exact-command registration repair. Actual affected checks passed 170 development, 83 runtime, 701 package and 10 schema tests with zero skips. Package/schema checks are separate from GIS product acceptance.
+
+Audited bundle025 contains 1,321 runtime files, 374 ELF files and 12 declared host prerequisites. Its immutable command registry retains and pins the exact oracle source; only the reviewed database-role interpreter, arguments and full program hash are admitted. Arbitrary programs, other roles, stdin and extra arguments remain rejected. Images025/026 retain source `cb057e3ef38013865e25a3cb9c864e26db02cff7`; native binaries, WAR/Java, service payloads and installer modules are unchanged.
+
+Independently reviewed concurrency005 passed four overlapping init/up pairs and two protected journeys (276 data requests). Two installed database observations each passed 19 fixed authenticated transactional denial cases with SQLSTATE 42501, rollback and unchanged selected logical state; engine return code is 0 and before/after snapshots match. The selected snapshot contains four principals, one resource, one application, 482 migration rows, two transport rules and one sequence. These bounded SQL-role facts do not establish serving-container secret-file isolation, complete migration graphs, native uniqueness or full installation acceptance. Independent final-effects review confirms four stopped roles, two absent initializers, eight known PID absences and eight unloaded units. The owned pause remains, six process reads were unavailable, and global helper/DNS cleanup is unverified. GeoServer exit 143 is not graceful exit 0 proof.
+
+Concurrency003 and 004 remain failed. The former retained ValueError without an oracle snapshot; the latter recorded engine return code 125 without a native program receipt. Pure source replay independently proved that the shipped owned dispatcher rejected the unregistered004 oracle command before native exec. Actual004 stderr and the original frame were not retained, and this finding does not establish003's exact cause. The registration repair does not rewrite those failures or open general engine execution.
+
+Historical ordinary019 remains incomplete at source `dfba5a60527a0eb2ffa0aef67310f02467e5617a` and bundle023 after twenty stages/four protected journeys, with six unsupported DNS namespace checks. Its original restart/reinitialization/recovery identities and limits remain preserved. The separate held targeted qualification stays unexecuted. Accepted foundations and DB-01/02/03 remain unchanged; DB-03 remains the last accepted task, and API-01/PLT-02 still depend on PLT-01.
+
+The retained read-only remote observation at 2026-10-05T04:32:01.556941+00:00 records draft/open/unmerged PR78 at `17df14ac32b90ec957b2b0f29517315377f10ecd`, with main `d0218209d435f80c21400dc38abc2c4d69d805bc` and issue11 open. This source/evidence increment is unpublished. Local document/package/schema/history/text gates precede an approved draft push; CI is then read back for that exact pushed head. Root's current Goal-tool testimony remains blocked (12,420,153 tokens; 30,612 seconds; no configured remaining-token budget); the precise tool timestamp is unavailable. Foreground work continues without a native Goal resume claim.
+
+Next: Implement strict role-scoped secret input validation at service, health and catalog-settings call sites and fixed serving-container credential-file checks in a fresh synthetic installation. Verify absence of migration credentials from catalog, GeoServer and gateway serving mounts/generated persistent files without retaining values; preserve the distinct database bootstrap credential scope. This is future enforcement and test work, not an implementation/pass or evidence of an existing exposure, and does not replace the held targeted qualification. Serving-container secret-file, declared network/listener/admin/egress/acquisition, per-role OS/resource-limit and supported clean-host/DNS checks remain open, as do full PLT/P1/MVP, release and human exits.
+
+Evidence: [evidence020](verification/plt01-lifecycle/evidence-020.json) and [progress020](verification/runtime-recovery/progress-020.json).
+
+## Historical plan-package checkpoints follow unchanged
+
+# Active delivery — 3 October 2026, PLT-01 and DB-01
+
+FND-06 is accepted/Merged at `d0218209d435f80c21400dc38abc2c4d69d805bc`
+([PR #77](https://github.com/aloerch/ambisgis-platform/pull/77)). Its original
+contract, five-goal traceability and measured Koop reuse criteria passed within
+the documented limits. The exact merged tree passed a fresh 227-assertion
+PostGIS/catalog/Koop run against 100,000 rows. Independent review verified
+sources, raw results, service/database shutdown and credential cleanup.
+[Acceptance and evidence](verification/fnd06-acceptance/acceptance-and-merge.json)
+record the normal protected merge and original requirement boundaries.
+
+PLT-01 is claimed/In progress on `plt-01/development-install`; the runtime-input
+component uses `plt-01/runtime-inputs`. Work implements a persistent loopback
+Compose installation, one configuration/secrets authority and useful readiness.
+DB-01 is accepted/Merged in `aloerch/ambisgis-geodb` at
+`ef9ef7364a7babc2ebcb4841c2c670633af59d59`
+([PR #11](https://github.com/aloerch/ambisgis-geodb/pull/11)). It implements typed
+managed schemas, stable UUID/ObjectID mappings and the DEFAULT version
+foundation. PLT-01 installation acceptance remains open.
+
+PLT-01 runtime preparation has retained 219 exact signed RPM inputs and 148
+matching source groups. Static checks and inert extraction pass; no new runtime
+has been executed. Independent security review found selected Podman 6.0.2
+affected by CVE-2026-94603. Engine execution is held while an owned source
+backport/build and rejection guards are prepared. This is a technical blocker
+for the selected runtime, not an owner-approval request or installer acceptance.
+DB-01 passed 22 real database tests and three schema guards again from the
+exact merged source; all 41 tracked files and 72 runtime artifacts were verified.
+Independent review confirmed shutdown, unchanged sources and zero test skips.
+The 12 earlier privilege probes retain their separate actual evidence.
+[Acceptance and postmerge evidence](verification/db01-acceptance/acceptance-and-merge.json)
+record issue closure and Delivery Verified → Merged, preserving unrelated
+Project planning. DB-02 is dependency-ready; API-01 still awaits PLT-01.
+
+Combined FND-06 checks passed 503 package tests, ten schema/example pairs,
+35 Koop guards and 14 notice guards; these remain distinct from product tests.
+Project tracking retains 93 items, 24 fields, seven views and 15 repositories.
+All unrelated planning and archive decisions were preserved.
+
+The complete scoped MVP, persistent installation acceptance, full API/security
+suites, desktop/branch/portal/notebook journeys, Windows, independent repair,
+human-only evaluations and release gates remain open. The
+[requirements matrix](docs/delivery-requirements-matrix.md) controls scope.
+
+## Prior checkpoints retained below
+
 # Active delivery — 3 October 2026, FND-06
 
 FND-08 is accepted/Merged at `6d18637e39818e60bcc947d3a7c252e84ab48fe0`

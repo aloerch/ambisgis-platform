@@ -1,0 +1,49 @@
+{
+  "all_helpers_gone": false,
+  "data_and_network_preserved": true,
+  "database_container_id": "6dfae89ed51310b468339dbba88374cc65d9ac9c3089735e8f5e55ef6963f2d0",
+  "database_process_absent": true,
+  "database_recorded_pid": 539045,
+  "database_state": "created",
+  "interpretation": "Private manager connection advanced to native systemd-run invocation, whose owned guard rejected the call. No timer/startup/installed acceptance inferred. The exact persistent rootless namespace helper is identified and deliberately retained; no process killed or data removed.",
+  "native_error": "create healthcheck: systemd-run failed: exit status125; owned ordinary wrapper rejected runtime input/configuration",
+  "other_five_containers_absent": true,
+  "pause_cgroup": "0::/user.slice/user-1000.slice/user@1000.service/user.slice/podman-pause-ce331f5d.scope",
+  "pause_namespaces": {
+    "mnt": "mnt:[4026533328]",
+    "net": "net:[4026531833]",
+    "user": "user:[4026533327]"
+  },
+  "pause_pid_file": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/installation-006/runtime/run/libpod/tmp/pause.pid",
+  "pause_pid_file_sha256": "c189d918c83dba899d198b48790b100ea597fefea81b06ef35784e889f283ecf",
+  "reconciled": true,
+  "recorded_at_utc": "2026-10-03T23:42:05.338746+00:00",
+  "references": [
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/result.json",
+      "sha256": "e5b969fe073d529be6d95bc27acd8ce9736a9e4d6c075de271b230c8dd278f7c"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/read-only-diagnosis-001/result.json",
+      "sha256": "5fa70872592e11bdfd3107bd2421155617e15ac21078b488d68388355caf52ac"
+    },
+    {
+      "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/podman-systemd-build-001/source/libpod/healthcheck_linux.go",
+      "sha256": "c5589a69705c903daaaea53c61cdd758adc9ed08a0296e9124f6f2d5f446a71b"
+    }
+  ],
+  "remaining": "Identify the exact ordinary health-timer argument/environment validation failure before any fresh lifecycle retry.",
+  "retained_owned_processes": [
+    {
+      "comm": "podman pause",
+      "exe": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/relocated-bundle/runtime/engine/podman",
+      "pid": 538380,
+      "start_ticks": "6841352"
+    }
+  ],
+  "run_id": "7e408e9c-0b9e-4121-a7b0-a9434083305a",
+  "running_services": 0,
+  "schema_version": 1,
+  "scope": "Completed failed ordinary lifecycle006; no remote writes attempted",
+  "wrapper_and_child_absent": true
+}

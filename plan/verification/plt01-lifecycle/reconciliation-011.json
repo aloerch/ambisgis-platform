@@ -1,0 +1,123 @@
+{
+  "all_helpers_gone": false,
+  "catalog_initializer_id": "66513580d96a527e19b5ce1ebf98f7b80ee63c327ba835a7d86fde7c6635c878",
+  "catalog_initializer_observed_exit": 1,
+  "catalog_initializer_removed_by_original_run": true,
+  "containers": {
+    "catalog": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "catalog-init": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "database": {
+      "engine_health": "healthy",
+      "process": "stopped"
+    },
+    "gateway": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "geoserver": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    },
+    "geoserver-init": {
+      "engine_health": "unavailable",
+      "process": "absent"
+    }
+  },
+  "data_deleted": false,
+  "database_health_exit_codes": [
+    1,
+    0,
+    0
+  ],
+  "database_observed_ready": true,
+  "dns_cleanup_verified": false,
+  "dns_files": {
+    "runtime/run/networks/aardvark-dns": {
+      "directory_entries": [],
+      "exists": true,
+      "mode": "0o755",
+      "symlink": false,
+      "uid": 1000
+    },
+    "runtime/run/networks/aardvark-dns/aardvark.pid": {
+      "exists": false,
+      "symlink": false
+    },
+    "runtime/run/networks/rootless-netns/rootless-netns": {
+      "exists": false,
+      "symlink": false
+    }
+  },
+  "dns_runtime_identity_verified": false,
+  "explicit_database_readiness_exit_codes": [
+    0
+  ],
+  "failed_guard_run_id": "e3a851f0-6cf8-4c96-890c-268996afd3f7",
+  "full_installation_acceptance": false,
+  "guard_wrapper_child_absent": true,
+  "install_id": "8ede81d0-dab0-46ae-a35b-508d97bf644d",
+  "installation": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/installation-011",
+  "last_persisted_health_units": {
+    "both_not_loaded": true,
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-011/read-only-timer-001/result.json",
+    "sha256": "598ffee66e19f56743e7525edf73a7b627b4d4c7aa39d11f310805a3bba6fcd4"
+  },
+  "lifecycle": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-011/result.json",
+    "sha256": "74dd21a6e2da5cb650b4a7772270d0d603b956ef553af832e306401bd1ac5335"
+  },
+  "lifecycle_retried": false,
+  "limitations": [
+    "The finite catalog_setup/module_missing diagnostic does not identify the missing module or establish prior native-library load success.",
+    "Current absence of the removed initializer is not evidence it never ran; native events establish creation, failure and removal.",
+    "Process ownership and absence are point-in-time root observations."
+  ],
+  "matching_processes": [
+    {
+      "comm": "podman pause",
+      "command_sha256": "81edb1f848e5614613bab98a227b81df4c60cb982378e69441245987edc4ed37",
+      "executable": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-011/relocated-bundle/runtime/engine/podman",
+      "pid": 656409,
+      "start_ticks": 9188350,
+      "state": "S",
+      "uid": 1000
+    }
+  ],
+  "mounted_database_markers": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-011/read-only-diagnosis-001/mounted-database-markers.json",
+    "sha256": "427186b18cc457c9ce6d7efdb6b3c24ba37521618046d35a52e07974f3afeecc"
+  },
+  "native_database_state": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-011/read-only-state-001/result.json",
+    "sha256": "b84705d884bff6271e77e2bba672b27537486c49cd4a30649bc4e67fdd48a01d"
+  },
+  "network": {
+    "driver": "bridge",
+    "internal": true,
+    "ipv6_enabled": false,
+    "name": "ambisgis-8ede81d0dab046aea35b508d97bf644d_internal",
+    "verified": true
+  },
+  "pause_pid_file": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/installation-011/runtime/run/libpod/tmp/pause.pid",
+  "preserved_helper": "Owned rootless pause process deliberately retained",
+  "read_only_diagnosis": {
+    "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-011/read-only-diagnosis-001/result.json",
+    "sha256": "2e21ee433ac5034effdfaddf6969e679ea2d19c34d2f51dc758199554b0e2aee"
+  },
+  "reconciled": true,
+  "recorded_at": "2026-10-04T06:14:39.966080+00:00",
+  "remote_mutations": false,
+  "schema_version": 1,
+  "signals_sent": false,
+  "startup_failure": {
+    "category": "import",
+    "code": "module_missing",
+    "stage": "catalog_setup"
+  }
+}

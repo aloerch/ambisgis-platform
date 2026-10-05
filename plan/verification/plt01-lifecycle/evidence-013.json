@@ -1,0 +1,124 @@
+{
+  "all_helpers_gone": false,
+  "attempts": 13,
+  "bundle": {
+    "delta_from015": "runtime custody metadata only",
+    "elf_objects": 374,
+    "host_prerequisites": 12,
+    "runtime_files": 1311,
+    "sequence": "016"
+  },
+  "cleanup_limits": "Known persisted database timer/service not loaded. Owned pause681347/start10524721 retained, with data/network. Unknown/removed-initializer units and DNS cleanup not proven.",
+  "current_source_integration_head": "26056894347071f4e06993ffaf1cc91310fc61de",
+  "data_deleted": false,
+  "diagnosis": "Retained native Application.client_secret is a raw CharField; Django check_password expects an encoded password hash and rejects matching raw values. Exact retained-function witness and independent review establish this source mismatch, not the actual013 exception frame.",
+  "dns_cleanup_verified": false,
+  "dns_identity_verified": false,
+  "failures_retained": 13,
+  "full_installation_acceptance": false,
+  "held_targeted_probe_executed": false,
+  "historical_failures": "All earlier lifecycle/diagnostic/control failures remain retained in predecessor evidence, including pre-write control rejection73b36976; no relabeling as product success.",
+  "image_source_head": "81cbc32666227a4c2000a1150a6ec7d8c45c49bf",
+  "images": "013/014 byte-identical; independent audit57008 payload members; retained dependency/native inputs unchanged.",
+  "last_install_id": "ea67df1e-751d-4697-ba2b-3ab03231fb04",
+  "last_state": "Attempt013 passed relocation and fresh init, then failed catalog_bootstrap/invalid_input/validation. Database health [1,0,0,0,0], explicit readiness0, no automatic restarts and final exit0; catalog-init started, died1 and was removed. Protected-service, persistence/restart/recovery and DNS journeys were not reached. Exact original exception and failing operation remain unobserved.",
+  "oauth_repair": {
+    "affected_guards": 16,
+    "base": "b31c4e751ec9b611927c957625902d3af7f0b0fe",
+    "baseline_errors": 2,
+    "baseline_failures": 1,
+    "branch": "plt-01/catalog-oauth-secret",
+    "integration": {
+      "component_commit": "71f0ab92af8760476d6eb0a30a6c8e349c47c2aa",
+      "head": "26056894347071f4e06993ffaf1cc91310fc61de",
+      "receipt": {
+        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integrated-catalog-oauth-secret-001.json",
+        "sha256": "5aeb02d454f54655c6b53f571fa25ec2ac440e6f70b1108e8a843a41af6ef885"
+      }
+    },
+    "limits": "Synthetic model/transaction collaborators and exact selected function ASTs; no Django setup/ORM/native. Initial copied-globals witness harness failure retained. Combined checks/new artifacts/runtime pending at this snapshot; original013 exception frame not proved.",
+    "new_guards": 9,
+    "production_delta": "Two import/call lines use native constant_time_compare raw-secret semantics; all other catalog bytes, metadata/owner/transaction guards unchanged.",
+    "retained_function_cases": 4,
+    "source": {
+      "deploy/development/catalog-oauth-bootstrap.md": "6611bc5942ee7d4f4bde4ac748d9a76ffc862f0e029b8cb1597486c05a6b9d34",
+      "plan/tests/test_catalog_oauth_secret.py": "a04cc554a415ab2503de6ffdb528b7a56671be7d5af9077e2a7b7edd56f00ded",
+      "services/development/ambisgis_development/catalog.py": "306c51fd40d8d7bdfef1fba30060c4e7f48420e704aa744d2144cc3d1bbbeecf"
+    },
+    "status": "reviewed_source_integrated_locally_combined_checks_pending",
+    "test_review_scope": "Independent reviewer replayed nine new guards and four retained-function cases. Sixteen author affected checks include those nine and are reused author evidence, not sixteen additional independent tests."
+  },
+  "observed_at": "2026-10-04T10:29:18.150958+00:00",
+  "previous_evidence": "plan/verification/plt01-lifecycle/evidence-012.json",
+  "private_reference_hashes": {
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integrated-catalog-oauth-secret-001.json": "5aeb02d454f54655c6b53f571fa25ec2ac440e6f70b1108e8a843a41af6ef885",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/plt01-draft-publication-attempts/19c0a651-079c-42f1-8588-362cdff36c99/result.json": "75bab0d4c7e5be70b2a582446eb907590ce338b94bfea9eccd7070580c3d5dc4",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/recovery-20261003/post-publication015-live-state.json": "e400f133bc962d130e9853c29fac1eab4e66020922c288a1c3039386460f1fa5",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-bootstrap013-source-diagnosis-001/result.json": "bb73d58d0720bf3e20b0b6ea6317b6ea5227b0101b4281b4ad38fd59346ba109",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-distutils-integration-review-001/result.json": "e714450e86de750c025f09cee19f64fa417ba5b80c728418467e93d57ef66108",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-distutils-review-001/result.json": "5539c09727fa0f75c0f27f34e21e7b452d520b9880d5a86bc40cec7b04ce5f6c",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-catalog-oauth-secret-review-001/result.json": "efd05286576280cf2a6b87099163bb71cbe85f0bb49e2e3649c2610b65c7caa7",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-images013-independent-review-001/result.json": "3f5805864d9902998d1542144c8543d673fbba77d427d5e50cb8ae71b10206fd",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-lifecycle013-reconciliation-review-001/result.json": "4083782d14413027c39f7c8bacfbfd3b28fff5c6e0bccd4cf1fb08570ccd6bb3",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-publication-history-review-019/result.json": "732513fdf415559ba98f9e8aa638aa96ecc61a16a60e960a7959fd9615948737",
+    "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-runtime-bundle016-review-001/result.json": "1d4c516a7d48f2ee507006451076cccc9ef4210a7adc4682f1359fbbd925b17b",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/bundle-016/bundle.json": "7ed251fc7fa640e8d715c70ebc47a79bda77ce023b5b4ad79f628820d3d1f59e",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-oauth-secret-001/affected.json": "adb84f6ecf26816afa5abd23c4fb18a80225a1e45f8b4e6f18717c160e4f7aa2",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-oauth-secret-001/baseline.json": "25bb5efc015dbd1530e970af30a3941fa1ae61f5532c9fea979c82f0ff94de39",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-oauth-secret-001/fixed-command.json": "032552b55cb7dc4bb4e94ea97c62c9a58f7ca4ef5fa4b7598cc9cada2ade4e51",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-oauth-secret-001/freeze.json": "cc7a9b5650f3af0f8de9195d8ed0ac825a21e595bbb7c69e08f722f9b30ca228",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-oauth-secret-001/retained-witness-003-command.json": "959e373c111e948d09b132075a8a2428d4ff44d19135dcad721a0517ea985a22",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/catalog-oauth-secret-001/retained-witness-003.json": "8e7a6bd91dafe2966360c8b3c0bbaad036efee5f94371ce069d326fc5ed9f75a",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/image-pair-006/result.json": "74f78d622b3c9d90a2004ef5f3767f2d023830c07aa17559163e747286c6e0a3",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-013/read-only-reconciliation-001/result.json": "7a69140f74b25c80ccfe31251065d3deff9bc71266ce72393eb5d3dd2d576c75",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-013/result.json": "837e86e9bf30ab723b766fd69938ae4c77ceffcb30aee1bfbccc2efb51e0dc6e",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-021/result.json": "e3f1d035b27a9b4432374ff4d9408d69a473a9fa8c013495f21a63f02b039199",
+    "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/runtime-validation-022/result.json": "e1f6a2a0093c4363553d19f17c69c3ae4ac6ba177602d11d0548ac93304c553f"
+  },
+  "publication": {
+    "body_sha256": "b0182a47061b469c57f69d037e828d6376467e273e5e0d5af21c6f97c8c21459",
+    "ci_url": "https://github.com/aloerch/ambisgis-platform/actions/runs/37194657940/job/111413907698",
+    "comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5978911190",
+    "draft": true,
+    "head": "b31c4e751ec9b611927c957625902d3af7f0b0fe",
+    "issue_project_state_changed": false,
+    "live_readback_at": "2026-10-04T10:23:17.171477Z",
+    "merged": false,
+    "normal_branch_push": true,
+    "package_schema_ci": "success",
+    "scope": "Reviewed draft publication; no merge/release/installation acceptance."
+  },
+  "published_head": "b31c4e751ec9b611927c957625902d3af7f0b0fe",
+  "reconciled": true,
+  "references": [
+    {
+      "path": "plan/verification/plt01-lifecycle/attempt-013.json",
+      "sha256": "837e86e9bf30ab723b766fd69938ae4c77ceffcb30aee1bfbccc2efb51e0dc6e"
+    },
+    {
+      "path": "plan/verification/plt01-lifecycle/reconciliation-013.json",
+      "sha256": "7a69140f74b25c80ccfe31251065d3deff9bc71266ce72393eb5d3dd2d576c75"
+    }
+  ],
+  "remaining": "Protected map/query/metadata and denial, reinit/restart/recovery, DNS transport/identity/lifetime, network/OS/port/concurrency/log/helper checks and held qualification. Full PLT-01/P1/scoped MVP remain open.",
+  "runtime_executed": true,
+  "schema_version": 1,
+  "source_checks": {
+    "development": 121,
+    "image_helpers": 40,
+    "package": 649,
+    "runtime": 52,
+    "schemas": 10,
+    "scope": "Validation022 package/runtime/schema after two-line pin; unchanged image/development inputs explicitly reuse validation021. No installed GIS acceptance.",
+    "skips": 0,
+    "source_files": 1516
+  },
+  "source_head": "b31c4e751ec9b611927c957625902d3af7f0b0fe",
+  "startup_failure": {
+    "category": "validation",
+    "code": "invalid_input",
+    "stage": "catalog_bootstrap"
+  },
+  "status": "In progress",
+  "task": "PLT-01"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": "42c90018-6256-42d2-9030-4ef0ada06eb4",
+  "scope": "Completed ordinary lifecycle004; no remote writes attempted",
+  "receipt_sha256": "f1e946a7962a4bdb98167696b288cd358213dc81485ced56726d9081d5b8c9d6",
+  "live_owned_containers": [
+    {
+      "id": "c7c1524cd787d909b3c6086c5d2a8077c61855f141aded0acb3a4864b76673f9",
+      "name": "ambisgis-48901d47d8754a53a34f45339ba06519-database",
+      "status": "created",
+      "running": false,
+      "pid": 0
+    }
+  ],
+  "live_matching_processes": [],
+  "wrapper_and_child_absent": true,
+  "persistent_data_preserved": true,
+  "shutdown_receipt_running_services": 0,
+  "remaining_work": "Investigate rootless systemd cgroup/user-bus selection. No host permissions, policy or cgroup controls have been changed. Retain stopped container and owned network.",
+  "reconciled": true
+}
