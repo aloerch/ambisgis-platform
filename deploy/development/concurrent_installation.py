@@ -58,8 +58,11 @@ def decode(data):
 
 
 class ConcurrentCheck(lifecycle.Check):
-    def __init__(self, directory, output):
+    def __init__(self, directory, output, *, installed_database_oracle=False):
         super().__init__(directory, output)
+        if type(installed_database_oracle) is not bool:
+            raise ValueError('Installed database oracle option must be boolean.')
+        self.installed_database_oracle = installed_database_oracle
         self.record.update({'schema_version': 1, 'task': 'PLT-01', 'gap': 'PLT01-GAP-05',
                        'scope': 'ordinary command concurrency and fixed native identity/policy/metadata preservation',
                        'status': 'running', 'started_at_utc': utc(), 'pairs': [],
@@ -313,14 +316,42 @@ class ConcurrentCheck(lifecycle.Check):
         self.record['owned_processes_after_up'] = observed
         self.capture_identity()
         title = self.protected_journey('native baseline before repeated concurrent commands')
+        if self.installed_database_oracle:
+            self.database_snapshot('before')
         self.pair('init', reinitialize=True)
         self.pair('up')
+        if self.installed_database_oracle:
+            # Read before the next HTTP journey can repair or edit any metadata.
+            self.database_snapshot('after')
         # The inherited method reads the old title before a journey can edit it,
         # and compares native principal/resource IDs and restored policy hashes.
         self.protected_journey('native state after repeated concurrent commands', title)
         self.capture_identity()
         self.record['native_identity_and_policy_preserved'] = True
         self.record['native_preservation_scope'] = 'fixed diagnostic item, owner/viewer IDs and native object policy; not full migration or database cardinality'
+
+    def database_snapshot(self, phase):
+        import installed_database_oracle as oracle
+        evidence = self.record.setdefault('installed_database_oracle', {
+            'status': 'running', 'complete': False,
+            'scope': 'selected catalog principal/resource/application and applied-migration cardinality/fingerprints; installed serving-role fixed transactional denials',
+            'migration_secret_file_surface_verified': False,
+            'full_migration_graph_or_managed_geodatabase_acceptance': False})
+        try:
+            if phase not in ('before', 'after') or phase in evidence or (phase == 'after' and 'before' not in evidence):
+                raise ValueError('Installed database observations are out of order.')
+            evidence[phase] = oracle.observe(self)
+            if phase == 'after':
+                if evidence['before']['snapshot'] != evidence['after']['snapshot']:
+                    raise ValueError('Installed native logical state changed across repeated commands.')
+                evidence.update(status='passed', complete=True, repeated_initialization_logical_state_preserved=True)
+                self.record['installed_sql_role_acceptance'] = True
+        except BaseException:
+            evidence.update(status='failed', complete=False)
+            self.record['installed_sql_role_acceptance'] = False
+            raise
+        finally:
+            self.save()
 
     def shutdown(self):
         if not self.up_attempted:
@@ -342,11 +373,14 @@ def main(args):
             or directory in output.parents or output in directory.parents):
         raise ValueError('Installation and evidence must be distinct fresh, nonnested paths.')
     output.mkdir(mode=0o700, parents=True)
-    check = ConcurrentCheck(directory, output)
+    check = ConcurrentCheck(directory, output, installed_database_oracle=getattr(args, 'installed_database_oracle', False))
     check.record['sources'] = [{'path': str(path), 'sha256': digest(path)} for path in (
         Path(__file__), Path(lifecycle.__file__), ROOT / 'installer/config.py',
         ROOT / 'installer/runtime.py', ROOT / 'installer/state.py', ROOT / 'installer/bundle.py',
         Path(lifecycle.journey_module.__file__), lifecycle.journey_module.POLICY_PROGRAM, lifecycle.journey_module.CLIENT)]
+    if check.installed_database_oracle:
+        path = ROOT / 'deploy/development/installed_database_oracle.py'
+        check.record['sources'].append({'path': str(path), 'sha256': digest(path)})
     passed = False
     previous = signal.getsignal(signal.SIGTERM)
     def interrupted(signum, frame):
@@ -384,4 +418,6 @@ if __name__ == '__main__':
     parser.add_argument('--bundle-sha256', required=True)
     parser.add_argument('--directory', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--installed-database-oracle', action='store_true',
+                        help='Add fixed installed SQL/cardinality checks to this fresh invocation only.')
     raise SystemExit(main(parser.parse_args()))
