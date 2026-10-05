@@ -110,9 +110,10 @@ def summary(rows):
     return {'count': len(rows), 'sha256': fingerprint(rows)}
 
 
-def project(product, catalog, transport, schemas, roles):
+def project(product, catalog, transport, schemas, roles, *, _stage=None):
     """Keep raw rows, including native password/client hashes, in memory only."""
     require(set(catalog) == set(CATALOG_ROWS) and set(transport) == set(TRANSPORT_ROWS))
+    if _stage is not None: _stage('principals')
     users = catalog['principals']
     selected = {}
     for key, name in (('owner', product['owner']), ('viewer', product['viewer']),
@@ -123,6 +124,7 @@ def project(product, catalog, transport, schemas, roles):
     require(len({row['id'] for row in selected.values()}) == 4)
     require(all(row['is_active'] is True and row['is_staff'] is False and row['is_superuser'] is False
                 for key, row in selected.items() if key != 'anonymous'))
+    if _stage is not None: _stage('resource')
     expected_uuid = str(uuid.uuid5(uuid.UUID(product['install_id']), 'diagnostic-private-points'))
     resources = [row for row in catalog['resources'] if row['uuid'] == expected_uuid or row['alternate'] == 'fixture:private_points']
     require(len(resources) == 1)
@@ -130,24 +132,29 @@ def project(product, catalog, transport, schemas, roles):
     require(item['uuid'] == expected_uuid and item['alternate'] == 'fixture:private_points'
             and item['owner_id'] == selected['owner']['id'] and type(item['id']) is int
             and item['is_published'] is True and item['is_approved'] is True and item['resource_type'] == 'dataset')
+    if _stage is not None: _stage('application')
     applications = [row for row in catalog['applications'] if row['name'] == 'AmbisGIS development']
     require(len(applications) == 1 and applications[0]['user_id'] == selected['owner']['id']
             and applications[0]['client_type'] == 'confidential'
             and applications[0]['authorization_grant_type'] == 'authorization-code'
             and applications[0]['skip_authorization'] is False)
+    if _stage is not None: _stage('migrations')
     migrations = catalog['migrations']
     require(migrations and len({(row['app'], row['name']) for row in migrations}) == len(migrations)
             and len({row['id'] for row in migrations}) == len(migrations)
             and all(type(row['id']) is int and row['applied'] and row['app'] and row['name'] for row in migrations))
+    if _stage is not None: _stage('transport')
     rules = transport['rules']
     require(len(rules) == 2 and len({row['id'] for row in rules}) == 2)
     require(sorted((row['priority'], row['service'], row['request'], row['workspace'], row['layer'], row['grant_type'])
                    for row in rules) == [(10, 'WMS', 'GETMAP', 'fixture', 'private_points', 'ALLOW'),
                                          (20, 'WFS', 'GETFEATURE', 'fixture', 'private_points', 'ALLOW')])
     require(len(transport['sequence']) == 1)
+    if _stage is not None: _stage('roles')
     role_by_name = {row['rolname']: row for row in roles['roles']}
     owners = {CATALOG: 'ambisgis_catalog_owner', TRANSPORT: 'ambisgis_transport_owner'}
     require(all(name in role_by_name for name in (*ROLES, *owners.values())))
+    if _stage is not None: _stage('ownership')
     for db, owner in owners.items():
         db_rows = [row for row in roles['databases'] if row['datname'] == db]
         require(len(db_rows) == 1 and db_rows[0]['datdba'] == role_by_name[owner]['oid'])
@@ -155,6 +162,7 @@ def project(product, catalog, transport, schemas, roles):
         for name in names:
             rows = [row for row in schemas[db]['relations'] if row['nspname'] == 'public' and row['relname'] == name]
             require(len(rows) == 1 and rows[0]['relowner'] == role_by_name[owner]['oid'])
+    if _stage is not None: _stage('roles')
     for name in ROLES:
         row = role_by_name[name]
         require(row['rolcanlogin'] is True and all(row[key] is False for key in
@@ -174,10 +182,95 @@ def project(product, catalog, transport, schemas, roles):
     return result
 
 
+# Failure vocabulary is fixed by this source, never exception messages, query
+# text, row values, paths or stderr. Unknown native errors remain unclassified.
+SQLSTATES = frozenset(('00000', '42501', '42703', '42P01', '42601', '28P01',
+                      '3D000', '57014', '25006', '25P02', '23505', '42P07'))
+STAGES = frozenset(('input', 'native_check', 'state_compare', 'host_preflight',
+                    'host_exec', 'host_native_receipt', 'host_success_receipt',
+                    'host_identity_recheck')) | frozenset(
+    phase + '.' + group + '.' + name
+    for phase in ('snapshot_before', 'snapshot_after')
+    for group, names in (('catalog', CATALOG_ROWS), ('transport', TRANSPORT_ROWS),
+                         ('catalog_schema', SCHEMA_ROWS), ('transport_schema', SCHEMA_ROWS),
+                         ('roles', ('roles', 'memberships', 'databases')),
+                         ('project', ('contract', 'principals', 'resource', 'application', 'migrations', 'transport', 'roles', 'ownership')))
+    for name in names) | frozenset('denial.' + role + '.' + case
+                                for role, cases in CASES.items() for case in cases)
+
+
+RETURN_CODES = frozenset(('0', '1', '125', '126', '127', 'signal', 'OTHER', 'not_observed'))
+
+
+def return_code_class(value):
+    if type(value) is not int:
+        return 'OTHER'
+    if value in (0, 1, 125, 126, 127):
+        return str(value)
+    return 'signal' if -64 <= value < 0 else 'OTHER'
+
+
+def failure_fact(error, stage, sqlstate='not_observed', rollback='not_observed', return_code='not_observed'):
+    kinds = {ValueError: 'ValueError', TypeError: 'TypeError', KeyError: 'KeyError',
+             RuntimeError: 'RuntimeError', OSError: 'OSError', ImportError: 'ImportError',
+             ModuleNotFoundError: 'ModuleNotFoundError', json.JSONDecodeError: 'JSONDecodeError',
+             subprocess.TimeoutExpired: 'TimeoutExpired', TimeoutError: 'TimeoutError'}
+    return {'stage': stage if type(stage) is str and stage in STAGES else 'OTHER',
+            'exception_class': kinds.get(type(error), 'OTHER'),
+            'sqlstate': sqlstate if type(sqlstate) is str and sqlstate in SQLSTATES | {'not_observed', 'OTHER'} else 'OTHER',
+            'rollback': rollback if type(rollback) is str and rollback in ('not_observed', 'marker_observed') else 'not_observed',
+            'return_code': return_code if type(return_code) is str and return_code in RETURN_CODES else 'OTHER'}
+
+
+def validate_failure(value):
+    require(type(value) is dict and set(value) == {'schema_version', 'status', 'failures'}
+            and type(value['schema_version']) is int and value['schema_version'] == 1
+            and value['status'] == 'failed' and type(value['failures']) is list
+            and 1 <= len(value['failures']) <= 2)
+    classes = {'ValueError', 'TypeError', 'KeyError', 'RuntimeError', 'OSError', 'ImportError',
+               'ModuleNotFoundError', 'JSONDecodeError', 'TimeoutExpired', 'TimeoutError', 'OTHER'}
+    for row in value['failures']:
+        require(type(row) is dict and set(row) == {'stage', 'exception_class', 'sqlstate', 'rollback', 'return_code'})
+        require(type(row['stage']) is str and row['stage'] in STAGES | {'OTHER'}
+                and type(row['exception_class']) is str and row['exception_class'] in classes
+                and type(row['sqlstate']) is str and row['sqlstate'] in SQLSTATES | {'not_observed', 'OTHER'}
+                and type(row['rollback']) is str and row['rollback'] in ('not_observed', 'marker_observed')
+                and type(row['return_code']) is str and row['return_code'] in RETURN_CODES)
+    return value
+
+
 class NativeOracle:
     def __init__(self, product, material):
         self.product, self.material = product, material
         self.deadline = time.monotonic() + 120
+        self.phase, self.stage = 'snapshot_before', 'native_check'
+        self.sqlstate, self.rollback = 'not_observed', 'not_observed'
+        self.return_code = 'not_observed'
+        self.failures = []
+
+    def at(self, stage):
+        require(stage in STAGES)
+        self.stage = stage
+        self.sqlstate, self.rollback = 'not_observed', 'not_observed'
+        self.return_code = 'not_observed'
+
+    def failed(self, error):
+        return failure_fact(error, self.stage, self.sqlstate, self.rollback, self.return_code)
+
+    def outcome(self, code, output, error):
+        self.return_code = return_code_class(code)
+        match = re.fullmatch(rb'(?:ERROR|FATAL):\s+([0-9A-Z]{5})\s*', error)
+        if code == 0 and error == b'':
+            self.sqlstate = '00000'
+        elif match:
+            value = match.group(1).decode('ascii')
+            self.sqlstate = value if value in SQLSTATES else 'OTHER'
+        else:
+            self.sqlstate = 'OTHER'
+        # This is only an observed fixed marker, never an inferred rollback after
+        # timeout/disconnection or a claim that all database storage is unchanged.
+        if code == 0 and output.splitlines()[-1:] == [b'ORACLE_ROLLED_BACK']:
+            self.rollback = 'marker_observed'
 
     def run(self, role, database, statement):
         # All callers below select literals from this file; there is no protocol
@@ -199,30 +292,41 @@ class NativeOracle:
                                      '-h', target, '-p', '5432', '-U', role, '-d', database],
                                     input=statement.encode(), env=env,
                                     stdout=stdout, stderr=stderr, timeout=remaining, check=False)
+            self.return_code = return_code_class(result.returncode)
             stdout.seek(0); output = stdout.read(LIMIT + 1)
             stderr.seek(0); error = stderr.read(LIMIT + 1)
         require(len(output) + len(error) <= LIMIT and type(result.returncode) is int)
         return result.returncode, output, error
 
     def rows(self, database, select):
-        statement = ('BEGIN READ ONLY; SET LOCAL statement_timeout=4000; SET LOCAL lock_timeout=1500; '
+        statement = ('\\set VERBOSITY sqlstate\nBEGIN READ ONLY; SET LOCAL statement_timeout=4000; SET LOCAL lock_timeout=1500; '
                      "SELECT COALESCE(json_agg(t),'[]'::json) FROM (" + select + ') t; ROLLBACK;')
         code, output, error = self.run('ambisgis_admin', database, statement)
+        self.outcome(code, output, error)
         require(code == 0 and error == b'')
         result = decode(output)
         summary(result)
         return result
 
     def snapshot(self):
-        catalog = {name: self.rows(CATALOG, query) for name, query in CATALOG_ROWS.items()}
-        transport = {name: self.rows(TRANSPORT, query) for name, query in TRANSPORT_ROWS.items()}
-        schemas = {db: {name: self.rows(db, query) for name, query in SCHEMA_ROWS.items()}
-                   for db in (CATALOG, TRANSPORT)}
-        roles = {name: self.rows(CATALOG, query) for name, query in
-                 (('roles', ROLE_ROWS), ('memberships', MEMBER_ROWS), ('databases', DATABASE_ROWS))}
-        return project(self.product, catalog, transport, schemas, roles)
+        def rows(group, database, statements):
+            result = {}
+            for name, query in statements.items():
+                self.at(self.phase + '.' + group + '.' + name)
+                result[name] = self.rows(database, query)
+            return result
+        catalog = rows('catalog', CATALOG, CATALOG_ROWS)
+        transport = rows('transport', TRANSPORT, TRANSPORT_ROWS)
+        schemas = {CATALOG: rows('catalog_schema', CATALOG, SCHEMA_ROWS),
+                   TRANSPORT: rows('transport_schema', TRANSPORT, SCHEMA_ROWS)}
+        roles = rows('roles', CATALOG, {'roles': ROLE_ROWS, 'memberships': MEMBER_ROWS,
+                                       'databases': DATABASE_ROWS})
+        self.at(self.phase + '.project.contract')
+        return project(self.product, catalog, transport, schemas, roles,
+                       _stage=lambda name: self.at(self.phase + '.project.' + name))
 
     def deny(self, role, case):
+        self.at('denial.' + role + '.' + case)
         database, _, relation = ROLES[role]
         # ON_ERROR_STOP is disabled only around the one named operation, so even
         # an unexpected success is rolled back. An aborted transaction is first
@@ -234,6 +338,7 @@ class NativeOracle:
         sql += ('\\echo ORACLE_SQLSTATE :SQLSTATE\n\\set ON_ERROR_STOP on\n'
                 "ROLLBACK TO SAVEPOINT installed_oracle; ROLLBACK; SELECT 'ORACLE_ROLLED_BACK';\n")
         code, output, error = self.run(role, database, sql)
+        self.outcome(code, output, error)
         lines = output.splitlines()
         require(code == 0 and len(lines) == 3 and lines[1:] == [b'ORACLE_SQLSTATE 42501', b'ORACLE_ROLLED_BACK'])
         identity = decode(lines[0])
@@ -251,26 +356,39 @@ class NativeOracle:
             for role, cases in CASES.items():
                 for case in cases:
                     denials.append(self.deny(role, case))
+        except BaseException as error:
+            self.failures.append(self.failed(error))
+            raise
         finally:
             # This is a logical projection, not equality of WAL/statistics or all
             # database bytes. A failed/timeout/aborted observation cannot pass.
-            after = self.snapshot()
-            require(before == after)
+            self.phase = 'snapshot_after'
+            try:
+                after = self.snapshot()
+                self.at('state_compare')
+                require(before == after)
+            except BaseException as error:
+                self.failures.append(self.failed(error))
+                raise
         return {'schema_version': 1, 'status': 'passed', 'snapshot': before, 'denials': denials,
                 'logical_state_unchanged': True, 'nontransactional_sequence_calls': False}
 
 
 def native_main():
+    native = None
     try:
         from ambisgis_development.common import inputs
         product, material = inputs()
-        result = NativeOracle(product, material).check()
+        native = NativeOracle(product, material)
+        result = native.check()
         print(encoded(result), flush=True)
         return 0
-    except BaseException:
-        # Never serialize exception messages, query text, connections or raw
-        # native stderr; root retains the fixed failure receipt for reconciliation.
-        print('{"schema_version":1,"status":"failed"}', flush=True)
+    except BaseException as error:
+        facts = native.failures if native is not None else []
+        if not facts:
+            facts = [native.failed(error) if native is not None else failure_fact(error, 'input')]
+        # No raw exception fields or native output enter this finite receipt.
+        print(encoded(validate_failure({'schema_version': 1, 'status': 'failed', 'failures': facts})), flush=True)
         return 1
 
 
@@ -307,22 +425,39 @@ def validate_receipt(value, identity):
 def observe(check):
     """Only the existing fresh invocation calls this; no existing-install CLI."""
     from installer import config
-    check.assert_root()
-    check.capture_identity()
-    require(check.rt.config['install_id'] == check.record['install_id'])
-    require(check.native_identity['install_id'] == check.record['install_id'])
-    observed = check.rt.processes(include_initializers=True)
-    require(all(observed[role]['process'] == 'running' for role in ('database', 'catalog', 'geoserver', 'gateway'))
-            and all(observed[role]['process'] != 'running' for role in ('catalog-init', 'geoserver-init')))
-    program = Path(__file__).read_text()
-    code, output = check.rt.engine('exec', config.project_name(check.rt.config) + '-database',
-                                  '/opt/ambisgis/python/bin/python3', '-c', program,
-                                  timeout=150, allow_failure=True)
-    require(type(code) is int and code == 0 and len(output) <= 65536)
-    value = validate_receipt(decode(output), check.native_identity)
-    require(check.safe(encoded(value)))
-    check.capture_identity()
-    return value
+    stage, engine_return_code = 'host_preflight', 'not_observed'
+    evidence = check.record.setdefault('installed_database_oracle', {'status': 'running', 'complete': False})
+    try:
+        check.assert_root()
+        check.capture_identity()
+        require(check.rt.config['install_id'] == check.record['install_id'])
+        require(check.native_identity['install_id'] == check.record['install_id'])
+        observed = check.rt.processes(include_initializers=True)
+        require(all(observed[role]['process'] == 'running' for role in ('database', 'catalog', 'geoserver', 'gateway'))
+                and all(observed[role]['process'] != 'running' for role in ('catalog-init', 'geoserver-init')))
+        program = Path(__file__).read_text()
+        stage = 'host_exec'
+        code, output = check.rt.engine('exec', config.project_name(check.rt.config) + '-database',
+                                      '/opt/ambisgis/python/bin/python3', '-c', program,
+                                      timeout=150, allow_failure=True)
+        engine_return_code = return_code_class(code)
+        evidence['engine_return_code'] = engine_return_code
+        stage = 'host_native_receipt'
+        require(type(code) is int and type(output) is bytes and len(output) <= 65536)
+        if code != 0:
+            value = validate_failure(decode(output))
+            evidence['failures'] = value['failures']
+            raise ValueError('Installed database oracle failed.')
+        stage = 'host_success_receipt'
+        value = validate_receipt(decode(output), check.native_identity)
+        require(check.safe(encoded(value)))
+        stage = 'host_identity_recheck'
+        check.capture_identity()
+        return value
+    except BaseException as error:
+        if 'failures' not in evidence:
+            evidence['failures'] = [failure_fact(error, stage, return_code=engine_return_code)]
+        raise
 
 
 if __name__ == '__main__':

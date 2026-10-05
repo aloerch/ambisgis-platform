@@ -184,7 +184,7 @@ class OracleContracts(unittest.TestCase):
         with patch.object(native, 'run', return_value=(0, b'[]', b'')) as run:
             self.assertEqual(native.rows(oracle.CATALOG, oracle.CATALOG_ROWS['migrations']), [])
             self.assertEqual(run.call_args.args[:2], ('ambisgis_admin', oracle.CATALOG))
-            self.assertTrue(run.call_args.args[2].startswith('BEGIN READ ONLY;'))
+            self.assertTrue(run.call_args.args[2].startswith('\\set VERBOSITY sqlstate\nBEGIN READ ONLY;'))
             self.assertTrue(run.call_args.args[2].endswith('ROLLBACK;'))
 
     def test_all_fixed_denials_and_state_recheck_on_error_or_unexpected_drift(self):
@@ -230,7 +230,9 @@ class OracleContracts(unittest.TestCase):
         with patch.dict('sys.modules', {'ambisgis_development.common': common}), patch.object(oracle.NativeOracle, 'check', side_effect=ValueError('private-password/private-path')) as check, redirect_stdout(output):
             self.assertEqual(oracle.native_main(), 1)
         check.assert_called_once()
-        self.assertEqual(json.loads(output.getvalue()), {'schema_version': 1, 'status': 'failed'})
+        value = json.loads(output.getvalue())
+        self.assertIs(oracle.validate_failure(value), value)
+        self.assertEqual(value['failures'], [oracle.failure_fact(ValueError(), 'native_check')])
 
 
 class OracleWiringTests(unittest.TestCase):
@@ -324,6 +326,122 @@ class OracleWiringTests(unittest.TestCase):
         rows['database']['process'] = 'stopped'
         with self.assertRaises(ValueError): oracle.observe(self.check)
         self.assertEqual(len(calls), 1)
+
+
+class FiniteFailureDiagnostics(unittest.TestCase):
+    def setUp(self):
+        self.addCleanup(patch.stopall)
+        patch('subprocess.Popen', side_effect=AssertionError('native subprocess forbidden')).start()
+        patch('socket.socket', side_effect=AssertionError('native socket forbidden')).start()
+
+    def native_output(self, run):
+        from types import ModuleType
+        common = ModuleType('ambisgis_development.common')
+        common.inputs = lambda: (data()[0], {})
+        output = io.StringIO()
+        with patch.dict('sys.modules', {'ambisgis_development.common': common}), patch.object(oracle.NativeOracle, 'run', side_effect=run), redirect_stdout(output):
+            self.assertEqual(oracle.native_main(), 1)
+        return json.loads(output.getvalue())
+
+    def test_actual_native_main_retains_first_snapshot_failure_without_private_text(self):
+        value = self.native_output(lambda *args: (1, b'', b'ERROR:  42703\n'))
+        self.assertIn('failures', value)
+        self.assertEqual(value['failures'], [{'stage': 'snapshot_before.catalog.principals',
+            'exception_class': 'ValueError', 'sqlstate': '42703', 'rollback': 'not_observed', 'return_code': '1'}])
+
+    def test_unknown_native_stderr_and_exception_names_never_cross_boundary(self):
+        value = self.native_output(lambda *args: (1, b'private-row', b'ERROR: password/private/path\n'))
+        self.assertEqual(value['failures'][0]['sqlstate'], 'OTHER')
+        class PrivatePasswordException(ValueError): pass
+        fact = oracle.failure_fact(PrivatePasswordException('private-password/path'), 'private-stage', 'secret', 'secret')
+        self.assertEqual(fact, {'stage': 'OTHER', 'exception_class': 'OTHER', 'sqlstate': 'OTHER', 'rollback': 'not_observed', 'return_code': 'not_observed'})
+        self.assertNotIn('private', oracle.encoded(value) + oracle.encoded(fact))
+
+    def test_snapshot_timeout_has_fixed_location_and_no_rollback_assumption(self):
+        def timeout(*args): raise subprocess.TimeoutExpired('private-sql-password', 10, output=b'private-row', stderr=b'private')
+        value = self.native_output(timeout)
+        self.assertIn('failures', value)
+        self.assertEqual(value['failures'][0], {'stage': 'snapshot_before.catalog.principals',
+            'exception_class': 'TimeoutExpired', 'sqlstate': 'not_observed', 'rollback': 'not_observed', 'return_code': 'not_observed'})
+
+    def test_denial_failure_preserves_primary_and_runs_followup_snapshot(self):
+        native = oracle.NativeOracle(data()[0], {})
+        snap = receipt()['snapshot']
+        output, error = denied()[1:]
+        with patch.object(native, 'snapshot', return_value=snap) as snapshots, patch.object(native, 'run', return_value=(0, output.replace(b'42501', b'00000'), b'')):
+            with self.assertRaises(ValueError): native.check()
+        self.assertEqual(snapshots.call_count, 2)
+        self.assertEqual(native.failures, [{'stage': 'denial.ambisgis_catalog_app.schema_create',
+            'exception_class': 'ValueError', 'sqlstate': '00000', 'rollback': 'marker_observed', 'return_code': '0'}])
+
+    def test_followup_failure_keeps_both_fixed_locations(self):
+        native = oracle.NativeOracle(data()[0], {})
+        calls = []
+        def snapshot():
+            calls.append(native.phase)
+            if len(calls) == 2:
+                native.at('snapshot_after.transport.rules')
+                raise TimeoutError('private-followup')
+            return receipt()['snapshot']
+        with patch.object(native, 'snapshot', side_effect=snapshot), patch.object(native, 'run', return_value=(1, b'', b'FATAL:  28P01\n')):
+            with self.assertRaises(TimeoutError): native.check()
+        self.assertEqual(calls, ['snapshot_before', 'snapshot_after'])
+        self.assertEqual([x['stage'] for x in native.failures], ['denial.ambisgis_catalog_app.schema_create', 'snapshot_after.transport.rules'])
+        self.assertEqual([x['sqlstate'] for x in native.failures], ['28P01', 'not_observed'])
+        oracle.validate_failure({'schema_version': 1, 'status': 'failed', 'failures': native.failures})
+
+    def test_failure_receipt_rejects_raw_fields_or_unbounded_vocabulary(self):
+        base = {'schema_version': 1, 'status': 'failed', 'failures': [oracle.failure_fact(ValueError(), 'input')]}
+        changes = [('stage', 'SELECT private'), ('exception_class', 'SecretException'), ('sqlstate', 'secret'), ('rollback', True)]
+        for key, value in changes:
+            bad = copy.deepcopy(base); bad['failures'][0][key] = value
+            with self.subTest(key=key), self.assertRaises(ValueError): oracle.validate_failure(bad)
+        for change in ('extra', 'bool', 'three', 'empty'):
+            bad = copy.deepcopy(base)
+            if change == 'extra': bad['raw_stderr'] = 'secret'
+            if change == 'bool': bad['schema_version'] = True
+            if change == 'three': bad['failures'] *= 3
+            if change == 'empty': bad['failures'] = []
+            with self.subTest(change=change), self.assertRaises(ValueError): oracle.validate_failure(bad)
+
+    def test_host_retains_only_validated_native_failure_and_never_passes(self):
+        fixture = concurrency_fixture.ConcurrentInstallationTests(); fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        check = fixture.check
+        check.native_identity = receipt()['snapshot']['identity']; check.native_identity['install_id'] = check.record['install_id']
+        rows = {role: {'process': 'running'} for role in concurrent.bundle.SERVICES}
+        rows.update({role: {'process': 'absent'} for role in ('catalog-init', 'geoserver-init')})
+        value = {'schema_version': 1, 'status': 'failed', 'failures': [{'stage': 'snapshot_before.project.contract', 'exception_class': 'ValueError', 'sqlstate': 'not_observed', 'rollback': 'not_observed', 'return_code': 'not_observed'}]}
+        check.rt = SimpleNamespace(config={'install_id': check.record['install_id']}, processes=lambda **kw: rows,
+                                   engine=lambda *a, **kw: (1, oracle.encoded(value).encode()))
+        with self.assertRaises(ValueError): oracle.observe(check)
+        self.assertIn('failures', check.record.get('installed_database_oracle', {}))
+        self.assertEqual(check.record['installed_database_oracle']['failures'], value['failures'])
+        self.assertFalse(check.record['installed_sql_role_acceptance'])
+        self.assertEqual(check.record['installed_database_oracle']['engine_return_code'], '1')
+        self.assertNotIn('before', check.record['installed_database_oracle'])
+
+
+    def test_finite_return_classes_reject_boolean_and_unexpected_codes(self):
+        for code, wanted in [(0, '0'), (1, '1'), (125, '125'), (126, '126'), (127, '127'),
+                             (-15, 'signal'), (-64, 'signal'), (-65, 'OTHER'), (2, 'OTHER'),
+                             (False, 'OTHER'), (0.0, 'OTHER'), ('secret', 'OTHER')]:
+            with self.subTest(code=code): self.assertEqual(oracle.return_code_class(code), wanted)
+        value = self.native_output(lambda *args: (127, b'', b'private-launch-error'))
+        self.assertEqual(value['failures'][0]['return_code'], '127')
+        self.assertEqual(value['failures'][0]['sqlstate'], 'OTHER')
+
+    def test_projection_subphase_does_not_change_value_and_locates_contract_failure(self):
+        phases = []
+        expected = oracle.project(*data())
+        self.assertEqual(oracle.project(*data(), _stage=phases.append), expected)
+        self.assertEqual(phases, ['principals', 'resource', 'application', 'migrations',
+                                 'transport', 'roles', 'ownership', 'roles'])
+        for kind, phase in [('principals', 'principals'), ('resources', 'resource'),
+                            ('applications', 'application'), ('migrations', 'migrations')]:
+            values = data(); values[1][kind].append(copy.deepcopy(values[1][kind][-1])); phases = []
+            with self.subTest(kind=kind), self.assertRaises(ValueError): oracle.project(*values, _stage=phases.append)
+            self.assertEqual(phases[-1], phase)
 
 
 if __name__ == '__main__':
