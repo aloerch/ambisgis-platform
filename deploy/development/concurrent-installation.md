@@ -87,8 +87,9 @@ cannot promise finalization.
 A command-concurrency pass is **not** completion of GAP-05 or PLT-01. This
 helper always records `full_installation_acceptance: false`,
 `native_uniqueness_acceptance: false`,
-`installed_sql_role_acceptance: false` and
-`health_helper_cleanup_verified: false`. The two unchanged protected journeys compare the fixed native resource and
+and `health_helper_cleanup_verified: false`. Without the explicit database
+option below, it also records `installed_sql_role_acceptance: false`.
+The two unchanged protected journeys compare the fixed native resource and
 owner/viewer IDs and restored object-policy fingerprints. The native policy
 program requires exactly one selected sample alternate and exact principals.
 The second journey reads the retained edited title before issuing new edits.
@@ -115,3 +116,71 @@ operation is introduced. All overlap/deadline/output/session cleanup bounds
 remain unchanged. The tests invoke the inherited metadata login/read/token-cleanup
 and protected-journey methods using only synthetic clients, preserving their
 record arrays and read-before-edit ordering. This source proposal has not run actual concurrent CLI calls.
+
+## Optional installed database oracle
+
+After independent source review, `--installed-database-oracle` adds fixed checks
+to this same fresh invocation. It provides no existing-installation, SQL, role,
+database or connection-target option. Omitting it preserves the default record
+and behavior. The first observation follows the first protected journey. The
+second follows the repeated init/up pairs, before the second journey can edit
+metadata. Both observations must pass and have identical logical snapshots.
+
+`installed_database_oracle.py` runs as fixed reviewed Python code in the
+validated owned database container. It reads the already mounted database role
+credentials privately. The admin socket is used only for read-only projections.
+Serving tests use their actual passwords over container-local `127.0.0.1:5432`;
+they never emulate authentication through a superuser `SET ROLE`. Each of 19
+fixed denials first proves the session/current role, database, successful read
+and read/write transaction mode. Only SQLSTATE `42501`, with an explicit
+savepoint/outer rollback and no additional diagnostic, passes. Connection,
+syntax, read-only-transaction and timeout errors cannot count as denials.
+
+The cases cover public/schema/temporary DDL, migration-table DDL and native
+resource ownership for the relevant serving roles; the render reader must also
+fail catalog reads/deletes. The transport reader must fail native `gf_rule`
+insert/update/delete and ownership changes. DML uses zero-row predicates so
+even an unexpected grant cannot evaluate row defaults or advance a sequence.
+An unexpected success is rolled back and fails the check. There is no
+`CREATE DATABASE`, `nextval`, `setval`, grant/revoke, role change or persistent
+DDL. Fixed psql calls receive SQL on stdin and a scoped credential environment.
+Each call has a maximum ten-second deadline, SQL statement/lock limits of
+four/1.5 seconds, and a complete combined output limit of 1 MiB. An observation
+has a 120-second budget; the outer owned engine call has a 150-second deadline.
+No raw query, native row, password/hash, SQL stderr or exception message is
+written to a receipt. Unavailable/oversize/timeout results fail closed and leave
+ordinary owned shutdown and independent effects reconciliation required.
+
+The independently defined projections cover all native principal IDs and
+selected credential/privilege flags, resource IDs/ownership/selected metadata, OAuth
+application bindings, and applied migration IDs/names/timestamps. They require
+one instance of each selected principal, resource UUID/alternate and application,
+and no duplicate applied migration key. Sorted counts and SHA256 fingerprints,
+plus the existing journey's exact principal/resource IDs, are compared across
+commands. Two fixed transport rules and the Hibernate sequence's *read-only*
+state, selected role memberships, database ACLs and application schema
+definitions/ACLs are also fingerprinted before and after denial attempts. This
+is logical-state preservation, not equality of WAL, statistics or storage bytes.
+
+The fixed SQL identifiers come from the retained owned GeoNode revision
+`2d28e100c16e5f5c99b9c5cc20da2f75b3d7eaa4` (`people.Profile`,
+`base.ResourceBase`), its selected `oauth2_provider.Application` model in
+geonode-oauth-toolkit 2.2.3.1, and Django 5.2.15's explicit `django_migrations`
+recorder/default model-table naming. `gf_rule` and its columns come from owned
+GeoFence revision `132a1d16901b7039f974c8c30d7e7df042d8af4c`,
+`services/core/model/.../model/Rule.java`; the two expected rule values are
+the fixed `DevelopmentGeoServer.transport` projection. The unchanged product
+database bootstrap supplies the three tested serving roles and authentication
+boundary. Membership columns follow the selected owned PostgreSQL 15.19
+`pg_auth_members` catalog, not a newer PostgreSQL schema. No product
+health/auditor result substitutes for these observations.
+
+Only actual successful native observations may set the opt-in receipt's
+`installed_sql_role_acceptance` to true, scoped to these named cases. These
+source-only tests provide no such credit. The oracle does not prove full
+migration graph/upgrade correctness, general native uniqueness, managed
+geodatabase isolation, serving-container migration-secret file visibility,
+namespace/helper cleanup or overall installation acceptance. Those exclusions
+remain explicit even if the oracle passes. Image and bundle payloads are
+unchanged: this is host-side test code with a fixed transient program, and its
+source bytes must be pinned separately when the integrator authorizes a run.
