@@ -216,6 +216,48 @@ class RuntimeTests(unittest.TestCase):
         binding.write_text('{}')
         with self.assertRaises(InstallError): self.engine(tail)
 
+
+    def oracle_command(self):
+        program = (ROOT / 'deploy/development/installed_database_oracle.py').read_text()
+        target = self.bundle / 'runtime/configuration'; target.mkdir(parents=True)
+        binding = target / 'ordinary-command.json'
+        binding.write_text(json.dumps({'installed_database_oracle_sha256': hashlib.sha256(program.encode()).hexdigest()}))
+        return binding, ['exec', self.name + '-database', '/opt/ambisgis/python/bin/python3', '-c', program]
+
+    def test_installed_oracle_exact_current_program_is_authorized(self):
+        _, tail = self.oracle_command()
+        self.assertEqual(self.engine(tail), self.globals + tail)
+        self.assertEqual(self.engine(['exec', self.name + '-database', '/opt/ambisgis/bin/health', 'database']),
+                         self.globals + ['exec', self.name + '-database', '/opt/ambisgis/bin/health', 'database'])
+
+    def test_installed_oracle_missing_stale_and_malformed_pins_are_denied(self):
+        binding, tail = self.oracle_command()
+        for value in ({}, {'installed_database_oracle_sha256': '0' * 64},
+                      {'installed_database_oracle_sha256': True}, {'installed_database_oracle_sha256': None},
+                      {'installed_database_oracle_sha256': ['wrong']}, {'installed_database_oracle_sha256': 1}):
+            binding.write_text(json.dumps(value))
+            with self.subTest(value=value), self.assertRaises(InstallError): self.engine(tail)
+        binding.unlink()
+        with self.assertRaises((InstallError, OSError)): self.engine(tail)
+
+    def test_installed_oracle_rejects_other_roles_stdin_flags_interpreter_and_extra_args(self):
+        _, tail = self.oracle_command()
+        variants = [tail + ['extra'], ['exec', '-i', *tail[1:]], ['exec', '--user', '0', *tail[1:]],
+                    ['exec', tail[1], '/bin/sh', '-c', tail[-1]], tail[:-2] + ['-m', tail[-1]]]
+        variants += [['exec', self.name + '-' + role, *tail[2:]] for role in
+                     ('gateway', 'catalog', 'geoserver', 'database-init', 'catalog-init', 'geoserver-init')]
+        variants += [['exec', 'foreign-database', *tail[2:]]]
+        for bad in variants:
+            with self.subTest(prefix=bad[:4]), self.assertRaises(InstallError): self.engine(bad)
+
+    def test_installed_oracle_rejects_changed_program_and_cross_registered_programs(self):
+        binding, tail = self.oracle_command()
+        foreign = (ROOT / 'deploy/development/dns_wire_probe.py').read_text()
+        value = json.loads(binding.read_text()); value['dns_wire_sha256'] = hashlib.sha256(foreign.encode()).hexdigest()
+        binding.write_text(json.dumps(value))
+        for program in (tail[-1] + '\n', tail[-1] + '\nprint(1)', tail[-1][:-1], 'print(1)', '', foreign):
+            with self.subTest(size=len(program)), self.assertRaises(InstallError): self.engine(tail[:-1] + [program])
+
     def test_real_retained_provider_arguments_match_all_six_roles_without_execution(self):
         provider_root = os.environ.get('AMBISGIS_TEST_PROVIDER')
         # The test runner supplies the exact already-reviewed retained provider;
