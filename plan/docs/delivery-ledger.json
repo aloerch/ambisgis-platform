@@ -17,18 +17,18 @@
   "active_workers": [
     {
       "agent": "/root",
-      "observed_at": "2026-10-04T23:43:43.930813+00:00",
-      "state": "Foreground integrator and sole native/remote executor"
+      "recorded_at": "2026-10-05T02:00:24.835586+00:00",
+      "state": "Sole integrator/native/remote executor; completed concurrency002 and finite final accounting, now independently reviews publication documents."
     },
     {
       "agent": "/root/db02_validation",
-      "observed_at": "2026-10-04T23:43:43.930813+00:00",
-      "state": "Retained journey/artifact/effects reviewer and private evidence preparer"
+      "recorded_at": "2026-10-05T02:00:24.835586+00:00",
+      "state": "Sealed actual002 outcome/first/final-effects reviews; authors this private six-document draft and prepares final publication history/privacy review. No worker native execution."
     },
     {
       "agent": "/root/fnd03_identity",
-      "observed_at": "2026-10-04T23:43:43.930813+00:00",
-      "state": "Independent evidence/publication review and source/control preparation"
+      "recorded_at": "2026-10-05T02:00:24.835586+00:00",
+      "state": "Preparing the installed database oracle source only in an isolated component worktree; no installed-oracle pass or native execution credited."
     }
   ],
   "authorization": "plan/authorizations/2026-10-02-standing-delegation.md",
@@ -226,9 +226,9 @@
     "unrelated_planning_preserved": true,
     "worktree": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/db03-worktree"
   },
-  "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
+  "evidence": "plan/verification/plt01-lifecycle/evidence-019.json",
   "execution_checkpoint": {
-    "current_action": "Prepare and review bounded ordinary concurrent CLI init/up checks, and publish this reviewed source/outcome increment after final document, history and text gates. DNS namespace-binding and overall cleanup evidence remain incomplete; the separate held targeted qualification stays unexecuted.",
+    "current_action": "Independently review and publish this source/evidence increment, then implement an installed native-identity, schema and serving-role oracle using a fresh owned test installation. That oracle is intended next work, not implemented or passed; it does not reuse a synthetic cluster probe on existing installations or substitute for the held targeted qualification.",
     "current_tasks": [
       {
         "branch": "plt-01/development-install",
@@ -236,15 +236,15 @@
         "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
         "id": "PLT-01",
         "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
-        "local_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
-        "local_increment": "SELECT-only transport sequence visibility, fresh mapped-owner DNS resolver validation, and explicit tmpfs restart permissions are integrated and independently reviewed. Images025/026 remain exact; bundle023 changes only two installer modules and custody. Actual019 completes four protected journeys and persistence/reinitialization/recovery but remains incomplete because six DNS namespace-binding observations are unsupported.",
-        "published_head": "73eda452935ee8e42e2e38c1d646b0e5e643ce6c",
-        "published_readback_at": "2026-10-04T23:34:50.719935+00:00",
+        "local_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+        "local_increment": "Concurrency helper and initializer existing-lock repair integrated; bundle024 audited; actual concurrency002 and finite effects passed with full acceptance still open.",
+        "published_head": "7d0efc03495e55803d0482b881564e5e67ae6bdd",
         "repository": "aloerch/ambisgis-platform",
         "repository_id": 1376927351
       }
     ],
-    "diagnosis": {
+    "historical_checkpoint": "Exact previous execution_checkpoint retained under prior_checkpoints[-1].preserved_current.execution_checkpoint.",
+    "historical_terminal_diagnosis": {
       "cause": "The root turn ended with an explicit platform cyber_policy error; an engine-probe worker later reported the same error class.",
       "confidence": "high for observed termination category; exact triggering content and UI-internal state transition unknown",
       "not_supported_as_cause": [
@@ -262,184 +262,14 @@
       "pending_platform_approvals": "none exposed to this turn",
       "queued_user_inputs": "unknown beyond messages already delivered"
     },
-    "evidence": {
-      "acceptance_driver_review": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-acceptance-source-root-review-002/result.json",
-        "sha256": "8fa5fee8a13f6942e58145968ecf91c215fbcaf0b1fd9bed588f6df9afbfafdc"
-      },
-      "acceptance_gap_audit": {
-        "full_installation_acceptance": false,
-        "path": "Private delivery-control/trust/plt01-acceptance-gap-001/result.json",
-        "sha256": "9e3047fed992b01ae3312ad32ab6597f80376efee74bf5c054569fad2e04f4ff"
-      },
-      "bundle007_review": {
-        "scope": "1290 files/12hostprereqs/19guards; no runtime acceptance",
-        "sha256": "3faaeff863905884fc3ebc1374ba99e0af353312521b5b69a3a4ec7b8494cedc"
-      },
-      "concurrency_review": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-concurrency-source-review-001/result.json",
-        "sha256": "e5ab73479c20b74d7a5d61c56d318d1a1df95ab70ac705ddff1501023254164d"
-      },
-      "db02_acceptance": "plan/verification/db02-acceptance/evidence.json",
-      "db03_acceptance": "plan/verification/db03-acceptance/evidence.json",
-      "doctor": "Private delivery-control/recovery-20261003/doctor-redacted-001.json",
-      "evidence015": {
-        "path": "plan/verification/plt01-lifecycle/evidence-015.json",
-        "sha256": "8cd4b9c5cdfd084f93802020cd34e7c9442fa5e9d49243f9ee2533d1f1f6a949"
-      },
-      "evidence016": {
-        "path": "plan/verification/plt01-lifecycle/evidence-016.json",
-        "sha256": "9da6deec141263fe0bb261c7c2e85be0f06fc4fe4ce7ff1311f439ec811ad8d9"
-      },
-      "geoserver_diagnostic001": {
-        "path": "plan/verification/plt01-lifecycle/geoserver-diagnostic-001.json",
-        "sha256": "fd7fdd2e9f4b05428167a75e7f81d8e2368a9fbb51de7f9f311494df89ec5951"
-      },
-      "integrated_source_008": {
-        "checks": {
-          "journey_policy": 32,
-          "lifecycle": 8,
-          "package": 565,
-          "runtime": 31,
-          "schemas": 10
-        },
-        "path": "Private plt01-runtime-checks/integrated-source-008/result.json",
-        "reuse": "Exact integrated3c8a5dd4 source; later native producer adds six independently passing inert guards. Final assembler validation remains pending.",
-        "sha256": "2d24a05891c3fc9c8492ab3b37e82746068bf879a1105fcaac8214cb70569227"
-      },
-      "lifecycle004": {
-        "full_installation_acceptance": false,
-        "path": "Private plt01-runtime-checks/lifecycle-004/result.json",
-        "persistent_data_preserved": true,
-        "reconciled": true,
-        "running_services": 0,
-        "sha256": "f1e946a7962a4bdb98167696b288cd358213dc81485ced56726d9081d5b8c9d6",
-        "status": "failed"
-      },
-      "lifecycle005": {
-        "all_helpers_gone": false,
-        "full_installation_acceptance": false,
-        "reconciled": true,
-        "reconciliation": {
-          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/reconciliation.json",
-          "sha256": "8ffe87e7182851d3d731cc18d0eb069fdfd70a110b8667c1d63078b98496b3fb"
-        },
-        "result": {
-          "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/result.json",
-          "sha256": "39ccedf5c7eb6efd21e7784c9f415216a962c5de7a8d39d2eb51028abda60ba6"
-        },
-        "retained_pause_pid": 519528,
-        "running_services": 0,
-        "status": "failed"
-      },
-      "lifecycle006": {
-        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/result.json",
-        "sha256": "e5b969fe073d529be6d95bc27acd8ce9736a9e4d6c075de271b230c8dd278f7c"
-      },
-      "lifecycle007": "plan/verification/plt01-lifecycle/evidence-007.json",
-      "lifecycle008": "plan/verification/plt01-lifecycle/evidence-008.json",
-      "lifecycle009": "plan/verification/plt01-lifecycle/evidence-009.json",
-      "lifecycle010": "plan/verification/plt01-lifecycle/evidence-010.json",
-      "lifecycle011": "plan/verification/plt01-lifecycle/evidence-011.json",
-      "lifecycle012": "plan/verification/plt01-lifecycle/evidence-012.json",
-      "lifecycle013": {
-        "path": "plan/verification/plt01-lifecycle/evidence-013.json",
-        "sha256": "72683c9d24011e70eb89d8f04efdd34c4516cbf9e7d739a410709d956b1edaf5"
-      },
-      "lifecycle014": {
-        "path": "plan/verification/plt01-lifecycle/evidence-014.json",
-        "sha256": "d2783ff1186878b737980df671e8167b38ab43ab0a028a719fe07d3181ab6125"
-      },
-      "live_local": "Private delivery-control/recovery-20261003/live-local-001.json",
-      "native_timer_alternatives": {
-        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/source-diagnosis-001/alternatives.json",
-        "sha256": "b1673fd9ef2cd78a2dda0ff873ca89a3eff1c9500707f94ea2020f325d1f0a78"
-      },
-      "oauth_source_integration": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integrated-catalog-oauth-secret-001.json",
-        "sha256": "5aeb02d454f54655c6b53f571fa25ec2ac440e6f70b1108e8a843a41af6ef885"
-      },
-      "ordinary_lifecycle": "plan/verification/plt01-lifecycle/evidence.json",
-      "ordinary_source_diagnosis": {
-        "path": "Private plt01-runtime-checks/lifecycle-004/read-only-diagnosis-001/source-diagnosis.json",
-        "scope": "Source inference; no observed D-Bus socket trace",
-        "sha256": "bb6a5a0b2380532e9c2c6d02ff049cb879b2ba320e1a394574bc02ada564af9b"
-      },
-      "package_checks": "Private delivery-control/recovery-20261003/package-001/result.json",
-      "plan/verification/plt01-lifecycle/evidence-018.json": {
-        "path": "plan/verification/plt01-lifecycle/evidence-018.json",
-        "sha256": "ac4d85fa15d7fd92dd10506924fc501d3deccce2637487bc4347263e5a6c607b"
-      },
-      "plan/verification/runtime-recovery/progress-018.json": {
-        "path": "plan/verification/runtime-recovery/progress-018.json",
-        "sha256": "a79d1315d657932c249fd7fec64fe8fb04b105c1e2e1bfbcf2fbec6b577120e2"
-      },
-      "pr78_readback": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/recovery-20261003/live-pr78-readback-001.json",
-        "sha256": "fb62d230e10dafef3b078682f914dea2ca0bf9a6d61a5daeec627fe2fb796891"
-      },
-      "probe_hold_sha256": "88df92a0060cd55d54ab0b91d7c5df048a0348b1a062d84183599c322b2064ea",
-      "progress007": "plan/verification/runtime-recovery/progress-007.json",
-      "progress011": "plan/verification/runtime-recovery/progress-011.json",
-      "progress012": "plan/verification/runtime-recovery/progress-012.json",
-      "progress013": {
-        "path": "plan/verification/runtime-recovery/progress-013.json",
-        "sha256": "eaa3320fd52ef7d4a373908f09f317354f2c001a430e64cc2e5be674710012c1"
-      },
-      "progress014": {
-        "path": "plan/verification/runtime-recovery/progress-014.json",
-        "sha256": "be7ac9b08be8b494aaf90a6c2170d642466dff5a4c306da2b4718cbdbe7f0d19"
-      },
-      "progress015": {
-        "path": "plan/verification/runtime-recovery/progress-015.json",
-        "sha256": "d8cddde34721e60d562f407899d1e16312761aa039a43b3c414dd5abcb9fb97e"
-      },
-      "progress016": {
-        "path": "plan/verification/runtime-recovery/progress-016.json",
-        "sha256": "8e6b9e0085be2a15486e761dd72be107bf3371137b3663d5543a4243f31f2973"
-      },
-      "python312_payload": {
-        "executed": false,
-        "packages": 32,
-        "path": "Private build-worktrees/plt01-image-inputs/payload-001/receipt.json",
-        "sha256": "24b9de32cc79a9836bc6dc82cb9d84b00a7b2bea4b23b9c7f725246170b30ce4",
-        "source_groups": 29
-      },
-      "reconciliation006": {
-        "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/reconciliation.json",
-        "sha256": "4598c486b7d78f409c071c875c4114be55e16eb1c3651a59e07cd317dc92987b"
-      },
-      "root_terminal": "Private native rollout task_complete event only; raw transcript not copied or published",
-      "runtime_build_review": {
-        "scope": "Inert source/build/closure review; no installation acceptance",
-        "sha256": "a147008a7aed94308e9ebbd8e73ea0970a601afd24de81c5efc1f95277acbef0"
-      },
-      "runtime_validation_009": {
-        "checks": {
-          "package": 565,
-          "runtime": 37,
-          "schemas": 10
-        },
-        "journey_lifecycle_reuse": "32+8 unchanged integrated-source-008",
-        "path": "Private plt01-runtime-checks/runtime-validation-009/result.json",
-        "sha256": "cab83ec0b8f27ab65a0c39699383e54f3c310a941a5bd39ee54217cbbb11b44d"
-      },
-      "socket_wrapper_review": {
-        "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-systemd-wrapper-review-001/result.json",
-        "sha256": "6a079e98272760ca0ca99e49e297c351a275181b9d0ebbcc851ab814d8f38355"
-      },
-      "token_cleanup_review": {
-        "path": "Private delivery-control/trust/plt01-token-cleanup-review-001/result.json",
-        "sha256": "5d25f04705c9123497cb551de2e184afb80d8ea0871a23f7b6dfc357328b1cc8"
-      }
+    "historical_terminal_observation": {
+      "at": "2026-10-03T13:28:22.795Z",
+      "category": "Platform cybersecurity-risk flag",
+      "code": "cyber_policy",
+      "exact_triggering_content": "unknown",
+      "final_message_present": false,
+      "turn_id": "01a1005c-e3c7-7742-b817-eed39401449b"
     },
-    "installed_runtime": {
-      "cli": "0.160.0",
-      "doctor_overall": "warning: search command could not be verified",
-      "extension": "openai.chatgpt-26.930.31730-linux-x64",
-      "supported_lifecycle_reference": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex"
-    },
-    "integrator": "/root",
     "last_completed": {
       "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
       "implementation": "Typed branch snapshots and durable private creation/activation, finite quotas and lifecycle metadata",
@@ -478,65 +308,164 @@
       "source_head": "869db18865e16287c9f029fcbd732be9bd797a3b",
       "status": "COMPLETED_PRIVATE_INITIALIZER_OBSERVATION"
     },
+    "latest_completed_concurrency": {
+      "attempt": {
+        "evidence_id": "concurrency002-attempt",
+        "sha256": "b3b1d83a5d32d1a8042c52a0082af8b5a40d5db69a1ff2c44c004b80cd1eb2a6"
+      },
+      "bundle_sha256": "c93581f580d7153a52d813fc6ef43b0cf592fc2c0628ba6e04b852487960e615",
+      "configuration_and_credentials_hashes_unchanged": true,
+      "full_installation_acceptance": false,
+      "install_id": "2d8b1731-7b10-462e-a7a2-8e43830f6161",
+      "limits": "Recorded native IDs, title and policy restoration do not establish installed SQL-role, migration cardinality or native uniqueness acceptance. Ten recorded revocations are not a proof of ten globally distinct credentials.",
+      "outcome_review": {
+        "evidence_id": "concurrency002-outcome-review",
+        "sha256": "7d5ca425a5167bca69cac1c20f29c898955c471b438e1ee2f4926e2301af0a0f"
+      },
+      "pair_facts": [
+        {
+          "children_reaped": 2,
+          "command": "init",
+          "lock_contention_observed": true,
+          "outcomes": [
+            "created",
+            "busy"
+          ],
+          "overlap_observed": true,
+          "reinitialize": false,
+          "remaining_owned_group_members": 0,
+          "signals_sent": false
+        },
+        {
+          "children_reaped": 2,
+          "command": "up",
+          "lock_contention_observed": true,
+          "outcomes": [
+            "busy",
+            "ready"
+          ],
+          "overlap_observed": true,
+          "reinitialize": false,
+          "remaining_owned_group_members": 0,
+          "signals_sent": false
+        },
+        {
+          "children_reaped": 2,
+          "command": "init",
+          "lock_contention_observed": true,
+          "outcomes": [
+            "busy",
+            "existing"
+          ],
+          "overlap_observed": true,
+          "reinitialize": true,
+          "remaining_owned_group_members": 0,
+          "signals_sent": false
+        },
+        {
+          "children_reaped": 2,
+          "command": "up",
+          "lock_contention_observed": true,
+          "outcomes": [
+            "busy",
+            "ready"
+          ],
+          "overlap_observed": true,
+          "reinitialize": false,
+          "remaining_owned_group_members": 0,
+          "signals_sent": false
+        }
+      ],
+      "selected_native_identity_policy_title_preserved": true,
+      "source_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+      "status": "passed",
+      "totals": {
+        "busy_peers": 4,
+        "cli_children": 8,
+        "created_installations_observed": 1,
+        "data_requests": 276,
+        "data_statuses": {
+          "200": 44,
+          "403": 214,
+          "404": 18
+        },
+        "map_query_oracles": 8,
+        "native_policy_restorations": 2,
+        "pairs": 4,
+        "post_negative_oracles": 10,
+        "protected_journeys": 2,
+        "recorded_token_revocations": 10,
+        "route_negatives": 164,
+        "same_valid_token_reads": 30,
+        "token_cleanup_sessions": 3,
+        "token_revocation_statuses": {
+          "200": 10
+        },
+        "unaccounted_issuance_principals": 0
+      }
+    },
     "latest_completed_implementation_boundary": {
-      "actual_installation": "Eighteen failures preserved;019 incomplete after four protected journeys, not accepted.",
       "artifacts": {
-        "assembler_sha256": "10aa86430bf28305cb4017a7ac1c10af626c3553fba8c7fe4897eacc0b50775e",
-        "bundle": "023",
-        "bundle_candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
-        "bundle_review": {
-          "evidence_id": "bundle023-review",
-          "sha256": "ec81567ff02f21536c78aebdae2070b9d660d633b4034f040bda5aa83ec3c3c2"
+        "assembly": {
+          "evidence_id": "bundle024-assembly",
+          "sha256": "cecb888b019bb36070375d33133f499c8e4bb71fd0df2e945b9ca02d956ac193"
         },
-        "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
-        "elf_objects": 374,
-        "host_prerequisites": 12,
-        "image_native_war_java_bytes_unchanged_from022": true,
-        "image_review": {
-          "evidence_id": "images025-review",
-          "sha256": "55956c70c5dd299cedde6d8ec7904841eb8b6e3d6d4e4ce975c1f0fdd0ace9a3"
+        "bundle": {
+          "evidence_id": "bundle024",
+          "sha256": "c93581f580d7153a52d813fc6ef43b0cf592fc2c0628ba6e04b852487960e615"
         },
-        "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
-        "images": "025/026",
-        "new_bundle_runtime_delta": [
+        "bundle_number": "024",
+        "candidate_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+        "changed_runtime_paths_from023": [
+          "runtime/configuration/custody.json",
           "runtime/modules/installer/config.py",
-          "runtime/modules/installer/runtime.py",
-          "runtime/configuration/custody.json"
+          "runtime/modules/installer/state.py"
         ],
-        "paired_archives_byte_identical": true,
-        "paired_roles": 4,
-        "runtime_executed_during_assembly_or_audit": false,
-        "runtime_files": 1320
+        "closure": {
+          "evidence_id": "bundle024-closure",
+          "sha256": "c1d88d86050e63ae85c758073981e6f9c79dbd2e4fcb29e5923cf70151d80522"
+        },
+        "distribution_or_installation_acceptance": false,
+        "elf_files": 374,
+        "host_prerequisites": 12,
+        "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+        "images_reused": [
+          "025",
+          "026"
+        ],
+        "review": {
+          "evidence_id": "bundle024-audit",
+          "sha256": "b2118b45a80419ac91cfa48e7c53a10b57300c297366a97c9097fb096b3f130c"
+        },
+        "runtime_files": 1320,
+        "unchanged": "Native binaries, image archives, WAR/Java payloads and service/runtime driver bytes remain identical to their bound prior artifacts."
       },
       "checks": {
         "all_exit_codes_zero": true,
-        "dns_host_validation": {
-          "development": 132,
-          "package": 689,
-          "schemas": 10
-        },
-        "explicit_unchanged_reuse": {
-          "image_helpers": 40
-        },
-        "final_document_package_schema_checks": "Pending fresh post-document checks before publication; not credited here.",
-        "reuse_limit": "Image inputs and helper sources are unchanged from the independently reviewed images025/026 and runtime-validation032 lineage. Earlier native fixture and source reviews are reused only for their unchanged scope.",
-        "scope": "Source/helper/package/schema checks and a separate synthetic PostgreSQL fixture; actual ordinary journeys are recorded separately.",
-        "sequence_native_fixed": 41,
-        "sequence_validation": {
-          "development": 121,
-          "package": 689,
-          "schemas": 10
-        },
-        "skips": 0,
-        "source_files": 1549,
-        "tmpfs_validation": {
-          "development": 132,
+        "final_document_package_schema_checks": "Pending fresh final-head 701 package and 10 schema checks; not credited here.",
+        "helper_validation": {
+          "development": 140,
           "package": 692,
+          "schemas": 10
+        },
+        "image_helpers_reused": 40,
+        "initializer_validation": {
+          "development": 140,
+          "package": 701,
           "runtime": 77,
           "schemas": 10
-        }
+        },
+        "initializer_validation_ref": {
+          "evidence_id": "initializer-validation",
+          "sha256": "8831a4c90863b20bf6e27c72c90d64706a96c57e1d73c8ef70020250ab4af3f7"
+        },
+        "scope": "Source/helper/package/schema validation; separate actual ordinary concurrency outcomes below.",
+        "skips": 0,
+        "source_files": 1551,
+        "source_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f"
       },
-      "implementation": "SELECT-only transport sequence visibility, fresh mapped-owner DNS resolver validation, and explicit tmpfs restart permissions are integrated and independently reviewed. Images025/026 remain exact; bundle023 changes only two installer modules and custody. Actual019 completes four protected journeys and persistence/reinitialization/recovery but remains incomplete because six DNS namespace-binding observations are unsupported."
+      "scope": "Actual concurrency002 passed; historical ordinary019 remains incomplete and retains its original source/artifact identity.",
+      "source_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f"
     },
     "latest_completed_ordinary_attempt": {
       "attempt": 19,
@@ -715,9 +644,9 @@
       "held_targeted_probe_executed": false,
       "native_resume_claimed": false,
       "original_terminal_cause": "cyber_policy",
-      "recorded_at": "2026-10-04T23:34:50.720439+00:00",
+      "recorded_at": "2026-10-05T02:00:24.835586+00:00",
       "remainingTokens": null,
-      "source": "Root get_goal tool testimony during this foreground context; recording timestamp is not precise tool response instant.",
+      "source": "Fresh parent root get_goal tool testimony in the current foreground context; exact response timestamp unavailable. recorded_at is this document recording time.",
       "status": "blocked",
       "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
       "timeUsedSeconds": 30612,
@@ -725,55 +654,28 @@
       "tokensUsed": 12420153,
       "updatedAt": 1791034102
     },
-    "observed_at": "2026-10-04T23:43:43.930813+00:00",
-    "observed_terminal": {
-      "at": "2026-10-03T13:28:22.795Z",
-      "category": "Platform cybersecurity-risk flag",
-      "code": "cyber_policy",
-      "exact_triggering_content": "unknown",
-      "final_message_present": false,
-      "turn_id": "01a1005c-e3c7-7742-b817-eed39401449b"
-    },
+    "observed_at": "2026-10-05T02:00:24.835586+00:00",
     "owner_action_required_for_current_safe_work": false,
-    "pending_component": "Bounded ordinary concurrent CLI init/up verification and final source/outcome publication gates; no result assumed.",
-    "recovery_performed": [
-      "Read-only guard/code, runtime version/help/doctor and sanitized terminal-event inspection",
-      "Fresh GitHub identity/repo/main/issue/Project and local worktree reconciliation",
-      "Preserved accepted FND-06/DB-01 and all historical evidence",
-      "Resumed unaffected implementation in this existing root context; no internal DB/settings edits or background service",
-      "Held targeted engine probe under platform restriction; prior technical preflight is not execution authorization",
-      "Claimed DB-02 from accepted DB-01 and assigned a bounded independent worker",
-      "Accepted DB-02 after normal protected merge, fresh real tests and separate reviews; claimed dependency-ready DB-03 without disturbing unrelated Project planning",
-      "Published, normally merged and accepted DB03 after independent implementation review,86 fresh postmerge checks and separate evidence verification.",
-      "Executed four ordinary installation attempts, preserved and reconciled all failures. Four image identities verify; no database service started in attempt004.",
-      "Independently reviewed owned runc build002 and bundle007; actual004 accepted native container inspection but failed systemd cgroup registration.",
-      "Completed independent original PLT01 acceptance-gap audit and source-only missing-busctl/direct-OCI-environment diagnosis; bounded local repair underway.",
-      "Built ordinary OCI environment successor from exact retained inputs; four old-block regressions fail and four production-helper cases pass. Independent completed-build review and24/565/10 checks pass. Bundle008 assembled without engine execution; installation remains unaccepted.",
-      "Bundle008 independently reviewed and adopted; ordinary lifecycle005 failed at systemd private-socket lookup. Wrapper/child/database process gone; exact installation-owned persistent rootless pause helper remains and is explicitly retained, not counted as a service or cleanup pass. Guard failure reconciled before creating isolated successor worktree.",
-      "Reconciled lifecycle006 failed guard7e408e9c and preserved stopped container, data, network and exact native pause helper; acknowledgement consumed by successful draft publication guard4052ac8c.",
-      "Reconciled failed lifecycle007 using corrected inspect projection, immutable exact engine metadata, finite GetUnit readback and exact process identity; preserved owned pause/data/network. Exact failed run acknowledgement consumed by completed normal draft publicationc40949e7."
-    ],
+    "pending_component": "Independent document/application/final-head validation/history/privacy/text/CI publication gates; source-only installed native-identity/schema/serving-role oracle preparation is active, with fresh installed validation still pending.",
     "remote_state": {
-      "API-01": "Backlog; PLT-01 pending",
-      "DB-01": "Merged",
-      "DB-02": "Merged",
-      "DB-03": "Merged",
-      "DB-04": "Backlog; API-04 required",
-      "FND-06": "Merged",
-      "PLT-01": "In progress; retained23:34:50 UTC readback shows draftPR78 open/unmerged at73eda. Local dfba source/outcome increment remains unpublished.",
-      "PLT-02": "Backlog; PLT-01 pending",
-      "geodb_main": "13fb7c9bff9d011838b768802a6ab63f932bd228",
-      "geoserver_main": "bc0b80af22f6554598bd54c5e03f5bf61dc750d2",
-      "geotools_main": "d360efd79801b0bed1d4a569fd816d1c4de474bc",
-      "platform_main": "d0218209d435f80c21400dc38abc2c4d69d805bc"
+      "authority": "Parent root read-only trusted API testimony; worker made no remote query. Exact response timestamp not provided.",
+      "draft": true,
+      "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+      "local_candidate_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+      "main": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+      "merged": false,
+      "open": true,
+      "publication_of_this_increment": "Pending final document/head/history/privacy/text/CI gates.",
+      "published_head": "7d0efc03495e55803d0482b881564e5e67ae6bdd"
     },
     "schema_version": 1,
-    "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+    "timestamp_scope": "Document recording time; current task assignments and remote/Goal observations are parent root testimony, not new worker queries.",
     "worker_observations": {
-      "db02_validation": "Sealed retained four-journey and final-effects reviews; no worker native execution. DNS helper author relies on independent root source review.",
-      "fnd03_identity": "Tmpfs source author and final-observer author; independent root source reviews and worker actual-evidence review remain separate.",
-      "observed_at": "2026-10-04T23:43:43.930813+00:00",
-      "root": "Sole integrator/native executor; completed ordinary019 and finite final accounting."
+      "db02_validation": "Sealed actual002 outcome/first/final-effects reviews; authors this private six-document draft and prepares final publication history/privacy review. No worker native execution.",
+      "fnd03_identity": "Preparing the installed database oracle source only in an isolated component worktree; no installed-oracle pass or native execution credited.",
+      "recorded_at": "2026-10-05T02:00:24.835586+00:00",
+      "root": "Sole integrator/native/remote executor; completed concurrency002 and finite final accounting, now independently reviews publication documents.",
+      "timestamp_scope": "Document recording time; parent task assignments and tool testimony have no claimed exact response timestamp."
     }
   },
   "fnd06_acceptance": {
@@ -840,7 +742,7 @@
     "runtime_commit": "f942670525253b9f3008563386a237a69b68549d",
     "runtime_review_sha256": "7aaebc9fd15403940df7b55fb832ea7602da3f8394e31469192c4c2befc783e7"
   },
-  "next": "Prepare and review bounded ordinary concurrent CLI init/up checks, and publish this reviewed source/outcome increment after final document, history and text gates. DNS namespace-binding and overall cleanup evidence remain incomplete; the separate held targeted qualification stays unexecuted.",
+  "next": "Independently review and publish this source/evidence increment, then implement an installed native-identity, schema and serving-role oracle using a fresh owned test installation. That oracle is intended next work, not implemented or passed; it does not reuse a synthetic cluster probe on existing installations or substitute for the held targeted qualification.",
   "owned_spine_acceptance": {
     "acceptance": "https://github.com/aloerch/ambisgis-platform/issues/7#issuecomment-5967417969",
     "all_unrelated_values_preserved": true,
@@ -1013,33 +915,122 @@
     "task": "PLT-01"
   },
   "plt01_image_review": {
-    "assembler_sha256": "10aa86430bf28305cb4017a7ac1c10af626c3553fba8c7fe4897eacc0b50775e",
-    "bundle": "023",
-    "bundle_candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
-    "bundle_review": {
-      "evidence_id": "bundle023-review",
-      "sha256": "ec81567ff02f21536c78aebdae2070b9d660d633b4034f040bda5aa83ec3c3c2"
+    "bundle": {
+      "evidence_id": "bundle024",
+      "sha256": "c93581f580d7153a52d813fc6ef43b0cf592fc2c0628ba6e04b852487960e615"
     },
-    "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
-    "elf_objects": 374,
-    "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
-    "host_prerequisites": 12,
-    "image_native_war_java_bytes_unchanged_from022": true,
+    "bundle_review": {
+      "evidence_id": "bundle024-audit",
+      "sha256": "b2118b45a80419ac91cfa48e7c53a10b57300c297366a97c9097fb096b3f130c"
+    },
+    "candidate_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+    "current_bundle": "024",
     "image_review": {
-      "evidence_id": "images025-review",
+      "evidence_id": "images025-audit",
       "sha256": "55956c70c5dd299cedde6d8ec7904841eb8b6e3d6d4e4ce975c1f0fdd0ace9a3"
     },
     "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
-    "images": "025/026",
-    "new_bundle_runtime_delta": [
-      "runtime/modules/installer/config.py",
-      "runtime/modules/installer/runtime.py",
-      "runtime/configuration/custody.json"
+    "images": [
+      "025",
+      "026"
     ],
-    "paired_archives_byte_identical": true,
-    "paired_roles": 4,
-    "runtime_executed_during_assembly_or_audit": false,
-    "runtime_files": 1320
+    "scope": "Current audited bundle024 with unchanged historical images025/026; no new image build or full installation acceptance."
+  },
+  "plt01_latest_concurrency": {
+    "attempt": {
+      "evidence_id": "concurrency002-attempt",
+      "sha256": "b3b1d83a5d32d1a8042c52a0082af8b5a40d5db69a1ff2c44c004b80cd1eb2a6"
+    },
+    "bundle_sha256": "c93581f580d7153a52d813fc6ef43b0cf592fc2c0628ba6e04b852487960e615",
+    "configuration_and_credentials_hashes_unchanged": true,
+    "full_installation_acceptance": false,
+    "install_id": "2d8b1731-7b10-462e-a7a2-8e43830f6161",
+    "limits": "Recorded native IDs, title and policy restoration do not establish installed SQL-role, migration cardinality or native uniqueness acceptance. Ten recorded revocations are not a proof of ten globally distinct credentials.",
+    "outcome_review": {
+      "evidence_id": "concurrency002-outcome-review",
+      "sha256": "7d5ca425a5167bca69cac1c20f29c898955c471b438e1ee2f4926e2301af0a0f"
+    },
+    "pair_facts": [
+      {
+        "children_reaped": 2,
+        "command": "init",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "created",
+          "busy"
+        ],
+        "overlap_observed": true,
+        "reinitialize": false,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      },
+      {
+        "children_reaped": 2,
+        "command": "up",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "busy",
+          "ready"
+        ],
+        "overlap_observed": true,
+        "reinitialize": false,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      },
+      {
+        "children_reaped": 2,
+        "command": "init",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "busy",
+          "existing"
+        ],
+        "overlap_observed": true,
+        "reinitialize": true,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      },
+      {
+        "children_reaped": 2,
+        "command": "up",
+        "lock_contention_observed": true,
+        "outcomes": [
+          "busy",
+          "ready"
+        ],
+        "overlap_observed": true,
+        "reinitialize": false,
+        "remaining_owned_group_members": 0,
+        "signals_sent": false
+      }
+    ],
+    "selected_native_identity_policy_title_preserved": true,
+    "source_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
+    "status": "passed",
+    "totals": {
+      "busy_peers": 4,
+      "cli_children": 8,
+      "created_installations_observed": 1,
+      "data_requests": 276,
+      "data_statuses": {
+        "200": 44,
+        "403": 214,
+        "404": 18
+      },
+      "map_query_oracles": 8,
+      "native_policy_restorations": 2,
+      "pairs": 4,
+      "post_negative_oracles": 10,
+      "protected_journeys": 2,
+      "recorded_token_revocations": 10,
+      "route_negatives": 164,
+      "same_valid_token_reads": 30,
+      "token_cleanup_sessions": 3,
+      "token_revocation_statuses": {
+        "200": 10
+      },
+      "unaccounted_issuance_principals": 0
+    }
   },
   "plt01_latest_lifecycle": {
     "attempt": 19,
@@ -2169,10 +2160,876 @@
         "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5980095133",
         "updated_at": "2026-10-04T20:40:57.118747+00:00"
       }
+    },
+    {
+      "checkpoint": "Before concurrency helper/initializer-lock and concurrency002 evidence019",
+      "preserved_current": {
+        "active_workers": [
+          {
+            "agent": "/root",
+            "observed_at": "2026-10-04T23:43:43.930813+00:00",
+            "state": "Foreground integrator and sole native/remote executor"
+          },
+          {
+            "agent": "/root/db02_validation",
+            "observed_at": "2026-10-04T23:43:43.930813+00:00",
+            "state": "Retained journey/artifact/effects reviewer and private evidence preparer"
+          },
+          {
+            "agent": "/root/fnd03_identity",
+            "observed_at": "2026-10-04T23:43:43.930813+00:00",
+            "state": "Independent evidence/publication review and source/control preparation"
+          }
+        ],
+        "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
+        "execution_checkpoint": {
+          "current_action": "Prepare and review bounded ordinary concurrent CLI init/up checks, and publish this reviewed source/outcome increment after final document, history and text gates. DNS namespace-binding and overall cleanup evidence remain incomplete; the separate held targeted qualification stays unexecuted.",
+          "current_tasks": [
+            {
+              "branch": "plt-01/development-install",
+              "delivery": "In progress",
+              "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+              "id": "PLT-01",
+              "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+              "local_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+              "local_increment": "SELECT-only transport sequence visibility, fresh mapped-owner DNS resolver validation, and explicit tmpfs restart permissions are integrated and independently reviewed. Images025/026 remain exact; bundle023 changes only two installer modules and custody. Actual019 completes four protected journeys and persistence/reinitialization/recovery but remains incomplete because six DNS namespace-binding observations are unsupported.",
+              "published_head": "73eda452935ee8e42e2e38c1d646b0e5e643ce6c",
+              "published_readback_at": "2026-10-04T23:34:50.719935+00:00",
+              "repository": "aloerch/ambisgis-platform",
+              "repository_id": 1376927351
+            }
+          ],
+          "diagnosis": {
+            "cause": "The root turn ended with an explicit platform cyber_policy error; an engine-probe worker later reported the same error class.",
+            "confidence": "high for observed termination category; exact triggering content and UI-internal state transition unknown",
+            "not_supported_as_cause": [
+              "No local STOP marker",
+              "No held integration lock",
+              "Last integration checkpoint completed successfully",
+              "GitHub identity and API access verified",
+              "Codex doctor reports configured ChatGPT authentication and provider HTTP/WebSocket reachability"
+            ],
+            "other_observations": [
+              "Doctor search-command warning corresponds to unavailable host rg; Python filesystem/text reads remain available.",
+              "Bare codex is absent from host PATH; extension-bundled absolute CLI works.",
+              "Doctor reports no separate background daemon; the current foreground turn is active. This is not evidence of missing scheduler installation."
+            ],
+            "pending_platform_approvals": "none exposed to this turn",
+            "queued_user_inputs": "unknown beyond messages already delivered"
+          },
+          "evidence": {
+            "acceptance_driver_review": {
+              "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-acceptance-source-root-review-002/result.json",
+              "sha256": "8fa5fee8a13f6942e58145968ecf91c215fbcaf0b1fd9bed588f6df9afbfafdc"
+            },
+            "acceptance_gap_audit": {
+              "full_installation_acceptance": false,
+              "path": "Private delivery-control/trust/plt01-acceptance-gap-001/result.json",
+              "sha256": "9e3047fed992b01ae3312ad32ab6597f80376efee74bf5c054569fad2e04f4ff"
+            },
+            "bundle007_review": {
+              "scope": "1290 files/12hostprereqs/19guards; no runtime acceptance",
+              "sha256": "3faaeff863905884fc3ebc1374ba99e0af353312521b5b69a3a4ec7b8494cedc"
+            },
+            "concurrency_review": {
+              "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-concurrency-source-review-001/result.json",
+              "sha256": "e5ab73479c20b74d7a5d61c56d318d1a1df95ab70ac705ddff1501023254164d"
+            },
+            "db02_acceptance": "plan/verification/db02-acceptance/evidence.json",
+            "db03_acceptance": "plan/verification/db03-acceptance/evidence.json",
+            "doctor": "Private delivery-control/recovery-20261003/doctor-redacted-001.json",
+            "evidence015": {
+              "path": "plan/verification/plt01-lifecycle/evidence-015.json",
+              "sha256": "8cd4b9c5cdfd084f93802020cd34e7c9442fa5e9d49243f9ee2533d1f1f6a949"
+            },
+            "evidence016": {
+              "path": "plan/verification/plt01-lifecycle/evidence-016.json",
+              "sha256": "9da6deec141263fe0bb261c7c2e85be0f06fc4fe4ce7ff1311f439ec811ad8d9"
+            },
+            "geoserver_diagnostic001": {
+              "path": "plan/verification/plt01-lifecycle/geoserver-diagnostic-001.json",
+              "sha256": "fd7fdd2e9f4b05428167a75e7f81d8e2368a9fbb51de7f9f311494df89ec5951"
+            },
+            "integrated_source_008": {
+              "checks": {
+                "journey_policy": 32,
+                "lifecycle": 8,
+                "package": 565,
+                "runtime": 31,
+                "schemas": 10
+              },
+              "path": "Private plt01-runtime-checks/integrated-source-008/result.json",
+              "reuse": "Exact integrated3c8a5dd4 source; later native producer adds six independently passing inert guards. Final assembler validation remains pending.",
+              "sha256": "2d24a05891c3fc9c8492ab3b37e82746068bf879a1105fcaac8214cb70569227"
+            },
+            "lifecycle004": {
+              "full_installation_acceptance": false,
+              "path": "Private plt01-runtime-checks/lifecycle-004/result.json",
+              "persistent_data_preserved": true,
+              "reconciled": true,
+              "running_services": 0,
+              "sha256": "f1e946a7962a4bdb98167696b288cd358213dc81485ced56726d9081d5b8c9d6",
+              "status": "failed"
+            },
+            "lifecycle005": {
+              "all_helpers_gone": false,
+              "full_installation_acceptance": false,
+              "reconciled": true,
+              "reconciliation": {
+                "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/reconciliation.json",
+                "sha256": "8ffe87e7182851d3d731cc18d0eb069fdfd70a110b8667c1d63078b98496b3fb"
+              },
+              "result": {
+                "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-005/result.json",
+                "sha256": "39ccedf5c7eb6efd21e7784c9f415216a962c5de7a8d39d2eb51028abda60ba6"
+              },
+              "retained_pause_pid": 519528,
+              "running_services": 0,
+              "status": "failed"
+            },
+            "lifecycle006": {
+              "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/result.json",
+              "sha256": "e5b969fe073d529be6d95bc27acd8ce9736a9e4d6c075de271b230c8dd278f7c"
+            },
+            "lifecycle007": "plan/verification/plt01-lifecycle/evidence-007.json",
+            "lifecycle008": "plan/verification/plt01-lifecycle/evidence-008.json",
+            "lifecycle009": "plan/verification/plt01-lifecycle/evidence-009.json",
+            "lifecycle010": "plan/verification/plt01-lifecycle/evidence-010.json",
+            "lifecycle011": "plan/verification/plt01-lifecycle/evidence-011.json",
+            "lifecycle012": "plan/verification/plt01-lifecycle/evidence-012.json",
+            "lifecycle013": {
+              "path": "plan/verification/plt01-lifecycle/evidence-013.json",
+              "sha256": "72683c9d24011e70eb89d8f04efdd34c4516cbf9e7d739a410709d956b1edaf5"
+            },
+            "lifecycle014": {
+              "path": "plan/verification/plt01-lifecycle/evidence-014.json",
+              "sha256": "d2783ff1186878b737980df671e8167b38ab43ab0a028a719fe07d3181ab6125"
+            },
+            "live_local": "Private delivery-control/recovery-20261003/live-local-001.json",
+            "native_timer_alternatives": {
+              "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/source-diagnosis-001/alternatives.json",
+              "sha256": "b1673fd9ef2cd78a2dda0ff873ca89a3eff1c9500707f94ea2020f325d1f0a78"
+            },
+            "oauth_source_integration": {
+              "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integrated-catalog-oauth-secret-001.json",
+              "sha256": "5aeb02d454f54655c6b53f571fa25ec2ac440e6f70b1108e8a843a41af6ef885"
+            },
+            "ordinary_lifecycle": "plan/verification/plt01-lifecycle/evidence.json",
+            "ordinary_source_diagnosis": {
+              "path": "Private plt01-runtime-checks/lifecycle-004/read-only-diagnosis-001/source-diagnosis.json",
+              "scope": "Source inference; no observed D-Bus socket trace",
+              "sha256": "bb6a5a0b2380532e9c2c6d02ff049cb879b2ba320e1a394574bc02ada564af9b"
+            },
+            "package_checks": "Private delivery-control/recovery-20261003/package-001/result.json",
+            "plan/verification/plt01-lifecycle/evidence-018.json": {
+              "path": "plan/verification/plt01-lifecycle/evidence-018.json",
+              "sha256": "ac4d85fa15d7fd92dd10506924fc501d3deccce2637487bc4347263e5a6c607b"
+            },
+            "plan/verification/runtime-recovery/progress-018.json": {
+              "path": "plan/verification/runtime-recovery/progress-018.json",
+              "sha256": "a79d1315d657932c249fd7fec64fe8fb04b105c1e2e1bfbcf2fbec6b577120e2"
+            },
+            "pr78_readback": {
+              "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/recovery-20261003/live-pr78-readback-001.json",
+              "sha256": "fb62d230e10dafef3b078682f914dea2ca0bf9a6d61a5daeec627fe2fb796891"
+            },
+            "probe_hold_sha256": "88df92a0060cd55d54ab0b91d7c5df048a0348b1a062d84183599c322b2064ea",
+            "progress007": "plan/verification/runtime-recovery/progress-007.json",
+            "progress011": "plan/verification/runtime-recovery/progress-011.json",
+            "progress012": "plan/verification/runtime-recovery/progress-012.json",
+            "progress013": {
+              "path": "plan/verification/runtime-recovery/progress-013.json",
+              "sha256": "eaa3320fd52ef7d4a373908f09f317354f2c001a430e64cc2e5be674710012c1"
+            },
+            "progress014": {
+              "path": "plan/verification/runtime-recovery/progress-014.json",
+              "sha256": "be7ac9b08be8b494aaf90a6c2170d642466dff5a4c306da2b4718cbdbe7f0d19"
+            },
+            "progress015": {
+              "path": "plan/verification/runtime-recovery/progress-015.json",
+              "sha256": "d8cddde34721e60d562f407899d1e16312761aa039a43b3c414dd5abcb9fb97e"
+            },
+            "progress016": {
+              "path": "plan/verification/runtime-recovery/progress-016.json",
+              "sha256": "8e6b9e0085be2a15486e761dd72be107bf3371137b3663d5543a4243f31f2973"
+            },
+            "python312_payload": {
+              "executed": false,
+              "packages": 32,
+              "path": "Private build-worktrees/plt01-image-inputs/payload-001/receipt.json",
+              "sha256": "24b9de32cc79a9836bc6dc82cb9d84b00a7b2bea4b23b9c7f725246170b30ce4",
+              "source_groups": 29
+            },
+            "reconciliation006": {
+              "path": "/home/revelberry/Projects/AmbisGIS_Codex_Plan/plt01-runtime-checks/lifecycle-006/reconciliation.json",
+              "sha256": "4598c486b7d78f409c071c875c4114be55e16eb1c3651a59e07cd317dc92987b"
+            },
+            "root_terminal": "Private native rollout task_complete event only; raw transcript not copied or published",
+            "runtime_build_review": {
+              "scope": "Inert source/build/closure review; no installation acceptance",
+              "sha256": "a147008a7aed94308e9ebbd8e73ea0970a601afd24de81c5efc1f95277acbef0"
+            },
+            "runtime_validation_009": {
+              "checks": {
+                "package": 565,
+                "runtime": 37,
+                "schemas": 10
+              },
+              "journey_lifecycle_reuse": "32+8 unchanged integrated-source-008",
+              "path": "Private plt01-runtime-checks/runtime-validation-009/result.json",
+              "sha256": "cab83ec0b8f27ab65a0c39699383e54f3c310a941a5bd39ee54217cbbb11b44d"
+            },
+            "socket_wrapper_review": {
+              "path": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/trust/plt01-systemd-wrapper-review-001/result.json",
+              "sha256": "6a079e98272760ca0ca99e49e297c351a275181b9d0ebbcc851ab814d8f38355"
+            },
+            "token_cleanup_review": {
+              "path": "Private delivery-control/trust/plt01-token-cleanup-review-001/result.json",
+              "sha256": "5d25f04705c9123497cb551de2e184afb80d8ea0871a23f7b6dfc357328b1cc8"
+            }
+          },
+          "installed_runtime": {
+            "cli": "0.160.0",
+            "doctor_overall": "warning: search command could not be verified",
+            "extension": "openai.chatgpt-26.930.31730-linux-x64",
+            "supported_lifecycle_reference": "https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex"
+          },
+          "integrator": "/root",
+          "last_completed": {
+            "acceptance": "https://github.com/aloerch/ambisgis-geodb/issues/4#issuecomment-5973606503",
+            "implementation": "Typed branch snapshots and durable private creation/activation, finite quotas and lifecycle metadata",
+            "limitations": "Named-branch editing, full history, external authorization, reconcile/post, physical GC, installation, production restore and full MVP remain open.",
+            "merge": "DB-03 PR13 13fb7c9bff9d011838b768802a6ab63f932bd228",
+            "tests": "Fresh postmerge86 checks:80 real database+6 schema,zero skips; five clusters stopped;391 tracked files,22 sources and72 runtime artifacts independently verified."
+          },
+          "latest_application_diagnostic": {
+            "applicability": "Historical initializer004 diagnostic only. Its limited result is preserved; subsequent full019 outcome and remaining DNS limits are recorded separately here.",
+            "bundle": "020",
+            "complete_output_retained": true,
+            "database_readiness_passed": true,
+            "effects": {
+              "all_helpers_gone": false,
+              "dns_cleanup_verified": false,
+              "guard_wrapper_child_absent": true,
+              "independent_review": "PASS_RETAINED_DIAGNOSTIC_SUCCESS_EFFECTS_REVIEW",
+              "known_persisted_units_not_loaded": true,
+              "owned_pause_retained": true,
+              "owned_services_stopped": true,
+              "persistent_data_preserved": true,
+              "root_reconciled": true,
+              "runtime_configuration_unchanged": true
+            },
+            "initializer_exit_code": 0,
+            "name": "geoserver-init-replay-004",
+            "original_and_three_prior_diagnostics_unchanged": true,
+            "outer_deadline_seconds": 240,
+            "persistent_initialized_marker_verified": true,
+            "private_capture_bytes": {
+              "stderr": 960,
+              "stdout": 5672
+            },
+            "python_java_deadline_seconds": 180,
+            "scope": "Fresh private standard database and ordinary GeoServer initializer only; no catalog/gateway/serving/full installation journey.",
+            "source_head": "869db18865e16287c9f029fcbd732be9bd797a3b",
+            "status": "COMPLETED_PRIVATE_INITIALIZER_OBSERVATION"
+          },
+          "latest_completed_implementation_boundary": {
+            "actual_installation": "Eighteen failures preserved;019 incomplete after four protected journeys, not accepted.",
+            "artifacts": {
+              "assembler_sha256": "10aa86430bf28305cb4017a7ac1c10af626c3553fba8c7fe4897eacc0b50775e",
+              "bundle": "023",
+              "bundle_candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+              "bundle_review": {
+                "evidence_id": "bundle023-review",
+                "sha256": "ec81567ff02f21536c78aebdae2070b9d660d633b4034f040bda5aa83ec3c3c2"
+              },
+              "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
+              "elf_objects": 374,
+              "host_prerequisites": 12,
+              "image_native_war_java_bytes_unchanged_from022": true,
+              "image_review": {
+                "evidence_id": "images025-review",
+                "sha256": "55956c70c5dd299cedde6d8ec7904841eb8b6e3d6d4e4ce975c1f0fdd0ace9a3"
+              },
+              "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+              "images": "025/026",
+              "new_bundle_runtime_delta": [
+                "runtime/modules/installer/config.py",
+                "runtime/modules/installer/runtime.py",
+                "runtime/configuration/custody.json"
+              ],
+              "paired_archives_byte_identical": true,
+              "paired_roles": 4,
+              "runtime_executed_during_assembly_or_audit": false,
+              "runtime_files": 1320
+            },
+            "checks": {
+              "all_exit_codes_zero": true,
+              "dns_host_validation": {
+                "development": 132,
+                "package": 689,
+                "schemas": 10
+              },
+              "explicit_unchanged_reuse": {
+                "image_helpers": 40
+              },
+              "final_document_package_schema_checks": "Pending fresh post-document checks before publication; not credited here.",
+              "reuse_limit": "Image inputs and helper sources are unchanged from the independently reviewed images025/026 and runtime-validation032 lineage. Earlier native fixture and source reviews are reused only for their unchanged scope.",
+              "scope": "Source/helper/package/schema checks and a separate synthetic PostgreSQL fixture; actual ordinary journeys are recorded separately.",
+              "sequence_native_fixed": 41,
+              "sequence_validation": {
+                "development": 121,
+                "package": 689,
+                "schemas": 10
+              },
+              "skips": 0,
+              "source_files": 1549,
+              "tmpfs_validation": {
+                "development": 132,
+                "package": 692,
+                "runtime": 77,
+                "schemas": 10
+              }
+            },
+            "implementation": "SELECT-only transport sequence visibility, fresh mapped-owner DNS resolver validation, and explicit tmpfs restart permissions are integrated and independently reviewed. Images025/026 remain exact; bundle023 changes only two installer modules and custody. Actual019 completes four protected journeys and persistence/reinitialization/recovery but remains incomplete because six DNS namespace-binding observations are unsupported."
+          },
+          "latest_completed_ordinary_attempt": {
+            "attempt": 19,
+            "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
+            "completed_protected_journeys": 4,
+            "count_limits": "552 recorded data requests exclude OAuth traffic and the separate gateway liveness request. Twenty-eight recorded revocations across ten cleanup sessions are not a claim of twenty-eight distinct token values.",
+            "dns": {
+              "classification": "namespace_binding_unavailable",
+              "daemon_cleanup_driver_verified": true,
+              "exact_mapped_owner_proofs": 4,
+              "fixed_database_udp_queries_verified": 4,
+              "incomplete_checks": 6,
+              "namespace_binding_verified": false,
+              "overall_cleanup_verified": false,
+              "running_identity_observations": 4,
+              "shutdown_observations": 2
+            },
+            "driver_shutdown": {
+              "dns_daemon_cleanup_verified": true,
+              "dns_namespace_binding_verified": false,
+              "dns_overall_cleanup_verified": false,
+              "persistent_data_preserved": true,
+              "running_services": 0
+            },
+            "error_type_recorded": false,
+            "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
+            "finished_at": "2026-10-04T23:20:38.556361+00:00",
+            "full_installation_acceptance": false,
+            "held_targeted_probe_executed": false,
+            "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+            "journey_totals": {
+              "completed_journeys": 4,
+              "data_requests": 552,
+              "data_status_counts": {
+                "200": 88,
+                "403": 428,
+                "404": 36
+              },
+              "map_query_oracles": 16,
+              "native_policy_restorations": 4,
+              "post_negative_unchanged_oracles": 20,
+              "recorded_tokens_revoked": 28,
+              "route_negative_cases": 328,
+              "same_token_permission_reads": 60,
+              "token_cleanup_sessions": 10,
+              "unaccounted_issuance_principals": 0
+            },
+            "persistence": {
+              "dependency_recovery_verified": true,
+              "metadata_uuid_and_title_same_all_four_journeys": true,
+              "reinitialization_verified": true,
+              "restart_verified": true,
+              "stop_identity_credentials_unchanged": true,
+              "stopped_renderer_useful_failure_verified": true
+            },
+            "preceding_failed_attempts_preserved": 18,
+            "recorded_driver_stages": [
+              {
+                "at": "2026-10-04T23:06:48.750464+00:00",
+                "name": "verified relocated bundle"
+              },
+              {
+                "at": "2026-10-04T23:06:57.332210+00:00",
+                "name": "fresh init"
+              },
+              {
+                "at": "2026-10-04T23:09:51.121453+00:00",
+                "name": "fresh up status doctor"
+              },
+              {
+                "at": "2026-10-04T23:09:51.126535+00:00",
+                "name": "native DNS after initial CLI exit"
+              },
+              {
+                "at": "2026-10-04T23:10:20.195211+00:00",
+                "name": "DNS wire after initial CLI exit"
+              },
+              {
+                "at": "2026-10-04T23:11:40.765295+00:00",
+                "name": "protected map query metadata journey"
+              },
+              {
+                "at": "2026-10-04T23:12:01.803513+00:00",
+                "name": "stopped persistent installation"
+              },
+              {
+                "at": "2026-10-04T23:12:18.978040+00:00",
+                "name": "restart preserves metadata and credentials"
+              },
+              {
+                "at": "2026-10-04T23:12:18.988136+00:00",
+                "name": "native DNS after restart"
+              },
+              {
+                "at": "2026-10-04T23:12:49.018705+00:00",
+                "name": "DNS wire after restart"
+              },
+              {
+                "at": "2026-10-04T23:14:16.632183+00:00",
+                "name": "full protected journey after restart"
+              },
+              {
+                "at": "2026-10-04T23:15:36.660669+00:00",
+                "name": "reinitialization preserves metadata and credentials"
+              },
+              {
+                "at": "2026-10-04T23:15:36.677830+00:00",
+                "name": "native DNS after repeated CLI exit"
+              },
+              {
+                "at": "2026-10-04T23:16:07.066502+00:00",
+                "name": "DNS wire after repeated CLI exit"
+              },
+              {
+                "at": "2026-10-04T23:17:34.509878+00:00",
+                "name": "full protected journey after reinitialization"
+              },
+              {
+                "at": "2026-10-04T23:18:07.585126+00:00",
+                "name": "stopped renderer produces useful failure"
+              },
+              {
+                "at": "2026-10-04T23:18:22.319841+00:00",
+                "name": "dependency recovery preserves state"
+              },
+              {
+                "at": "2026-10-04T23:18:22.345071+00:00",
+                "name": "native DNS after dependency recovery"
+              },
+              {
+                "at": "2026-10-04T23:18:52.634233+00:00",
+                "name": "DNS wire after dependency recovery"
+              },
+              {
+                "at": "2026-10-04T23:20:20.796309+00:00",
+                "name": "full protected journey after dependency recovery"
+              }
+            ],
+            "recorded_stage_count": 20,
+            "reviewed_effects": {
+              "all_four_retained_health_snapshots": "healthy, last five health exit codes zero; services are stopped, so this is not current readiness",
+              "all_helpers_gone": false,
+              "all_six_roles_nonrunning": true,
+              "dns_cleanup_verified": false,
+              "four_present_roles_full_security_passed": true,
+              "geoserver_exit_limit": "Exit143 is compatible with signal15 and is not clean exit0 or independent proof of graceful shutdown.",
+              "guard_wrapper_child_absent": true,
+              "initializers_absent": 2,
+              "known_persisted_timer_service_units_not_loaded": 8,
+              "known_service_conmon_pid_absences": 8,
+              "native_state_limit": "Equality covers only this post-diagnosis final observer, not the earlier lifecycle.",
+              "native_state_unchanged_during_final_observer": true,
+              "observer_data_deleted": false,
+              "observer_retry": false,
+              "observer_signals_sent": false,
+              "owned_pause_retained": true,
+              "reconciled": true,
+              "serving_role_exits": {
+                "catalog": 0,
+                "database": 0,
+                "gateway": 0,
+                "geoserver": 143
+              },
+              "stored_native_errors": "Three roles retain the exact owned-source already-running start-state error; operation and time are unrecorded. Fresh retained inspection independently shows exited/Pid0.",
+              "unavailable_process_reads": 5
+            },
+            "source_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+            "started_at": "2026-10-04T23:06:38.631835+00:00",
+            "status": "incomplete"
+          },
+          "native_goal": {
+            "assistant_resume_performed": false,
+            "budget_configured": false,
+            "exact_original_trigger": "unknown",
+            "foreground_delivery_continues": true,
+            "held_targeted_probe_executed": false,
+            "native_resume_claimed": false,
+            "original_terminal_cause": "cyber_policy",
+            "recorded_at": "2026-10-04T23:34:50.720439+00:00",
+            "remainingTokens": null,
+            "source": "Root get_goal tool testimony during this foreground context; recording timestamp is not precise tool response instant.",
+            "status": "blocked",
+            "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+            "timeUsedSeconds": 30612,
+            "timestamp_meaning": "Persisted root testimony record time, not the precise tool-response instant.",
+            "tokensUsed": 12420153,
+            "updatedAt": 1791034102
+          },
+          "observed_at": "2026-10-04T23:43:43.930813+00:00",
+          "observed_terminal": {
+            "at": "2026-10-03T13:28:22.795Z",
+            "category": "Platform cybersecurity-risk flag",
+            "code": "cyber_policy",
+            "exact_triggering_content": "unknown",
+            "final_message_present": false,
+            "turn_id": "01a1005c-e3c7-7742-b817-eed39401449b"
+          },
+          "owner_action_required_for_current_safe_work": false,
+          "pending_component": "Bounded ordinary concurrent CLI init/up verification and final source/outcome publication gates; no result assumed.",
+          "recovery_performed": [
+            "Read-only guard/code, runtime version/help/doctor and sanitized terminal-event inspection",
+            "Fresh GitHub identity/repo/main/issue/Project and local worktree reconciliation",
+            "Preserved accepted FND-06/DB-01 and all historical evidence",
+            "Resumed unaffected implementation in this existing root context; no internal DB/settings edits or background service",
+            "Held targeted engine probe under platform restriction; prior technical preflight is not execution authorization",
+            "Claimed DB-02 from accepted DB-01 and assigned a bounded independent worker",
+            "Accepted DB-02 after normal protected merge, fresh real tests and separate reviews; claimed dependency-ready DB-03 without disturbing unrelated Project planning",
+            "Published, normally merged and accepted DB03 after independent implementation review,86 fresh postmerge checks and separate evidence verification.",
+            "Executed four ordinary installation attempts, preserved and reconciled all failures. Four image identities verify; no database service started in attempt004.",
+            "Independently reviewed owned runc build002 and bundle007; actual004 accepted native container inspection but failed systemd cgroup registration.",
+            "Completed independent original PLT01 acceptance-gap audit and source-only missing-busctl/direct-OCI-environment diagnosis; bounded local repair underway.",
+            "Built ordinary OCI environment successor from exact retained inputs; four old-block regressions fail and four production-helper cases pass. Independent completed-build review and24/565/10 checks pass. Bundle008 assembled without engine execution; installation remains unaccepted.",
+            "Bundle008 independently reviewed and adopted; ordinary lifecycle005 failed at systemd private-socket lookup. Wrapper/child/database process gone; exact installation-owned persistent rootless pause helper remains and is explicitly retained, not counted as a service or cleanup pass. Guard failure reconciled before creating isolated successor worktree.",
+            "Reconciled lifecycle006 failed guard7e408e9c and preserved stopped container, data, network and exact native pause helper; acknowledgement consumed by successful draft publication guard4052ac8c.",
+            "Reconciled failed lifecycle007 using corrected inspect projection, immutable exact engine metadata, finite GetUnit readback and exact process identity; preserved owned pause/data/network. Exact failed run acknowledgement consumed by completed normal draft publicationc40949e7."
+          ],
+          "remote_state": {
+            "API-01": "Backlog; PLT-01 pending",
+            "DB-01": "Merged",
+            "DB-02": "Merged",
+            "DB-03": "Merged",
+            "DB-04": "Backlog; API-04 required",
+            "FND-06": "Merged",
+            "PLT-01": "In progress; retained23:34:50 UTC readback shows draftPR78 open/unmerged at73eda. Local dfba source/outcome increment remains unpublished.",
+            "PLT-02": "Backlog; PLT-01 pending",
+            "geodb_main": "13fb7c9bff9d011838b768802a6ab63f932bd228",
+            "geoserver_main": "bc0b80af22f6554598bd54c5e03f5bf61dc750d2",
+            "geotools_main": "d360efd79801b0bed1d4a569fd816d1c4de474bc",
+            "platform_main": "d0218209d435f80c21400dc38abc2c4d69d805bc"
+          },
+          "schema_version": 1,
+          "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+          "worker_observations": {
+            "db02_validation": "Sealed retained four-journey and final-effects reviews; no worker native execution. DNS helper author relies on independent root source review.",
+            "fnd03_identity": "Tmpfs source author and final-observer author; independent root source reviews and worker actual-evidence review remain separate.",
+            "observed_at": "2026-10-04T23:43:43.930813+00:00",
+            "root": "Sole integrator/native executor; completed ordinary019 and finite final accounting."
+          }
+        },
+        "next": "Prepare and review bounded ordinary concurrent CLI init/up checks, and publish this reviewed source/outcome increment after final document, history and text gates. DNS namespace-binding and overall cleanup evidence remain incomplete; the separate held targeted qualification stays unexecuted.",
+        "plt01_image_review": {
+          "assembler_sha256": "10aa86430bf28305cb4017a7ac1c10af626c3553fba8c7fe4897eacc0b50775e",
+          "bundle": "023",
+          "bundle_candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+          "bundle_review": {
+            "evidence_id": "bundle023-review",
+            "sha256": "ec81567ff02f21536c78aebdae2070b9d660d633b4034f040bda5aa83ec3c3c2"
+          },
+          "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
+          "elf_objects": 374,
+          "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
+          "host_prerequisites": 12,
+          "image_native_war_java_bytes_unchanged_from022": true,
+          "image_review": {
+            "evidence_id": "images025-review",
+            "sha256": "55956c70c5dd299cedde6d8ec7904841eb8b6e3d6d4e4ce975c1f0fdd0ace9a3"
+          },
+          "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+          "images": "025/026",
+          "new_bundle_runtime_delta": [
+            "runtime/modules/installer/config.py",
+            "runtime/modules/installer/runtime.py",
+            "runtime/configuration/custody.json"
+          ],
+          "paired_archives_byte_identical": true,
+          "paired_roles": 4,
+          "runtime_executed_during_assembly_or_audit": false,
+          "runtime_files": 1320
+        },
+        "plt01_latest_lifecycle": {
+          "attempt": 19,
+          "bundle_sha256": "20f4658b2517626333fd22089022f5a20ec3fc67732be4c26407ebc74aa74d20",
+          "completed_protected_journeys": 4,
+          "count_limits": "552 recorded data requests exclude OAuth traffic and the separate gateway liveness request. Twenty-eight recorded revocations across ten cleanup sessions are not a claim of twenty-eight distinct token values.",
+          "dns": {
+            "classification": "namespace_binding_unavailable",
+            "daemon_cleanup_driver_verified": true,
+            "exact_mapped_owner_proofs": 4,
+            "fixed_database_udp_queries_verified": 4,
+            "incomplete_checks": 6,
+            "namespace_binding_verified": false,
+            "overall_cleanup_verified": false,
+            "running_identity_observations": 4,
+            "shutdown_observations": 2
+          },
+          "driver_shutdown": {
+            "dns_daemon_cleanup_verified": true,
+            "dns_namespace_binding_verified": false,
+            "dns_overall_cleanup_verified": false,
+            "persistent_data_preserved": true,
+            "running_services": 0
+          },
+          "error_type_recorded": false,
+          "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
+          "finished_at": "2026-10-04T23:20:38.556361+00:00",
+          "full_installation_acceptance": false,
+          "held_targeted_probe_executed": false,
+          "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+          "journey_totals": {
+            "completed_journeys": 4,
+            "data_requests": 552,
+            "data_status_counts": {
+              "200": 88,
+              "403": 428,
+              "404": 36
+            },
+            "map_query_oracles": 16,
+            "native_policy_restorations": 4,
+            "post_negative_unchanged_oracles": 20,
+            "recorded_tokens_revoked": 28,
+            "route_negative_cases": 328,
+            "same_token_permission_reads": 60,
+            "token_cleanup_sessions": 10,
+            "unaccounted_issuance_principals": 0
+          },
+          "persistence": {
+            "dependency_recovery_verified": true,
+            "metadata_uuid_and_title_same_all_four_journeys": true,
+            "reinitialization_verified": true,
+            "restart_verified": true,
+            "stop_identity_credentials_unchanged": true,
+            "stopped_renderer_useful_failure_verified": true
+          },
+          "preceding_failed_attempts_preserved": 18,
+          "recorded_driver_stages": [
+            {
+              "at": "2026-10-04T23:06:48.750464+00:00",
+              "name": "verified relocated bundle"
+            },
+            {
+              "at": "2026-10-04T23:06:57.332210+00:00",
+              "name": "fresh init"
+            },
+            {
+              "at": "2026-10-04T23:09:51.121453+00:00",
+              "name": "fresh up status doctor"
+            },
+            {
+              "at": "2026-10-04T23:09:51.126535+00:00",
+              "name": "native DNS after initial CLI exit"
+            },
+            {
+              "at": "2026-10-04T23:10:20.195211+00:00",
+              "name": "DNS wire after initial CLI exit"
+            },
+            {
+              "at": "2026-10-04T23:11:40.765295+00:00",
+              "name": "protected map query metadata journey"
+            },
+            {
+              "at": "2026-10-04T23:12:01.803513+00:00",
+              "name": "stopped persistent installation"
+            },
+            {
+              "at": "2026-10-04T23:12:18.978040+00:00",
+              "name": "restart preserves metadata and credentials"
+            },
+            {
+              "at": "2026-10-04T23:12:18.988136+00:00",
+              "name": "native DNS after restart"
+            },
+            {
+              "at": "2026-10-04T23:12:49.018705+00:00",
+              "name": "DNS wire after restart"
+            },
+            {
+              "at": "2026-10-04T23:14:16.632183+00:00",
+              "name": "full protected journey after restart"
+            },
+            {
+              "at": "2026-10-04T23:15:36.660669+00:00",
+              "name": "reinitialization preserves metadata and credentials"
+            },
+            {
+              "at": "2026-10-04T23:15:36.677830+00:00",
+              "name": "native DNS after repeated CLI exit"
+            },
+            {
+              "at": "2026-10-04T23:16:07.066502+00:00",
+              "name": "DNS wire after repeated CLI exit"
+            },
+            {
+              "at": "2026-10-04T23:17:34.509878+00:00",
+              "name": "full protected journey after reinitialization"
+            },
+            {
+              "at": "2026-10-04T23:18:07.585126+00:00",
+              "name": "stopped renderer produces useful failure"
+            },
+            {
+              "at": "2026-10-04T23:18:22.319841+00:00",
+              "name": "dependency recovery preserves state"
+            },
+            {
+              "at": "2026-10-04T23:18:22.345071+00:00",
+              "name": "native DNS after dependency recovery"
+            },
+            {
+              "at": "2026-10-04T23:18:52.634233+00:00",
+              "name": "DNS wire after dependency recovery"
+            },
+            {
+              "at": "2026-10-04T23:20:20.796309+00:00",
+              "name": "full protected journey after dependency recovery"
+            }
+          ],
+          "recorded_stage_count": 20,
+          "reviewed_effects": {
+            "all_four_retained_health_snapshots": "healthy, last five health exit codes zero; services are stopped, so this is not current readiness",
+            "all_helpers_gone": false,
+            "all_six_roles_nonrunning": true,
+            "dns_cleanup_verified": false,
+            "four_present_roles_full_security_passed": true,
+            "geoserver_exit_limit": "Exit143 is compatible with signal15 and is not clean exit0 or independent proof of graceful shutdown.",
+            "guard_wrapper_child_absent": true,
+            "initializers_absent": 2,
+            "known_persisted_timer_service_units_not_loaded": 8,
+            "known_service_conmon_pid_absences": 8,
+            "native_state_limit": "Equality covers only this post-diagnosis final observer, not the earlier lifecycle.",
+            "native_state_unchanged_during_final_observer": true,
+            "observer_data_deleted": false,
+            "observer_retry": false,
+            "observer_signals_sent": false,
+            "owned_pause_retained": true,
+            "reconciled": true,
+            "serving_role_exits": {
+              "catalog": 0,
+              "database": 0,
+              "gateway": 0,
+              "geoserver": 143
+            },
+            "stored_native_errors": "Three roles retain the exact owned-source already-running start-state error; operation and time are unrecorded. Fresh retained inspection independently shows exited/Pid0.",
+            "unavailable_process_reads": 5
+          },
+          "source_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+          "started_at": "2026-10-04T23:06:38.631835+00:00",
+          "status": "incomplete"
+        },
+        "pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+        "progress": "plan/verification/runtime-recovery/progress-018.json",
+        "runtime": {
+          "cross_turn_continuation": {
+            "mechanism": "native goal continuation after final checkpoint",
+            "observed_at": "2026-10-03T06:04:33Z",
+            "previous_turn_classification": "progress",
+            "previous_turn_evidence": [
+              "PR72 and PR73 normal protected merges",
+              "Four exact authorized source refs published; independent recovery and zero-write replay",
+              "FND07 accepted/Merged and FND08 claimed/In progress",
+              "FND03/FND04 substantive implementations with actual runtime tests and material review fixes"
+            ],
+            "resume_reconciliation": {
+              "active_agents": [
+                "/root",
+                "/root/fnd03_identity",
+                "/root/fnd04_prototype",
+                "/root/publication_review"
+              ],
+              "integration_checkpoint": "completed",
+              "live_platform_main": "7812efa3502ec1d7004b485d35b433eea56ce13e",
+              "working_branch": "fnd-08/owned-spine"
+            },
+            "status": "observed",
+            "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7"
+          },
+          "current_observation": {
+            "assistant_resume_performed": false,
+            "foreground_delivery_continues": true,
+            "foreground_integrator": "/root",
+            "native_goal_status": "blocked",
+            "recorded_at": "2026-10-04T23:34:50.720439+00:00",
+            "source": "Root tool testimony",
+            "timestamp_meaning": "Persisted record time, not exact tool-response instant."
+          },
+          "external_supervisor": false,
+          "integrator": "/root",
+          "kind": "native-codex-goal",
+          "maximum_agents": 4,
+          "state_directory": "/home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integration",
+          "stop_command": "python3 plan/tools/delivery_runtime.py --state-dir /home/revelberry/Projects/AmbisGIS/build-worktrees/delivery-control/integration stop",
+          "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7"
+        },
+        "source_publication": {
+          "geoserver": "Owned PR1 normally merged atbc0b80af; compiled headbb35 tree equality verified.",
+          "geotools": "Owned PR1 normally merged atd360efd7; compiled head9b002 tree equality verified. Earlier canonical publication records remain in prior_checkpoints.",
+          "platform": {
+            "draft": true,
+            "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
+            "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
+            "local_candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+            "main": "d0218209d435f80c21400dc38abc2c4d69d805bc",
+            "merged": false,
+            "published_head": "73eda452935ee8e42e2e38c1d646b0e5e643ce6c",
+            "readback_recorded_at": "2026-10-04T23:34:50.719935+00:00"
+          },
+          "qgis": "exact review and canonical refs published, independently recovered; snapshot scope only"
+        },
+        "state": "PLT-01 In progress; ordinary019 is incomplete after twenty stages and four protected journeys. Finite effects reviewed; DNS namespace binding/overall cleanup and full installation acceptance remain open.",
+        "tests": [
+          {
+            "all_exit_codes_zero": true,
+            "candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+            "dns_host_validation": {
+              "development": 132,
+              "package": 689,
+              "schemas": 10
+            },
+            "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
+            "explicit_unchanged_reuse": {
+              "image_helpers": 40
+            },
+            "final_document_package_schema_checks": "Pending fresh post-document checks before publication; not credited here.",
+            "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
+            "reuse_limit": "Image inputs and helper sources are unchanged from the independently reviewed images025/026 and runtime-validation032 lineage. Earlier native fixture and source reviews are reused only for their unchanged scope.",
+            "scope": "Source/helper/package/schema checks and a separate synthetic PostgreSQL fixture; actual ordinary journeys are recorded separately.",
+            "sequence_native_fixed": 41,
+            "sequence_validation": {
+              "development": 121,
+              "package": 689,
+              "schemas": 10
+            },
+            "skips": 0,
+            "source_files": 1549,
+            "tmpfs_validation": {
+              "development": 132,
+              "package": 692,
+              "runtime": 77,
+              "schemas": 10
+            }
+          }
+        ],
+        "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5984320234",
+        "updated_at": "2026-10-04T23:43:43.930813+00:00"
+      }
     }
   ],
   "product_acceptance": false,
-  "progress": "plan/verification/runtime-recovery/progress-018.json",
+  "progress": "plan/verification/runtime-recovery/progress-019.json",
   "project_checkpoint": {
     "all_unrelated_values_preserved": true,
     "evidence": "plan/verification/fnd06-integration-001/draft-project-tracking.json",
@@ -2307,12 +3164,21 @@
     },
     "current_observation": {
       "assistant_resume_performed": false,
+      "budget_configured": false,
+      "exact_original_trigger": "unknown",
       "foreground_delivery_continues": true,
-      "foreground_integrator": "/root",
-      "native_goal_status": "blocked",
-      "recorded_at": "2026-10-04T23:34:50.720439+00:00",
-      "source": "Root tool testimony",
-      "timestamp_meaning": "Persisted record time, not exact tool-response instant."
+      "held_targeted_probe_executed": false,
+      "native_resume_claimed": false,
+      "original_terminal_cause": "cyber_policy",
+      "recorded_at": "2026-10-05T02:00:24.835586+00:00",
+      "remainingTokens": null,
+      "source": "Fresh parent root get_goal tool testimony in the current foreground context; exact response timestamp unavailable. recorded_at is this document recording time.",
+      "status": "blocked",
+      "thread_id": "01a1001c-60c3-7680-a640-54a47bbe6be7",
+      "timeUsedSeconds": 30612,
+      "timestamp_meaning": "Persisted root testimony record time, not the precise tool-response instant.",
+      "tokensUsed": 12420153,
+      "updatedAt": 1791034102
     },
     "external_supervisor": false,
     "integrator": "/root",
@@ -2335,54 +3201,48 @@
     "geoserver": "Owned PR1 normally merged atbc0b80af; compiled headbb35 tree equality verified.",
     "geotools": "Owned PR1 normally merged atd360efd7; compiled head9b002 tree equality verified. Earlier canonical publication records remain in prior_checkpoints.",
     "platform": {
+      "authority": "Parent root read-only trusted API testimony; worker made no remote query. Exact response timestamp not provided.",
       "draft": true,
       "draft_pr": "https://github.com/aloerch/ambisgis-platform/pull/78",
-      "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
-      "local_candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
+      "local_candidate_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f",
       "main": "d0218209d435f80c21400dc38abc2c4d69d805bc",
       "merged": false,
-      "published_head": "73eda452935ee8e42e2e38c1d646b0e5e643ce6c",
-      "readback_recorded_at": "2026-10-04T23:34:50.719935+00:00"
+      "open": true,
+      "publication_of_this_increment": "Pending final document/head/history/privacy/text/CI gates.",
+      "published_head": "7d0efc03495e55803d0482b881564e5e67ae6bdd"
     },
     "qgis": "exact review and canonical refs published, independently recovered; snapshot scope only"
   },
-  "state": "PLT-01 In progress; ordinary019 is incomplete after twenty stages and four protected journeys. Finite effects reviewed; DNS namespace binding/overall cleanup and full installation acceptance remain open.",
+  "state": "PLT-01 In progress; concurrency002 passed with finite effects reconciled. Historical ordinary019 remains incomplete; DNS/global cleanup and full installation acceptance remain open.",
   "task": "PLT-01 repeatable development installation",
   "tests": [
     {
       "all_exit_codes_zero": true,
-      "candidate_head": "dfba5a60527a0eb2ffa0aef67310f02467e5617a",
-      "dns_host_validation": {
-        "development": 132,
-        "package": 689,
-        "schemas": 10
-      },
-      "evidence": "plan/verification/plt01-lifecycle/evidence-018.json",
-      "explicit_unchanged_reuse": {
-        "image_helpers": 40
-      },
-      "final_document_package_schema_checks": "Pending fresh post-document checks before publication; not credited here.",
-      "image_source_head": "cb057e3ef38013865e25a3cb9c864e26db02cff7",
-      "reuse_limit": "Image inputs and helper sources are unchanged from the independently reviewed images025/026 and runtime-validation032 lineage. Earlier native fixture and source reviews are reused only for their unchanged scope.",
-      "scope": "Source/helper/package/schema checks and a separate synthetic PostgreSQL fixture; actual ordinary journeys are recorded separately.",
-      "sequence_native_fixed": 41,
-      "sequence_validation": {
-        "development": 121,
-        "package": 689,
-        "schemas": 10
-      },
-      "skips": 0,
-      "source_files": 1549,
-      "tmpfs_validation": {
-        "development": 132,
+      "final_document_package_schema_checks": "Pending fresh final-head 701 package and 10 schema checks; not credited here.",
+      "helper_validation": {
+        "development": 140,
         "package": 692,
+        "schemas": 10
+      },
+      "image_helpers_reused": 40,
+      "initializer_validation": {
+        "development": 140,
+        "package": 701,
         "runtime": 77,
         "schemas": 10
-      }
+      },
+      "initializer_validation_ref": {
+        "evidence_id": "initializer-validation",
+        "sha256": "8831a4c90863b20bf6e27c72c90d64706a96c57e1d73c8ef70020250ab4af3f7"
+      },
+      "scope": "Source/helper/package/schema validation; separate actual ordinary concurrency outcomes below.",
+      "skips": 0,
+      "source_files": 1551,
+      "source_head": "f959e7f65e6967ceea7d88ee468c89b2e012222f"
     }
   ],
   "tracking_comment": "https://github.com/aloerch/ambisgis-platform/issues/11#issuecomment-5984320234",
-  "updated_at": "2026-10-04T23:43:43.930813+00:00",
+  "updated_at": "2026-10-05T02:00:24.835586+00:00",
   "workflow": {
     "merge": "8c3612dd3e4ee992d930f1417798b66f467784e9",
     "pr": 72,
