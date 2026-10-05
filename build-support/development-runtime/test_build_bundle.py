@@ -34,6 +34,57 @@ class BundleAssemblyTests(unittest.TestCase):
         with self.assertRaises(ValueError): writer.put('copy', source=source, sha256='0' * 64)
         self.assertFalse((writer.root / 'copy').exists())
 
+
+    def acceptance_programs(self, source_root, output):
+        # Execute the real producer's isolated acceptance-program statements.
+        # This does not call assemble, inspect ELF, run tools, or copy a runtime.
+        import ast
+        tree = ast.parse(Path(build.__file__).read_text())
+        producer = next(node for node in tree.body if isinstance(node, ast.FunctionDef)
+                        and any(isinstance(row, ast.Assign) and any(isinstance(t, ast.Name) and t.id == 'program_source'
+                                for t in row.targets) for row in node.body))
+        start = next(i for i, row in enumerate(producer.body) if isinstance(row, ast.Assign)
+                     and any(isinstance(t, ast.Name) and t.id == 'program_source' for t in row.targets))
+        end = next(i for i in range(start, len(producer.body)) if isinstance(producer.body[i], ast.Expr)
+                   and isinstance(producer.body[i].value, ast.Call)
+                   and isinstance(producer.body[i].value.func, ast.Attribute)
+                   and producer.body[i].value.func.attr == 'document'
+                   and producer.body[i].value.args
+                   and isinstance(producer.body[i].value.args[0], ast.Constant)
+                   and producer.body[i].value.args[0].value == 'runtime/configuration/ordinary-command.json')
+        writer = build.Writer(output)
+        namespace = dict(vars(build), ROOT=source_root, writer=writer)
+        exec(compile(ast.Module(body=producer.body[start:end + 1], type_ignores=[]), '<inert acceptance program section>', 'exec'), namespace)
+        return writer
+
+    def test_oracle_source_and_registry_are_bound_to_actual_source_bytes(self):
+        import json
+        writer = self.acceptance_programs(build.ROOT, self.base / 'programs')
+        source = build.ROOT / 'deploy/development/installed_database_oracle.py'
+        target = 'runtime/configuration/installed-database-oracle-source.py'
+        registry = json.loads((writer.root / 'runtime/configuration/ordinary-command.json').read_bytes())
+        self.assertEqual(registry['installed_database_oracle_sha256'], build.digest(source))
+        self.assertEqual((writer.root / target).read_bytes(), source.read_bytes())
+        self.assertEqual(writer.rows[target]['origin'], {'owned_acceptance_program': str(source), 'sha256': build.digest(source)})
+        self.assertEqual(set(registry), {'source_sha256', 'internal_client_sha256', 'catalog_permission_sha256',
+                                        'dns_wire_sha256', 'installed_database_oracle_sha256'})
+        self.assertEqual(registry['dns_wire_sha256'], build.digest(build.ROOT / 'deploy/development/dns_wire_probe.py'))
+        self.assertEqual(registry['catalog_permission_sha256'], build.digest(build.ROOT / 'deploy/development/catalog_permission_probe.py'))
+
+    def test_oracle_registry_follows_changed_bytes_and_missing_source_fails(self):
+        import json
+        root = self.base / 'source'; directory = root / 'deploy/development'; directory.mkdir(parents=True)
+        for name in ('journey_probe.py', 'catalog_permission_probe.py', 'dns_wire_probe.py', 'installed_database_oracle.py'):
+            (directory / name).write_bytes((build.ROOT / 'deploy/development' / name).read_bytes())
+        oracle = directory / 'installed_database_oracle.py'; oracle.write_bytes(oracle.read_bytes() + b'\n# inert changed source\n')
+        writer = self.acceptance_programs(root, self.base / 'changed-programs')
+        registry = json.loads((writer.root / 'runtime/configuration/ordinary-command.json').read_bytes())
+        self.assertEqual(registry['installed_database_oracle_sha256'], build.digest(oracle))
+        self.assertNotEqual(registry['installed_database_oracle_sha256'], build.digest(build.ROOT / 'deploy/development/installed_database_oracle.py'))
+        self.assertEqual((writer.root / 'runtime/configuration/installed-database-oracle-source.py').read_bytes(), oracle.read_bytes())
+        oracle.unlink()
+        with self.assertRaises((ValueError, OSError)): self.acceptance_programs(root, self.base / 'missing-program')
+
     def launch_inert_bundle(self, leaf, *, public=True):
         root = self.base / leaf
         (root / 'runtime/engine').mkdir(parents=True)
