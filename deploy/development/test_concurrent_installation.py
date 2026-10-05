@@ -288,5 +288,115 @@ class ConcurrentInstallationTests(unittest.TestCase):
         self.assertFalse(result['full_installation_acceptance'])
 
 
+    def test_repeated_init_requires_existing_success_and_rejects_creator(self):
+        for replies,passes in [([self.success(created=False),self.busy()],True),
+                               ([self.success(created=False),self.success(created=False)],True),
+                               ([self.success(),self.busy()],False),
+                               ([self.busy(),self.busy()],False)]:
+            self.children.clear();self.calls.clear()
+            with (self.subTest(passes=passes),
+                  patch.object(concurrent.subprocess,'Popen',self.factory(replies)),
+                  patch.object(concurrent,'group_members',return_value=[])):
+                if passes:
+                    self.assertTrue(self.check.pair('init',reinitialize=True)['reinitialize'])
+                else:
+                    with self.assertRaises(ValueError):self.check.pair('init',reinitialize=True)
+
+    def test_reinitialize_flag_is_finite_and_rejects_up_before_launch(self):
+        with patch.object(concurrent.subprocess,'Popen')as spawn:
+            for command,flag in [('up',True),('init',1),('init','yes')]:
+                with self.subTest(command=command,flag=flag),self.assertRaises(ValueError):
+                    self.check.pair(command,reinitialize=flag)
+            spawn.assert_not_called()
+
+    def exercise_native_fixture(self, *, drift=None, lost_title=False, token_failure=False):
+        from types import SimpleNamespace
+        events=[];state={'identity':{'resource_uuid':'fixture','resource_pk':3,'owner_pk':1,'viewer_pk':2},'policy':'fixed-policy'}
+        class Journey:
+            def __init__(self,directory):
+                events.append(('construct',));self.cleanup_result={'complete':True};self.permission_cleanup={'complete':True};self.browsers=[];self.rows=[];self.permission_events=[]
+            def login(self, principal):
+                events.append(('login',principal));return None,SimpleNamespace(access_token='inert-token')
+            def request(self, path, **kwargs):
+                events.append(('metadata', 'edited-title'))
+                test_title='missing-title' if lost_title else 'edited-title'
+                return 200,json.dumps({'title':test_title}).encode()
+            def cleanup_tokens(self):
+                events.append(('metadata-token-cleanup',));return {'complete':True}
+            def run(self):
+                events.append(('run',))
+                if token_failure and len([e for e in events if e[0]=='run'])==2:
+                    self.cleanup_result={'complete':False}
+                    raise RuntimeError('Synthetic token cleanup incomplete')
+                return {'retained_metadata_title':'edited-title','native_item_permission_roundtrip':{
+                    'identity':dict(state['identity']),'restoration':{'native':{'after_sha256':state['policy']}}}}
+        def pair(command,**kwargs):
+            events.append(('pair',command,kwargs.get('reinitialize',False)))
+            if kwargs.get('reinitialize'):
+                if drift=='identity':state['identity']['viewer_pk']=99
+                if drift=='policy':state['policy']='changed-policy'
+            return {'child_cleanup':{'complete':True}}
+        rows={role:{'process':'running'}for role in concurrent.bundle.SERVICES}
+        rows.update({'catalog-init':{'process':'absent'},'geoserver-init':{'process':'absent'}})
+        rt=SimpleNamespace(processes=lambda **kw:rows,network=lambda:{'verified':True})
+        with (patch.object(self.check,'prepare'),patch.object(self.check,'pair',side_effect=pair),
+              patch.object(concurrent.runtime,'Runtime',return_value=rt),
+              patch.object(concurrent.lifecycle.journey_module,'Journey',Journey)):
+            try:self.check.exercise(self.f.manifest,self.f.identity)
+            finally:self.native_events=events
+        return events
+
+    def test_inherited_journey_wiring_and_read_before_edit_after_pairs(self):
+        events=self.exercise_native_fixture()
+        self.assertEqual([e for e in events if e[0]=='pair'],[('pair','init',False),('pair','up',False),('pair','init',True),('pair','up',False)])
+        reads=[i for i,e in enumerate(events)if e[0]=='run'];self.assertEqual(len(reads),2)
+        self.assertLess(events.index(('metadata','edited-title')),reads[1])
+        self.assertEqual(len(self.check.record['http_journeys']),2)
+        self.assertEqual(len(self.check.record['token_cleanup']),3)
+        self.assertIn(('login','owner'),events)
+        self.assertIn(('metadata-token-cleanup',),events)
+        self.assertEqual(len(self.check.record['permission_cleanup']),2)
+        self.assertEqual(len(self.check.record['stages']),2)
+        self.assertTrue(self.check.record['native_identity_and_policy_preserved'])
+        self.assertFalse(self.check.record['native_uniqueness_acceptance'])
+        self.assertFalse(self.check.record['installed_sql_role_acceptance'])
+        self.assertFalse(self.check.record['full_installation_acceptance'])
+
+    def test_native_identity_and_policy_drift_block_preservation_credit(self):
+        for drift in ('identity','policy'):
+            self.check.native_identity=None;self.check.native_policy_sha256=None
+            with self.subTest(drift=drift),self.assertRaisesRegex(ValueError,'native principals'):
+                self.exercise_native_fixture(drift=drift)
+            self.assertFalse(self.check.record['native_identity_and_policy_preserved'])
+
+    def test_missing_old_metadata_prevents_second_journey_write(self):
+        with self.assertRaisesRegex(ValueError,'previous metadata edit'):
+            self.exercise_native_fixture(lost_title=True)
+        self.assertEqual(len([e for e in self.native_events if e[0]=='run']),1)
+        self.assertFalse(self.check.record['native_identity_and_policy_preserved'])
+
+    def test_journey_cleanup_failure_retained_without_success_credit(self):
+        with self.assertRaisesRegex(RuntimeError,'token cleanup'):
+            self.exercise_native_fixture(token_failure=True)
+        self.assertFalse(self.check.record['token_cleanup'][-1]['complete'])
+        self.assertFalse(self.check.record['native_identity_and_policy_preserved'])
+
+    def test_main_incomplete_cannot_be_reported_passed(self):
+        args=Namespace(directory=self.f.base/'fresh-incomplete',output=self.f.base/'out-incomplete',bundle=self.f.manifest,bundle_sha256=self.f.identity)
+        def incomplete(check,*unused):check.record['incomplete_checks'].append({'classification':'synthetic_unavailable'})
+        with (patch.object(concurrent.ConcurrentCheck,'exercise',incomplete),
+              patch.object(concurrent.ConcurrentCheck,'shutdown',return_value={'complete':True})):
+            self.assertEqual(concurrent.main(args),1)
+        value=json.loads((args.output/'result.json').read_text());self.assertEqual(value['status'],'incomplete')
+        self.assertFalse(value['full_installation_acceptance'])
+
+    def test_main_explicit_incomplete_shutdown_cannot_be_reported_passed(self):
+        args=Namespace(directory=self.f.base/'fresh-stop',output=self.f.base/'out-stop',bundle=self.f.manifest,bundle_sha256=self.f.identity)
+        with (patch.object(concurrent.ConcurrentCheck,'exercise'),
+              patch.object(concurrent.ConcurrentCheck,'shutdown',return_value={'complete':False,'reconciliation_required':True})):
+            self.assertEqual(concurrent.main(args),1)
+        self.assertEqual(json.loads((args.output/'result.json').read_text())['status'],'failed')
+
+
 if __name__ == '__main__':
     unittest.main()
