@@ -1,5 +1,10 @@
 """Installer state/negative guards; these are not container or GIS acceptance."""
 import hashlib
+import fcntl
+import stat
+import threading
+from contextlib import contextmanager
+from types import SimpleNamespace
 import copy
 import io
 import json
@@ -150,6 +155,193 @@ class InstallerStateTests(unittest.TestCase):
             with self.subTest(kwargs=kwargs), self.assertRaises(InstallError):
                 self.init(**kwargs)
             self.assertFalse(self.root.exists())
+
+
+    def initialization_snapshot(self, root=None):
+        root = root or self.root
+        rows = {}
+        for path in sorted(root.rglob('*')):
+            info = path.lstat()
+            kind = stat.S_IFMT(info.st_mode)
+            value = (os.readlink(path) if stat.S_ISLNK(info.st_mode)
+                     else path.read_bytes() if stat.S_ISREG(info.st_mode) else None)
+            rows[str(path.relative_to(root))] = (kind, stat.S_IMODE(info.st_mode), value)
+        return rows
+
+    def first_init_with_gate(self, *, complete_before_contender_lock=False):
+        entered, release, done = threading.Event(), threading.Event(), threading.Event()
+        first, errors, before_second, held_during_load = [], [], [], []
+        original_write, original_locked, original_load = config.atomic_write, config.locked, config.load
+        def held_write(path, *args, **kwargs):
+            if path == self.root / 'secrets/product.json':
+                entered.set()
+                if not release.wait(5):
+                    raise AssertionError('Test-owned first writer was not released.')
+            return original_write(path, *args, **kwargs)
+        def producer():
+            try:
+                first.append(self.init())
+            except BaseException as error:
+                errors.append(error)
+            finally:
+                done.set()
+        worker = threading.Thread(target=producer, daemon=True)
+        @contextmanager
+        def contender_lock(root, **kwargs):
+            if threading.current_thread() is not worker and complete_before_contender_lock:
+                release.set()
+                if not done.wait(5):
+                    raise AssertionError('Test-owned first writer did not complete.')
+                before_second.append(self.initialization_snapshot())
+            with original_locked(root, **kwargs):
+                yield
+        def checked_load(root):
+            if threading.current_thread() is not worker:
+                fd = os.open(root / '.lock', os.O_RDWR | os.O_NOFOLLOW)
+                try:
+                    with self.assertRaises(BlockingIOError):
+                        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                    held_during_load.append(True)
+                finally:
+                    os.close(fd)
+            return original_load(root)
+        with patch.object(config, 'atomic_write', held_write), \
+                patch.object(config, 'locked', contender_lock), \
+                patch.object(config, 'load', checked_load):
+            worker.start()
+            try:
+                self.assertTrue(entered.wait(5), 'First writer did not reach its held-lock gate.')
+                snapshot = self.initialization_snapshot()
+                with patch.object(config.secrets, 'token_urlsafe',
+                                  side_effect=AssertionError('Contender must not regenerate secrets.')):
+                    if complete_before_contender_lock:
+                        second = self.init()
+                        self.assertFalse(second['created'])
+                        self.assertEqual(second['install_id'], first[0]['install_id'])
+                        self.assertEqual(before_second, [self.initialization_snapshot()])
+                        self.assertEqual(held_during_load, [True])
+                    else:
+                        with self.assertRaisesRegex(InstallError,
+                                '^Another installation command is already running\\.$'):
+                            self.init()
+                        self.assertEqual(snapshot, self.initialization_snapshot())
+            finally:
+                release.set()
+                worker.join(10)
+                self.assertFalse(worker.is_alive(), 'Test-owned writer thread did not finish.')
+        self.assertEqual(errors, [])
+        self.assertEqual(len(first), 1)
+        self.assertTrue(first[0]['created'])
+        snapshot = self.initialization_snapshot()
+        with patch.object(config.secrets, 'token_urlsafe',
+                          side_effect=AssertionError('Reinit must not regenerate secrets.')):
+            repeated = self.init()
+        self.assertFalse(repeated['created'])
+        self.assertEqual(repeated['install_id'], first[0]['install_id'])
+        self.assertEqual(snapshot, self.initialization_snapshot())
+
+    def test_first_init_active_lock_is_busy_without_partial_state_adoption(self):
+        self.first_init_with_gate()
+
+    def test_first_init_completion_before_contender_lock_reuses_same_locked_state(self):
+        self.first_init_with_gate(complete_before_contender_lock=True)
+
+    def test_existing_only_lock_never_creates_missing_lock(self):
+        self.root.mkdir(mode=0o700)
+        (self.root / 'user-data').write_bytes(b'keep exactly')
+        before = self.initialization_snapshot()
+        with self.assertRaises(InstallError), locked(self.root, existing_only=True):
+            self.fail('A missing existing lock must not be acquired.')
+        self.assertEqual(before, self.initialization_snapshot())
+
+    def test_unlocked_unmarked_lock_remains_rejected_without_credential_creation(self):
+        self.root.mkdir(mode=0o700)
+        (self.root / '.lock').write_bytes(b'')
+        (self.root / '.lock').chmod(0o600)
+        before = self.initialization_snapshot()
+        with patch.object(config.secrets, 'token_urlsafe',
+                          side_effect=AssertionError('Interrupted init must not create secrets.')):
+            with self.assertRaisesRegex(InstallError, 'not empty.*no product configuration'):
+                self.init()
+        self.assertEqual(before, self.initialization_snapshot())
+
+    def test_partial_unmarked_secrets_and_data_are_not_adopted(self):
+        self.root.mkdir(mode=0o700)
+        (self.root / '.lock').write_bytes(b'')
+        (self.root / '.lock').chmod(0o600)
+        (self.root / 'secrets').mkdir(mode=0o700)
+        (self.root / 'secrets/product.json').write_bytes(b'preserve interrupted private material')
+        (self.root / 'secrets/product.json').chmod(0o600)
+        (self.root / 'data').mkdir(mode=0o700)
+        (self.root / 'data/retained').write_bytes(b'do not adopt')
+        before = self.initialization_snapshot()
+        with patch.object(config.secrets, 'token_urlsafe',
+                          side_effect=AssertionError('Interrupted init must not create secrets.')):
+            with self.assertRaisesRegex(InstallError, 'not empty.*no product configuration'):
+                self.init()
+        self.assertEqual(before, self.initialization_snapshot())
+
+    def test_unmarked_missing_lock_preserves_exact_user_data(self):
+        self.root.mkdir(mode=0o700)
+        (self.root / 'user-data').write_bytes(b'keep exactly')
+        before = self.initialization_snapshot()
+        with self.assertRaises(InstallError):
+            self.init()
+        self.assertEqual(before, self.initialization_snapshot())
+
+    def test_existing_only_lock_unsafe_inputs_are_never_changed(self):
+        for kind in ('public', 'symlink', 'directory', 'fifo'):
+            with self.subTest(kind=kind):
+                root = self.base / ('unsafe-' + kind)
+                root.mkdir(mode=0o700)
+                lock = root / '.lock'
+                if kind == 'public':
+                    lock.write_bytes(b'keep'); lock.chmod(0o644)
+                elif kind == 'symlink':
+                    target = self.base / 'outside-lock'
+                    target.write_bytes(b'outside'); target.chmod(0o600)
+                    lock.symlink_to(target)
+                elif kind == 'directory':
+                    lock.mkdir(mode=0o700)
+                else:
+                    os.mkfifo(lock, 0o600)
+                before = self.initialization_snapshot(root)
+                with self.assertRaises((InstallError, OSError)), locked(root, existing_only=True):
+                    self.fail('Unsafe existing lock must not be acquired.')
+                self.assertEqual(before, self.initialization_snapshot(root))
+                if kind == 'symlink':
+                    self.assertEqual(target.read_bytes(), b'outside')
+
+    def test_existing_only_lock_wrong_owner_is_rejected(self):
+        self.root.mkdir(mode=0o700)
+        lock = self.root / '.lock'
+        lock.write_bytes(b''); lock.chmod(0o600)
+        identity, original = lock.stat(), os.fstat
+        def observed(fd):
+            info = original(fd)
+            if (info.st_dev, info.st_ino) == (identity.st_dev, identity.st_ino):
+                return SimpleNamespace(st_mode=info.st_mode, st_uid=os.getuid() + 1)
+            return info
+        before = self.initialization_snapshot()
+        with patch('installer.state.os.fstat', observed):
+            with self.assertRaisesRegex(InstallError, 'unsafe ownership or permissions'), \
+                    locked(self.root, existing_only=True):
+                self.fail('Wrong-owner existing lock must not be acquired.')
+        self.assertEqual(before, self.initialization_snapshot())
+
+    def test_preflock_publication_window_is_conservative_refusal(self):
+        self.root.mkdir(mode=0o700)
+        fd = os.open(self.root / '.lock', os.O_CREAT | os.O_EXCL | os.O_RDWR, 0o600)
+        try:
+            # This fixture deliberately models a creator paused before flock.
+            before = self.initialization_snapshot()
+            with self.assertRaisesRegex(InstallError, 'not empty.*no product configuration'):
+                self.init()
+            self.assertEqual(before, self.initialization_snapshot())
+            fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        finally:
+            os.close(fd)
+
 
     def test_database_failure_prevents_migrations_and_serving(self):
         self.init()

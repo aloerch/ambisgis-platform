@@ -147,18 +147,17 @@ def initialize(directory, bundle_path, bundle_sha256, *, port=None, owner=None, 
     root = checked_path(directory)
     selection = bundle.load(bundle_path, bundle_sha256)
     bundle.validate_runtime_paths(selection, root, bundle_root=checked_path(bundle_path).parent)
-    # Never adopt preexisting application/user data by directory title. An
-    # interrupted first init without its final configuration fails closed.
-    if root.exists() and not (root / 'product.json').exists() and any(root.iterdir()):
-        raise InstallError('Installation directory is not empty and has no product configuration.')
+    # A live first writer may hold an unmarked root. Probe only its existing
+    # lock; acquiring an unlocked interrupted root never authorizes adoption.
+    existing_only = root.exists() and not (root / 'product.json').exists() and any(root.iterdir())
     candidate = validate({'schema_version': 1, 'install_id': str(uuid.uuid4()), 'profile': PROFILE,
                           'listen': {'host': '127.0.0.1', 'port': port if port is not None else 8787},
                           'storage': str(root / 'data'),
                           'bundle': {'path': str(checked_path(bundle_path)), 'sha256': bundle_sha256},
                           'owner': owner if owner is not None else 'publisher',
                           'viewer': viewer if viewer is not None else 'viewer'}, root)
-    private_directory(root, create=True)
-    with locked(root):
+    private_directory(root, create=not existing_only)
+    with locked(root, existing_only=existing_only):
         if (root / 'product.json').exists():
             config = load(root)
             if config['bundle'] != {'path': str(checked_path(bundle_path)), 'sha256': bundle_sha256}:
@@ -168,6 +167,8 @@ def initialize(directory, bundle_path, bundle_sha256, *, port=None, owner=None, 
                     raise InstallError('Reinitialization conflicts with existing configuration; state was preserved.')
             secret_material(root)
             created = False
+        elif existing_only:
+            raise InstallError('Installation directory is not empty and has no product configuration.')
         else:
             config = candidate
             private_directory(root / 'secrets', create=True)

@@ -98,9 +98,16 @@ def atomic_write(path, value, *, replace=False):
 
 
 @contextmanager
-def locked(directory):
+def locked(directory, *, existing_only=False):
     directory = private_directory(directory)
-    descriptor = os.open(directory / '.lock', os.O_CREAT | os.O_RDWR | os.O_NOFOLLOW, 0o600)
+    # A contender inspecting an unmarked root must never create its lock.
+    flags = os.O_RDWR | os.O_NOFOLLOW | (0 if existing_only else os.O_CREAT)
+    try:
+        descriptor = os.open(directory / '.lock', flags, 0o600)
+    except FileNotFoundError as error:
+        if existing_only:
+            raise InstallError('Installation lock is absent; unmarked state was preserved.') from error
+        raise
     try:
         metadata = os.fstat(descriptor)
         if not stat.S_ISREG(metadata.st_mode) or metadata.st_uid != os.getuid() or metadata.st_mode & 0o077:
