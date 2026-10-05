@@ -60,14 +60,15 @@ def decode(data):
 class ConcurrentCheck(lifecycle.Check):
     def __init__(self, directory, output):
         super().__init__(directory, output)
-        self.record = {'schema_version': 1, 'task': 'PLT-01', 'gap': 'PLT01-GAP-05',
-                       'scope': 'command concurrency and configuration preservation',
+        self.record.update({'schema_version': 1, 'task': 'PLT-01', 'gap': 'PLT01-GAP-05',
+                       'scope': 'ordinary command concurrency and fixed native identity/policy/metadata preservation',
                        'status': 'running', 'started_at_utc': utc(), 'pairs': [],
                        'full_installation_acceptance': False,
                        'native_uniqueness_acceptance': False,
                        'installed_sql_role_acceptance': False,
                        'health_helper_cleanup_verified': False,
-                       'targeted_probe_executed': False, 'persistent_data_deleted': False}
+                       'targeted_probe_executed': False, 'persistent_data_deleted': False,
+                       'native_identity_and_policy_preserved': False})
         self.root_stamp = None
         self.up_attempted = False
 
@@ -120,6 +121,7 @@ class ConcurrentCheck(lifecycle.Check):
                  'configuration_sha256': hashlib.sha256(product_bytes).hexdigest(),
                  'credentials_file_sha256': hashlib.sha256(secret_bytes).hexdigest()}
         self.record['identity'] = facts
+        self.record['install_id'] = current['install_id']
         return facts
 
     def result(self, command, child, row):
@@ -207,11 +209,11 @@ class ConcurrentCheck(lifecycle.Check):
                     stream.close()
         return facts
 
-    def pair(self, command):
-        if command not in ('init', 'up'):
-            raise ValueError('Only the finite init/up pairs are supported.')
+    def pair(self, command, *, reinitialize=False):
+        if command not in ('init', 'up') or type(reinitialize) is not bool or (reinitialize and command != 'init'):
+            raise ValueError('Only the finite fresh init, existing init and up pairs are supported.')
         self.assert_root()
-        if command == 'up':
+        if command == 'up' or reinitialize:
             self.capture_identity()
         # Revalidate the exact relocated closure immediately before each pair.
         bundle.load(self.bundle_path, self.bundle_sha256)
@@ -221,7 +223,7 @@ class ConcurrentCheck(lifecycle.Check):
         environment = {'HOME': str(self.output), 'PATH': str(self.launcher.parent),
                        'LANG': 'C.UTF-8', 'LC_ALL': 'C.UTF-8', 'PYTHONNOUSERSITE': '1',
                        'PYTHONSAFEPATH': '1', 'PYTHONDONTWRITEBYTECODE': '1'}
-        facts = {'command': command, 'started_at_utc': utc(), 'argv': arguments,
+        facts = {'command': command, 'reinitialize': reinitialize, 'started_at_utc': utc(), 'argv': arguments,
                  'launch_overlap_observed': False, 'lock_contention_observed': False,
                  'children': []}
         self.record['pairs'].append(facts)
@@ -277,7 +279,10 @@ class ConcurrentCheck(lifecycle.Check):
                 outcomes = [row['outcome'] for row in facts['children']]
                 facts['lock_contention_observed'] = 'busy' in outcomes
                 if command == 'init':
-                    if outcomes.count('created') != 1 or any(x not in ('created', 'existing', 'busy') for x in outcomes):
+                    if reinitialize:
+                        if 'existing' not in outcomes or any(x not in ('existing', 'busy') for x in outcomes):
+                            raise ValueError('Repeated init pair must preserve only the existing installation.')
+                    elif outcomes.count('created') != 1 or any(x not in ('created', 'existing', 'busy') for x in outcomes):
                         raise ValueError('Init pair did not create exactly one installation.')
                 elif 'ready' not in outcomes or any(x not in ('ready', 'busy') for x in outcomes):
                     raise ValueError('Up pair has no successful ready peer.')
@@ -307,6 +312,15 @@ class ConcurrentCheck(lifecycle.Check):
         # are deliberately not inferred from these installation observations.
         self.record['owned_processes_after_up'] = observed
         self.capture_identity()
+        title = self.protected_journey('native baseline before repeated concurrent commands')
+        self.pair('init', reinitialize=True)
+        self.pair('up')
+        # The inherited method reads the old title before a journey can edit it,
+        # and compares native principal/resource IDs and restored policy hashes.
+        self.protected_journey('native state after repeated concurrent commands', title)
+        self.capture_identity()
+        self.record['native_identity_and_policy_preserved'] = True
+        self.record['native_preservation_scope'] = 'fixed diagnostic item, owner/viewer IDs and native object policy; not full migration or database cardinality'
 
     def shutdown(self):
         if not self.up_attempted:
@@ -331,7 +345,8 @@ def main(args):
     check = ConcurrentCheck(directory, output)
     check.record['sources'] = [{'path': str(path), 'sha256': digest(path)} for path in (
         Path(__file__), Path(lifecycle.__file__), ROOT / 'installer/config.py',
-        ROOT / 'installer/runtime.py', ROOT / 'installer/state.py', ROOT / 'installer/bundle.py')]
+        ROOT / 'installer/runtime.py', ROOT / 'installer/state.py', ROOT / 'installer/bundle.py',
+        Path(lifecycle.journey_module.__file__), lifecycle.journey_module.POLICY_PROGRAM, lifecycle.journey_module.CLIENT)]
     passed = False
     previous = signal.getsignal(signal.SIGTERM)
     def interrupted(signum, frame):
@@ -345,17 +360,22 @@ def main(args):
     finally:
         try:
             check.record['shutdown'] = check.shutdown()
+            if check.record['shutdown'].get('complete') is False:
+                passed = False
         except (Exception, KeyboardInterrupt) as error:
             passed = False
             check.record['shutdown'] = {'complete': False, 'error_type': type(error).__name__,
                                         'reconciliation_required': True, 'persistent_data_preserved': True}
-        check.record.update(status='passed' if passed else 'failed', completed_at_utc=utc())
+        status = 'passed' if passed else 'failed'
+        if passed and check.record['incomplete_checks']:
+            status = 'incomplete'
+        check.record.update(status=status, completed_at_utc=utc())
         try:
             check.save()
         finally:
             signal.signal(signal.SIGTERM, previous)
     print(json.dumps({'status': check.record['status'], 'receipt': str(output / 'result.json')}))
-    return 0 if passed else 1
+    return 0 if check.record['status'] == 'passed' else 1
 
 
 if __name__ == '__main__':

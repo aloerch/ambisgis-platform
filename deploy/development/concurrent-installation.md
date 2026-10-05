@@ -2,8 +2,11 @@
 
 `concurrent_installation.py` covers the command-concurrency part of
 PLT01-GAP-05. It is a finite, foreground helper for one fresh synthetic
-installation. It runs exactly two concurrent `init` invocations and then
-exactly two concurrent `up` invocations with the selected bundle launcher.
+installation. It runs a fresh pair of concurrent `init` invocations and a pair of concurrent
+`up` invocations with the selected bundle launcher. After the first protected
+journey edits the fixed synthetic item, it runs an existing-only `init` pair
+and another `up` pair, then verifies the old metadata before the next protected
+journey can edit it.
 It accepts no command, resource, principal, SQL or engine argument from its
 caller. There is no retry, background scheduler, daemon or reset.
 
@@ -37,7 +40,9 @@ launch overlap alone does not prove that both workers reached the critical
 section simultaneously. It fails if the first child finishes before overlap
 can be observed and never retries to manufacture a passing result.
 
-The init pair must report exactly one newly created identity. Any successful
+The fresh init pair must report exactly one newly created identity. The explicit
+repeated-init phase requires at least one existing-identity success and permits
+only existing successes or the exact lock-busy result; any creator fails. Any successful
 second call must report that same existing identity. A racing
 `Installation directory is not empty and has no product configuration.`
 rejection is a failure, not an accepted busy response. Such a failure remains
@@ -51,7 +56,7 @@ Configuration and credential files are validated through the installer and
 their exact bytes are compared after successful command completions, after
 each pair and around shutdown. Receipts contain the installation UUID and file
 SHA256s, never credential values. The first observed identity is retained, not
-a reconstruction from regenerated state. A final reused native inspection
+a reconstruction from regenerated state. After the first up pair, a reused native inspection
 checks only the six named owned roles, their image/configuration/security
 bindings, the four running services, stopped/absent initializer roles and the
 installation's network. The existing runtime remains the authority for these
@@ -83,11 +88,13 @@ A command-concurrency pass is **not** completion of GAP-05 or PLT-01. This
 helper always records `full_installation_acceptance: false`,
 `native_uniqueness_acceptance: false`,
 `installed_sql_role_acceptance: false` and
-`health_helper_cleanup_verified: false`. CLI UUID/configuration preservation
-does not prove preservation or uniqueness of native principals, items,
-permissions, migration state or effective installed serving-role privileges.
-Those require their separate actual before/after native identity and SQL
-checks. Detached health units, conmon and other helpers that leave the CLI
+`health_helper_cleanup_verified: false`. The two unchanged protected journeys compare the fixed native resource and
+owner/viewer IDs and restored object-policy fingerprints. The native policy
+program requires exactly one selected sample alternate and exact principals.
+The second journey reads the retained edited title before issuing new edits.
+Only successful comparisons set `native_identity_and_policy_preserved: true`.
+This does not establish general native cardinality, migration-state equality or
+effective installed serving-role privileges; those retain separate checks. Detached health units, conmon and other helpers that leave the CLI
 process group require separate owned-state reconciliation. No targeted
 container vulnerability probe is invoked or replaced.
 
@@ -98,3 +105,13 @@ are helper evidence only. The initial missing-module baseline and subsequent
 test corrections are retained outside the repository. Actual command
 concurrency remains pending until the reviewed helper is run on a reviewed
 bundle and its source, results and cleanup are independently verified.
+
+The helper retains the lifecycle record arrays needed by the inherited journey,
+metadata, permission restoration and token-cleanup methods. Any recorded
+incomplete subcheck produces an `incomplete` result and exit1, never a pass.
+Explicit incomplete shutdown likewise prevents a passing result. DNS namespace
+and global helper cleanup remain unqualified; no new DNS or held qualification
+operation is introduced. All overlap/deadline/output/session cleanup bounds
+remain unchanged. The tests invoke the inherited metadata login/read/token-cleanup
+and protected-journey methods using only synthetic clients, preserving their
+record arrays and read-before-edit ordering. This source proposal has not run actual concurrent CLI calls.
